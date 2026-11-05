@@ -21,7 +21,8 @@
       "Read(~/.ssh/**)",
       "Read(~/.config/gcloud/**)",
       "Bash(rm -rf:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Read(./.env)"
     ]
   }
 }
