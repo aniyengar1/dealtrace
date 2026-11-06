@@ -35,18 +35,25 @@ _LOW_HIGH_PAIRS = [
 # Filing text and model output disagree on which Unicode code point to use
 # for an otherwise-identical character (curly vs. straight quotes, en/em
 # dash vs. hyphen, NBSP vs. regular space). None of that is a real content
-# difference, so both sides of a quote match are folded onto one ASCII
-# representative before comparing.
+# difference, so both sides of a quote match are folded onto one
+# representative before comparing. Quotes fold all the way down to a
+# single canonical character regardless of single/double or
+# curly/straight style -- a model substituting a double quotation mark
+# for a single one (or vice versa) around the same span is the same kind
+# of non-content noise as a curly-vs-straight mismatch, not a real
+# wording difference.
 _QUOTE_NORMALIZE_MAP = str.maketrans(
     {
+        "'": "'",  # straight single quote / apostrophe (canonical form)
+        '"': "'",  # straight double quote
         "‘": "'",  # left single quotation mark
         "’": "'",  # right single quotation mark
         "‚": "'",  # single low-9 quotation mark
         "′": "'",  # prime
-        "“": '"',  # left double quotation mark
-        "”": '"',  # right double quotation mark
-        "„": '"',  # double low-9 quotation mark
-        "″": '"',  # double prime
+        "“": "'",  # left double quotation mark
+        "”": "'",  # right double quotation mark
+        "„": "'",  # double low-9 quotation mark
+        "″": "'",  # double prime
         " ": " ",  # no-break space
         "‐": "-",  # hyphen
         "‑": "-",  # non-breaking hyphen

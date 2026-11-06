@@ -105,7 +105,16 @@ def test_normalize_whitespace_collapses_runs():
 
 def test_normalize_for_match_folds_curly_quotes_and_apostrophes():
     assert normalize_for_match("the ‘Agreement’") == "the 'Agreement'"
-    assert normalize_for_match("the “Agreement”") == 'the "Agreement"'
+    assert normalize_for_match("the “Agreement”") == "the 'Agreement'"
+
+
+def test_normalize_for_match_folds_single_and_double_quotes_to_one_canonical_char():
+    # Single vs. double, curly vs. straight -- all four styles must collapse
+    # onto the same character so a model swapping quote style around a span
+    # doesn't register as a content difference.
+    variants = ["the 'Agreement'", 'the "Agreement"', "the ‘Agreement’", "the “Agreement”"]
+    normalized = {normalize_for_match(v) for v in variants}
+    assert len(normalized) == 1
 
 
 def test_normalize_for_match_folds_dash_variants():
@@ -118,7 +127,7 @@ def test_normalize_for_match_folds_nbsp_to_space():
 
 
 def test_normalize_for_match_decodes_html_entities():
-    assert normalize_for_match("the &#8220;Agreement&#8221;") == 'the "Agreement"'
+    assert normalize_for_match("the &#8220;Agreement&#8221;") == "the 'Agreement'"
     assert normalize_for_match("Cisco &amp; Splunk") == "Cisco & Splunk"
 
 
@@ -129,6 +138,17 @@ def test_quote_matches_despite_straight_vs_curly_quote_mismatch():
     lookup = {"p1": 'the “Confidentiality Agreement” was signed'}
     ok, reason = check_quote_in_paragraphs(
         'the "Confidentiality Agreement" was signed', ["p1"], lookup
+    )
+    assert ok, reason
+
+
+def test_quote_matches_despite_single_vs_double_quote_mismatch():
+    # The real failure this guards against: the filing used curly double
+    # quotes, but the model quoted the same span with curly single quotes --
+    # a wrong-but-equivalent quote style, not a real wording difference.
+    lookup = {"p1": "the “Confidentiality Agreement” was signed"}
+    ok, reason = check_quote_in_paragraphs(
+        "the ‘Confidentiality Agreement’ was signed", ["p1"], lookup
     )
     assert ok, reason
 
