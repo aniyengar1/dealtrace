@@ -8,6 +8,7 @@ consistent. Records that fail are kept (not dropped) but flagged, so a human
 can see exactly what's unverified.
 """
 
+import html as html_lib
 import json
 import re
 from datetime import date as date_cls
@@ -31,9 +32,48 @@ _LOW_HIGH_PAIRS = [
     ("implied_price_low", "implied_price_high"),
 ]
 
+# Filing text and model output disagree on which Unicode code point to use
+# for an otherwise-identical character (curly vs. straight quotes, en/em
+# dash vs. hyphen, NBSP vs. regular space). None of that is a real content
+# difference, so both sides of a quote match are folded onto one ASCII
+# representative before comparing.
+_QUOTE_NORMALIZE_MAP = str.maketrans(
+    {
+        "‘": "'",  # left single quotation mark
+        "’": "'",  # right single quotation mark
+        "‚": "'",  # single low-9 quotation mark
+        "′": "'",  # prime
+        "“": '"',  # left double quotation mark
+        "”": '"',  # right double quotation mark
+        "„": '"',  # double low-9 quotation mark
+        "″": '"',  # double prime
+        " ": " ",  # no-break space
+        "‐": "-",  # hyphen
+        "‑": "-",  # non-breaking hyphen
+        "‒": "-",  # figure dash
+        "–": "-",  # en dash
+        "—": "-",  # em dash
+        "―": "-",  # horizontal bar
+        "−": "-",  # minus sign
+    }
+)
+
 
 def normalize_whitespace(text: str) -> str:
     return _WHITESPACE_RE.sub(" ", text).strip()
+
+
+def normalize_for_match(text: str) -> str:
+    """Normalize text for verbatim-quote comparison, not for display.
+
+    Decodes HTML entities, folds Unicode quote/dash/NBSP variants onto their
+    ASCII equivalents, then collapses whitespace. Exact string containment
+    after this normalization is still the pass/fail bar -- this only removes
+    encoding noise, it never allows a fuzzy/approximate match to pass.
+    """
+    text = html_lib.unescape(text)
+    text = text.translate(_QUOTE_NORMALIZE_MAP)
+    return normalize_whitespace(text)
 
 
 def load_paragraph_lookup(sections_dir: Path = DATA_SECTIONS) -> dict[str, str]:
@@ -56,7 +96,7 @@ def check_quote_in_paragraphs(
         return False, f"unknown paragraph id(s): {missing}"
 
     combined = " ".join(paragraph_lookup[pid] for pid in source_paragraph_ids)
-    if normalize_whitespace(source_quote) in normalize_whitespace(combined):
+    if normalize_for_match(source_quote) in normalize_for_match(combined):
         return True, ""
     return False, "source_quote not found verbatim in cited paragraphs"
 

@@ -50,18 +50,59 @@ class Paragraph:
         return {"id": self.id, "text": self.text}
 
 
+_ZERO_WIDTH_RE = re.compile(r"[​ ]")
+
+
+def _table_text(table_tag) -> str:
+    """Render a <table> as "cell | cell" rows, one row per line.
+
+    Financial-printer HTML pads tables with empty "gutter" <td>s (often just
+    a zero-width space) purely for visual column spacing; those carry no
+    content, so they're dropped rather than appearing as empty cells.
+    """
+    lines = []
+    for row in table_tag.find_all("tr"):
+        cells = []
+        for cell in row.find_all(["td", "th"]):
+            text = cell.get_text(" ", strip=True)
+            text = _ZERO_WIDTH_RE.sub("", text).strip()
+            if text:
+                cells.append(text)
+        if cells:
+            lines.append(" | ".join(cells))
+    return "\n".join(lines)
+
+
 def parse_paragraphs(html: str) -> list[Paragraph]:
     """Extract an ordered list of leaf-level paragraphs with stable IDs.
 
     A paragraph is a <div> or <p> with no nested div/p/table (i.e. its text
     is a single flowing block). Heading paragraphs carry a level (1-5) taken
     from an h1..h5 CSS class; body paragraphs have level=None.
+
+    A <table> is its own paragraph instead: its rows/cells have no flowing
+    prose structure, so splitting it into leaf divs (one per cell) would
+    scatter a single row across unrelated paragraph IDs. Elements nested
+    inside a table are skipped in the main loop since the table's own entry
+    already covers their text.
     """
     soup = BeautifulSoup(html, "lxml")
 
     paragraphs: list[Paragraph] = []
     counter = 0
-    for tag in soup.find_all(["div", "p"]):
+    for tag in soup.find_all(["div", "p", "table"]):
+        if tag.name == "table":
+            if tag.find_parent("table") is not None:
+                continue  # nested table -- captured as text by the outer one
+            text = _table_text(tag)
+            if not text:
+                continue
+            counter += 1
+            paragraphs.append(Paragraph(f"p{counter:05d}", text, None))
+            continue
+
+        if tag.find_parent("table") is not None:
+            continue  # already captured by the table's own paragraph
         if tag.find(["div", "p", "table"]):
             continue  # not a leaf -- its text is captured by its children
 

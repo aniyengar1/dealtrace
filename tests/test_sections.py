@@ -40,3 +40,19 @@ def test_toc_duplicate_heading_is_not_mistaken_for_the_section():
     # the real section (with actual prose) must be the one returned.
     assert sections["background_of_the_merger"]["word_count"] > 0
     assert len(sections["background_of_the_merger"]["paragraphs"]) == 2
+
+
+def test_table_becomes_one_paragraph_with_pipe_separated_rows():
+    sections = extract_sections(FIXTURE.read_text())
+    texts = [p["text"] for p in sections["opinion_of_example_advisor_llc"]["paragraphs"]]
+    table_texts = [t for t in texts if "|" in t]
+    assert len(table_texts) == 1
+    assert table_texts[0] == "Method | Implied Price\nDCF | $95.00-$115.00"
+
+
+def test_table_gutter_spacer_cells_are_dropped():
+    sections = extract_sections(FIXTURE.read_text())
+    texts = " ".join(p["text"] for p in sections["opinion_of_example_advisor_llc"]["paragraphs"])
+    # The gutter <td>s carry only a zero-width space for visual spacing --
+    # they must not show up as empty " | " segments in the rendered row.
+    assert " |  | " not in texts

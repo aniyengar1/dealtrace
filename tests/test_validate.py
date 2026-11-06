@@ -3,6 +3,7 @@ from src.validate import (
     check_low_le_high,
     check_numbers_in_quote,
     check_quote_in_paragraphs,
+    normalize_for_match,
     normalize_whitespace,
 )
 
@@ -100,3 +101,58 @@ def test_dates_valid_fails_with_inverted_range():
 
 def test_normalize_whitespace_collapses_runs():
     assert normalize_whitespace("a  \n b\t c") == "a b c"
+
+
+def test_normalize_for_match_folds_curly_quotes_and_apostrophes():
+    assert normalize_for_match("the ‘Agreement’") == "the 'Agreement'"
+    assert normalize_for_match("the “Agreement”") == 'the "Agreement"'
+
+
+def test_normalize_for_match_folds_dash_variants():
+    assert normalize_for_match("120.66–179.78") == "120.66-179.78"
+    assert normalize_for_match("a — b") == "a - b"
+
+
+def test_normalize_for_match_folds_nbsp_to_space():
+    assert normalize_for_match("April 4, 2023") == "April 4, 2023"
+
+
+def test_normalize_for_match_decodes_html_entities():
+    assert normalize_for_match("the &#8220;Agreement&#8221;") == 'the "Agreement"'
+    assert normalize_for_match("Cisco &amp; Splunk") == "Cisco & Splunk"
+
+
+def test_quote_matches_despite_straight_vs_curly_quote_mismatch():
+    # Filing text uses curly double quotes; the model quoted the same words
+    # with plain ASCII quotes -- an equivalent encoding, not a real wording
+    # difference, so this must still pass after normalization.
+    lookup = {"p1": 'the “Confidentiality Agreement” was signed'}
+    ok, reason = check_quote_in_paragraphs(
+        'the "Confidentiality Agreement" was signed', ["p1"], lookup
+    )
+    assert ok, reason
+
+
+def test_quote_matches_despite_dash_and_nbsp_variants():
+    lookup = {"p1": "a range of 120.66–179.78 per share"}
+    ok, reason = check_quote_in_paragraphs("120.66-179.78 per share", ["p1"], lookup)
+    assert ok, reason
+
+
+def test_fuzzy_near_match_still_fails():
+    # Normalization closes encoding gaps only -- an actual wording
+    # difference must still fail, never pass via approximate matching.
+    lookup = {"p1": "the Board of Directors convened a meeting on April 10, 2023"}
+    ok, reason = check_quote_in_paragraphs(
+        "the Board of Directors convened a meeting on April 9, 2023", ["p1"], lookup
+    )
+    assert not ok
+    assert "not found" in reason
+
+
+def test_quote_matches_table_row_rendered_as_pipe_separated_cells():
+    lookup = {"p1": "Sensitivity 1 Projections | 120.66–179.78\nSensitivity 2 Projections | 100.95–147.31"}
+    ok, reason = check_quote_in_paragraphs(
+        "Sensitivity 2 Projections | 100.95-147.31", ["p1"], lookup
+    )
+    assert ok, reason
