@@ -31,6 +31,13 @@ ProposalKind = Literal[
 ValuationMethod = Literal["trading_comps", "precedent_transactions", "dcf", "other"]
 
 
+SOURCE_QUOTES_DESCRIPTION = (
+    "1 to 3 exact, verbatim, contiguous spans copied character-for-character "
+    "from the source paragraphs -- never a paraphrase. Every number in this "
+    "item's numeric fields must appear in at least one of these quotes."
+)
+
+
 class Event(BaseModel):
     date_text: str = Field(description="Date exactly as written in the filing")
     date_start: Optional[date] = Field(None, description="ISO start date, null if unknown")
@@ -40,7 +47,9 @@ class Event(BaseModel):
     parties: list[str] = Field(description="Anonymized party labels, e.g. 'Party A'")
     summary: str
     source_paragraph_ids: list[str]
-    source_quote: str = Field(description="Exact verbatim text from the source paragraphs")
+    source_quotes: list[str] = Field(
+        min_length=1, max_length=3, description=SOURCE_QUOTES_DESCRIPTION
+    )
 
 
 class Proposal(BaseModel):
@@ -54,7 +63,9 @@ class Proposal(BaseModel):
     proposal_kind: ProposalKind
     status: str
     source_paragraph_ids: list[str]
-    source_quote: str = Field(description="Exact verbatim text from the source paragraphs")
+    source_quotes: list[str] = Field(
+        min_length=1, max_length=3, description=SOURCE_QUOTES_DESCRIPTION
+    )
 
 
 class ValuationAnalysis(BaseModel):
@@ -69,7 +80,9 @@ class ValuationAnalysis(BaseModel):
         default_factory=list, description="e.g. WACC range, terminal growth rate"
     )
     source_paragraph_ids: list[str]
-    source_quote: str = Field(description="Exact verbatim text from the source paragraphs")
+    source_quotes: list[str] = Field(
+        min_length=1, max_length=3, description=SOURCE_QUOTES_DESCRIPTION
+    )
 
 
 SCHEMA_REGISTRY: dict[str, type[BaseModel]] = {

@@ -1,11 +1,11 @@
 """Validate extracted records against their source text and write outputs.
 
-Every record must be traceable back to the filing: its source_quote has to
-appear verbatim (after whitespace normalization) in the paragraphs it cites,
-every number it reports has to actually appear in that quote, low/high pairs
-have to be ordered correctly, and any dates have to be internally
-consistent. Records that fail are kept (not dropped) but flagged, so a human
-can see exactly what's unverified.
+Every record must be traceable back to the filing: each of its 1-3
+source_quotes has to appear verbatim (after normalization) in the paragraphs
+it cites, every number it reports has to appear in at least one of those
+quotes, low/high pairs have to be ordered correctly, and any dates have to
+be internally consistent. Records that fail are kept (not dropped) but
+flagged, so a human can see exactly what's unverified.
 """
 
 import html as html_lib
@@ -93,19 +93,23 @@ def load_paragraph_lookup(sections_dir: Path = DATA_SECTIONS) -> dict[str, str]:
     return lookup
 
 
-def check_quote_in_paragraphs(
-    source_quote: str, source_paragraph_ids: list[str], paragraph_lookup: dict[str, str]
+def check_quotes_in_paragraphs(
+    source_quotes: list[str], source_paragraph_ids: list[str], paragraph_lookup: dict[str, str]
 ) -> tuple[bool, str]:
+    """Every quote in source_quotes must individually match verbatim."""
     if not source_paragraph_ids:
         return False, "no source_paragraph_ids given"
     missing = [pid for pid in source_paragraph_ids if pid not in paragraph_lookup]
     if missing:
         return False, f"unknown paragraph id(s): {missing}"
+    if not source_quotes:
+        return False, "no source_quotes given"
 
-    combined = " ".join(paragraph_lookup[pid] for pid in source_paragraph_ids)
-    if normalize_for_match(source_quote) in normalize_for_match(combined):
-        return True, ""
-    return False, "source_quote not found verbatim in cited paragraphs"
+    combined = normalize_for_match(" ".join(paragraph_lookup[pid] for pid in source_paragraph_ids))
+    not_found = [q for q in source_quotes if normalize_for_match(q) not in combined]
+    if not_found:
+        return False, f"source_quote(s) not found verbatim in cited paragraphs: {not_found}"
+    return True, ""
 
 
 def _numbers_in_record(record: dict) -> dict[str, float]:
@@ -120,17 +124,19 @@ def _numbers_in_record(record: dict) -> dict[str, float]:
     return {f: record[f] for f in numeric_fields if record.get(f) is not None}
 
 
-def check_numbers_in_quote(record: dict, source_quote: str) -> tuple[bool, str]:
+def check_numbers_in_quotes(record: dict, source_quotes: list[str]) -> tuple[bool, str]:
+    """Every numeric field must appear in at least one of source_quotes."""
     numbers = _numbers_in_record(record)
     if not numbers:
         return True, ""
 
     quote_numbers = set()
-    for match in _NUMBER_RE.findall(source_quote):
-        try:
-            quote_numbers.add(float(match.replace(",", "")))
-        except ValueError:
-            continue
+    for quote in source_quotes:
+        for match in _NUMBER_RE.findall(quote):
+            try:
+                quote_numbers.add(float(match.replace(",", "")))
+            except ValueError:
+                continue
 
     missing = []
     for field, value in numbers.items():
@@ -138,7 +144,7 @@ def check_numbers_in_quote(record: dict, source_quote: str) -> tuple[bool, str]:
             missing.append(field)
 
     if missing:
-        return False, f"field(s) not found in source_quote: {missing}"
+        return False, f"field(s) not found in any source_quote: {missing}"
     return True, ""
 
 
@@ -177,10 +183,10 @@ def validate_record(
     record_type: str, record: dict, paragraph_lookup: dict[str, str]
 ) -> dict:
     checks = {}
-    checks["quote_in_paragraphs"], reason1 = check_quote_in_paragraphs(
-        record.get("source_quote", ""), record.get("source_paragraph_ids", []), paragraph_lookup
+    checks["quotes_in_paragraphs"], reason1 = check_quotes_in_paragraphs(
+        record.get("source_quotes", []), record.get("source_paragraph_ids", []), paragraph_lookup
     )
-    checks["numbers_in_quote"], reason2 = check_numbers_in_quote(record, record.get("source_quote", ""))
+    checks["numbers_in_quotes"], reason2 = check_numbers_in_quotes(record, record.get("source_quotes", []))
     checks["low_le_high"], reason3 = check_low_le_high(record)
     checks["dates_valid"], reason4 = check_dates_valid(record)
 
@@ -248,13 +254,17 @@ def _status_marker(result: dict) -> str:
     return "" if result["passed"] else f" ⚠ VALIDATION FAILED: {'; '.join(result['failure_reasons'])}"
 
 
+def _format_quotes(rec: dict) -> str:
+    return "\n".join(f"  > {q}" for q in rec.get("source_quotes", []))
+
+
 def _format_event(r: dict) -> str:
     rec = r["record"]
     parties = ", ".join(rec.get("parties", []))
     return (
         f"- **{rec.get('date_text')}** [{rec.get('event_type')}] ({parties}): "
         f"{rec.get('summary')}{_status_marker(r)}\n"
-        f"  > {rec.get('source_quote')}\n"
+        f"{_format_quotes(rec)}\n"
     )
 
 
@@ -268,7 +278,7 @@ def _format_proposal(r: dict) -> str:
         f"- **{rec.get('date')}** [{rec.get('proposal_kind')}] "
         f"{rec.get('proposer')} -> {rec.get('recipient')}{price} "
         f"({rec.get('consideration_type')}, status: {rec.get('status')}){_status_marker(r)}\n"
-        f"  > {rec.get('source_quote')}\n"
+        f"{_format_quotes(rec)}\n"
     )
 
 
@@ -286,7 +296,7 @@ def _format_valuation(r: dict) -> str:
     return (
         f"- **{rec.get('advisor')}** [{rec.get('method')}] {rec.get('metric')}"
         f"{multiple}{implied}{assumptions}{_status_marker(r)}\n"
-        f"  > {rec.get('source_quote')}\n"
+        f"{_format_quotes(rec)}\n"
     )
 
 

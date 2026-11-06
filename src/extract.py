@@ -31,7 +31,7 @@ from pydantic import BaseModel, ValidationError
 
 load_dotenv()
 
-PROMPT_VERSION = "v3"
+PROMPT_VERSION = "v4"
 MAX_CHUNK_WORDS = 8000
 MAX_MALFORMED_RETRIES = 2
 # A per-day quota exhaustion (RESOURCE_EXHAUSTED with a "...PerDay..." quota
@@ -159,16 +159,20 @@ individual, an advisor) should get the next unused label ("Party C", \
 real company or person name in that field.
 - source_paragraph_ids must list the paragraph ID(s) from the excerpt below \
 that support the item.
-- source_quote must be copied character-for-character from the cited \
-paragraph(s) -- do not paraphrase, summarize, or alter wording or \
-punctuation. It must be ONE contiguous span of at most ~40 words: never \
-join two separate spans with "...", a connector, or any other glue. If the \
-supporting text is longer than that, pick the single short exact span that \
-most directly supports the item rather than quoting the full sentence.
+- source_quotes must be a list of 1 to 3 exact spans copied \
+character-for-character from the cited paragraph(s) -- do not paraphrase, \
+summarize, or alter wording or punctuation. Each entry must be ONE \
+contiguous span of at most ~40 words: never join two separate spans with \
+"...", a connector, or any other glue within one entry -- use a separate \
+list entry instead. Every number that appears in this item's numeric \
+fields (e.g. a price, multiple, or implied price) must appear verbatim in \
+at least one of the quotes; if the span that best describes the item \
+doesn't also contain its numbers, add a second (or third) short quote that \
+does rather than stretching one quote to cover everything.
 - Some excerpt paragraphs are tables rendered as rows of "cell | cell", one \
-row per line. A source_quote drawn from a table must still be an exact \
-contiguous span of that rendered row text (e.g. "Sensitivity 1 Projections \
-| 120.66-179.78"), not a paraphrase of the numbers.
+row per line. A quote drawn from a table must still be an exact contiguous \
+span of that rendered row text (e.g. "Sensitivity 1 Projections | \
+120.66-179.78"), not a paraphrase of the numbers.
 - Extract every item the excerpt supports, not just the first one you find.
 - If nothing in this excerpt matches the schema, return empty list(s).
 
