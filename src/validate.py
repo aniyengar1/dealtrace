@@ -14,6 +14,7 @@ import re
 from datetime import date as date_cls
 from datetime import datetime
 from pathlib import Path
+from typing import Optional
 
 from src.schemas import Event, Proposal, ValuationAnalysis
 
@@ -179,6 +180,67 @@ def check_dates_valid(record: dict) -> tuple[bool, str]:
     return True, ""
 
 
+NUMBER_TOLERANCE = 0.01
+_PROPOSAL_EVENT_TYPES = {"proposal", "counteroffer"}
+
+
+def _as_record_dict(record) -> dict:
+    return record.model_dump(mode="json") if hasattr(record, "model_dump") else record
+
+
+def _as_date_value(value) -> Optional[date_cls]:
+    if value is None or isinstance(value, date_cls):
+        return value
+    return date_cls.fromisoformat(value)
+
+
+def dedupe_proposal_events(records_by_type: dict[str, list]) -> tuple[dict[str, list], int]:
+    """Drop Events of type proposal/counteroffer that duplicate a Proposal
+    record already capturing the same fact (same date + price).
+
+    The model sometimes extracts the same price move twice: once as the
+    structured Proposal record, and again as an Event narrating that same
+    moment in prose. The Event adds nothing once the Proposal already has
+    it, so it's dropped here rather than double-counted downstream.
+    """
+    proposal_keys: list[tuple[date_cls, set[float]]] = []
+    for proposal in records_by_type.get("Proposal", []):
+        pd = _as_record_dict(proposal)
+        p_date = _as_date_value(pd.get("date_resolved")) or _try_parse_date(pd.get("date", ""))
+        prices = {v for v in (pd.get("price_low"), pd.get("price_high")) if v is not None}
+        if p_date and prices:
+            proposal_keys.append((p_date, prices))
+
+    kept_events = []
+    removed = 0
+    for event in records_by_type.get("Event", []):
+        ed = _as_record_dict(event)
+        if ed.get("event_type") not in _PROPOSAL_EVENT_TYPES:
+            kept_events.append(event)
+            continue
+
+        event_date = _as_date_value(ed.get("date_start"))
+        text = " ".join([ed.get("summary") or "", *ed.get("source_quotes", [])])
+        event_numbers = set()
+        for match in _NUMBER_RE.findall(text):
+            try:
+                event_numbers.add(float(match.replace(",", "")))
+            except ValueError:
+                continue
+
+        is_duplicate = event_date is not None and any(
+            event_date == p_date
+            and any(abs(n - price) < NUMBER_TOLERANCE for n in event_numbers for price in prices)
+            for p_date, prices in proposal_keys
+        )
+        if is_duplicate:
+            removed += 1
+        else:
+            kept_events.append(event)
+
+    return {**records_by_type, "Event": kept_events}, removed
+
+
 def validate_record(
     record_type: str, record: dict, paragraph_lookup: dict[str, str]
 ) -> dict:
@@ -335,6 +397,10 @@ def write_summary_md(results: list[dict], deal_name: str, path: Path) -> None:
 def run(
     records_by_type: dict[str, list], deal_name: str, deal_slug: str
 ) -> tuple[list[dict], Path, Path]:
+    records_by_type, n_duplicates_removed = dedupe_proposal_events(records_by_type)
+    if n_duplicates_removed:
+        print(f"Dropped {n_duplicates_removed} Event(s) duplicating an existing Proposal")
+
     paragraph_lookup = load_paragraph_lookup()
     results = validate_all(records_by_type, paragraph_lookup)
 

@@ -23,6 +23,7 @@ swapping providers later only means rewriting this one function.
 import hashlib
 import json
 import os
+import re
 import time
 from dataclasses import dataclass, field
 from datetime import date, datetime
@@ -36,7 +37,7 @@ from pydantic import BaseModel, ValidationError
 
 load_dotenv()
 
-PROMPT_VERSION = "v5"
+PROMPT_VERSION = "v6"
 MAX_CHUNK_WORDS = 8000
 MAX_MALFORMED_RETRIES = 2
 # A per-day quota exhaustion (RESOURCE_EXHAUSTED with a "...PerDay..." quota
@@ -193,6 +194,15 @@ first number) or "revised_bid" (every number after that), never \
 end of the excerpt: "open" (not yet responded to), "rejected" (declined \
 with no replacement), "superseded" (overtaken by a later number from the \
 same side), "accepted", or "withdrawn" (the proposer pulled it).
+- A date is often relative to a nearby sentence instead of stated outright \
+("later that day", "the following day", "two weeks later", "on the next \
+call"). Resolve it to an absolute date using the most recent absolute date \
+established earlier in the excerpt, and put that resolved date in \
+date_start/date_end (Event) or date_resolved (Proposal). Always keep the \
+filing's own relative phrase, verbatim, in date_text (Event) or date \
+(Proposal) -- never silently replace it with the resolved date. If no \
+absolute date appears anywhere earlier in the excerpt to resolve it \
+against, leave date_start/date_end/date_resolved null rather than guessing.
 - Extract every item the excerpt supports, not just the first one you find.
 - If nothing in this excerpt matches the schema, return empty list(s).
 
@@ -241,6 +251,66 @@ def chunk_paragraphs_by_count(paragraphs: list[dict], target_chunks: int) -> lis
 def _build_prompt(chunk: list[dict]) -> str:
     paragraphs_block = "\n".join(f"{p['id']}: {p['text']}" for p in chunk)
     return SYSTEM_INSTRUCTION.format(paragraphs_block=paragraphs_block)
+
+
+_ABSOLUTE_DATE_RE = re.compile(r"\b([A-Za-z]+)\s+(\d{1,2}),?\s+(\d{4})\b")
+_ABSOLUTE_DATE_FORMATS = ("%B %d %Y", "%b %d %Y")
+
+
+def _parse_absolute_date(month: str, day: str, year: str) -> Optional[date]:
+    for fmt in _ABSOLUTE_DATE_FORMATS:
+        try:
+            return datetime.strptime(f"{month} {day} {year}", fmt).date()
+        except ValueError:
+            continue
+    return None
+
+
+def paragraph_anchor_dates(paragraphs: list[dict]) -> dict[str, Optional[date]]:
+    """Map each paragraph id -> the most recent absolute date established by
+    that paragraph or any earlier paragraph in this list, in document order.
+
+    This is the fallback source for a record whose date the model left
+    relative/unresolved (e.g. "later that day"): the nearest preceding
+    absolute date in the same excerpt.
+    """
+    anchors: dict[str, Optional[date]] = {}
+    last_date: Optional[date] = None
+    for para in paragraphs:
+        for match in _ABSOLUTE_DATE_RE.finditer(para["text"]):
+            parsed = _parse_absolute_date(*match.groups())
+            if parsed is not None:
+                last_date = parsed
+        anchors[para["id"]] = last_date
+    return anchors
+
+
+def apply_relative_date_fallback(merged: dict[str, list], paragraphs: list[dict]) -> None:
+    """Fill a record's missing resolved date from its (or an earlier)
+    paragraph's most recent absolute date, in place.
+
+    Safety net for relative dates the prompt's own resolution missed --
+    never overrides a date the model already resolved itself.
+    """
+    anchors = paragraph_anchor_dates(paragraphs)
+
+    for event in merged.get("events", []):
+        if event.date_start is not None or not event.source_paragraph_ids:
+            continue
+        anchor = anchors.get(event.source_paragraph_ids[0])
+        if anchor is not None:
+            event.date_start = anchor
+            if event.date_end is None:
+                event.date_end = anchor
+            if event.date_precision == "unknown":
+                event.date_precision = "day"
+
+    for proposal in merged.get("proposals", []):
+        if proposal.date_resolved is not None or not proposal.source_paragraph_ids:
+            continue
+        anchor = anchors.get(proposal.source_paragraph_ids[0])
+        if anchor is not None:
+            proposal.date_resolved = anchor
 
 
 def _cache_key(chunk: list[dict], model: str, schema: type[BaseModel]) -> str:
@@ -422,4 +492,5 @@ def extract_section(
             merged[f].extend(getattr(instance, f))
         total_usage.add(usage)
 
+    apply_relative_date_fallback(merged, paragraphs)
     return schema.model_validate(merged), total_usage

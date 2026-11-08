@@ -1,6 +1,6 @@
 """Pydantic schemas for structured extraction from merger proxy filings."""
 
-from datetime import date
+from datetime import date as date_cls
 from typing import Literal, Optional
 
 from pydantic import BaseModel, Field
@@ -59,8 +59,8 @@ SOURCE_QUOTES_DESCRIPTION = (
 
 class Event(BaseModel):
     date_text: str = Field(description="Date exactly as written in the filing")
-    date_start: Optional[date] = Field(None, description="ISO start date, null if unknown")
-    date_end: Optional[date] = Field(None, description="ISO end date, null if unknown")
+    date_start: Optional[date_cls] = Field(None, description="ISO start date, null if unknown")
+    date_end: Optional[date_cls] = Field(None, description="ISO end date, null if unknown")
     date_precision: DatePrecision
     event_type: EventType
     parties: list[str] = Field(
@@ -75,6 +75,14 @@ class Event(BaseModel):
 
 class Proposal(BaseModel):
     date: str = Field(description="Date exactly as written in the filing")
+    date_resolved: Optional[date_cls] = Field(
+        None,
+        description=(
+            "ISO date if `date` is relative (e.g. 'later that day') and was "
+            "resolved from surrounding context; null if `date` is already "
+            "absolute or couldn't be resolved"
+        ),
+    )
     proposer: str
     recipient: str
     price_low: Optional[float] = None

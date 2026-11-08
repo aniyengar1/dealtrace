@@ -6,9 +6,11 @@ from src.extract import (
     ExtractionError,
     _call_gemini,
     _is_daily_quota_exhausted,
+    apply_relative_date_fallback,
     chunk_paragraphs_by_count,
+    paragraph_anchor_dates,
 )
-from src.schemas import BackgroundExtraction
+from src.schemas import BackgroundExtraction, Event, Proposal
 
 
 def _quota_error(quota_ids: list[str]) -> errors.ClientError:
@@ -178,3 +180,95 @@ def test_chunk_by_count_never_exceeds_paragraph_count():
     chunks = chunk_paragraphs_by_count(_paras(2), 5)
     assert len(chunks) == 2
     assert all(len(c) == 1 for c in chunks)
+
+
+def _event(**overrides):
+    base = dict(
+        date_text="later that day",
+        date_start=None,
+        date_end=None,
+        date_precision="unknown",
+        event_type="other",
+        parties=["Cisco", "Splunk"],
+        summary="x",
+        source_paragraph_ids=["p1"],
+        source_quotes=["x"],
+    )
+    base.update(overrides)
+    return Event.model_validate(base)
+
+
+def _proposal(**overrides):
+    base = dict(
+        date="later that day",
+        date_resolved=None,
+        proposer="Cisco",
+        recipient="Splunk",
+        consideration_type="cash",
+        proposal_kind="revised_bid",
+        status="open",
+        source_paragraph_ids=["p1"],
+        source_quotes=["x"],
+    )
+    base.update(overrides)
+    return Proposal.model_validate(base)
+
+
+def test_paragraph_anchor_dates_carries_forward_the_last_absolute_date():
+    paras = [
+        {"id": "p1", "text": "On August 30, 2023, the parties spoke."},
+        {"id": "p2", "text": "Later that day, Robbins called Steele."},
+        {"id": "p3", "text": "On August 31, 2023, a new offer was made."},
+    ]
+    anchors = paragraph_anchor_dates(paras)
+    assert str(anchors["p1"]) == "2023-08-30"
+    assert str(anchors["p2"]) == "2023-08-30"  # inherits from p1, no date of its own
+    assert str(anchors["p3"]) == "2023-08-31"  # updated by its own date
+
+
+def test_paragraph_anchor_dates_is_none_before_any_absolute_date_seen():
+    paras = [{"id": "p1", "text": "Earlier that week, they had spoken."}]
+    anchors = paragraph_anchor_dates(paras)
+    assert anchors["p1"] is None
+
+
+def test_apply_relative_date_fallback_fills_missing_event_date():
+    paras = [
+        {"id": "p1", "text": "On August 30, 2023, the parties spoke."},
+        {"id": "p2", "text": "Later that day, Robbins called Steele."},
+    ]
+    event = _event(source_paragraph_ids=["p2"])
+    merged = {"events": [event], "proposals": []}
+    apply_relative_date_fallback(merged, paras)
+    assert str(event.date_start) == "2023-08-30"
+    assert str(event.date_end) == "2023-08-30"
+    assert event.date_precision == "day"
+    assert event.date_text == "later that day"  # original phrase untouched
+
+
+def test_apply_relative_date_fallback_fills_missing_proposal_date():
+    paras = [
+        {"id": "p1", "text": "On August 30, 2023, the parties spoke."},
+        {"id": "p2", "text": "Later that day, Robbins called Steele with a new price."},
+    ]
+    proposal = _proposal(source_paragraph_ids=["p2"])
+    merged = {"events": [], "proposals": [proposal]}
+    apply_relative_date_fallback(merged, paras)
+    assert str(proposal.date_resolved) == "2023-08-30"
+    assert proposal.date == "later that day"
+
+
+def test_apply_relative_date_fallback_never_overrides_a_resolved_date():
+    paras = [{"id": "p1", "text": "On August 30, 2023, the parties spoke."}]
+    event = _event(source_paragraph_ids=["p1"], date_start="2023-01-01", date_precision="day")
+    merged = {"events": [event], "proposals": []}
+    apply_relative_date_fallback(merged, paras)
+    assert str(event.date_start) == "2023-01-01"  # untouched, even though it looks wrong
+
+
+def test_apply_relative_date_fallback_leaves_unresolvable_dates_null():
+    paras = [{"id": "p1", "text": "Earlier that week, nothing dated appears."}]
+    event = _event(source_paragraph_ids=["p1"])
+    merged = {"events": [event], "proposals": []}
+    apply_relative_date_fallback(merged, paras)
+    assert event.date_start is None

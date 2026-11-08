@@ -1,4 +1,5 @@
 from src.score import (
+    extracted_proposal_date,
     gold_event_date_range,
     match_events,
     match_proposals,
@@ -178,6 +179,32 @@ def test_match_events_global_assignment_resolves_shared_paragraph_correctly():
     matched_gold, _ = result["matches"][0]
     assert matched_gold["id"] == "G2"
     assert result["misses"] == [gold[0]]
+
+
+def test_extracted_proposal_date_prefers_date_resolved_over_literal_text():
+    rec = {"date": "later that evening", "date_resolved": "2023-08-30"}
+    assert str(extracted_proposal_date(rec)) == "2023-08-30"
+
+
+def test_extracted_proposal_date_falls_back_to_parsing_literal_text():
+    rec = {"date": "August 30, 2023"}
+    assert str(extracted_proposal_date(rec)) == "2023-08-30"
+
+
+def test_match_proposals_matches_via_resolved_relative_date():
+    gold = [{"date": "2023-08-30", "proposer": "Cisco", "recipient": "Splunk", "price_low": 156, "price_high": 156}]
+    extracted = [
+        {
+            "date": "later that evening",
+            "date_resolved": "2023-08-30",
+            "proposer": "Cisco",
+            "recipient": "Splunk",
+            "price_low": 156.0,
+            "price_high": 156.0,
+        }
+    ]
+    result = match_proposals(gold, extracted)
+    assert len(result["matches"]) == 1
 
 
 def test_match_proposals_matches_on_date_and_price():

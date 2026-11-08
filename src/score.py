@@ -134,6 +134,18 @@ def _numbers_close(a: Optional[float], b: Optional[float]) -> bool:
     return abs(a - b) < NUMBER_TOLERANCE
 
 
+def extracted_proposal_date(record: dict) -> Optional[date_cls]:
+    """An extracted Proposal's effective date: date_resolved if the model
+    (or the extractor's relative-date fallback) resolved a relative phrase
+    like "later that day", else whatever _try_parse_date can get from the
+    literal `date` text.
+    """
+    resolved = record.get("date_resolved")
+    if resolved:
+        return _parse_iso(resolved) if isinstance(resolved, str) else resolved
+    return _try_parse_date(record.get("date", ""))
+
+
 def match_events(gold_events: list[dict], extracted_events: list[dict]) -> dict:
     """Globally match gold events to extracted events (see module docstring)."""
     candidates: list[tuple[tuple[int, float], int, int]] = []
@@ -175,7 +187,7 @@ def match_proposals(gold_proposals: list[dict], extracted_proposals: list[dict])
         found_idx = None
         for idx in unmatched:
             rec = extracted_proposals[idx]
-            e_date = _try_parse_date(rec.get("date", ""))
+            e_date = extracted_proposal_date(rec)
             if e_date != g_date:
                 continue
             if not _numbers_close(rec.get("price_low"), gold.get("price_low")):

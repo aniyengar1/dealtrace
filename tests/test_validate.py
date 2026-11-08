@@ -3,6 +3,7 @@ from src.validate import (
     check_low_le_high,
     check_numbers_in_quotes,
     check_quotes_in_paragraphs,
+    dedupe_proposal_events,
     normalize_for_match,
     normalize_whitespace,
 )
@@ -220,3 +221,83 @@ def test_quote_matches_table_row_rendered_as_pipe_separated_cells():
         ["Sensitivity 2 Projections | 100.95-147.31"], ["p1"], lookup
     )
     assert ok, reason
+
+
+def _proposal_record(**overrides):
+    base = {
+        "date": "August 30, 2023",
+        "price_low": 156.0,
+        "price_high": 156.0,
+    }
+    base.update(overrides)
+    return base
+
+
+def _event_record(**overrides):
+    base = {
+        "event_type": "proposal",
+        "date_start": "2023-08-30",
+        "summary": "Robbins called Steele to convey a revised offer of $156 per share.",
+        "source_quotes": ["a revised offer of $156 per share"],
+    }
+    base.update(overrides)
+    return base
+
+
+def test_dedupe_drops_event_matching_proposal_date_and_price():
+    records = {
+        "Event": [_event_record()],
+        "Proposal": [_proposal_record()],
+    }
+    deduped, removed = dedupe_proposal_events(records)
+    assert removed == 1
+    assert deduped["Event"] == []
+    assert len(deduped["Proposal"]) == 1
+
+
+def test_dedupe_keeps_event_with_different_price():
+    records = {
+        "Event": [_event_record(summary="a revised offer of $160 per share", source_quotes=["$160 per share"])],
+        "Proposal": [_proposal_record()],
+    }
+    deduped, removed = dedupe_proposal_events(records)
+    assert removed == 0
+    assert len(deduped["Event"]) == 1
+
+
+def test_dedupe_keeps_event_with_different_date():
+    records = {
+        "Event": [_event_record(date_start="2023-08-31")],
+        "Proposal": [_proposal_record()],
+    }
+    deduped, removed = dedupe_proposal_events(records)
+    assert removed == 0
+    assert len(deduped["Event"]) == 1
+
+
+def test_dedupe_ignores_event_types_other_than_proposal_or_counteroffer():
+    records = {
+        "Event": [_event_record(event_type="board_meeting")],
+        "Proposal": [_proposal_record()],
+    }
+    deduped, removed = dedupe_proposal_events(records)
+    assert removed == 0
+    assert len(deduped["Event"]) == 1
+
+
+def test_dedupe_matches_counteroffer_event_type_too():
+    records = {
+        "Event": [_event_record(event_type="counteroffer")],
+        "Proposal": [_proposal_record()],
+    }
+    deduped, removed = dedupe_proposal_events(records)
+    assert removed == 1
+
+
+def test_dedupe_uses_proposal_date_resolved_when_present():
+    records = {
+        "Event": [_event_record()],
+        "Proposal": [_proposal_record(date="later that evening", date_resolved="2023-08-30")],
+    }
+    deduped, removed = dedupe_proposal_events(records)
+    assert removed == 1
