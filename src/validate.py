@@ -12,7 +12,7 @@ import html as html_lib
 import json
 import re
 from datetime import date as date_cls
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
@@ -20,6 +20,8 @@ from src.schemas import Event, Proposal, ValuationAnalysis
 
 DATA_OUTPUT = Path(__file__).resolve().parent.parent / "data" / "output"
 DATA_SECTIONS = Path(__file__).resolve().parent.parent / "data" / "sections"
+RUNS_DIR = DATA_OUTPUT / "runs"
+LATEST_LINK = DATA_OUTPUT / "latest"
 
 _WHITESPACE_RE = re.compile(r"\s+")
 # No leading sign: filing ranges are written "4.0x-6.0x" where the hyphen is
@@ -394,8 +396,32 @@ def write_summary_md(results: list[dict], deal_name: str, path: Path) -> None:
     path.write_text("\n".join(lines))
 
 
+def _run_id(model: str, prompt_version: str) -> str:
+    timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    safe_model = model.replace("/", "_")
+    return f"{timestamp}_{safe_model}_{prompt_version}"
+
+
+def new_run_dir(model: str, prompt_version: str) -> Path:
+    """Create data/output/runs/<timestamp>_<model>_<prompt_version>/ and
+    repoint data/output/latest at it.
+
+    Every run gets its own folder (named for exactly what produced it) so
+    a run never overwrites an earlier one's results; `latest` is always a
+    symlink to whichever run folder was created most recently.
+    """
+    run_dir = RUNS_DIR / _run_id(model, prompt_version)
+    run_dir.mkdir(parents=True)
+
+    if LATEST_LINK.is_symlink() or LATEST_LINK.exists():
+        LATEST_LINK.unlink()
+    LATEST_LINK.symlink_to(run_dir.relative_to(DATA_OUTPUT))
+
+    return run_dir
+
+
 def run(
-    records_by_type: dict[str, list], deal_name: str, deal_slug: str
+    records_by_type: dict[str, list], deal_name: str, deal_slug: str, model: str, prompt_version: str
 ) -> tuple[list[dict], Path, Path]:
     records_by_type, n_duplicates_removed = dedupe_proposal_events(records_by_type)
     if n_duplicates_removed:
@@ -404,8 +430,9 @@ def run(
     paragraph_lookup = load_paragraph_lookup()
     results = validate_all(records_by_type, paragraph_lookup)
 
-    extraction_path = DATA_OUTPUT / f"{deal_slug}_extraction.json"
-    summary_path = DATA_OUTPUT / f"{deal_slug}_summary.md"
+    run_dir = new_run_dir(model, prompt_version)
+    extraction_path = run_dir / f"{deal_slug}_extraction.json"
+    summary_path = run_dir / f"{deal_slug}_summary.md"
 
     write_extraction_json(results, extraction_path)
     write_summary_md(results, deal_name, summary_path)

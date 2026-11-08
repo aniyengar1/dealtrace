@@ -1,9 +1,14 @@
+import pytest
+
+from src import validate
 from src.validate import (
+    _run_id,
     check_dates_valid,
     check_low_le_high,
     check_numbers_in_quotes,
     check_quotes_in_paragraphs,
     dedupe_proposal_events,
+    new_run_dir,
     normalize_for_match,
     normalize_whitespace,
 )
@@ -301,3 +306,50 @@ def test_dedupe_uses_proposal_date_resolved_when_present():
     }
     deduped, removed = dedupe_proposal_events(records)
     assert removed == 1
+
+
+def _isolate_output_dirs(tmp_path, monkeypatch):
+    monkeypatch.setattr(validate, "DATA_OUTPUT", tmp_path)
+    monkeypatch.setattr(validate, "RUNS_DIR", tmp_path / "runs")
+    monkeypatch.setattr(validate, "LATEST_LINK", tmp_path / "latest")
+
+
+def test_run_id_differs_by_model_and_prompt_version():
+    assert _run_id("gemini-3.6-flash", "v6") != _run_id("gemini-3-flash-preview", "v6")
+    assert _run_id("gemini-3.6-flash", "v6") != _run_id("gemini-3.6-flash", "v7")
+
+
+def test_new_run_dir_creates_folder_named_for_model_and_prompt_version(tmp_path, monkeypatch):
+    _isolate_output_dirs(tmp_path, monkeypatch)
+    run_dir = new_run_dir("gemini-3.6-flash", "v6")
+    assert run_dir.is_dir()
+    assert "gemini-3.6-flash" in run_dir.name
+    assert "v6" in run_dir.name
+    assert run_dir.parent == tmp_path / "runs"
+
+
+def test_new_run_dir_points_latest_symlink_at_the_new_folder(tmp_path, monkeypatch):
+    _isolate_output_dirs(tmp_path, monkeypatch)
+    run_dir = new_run_dir("gemini-3.6-flash", "v6")
+    latest = tmp_path / "latest"
+    assert latest.is_symlink()
+    assert latest.resolve() == run_dir.resolve()
+
+
+def test_new_run_dir_repoints_latest_to_each_new_run(tmp_path, monkeypatch):
+    _isolate_output_dirs(tmp_path, monkeypatch)
+    first = new_run_dir("gemini-3.6-flash", "v6")
+    # Force a distinct run id without depending on wall-clock granularity.
+    monkeypatch.setattr(validate, "_run_id", lambda model, version: "second-run")
+    second = new_run_dir("gemini-3.6-flash", "v6")
+    assert first != second
+    assert first.exists()  # the earlier run's folder is never removed/overwritten
+    assert (tmp_path / "latest").resolve() == second.resolve()
+
+
+def test_new_run_dir_never_silently_overwrites_an_existing_run(tmp_path, monkeypatch):
+    _isolate_output_dirs(tmp_path, monkeypatch)
+    monkeypatch.setattr(validate, "_run_id", lambda model, version: "same-run-id")
+    new_run_dir("gemini-3.6-flash", "v6")
+    with pytest.raises(FileExistsError):
+        new_run_dir("gemini-3.6-flash", "v6")

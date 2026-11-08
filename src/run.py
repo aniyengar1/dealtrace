@@ -98,11 +98,18 @@ def run(deal_slug: str, model: str | None = None) -> None:
     print(f"[quota] {resolved_model}: {used}/{extract.FREE_TIER_DAILY_QUOTA} used today, {remaining} remaining (local estimate)\n")
 
     print("=== Step 4: validate ===")
-    results, extraction_path, summary_path = validate.run(records_by_type, deal["deal_name"], deal_slug)
+    results, extraction_path, summary_path = validate.run(
+        records_by_type,
+        deal["deal_name"],
+        deal_slug,
+        model=resolved_model,
+        prompt_version=extract.PROMPT_VERSION,
+    )
     n_pass = sum(1 for r in results if r["passed"])
     print(f"Validation: {n_pass}/{len(results)} records passed")
     print(f"Wrote {extraction_path}")
     print(f"Wrote {summary_path}")
+    print(f"Latest run: {validate.LATEST_LINK}")
 
     print("\n=== DONE ===")
     print(f"Total tokens used this run: {total_usage.total_tokens}")

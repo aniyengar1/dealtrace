@@ -272,3 +272,19 @@ def test_apply_relative_date_fallback_leaves_unresolvable_dates_null():
     merged = {"events": [event], "proposals": []}
     apply_relative_date_fallback(merged, paras)
     assert event.date_start is None
+
+
+def test_prompt_states_written_vs_verbal_proposal_kind_rule():
+    # Regression guard for the v7 rule: a written indication of interest
+    # from the acquirer stays non_binding_indication even when it revises
+    # an earlier number (this is exactly what P02/P03/P06 in the Splunk
+    # gold set got wrong under the v5/v6 "first number vs. later number"
+    # rule); a verbal revision from the acquirer is revised_bid; only the
+    # target's own ask back is ever a counteroffer.
+    instruction = extract.SYSTEM_INSTRUCTION
+    assert "WRITTEN" in instruction
+    assert "non_binding_indication" in instruction
+    assert "even if it revises an earlier number" in instruction
+    assert "VERBAL" in instruction
+    assert "revised_bid" in instruction
+    assert 'proposal_kind="counteroffer" is ONLY the target company' in instruction

@@ -37,7 +37,7 @@ from pydantic import BaseModel, ValidationError
 
 load_dotenv()
 
-PROMPT_VERSION = "v6"
+PROMPT_VERSION = "v7"
 MAX_CHUNK_WORDS = 8000
 MAX_MALFORMED_RETRIES = 2
 # A per-day quota exhaustion (RESOURCE_EXHAUSTED with a "...PerDay..." quota
@@ -186,14 +186,19 @@ does rather than stretching one quote to cover everything.
 row per line. A quote drawn from a table must still be an exact contiguous \
 span of that rendered row text (e.g. "Sensitivity 1 Projections | \
 120.66-179.78"), not a paraphrase of the numbers.
-- For a Proposal, proposal_kind="counteroffer" is ONLY the target company's \
-own ask back to the acquirer. Any price the acquirer puts forward --
-including a revision after the target counters -- is "formal_bid" (its \
-first number) or "revised_bid" (every number after that), never \
-"counteroffer". status reflects what became of that specific number by the \
-end of the excerpt: "open" (not yet responded to), "rejected" (declined \
-with no replacement), "superseded" (overtaken by a later number from the \
-same side), "accepted", or "withdrawn" (the proposer pulled it).
+- For a Proposal from the acquirer: if it is WRITTEN (a delivered letter, a \
+written indication of interest), it is "non_binding_indication" every time \
+one is sent, even if it revises an earlier number -- being on paper, not \
+its place in the sequence, is what keeps it non-binding. If it is VERBAL \
+(a call, a meeting) and revises an earlier number, it is "revised_bid"; a \
+verbal price with no earlier number from the acquirer to revise is \
+"formal_bid". proposal_kind="counteroffer" is ONLY the target company's \
+own ask back to the acquirer, whether verbal or written -- never anything \
+the acquirer itself puts forward. status reflects what became of that \
+specific number by the end of the excerpt: "open" (not yet responded to), \
+"rejected" (declined with no replacement), "superseded" (overtaken by a \
+later number from the same side), "accepted", or "withdrawn" (the \
+proposer pulled it).
 - A date is often relative to a nearby sentence instead of stated outright \
 ("later that day", "the following day", "two weeks later", "on the next \
 call"). Resolve it to an absolute date using the most recent absolute date \

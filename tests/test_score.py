@@ -1,6 +1,12 @@
+import json
+
+import pytest
+
 from src.score import (
     extracted_proposal_date,
+    find_extraction_file,
     gold_event_date_range,
+    load_extraction,
     match_events,
     match_proposals,
     normalize_name,
@@ -372,3 +378,33 @@ def test_score_extraction_proposer_recipient_matches_real_names():
     }
     result = score_extraction(gold, extraction)
     assert result["proposals"]["proposer_recipient_correct"] == 1
+
+
+def test_find_extraction_file_locates_the_single_match(tmp_path):
+    (tmp_path / "splunk_extraction.json").write_text("[]")
+    (tmp_path / "splunk_summary.md").write_text("# summary")
+    assert find_extraction_file(tmp_path) == tmp_path / "splunk_extraction.json"
+
+
+def test_find_extraction_file_raises_when_none_found(tmp_path):
+    with pytest.raises(FileNotFoundError):
+        find_extraction_file(tmp_path)
+
+
+def test_find_extraction_file_raises_on_multiple_matches(tmp_path):
+    (tmp_path / "splunk_extraction.json").write_text("[]")
+    (tmp_path / "other_extraction.json").write_text("[]")
+    with pytest.raises(ValueError):
+        find_extraction_file(tmp_path)
+
+
+def test_load_extraction_groups_records_from_a_run_folder(tmp_path):
+    records = [
+        {"record_type": "Event", "record": {"event_type": "signing"}},
+        {"record_type": "Proposal", "record": {"date": "2023-09-20"}},
+    ]
+    (tmp_path / "splunk_extraction.json").write_text(json.dumps(records))
+    extraction = load_extraction(tmp_path)
+    assert len(extraction["Event"]) == 1
+    assert len(extraction["Proposal"]) == 1
+    assert extraction["ValuationAnalysis"] == []

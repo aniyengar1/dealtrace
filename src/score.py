@@ -1,6 +1,11 @@
 """Score an extraction output against a hand-checked gold answer key.
 
-    python -m src.score data/output/splunk_extraction.json data/benchmark/splunk_gold.json
+    python -m src.score data/output/latest data/benchmark/splunk_gold.json
+
+The first argument is a run folder (see validate.new_run_dir) -- e.g.
+data/output/latest (a symlink to the most recent run) or any specific
+data/output/runs/<timestamp>_<model>_<prompt_version>/ -- containing
+exactly one <deal_slug>_extraction.json.
 
 Events are matched on date alone (respecting the gold entry's own
 date_precision -- a "month" or "range" gold entry is a tolerant window,
@@ -88,9 +93,20 @@ def load_gold(path: Path) -> dict:
     return json.loads(Path(path).read_text())
 
 
-def load_extraction(path: Path) -> dict[str, list[dict]]:
-    """Group a validate.py-style extraction file's records by record_type."""
-    results = json.loads(Path(path).read_text())
+def find_extraction_file(run_dir: Path) -> Path:
+    """Locate the single <deal_slug>_extraction.json inside a run folder."""
+    run_dir = Path(run_dir)
+    matches = sorted(run_dir.glob("*_extraction.json"))
+    if not matches:
+        raise FileNotFoundError(f"No *_extraction.json found in {run_dir}")
+    if len(matches) > 1:
+        raise ValueError(f"Multiple extraction files found in {run_dir}: {matches}")
+    return matches[0]
+
+
+def load_extraction(run_dir: Path) -> dict[str, list[dict]]:
+    """Group a run folder's extraction file's records by record_type."""
+    results = json.loads(find_extraction_file(run_dir).read_text())
     by_type: dict[str, list[dict]] = {"Event": [], "Proposal": [], "ValuationAnalysis": []}
     for r in results:
         by_type.setdefault(r["record_type"], []).append(r["record"])
@@ -338,16 +354,20 @@ def format_report(result: dict) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Score an extraction file against a hand-checked gold answer key."
+        description="Score a run folder's extraction against a hand-checked gold answer key."
     )
-    parser.add_argument("extraction_path", type=Path)
+    parser.add_argument(
+        "run_dir",
+        type=Path,
+        help="A run folder, e.g. data/output/latest or data/output/runs/<run_id>",
+    )
     parser.add_argument(
         "gold_path", type=Path, nargs="?", default=Path("data/benchmark/splunk_gold.json")
     )
     args = parser.parse_args()
 
     gold = load_gold(args.gold_path)
-    extraction = load_extraction(args.extraction_path)
+    extraction = load_extraction(args.run_dir)
     result = score_extraction(gold, extraction)
     print(format_report(result))
 

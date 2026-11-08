@@ -35,8 +35,13 @@ DatePrecision = Literal["day", "month", "range", "unknown"]
 
 ConsiderationType = Literal["cash", "stock", "mixed", "unknown"]
 
-# counteroffer is ONLY the target's ask back to the acquirer; an acquirer
-# revising its own bid (even in response to a counteroffer) is revised_bid.
+# counteroffer is ONLY the target's own ask back to the acquirer. For the
+# acquirer's own proposals: a WRITTEN indication of interest is always
+# non_binding_indication, even when it revises an earlier number (being on
+# paper is what keeps it non-binding, not its place in the sequence); a
+# VERBAL price that revises an earlier one is revised_bid; a verbal price
+# with nothing earlier to revise is formal_bid. See extract.py's
+# SYSTEM_INSTRUCTION for the full rule the model is given.
 ProposalKind = Literal[
     "non_binding_indication",
     "formal_bid",
