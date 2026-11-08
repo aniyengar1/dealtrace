@@ -15,18 +15,37 @@ EventType = Literal[
     "diligence",
     "signing",
     "other",
+    "withdrawal",
+    "re_engagement",
+    "rejection",
+    "advisor_engagement",
+    "projections_shared",
+    "market_check_decision",
+    "board_authorization",
+    "board_approval",
+    "press_leak",
+    "management_condition",
+    "draft_agreement",
+    "announcement",
+    "discussion",
+    "diligence_request",
 ]
 
 DatePrecision = Literal["day", "month", "range", "unknown"]
 
 ConsiderationType = Literal["cash", "stock", "mixed", "unknown"]
 
+# counteroffer is ONLY the target's ask back to the acquirer; an acquirer
+# revising its own bid (even in response to a counteroffer) is revised_bid.
 ProposalKind = Literal[
     "non_binding_indication",
     "formal_bid",
     "counteroffer",
+    "revised_bid",
     "suggested_valuation",
 ]
+
+ProposalStatus = Literal["open", "rejected", "superseded", "accepted", "withdrawn"]
 
 ValuationMethod = Literal["trading_comps", "precedent_transactions", "dcf", "other"]
 
@@ -44,7 +63,9 @@ class Event(BaseModel):
     date_end: Optional[date] = Field(None, description="ISO end date, null if unknown")
     date_precision: DatePrecision
     event_type: EventType
-    parties: list[str] = Field(description="Anonymized party labels, e.g. 'Party A'")
+    parties: list[str] = Field(
+        description="Real names as used in the filing, e.g. 'Cisco', 'Splunk'"
+    )
     summary: str
     source_paragraph_ids: list[str]
     source_quotes: list[str] = Field(
@@ -61,7 +82,7 @@ class Proposal(BaseModel):
     currency: Optional[str] = None
     consideration_type: ConsiderationType
     proposal_kind: ProposalKind
-    status: str
+    status: ProposalStatus
     source_paragraph_ids: list[str]
     source_quotes: list[str] = Field(
         min_length=1, max_length=3, description=SOURCE_QUOTES_DESCRIPTION

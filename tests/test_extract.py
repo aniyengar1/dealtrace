@@ -2,7 +2,12 @@ import pytest
 from google.genai import errors
 
 from src import extract
-from src.extract import ExtractionError, _call_gemini, _is_daily_quota_exhausted
+from src.extract import (
+    ExtractionError,
+    _call_gemini,
+    _is_daily_quota_exhausted,
+    chunk_paragraphs_by_count,
+)
 from src.schemas import BackgroundExtraction
 
 
@@ -145,3 +150,31 @@ def test_non_retryable_client_error_raises_immediately(monkeypatch):
         _call_gemini("prompt", BackgroundExtraction, "fake-model")
 
     assert client.models.calls == 1
+
+
+def _paras(n):
+    return [{"id": f"p{i:05d}", "text": f"paragraph {i}"} for i in range(n)]
+
+
+def test_chunk_by_count_splits_into_target_number_of_chunks():
+    chunks = chunk_paragraphs_by_count(_paras(67), 3)
+    assert len(chunks) == 3
+    # every paragraph appears exactly once, in order, split on boundaries
+    assert [p for chunk in chunks for p in chunk] == _paras(67)
+
+
+def test_chunk_by_count_roughly_balances_chunk_sizes():
+    chunks = chunk_paragraphs_by_count(_paras(67), 3)
+    sizes = [len(c) for c in chunks]
+    assert max(sizes) - min(sizes) <= 2
+
+
+def test_chunk_by_count_of_one_returns_single_chunk():
+    paras = _paras(10)
+    assert chunk_paragraphs_by_count(paras, 1) == [paras]
+
+
+def test_chunk_by_count_never_exceeds_paragraph_count():
+    chunks = chunk_paragraphs_by_count(_paras(2), 5)
+    assert len(chunks) == 2
+    assert all(len(c) == 1 for c in chunks)

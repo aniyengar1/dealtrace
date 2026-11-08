@@ -33,6 +33,14 @@ SECTION_SCHEMAS: dict[str, type] = {
 }
 OPINION_SCHEMA = ValuationExtraction
 
+# Background of the Merger is long and paragraph-dense (first_contact
+# through signing); splitting it into a few smaller calls on paragraph
+# boundaries keeps each call's scope narrow enough for the model to work
+# through it paragraph by paragraph instead of skimming a single huge one.
+SECTION_TARGET_CHUNKS: dict[str, int] = {
+    "background_of_the_merger": 3,
+}
+
 
 def run(deal_slug: str, model: str | None = None) -> None:
     if deal_slug not in DEALS:
@@ -65,7 +73,10 @@ def run(deal_slug: str, model: str | None = None) -> None:
             continue
 
         print(f"-- {section_key} ({len(section['paragraphs'])} paragraphs, schema={schema.__name__})")
-        instance, usage = extract.extract_section(section["paragraphs"], schema, model=model)
+        target_chunks = SECTION_TARGET_CHUNKS.get(section_key)
+        instance, usage = extract.extract_section(
+            section["paragraphs"], schema, model=model, target_chunks=target_chunks
+        )
         if hasattr(instance, "events"):
             records_by_type["Event"].extend(instance.events)
         if hasattr(instance, "proposals"):

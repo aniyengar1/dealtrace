@@ -1,0 +1,538 @@
+{
+  "deal": "Cisco / Splunk",
+  "source": "Splunk DEFM14A (Oct 2023), Background of the Merger",
+  "benchmark_version": 1,
+  "built_by": "Claude (independent of the Gemini extractor); pending human spot-check",
+  "events": [
+    {
+      "id": "E01",
+      "date": "2021-11-19",
+      "date_precision": "day",
+      "event_type": "first_contact",
+      "parties": [
+        "Cisco",
+        "Splunk"
+      ],
+      "summary": "Cisco CEO Chuck Robbins contacts Splunk interim CEO Graham Smith about a potential combination",
+      "paragraph_id": "p00442",
+      "core": true
+    },
+    {
+      "id": "E02",
+      "date": "2021-12-15",
+      "date_precision": "day",
+      "event_type": "discussion",
+      "parties": [
+        "Cisco",
+        "Splunk"
+      ],
+      "summary": "Smith and Robbins speak; Cisco reiterates interest, no price discussed",
+      "paragraph_id": "p00442",
+      "core": false
+    },
+    {
+      "id": "E03",
+      "date": "2021-12-21",
+      "date_precision": "day",
+      "event_type": "diligence_request",
+      "parties": [
+        "Cisco",
+        "Splunk"
+      ],
+      "summary": "Cisco letter requesting non-public diligence information",
+      "paragraph_id": "p00443",
+      "core": false
+    },
+    {
+      "id": "E04",
+      "date": "2022-01",
+      "date_precision": "month",
+      "event_type": "advisor_engagement",
+      "parties": [
+        "Splunk",
+        "Qatalyst Partners"
+      ],
+      "summary": "Splunk board engages Qatalyst Partners and another financial advisor",
+      "paragraph_id": "p00446",
+      "core": true
+    },
+    {
+      "id": "E05",
+      "date": "2022-01-23",
+      "date_precision": "day",
+      "event_type": "nda",
+      "parties": [
+        "Cisco",
+        "Splunk"
+      ],
+      "summary": "Confidentiality agreement signed (with standstill, no don't-ask-don't-waive)",
+      "paragraph_id": "p00446",
+      "core": true
+    },
+    {
+      "id": "E06",
+      "date": "2022-02-06",
+      "date_precision": "day",
+      "event_type": "withdrawal",
+      "parties": [
+        "Cisco"
+      ],
+      "summary": "Cisco withdraws its indication of interest (CEO search / management changes)",
+      "paragraph_id": "p00449",
+      "core": true
+    },
+    {
+      "id": "E07",
+      "date": "2022-02-09",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "Splunk",
+        "Cisco"
+      ],
+      "summary": "Splunk requests return/destruction of confidential information",
+      "paragraph_id": "p00450",
+      "core": false
+    },
+    {
+      "id": "E08",
+      "date": "2022-02-11",
+      "date_precision": "day",
+      "event_type": "press_leak",
+      "parties": [
+        "Cisco",
+        "Splunk"
+      ],
+      "summary": "Press reports Cisco-Splunk talks valuing Splunk at over $20B",
+      "paragraph_id": "p00451",
+      "core": true
+    },
+    {
+      "id": "E09",
+      "date": "2023-04-04",
+      "date_precision": "day",
+      "event_type": "re_engagement",
+      "parties": [
+        "Cisco",
+        "Splunk"
+      ],
+      "summary": "Cisco CFO Scott Herren contacts CEO Gary Steele about re-engaging on an acquisition",
+      "paragraph_id": "p00455",
+      "core": true
+    },
+    {
+      "id": "E10",
+      "date": "2023-04-10",
+      "date_precision": "day",
+      "event_type": "board_authorization",
+      "parties": [
+        "Splunk"
+      ],
+      "summary": "Board authorizes management to engage with Cisco and share updated information",
+      "paragraph_id": "p00456",
+      "core": true
+    },
+    {
+      "id": "E11",
+      "date": "2023-04-12",
+      "date_precision": "day",
+      "event_type": "diligence_request",
+      "parties": [
+        "Cisco",
+        "Splunk"
+      ],
+      "summary": "Cisco sends preliminary information request list",
+      "paragraph_id": "p00457",
+      "core": false
+    },
+    {
+      "id": "E12",
+      "date": "2023-04-26",
+      "date_precision": "day",
+      "event_type": "nda",
+      "parties": [
+        "Cisco",
+        "Splunk"
+      ],
+      "summary": "Confidentiality agreement amended to extend term",
+      "paragraph_id": "p00458",
+      "core": false
+    },
+    {
+      "id": "E13",
+      "date": "2023-04-27",
+      "date_precision": "day",
+      "event_type": "diligence",
+      "parties": [
+        "Cisco",
+        "Splunk"
+      ],
+      "summary": "Initial information-sharing meeting",
+      "paragraph_id": "p00459",
+      "core": false
+    },
+    {
+      "id": "E14",
+      "date": "2023-05-02",
+      "date_precision": "day",
+      "event_type": "board_authorization",
+      "parties": [
+        "Splunk"
+      ],
+      "summary": "Board reviews Interim Management Projections and authorizes sharing them with Cisco",
+      "paragraph_id": "p00460",
+      "core": true
+    },
+    {
+      "id": "E15",
+      "date": "2023-05-03/2023-06-19",
+      "date_precision": "range",
+      "event_type": "projections_shared",
+      "parties": [
+        "Splunk",
+        "Cisco"
+      ],
+      "summary": "Interim Management Projections shared with Cisco during information-sharing meetings",
+      "paragraph_id": "p00462",
+      "core": true
+    },
+    {
+      "id": "E16",
+      "date": "2023-06-21",
+      "date_precision": "day",
+      "event_type": "board_meeting",
+      "parties": [
+        "Splunk"
+      ],
+      "summary": "Board discusses $130 proposal; forms Transaction Committee; decides to engage Qatalyst and Morgan Stanley",
+      "paragraph_id": "p00465",
+      "core": true
+    },
+    {
+      "id": "E17",
+      "date": "2023-06-27",
+      "date_precision": "day",
+      "event_type": "market_check_decision",
+      "parties": [
+        "Splunk"
+      ],
+      "summary": "Transaction Committee decides not to run a market check",
+      "paragraph_id": "p00469",
+      "core": true
+    },
+    {
+      "id": "E18",
+      "date": "2023-06-29",
+      "date_precision": "day",
+      "event_type": "rejection",
+      "parties": [
+        "Splunk",
+        "Cisco"
+      ],
+      "summary": "Steele tells Robbins $130 does not reflect standalone value",
+      "paragraph_id": "p00471",
+      "core": true
+    },
+    {
+      "id": "E19",
+      "date": "2023-07-05",
+      "date_precision": "day",
+      "event_type": "discussion",
+      "parties": [
+        "Tidal Partners",
+        "Qatalyst Partners"
+      ],
+      "summary": "Cisco's advisor says Cisco would consider a revised offer pending more diligence",
+      "paragraph_id": "p00472",
+      "core": false
+    },
+    {
+      "id": "E20",
+      "date": "2023-07-10",
+      "date_precision": "day",
+      "event_type": "board_meeting",
+      "parties": [
+        "Splunk"
+      ],
+      "summary": "Transaction Committee authorizes sharing supplemental info and engaging both advisors",
+      "paragraph_id": "p00473",
+      "core": false
+    },
+    {
+      "id": "E21",
+      "date": "2023-08-03",
+      "date_precision": "day",
+      "event_type": "advisor_engagement",
+      "parties": [
+        "Splunk",
+        "Qatalyst Partners"
+      ],
+      "summary": "Formal engagement letter with Qatalyst Partners",
+      "paragraph_id": "p00475",
+      "core": false
+    },
+    {
+      "id": "E22",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "event_type": "advisor_engagement",
+      "parties": [
+        "Splunk",
+        "Morgan Stanley"
+      ],
+      "summary": "Formal engagement letter with Morgan Stanley",
+      "paragraph_id": "p00475",
+      "core": false
+    },
+    {
+      "id": "E23",
+      "date": "2023-08",
+      "date_precision": "month",
+      "event_type": "projections_shared",
+      "parties": [
+        "Splunk",
+        "Cisco"
+      ],
+      "summary": "After Q2 FY24, Splunk shares a revised FY2024 forecast with Cisco",
+      "paragraph_id": "p00477",
+      "core": true
+    },
+    {
+      "id": "E24",
+      "date": "2023-09-01",
+      "date_precision": "day",
+      "event_type": "board_authorization",
+      "parties": [
+        "Splunk"
+      ],
+      "summary": "Board reconfirms no market check; authorizes negotiation at $157 and exclusivity",
+      "paragraph_id": "p00492",
+      "core": true
+    },
+    {
+      "id": "E25",
+      "date": "2023-09-02",
+      "date_precision": "day",
+      "event_type": "exclusivity",
+      "parties": [
+        "Cisco",
+        "Splunk"
+      ],
+      "summary": "30-day exclusivity agreement signed",
+      "paragraph_id": "p00493",
+      "core": true
+    },
+    {
+      "id": "E26",
+      "date": "2023-09-06",
+      "date_precision": "day",
+      "event_type": "draft_agreement",
+      "parties": [
+        "Simpson Thacher",
+        "Skadden"
+      ],
+      "summary": "First draft merger agreement sent; voting agreements requested",
+      "paragraph_id": "p00495",
+      "core": false
+    },
+    {
+      "id": "E27",
+      "date": "2023-09-07",
+      "date_precision": "day",
+      "event_type": "management_condition",
+      "parties": [
+        "Cisco",
+        "Splunk"
+      ],
+      "summary": "Cisco conditions the deal on employment agreements with Steele and key executives",
+      "paragraph_id": "p00497",
+      "core": true
+    },
+    {
+      "id": "E28",
+      "date": "2023-09-10",
+      "date_precision": "day",
+      "event_type": "draft_agreement",
+      "parties": [
+        "Cisco",
+        "H&F"
+      ],
+      "summary": "Draft voting agreement with Hellman & Friedman sent",
+      "paragraph_id": "p00499",
+      "core": false
+    },
+    {
+      "id": "E29",
+      "date": "2023-09-20",
+      "date_precision": "day",
+      "event_type": "board_approval",
+      "parties": [
+        "Splunk",
+        "Qatalyst Partners",
+        "Morgan Stanley"
+      ],
+      "summary": "Board receives fairness opinions and unanimously approves the merger",
+      "paragraph_id": "p00503",
+      "core": true
+    },
+    {
+      "id": "E30",
+      "date": "2023-09-20",
+      "date_precision": "day",
+      "event_type": "signing",
+      "parties": [
+        "Cisco",
+        "Splunk",
+        "H&F"
+      ],
+      "summary": "Merger Agreement and Voting and Support Agreement signed",
+      "paragraph_id": "p00505",
+      "core": true
+    },
+    {
+      "id": "E31",
+      "date": "2023-09-21",
+      "date_precision": "day",
+      "event_type": "announcement",
+      "parties": [
+        "Cisco",
+        "Splunk"
+      ],
+      "summary": "Public announcement of the transaction",
+      "paragraph_id": "p00506",
+      "core": true
+    }
+  ],
+  "proposals": [
+    {
+      "id": "P01",
+      "date": "2021-12-17",
+      "proposer": "Cisco",
+      "recipient": "Splunk",
+      "price_low": 165,
+      "price_high": 175,
+      "proposal_kind": "non_binding_indication",
+      "paragraph_id": "p00443"
+    },
+    {
+      "id": "P02",
+      "date": "2022-01-14",
+      "proposer": "Cisco",
+      "recipient": "Splunk",
+      "price_low": 175,
+      "price_high": 190,
+      "proposal_kind": "non_binding_indication",
+      "paragraph_id": "p00445"
+    },
+    {
+      "id": "P03",
+      "date": "2022-02-04",
+      "proposer": "Cisco",
+      "recipient": "Splunk",
+      "price_low": 193,
+      "price_high": 193,
+      "proposal_kind": "non_binding_indication",
+      "paragraph_id": "p00447"
+    },
+    {
+      "id": "P04",
+      "date": "2022-02-06",
+      "proposer": "Splunk",
+      "recipient": "Cisco",
+      "price_low": 212,
+      "price_high": 212,
+      "proposal_kind": "counteroffer",
+      "paragraph_id": "p00448"
+    },
+    {
+      "id": "P05",
+      "date": "2023-06-20",
+      "proposer": "Cisco",
+      "recipient": "Splunk",
+      "price_low": 130,
+      "price_high": 130,
+      "proposal_kind": "non_binding_indication",
+      "paragraph_id": "p00464"
+    },
+    {
+      "id": "P06",
+      "date": "2023-08-25",
+      "proposer": "Cisco",
+      "recipient": "Splunk",
+      "price_low": 142,
+      "price_high": 142,
+      "proposal_kind": "non_binding_indication",
+      "paragraph_id": "p00479"
+    },
+    {
+      "id": "P07",
+      "date": "2023-08-27",
+      "proposer": "Splunk",
+      "recipient": "Cisco",
+      "price_low": 168,
+      "price_high": 168,
+      "proposal_kind": "counteroffer",
+      "paragraph_id": "p00481"
+    },
+    {
+      "id": "P08",
+      "date": "2023-08-28",
+      "proposer": "Cisco",
+      "recipient": "Splunk",
+      "price_low": 146,
+      "price_high": 146,
+      "proposal_kind": "revised_bid",
+      "paragraph_id": "p00482"
+    },
+    {
+      "id": "P09",
+      "date": "2023-08-29",
+      "proposer": "Splunk",
+      "recipient": "Cisco",
+      "price_low": 160,
+      "price_high": 160,
+      "proposal_kind": "counteroffer",
+      "paragraph_id": "p00483"
+    },
+    {
+      "id": "P10",
+      "date": "2023-08-30",
+      "proposer": "Cisco",
+      "recipient": "Splunk",
+      "price_low": 152,
+      "price_high": 152,
+      "proposal_kind": "revised_bid",
+      "paragraph_id": "p00484"
+    },
+    {
+      "id": "P11",
+      "date": "2023-08-30",
+      "proposer": "Splunk",
+      "recipient": "Cisco",
+      "price_low": 158,
+      "price_high": 158,
+      "proposal_kind": "counteroffer",
+      "paragraph_id": "p00486"
+    },
+    {
+      "id": "P12",
+      "date": "2023-08-30",
+      "proposer": "Cisco",
+      "recipient": "Splunk",
+      "price_low": 156,
+      "price_high": 156,
+      "proposal_kind": "revised_bid",
+      "paragraph_id": "p00487"
+    },
+    {
+      "id": "P13",
+      "date": "2023-08-31",
+      "proposer": "Cisco",
+      "recipient": "Splunk",
+      "price_low": 157,
+      "price_high": 157,
+      "proposal_kind": "revised_bid",
+      "paragraph_id": "p00490"
+    }
+  ]
+}
