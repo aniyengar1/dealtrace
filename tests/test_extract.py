@@ -6,9 +6,9 @@ from src.extract import (
     ExtractionError,
     _call_gemini,
     _is_daily_quota_exhausted,
-    apply_relative_date_fallback,
     chunk_paragraphs_by_count,
     paragraph_anchor_dates,
+    resolve_dates,
 )
 from src.schemas import BackgroundExtraction, Event, Proposal
 
@@ -232,46 +232,161 @@ def test_paragraph_anchor_dates_is_none_before_any_absolute_date_seen():
     assert anchors["p1"] is None
 
 
-def test_apply_relative_date_fallback_fills_missing_event_date():
+def test_resolve_dates_fills_relative_event_date_from_anchor():
     paras = [
         {"id": "p1", "text": "On August 30, 2023, the parties spoke."},
         {"id": "p2", "text": "Later that day, Robbins called Steele."},
     ]
-    event = _event(source_paragraph_ids=["p2"])
+    event = _event(source_paragraph_ids=["p2"])  # date_text="later that day"
     merged = {"events": [event], "proposals": []}
-    apply_relative_date_fallback(merged, paras)
+    resolve_dates(merged, paras)
     assert str(event.date_start) == "2023-08-30"
     assert str(event.date_end) == "2023-08-30"
     assert event.date_precision == "day"
     assert event.date_text == "later that day"  # original phrase untouched
 
 
-def test_apply_relative_date_fallback_fills_missing_proposal_date():
+def test_resolve_dates_fills_relative_proposal_date_from_anchor():
     paras = [
         {"id": "p1", "text": "On August 30, 2023, the parties spoke."},
         {"id": "p2", "text": "Later that day, Robbins called Steele with a new price."},
     ]
-    proposal = _proposal(source_paragraph_ids=["p2"])
+    proposal = _proposal(source_paragraph_ids=["p2"])  # date="later that day"
     merged = {"events": [], "proposals": [proposal]}
-    apply_relative_date_fallback(merged, paras)
+    resolve_dates(merged, paras)
     assert str(proposal.date_resolved) == "2023-08-30"
     assert proposal.date == "later that day"
 
 
-def test_apply_relative_date_fallback_never_overrides_a_resolved_date():
-    paras = [{"id": "p1", "text": "On August 30, 2023, the parties spoke."}]
-    event = _event(source_paragraph_ids=["p1"], date_start="2023-01-01", date_precision="day")
-    merged = {"events": [event], "proposals": []}
-    apply_relative_date_fallback(merged, paras)
-    assert str(event.date_start) == "2023-01-01"  # untouched, even though it looks wrong
-
-
-def test_apply_relative_date_fallback_leaves_unresolvable_dates_null():
+def test_resolve_dates_leaves_unresolvable_dates_null():
     paras = [{"id": "p1", "text": "Earlier that week, nothing dated appears."}]
     event = _event(source_paragraph_ids=["p1"])
-    merged = {"events": [event], "proposals": []}
-    apply_relative_date_fallback(merged, paras)
+    proposal = _proposal(source_paragraph_ids=["p1"])
+    merged = {"events": [event], "proposals": [proposal]}
+    resolve_dates(merged, paras)
     assert event.date_start is None
+    assert event.date_end is None
+    assert proposal.date_resolved is None
+
+
+def test_resolve_dates_does_not_touch_a_bare_month_date_text():
+    # "January 2022" is an absolute but day-less date, not a relative
+    # phrase -- _absolute_dates_in_text can't resolve it to a single day,
+    # but it must NOT be treated as relative and sent through the anchor
+    # fallback either (that would silently collapse a whole-month event
+    # onto some unrelated day mentioned later in the same paragraph). This
+    # is the exact regression caught while post-processing the v7 output:
+    # an "advisor engagement, January 2022" event was wrongly collapsed
+    # onto "January 23" (the NDA date mentioned later in the same
+    # paragraph) before this case was excluded from the relative-phrase
+    # fallback.
+    paras = [
+        {
+            "id": "p1",
+            "text": (
+                "Also, in January 2022, the Board engaged Qatalyst Partners. "
+                "On January 23, 2022, Cisco and Splunk signed a confidentiality agreement."
+            ),
+        }
+    ]
+    event = _event(
+        date_text="January 2022",
+        date_start="2022-01-01",
+        date_end="2022-01-31",
+        date_precision="month",
+        source_paragraph_ids=["p1"],
+    )
+    merged = {"events": [event], "proposals": []}
+    resolve_dates(merged, paras)
+    assert str(event.date_start) == "2022-01-01"
+    assert str(event.date_end) == "2022-01-31"
+    assert event.date_precision == "month"
+
+
+def test_resolve_dates_does_not_touch_a_shared_year_day_list():
+    # "September 17, 18 and 19, 2023" has three days sharing one trailing
+    # year -- _absolute_dates_in_text finds no "Month Day, Year" match in
+    # it at all, but it is absolute information, not a relative phrase, so
+    # it must be left alone rather than forced through the anchor fallback.
+    paras = [
+        {
+            "id": "p1",
+            "text": "The Committee met on September 17, 18 and 19, 2023 to provide guidance.",
+        }
+    ]
+    event = _event(
+        date_text="September 17, 18 and 19, 2023",
+        date_start="2023-09-17",
+        date_end="2023-09-19",
+        date_precision="range",
+        source_paragraph_ids=["p1"],
+    )
+    merged = {"events": [event], "proposals": []}
+    resolve_dates(merged, paras)
+    assert str(event.date_start) == "2023-09-17"
+    assert str(event.date_end) == "2023-09-19"
+
+
+def test_resolve_dates_overrides_whatever_the_model_put_when_own_text_is_absolute():
+    # Date resolution is entirely code's job now -- even if the model
+    # ignored the prompt and filled in a date_start of its own, a record
+    # whose date_text is itself absolute must resolve to THAT date, not
+    # whatever the model guessed.
+    paras = [{"id": "p1", "text": "On August 30, 2023, the parties spoke."}]
+    event = _event(
+        date_text="August 30, 2023",
+        source_paragraph_ids=["p1"],
+        date_start="2023-01-01",
+        date_precision="day",
+    )
+    merged = {"events": [event], "proposals": []}
+    resolve_dates(merged, paras)
+    assert str(event.date_start) == "2023-08-30"
+
+
+def test_resolve_dates_handles_a_date_range_in_the_record_s_own_text():
+    paras = [{"id": "p1", "text": "Representatives met several times between July 21, 2023, and August 3, 2023."}]
+    event = _event(
+        date_text="Between July 21, 2023, and August 3, 2023",
+        source_paragraph_ids=["p1"],
+    )
+    merged = {"events": [event], "proposals": []}
+    resolve_dates(merged, paras)
+    assert str(event.date_start) == "2023-07-21"
+    assert str(event.date_end) == "2023-08-03"
+    assert event.date_precision == "range"
+
+
+@pytest.mark.parametrize(
+    "own_date, other_date, expected_iso",
+    [
+        ("December 17, 2021", "December 21, 2021", "2021-12-17"),
+        ("June 20, 2023", "June 16, 2023", "2023-06-20"),
+        ("August 25, 2023", "August 24, 2023", "2023-08-25"),
+    ],
+)
+def test_resolve_dates_trusts_a_record_s_own_date_over_other_dates_in_the_same_paragraph(
+    own_date, other_date, expected_iso
+):
+    # Regression guard for the exact failure class found in the v7 output:
+    # a paragraph mentioning two absolute dates must never let the WRONG
+    # one leak into a record whose own date_text/date already names the
+    # right one. A naive "last date seen in the paragraph" anchor would
+    # get this wrong; a record's own text must always win over the
+    # paragraph-level anchor.
+    paras = [
+        {
+            "id": "p1",
+            "text": f"On {own_date}, Cisco proposed a price. Splunk followed up on {other_date}.",
+        }
+    ]
+    event = _event(date_text=own_date, source_paragraph_ids=["p1"])
+    proposal = _proposal(date=own_date, source_paragraph_ids=["p1"])
+    merged = {"events": [event], "proposals": [proposal]}
+    resolve_dates(merged, paras)
+    assert str(event.date_start) == expected_iso
+    assert str(event.date_end) == expected_iso
+    assert str(proposal.date_resolved) == expected_iso
 
 
 def test_prompt_states_written_vs_verbal_proposal_kind_rule():
@@ -288,3 +403,26 @@ def test_prompt_states_written_vs_verbal_proposal_kind_rule():
     assert "VERBAL" in instruction
     assert "revised_bid" in instruction
     assert 'proposal_kind="counteroffer" is ONLY the target company' in instruction
+
+
+def test_prompt_no_longer_asks_the_model_to_resolve_dates():
+    # v8: date resolution moved entirely into resolve_dates(); the model
+    # must not be asked to attempt it (resolve_dates unconditionally
+    # overrides anything it produces anyway, but an instruction telling it
+    # to try is actively misleading now).
+    instruction = extract.SYSTEM_INSTRUCTION
+    assert "handled entirely in code" in instruction
+    assert "do not attempt it" in instruction
+    assert "Resolve it to an absolute date" not in instruction
+
+
+def test_prompt_states_preview_of_proposal_is_a_discussion_event():
+    instruction = extract.SYSTEM_INSTRUCTION
+    assert '"discussion" Event, not a' in instruction
+    assert "Only create a Proposal once the number is actually delivered" in instruction
+
+
+def test_prompt_states_authorization_is_not_the_proposal():
+    instruction = extract.SYSTEM_INSTRUCTION
+    assert '"board_authorization" Event' in instruction
+    assert "only when that counteroffer is actually conveyed to the other side" in instruction

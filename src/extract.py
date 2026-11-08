@@ -37,7 +37,7 @@ from pydantic import BaseModel, ValidationError
 
 load_dotenv()
 
-PROMPT_VERSION = "v7"
+PROMPT_VERSION = "v8"
 MAX_CHUNK_WORDS = 8000
 MAX_MALFORMED_RETRIES = 2
 # A per-day quota exhaustion (RESOURCE_EXHAUSTED with a "...PerDay..." quota
@@ -199,15 +199,22 @@ specific number by the end of the excerpt: "open" (not yet responded to), \
 "rejected" (declined with no replacement), "superseded" (overtaken by a \
 later number from the same side), "accepted", or "withdrawn" (the \
 proposer pulled it).
-- A date is often relative to a nearby sentence instead of stated outright \
-("later that day", "the following day", "two weeks later", "on the next \
-call"). Resolve it to an absolute date using the most recent absolute date \
-established earlier in the excerpt, and put that resolved date in \
-date_start/date_end (Event) or date_resolved (Proposal). Always keep the \
-filing's own relative phrase, verbatim, in date_text (Event) or date \
-(Proposal) -- never silently replace it with the resolved date. If no \
-absolute date appears anywhere earlier in the excerpt to resolve it \
-against, leave date_start/date_end/date_resolved null rather than guessing.
+- date_text (Event) and date (Proposal) must be the filing's own phrase, \
+verbatim, whether it's absolute ("December 17, 2021") or relative ("later \
+that day"). Resolving a relative phrase to an absolute date is handled \
+entirely in code after extraction, not by you -- do not attempt it.
+- A mention that a written proposal is coming, or a preview of a price \
+before it's actually put forward, is a "discussion" Event, not a \
+Proposal. Only create a Proposal once the number is actually delivered -- \
+in writing, or stated to the other side -- never for a heads-up that one \
+is expected.
+- When a board or committee votes to authorize negotiating at a price or \
+making a counteroffer, that vote itself is a "board_authorization" Event, \
+not a Proposal. The Proposal is created only when that counteroffer is \
+actually conveyed to the other side (the call, letter, or meeting where \
+the other party hears the number) -- the authorization and the conveyance \
+are two different moments, often in different paragraphs, and only the \
+second is a Proposal.
 - Extract every item the excerpt supports, not just the first one you find.
 - If nothing in this excerpt matches the schema, return empty list(s).
 
@@ -271,51 +278,102 @@ def _parse_absolute_date(month: str, day: str, year: str) -> Optional[date]:
     return None
 
 
+def _absolute_dates_in_text(text: str) -> list[date]:
+    """Every "Month Day, Year" absolute date in `text`, in the order found."""
+    dates = []
+    for match in _ABSOLUTE_DATE_RE.finditer(text):
+        parsed = _parse_absolute_date(*match.groups())
+        if parsed is not None:
+            dates.append(parsed)
+    return dates
+
+
+# Deliberately an allowlist, not "anything _absolute_dates_in_text can't
+# parse": date_text/date can legitimately carry date information in forms
+# that regex doesn't resolve to a single day (a bare month -- "January
+# 2022" -- or a shared-year day list -- "September 17, 18 and 19, 2023").
+# Treating those as relative would overwrite a correct, if lower-precision
+# or multi-day, date with a wrong single day from the paragraph anchor.
+# Only phrases that are unambiguously relative references with no date
+# information of their own should hit the anchor fallback.
+_RELATIVE_PHRASE_RE = re.compile(
+    r"\b(?:later|earlier)\s+that\s+(?:day|evening|morning|afternoon|week)\b"
+    r"|\b(?:the\s+)?(?:following|next)\s+day\b"
+    r"|\bthat\s+(?:same\s+)?(?:day|evening|morning|afternoon)\b"
+    r"|\bthe\s+same\s+day\b",
+    re.IGNORECASE,
+)
+
+
+def _is_relative_phrase(text: str) -> bool:
+    return bool(_RELATIVE_PHRASE_RE.search(text))
+
+
 def paragraph_anchor_dates(paragraphs: list[dict]) -> dict[str, Optional[date]]:
     """Map each paragraph id -> the most recent absolute date established by
     that paragraph or any earlier paragraph in this list, in document order.
 
-    This is the fallback source for a record whose date the model left
-    relative/unresolved (e.g. "later that day"): the nearest preceding
-    absolute date in the same excerpt.
+    This is the resolution source for a record whose own date_text/date is a
+    genuinely relative phrase (e.g. "later that day") with no date of its
+    own: the nearest preceding absolute date in the same excerpt.
     """
     anchors: dict[str, Optional[date]] = {}
     last_date: Optional[date] = None
     for para in paragraphs:
-        for match in _ABSOLUTE_DATE_RE.finditer(para["text"]):
-            parsed = _parse_absolute_date(*match.groups())
-            if parsed is not None:
-                last_date = parsed
+        dates = _absolute_dates_in_text(para["text"])
+        if dates:
+            last_date = dates[-1]
         anchors[para["id"]] = last_date
     return anchors
 
 
-def apply_relative_date_fallback(merged: dict[str, list], paragraphs: list[dict]) -> None:
-    """Fill a record's missing resolved date from its (or an earlier)
-    paragraph's most recent absolute date, in place.
+def resolve_dates(merged: dict[str, list], paragraphs: list[dict]) -> None:
+    """Deterministically set every record's resolved date, in place.
 
-    Safety net for relative dates the prompt's own resolution missed --
-    never overrides a date the model already resolved itself.
+    Date resolution is done entirely here, never by the model (the prompt
+    explicitly tells it not to attempt it). Three cases, in order:
+    1. date_text/date itself contains an absolute "Month Day, Year" date:
+       that's authoritative, full stop, used unconditionally even if the
+       model (ignoring the prompt) filled in something else. One absolute
+       date found means a single day (Event: date_start=date_end); two or
+       more means a range (date_start=first, date_end=last;
+       Proposal.date_resolved takes the first, since a proposal is a
+       single moment).
+    2. No absolute date of its own, but it's a recognized relative phrase
+       (see _RELATIVE_PHRASE_RE, e.g. "later that day"): resolved from the
+       nearest preceding absolute date via paragraph_anchor_dates.
+    3. Neither of the above (e.g. a bare month like "January 2022", or a
+       shared-year day list like "September 17, 18 and 19, 2023" that
+       _absolute_dates_in_text can't resolve to a single day): left
+       untouched rather than guessed at, since forcing it through the
+       anchor fallback would silently replace a legitimate lower-precision
+       or multi-day date with a wrong single day.
     """
     anchors = paragraph_anchor_dates(paragraphs)
 
+    def anchor_for(source_paragraph_ids: list[str]) -> Optional[date]:
+        return anchors.get(source_paragraph_ids[0]) if source_paragraph_ids else None
+
     for event in merged.get("events", []):
-        if event.date_start is not None or not event.source_paragraph_ids:
-            continue
-        anchor = anchors.get(event.source_paragraph_ids[0])
-        if anchor is not None:
-            event.date_start = anchor
-            if event.date_end is None:
-                event.date_end = anchor
+        own_dates = _absolute_dates_in_text(event.date_text)
+        if own_dates:
+            event.date_start = own_dates[0]
+            event.date_end = own_dates[-1]
             if event.date_precision == "unknown":
+                event.date_precision = "day" if len(own_dates) == 1 else "range"
+        elif _is_relative_phrase(event.date_text):
+            anchor = anchor_for(event.source_paragraph_ids)
+            event.date_start = anchor
+            event.date_end = anchor
+            if anchor is not None and event.date_precision == "unknown":
                 event.date_precision = "day"
 
     for proposal in merged.get("proposals", []):
-        if proposal.date_resolved is not None or not proposal.source_paragraph_ids:
-            continue
-        anchor = anchors.get(proposal.source_paragraph_ids[0])
-        if anchor is not None:
-            proposal.date_resolved = anchor
+        own_dates = _absolute_dates_in_text(proposal.date)
+        if own_dates:
+            proposal.date_resolved = own_dates[0]
+        elif _is_relative_phrase(proposal.date):
+            proposal.date_resolved = anchor_for(proposal.source_paragraph_ids)
 
 
 def _cache_key(chunk: list[dict], model: str, schema: type[BaseModel]) -> str:
@@ -497,5 +555,5 @@ def extract_section(
             merged[f].extend(getattr(instance, f))
         total_usage.add(usage)
 
-    apply_relative_date_fallback(merged, paragraphs)
+    resolve_dates(merged, paragraphs)
     return schema.model_validate(merged), total_usage
