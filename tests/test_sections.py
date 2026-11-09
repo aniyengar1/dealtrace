@@ -10,8 +10,10 @@ from src.sections import (
     OPINION_SUBSECTION_RE,
     SECTION_SPECS,
     SECTION_WORD_WARNING_THRESHOLD,
+    _decode_legacy_cp1252_charrefs,
     _strip_page_reference,
     extract_sections,
+    parse_paragraphs,
     run,
     save_sections,
 )
@@ -167,6 +169,37 @@ def test_extra_continue_headings_defaults_to_none_without_changing_behavior():
     sections = extract_sections(FIXTURE.read_text())
     texts = " ".join(p["text"] for p in sections["opinion_of_example_advisor_llc"]["paragraphs"])
     assert "same-level non-opinion sibling" not in texts
+
+
+def test_decode_legacy_cp1252_charrefs_resolves_smart_quotes():
+    # Coupa's filing agent encodes curly quotes as decimal numeric char
+    # refs in the legacy Windows-1252 range (147/148/146), which lxml
+    # would otherwise resolve to raw C1 control codepoints instead of the
+    # curly quotes real browsers render.
+    html = "&#147;Financial Sponsor&nbsp;A&#148; and the Company&#146;s Board"
+    result = _decode_legacy_cp1252_charrefs(html)
+    assert result == "“Financial Sponsor&nbsp;A” and the Company’s Board"
+
+
+def test_decode_legacy_cp1252_charrefs_leaves_other_entities_untouched():
+    html = "&amp;nbsp; &lt;tag&gt; &#169; &#8217;"  # copyright + a real Unicode ref, outside 128-159
+    assert _decode_legacy_cp1252_charrefs(html) == html
+
+
+def test_parse_paragraphs_resolves_legacy_charrefs_in_body_text():
+    html = (
+        "<html><body>"
+        "<div>Thoma Bravo stated that it refers to &#147;Financial Sponsor&#148; "
+        "in the Company&#146;s filing.</div>"
+        "</body></html>"
+    )
+    paragraphs = parse_paragraphs(html)
+    assert len(paragraphs) == 1
+    assert "“Financial Sponsor”" in paragraphs[0].text
+    assert "Company’s" in paragraphs[0].text
+    assert chr(0x93) not in paragraphs[0].text
+    assert chr(0x94) not in paragraphs[0].text
+    assert chr(0x92) not in paragraphs[0].text
 
 
 def test_run_namespaces_sections_under_the_deal_slug(tmp_path, monkeypatch):

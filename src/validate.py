@@ -57,6 +57,10 @@ _QUOTE_NORMALIZE_MAP = str.maketrans(
         "”": "'",  # right double quotation mark
         "„": "'",  # double low-9 quotation mark
         "″": "'",  # double prime
+        "": "'",  # legacy C1 left single quote (lxml mis-decoding &#145;)
+        "": "'",  # legacy C1 right single quote (lxml mis-decoding &#146;)
+        "": "'",  # legacy C1 left double quote (lxml mis-decoding &#147;)
+        "": "'",  # legacy C1 right double quote (lxml mis-decoding &#148;)
         " ": " ",  # no-break space
         "‐": "-",  # hyphen
         "‑": "-",  # non-breaking hyphen
@@ -124,6 +128,7 @@ def _numbers_in_record(record: dict) -> dict[str, float]:
     numeric_fields = (
         "price_low",
         "price_high",
+        "premium_pct",
         "multiple_low",
         "multiple_high",
         "implied_price_low",

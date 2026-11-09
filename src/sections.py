@@ -26,6 +26,35 @@ _HEADING_CLASS_RE = re.compile(r"^h([1-5])$")
 _TOC_MARKER_RE = re.compile(r"^(TABLE OF CONTENTS\s*)+", re.IGNORECASE)
 _PAGE_NUMBER_RE = re.compile(r"^[\d\s\-–—]*$")
 
+# Some filing agents (e.g. Coupa's) encode smart quotes/dashes as decimal
+# numeric character references in the 128-159 range -- &#147; for a left
+# curly quote, &#146; for a right single quote -- which are legacy
+# Windows-1252 byte codes, not literal Unicode code points. Real browsers
+# decode these through HTML5's backward-compatibility override table
+# (the same one Python's html.unescape implements); lxml doesn't, so
+# BeautifulSoup(html, "lxml") resolves &#147; to the raw C1 control
+# character U+0093 instead of the curly quote U+201C it actually stands
+# for. Pre-resolve just this narrow range before lxml ever sees it,
+# leaving every other entity (&amp;, &lt;, &nbsp;, named entities, numeric
+# refs outside 128-159) untouched for lxml's normal handling.
+_LEGACY_CP1252_OVERRIDES = {
+    128: "€", 130: "‚", 131: "ƒ", 132: "„", 133: "…",
+    134: "†", 135: "‡", 136: "ˆ", 137: "‰", 138: "Š",
+    139: "‹", 140: "Œ", 142: "Ž", 145: "‘", 146: "’",
+    147: "“", 148: "”", 149: "•", 150: "–", 151: "—",
+    152: "˜", 153: "™", 154: "š", 155: "›", 156: "œ",
+    158: "ž", 159: "Ÿ",
+}
+_LEGACY_CHARREF_RE = re.compile(r"&#(?:0*(1[2-5]\d)|[xX]0*([89a-bA-B][0-9a-fA-F]));")
+
+
+def _decode_legacy_cp1252_charrefs(html: str) -> str:
+    def _sub(match: "re.Match") -> str:
+        code = int(match.group(1)) if match.group(1) else int(match.group(2), 16)
+        return _LEGACY_CP1252_OVERRIDES.get(code, chr(code))
+
+    return _LEGACY_CHARREF_RE.sub(_sub, html)
+
 SECTION_SPECS = {
     "background_of_the_merger": [r"^Background of the Merger$"],
     "management_projections": [
@@ -196,6 +225,7 @@ def parse_paragraphs(html: str) -> list[Paragraph]:
     inside a table are skipped in the main loop since the table's own entry
     already covers their text.
     """
+    html = _decode_legacy_cp1252_charrefs(html)
     soup = BeautifulSoup(html, "lxml")
 
     paragraphs: list[Paragraph] = []

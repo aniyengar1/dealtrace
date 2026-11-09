@@ -37,7 +37,7 @@ from pydantic import BaseModel, ValidationError
 
 load_dotenv()
 
-PROMPT_VERSION = "v9"
+PROMPT_VERSION = "v10"
 MAX_CHUNK_WORDS = 8000
 MAX_MALFORMED_RETRIES = 2
 # A per-day quota exhaustion (RESOURCE_EXHAUSTED with a "...PerDay..." quota
@@ -190,15 +190,34 @@ span of that rendered row text (e.g. "Sensitivity 1 Projections | \
 written indication of interest), it is "non_binding_indication" every time \
 one is sent, even if it revises an earlier number -- being on paper, not \
 its place in the sequence, is what keeps it non-binding. If it is VERBAL \
-(a call, a meeting) and revises an earlier number, it is "revised_bid"; a \
-verbal price with no earlier number from the acquirer to revise is \
-"formal_bid". proposal_kind="counteroffer" is ONLY the target company's \
-own ask back to the acquirer, whether verbal or written -- never anything \
-the acquirer itself puts forward. status reflects what became of that \
-specific number by the end of the excerpt: "open" (not yet responded to), \
-"rejected" (declined with no replacement), "superseded" (overtaken by a \
-later number from the same side), "accepted", or "withdrawn" (the \
-proposer pulled it).
+(a call, a meeting) and revises an earlier number, it is "revised_bid". \
+proposal_kind="formal_bid" is reserved ONLY for the final-round, binding \
+bid -- one submitted together with a markup of the merger agreement \
+and/or financing commitments (e.g. debt or equity commitment letters). \
+Every earlier or range-based price indication, whether written or \
+verbal, is "non_binding_indication" instead, never "formal_bid" -- \
+including a first verbal price with nothing earlier to revise, if it \
+wasn't accompanied by a markup or financing commitments. \
+proposal_kind="counteroffer" is ONLY the target company's own ask back to \
+the acquirer, whether verbal or written -- never anything the acquirer \
+itself puts forward. status reflects what became of that specific number \
+by the end of the excerpt: "open" (not yet responded to), "rejected" \
+(declined with no replacement), "superseded" (overtaken by a later \
+number from the same side), "accepted", or "withdrawn" (the proposer \
+pulled it).
+- If a Proposal states only a percentage premium with no per-share price \
+(e.g. "a premium of approximately 25% to the current share price"), \
+leave price_low/price_high null and set premium_pct to that percentage \
+(25.0 for "approximately 25%"). If it states a per-share price, set \
+price_low/price_high as usual and leave premium_pct null unless the \
+filing also separately states a premium percentage for the same number.
+- The same bidder stating the exact same price again in a later paragraph, \
+without changing it (e.g. reconfirming an existing offer on a later call \
+or in a follow-up email), is NOT a new Proposal -- extract that price \
+only once, at its first occurrence. Only create a second Proposal from \
+the same bidder when the number itself changes, or when the earlier \
+mention was a discussion/preview (see the next rule) and this is the \
+first time the number is actually delivered.
 - A HEDGED number is never a firm proposal, no matter who said it or \
 whether it revises an earlier one: language like "may be able to offer", \
 "could be as high as", or "might be prepared to offer" means \

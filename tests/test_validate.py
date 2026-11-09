@@ -174,6 +174,15 @@ def test_normalize_for_match_folds_dash_variants():
     assert normalize_for_match("a — b") == "a - b"
 
 
+def test_normalize_for_match_folds_legacy_c1_quote_codes_as_safety_net():
+    # Safety net for text that reaches validate.py with the C1 mojibake
+    # already baked in (e.g. stale cached extractions from before the
+    # sections.py entity-decoding fix) -- U+0091/0092 (legacy left/right
+    # single quote) and U+0093/0094 (legacy left/right double quote).
+    mojibake = f"the Company{chr(0x92)}s {chr(0x93)}Financial Sponsor{chr(0x94)}"
+    assert normalize_for_match(mojibake) == "the Company's 'Financial Sponsor'"
+
+
 def test_normalize_for_match_folds_nbsp_to_space():
     assert normalize_for_match("April 4, 2023") == "April 4, 2023"
 

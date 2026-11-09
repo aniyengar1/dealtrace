@@ -39,8 +39,12 @@ ConsiderationType = Literal["cash", "stock", "mixed", "unknown"]
 # acquirer's own proposals: a WRITTEN indication of interest is always
 # non_binding_indication, even when it revises an earlier number (being on
 # paper is what keeps it non-binding, not its place in the sequence); a
-# VERBAL price that revises an earlier one is revised_bid; a verbal price
-# with nothing earlier to revise is formal_bid. See extract.py's
+# VERBAL price that revises an earlier one is revised_bid. formal_bid is
+# reserved for the final-round, binding bid -- submitted together with a
+# merger agreement markup and/or financing commitments -- not any early or
+# range-based verbal indication, which is non_binding_indication instead
+# (v10; v9 used formal_bid for a verbal price with nothing earlier to
+# revise, regardless of how final it was). See extract.py's
 # SYSTEM_INSTRUCTION for the full rule the model is given.
 ProposalKind = Literal[
     "non_binding_indication",
@@ -92,6 +96,17 @@ class Proposal(BaseModel):
     recipient: str
     price_low: Optional[float] = None
     price_high: Optional[float] = None
+    premium_pct: Optional[float] = Field(
+        None,
+        description=(
+            "Percentage premium stated in place of (or in addition to) a "
+            "per-share price, e.g. 25.0 for 'a premium of approximately "
+            "25%'. If the filing states only a premium with no per-share "
+            "price, price_low/price_high stay null and this is set; if it "
+            "states a per-share price, set that instead (or alongside, if "
+            "the filing gives both)."
+        ),
+    )
     currency: Optional[str] = None
     consideration_type: ConsiderationType
     proposal_kind: ProposalKind
