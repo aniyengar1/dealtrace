@@ -1,0 +1,1111 @@
+{
+  "deal": "Hellman & Friedman and Permira / Zendesk",
+  "source": "Zendesk DEFM14A (Aug 2022), Background of the Merger (p00408-p00503)",
+  "benchmark_version": 1,
+  "built_by": "Claude (independent of the Gemini extractor), built BEFORE any extraction on this deal; pending human spot-check",
+  "held_out": true,
+  "notes": [
+    "Competitive process: Consortium (Permira, H&F, Financial Sponsor A, later co-investors) vs Bidder 2; 26 parties contacted.",
+    "Prices fall over the process ($127-132 -> $77.50). Tests whether the extractor handles declining bids and anonymous bidders.",
+    "The Feb 7 Consortium approach is captured as proposal P01 only (no separate event), per the de-duplication rule."
+  ],
+  "events": [
+    {
+      "id": "E01",
+      "date": "2021-10-28",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "Zendesk",
+        "Momentive"
+      ],
+      "summary": "Zendesk announces agreement to acquire Momentive (stock deal needing shareholder approval)",
+      "paragraph_id": "p00409",
+      "core": false
+    },
+    {
+      "id": "E02",
+      "date": "2021-11-30",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "JANA Partners",
+        "Zendesk"
+      ],
+      "summary": "Activist JANA Partners publicly opposes the Momentive deal",
+      "paragraph_id": "p00411",
+      "core": true
+    },
+    {
+      "id": "E03",
+      "date": "2022-02-09",
+      "date_precision": "day",
+      "event_type": "rejection",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Board concludes the Consortium's $127-132 proposal significantly undervalues Zendesk",
+      "paragraph_id": "p00413",
+      "core": true
+    },
+    {
+      "id": "E04",
+      "date": "2022-02-10",
+      "date_precision": "day",
+      "event_type": "announcement",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Zendesk publicly announces rejection of the Consortium proposal",
+      "paragraph_id": "p00414",
+      "core": true
+    },
+    {
+      "id": "E05",
+      "date": "2022-02-16",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "JANA Partners",
+        "Zendesk"
+      ],
+      "summary": "JANA launches proxy contest (4 director nominees) and urges a sale",
+      "paragraph_id": "p00415",
+      "core": true
+    },
+    {
+      "id": "E06",
+      "date": "2022-02-25",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Shareholders vote down the Momentive deal; transaction terminated",
+      "paragraph_id": "p00417",
+      "core": true
+    },
+    {
+      "id": "E07",
+      "date": "2022-02-28",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "JANA Partners",
+        "Zendesk"
+      ],
+      "summary": "JANA letter: board change or sale",
+      "paragraph_id": "p00418",
+      "core": false
+    },
+    {
+      "id": "E08",
+      "date": "2022-03-07",
+      "date_precision": "day",
+      "event_type": "board_meeting",
+      "parties": [
+        "Zendesk",
+        "Qatalyst Partners"
+      ],
+      "summary": "Board reviews strategic alternatives; decides to explore a sale process more intensively",
+      "paragraph_id": "p00419",
+      "core": true
+    },
+    {
+      "id": "E09",
+      "date": "2022-03-09",
+      "date_precision": "day",
+      "event_type": "board_meeting",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Board discusses engaging Qatalyst and Goldman Sachs",
+      "paragraph_id": "p00420",
+      "core": false
+    },
+    {
+      "id": "E10",
+      "date": "2022-03-16",
+      "date_precision": "day",
+      "event_type": "advisor_engagement",
+      "parties": [
+        "Zendesk",
+        "Qatalyst Partners",
+        "Goldman Sachs"
+      ],
+      "summary": "Board approves engagement letters with Qatalyst and Goldman Sachs",
+      "paragraph_id": "p00422",
+      "core": true
+    },
+    {
+      "id": "E11",
+      "date": "2022-03-16",
+      "date_precision": "day",
+      "event_type": "board_authorization",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Board formally launches strategic review/sale process and authorizes outreach and NDAs",
+      "paragraph_id": "p00423",
+      "core": true
+    },
+    {
+      "id": "E12",
+      "date": "2022-03-17",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "Qatalyst Partners"
+      ],
+      "summary": "Outreach begins: 26 counterparties contacted (16 strategic, 10 sponsors); 11 sign NDAs",
+      "paragraph_id": "p00424",
+      "core": true
+    },
+    {
+      "id": "E13",
+      "date": "2022-03-23",
+      "date_precision": "day",
+      "event_type": "board_meeting",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Board update on outreach",
+      "paragraph_id": "p00425",
+      "core": false
+    },
+    {
+      "id": "E14",
+      "date": "2022-03-30",
+      "date_precision": "day",
+      "event_type": "board_meeting",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Board update; long-range plan for bidders discussed",
+      "paragraph_id": "p00426",
+      "core": false
+    },
+    {
+      "id": "E15",
+      "date": "2022-04-04/2022-04-20",
+      "date_precision": "range",
+      "event_type": "diligence",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Management meetings with 10 counterparties (4 strategic, 6 sponsors); one strategic drops out",
+      "paragraph_id": "p00427",
+      "core": true
+    },
+    {
+      "id": "E16",
+      "date": "2022-04-06",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "Consortium",
+        "Significant LP Co-Investor A"
+      ],
+      "summary": "Significant LP Co-Investor A allowed to join the Consortium",
+      "paragraph_id": "p00428",
+      "core": false
+    },
+    {
+      "id": "E17",
+      "date": "2022-04-07",
+      "date_precision": "day",
+      "event_type": "diligence",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Data room opened to 10 counterparties",
+      "paragraph_id": "p00429",
+      "core": false
+    },
+    {
+      "id": "E18",
+      "date": "2022-04-07",
+      "date_precision": "day",
+      "event_type": "discussion",
+      "parties": [
+        "Zendesk",
+        "JANA Partners"
+      ],
+      "summary": "Directors meet JANA; JANA wants board change or a sale",
+      "paragraph_id": "p00430",
+      "core": false
+    },
+    {
+      "id": "E19",
+      "date": "2022-04-12",
+      "date_precision": "day",
+      "event_type": "discussion",
+      "parties": [
+        "Consortium",
+        "Zendesk"
+      ],
+      "summary": "Consortium representative meets CEO Mikkel Svane",
+      "paragraph_id": "p00431",
+      "core": false
+    },
+    {
+      "id": "E20",
+      "date": "2022-04-13",
+      "date_precision": "day",
+      "event_type": "board_meeting",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Board process update",
+      "paragraph_id": "p00432",
+      "core": false
+    },
+    {
+      "id": "E21",
+      "date": "2022-04-14",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "Bidder 2"
+      ],
+      "summary": "Bidder 2 allowed to add an LP co-investor",
+      "paragraph_id": "p00433",
+      "core": false
+    },
+    {
+      "id": "E22",
+      "date": "2022-04-18",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "Qatalyst Partners"
+      ],
+      "summary": "Process letter requests preliminary indications by May 5",
+      "paragraph_id": "p00434",
+      "core": true
+    },
+    {
+      "id": "E23",
+      "date": "2022-04-18",
+      "date_precision": "day",
+      "event_type": "press_leak",
+      "parties": [
+        "Zendesk",
+        "Qatalyst Partners"
+      ],
+      "summary": "Bloomberg reports Zendesk exploring a sale; stock +6.1%",
+      "paragraph_id": "p00435",
+      "core": true
+    },
+    {
+      "id": "E24",
+      "date": "2022-04-18/2022-04-19",
+      "date_precision": "range",
+      "event_type": "projections_shared",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Q1 results summary and long-range plan (March 2022 Case) provided to bidders",
+      "paragraph_id": "p00436",
+      "core": true
+    },
+    {
+      "id": "E25",
+      "date": "2022-04-19",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "Consortium",
+        "Significant LP Co-Investor B"
+      ],
+      "summary": "Significant LP Co-Investor B joins the Consortium",
+      "paragraph_id": "p00437",
+      "core": false
+    },
+    {
+      "id": "E26",
+      "date": "2022-04-20",
+      "date_precision": "day",
+      "event_type": "board_meeting",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Board process update",
+      "paragraph_id": "p00438",
+      "core": false
+    },
+    {
+      "id": "E27",
+      "date": "2022-04-26",
+      "date_precision": "day",
+      "event_type": "board_meeting",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Board process update; alternatives to a sale",
+      "paragraph_id": "p00438",
+      "core": false
+    },
+    {
+      "id": "E28",
+      "date": "2022-05-02",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "Consortium",
+        "Significant LP Co-Investor C"
+      ],
+      "summary": "Significant LP Co-Investor C joins the Consortium",
+      "paragraph_id": "p00439",
+      "core": false
+    },
+    {
+      "id": "E29",
+      "date": "2022-05-03",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "Bidder 2"
+      ],
+      "summary": "Bidder 2 adds another LP co-investor",
+      "paragraph_id": "p00440",
+      "core": false
+    },
+    {
+      "id": "E30",
+      "date": "2022-05-04",
+      "date_precision": "day",
+      "event_type": "projections_shared",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Updated long-range plan provided to remaining bidders",
+      "paragraph_id": "p00441",
+      "core": true
+    },
+    {
+      "id": "E31",
+      "date": "2022-05-06",
+      "date_precision": "day",
+      "event_type": "board_authorization",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Board reviews indications; advances Consortium and Bidder 2 to next round",
+      "paragraph_id": "p00443",
+      "core": true
+    },
+    {
+      "id": "E32",
+      "date": "2022-05-07/2022-05-08",
+      "date_precision": "range",
+      "event_type": "discussion",
+      "parties": [
+        "Qatalyst Partners",
+        "Consortium"
+      ],
+      "summary": "Qatalyst tells Consortium it must improve on $120",
+      "paragraph_id": "p00444",
+      "core": false
+    },
+    {
+      "id": "E33",
+      "date": "2022-05-09",
+      "date_precision": "day",
+      "event_type": "withdrawal",
+      "parties": [
+        "Financial Sponsor A",
+        "Consortium"
+      ],
+      "summary": "Financial Sponsor A drops out of the Consortium",
+      "paragraph_id": "p00445",
+      "core": true
+    },
+    {
+      "id": "E34",
+      "date": "2022-05-09/2022-05-24",
+      "date_precision": "range",
+      "event_type": "diligence",
+      "parties": [
+        "Consortium",
+        "Zendesk"
+      ],
+      "summary": "Consortium confirmatory diligence meetings",
+      "paragraph_id": "p00446",
+      "core": false
+    },
+    {
+      "id": "E35",
+      "date": "2022-05-10/2022-05-17",
+      "date_precision": "range",
+      "event_type": "diligence",
+      "parties": [
+        "Bidder 2",
+        "Zendesk"
+      ],
+      "summary": "Bidder 2 confirmatory diligence meetings",
+      "paragraph_id": "p00447",
+      "core": false
+    },
+    {
+      "id": "E36",
+      "date": "2022-05-11",
+      "date_precision": "day",
+      "event_type": "draft_agreement",
+      "parties": [
+        "Zendesk",
+        "Consortium",
+        "Bidder 2"
+      ],
+      "summary": "Form merger agreement sent to both bidders",
+      "paragraph_id": "p00448",
+      "core": true
+    },
+    {
+      "id": "E37",
+      "date": "2022-05-11",
+      "date_precision": "day",
+      "event_type": "discussion",
+      "parties": [
+        "Consortium",
+        "Zendesk"
+      ],
+      "summary": "Consortium meets Svane",
+      "paragraph_id": "p00449",
+      "core": false
+    },
+    {
+      "id": "E38",
+      "date": "2022-05-13",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "Consortium",
+        "Financial Sponsor B",
+        "Financial Sponsor C"
+      ],
+      "summary": "Financial Sponsors B and C join the Consortium",
+      "paragraph_id": "p00450",
+      "core": false
+    },
+    {
+      "id": "E39",
+      "date": "2022-05-13",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "Zendesk",
+        "Consortium",
+        "Bidder 2"
+      ],
+      "summary": "April bookings update shared with bidders (bookings down, well below plan)",
+      "paragraph_id": "p00451",
+      "core": true
+    },
+    {
+      "id": "E40",
+      "date": "2022-05-13",
+      "date_precision": "day",
+      "event_type": "discussion",
+      "parties": [
+        "Consortium",
+        "Zendesk"
+      ],
+      "summary": "Consortium meets Svane",
+      "paragraph_id": "p00452",
+      "core": false
+    },
+    {
+      "id": "E41",
+      "date": "2022-05-16",
+      "date_precision": "day",
+      "event_type": "discussion",
+      "parties": [
+        "Zendesk",
+        "Bidder 2"
+      ],
+      "summary": "Svane meets Bidder 2's CEO on business momentum",
+      "paragraph_id": "p00453",
+      "core": false
+    },
+    {
+      "id": "E42",
+      "date": "2022-05-16",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "Qatalyst Partners"
+      ],
+      "summary": "Final-round process letter: binding bids due May 25",
+      "paragraph_id": "p00454",
+      "core": true
+    },
+    {
+      "id": "E43",
+      "date": "2022-05-18",
+      "date_precision": "day",
+      "event_type": "board_meeting",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Board process update",
+      "paragraph_id": "p00455",
+      "core": false
+    },
+    {
+      "id": "E44",
+      "date": "2022-05-21",
+      "date_precision": "day",
+      "event_type": "draft_agreement",
+      "parties": [
+        "Bidder 2"
+      ],
+      "summary": "Bidder 2 merger agreement markup",
+      "paragraph_id": "p00456",
+      "core": false
+    },
+    {
+      "id": "E45",
+      "date": "2022-05-23",
+      "date_precision": "day",
+      "event_type": "draft_agreement",
+      "parties": [
+        "Consortium"
+      ],
+      "summary": "Consortium markup with 4% reverse termination fee",
+      "paragraph_id": "p00458",
+      "core": false
+    },
+    {
+      "id": "E46",
+      "date": "2022-05-24",
+      "date_precision": "day",
+      "event_type": "withdrawal",
+      "parties": [
+        "Significant LP Co-Investor A",
+        "Financial Sponsor B",
+        "Financial Sponsor C",
+        "Consortium"
+      ],
+      "summary": "Three more equity partners drop out of the Consortium",
+      "paragraph_id": "p00459",
+      "core": true
+    },
+    {
+      "id": "E47",
+      "date": "2022-05-25",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "Bidder 2"
+      ],
+      "summary": "Bidder 2 misses the final-bid deadline",
+      "paragraph_id": "p00460",
+      "core": true
+    },
+    {
+      "id": "E48",
+      "date": "2022-05-26",
+      "date_precision": "day",
+      "event_type": "discussion",
+      "parties": [
+        "Bidder 2",
+        "Qatalyst Partners"
+      ],
+      "summary": "Bidder 2 verbally previews ~$110 and needs weeks for financing",
+      "paragraph_id": "p00461",
+      "core": false
+    },
+    {
+      "id": "E49",
+      "date": "2022-05-27",
+      "date_precision": "day",
+      "event_type": "board_meeting",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Board: Consortium lacks financing; Bidder 2 proposal reviewed",
+      "paragraph_id": "p00463",
+      "core": false
+    },
+    {
+      "id": "E50",
+      "date": "2022-05-27",
+      "date_precision": "day",
+      "event_type": "rejection",
+      "parties": [
+        "Qatalyst Partners",
+        "Consortium"
+      ],
+      "summary": "Zendesk stops engaging with the Consortium until it has an actionable proposal",
+      "paragraph_id": "p00465",
+      "core": true
+    },
+    {
+      "id": "E51",
+      "date": "2022-05-28",
+      "date_precision": "day",
+      "event_type": "board_authorization",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Board instructs advisors to push Bidder 2 to $115",
+      "paragraph_id": "p00466",
+      "core": false
+    },
+    {
+      "id": "E52",
+      "date": "2022-06-05",
+      "date_precision": "day",
+      "event_type": "discussion",
+      "parties": [
+        "Consortium",
+        "Bidder 2"
+      ],
+      "summary": "Consortium seeks partners; Bidder 2 refuses to team up",
+      "paragraph_id": "p00469",
+      "core": false
+    },
+    {
+      "id": "E53",
+      "date": "2022-06-06",
+      "date_precision": "day",
+      "event_type": "board_authorization",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Board ends the review and decides to remain standalone",
+      "paragraph_id": "p00470",
+      "core": true
+    },
+    {
+      "id": "E54",
+      "date": "2022-06-07",
+      "date_precision": "day",
+      "event_type": "discussion",
+      "parties": [
+        "JANA Partners",
+        "Zendesk"
+      ],
+      "summary": "JANA refuses a limited NDA",
+      "paragraph_id": "p00472",
+      "core": false
+    },
+    {
+      "id": "E55",
+      "date": "2022-06-08",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "JANA Partners"
+      ],
+      "summary": "JANA announces intent to sue over the annual meeting",
+      "paragraph_id": "p00472",
+      "core": false
+    },
+    {
+      "id": "E56",
+      "date": "2022-06-08",
+      "date_precision": "day",
+      "event_type": "re_engagement",
+      "parties": [
+        "Consortium"
+      ],
+      "summary": "Consortium says it remains interested and may secure financing",
+      "paragraph_id": "p00473",
+      "core": true
+    },
+    {
+      "id": "E57",
+      "date": "2022-06-08",
+      "date_precision": "day",
+      "event_type": "board_authorization",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Board authorizes announcing that the review is complete",
+      "paragraph_id": "p00474",
+      "core": false
+    },
+    {
+      "id": "E58",
+      "date": "2022-06-08",
+      "date_precision": "day",
+      "event_type": "press_leak",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "CNBC reports the sale process ended; stock -7%",
+      "paragraph_id": "p00475",
+      "core": true
+    },
+    {
+      "id": "E59",
+      "date": "2022-06-09",
+      "date_precision": "day",
+      "event_type": "announcement",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Press release: review complete, no actionable offers, staying independent; stock -14%",
+      "paragraph_id": "p00476",
+      "core": true
+    },
+    {
+      "id": "E60",
+      "date": "2022-06-11",
+      "date_precision": "day",
+      "event_type": "board_authorization",
+      "parties": [
+        "Zendesk",
+        "JANA Partners"
+      ],
+      "summary": "Board authorizes settlement talks with JANA",
+      "paragraph_id": "p00478",
+      "core": false
+    },
+    {
+      "id": "E61",
+      "date": "2022-06-14",
+      "date_precision": "day",
+      "event_type": "re_engagement",
+      "parties": [
+        "Consortium"
+      ],
+      "summary": "Consortium renews interest pending May bookings",
+      "paragraph_id": "p00480",
+      "core": true
+    },
+    {
+      "id": "E62",
+      "date": "2022-06-14",
+      "date_precision": "day",
+      "event_type": "discussion",
+      "parties": [
+        "Qatalyst Partners",
+        "Bidder 2"
+      ],
+      "summary": "Bidder 2 asked about renewed bid; needs better May data",
+      "paragraph_id": "p00481",
+      "core": false
+    },
+    {
+      "id": "E63",
+      "date": "2022-06-15",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "Zendesk",
+        "Consortium",
+        "Bidder 2"
+      ],
+      "summary": "May bookings shared with bidders (weaker still)",
+      "paragraph_id": "p00482",
+      "core": true
+    },
+    {
+      "id": "E64",
+      "date": "2022-06-15",
+      "date_precision": "day",
+      "event_type": "board_meeting",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Board discusses expected Consortium proposal and JANA settlement",
+      "paragraph_id": "p00483",
+      "core": false
+    },
+    {
+      "id": "E65",
+      "date": "2022-06-18",
+      "date_precision": "day",
+      "event_type": "nda",
+      "parties": [
+        "Zendesk",
+        "JANA Partners"
+      ],
+      "summary": "JANA signs limited-duration confidentiality agreement",
+      "paragraph_id": "p00486",
+      "core": false
+    },
+    {
+      "id": "E66",
+      "date": "2022-06-19",
+      "date_precision": "day",
+      "event_type": "discussion",
+      "parties": [
+        "Zendesk",
+        "JANA Partners"
+      ],
+      "summary": "JANA supports engaging with the Consortium to improve price",
+      "paragraph_id": "p00487",
+      "core": false
+    },
+    {
+      "id": "E67",
+      "date": "2022-06-19",
+      "date_precision": "day",
+      "event_type": "board_authorization",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Board authorizes negotiating with the Consortium to improve price",
+      "paragraph_id": "p00488",
+      "core": true
+    },
+    {
+      "id": "E68",
+      "date": "2022-06-17/2022-06-23",
+      "date_precision": "range",
+      "event_type": "discussion",
+      "parties": [
+        "Qatalyst Partners",
+        "Bidder 2"
+      ],
+      "summary": "Bidder 2 won't bid without June bookings data",
+      "paragraph_id": "p00489",
+      "core": false
+    },
+    {
+      "id": "E69",
+      "date": "2022-06-20",
+      "date_precision": "day",
+      "event_type": "discussion",
+      "parties": [
+        "Zendesk",
+        "Consortium"
+      ],
+      "summary": "Svane meets Consortium on bookings and cost structure",
+      "paragraph_id": "p00490",
+      "core": false
+    },
+    {
+      "id": "E70",
+      "date": "2022-06-21",
+      "date_precision": "day",
+      "event_type": "withdrawal",
+      "parties": [
+        "Bidder 2"
+      ],
+      "summary": "Bidder 2 reconfirms it will not bid",
+      "paragraph_id": "p00491",
+      "core": true
+    },
+    {
+      "id": "E71",
+      "date": "2022-06-21",
+      "date_precision": "day",
+      "event_type": "draft_agreement",
+      "parties": [
+        "Wachtell Lipton",
+        "Fried Frank"
+      ],
+      "summary": "Revised merger agreement draft sent to Consortium counsel",
+      "paragraph_id": "p00492",
+      "core": false
+    },
+    {
+      "id": "E72",
+      "date": "2022-06-21/2022-06-22",
+      "date_precision": "range",
+      "event_type": "discussion",
+      "parties": [
+        "Qatalyst Partners",
+        "JANA Partners"
+      ],
+      "summary": "JANA says it would not oppose a deal at $77.50",
+      "paragraph_id": "p00494",
+      "core": true
+    },
+    {
+      "id": "E73",
+      "date": "2022-06-22",
+      "date_precision": "day",
+      "event_type": "board_authorization",
+      "parties": [
+        "Zendesk"
+      ],
+      "summary": "Board reviews June 2022 Case; authorizes finalizing at $77.50",
+      "paragraph_id": "p00495",
+      "core": true
+    },
+    {
+      "id": "E74",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "event_type": "draft_agreement",
+      "parties": [
+        "Fried Frank",
+        "Wachtell Lipton"
+      ],
+      "summary": "Consortium raises reverse termination fee to ~5%, then ~6%",
+      "paragraph_id": "p00496",
+      "core": false
+    },
+    {
+      "id": "E75",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "event_type": "board_approval",
+      "parties": [
+        "Zendesk",
+        "Qatalyst Partners",
+        "Goldman Sachs"
+      ],
+      "summary": "Fairness opinions delivered; board unanimously approves",
+      "paragraph_id": "p00498",
+      "core": true
+    },
+    {
+      "id": "E76",
+      "date": "2022-06-23",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "JANA Partners",
+        "Zendesk"
+      ],
+      "summary": "JANA agrees to withdraw nominations if a deal is announced",
+      "paragraph_id": "p00501",
+      "core": true
+    },
+    {
+      "id": "E77",
+      "date": "2022-06-24",
+      "date_precision": "day",
+      "event_type": "signing",
+      "parties": [
+        "Zendesk",
+        "Consortium"
+      ],
+      "summary": "Merger agreement signed",
+      "paragraph_id": "p00503",
+      "core": true
+    },
+    {
+      "id": "E78",
+      "date": "2022-06-24",
+      "date_precision": "day",
+      "event_type": "announcement",
+      "parties": [
+        "Zendesk",
+        "Consortium"
+      ],
+      "summary": "Press release announcing the deal",
+      "paragraph_id": "p00503",
+      "core": true
+    }
+  ],
+  "proposals": [
+    {
+      "id": "P01",
+      "date": "2022-02-07",
+      "proposer": "Consortium",
+      "recipient": "Zendesk",
+      "price_low": 127,
+      "price_high": 132,
+      "proposal_kind": "non_binding_indication",
+      "paragraph_id": "p00412",
+      "note": ""
+    },
+    {
+      "id": "P02",
+      "date": "2022-05-05",
+      "proposer": "Consortium",
+      "recipient": "Zendesk",
+      "price_low": 120,
+      "price_high": 120,
+      "proposal_kind": "non_binding_indication",
+      "paragraph_id": "p00442",
+      "note": ""
+    },
+    {
+      "id": "P03",
+      "date": "2022-05-05",
+      "proposer": "Bidder 2",
+      "recipient": "Zendesk",
+      "price_low": 125,
+      "price_high": 135,
+      "proposal_kind": "non_binding_indication",
+      "paragraph_id": "p00442",
+      "note": "two proposals in one paragraph"
+    },
+    {
+      "id": "P04",
+      "date": "2022-05-24",
+      "proposer": "Consortium",
+      "recipient": "Zendesk",
+      "price_low": 96,
+      "price_high": 96,
+      "proposal_kind": "revised_bid",
+      "paragraph_id": "p00459",
+      "note": "verbal lowered indication"
+    },
+    {
+      "id": "P05",
+      "date": "2022-05-26",
+      "proposer": "Bidder 2",
+      "recipient": "Zendesk",
+      "price_low": 110,
+      "price_high": 110,
+      "proposal_kind": "non_binding_indication",
+      "paragraph_id": "p00462",
+      "note": "written; verbal preview in p00461 is a discussion event"
+    },
+    {
+      "id": "P06",
+      "date": "2022-05-28",
+      "proposer": "Zendesk",
+      "recipient": "Bidder 2",
+      "price_low": 115,
+      "price_high": 115,
+      "proposal_kind": "counteroffer",
+      "paragraph_id": "p00467",
+      "note": "target's ask"
+    },
+    {
+      "id": "P07",
+      "date": "2022-06-01",
+      "proposer": "Bidder 2",
+      "recipient": "Zendesk",
+      "price_low": 90.12,
+      "price_high": 100,
+      "proposal_kind": "revised_bid",
+      "paragraph_id": "p00468",
+      "note": "ambiguous low end: 'between the then current share price ($90.12) and $100'; board later describes $90-100"
+    },
+    {
+      "id": "P08",
+      "date": "2022-06-14",
+      "proposer": "Consortium",
+      "recipient": "Zendesk",
+      "price_low": 82,
+      "price_high": 82,
+      "proposal_kind": "revised_bid",
+      "paragraph_id": "p00480",
+      "note": "verbal 'could be as high as $82'; not a preview of the same number"
+    },
+    {
+      "id": "P09",
+      "date": "2022-06-17",
+      "proposer": "Consortium",
+      "recipient": "Zendesk",
+      "price_low": 75.5,
+      "price_high": 75.5,
+      "proposal_kind": "non_binding_indication",
+      "paragraph_id": "p00485",
+      "note": "June 17 Proposal"
+    },
+    {
+      "id": "P10",
+      "date": "2022-06-21",
+      "proposer": "Consortium",
+      "recipient": "Zendesk",
+      "price_low": 77.5,
+      "price_high": 77.5,
+      "proposal_kind": "non_binding_indication",
+      "paragraph_id": "p00491",
+      "note": "'best and final'; accepted"
+    }
+  ]
+}

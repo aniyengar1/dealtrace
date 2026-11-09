@@ -21,10 +21,37 @@ DEALS = {
     "splunk": {
         "search_term": "splunk",
         "deal_name": "Cisco's Acquisition of Splunk",
+        # Advisor/counsel/board names the model may use in place of the
+        # company they represent -- gold rolls these up to the company;
+        # see validate.normalize_party_roles.
+        "party_map": {
+            "Qatalyst": "Splunk",
+            "Morgan Stanley": "Splunk",
+            "Skadden": "Splunk",
+            "Board": "Splunk",
+            "Tidal Partners": "Cisco",
+            "Simpson Thacher": "Cisco",
+        },
     },
     "zendesk": {
         "search_term": "zendesk",
         "deal_name": "Hellman & Friedman and Permira's Acquisition of Zendesk",
+        "party_map": {
+            "Qatalyst": "Zendesk",
+            "Goldman Sachs": "Zendesk",
+            "Wachtell Lipton": "Zendesk",
+            "Board": "Zendesk",
+            "Fried Frank": "Consortium",
+        },
+        # Zendesk's own filing HTML mistags this sub-subsection at the same
+        # heading depth as "Opinion of Goldman Sachs & Co. LLC" instead of
+        # one level deeper like its siblings ("Selected Public Company
+        # Comparables", "General"), so sections.py's general
+        # OPINION_SUBSECTION_RE pattern doesn't recognize it as a
+        # continuation and the section stops one subsection early. A
+        # one-off quirk of this filing, not a general pattern -- see
+        # sections.extract_sections' extra_continue_headings.
+        "section_boundary_overrides": ["EV/NTM Revenue Multiple Over Time"],
     },
 }
 
@@ -58,7 +85,9 @@ def run(deal_slug: str, model: str | None = None) -> None:
     print(f"From cache: {fetch_result.from_cache}\n")
 
     print("=== Step 2: sections ===")
-    section_dict = sections.run(fetch_result.html_path, deal_slug)
+    section_dict = sections.run(
+        fetch_result.html_path, deal_slug, deal.get("section_boundary_overrides")
+    )
     print()
 
     print(f"=== Step 3: extract (model={resolved_model}) ===")
@@ -108,6 +137,7 @@ def run(deal_slug: str, model: str | None = None) -> None:
         deal_slug,
         model=resolved_model,
         prompt_version=extract.PROMPT_VERSION,
+        party_map=deal.get("party_map"),
     )
     n_pass = sum(1 for r in results if r["passed"])
     print(f"Validation: {n_pass}/{len(results)} records passed")

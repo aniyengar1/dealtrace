@@ -248,6 +248,57 @@ def dedupe_proposal_events(records_by_type: dict[str, list]) -> tuple[dict[str, 
     return {**records_by_type, "Event": kept_events}, removed
 
 
+def _resolve_party_role(name: Optional[str], party_map: dict[str, str]) -> Optional[str]:
+    """Roll a single name up to the company it represents, per party_map.
+
+    Matching is a case-insensitive substring check in *either* direction,
+    since the model renders the same entity inconsistently across calls
+    -- e.g. "Simpson" vs "Simpson Thacher", "Skadden" vs "Skadden, Arps,
+    Slate, Meagher & Flom LLP". The first party_map key that matches wins.
+    """
+    if not name:
+        return name
+    low = name.lower()
+    for key, mapped in party_map.items():
+        key_low = key.lower()
+        if key_low in low or low in key_low:
+            return mapped
+    return name
+
+
+def normalize_party_roles(records_by_type: dict[str, list], party_map: dict[str, str]) -> dict[str, list]:
+    """Roll up advisor/counsel/board names to the company they represent,
+    in Proposal.proposer/recipient only.
+
+    This is role normalization done entirely in code, never by the
+    prompt: gold always reports a Proposal's proposer/recipient as the
+    company itself ("Qatalyst Partners" -> "Splunk"), so the model naming
+    the specific entity it actually read in the filing text is correct
+    extraction, not an error -- the gap is in which granularity gold
+    reports at, and that's a deterministic, per-deal roll-up, not
+    something to push onto the model's judgment. `party_map` is a deal's
+    {name_or_substring: company} map (see run.py's DEALS).
+
+    Deliberately NOT applied to Event.parties, despite being the same
+    kind of gap there: measured it against both deals' gold and it's a
+    net regression (Splunk 41/43 -> 36/43, Zendesk 72/74 -> 59/74 on the
+    parties-include-gold-names check). Gold's own Event.parties keeps the
+    specific advisor name for advisor-centric events (e.g.
+    advisor_engagement lists ["Splunk", "Qatalyst Partners"], not
+    ["Splunk", "Splunk"]) -- collapsing it there destroys exactly the
+    distinction gold is making, unlike Proposal.proposer/recipient, which
+    gold rolls up unconditionally.
+    """
+    new_proposals = []
+    for proposal in records_by_type.get("Proposal", []):
+        pd = dict(_as_record_dict(proposal))
+        pd["proposer"] = _resolve_party_role(pd.get("proposer"), party_map)
+        pd["recipient"] = _resolve_party_role(pd.get("recipient"), party_map)
+        new_proposals.append(pd)
+
+    return {**records_by_type, "Proposal": new_proposals}
+
+
 def validate_record(
     record_type: str, record: dict, paragraph_lookup: dict[str, str]
 ) -> dict:
@@ -428,11 +479,19 @@ def new_run_dir(deal_slug: str, model: str, prompt_version: str) -> Path:
 
 
 def run(
-    records_by_type: dict[str, list], deal_name: str, deal_slug: str, model: str, prompt_version: str
+    records_by_type: dict[str, list],
+    deal_name: str,
+    deal_slug: str,
+    model: str,
+    prompt_version: str,
+    party_map: Optional[dict[str, str]] = None,
 ) -> tuple[list[dict], Path, Path]:
     records_by_type, n_duplicates_removed = dedupe_proposal_events(records_by_type)
     if n_duplicates_removed:
         print(f"Dropped {n_duplicates_removed} Event(s) duplicating an existing Proposal")
+
+    if party_map:
+        records_by_type = normalize_party_roles(records_by_type, party_map)
 
     paragraph_lookup = load_paragraph_lookup(DATA_SECTIONS / deal_slug)
     results = validate_all(records_by_type, paragraph_lookup)

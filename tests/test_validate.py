@@ -10,6 +10,7 @@ from src.validate import (
     dedupe_proposal_events,
     new_run_dir,
     normalize_for_match,
+    normalize_party_roles,
     normalize_whitespace,
 )
 
@@ -355,3 +356,63 @@ def test_new_run_dir_never_silently_overwrites_an_existing_run(tmp_path, monkeyp
     new_run_dir("splunk", "gemini-3.6-flash", "v6")
     with pytest.raises(FileExistsError):
         new_run_dir("splunk", "gemini-3.6-flash", "v6")
+
+
+SPLUNK_PARTY_MAP = {
+    "Qatalyst": "Splunk",
+    "Morgan Stanley": "Splunk",
+    "Skadden": "Splunk",
+    "Board": "Splunk",
+    "Tidal Partners": "Cisco",
+    "Simpson Thacher": "Cisco",
+}
+
+
+def test_normalize_party_roles_maps_proposal_proposer_and_recipient():
+    records = {
+        "Event": [],
+        "Proposal": [{"proposer": "Qatalyst Partners", "recipient": "Tidal Partners"}],
+    }
+    result = normalize_party_roles(records, SPLUNK_PARTY_MAP)
+    assert result["Proposal"][0]["proposer"] == "Splunk"
+    assert result["Proposal"][0]["recipient"] == "Cisco"
+
+
+def test_normalize_party_roles_leaves_event_parties_untouched():
+    # Deliberately not applied to events: gold's own Event.parties keeps
+    # the specific advisor name for advisor-centric events (verified
+    # against both deals' gold -- collapsing it there was a measured
+    # regression), unlike Proposal.proposer/recipient, which gold always
+    # rolls up to the company.
+    records = {
+        "Event": [{"parties": ["Skadden", "Tidal Partners", "Chuck Robbins"]}],
+        "Proposal": [],
+    }
+    result = normalize_party_roles(records, SPLUNK_PARTY_MAP)
+    assert result["Event"][0]["parties"] == ["Skadden", "Tidal Partners", "Chuck Robbins"]
+
+
+def test_normalize_party_roles_matches_truncated_names():
+    # The model renders "Simpson Thacher" as just "Simpson" in some calls --
+    # the map key (the full name) must still catch the truncated form.
+    records = {"Event": [], "Proposal": [{"proposer": "Simpson", "recipient": "Zendesk"}]}
+    result = normalize_party_roles(records, SPLUNK_PARTY_MAP)
+    assert result["Proposal"][0]["proposer"] == "Cisco"
+
+
+def test_normalize_party_roles_matches_expanded_names():
+    # The model renders "Skadden" with its full name in other calls -- the
+    # short map key must still catch the expanded form, in either direction.
+    records = {
+        "Event": [],
+        "Proposal": [{"proposer": "Skadden, Arps, Slate, Meagher & Flom LLP", "recipient": "Cisco"}],
+    }
+    result = normalize_party_roles(records, SPLUNK_PARTY_MAP)
+    assert result["Proposal"][0]["proposer"] == "Splunk"
+
+
+def test_normalize_party_roles_leaves_unmapped_names_untouched():
+    records = {"Event": [], "Proposal": [{"proposer": "Cisco", "recipient": "Splunk"}]}
+    result = normalize_party_roles(records, SPLUNK_PARTY_MAP)
+    assert result["Proposal"][0]["proposer"] == "Cisco"
+    assert result["Proposal"][0]["recipient"] == "Splunk"

@@ -215,8 +215,20 @@ def _slugify(text: str) -> str:
     return slug
 
 
-def extract_sections(html: str) -> dict[str, dict]:
-    """Locate target sections and return {section_key: section_dict}."""
+def extract_sections(html: str, extra_continue_headings: list[str] | None = None) -> dict[str, dict]:
+    """Locate target sections and return {section_key: section_dict}.
+
+    `extra_continue_headings`, if given, is a per-deal override: exact
+    heading texts that should continue an opinion section instead of
+    ending it, on top of the general OPINION_SUBSECTION_RE patterns. This
+    exists for one-off filing quirks a general pattern can't anticipate
+    -- e.g. a sub-subsection mistagged at the same heading depth as
+    "Opinion of X" instead of one level deeper like its siblings (see
+    run.py's DEALS["zendesk"]["section_boundary_overrides"] for the real
+    case this was added for). Prefer extending OPINION_SUBSECTION_RE
+    itself when the heading text is a genuinely common pattern across
+    filings; use this when it's a single filing's own inconsistency.
+    """
     paragraphs = parse_paragraphs(html)
 
     sections: dict[str, dict] = {}
@@ -236,8 +248,15 @@ def extract_sections(html: str) -> dict[str, dict]:
             "paragraphs": [p.to_dict() for p in body],
         }
 
+    continue_re = OPINION_SUBSECTION_RE
+    if extra_continue_headings:
+        extra_pattern = "|".join(f"^{re.escape(h)}$" for h in extra_continue_headings)
+        continue_re = re.compile(
+            f"{OPINION_SUBSECTION_RE.pattern}|{extra_pattern}", re.IGNORECASE
+        )
+
     for heading_text in find_opinion_headings(paragraphs):
-        match = _best_match(paragraphs, [re.escape(heading_text)], continue_re=OPINION_SUBSECTION_RE)
+        match = _best_match(paragraphs, [re.escape(heading_text)], continue_re=continue_re)
         if match is None:
             continue
         start_idx, end_idx, word_count = match
@@ -272,9 +291,11 @@ def save_sections(sections: dict[str, dict], out_dir: Path) -> list[Path]:
     return paths
 
 
-def run(html_path: Path, deal_slug: str) -> dict[str, dict]:
+def run(
+    html_path: Path, deal_slug: str, extra_continue_headings: list[str] | None = None
+) -> dict[str, dict]:
     html = html_path.read_text(encoding="utf-8", errors="replace")
-    sections = extract_sections(html)
+    sections = extract_sections(html, extra_continue_headings)
     save_sections(sections, DATA_SECTIONS / deal_slug)
     return sections
 

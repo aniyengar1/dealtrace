@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 import pytest
@@ -139,6 +140,29 @@ def test_save_sections_does_not_warn_for_a_normal_sized_section(tmp_path, capsys
     assert "WARNING" not in captured.out
 
 
+def test_extra_continue_headings_overrides_a_same_level_sibling():
+    # "Interests of Certain Persons in the Merger" is the fixture's true
+    # sibling (see test_opinion_section_stops_at_a_same_level_non_opinion_
+    # sibling) -- the per-deal override must be able to treat it as a
+    # continuation instead, for the rare case where a filing's own HTML
+    # mistags a real subsection at the sibling's depth.
+    sections = extract_sections(
+        FIXTURE.read_text(),
+        extra_continue_headings=["Interests of Certain Persons in the Merger"],
+    )
+    texts = " ".join(p["text"] for p in sections["opinion_of_example_advisor_llc"]["paragraphs"])
+    assert "same-level non-opinion sibling" in texts
+    # The true shallower sibling ("Certain Other Matters") must still end
+    # the section even with the override in place.
+    assert "This paragraph should not be included" not in texts
+
+
+def test_extra_continue_headings_defaults_to_none_without_changing_behavior():
+    sections = extract_sections(FIXTURE.read_text())
+    texts = " ".join(p["text"] for p in sections["opinion_of_example_advisor_llc"]["paragraphs"])
+    assert "same-level non-opinion sibling" not in texts
+
+
 def test_run_namespaces_sections_under_the_deal_slug(tmp_path, monkeypatch):
     import src.sections as sections_module
 
@@ -150,3 +174,17 @@ def test_run_namespaces_sections_under_the_deal_slug(tmp_path, monkeypatch):
 
     assert (tmp_path / "example_deal" / "background_of_the_merger.json").exists()
     assert not (tmp_path / "background_of_the_merger.json").exists()
+
+
+def test_run_passes_through_extra_continue_headings(tmp_path, monkeypatch):
+    import src.sections as sections_module
+
+    monkeypatch.setattr(sections_module, "DATA_SECTIONS", tmp_path)
+    html_path = tmp_path / "filing.html"
+    html_path.write_text(FIXTURE.read_text())
+
+    run(html_path, "example_deal", ["Interests of Certain Persons in the Merger"])
+
+    opinion = json.loads((tmp_path / "example_deal" / "opinion_of_example_advisor_llc.json").read_text())
+    texts = " ".join(p["text"] for p in opinion["paragraphs"])
+    assert "same-level non-opinion sibling" in texts
