@@ -299,6 +299,68 @@ def normalize_party_roles(records_by_type: dict[str, list], party_map: dict[str,
     return {**records_by_type, "Proposal": new_proposals}
 
 
+# Merger-agreement defined terms that always stand in for one of the two
+# deal principals, regardless of which deal this is -- "Parent" and "Merger
+# Sub" are the acquirer's defined terms in every DEFM14A's merger agreement
+# (Merger Sub is the acquirer's shell subsidiary doing the actual merging,
+# "Acquiror" is occasionally used in place of "Parent"), and "the Company"
+# is the target's. Unlike normalize_party_roles' advisor names, these carry
+# no information worth preserving when resolved -- "Parent" never means
+# anything other than "whichever entity is acquiring the target", so
+# resolving it to the deal's actual acquirer name loses nothing. That's why
+# this is safe to apply to Event.parties too, where normalize_party_roles
+# deliberately isn't: an advisor's name is itself informative (which firm
+# advised whom), but a defined term is pure legal-drafting shorthand for an
+# identity the deal's own metadata (target/acquirer) already specifies in
+# full.
+_ACQUIRER_DEFINED_TERMS = {"parent", "parent's", "merger sub", "acquiror"}
+_TARGET_DEFINED_TERMS = {"the company", "the company's"}
+
+
+def _resolve_defined_term(name: Optional[str], target_name: str, acquirer_name: str) -> Optional[str]:
+    """Resolve a single value if it's exactly one of the fixed defined
+    terms above (case-insensitive). Exact match, not substring -- these
+    values are short, generic phrases ("the Company") that would false-
+    match all over the place as substrings, unlike the longer, more
+    specific advisor names _resolve_party_role matches on.
+    """
+    if not name:
+        return name
+    normalized = name.strip().lower()
+    if normalized in _ACQUIRER_DEFINED_TERMS:
+        return acquirer_name
+    if normalized in _TARGET_DEFINED_TERMS:
+        return target_name
+    return name
+
+
+def normalize_defined_terms(
+    records_by_type: dict[str, list], target_name: str, acquirer_name: str
+) -> dict[str, list]:
+    """Resolve merger-agreement defined terms ("Parent", "Merger Sub",
+    "Acquiror" -> acquirer; "the Company" -> target) in both Event.parties
+    and Proposal.proposer/recipient. Deal-agnostic -- the same fixed set of
+    terms applies to every deal's merger agreement, so this needs no
+    per-deal party_map, just the deal's own target/acquirer names.
+    """
+    new_events = []
+    for event in records_by_type.get("Event", []):
+        ed = dict(_as_record_dict(event))
+        ed["parties"] = [
+            _resolve_defined_term(p, target_name, acquirer_name) for p in (ed.get("parties") or [])
+        ]
+        new_events.append(ed)
+
+    new_proposals = []
+    for proposal in records_by_type.get("Proposal", []):
+        pd = dict(_as_record_dict(proposal))
+        pd["proposer"] = _resolve_defined_term(pd.get("proposer"), target_name, acquirer_name)
+        pd["recipient"] = _resolve_defined_term(pd.get("recipient"), target_name, acquirer_name)
+        new_proposals.append(pd)
+
+    return {**records_by_type, "Event": new_events, "Proposal": new_proposals}
+
+
 def validate_record(
     record_type: str, record: dict, paragraph_lookup: dict[str, str]
 ) -> dict:
@@ -485,10 +547,15 @@ def run(
     model: str,
     prompt_version: str,
     party_map: Optional[dict[str, str]] = None,
+    target_name: Optional[str] = None,
+    acquirer_name: Optional[str] = None,
 ) -> tuple[list[dict], Path, Path]:
     records_by_type, n_duplicates_removed = dedupe_proposal_events(records_by_type)
     if n_duplicates_removed:
         print(f"Dropped {n_duplicates_removed} Event(s) duplicating an existing Proposal")
+
+    if target_name and acquirer_name:
+        records_by_type = normalize_defined_terms(records_by_type, target_name, acquirer_name)
 
     if party_map:
         records_by_type = normalize_party_roles(records_by_type, party_map)

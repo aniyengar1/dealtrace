@@ -203,6 +203,8 @@ def run(deal_slug: str, model: str | None = None) -> None:
         model=resolved_model,
         prompt_version=extract.PROMPT_VERSION,
         party_map=deal.get("party_map"),
+        target_name=deal.get("target"),
+        acquirer_name=deal.get("acquirer"),
     )
     n_pass = sum(1 for r in results if r["passed"])
     print(f"Validation: {n_pass}/{len(results)} records passed")

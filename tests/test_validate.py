@@ -9,6 +9,7 @@ from src.validate import (
     check_quotes_in_paragraphs,
     dedupe_proposal_events,
     new_run_dir,
+    normalize_defined_terms,
     normalize_for_match,
     normalize_party_roles,
     normalize_whitespace,
@@ -416,3 +417,47 @@ def test_normalize_party_roles_leaves_unmapped_names_untouched():
     result = normalize_party_roles(records, SPLUNK_PARTY_MAP)
     assert result["Proposal"][0]["proposer"] == "Cisco"
     assert result["Proposal"][0]["recipient"] == "Splunk"
+
+
+def test_normalize_defined_terms_maps_event_parties():
+    # Unlike normalize_party_roles, this one IS meant to touch Event.parties
+    # -- "Parent" is a pure legal-drafting placeholder, not an informative
+    # advisor name, so resolving it loses nothing.
+    records = {
+        "Event": [{"parties": ["Mandiant", "Parent", "Mr. Mandia"]}],
+        "Proposal": [],
+    }
+    result = normalize_defined_terms(records, "Mandiant", "Google")
+    assert result["Event"][0]["parties"] == ["Mandiant", "Google", "Mr. Mandia"]
+
+
+def test_normalize_defined_terms_maps_all_acquirer_terms():
+    for term in ("Parent", "parent's", "Merger Sub", "ACQUIROR"):
+        records = {"Event": [], "Proposal": [{"proposer": term, "recipient": "the Company"}]}
+        result = normalize_defined_terms(records, "Mandiant", "Google")
+        assert result["Proposal"][0]["proposer"] == "Google", term
+        assert result["Proposal"][0]["recipient"] == "Mandiant"
+
+
+def test_normalize_defined_terms_maps_the_company_possessive():
+    records = {"Event": [], "Proposal": [{"proposer": "the Company's", "recipient": "Google"}]}
+    result = normalize_defined_terms(records, "Mandiant", "Google")
+    assert result["Proposal"][0]["proposer"] == "Mandiant"
+
+
+def test_normalize_defined_terms_is_exact_match_not_substring():
+    # "the Company" is generic enough that it must only resolve on an
+    # exact value match, not a substring hit against unrelated text.
+    records = {"Event": [{"parties": ["Goldman Sachs, the Company's financial advisor"]}], "Proposal": []}
+    result = normalize_defined_terms(records, "Mandiant", "Google")
+    assert result["Event"][0]["parties"] == ["Goldman Sachs, the Company's financial advisor"]
+
+
+def test_normalize_defined_terms_leaves_real_names_untouched():
+    records = {
+        "Event": [{"parties": ["Mandiant", "Google"]}],
+        "Proposal": [{"proposer": "Goldman Sachs", "recipient": "Mandiant"}],
+    }
+    result = normalize_defined_terms(records, "Mandiant", "Google")
+    assert result["Event"][0]["parties"] == ["Mandiant", "Google"]
+    assert result["Proposal"][0]["proposer"] == "Goldman Sachs"
