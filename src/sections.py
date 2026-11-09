@@ -67,18 +67,89 @@ SECTION_WORD_WARNING_THRESHOLD = 8000
 
 
 class Paragraph:
-    __slots__ = ("id", "text", "level")
+    __slots__ = ("id", "text", "level", "looks_like_heading")
 
-    def __init__(self, para_id: str, text: str, level: int | None):
+    def __init__(
+        self, para_id: str, text: str, level: int | None, looks_like_heading: bool = False
+    ):
         self.id = para_id
         self.text = text
         self.level = level
+        # Precomputed candidate-heading flag for the fallback parser (see
+        # _extract_sections_fallback) -- never read by the primary h1-h5
+        # path, so computing it costs nothing for filings that don't need
+        # it and can't change their output.
+        self.looks_like_heading = looks_like_heading
 
     def to_dict(self) -> dict:
         return {"id": self.id, "text": self.text}
 
 
 _ZERO_WIDTH_RE = re.compile(r"[​ ]")
+
+_STYLE_TAG_NAMES = ("b", "strong", "i", "em", "u")
+_BOLD_STYLE_RE = re.compile(r"font-weight\s*:\s*(bold|[6-9]00)", re.IGNORECASE)
+_UNDERLINE_STYLE_RE = re.compile(r"text-decoration\s*:\s*underline", re.IGNORECASE)
+
+# Standard DEFM14A chapter names, used by the fallback parser (no semantic
+# heading markup) for two things: recognizing a block of text as a
+# candidate heading at all (the "exact match to a known name" trigger,
+# alongside bold/italic/underline/all-caps styling), and recognizing the
+# next occurrence of one as the end of whatever section came before it.
+# Deliberately loose (.search, not anchored) since real headings carry
+# extra words around the core phrase (e.g. "Recommendation of the Twitter
+# Board AND REASONS FOR THE MERGER" combines two of these into one
+# heading) and can have embedded line breaks from hard-wrapped source HTML.
+_KNOWN_STANDARD_HEADING_RE = re.compile(
+    r"background of the merger"
+    r"|recommendation of .{0,40}board"
+    r"|reasons for the merger"
+    r"|opinion of "
+    r"|certain unaudited prospective financial information"
+    r"|unaudited prospective financial information"
+    r"|management projections"
+    r"|certain financial projections"
+    r"|^projections$"
+    r"|interests of .{0,60}directors and executive officers"
+    r"|financing of the merger"
+    r"|^financing$"
+    r"|regulatory approvals"
+    r"|^the merger agreement$",
+    re.IGNORECASE,
+)
+
+
+def _tag_is_styled_like_heading(tag) -> bool:
+    if tag.find(_STYLE_TAG_NAMES):
+        return True
+    style = tag.get("style") or ""
+    return bool(_BOLD_STYLE_RE.search(style) or _UNDERLINE_STYLE_RE.search(style))
+
+
+def _normalize_for_heading_match(text: str) -> str:
+    """Collapse newline/tab/multi-space runs for heading pattern matching
+    ONLY -- never applied to stored paragraph text, which can carry
+    intentional non-breaking spaces (e.g. "November[nbsp]15, 2021") that
+    must survive untouched for downstream quote verification.
+    """
+    return re.sub(r"[ \t\r\n]+", " ", text).strip()
+
+
+def _looks_like_heading_candidate(tag, text: str) -> bool:
+    """A fallback-parser candidate heading: short, not a sentence, and
+    either visually distinct (bold/italic/underline/all-caps) or an exact
+    match for a name real DEFM14A chapters commonly use. The latter
+    catches a real heading whose styling this check doesn't recognize;
+    callers still have to separately confirm it's followed by substantial
+    prose and not a table-of-contents listing (see _fallback_best_match).
+    """
+    if not text or len(text.split()) > 15 or text.rstrip().endswith("."):
+        return False
+    if _tag_is_styled_like_heading(tag):
+        return True
+    if text.isupper():
+        return True
+    return bool(_KNOWN_STANDARD_HEADING_RE.search(_normalize_for_heading_match(text)))
 
 
 def _table_text(table_tag) -> str:
@@ -146,7 +217,9 @@ def parse_paragraphs(html: str) -> list[Paragraph]:
                 level = int(m.group(1))
 
         counter += 1
-        paragraphs.append(Paragraph(f"p{counter:05d}", text, level))
+        paragraphs.append(
+            Paragraph(f"p{counter:05d}", text, level, _looks_like_heading_candidate(tag, text))
+        )
 
     return paragraphs
 
@@ -215,6 +288,180 @@ def _slugify(text: str) -> str:
     return slug
 
 
+def _build_continue_re(extra_continue_headings: list[str] | None) -> "re.Pattern":
+    if not extra_continue_headings:
+        return OPINION_SUBSECTION_RE
+    extra_pattern = "|".join(f"^{re.escape(h)}$" for h in extra_continue_headings)
+    return re.compile(f"{OPINION_SUBSECTION_RE.pattern}|{extra_pattern}", re.IGNORECASE)
+
+
+def _section_dict(key: str, heading_para: Paragraph, body: list[Paragraph], word_count: int) -> dict:
+    return {
+        "section_key": key,
+        "heading_text": heading_para.text,
+        "heading_paragraph_id": heading_para.id,
+        "word_count": word_count,
+        "paragraphs": [p.to_dict() for p in body],
+    }
+
+
+def _extract_sections_primary(paragraphs: list[Paragraph], continue_re: "re.Pattern") -> dict[str, dict]:
+    """The original (unchanged) logic: section boundaries from h1-h5
+    heading depth. Only runs when parse_paragraphs found at least one
+    real heading -- see extract_sections.
+    """
+    sections: dict[str, dict] = {}
+
+    for key, patterns in SECTION_SPECS.items():
+        match = _best_match(paragraphs, patterns)
+        if match is None:
+            continue
+        start_idx, end_idx, word_count = match
+        heading_para = paragraphs[start_idx]
+        body = paragraphs[start_idx + 1 : end_idx]
+        sections[key] = _section_dict(key, heading_para, body, word_count)
+
+    for heading_text in find_opinion_headings(paragraphs):
+        match = _best_match(paragraphs, [re.escape(heading_text)], continue_re=continue_re)
+        if match is None:
+            continue
+        start_idx, end_idx, word_count = match
+        heading_para = paragraphs[start_idx]
+        body = paragraphs[start_idx + 1 : end_idx]
+        key = f"opinion_of_{_slugify(heading_text.replace('Opinion of', ''))}"
+        sections[key] = _section_dict(key, heading_para, body, word_count)
+
+    return sections
+
+
+_FALLBACK_MIN_PROSE_WORDS = 300
+
+
+def _fallback_word_count_between(paragraphs: list[Paragraph], start_idx: int, end_idx: int) -> int:
+    return sum(len(paragraphs[j].text.split()) for j in range(start_idx + 1, end_idx))
+
+
+def _fallback_find_end(
+    paragraphs: list[Paragraph],
+    candidate_indices: list[int],
+    start_idx: int,
+    continue_re: "re.Pattern | None" = None,
+) -> int:
+    """First candidate index after start_idx matching a known standard
+    heading (and not continue_re); len(paragraphs) if none found. Candidate
+    indices that match neither -- a quoted letter's signature block, a
+    person's name, an all-caps defined term -- are silently skipped rather
+    than ending the section, since only a recognized chapter name is
+    trusted as a real boundary here (there's no heading-depth signal to
+    fall back on in this parser).
+    """
+    for ci in candidate_indices:
+        if ci <= start_idx:
+            continue
+        text = _normalize_for_heading_match(paragraphs[ci].text)
+        if continue_re and continue_re.search(text):
+            continue
+        if _KNOWN_STANDARD_HEADING_RE.search(text):
+            return ci
+    return len(paragraphs)
+
+
+def _fallback_best_match(
+    paragraphs: list[Paragraph],
+    candidate_indices: list[int],
+    patterns: list[str],
+    continue_re: "re.Pattern | None" = None,
+) -> tuple[int, int, int] | None:
+    """Like _best_match, but driven by candidate_indices + known-heading
+    text matching instead of heading depth, and requiring at least
+    _FALLBACK_MIN_PROSE_WORDS of body content -- a table-of-contents
+    listing of the same heading text is immediately followed by another
+    TOC entry (near-zero words before it), which this filters out without
+    needing to specially detect "this is the TOC" at all.
+    """
+    compiled = [re.compile(p, re.IGNORECASE) for p in patterns]
+    best = None
+    for ci in candidate_indices:
+        text = _normalize_for_heading_match(paragraphs[ci].text)
+        if not any(c.search(text) for c in compiled):
+            continue
+        end_idx = _fallback_find_end(paragraphs, candidate_indices, ci, continue_re)
+        word_count = _fallback_word_count_between(paragraphs, ci, end_idx)
+        if word_count < _FALLBACK_MIN_PROSE_WORDS:
+            continue
+        if best is None or word_count > best[2]:
+            best = (ci, end_idx, word_count)
+    return best
+
+
+_PAGE_REFERENCE_RE = re.compile(r"\s*\(\s*(?:see\s+)?page\s+\d+\s*\)\s*$", re.IGNORECASE)
+
+
+def _strip_page_reference(text: str) -> str:
+    """Drop a trailing "(page 41)"-style cross-reference annotation.
+
+    A short "Summary" chapter in some filings lists "Opinion of Qatalyst
+    Partners (page 41)" as a cross-reference to the real heading further
+    in; without stripping this, it's a different exact string from the
+    real "Opinion of Qatalyst Partners" heading and gets treated as a
+    second, separate advisor. Stripping it collapses both onto the same
+    canonical text, and _fallback_best_match's own word-count/minimum-
+    prose logic (same mechanism that already separates a table-of-
+    contents listing from the real heading) then picks the real,
+    substantial occurrence over this short stub on its own.
+    """
+    return _PAGE_REFERENCE_RE.sub("", text).strip()
+
+
+def _fallback_find_opinion_headings(paragraphs: list[Paragraph], candidate_indices: list[int]) -> list[str]:
+    seen = []
+    for ci in candidate_indices:
+        text = _normalize_for_heading_match(paragraphs[ci].text)
+        if OPINION_HEADING_RE.match(text):
+            canonical = _strip_page_reference(text)
+            if canonical not in seen:
+                seen.append(canonical)
+    return seen
+
+
+def _extract_sections_fallback(paragraphs: list[Paragraph], continue_re: "re.Pattern") -> dict[str, dict]:
+    """Section detection for filings with no semantic h1-h5 heading markup
+    at all (used only when parse_paragraphs found zero real headings --
+    see extract_sections). Candidate headings are short, non-sentence
+    blocks that are visually distinct or an exact known chapter name (see
+    _looks_like_heading_candidate); a section ends at the next candidate
+    that names a *known* standard chapter (_KNOWN_STANDARD_HEADING_RE),
+    not just the next candidate of any kind, since most candidates in a
+    markup-less filing turn out to be names, salutations, and other
+    short bold text from quoted correspondence rather than real headings.
+    """
+    candidate_indices = [i for i, p in enumerate(paragraphs) if p.looks_like_heading]
+    sections: dict[str, dict] = {}
+
+    for key, patterns in SECTION_SPECS.items():
+        match = _fallback_best_match(paragraphs, candidate_indices, patterns)
+        if match is None:
+            continue
+        start_idx, end_idx, word_count = match
+        heading_para = paragraphs[start_idx]
+        body = paragraphs[start_idx + 1 : end_idx]
+        sections[key] = _section_dict(key, heading_para, body, word_count)
+
+    for heading_text in _fallback_find_opinion_headings(paragraphs, candidate_indices):
+        match = _fallback_best_match(
+            paragraphs, candidate_indices, [re.escape(heading_text)], continue_re=continue_re
+        )
+        if match is None:
+            continue
+        start_idx, end_idx, word_count = match
+        heading_para = paragraphs[start_idx]
+        body = paragraphs[start_idx + 1 : end_idx]
+        key = f"opinion_of_{_slugify(heading_text.replace('Opinion of', ''))}"
+        sections[key] = _section_dict(key, heading_para, body, word_count)
+
+    return sections
+
+
 def extract_sections(html: str, extra_continue_headings: list[str] | None = None) -> dict[str, dict]:
     """Locate target sections and return {section_key: section_dict}.
 
@@ -228,50 +475,19 @@ def extract_sections(html: str, extra_continue_headings: list[str] | None = None
     case this was added for). Prefer extending OPINION_SUBSECTION_RE
     itself when the heading text is a genuinely common pattern across
     filings; use this when it's a single filing's own inconsistency.
+
+    If parse_paragraphs finds zero real (h1-h5) headings anywhere in the
+    document, this is a filing that uses a different, markup-less
+    template, and the whole document falls through to
+    _extract_sections_fallback. Filings with real headings never touch
+    that path, so this can't change their output.
     """
     paragraphs = parse_paragraphs(html)
+    continue_re = _build_continue_re(extra_continue_headings)
 
-    sections: dict[str, dict] = {}
-
-    for key, patterns in SECTION_SPECS.items():
-        match = _best_match(paragraphs, patterns)
-        if match is None:
-            continue
-        start_idx, end_idx, word_count = match
-        heading_para = paragraphs[start_idx]
-        body = paragraphs[start_idx + 1 : end_idx]
-        sections[key] = {
-            "section_key": key,
-            "heading_text": heading_para.text,
-            "heading_paragraph_id": heading_para.id,
-            "word_count": word_count,
-            "paragraphs": [p.to_dict() for p in body],
-        }
-
-    continue_re = OPINION_SUBSECTION_RE
-    if extra_continue_headings:
-        extra_pattern = "|".join(f"^{re.escape(h)}$" for h in extra_continue_headings)
-        continue_re = re.compile(
-            f"{OPINION_SUBSECTION_RE.pattern}|{extra_pattern}", re.IGNORECASE
-        )
-
-    for heading_text in find_opinion_headings(paragraphs):
-        match = _best_match(paragraphs, [re.escape(heading_text)], continue_re=continue_re)
-        if match is None:
-            continue
-        start_idx, end_idx, word_count = match
-        heading_para = paragraphs[start_idx]
-        body = paragraphs[start_idx + 1 : end_idx]
-        key = f"opinion_of_{_slugify(heading_text.replace('Opinion of', ''))}"
-        sections[key] = {
-            "section_key": key,
-            "heading_text": heading_para.text,
-            "heading_paragraph_id": heading_para.id,
-            "word_count": word_count,
-            "paragraphs": [p.to_dict() for p in body],
-        }
-
-    return sections
+    if any(p.level is not None for p in paragraphs):
+        return _extract_sections_primary(paragraphs, continue_re)
+    return _extract_sections_fallback(paragraphs, continue_re)
 
 
 def save_sections(sections: dict[str, dict], out_dir: Path) -> list[Path]:

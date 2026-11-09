@@ -3,15 +3,18 @@ from pathlib import Path
 
 import pytest
 
+import src.sections as sections_module
 from src.sections import (
     OPINION_SUBSECTION_RE,
     SECTION_WORD_WARNING_THRESHOLD,
+    _strip_page_reference,
     extract_sections,
     run,
     save_sections,
 )
 
 FIXTURE = Path(__file__).parent / "fixtures" / "mini_filing.html"
+NO_MARKUP_FIXTURE = Path(__file__).parent / "fixtures" / "mini_filing_no_markup.html"
 
 
 def test_finds_background_of_the_merger():
@@ -188,3 +191,127 @@ def test_run_passes_through_extra_continue_headings(tmp_path, monkeypatch):
     opinion = json.loads((tmp_path / "example_deal" / "opinion_of_example_advisor_llc.json").read_text())
     texts = " ".join(p["text"] for p in opinion["paragraphs"])
     assert "same-level non-opinion sibling" in texts
+
+
+# Regression guard for the fallback (markup-less) parser added for filings
+# with no semantic h1-h5 headings: Splunk's, Zendesk's, and Cvent's
+# filings all DO have real heading markup, so they must never take that
+# code path, and their sections must come out exactly as they did before
+# the fallback parser existed. Skipped (not failed) when the cached raw
+# HTML isn't present locally, since data/raw/ is gitignored -- this is a
+# development-environment regression check, not a portable one.
+RAW_DIR = Path(__file__).parent.parent / "data" / "raw"
+
+KNOWN_GOOD_DEALS = {
+    "splunk_inc_defm14a.html": {
+        "background_of_the_merger": (7043, 67, "Background of the Merger"),
+        "management_projections": (1967, 14, "Management Projections"),
+        "opinion_of_morgan_stanley_co_llc": (5805, 75, "Opinion of Morgan Stanley & Co. LLC"),
+        "opinion_of_qatalyst_partners_lp": (5209, 49, "Opinion of Qatalyst Partners LP"),
+    },
+    "zendesk,_inc_defm14a.html": {
+        "background_of_the_merger": (9537, 96, "Background of the Merger"),
+        "management_projections": (2397, 28, "Certain Financial Projections"),
+        "opinion_of_goldman_sachs_co_llc": (6610, 81, "Opinion of Goldman Sachs & Co. LLC"),
+        "opinion_of_qatalyst_partners_lp": (4124, 40, "Opinion of Qatalyst Partners LP"),
+    },
+    "cvent_holding_corp_defm14a.html": {
+        "background_of_the_merger": (13952, 131, "Background of the Merger"),
+        "management_projections": (2127, 22, "Certain Financial Projections"),
+        "opinion_of_j_p_morgan": (4235, 54, "Opinion of J.P. Morgan"),
+        "opinion_of_qatalyst_partners": (4502, 41, "Opinion of Qatalyst Partners"),
+    },
+}
+
+ZENDESK_OVERRIDES = ["EV/NTM Revenue Multiple Over Time"]
+
+
+@pytest.mark.parametrize("html_filename", list(KNOWN_GOOD_DEALS))
+def test_known_good_deals_unaffected_by_fallback_parser(html_filename):
+    html_path = RAW_DIR / html_filename
+    if not html_path.exists():
+        pytest.skip(f"{html_path} not cached locally (data/raw/ is gitignored)")
+
+    overrides = ZENDESK_OVERRIDES if html_filename.startswith("zendesk") else None
+    sections = extract_sections(html_path.read_text(encoding="utf-8", errors="replace"), overrides)
+
+    expected = KNOWN_GOOD_DEALS[html_filename]
+    assert set(sections) == set(expected), (set(sections), set(expected))
+    for key, (word_count, n_paragraphs, heading_text) in expected.items():
+        section = sections[key]
+        assert section["word_count"] == word_count, key
+        assert len(section["paragraphs"]) == n_paragraphs, key
+        assert section["heading_text"] == heading_text, key
+
+
+# --- Fallback parser (no semantic heading markup) ---------------------------
+
+
+@pytest.fixture(autouse=False)
+def low_fallback_prose_threshold(monkeypatch):
+    # The no-markup fixture is tiny for readability; real filings clear
+    # the real ~300-word minimum easily, but this fixture's "background"
+    # body is only a few short sentences, so the threshold needs lowering
+    # for it to be recognized as the real section rather than a TOC entry.
+    monkeypatch.setattr(sections_module, "_FALLBACK_MIN_PROSE_WORDS", 10)
+
+
+def test_extract_sections_dispatches_to_fallback_when_no_headings_found(low_fallback_prose_threshold):
+    sections = extract_sections(NO_MARKUP_FIXTURE.read_text())
+    assert "background_of_the_merger" in sections
+    assert "opinion_of_example_advisor_llc" in sections
+
+
+def test_fallback_skips_the_table_of_contents(low_fallback_prose_threshold):
+    sections = extract_sections(NO_MARKUP_FIXTURE.read_text())
+    # The TOC's "Background of the Merger" link has ~0 words before the
+    # next candidate; the real (bold) heading must be the one selected.
+    assert sections["background_of_the_merger"]["heading_paragraph_id"] != "p00002"
+    texts = " ".join(p["text"] for p in sections["background_of_the_merger"]["paragraphs"])
+    assert "non-binding indication of interest" in texts
+
+
+def test_fallback_background_excludes_quoted_letter_noise_as_a_stop_signal(low_fallback_prose_threshold):
+    # "Dear Marty and Alan:" / "Sincerely," / "/s/ Jane Doe" are short and
+    # bold-or-not, but none of them name a known standard chapter, so they
+    # must not end the section early -- only the real
+    # "Recommendation of..." heading should.
+    sections = extract_sections(NO_MARKUP_FIXTURE.read_text())
+    texts = " ".join(p["text"] for p in sections["background_of_the_merger"]["paragraphs"])
+    assert "continued negotiating the terms" in texts
+
+
+def test_fallback_background_stops_at_known_standard_heading(low_fallback_prose_threshold):
+    sections = extract_sections(NO_MARKUP_FIXTURE.read_text())
+    texts = " ".join(p["text"] for p in sections["background_of_the_merger"]["paragraphs"])
+    assert "recommends that stockholders" not in texts
+
+
+def test_fallback_opinion_section_includes_same_level_methodology_subsection(low_fallback_prose_threshold):
+    sections = extract_sections(NO_MARKUP_FIXTURE.read_text())
+    texts = " ".join(p["text"] for p in sections["opinion_of_example_advisor_llc"]["paragraphs"])
+    assert "discount rate range" in texts
+
+
+def test_fallback_opinion_section_stops_at_true_sibling(low_fallback_prose_threshold):
+    sections = extract_sections(NO_MARKUP_FIXTURE.read_text())
+    texts = " ".join(p["text"] for p in sections["opinion_of_example_advisor_llc"]["paragraphs"])
+    assert "should not be included" not in texts
+
+
+def test_strip_page_reference_removes_trailing_page_annotation():
+    assert _strip_page_reference("Opinion of Qatalyst Partners (page 41)") == "Opinion of Qatalyst Partners"
+    assert _strip_page_reference("Opinion of X (page 52 )") == "Opinion of X"
+
+
+def test_strip_page_reference_leaves_plain_headings_untouched():
+    assert _strip_page_reference("Opinion of Qatalyst Partners") == "Opinion of Qatalyst Partners"
+
+
+def test_fallback_collapses_page_reference_variant_onto_the_real_opinion_heading(low_fallback_prose_threshold):
+    # The fixture's TOC entry is "Opinion of Example Advisor LLC (page 41)"
+    # -- without stripping the page reference this would be tracked as a
+    # second, separate advisor rather than the same one as the real heading.
+    sections = extract_sections(NO_MARKUP_FIXTURE.read_text())
+    opinion_keys = [k for k in sections if k.startswith("opinion_of")]
+    assert opinion_keys == ["opinion_of_example_advisor_llc"]

@@ -59,6 +59,45 @@ DEALS = {
         # No party_map yet -- build one from the actual extraction once
         # this deal is run, the way Splunk's and Zendesk's were.
     },
+    # The 7 deals below all use a filing-agent template with no semantic
+    # h1-h5 heading markup at all, unlike the 3 above -- sections.py's
+    # fallback parser (candidate headings from styling/known chapter
+    # names, not heading depth) handles them. All verified to section
+    # cleanly: every background_of_the_merger stops at a real, checked
+    # "Recommendation of the Board..."-style heading. No party_map yet for
+    # any of them -- same as Cvent, build one from a real extraction.
+    "anaplan": {
+        "search_term": "anaplan",
+        "deal_name": "Thoma Bravo's Acquisition of Anaplan",
+    },
+    "citrix": {
+        "search_term": "citrix systems",
+        "deal_name": "Vista Equity Partners and Evergreen Coast Capital's Acquisition of Citrix",
+    },
+    "coupa": {
+        "search_term": "coupa software",
+        "deal_name": "Thoma Bravo's Acquisition of Coupa",
+    },
+    "new_relic": {
+        "search_term": "new relic",
+        "deal_name": "Francisco Partners and TPG's Acquisition of New Relic",
+    },
+    "mandiant": {
+        "search_term": "mandiant",
+        "deal_name": "Google's Acquisition of Mandiant",
+    },
+    "activision": {
+        "search_term": "activision blizzard",
+        "deal_name": "Microsoft's Acquisition of Activision Blizzard",
+    },
+    "twitter": {
+        "search_term": "twitter",
+        "deal_name": "Elon Musk's Acquisition of Twitter",
+        # background_of_the_merger is genuinely ~23,500 words (verified
+        # the end boundary -- it's not a bug, the litigation made this an
+        # unusually long chronology). Will likely need more target_chunks
+        # than the other deals' default when this is actually extracted.
+    },
 }
 
 # Which container schema to run against which sections. Background of the
