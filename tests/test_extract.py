@@ -426,3 +426,25 @@ def test_prompt_states_authorization_is_not_the_proposal():
     instruction = extract.SYSTEM_INSTRUCTION
     assert '"board_authorization" Event' in instruction
     assert "only when that counteroffer is actually conveyed to the other side" in instruction
+
+
+def test_prompt_states_hedged_numbers_are_suggested_valuation():
+    # v9 rule, regression guard for Zendesk gold P04/P08: "might be
+    # prepared to offer" and "could be as high as" are hedges, not a
+    # firm proposal, regardless of who said it or whether it revises an
+    # earlier number.
+    instruction = extract.SYSTEM_INSTRUCTION
+    assert "HEDGED number is never a firm proposal" in instruction
+    assert "may be able to offer" in instruction
+    assert "could be as high as" in instruction
+    assert "might be prepared to offer" in instruction
+    assert 'proposal_kind="suggested_valuation"' in instruction
+
+
+def test_prompt_reemphasizes_preview_vs_written_with_an_example():
+    # v9: re-emphasizes the existing discussion-vs-proposal rule with a
+    # concrete Zendesk-style example (a verbal preview followed by a
+    # written proposal at the same price is ONE Proposal, not two).
+    instruction = extract.SYSTEM_INSTRUCTION
+    assert "verbally previews" in instruction
+    assert "never two Proposals for the same number" in instruction

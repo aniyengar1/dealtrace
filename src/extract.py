@@ -37,7 +37,7 @@ from pydantic import BaseModel, ValidationError
 
 load_dotenv()
 
-PROMPT_VERSION = "v8"
+PROMPT_VERSION = "v9"
 MAX_CHUNK_WORDS = 8000
 MAX_MALFORMED_RETRIES = 2
 # A per-day quota exhaustion (RESOURCE_EXHAUSTED with a "...PerDay..." quota
@@ -199,6 +199,13 @@ specific number by the end of the excerpt: "open" (not yet responded to), \
 "rejected" (declined with no replacement), "superseded" (overtaken by a \
 later number from the same side), "accepted", or "withdrawn" (the \
 proposer pulled it).
+- A HEDGED number is never a firm proposal, no matter who said it or \
+whether it revises an earlier one: language like "may be able to offer", \
+"could be as high as", or "might be prepared to offer" means \
+proposal_kind="suggested_valuation", not non_binding_indication/ \
+formal_bid/revised_bid/counteroffer. Reserve those for a number stated \
+as what the party IS putting forward, not what it might, could, or may \
+do.
 - date_text (Event) and date (Proposal) must be the filing's own phrase, \
 verbatim, whether it's absolute ("December 17, 2021") or relative ("later \
 that day"). Resolving a relative phrase to an absolute date is handled \
@@ -207,7 +214,11 @@ entirely in code after extraction, not by you -- do not attempt it.
 before it's actually put forward, is a "discussion" Event, not a \
 Proposal. Only create a Proposal once the number is actually delivered -- \
 in writing, or stated to the other side -- never for a heads-up that one \
-is expected.
+is expected. For example: a bidder verbally previews "$110 per share" on \
+one call, then sends a written indication of interest at $110 per share \
+the next day -- that excerpt gets exactly ONE Proposal (the written one) \
+plus a "discussion" Event for the verbal preview, never two Proposals \
+for the same number.
 - When a board or committee votes to authorize negotiating at a price or \
 making a counteroffer, that vote itself is a "board_authorization" Event, \
 not a Proposal. The Proposal is created only when that counteroffer is \

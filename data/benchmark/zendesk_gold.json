@@ -1,7 +1,7 @@
 {
   "deal": "Hellman & Friedman and Permira / Zendesk",
   "source": "Zendesk DEFM14A (Aug 2022), Background of the Merger (p00408-p00503)",
-  "benchmark_version": 1,
+  "benchmark_version": 2,
   "built_by": "Claude (independent of the Gemini extractor), built BEFORE any extraction on this deal; pending human spot-check",
   "held_out": true,
   "notes": [
@@ -1037,7 +1037,7 @@
       "recipient": "Zendesk",
       "price_low": 96,
       "price_high": 96,
-      "proposal_kind": "revised_bid",
+      "proposal_kind": "suggested_valuation",
       "paragraph_id": "p00459",
       "note": "verbal lowered indication"
     },
@@ -1081,7 +1081,7 @@
       "recipient": "Zendesk",
       "price_low": 82,
       "price_high": 82,
-      "proposal_kind": "revised_bid",
+      "proposal_kind": "suggested_valuation",
       "paragraph_id": "p00480",
       "note": "verbal 'could be as high as $82'; not a preview of the same number"
     },
@@ -1107,5 +1107,8 @@
       "paragraph_id": "p00491",
       "note": "'best and final'; accepted"
     }
+  ],
+  "changelog": [
+    "v2 (2026-11-09): P04 ($96) and P08 ($82) changed from revised_bid to suggested_valuation -- both are hedged verbal language (\"might be prepared to offer\", \"could be as high as\"), not a firm number put forward, which is what revised_bid should mean. P05 ($110, \"may be able to offer as high as... would require several additional weeks\") was already non_binding_indication and is unchanged -- it's the written indication that followed, not the hedged verbal preview itself. The held-out score recorded against v1 (2026-11-08) scored proposal_kind accuracy at 7/10, counting all three of these as wrong under the old (pre-this-change) definition; rescoring against v2 should recover P04 and P08 but P05 was never affected."
   ]
 }

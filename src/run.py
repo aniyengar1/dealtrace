@@ -53,6 +53,12 @@ DEALS = {
         # sections.extract_sections' extra_continue_headings.
         "section_boundary_overrides": ["EV/NTM Revenue Multiple Over Time"],
     },
+    "cvent": {
+        "search_term": "cvent holding corp",
+        "deal_name": "Blackstone's Acquisition of Cvent",
+        # No party_map yet -- build one from the actual extraction once
+        # this deal is run, the way Splunk's and Zendesk's were.
+    },
 }
 
 # Which container schema to run against which sections. Background of the
