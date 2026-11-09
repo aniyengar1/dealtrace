@@ -1,7 +1,7 @@
 {
   "deal": "Cisco / Splunk",
   "source": "Splunk DEFM14A (Oct 2023), Background of the Merger",
-  "benchmark_version": 1,
+  "benchmark_version": 2,
   "built_by": "Claude (independent of the Gemini extractor); pending human spot-check",
   "events": [
     {
@@ -286,8 +286,8 @@
     },
     {
       "id": "E23",
-      "date": "2023-08",
-      "date_precision": "month",
+      "date": "2023-07-31/2023-08-23",
+      "date_precision": "range",
       "event_type": "projections_shared",
       "parties": [
         "Splunk",
@@ -401,6 +401,168 @@
       "summary": "Public announcement of the transaction",
       "paragraph_id": "p00506",
       "core": true
+    },
+    {
+      "id": "E32",
+      "date": "2023-04-11",
+      "date_precision": "day",
+      "event_type": "discussion",
+      "parties": [
+        "Splunk",
+        "Cisco"
+      ],
+      "summary": "Steele tells Herren the board authorized preliminary discussions",
+      "paragraph_id": "p00457",
+      "core": false
+    },
+    {
+      "id": "E33",
+      "date": "2023-06-19",
+      "date_precision": "day",
+      "event_type": "discussion",
+      "parties": [
+        "Cisco",
+        "Splunk"
+      ],
+      "summary": "Robbins and Steele meet; Robbins previews a forthcoming $130 written proposal",
+      "paragraph_id": "p00463",
+      "core": false
+    },
+    {
+      "id": "E34",
+      "date": "2023-07-21/2023-08-03",
+      "date_precision": "range",
+      "event_type": "diligence",
+      "parties": [
+        "Cisco",
+        "Splunk"
+      ],
+      "summary": "Several in-person meetings on business, technology and synergies",
+      "paragraph_id": "p00476",
+      "core": false
+    },
+    {
+      "id": "E35",
+      "date": "2023-08-23",
+      "date_precision": "day",
+      "event_type": "other",
+      "parties": [
+        "Splunk"
+      ],
+      "summary": "Splunk publicly reports Q2 FY2024 results",
+      "paragraph_id": "p00478",
+      "core": false
+    },
+    {
+      "id": "E36",
+      "date": "2023-08-27",
+      "date_precision": "day",
+      "event_type": "board_meeting",
+      "parties": [
+        "Splunk"
+      ],
+      "summary": "Transaction Committee reviews $142 proposal; authorizes $168 counter",
+      "paragraph_id": "p00480",
+      "core": false
+    },
+    {
+      "id": "E37",
+      "date": "2023-08-29",
+      "date_precision": "day",
+      "event_type": "board_meeting",
+      "parties": [
+        "Splunk"
+      ],
+      "summary": "Transaction Committee reviews $146 proposal; authorizes $160 counter",
+      "paragraph_id": "p00483",
+      "core": false
+    },
+    {
+      "id": "E38",
+      "date": "2023-08-30",
+      "date_precision": "day",
+      "event_type": "discussion",
+      "parties": [
+        "Tidal Partners",
+        "Qatalyst Partners"
+      ],
+      "summary": "Tidal previews that Robbins will call Steele about valuation",
+      "paragraph_id": "p00484",
+      "core": false
+    },
+    {
+      "id": "E39",
+      "date": "2023-08-30",
+      "date_precision": "day",
+      "event_type": "board_meeting",
+      "parties": [
+        "Splunk"
+      ],
+      "summary": "Transaction Committee reviews $152 proposal; authorizes $158 response",
+      "paragraph_id": "p00485",
+      "core": false
+    },
+    {
+      "id": "E40",
+      "date": "2023-08-30",
+      "date_precision": "day",
+      "event_type": "board_meeting",
+      "parties": [
+        "Splunk"
+      ],
+      "summary": "Transaction Committee reviews $156 proposal; authorizes Steele to get the highest price",
+      "paragraph_id": "p00488",
+      "core": false
+    },
+    {
+      "id": "E41",
+      "date": "2023-09-05",
+      "date_precision": "day",
+      "event_type": "discussion",
+      "parties": [
+        "Cisco",
+        "Splunk"
+      ],
+      "summary": "Robbins calls Steele; shares target announcement date of Sept 21",
+      "paragraph_id": "p00494",
+      "core": false
+    },
+    {
+      "id": "E42",
+      "date": "2023-09-13",
+      "date_precision": "day",
+      "event_type": "board_meeting",
+      "parties": [
+        "Splunk"
+      ],
+      "summary": "Board and compensation committee discuss negotiations and retention",
+      "paragraph_id": "p00500",
+      "core": false
+    },
+    {
+      "id": "E43",
+      "date": "2023-09-17/2023-09-19",
+      "date_precision": "range",
+      "event_type": "board_meeting",
+      "parties": [
+        "Splunk"
+      ],
+      "summary": "Transaction Committee meets Sept 17, 18 and 19 on final terms",
+      "paragraph_id": "p00501",
+      "core": false
+    },
+    {
+      "id": "E44",
+      "date": "2023-09-14",
+      "date_precision": "day",
+      "event_type": "management_condition",
+      "parties": [
+        "Cisco",
+        "Splunk"
+      ],
+      "summary": "Cisco requests and receives permission to negotiate executive compensation",
+      "paragraph_id": "p00502",
+      "core": false
     }
   ],
   "proposals": [
@@ -533,6 +695,19 @@
       "price_high": 157,
       "proposal_kind": "revised_bid",
       "paragraph_id": "p00490"
+    },
+    {
+      "id": "P14",
+      "date": "2023-08-31",
+      "proposer": "Cisco",
+      "recipient": "Splunk",
+      "price_low": 157,
+      "price_high": 157,
+      "proposal_kind": "non_binding_indication",
+      "paragraph_id": "p00491"
     }
+  ],
+  "changelog": [
+    "v2 (2026-11-08): added 13 real non-core events and written $157 indication (P14) that v1 omitted; E23 changed to a date range because the filing gives no exact date. Every addition is a verifiable paragraph in the filing; core events unchanged."
   ]
 }

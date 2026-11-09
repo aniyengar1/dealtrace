@@ -86,8 +86,13 @@ def normalize_for_match(text: str) -> str:
     return normalize_whitespace(text)
 
 
-def load_paragraph_lookup(sections_dir: Path = DATA_SECTIONS) -> dict[str, str]:
-    """Merge paragraph id -> text across every saved section file."""
+def load_paragraph_lookup(sections_dir: Path) -> dict[str, str]:
+    """Merge paragraph id -> text across every saved section file.
+
+    `sections_dir` is a deal's section directory, e.g. DATA_SECTIONS /
+    deal_slug (sections are namespaced per deal so two deals' section
+    files don't collide).
+    """
     lookup: dict[str, str] = {}
     for path in sections_dir.glob("*.json"):
         section = json.loads(path.read_text())
@@ -396,21 +401,23 @@ def write_summary_md(results: list[dict], deal_name: str, path: Path) -> None:
     path.write_text("\n".join(lines))
 
 
-def _run_id(model: str, prompt_version: str) -> str:
+def _run_id(deal_slug: str, model: str, prompt_version: str) -> str:
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     safe_model = model.replace("/", "_")
-    return f"{timestamp}_{safe_model}_{prompt_version}"
+    return f"{timestamp}_{deal_slug}_{safe_model}_{prompt_version}"
 
 
-def new_run_dir(model: str, prompt_version: str) -> Path:
-    """Create data/output/runs/<timestamp>_<model>_<prompt_version>/ and
-    repoint data/output/latest at it.
+def new_run_dir(deal_slug: str, model: str, prompt_version: str) -> Path:
+    """Create data/output/runs/<timestamp>_<deal>_<model>_<prompt_version>/
+    and repoint data/output/latest at it.
 
     Every run gets its own folder (named for exactly what produced it) so
     a run never overwrites an earlier one's results; `latest` is always a
-    symlink to whichever run folder was created most recently.
+    symlink to whichever run folder was created most recently, across all
+    deals -- it doesn't distinguish by deal, so check the folder name (or
+    use a specific run folder) if you need "latest for this deal."
     """
-    run_dir = RUNS_DIR / _run_id(model, prompt_version)
+    run_dir = RUNS_DIR / _run_id(deal_slug, model, prompt_version)
     run_dir.mkdir(parents=True)
 
     if LATEST_LINK.is_symlink() or LATEST_LINK.exists():
@@ -427,10 +434,10 @@ def run(
     if n_duplicates_removed:
         print(f"Dropped {n_duplicates_removed} Event(s) duplicating an existing Proposal")
 
-    paragraph_lookup = load_paragraph_lookup()
+    paragraph_lookup = load_paragraph_lookup(DATA_SECTIONS / deal_slug)
     results = validate_all(records_by_type, paragraph_lookup)
 
-    run_dir = new_run_dir(model, prompt_version)
+    run_dir = new_run_dir(deal_slug, model, prompt_version)
     extraction_path = run_dir / f"{deal_slug}_extraction.json"
     summary_path = run_dir / f"{deal_slug}_summary.md"
 

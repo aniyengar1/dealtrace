@@ -1,6 +1,14 @@
 from pathlib import Path
 
-from src.sections import extract_sections
+import pytest
+
+from src.sections import (
+    OPINION_SUBSECTION_RE,
+    SECTION_WORD_WARNING_THRESHOLD,
+    extract_sections,
+    run,
+    save_sections,
+)
 
 FIXTURE = Path(__file__).parent / "fixtures" / "mini_filing.html"
 
@@ -34,6 +42,19 @@ def test_opinion_section_excludes_unrelated_trailing_section():
     assert "should not be included" not in texts
 
 
+def test_opinion_section_stops_at_a_same_level_non_opinion_sibling():
+    # Regression guard for the Zendesk over-capture bug: a same-level
+    # heading that is neither a recognized methodology subsection
+    # ("... Analysis", "Miscellaneous", "General") nor another advisor's
+    # "Opinion of ..." must still end the section -- it must not be
+    # treated as "not an opinion heading, so keep going" (that's what let
+    # "Interests of Zendesk's Executive Officers ... in the Merger" pull
+    # in several unrelated chapters after the real Goldman Sachs opinion).
+    sections = extract_sections(FIXTURE.read_text())
+    texts = " ".join(p["text"] for p in sections["opinion_of_example_advisor_llc"]["paragraphs"])
+    assert "same-level non-opinion sibling" not in texts
+
+
 def test_toc_duplicate_heading_is_not_mistaken_for_the_section():
     sections = extract_sections(FIXTURE.read_text())
     # The TOC lists "Background of the Merger" with no body text after it;
@@ -56,3 +77,76 @@ def test_table_gutter_spacer_cells_are_dropped():
     # The gutter <td>s carry only a zero-width space for visual spacing --
     # they must not show up as empty " | " segments in the rendered row.
     assert " |  | " not in texts
+
+
+@pytest.mark.parametrize(
+    "heading",
+    [
+        "Discounted Cash Flow Analysis",
+        "Selected Companies Analysis",
+        "Selected Transactions Analysis",
+        "Illustrative Discounted Cash Flow Analysis",
+        "Summary of Financial Analyses",
+        "Precedent Transactions Multiples Analysis",
+        "Other Information",
+        "Miscellaneous",
+        "General",
+    ],
+)
+def test_opinion_subsection_re_matches_known_methodology_headings(heading):
+    assert OPINION_SUBSECTION_RE.match(heading)
+
+
+@pytest.mark.parametrize(
+    "heading",
+    [
+        "Interests of Zendesk's Executive Officers and Directors in the Merger",
+        "Restrictions on Solicitation of Alternative Proposals",
+        "Opinion of Morgan Stanley & Co. LLC",
+    ],
+)
+def test_opinion_subsection_re_does_not_match_true_siblings(heading):
+    assert not OPINION_SUBSECTION_RE.match(heading)
+
+
+def test_save_sections_warns_when_a_section_is_implausibly_large(tmp_path, capsys):
+    oversized = {
+        "key": {
+            "section_key": "key",
+            "heading_text": "Big Section",
+            "heading_paragraph_id": "p1",
+            "word_count": SECTION_WORD_WARNING_THRESHOLD + 1,
+            "paragraphs": [],
+        }
+    }
+    save_sections(oversized, tmp_path)
+    captured = capsys.readouterr()
+    assert "WARNING" in captured.out
+
+
+def test_save_sections_does_not_warn_for_a_normal_sized_section(tmp_path, capsys):
+    normal = {
+        "key": {
+            "section_key": "key",
+            "heading_text": "Normal Section",
+            "heading_paragraph_id": "p1",
+            "word_count": 1000,
+            "paragraphs": [],
+        }
+    }
+    save_sections(normal, tmp_path)
+    captured = capsys.readouterr()
+    assert "WARNING" not in captured.out
+
+
+def test_run_namespaces_sections_under_the_deal_slug(tmp_path, monkeypatch):
+    import src.sections as sections_module
+
+    monkeypatch.setattr(sections_module, "DATA_SECTIONS", tmp_path)
+    html_path = tmp_path / "filing.html"
+    html_path.write_text(FIXTURE.read_text())
+
+    run(html_path, "example_deal")
+
+    assert (tmp_path / "example_deal" / "background_of_the_merger.json").exists()
+    assert not (tmp_path / "background_of_the_merger.json").exists()

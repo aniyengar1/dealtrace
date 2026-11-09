@@ -22,6 +22,10 @@ DEALS = {
         "search_term": "splunk",
         "deal_name": "Cisco's Acquisition of Splunk",
     },
+    "zendesk": {
+        "search_term": "zendesk",
+        "deal_name": "Hellman & Friedman and Permira's Acquisition of Zendesk",
+    },
 }
 
 # Which container schema to run against which sections. Background of the
@@ -54,7 +58,7 @@ def run(deal_slug: str, model: str | None = None) -> None:
     print(f"From cache: {fetch_result.from_cache}\n")
 
     print("=== Step 2: sections ===")
-    section_dict = sections.run(fetch_result.html_path)
+    section_dict = sections.run(fetch_result.html_path, deal_slug)
     print()
 
     print(f"=== Step 3: extract (model={resolved_model}) ===")

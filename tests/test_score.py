@@ -6,6 +6,7 @@ from src.score import (
     extracted_proposal_date,
     find_extraction_file,
     gold_event_date_range,
+    gold_path_for,
     load_extraction,
     match_events,
     match_proposals,
@@ -408,3 +409,9 @@ def test_load_extraction_groups_records_from_a_run_folder(tmp_path):
     assert len(extraction["Event"]) == 1
     assert len(extraction["Proposal"]) == 1
     assert extraction["ValuationAnalysis"] == []
+
+
+def test_gold_path_for_resolves_per_deal():
+    assert gold_path_for("splunk").name == "splunk_gold.json"
+    assert gold_path_for("zendesk").name == "zendesk_gold.json"
+    assert gold_path_for("splunk") != gold_path_for("zendesk")

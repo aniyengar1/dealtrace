@@ -37,6 +37,34 @@ SECTION_SPECS = {
 }
 OPINION_HEADING_RE = re.compile(r"^Opinion of (?!.*\band\b).+$")
 
+# Valuation-methodology subheadings ("Discounted Cash Flow Analysis",
+# "Summary of Financial Analyses", "Other Information", a closing
+# "Miscellaneous"/"General" fee disclosure) render at the SAME heading
+# depth as "Opinion of X" in some filings' flat heading hierarchy -- the
+# HTML carries no distinguishing style/class between a true subsection and
+# a true sibling chapter, only the text says which one it is. These
+# continue the opinion section instead of ending it; any OTHER same-level
+# heading ends it, including ones that aren't "Opinion of <other
+# advisor>" either (that was the over-capture bug: a non-opinion sibling
+# like "Interests of Zendesk's Executive Officers ... in the Merger" was
+# wrongly treated as still part of the opinion, pulling in everything up
+# to the next *shallower* heading -- several chapters later).
+#
+# This is a heuristic over real-world filing text, not a closed set: a
+# same-level subheading whose text matches none of these (and isn't
+# caught by a deeper heading level either) will still end the section
+# early. Splunk's and Zendesk's filings needed exactly this list; a new
+# filing may need another phrase added here if its real opinion section
+# ends up suspiciously short.
+OPINION_SUBSECTION_RE = re.compile(
+    r".*\bAnalys(is|es)$|^Miscellaneous$|^General$|^Other Information$", re.IGNORECASE
+)
+
+# A real DEFM14A section this pipeline looks for is at most a few thousand
+# words; anything much bigger is a sign the end-boundary logic walked past
+# the section's real end into unrelated chapters.
+SECTION_WORD_WARNING_THRESHOLD = 8000
+
 
 class Paragraph:
     __slots__ = ("id", "text", "level")
@@ -124,17 +152,18 @@ def parse_paragraphs(html: str) -> list[Paragraph]:
 
 
 def _section_span(
-    paragraphs: list[Paragraph], start_idx: int, sibling_stop_re: "re.Pattern | None" = None
+    paragraphs: list[Paragraph], start_idx: int, continue_re: "re.Pattern | None" = None
 ) -> tuple[int, int]:
     """Return (word_count, end_idx) for the body content following a heading.
 
     A heading strictly shallower than the start heading always ends the
-    section. A heading at the *same* level only ends it if `sibling_stop_re`
-    is None (default: any same-level heading ends it) or matches that
-    heading's text -- this lets callers treat same-level methodology
-    subheadings (e.g. "Discounted Cash Flow Analysis" nested under "Opinion
-    of X" at the same h3 depth) as part of the section instead of a
-    sibling that should end it.
+    section. A heading at the *same* level ends it too, UNLESS `continue_re`
+    is given and matches that heading's text -- this lets callers treat
+    recognized same-level subheadings (e.g. "Discounted Cash Flow Analysis"
+    nested under "Opinion of X" at the same h3 depth) as part of the
+    section instead of a sibling that should end it. Any other same-level
+    heading ends the section even if it doesn't look like "the next
+    sibling chapter" either -- there is no third option.
     """
     level = paragraphs[start_idx].level
     word_count = 0
@@ -144,7 +173,7 @@ def _section_span(
         if p.level is not None:
             if p.level < level:
                 break
-            if p.level == level and (sibling_stop_re is None or sibling_stop_re.match(p.text)):
+            if p.level == level and not (continue_re and continue_re.match(p.text)):
                 break
         word_count += len(p.text.split())
         j += 1
@@ -152,7 +181,7 @@ def _section_span(
 
 
 def _best_match(
-    paragraphs: list[Paragraph], patterns: list[str], sibling_stop_re: "re.Pattern | None" = None
+    paragraphs: list[Paragraph], patterns: list[str], continue_re: "re.Pattern | None" = None
 ) -> tuple[int, int, int] | None:
     """Find the best-scoring (most content) heading occurrence matching any pattern.
 
@@ -165,7 +194,7 @@ def _best_match(
             continue
         if not any(c.match(para.text) for c in compiled):
             continue
-        word_count, end_idx = _section_span(paragraphs, i, sibling_stop_re)
+        word_count, end_idx = _section_span(paragraphs, i, continue_re)
         if best is None or word_count > best[2]:
             best = (i, end_idx, word_count)
     return best
@@ -208,7 +237,7 @@ def extract_sections(html: str) -> dict[str, dict]:
         }
 
     for heading_text in find_opinion_headings(paragraphs):
-        match = _best_match(paragraphs, [re.escape(heading_text)], sibling_stop_re=OPINION_HEADING_RE)
+        match = _best_match(paragraphs, [re.escape(heading_text)], continue_re=OPINION_SUBSECTION_RE)
         if match is None:
             continue
         start_idx, end_idx, word_count = match
@@ -226,7 +255,7 @@ def extract_sections(html: str) -> dict[str, dict]:
     return sections
 
 
-def save_sections(sections: dict[str, dict], out_dir: Path = DATA_SECTIONS) -> list[Path]:
+def save_sections(sections: dict[str, dict], out_dir: Path) -> list[Path]:
     out_dir.mkdir(parents=True, exist_ok=True)
     paths = []
     for key, section in sections.items():
@@ -234,13 +263,19 @@ def save_sections(sections: dict[str, dict], out_dir: Path = DATA_SECTIONS) -> l
         path.write_text(json.dumps(section, indent=2))
         paths.append(path)
         print(f"{key}: {section['word_count']} words, {len(section['paragraphs'])} paragraphs -> {path}")
+        if section["word_count"] > SECTION_WORD_WARNING_THRESHOLD:
+            print(
+                f"  WARNING: {key} is {section['word_count']} words "
+                f"(>{SECTION_WORD_WARNING_THRESHOLD}) -- likely over-captured; "
+                "check the end-boundary heading."
+            )
     return paths
 
 
-def run(html_path: Path) -> dict[str, dict]:
+def run(html_path: Path, deal_slug: str) -> dict[str, dict]:
     html = html_path.read_text(encoding="utf-8", errors="replace")
     sections = extract_sections(html)
-    save_sections(sections)
+    save_sections(sections, DATA_SECTIONS / deal_slug)
     return sections
 
 
@@ -248,4 +283,5 @@ if __name__ == "__main__":
     import sys
 
     path = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("data/raw/splunk_inc_defm14a.html")
-    run(path)
+    slug = sys.argv[2] if len(sys.argv) > 2 else "splunk"
+    run(path, slug)

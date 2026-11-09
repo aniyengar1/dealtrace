@@ -1,11 +1,13 @@
-"""Score an extraction output against a hand-checked gold answer key.
+"""Score an extraction output against a deal's hand-checked gold answer key.
 
-    python -m src.score data/output/latest data/benchmark/splunk_gold.json
+    python -m src.score data/output/latest splunk
 
 The first argument is a run folder (see validate.new_run_dir) -- e.g.
-data/output/latest (a symlink to the most recent run) or any specific
-data/output/runs/<timestamp>_<model>_<prompt_version>/ -- containing
-exactly one <deal_slug>_extraction.json.
+data/output/latest (a symlink to the most recent run, across all deals --
+check the folder name) or any specific
+data/output/runs/<timestamp>_<deal>_<model>_<prompt_version>/ -- containing
+exactly one <deal_slug>_extraction.json. The second is the deal slug,
+which resolves to data/benchmark/<deal_slug>_gold.json (gold_path_for).
 
 Events are matched on date alone (respecting the gold entry's own
 date_precision -- a "month" or "range" gold entry is a tolerant window,
@@ -87,6 +89,13 @@ def normalize_name(name: Optional[str]) -> Optional[str]:
     if name is None:
         return None
     return " ".join(name.split()).lower()
+
+
+GOLD_DIR = Path(__file__).resolve().parent.parent / "data" / "benchmark"
+
+
+def gold_path_for(deal_slug: str) -> Path:
+    return GOLD_DIR / f"{deal_slug}_gold.json"
 
 
 def load_gold(path: Path) -> dict:
@@ -354,7 +363,7 @@ def format_report(result: dict) -> str:
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Score a run folder's extraction against a hand-checked gold answer key."
+        description="Score a run folder's extraction against a deal's gold answer key."
     )
     parser.add_argument(
         "run_dir",
@@ -362,11 +371,12 @@ def main() -> None:
         help="A run folder, e.g. data/output/latest or data/output/runs/<run_id>",
     )
     parser.add_argument(
-        "gold_path", type=Path, nargs="?", default=Path("data/benchmark/splunk_gold.json")
+        "deal_slug",
+        help="Deal identifier, e.g. 'splunk' -- loads data/benchmark/<deal_slug>_gold.json",
     )
     args = parser.parse_args()
 
-    gold = load_gold(args.gold_path)
+    gold = load_gold(gold_path_for(args.deal_slug))
     extraction = load_extraction(args.run_dir)
     result = score_extraction(gold, extraction)
     print(format_report(result))
