@@ -11,7 +11,7 @@ import os
 
 from dotenv import load_dotenv
 
-from src import extract, fetch, sections, validate
+from src import extract, fetch, sanity, sections, validate
 from src.extract import Usage
 from src.schemas import BackgroundExtraction, ValuationExtraction
 
@@ -21,6 +21,8 @@ DEALS = {
     "splunk": {
         "search_term": "splunk",
         "deal_name": "Cisco's Acquisition of Splunk",
+        "target": "Splunk",
+        "acquirer": "Cisco",
         # Advisor/counsel/board names the model may use in place of the
         # company they represent -- gold rolls these up to the company;
         # see validate.normalize_party_roles.
@@ -36,6 +38,8 @@ DEALS = {
     "zendesk": {
         "search_term": "zendesk",
         "deal_name": "Hellman & Friedman and Permira's Acquisition of Zendesk",
+        "target": "Zendesk",
+        "acquirer": "Consortium",
         "party_map": {
             "Qatalyst": "Zendesk",
             "Goldman Sachs": "Zendesk",
@@ -56,6 +60,8 @@ DEALS = {
     "cvent": {
         "search_term": "cvent holding corp",
         "deal_name": "Blackstone's Acquisition of Cvent",
+        "target": "Cvent",
+        "acquirer": "Blackstone",
         # No party_map yet -- build one from the actual extraction once
         # this deal is run, the way Splunk's and Zendesk's were.
     },
@@ -69,30 +75,44 @@ DEALS = {
     "anaplan": {
         "search_term": "anaplan",
         "deal_name": "Thoma Bravo's Acquisition of Anaplan",
+        "target": "Anaplan",
+        "acquirer": "Thoma Bravo",
     },
     "citrix": {
         "search_term": "citrix systems",
         "deal_name": "Vista Equity Partners and Evergreen Coast Capital's Acquisition of Citrix",
+        "target": "Citrix",
+        "acquirer": "Vista",
     },
     "coupa": {
         "search_term": "coupa software",
         "deal_name": "Thoma Bravo's Acquisition of Coupa",
+        "target": "Coupa",
+        "acquirer": "Thoma Bravo",
     },
     "new_relic": {
         "search_term": "new relic",
         "deal_name": "Francisco Partners and TPG's Acquisition of New Relic",
+        "target": "New Relic",
+        "acquirer": "Francisco Partners",
     },
     "mandiant": {
         "search_term": "mandiant",
         "deal_name": "Google's Acquisition of Mandiant",
+        "target": "Mandiant",
+        "acquirer": "Google",
     },
     "activision": {
         "search_term": "activision blizzard",
         "deal_name": "Microsoft's Acquisition of Activision Blizzard",
+        "target": "Activision Blizzard",
+        "acquirer": "Microsoft",
     },
     "twitter": {
         "search_term": "twitter",
         "deal_name": "Elon Musk's Acquisition of Twitter",
+        "target": "Twitter",
+        "acquirer": "Musk",
         # background_of_the_merger is genuinely ~23,500 words (verified
         # the end boundary -- it's not a bug, the litigation made this an
         # unusually long chronology). Will likely need more target_chunks
@@ -189,6 +209,14 @@ def run(deal_slug: str, model: str | None = None) -> None:
     print(f"Wrote {extraction_path}")
     print(f"Wrote {summary_path}")
     print(f"Latest run: {validate.LATEST_LINK}")
+
+    print("\n=== Step 5: deal-level sanity checks ===")
+    validated_by_type: dict[str, list] = {"Event": [], "Proposal": [], "ValuationAnalysis": []}
+    for r in results:
+        validated_by_type[r["record_type"]].append(r["record"])
+    html = fetch_result.html_path.read_text(encoding="utf-8", errors="replace")
+    sanity_results = sanity.run(validated_by_type, html, deal.get("target", ""), deal.get("acquirer", ""))
+    print(sanity.format_report(deal["deal_name"], sanity_results))
 
     print("\n=== DONE ===")
     print(f"Total tokens used this run: {total_usage.total_tokens}")

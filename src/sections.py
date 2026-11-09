@@ -33,6 +33,17 @@ SECTION_SPECS = {
         r"^Unaudited Prospective Financial Information$",
         r"^Management Projections$",
         r"^Certain Financial Projections$",
+        r"^Projected Financial Information$",
+        r"^Financial Forecasts$",
+        # Found while re-sectioning Coupa/New Relic/Activision, which
+        # don't use any of the patterns above: Coupa and Activision each
+        # call it "Certain Financial Forecasts"/"Management Forecasts"
+        # instead of "Financial Forecasts" outright, and New Relic's own
+        # heading is "Summary of Management Projections", not the bare
+        # "Management Projections" above.
+        r"^Certain Financial Forecasts$",
+        r"^Management Forecasts$",
+        r"^Summary of Management Projections$",
     ],
 }
 OPINION_HEADING_RE = re.compile(r"^Opinion of (?!.*\band\b).+$")

@@ -3,9 +3,12 @@ from pathlib import Path
 
 import pytest
 
+import re
+
 import src.sections as sections_module
 from src.sections import (
     OPINION_SUBSECTION_RE,
+    SECTION_SPECS,
     SECTION_WORD_WARNING_THRESHOLD,
     _strip_page_reference,
     extract_sections,
@@ -315,3 +318,31 @@ def test_fallback_collapses_page_reference_variant_onto_the_real_opinion_heading
     sections = extract_sections(NO_MARKUP_FIXTURE.read_text())
     opinion_keys = [k for k in sections if k.startswith("opinion_of")]
     assert opinion_keys == ["opinion_of_example_advisor_llc"]
+
+
+# --- management_projections heading variants ---------------------------
+
+
+@pytest.mark.parametrize(
+    "heading_text",
+    [
+        "Certain Unaudited Prospective Financial Information",
+        "Unaudited Prospective Financial Information",
+        "Management Projections",
+        "Certain Financial Projections",
+        "Projected Financial Information",
+        "Financial Forecasts",
+        "Certain Financial Forecasts",
+        "Management Forecasts",
+        "Summary of Management Projections",
+    ],
+)
+def test_management_projections_patterns_match_each_known_variant(heading_text):
+    patterns = [re.compile(p, re.IGNORECASE) for p in SECTION_SPECS["management_projections"]]
+    assert any(p.match(heading_text) for p in patterns), heading_text
+
+
+def test_management_projections_patterns_do_not_match_unrelated_headings():
+    patterns = [re.compile(p, re.IGNORECASE) for p in SECTION_SPECS["management_projections"]]
+    for heading_text in ["Background of the Merger", "Opinion of Qatalyst Partners", "Regulatory Approvals"]:
+        assert not any(p.match(heading_text) for p in patterns), heading_text
