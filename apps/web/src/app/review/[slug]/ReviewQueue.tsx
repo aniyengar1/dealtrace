@@ -4,7 +4,24 @@ import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import type { Fact, FactType, ParagraphRow } from "@/lib/types";
 import { renderHighlighted } from "@/lib/highlight";
 import { ReviewStatusBadge, ValidationBadge } from "@/components/StatusBadge";
+import { eventTypeLabel, proposalKindLabel, valuationMethodLabel, CORE_EVENT_TYPES } from "@/lib/labels";
 import { approveFactAction, correctFactAction, rejectFactAction } from "./actions";
+
+// Proposals first (the facts that most directly drive the deal
+// narrative), then core-type events, then everything else (non-core
+// events and valuations) -- a stable sort, so ties keep their original
+// date-ish order from getAllFactsForRun.
+function factTier(fact: Fact): number {
+  if (fact.record_type === "Proposal") return 0;
+  if (fact.record_type === "Event") return CORE_EVENT_TYPES.has(fact.event_type) ? 1 : 2;
+  return 3;
+}
+
+function isCoreOrProposal(fact: Fact): boolean {
+  if (fact.record_type === "Proposal") return true;
+  if (fact.record_type === "Event") return CORE_EVENT_TYPES.has(fact.event_type);
+  return false;
+}
 
 type FieldType = "text" | "number" | "textarea" | "array" | "select";
 interface FieldConfig {
@@ -78,9 +95,9 @@ function fromEditString(value: string, type: FieldType): unknown {
 }
 
 function factSummaryLine(fact: Fact): string {
-  if (fact.record_type === "Event") return fact.event_type.replace(/_/g, " ");
-  if (fact.record_type === "Proposal") return `${fact.proposer} → ${fact.recipient} (${fact.proposal_kind.replace(/_/g, " ")})`;
-  return `${fact.advisor} — ${fact.method.replace(/_/g, " ")}`;
+  if (fact.record_type === "Event") return eventTypeLabel(fact.event_type);
+  if (fact.record_type === "Proposal") return `${fact.proposer} → ${fact.recipient} (${proposalKindLabel(fact.proposal_kind)})`;
+  return `${fact.advisor} — ${valuationMethodLabel(fact.method)}`;
 }
 
 export function ReviewQueue({
@@ -92,9 +109,14 @@ export function ReviewQueue({
   initialFacts: Fact[];
   paragraphs: Record<string, ParagraphRow>;
 }) {
-  const [facts, setFacts] = useState(initialFacts);
+  const [facts, setFacts] = useState(() => [...initialFacts].sort((a, b) => factTier(a) - factTier(b)));
+  const [coreOnly, setCoreOnly] = useState(false);
+  const visibleFacts = useMemo(
+    () => (coreOnly ? facts.filter(isCoreOrProposal) : facts),
+    [facts, coreOnly]
+  );
   const [index, setIndex] = useState(() => {
-    const firstUnreviewed = initialFacts.findIndex((f) => f.review_status === "unreviewed");
+    const firstUnreviewed = visibleFacts.findIndex((f) => f.review_status === "unreviewed");
     return firstUnreviewed === -1 ? 0 : firstUnreviewed;
   });
   const [mode, setMode] = useState<"view" | "correct" | "reject">("view");
@@ -103,7 +125,7 @@ export function ReviewQueue({
   const [pending, setPending] = useState(false);
   const noteInputRef = useRef<HTMLTextAreaElement>(null);
 
-  const current = facts[index];
+  const current = visibleFacts[index];
   const fields = current ? FIELD_CONFIG[current.record_type] : [];
   const reviewedCount = facts.filter((f) => f.review_status !== "unreviewed").length;
 
@@ -114,13 +136,20 @@ export function ReviewQueue({
   }
 
   function goTo(newIndex: number) {
-    if (newIndex < 0 || newIndex >= facts.length) return;
+    if (newIndex < 0 || newIndex >= visibleFacts.length) return;
     setIndex(newIndex);
     resetModeState();
   }
 
+  function toggleCoreOnly() {
+    setCoreOnly((v) => !v);
+    setIndex(0);
+    resetModeState();
+  }
+
   function updateCurrentFact(patch: Record<string, unknown>) {
-    setFacts((prev) => prev.map((f, i) => (i === index ? ({ ...f, ...patch } as Fact) : f)));
+    if (!current) return;
+    setFacts((prev) => prev.map((f) => (f.id === current.id ? ({ ...f, ...patch } as Fact) : f)));
   }
 
   async function handleApprove() {
@@ -191,20 +220,27 @@ export function ReviewQueue({
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mode, index, facts, pending]);
+  }, [mode, index, facts, coreOnly, pending]);
 
   const quotes = useMemo(() => current?.source_quotes ?? [], [current]);
-
-  if (!current) {
-    return <p className="text-sm text-neutral-500">No facts to review for this deal.</p>;
-  }
 
   return (
     <div>
       <div className="mb-4 flex items-center justify-between text-sm text-neutral-500">
-        <span>
-          {index + 1} of {facts.length} · {reviewedCount} reviewed
-        </span>
+        <div className="flex items-center gap-4">
+          <span>
+            {current ? `${index + 1} of ${visibleFacts.length}` : "0 of 0"}
+            {coreOnly ? " (core only)" : ""} · {reviewedCount} of {facts.length} reviewed overall
+          </span>
+          <button
+            onClick={toggleCoreOnly}
+            className={`rounded-full px-2.5 py-1 text-xs transition-colors ${
+              coreOnly ? "bg-neutral-900 text-white" : "border border-neutral-300 text-neutral-600 hover:bg-neutral-50"
+            }`}
+          >
+            Core only
+          </button>
+        </div>
         <span className="text-xs">
           <kbd className="rounded border border-neutral-300 bg-neutral-50 px-1">a</kbd> approve ·{" "}
           <kbd className="rounded border border-neutral-300 bg-neutral-50 px-1">c</kbd> correct ·{" "}
@@ -214,6 +250,13 @@ export function ReviewQueue({
         </span>
       </div>
 
+      {!current ? (
+        <p className="text-sm text-neutral-500">
+          {facts.length === 0
+            ? "No facts to review for this deal."
+            : "No core facts (proposals/core events) to review -- turn off Core only to see the rest."}
+        </p>
+      ) : (
       <div className="grid grid-cols-2 gap-6">
         <div className="rounded-lg border border-neutral-200 bg-white p-4">
           <div className="mb-3 flex items-center justify-between">
@@ -222,7 +265,7 @@ export function ReviewQueue({
               <div className="text-sm font-medium">{factSummaryLine(current)}</div>
             </div>
             <div className="flex items-center gap-2">
-              <ReviewStatusBadge status={current.review_status} />
+              <ReviewStatusBadge status={current.review_status} context="review" />
               <ValidationBadge passed={current.passed} />
             </div>
           </div>
@@ -378,7 +421,7 @@ export function ReviewQueue({
             </button>
             <button
               onClick={() => goTo(index + 1)}
-              disabled={index === facts.length - 1}
+              disabled={index === visibleFacts.length - 1}
               className="text-sm text-neutral-500 hover:text-neutral-900 disabled:opacity-30"
             >
               next →
@@ -408,6 +451,7 @@ export function ReviewQueue({
           </div>
         </div>
       </div>
+      )}
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { listDealsSummary } from "@/lib/queries";
 import { formatDate, formatPriceRange, formatPercentWhole } from "@/lib/format";
+import { acquirerDisplayName } from "@/lib/labels";
 
 export const dynamic = "force-dynamic";
 
@@ -42,7 +43,7 @@ export default async function HomePage() {
                       <span className="text-neutral-400">{deal.target}</span>
                     )}
                   </td>
-                  <td className="px-4 py-3 text-neutral-600">{deal.acquirer}</td>
+                  <td className="px-4 py-3 text-neutral-600">{acquirerDisplayName(deal.slug, deal.acquirer)}</td>
                   <td className="px-4 py-3 tabular-nums">
                     {formatPriceRange(deal.final_price_low, deal.final_price_high)}
                   </td>

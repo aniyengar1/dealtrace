@@ -58,7 +58,7 @@ export async function listDealsSummary(): Promise<DealSummary[]> {
     LEFT JOIN proposal_counts pc ON pc.run_id = lr.run_id
     LEFT JOIN final_proposal fprop ON fprop.run_id = lr.run_id
     LEFT JOIN signing s ON s.run_id = lr.run_id
-    ORDER BY d.deal_name
+    ORDER BY (coalesce(fc.total, 0) = 0) ASC, s.date_start DESC NULLS LAST, d.deal_name ASC
   `);
 }
 

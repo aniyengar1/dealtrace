@@ -8,7 +8,9 @@ import {
   getValuationsForRun,
   getParagraphsForDeal,
 } from "@/lib/queries";
-import { formatDate, formatPriceRange } from "@/lib/format";
+import { formatDate, formatPrice, formatPriceRange } from "@/lib/format";
+import { acquirerDisplayName } from "@/lib/labels";
+import { computeDealSummary } from "@/lib/dealSummary";
 import { DealView } from "./DealView";
 
 export const dynamic = "force-dynamic";
@@ -53,6 +55,7 @@ export default async function DealPage({ params }: { params: Promise<{ slug: str
   const finalProposal = pickFinalProposal(proposals);
   const finalPrice = finalProposal?.price_high ?? finalProposal?.price_low ?? null;
   const signingEvent = events.find((e) => e.event_type === "signing" && e.date_start);
+  const summary = computeDealSummary(events, proposals, deal.target);
 
   return (
     <div>
@@ -60,7 +63,7 @@ export default async function DealPage({ params }: { params: Promise<{ slug: str
         <div>
           <h1 className="text-xl font-semibold tracking-tight">{deal.deal_name}</h1>
           <p className="mt-1 text-sm text-neutral-500">
-            {deal.target} <span className="text-neutral-300">→</span> {deal.acquirer}
+            {deal.target} <span className="text-neutral-300">→</span> {acquirerDisplayName(deal.slug, deal.acquirer)}
           </p>
         </div>
         <Link
@@ -93,6 +96,50 @@ export default async function DealPage({ params }: { params: Promise<{ slug: str
           <dd className="mt-0.5 text-lg font-semibold tabular-nums">{events.length}</dd>
         </div>
       </dl>
+
+      <div className="mt-6 rounded-lg border border-neutral-200 bg-white p-4">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">Deal summary</h2>
+        <dl className="mt-3 grid grid-cols-2 gap-4 sm:grid-cols-5">
+          <div>
+            <dt className="text-xs text-neutral-500">First bid → final</dt>
+            <dd className="mt-0.5 text-sm font-medium tabular-nums">
+              {summary.firstBidPrice !== null && summary.finalBidPrice !== null ? (
+                <>
+                  {formatPrice(summary.firstBidPrice)} → {formatPrice(summary.finalBidPrice)}{" "}
+                  <span className={summary.pctChange !== null && summary.pctChange >= 0 ? "text-emerald-600" : "text-red-600"}>
+                    ({summary.pctChange !== null ? `${summary.pctChange >= 0 ? "+" : ""}${summary.pctChange.toFixed(1)}%` : "—"})
+                  </span>
+                </>
+              ) : (
+                "—"
+              )}
+            </dd>
+          </div>
+          <div>
+            <dt className="text-xs text-neutral-500">Rounds</dt>
+            <dd className="mt-0.5 text-sm font-medium tabular-nums">{summary.nRounds}</dd>
+          </div>
+          <div>
+            <dt className="text-xs text-neutral-500">Bidders</dt>
+            <dd className="mt-0.5 text-sm font-medium tabular-nums">{summary.nBidders}</dd>
+          </div>
+          <div>
+            <dt className="text-xs text-neutral-500">First contact → signing</dt>
+            <dd className="mt-0.5 text-sm font-medium tabular-nums">
+              {summary.daysFirstContactToSigning !== null ? `${summary.daysFirstContactToSigning} days` : "—"}
+            </dd>
+          </div>
+          <div>
+            <dt className="text-xs text-neutral-500">Market check</dt>
+            <dd className="mt-0.5 text-sm font-medium capitalize">{summary.marketCheck}</dd>
+          </div>
+        </dl>
+        <p className="mt-3 text-xs text-neutral-400">
+          Based on {summary.nConfirmed} confirmed and {summary.nUnreviewed} unreviewed fact
+          {summary.nConfirmed + summary.nUnreviewed === 1 ? "" : "s"}
+          {summary.nRejectedExcluded > 0 && ` (${summary.nRejectedExcluded} rejected fact${summary.nRejectedExcluded === 1 ? "" : "s"} excluded)`}.
+        </p>
+      </div>
 
       <div className="mt-8">
         <DealView

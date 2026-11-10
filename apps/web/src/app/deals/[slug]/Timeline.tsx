@@ -2,10 +2,16 @@
 
 import { useMemo, useState } from "react";
 import type { EventRow } from "@/lib/types";
-import { formatDate } from "@/lib/format";
+import { formatEventDate } from "@/lib/format";
+import { eventTypeLabel, CORE_EVENT_TYPES } from "@/lib/labels";
 import { ReviewStatusBadge, factRowClassName } from "@/components/StatusBadge";
 
-const CORE_EVENT_TYPES = new Set(["proposal", "withdrawal", "rejection", "exclusivity", "signing", "board_approval"]);
+function chipClassName(active: boolean, isCore: boolean): string {
+  if (active && isCore) return "bg-neutral-900 text-white border border-neutral-900";
+  if (active) return "bg-neutral-200 text-neutral-700 border border-neutral-200";
+  if (isCore) return "bg-white text-neutral-700 border-2 border-neutral-900";
+  return "bg-white text-neutral-400 border border-neutral-200";
+}
 
 export function Timeline({
   events,
@@ -41,15 +47,9 @@ export function Timeline({
             <button
               key={type}
               onClick={() => toggleType(type)}
-              className={`rounded-full px-2.5 py-1 text-xs transition-colors ${
-                active
-                  ? isCore
-                    ? "bg-neutral-900 text-white"
-                    : "bg-neutral-200 text-neutral-700"
-                  : "bg-neutral-50 text-neutral-400"
-              }`}
+              className={`rounded-full px-2.5 py-1 text-xs transition-colors ${chipClassName(active, isCore)}`}
             >
-              {type.replace(/_/g, " ")}
+              {eventTypeLabel(type)}
             </button>
           );
         })}
@@ -62,19 +62,19 @@ export function Timeline({
             <li
               key={event.id}
               onClick={() => onInspect(event)}
-              className={factRowClassName(event.review_status, "flex gap-3 rounded px-2 py-2")}
+              className={factRowClassName("flex gap-3 rounded px-2 py-2")}
             >
-              <span className="w-28 flex-shrink-0 tabular-nums text-xs text-neutral-500">
-                {formatDate(event.date_start)}
+              <span className="w-32 flex-shrink-0 tabular-nums text-xs text-neutral-500">
+                {formatEventDate(event)}
               </span>
               <div className="min-w-0 flex-1">
                 <div className="flex items-center gap-2">
                   <span
-                    className={`rounded px-1.5 py-0.5 text-xs capitalize ${
+                    className={`rounded px-1.5 py-0.5 text-xs ${
                       isCore ? "bg-neutral-900 text-white" : "bg-neutral-100 text-neutral-600"
                     }`}
                   >
-                    {event.event_type.replace(/_/g, " ")}
+                    {eventTypeLabel(event.event_type)}
                   </span>
                   <ReviewStatusBadge status={event.review_status} />
                 </div>

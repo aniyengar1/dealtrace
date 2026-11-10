@@ -4,12 +4,13 @@ import { useEffect } from "react";
 import type { Fact, ParagraphRow } from "@/lib/types";
 import { renderHighlighted } from "@/lib/highlight";
 import { ReviewStatusBadge, ValidationBadge } from "@/components/StatusBadge";
-import { formatPriceRange, formatMultipleRange } from "@/lib/format";
+import { formatEventDate, formatPriceRange, formatMultipleRange } from "@/lib/format";
+import { eventTypeLabel, proposalKindLabel, proposalStatusLabel, valuationMethodLabel } from "@/lib/labels";
 
 function factTitle(fact: Fact): string {
-  if (fact.record_type === "Event") return fact.event_type.replace(/_/g, " ");
-  if (fact.record_type === "Proposal") return `${fact.proposal_kind.replace(/_/g, " ")}`;
-  return `${fact.advisor} — ${fact.method.replace(/_/g, " ")}`;
+  if (fact.record_type === "Event") return eventTypeLabel(fact.event_type);
+  if (fact.record_type === "Proposal") return proposalKindLabel(fact.proposal_kind);
+  return `${fact.advisor} — ${valuationMethodLabel(fact.method)}`;
 }
 
 function FactFields({ fact }: { fact: Fact }) {
@@ -17,7 +18,7 @@ function FactFields({ fact }: { fact: Fact }) {
     return (
       <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1 text-sm">
         <dt className="text-neutral-500">Date</dt>
-        <dd>{fact.date_text}</dd>
+        <dd>{formatEventDate(fact)}</dd>
         <dt className="text-neutral-500">Parties</dt>
         <dd>{fact.parties.join(", ") || "—"}</dd>
         <dt className="text-neutral-500">Summary</dt>
@@ -43,7 +44,7 @@ function FactFields({ fact }: { fact: Fact }) {
           </>
         )}
         <dt className="text-neutral-500">Status</dt>
-        <dd>{fact.status}</dd>
+        <dd>{proposalStatusLabel(fact.status)}</dd>
       </dl>
     );
   }
@@ -96,7 +97,7 @@ export function EvidenceDrawer({
             <div className="text-xs uppercase tracking-wide text-neutral-500">
               {fact.record_type}
             </div>
-            <h2 className="text-base font-semibold capitalize">{factTitle(fact)}</h2>
+            <h2 className="text-base font-semibold">{factTitle(fact)}</h2>
           </div>
           <button
             onClick={onClose}

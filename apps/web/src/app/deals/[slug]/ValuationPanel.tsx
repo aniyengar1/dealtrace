@@ -2,6 +2,7 @@
 
 import type { ValuationRow } from "@/lib/types";
 import { formatPrice, formatMultipleRange } from "@/lib/format";
+import { valuationMethodLabel } from "@/lib/labels";
 import { ReviewStatusBadge, factRowClassName } from "@/components/StatusBadge";
 
 export function ValuationPanel({
@@ -52,11 +53,11 @@ export function ValuationPanel({
             <div
               key={v.id}
               onClick={() => onInspect(v)}
-              className={factRowClassName(v.review_status, "rounded px-2 py-2")}
+              className={factRowClassName("rounded px-2 py-2")}
             >
               <div className="mb-1 flex items-center justify-between text-xs">
                 <span className="font-medium text-neutral-700">
-                  {v.advisor} · {v.method.replace(/_/g, " ")}
+                  {v.advisor} · {valuationMethodLabel(v.method)}
                 </span>
                 <div className="flex items-center gap-2">
                   <span className="tabular-nums text-neutral-500">
