@@ -3,9 +3,11 @@ import { parseFilingDate } from "./format";
 import { computeRounds } from "./rounds";
 
 export interface DealSummaryStats {
-  firstBidPrice: number | null;
+  firstBidPriceLow: number | null;
+  firstBidPriceHigh: number | null;
   finalBidPrice: number | null;
   pctChange: number | null;
+  pctChangeBasis: "low" | "high" | null;
   nRounds: number;
   nBidders: number;
   daysFirstContactToSigning: number | null;
@@ -45,16 +47,25 @@ export function computeDealSummary(
     .filter((d): d is { proposal: ProposalRow; date: Date; price: number } => d !== null)
     .sort((a, b) => a.date.getTime() - b.date.getTime());
 
-  const firstBidPrice = dated[0]?.price ?? null;
+  const firstEntry = dated[0] ?? null;
+  const firstBidPriceLow = firstEntry?.proposal.price_low ?? null;
+  const firstBidPriceHigh = firstEntry?.proposal.price_high ?? null;
+  // A range's upper end is the conventional one to quote against the
+  // final price ("they opened at up to $X, settled at $Y"); only labeled
+  // "low" when there's no high end to prefer.
+  const pctChangeBasis: "low" | "high" | null =
+    firstBidPriceHigh !== null ? "high" : firstBidPriceLow !== null ? "low" : null;
+  const firstBidPriceForPct = pctChangeBasis === "high" ? firstBidPriceHigh : firstBidPriceLow;
+
   const accepted = dated.find((d) => d.proposal.status === "accepted");
   const finalEntry = accepted ?? dated[dated.length - 1] ?? null;
   const finalBidPrice = finalEntry?.price ?? null;
   const pctChange =
-    firstBidPrice !== null && finalBidPrice !== null && firstBidPrice !== 0
-      ? ((finalBidPrice - firstBidPrice) / firstBidPrice) * 100
+    firstBidPriceForPct !== null && finalBidPrice !== null && firstBidPriceForPct !== 0
+      ? ((finalBidPrice - firstBidPriceForPct) / firstBidPriceForPct) * 100
       : null;
 
-  const { rounds } = computeRounds(includedProposals, includedEvents);
+  const { rounds } = computeRounds(includedProposals, includedEvents, target);
   const nRounds = rounds.length;
 
   const nBidders = new Set(includedProposals.map((p) => p.proposer).filter((p) => p !== target)).size;
@@ -66,9 +77,21 @@ export function computeDealSummary(
     .filter((e) => e.event_type === "signing" && e.date_start)
     .sort((a, b) => (a.date_start! < b.date_start! ? 1 : -1))[0];
 
+  // No first_contact event extracted (it happens) shouldn't blank this
+  // figure out entirely -- the earliest dated fact of any kind is still
+  // a reasonable lower bound for when the process began.
+  let processStartDate: string | null = firstContact?.date_start ?? null;
+  if (!processStartDate) {
+    const allDates = [
+      ...includedEvents.map((e) => e.date_start).filter((d): d is string => d !== null),
+      ...dated.map((d) => d.date.toISOString().slice(0, 10)),
+    ].sort();
+    processStartDate = allDates[0] ?? null;
+  }
+
   let daysFirstContactToSigning: number | null = null;
-  if (firstContact?.date_start && signing?.date_start) {
-    const start = new Date(`${firstContact.date_start}T00:00:00Z`).getTime();
+  if (processStartDate && signing?.date_start) {
+    const start = new Date(`${processStartDate}T00:00:00Z`).getTime();
     const end = new Date(`${signing.date_start}T00:00:00Z`).getTime();
     daysFirstContactToSigning = Math.round((end - start) / (1000 * 60 * 60 * 24));
   }
@@ -86,9 +109,11 @@ export function computeDealSummary(
   else marketCheck = "unknown";
 
   return {
-    firstBidPrice,
+    firstBidPriceLow,
+    firstBidPriceHigh,
     finalBidPrice,
     pctChange,
+    pctChangeBasis,
     nRounds,
     nBidders,
     daysFirstContactToSigning,

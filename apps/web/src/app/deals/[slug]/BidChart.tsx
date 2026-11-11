@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import type { EventRow, ProposalRow } from "@/lib/types";
 import { formatDate, formatPrice } from "@/lib/format";
 import { eventTypeLabel } from "@/lib/labels";
@@ -8,11 +8,33 @@ import { computeRounds, type PlottableProposal, type Round } from "@/lib/rounds"
 
 const BIDDER_COLORS = ["#2563eb", "#7c3aed", "#d97706", "#059669", "#db2777", "#0891b2"];
 const PANEL_WIDTH = 720;
-const PANEL_HEIGHT = 220;
+const PANEL_HEIGHT = 240;
 const MARGIN = { top: 16, right: 20, bottom: 32, left: 56 };
 
 function isoDate(d: Date): string {
   return d.toISOString().slice(0, 10);
+}
+
+// Round, human-friendly axis ticks (e.g. 75/80/85, not whatever the exact
+// min/mid/max of the data happens to be).
+function niceTicks(min: number, max: number, count = 4): number[] {
+  if (min === max) return [min];
+  const rawStep = (max - min) / (count - 1);
+  const magnitude = Math.pow(10, Math.floor(Math.log10(rawStep)));
+  const normalized = rawStep / magnitude;
+  let step: number;
+  if (normalized < 1.5) step = magnitude;
+  else if (normalized < 3) step = 2 * magnitude;
+  else if (normalized < 7) step = 5 * magnitude;
+  else step = 10 * magnitude;
+
+  const niceMin = Math.floor(min / step) * step;
+  const niceMax = Math.ceil(max / step) * step;
+  const ticks: number[] = [];
+  for (let v = niceMin; v <= niceMax + step * 0.001; v += step) {
+    ticks.push(Math.round(v * 100) / 100);
+  }
+  return ticks;
 }
 
 function RoundPanel({
@@ -30,28 +52,29 @@ function RoundPanel({
   acceptedId: string | null;
   onInspect: (p: ProposalRow) => void;
 }) {
-  const [hoveredId, setHoveredId] = useState<string | null>(null);
   const points = round.proposals;
 
-  const dates = points.map((p) => p.date.getTime());
+  // X-axis is sequence-based, not time-proportional -- a round with 5
+  // bids over 3 days and one with 5 bids over 3 months both get evenly
+  // spaced slots, so a dense cluster is just as readable as a sparse one.
+  const uniqueDates = Array.from(new Set(points.map((p) => p.date.getTime()))).sort((a, b) => a - b);
+  const xScale = (t: number) => {
+    const idx = uniqueDates.indexOf(t);
+    const denom = Math.max(uniqueDates.length - 1, 1);
+    return MARGIN.left + (idx / denom) * (PANEL_WIDTH - MARGIN.left - MARGIN.right);
+  };
+
   const lows = points.map((p) => p.proposal.price_low ?? p.proposal.price_high!);
   const highs = points.map((p) => p.proposal.price_high ?? p.proposal.price_low!);
-  const minDate = Math.min(...dates);
-  const maxDate = Math.max(...dates);
-  const minPrice = Math.min(...lows);
-  const maxPrice = Math.max(...highs);
-  const pricePad = (maxPrice - minPrice) * 0.15 || maxPrice * 0.1 || 1;
-  const datePad = (maxDate - minDate) * 0.08 || 1000 * 60 * 60 * 24 * 3;
-
-  const xScale = (t: number) =>
-    MARGIN.left +
-    ((t - (minDate - datePad)) / (maxDate - minDate + 2 * datePad)) *
-      (PANEL_WIDTH - MARGIN.left - MARGIN.right);
+  const dataMin = Math.min(...lows);
+  const dataMax = Math.max(...highs);
+  const yTicks = niceTicks(dataMin, dataMax);
+  const domainMin = yTicks[0];
+  const domainMax = yTicks[yTicks.length - 1];
   const yScale = (price: number) =>
     PANEL_HEIGHT -
     MARGIN.bottom -
-    ((price - (minPrice - pricePad)) / (maxPrice - minPrice + 2 * pricePad)) *
-      (PANEL_HEIGHT - MARGIN.top - MARGIN.bottom);
+    ((price - domainMin) / (domainMax - domainMin || 1)) * (PANEL_HEIGHT - MARGIN.top - MARGIN.bottom);
 
   const series = new Map<string, PlottableProposal[]>();
   for (const point of points) {
@@ -61,13 +84,10 @@ function RoundPanel({
     series.set(key, existing);
   }
 
-  const yTicks = Array.from(new Set([minPrice, (minPrice + maxPrice) / 2, maxPrice]));
-  const xTicks = minDate === maxDate ? [minDate] : [minDate, maxDate];
-
   return (
     <div className="rounded-lg border border-neutral-200 bg-white p-4">
       <div className="mb-2 text-xs font-medium text-neutral-500">
-        Round {roundIndex + 1} · {formatDate(isoDate(new Date(minDate)))} – {formatDate(isoDate(new Date(maxDate)))}
+        Round {roundIndex + 1} · {formatDate(isoDate(points[0].date))} – {formatDate(isoDate(points[points.length - 1].date))}
       </div>
       <svg
         viewBox={`0 0 ${PANEL_WIDTH} ${PANEL_HEIGHT}`}
@@ -90,7 +110,7 @@ function RoundPanel({
             </text>
           </g>
         ))}
-        {xTicks.map((t) => (
+        {uniqueDates.map((t) => (
           <text key={t} x={xScale(t)} y={PANEL_HEIGHT - 10} textAnchor="middle" fontSize={11} fill="#737373">
             {formatDate(isoDate(new Date(t)))}
           </text>
@@ -100,7 +120,8 @@ function RoundPanel({
           const isTarget = proposer === target;
           const color = colorByBidder.get(proposer)!;
           const sorted = [...pts].sort((a, b) => a.date.getTime() - b.date.getTime());
-          const linePath = sorted
+          const realBids = sorted.filter((p) => p.proposal.proposal_kind !== "suggested_valuation");
+          const linePath = realBids
             .map(
               (p, i) =>
                 `${i === 0 ? "M" : "L"}${xScale(p.date.getTime())},${yScale(p.proposal.price_high ?? p.proposal.price_low!)}`
@@ -109,7 +130,7 @@ function RoundPanel({
 
           return (
             <g key={proposer}>
-              {sorted.length > 1 && (
+              {realBids.length > 1 && (
                 <path
                   d={linePath}
                   fill="none"
@@ -122,21 +143,23 @@ function RoundPanel({
               {sorted.map((p) => {
                 const low = p.proposal.price_low;
                 const high = p.proposal.price_high;
+                const isHedged = p.proposal.proposal_kind === "suggested_valuation";
                 const isRange = low !== null && high !== null && low !== high;
                 const x = xScale(p.date.getTime());
                 const y = yScale(high ?? low!);
                 const isAccepted = p.proposal.id === acceptedId;
                 const dimmed = p.proposal.review_status === "unreviewed" ? 0.5 : 1;
+                const priceLabel = isHedged
+                  ? `indicated up to ${formatPrice(high ?? low)}`
+                  : isRange
+                    ? `${formatPrice(low)}–${formatPrice(high)}`
+                    : formatPrice(high ?? low);
 
                 return (
-                  <g
-                    key={p.proposal.id}
-                    onClick={() => onInspect(p.proposal)}
-                    onMouseEnter={() => setHoveredId(p.proposal.id)}
-                    onMouseLeave={() => setHoveredId((id) => (id === p.proposal.id ? null : id))}
-                    className="cursor-pointer"
-                  >
-                    {isRange ? (
+                  <g key={p.proposal.id} onClick={() => onInspect(p.proposal)} className="cursor-pointer">
+                    {isHedged ? (
+                      <circle cx={x} cy={y} r={5} fill="white" stroke={color} strokeWidth={2} opacity={dimmed} />
+                    ) : isRange ? (
                       <>
                         <line x1={x} x2={x} y1={yScale(low!)} y2={yScale(high!)} stroke={color} strokeWidth={3} opacity={dimmed * 0.85} />
                         <line x1={x - 4} x2={x + 4} y1={yScale(low!)} y2={yScale(low!)} stroke={color} strokeWidth={2} opacity={dimmed} />
@@ -148,12 +171,9 @@ function RoundPanel({
                       <circle cx={x} cy={y} r={4.5} fill={color} opacity={dimmed} />
                     )}
                     {isAccepted && <circle cx={x} cy={y} r={9} fill="none" stroke="#16a34a" strokeWidth={2} />}
-                    {hoveredId === p.proposal.id && (
-                      <text x={x} y={y - 14} textAnchor="middle" fontSize={11} fill="#171717" fontWeight={500}>
-                        {isRange ? `${formatPrice(low)}–${formatPrice(high)}` : formatPrice(high ?? low)} ·{" "}
-                        {formatDate(isoDate(p.date))}
-                      </text>
-                    )}
+                    <text x={x} y={y - 10} textAnchor="middle" fontSize={10} fill="#171717">
+                      {priceLabel}
+                    </text>
                   </g>
                 );
               })}
@@ -176,7 +196,7 @@ export function BidChart({
   target: string;
   onInspect: (p: ProposalRow) => void;
 }) {
-  const { rounds, breaks } = useMemo(() => computeRounds(proposals, events), [proposals, events]);
+  const { rounds, breaks } = useMemo(() => computeRounds(proposals, events, target), [proposals, events, target]);
   const allPlotted = useMemo(() => rounds.flatMap((r) => r.proposals), [rounds]);
   const unplottable = proposals.length - allPlotted.length;
 
@@ -214,7 +234,7 @@ export function BidChart({
               <span>
                 {breaks[i].events.length > 0
                   ? breaks[i].events.map((e) => eventTypeLabel(e.event_type)).join(", ")
-                  : `${Math.round(breaks[i].gapDays)}-day gap`}
+                  : "process break"}
               </span>
               <div className="h-px flex-1 bg-neutral-200" />
             </div>
@@ -244,11 +264,14 @@ export function BidChart({
           <span className="inline-block h-0.5 w-3 bg-neutral-400" />
           range bid (low–high)
         </span>
+        <span className="inline-flex items-center gap-1.5">
+          <span className="inline-block h-2.5 w-2.5 rounded-full border-2 border-neutral-400 bg-white" />
+          hedged / suggested valuation
+        </span>
       </div>
       {unplottable > 0 && (
         <p className="text-xs text-neutral-400">
-          {unplottable} proposal{unplottable === 1 ? "" : "s"} not shown (no per-share price, e.g. premium-only
-          offers) — see the timeline below.
+          {unplottable} proposal{unplottable === 1 ? "" : "s"} not shown (no per-share price) — see the timeline below.
         </p>
       )}
     </div>

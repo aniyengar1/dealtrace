@@ -103,11 +103,14 @@ export default async function DealPage({ params }: { params: Promise<{ slug: str
           <div>
             <dt className="text-xs text-neutral-500">First bid → final</dt>
             <dd className="mt-0.5 text-sm font-medium tabular-nums">
-              {summary.firstBidPrice !== null && summary.finalBidPrice !== null ? (
+              {(summary.firstBidPriceLow !== null || summary.firstBidPriceHigh !== null) &&
+              summary.finalBidPrice !== null ? (
                 <>
-                  {formatPrice(summary.firstBidPrice)} → {formatPrice(summary.finalBidPrice)}{" "}
+                  {formatPriceRange(summary.firstBidPriceLow, summary.firstBidPriceHigh)} →{" "}
+                  {formatPrice(summary.finalBidPrice)}{" "}
                   <span className={summary.pctChange !== null && summary.pctChange >= 0 ? "text-emerald-600" : "text-red-600"}>
-                    ({summary.pctChange !== null ? `${summary.pctChange >= 0 ? "+" : ""}${summary.pctChange.toFixed(1)}%` : "—"})
+                    ({summary.pctChange !== null ? `${summary.pctChange >= 0 ? "+" : ""}${summary.pctChange.toFixed(1)}%` : "—"}
+                    {summary.pctChangeBasis ? ` from ${summary.pctChangeBasis}` : ""})
                   </span>
                 </>
               ) : (
