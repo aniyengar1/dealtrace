@@ -40,7 +40,7 @@ def test_roundtrip_idempotency_and_edges(db_conn,company):
 def test_outcome_roundtrip(db_conn,company):
     g=guidance();store.save_guidance(db_conn,g)
     a=actual('2026-02-01','2027-01-31','1000000000','2027-03-20');store.save_actual(db_conn,a)
-    r=outcomes(company,a,[g],cutoff=date(2027,3,20),result_issued=DateInterval.read('2027-03-10'),result_source={'accession':'a','url':'https://www.sec.gov/Archives/release'})
+    r=outcomes(company,a,[g],cutoff=date(2027,3,20),result_issued=DateInterval.read('2027-03-10'),result_source={'accession':'a','url':'https://www.sec.gov/Archives/release','filed_date':'2027-03-10'})
     store.save_outcome(db_conn,r,a);store.save_outcome(db_conn,r,a)
     assert db_conn.execute('SELECT original_class,latest_class FROM guidance_outcomes WHERE id=%s',(r['id'],)).fetchone()==('within','within')
 

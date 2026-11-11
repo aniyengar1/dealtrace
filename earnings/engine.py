@@ -114,8 +114,12 @@ def outcomes(company, annual, history, *, cutoff, result_issued, result_source, 
     """
     if not result_source.get('accession') or not result_source.get('url', '').startswith('https://www.sec.gov/Archives/'):
         raise ValueError('Annual outcome requires an evidenced SEC result announcement')
+    if not result_source.get('filed_date'):
+        raise ValueError('Annual outcome requires the result release SEC filing date')
+    result_source = dict(result_source)
+    result_source['filed_date'] = date.fromisoformat(str(result_source['filed_date']))
     start, end = map(date.fromisoformat, (company['period_start'], company['period_end']))
-    benchmark_cutoff = result_issued.start - timedelta(days=1)
+    benchmark_cutoff = min(result_issued.start, annual.filed) - timedelta(days=1)
     eligible = available_guidance(history, benchmark_cutoff, start, end, company['ticker'])
     # The initial range must actually be the first observed version and be verified.
     original = eligible[0] if eligible and eligible[0].original_verified else None
@@ -127,7 +131,7 @@ def outcomes(company, annual, history, *, cutoff, result_issued, result_source, 
               'original_guidance': original.id if original else None,
               'latest_guidance': latest.id if latest else None,
               'original_subsequently_withdrawn': withdrawn, 'codes': {}}
-    ready = annual.filed <= cutoff and result_issued.available(cutoff) and result_issued.start > end
+    ready = annual.filed <= cutoff and result_source['filed_date'] <= cutoff and result_issued.available(cutoff) and result_issued.start > end
     valid_period = (annual.company, annual.start, annual.end) == (company['ticker'], start, end)
     valid_basis = (annual.concept, annual.unit, annual.basis) == (company['concept'], 'USD', company['basis'])
     for label, g in [('original', original), ('latest', latest)]:

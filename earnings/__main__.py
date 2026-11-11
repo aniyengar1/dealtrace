@@ -62,6 +62,7 @@ def main(argv=None):
         if command=='outcome':
             p.add_argument('--result-issued',required=True,help='ISO date, or JSON date interval')
             p.add_argument('--result-accession',required=True);p.add_argument('--result-url',required=True)
+            p.add_argument('--result-filed',type=date.fromisoformat,required=True)
             p.add_argument('--not-comparable',action='store_true')
     p=sub.add_parser('inspect');p.add_argument('id')
     p=sub.add_parser('compare');p.add_argument('before');p.add_argument('after')
@@ -114,7 +115,7 @@ def main(argv=None):
                     a=exactly(snapshot(actuals,args.as_of),date.fromisoformat(company['period_start']),date.fromisoformat(company['period_end']),ticker,company['concept'],company['basis'])
                     issued=DateInterval.read(json.loads(args.result_issued) if args.result_issued.startswith('{') else args.result_issued)
                     r=outcomes(company,a,history,cutoff=args.as_of,result_issued=issued,
-                        result_source={'accession':args.result_accession,'url':args.result_url},comparable=not args.not_comparable)
+                        result_source={'accession':args.result_accession,'url':args.result_url,'filed_date':args.result_filed},comparable=not args.not_comparable)
                     store.save_outcome(conn,r,a);print(dumps(r));continue
                 policy=Policy(args.policy_version,args.actual_days,args.guidance_days)
                 if policy!=Policy() and args.policy_version==Policy().version:

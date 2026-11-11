@@ -166,7 +166,7 @@ def annual_outcome(history, value='1000000000', **kwargs):
     a=actual('2026-02-01','2027-01-31',value,'2027-03-20')
     return outcomes(COMPANY,a,history,cutoff=DAY(kwargs.pop('cutoff','2027-03-20')),
         result_issued=DateInterval.read('2027-03-10'),
-        result_source={'accession':'annual-release','url':'https://www.sec.gov/Archives/release'},**kwargs)
+        result_source={'accession':'annual-release','url':'https://www.sec.gov/Archives/release','filed_date':'2027-03-10'},**kwargs)
 
 
 @pytest.mark.parametrize('value,expected',[('999999999','below'),('1000000000','within'),('1050000000','within'),('1050000001','above')])
@@ -209,7 +209,7 @@ def test_missing_raw_observation_is_not_zero():
 def test_outcome_changed_basis_is_not_comparable():
     a=replace(actual('2026-02-01','2027-01-31','1000000000','2027-03-20'),basis='recast')
     r=outcomes(COMPANY,a,[guidance()],cutoff=DAY('2027-03-20'),result_issued=DateInterval.read('2027-03-10'),
-        result_source={'accession':'a','url':'https://www.sec.gov/Archives/release'})
+        result_source={'accession':'a','url':'https://www.sec.gov/Archives/release','filed_date':'2027-03-10'})
     assert r['original']==r['latest']=='not_comparable'
 
 
@@ -218,3 +218,10 @@ def test_unresolved_withdrawal_never_creates_latest_outcome():
     assert r['latest'] is None and r['codes']['latest']=='GUIDANCE_WITHDRAWN'
     r=annual_outcome([guidance('raised')],comparable=False)
     assert r['original'] is None and r['codes']['original']=='ORIGINAL_GUIDANCE_UNAVAILABLE'
+
+
+def test_result_announcement_sec_filing_must_be_available():
+    a=actual('2026-02-01','2027-01-31','1000000000','2027-03-10')
+    r=outcomes(COMPANY,a,[guidance()],cutoff=DAY('2027-03-10'),result_issued=DateInterval.read('2027-03-10'),
+        result_source={'accession':'a','url':'https://www.sec.gov/Archives/release','filed_date':'2027-03-11'})
+    assert r['original'] is None and r['codes']['latest']=='MISSING_PERIOD'
