@@ -1,0 +1,126 @@
+{
+  "history_review": {
+    "cutoff": "2026-11-11",
+    "scope": "Manual review of all SEC 8-K/8-K/A filings and linked 99.x/earnings/investor exhibits from December 2025 through November 11, 2026; includes non-earnings reaffirmations.",
+    "sources_reviewed": [
+      "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000234/crm-20251203.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000234/crm-q3fy26xexhibit991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-20260225.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-q4fy26xexhibit991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000062/crm-20260306.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000125/crm-20260527.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000125/crm-q1fy27xexhibit991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000131/crm-20260528.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000138/crm-20260527.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000160/crm-20260805.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-20260826.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000197/crm-20260902.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000210/crm-20260916.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000210/investorday2026.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000119312526104282/d887348d8k.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000119312526106356/d114728d8k.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000119312526107403/d887663d8k.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000119312526107403/d887663dex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000119312526425881/d516983d8k.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000119312526425881/d516983dex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1108524/000119312526425881/d516983dex992.htm"
+    ],
+    "original_verified": true,
+    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness."
+  },
+  "versions": [
+    {
+      "issued_date": "2026-02-25",
+      "filed_date": "2026-02-25",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "45800000000.0",
+      "high": "46200000000.0",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001108524-26-000056",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-q4fy26xexhibit991.htm"
+      },
+      "quote": "Initiates full year FY27 revenue guidance of $45.8 billion to $46.2 billion, up 10% - 11% Y/Y and in CC, including approximately 3pts Informatica contribution \u2022 Expects organic revenue re-acceleration in the second half of FY27 \u2022 Initiates full year FY27 subscription & support revenue growth guidance of slightly under ",
+      "original_verified": true,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-05-27",
+      "filed_date": "2026-05-27",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "45900000000.0",
+      "high": "46200000000.0",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "raised",
+      "source": {
+        "accession": "0001108524-26-000125",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000125/crm-q1fy27xexhibit991.htm"
+      },
+      "quote": "Raises midpoint of full year FY27 revenue guidance, now expects full year FY27 revenue of $45.9 billion to $46.2 billion, up 11% Y/Y and 10% - 11% in CC, including approximately 3pts Informatica contribution \u2022 Maintains full year FY27 subscription & support revenue growth guidance of slightly under 12% Y/Y and approxim",
+      "original_verified": false,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-08-26",
+      "filed_date": "2026-08-26",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "46100000000.0",
+      "high": "46400000000.0",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "raised",
+      "source": {
+        "accession": "0001108524-26-000187",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+      },
+      "quote": "Salesforce raises full year FY27 revenue guidance to $46.1 billion to $46.4 billion, up 11% - 12% Y/Y and 11% Y/Y in CC. In June, Salesforce announced separate definitive agreements to acquire Contentful and Fin. The Company now expects both transactions to close independently in the coming weeks, during the third quar",
+      "original_verified": false,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-10-20",
+      "filed_date": "2026-10-20",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "46100000000.0",
+      "high": "46400000000.0",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "reaffirmed",
+      "source": {
+        "accession": "0001193125-26-425881",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312526425881/d516983dex991.htm"
+      },
+      "quote": "There is no anticipated change to Salesforce\u2019s FY27 guidance.",
+      "original_verified": false,
+      "notes": "Bounds carried from explicitly referenced previous guidance; no new numerical range."
+    }
+  ]
+}

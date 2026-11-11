@@ -191,3 +191,30 @@ def test_outcome_requires_original_and_annual_availability():
     # Guidance issued on the result date is not an eligible pre-result benchmark.
     r=annual_outcome([guidance(),guidance('raised',low='1200000000',high='1300000000',issued='2027-03-10')])
     assert r['latest']=='within'
+
+
+def test_resolved_annual_is_not_an_active_hurdle(facts):
+    reported=actual('2026-02-01','2027-01-31','1020000000','2027-03-10')
+    r=calc(facts+[reported],cutoff=DAY('2027-03-10'))
+    assert r.state=='blocked' and 'Annual result is available' in r.details[0]
+
+
+def test_missing_raw_observation_is_not_zero():
+    c={**COMPANY,'concept':'Revenues'}
+    payload={'cik':1,'facts':{'us-gaap':{'Revenues':{'units':{'USD':[
+        {'start':'2026-02-01','end':'2026-07-31','val':None,'filed':'2026-08-27','accn':'a','form':'10-Q'}]}}}}}
+    assert parse_companyfacts(c,payload)==[]
+
+
+def test_outcome_changed_basis_is_not_comparable():
+    a=replace(actual('2026-02-01','2027-01-31','1000000000','2027-03-20'),basis='recast')
+    r=outcomes(COMPANY,a,[guidance()],cutoff=DAY('2027-03-20'),result_issued=DateInterval.read('2027-03-10'),
+        result_source={'accession':'a','url':'https://www.sec.gov/Archives/release'})
+    assert r['original']==r['latest']=='not_comparable'
+
+
+def test_unresolved_withdrawal_never_creates_latest_outcome():
+    r=annual_outcome([guidance(),guidance('withdrawn',issued='2026-11-01')],comparable=False)
+    assert r['latest'] is None and r['codes']['latest']=='GUIDANCE_WITHDRAWN'
+    r=annual_outcome([guidance('raised')],comparable=False)
+    assert r['original'] is None and r['codes']['original']=='ORIGINAL_GUIDANCE_UNAVAILABLE'

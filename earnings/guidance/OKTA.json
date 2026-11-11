@@ -1,0 +1,99 @@
+{
+  "history_review": {
+    "cutoff": "2026-11-11",
+    "scope": "Manual review of all SEC 8-K/8-K/A filings and linked 99.x/earnings/investor exhibits from December 2025 through November 11, 2026; includes non-earnings reaffirmations.",
+    "sources_reviewed": [
+      "https://www.sec.gov/Archives/edgar/data/1660134/000119312526170498/d118360d8k.htm",
+      "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000170/okta-10312025_ex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000170/okta-20251202.htm",
+      "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000173/okta-12192025exh991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000173/okta-20251215.htm",
+      "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000003/okta-01052026exh991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000003/okta-20260105.htm",
+      "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-1312026_ex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-20260304.htm",
+      "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000024/okta-20260305.htm",
+      "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000029/okta-20260319.htm",
+      "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000050/okta-20260528.htm",
+      "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000050/okta-4302026_ex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000054/okta-20260618.htm",
+      "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-20260826.htm",
+      "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000072/okta-09142026ex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000072/okta-20260914.htm"
+    ],
+    "original_verified": true,
+    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness."
+  },
+  "versions": [
+    {
+      "issued_date": "2026-03-04",
+      "filed_date": "2026-03-04",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "3170000000.000",
+      "high": "3190000000.000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001660134-26-000016",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-1312026_ex991.htm"
+      },
+      "quote": "For the full year fiscal 2027, the Company now expects: \u2022 Total revenue of $3.170 billion to $3.190 billion , representing a growth rate of 9% year-over-year; \u25e6 Reflected in the revenue guidance is an approximately one percentage point impact to total revenue growth resulting from our decision to accelerate the shift o",
+      "original_verified": true,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-05-28",
+      "filed_date": "2026-05-28",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "3185000000.000",
+      "high": "3205000000.000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "raised",
+      "source": {
+        "accession": "0001660134-26-000050",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000050/okta-4302026_ex991.htm"
+      },
+      "quote": "For the full year fiscal 2027, the Company now expects: \u2022 Total revenue of $3.185 billion to $3.205 billion , representing a growth rate of 9% to 10% year-over-year; \u25e6 Reflected in the revenue guidance is an approximately one percentage point impact to total revenue growth resulting from our decision to accelerate the ",
+      "original_verified": false,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-08-26",
+      "filed_date": "2026-08-26",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "3216000000.000",
+      "high": "3226000000.000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "raised",
+      "source": {
+        "accession": "0001660134-26-000068",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+      },
+      "quote": "For the full year fiscal 2027, the Company now expects: \u2022 Total revenue of $3.216 billion to $3.226 billion , representing a growth rate of 10% to 11% year-over-year; \u25e6 Reflected in the revenue guidance is an approximately one percentage point impact to total revenue growth resulting from our decision to accelerate the",
+      "original_verified": false,
+      "notes": ""
+    }
+  ]
+}

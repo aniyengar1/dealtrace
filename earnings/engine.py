@@ -20,7 +20,7 @@ def latest_guidance(history):
     return last
 
 
-def hurdle(company, actuals, guidance, cutoff, policy=Policy()):
+def _hurdle(company, actuals, guidance, cutoff, policy=Policy()):
     inputs = {}
     def blocked(code, detail):
         return Calculation(company['ticker'], cutoff, policy, inputs.copy(), (code,), (detail,))
@@ -34,6 +34,8 @@ def hurdle(company, actuals, guidance, cutoff, policy=Policy()):
         if review.get('blocked') and date.fromisoformat(review['available_on']) <= cutoff:
             return blocked('INCOMPARABLE_BASIS', review['reason'])
         facts = snapshot(actuals, cutoff)
+        if any(a.company == company['ticker'] and a.start == start and a.end == end for a in facts):
+            return blocked('MISSING_PERIOD', 'Annual result is available; use annual outcome classification instead of an active hurdle')
         current = [a for a in facts if a.company == company['ticker'] and a.start == start and a.end < end
                    and a.unit == 'USD' and a.basis == company['basis'] and a.concept == company['concept']]
         if not current:
@@ -91,6 +93,8 @@ def attribution(before, after):
         moved.append('actuals_arrived_or_revised')
     if any(before.inputs.get(k) != after.inputs.get(k) for k in ('prior_annual', 'prior_ytd', 'prior_remaining')):
         moved.append('prior_comparison_changed')
+    if before.company_config.get('comparability') != after.company_config.get('comparability'):
+        moved.append('comparability_review_changed')
     if before.policy != after.policy:
         moved.append('manual_policy_changed')
     if before.codes != after.codes:
@@ -124,20 +128,30 @@ def outcomes(company, annual, history, *, cutoff, result_issued, result_source, 
               'latest_guidance': latest.id if latest else None,
               'original_subsequently_withdrawn': withdrawn, 'codes': {}}
     ready = annual.filed <= cutoff and result_issued.available(cutoff) and result_issued.start > end
-    valid_period = (annual.company, annual.start, annual.end, annual.concept, annual.unit, annual.basis) == (
-        company['ticker'], start, end, company['concept'], 'USD', company['basis'])
+    valid_period = (annual.company, annual.start, annual.end) == (company['ticker'], start, end)
+    valid_basis = (annual.concept, annual.unit, annual.basis) == (company['concept'], 'USD', company['basis'])
     for label, g in [('original', original), ('latest', latest)]:
         if not ready or not valid_period:
             result['codes'][label] = 'MISSING_PERIOD'
-        elif not comparable or company.get('comparability', {}).get('blocked'):
-            result[label] = 'not_comparable'
         elif g is None:
             result['codes'][label] = 'ORIGINAL_GUIDANCE_UNAVAILABLE' if label == 'original' else 'MISSING_PERIOD'
         elif g.status == 'withdrawn':
             result['codes'][label] = 'GUIDANCE_WITHDRAWN'
+        elif not comparable or not valid_basis or (company.get('comparability', {}).get('blocked') and date.fromisoformat(company['comparability']['available_on']) <= cutoff):
+            result[label] = 'not_comparable'
         elif (g.basis, g.unit) != (annual.basis, annual.unit):
             result[label] = 'not_comparable'
         else:
             result[label] = classify(annual.value, g.low, g.high)
     result['id'] = record_id('outcome-v1', result)
     return result
+
+
+def hurdle(company, actuals, guidance, cutoff, policy=Policy()):
+    from dataclasses import replace
+    from copy import deepcopy
+    config = deepcopy({k: v for k, v in company.items() if k not in ('next_report', 'annual_result')})
+    review = config.get('comparability', {})
+    if review and date.fromisoformat(review['available_on']) > cutoff:
+        config['comparability'] = {'review_status': 'not_available_by_cutoff'}
+    return replace(_hurdle(company, actuals, guidance, cutoff, policy), company_config=config)

@@ -31,7 +31,8 @@
         "precision": "range"
       },
       "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000106/pd-20251122.htm",
-      "source_date": "2025-11-25"
+      "source_date": "2025-11-25",
+      "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only."
     },
     "annual_result": {
       "expected_window": {
@@ -42,7 +43,8 @@
       "status": "estimated",
       "type": "Q4/FY annual-guidance outcome",
       "source_date": "2026-03-12",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm"
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance."
     }
   },
   {
@@ -77,7 +79,8 @@
         "precision": "range"
       },
       "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054758/gtlb-20251202.htm",
-      "source_date": "2025-12-02"
+      "source_date": "2025-12-02",
+      "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only."
     },
     "annual_result": {
       "expected_window": {
@@ -88,7 +91,412 @@
       "status": "estimated",
       "type": "Q4/FY annual-guidance outcome",
       "source_date": "2026-03-03",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm"
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance."
     }
+  },
+  {
+    "ticker": "CRM",
+    "cik": "0001108524",
+    "name": "Salesforce, Inc.",
+    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2026-02-01",
+    "period_end": "2027-01-31",
+    "fiscal_label": "FY2027",
+    "prior_start": "2025-02-01",
+    "prior_end": "2026-01-31",
+    "calendar": "months",
+    "comparison_ends": {
+      "2026-04-30": "2025-04-30",
+      "2026-07-31": "2025-07-31",
+      "2026-10-31": "2025-10-31"
+    },
+    "comparability": {
+      "blocked": true,
+      "available_on": "2026-02-25",
+      "reason": "Informatica contribution and pending Contentful/Fin acquisitions change consolidation scope. October Braze announcement adds uncertainty; explicit evidence reconciliation required.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm"
+    },
+    "next_report": {
+      "type": "Q3 annual-hurdle update",
+      "date": "2026-12-02",
+      "status": "confirmed",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-15",
+        "precision": "range"
+      },
+      "source_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx",
+      "source_date": "2026-11-10",
+      "quote": "Results to be released on December 2, 2026, after market close",
+      "verified_as_of": "2026-11-11"
+    },
+    "annual_result": {
+      "type": "Q4/FY annual-guidance outcome",
+      "expected_window": {
+        "start": "2027-02-01",
+        "end": "2027-02-28",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "source_date": "2026-02-25",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-q4fy26xexhibit991.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance."
+    },
+    "calendar_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm"
+  },
+  {
+    "ticker": "CRWD",
+    "cik": "0001535527",
+    "name": "CrowdStrike Holdings, Inc.",
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2026-02-01",
+    "period_end": "2027-01-31",
+    "fiscal_label": "FY2027",
+    "prior_start": "2025-02-01",
+    "prior_end": "2026-01-31",
+    "calendar": "months",
+    "comparison_ends": {
+      "2026-04-30": "2025-04-30",
+      "2026-07-31": "2025-07-31",
+      "2026-10-31": "2025-10-31"
+    },
+    "comparability": {
+      "blocked": false,
+      "available_on": "2026-11-11",
+      "reason": "As-reported total revenue. Acquisitions disclosed in Note 12 as not having material financial-statement impact; no organic/pro-forma normalization. Stock-compensation revisions preserved.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm"
+    },
+    "next_report": {
+      "type": "Q3 annual-hurdle update",
+      "date": "2026-12-01",
+      "status": "confirmed",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-15",
+        "precision": "range"
+      },
+      "source_url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-announces-date-fiscal-third-quarter-2027-financial",
+      "source_date": "2026-11-04",
+      "quote": "after the U.S. market close on Tuesday, December 1, 2026",
+      "verified_as_of": "2026-11-11"
+    },
+    "annual_result": {
+      "type": "Q4/FY annual-guidance outcome",
+      "expected_window": {
+        "start": "2027-03-01",
+        "end": "2027-03-31",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "source_date": "2026-03-03",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance."
+    },
+    "calendar_source": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm"
+  },
+  {
+    "ticker": "OKTA",
+    "cik": "0001660134",
+    "name": "Okta, Inc.",
+    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2026-02-01",
+    "period_end": "2027-01-31",
+    "fiscal_label": "FY2027",
+    "prior_start": "2025-02-01",
+    "prior_end": "2026-01-31",
+    "calendar": "months",
+    "comparison_ends": {
+      "2026-04-30": "2025-04-30",
+      "2026-07-31": "2025-07-31",
+      "2026-10-31": "2025-10-31"
+    },
+    "comparability": {
+      "blocked": true,
+      "available_on": "2026-08-27",
+      "reason": "August 26 Permiso acquisition is a subsequent event with consideration still under evaluation. Annual guidance and prior-year comparison scope require reconciliation; partner-services shift is also disclosed.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000069/okta-20260731.htm"
+    },
+    "next_report": {
+      "type": "Q3 annual-hurdle update",
+      "date": "2026-12-01",
+      "status": "confirmed",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-15",
+        "precision": "range"
+      },
+      "source_url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+      "source_date": "2026-11-02",
+      "quote": "after the U.S. market close on Tuesday, December 1, 2026",
+      "verified_as_of": "2026-11-11"
+    },
+    "annual_result": {
+      "type": "Q4/FY annual-guidance outcome",
+      "expected_window": {
+        "start": "2027-03-01",
+        "end": "2027-03-31",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "source_date": "2026-03-04",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-1312026_ex991.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance."
+    },
+    "calendar_source": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000069/okta-20260731.htm"
+  },
+  {
+    "ticker": "IOT",
+    "cik": "0001642896",
+    "name": "Samsara Inc.",
+    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2026-02-01",
+    "period_end": "2027-01-30",
+    "fiscal_label": "FY2027",
+    "prior_start": "2025-02-02",
+    "prior_end": "2026-01-31",
+    "calendar": "weeks",
+    "comparison_ends": {
+      "2026-05-02": "2025-05-03",
+      "2026-08-01": "2025-08-02",
+      "2026-10-31": "2025-11-01"
+    },
+    "comparability": {
+      "blocked": false,
+      "available_on": "2026-11-11",
+      "reason": "Current and prior fiscal years each have 52 weeks; compare observed 26-week remaining periods.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060909/iot-20260801.htm"
+    },
+    "next_report": {
+      "type": "Q3 annual-hurdle update",
+      "date": null,
+      "status": "unverified",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-15",
+        "precision": "range"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025055355/iot-20251204.htm",
+      "source_date": "2025-12-04",
+      "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only."
+    },
+    "annual_result": {
+      "type": "Q4/FY annual-guidance outcome",
+      "expected_window": {
+        "start": "2027-03-01",
+        "end": "2027-03-31",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "source_date": "2026-03-05",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026015170/samsaraepr-q42026.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance."
+    },
+    "calendar_source": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060909/iot-20260801.htm"
+  },
+  {
+    "ticker": "MDB",
+    "cik": "0001441816",
+    "name": "MongoDB, Inc.",
+    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2026-02-01",
+    "period_end": "2027-01-31",
+    "fiscal_label": "FY2027",
+    "prior_start": "2025-02-01",
+    "prior_end": "2026-01-31",
+    "calendar": "months",
+    "comparison_ends": {
+      "2026-04-30": "2025-04-30",
+      "2026-07-31": "2025-07-31",
+      "2026-10-31": "2025-10-31"
+    },
+    "comparability": {
+      "blocked": false,
+      "available_on": "2026-11-11",
+      "reason": "Clarity consolidated from May 8, 2026. Note 4 says acquisition effects were not material; no normalization. September 29 presentation expressly does not reaffirm guidance.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059830/mdb-20260731.htm"
+    },
+    "next_report": {
+      "type": "Q3 annual-hurdle update",
+      "date": "2026-12-01",
+      "status": "confirmed",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-15",
+        "precision": "range"
+      },
+      "source_url": "https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-date-third-quarter-fiscal-2027-earnings",
+      "source_date": "2026-11-05",
+      "quote": "after the U.S. financial markets close on Tuesday, December 1, 2026",
+      "verified_as_of": "2026-11-11"
+    },
+    "annual_result": {
+      "type": "Q4/FY annual-guidance outcome",
+      "expected_window": {
+        "start": "2027-03-01",
+        "end": "2027-03-31",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "source_date": "2026-03-02",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance."
+    },
+    "calendar_source": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059830/mdb-20260731.htm"
+  },
+  {
+    "ticker": "S",
+    "cik": "0001583708",
+    "name": "SentinelOne, Inc.",
+    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2026-02-01",
+    "period_end": "2027-01-31",
+    "fiscal_label": "FY2027",
+    "prior_start": "2025-02-01",
+    "prior_end": "2026-01-31",
+    "calendar": "months",
+    "comparison_ends": {
+      "2026-04-30": "2025-04-30",
+      "2026-07-31": "2025-07-31",
+      "2026-10-31": "2025-10-31"
+    },
+    "comparability": {
+      "blocked": true,
+      "available_on": "2026-08-28",
+      "reason": "Observo and Prompt acquired in September 2025; current/prior remaining periods contain different ownership durations. Comparable revenue impact not reconciled.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000055/s-20260731.htm"
+    },
+    "next_report": {
+      "type": "Q3 annual-hurdle update",
+      "date": null,
+      "status": "unverified",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-15",
+        "precision": "range"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000157/s-20251204.htm",
+      "source_date": "2025-12-04",
+      "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only."
+    },
+    "annual_result": {
+      "type": "Q4/FY annual-guidance outcome",
+      "expected_window": {
+        "start": "2027-03-01",
+        "end": "2027-03-31",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "source_date": "2026-03-12",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/sentineloneq426exhibit991.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance."
+    },
+    "calendar_source": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000055/s-20260731.htm"
+  },
+  {
+    "ticker": "ADBE",
+    "cik": "0000796343",
+    "name": "ADOBE INC.",
+    "concept": "Revenues",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2025-11-29",
+    "period_end": "2026-11-27",
+    "fiscal_label": "FY2026",
+    "prior_start": "2024-11-30",
+    "prior_end": "2025-11-28",
+    "calendar": "weeks",
+    "comparison_ends": {
+      "2026-02-27": "2025-02-28",
+      "2026-05-29": "2025-05-30",
+      "2026-08-28": "2025-08-29"
+    },
+    "comparability": {
+      "blocked": false,
+      "available_on": "2026-11-11",
+      "reason": "Semrush consolidated from April 28, 2026. Note 3 explicitly says impact was not material; no acquisition normalization. FY2026 and comparison FY2025 are 52-week years.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
+    },
+    "next_report": {
+      "type": "Q4/FY annual-guidance outcome",
+      "date": null,
+      "status": "unverified",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-15",
+        "precision": "range"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbe-20251210.htm",
+      "source_date": "2025-12-10",
+      "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only."
+    },
+    "annual_result": {
+      "type": "Q4/FY annual-guidance outcome",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-31",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "source_date": "2025-12-10",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance."
+    },
+    "calendar_source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
+  },
+  {
+    "ticker": "LULU",
+    "cik": "0001397187",
+    "name": "lululemon athletica inc.",
+    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2026-02-02",
+    "period_end": "2027-01-31",
+    "fiscal_label": "FY2026",
+    "prior_start": "2025-02-03",
+    "prior_end": "2026-02-01",
+    "calendar": "weeks",
+    "comparison_ends": {
+      "2026-05-03": "2025-05-04",
+      "2026-08-02": "2025-08-03",
+      "2026-11-01": "2025-11-02"
+    },
+    "comparability": {
+      "blocked": false,
+      "available_on": "2026-11-11",
+      "reason": "Current and prior fiscal years each have 52 weeks; reported total net revenue, no constant-dollar normalization.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000127/lulu-20260802.htm"
+    },
+    "next_report": {
+      "type": "Q3 annual-hurdle update",
+      "date": null,
+      "status": "unverified",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-15",
+        "precision": "range"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000054/lulu-20251203.htm",
+      "source_date": "2025-12-11",
+      "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only."
+    },
+    "annual_result": {
+      "type": "Q4/FY annual-guidance outcome",
+      "expected_window": {
+        "start": "2027-03-01",
+        "end": "2027-03-31",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "source_date": "2026-03-17",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260201xex991.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance."
+    },
+    "calendar_source": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000127/lulu-20260802.htm"
   }
 ]

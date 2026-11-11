@@ -87,8 +87,8 @@ class Actual:
 
     def __post_init__(self):
         object.__setattr__(self, 'value', money(self.value))
-        if self.start > self.end:
-            raise ValueError('Reversed actual period')
+        if self.start > self.end or self.filed < self.end:
+            raise ValueError('Invalid actual period or public-availability date')
 
     @property
     def id(self):
@@ -166,6 +166,7 @@ class Calculation:
     remaining_high: Decimal | None = None
     growth_low: Decimal | None = None
     growth_high: Decimal | None = None
+    company_config: dict = field(default_factory=dict)
     formula_version: str = 'revenue-hurdle-v1-decimal50'
     # Decimal division uses 50-digit precision; no display quantization here.
 

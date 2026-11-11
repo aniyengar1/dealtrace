@@ -1,7 +1,7 @@
 {
   "history_review": {
     "cutoff": "2026-11-11",
-    "scope": "SEC 8-K/8-K/A Items 2.02, 7.01, 8.01 and linked exhibits from December 2025 through cutoff; manual review, not LLM extraction",
+    "scope": "Manual review of all SEC 8-K/8-K/A filings and linked 99.x/earnings/investor exhibits from December 2025 through November 11, 2026; includes non-earnings reaffirmations.",
     "sources_reviewed": [
       "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054758/gitlab-ex99120251031fy26.htm",
       "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054758/gtlb-20251202.htm",
@@ -13,10 +13,13 @@
       "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039805/gtlb-20260601.htm",
       "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm",
       "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gtlb-20260828.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000002/gtlb-20251230.htm",
       "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000009/gtlb-20260109.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000051/gtlb-20260413.htm",
       "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000095/exhibit991-letterfromwilla.htm",
       "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000095/gtlb-20260511.htm",
       "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000107/gtlb-20260518.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000139/gtlb-20260617.htm",
       "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000145/exhibit991-businessupdat.htm",
       "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000145/gtlb-20260708.htm"
     ],

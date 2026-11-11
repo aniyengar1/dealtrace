@@ -19,6 +19,8 @@ def parse_companyfacts(company, payload):
         for row in facts:
             if 'start' not in row or row.get('form') not in ('10-K', '10-Q', '10-K/A', '10-Q/A'):
                 continue
+            if row.get('val') is None:
+                continue  # A missing observation remains absent; it never becomes zero.
             a = Actual(company['ticker'], concept, date.fromisoformat(row['start']),
                        date.fromisoformat(row['end']), money(row['val']), unit,
                        company['basis'], row['accn'], date.fromisoformat(row['filed']),

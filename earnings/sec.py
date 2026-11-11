@@ -2,9 +2,11 @@
 from datetime import datetime, timezone
 import hashlib
 import json
+import time
 from pathlib import Path
 from urllib.parse import urlparse
-from src.fetch import _throttled_get
+import fcntl
+import src.fetch as transport
 
 CACHE = Path(__file__).resolve().parents[1] / 'data' / 'cache' / 'earnings'
 
@@ -22,8 +24,19 @@ def fetch(url, *, refresh=False, cache=CACHE):
         if hashlib.sha256(body).hexdigest() != manifest['sha256']:
             raise ValueError('SEC cache integrity failure')
         return body, manifest
-    response = _throttled_get(url, allow_redirects=False)
-    body = response.content
+    # src.fetch's limiter is process-local. Serialize Crosscheck processes and
+    # pass its last-request timestamp through to the existing limiter.
+    with (cache / 'sec.lock').open('a+') as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        stamp = cache / 'last-request.json'
+        if stamp.exists():
+            elapsed = max(0, time.time() - json.loads(stamp.read_text())['wall_time'])
+            transport._last_request_time = max(transport._last_request_time, time.monotonic() - elapsed)
+        try:
+            response = transport._throttled_get(url, allow_redirects=False)
+        finally:
+            stamp.write_text(json.dumps({'wall_time': time.time()}))
+        body = response.content
     sha = hashlib.sha256(body).hexdigest()
     body_name = f'{key}-{sha}.body'
     (cache / body_name).write_bytes(body)

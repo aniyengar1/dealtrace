@@ -1,0 +1,120 @@
+{
+  "history_review": {
+    "cutoff": "2026-11-11",
+    "scope": "Manual review of all SEC 8-K/8-K/A filings and linked 99.x/earnings/investor exhibits from December 2025 through November 11, 2026; includes non-earnings reaffirmations.",
+    "sources_reviewed": [
+      "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbe-20251210.htm",
+      "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+      "https://www.sec.gov/Archives/edgar/data/796343/000079634326000019/adbe-20260126.htm",
+      "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbe-20260309.htm",
+      "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbeex991q126.htm",
+      "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbeex992q126.htm",
+      "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbeex993q126.htm",
+      "https://www.sec.gov/Archives/edgar/data/796343/000079634326000101/adbe-20260415.htm",
+      "https://www.sec.gov/Archives/edgar/data/796343/000079634326000101/ex9918-k42126.htm",
+      "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbe-20260608.htm",
+      "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm",
+      "https://www.sec.gov/Archives/edgar/data/796343/000079634326000120/adbe-20260714.htm",
+      "https://www.sec.gov/Archives/edgar/data/796343/000079634326000144/adbe-20260902.htm",
+      "https://www.sec.gov/Archives/edgar/data/796343/000079634326000144/adbeex9918-k9826.htm",
+      "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbe-20260910.htm",
+      "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+    ],
+    "original_verified": true,
+    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness."
+  },
+  "versions": [
+    {
+      "issued_date": "2025-12-10",
+      "filed_date": "2025-12-10",
+      "fiscal_period": {
+        "start": "2025-11-29",
+        "end": "2026-11-27",
+        "label": "FY2026"
+      },
+      "metric": "consolidated_revenue",
+      "low": "25900000000.00",
+      "high": "26100000000.00",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0000796343-25-000135",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm"
+      },
+      "quote": "FY2026 targets 1 : Total revenue $25.90 billion to $26.10 billion Business Professionals & Consumers subscription revenue $7.35 billion to $7.40 billion Creative & Marketing Professionals subscription revenue $17.75 billion to $17.90 billion Total Adobe ending ARR growth 10.2% year over year Earnings per share GAAP: $1",
+      "original_verified": true,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-03-12",
+      "filed_date": "2026-03-12",
+      "fiscal_period": {
+        "start": "2025-11-29",
+        "end": "2026-11-27",
+        "label": "FY2026"
+      },
+      "metric": "consolidated_revenue",
+      "low": "25900000000.00",
+      "high": "26100000000.00",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "reaffirmed",
+      "source": {
+        "accession": "0000796343-26-000048",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbeex991q126.htm"
+      },
+      "quote": "In addition, Adobe is reaffirming previously issued FY2026 targets.",
+      "original_verified": false,
+      "notes": "Bounds carried from explicitly referenced previous guidance; no new numerical range."
+    },
+    {
+      "issued_date": "2026-06-11",
+      "filed_date": "2026-06-11",
+      "fiscal_period": {
+        "start": "2025-11-29",
+        "end": "2026-11-27",
+        "label": "FY2026"
+      },
+      "metric": "consolidated_revenue",
+      "low": "26500000000.00",
+      "high": "26600000000.00",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "raised",
+      "source": {
+        "accession": "0000796343-26-000109",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm"
+      },
+      "quote": "updated FY2026 targets: Total revenue $26.50 billion to $26.60 billion Business Professionals & Consumers subscription revenue $7.44 billion to $7.48 billion Creative & Marketing Professionals subscription revenue $18.21 billion to $18.27 billion Total Adobe ending ARR growth 10.2% year over year Earnings per share 2 G",
+      "original_verified": false,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-09-10",
+      "filed_date": "2026-09-10",
+      "fiscal_period": {
+        "start": "2025-11-29",
+        "end": "2026-11-27",
+        "label": "FY2026"
+      },
+      "metric": "consolidated_revenue",
+      "low": "26576000000.000",
+      "high": "26626000000.000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "raised",
+      "source": {
+        "accession": "0000796343-26-000147",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+      },
+      "quote": "updated FY2026 targets: Total revenue $26.576 billion to $26.626 billion Business Professionals & Consumers subscription revenue $7.470 billion to $7.490 billion Creative & Marketing Professionals subscription revenue $18.242 billion to $18.272 billion Total Adobe ending ARR growth 10.2% year over year Earnings per sha",
+      "original_verified": false,
+      "notes": ""
+    }
+  ]
+}

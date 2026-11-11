@@ -1,12 +1,14 @@
 {
   "history_review": {
     "cutoff": "2026-11-11",
-    "scope": "SEC 8-K/8-K/A Items 2.02, 7.01, 8.01 and linked exhibits from December 2025 through cutoff; manual review, not LLM extraction",
+    "scope": "Manual review of all SEC 8-K/8-K/A filings and linked 99.x/earnings/investor exhibits from December 2025 through November 11, 2026; includes non-earnings reaffirmations.",
     "sources_reviewed": [
       "https://www.sec.gov/Archives/edgar/data/1568100/000114036126020610/ef20072978_8k.htm",
       "https://www.sec.gov/Archives/edgar/data/1568100/000114036126020610/ef20072978_ex99-1.htm",
+      "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000109/pd-20251230.htm",
       "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000003/ex991-8xkxdirectorappointm.htm",
       "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000003/pd-20260115.htm",
+      "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000005/pd-20260201.htm",
       "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
       "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/pd-20260312.htm",
       "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000030/ex991-pagerdutyq1fy27earni.htm",

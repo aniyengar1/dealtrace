@@ -1,0 +1,120 @@
+{
+  "history_review": {
+    "cutoff": "2026-11-11",
+    "scope": "Manual review of all SEC 8-K/8-K/A filings and linked 99.x/earnings/investor exhibits from December 2025 through November 11, 2026; includes non-earnings reaffirmations.",
+    "sources_reviewed": [
+      "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054425/mdb-103125xex991xrelease.htm",
+      "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054425/mdb-20251201.htm",
+      "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054569/a8-kaexhibit991revised.htm",
+      "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054569/mdb-20251201.htm",
+      "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm",
+      "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-20260302.htm",
+      "https://www.sec.gov/Archives/edgar/data/1441816/000162828026038798/mdb-043026xex991xrelease.htm",
+      "https://www.sec.gov/Archives/edgar/data/1441816/000162828026038798/mdb-20260528.htm",
+      "https://www.sec.gov/Archives/edgar/data/1441816/000162828026047228/mdb-20260630.htm",
+      "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm",
+      "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-20260901.htm",
+      "https://www.sec.gov/Archives/edgar/data/1441816/000162828026063657/mdb-20260924.htm",
+      "https://www.sec.gov/Archives/edgar/data/1441816/000162828026063657/pressreleasedatedseptemb.htm",
+      "https://www.sec.gov/Archives/edgar/data/1441816/000162828026063850/mdb-20260925.htm",
+      "https://www.sec.gov/Archives/edgar/data/1441816/000162828026063850/publishablecopy-mongodbi.htm",
+      "https://www.sec.gov/Archives/edgar/data/1441816/000162828026065934/mdb-20261012.htm"
+    ],
+    "original_verified": true,
+    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness."
+  },
+  "versions": [
+    {
+      "issued_date": "2026-03-02",
+      "filed_date": "2026-03-02",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "2860000000.000",
+      "high": "2900000000.000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001628280-26-013199",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm"
+      },
+      "quote": "Full Year Fiscal 2027 Guidance Base d on information available to management as of today, March\u00a02, 2026, MongoDB is issuing the following financial guidance for the full year fiscal 2027. Revenues are expected to be in the range of: $2.860 billion to $2.900 billion GAAP Non-GAAP Income (Loss) from Operations are expected to be in the range of: $(117.0) million to $(97.0) million $545.0 million to $565.0 million Net I",
+      "original_verified": true,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-05-28",
+      "filed_date": "2026-05-28",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "2920000000.00",
+      "high": "2960000000.00",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "raised",
+      "source": {
+        "accession": "0001628280-26-038798",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026038798/mdb-043026xex991xrelease.htm"
+      },
+      "quote": "Full Year Fiscal 2027 Guidance Based on information available to management as of today, May\u00a028, 2026, MongoDB is issuing the following financial guidance for the full year fiscal 2027. Revenues are expected to be in the range of: $2.92 billion to $2.96 billion GAAP Non-GAAP Income (Loss) from Operations are expected to be in the range of: $(78.0) million to $(58.0) million $571.0 million to $591.0 million Net Income",
+      "original_verified": false,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-09-01",
+      "filed_date": "2026-09-01",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "2990000000.00",
+      "high": "3030000000.00",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "raised",
+      "source": {
+        "accession": "0001628280-26-059794",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm"
+      },
+      "quote": "Full Year Fiscal 2027 Guidance Based on information available to management as of today, September\u00a01, 2026, MongoDB is issuing the following financial guidance for the full year fiscal 2027. Revenues are expected to be in the range of: $2.99 billion to $3.03 billion GAAP Non-GAAP Income (Loss) from Operations are expected to be in the range of: $(28.0) million to $(8.0) million $616.3 million to $636.3 million Net In",
+      "original_verified": false,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-09-28",
+      "filed_date": "2026-09-28",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "2990000000.00",
+      "high": "3030000000.00",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "reaffirmed",
+      "source": {
+        "accession": "0001628280-26-063657",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026063657/pressreleasedatedseptemb.htm"
+      },
+      "quote": "The company remains confident in the outlook for the business and is reaffirming its  guidance for Q3 and the full year fiscal 2027 provided on September 1st, 2026.    Investor Day     MongoDB will be hosting an Investor Day at Nasdaq MarketSite on Tuesday, September  29th from 11:00 am\u20133:15 pm ET. The MongoDB leadership team will share an in-depth look  at our long-term strategy, market opportunities, and product in",
+      "original_verified": false,
+      "notes": "Bounds carried from explicitly referenced previous guidance; no new numerical range."
+    }
+  ]
+}
