@@ -12,12 +12,26 @@ import type {
   ValuationRow,
 } from "./types";
 
+// "Latest run" is per (deal, section), not per deal -- a deal can have
+// its background section re-extracted (events/proposals) under a newer
+// prompt version while its opinion sections (valuations) are still only
+// covered by an older run; each half should independently use whichever
+// run actually covered it most recently, not go blank just because a
+// *different* section got a newer run.
 export async function listDealsSummary(): Promise<DealSummary[]> {
   return query<DealSummary>(`
-    WITH latest_run AS (
-      SELECT DISTINCT ON (deal_id) id AS run_id, deal_id
-      FROM extraction_runs
-      ORDER BY deal_id, started_at DESC
+    WITH latest_facts_run AS (
+      SELECT DISTINCT ON (r.deal_id) r.id AS run_id, r.deal_id
+      FROM extraction_runs r
+      WHERE EXISTS (SELECT 1 FROM events e WHERE e.run_id = r.id)
+         OR EXISTS (SELECT 1 FROM proposals p WHERE p.run_id = r.id)
+      ORDER BY r.deal_id, r.started_at DESC
+    ),
+    latest_valuations_run AS (
+      SELECT DISTINCT ON (r.deal_id) r.id AS run_id, r.deal_id
+      FROM extraction_runs r
+      WHERE EXISTS (SELECT 1 FROM valuations v WHERE v.run_id = r.id)
+      ORDER BY r.deal_id, r.started_at DESC
     ),
     fact_counts AS (
       SELECT run_id, count(*) AS total, count(*) FILTER (WHERE review_status != 'unreviewed') AS reviewed
@@ -25,9 +39,12 @@ export async function listDealsSummary(): Promise<DealSummary[]> {
         SELECT run_id, review_status FROM events
         UNION ALL
         SELECT run_id, review_status FROM proposals
-        UNION ALL
-        SELECT run_id, review_status FROM valuations
       ) f
+      GROUP BY run_id
+    ),
+    valuation_counts AS (
+      SELECT run_id, count(*) AS total, count(*) FILTER (WHERE review_status != 'unreviewed') AS reviewed
+      FROM valuations
       GROUP BY run_id
     ),
     proposal_counts AS (
@@ -50,15 +67,17 @@ export async function listDealsSummary(): Promise<DealSummary[]> {
       fprop.price_high AS final_price_high,
       s.date_start AS signing_date,
       coalesce(pc.n_proposals, 0) AS n_proposals,
-      coalesce(fc.total, 0) AS n_facts_total,
-      coalesce(fc.reviewed, 0) AS n_facts_reviewed
+      coalesce(fc.total, 0) + coalesce(vc.total, 0) AS n_facts_total,
+      coalesce(fc.reviewed, 0) + coalesce(vc.reviewed, 0) AS n_facts_reviewed
     FROM deals d
-    LEFT JOIN latest_run lr ON lr.deal_id = d.id
-    LEFT JOIN fact_counts fc ON fc.run_id = lr.run_id
-    LEFT JOIN proposal_counts pc ON pc.run_id = lr.run_id
-    LEFT JOIN final_proposal fprop ON fprop.run_id = lr.run_id
-    LEFT JOIN signing s ON s.run_id = lr.run_id
-    ORDER BY (coalesce(fc.total, 0) = 0) ASC, s.date_start DESC NULLS LAST, d.deal_name ASC
+    LEFT JOIN latest_facts_run lfr ON lfr.deal_id = d.id
+    LEFT JOIN latest_valuations_run lvr ON lvr.deal_id = d.id
+    LEFT JOIN fact_counts fc ON fc.run_id = lfr.run_id
+    LEFT JOIN valuation_counts vc ON vc.run_id = lvr.run_id
+    LEFT JOIN proposal_counts pc ON pc.run_id = lfr.run_id
+    LEFT JOIN final_proposal fprop ON fprop.run_id = lfr.run_id
+    LEFT JOIN signing s ON s.run_id = lfr.run_id
+    ORDER BY (coalesce(fc.total, 0) + coalesce(vc.total, 0) = 0) ASC, s.date_start DESC NULLS LAST, d.deal_name ASC
   `);
 }
 
@@ -68,10 +87,32 @@ export async function getDealBySlug(slug: string): Promise<Deal | null> {
   ]);
 }
 
-export async function getLatestRunForDeal(dealId: string): Promise<ExtractionRun | null> {
+// The most recent run that actually extracted events/proposals (the
+// background section) for this deal -- never a run that only covered
+// opinion sections, even if it happens to be newer.
+export async function getLatestFactsRunForDeal(dealId: string): Promise<ExtractionRun | null> {
   return queryOne<ExtractionRun>(
-    `SELECT id, deal_id, run_dir, model, prompt_version, started_at
-     FROM extraction_runs WHERE deal_id = $1 ORDER BY started_at DESC LIMIT 1`,
+    `SELECT r.id, r.deal_id, r.run_dir, r.model, r.prompt_version, r.started_at
+     FROM extraction_runs r
+     WHERE r.deal_id = $1
+       AND (EXISTS (SELECT 1 FROM events e WHERE e.run_id = r.id)
+            OR EXISTS (SELECT 1 FROM proposals p WHERE p.run_id = r.id))
+     ORDER BY r.started_at DESC LIMIT 1`,
+    [dealId]
+  );
+}
+
+// The most recent run that actually extracted valuations (the opinion
+// sections) for this deal -- independent of whichever run is latest for
+// facts, so a background-only re-extraction never blanks out valuations
+// that an earlier, still-only run already covered.
+export async function getLatestValuationsRunForDeal(dealId: string): Promise<ExtractionRun | null> {
+  return queryOne<ExtractionRun>(
+    `SELECT r.id, r.deal_id, r.run_dir, r.model, r.prompt_version, r.started_at
+     FROM extraction_runs r
+     WHERE r.deal_id = $1
+       AND EXISTS (SELECT 1 FROM valuations v WHERE v.run_id = r.id)
+     ORDER BY r.started_at DESC LIMIT 1`,
     [dealId]
   );
 }
@@ -116,6 +157,22 @@ export async function getAllFactsForRun(runId: string): Promise<Fact[]> {
     getEventsForRun(runId),
     getProposalsForRun(runId),
     getValuationsForRun(runId),
+  ]);
+  return [...events, ...proposals, ...valuations];
+}
+
+// Events/proposals from the deal's latest facts run, valuations from its
+// latest valuations run -- the two can legitimately be different runs
+// (see listDealsSummary's comment above).
+export async function getAllFactsForDeal(dealId: string): Promise<Fact[]> {
+  const [factsRun, valuationsRun] = await Promise.all([
+    getLatestFactsRunForDeal(dealId),
+    getLatestValuationsRunForDeal(dealId),
+  ]);
+  const [events, proposals, valuations] = await Promise.all([
+    factsRun ? getEventsForRun(factsRun.id) : Promise.resolve([]),
+    factsRun ? getProposalsForRun(factsRun.id) : Promise.resolve([]),
+    valuationsRun ? getValuationsForRun(valuationsRun.id) : Promise.resolve([]),
   ]);
   return [...events, ...proposals, ...valuations];
 }

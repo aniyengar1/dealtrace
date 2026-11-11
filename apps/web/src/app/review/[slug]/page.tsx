@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { requireReviewer } from "@/lib/auth";
-import { getAllFactsForRun, getDealBySlug, getLatestRunForDeal, getParagraphsForDeal } from "@/lib/queries";
+import { getAllFactsForDeal, getDealBySlug, getLatestFactsRunForDeal, getParagraphsForDeal } from "@/lib/queries";
 import { ReviewQueue } from "./ReviewQueue";
 
 export const dynamic = "force-dynamic";
@@ -13,8 +13,8 @@ export default async function ReviewPage({ params }: { params: Promise<{ slug: s
   const deal = await getDealBySlug(slug);
   if (!deal) notFound();
 
-  const run = await getLatestRunForDeal(deal.id);
-  if (!run) {
+  const factsRun = await getLatestFactsRunForDeal(deal.id);
+  if (!factsRun) {
     return (
       <div>
         <h1 className="text-xl font-semibold">{deal.deal_name}</h1>
@@ -24,7 +24,7 @@ export default async function ReviewPage({ params }: { params: Promise<{ slug: s
   }
 
   const [facts, paragraphs] = await Promise.all([
-    getAllFactsForRun(run.id),
+    getAllFactsForDeal(deal.id),
     getParagraphsForDeal(deal.id),
   ]);
 

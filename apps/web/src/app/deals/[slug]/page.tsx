@@ -2,7 +2,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   getDealBySlug,
-  getLatestRunForDeal,
+  getLatestFactsRunForDeal,
+  getLatestValuationsRunForDeal,
   getEventsForRun,
   getProposalsForRun,
   getValuationsForRun,
@@ -33,8 +34,11 @@ export default async function DealPage({ params }: { params: Promise<{ slug: str
   const deal = await getDealBySlug(slug);
   if (!deal) notFound();
 
-  const run = await getLatestRunForDeal(deal.id);
-  if (!run) {
+  const [factsRun, valuationsRun] = await Promise.all([
+    getLatestFactsRunForDeal(deal.id),
+    getLatestValuationsRunForDeal(deal.id),
+  ]);
+  if (!factsRun) {
     return (
       <div>
         <h1 className="text-xl font-semibold">{deal.deal_name}</h1>
@@ -46,9 +50,9 @@ export default async function DealPage({ params }: { params: Promise<{ slug: str
   }
 
   const [events, proposals, valuations, paragraphs] = await Promise.all([
-    getEventsForRun(run.id),
-    getProposalsForRun(run.id),
-    getValuationsForRun(run.id),
+    getEventsForRun(factsRun.id),
+    getProposalsForRun(factsRun.id),
+    valuationsRun ? getValuationsForRun(valuationsRun.id) : Promise.resolve([]),
     getParagraphsForDeal(deal.id),
   ]);
 
