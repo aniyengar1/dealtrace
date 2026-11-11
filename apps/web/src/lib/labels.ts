@@ -26,6 +26,7 @@ export const EVENT_TYPE_LABELS: Record<string, string> = {
   announcement: "Announcement",
   discussion: "Discussion",
   diligence_request: "Diligence request",
+  activist: "Activist",
 };
 
 export function eventTypeLabel(type: string): string {

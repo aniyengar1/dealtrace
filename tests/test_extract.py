@@ -468,3 +468,19 @@ def test_prompt_restatement_rule_is_scoped_to_the_same_medium():
     assert "SAME medium" in instruction
     assert "A WRITTEN indication of interest or proposal is ALWAYS its own Proposal" in instruction
     assert "even when it restates a price already conveyed VERBALLY" in instruction
+
+
+def test_prompt_states_activist_event_type_rule():
+    # v12: activist-shareholder actions (JANA Partners' campaign against
+    # Zendesk -- letters, a proxy contest, nominations, settlement talks)
+    # had no distinct event_type and were scattered across other/
+    # discussion/nda; see data/benchmark/CHANGELOG.md for which gold
+    # events moved. The rule must cover the activist's own actions even
+    # when framed around the deal itself (e.g. demanding a sale), not
+    # just generic activism unrelated to the transaction.
+    instruction = extract.SYSTEM_INSTRUCTION
+    assert 'event_type="activist"' in instruction
+    assert "proxy contest" in instruction
+    assert "director nomination" in instruction
+    assert "settlement with an activist" in instruction
+    assert "public campaign" in instruction

@@ -37,7 +37,12 @@ from pydantic import BaseModel, ValidationError
 
 load_dotenv()
 
-PROMPT_VERSION = "v11"
+PROMPT_VERSION = "v12"
+# Deterministic sampling -- every extraction call should be reproducible
+# given the same prompt and model, since we rely on re-running (not
+# re-prompting with variety) for cache hits and for score-comparing
+# prompt versions against each other.
+GENERATION_TEMPERATURE = 0
 MAX_CHUNK_WORDS = 8000
 MAX_MALFORMED_RETRIES = 2
 # A per-day quota exhaustion (RESOURCE_EXHAUSTED with a "...PerDay..." quota
@@ -252,6 +257,17 @@ actually conveyed to the other side (the call, letter, or meeting where \
 the other party hears the number) -- the authorization and the conveyance \
 are two different moments, often in different paragraphs, and only the \
 second is a Proposal.
+- event_type="activist" covers activist-shareholder actions aimed at \
+the target: a public letter from an activist investor, a director \
+nomination, a proxy contest, a settlement with an activist, or any \
+other public campaign pressuring the board -- whether or not the \
+activist's stated goal is to force, oppose, or support a specific \
+transaction. Use it even when the activist's letter or campaign is \
+framed around the deal itself (e.g. demanding a sale, or opposing an \
+announced one) -- it's the ACTION (a letter, a nomination, a lawsuit \
+threat, a settlement) that makes it "activist", not which side of the \
+deal it happens to help. Don't use "other", "discussion", or \
+"announcement" for these.
 - Extract every item the excerpt supports, not just the first one you find.
 - If nothing in this excerpt matches the schema, return empty list(s).
 
@@ -460,12 +476,13 @@ def _call_gemini(prompt: str, schema: type[BaseModel], model: str) -> tuple[dict
                 config=types.GenerateContentConfig(
                     response_mime_type="application/json",
                     response_schema=schema,
-                    temperature=0,
+                    temperature=GENERATION_TEMPERATURE,
                 ),
             )
             used, remaining = _record_call(model)
             print(f"    [quota] {model}: {used}/{FREE_TIER_DAILY_QUOTA} used today, {remaining} remaining (local estimate)")
             print(f"    [model_version] {response.model_version}")
+            print(f"    [generation_config] temperature={GENERATION_TEMPERATURE}")
 
             usage_meta = response.usage_metadata
             usage = Usage(

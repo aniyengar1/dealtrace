@@ -29,6 +29,12 @@ EventType = Literal[
     "announcement",
     "discussion",
     "diligence_request",
+    # v12: activist-shareholder actions (letters, director nominations,
+    # proxy contests, settlements, public campaigns) were previously
+    # scattered across "other"/"discussion"/"announcement" with no way
+    # to distinguish them from ordinary process narrative -- see the
+    # zendesk_gold.json changelog entry for which gold events moved here.
+    "activist",
 ]
 
 DatePrecision = Literal["day", "month", "range", "unknown"]
