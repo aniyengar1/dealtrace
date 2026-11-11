@@ -104,11 +104,13 @@ def financial_overview(company, metric_facts, cutoff):
                         if company['calendar'] != 'weeks' or (p.end-p.start).days == (anchor.end-anchor.start).days:
                             value = anchor.value / p.value - Decimal(1); parents = [anchor, p]
                             formula = 'Reported revenue / corresponding prior-year revenue − 1; no scope normalization.'
+                        else:
+                            reason = 'Not comparable: fiscal-week counts differ; no automatic normalization.'
                 if key in conflicts:
                     value = None; parents = []; reason = 'Conflicting source versions require review.'
                 cells.append({'key': key, 'label': label, 'value': str(value) if value is not None else None,
                               'display': display(value, unit), 'unit': unit, 'basis': ('Reported US GAAP · parent-attributable' if key == 'net_income' and direct and direct.concept == 'NetIncomeLoss' else 'Reported US GAAP · includes noncontrolling interests' if key == 'net_income' and direct and direct.concept == 'ProfitLoss' else 'Reported US GAAP') if not formula else 'Calculated from reported US GAAP',
-                              'state': 'available' if value is not None else 'missing', 'reason': None if value is not None else reason,
+                              'state': 'available' if value is not None else 'not_comparable' if reason.startswith(('Not comparable', 'Comparison scope')) else 'missing', 'reason': None if value is not None else reason,
                               'formula': formula, 'sources': [evidence(a) for a in parents]})
         panels.append({'type': period_type, 'start': str(anchor.start) if anchor else None, 'end': str(anchor.end) if anchor else None,
                        'filed': str(anchor.filed) if anchor else None,

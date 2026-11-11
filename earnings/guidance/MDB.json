@@ -21,7 +21,16 @@
       "https://www.sec.gov/Archives/edgar/data/1441816/000162828026065934/mdb-20261012.htm"
     ],
     "original_verified": true,
-    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness."
+    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness.",
+    "latest_actual_release": {
+      "ytd_end": "2026-07-31",
+      "issued_date": "2026-09-01",
+      "filed_date": "2026-09-01",
+      "accession": "0001628280-26-059794",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm",
+      "period_quote": " 1, 2026 - MongoDB, Inc. (NASDAQ: MDB) today announced its financial results for the second quarter ended July 31, 2026",
+      "source_sha256": "28eb3703e7b94394ac7ee44215f3452bca4b47d7d35d8c51f6192f936c0378c9"
+    }
   },
   "versions": [
     {

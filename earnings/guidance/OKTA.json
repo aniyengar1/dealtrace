@@ -23,7 +23,16 @@
       "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000072/okta-20260914.htm"
     ],
     "original_verified": true,
-    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness."
+    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness.",
+    "latest_actual_release": {
+      "ytd_end": "2026-07-31",
+      "issued_date": "2026-08-26",
+      "filed_date": "2026-08-26",
+      "accession": "0001660134-26-000068",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm",
+      "period_quote": "the leading independent identity provider, today announced financial results for its second quarter ended July 31, 2026",
+      "source_sha256": "ff2c5da95d6ad2ef5134656c86f5a0a6c40b3c4b8f31b8b6cf0b435ff8248894"
+    }
   },
   "versions": [
     {

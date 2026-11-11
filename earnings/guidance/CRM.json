@@ -27,7 +27,16 @@
       "https://www.sec.gov/Archives/edgar/data/1108524/000119312526425881/d516983dex992.htm"
     ],
     "original_verified": true,
-    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness."
+    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness.",
+    "latest_actual_release": {
+      "ytd_end": "2026-07-31",
+      "issued_date": "2026-08-26",
+      "filed_date": "2026-08-26",
+      "accession": "0001108524-26-000187",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
+      "period_quote": "orce (NYSE: CRM), the world's #1 AI CRM, today announced results for its second quarter fiscal 2027 ended July 31, 2026",
+      "source_sha256": "ed2dace59f395fd2426543a34ce2dd92ecf2c442024be98c33fb96f98689633b"
+    }
   },
   "versions": [
     {

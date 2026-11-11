@@ -21,7 +21,16 @@
       "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
     ],
     "original_verified": true,
-    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness."
+    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness.",
+    "latest_actual_release": {
+      "ytd_end": "2026-08-28",
+      "issued_date": "2026-09-10",
+      "filed_date": "2026-09-10",
+      "accession": "0000796343-26-000147",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+      "period_quote": "rough innovative platforms and tools, today reported financial results for its third quarter FY2026 ended Aug. 28, 2026",
+      "source_sha256": "24da9b5927cdb491c398249a90eb2c6ef2a28fee050a2b89bafba8955ae973a4"
+    }
   },
   "versions": [
     {

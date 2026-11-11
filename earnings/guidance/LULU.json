@@ -33,7 +33,16 @@
       "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000135/lulu-20261019xex991.htm"
     ],
     "original_verified": true,
-    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness."
+    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness.",
+    "latest_actual_release": {
+      "ytd_end": "2026-08-02",
+      "issued_date": "2026-09-03",
+      "filed_date": "2026-09-03",
+      "accession": "0001397187-26-000126",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm",
+      "period_quote": "a inc. (NASDAQ:LULU) today announced financial results for the second quarter of fiscal 2026, which ended on August 2, 2026",
+      "source_sha256": "a46c0ae866fbf781605e969adee8e23a469aff5eb38e1044bb30b7aa1f448e41"
+    }
   },
   "versions": [
     {

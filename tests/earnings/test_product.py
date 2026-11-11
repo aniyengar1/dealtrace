@@ -122,3 +122,50 @@ def test_evaluation_rejects_future_dates_and_fiscal_calendar_mismatch():
     a=[actual('2025-02-01','2025-10-31','700','2025-11-01'),actual('2024-02-01','2024-10-31','500','2024-11-01'),actual('2024-02-01','2025-01-31','1000','2025-03-01'),actual('2025-02-01','2026-01-31','1300','2026-03-01')]
     bad=evaluate_case({**CASE,'period_end':'2026-02-07'},{**COMPANY,'calendar':'weeks'},a,date(2026,11,11))
     assert bad['status']=='blocked' and 'fiscal-week' in bad['reason']
+
+
+def test_refresh_records_source_gap_and_continues(monkeypatch,tmp_path,capsys):
+    from earnings import product
+    from src.fetch import FetchError
+    monkeypatch.setattr(product,'companies',lambda:{'PD':{'cik':'0001568100'},'GTLB':{'cik':'0001653482'}})
+    monkeypatch.setattr(product,'GAP_DIR',tmp_path)
+    called=[]
+    def update(t,*args):
+        called.append(t)
+        if t=='PD':raise FetchError('untrusted or private error text')
+        return {'company':t,'new_report':0}
+    monkeypatch.setattr(product,'refresh_company',update)
+    result=product.refresh(['ALL'],date(2026,11,11),True)
+    assert called==['PD','GTLB'] and result[0]['status']=='source_gap' and result[1]['company']=='GTLB'
+    assert len(list(tmp_path.glob('*.json')))==1
+    assert 'untrusted or private' not in capsys.readouterr().out
+
+
+def test_week_mismatches_are_explicit_in_financial_overview():
+    c={**COMPANY,'calendar':'weeks','period_start':'2026-02-02','period_end':'2027-01-31','comparison_ends':{}}
+    m=[metric('revenue','Revenues','2025-02-03','2026-02-01','1000'),metric('revenue','Revenues','2024-01-29','2025-02-02','900')]
+    growth=next(x for x in financial_overview(c,m,date(2026,11,11))[2]['metrics'] if x['key']=='revenue_growth')
+    assert growth['value'] is None and growth['state']=='not_comparable' and 'fiscal-week' in growth['reason']
+
+
+def test_metric_facts_keep_public_read_only_access(db_conn):
+    from psycopg.types.json import Jsonb
+    store.register(db_conn,{**COMPANY,'name':'Test'})
+    a=actual('2026-02-01','2026-10-31','700')
+    row={'id':a.id,'company_id':store.company_id('TEST'),'metric_key':'revenue','concept':a.concept,'period_start':a.start,'period_end':a.end,'filed_date':a.filed,'accession':a.accession,'unit':a.unit,'value':a.value,'payload':Jsonb(plain(a))}
+    db_conn.execute('SET LOCAL ROLE service_role');assert store.insert(db_conn,'earnings_metric_facts',row)==1
+    db_conn.execute('RESET ROLE');db_conn.execute('SET LOCAL ROLE anon')
+    assert db_conn.execute('SELECT value FROM earnings_metric_facts WHERE id=%s',(a.id,)).fetchone()[0]==D(700)
+    with pytest.raises(psycopg.errors.InsufficientPrivilege):
+        with db_conn.transaction():db_conn.execute('UPDATE earnings_metric_facts SET value=0 WHERE id=%s',(a.id,))
+    db_conn.execute('RESET ROLE')
+
+
+def test_new_release_waits_for_actuals_without_lookahead(facts):
+    c={**COMPANY,'name':'Test','fiscal_label':'FY2027','comparison_ends':{'2026-07-31':'2025-07-31'},'next_report':{'source_date':'2026-01-01'},'annual_result':{'source_date':'2026-01-01'}}
+    old=[replace(facts[0],end=date(2026,7,31)),facts[1],replace(facts[2],end=date(2025,7,31))]
+    release={'ytd_end':'2026-10-31','issued_date':'2026-11-11','filed_date':'2026-11-12','accession':'a','source_url':'https://www.sec.gov/Archives/release','period_quote':'reported through October 31, 2026'}
+    r,_=build_report(c,old,[],[guidance()],date(2026,11,11),{},'sha','2026-11-12',release)
+    assert r['forecast']['status']=='experimental' and r['latest_actual_release'] is None
+    r,_=build_report(c,old,[],[guidance()],date(2026,11,12),{},'sha','2026-11-12',release)
+    assert r['forecast']['status']=='blocked' and r['forecast']['codes']==['ACTUALS_PENDING_XBRL'] and r['forecast']['estimate'] is None

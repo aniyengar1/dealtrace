@@ -16,6 +16,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <Link href="/" className="text-sm font-semibold tracking-tight">
               DealTrace
             </Link>
+            <Link href="/crosscheck" className="text-sm font-medium text-emerald-800 hover:underline">Crosscheck</Link>
           </nav>
         </header>
         <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-8">{children}</main>

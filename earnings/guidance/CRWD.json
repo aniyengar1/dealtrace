@@ -18,7 +18,16 @@
       "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
     ],
     "original_verified": true,
-    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness."
+    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness.",
+    "latest_actual_release": {
+      "ytd_end": "2026-07-31",
+      "issued_date": "2026-08-26",
+      "filed_date": "2026-08-26",
+      "accession": "0001535527-26-000029",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+      "period_quote": "gs, Inc. (Nasdaq: CRWD), today announced financial results for the second quarter fiscal year 2027, ended July 31, 2026",
+      "source_sha256": "40fe219bb8e11d46d665cd8f565484b80d6e62d8dd6a1492339a5125a0656d66"
+    }
   },
   "versions": [
     {

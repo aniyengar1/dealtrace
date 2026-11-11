@@ -1,5 +1,9 @@
 """Repeatable materialization for the Next.js Crosscheck experience."""
 import argparse
+from datetime import datetime, timezone
+import requests
+from urllib.parse import urlparse
+from src.fetch import FetchError
 from dataclasses import replace
 from datetime import date
 from decimal import Decimal
@@ -15,19 +19,35 @@ from .metrics import parse_metrics, financial_overview, display, evidence
 from .evaluate import evaluate
 from .models import plain, record_id, dumps
 from .registry import companies, load_guidance, ROOT
-from .sec import fetch
+from .sec import fetch, CACHE
+
+GAP_DIR = CACHE / "update-gaps"
 from .__main__ import persist_calculation, reporting_asof, verify_guidance
 
 REPORT_VERSION = 'company-overview-v1'
 
 
-def build_report(company, actuals, metric_facts, history, cutoff, evaluation, source_hash, review_through):
+def build_report(company, actuals, metric_facts, history, cutoff, evaluation, source_hash, review_through, latest_release=None):
     calc = hurdle(company, actuals, history, cutoff)
     if cutoff > date.fromisoformat(review_through) and calc.state == 'ok':
         calc = replace(calc, codes=('GUIDANCE_REVIEW_REQUIRED',), details=(f'Guidance manually reviewed only through {review_through}. Refresh the evidence review before publishing a later forecast.',))
     # Current unresolved scope reviews withhold earlier experimental forecasts too.
     if company.get('comparability', {}).get('blocked') and calc.state == 'ok':
         calc = replace(calc, codes=('INCOMPARABLE_BASIS',), details=('Current acquisition-scope review remains unresolved; historical forecast withheld.',))
+    release = None
+    if latest_release:
+        issued = date.fromisoformat(latest_release['issued_date'])
+        filed = date.fromisoformat(latest_release['filed_date'])
+        release_end = date.fromisoformat(latest_release['ytd_end'])
+        if release_end > min(issued, filed) or not latest_release.get('period_quote') or not latest_release.get('accession') or not latest_release.get('source_url', '').startswith('https://www.sec.gov/Archives/'):
+            raise ValueError('Latest actual release needs valid SEC period and availability evidence')
+        if max(issued, filed) <= cutoff:
+            release = latest_release
+            calc = replace(calc, company_config={**calc.company_config, 'latest_actual_release': release})
+            current_ends = [a.end for a in actuals if a.company == company['ticker'] and a.concept == company['concept']
+                            and str(a.start) == company['period_start'] and a.unit == 'USD' and a.filed <= cutoff]
+            if (not current_ends or max(current_ends) < release_end) and calc.state == 'ok':
+                calc = replace(calc, codes=('ACTUALS_PENDING_XBRL',), details=(f'SEC release covers YTD through {release_end}, but companyfacts has no matching reported actual yet. No substitute forecast is published.',))
     f = forecast(calc, actuals, history)
     gs = available_guidance(history, cutoff, date.fromisoformat(company['period_start']), date.fromisoformat(company['period_end']), company['ticker'])
     guides = []
@@ -41,7 +61,7 @@ def build_report(company, actuals, metric_facts, history, cutoff, evaluation, so
     selected = {k:evidence(by_id[v]) for k,v in calc.inputs.items() if v in by_id}
     result = {'report_version':REPORT_VERSION, 'as_of':str(cutoff),
               'company':{k:company[k] for k in ('ticker','name','cik','period_start','period_end','fiscal_label','basis','calendar')},
-              'overview':overview, 'guidance':guides, 'guidance_review_through':review_through,
+              'overview':overview, 'latest_actual_release':release, 'guidance':guides, 'guidance_review_through':review_through,
               'hurdle':{'id':calc.id,'state':calc.state, **plain(calc)},
               'hurdle_display':{k:display(getattr(calc,k), 'ratio' if k.startswith('growth') else 'USD') for k in ('remaining_low','remaining_high','growth_low','growth_high')},
               'forecast':plain(f), 'forecast_display':{k:display(f.get(k),'ratio' if k in ('observed_growth','prior_remaining_share') else 'USD') for k in ('estimate','benchmark','observed_growth','prior_remaining_share')},
@@ -65,6 +85,8 @@ def save_report(conn, company, report, calc, actuals):
         old_calc = store.calculation_from({k:v for k,v in old['hurdle'].items() if k not in ('id','state')})
         changes = {'previous_report_id':old['id'],'causes':attribution(old_calc,calc),
                    'input_versions':{role:{'before':old_calc.inputs.get(role),'after':calc.inputs.get(role)} for role in set(old_calc.inputs)|set(calc.inputs)}}
+        if old.get('latest_actual_release') != report.get('latest_actual_release'):
+            changes['causes'].append('release_evidence_changed')
         if old['overview'] != report['overview']:
             changes['causes'].append('financial_overview_changed')
         for key, cause in [('method', 'forecast_method_changed'), ('assumptions', 'forecast_assumptions_changed'),
@@ -84,41 +106,76 @@ def save_report(conn, company, report, calc, actuals):
     return report,count
 
 
+def refresh_company(t, registry, cutoff, refresh_source=False, verify=False):
+    c=registry[t]
+    body,manifest=fetch(f'https://data.sec.gov/api/xbrl/companyfacts/CIK{c["cik"]}.json',refresh=refresh_source)
+    payload=json.loads(body,parse_float=Decimal)
+    actuals=parse_companyfacts(c,payload); metrics=parse_metrics(c,payload); history=load_guidance(t)
+    if verify:
+        verify_guidance(t)
+    with store.connect() as conn:
+        store.register(conn,c)
+        new_actuals=sum(store.save_actual(conn,a) for a in actuals)
+        new_guides=sum(store.save_guidance(conn,g) for g in history)
+        new_metrics=0
+        for key,a in metrics:
+            new_metrics+=store.insert(conn,'earnings_metric_facts',{'id':a.id,'company_id':store.company_id(t),'metric_key':key,
+                'concept':a.concept,'period_start':a.start,'period_end':a.end,'filed_date':a.filed,
+                'accession':a.accession,'unit':a.unit,'value':a.value,'payload':Jsonb(plain(a))})
+        # Evaluation can read existing companies, but never future versions at forecast dates.
+        all_actuals={ticker:store.records(conn,ticker)[0] for ticker in registry}
+        evaluation=evaluate(registry,all_actuals,cutoff)
+        # Read all immutable versions back: an updated SEC payload cannot erase an old fact.
+        actuals,history=store.records(conn,t)
+        metric_rows=conn.execute('SELECT metric_key,payload FROM earnings_metric_facts WHERE company_id=%s',(store.company_id(t),)).fetchall()
+        metrics=[(k,store.actual_from(row)) for k,row in metric_rows]
+        review=json.loads((ROOT/'guidance'/f'{t}.json').read_text())['history_review']
+        report,calc=build_report(c,actuals,metrics,history,cutoff,evaluation,manifest['sha256'],review['cutoff'],review.get('latest_actual_release'))
+        report,inserted=save_report(conn,c,report,calc,actuals)
+        return {'company':t,'report_id':report['id'],'as_of':str(cutoff),'forecast':report['forecast']['status'],
+                     'verdict':report['forecast']['verdict'],'new_actuals':new_actuals,'new_metrics':new_metrics,
+                     'new_guidance':new_guides,'new_report':inserted}
+
+def failed_sec_url(exc):
+    """Use request metadata only; never guess a failed URL or echo error text."""
+    seen = set()
+    while exc is not None and id(exc) not in seen:
+        seen.add(id(exc))
+        for item in (getattr(exc, 'response', None), getattr(exc, 'request', None)):
+            url = getattr(item, 'url', None)
+            if isinstance(url, str):
+                parsed = urlparse(url)
+                if parsed.scheme == 'https' and parsed.hostname in ('sec.gov','www.sec.gov','data.sec.gov') and not parsed.username and not parsed.password:
+                    return url
+        exc = exc.__cause__
+    return None
+
+
 def refresh(tickers, cutoff, refresh_source=False, verify=False):
-    registry=companies()
-    selected=list(registry) if tickers==['ALL'] else [t.upper() for t in tickers]
-    unknown=set(selected)-set(registry)
+    registry = companies()
+    selected = list(registry) if tickers == ['ALL'] else [t.upper() for t in tickers]
+    unknown = set(selected) - set(registry)
     if unknown:
-        raise ValueError('Unsupported company: '+', '.join(sorted(unknown)))
+        raise ValueError('Unsupported company: ' + ', '.join(sorted(unknown)))
+    results = []
     for t in selected:
-        c=registry[t]
-        body,manifest=fetch(f'https://data.sec.gov/api/xbrl/companyfacts/CIK{c["cik"]}.json',refresh=refresh_source)
-        payload=json.loads(body,parse_float=Decimal)
-        actuals=parse_companyfacts(c,payload); metrics=parse_metrics(c,payload); history=load_guidance(t)
-        if verify:
-            verify_guidance(t)
-        with store.connect() as conn:
-            store.register(conn,c)
-            new_actuals=sum(store.save_actual(conn,a) for a in actuals)
-            new_guides=sum(store.save_guidance(conn,g) for g in history)
-            new_metrics=0
-            for key,a in metrics:
-                new_metrics+=store.insert(conn,'earnings_metric_facts',{'id':a.id,'company_id':store.company_id(t),'metric_key':key,
-                    'concept':a.concept,'period_start':a.start,'period_end':a.end,'filed_date':a.filed,
-                    'accession':a.accession,'unit':a.unit,'value':a.value,'payload':Jsonb(plain(a))})
-            # Evaluation can read existing companies, but never future versions at forecast dates.
-            all_actuals={ticker:store.records(conn,ticker)[0] for ticker in registry}
-            evaluation=evaluate(registry,all_actuals,cutoff)
-            # Read all immutable versions back: an updated SEC payload cannot erase an old fact.
-            actuals,history=store.records(conn,t)
-            metric_rows=conn.execute('SELECT metric_key,payload FROM earnings_metric_facts WHERE company_id=%s',(store.company_id(t),)).fetchall()
-            metrics=[(k,store.actual_from(row)) for k,row in metric_rows]
-            reviewed=json.loads((ROOT/'guidance'/f'{t}.json').read_text())['history_review']['cutoff']
-            report,calc=build_report(c,actuals,metrics,history,cutoff,evaluation,manifest['sha256'],reviewed)
-            report,inserted=save_report(conn,c,report,calc,actuals)
-            print(dumps({'company':t,'report_id':report['id'],'as_of':str(cutoff),'forecast':report['forecast']['status'],
-                         'verdict':report['forecast']['verdict'],'new_actuals':new_actuals,'new_metrics':new_metrics,
-                         'new_guidance':new_guides,'new_report':inserted}))
+        try:
+            result = refresh_company(t, registry, cutoff, refresh_source, verify)
+        except (requests.RequestException, FetchError, ValueError, KeyError, OSError, psycopg.Error) as exc:
+            # No raw driver/HTTP text: it can contain credentials or untrusted document text.
+            result = {'company': t, 'as_of': str(cutoff), 'status': 'source_gap',
+                      'error_type': type(exc).__name__,
+                      'source_url': failed_sec_url(exc),
+                      'companyfacts_url': f'https://data.sec.gov/api/xbrl/companyfacts/CIK{registry[t]["cik"]}.json',
+                      'observed_at': datetime.now(timezone.utc).isoformat(),
+                      'message': 'Update failed; no substitute report published. Existing snapshots retain their original cutoffs.'}
+            GAP_DIR.mkdir(parents=True, exist_ok=True)
+            gap_file = GAP_DIR / (record_id('update-gap-v1', result) + '.json')
+            gap_file.write_text(dumps(result) + '\n')
+            result['gap_file'] = str(gap_file)
+        results.append(result)
+        print(dumps(result))
+    return results
 
 
 def main():
@@ -134,7 +191,9 @@ def main():
             with store.connect() as conn:
                 print(dumps(evaluate(registry,{t:store.records(conn,t)[0] for t in registry},args.as_of)))
         else:
-            refresh(args.tickers or ['ALL'],args.as_of,args.refresh,args.verify_guidance)
+            results = refresh(args.tickers or ['ALL'],args.as_of,args.refresh,args.verify_guidance)
+            if any(r.get('status') == 'source_gap' for r in results):
+                return 1
     except psycopg.Error as exc:
         print(dumps({'database_error':type(exc).__name__,'sqlstate':exc.sqlstate}),file=sys.stderr)
         return 1

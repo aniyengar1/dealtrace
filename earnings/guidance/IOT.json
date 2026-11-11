@@ -17,7 +17,16 @@
       "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm"
     ],
     "original_verified": true,
-    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness."
+    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness.",
+    "latest_actual_release": {
+      "ytd_end": "2026-08-01",
+      "issued_date": "2026-09-03",
+      "filed_date": "2026-09-03",
+      "accession": "0001628280-26-060438",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm",
+      "period_quote": "eer of the Connected Operations \u00ae Platform, today reported financial results for the second quarter ended August 1, 2026",
+      "source_sha256": "4323b6b76f3785cb80b656f18cb96b8b3e37b366c0baad4e18b361aafdc29812"
+    }
   },
   "versions": [
     {

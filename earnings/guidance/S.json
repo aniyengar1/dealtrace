@@ -26,7 +26,16 @@
       "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sq2fy27earningspresentat.htm"
     ],
     "original_verified": true,
-    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness."
+    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness.",
+    "latest_actual_release": {
+      "ytd_end": "2026-07-31",
+      "issued_date": "2026-08-27",
+      "filed_date": "2026-08-27",
+      "accession": "0001583708-26-000052",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm",
+      "period_quote": "nelOne, Inc. (NYSE: S) today announced financial results for the second quarter of fiscal year 2027 ended July 31, 2026",
+      "source_sha256": "0c703caa39e80f5376002fa0bb83b8709df7fc198d11120918710a8b61457aeb"
+    }
   },
   "versions": [
     {

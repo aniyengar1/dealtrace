@@ -23,7 +23,16 @@
       "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000145/exhibit991-businessupdat.htm",
       "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000145/gtlb-20260708.htm"
     ],
-    "original_verified": true
+    "original_verified": true,
+    "latest_actual_release": {
+      "ytd_end": "2026-07-31",
+      "issued_date": "2026-09-01",
+      "filed_date": "2026-09-01",
+      "accession": "0001628280-26-059820",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm",
+      "period_quote": "n platform for DevSecOps, today reported financial results for its second quarter fiscal year 2027, ended July 31, 2026",
+      "source_sha256": "7c3e015238a277599421246919f83f33228efea9a5f2dca65486bbd65699db3b"
+    }
   },
   "versions": [
     {
