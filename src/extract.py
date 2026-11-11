@@ -37,7 +37,7 @@ from pydantic import BaseModel, ValidationError
 
 load_dotenv()
 
-PROMPT_VERSION = "v10"
+PROMPT_VERSION = "v11"
 MAX_CHUNK_WORDS = 8000
 MAX_MALFORMED_RETRIES = 2
 # A per-day quota exhaustion (RESOURCE_EXHAUSTED with a "...PerDay..." quota
@@ -211,11 +211,18 @@ leave price_low/price_high null and set premium_pct to that percentage \
 (25.0 for "approximately 25%"). If it states a per-share price, set \
 price_low/price_high as usual and leave premium_pct null unless the \
 filing also separately states a premium percentage for the same number.
-- The same bidder stating the exact same price again in a later paragraph, \
-without changing it (e.g. reconfirming an existing offer on a later call \
-or in a follow-up email), is NOT a new Proposal -- extract that price \
-only once, at its first occurrence. Only create a second Proposal from \
-the same bidder when the number itself changes, or when the earlier \
+- The same bidder stating the exact same price again in a later \
+paragraph, without changing it, is NOT a new Proposal ONLY when it's \
+restated in the SAME medium -- verbal reconfirming an earlier verbal \
+number (e.g. on a later call), or written reconfirming an earlier \
+written one (e.g. a near-identical follow-up letter); extract that \
+price once, at its first occurrence in that medium. A WRITTEN \
+indication of interest or proposal is ALWAYS its own Proposal, even \
+when it restates a price already conveyed VERBALLY -- the written \
+delivery is itself a separate, more formal act (see the WRITTEN vs \
+VERBAL rule above), regardless of whether the number changed. Only \
+create a second Proposal from the same bidder when the number \
+changes, the medium changes from verbal to written, or the earlier \
 mention was a discussion/preview (see the next rule) and this is the \
 first time the number is actually delivered.
 - A HEDGED number is never a firm proposal, no matter who said it or \

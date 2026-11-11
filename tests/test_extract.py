@@ -448,3 +448,23 @@ def test_prompt_reemphasizes_preview_vs_written_with_an_example():
     instruction = extract.SYSTEM_INSTRUCTION
     assert "verbally previews" in instruction
     assert "never two Proposals for the same number" in instruction
+
+
+def test_prompt_restatement_rule_is_scoped_to_the_same_medium():
+    # v11 fix, regression guard for Splunk gold P13/P14: the v10
+    # "same bidder restating the same price is not a new Proposal" rule
+    # was too broad and swallowed a real case -- Cisco's August 31, 2023
+    # VERBAL $157 offer (p00490, a real Proposal, not a discussion/
+    # preview -- unlike the v9 example above) followed by a WRITTEN
+    # "revised non-binding indication of interest" at the same $157
+    # (p00491). Both are real gold Proposals (P13 revised_bid, P14
+    # non_binding_indication); v10 extracted only the first, treating
+    # the written one as a mere restatement. The rule must only
+    # suppress a restatement within the SAME medium (verbal->verbal or
+    # written->written) -- a written delivery is always its own
+    # Proposal, even when it repeats a price already given verbally.
+    instruction = extract.SYSTEM_INSTRUCTION
+    assert "NOT a new Proposal ONLY when it's" in instruction
+    assert "SAME medium" in instruction
+    assert "A WRITTEN indication of interest or proposal is ALWAYS its own Proposal" in instruction
+    assert "even when it restates a price already conveyed VERBALLY" in instruction
