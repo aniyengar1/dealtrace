@@ -1,0 +1,94 @@
+[
+  {
+    "ticker": "PD",
+    "cik": "0001568100",
+    "name": "PagerDuty, Inc.",
+    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2026-02-01",
+    "period_end": "2027-01-31",
+    "fiscal_label": "FY2027",
+    "prior_start": "2025-02-01",
+    "prior_end": "2026-01-31",
+    "calendar": "months",
+    "comparison_ends": {
+      "2026-04-30": "2025-04-30",
+      "2026-07-31": "2025-07-31",
+      "2026-10-31": "2025-10-31"
+    },
+    "comparability": {
+      "blocked": false,
+      "available_on": "2026-11-11",
+      "reason": "Consolidated revenue reconciled to current release and prior-year annual/YTD statements."
+    },
+    "next_report": {
+      "type": "Q3 annual-hurdle update",
+      "date": null,
+      "status": "unverified",
+      "expected_window": {
+        "start": "2026-11-20",
+        "end": "2026-11-30",
+        "precision": "range"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000106/pd-20251122.htm",
+      "source_date": "2025-11-25"
+    },
+    "annual_result": {
+      "expected_window": {
+        "start": "2027-03-01",
+        "end": "2027-03-31",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "type": "Q4/FY annual-guidance outcome",
+      "source_date": "2026-03-12",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm"
+    }
+  },
+  {
+    "ticker": "GTLB",
+    "cik": "0001653482",
+    "name": "GitLab Inc.",
+    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2026-02-01",
+    "period_end": "2027-01-31",
+    "fiscal_label": "FY2027",
+    "prior_start": "2025-02-01",
+    "prior_end": "2026-01-31",
+    "calendar": "months",
+    "comparison_ends": {
+      "2026-04-30": "2025-04-30",
+      "2026-07-31": "2025-07-31",
+      "2026-10-31": "2025-10-31"
+    },
+    "comparability": {
+      "blocked": false,
+      "available_on": "2026-11-11",
+      "reason": "Consolidated revenue reconciled to current release and prior-year annual/YTD statements."
+    },
+    "next_report": {
+      "type": "Q3 annual-hurdle update",
+      "date": null,
+      "status": "unverified",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-15",
+        "precision": "range"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054758/gtlb-20251202.htm",
+      "source_date": "2025-12-02"
+    },
+    "annual_result": {
+      "expected_window": {
+        "start": "2027-03-01",
+        "end": "2027-03-31",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "type": "Q4/FY annual-guidance outcome",
+      "source_date": "2026-03-03",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm"
+    }
+  }
+]

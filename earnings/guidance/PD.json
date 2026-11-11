@@ -1,0 +1,117 @@
+{
+  "history_review": {
+    "cutoff": "2026-11-11",
+    "scope": "SEC 8-K/8-K/A Items 2.02, 7.01, 8.01 and linked exhibits from December 2025 through cutoff; manual review, not LLM extraction",
+    "sources_reviewed": [
+      "https://www.sec.gov/Archives/edgar/data/1568100/000114036126020610/ef20072978_8k.htm",
+      "https://www.sec.gov/Archives/edgar/data/1568100/000114036126020610/ef20072978_ex99-1.htm",
+      "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000003/ex991-8xkxdirectorappointm.htm",
+      "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000003/pd-20260115.htm",
+      "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
+      "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/pd-20260312.htm",
+      "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000030/ex991-pagerdutyq1fy27earni.htm",
+      "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000030/pd-20260527.htm",
+      "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000033/ex991-cfoappointment62226.htm",
+      "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000033/pd-20260622.htm",
+      "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000040/ex991-8xkxdirectorappointm.htm",
+      "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000040/pd-20260711.htm",
+      "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm",
+      "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/pd-20260826.htm"
+    ],
+    "original_verified": true
+  },
+  "versions": [
+    {
+      "issued_date": "2026-03-12",
+      "filed_date": "2026-03-12",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "488500000",
+      "high": "496500000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001568100-26-000011",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm"
+      },
+      "quote": "For the full fiscal year 2027, PagerDuty currently expects: \u2022 Total revenue of $488.5 million - $496.5 million. \u2022 Non-GAAP net income per diluted share attributable to PagerDuty, Inc. common stockholders of $1.23 - $1.28 assuming approximately 81 million diluted shares and a non-GAAP tax rate of 20%. These statements are forward-looking and actual results may differ materially. Please refer to the section titled \"For",
+      "original_verified": true,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-05-11",
+      "filed_date": "2026-05-11",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "488500000",
+      "high": "496500000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "reaffirmed",
+      "source": {
+        "accession": "0001140361-26-020610",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1568100/000114036126020610/ef20072978_ex99-1.htm"
+      },
+      "quote": "Company Outlook The Company also reaffirmed its outlook for the first quarter and full fiscal year 2027, previously provided on March 12, 2026. The Company expects first\n        quarter total revenue of $118 million to $120 million, and full fiscal year total revenue of $488.5 million to $496.5 million. The Company expects Non-GAAP net income per diluted share of $0.23 - $0.25 for the first quarter (assuming approxim",
+      "original_verified": false,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-05-28",
+      "filed_date": "2026-05-28",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "488500000",
+      "high": "496500000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "reaffirmed",
+      "source": {
+        "accession": "0001568100-26-000030",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000030/ex991-pagerdutyq1fy27earni.htm"
+      },
+      "quote": "For the full fiscal year 2027, PagerDuty currently expects: \u2022 Total revenue of $488.5 million - $496.5 million, consistent with previous guidance. \u2022 Non-GAAP net income per diluted share attributable to PagerDuty, Inc. common stockholders of $1.27 - $1.32 (up from $1.23 - $1.28) assuming approximately 79 million diluted shares and a non-GAAP tax rate of 20%. These statements are forward-looking and actual results may",
+      "original_verified": false,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-08-27",
+      "filed_date": "2026-08-27",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "491500000",
+      "high": "496500000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "raised",
+      "source": {
+        "accession": "0001568100-26-000044",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm"
+      },
+      "quote": "For the full fiscal year 2027, PagerDuty currently expects: \u2022 Total revenue of $491.5 million - $496.5 million. \u2022 Non-GAAP operating margin of 25.0% to 26.0%. \u2022 Non-GAAP net income per diluted share attributable to PagerDuty, Inc. common stockholders of $1.33 - $1.37, assuming approximately 80 million diluted shares and a non-GAAP tax rate of 20%. These statements are forward-looking and actual results may differ mat",
+      "original_verified": false,
+      "notes": ""
+    }
+  ]
+}
