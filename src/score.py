@@ -35,6 +35,23 @@ against gold's real names after case/whitespace normalization only. Older
 (pre-v5) extractions anonymize parties as "Party A"/"Party B" and will
 correctly score ~0 here -- that's not a bug, it's the anonymization
 showing up as a real gap against gold's real names.
+
+Regression policy (for comparing a prompt change against a prior
+baseline on an already-scored deal): stop and report rather than
+continuing to the next deal only if EITHER
+  - a deal loses 2 or more core events, or 2 or more proposals
+    (an absolute count of newly-missing gold records, not a
+    percentage-point recall drop -- a single flipped match on a small
+    gold set swings recall% by a lot without being a real problem), OR
+  - any single miss, however small, is traceable to a specific prompt/
+    rule change rather than ordinary sampling variance (check: does the
+    model's nearest extraction near that gold record, and the rule text
+    itself, actually explain the gap? if there's no plausible causal
+    link, it's variance, not a regression).
+A deal that fails neither check is fine to proceed past even if its
+raw recall percentage moved; one that fails via the second bullet is a
+real prompt bug and should block further rollout even if the count is
+only 1, since the same rule will keep causing it elsewhere.
 """
 
 import argparse
