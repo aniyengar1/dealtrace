@@ -1,0 +1,24 @@
+{
+  "locked_prompt_version": "v12",
+  "locked_at": "2026-11-12",
+  "acceptance_band": {
+    "core_recall_min": 0.90,
+    "proposal_recall_min": 0.93
+  },
+  "results": {
+    "splunk": {
+      "run_dir": "20261111T074833Z_splunk_gemini-3.6-flash_v11",
+      "prompt_version": "v11",
+      "core_recall": "19/19",
+      "proposal_recall": "14/14",
+      "note": "v12 only added the activist event type and generation-temperature logging, neither of which touches Splunk (no activist content); v11's result stands unchanged under v12."
+    },
+    "zendesk": {
+      "run_dir": "20261112T080850Z_zendesk_gemini-3.6-flash_v12",
+      "prompt_version": "v12",
+      "core_recall": "35/36",
+      "proposal_recall": "10/10"
+    }
+  },
+  "reason": "Both gold deals clear the acceptance band (core >=90%, proposal >=93%); v12 locked as the current production prompt."
+}
