@@ -1,8 +1,8 @@
 # Crosscheck
 
-Crosscheck measures the revenue required to meet annual company guidance. It uses manual SEC-backed guidance, SEC companyfacts, Decimal arithmetic, content-versioned financial records, and explicit as-of dates. The current milestone adds a ten-company search and overview interface plus an **experimental annual revenue forecast**. A Q3 report updates the annual hurdle; only an annual result can resolve an annual guidance outcome.
+Crosscheck measures the revenue required to meet annual company guidance. It uses manual SEC-backed guidance, SEC companyfacts, Decimal arithmetic, content-versioned financial records, and explicit as-of dates. The interface provides ten-company search, sourced financial overviews, annual hurdles and quarterly guidance-implied growth. The preserved experimental annual revenue forecast and its evaluation are **hidden by default** behind the server-only `CROSSCHECK_EXPERIMENTAL_ANNUAL_FORECAST=true` opt-in. A Q3 report updates the annual hurdle; only an annual result can resolve an annual guidance outcome.
 
-## Launch search → overview → targets → forecast → evidence
+## Launch search → overview → targets → evidence
 
 The interface uses the existing Next.js app at `/crosscheck`. Its server reads content-versioned PostgreSQL reports produced by the Python earnings pipeline. All financial math stays in Decimal; JSON financial amounts remain strings, including in the browser. The existing deals query layer is reused only for server-side database access. New routes expose reads, not writes.
 
@@ -24,7 +24,7 @@ npm run start -- --hostname 127.0.0.1 --port 3011
 
 Open `http://127.0.0.1:3011/crosscheck`. For development, use `npm run dev -- --webpack --hostname 127.0.0.1 --port 3011`. The Webpack flag is intentional: this environment denies the local helper-port binding used by Turbopack's CSS worker, including during a production build. The pinned official Tailwind PostCSS plugin compiles the same utilities for the supported Webpack path. The existing Turbopack configuration remains unchanged.
 
-Search by name or ticker, then open a company. The page shows the exact research cutoff, financial periods, filing dates, manual freshness state, guidance history, required performance, experimental revenue forecast, and expandable source/record details. Unsupported companies have an explicit coverage view and a 404 JSON response. A date without a calculated snapshot shows a missing-report state; an earlier snapshot is never silently substituted. The default is the latest published cutoff no later than today, **not a claim of live data**. A later cutoff requires a new refresh.
+Search by name or ticker, then open a company. The page shows the exact research cutoff, financial periods, filing dates, manual freshness state, guidance history, required performance, and expandable source/record details. Forecast/evaluation panels, search verdicts and their public JSON fields are omitted unless the explicit experimental flag is enabled; stored research records are preserved. Unsupported companies have an explicit coverage view and a 404 JSON response. A date without a calculated snapshot shows a missing-report state; an earlier snapshot is never silently substituted. The default is the latest published cutoff no later than today, **not a claim of live data**. A later cutoff requires a new refresh.
 
 Read-only evidence JSON: `/api/crosscheck/PD?asOf=2026-11-11`. API financial values retain their Decimal strings. Public read/service-role write RLS applies to both new tables, `earnings_metric_facts` and `earnings_company_reports`, matching the earnings/deals conventions. Database credentials stay server-side.
 
@@ -356,3 +356,25 @@ statements report USD thousands. Verification checks these scales and the actual
 selected XBRL values independently, then recalculates the hurdle and checks the
 derived remainder's parent IDs. Session 2's complete audit and Session 3's baseline
 and immutable ledger remain outstanding.
+
+
+## Preparation before Session 3
+
+See [merge/readiness review](reports/pre_session3_readiness.md) and
+[verification evidence](validation/pre_session3_readiness.json). The four shared
+frontend files and current main/base revisions are listed there. Visual
+compatibility is explicitly unverified: browser automation remains prohibited,
+so no matched main-versus-earnings screenshots were produced. No merge occurred.
+
+The public interface defaults to annual hurdles, quarterly guidance-implied
+growth and evidence. Forecast/evaluation implementations and stored records
+remain available internally; this presentation flag is not a change to RLS.
+Current quarterly views read the existing calculations at the report's exact
+cutoff. For an explicit experimental local review, set the flag on the server
+process, not in a public client variable. No probabilities or live record exist.
+
+The default smoke check expects the flag off; pass `--experimental-forecast` only
+when checking a separately started opt-in instance. Future manual results-date
+confirmations can be captured with `python -m earnings.manual_dates INPUT.json`;
+see the readiness report for required provenance, timezone and precision fields.
+No manual confirmation was invented during preparation.
