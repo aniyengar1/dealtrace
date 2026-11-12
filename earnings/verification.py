@@ -4,7 +4,7 @@ from decimal import Decimal
 import json
 import re
 from bs4 import BeautifulSoup
-from .actuals import parse_companyfacts, snapshot, exactly
+from .actuals import parse_companyfacts, derive_remaining
 from .engine import hurdle
 from .models import plain
 from .registry import ROOT, companies, load_guidance
@@ -14,7 +14,8 @@ from .sec import fetch
 def check_statement_columns(gold):
     expected=[(gold['expected_ytd'],gold['expected_prior_ytd']), (gold['expected_prior_annual'],None)]
     for evidence,(current,prior) in zip(gold['statement_evidence'],expected):
-        numbers=[Decimal(n.replace(',',''))*Decimal(1000) for n in re.findall(r'\d[\d,]*',evidence['quote'])]
+        scale = {'USD thousands': Decimal(1000), 'USD millions': Decimal(1000000)}[evidence['unit']]
+        numbers=[Decimal(n.replace(',',''))*scale for n in re.findall(r'\d[\d,]*',evidence['quote'])]
         if len(numbers)!=4 or numbers[2]!=Decimal(current) or (prior is not None and numbers[3]!=Decimal(prior)):
             raise ValueError('Statement column/scale reconciliation failed')
 
@@ -36,7 +37,14 @@ def verify_real(ticker):
     if r.state!='ok' or r.remaining_low!=Decimal(gold['expected_remaining_low']) or r.remaining_high!=Decimal(gold['expected_remaining_high']):
         raise ValueError('Live SEC facts no longer reconcile to reviewed example at cutoff')
     by_id={a.id:a for a in actuals}
+    for role,key in [('actual_ytd','expected_ytd'),('prior_annual','expected_prior_annual'),('prior_ytd','expected_prior_ytd')]:
+        if by_id[r.inputs[role]].value != Decimal(gold[key]):
+            raise ValueError(f'{role} differs from the independently reviewed statement column')
+    derived=derive_remaining(by_id[r.inputs['prior_annual']],by_id[r.inputs['prior_ytd']])
+    if derived.id != r.inputs['prior_remaining']:
+        raise ValueError('Derived remainder provenance differs')
+    by_id[derived.id]=derived
     return {'company':ticker,'as_of':str(cutoff),'companyfacts_manifest':m,
         'statement_evidence':documents,'calculation':{'id':r.id,'state':r.state,**plain(r)},
         'input_records':{role:{'id':identifier,**plain(by_id[identifier])} for role,identifier in r.inputs.items() if identifier in by_id},
-        'guidance':{'id':history[-1].id,**plain(history[-1])}}
+        'guidance':next({'id':g.id,**plain(g)} for g in history if g.id == r.inputs['guidance'])}

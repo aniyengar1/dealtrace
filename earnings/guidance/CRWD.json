@@ -27,6 +27,13 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
       "period_quote": "gs, Inc. (Nasdaq: CRWD), today announced financial results for the second quarter fiscal year 2027, ended July 31, 2026",
       "source_sha256": "40fe219bb8e11d46d665cd8f565484b80d6e62d8dd6a1492339a5125a0656d66"
+    },
+    "quarterly_scope": {
+      "target": "Q3 FY2027",
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "cutoff": "2026-11-11",
+      "note": "Reviewed existing SEC source inventory after quarter issuance. MongoDB September 28 explicitly reaffirms Q3; Salesforce October 20 mentions FY27 only and is not treated as quarterly reaffirmation. No inferred quarterly reaffirmations from annual-only statements."
     }
   },
   "versions": [
@@ -98,6 +105,30 @@
       "quote": "Full Year FY27 Guidance Annual recurring revenue $6,184.4 - $6,188.4 million $6,603.0 - $6,611.9 million Total revenue $1,523.2 - $1,529.2 million $5,991.1 - $6,011.1 million Non-GAAP income from operations $372.7 - $375.9 million $1,497.2 - $1,508.4 million Non-GAAP net income attributable to CrowdStrike $325.4 - $327.9 million $1,302.7 - $1,311.6 million Non-GAAP net income per share attributable to CrowdStrike com",
       "original_verified": false,
       "notes": ""
+    },
+    {
+      "issued_date": "2026-08-26",
+      "filed_date": "2026-08-26",
+      "fiscal_period": {
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "label": "Q3 FY2027"
+      },
+      "metric": "quarterly_consolidated_revenue",
+      "low": "1523200000",
+      "high": "1529200000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001535527-26-000029",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
+      },
+      "quote": "Total revenue $1,523.2 - $1,529.2 million $5,991.1 - $6,011.1 million Non-GAAP income from operations $372.7 - $375.9 mill",
+      "original_verified": true,
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "source_sha256": "40fe219bb8e11d46d665cd8f565484b80d6e62d8dd6a1492339a5125a0656d66"
     }
   ]
 }

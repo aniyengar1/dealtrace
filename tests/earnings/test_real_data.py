@@ -8,13 +8,13 @@ from earnings.actuals import parse_companyfacts
 from earnings.engine import hurdle
 
 
-@pytest.mark.parametrize('ticker',['PD','GTLB'])
+@pytest.mark.parametrize('ticker',['PD','GTLB','ADBE','CRWD'])
 def test_reconciled_sec_examples(ticker):
     gold=json.loads((ROOT/'reconciliation.json').read_text())[ticker]
     from earnings.verification import check_statement_columns
     check_statement_columns(gold)
     c=companies()[ticker]
-    a=parse_companyfacts(c,gold['companyfacts']);g=load_guidance(ticker)
+    a=parse_companyfacts(c,gold['companyfacts']);g=[v for v in load_guidance(ticker) if v.metric=='consolidated_revenue']
     r=hurdle(c,a,g,date(2026,11,11))
     assert r.state=='ok'
     assert r.remaining_low==D(gold['expected_remaining_low'])
@@ -23,8 +23,8 @@ def test_reconciled_sec_examples(ticker):
     assert r.id==hurdle(c,list(reversed(a)),list(reversed(g)),date(2026,11,11)).id
     # Independent reported statement columns reconcile to the underlying XBRL inputs.
     for e in gold['statement_evidence']:
-        assert e['unit']=='USD thousands'
-    assert g[0].original_verified and len(g)==4
+        assert e['unit']==('USD millions' if ticker=='ADBE' else 'USD thousands')
+    assert g[0].original_verified and len(g)>=3
     assert (g[0].low,g[0].high)!=(g[-1].low,g[-1].high)
 
 

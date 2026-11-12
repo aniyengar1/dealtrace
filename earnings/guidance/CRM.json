@@ -36,6 +36,13 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
       "period_quote": "orce (NYSE: CRM), the world's #1 AI CRM, today announced results for its second quarter fiscal 2027 ended July 31, 2026",
       "source_sha256": "ed2dace59f395fd2426543a34ce2dd92ecf2c442024be98c33fb96f98689633b"
+    },
+    "quarterly_scope": {
+      "target": "Q3 FY2027",
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "cutoff": "2026-11-11",
+      "note": "Reviewed existing SEC source inventory after quarter issuance. MongoDB September 28 explicitly reaffirms Q3; Salesforce October 20 mentions FY27 only and is not treated as quarterly reaffirmation. No inferred quarterly reaffirmations from annual-only statements."
     }
   },
   "versions": [
@@ -130,6 +137,30 @@
       "quote": "There is no anticipated change to Salesforce\u2019s FY27 guidance.",
       "original_verified": false,
       "notes": "Bounds carried from explicitly referenced previous guidance; no new numerical range."
+    },
+    {
+      "issued_date": "2026-08-26",
+      "filed_date": "2026-08-26",
+      "fiscal_period": {
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "label": "Q3 FY2027"
+      },
+      "metric": "quarterly_consolidated_revenue",
+      "low": "11420000000",
+      "high": "11500000000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001108524-26-000187",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+      },
+      "quote": "Initiates third quarter FY27 revenue guidance of $11.42 billion to $11.5 billion, up 11% - 12% Y/Y and in CC, including slightly above 4pts Informatica contribution \u2022 Initiates third qu",
+      "original_verified": true,
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "source_sha256": "ed2dace59f395fd2426543a34ce2dd92ecf2c442024be98c33fb96f98689633b"
     }
   ]
 }

@@ -29,6 +29,13 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm",
       "period_quote": "rst operations management, today announced financial results for the second quarter of fiscal 2027, ended July 31, 2026",
       "source_sha256": "fbaaad97447a51e013b30f56b21375492b3ad170ddf68dd9e8e11e762205bbd8"
+    },
+    "quarterly_scope": {
+      "target": "Q3 FY2027",
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "cutoff": "2026-11-11",
+      "note": "Reviewed existing SEC source inventory after quarter issuance. MongoDB September 28 explicitly reaffirms Q3; Salesforce October 20 mentions FY27 only and is not treated as quarterly reaffirmation. No inferred quarterly reaffirmations from annual-only statements."
     }
   },
   "versions": [
@@ -123,6 +130,30 @@
       "quote": "For the full fiscal year 2027, PagerDuty currently expects: \u2022 Total revenue of $491.5 million - $496.5 million. \u2022 Non-GAAP operating margin of 25.0% to 26.0%. \u2022 Non-GAAP net income per diluted share attributable to PagerDuty, Inc. common stockholders of $1.33 - $1.37, assuming approximately 80 million diluted shares and a non-GAAP tax rate of 20%. These statements are forward-looking and actual results may differ mat",
       "original_verified": false,
       "notes": ""
+    },
+    {
+      "issued_date": "2026-08-27",
+      "filed_date": "2026-08-27",
+      "fiscal_period": {
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "label": "Q3 FY2027"
+      },
+      "metric": "quarterly_consolidated_revenue",
+      "low": "123000000",
+      "high": "125000000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001568100-26-000044",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm"
+      },
+      "quote": "For the third quarter of fiscal 2027, PagerDuty currently expects: \u2022 Total revenue of $123.0 million - $125.0 million. \u2022 Non-GAAP operating margin of 26.5% to 27.5%. \u2022 Non-GAAP net income per diluted share attributable to PagerDuty, Inc. common stockholders of $0.34",
+      "original_verified": true,
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "source_sha256": "fbaaad97447a51e013b30f56b21375492b3ad170ddf68dd9e8e11e762205bbd8"
     }
   ]
 }

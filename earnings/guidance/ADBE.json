@@ -30,6 +30,13 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
       "period_quote": "rough innovative platforms and tools, today reported financial results for its third quarter FY2026 ended Aug. 28, 2026",
       "source_sha256": "24da9b5927cdb491c398249a90eb2c6ef2a28fee050a2b89bafba8955ae973a4"
+    },
+    "quarterly_scope": {
+      "target": "Q4 FY2026",
+      "start": "2026-08-29",
+      "end": "2026-11-27",
+      "cutoff": "2026-11-11",
+      "note": "Reviewed existing SEC source inventory after quarter issuance. MongoDB September 28 explicitly reaffirms Q3; Salesforce October 20 mentions FY27 only and is not treated as quarterly reaffirmation. No inferred quarterly reaffirmations from annual-only statements."
     }
   },
   "versions": [
@@ -124,6 +131,30 @@
       "quote": "updated FY2026 targets: Total revenue $26.576 billion to $26.626 billion Business Professionals & Consumers subscription revenue $7.470 billion to $7.490 billion Creative & Marketing Professionals subscription revenue $18.242 billion to $18.272 billion Total Adobe ending ARR growth 10.2% year over year Earnings per sha",
       "original_verified": false,
       "notes": ""
+    },
+    {
+      "issued_date": "2026-09-10",
+      "filed_date": "2026-09-10",
+      "fiscal_period": {
+        "start": "2026-08-29",
+        "end": "2026-11-27",
+        "label": "Q4 FY2026"
+      },
+      "metric": "quarterly_consolidated_revenue",
+      "low": "6800000000",
+      "high": "6850000000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0000796343-26-000147",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+      },
+      "quote": "fourth quarter FY2026 targets, which assumes current macroeconomic conditions: Total revenue $6.80 billion to $6.85 billion Business Professionals & Consumers subscription revenue $1.93 billion to $1.95 billion Creative & Marketing Professionals subscription",
+      "original_verified": true,
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "source_sha256": "24da9b5927cdb491c398249a90eb2c6ef2a28fee050a2b89bafba8955ae973a4"
     }
   ]
 }

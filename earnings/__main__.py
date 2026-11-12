@@ -49,21 +49,26 @@ def reporting_asof(company,cutoff):
 
 
 def main(argv=None):
-    parser=argparse.ArgumentParser(description='Crosscheck deterministic annual revenue guidance pipeline')
+    parser=argparse.ArgumentParser(description='Crosscheck deterministic annual hurdles and quarterly guidance comparisons')
     sub=parser.add_subparsers(dest='command',required=True)
     sub.add_parser('migrate',help='Apply pending repository migrations; inspect first when sharing a DB')
-    for command in ('ingest','load-guidance','calculate','verify-guidance','report-dates','outcome','verify-real'):
+    for command in ('ingest','load-guidance','calculate','verify-guidance','report-dates','outcome','verify-real','quarter-growth','quarter-outcome'):
         p=sub.add_parser(command);p.add_argument('tickers',nargs='+',help='Approved tickers, or ALL')
         if command in ('ingest','verify-guidance'):p.add_argument('--refresh',action='store_true')
-        if command in ('calculate','report-dates','outcome'):p.add_argument('--as-of',type=date.fromisoformat,required=True)
-        if command=='calculate':
+        if command in ('calculate','report-dates','outcome','quarter-growth','quarter-outcome'):p.add_argument('--as-of',type=date.fromisoformat,required=True)
+        if command in ('calculate','quarter-growth'):
             p.add_argument('--actual-days',type=int,default=135);p.add_argument('--guidance-days',type=int,default=150)
             p.add_argument('--policy-version',default='manual-freshness-v1')
-        if command=='outcome':
+        if command in ('outcome','quarter-outcome'):
             p.add_argument('--result-issued',required=True,help='ISO date, or JSON date interval')
             p.add_argument('--result-accession',required=True);p.add_argument('--result-url',required=True)
             p.add_argument('--result-filed',type=date.fromisoformat,required=True)
             p.add_argument('--not-comparable',action='store_true')
+        if command in ('quarter-growth','quarter-outcome'):
+            p.add_argument('--period-end',type=date.fromisoformat,help='Explicit registered quarter end; defaults to current target')
+        if command=='quarter-outcome':
+            p.add_argument('--guidance-id',required=True,help='Exact quarterly guidance version to score')
+            p.add_argument('--basis-review',type=Path,help='JSON result-specific comparability review with source evidence and exact record IDs')
     p=sub.add_parser('inspect');p.add_argument('id')
     p=sub.add_parser('compare');p.add_argument('before');p.add_argument('after')
     args=parser.parse_args(argv)
@@ -75,7 +80,7 @@ def main(argv=None):
     if args.command in ('inspect','compare'):
         with store.connect() as conn:
             if args.command=='inspect':
-                for table in ('hurdle_calculations','earnings_actuals','guidance_versions','guidance_outcomes'):
+                for table in ('hurdle_calculations','earnings_actuals','guidance_versions','guidance_outcomes','earnings_quarter_calculations','earnings_quarter_outcomes'):
                     row=conn.execute(sql.SQL('SELECT payload FROM {} WHERE id=%s').format(sql.Identifier(table)),(args.id,)).fetchone()
                     if row:
                         print(dumps({'id':args.id,'table':table,'record':row[0]}));return
@@ -83,10 +88,18 @@ def main(argv=None):
             records=[]
             for identifier in (args.before,args.after):
                 row=conn.execute('SELECT payload FROM hurdle_calculations WHERE id=%s',(identifier,)).fetchone()
-                if not row:raise ValueError('Calculation not found')
-                records.append(store.calculation_from(row[0]))
+                if row:
+                    records.append(store.calculation_from(row[0]))
+                else:
+                    row=conn.execute('SELECT payload FROM earnings_quarter_calculations WHERE id=%s',(identifier,)).fetchone()
+                    if not row:raise ValueError('Calculation not found')
+                    records.append(store.quarter_calculation_from(row[0]))
             if records[0].company!=records[1].company:raise ValueError('Cannot compare different companies')
-            print(dumps({'attribution':attribution(*records)}));return
+            if type(records[0]) is not type(records[1]):raise ValueError('Cannot compare annual and quarterly calculations')
+            compare=attribution
+            from .quarters import QuarterCalculation, attribution as quarter_attribution
+            if isinstance(records[0],QuarterCalculation):compare=quarter_attribution
+            print(dumps({'attribution':compare(*records)}));return
     tickers=list(registry) if args.tickers==['ALL'] else [t.upper() for t in args.tickers]
     errors=False
     for ticker in tickers:
@@ -111,6 +124,29 @@ def main(argv=None):
                     count=sum(store.save_guidance(conn,g) for g in history)
                     print(dumps({'company':ticker,'inserted':count,'versions':len(history)}));continue
                 actuals,history=store.records(conn,ticker)
+                if args.command in ('quarter-growth','quarter-outcome'):
+                    from .quarters import implied_growth, prior_quarter, selected_outcome
+                    targets = company['quarter_targets']
+                    target = next((t for t in targets if date.fromisoformat(t['end']) == args.period_end), None) if args.period_end else targets[-1]
+                    if target is None: raise ValueError('Unsupported quarter; register evidenced fiscal boundaries first')
+                    if args.command == 'quarter-growth':
+                        policy=Policy(args.policy_version,args.actual_days,args.guidance_days)
+                        if policy!=Policy() and args.policy_version==Policy().version:
+                            raise ValueError('Changed manual thresholds require a new --policy-version')
+                        r=implied_growth(company,target,actuals,history,args.as_of,policy)
+                        prior=prior_quarter(company,target,actuals,args.as_of) if 'prior_quarter' in r.inputs else None
+                        store.save_quarter_calculation(conn,r,prior)
+                        print(dumps({'id':r.id,'state':r.state,**plain(r)}));continue
+                    selected=next((g for g in history if g.id==args.guidance_id),None)
+                    if selected is None: raise ValueError('Guidance version not found')
+                    a=exactly(snapshot(actuals,args.as_of),date.fromisoformat(target['start']),date.fromisoformat(target['end']),ticker,company['concept'],company['basis'])
+                    review=json.loads(args.basis_review.read_text()) if args.basis_review else None
+                    if args.not_comparable:
+                        review={'blocked':True,'available_on':str(args.as_of),'reason':'Operator marked result not comparable'}
+                    issued=DateInterval.read(json.loads(args.result_issued) if args.result_issued.startswith('{') else args.result_issued)
+                    r=selected_outcome(company,target,a,selected,cutoff=args.as_of,result_issued=issued,
+                        result_source={'accession':args.result_accession,'url':args.result_url,'filed_date':str(args.result_filed)},comparability=review,history=history)
+                    store.save_quarter_outcome(conn,r);print(dumps(r));continue
                 if args.command=='outcome':
                     a=exactly(snapshot(actuals,args.as_of),date.fromisoformat(company['period_start']),date.fromisoformat(company['period_end']),ticker,company['concept'],company['basis'])
                     issued=DateInterval.read(json.loads(args.result_issued) if args.result_issued.startswith('{') else args.result_issued)

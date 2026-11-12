@@ -22,7 +22,8 @@ def load_guidance(ticker):
                      row['metric'], row.get('original_verified', False), row.get('notes', ''))
         if not g.source_url.startswith('https://www.sec.gov/Archives/'):
             raise ValueError('Financial guidance requires an SEC source')
-        if g.status == 'reaffirmed' and records and (g.low, g.high) != (records[-1].low, records[-1].high):
+        previous = [r for r in records if (r.metric,r.start,r.end) == (g.metric,g.start,g.end)]
+        if g.status == 'reaffirmed' and previous and (g.low, g.high) != (previous[-1].low, previous[-1].high):
             raise ValueError('Reaffirmation cannot change the previous range')
         records.append(g)
     return records

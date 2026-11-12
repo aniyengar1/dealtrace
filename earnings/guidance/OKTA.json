@@ -32,6 +32,13 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm",
       "period_quote": "the leading independent identity provider, today announced financial results for its second quarter ended July 31, 2026",
       "source_sha256": "ff2c5da95d6ad2ef5134656c86f5a0a6c40b3c4b8f31b8b6cf0b435ff8248894"
+    },
+    "quarterly_scope": {
+      "target": "Q3 FY2027",
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "cutoff": "2026-11-11",
+      "note": "Reviewed existing SEC source inventory after quarter issuance. MongoDB September 28 explicitly reaffirms Q3; Salesforce October 20 mentions FY27 only and is not treated as quarterly reaffirmation. No inferred quarterly reaffirmations from annual-only statements."
     }
   },
   "versions": [
@@ -103,6 +110,30 @@
       "quote": "For the full year fiscal 2027, the Company now expects: \u2022 Total revenue of $3.216 billion to $3.226 billion , representing a growth rate of 10% to 11% year-over-year; \u25e6 Reflected in the revenue guidance is an approximately one percentage point impact to total revenue growth resulting from our decision to accelerate the",
       "original_verified": false,
       "notes": ""
+    },
+    {
+      "issued_date": "2026-08-26",
+      "filed_date": "2026-08-26",
+      "fiscal_period": {
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "label": "Q3 FY2027"
+      },
+      "metric": "quarterly_consolidated_revenue",
+      "low": "813000000",
+      "high": "817000000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001660134-26-000068",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+      },
+      "quote": "For the third quarter of fiscal 2027, the Company expects: \u2022 Total revenue of $813 million to $817 million, representing a growth rate of 10% year-over-year; \u2022 Current RPO of $2.590 billion to $2.600 billion , representing a growth rate of 11% to 12% year-over-year; \u2022 Non-GAAP operating income of $196 million to $200 million, which yi",
+      "original_verified": true,
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "source_sha256": "ff2c5da95d6ad2ef5134656c86f5a0a6c40b3c4b8f31b8b6cf0b435ff8248894"
     }
   ]
 }

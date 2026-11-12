@@ -1,10 +1,10 @@
 # Crosscheck
 
-Crosscheck measures the revenue required to meet annual company guidance. It uses manual SEC-backed guidance, SEC companyfacts, Decimal arithmetic, immutable financial records, and explicit as-of dates. The current milestone adds a ten-company search and overview interface plus an **experimental annual revenue forecast**. A Q3 report updates the annual hurdle; only an annual result can resolve an annual guidance outcome.
+Crosscheck measures the revenue required to meet annual company guidance. It uses manual SEC-backed guidance, SEC companyfacts, Decimal arithmetic, content-versioned financial records, and explicit as-of dates. The current milestone adds a ten-company search and overview interface plus an **experimental annual revenue forecast**. A Q3 report updates the annual hurdle; only an annual result can resolve an annual guidance outcome.
 
 ## Launch search → overview → targets → forecast → evidence
 
-The interface uses the existing Next.js app at `/crosscheck`. Its server reads immutable PostgreSQL reports produced by the Python earnings pipeline. All financial math stays in Decimal; JSON financial amounts remain strings, including in the browser. The existing deals query layer is reused only for server-side database access. New routes expose reads, not writes.
+The interface uses the existing Next.js app at `/crosscheck`. Its server reads content-versioned PostgreSQL reports produced by the Python earnings pipeline. All financial math stays in Decimal; JSON financial amounts remain strings, including in the browser. The existing deals query layer is reused only for server-side database access. New routes expose reads, not writes.
 
 From the repository root, using the worktree-specific environment:
 
@@ -52,7 +52,7 @@ Evaluation cases are explicit in `evaluation_cases.json`. All forecast inputs an
 
 ### Overview metric scope
 
-The overview shows latest available quarter, selected-year YTD, and latest available annual results separately. It covers reported revenue, corresponding-period revenue growth, gross/operating margins, net income, directly reported diluted EPS, operating cash flow, and calculated free cash flow. Each cell carries its period, unit, concept, accession, filed date, source URL, and immutable source record ID.
+The overview shows latest available quarter, selected-year YTD, and latest available annual results separately. It covers reported revenue, corresponding-period revenue growth, gross/operating margins, net income, directly reported diluted EPS, operating cash flow, and calculated free cash flow. Each cell carries its period, unit, concept, accession, filed date, source URL, and content-derived source record ID.
 
 - Margins require reported income and revenue from the exact same fiscal period and accession.
 - Net-income captions distinguish parent-attributable `NetIncomeLoss` from consolidated `ProfitLoss` including noncontrolling interests. Neither is silently presented as an adjusted metric.
@@ -69,14 +69,14 @@ PagerDuty and GitLab quarter/YTD source inputs were also checked against their o
 2. Append guidance versions to `guidance/TICKER.json`, preserving prior records. Record issue/filing dates, exact fiscal period, basis, bounds/status, accession/exhibit, and verbatim evidence. Review all new filings for changes or explicit reaffirmations before advancing `history_review.cutoff`.
 Also maintain `history_review.latest_actual_release` from the actual SEC earnings release: `ytd_end`, `issued_date`, `filed_date`, `accession`, `source_url`, `period_quote`, and `source_sha256`. Initial markers for all ten companies were verified against their SEC release text. Actual metrics come from companyfacts, not automatic parsing of press-release tables. If a newly public release announces a later actual period than companyfacts provides, the forecast is withheld with `ACTUALS_PENDING_XBRL` until matching actuals arrive. Both release issuance and SEC availability must be within the cutoff; future release evidence is not used.
 
-3. Review acquisitions, reporting-basis changes, and 52/53-week boundaries. Keep or add a comparability block until evidence resolves it. For a new target fiscal year, update registry periods/comparison boundaries from dated evidence; old published reports remain immutable.
+3. Review acquisitions, reporting-basis changes, and 52/53-week boundaries. Keep or add a comparability block until evidence resolves it. For a new target fiscal year, update registry periods/comparison boundaries from dated evidence; old published reports are preserved by application insert convention.
 4. Run:
 
 ```sh
 .venv/bin/python -m earnings.product refresh PD --as-of YYYY-MM-DD --refresh --verify-guidance
 ```
 
-This ingests new actuals/metric versions, loads guidance, recalculates the hurdle and forecast, evaluates available reviewed historical cases, and publishes an immutable report. If the requested cutoff is after the guidance review horizon, publication of a forecast is blocked with `GUIDANCE_REVIEW_REQUIRED`. Freshness and scope blocks also apply. Changing the forecast method requires a new method version.
+This ingests new actuals/metric versions, loads guidance, recalculates the hurdle and forecast, evaluates available reviewed historical cases, and publishes a content-versioned report. If the requested cutoff is after the guidance review horizon, publication of a forecast is blocked with `GUIDANCE_REVIEW_REQUIRED`. Freshness and scope blocks also apply. Changing the forecast method requires a new method version.
 
 5. Inspect **What changed & reproducibility** on the detail page. It records the previous report, exact before/after input IDs, guidance/actual/comparison/policy causes, and forecast/evaluation changes. A guidance reaffirmation is distinguishable through its dated guidance record even when endpoints do not move.
 6. Repeat the command to check idempotency. An unchanged source/cutoff produces zero new facts, guidance versions, or reports. `--refresh` requests new SEC bodies; without it the cache is intentionally reused. Missing metric facts are not synthesized.
@@ -188,7 +188,7 @@ After annual results and their SEC actuals are public:
   --result-url https://www.sec.gov/Archives/edgar/data/.../earnings-release.htm
 ```
 
-`--result-issued` also accepts a JSON `{start,end,precision}` interval. The operator supplies the actual dated annual earnings-release evidence, not an estimated calendar date. The command refuses a missing annual fact; it never treats Q3 as the annual outcome. Pass `--not-comparable` for a newly identified material change; registry comparability blocks also apply. Endpoint equality is `within`.
+`--result-issued` also accepts a JSON `{start,end,precision}` interval. The operator supplies the actual dated annual earnings-release evidence, not an estimated calendar date. The command refuses a missing annual fact; it never treats Q3 as the annual outcome. Pass `--not-comparable` for a newly identified material change; separate outcome comparability reviews apply; a growth-comparison block alone does not decide scoring. Endpoint equality is `within`.
 
 Withdrawal blocks active hurdles without deleting the initial range. A comparable original-guidance outcome remains possible and is labeled subsequently withdrawn. During an unresolved withdrawal, the latest comparison has no outcome and carries `GUIDANCE_WITHDRAWN`. Reinstatement restores a latest benchmark without resetting the original. Material basis changes yield `not_comparable`.
 
@@ -207,6 +207,152 @@ Withdrawal blocks active hurdles without deleting the initial range. A comparabl
 .venv/bin/python -m pytest tests/earnings -q
 ```
 
-Tests use the existing real-PostgreSQL session migration/per-test rollback convention. They cover blueprint arithmetic; zero/negative/missing inputs; withdrawal/reinstatement; as-of revisions; inclusive outcomes; 52/53-week and basis mismatches; threshold boundaries; immutable repeat ingestion; relational provenance; cross-company constraints; cache integrity; and public read-only/service-role writes.
+Tests use the existing real-PostgreSQL session migration/per-test rollback convention. They cover blueprint arithmetic; zero/negative/missing inputs; withdrawal/reinstatement; as-of revisions; inclusive outcomes; 52/53-week and basis mismatches; threshold boundaries; version preservation and repeat ingestion; relational provenance; cross-company constraints; cache integrity; and public read-only/service-role writes.
 
-`validation/2026-11-11.json` contains all ten calculation records, exact selected input versions and source links, guidance quote verification, initial statement reconciliation, and reporting-date metadata. It is a review snapshot, not an ML prediction or annual scoring record. Recreate inputs using the commands above; inspect stored IDs for the original immutable calculation even after later filings arrive. That Phase 1 snapshot predates the interface/forecast milestone above. Protected src files, the shared venv, and deals migrations remain unchanged.
+`validation/2026-11-11.json` contains all ten calculation records, exact selected input versions and source links, guidance quote verification, initial statement reconciliation, and reporting-date metadata. It is a review snapshot, not an ML prediction or annual scoring record. Recreate inputs using the commands above; inspect stored IDs for the original content-versioned calculation even after later filings arrive. That Phase 1 snapshot predates the interface/forecast milestone above. Protected src files, the shared venv, and deals migrations remain unchanged.
+
+
+## Bounded Session 1 completion (November 11, 2026)
+
+This pass adds **quarterly consolidated revenue guidance**, not the Session 3
+probabilistic baseline or live prediction ledger. Existing annual forecasts remain
+experimental and unvalidated. Existing interface work is preserved; this pass
+makes no website changes. The Session 2 full-universe audit has not been started.
+
+### Setup and boundaries
+
+The approved environment is the real, gitignored worktree directory `.venv/`,
+not a symlink into Claude's environment. Create/install using the root setup
+commands above. `requirements.txt` pins requests 2.34.2, beautifulsoup4 4.15.0,
+lxml 6.1.3, python-dotenv 1.2.4, psycopg[binary] 3.3.8 and pytest 9.2.0;
+`pip check` passes. The driver includes psycopg-binary 3.3.8. No shared environment
+or dependency file was modified in this pass. AGENTS.md is committed unchanged.
+
+Records are content-versioned and repeat inserts are ignored by ID. This is
+**application-level version preservation, not database-enforced immutability**:
+privileged roles can update/delete rows. No live prediction lock or live track
+record exists. Migration 0102 adds separate quarter calculation/outcome tables,
+with the same public-read/service-role-write RLS conventions. Migrations 0001–0099,
+including 0009, remain protected.
+
+### Annual versus quarterly guidance
+
+Annual records retain metric `consolidated_revenue` and their existing IDs.
+Quarterly records use `quarterly_consolidated_revenue`, explicit start/end dates,
+issue-date intervals, SEC filing dates, statuses, accessions, exhibits and quotes.
+Selection is by **company, metric, exact period and public availability**. The
+loader checks reaffirmations within that same metric/period, never against an
+unrelated annual range. Both issuance and SEC availability must pass the cutoff.
+
+The files contain ten current target quarters (Q3 FY2027 for eight January-year
+companies, Q3 FY2026 for lululemon, Q4 FY2026 for Adobe), plus MongoDB's explicit
+September 28 Q3 reaffirmation: eleven quarterly versions. Salesforce's October
+20 statement refers to FY27 and is not invented into a Q3 reaffirmation. The
+existing reviewed SEC source inventory was checked for applicable subsequent
+statements. Earlier quarters and an eight-quarter outcome-history backfill are
+not claimed; those belong to Session 3.
+
+```sh
+.venv/bin/python -m earnings migrate
+.venv/bin/python -m earnings load-guidance ALL
+.venv/bin/python -m earnings verify-guidance ALL
+.venv/bin/python -m earnings quarter-growth PD --as-of 2026-11-11
+.venv/bin/python -m earnings inspect QUARTER_CALCULATION_UUID
+.venv/bin/python -m earnings compare BEFORE_QUARTER_UUID AFTER_QUARTER_UUID
+```
+
+`quarter-growth` is **guidance-implied YoY growth, not a forecast**:
+
+```
+implied_growth_low  = quarter_guidance_low  / prior_comparable_quarter - 1
+implied_growth_high = quarter_guidance_high / prior_comparable_quarter - 1
+```
+
+For a wholly unreported quarter, no annual YTD amount is subtracted. The result
+has `guidance_low/high`, not annual `remaining_low/high`. If target-quarter actuals
+are already public, including a partial target-period observation, this path
+blocks and directs the caller to outcome classification. The prior denominator
+must match entity/concept/basis/currency and fiscal boundaries. Q4 can be derived
+from annual minus explicit nine-month inputs; all parent versions are preserved.
+Weekly quarter lengths must match; a 14-week Q4 is never normalized to 13 weeks.
+The historical denominator is intentionally a year old and does not trigger the
+135-day **current actuals** policy. The configurable/versioned 150-day guidance
+age rule still applies, including its inclusive boundary. Annual freshness rules
+are unchanged. `compare` refuses annual-versus-quarter attribution and separates
+guidance, prior comparison, growth review, policy and eligibility changes.
+
+### Independent comparability and selected-version outcomes
+
+`quarter_targets[].growth_comparability` answers whether current versus prior-year
+revenue is comparable. `outcome_comparability` separately answers whether guidance
+matches the reported target result. Neither a passed growth review nor a growth
+block decides outcome eligibility. Salesforce, Okta and SentinelOne retain their
+growth blocks. Their target results are not yet public, so no result-basis review
+is fabricated. Every current quarter target has an explicit pending outcome
+review; annual registry outcomes also have a distinct pending review.
+
+After the actual is filed, score an **explicit selected guidance version**:
+
+```sh
+.venv/bin/python -m earnings quarter-outcome PD --as-of YYYY-MM-DD \
+  --period-end 2026-10-31 --guidance-id GUIDANCE_UUID \
+  --result-issued YYYY-MM-DD --result-filed YYYY-MM-DD \
+  --result-accession SEC_ACCESSION \
+  --result-url https://www.sec.gov/Archives/edgar/data/.../release.htm \
+  --basis-review earnings/validation/reviewed-result.json
+```
+
+The manual review JSON must identify `blocked`, `available_on`, `reason`,
+`sources` (SEC URLs or objects with `url` and `filed_date`), `actual_id` and
+`guidance_id`. A passing quarterly review must match the exact selected versions;
+unknown, future, unsupported or blocked reviews yield `not_comparable` with
+`INCOMPARABLE_BASIS`. `--not-comparable` records an explicit operator block.
+Result and release filing availability, issuance interval, company, period,
+concept, unit and basis are checked. Guidance issued/filed on the result date is
+conservatively excluded; no intraday precedence is invented. Endpoint equality
+is `within`, also for point guidance. Withdrawn selected guidance blocks. An
+older valid original version can be scored explicitly without treating a later
+withdrawal as a zero forecast. The CLI records whether the selected version is
+original/latest, the latest pre-result status, and subsequent withdrawal history. This command is deterministic outcome
+classification, not prediction-lock creation or probabilistic scoring.
+
+### Date-source fetch observations
+
+```sh
+.venv/bin/python -m earnings.dates > data/cache/earnings/date-checks-NEW-RUN.json
+```
+
+Use a new output filename per run to preserve observations. The dates-only IR
+transport rejects off-allowlist hosts and redirects. SEC date sources use the
+existing fetcher with a fresh request and its cache manifest. Each observation
+stores actual `checked_at`, successful `fetched_at`, source URL, hash, and status.
+Failed checks retain their check time and **null fetched_at**; no earlier fetch
+time is reconstructed. These are retrieval/verification observations, not a claim
+that a historical estimate has become a confirmed upcoming date.
+
+`validation/session1-date-checks.json` stores this pass's twenty observations:
+eighteen successful retrievals and two HTTP 403 gaps (CrowdStrike and MongoDB IR).
+Salesforce/Okta's existing dated announcements were reconfirmed. CrowdStrike and
+MongoDB retain earlier confirmation provenance with the current retrieval gap
+explicitly recorded. Six exact upcoming dates and annual-result windows remain
+unverified/estimated. Registry `source_check` objects link the latest observations;
+previous Phase 1 validation snapshots are unchanged.
+
+### Gate evidence
+
+`validation/session1-completion.json` records the Adobe/CrowdStrike annual
+calculations with every input ID, period, accession and filing date, independently
+checked statement columns, source hashes, quarterly guidance verification, and
+repeat-load counts. Reproduce the two annual checks with:
+
+```sh
+.venv/bin/python -m earnings verify-real ADBE CRWD
+.venv/bin/python -m pytest -q
+```
+
+The reconciliation gold now covers Adobe/CrowdStrike as well as the original
+PagerDuty/GitLab examples. Adobe statements report USD millions; CrowdStrike
+statements report USD thousands. Verification checks these scales and the actual
+selected XBRL values independently, then recalculates the hurdle and checks the
+derived remainder's parent IDs. Session 2's complete audit and Session 3's baseline
+and immutable ledger remain outstanding.

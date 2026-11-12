@@ -128,5 +128,133 @@
     "expected_prior_ytd": "450469000",
     "expected_remaining_low": "578588000",
     "expected_remaining_high": "582588000"
+  },
+  "ADBE": {
+    "companyfacts": {
+      "cik": 796343,
+      "facts": {
+        "us-gaap": {
+          "Revenues": {
+            "units": {
+              "USD": [
+                {
+                  "start": "2025-11-29",
+                  "end": "2026-08-28",
+                  "val": 19776000000,
+                  "accn": "0000796343-26-000156",
+                  "fy": 2026,
+                  "fp": "Q3",
+                  "form": "10-Q",
+                  "filed": "2026-09-22"
+                },
+                {
+                  "start": "2024-11-30",
+                  "end": "2025-11-28",
+                  "val": 23769000000,
+                  "accn": "0000796343-26-000003",
+                  "fy": 2025,
+                  "fp": "FY",
+                  "form": "10-K",
+                  "filed": "2026-01-15"
+                },
+                {
+                  "start": "2024-11-30",
+                  "end": "2025-08-29",
+                  "val": 17575000000,
+                  "accn": "0000796343-26-000156",
+                  "fy": 2026,
+                  "fp": "Q3",
+                  "form": "10-Q",
+                  "filed": "2026-09-22"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "statement_evidence": [
+      {
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+        "quote": "Total revenue 6,760 5,988 19,776 17,575",
+        "unit": "USD millions",
+        "column_order": "current quarter, prior quarter, current YTD/annual, prior YTD/annual"
+      },
+      {
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+        "quote": "Total revenue 6,194 5,606 23,769 21,505",
+        "unit": "USD millions",
+        "column_order": "current quarter, prior quarter, current YTD/annual, prior YTD/annual"
+      }
+    ],
+    "expected_ytd": "19776000000",
+    "expected_prior_ytd": "17575000000",
+    "expected_prior_annual": "23769000000",
+    "expected_remaining_low": "6800000000.000",
+    "expected_remaining_high": "6850000000.000"
+  },
+  "CRWD": {
+    "companyfacts": {
+      "cik": 1535527,
+      "facts": {
+        "us-gaap": {
+          "RevenueFromContractWithCustomerIncludingAssessedTax": {
+            "units": {
+              "USD": [
+                {
+                  "start": "2026-02-01",
+                  "end": "2026-07-31",
+                  "val": 2856526000,
+                  "accn": "0001535527-26-000031",
+                  "fy": 2027,
+                  "fp": "Q2",
+                  "form": "10-Q",
+                  "filed": "2026-08-27"
+                },
+                {
+                  "start": "2025-02-01",
+                  "end": "2026-01-31",
+                  "val": 4812005000,
+                  "accn": "0001535527-26-000010",
+                  "fy": 2026,
+                  "fp": "FY",
+                  "form": "10-K",
+                  "filed": "2026-03-05"
+                },
+                {
+                  "start": "2025-02-01",
+                  "end": "2025-07-31",
+                  "val": 2272386000,
+                  "accn": "0001535527-26-000031",
+                  "fy": 2027,
+                  "fp": "Q2",
+                  "form": "10-Q",
+                  "filed": "2026-08-27"
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    "statement_evidence": [
+      {
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+        "quote": "Total revenue 1,470,897 1,168,952 2,856,526 2,272,386",
+        "unit": "USD thousands",
+        "column_order": "current quarter, prior quarter, current YTD/annual, prior YTD/annual"
+      },
+      {
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm",
+        "quote": "Total revenue 1,305,375 1,058,538 4,812,005 3,953,624",
+        "unit": "USD thousands",
+        "column_order": "current quarter, prior quarter, current YTD/annual, prior YTD/annual"
+      }
+    ],
+    "expected_ytd": "2856526000",
+    "expected_prior_ytd": "2272386000",
+    "expected_prior_annual": "4812005000",
+    "expected_remaining_low": "3134574000.0000",
+    "expected_remaining_high": "3154574000.0000"
   }
 }

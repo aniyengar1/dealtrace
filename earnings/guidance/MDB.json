@@ -30,6 +30,13 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm",
       "period_quote": " 1, 2026 - MongoDB, Inc. (NASDAQ: MDB) today announced its financial results for the second quarter ended July 31, 2026",
       "source_sha256": "28eb3703e7b94394ac7ee44215f3452bca4b47d7d35d8c51f6192f936c0378c9"
+    },
+    "quarterly_scope": {
+      "target": "Q3 FY2027",
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "cutoff": "2026-11-11",
+      "note": "Reviewed existing SEC source inventory after quarter issuance. MongoDB September 28 explicitly reaffirms Q3; Salesforce October 20 mentions FY27 only and is not treated as quarterly reaffirmation. No inferred quarterly reaffirmations from annual-only statements."
     }
   },
   "versions": [
@@ -124,6 +131,54 @@
       "quote": "The company remains confident in the outlook for the business and is reaffirming its  guidance for Q3 and the full year fiscal 2027 provided on September 1st, 2026.    Investor Day     MongoDB will be hosting an Investor Day at Nasdaq MarketSite on Tuesday, September  29th from 11:00 am\u20133:15 pm ET. The MongoDB leadership team will share an in-depth look  at our long-term strategy, market opportunities, and product in",
       "original_verified": false,
       "notes": "Bounds carried from explicitly referenced previous guidance; no new numerical range."
+    },
+    {
+      "issued_date": "2026-09-01",
+      "filed_date": "2026-09-01",
+      "fiscal_period": {
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "label": "Q3 FY2027"
+      },
+      "metric": "quarterly_consolidated_revenue",
+      "low": "756000000",
+      "high": "761000000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001628280-26-059794",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm"
+      },
+      "quote": "Third Quarter Fiscal 2027 Guidance Based on information available to management as of today, September 1, 2026, MongoDB is issuing the following financial guidance for the third quarter fiscal 2027. Revenues are expected to be in the range of: $756 million to $761 million GAAP Non-GAAP Income (Loss) from Operations are expected to be in the range of: $(14.5) million to $(10.5) million $1",
+      "original_verified": true,
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "source_sha256": "28eb3703e7b94394ac7ee44215f3452bca4b47d7d35d8c51f6192f936c0378c9"
+    },
+    {
+      "issued_date": "2026-09-28",
+      "filed_date": "2026-09-28",
+      "fiscal_period": {
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "label": "Q3 FY2027"
+      },
+      "metric": "quarterly_consolidated_revenue",
+      "low": "756000000",
+      "high": "761000000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "reaffirmed",
+      "source": {
+        "accession": "0001628280-26-063657",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026063657/pressreleasedatedseptemb.htm"
+      },
+      "quote": "The company remains confident in the outlook for the business and is reaffirming its  guidance for Q3 and the full year fiscal 2027 provided on September 1st, 2026.    Investor Day     MongoDB will be hosting an Investor Day at Nasdaq MarketSite on Tuesday, September  29th from 11:00 am\u20133:15 pm ET. The MongoDB leadership team will share an in-depth look  at our long-term strategy, market opportunities, and product in",
+      "original_verified": false,
+      "notes": "Explicit reaffirmation of Q3 and full-year guidance from September 1. Quarterly dollar bounds retain the September 1 evidence.",
+      "source_sha256": "1c7184a8bf6bab81c1195cba1e12b43a66ea5ec6e7f10b0af545a3a23b5ccd7a"
     }
   ]
 }

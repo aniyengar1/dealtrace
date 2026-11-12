@@ -35,6 +35,13 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm",
       "period_quote": "nelOne, Inc. (NYSE: S) today announced financial results for the second quarter of fiscal year 2027 ended July 31, 2026",
       "source_sha256": "0c703caa39e80f5376002fa0bb83b8709df7fc198d11120918710a8b61457aeb"
+    },
+    "quarterly_scope": {
+      "target": "Q3 FY2027",
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "cutoff": "2026-11-11",
+      "note": "Reviewed existing SEC source inventory after quarter issuance. MongoDB September 28 explicitly reaffirms Q3; Salesforce October 20 mentions FY27 only and is not treated as quarterly reaffirmation. No inferred quarterly reaffirmations from annual-only statements."
     }
   },
   "versions": [
@@ -106,6 +113,30 @@
       "quote": "Q3 Fiscal Year 2027 Guidance Fiscal Year 2027 Guidance Revenue $309 - 311 million $1.202 - 1.207 billion Non-GAAP operating income $38 - 40 million $124 - 128 million Non-GAAP diluted earnings per share (EPS) $0.08 - 0.09 $0.30 - 0.32 Diluted weighted average shares outstanding 370 million 361 million Non-GAAP tax rate",
       "original_verified": false,
       "notes": ""
+    },
+    {
+      "issued_date": "2026-08-27",
+      "filed_date": "2026-08-27",
+      "fiscal_period": {
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "label": "Q3 FY2027"
+      },
+      "metric": "quarterly_consolidated_revenue",
+      "low": "309000000",
+      "high": "311000000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001583708-26-000052",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+      },
+      "quote": "Q3 Fiscal Year 2027 Guidance Fiscal Year 2027 Guidance Revenue $309 - 311 million $1.202 - 1.207 billion Non-GAAP operating income $38 - 40 million $124 - 128 million Non-GAAP diluted earnings per share (EPS) $0.08 - 0.09 $0.30",
+      "original_verified": true,
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "source_sha256": "0c703caa39e80f5376002fa0bb83b8709df7fc198d11120918710a8b61457aeb"
     }
   ]
 }

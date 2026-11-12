@@ -1,4 +1,4 @@
-"""PostgreSQL persistence: content-addressed immutable financial inserts."""
+"""PostgreSQL persistence: content-addressed, append-preserving application inserts (not DB locks)."""
 import os
 from datetime import date
 from decimal import Decimal
@@ -102,3 +102,41 @@ def calculation_from(row):
         d[k]=Decimal(d[k]) if d[k] is not None else None
     d['codes']=tuple(d['codes']);d['details']=tuple(d['details'])
     return Calculation(**d)
+
+
+def save_quarter_calculation(conn, result, prior=None):
+    if prior is not None:
+        if prior.id != result.inputs.get('prior_quarter'):
+            raise ValueError('Quarter comparison identity mismatch')
+        save_actual(conn, prior)
+    return insert(conn, 'earnings_quarter_calculations', {
+        'id': result.id, 'company_id': company_id(result.company), 'as_of': result.as_of,
+        'period_start': result.target['start'], 'period_end': result.target['end'],
+        'formula_version': result.formula_version, 'policy': Jsonb(plain(result.policy)),
+        'guidance_id': result.inputs.get('guidance'), 'prior_quarter_id': result.inputs.get('prior_quarter'),
+        'state': result.state, 'reason_codes': list(result.codes),
+        'guidance_low': result.guidance_low, 'guidance_high': result.guidance_high,
+        'growth_low': result.growth_low, 'growth_high': result.growth_high,
+        'payload': Jsonb(plain(result))})
+
+
+def save_quarter_outcome(conn, result):
+    return insert(conn, 'earnings_quarter_outcomes', {
+        'id': result['id'], 'company_id': company_id(result['company']), 'as_of': result['as_of'],
+        'period_start': result['period_start'], 'period_end': result['period_end'],
+        'guidance_id': result['guidance'], 'actual_id': result['actual'],
+        'classification': result['classification'], 'reason_codes': result['codes'],
+        'result_issued_start': result['result_issued'].start,
+        'result_issued_end': result['result_issued'].end,
+        'result_filed_date': result['result_source']['filed_date'],
+        'result_accession': result['result_source']['accession'],
+        'result_source_url': result['result_source']['url'], 'payload': Jsonb(plain(result))})
+
+
+def quarter_calculation_from(row):
+    from .quarters import QuarterCalculation
+    d=dict(row); d['as_of']=date.fromisoformat(d['as_of']);d['policy']=Policy(**d['policy'])
+    for k in ('guidance_low','guidance_high','growth_low','growth_high'):
+        d[k]=Decimal(d[k]) if d[k] is not None else None
+    d['codes']=tuple(d['codes']);d['details']=tuple(d['details'])
+    return QuarterCalculation(**d)

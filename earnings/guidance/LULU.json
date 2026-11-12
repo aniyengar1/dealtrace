@@ -42,6 +42,13 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm",
       "period_quote": "a inc. (NASDAQ:LULU) today announced financial results for the second quarter of fiscal 2026, which ended on August 2, 2026",
       "source_sha256": "a46c0ae866fbf781605e969adee8e23a469aff5eb38e1044bb30b7aa1f448e41"
+    },
+    "quarterly_scope": {
+      "target": "Q3 FY2026",
+      "start": "2026-08-03",
+      "end": "2026-11-01",
+      "cutoff": "2026-11-11",
+      "note": "Reviewed existing SEC source inventory after quarter issuance. MongoDB September 28 explicitly reaffirms Q3; Salesforce October 20 mentions FY27 only and is not treated as quarterly reaffirmation. No inferred quarterly reaffirmations from annual-only statements."
     }
   },
   "versions": [
@@ -113,6 +120,30 @@
       "quote": "For 2026, the Company now expects net revenue to be in the range of $10.350 billion to $10.500 billion, representing a decline of 5% to 7%. Diluted earnings per share are now expected to be in the range of $9.48 to $9.73 for the year. This assumes a tax rate of approximately 30%. The 2026 outlook includes $0.86 per sha",
       "original_verified": false,
       "notes": ""
+    },
+    {
+      "issued_date": "2026-09-03",
+      "filed_date": "2026-09-03",
+      "fiscal_period": {
+        "start": "2026-08-03",
+        "end": "2026-11-01",
+        "label": "Q3 FY2026"
+      },
+      "metric": "quarterly_consolidated_revenue",
+      "low": "2290000000",
+      "high": "2320000000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001397187-26-000126",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm"
+      },
+      "quote": "For the third quarter of 2026, the Company expects net revenue to be in the range of $2.290 billion to $2.320 billion, representing a decline of 10% to 11%. Diluted earnings per share are expected to be in the range of $0.93 to $0.98 for the quarter. This assumes a tax",
+      "original_verified": true,
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "source_sha256": "a46c0ae866fbf781605e969adee8e23a469aff5eb38e1044bb30b7aa1f448e41"
     }
   ]
 }

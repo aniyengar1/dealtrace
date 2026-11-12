@@ -26,6 +26,13 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm",
       "period_quote": "eer of the Connected Operations \u00ae Platform, today reported financial results for the second quarter ended August 1, 2026",
       "source_sha256": "4323b6b76f3785cb80b656f18cb96b8b3e37b366c0baad4e18b361aafdc29812"
+    },
+    "quarterly_scope": {
+      "target": "Q3 FY2027",
+      "start": "2026-08-02",
+      "end": "2026-10-31",
+      "cutoff": "2026-11-11",
+      "note": "Reviewed existing SEC source inventory after quarter issuance. MongoDB September 28 explicitly reaffirms Q3; Salesforce October 20 mentions FY27 only and is not treated as quarterly reaffirmation. No inferred quarterly reaffirmations from annual-only statements."
     }
   },
   "versions": [
@@ -97,6 +104,30 @@
       "quote": "Financial Outlook Our guidance includes GAAP and non-GAAP financial measures. For the third quarter and fiscal year 2027, Samsara expects the following: Q3 FY2027 Outlook FY2027 Outlook Total revenue $514 million \u2013 $516 million $2.043 billion \u2013 $2.047 billion Year/Year revenue growth 24% 26% Year/Year revenue growth in constant currency (1) 23%  \u2013 24% 26% Non-GAAP operating margin (2) 21% 21% Non-GAAP net income per share, diluted (2) $0.18 \u2013 $0.19 $0.76 \u2013 $0.78 GAAP net income per share, diluted GAAP Profitable GAAP Profitable __________ (1) Constant currency impact to revenue guidance is $2 million for Q3 FY202",
       "original_verified": false,
       "notes": ""
+    },
+    {
+      "issued_date": "2026-09-03",
+      "filed_date": "2026-09-03",
+      "fiscal_period": {
+        "start": "2026-08-02",
+        "end": "2026-10-31",
+        "label": "Q3 FY2027"
+      },
+      "metric": "quarterly_consolidated_revenue",
+      "low": "514000000",
+      "high": "516000000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001628280-26-060438",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm"
+      },
+      "quote": "Q3 FY2027 Outlook FY2027 Outlook Total revenue $514 million \u2013 $516 million $2.043 billion \u2013 $2.047 billion Year/Year revenue growth 24% 26% Year/Year revenue growth in constant currency (1) 23% \u2013 24% 26% Non-GAAP operating margin (2) 21% 21% Non-GAAP net income per share, diluted (2) $0.18 \u2013 $0.19 $0.76 \u2013 $0.78 GAAP",
+      "original_verified": true,
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "source_sha256": "4323b6b76f3785cb80b656f18cb96b8b3e37b366c0baad4e18b361aafdc29812"
     }
   ]
 }

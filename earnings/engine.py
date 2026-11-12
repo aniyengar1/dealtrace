@@ -5,9 +5,9 @@ from .actuals import Blocked, snapshot, exactly, derive_remaining
 from .models import Calculation, Policy, plain, record_id
 
 
-def available_guidance(history, cutoff, start, end, company):
+def available_guidance(history, cutoff, start, end, company, *, metric="consolidated_revenue"):
     return sorted((g for g in history if g.company == company and g.start == start and g.end == end
-                   and g.available_on <= cutoff), key=lambda g: (g.available_on, g.issued.end, g.accession, g.id))
+                   and g.metric == metric and g.available_on <= cutoff), key=lambda g: (g.available_on, g.issued.end, g.accession, g.id))
 
 
 def latest_guidance(history):
@@ -106,6 +106,16 @@ def classify(value, low, high):
     return 'below' if value < low else 'above' if value > high else 'within'
 
 
+def _outcome_review_blocks(company, cutoff):
+    review = company.get('outcome_comparability')
+    if review is None:
+        # Growth comparability does not decide guidance-to-result comparability.
+        # Registry companies carry an explicit separate review.
+        return False
+    from .quarters import review_block
+    return review_block(review, cutoff) is not None
+
+
 def outcomes(company, annual, history, *, cutoff, result_issued, result_source, comparable=True):
     """Annual result only. Benchmark cutoff precedes the earnings release, not its later 10-K.
 
@@ -130,7 +140,9 @@ def outcomes(company, annual, history, *, cutoff, result_issued, result_source, 
               'benchmark_cutoff': benchmark_cutoff, 'original': None, 'latest': None,
               'original_guidance': original.id if original else None,
               'latest_guidance': latest.id if latest else None,
-              'original_subsequently_withdrawn': withdrawn, 'codes': {}}
+              'original_subsequently_withdrawn': withdrawn, 'codes': {},
+              'outcome_comparability': company.get('outcome_comparability'),
+              'comparability_detail': 'Separate guidance-to-result basis review required' if _outcome_review_blocks(company, cutoff) else None}
     ready = annual.filed <= cutoff and result_source['filed_date'] <= cutoff and result_issued.available(cutoff) and result_issued.start > end
     valid_period = (annual.company, annual.start, annual.end) == (company['ticker'], start, end)
     valid_basis = (annual.concept, annual.unit, annual.basis) == (company['concept'], 'USD', company['basis'])
@@ -141,7 +153,7 @@ def outcomes(company, annual, history, *, cutoff, result_issued, result_source, 
             result['codes'][label] = 'ORIGINAL_GUIDANCE_UNAVAILABLE' if label == 'original' else 'MISSING_PERIOD'
         elif g.status == 'withdrawn':
             result['codes'][label] = 'GUIDANCE_WITHDRAWN'
-        elif not comparable or not valid_basis or (company.get('comparability', {}).get('blocked') and date.fromisoformat(company['comparability']['available_on']) <= cutoff):
+        elif not comparable or not valid_basis or _outcome_review_blocks(company, cutoff):
             result[label] = 'not_comparable'
         elif (g.basis, g.unit) != (annual.basis, annual.unit):
             result[label] = 'not_comparable'
@@ -154,7 +166,7 @@ def outcomes(company, annual, history, *, cutoff, result_issued, result_source, 
 def hurdle(company, actuals, guidance, cutoff, policy=Policy()):
     from dataclasses import replace
     from copy import deepcopy
-    config = deepcopy({k: v for k, v in company.items() if k not in ('next_report', 'annual_result')})
+    config = deepcopy({k: v for k, v in company.items() if k not in ('next_report', 'annual_result', 'quarter_targets', 'outcome_comparability')})
     review = config.get('comparability', {})
     if review and date.fromisoformat(review['available_on']) > cutoff:
         config['comparability'] = {'review_status': 'not_available_by_cutoff'}

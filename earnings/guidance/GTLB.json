@@ -32,6 +32,13 @@
       "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm",
       "period_quote": "n platform for DevSecOps, today reported financial results for its second quarter fiscal year 2027, ended July 31, 2026",
       "source_sha256": "7c3e015238a277599421246919f83f33228efea9a5f2dca65486bbd65699db3b"
+    },
+    "quarterly_scope": {
+      "target": "Q3 FY2027",
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "cutoff": "2026-11-11",
+      "note": "Reviewed existing SEC source inventory after quarter issuance. MongoDB September 28 explicitly reaffirms Q3; Salesforce October 20 mentions FY27 only and is not treated as quarterly reaffirmation. No inferred quarterly reaffirmations from annual-only statements."
     }
   },
   "versions": [
@@ -126,6 +133,30 @@
       "quote": "Third Quarter and Fiscal Year 2027 Financial Outlook For the third quarter and fiscal year 2027, GitLab Inc. expects ( in millions , except share and per share data) : Q3 FY 2027 Guidance FY 2027 Guidance Revenue $281 - $283 $1,129 - $1,133 Non-GAAP operating income $35 - $37 $148 - $152 Non-GAAP diluted net income per share assuming approximately 172 million and 172 million weighted average shares outstanding during Q3 FY 2027 and FY 2027, respectively. $0.19 - $0.20 $0.85 - $0.87 These statements are forward-looking and actual results may differ materially as a result of many factors. Refer to the Forward-Looking Statements safe harbor belo",
       "original_verified": false,
       "notes": ""
+    },
+    {
+      "issued_date": "2026-09-01",
+      "filed_date": "2026-09-01",
+      "fiscal_period": {
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "label": "Q3 FY2027"
+      },
+      "metric": "quarterly_consolidated_revenue",
+      "low": "281000000",
+      "high": "283000000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001628280-26-059820",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm"
+      },
+      "quote": "Q3 FY 2027 Guidance FY 2027 Guidance Revenue $281 - $283 $1,129 - $1,133 Non-GAAP operating income $35 - $37 $148 - $152 Non-GAAP diluted net income per share assuming approximately 172 million and 172 million weighted average sh",
+      "original_verified": true,
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "source_sha256": "7c3e015238a277599421246919f83f33228efea9a5f2dca65486bbd65699db3b"
     }
   ]
 }
