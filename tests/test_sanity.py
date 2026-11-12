@@ -28,6 +28,29 @@ def test_extract_proxy_consideration_returns_none_when_phrase_absent():
     assert extract_proxy_consideration("<p>Nothing relevant here.</p>") is None
 
 
+def test_extract_proxy_consideration_handles_converted_into_the_right_to_receive():
+    html = (
+        "<p>shares will be converted into the right to receive $77.50 in cash, "
+        "without interest, for each share.</p>"
+    )
+    assert extract_proxy_consideration(html) == 77.50
+
+
+def test_extract_proxy_consideration_handles_will_receive():
+    html = "<p>you will receive $54.20 in cash for each share you own.</p>"
+    assert extract_proxy_consideration(html) == 54.20
+
+
+def test_extract_proxy_consideration_handles_amount_first_per_share_phrasing():
+    html = "<p>entitled to $81.00 per share in cash, without interest, for each share.</p>"
+    assert extract_proxy_consideration(html) == 81.00
+
+
+def test_extract_proxy_consideration_handles_amounts_without_a_dollar_sign():
+    html = "<p>you will be entitled to receive 157.00 in cash for each share.</p>"
+    assert extract_proxy_consideration(html) == 157.00
+
+
 def test_final_price_matches_when_accepted_proposal_equals_consideration():
     records = {
         "Proposal": [
