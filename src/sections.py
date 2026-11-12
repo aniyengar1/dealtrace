@@ -56,7 +56,16 @@ def _decode_legacy_cp1252_charrefs(html: str) -> str:
     return _LEGACY_CHARREF_RE.sub(_sub, html)
 
 SECTION_SPECS = {
-    "background_of_the_merger": [r"^Background of the Merger$"],
+    # Tender-offer filings (SC 14D9/SC TO-T) use "Background of the
+    # Offer" (or, when a tender offer is itself followed by a back-end
+    # merger, "...the Offer and the Merger") instead of "...the Merger"
+    # -- found while building the EDGAR discovery scan (src/discover.py),
+    # which checks both DEFM14A-style and tender-offer-style filings.
+    "background_of_the_merger": [
+        r"^Background of the Merger$",
+        r"^Background of the Offer$",
+        r"^Background of the Offer and the Merger$",
+    ],
     "management_projections": [
         r"^Certain Unaudited Prospective Financial Information$",
         r"^Unaudited Prospective Financial Information$",

@@ -11,3 +11,6 @@ data/sections/*
 data/output/*
 !data/output/.gitkeep
 data/cache/
+data/discovery/*
+!data/discovery/.gitkeep
+!data/discovery/report.md
