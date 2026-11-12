@@ -1,0 +1,165 @@
+{
+  "clock_source": "PostgreSQL clock_timestamp()",
+  "execution_finished_at": "2026-11-12T22:49:28.232813+00:00",
+  "execution_started_at": "2026-11-12T22:49:28.216505+00:00",
+  "history_ingestion": {
+    "blocked": 5,
+    "eligible": 75,
+    "inserted": 80
+  },
+  "locked": [],
+  "method_version": "quarter-frequency-v1",
+  "skipped": [
+    {
+      "code": "UNVERIFIED_RELEASE_DATE",
+      "company": "PD",
+      "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+      "unverified_release_lead": null
+    },
+    {
+      "code": "UNVERIFIED_RELEASE_DATE",
+      "company": "GTLB",
+      "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+      "unverified_release_lead": null
+    },
+    {
+      "announcement_evidence": {
+        "announcement_issued_date": "2026-11-10",
+        "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/76a225f3e35b0f5e19a47014c96fe18d8639fbc3e5a064f512a31d4522e7af38-e529ae64b698b3a80e768fcaffd7566262d5a43e3e7bcc427be6f54f6869b8f0.body",
+        "checked_at": "2026-11-12T10:55:18.802274+00:00",
+        "company": "CRM",
+        "event_kind": "results_release",
+        "fiscal_period": {
+          "end": "2026-10-31",
+          "label": "Q3 FY2027",
+          "start": "2026-08-01"
+        },
+        "id": "e82fb6a0-19d2-5391-9516-c866f186a734",
+        "quote": "Results to be released on December 2, 2026, after market close",
+        "release_date": "2026-12-02",
+        "release_time": "after_market_close",
+        "retrieved_at": "2026-11-12T10:55:19.122127+00:00",
+        "source_sha256": "e529ae64b698b3a80e768fcaffd7566262d5a43e3e7bcc427be6f54f6869b8f0",
+        "source_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx",
+        "time_precision": "market_session",
+        "timestamp_verified": false,
+        "timezone": "America/New_York",
+        "timezone_provenance": "US market-close context; conservative release-date boundary in America/New_York, release-date-boundary-v1. No exact publication clock time inferred.",
+        "verification_method": "direct_http_official_ir_full_document",
+        "verification_status": "independently_verified",
+        "verified_at": "2026-11-12T10:55:19.157935+00:00",
+        "verifier": "Codex"
+      },
+      "code": "OUTSIDE_14_DAY_WINDOW",
+      "company": "CRM",
+      "deadline": "2026-12-02T05:00:00+00:00",
+      "next_eligibility_at": "2026-11-18T05:00:00+00:00",
+      "release_date": "2026-12-02"
+    },
+    {
+      "code": "UNVERIFIED_RELEASE_DATE",
+      "company": "CRWD",
+      "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+      "unverified_release_lead": "2026-12-01"
+    },
+    {
+      "announcement_evidence": {
+        "announcement_issued_date": "2026-11-02",
+        "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/1baff785d18b716e62059282389f6e5a9e7a0b62d605938fb202fe6fcda66a19-aa45c5700d23cfc5c29321b3c8e5a5791d4788cb98f8fcdb9f901b5eda833dda.body",
+        "checked_at": "2026-11-12T10:55:19.322871+00:00",
+        "company": "OKTA",
+        "event_kind": "results_release",
+        "fiscal_period": {
+          "end": "2026-10-31",
+          "label": "Q3 FY2027",
+          "start": "2026-08-01"
+        },
+        "id": "c28a2554-0a0a-51fd-946a-3d4a129a1c6c",
+        "quote": "after the U.S. market close on Tuesday, December 1, 2026",
+        "release_date": "2026-12-01",
+        "release_time": "after_market_close",
+        "retrieved_at": "2026-11-12T10:55:19.625884+00:00",
+        "source_sha256": "aa45c5700d23cfc5c29321b3c8e5a5791d4788cb98f8fcdb9f901b5eda833dda",
+        "source_url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+        "time_precision": "market_session",
+        "timestamp_verified": false,
+        "timezone": "America/New_York",
+        "timezone_provenance": "US market-close context; conservative release-date boundary in America/New_York, release-date-boundary-v1. No exact publication clock time inferred.",
+        "verification_method": "direct_http_official_ir_full_document",
+        "verification_status": "independently_verified",
+        "verified_at": "2026-11-12T10:55:19.674004+00:00",
+        "verifier": "Codex"
+      },
+      "code": "OUTSIDE_14_DAY_WINDOW",
+      "company": "OKTA",
+      "deadline": "2026-12-01T05:00:00+00:00",
+      "next_eligibility_at": "2026-11-17T05:00:00+00:00",
+      "release_date": "2026-12-01"
+    },
+    {
+      "announcement_evidence": {
+        "announcement_issued_date": "2026-11-02",
+        "cached_body": "data/cache/earnings/session3-research/samsara-date-be8472cbd44fe0287b86b3a95999dcdec6f4bda10db333f56c10a49b2573fb0a.html",
+        "call": {
+          "event_kind": "earnings_call",
+          "precision": "minute",
+          "time": "14:00",
+          "timezone": "America/Los_Angeles"
+        },
+        "checked_at": "2026-11-12T10:47:32.848632+00:00",
+        "company": "IOT",
+        "discovery_note": "Another agent supplied a Finviz lead. The lead was not used as verified evidence; original official IR document independently retrieved. No user_verified label.",
+        "event_kind": "results_release",
+        "fiscal_period": {
+          "end": "2026-10-31",
+          "label": "Q3 FY2027",
+          "start": "2026-08-02"
+        },
+        "id": "7e01749a-258c-5831-aace-9e0d050eb715",
+        "quote": "after the U.S. market closes on Thursday, December 3, 2026.",
+        "release_date": "2026-12-03",
+        "release_time": "after_market_close",
+        "retrieved_at": "2026-11-12T10:47:33.282784+00:00",
+        "source_sha256": "be8472cbd44fe0287b86b3a95999dcdec6f4bda10db333f56c10a49b2573fb0a",
+        "source_url": "https://investors.samsara.com/news/news-details/2026/Samsara-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-3-2026/default.aspx",
+        "time_precision": "market_session",
+        "timestamp_verified": false,
+        "timezone": "America/New_York",
+        "timezone_provenance": "US market closes reference; release-date boundary interpreted in America/New_York under release-date-boundary-v1. Not an exact publication clock time.",
+        "verification_method": "direct_http_official_ir_full_document; field validation and Codex review completed at verified_at",
+        "verification_status": "independently_verified",
+        "verified_at": "2026-11-12T20:24:42.274438+00:00",
+        "verifier": "Codex"
+      },
+      "code": "OUTSIDE_14_DAY_WINDOW",
+      "company": "IOT",
+      "deadline": "2026-12-03T05:00:00+00:00",
+      "next_eligibility_at": "2026-11-19T05:00:00+00:00",
+      "release_date": "2026-12-03"
+    },
+    {
+      "code": "UNVERIFIED_RELEASE_DATE",
+      "company": "MDB",
+      "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+      "unverified_release_lead": "2026-12-01"
+    },
+    {
+      "code": "UNVERIFIED_RELEASE_DATE",
+      "company": "S",
+      "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+      "unverified_release_lead": null
+    },
+    {
+      "code": "UNVERIFIED_RELEASE_DATE",
+      "company": "ADBE",
+      "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+      "unverified_release_lead": null
+    },
+    {
+      "code": "UNVERIFIED_RELEASE_DATE",
+      "company": "LULU",
+      "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+      "unverified_release_lead": null
+    }
+  ]
+}

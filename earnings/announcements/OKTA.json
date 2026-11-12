@@ -1,0 +1,31 @@
+{
+  "versions": [
+    {
+      "company": "OKTA",
+      "event_kind": "results_release",
+      "fiscal_period": {
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "label": "Q3 FY2027"
+      },
+      "release_date": "2026-12-01",
+      "time_precision": "market_session",
+      "release_time": "after_market_close",
+      "timezone": "America/New_York",
+      "timezone_provenance": "US market-close context; conservative release-date boundary in America/New_York, release-date-boundary-v1. No exact publication clock time inferred.",
+      "timestamp_verified": false,
+      "announcement_issued_date": "2026-11-02",
+      "verification_status": "independently_verified",
+      "verifier": "Codex",
+      "verification_method": "direct_http_official_ir_full_document",
+      "checked_at": "2026-11-12T10:55:19.322871+00:00",
+      "retrieved_at": "2026-11-12T10:55:19.625884+00:00",
+      "verified_at": "2026-11-12T10:55:19.674004+00:00",
+      "source_url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+      "source_sha256": "aa45c5700d23cfc5c29321b3c8e5a5791d4788cb98f8fcdb9f901b5eda833dda",
+      "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/1baff785d18b716e62059282389f6e5a9e7a0b62d605938fb202fe6fcda66a19-aa45c5700d23cfc5c29321b3c8e5a5791d4788cb98f8fcdb9f901b5eda833dda.body",
+      "quote": "after the U.S. market close on Tuesday, December 1, 2026",
+      "id": "c28a2554-0a0a-51fd-946a-3d4a129a1c6c"
+    }
+  ]
+}

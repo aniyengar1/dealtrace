@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-11-12T23:29:33.578880+00:00",
+  "command": ".venv/bin/python -m pytest -q --tb=short",
+  "passed": 361,
+  "skipped": 3,
+  "failed": 0,
+  "earnings_test_count": 138,
+  "duration_seconds": "1.81",
+  "database_tests": "Real local PostgreSQL; per-test rollback; synthetic locks/results do not persist",
+  "source_audit": "80/80 SEC actuals reconcile exactly; guidance/result/issuance and scope quotes verified"
+}

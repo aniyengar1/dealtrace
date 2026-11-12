@@ -1,0 +1,4728 @@
+{
+  "always_above_mean_brier": "0.31578947368421052631578947368421052631578947368421052631578947368421052631578947",
+  "eligible_quarters": 75,
+  "evaluated": [
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-03-13T04:00:00+00:00",
+        "company_sample_size": 1,
+        "counts": {
+          "above": 11,
+          "below": 0,
+          "within": 1
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.916666666666666666666667",
+          "below": "0E-24",
+          "within": "0.083333333333333333333333"
+        },
+        "sample_size": 12
+      },
+      "brier": "0.013888888888888888888888777777777777777777777778",
+      "company": "LULU",
+      "guidance_id": "428042f8-d727-51ae-9c58-b562f949a824",
+      "id": "9546da63-018a-5005-9ff1-661ea58601dd",
+      "outcome": "above",
+      "period_end": "2025-02-02",
+      "simulated_forecast_date": "2025-03-13T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-05-14T04:00:00+00:00",
+        "company_sample_size": 2,
+        "counts": {
+          "above": 18,
+          "below": 0,
+          "within": 1
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.947368421052631578947368",
+          "below": "0E-24",
+          "within": "0.052631578947368421052632"
+        },
+        "sample_size": 19
+      },
+      "brier": "0.005540166204986149584487623268698060941828254848",
+      "company": "CRM",
+      "guidance_id": "569a87b8-437e-54d9-a6d1-dd69cfd4d9ac",
+      "id": "8a009902-473a-5cf2-a231-c05e6da94253",
+      "outcome": "above",
+      "period_end": "2025-04-30",
+      "simulated_forecast_date": "2025-05-14T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-05-27T04:00:00+00:00",
+        "company_sample_size": 2,
+        "counts": {
+          "above": 18,
+          "below": 0,
+          "within": 1
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.947368421052631578947368",
+          "below": "0E-24",
+          "within": "0.052631578947368421052632"
+        },
+        "sample_size": 19
+      },
+      "brier": "0.005540166204986149584487623268698060941828254848",
+      "company": "GTLB",
+      "guidance_id": "ff19701e-1677-57da-bf36-9a6734ef2072",
+      "id": "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+      "outcome": "above",
+      "period_end": "2025-04-30",
+      "simulated_forecast_date": "2025-05-27T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-05-21T04:00:00+00:00",
+        "company_sample_size": 2,
+        "counts": {
+          "above": 18,
+          "below": 0,
+          "within": 1
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.947368421052631578947368",
+          "below": "0E-24",
+          "within": "0.052631578947368421052632"
+        },
+        "sample_size": 19
+      },
+      "brier": "0.005540166204986149584487623268698060941828254848",
+      "company": "MDB",
+      "guidance_id": "c04ef45b-be19-52d7-b307-767ac6ead384",
+      "id": "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+      "outcome": "above",
+      "period_end": "2025-04-30",
+      "simulated_forecast_date": "2025-05-21T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-05-13T04:00:00+00:00",
+        "company_sample_size": 1,
+        "counts": {
+          "above": 18,
+          "below": 0,
+          "within": 1
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.947368421052631578947368",
+          "below": "0E-24",
+          "within": "0.052631578947368421052632"
+        },
+        "sample_size": 19
+      },
+      "brier": "0.005540166204986149584487623268698060941828254848",
+      "company": "OKTA",
+      "guidance_id": "8ef69874-02e3-5144-be84-b60225d962fe",
+      "id": "9fd1495d-2e63-5644-9bcb-908133766a3f",
+      "outcome": "above",
+      "period_end": "2025-04-30",
+      "simulated_forecast_date": "2025-05-13T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "2",
+      "baseline": {
+        "as_of": "2025-05-15T04:00:00+00:00",
+        "company_sample_size": 2,
+        "counts": {
+          "above": 18,
+          "below": 0,
+          "within": 1
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.947368421052631578947368",
+          "below": "0E-24",
+          "within": "0.052631578947368421052632"
+        },
+        "sample_size": 19
+      },
+      "brier": "1.795013850415512465373959623268698060941828254848",
+      "company": "PD",
+      "guidance_id": "59c4247e-16d3-5bb3-a84e-dfc45b8dcbed",
+      "id": "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+      "outcome": "within",
+      "period_end": "2025-04-30",
+      "simulated_forecast_date": "2025-05-15T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-05-14T04:00:00+00:00",
+        "company_sample_size": 2,
+        "counts": {
+          "above": 18,
+          "below": 0,
+          "within": 1
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.947368421052631578947368",
+          "below": "0E-24",
+          "within": "0.052631578947368421052632"
+        },
+        "sample_size": 19
+      },
+      "brier": "0.005540166204986149584487623268698060941828254848",
+      "company": "S",
+      "guidance_id": "70eef1c1-c372-5991-9fa0-9341e6ee381b",
+      "id": "198d111b-9057-515d-ad22-07486dbe75e9",
+      "outcome": "above",
+      "period_end": "2025-04-30",
+      "simulated_forecast_date": "2025-05-14T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-05-22T04:00:00+00:00",
+        "company_sample_size": 2,
+        "counts": {
+          "above": 18,
+          "below": 0,
+          "within": 1
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.947368421052631578947368",
+          "below": "0E-24",
+          "within": "0.052631578947368421052632"
+        },
+        "sample_size": 19
+      },
+      "brier": "0.005540166204986149584487623268698060941828254848",
+      "company": "IOT",
+      "guidance_id": "b9e39c77-967f-5eec-a014-fbca4779d7e0",
+      "id": "c3df377b-e059-51f7-be16-6212a9c2f96c",
+      "outcome": "above",
+      "period_end": "2025-05-03",
+      "simulated_forecast_date": "2025-05-22T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-05-22T04:00:00+00:00",
+        "company_sample_size": 2,
+        "counts": {
+          "above": 18,
+          "below": 0,
+          "within": 1
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.947368421052631578947368",
+          "below": "0E-24",
+          "within": "0.052631578947368421052632"
+        },
+        "sample_size": 19
+      },
+      "brier": "0.005540166204986149584487623268698060941828254848",
+      "company": "LULU",
+      "guidance_id": "5690de22-8de0-5635-8526-c01c9cc462a6",
+      "id": "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+      "outcome": "above",
+      "period_end": "2025-05-04",
+      "simulated_forecast_date": "2025-05-22T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-05-29T04:00:00+00:00",
+        "company_sample_size": 2,
+        "counts": {
+          "above": 20,
+          "below": 0,
+          "within": 1
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.952380952380952380952381",
+          "below": "0E-24",
+          "within": "0.047619047619047619047619"
+        },
+        "sample_size": 21
+      },
+      "brier": "0.004535147392290249433106566893424036281179138322",
+      "company": "ADBE",
+      "guidance_id": "2053bcc5-9b6a-5ec5-8291-2e4ee2e6ba59",
+      "id": "4cb019e3-d201-54cc-8cf5-3981af360031",
+      "outcome": "above",
+      "period_end": "2025-05-30",
+      "simulated_forecast_date": "2025-05-29T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-08-20T04:00:00+00:00",
+        "company_sample_size": 3,
+        "counts": {
+          "above": 26,
+          "below": 0,
+          "within": 2
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.928571428571428571428571",
+          "below": "0E-24",
+          "within": "0.071428571428571428571429"
+        },
+        "sample_size": 28
+      },
+      "brier": "0.010204081632653061224489918367346938775510204082",
+      "company": "CRM",
+      "guidance_id": "984df744-7f57-51d3-a70c-2910e19cb04b",
+      "id": "bf133a27-52cd-537a-ac37-e413923a952b",
+      "outcome": "above",
+      "period_end": "2025-07-31",
+      "simulated_forecast_date": "2025-08-20T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-08-13T04:00:00+00:00",
+        "company_sample_size": 2,
+        "counts": {
+          "above": 26,
+          "below": 0,
+          "within": 2
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.928571428571428571428571",
+          "below": "0E-24",
+          "within": "0.071428571428571428571429"
+        },
+        "sample_size": 28
+      },
+      "brier": "0.010204081632653061224489918367346938775510204082",
+      "company": "CRWD",
+      "guidance_id": "fddbd054-6750-589a-816f-b9601159beee",
+      "id": "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+      "outcome": "above",
+      "period_end": "2025-07-31",
+      "simulated_forecast_date": "2025-08-13T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-08-20T04:00:00+00:00",
+        "company_sample_size": 3,
+        "counts": {
+          "above": 26,
+          "below": 0,
+          "within": 2
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.928571428571428571428571",
+          "below": "0E-24",
+          "within": "0.071428571428571428571429"
+        },
+        "sample_size": 28
+      },
+      "brier": "0.010204081632653061224489918367346938775510204082",
+      "company": "GTLB",
+      "guidance_id": "0db01af0-bc40-5023-befb-130f4f1a9ac0",
+      "id": "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+      "outcome": "above",
+      "period_end": "2025-07-31",
+      "simulated_forecast_date": "2025-08-20T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-08-12T04:00:00+00:00",
+        "company_sample_size": 3,
+        "counts": {
+          "above": 26,
+          "below": 0,
+          "within": 2
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.928571428571428571428571",
+          "below": "0E-24",
+          "within": "0.071428571428571428571429"
+        },
+        "sample_size": 28
+      },
+      "brier": "0.010204081632653061224489918367346938775510204082",
+      "company": "MDB",
+      "guidance_id": "7515ff32-081a-5f97-acfc-c99717fde937",
+      "id": "df5055c1-ec9d-59bd-a63c-a5b9f4749b70",
+      "outcome": "above",
+      "period_end": "2025-07-31",
+      "simulated_forecast_date": "2025-08-12T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-08-12T04:00:00+00:00",
+        "company_sample_size": 2,
+        "counts": {
+          "above": 26,
+          "below": 0,
+          "within": 2
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.928571428571428571428571",
+          "below": "0E-24",
+          "within": "0.071428571428571428571429"
+        },
+        "sample_size": 28
+      },
+      "brier": "0.010204081632653061224489918367346938775510204082",
+      "company": "OKTA",
+      "guidance_id": "ec065d80-95bd-5fc4-8ee7-a9fcbff91f2b",
+      "id": "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+      "outcome": "above",
+      "period_end": "2025-07-31",
+      "simulated_forecast_date": "2025-08-12T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "2",
+      "baseline": {
+        "as_of": "2025-08-20T04:00:00+00:00",
+        "company_sample_size": 3,
+        "counts": {
+          "above": 26,
+          "below": 0,
+          "within": 2
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.928571428571428571428571",
+          "below": "0E-24",
+          "within": "0.071428571428571428571429"
+        },
+        "sample_size": 28
+      },
+      "brier": "1.724489795918367346938773918367346938775510204082",
+      "company": "PD",
+      "guidance_id": "1671a9bb-9d5b-52fa-aa21-3972bf0933ff",
+      "id": "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+      "outcome": "within",
+      "period_end": "2025-07-31",
+      "simulated_forecast_date": "2025-08-20T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-08-14T04:00:00+00:00",
+        "company_sample_size": 3,
+        "counts": {
+          "above": 26,
+          "below": 0,
+          "within": 2
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.928571428571428571428571",
+          "below": "0E-24",
+          "within": "0.071428571428571428571429"
+        },
+        "sample_size": 28
+      },
+      "brier": "0.010204081632653061224489918367346938775510204082",
+      "company": "S",
+      "guidance_id": "7d34d32d-ff89-54a9-96b9-54ce1a8e04f3",
+      "id": "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+      "outcome": "above",
+      "period_end": "2025-07-31",
+      "simulated_forecast_date": "2025-08-14T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-08-21T04:00:00+00:00",
+        "company_sample_size": 3,
+        "counts": {
+          "above": 26,
+          "below": 0,
+          "within": 2
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.928571428571428571428571",
+          "below": "0E-24",
+          "within": "0.071428571428571428571429"
+        },
+        "sample_size": 28
+      },
+      "brier": "0.010204081632653061224489918367346938775510204082",
+      "company": "IOT",
+      "guidance_id": "0192eddc-2f6a-57f4-9f91-19933b38043d",
+      "id": "a2db7ecb-4217-5078-a05c-351a64d98400",
+      "outcome": "above",
+      "period_end": "2025-08-02",
+      "simulated_forecast_date": "2025-08-21T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "2",
+      "baseline": {
+        "as_of": "2025-08-21T04:00:00+00:00",
+        "company_sample_size": 3,
+        "counts": {
+          "above": 26,
+          "below": 0,
+          "within": 2
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.928571428571428571428571",
+          "below": "0E-24",
+          "within": "0.071428571428571428571429"
+        },
+        "sample_size": 28
+      },
+      "brier": "1.867346938775510204081631918367346938775510204082",
+      "company": "LULU",
+      "guidance_id": "761d0e8e-cb2e-578f-b009-66c1bbd92387",
+      "id": "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+      "outcome": "below",
+      "period_end": "2025-08-03",
+      "simulated_forecast_date": "2025-08-21T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-08-28T04:00:00+00:00",
+        "company_sample_size": 3,
+        "counts": {
+          "above": 28,
+          "below": 0,
+          "within": 2
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.933333333333333333333333",
+          "below": "0E-24",
+          "within": "0.066666666666666666666667"
+        },
+        "sample_size": 30
+      },
+      "brier": "0.008888888888888888888888977777777777777777777778",
+      "company": "ADBE",
+      "guidance_id": "bc676721-36d2-586e-b72a-97e04af6f2fd",
+      "id": "5b215876-aedd-5e65-a33b-3921cb483b69",
+      "outcome": "above",
+      "period_end": "2025-08-29",
+      "simulated_forecast_date": "2025-08-28T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "2",
+      "baseline": {
+        "as_of": "2025-11-19T05:00:00+00:00",
+        "company_sample_size": 4,
+        "counts": {
+          "above": 34,
+          "below": 1,
+          "within": 3
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.894736842105263157894737",
+          "below": "0.026315789473684210526316",
+          "within": "0.078947368421052631578947"
+        },
+        "sample_size": 38
+      },
+      "brier": "1.649584487534626038781164407202216066481994459834",
+      "company": "CRM",
+      "guidance_id": "42930d56-cae9-5290-9732-17206bc8ea2d",
+      "id": "f3b84e6b-57cc-58a2-85be-64bcdbc060de",
+      "outcome": "within",
+      "period_end": "2025-10-31",
+      "simulated_forecast_date": "2025-11-19T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-11-18T05:00:00+00:00",
+        "company_sample_size": 3,
+        "counts": {
+          "above": 34,
+          "below": 1,
+          "within": 3
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.894736842105263157894737",
+          "below": "0.026315789473684210526316",
+          "within": "0.078947368421052631578947"
+        },
+        "sample_size": 38
+      },
+      "brier": "0.018005540166204986149584407202216066481994459834",
+      "company": "CRWD",
+      "guidance_id": "0368ce79-a89c-563d-a455-2343829ceccb",
+      "id": "b1b6fc6b-229c-5e40-9ecc-8c3019e378ba",
+      "outcome": "above",
+      "period_end": "2025-10-31",
+      "simulated_forecast_date": "2025-11-18T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-11-18T05:00:00+00:00",
+        "company_sample_size": 4,
+        "counts": {
+          "above": 34,
+          "below": 1,
+          "within": 3
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.894736842105263157894737",
+          "below": "0.026315789473684210526316",
+          "within": "0.078947368421052631578947"
+        },
+        "sample_size": 38
+      },
+      "brier": "0.018005540166204986149584407202216066481994459834",
+      "company": "GTLB",
+      "guidance_id": "e4cd15bc-a65b-5deb-ad3e-401211258e69",
+      "id": "5be8a598-88a3-5c80-bc30-0ebe07725aed",
+      "outcome": "above",
+      "period_end": "2025-10-31",
+      "simulated_forecast_date": "2025-11-18T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-11-18T05:00:00+00:00",
+        "company_sample_size": 3,
+        "counts": {
+          "above": 34,
+          "below": 1,
+          "within": 3
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.894736842105263157894737",
+          "below": "0.026315789473684210526316",
+          "within": "0.078947368421052631578947"
+        },
+        "sample_size": 38
+      },
+      "brier": "0.018005540166204986149584407202216066481994459834",
+      "company": "OKTA",
+      "guidance_id": "25c8bdf4-b2b1-5677-b987-3a2caa93dba8",
+      "id": "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+      "outcome": "above",
+      "period_end": "2025-10-31",
+      "simulated_forecast_date": "2025-11-18T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "2",
+      "baseline": {
+        "as_of": "2025-11-11T05:00:00+00:00",
+        "company_sample_size": 4,
+        "counts": {
+          "above": 34,
+          "below": 1,
+          "within": 3
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.894736842105263157894737",
+          "below": "0.026315789473684210526316",
+          "within": "0.078947368421052631578947"
+        },
+        "sample_size": 38
+      },
+      "brier": "1.649584487534626038781164407202216066481994459834",
+      "company": "PD",
+      "guidance_id": "9a2155bb-f38d-5f26-95b1-c419410a6983",
+      "id": "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+      "outcome": "within",
+      "period_end": "2025-10-31",
+      "simulated_forecast_date": "2025-11-11T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-11-20T05:00:00+00:00",
+        "company_sample_size": 4,
+        "counts": {
+          "above": 34,
+          "below": 1,
+          "within": 3
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.894736842105263157894737",
+          "below": "0.026315789473684210526316",
+          "within": "0.078947368421052631578947"
+        },
+        "sample_size": 38
+      },
+      "brier": "0.018005540166204986149584407202216066481994459834",
+      "company": "S",
+      "guidance_id": "512b0e95-f3e4-5e48-bc60-f2c247699f0b",
+      "id": "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+      "outcome": "above",
+      "period_end": "2025-10-31",
+      "simulated_forecast_date": "2025-11-20T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-11-20T05:00:00+00:00",
+        "company_sample_size": 4,
+        "counts": {
+          "above": 34,
+          "below": 1,
+          "within": 3
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.894736842105263157894737",
+          "below": "0.026315789473684210526316",
+          "within": "0.078947368421052631578947"
+        },
+        "sample_size": 38
+      },
+      "brier": "0.018005540166204986149584407202216066481994459834",
+      "company": "IOT",
+      "guidance_id": "be526f84-8160-5a5f-a624-15c39feec219",
+      "id": "22b792bc-f915-57e5-b426-a490e1dca5de",
+      "outcome": "above",
+      "period_end": "2025-11-01",
+      "simulated_forecast_date": "2025-11-20T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-11-27T05:00:00+00:00",
+        "company_sample_size": 4,
+        "counts": {
+          "above": 34,
+          "below": 1,
+          "within": 4
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.871794871794871794871795",
+          "below": "0.025641025641025641025641",
+          "within": "0.102564102564102564102564"
+        },
+        "sample_size": 39
+      },
+      "brier": "0.027613412228796844181459510848126232741617357002",
+      "company": "LULU",
+      "guidance_id": "d3e5d71a-7cdc-5aaf-89e1-3887345fcb2a",
+      "id": "13082c66-6956-56e7-9480-2d8655e69685",
+      "outcome": "above",
+      "period_end": "2025-11-02",
+      "simulated_forecast_date": "2025-11-27T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2025-11-26T05:00:00+00:00",
+        "company_sample_size": 4,
+        "counts": {
+          "above": 34,
+          "below": 1,
+          "within": 3
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.894736842105263157894737",
+          "below": "0.026315789473684210526316",
+          "within": "0.078947368421052631578947"
+        },
+        "sample_size": 38
+      },
+      "brier": "0.018005540166204986149584407202216066481994459834",
+      "company": "ADBE",
+      "guidance_id": "57807be0-c9a0-5ce4-ba88-b787def5f7cf",
+      "id": "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6",
+      "outcome": "above",
+      "period_end": "2025-11-28",
+      "simulated_forecast_date": "2025-11-26T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "2",
+      "baseline": {
+        "as_of": "2026-02-11T05:00:00+00:00",
+        "company_sample_size": 5,
+        "counts": {
+          "above": 41,
+          "below": 1,
+          "within": 5
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+          "13082c66-6956-56e7-9480-2d8655e69685",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "22b792bc-f915-57e5-b426-a490e1dca5de",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5be8a598-88a3-5c80-bc30-0ebe07725aed",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "b1b6fc6b-229c-5e40-9ecc-8c3019e378ba",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70",
+          "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.872340425531914893617021",
+          "below": "0.021276595744680851063830",
+          "within": "0.106382978723404255319149"
+        },
+        "sample_size": 47
+      },
+      "brier": "1.559981892258940697148030195563603440470801267542",
+      "company": "CRM",
+      "guidance_id": "559547e2-f9f8-5b6c-b0e2-ab07f37b7c55",
+      "id": "5efe5d24-e4b0-5e01-a6be-a1380b221681",
+      "outcome": "within",
+      "period_end": "2026-01-31",
+      "simulated_forecast_date": "2026-02-11T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-02-17T05:00:00+00:00",
+        "company_sample_size": 4,
+        "counts": {
+          "above": 41,
+          "below": 1,
+          "within": 5
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+          "13082c66-6956-56e7-9480-2d8655e69685",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "22b792bc-f915-57e5-b426-a490e1dca5de",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5be8a598-88a3-5c80-bc30-0ebe07725aed",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "b1b6fc6b-229c-5e40-9ecc-8c3019e378ba",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70",
+          "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.872340425531914893617021",
+          "below": "0.021276595744680851063830",
+          "within": "0.106382978723404255319149"
+        },
+        "sample_size": 47
+      },
+      "brier": "0.028066998641919420552286195563603440470801267542",
+      "company": "CRWD",
+      "guidance_id": "01df377c-892b-5b33-8cdc-07191f0a9bb0",
+      "id": "61267a3e-6b9b-56d5-9a00-98c88507f0c5",
+      "outcome": "above",
+      "period_end": "2026-01-31",
+      "simulated_forecast_date": "2026-02-17T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-02-17T05:00:00+00:00",
+        "company_sample_size": 5,
+        "counts": {
+          "above": 41,
+          "below": 1,
+          "within": 5
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+          "13082c66-6956-56e7-9480-2d8655e69685",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "22b792bc-f915-57e5-b426-a490e1dca5de",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5be8a598-88a3-5c80-bc30-0ebe07725aed",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "b1b6fc6b-229c-5e40-9ecc-8c3019e378ba",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70",
+          "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.872340425531914893617021",
+          "below": "0.021276595744680851063830",
+          "within": "0.106382978723404255319149"
+        },
+        "sample_size": 47
+      },
+      "brier": "0.028066998641919420552286195563603440470801267542",
+      "company": "GTLB",
+      "guidance_id": "1871a1e8-7e00-5f1c-8e28-a262fa6ce510",
+      "id": "dbf0f839-7e82-553b-b2c7-3689455d65b0",
+      "outcome": "above",
+      "period_end": "2026-01-31",
+      "simulated_forecast_date": "2026-02-17T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-02-19T05:00:00+00:00",
+        "company_sample_size": 5,
+        "counts": {
+          "above": 41,
+          "below": 1,
+          "within": 5
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+          "13082c66-6956-56e7-9480-2d8655e69685",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "22b792bc-f915-57e5-b426-a490e1dca5de",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5be8a598-88a3-5c80-bc30-0ebe07725aed",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "b1b6fc6b-229c-5e40-9ecc-8c3019e378ba",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70",
+          "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.872340425531914893617021",
+          "below": "0.021276595744680851063830",
+          "within": "0.106382978723404255319149"
+        },
+        "sample_size": 47
+      },
+      "brier": "0.028066998641919420552286195563603440470801267542",
+      "company": "IOT",
+      "guidance_id": "56685baa-a236-506c-abc3-dda2a073ce7a",
+      "id": "2962c236-49c4-5874-b918-b1fe3a137190",
+      "outcome": "above",
+      "period_end": "2026-01-31",
+      "simulated_forecast_date": "2026-02-19T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-02-16T05:00:00+00:00",
+        "company_sample_size": 4,
+        "counts": {
+          "above": 41,
+          "below": 1,
+          "within": 5
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+          "13082c66-6956-56e7-9480-2d8655e69685",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "22b792bc-f915-57e5-b426-a490e1dca5de",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5be8a598-88a3-5c80-bc30-0ebe07725aed",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "b1b6fc6b-229c-5e40-9ecc-8c3019e378ba",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70",
+          "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.872340425531914893617021",
+          "below": "0.021276595744680851063830",
+          "within": "0.106382978723404255319149"
+        },
+        "sample_size": 47
+      },
+      "brier": "0.028066998641919420552286195563603440470801267542",
+      "company": "MDB",
+      "guidance_id": "3f519fed-b8c0-526f-838f-f91a1fedcd8c",
+      "id": "3491a815-1b12-5e33-a095-b6d9751ca69f",
+      "outcome": "above",
+      "period_end": "2026-01-31",
+      "simulated_forecast_date": "2026-02-16T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-02-18T05:00:00+00:00",
+        "company_sample_size": 4,
+        "counts": {
+          "above": 41,
+          "below": 1,
+          "within": 5
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+          "13082c66-6956-56e7-9480-2d8655e69685",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "22b792bc-f915-57e5-b426-a490e1dca5de",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5be8a598-88a3-5c80-bc30-0ebe07725aed",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "b1b6fc6b-229c-5e40-9ecc-8c3019e378ba",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70",
+          "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.872340425531914893617021",
+          "below": "0.021276595744680851063830",
+          "within": "0.106382978723404255319149"
+        },
+        "sample_size": 47
+      },
+      "brier": "0.028066998641919420552286195563603440470801267542",
+      "company": "OKTA",
+      "guidance_id": "291f2d05-0368-56a6-a423-5734101169b5",
+      "id": "024f6621-98d3-562f-b9ff-913a1c253d95",
+      "outcome": "above",
+      "period_end": "2026-01-31",
+      "simulated_forecast_date": "2026-02-18T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-02-26T05:00:00+00:00",
+        "company_sample_size": 5,
+        "counts": {
+          "above": 41,
+          "below": 1,
+          "within": 5
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+          "13082c66-6956-56e7-9480-2d8655e69685",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "22b792bc-f915-57e5-b426-a490e1dca5de",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5be8a598-88a3-5c80-bc30-0ebe07725aed",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "b1b6fc6b-229c-5e40-9ecc-8c3019e378ba",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70",
+          "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.872340425531914893617021",
+          "below": "0.021276595744680851063830",
+          "within": "0.106382978723404255319149"
+        },
+        "sample_size": 47
+      },
+      "brier": "0.028066998641919420552286195563603440470801267542",
+      "company": "PD",
+      "guidance_id": "a20347e2-5e99-53df-885f-cef3c77f5996",
+      "id": "84a9ba93-c747-587b-a061-81986f941573",
+      "outcome": "above",
+      "period_end": "2026-01-31",
+      "simulated_forecast_date": "2026-02-26T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-02-26T05:00:00+00:00",
+        "company_sample_size": 5,
+        "counts": {
+          "above": 41,
+          "below": 1,
+          "within": 5
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+          "13082c66-6956-56e7-9480-2d8655e69685",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "22b792bc-f915-57e5-b426-a490e1dca5de",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5be8a598-88a3-5c80-bc30-0ebe07725aed",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "b1b6fc6b-229c-5e40-9ecc-8c3019e378ba",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70",
+          "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.872340425531914893617021",
+          "below": "0.021276595744680851063830",
+          "within": "0.106382978723404255319149"
+        },
+        "sample_size": 47
+      },
+      "brier": "0.028066998641919420552286195563603440470801267542",
+      "company": "S",
+      "guidance_id": "25216c0c-32d8-57b0-afe5-7e21009d75b6",
+      "id": "4b27139d-7ed7-5343-8001-b3720d678486",
+      "outcome": "above",
+      "period_end": "2026-01-31",
+      "simulated_forecast_date": "2026-02-26T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-03-03T05:00:00+00:00",
+        "company_sample_size": 5,
+        "counts": {
+          "above": 41,
+          "below": 1,
+          "within": 6
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+          "13082c66-6956-56e7-9480-2d8655e69685",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "22b792bc-f915-57e5-b426-a490e1dca5de",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5be8a598-88a3-5c80-bc30-0ebe07725aed",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5efe5d24-e4b0-5e01-a6be-a1380b221681",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "b1b6fc6b-229c-5e40-9ecc-8c3019e378ba",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70",
+          "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.854166666666666666666667",
+          "below": "0.020833333333333333333333",
+          "within": "0.125000000000000000000000"
+        },
+        "sample_size": 48
+      },
+      "brier": "0.037326388888888888888888777777777777777777777778",
+      "company": "LULU",
+      "guidance_id": "a7933c24-91b4-555b-bacc-6c30c5947967",
+      "id": "947f28bb-aa24-5d0e-966c-0d5b2faab4bc",
+      "outcome": "above",
+      "period_end": "2026-02-01",
+      "simulated_forecast_date": "2026-03-03T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-02-26T05:00:00+00:00",
+        "company_sample_size": 5,
+        "counts": {
+          "above": 41,
+          "below": 1,
+          "within": 5
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+          "13082c66-6956-56e7-9480-2d8655e69685",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "22b792bc-f915-57e5-b426-a490e1dca5de",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5be8a598-88a3-5c80-bc30-0ebe07725aed",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "b1b6fc6b-229c-5e40-9ecc-8c3019e378ba",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70",
+          "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.872340425531914893617021",
+          "below": "0.021276595744680851063830",
+          "within": "0.106382978723404255319149"
+        },
+        "sample_size": 47
+      },
+      "brier": "0.028066998641919420552286195563603440470801267542",
+      "company": "ADBE",
+      "guidance_id": "1515cf4f-d53f-542c-a786-4321a261155b",
+      "id": "47babbbb-32d1-5b8e-b5ea-4cfe4af7bc5e",
+      "outcome": "above",
+      "period_end": "2026-02-27",
+      "simulated_forecast_date": "2026-02-26T00:00:00-05:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-05-13T04:00:00+00:00",
+        "company_sample_size": 6,
+        "counts": {
+          "above": 3,
+          "below": 0,
+          "within": 3
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "5efe5d24-e4b0-5e01-a6be-a1380b221681",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "company",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "CRM"
+        ],
+        "probabilities": {
+          "above": "0.500000000000000000000000",
+          "below": "0E-24",
+          "within": "0.500000000000000000000000"
+        },
+        "sample_size": 6
+      },
+      "brier": "0.500000000000000000000000000000000000000000000000",
+      "company": "CRM",
+      "guidance_id": "903f9e16-b90d-5951-be33-6b25eb3a6b6b",
+      "id": "4f05be77-b1b5-58c4-98d1-e5de94c3deab",
+      "outcome": "above",
+      "period_end": "2026-04-30",
+      "simulated_forecast_date": "2026-05-13T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-05-20T04:00:00+00:00",
+        "company_sample_size": 5,
+        "counts": {
+          "above": 50,
+          "below": 1,
+          "within": 6
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "024f6621-98d3-562f-b9ff-913a1c253d95",
+          "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+          "13082c66-6956-56e7-9480-2d8655e69685",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "22b792bc-f915-57e5-b426-a490e1dca5de",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2962c236-49c4-5874-b918-b1fe3a137190",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "3491a815-1b12-5e33-a095-b6d9751ca69f",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "47babbbb-32d1-5b8e-b5ea-4cfe4af7bc5e",
+          "4b27139d-7ed7-5343-8001-b3720d678486",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5be8a598-88a3-5c80-bc30-0ebe07725aed",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5efe5d24-e4b0-5e01-a6be-a1380b221681",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+          "61267a3e-6b9b-56d5-9a00-98c88507f0c5",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "84a9ba93-c747-587b-a061-81986f941573",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "947f28bb-aa24-5d0e-966c-0d5b2faab4bc",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "b1b6fc6b-229c-5e40-9ecc-8c3019e378ba",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "dbf0f839-7e82-553b-b2c7-3689455d65b0",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70",
+          "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.877192982456140350877193",
+          "below": "0.017543859649122807017544",
+          "within": "0.105263157894736842105263"
+        },
+        "sample_size": 57
+      },
+      "brier": "0.026469682979378270236995966143428747306863650354",
+      "company": "CRWD",
+      "guidance_id": "7bc596a9-4d6e-5f18-8f95-76b424343da6",
+      "id": "1cb5bc39-8a5b-5d70-a2ce-768ca1cb3cdb",
+      "outcome": "above",
+      "period_end": "2026-04-30",
+      "simulated_forecast_date": "2026-05-20T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-05-14T04:00:00+00:00",
+        "company_sample_size": 5,
+        "counts": {
+          "above": 50,
+          "below": 1,
+          "within": 6
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "024f6621-98d3-562f-b9ff-913a1c253d95",
+          "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+          "13082c66-6956-56e7-9480-2d8655e69685",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "22b792bc-f915-57e5-b426-a490e1dca5de",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2962c236-49c4-5874-b918-b1fe3a137190",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "3491a815-1b12-5e33-a095-b6d9751ca69f",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "47babbbb-32d1-5b8e-b5ea-4cfe4af7bc5e",
+          "4b27139d-7ed7-5343-8001-b3720d678486",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5be8a598-88a3-5c80-bc30-0ebe07725aed",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5efe5d24-e4b0-5e01-a6be-a1380b221681",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+          "61267a3e-6b9b-56d5-9a00-98c88507f0c5",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "84a9ba93-c747-587b-a061-81986f941573",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "947f28bb-aa24-5d0e-966c-0d5b2faab4bc",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "b1b6fc6b-229c-5e40-9ecc-8c3019e378ba",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "dbf0f839-7e82-553b-b2c7-3689455d65b0",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70",
+          "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.877192982456140350877193",
+          "below": "0.017543859649122807017544",
+          "within": "0.105263157894736842105263"
+        },
+        "sample_size": 57
+      },
+      "brier": "0.026469682979378270236995966143428747306863650354",
+      "company": "MDB",
+      "guidance_id": "ad14ac79-8c5c-5236-8fae-e508808c519a",
+      "id": "1c741a15-67ad-5aea-a1b7-22df9bd45329",
+      "outcome": "above",
+      "period_end": "2026-04-30",
+      "simulated_forecast_date": "2026-05-14T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-05-14T04:00:00+00:00",
+        "company_sample_size": 5,
+        "counts": {
+          "above": 50,
+          "below": 1,
+          "within": 6
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "024f6621-98d3-562f-b9ff-913a1c253d95",
+          "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+          "13082c66-6956-56e7-9480-2d8655e69685",
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "22b792bc-f915-57e5-b426-a490e1dca5de",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "2962c236-49c4-5874-b918-b1fe3a137190",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "3491a815-1b12-5e33-a095-b6d9751ca69f",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "47babbbb-32d1-5b8e-b5ea-4cfe4af7bc5e",
+          "4b27139d-7ed7-5343-8001-b3720d678486",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5be8a598-88a3-5c80-bc30-0ebe07725aed",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "5efe5d24-e4b0-5e01-a6be-a1380b221681",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+          "61267a3e-6b9b-56d5-9a00-98c88507f0c5",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "84a9ba93-c747-587b-a061-81986f941573",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "947f28bb-aa24-5d0e-966c-0d5b2faab4bc",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "b1b6fc6b-229c-5e40-9ecc-8c3019e378ba",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+          "dbf0f839-7e82-553b-b2c7-3689455d65b0",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70",
+          "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "pooled",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE",
+          "CRM",
+          "CRWD",
+          "GTLB",
+          "IOT",
+          "LULU",
+          "MDB",
+          "OKTA",
+          "PD",
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.877192982456140350877193",
+          "below": "0.017543859649122807017544",
+          "within": "0.105263157894736842105263"
+        },
+        "sample_size": 57
+      },
+      "brier": "0.026469682979378270236995966143428747306863650354",
+      "company": "OKTA",
+      "guidance_id": "e4299f55-09d5-58a8-a304-c918c6940039",
+      "id": "97daa508-ace5-596a-ac8b-367d1eeb8660",
+      "outcome": "above",
+      "period_end": "2026-04-30",
+      "simulated_forecast_date": "2026-05-14T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "2",
+      "baseline": {
+        "as_of": "2026-05-14T04:00:00+00:00",
+        "company_sample_size": 6,
+        "counts": {
+          "above": 6,
+          "below": 0,
+          "within": 0
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "4b27139d-7ed7-5343-8001-b3720d678486",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "company",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "S"
+        ],
+        "probabilities": {
+          "above": "1.000000000000000000000000",
+          "below": "0E-24",
+          "within": "0E-24"
+        },
+        "sample_size": 6
+      },
+      "brier": "2.000000000000000000000000000000000000000000000000",
+      "company": "S",
+      "guidance_id": "bb88dc24-cbcc-5b98-966e-d0bfe16c3287",
+      "id": "1f3f1a34-f8c2-5ff1-a142-99c70061ead5",
+      "outcome": "within",
+      "period_end": "2026-04-30",
+      "simulated_forecast_date": "2026-05-14T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-05-21T04:00:00+00:00",
+        "company_sample_size": 6,
+        "counts": {
+          "above": 6,
+          "below": 0,
+          "within": 0
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "22b792bc-f915-57e5-b426-a490e1dca5de",
+          "2962c236-49c4-5874-b918-b1fe3a137190",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "company",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "IOT"
+        ],
+        "probabilities": {
+          "above": "1.000000000000000000000000",
+          "below": "0E-24",
+          "within": "0E-24"
+        },
+        "sample_size": 6
+      },
+      "brier": "0E-48",
+      "company": "IOT",
+      "guidance_id": "8446e825-3f2b-563a-a7ba-5b72801c1261",
+      "id": "85084aa2-014a-54d7-947e-22f48d5c315f",
+      "outcome": "above",
+      "period_end": "2026-05-02",
+      "simulated_forecast_date": "2026-05-21T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-05-21T04:00:00+00:00",
+        "company_sample_size": 6,
+        "counts": {
+          "above": 5,
+          "below": 1,
+          "within": 0
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "13082c66-6956-56e7-9480-2d8655e69685",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "947f28bb-aa24-5d0e-966c-0d5b2faab4bc",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "company",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "LULU"
+        ],
+        "probabilities": {
+          "above": "0.833333333333333333333333",
+          "below": "0.166666666666666666666667",
+          "within": "0E-24"
+        },
+        "sample_size": 6
+      },
+      "brier": "0.055555555555555555555555777777777777777777777778",
+      "company": "LULU",
+      "guidance_id": "795adeb2-8fb6-5a3e-87a4-bdf607d2ebf1",
+      "id": "86b2fdd0-9dbf-5d07-aa24-7353fed9d54a",
+      "outcome": "above",
+      "period_end": "2026-05-03",
+      "simulated_forecast_date": "2026-05-21T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-05-28T04:00:00+00:00",
+        "company_sample_size": 6,
+        "counts": {
+          "above": 6,
+          "below": 0,
+          "within": 0
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "47babbbb-32d1-5b8e-b5ea-4cfe4af7bc5e",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "company",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE"
+        ],
+        "probabilities": {
+          "above": "1.000000000000000000000000",
+          "below": "0E-24",
+          "within": "0E-24"
+        },
+        "sample_size": 6
+      },
+      "brier": "0E-48",
+      "company": "ADBE",
+      "guidance_id": "0a890adf-1833-5ec9-8455-10f6ae14dc06",
+      "id": "5c56819d-c45e-58ab-9f19-09e5752f4259",
+      "outcome": "above",
+      "period_end": "2026-05-29",
+      "simulated_forecast_date": "2026-05-28T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "2",
+      "baseline": {
+        "as_of": "2026-08-12T04:00:00+00:00",
+        "company_sample_size": 7,
+        "counts": {
+          "above": 4,
+          "below": 0,
+          "within": 3
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "4f05be77-b1b5-58c4-98d1-e5de94c3deab",
+          "5efe5d24-e4b0-5e01-a6be-a1380b221681",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "company",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "CRM"
+        ],
+        "probabilities": {
+          "above": "0.571428571428571428571429",
+          "below": "0E-24",
+          "within": "0.428571428571428571428571"
+        },
+        "sample_size": 7
+      },
+      "brier": "0.653061224489795918367347918367346938775510204082",
+      "company": "CRM",
+      "guidance_id": "b81cf032-a16f-5631-bb29-024ecd5ca379",
+      "id": "da0c0e00-f25d-5903-bde5-70e92d18d5f1",
+      "outcome": "within",
+      "period_end": "2026-07-31",
+      "simulated_forecast_date": "2026-08-12T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-08-12T04:00:00+00:00",
+        "company_sample_size": 6,
+        "counts": {
+          "above": 6,
+          "below": 0,
+          "within": 0
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "1cb5bc39-8a5b-5d70-a2ce-768ca1cb3cdb",
+          "61267a3e-6b9b-56d5-9a00-98c88507f0c5",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "b1b6fc6b-229c-5e40-9ecc-8c3019e378ba",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "company",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "CRWD"
+        ],
+        "probabilities": {
+          "above": "1.000000000000000000000000",
+          "below": "0E-24",
+          "within": "0E-24"
+        },
+        "sample_size": 6
+      },
+      "brier": "0E-48",
+      "company": "CRWD",
+      "guidance_id": "49a3f9b5-1f5a-54cd-ab80-c173b4ed70fd",
+      "id": "5bce9a70-7c70-5e88-87d2-4b00a37f569b",
+      "outcome": "above",
+      "period_end": "2026-07-31",
+      "simulated_forecast_date": "2026-08-12T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-08-18T04:00:00+00:00",
+        "company_sample_size": 6,
+        "counts": {
+          "above": 6,
+          "below": 0,
+          "within": 0
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "5be8a598-88a3-5c80-bc30-0ebe07725aed",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "dbf0f839-7e82-553b-b2c7-3689455d65b0"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "company",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "GTLB"
+        ],
+        "probabilities": {
+          "above": "1.000000000000000000000000",
+          "below": "0E-24",
+          "within": "0E-24"
+        },
+        "sample_size": 6
+      },
+      "brier": "0E-48",
+      "company": "GTLB",
+      "guidance_id": "8609a2e2-4fd1-501f-a13b-f51fc951d2e7",
+      "id": "74b4da63-77cc-515b-b0d5-1d68136bb529",
+      "outcome": "above",
+      "period_end": "2026-07-31",
+      "simulated_forecast_date": "2026-08-18T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-08-18T04:00:00+00:00",
+        "company_sample_size": 6,
+        "counts": {
+          "above": 6,
+          "below": 0,
+          "within": 0
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "1c741a15-67ad-5aea-a1b7-22df9bd45329",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "3491a815-1b12-5e33-a095-b6d9751ca69f",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "company",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "MDB"
+        ],
+        "probabilities": {
+          "above": "1.000000000000000000000000",
+          "below": "0E-24",
+          "within": "0E-24"
+        },
+        "sample_size": 6
+      },
+      "brier": "0E-48",
+      "company": "MDB",
+      "guidance_id": "51b3af46-4bda-59f9-845d-be4e51e6ec65",
+      "id": "84c96ecf-c4f6-56da-8800-c767c78b0100",
+      "outcome": "above",
+      "period_end": "2026-07-31",
+      "simulated_forecast_date": "2026-08-18T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-08-12T04:00:00+00:00",
+        "company_sample_size": 6,
+        "counts": {
+          "above": 6,
+          "below": 0,
+          "within": 0
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "024f6621-98d3-562f-b9ff-913a1c253d95",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+          "97daa508-ace5-596a-ac8b-367d1eeb8660",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "company",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "OKTA"
+        ],
+        "probabilities": {
+          "above": "1.000000000000000000000000",
+          "below": "0E-24",
+          "within": "0E-24"
+        },
+        "sample_size": 6
+      },
+      "brier": "0E-48",
+      "company": "OKTA",
+      "guidance_id": "89fe4070-f04b-5293-9aed-55cd43cab1f4",
+      "id": "ac7eef4f-1555-5aa1-89d4-79440f6d2225",
+      "outcome": "above",
+      "period_end": "2026-07-31",
+      "simulated_forecast_date": "2026-08-12T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-08-13T04:00:00+00:00",
+        "company_sample_size": 6,
+        "counts": {
+          "above": 3,
+          "below": 0,
+          "within": 3
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+          "84a9ba93-c747-587b-a061-81986f941573"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "company",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "PD"
+        ],
+        "probabilities": {
+          "above": "0.500000000000000000000000",
+          "below": "0E-24",
+          "within": "0.500000000000000000000000"
+        },
+        "sample_size": 6
+      },
+      "brier": "0.500000000000000000000000000000000000000000000000",
+      "company": "PD",
+      "guidance_id": "eb6a3e37-66d7-5c60-9f83-a01eea51edf4",
+      "id": "99cd334a-3e30-5017-ada3-4e2ecd92f97d",
+      "outcome": "above",
+      "period_end": "2026-07-31",
+      "simulated_forecast_date": "2026-08-13T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-08-13T04:00:00+00:00",
+        "company_sample_size": 7,
+        "counts": {
+          "above": 6,
+          "below": 0,
+          "within": 1
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1f3f1a34-f8c2-5ff1-a142-99c70061ead5",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "4b27139d-7ed7-5343-8001-b3720d678486",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "company",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "S"
+        ],
+        "probabilities": {
+          "above": "0.857142857142857142857143",
+          "below": "0E-24",
+          "within": "0.142857142857142857142857"
+        },
+        "sample_size": 7
+      },
+      "brier": "0.040816326530612244897959102040816326530612244898",
+      "company": "S",
+      "guidance_id": "6b0268b6-1db8-5996-bb98-cce8f4dedf4e",
+      "id": "df062ed8-23f0-5c80-a674-8c5ab54a68d7",
+      "outcome": "above",
+      "period_end": "2026-07-31",
+      "simulated_forecast_date": "2026-08-13T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-08-20T04:00:00+00:00",
+        "company_sample_size": 7,
+        "counts": {
+          "above": 7,
+          "below": 0,
+          "within": 0
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "22b792bc-f915-57e5-b426-a490e1dca5de",
+          "2962c236-49c4-5874-b918-b1fe3a137190",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "85084aa2-014a-54d7-947e-22f48d5c315f",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "company",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "IOT"
+        ],
+        "probabilities": {
+          "above": "1.000000000000000000000000",
+          "below": "0E-24",
+          "within": "0E-24"
+        },
+        "sample_size": 7
+      },
+      "brier": "0E-48",
+      "company": "IOT",
+      "guidance_id": "63ace526-191d-57f5-a1f9-09c2341d12a4",
+      "id": "6b8d169c-4077-5d31-9bee-84dc60f76e50",
+      "outcome": "above",
+      "period_end": "2026-08-01",
+      "simulated_forecast_date": "2026-08-20T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "2",
+      "baseline": {
+        "as_of": "2026-08-20T04:00:00+00:00",
+        "company_sample_size": 7,
+        "counts": {
+          "above": 6,
+          "below": 1,
+          "within": 0
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "13082c66-6956-56e7-9480-2d8655e69685",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "86b2fdd0-9dbf-5d07-aa24-7353fed9d54a",
+          "947f28bb-aa24-5d0e-966c-0d5b2faab4bc",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "company",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "LULU"
+        ],
+        "probabilities": {
+          "above": "0.857142857142857142857143",
+          "below": "0.142857142857142857142857",
+          "within": "0E-24"
+        },
+        "sample_size": 7
+      },
+      "brier": "1.469387755102040816326531102040816326530612244898",
+      "company": "LULU",
+      "guidance_id": "35bdf649-0526-56e8-ad6b-6154e08e39d6",
+      "id": "364cd7d9-c11f-5660-ab0b-c5b68cf81ee5",
+      "outcome": "below",
+      "period_end": "2026-08-02",
+      "simulated_forecast_date": "2026-08-20T00:00:00-04:00"
+    },
+    {
+      "always_above_brier": "0",
+      "baseline": {
+        "as_of": "2026-08-27T04:00:00+00:00",
+        "company_sample_size": 7,
+        "counts": {
+          "above": 7,
+          "below": 0,
+          "within": 0
+        },
+        "evaluation_kind": "retrospective_reconstruction",
+        "historical_ids": [
+          "47babbbb-32d1-5b8e-b5ea-4cfe4af7bc5e",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5c56819d-c45e-58ab-9f19-09e5752f4259",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6"
+        ],
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ],
+        "method_version": "quarter-frequency-v1",
+        "mode": "company",
+        "policy": {
+          "company_minimum": 6,
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "pool_company_minimum": 2,
+          "pool_minimum": 12,
+          "quarters_per_company": 8,
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "smoothing": "none"
+        },
+        "pool_companies": [
+          "ADBE"
+        ],
+        "probabilities": {
+          "above": "1.000000000000000000000000",
+          "below": "0E-24",
+          "within": "0E-24"
+        },
+        "sample_size": 7
+      },
+      "brier": "0E-48",
+      "company": "ADBE",
+      "guidance_id": "e8524bc3-89c0-5a87-965e-9a97fe4dea07",
+      "id": "7fd6d96b-29a4-5413-9d34-6f06bd45dee8",
+      "outcome": "above",
+      "period_end": "2026-08-28",
+      "simulated_forecast_date": "2026-08-27T00:00:00-04:00"
+    }
+  ],
+  "evaluated_count": 57,
+  "evaluation_kind": "retrospective_reconstruction_NOT_live",
+  "excluded": [
+    {
+      "company": "LULU",
+      "id": "696c01eb-7fb0-5926-adad-05ed609f6834",
+      "reasons": [
+        "INSUFFICIENT_HISTORY"
+      ]
+    },
+    {
+      "company": "CRM",
+      "id": "2938884f-fc6a-596d-81fa-6c78134cbed0",
+      "reasons": [
+        "INSUFFICIENT_HISTORY"
+      ]
+    },
+    {
+      "company": "CRWD",
+      "id": "1942669c-4809-50d5-a57c-610f6f1a313d",
+      "reasons": [
+        "INSUFFICIENT_HISTORY"
+      ]
+    },
+    {
+      "company": "GTLB",
+      "id": "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+      "reasons": [
+        "INSUFFICIENT_HISTORY"
+      ]
+    },
+    {
+      "company": "MDB",
+      "id": "3a280442-fd76-50c6-92ca-dba9f6c85118",
+      "reasons": [
+        "INSUFFICIENT_HISTORY"
+      ]
+    },
+    {
+      "company": "OKTA",
+      "id": "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+      "reasons": [
+        "INSUFFICIENT_HISTORY"
+      ]
+    },
+    {
+      "company": "PD",
+      "id": "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+      "reasons": [
+        "INSUFFICIENT_HISTORY"
+      ]
+    },
+    {
+      "company": "S",
+      "id": "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+      "reasons": [
+        "INSUFFICIENT_HISTORY"
+      ]
+    },
+    {
+      "company": "IOT",
+      "id": "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+      "reasons": [
+        "INSUFFICIENT_HISTORY"
+      ]
+    },
+    {
+      "company": "ADBE",
+      "id": "7d3a833b-3c50-5241-b529-462ee9726e0f",
+      "reasons": [
+        "INSUFFICIENT_HISTORY"
+      ]
+    },
+    {
+      "company": "CRM",
+      "id": "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+      "reasons": [
+        "INSUFFICIENT_HISTORY"
+      ]
+    },
+    {
+      "company": "CRWD",
+      "id": "d4555f84-c328-5b53-a00c-4a509faeaad9",
+      "reasons": [
+        "INSUFFICIENT_HISTORY"
+      ]
+    },
+    {
+      "company": "GTLB",
+      "id": "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+      "reasons": [
+        "INSUFFICIENT_HISTORY"
+      ]
+    },
+    {
+      "company": "MDB",
+      "id": "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+      "reasons": [
+        "INSUFFICIENT_HISTORY"
+      ]
+    },
+    {
+      "company": "OKTA",
+      "id": "66e63fe9-08d5-58ee-a57f-79b313a11831",
+      "reasons": [
+        "EARLY_POST_CLOSE_RESULT_INDICATION: 2025-02-04 precedes formal-release lock window; excluded rather than training on already-public result information"
+      ]
+    },
+    {
+      "company": "PD",
+      "id": "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+      "reasons": [
+        "INSUFFICIENT_HISTORY"
+      ]
+    },
+    {
+      "company": "S",
+      "id": "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+      "reasons": [
+        "INSUFFICIENT_HISTORY"
+      ]
+    },
+    {
+      "company": "IOT",
+      "id": "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+      "reasons": [
+        "INSUFFICIENT_HISTORY"
+      ]
+    },
+    {
+      "company": "ADBE",
+      "id": "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+      "reasons": [
+        "INSUFFICIENT_HISTORY"
+      ]
+    },
+    {
+      "company": "CRWD",
+      "id": "16b5afe7-5155-5f82-a34a-f8f0a3ecb320",
+      "reasons": [
+        "EARLY_POST_CLOSE_RESULT_INDICATION: 2025-05-07 precedes formal-release lock window; excluded rather than training on already-public result information"
+      ]
+    },
+    {
+      "company": "MDB",
+      "id": "fb3a2124-04ac-5345-95bd-addb109a9492",
+      "reasons": [
+        "EARLY_POST_CLOSE_RESULT_INDICATION: 2025-11-03 precedes formal-release lock window; excluded rather than training on already-public result information"
+      ]
+    },
+    {
+      "company": "GTLB",
+      "id": "039646d4-7a72-56b2-b47f-7a9061d30629",
+      "reasons": [
+        "EARLY_POST_CLOSE_RESULT_INDICATION: 2026-05-11 precedes formal-release lock window; excluded rather than training on already-public result information"
+      ]
+    },
+    {
+      "company": "PD",
+      "id": "bb814677-c91b-5e83-b096-6491b6837114",
+      "reasons": [
+        "EARLY_POST_CLOSE_RESULT_INDICATION: 2026-05-11 precedes formal-release lock window; excluded rather than training on already-public result information"
+      ]
+    }
+  ],
+  "excluded_count": 23,
+  "executed_at": "2026-11-12T20:31:35.652358+00:00",
+  "limitations": [
+    "Today-curated guidance, fiscal boundaries and comparability reviews; not an operational as-recorded backtest.",
+    "Only underlying SEC public-availability dates are simulated; no review timestamps are backdated.",
+    "Small selected ten-company cohort; repeated overlapping histories; no calibration or predictive-quality claim.",
+    "Historical report dates define the simulated horizon retrospectively; scheduled-date evidence was not reconstructed."
+  ],
+  "mean_brier": "0.28209233428662343253022767857680339730699330199031578947368421052631578947368421",
+  "total_quarters": 80
+}

@@ -378,3 +378,30 @@ when checking a separately started opt-in instance. Future manual results-date
 confirmations can be captured with `python -m earnings.manual_dates INPUT.json`;
 see the readiness report for required provenance, timezone and precision fields.
 No manual confirmation was invented during preparation.
+
+## Session 3: quarterly empirical baseline and immutable ledger
+
+See [METHODS.md](METHODS.md) for fixed-horizon quarterly guidance selection,
+75/80 eligible observations, probability/pooling policy, conservative timing,
+retrospective-only diagnostic limitations, DB threat model and outcome-review schema.
+This is separate from the hidden, unvalidated experimental annual forecast.
+
+```sh
+source .venv/bin/activate
+python -m db.migrate
+python -m earnings.history_audit --output /tmp/crosscheck-history-audit-new.json
+python -m earnings.history
+python -m earnings.baseline_evaluation --output /tmp/crosscheck-retrospective-new.json
+python -m earnings.predict --lock --output /tmp/crosscheck-lock-run-new.json
+python -m earnings.score_live --review-dir earnings/scoring_reviews --output /tmp/crosscheck-score-run-new.json
+python -m pytest tests/earnings -q
+```
+
+Output files must be new paths; previous executions are never overwritten.
+No automatic lock is made from a call date, calendar estimate or search snippet.
+Missing reviewed outcome files block scoring. Outcome reviews verify/ingest SEC
+actual versions and compare with the locked guidance, not later revisions.
+There are no backdated live locks. Current Salesforce, Okta and SentinelOne
+prospective acquisition-scope blocks remain. Visual compatibility remains
+**unverified and required before merging**. Do not merge/push/deploy as part of
+these commands.

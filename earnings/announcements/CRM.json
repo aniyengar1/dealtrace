@@ -1,0 +1,31 @@
+{
+  "versions": [
+    {
+      "company": "CRM",
+      "event_kind": "results_release",
+      "fiscal_period": {
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "label": "Q3 FY2027"
+      },
+      "release_date": "2026-12-02",
+      "time_precision": "market_session",
+      "release_time": "after_market_close",
+      "timezone": "America/New_York",
+      "timezone_provenance": "US market-close context; conservative release-date boundary in America/New_York, release-date-boundary-v1. No exact publication clock time inferred.",
+      "timestamp_verified": false,
+      "announcement_issued_date": "2026-11-10",
+      "verification_status": "independently_verified",
+      "verifier": "Codex",
+      "verification_method": "direct_http_official_ir_full_document",
+      "checked_at": "2026-11-12T10:55:18.802274+00:00",
+      "retrieved_at": "2026-11-12T10:55:19.122127+00:00",
+      "verified_at": "2026-11-12T10:55:19.157935+00:00",
+      "source_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx",
+      "source_sha256": "e529ae64b698b3a80e768fcaffd7566262d5a43e3e7bcc427be6f54f6869b8f0",
+      "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/76a225f3e35b0f5e19a47014c96fe18d8639fbc3e5a064f512a31d4522e7af38-e529ae64b698b3a80e768fcaffd7566262d5a43e3e7bcc427be6f54f6869b8f0.body",
+      "quote": "Results to be released on December 2, 2026, after market close",
+      "id": "e82fb6a0-19d2-5391-9516-c866f186a734"
+    }
+  ]
+}

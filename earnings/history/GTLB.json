@@ -1,0 +1,1346 @@
+{
+  "review_scope": "Last eight publicly reported quarters as of 2026-11-12; complete reviewed 8-K/8-K-A inventory from 2024-08-01 through 2026-11-12",
+  "source_inventory": [
+    {
+      "accession": "0001628280-24-034540",
+      "filed": "2024-08-05",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024034540/gtlb-20240802.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001628280-24-039118",
+      "filed": "2024-09-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024039118/gtlb-20240903.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1653482/000162828024039118/gitlab-ex99120240731fy25.htm"
+      ]
+    },
+    {
+      "accession": "0001628280-24-050064",
+      "filed": "2024-12-05",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024050064/gtlb-20241203.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1653482/000162828024050064/gitlab-ex99120241031fy25.htm"
+      ]
+    },
+    {
+      "accession": "0001628280-25-009422",
+      "filed": "2025-03-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025009422/gtlb-20250228.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1653482/000162828025009422/gitlab-ex99120250131fy25.htm"
+      ]
+    },
+    {
+      "accession": "0001628280-25-030455",
+      "filed": "2025-06-10",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025030455/gtlb-20250610.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1653482/000162828025030455/gitlab-ex99120250430fy26.htm"
+      ]
+    },
+    {
+      "accession": "0001653482-25-000008",
+      "filed": "2025-09-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348225000008/gtlb-20250828.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1653482/000165348225000008/gitlab-ex99120250731fy26.htm"
+      ]
+    },
+    {
+      "accession": "0001628280-25-054758",
+      "filed": "2025-12-02",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054758/gtlb-20251202.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054758/gitlab-ex99120251031fy26.htm"
+      ]
+    },
+    {
+      "accession": "0001628280-25-054895",
+      "filed": "2025-12-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054895/gtlb-20251202.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054895/gitlab-ex99120251031fy26am.htm"
+      ]
+    },
+    {
+      "accession": "0001653482-26-000009",
+      "filed": "2026-01-12",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000009/gtlb-20260109.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001628280-26-013795",
+      "filed": "2026-03-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gtlb-20260302.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm"
+      ]
+    },
+    {
+      "accession": "0001653482-26-000095",
+      "filed": "2026-05-11",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000095/gtlb-20260511.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000095/exhibit991-letterfromwilla.htm"
+      ]
+    },
+    {
+      "accession": "0001653482-26-000107",
+      "filed": "2026-05-19",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000107/gtlb-20260518.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001628280-26-039805",
+      "filed": "2026-06-02",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039805/gtlb-20260601.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039805/gitlab-ex99120260430fy27.htm"
+      ]
+    },
+    {
+      "accession": "0001653482-26-000145",
+      "filed": "2026-07-08",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000145/gtlb-20260708.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000145/exhibit991-businessupdat.htm"
+      ]
+    },
+    {
+      "accession": "0001628280-26-059820",
+      "filed": "2026-09-01",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gtlb-20260828.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm"
+      ]
+    },
+    {
+      "accession": "0001628280-24-041875",
+      "filed": "2024-10-02",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024041875/gtlb-20241002.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001628280-25-032610",
+      "filed": "2025-06-23",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025032610/gtlb-20250620.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001653482-25-000042",
+      "filed": "2025-09-23",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348225000042/gtlb-20250919.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001653482-25-000060",
+      "filed": "2025-11-26",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348225000060/gtlb-20251125.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001653482-26-000002",
+      "filed": "2026-01-05",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000002/gtlb-20251230.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001653482-26-000051",
+      "filed": "2026-04-16",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000051/gtlb-20260413.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001653482-26-000139",
+      "filed": "2026-06-24",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000139/gtlb-20260617.htm",
+      "exhibits": []
+    }
+  ],
+  "inventory_gaps": [],
+  "quarters": [
+    {
+      "company": "GTLB",
+      "target": {
+        "start": "2024-08-01",
+        "end": "2024-10-31",
+        "label": "Q3 FY2025",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "2a49ff7a-c5b4-505a-beb9-2c251836a12e",
+          "company": "GTLB",
+          "issued": {
+            "start": "2024-09-03",
+            "end": "2024-09-03",
+            "precision": "day"
+          },
+          "filed": "2024-09-03",
+          "start": "2024-08-01",
+          "end": "2024-10-31",
+          "low": "187000000.0",
+          "high": "188000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001628280-24-039118",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024039118/gitlab-ex99120240731fy25.htm",
+          "quote": "Q3 FY 2025 Guidance FY 2025 Guidance Revenue $187.0 - $188.0 $",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "2a49ff7a-c5b4-505a-beb9-2c251836a12e",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024039118/gitlab-ex99120240731fy25.htm",
+          "source_sha256": "4421a4e752eb1d85d70a15a55d2d897b50671e9caf5272110705f81b2fa0638b",
+          "fetched_at": "2026-11-12T10:25:54.896541+00:00",
+          "issuance_date_quote": "September 3, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024039118/gtlb-20240903.htm",
+          "exhibit_index_quote": "99.1 Press Release dated S eptember 3 , 2024."
+        }
+      ],
+      "actual": {
+        "id": "e6804a8b-f6cf-563a-96be-87f8c11c09b5",
+        "company": "GTLB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2024-08-01",
+        "end": "2024-10-31",
+        "value": "196047000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-24-050129",
+        "filed": "2024-12-06",
+        "form": "10-Q",
+        "fiscal_year": 2025,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024050129/gtlb-20241031.htm",
+        "filed": "2024-12-06",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024050129/gtlb-20241031.htm",
+          "sha256": "bbd022bed5c334779922bb19c596f06d4e0fa9133d4417dd85d7d17748307b70",
+          "body": "3c3219ed31fbf91d5960dfa6bc7f4897d8e4e07ac803634dc489ac630260352c-bbd022bed5c334779922bb19c596f06d4e0fa9133d4417dd85d7d17748307b70.body",
+          "fetched_at": "2026-11-12T10:40:52.181840+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001628280-24-050129-filing.txt"
+      },
+      "result": {
+        "issued_date": "2024-12-05",
+        "formal_release_issued_date": "2024-12-05",
+        "issued_precision": "day",
+        "date_quote": "December 5, 2024",
+        "filed": "2024-12-05",
+        "accession": "0001628280-24-050064",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024050064/gitlab-ex99120241031fy25.htm",
+        "reported_revenue_quote": "Total revenue 196,047 149,668 547,818 416,127",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "439eb788c8f1a3a4a6b87c25317ae7f298b5880a5204343f41a6d1e837d5ef7a",
+        "fetched_at": "2026-11-12T10:25:56.210004+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.429955+00:00",
+        "guidance_id": "2a49ff7a-c5b4-505a-beb9-2c251836a12e",
+        "actual_id": "e6804a8b-f6cf-563a-96be-87f8c11c09b5",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024039118/gitlab-ex99120240731fy25.htm",
+            "filed_date": "2024-09-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024050064/gitlab-ex99120241031fy25.htm",
+            "filed_date": "2024-12-05"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024050129/gtlb-20241031.htm",
+            "filed_date": "2024-12-06"
+          }
+        ],
+        "scope_evidence": [
+          " condensed consolidated financial statements subsequent to the date of acquisition. The revenue and net income (loss) earned by the business acquired following the acquisition are not material to the Company\u2019s condensed consolidated results of operations; and accordingly, pro forma financial statements have not been presented. 7. Goodwill and Intangible Assets, Net Goodwill The carrying amount of goodwill was"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2024-12-05"
+    },
+    {
+      "company": "GTLB",
+      "target": {
+        "start": "2024-11-01",
+        "end": "2025-01-31",
+        "label": "Q4 FY2025",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "2b515a2c-98ca-5023-98ea-7161d57f254d",
+          "company": "GTLB",
+          "issued": {
+            "start": "2024-12-05",
+            "end": "2024-12-05",
+            "precision": "day"
+          },
+          "filed": "2024-12-05",
+          "start": "2024-11-01",
+          "end": "2025-01-31",
+          "low": "205000000.0",
+          "high": "206000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001628280-24-050064",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024050064/gitlab-ex99120241031fy25.htm",
+          "quote": "Q4 FY 2025 Guidance FY 2025 Guidance Revenue $205.0 - $206.0 $",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "2b515a2c-98ca-5023-98ea-7161d57f254d",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024050064/gitlab-ex99120241031fy25.htm",
+          "source_sha256": "439eb788c8f1a3a4a6b87c25317ae7f298b5880a5204343f41a6d1e837d5ef7a",
+          "fetched_at": "2026-11-12T10:25:56.210004+00:00",
+          "issuance_date_quote": "December 5, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024050064/gtlb-20241203.htm",
+          "exhibit_index_quote": "99.1 Press Release dated Dec ember 5 , 2024."
+        }
+      ],
+      "actual": {
+        "id": "075b6548-b1c8-5a01-b009-70612b6a2518",
+        "company": "GTLB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2024-11-01",
+        "end": "2025-01-31",
+        "value": "211431000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-25-014344",
+        "filed": "2025-03-21",
+        "form": "DERIVED",
+        "fiscal_year": 2025,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+        "parents": [
+          "ce468ddf-bfc7-5e4f-a3dc-e876eb671bd3",
+          "00133629-cc7d-5543-8eaf-658ea31b645f"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "00133629-cc7d-5543-8eaf-658ea31b645f",
+          "company": "GTLB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2024-02-01",
+          "end": "2024-10-31",
+          "value": "547818000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001628280-24-050129",
+          "filed": "2024-12-06",
+          "form": "10-Q",
+          "fiscal_year": 2025,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "ce468ddf-bfc7-5e4f-a3dc-e876eb671bd3",
+          "company": "GTLB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2024-02-01",
+          "end": "2025-01-31",
+          "value": "759249000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001628280-25-014344",
+          "filed": "2025-03-21",
+          "form": "10-K",
+          "fiscal_year": 2025,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025014344/gtlb-20250131.htm",
+        "filed": "2025-03-21",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025014344/gtlb-20250131.htm",
+          "sha256": "9fc5aea6587298078a94fc395eec8dbd9e9af5e75c2324a4a98d58e31f8a390d",
+          "body": "e207a587d9f39fcc57f544b7aa83f694545e7fa8564bd65607e1fce56eb552b4-9fc5aea6587298078a94fc395eec8dbd9e9af5e75c2324a4a98d58e31f8a390d.body",
+          "fetched_at": "2026-11-12T10:40:52.828872+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001628280-25-014344-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-03-03",
+        "formal_release_issued_date": "2025-03-03",
+        "issued_precision": "day",
+        "date_quote": "March 03, 2025",
+        "filed": "2025-03-03",
+        "accession": "0001628280-25-009422",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025009422/gitlab-ex99120250131fy25.htm",
+        "reported_revenue_quote": "Total revenue 211,431 163,779 759,249 579,906",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "fc2b8a24b1e57f01156774a77af67805e8c1f9cea065a2a54409357b177d2cd1",
+        "fetched_at": "2026-11-12T10:25:57.555450+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.445564+00:00",
+        "guidance_id": "2b515a2c-98ca-5023-98ea-7161d57f254d",
+        "actual_id": "075b6548-b1c8-5a01-b009-70612b6a2518",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024050064/gitlab-ex99120241031fy25.htm",
+            "filed_date": "2024-12-05"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025009422/gitlab-ex99120250131fy25.htm",
+            "filed_date": "2025-03-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025014344/gtlb-20250131.htm",
+            "filed_date": "2025-03-21"
+          }
+        ],
+        "scope_evidence": [
+          " Company\u2019s consolidated financial statements subsequent to the date of acquisition. The revenue and net income (loss) earned by the business acquired following the acquisition are not material to the Company\u2019s consolidated results of operations; and accordingly, pro forma financial statements have not been presented. 7. Goodwill and Intangible Assets, Net Goodwill The carrying amount of goodwill was as follow"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-03-03"
+    },
+    {
+      "company": "GTLB",
+      "target": {
+        "start": "2025-02-01",
+        "end": "2025-04-30",
+        "label": "Q1 FY2026",
+        "calendar": "months",
+        "days": 89
+      },
+      "guidance_versions": [
+        {
+          "id": "ff19701e-1677-57da-bf36-9a6734ef2072",
+          "company": "GTLB",
+          "issued": {
+            "start": "2025-03-03",
+            "end": "2025-03-03",
+            "precision": "day"
+          },
+          "filed": "2025-03-03",
+          "start": "2025-02-01",
+          "end": "2025-04-30",
+          "low": "212000000.0",
+          "high": "213000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001628280-25-009422",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025009422/gitlab-ex99120250131fy25.htm",
+          "quote": "Q1 FY 2026 Guidance FY 2026 Guidance Revenue $212.0 - $213.0 $",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "ff19701e-1677-57da-bf36-9a6734ef2072",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025009422/gitlab-ex99120250131fy25.htm",
+          "source_sha256": "fc2b8a24b1e57f01156774a77af67805e8c1f9cea065a2a54409357b177d2cd1",
+          "fetched_at": "2026-11-12T10:25:57.555450+00:00",
+          "issuance_date_quote": "March 03, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025009422/gtlb-20250228.htm",
+          "exhibit_index_quote": "99.1 Press Release dated March 3, 2025."
+        }
+      ],
+      "actual": {
+        "id": "0cc235f2-be40-5793-852d-f79c47776d7c",
+        "company": "GTLB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-02-01",
+        "end": "2025-04-30",
+        "value": "214509000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-25-030546",
+        "filed": "2025-06-11",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025030546/gtlb-20250430.htm",
+        "filed": "2025-06-11",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025030546/gtlb-20250430.htm",
+          "sha256": "d9b00bfa689f161905af2b4fa59dd156e487d2740f10a5257263f3d8a74c767b",
+          "body": "5999eda01338181525d656817cf8f16a6e6a30067f1126051bb38ce992193390-d9b00bfa689f161905af2b4fa59dd156e487d2740f10a5257263f3d8a74c767b.body",
+          "fetched_at": "2026-11-12T10:40:53.535381+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001628280-25-030546-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-06-10",
+        "formal_release_issued_date": "2025-06-10",
+        "issued_precision": "day",
+        "date_quote": "June 10, 2025",
+        "filed": "2025-06-10",
+        "accession": "0001628280-25-030455",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025030455/gitlab-ex99120250430fy26.htm",
+        "reported_revenue_quote": "Total revenue 214,509 169,187",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "2974fefbefcbf603b280b0f51a627086304d04adc419ae5e3569d10dfaefe85b",
+        "fetched_at": "2026-11-12T10:25:58.968220+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.456063+00:00",
+        "guidance_id": "ff19701e-1677-57da-bf36-9a6734ef2072",
+        "actual_id": "0cc235f2-be40-5793-852d-f79c47776d7c",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025009422/gitlab-ex99120250131fy25.htm",
+            "filed_date": "2025-03-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025030455/gitlab-ex99120250430fy26.htm",
+            "filed_date": "2025-06-10"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025030546/gtlb-20250430.htm",
+            "filed_date": "2025-06-11"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-06-10"
+    },
+    {
+      "company": "GTLB",
+      "target": {
+        "start": "2025-05-01",
+        "end": "2025-07-31",
+        "label": "Q2 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "0db01af0-bc40-5023-befb-130f4f1a9ac0",
+          "company": "GTLB",
+          "issued": {
+            "start": "2025-06-10",
+            "end": "2025-06-10",
+            "precision": "day"
+          },
+          "filed": "2025-06-10",
+          "start": "2025-05-01",
+          "end": "2025-07-31",
+          "low": "226000000.0",
+          "high": "227000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001628280-25-030455",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025030455/gitlab-ex99120250430fy26.htm",
+          "quote": "Q2 FY 2026 Guidance FY 2026 Guidance Revenue $226.0 - $227.0 $",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "0db01af0-bc40-5023-befb-130f4f1a9ac0",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025030455/gitlab-ex99120250430fy26.htm",
+          "source_sha256": "2974fefbefcbf603b280b0f51a627086304d04adc419ae5e3569d10dfaefe85b",
+          "fetched_at": "2026-11-12T10:25:58.968220+00:00",
+          "issuance_date_quote": "June 10, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025030455/gtlb-20250610.htm",
+          "exhibit_index_quote": "99.1 Press Release dated June 10 , 2025."
+        }
+      ],
+      "actual": {
+        "id": "acd1a06d-7168-56c9-a5ca-a8ddc7f3bcd0",
+        "company": "GTLB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-05-01",
+        "end": "2025-07-31",
+        "value": "235960000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001653482-25-000010",
+        "filed": "2025-09-04",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348225000010/gtlb-20250731.htm",
+        "filed": "2025-09-04",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348225000010/gtlb-20250731.htm",
+          "sha256": "4d7ede1e1b9701c82be4a91d94c3073424a3a20467b9571ef4695fd41364aed8",
+          "body": "4199ba116a2914e0ec14b78408badad2520f5ed4ffbeab81fa77fb13929a1c00-4d7ede1e1b9701c82be4a91d94c3073424a3a20467b9571ef4695fd41364aed8.body",
+          "fetched_at": "2026-11-11T11:20:01.399541+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001653482-25-000010-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-09-03",
+        "formal_release_issued_date": "2025-09-03",
+        "issued_precision": "day",
+        "date_quote": "September 3, 2025",
+        "filed": "2025-09-03",
+        "accession": "0001653482-25-000008",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348225000008/gitlab-ex99120250731fy26.htm",
+        "reported_revenue_quote": "Total revenue 235,960 182,584 450,469 351,771",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "4e8f735875bb06a353a676cc9e952a84174f10332691d0edcdb78f3a4495a221",
+        "fetched_at": "2026-11-11T11:20:02.645659+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.466898+00:00",
+        "guidance_id": "0db01af0-bc40-5023-befb-130f4f1a9ac0",
+        "actual_id": "acd1a06d-7168-56c9-a5ca-a8ddc7f3bcd0",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025030455/gitlab-ex99120250430fy26.htm",
+            "filed_date": "2025-06-10"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348225000008/gitlab-ex99120250731fy26.htm",
+            "filed_date": "2025-09-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348225000010/gtlb-20250731.htm",
+            "filed_date": "2025-09-04"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-09-03"
+    },
+    {
+      "company": "GTLB",
+      "target": {
+        "start": "2025-08-01",
+        "end": "2025-10-31",
+        "label": "Q3 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "e4cd15bc-a65b-5deb-ad3e-401211258e69",
+          "company": "GTLB",
+          "issued": {
+            "start": "2025-09-03",
+            "end": "2025-09-03",
+            "precision": "day"
+          },
+          "filed": "2025-09-03",
+          "start": "2025-08-01",
+          "end": "2025-10-31",
+          "low": "238000000.0",
+          "high": "239000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001653482-25-000008",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348225000008/gitlab-ex99120250731fy26.htm",
+          "quote": "Q3 FY 2026 Guidance FY 2026 Guidance Revenue $238.0 - $239.0 $",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "e4cd15bc-a65b-5deb-ad3e-401211258e69",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348225000008/gitlab-ex99120250731fy26.htm",
+          "source_sha256": "4e8f735875bb06a353a676cc9e952a84174f10332691d0edcdb78f3a4495a221",
+          "fetched_at": "2026-11-11T11:20:02.645659+00:00",
+          "issuance_date_quote": "September 3, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348225000008/gtlb-20250828.htm",
+          "exhibit_index_quote": "99.1 Press Release dated September 3 , 2025."
+        }
+      ],
+      "actual": {
+        "id": "c14acb73-8f6e-5174-b068-45c2bf6a085a",
+        "company": "GTLB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-08-01",
+        "end": "2025-10-31",
+        "value": "244353000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-25-054840",
+        "filed": "2025-12-03",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054840/gtlb-20251031.htm",
+        "filed": "2025-12-03",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054840/gtlb-20251031.htm",
+          "sha256": "74cb4d5120c103783aabe406121feaed01b77900373f3d3a9671dfff38fffb51",
+          "body": "54a2b075d0fde383d72a75e5dcd8a3294e7145004bccab793e209da4b107746b-74cb4d5120c103783aabe406121feaed01b77900373f3d3a9671dfff38fffb51.body",
+          "fetched_at": "2026-11-12T10:40:54.266249+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001628280-25-054840-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-12-02",
+        "formal_release_issued_date": "2025-12-02",
+        "issued_precision": "day",
+        "date_quote": "December 2, 2025",
+        "filed": "2025-12-02",
+        "accession": "0001628280-25-054758",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054758/gitlab-ex99120251031fy26.htm",
+        "reported_revenue_quote": "Total revenue 244,353 196,047 694,822 547,818",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "c18b297721765ee532b74037a23c80b668a01d681a19cbad91fd128f95f3e238",
+        "fetched_at": "2026-11-12T07:10:33.629457+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.478071+00:00",
+        "guidance_id": "e4cd15bc-a65b-5deb-ad3e-401211258e69",
+        "actual_id": "c14acb73-8f6e-5174-b068-45c2bf6a085a",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348225000008/gitlab-ex99120250731fy26.htm",
+            "filed_date": "2025-09-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054758/gitlab-ex99120251031fy26.htm",
+            "filed_date": "2025-12-02"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054840/gtlb-20251031.htm",
+            "filed_date": "2025-12-03"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-12-02"
+    },
+    {
+      "company": "GTLB",
+      "target": {
+        "start": "2025-11-01",
+        "end": "2026-01-31",
+        "label": "Q4 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "3f56fa7c-ed4c-5791-85b6-7c6abb59c449",
+          "company": "GTLB",
+          "issued": {
+            "start": "2025-12-02",
+            "end": "2025-12-02",
+            "precision": "day"
+          },
+          "filed": "2025-12-02",
+          "start": "2025-11-01",
+          "end": "2026-01-31",
+          "low": "251000000.0",
+          "high": "252000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001628280-25-054758",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054758/gitlab-ex99120251031fy26.htm",
+          "quote": "Q4 FY 2026 Guidance FY 2026 Guidance Revenue $251.0 - $252.0 $",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        },
+        {
+          "id": "b520ab79-a73e-5310-bcf7-50e2d838de7f",
+          "company": "GTLB",
+          "issued": {
+            "start": "2025-12-02",
+            "end": "2025-12-02",
+            "precision": "day"
+          },
+          "filed": "2025-12-03",
+          "start": "2025-11-01",
+          "end": "2026-01-31",
+          "low": "251000000.0",
+          "high": "252000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001628280-25-054895",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054895/gitlab-ex99120251031fy26am.htm",
+          "quote": "Q4 FY 2026 Guidance FY 2026 Guidance Revenue $251.0 - $252.0 $",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": false,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance. Amended exhibit retains revenue range; not treated as a new explicit reaffirmation."
+        },
+        {
+          "id": "1871a1e8-7e00-5f1c-8e28-a262fa6ce510",
+          "company": "GTLB",
+          "issued": {
+            "start": "2026-01-12",
+            "end": "2026-01-12",
+            "precision": "day"
+          },
+          "filed": "2026-01-12",
+          "start": "2025-11-01",
+          "end": "2026-01-31",
+          "low": "251000000.0",
+          "high": "252000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "reaffirmed",
+          "accession": "0001653482-26-000009",
+          "exhibit": "8-K Item 7.01 (primary document; no exhibit)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000009/gtlb-20260109.htm",
+          "quote": "reaffirmed its fourth quarter and fiscal year 2026 guidance previously provided in the Company\u2019s third quarter fiscal year 2026 earnings release issued on December 2, 2025. SIGNATURES Pursuant to the requirements of the Securities",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": false,
+          "notes": "Explicit quarterly reaffirmation; bounds retained from prior source. Post-close indications are separately flagged and excluded from the training cohort."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "3f56fa7c-ed4c-5791-85b6-7c6abb59c449",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054758/gitlab-ex99120251031fy26.htm",
+          "source_sha256": "c18b297721765ee532b74037a23c80b668a01d681a19cbad91fd128f95f3e238",
+          "fetched_at": "2026-11-12T07:10:33.629457+00:00",
+          "issuance_date_quote": "December 2, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054758/gtlb-20251202.htm",
+          "exhibit_index_quote": "99.1 Press Release dated December 2 , 2025."
+        },
+        {
+          "guidance_id": "b520ab79-a73e-5310-bcf7-50e2d838de7f",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054895/gitlab-ex99120251031fy26am.htm",
+          "source_sha256": "7c4135e32e9ac5e3883734fa0734c2f2f5f1ab1a741f5286257efcb7d5a8fd32",
+          "fetched_at": "2026-11-12T07:10:35.062810+00:00",
+          "issuance_date_quote": "December 2, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "amendment",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054895/gtlb-20251202.htm",
+          "exhibit_index_quote": "99.1 Press Release dated December 2, 2025 (as corrected) ."
+        },
+        {
+          "guidance_id": "1871a1e8-7e00-5f1c-8e28-a262fa6ce510",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000009/gtlb-20260109.htm",
+          "source_sha256": "aad670fe6f5698f8915114e9bbca56514f8601125c8039ff078ff553c642a601",
+          "fetched_at": "2026-11-12T10:26:00.192724+00:00",
+          "issuance_date_quote": "January 12, 2026",
+          "version_kind": "explicit_reaffirmation",
+          "exhibit_identifier": "8-K Item 7.01 (primary document; no exhibit)",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000009/gtlb-20260109.htm",
+          "exhibit_index_quote": null,
+          "primary_item": "7.01 (no separate exhibit)"
+        }
+      ],
+      "actual": {
+        "id": "efe157e1-2cbe-5d6d-91f1-37d211723db4",
+        "company": "GTLB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-11-01",
+        "end": "2026-01-31",
+        "value": "260402000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-26-018731",
+        "filed": "2026-03-17",
+        "form": "DERIVED",
+        "fiscal_year": 2026,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+        "parents": [
+          "dc87f11a-a9f0-534d-96c7-86247ee6a868",
+          "3f6ced9f-ed50-5956-8365-627bbe5bb2c0"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "3f6ced9f-ed50-5956-8365-627bbe5bb2c0",
+          "company": "GTLB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-02-01",
+          "end": "2025-10-31",
+          "value": "694822000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001628280-25-054840",
+          "filed": "2025-12-03",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "dc87f11a-a9f0-534d-96c7-86247ee6a868",
+          "company": "GTLB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-02-01",
+          "end": "2026-01-31",
+          "value": "955224000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001628280-26-018731",
+          "filed": "2026-03-17",
+          "form": "10-K",
+          "fiscal_year": 2026,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026018731/gtlb-20260131.htm",
+        "filed": "2026-03-17",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026018731/gtlb-20260131.htm",
+          "sha256": "2310bd9fd21557505d5902eb658116636d878168cdc336482b98567f714a8def",
+          "body": "06baddb34ce2f30edf2d5247f2b07440d9898a865b93dd4b338c62e2acfa77ae-2310bd9fd21557505d5902eb658116636d878168cdc336482b98567f714a8def.body",
+          "fetched_at": "2026-11-12T10:40:55.058847+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001628280-26-018731-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-03-03",
+        "formal_release_issued_date": "2026-03-03",
+        "issued_precision": "day",
+        "date_quote": "March 3, 2026",
+        "filed": "2026-03-03",
+        "accession": "0001628280-26-013795",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm",
+        "reported_revenue_quote": "Total revenue 260,402 211,431 955,224 759,249",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "ded7bdd17b01b7cef197ca62f582b40261b3cefbf65a4d56d302e788e7703cd2",
+        "fetched_at": "2026-11-11T23:48:26.511912+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.504086+00:00",
+        "guidance_id": "1871a1e8-7e00-5f1c-8e28-a262fa6ce510",
+        "actual_id": "efe157e1-2cbe-5d6d-91f1-37d211723db4",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000009/gtlb-20260109.htm",
+            "filed_date": "2026-01-12"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm",
+            "filed_date": "2026-03-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026018731/gtlb-20260131.htm",
+            "filed_date": "2026-03-17"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-03-03"
+    },
+    {
+      "company": "GTLB",
+      "target": {
+        "start": "2026-02-01",
+        "end": "2026-04-30",
+        "label": "Q1 FY2027",
+        "calendar": "months",
+        "days": 89
+      },
+      "guidance_versions": [
+        {
+          "id": "ee4713fc-9132-59fe-a528-d651a7200100",
+          "company": "GTLB",
+          "issued": {
+            "start": "2026-03-03",
+            "end": "2026-03-03",
+            "precision": "day"
+          },
+          "filed": "2026-03-03",
+          "start": "2026-02-01",
+          "end": "2026-04-30",
+          "low": "253000000.0",
+          "high": "255000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001628280-26-013795",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm",
+          "quote": "Q1 FY 2027 Guidance FY 2027 Guidance Revenue $253.0 - $255.0 $",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        },
+        {
+          "id": "8b7bce64-dc28-5fcf-87c4-1a4028543b8a",
+          "company": "GTLB",
+          "issued": {
+            "start": "2026-05-11",
+            "end": "2026-05-11",
+            "precision": "day"
+          },
+          "filed": "2026-05-11",
+          "start": "2026-02-01",
+          "end": "2026-04-30",
+          "low": "253000000.0",
+          "high": "255000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "reaffirmed",
+          "accession": "0001653482-26-000095",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000095/exhibit991-letterfromwilla.htm",
+          "quote": "reaffirming our Q1 and full year FY27 guidance today. The final scope and financial impact of the restructuring will be shared on our June 2 earnings call, once we\u2019ve finished the plan and received approval by our board. Our Core B",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": false,
+          "notes": "Explicit quarterly reaffirmation; bounds retained from prior source. Post-close indications are separately flagged and excluded from the training cohort."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "ee4713fc-9132-59fe-a528-d651a7200100",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm",
+          "source_sha256": "ded7bdd17b01b7cef197ca62f582b40261b3cefbf65a4d56d302e788e7703cd2",
+          "fetched_at": "2026-11-11T23:48:26.511912+00:00",
+          "issuance_date_quote": "March 3, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gtlb-20260302.htm",
+          "exhibit_index_quote": "99.1 Press Release dated March 3 , 202 6 ."
+        },
+        {
+          "guidance_id": "8b7bce64-dc28-5fcf-87c4-1a4028543b8a",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000095/exhibit991-letterfromwilla.htm",
+          "source_sha256": "1abf815d7300a35ff28ba46d5d471707969d14ef7b4fe2f6f361f52a46ea8dd2",
+          "fetched_at": "2026-11-12T10:26:01.426679+00:00",
+          "issuance_date_quote": "May 11, 2026",
+          "version_kind": "explicit_reaffirmation",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000095/gtlb-20260511.htm",
+          "exhibit_index_quote": "99.1 Letter from William Staples, Chief Executive Officer of GitLab Inc. , dated May 11, 2026",
+          "issuance_date_source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000095/gtlb-20260511.htm"
+        }
+      ],
+      "actual": {
+        "id": "6821d1f3-8c4d-5115-a4c4-de28b1c6a992",
+        "company": "GTLB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-02-01",
+        "end": "2026-04-30",
+        "value": "264158000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-26-039793",
+        "filed": "2026-06-02",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039793/gtlb-20260430.htm",
+        "filed": "2026-06-02",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039793/gtlb-20260430.htm",
+          "sha256": "9a7f08a4d44c0446fb0a0bf62702298e8b397bea33807124508a169297787969",
+          "body": "0adcd82c07afdc3f8e50d222aa99cb0fd63c0e04a207fdd63329b803e4313c3d-9a7f08a4d44c0446fb0a0bf62702298e8b397bea33807124508a169297787969.body",
+          "fetched_at": "2026-11-12T10:40:55.894910+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001628280-26-039793-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-06-02",
+        "formal_release_issued_date": "2026-06-02",
+        "issued_precision": "day",
+        "date_quote": "June 2, 2026",
+        "filed": "2026-06-02",
+        "accession": "0001628280-26-039805",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039805/gitlab-ex99120260430fy27.htm",
+        "reported_revenue_quote": "Total revenue 264,158 214,509",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "ad4e810c4a58dcefcb90971c37fc0d6f5e80e300b7e7685980dfb3ee6f1fa131",
+        "fetched_at": "2026-11-11T10:08:33.813166+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [
+        {
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000095/gtlb-20260511.htm",
+          "accession": "0001653482-26-000095",
+          "filed": "2026-05-11",
+          "public_date": "2026-05-11",
+          "quote": "expects its results for the first quarter of fiscal year 2027 to be in-line with its guidance as provided in its earnings press release issued March 3, 2026. The Company also reaffirms its guidance for the fiscal year 2027 (ending January 31, 2027), as provided in its ea",
+          "sha256": "7cdb4107962a2ea159c8eff0a60e6d71908a2ae50d6d310d0a2d66fb0a511ed3",
+          "fetched_at": "2026-11-11T10:08:30.615210+00:00",
+          "interpretation": "Completed-quarter preliminary/in-line/reaffirmation indication; conservatively not a clean pre-publication historical target",
+          "public_date_basis": "SEC filing day establishes a known-public-by boundary, not a claimed exact company publication timestamp."
+        }
+      ],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.518971+00:00",
+        "guidance_id": "ee4713fc-9132-59fe-a528-d651a7200100",
+        "actual_id": "6821d1f3-8c4d-5115-a4c4-de28b1c6a992",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm",
+            "filed_date": "2026-03-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039805/gitlab-ex99120260430fy27.htm",
+            "filed_date": "2026-06-02"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039793/gtlb-20260430.htm",
+            "filed_date": "2026-06-02"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [
+        "EARLY_POST_CLOSE_RESULT_INDICATION: 2026-05-11 precedes formal-release lock window; excluded rather than training on already-public result information"
+      ],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-05-11"
+    },
+    {
+      "company": "GTLB",
+      "target": {
+        "start": "2026-05-01",
+        "end": "2026-07-31",
+        "label": "Q2 FY2027",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "8609a2e2-4fd1-501f-a13b-f51fc951d2e7",
+          "company": "GTLB",
+          "issued": {
+            "start": "2026-06-02",
+            "end": "2026-06-02",
+            "precision": "day"
+          },
+          "filed": "2026-06-02",
+          "start": "2026-05-01",
+          "end": "2026-07-31",
+          "low": "272000000",
+          "high": "274000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001628280-26-039805",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039805/gitlab-ex99120260430fy27.htm",
+          "quote": "Q2 FY 2027 Guidance FY 2027 Guidance Revenue $272 - $274 $",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "8609a2e2-4fd1-501f-a13b-f51fc951d2e7",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039805/gitlab-ex99120260430fy27.htm",
+          "source_sha256": "ad4e810c4a58dcefcb90971c37fc0d6f5e80e300b7e7685980dfb3ee6f1fa131",
+          "fetched_at": "2026-11-11T10:08:33.813166+00:00",
+          "issuance_date_quote": "June 2, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039805/gtlb-20260601.htm",
+          "exhibit_index_quote": "99.1 Press Release dated June 2, 2026."
+        }
+      ],
+      "actual": {
+        "id": "362a234f-cb11-51d3-9e45-c2bea07414d1",
+        "company": "GTLB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-05-01",
+        "end": "2026-07-31",
+        "value": "286254000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-26-059943",
+        "filed": "2026-09-02",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059943/gtlb-20260731.htm",
+        "filed": "2026-09-02",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059943/gtlb-20260731.htm",
+          "sha256": "5309886a57f8ebd955d8baeb20b3a8ee62cb75d089d0aa45adc1df759a35382f",
+          "body": "1a025ace5d32829b28589ffb1307e7d6e706f4de752bab68ecb68073cd7c4ae7-5309886a57f8ebd955d8baeb20b3a8ee62cb75d089d0aa45adc1df759a35382f.body",
+          "fetched_at": "2026-11-11T12:14:15.579554+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001628280-26-059943-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-09-01",
+        "formal_release_issued_date": "2026-09-01",
+        "issued_precision": "day",
+        "date_quote": "September 1, 2026",
+        "filed": "2026-09-01",
+        "accession": "0001628280-26-059820",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm",
+        "reported_revenue_quote": "Total revenue 286,254 235,960 550,412 450,469",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "7c3e015238a277599421246919f83f33228efea9a5f2dca65486bbd65699db3b",
+        "fetched_at": "2026-11-11T10:08:35.692618+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.530264+00:00",
+        "guidance_id": "8609a2e2-4fd1-501f-a13b-f51fc951d2e7",
+        "actual_id": "362a234f-cb11-51d3-9e45-c2bea07414d1",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039805/gitlab-ex99120260430fy27.htm",
+            "filed_date": "2026-06-02"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm",
+            "filed_date": "2026-09-01"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059943/gtlb-20260731.htm",
+            "filed_date": "2026-09-02"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-09-01"
+    }
+  ]
+}

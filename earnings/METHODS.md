@@ -1,0 +1,75 @@
+# Session 3 quarterly baseline and live ledger
+
+Method: `quarter-frequency-v1`. This is an empirical categorical baseline for **quarterly consolidated reported revenue against management guidance**, not the experimental annual point forecast, the annual revenue hurdle, quarterly guidance-implied growth, analyst consensus, ML, or investment advice. The annual experimental forecast remains hidden by default. No website changes were made in this session; visual compatibility remains unverified and required before merging.
+
+## Target and historical selection
+
+Each target is an exact fiscal start/end, currency and reported consolidated revenue basis. Inclusive endpoints: below `< low`; within `low <= actual <= high`; above `> high`. Point guidance uses equal endpoints with no invented tolerance.
+
+Freeze guidance at entry to the 14-calendar-day release window, rather than choosing a range after observing a result. For results publication on local date D, choose the latest version whose **issuance interval end and SEC filing date are both <= D−15 days**. This conservatively excludes day-precision records on the entry date D−14. Live locks keep that target even if execution occurs later in the window. Current unresolved withdrawal blocks locking; a withdrawn frozen version also blocks. Reinstatement does not erase earlier versions. Outcome scoring always uses the exact locked range, never a later revision. A changed release date is new evidence and cannot rewrite a lock.
+
+Historical files in `earnings/history/` cover the last eight **reported, completed** quarters per company as of November 12, 2026. They include guidance versions, literal quotes, issuance/filing dates, accession/exhibit IDs, actuals and compatible Q4 derivation parents, release revenue rows, exact fiscal boundaries and independent guidance-to-result basis reviews. Source inventory includes all 8-K/8-K-A items from August 1, 2024 through the cutoff, not just earnings-tagged items. Primary Item 7.01 statements are identified as primary documents, never invented Exhibit 99.1s. There are no unresolved financial source-access gaps in these 80 rows.
+
+Historical release dates use the earliest observed completed-quarter indication as the selection anchor. Five post-close preliminary/in-line/reaffirmation indications make a clean simulated pre-publication window ambiguous; those quarters remain in the eight-quarter window but are excluded from training. We do not reach back to a ninth quarter to inflate coverage. We retain subsequent guidance amendments/reaffirmations, without selecting those published alongside or after a result. Historical records are **retrospective curation, not live predictions**.
+
+Day-precision issuance and SEC availability intervals close at the next midnight in `America/New_York`. This is a conservative availability boundary, not an assertion of the actual publication time. An eligible historical observation becomes available only after both the release and the actual's SEC filing interval close. A Q4 label derived from a January 10-K is not available in December merely because the December release disclosed a rounded result. All amounts and ratios use Decimal/NUMERIC; no week, acquisition, organic or constant-currency normalization is performed. Lululemon's 14-week Q4 remains 14 weeks. Guidance-to-result comparability is independent of prior-year growth comparability. Historical passes do not resolve Salesforce, Okta or SentinelOne's current prospective scope blocks; those remain enforced.
+
+## Frequencies, pooling and limitations
+
+At a real prediction timestamp, select only observations whose SEC/public availability **and database recording time** precede the timestamp. Select the latest recorded version per company/exact quarter, then the most recent eight quarters (including excluded rows) and retain eligible outcomes. A newer blocked review suppresses an older passing review.
+
+Use company frequencies with >=6 eligible quarters. Otherwise pool eligible observations from the same eight-quarter windows across this ten-company registry, requiring >=12 observations and >=2 companies; otherwise `INSUFFICIENT_HISTORY`. Pooling includes the subject company's eligible observations, weights observations equally, and does not imply sector comparability or independence. No smoothing or invented confidence scores. Count below/within/above and divide by N; round the first two rates half-even to 24 decimal places and give above the exact residual, so stored probabilities sum exactly to one. SQL independently reproduces the counts for method v1.
+
+Current coverage is 75/80: ADBE 8 (0/0/8 below/within/above), CRM 8 (0/4/4), CRWD 7 (0/0/7), GTLB 7 (0/0/7), IOT 8 (0/0/8), LULU 8 (2/0/6), MDB 7 (0/0/7), OKTA 7 (0/0/7), PD 7 (0/3/4), S 8 (0/1/7). Each currently has enough own history. Pool fallback is tested, not needed for this cohort. Zero and one probabilities are unsmoothed sample frequencies, not calibrated certainty. Guidance practices, selection bias, changing acquisitions and very small samples limit interpretation.
+
+`python -m earnings.baseline_evaluation --output <new-file>` performs a **retrospective public-date walk-forward reconstruction** at D−14 local midnight. It filters future SEC facts/results and guidance but uses today's curated basis reviews and known historical publication dates. It explicitly bypasses recording-time selection only in this diagnostic; it never changes or backdates those timestamps and cannot insert a live record. It is not an operational as-recorded backtest, because contemporaneous curated inputs and scheduled-date evidence were not collected then. The 57 evaluable quarters have mean unscaled Brier 0.2820923343, versus 0.3157894737 for an always-above benchmark. Of 80 total, five are excluded for timing ambiguity and eighteen lack the minimum historical sample at their simulated dates. These overlapping, small, selected retrospective samples do **not** establish predictive quality or calibration. No probability confidence labels or prediction intervals are published. See the complete per-case diagnostic in `validation/session3_baseline_evaluation.json`.
+
+## Announcement timing and pre-publication checks
+
+Only a full dated official IR announcement (or direct user-supplied confirmation with explicit attribution) qualifies; search snippets, third-party calendars, another agent's research and earnings-call schedules are leads only. Store actual verifier, source URL, body hash/cache reference, retrieval time, separate verification/entry time, fiscal period, timezone and precision. Do not backdate verification. `announcements/*.json` stores append-only source-evidence versions by convention; every lock copies the evidence immutably. No current record is labeled user_verified.
+
+- Exact independently verified **results-publication** timestamp: strictly before it, with its timezone and literal evidence. A call time does not qualify.
+- Release date only, including before-open/after-close: before the **start of that date** in its documented timezone. Never 09:30 for before-open.
+- Unknown release date/timezone: block automatic locking.
+- Eligibility opens 14 elapsed days before the conservative deadline. The guide-selection horizon is separately defined above in local calendar dates.
+
+Before an eligible lock, reread the original announcement over direct HTTP. Inaccessible or changed full-body hash blocks and requires an appended human-reviewed evidence version; a changed footer may conservatively block too. Then refresh SEC submissions using the existing rate-limited cached fetcher and inspect an observable official IR results/news listing. Target-period-or-later SEC earnings filings, possible target results headlines, empty/dynamic pages, unavailable sources and unresolved indications block. Both checks must succeed; announcement evidence must be <=10 minutes old and publication check <=2 minutes old at database insertion. SEC target actuals already stored also block at the database level. The check snapshots retain URLs, retrieval/checked times, hashes and cached bodies where available.
+
+A negative source check is not proof against every internet publication, and there is a race between fetching evidence and insertion. We fail closed on observed ambiguity and require prospective-publication timing again at scoring. We do not claim complete internet surveillance. Default current forecasts are blocked on unresolved acquisition scope or the existing configurable manual 135-day actual / 150-day guidance thresholds (`manual-freshness-v1`, not accounting standards).
+
+## Ledger enforcement and threat model
+
+Migration `0103_crosscheck_live_ledger.sql` adds `earnings_historical_observations`, `earnings_live_predictions` and `earnings_live_results`. Application writes use `SET LOCAL ROLE service_role`, including on a local owner connection. DB `clock_timestamp()` supplies recording, prediction and scoring timestamps; application INSERT grants exclude live IDs/creation timestamps and triggers overwrite supplied timestamps even for ordinary owner inserts. The CLI has no as-of/backdating option.
+
+All three tables reject UPDATE and DELETE via triggers and have statement-level TRUNCATE rejection. Application roles lack those privileges; public roles have SELECT only, with RLS. INSERT grants are column-specific. Predictions have a unique key `(company, exact period, metric, method_version)`; future methods can run in parallel. Database guards check the window, announcement/publication evidence, available guidance, historical availability, duplicate quarters, sample size and v1 empirical probability reproduction.
+
+At lock time the database copies the complete guidance payload, historical observations including complete source/input records and their real recording times, announcement/publication evidence, probabilities, method and target into a **self-contained immutable snapshot**. Later changes to legacy mutable guidance tables or source files cannot rewrite it. Historical reviews themselves are append-only. A correction is a new observation; latest available version is selected for future locks.
+
+This protects against ordinary application writers and accidental owner DML. It does **not** protect against a database administrator/owner who alters or disables triggers, changes grants, replaces functions, edits system catalogs or drops tables; nor does it prove manually entered evidence is true. No cryptographic external timestamp authority is claimed. Other application write code must not use an unrestricted owner role. Tests use rollback transactions and synthetic evidence, never real prospective claims.
+
+## Append-only outcomes and Brier scoring
+
+`python -m earnings.score_live --review-dir earnings/scoring_reviews --output <new-file>` consumes explicit source-backed reviews named `<prediction UUID>*.json`, verifies fresh SEC companyfacts and result-release quotes, ingests exact actual versions and parents, and scores against locked guidance. Missing review/outcome, unavailable evidence, mismatched fiscal period/unit/basis, unresolved scope or potentially already-public results blocks scoring. A current acquisition YoY growth block alone does not decide the separate result-basis review.
+
+Each review contains:
+
+- `actual`: complete existing Actual schema plus reproducible `id`; compatible `actual_parents` for derived Q4.
+- `outcome_basis_review`: exact `actual_id` and locked `guidance_id`, `blocked`, `available_on`, dated SEC `sources`, reason, verifier and actual review-entry timestamp.
+- `result_source`: SEC URL, accession, `filed_date`, `issued_date`, literal `issuance_date_quote`, and literal `quote` supporting publication.
+- `first_result_publication_lower_bound`: explicit timezone-aware **lower boundary of the earliest observed results publication**; with day-only evidence use New York start of that day. Document the earliest-publication research and do not substitute call/filing times. An earlier preliminary indication must be included.
+- `evidence_available_at`: conservative upper boundary of both the actual and result-source SEC filing intervals. Production source verification currently requires day-precision filing/publication boundaries and blocks asserted exact SEC acceptance times; no unsupported timestamp precision.
+
+Compare prediction time with the earliest of that first-publication lower bound and the actual filing-day lower bound; if the prediction is not strictly earlier, no live score. This may conservatively block a legitimate same-day pre-release prediction until exact timing support is implemented. Existing real locks, if any, are never reclassified as retrospectively live.
+
+Multiclass Brier is **unscaled** `sum_k (p_k − 1[outcome=k])²`, range 0..2, lower is better; it is not divided by three or two. The DB recomputes it from locked probabilities. Original score rows are preserved; later corrected actual/basis evidence creates a new row with `supersedes_id`. The exact prediction/evidence key prevents duplicate scores on repeat execution, and an advisory transaction lock serializes correction chains. A new review entry timestamp alone does not create a new score. Missing/blocked outcomes do not fabricate a numeric Brier or count as scored observations.
+
+## Repeatable execution
+
+Use the isolated worktree `.venv` and existing pinned `requirements.txt`; see README setup. No dependencies or shared environment changed for Session 3.
+
+1. `python -m db.migrate` applies earnings migration 0103 using DATABASE_URL (dotenv; never display `.env`).
+2. Update SEC actuals and versioned manual guidance through existing earnings CLI. Preserve original/accession/filing availability and all revisions. Review and append announcement evidence; no mutation of existing locks.
+3. `python -m earnings.history_audit --output <new-file>` verifies all curated quotes/IDs against SEC documents and reconciles actuals, including Q4 parents. `python -m earnings.history` imports immutable observations idempotently.
+4. `python -m earnings.predict --lock --output <new-file>` imports new history versions, checks each company's exact current quarterly target and timing, and locks only eligible companies; others receive explicit skip reasons. Zero is a valid result. Save each actual execution record under `earnings/reports/` for review. Every later run rechecks the database clock and timing; never rerun with a fake date to make a lock.
+5. After reports, prepare reviewed outcome evidence and run `score_live` as above. Repeated files do not duplicate results; add a later revision file to preserve a correction.
+6. Inspect `SELECT ... FROM earnings_live_predictions ORDER BY made_at` and `earnings_live_results ORDER BY scored_at`. Self-contained snapshots reproduce locks even if original mutable inputs later change. These are server-side research CLIs; no frontend, merge or deployment is part of this session.

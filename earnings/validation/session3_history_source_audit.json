@@ -1,0 +1,1304 @@
+{
+  "checked_at": "2026-11-12T20:30:32.140816+00:00",
+  "rows": [
+    {
+      "actual_id": "a890fda1-9385-5e08-a8c9-e2c179b06211",
+      "actual_revenue": "5606000000",
+      "blocking_reasons": [],
+      "company": "ADBE",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "943db843-f2f6-5304-8af1-768f655f4e69"
+      ],
+      "observation_id": "7d3a833b-3c50-5241-b529-462ee9726e0f",
+      "outcome": "above",
+      "period_end": "2024-11-29",
+      "period_start": "2024-08-31",
+      "reported_revenue": "5606000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "04567782-c322-518d-bcb4-b2a65f830f24",
+      "actual_revenue": "5714000000",
+      "blocking_reasons": [],
+      "company": "ADBE",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "4092b1fe-aebe-5693-997f-d6ab62f6c620"
+      ],
+      "observation_id": "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+      "outcome": "above",
+      "period_end": "2025-02-28",
+      "period_start": "2024-11-30",
+      "reported_revenue": "5714000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "c8fa9f03-f259-5927-ae4b-07c0d841027d",
+      "actual_revenue": "5873000000",
+      "blocking_reasons": [],
+      "company": "ADBE",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "2053bcc5-9b6a-5ec5-8291-2e4ee2e6ba59"
+      ],
+      "observation_id": "4cb019e3-d201-54cc-8cf5-3981af360031",
+      "outcome": "above",
+      "period_end": "2025-05-30",
+      "period_start": "2025-03-01",
+      "reported_revenue": "5873000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "a5c0d918-79a7-578c-9273-e779e7f4f99a",
+      "actual_revenue": "5988000000",
+      "blocking_reasons": [],
+      "company": "ADBE",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "bc676721-36d2-586e-b72a-97e04af6f2fd"
+      ],
+      "observation_id": "5b215876-aedd-5e65-a33b-3921cb483b69",
+      "outcome": "above",
+      "period_end": "2025-08-29",
+      "period_start": "2025-05-31",
+      "reported_revenue": "5988000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "4a112452-48b9-5d6f-9961-94d689154452",
+      "actual_revenue": "6194000000",
+      "blocking_reasons": [],
+      "company": "ADBE",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "57807be0-c9a0-5ce4-ba88-b787def5f7cf"
+      ],
+      "observation_id": "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6",
+      "outcome": "above",
+      "period_end": "2025-11-28",
+      "period_start": "2025-08-30",
+      "reported_revenue": "6194000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "67c93245-8791-592c-a54a-c37e8e3d07a1",
+      "actual_revenue": "6398000000",
+      "blocking_reasons": [],
+      "company": "ADBE",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "1515cf4f-d53f-542c-a786-4321a261155b"
+      ],
+      "observation_id": "47babbbb-32d1-5b8e-b5ea-4cfe4af7bc5e",
+      "outcome": "above",
+      "period_end": "2026-02-27",
+      "period_start": "2025-11-29",
+      "reported_revenue": "6398000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "c1900ef6-3165-5fad-a7a6-0ff688a853bd",
+      "actual_revenue": "6618000000",
+      "blocking_reasons": [],
+      "company": "ADBE",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "0a890adf-1833-5ec9-8455-10f6ae14dc06"
+      ],
+      "observation_id": "5c56819d-c45e-58ab-9f19-09e5752f4259",
+      "outcome": "above",
+      "period_end": "2026-05-29",
+      "period_start": "2026-02-28",
+      "reported_revenue": "6618000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "2e97365c-03d8-5519-bfed-13d8cebf6dac",
+      "actual_revenue": "6760000000",
+      "blocking_reasons": [],
+      "company": "ADBE",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "e8524bc3-89c0-5a87-965e-9a97fe4dea07"
+      ],
+      "observation_id": "7fd6d96b-29a4-5413-9d34-6f06bd45dee8",
+      "outcome": "above",
+      "period_end": "2026-08-28",
+      "period_start": "2026-05-30",
+      "reported_revenue": "6760000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "fd9cfcfa-3f52-58d2-b7f8-094c4daecf7f",
+      "actual_revenue": "9444000000",
+      "blocking_reasons": [],
+      "company": "CRM",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "9b41e06c-3f35-590e-a0f2-fc66d81dfb10"
+      ],
+      "observation_id": "2938884f-fc6a-596d-81fa-6c78134cbed0",
+      "outcome": "above",
+      "period_end": "2024-10-31",
+      "period_start": "2024-08-01",
+      "reported_revenue": "9444000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "8039a516-a19a-56a1-b56f-e2b3d60ac87f",
+      "actual_revenue": "9993000000",
+      "blocking_reasons": [],
+      "company": "CRM",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "8b3165b3-9aef-506e-828d-ff866b6d38f1"
+      ],
+      "observation_id": "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+      "outcome": "within",
+      "period_end": "2025-01-31",
+      "period_start": "2024-11-01",
+      "reported_revenue": "9993000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "9990a746-aed2-5397-bd83-820a60eb870a",
+      "actual_revenue": "9829000000",
+      "blocking_reasons": [],
+      "company": "CRM",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "569a87b8-437e-54d9-a6d1-dd69cfd4d9ac"
+      ],
+      "observation_id": "8a009902-473a-5cf2-a231-c05e6da94253",
+      "outcome": "above",
+      "period_end": "2025-04-30",
+      "period_start": "2025-02-01",
+      "reported_revenue": "9829000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "141a9883-a63a-581d-8278-22614862709e",
+      "actual_revenue": "10236000000",
+      "blocking_reasons": [],
+      "company": "CRM",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "984df744-7f57-51d3-a70c-2910e19cb04b"
+      ],
+      "observation_id": "bf133a27-52cd-537a-ac37-e413923a952b",
+      "outcome": "above",
+      "period_end": "2025-07-31",
+      "period_start": "2025-05-01",
+      "reported_revenue": "10236000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "6509063f-42b3-5d22-8909-5d47e047d76b",
+      "actual_revenue": "10259000000",
+      "blocking_reasons": [],
+      "company": "CRM",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "42930d56-cae9-5290-9732-17206bc8ea2d"
+      ],
+      "observation_id": "f3b84e6b-57cc-58a2-85be-64bcdbc060de",
+      "outcome": "within",
+      "period_end": "2025-10-31",
+      "period_start": "2025-08-01",
+      "reported_revenue": "10259000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "3b11599c-fe3f-575e-a2f6-aed2a13361ae",
+      "actual_revenue": "11201000000",
+      "blocking_reasons": [],
+      "company": "CRM",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "559547e2-f9f8-5b6c-b0e2-ab07f37b7c55"
+      ],
+      "observation_id": "5efe5d24-e4b0-5e01-a6be-a1380b221681",
+      "outcome": "within",
+      "period_end": "2026-01-31",
+      "period_start": "2025-11-01",
+      "reported_revenue": "11201000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "68a6998b-e602-5bbe-97ae-11af69fc4d24",
+      "actual_revenue": "11133000000",
+      "blocking_reasons": [],
+      "company": "CRM",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "903f9e16-b90d-5951-be33-6b25eb3a6b6b"
+      ],
+      "observation_id": "4f05be77-b1b5-58c4-98d1-e5de94c3deab",
+      "outcome": "above",
+      "period_end": "2026-04-30",
+      "period_start": "2026-02-01",
+      "reported_revenue": "11133000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "c52c6e9c-3d31-5695-b309-be49982b47b0",
+      "actual_revenue": "11345000000",
+      "blocking_reasons": [],
+      "company": "CRM",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "b81cf032-a16f-5631-bb29-024ecd5ca379"
+      ],
+      "observation_id": "da0c0e00-f25d-5903-bde5-70e92d18d5f1",
+      "outcome": "within",
+      "period_end": "2026-07-31",
+      "period_start": "2026-05-01",
+      "reported_revenue": "11345000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "362b7217-5086-5ed2-a7f5-e92b4467cf98",
+      "actual_revenue": "1010178000",
+      "blocking_reasons": [],
+      "company": "CRWD",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "01205c58-db41-52ae-a250-7887b127dba6"
+      ],
+      "observation_id": "1942669c-4809-50d5-a57c-610f6f1a313d",
+      "outcome": "above",
+      "period_end": "2024-10-31",
+      "period_start": "2024-08-01",
+      "reported_revenue": "1010178000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "b2645ef9-7872-5146-9088-279228560cfa",
+      "actual_revenue": "1058538000",
+      "blocking_reasons": [],
+      "company": "CRWD",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "9e84819f-e81c-5038-ac3a-325e500d9784"
+      ],
+      "observation_id": "d4555f84-c328-5b53-a00c-4a509faeaad9",
+      "outcome": "above",
+      "period_end": "2025-01-31",
+      "period_start": "2024-11-01",
+      "reported_revenue": "1058538000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "10b46f82-aee8-55a3-9ea5-f829bd7fc80a",
+      "actual_revenue": "1103434000",
+      "blocking_reasons": [
+        "EARLY_POST_CLOSE_RESULT_INDICATION: 2025-05-07 precedes formal-release lock window; excluded rather than training on already-public result information"
+      ],
+      "company": "CRWD",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "6ff36d6a-7731-580d-b870-86b7885d03a4"
+      ],
+      "observation_id": "16b5afe7-5155-5f82-a34a-f8f0a3ecb320",
+      "outcome": null,
+      "period_end": "2025-04-30",
+      "period_start": "2025-02-01",
+      "reported_revenue": "1103434000",
+      "status": "blocked"
+    },
+    {
+      "actual_id": "413e3afc-4f12-5f15-ae44-96e2a12a10aa",
+      "actual_revenue": "1168952000",
+      "blocking_reasons": [],
+      "company": "CRWD",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "fddbd054-6750-589a-816f-b9601159beee"
+      ],
+      "observation_id": "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+      "outcome": "above",
+      "period_end": "2025-07-31",
+      "period_start": "2025-05-01",
+      "reported_revenue": "1168952000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "12953b5a-1353-5189-b35f-3eb7d8b0a959",
+      "actual_revenue": "1234244000",
+      "blocking_reasons": [],
+      "company": "CRWD",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "0368ce79-a89c-563d-a455-2343829ceccb"
+      ],
+      "observation_id": "b1b6fc6b-229c-5e40-9ecc-8c3019e378ba",
+      "outcome": "above",
+      "period_end": "2025-10-31",
+      "period_start": "2025-08-01",
+      "reported_revenue": "1234244000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "e209ef19-679a-58d4-bf08-1e4b3bcb6a40",
+      "actual_revenue": "1305375000",
+      "blocking_reasons": [],
+      "company": "CRWD",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "01df377c-892b-5b33-8cdc-07191f0a9bb0"
+      ],
+      "observation_id": "61267a3e-6b9b-56d5-9a00-98c88507f0c5",
+      "outcome": "above",
+      "period_end": "2026-01-31",
+      "period_start": "2025-11-01",
+      "reported_revenue": "1305375000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "1c0f8e53-a03e-5a18-b09d-06d9c33e99eb",
+      "actual_revenue": "1385629000",
+      "blocking_reasons": [],
+      "company": "CRWD",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "7bc596a9-4d6e-5f18-8f95-76b424343da6"
+      ],
+      "observation_id": "1cb5bc39-8a5b-5d70-a2ce-768ca1cb3cdb",
+      "outcome": "above",
+      "period_end": "2026-04-30",
+      "period_start": "2026-02-01",
+      "reported_revenue": "1385629000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "44f21ec7-5ad8-58a6-b657-24b0f4f08c13",
+      "actual_revenue": "1470897000",
+      "blocking_reasons": [],
+      "company": "CRWD",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "49a3f9b5-1f5a-54cd-ab80-c173b4ed70fd"
+      ],
+      "observation_id": "5bce9a70-7c70-5e88-87d2-4b00a37f569b",
+      "outcome": "above",
+      "period_end": "2026-07-31",
+      "period_start": "2026-05-01",
+      "reported_revenue": "1470897000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "e6804a8b-f6cf-563a-96be-87f8c11c09b5",
+      "actual_revenue": "196047000",
+      "blocking_reasons": [],
+      "company": "GTLB",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "2a49ff7a-c5b4-505a-beb9-2c251836a12e"
+      ],
+      "observation_id": "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+      "outcome": "above",
+      "period_end": "2024-10-31",
+      "period_start": "2024-08-01",
+      "reported_revenue": "196047000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "075b6548-b1c8-5a01-b009-70612b6a2518",
+      "actual_revenue": "211431000",
+      "blocking_reasons": [],
+      "company": "GTLB",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "2b515a2c-98ca-5023-98ea-7161d57f254d"
+      ],
+      "observation_id": "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+      "outcome": "above",
+      "period_end": "2025-01-31",
+      "period_start": "2024-11-01",
+      "reported_revenue": "211431000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "0cc235f2-be40-5793-852d-f79c47776d7c",
+      "actual_revenue": "214509000",
+      "blocking_reasons": [],
+      "company": "GTLB",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "ff19701e-1677-57da-bf36-9a6734ef2072"
+      ],
+      "observation_id": "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+      "outcome": "above",
+      "period_end": "2025-04-30",
+      "period_start": "2025-02-01",
+      "reported_revenue": "214509000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "acd1a06d-7168-56c9-a5ca-a8ddc7f3bcd0",
+      "actual_revenue": "235960000",
+      "blocking_reasons": [],
+      "company": "GTLB",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "0db01af0-bc40-5023-befb-130f4f1a9ac0"
+      ],
+      "observation_id": "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+      "outcome": "above",
+      "period_end": "2025-07-31",
+      "period_start": "2025-05-01",
+      "reported_revenue": "235960000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "c14acb73-8f6e-5174-b068-45c2bf6a085a",
+      "actual_revenue": "244353000",
+      "blocking_reasons": [],
+      "company": "GTLB",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "e4cd15bc-a65b-5deb-ad3e-401211258e69"
+      ],
+      "observation_id": "5be8a598-88a3-5c80-bc30-0ebe07725aed",
+      "outcome": "above",
+      "period_end": "2025-10-31",
+      "period_start": "2025-08-01",
+      "reported_revenue": "244353000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "efe157e1-2cbe-5d6d-91f1-37d211723db4",
+      "actual_revenue": "260402000",
+      "blocking_reasons": [],
+      "company": "GTLB",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "3f56fa7c-ed4c-5791-85b6-7c6abb59c449",
+        "b520ab79-a73e-5310-bcf7-50e2d838de7f",
+        "1871a1e8-7e00-5f1c-8e28-a262fa6ce510"
+      ],
+      "observation_id": "dbf0f839-7e82-553b-b2c7-3689455d65b0",
+      "outcome": "above",
+      "period_end": "2026-01-31",
+      "period_start": "2025-11-01",
+      "reported_revenue": "260402000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "6821d1f3-8c4d-5115-a4c4-de28b1c6a992",
+      "actual_revenue": "264158000",
+      "blocking_reasons": [
+        "EARLY_POST_CLOSE_RESULT_INDICATION: 2026-05-11 precedes formal-release lock window; excluded rather than training on already-public result information"
+      ],
+      "company": "GTLB",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "ee4713fc-9132-59fe-a528-d651a7200100",
+        "8b7bce64-dc28-5fcf-87c4-1a4028543b8a"
+      ],
+      "observation_id": "039646d4-7a72-56b2-b47f-7a9061d30629",
+      "outcome": null,
+      "period_end": "2026-04-30",
+      "period_start": "2026-02-01",
+      "reported_revenue": "264158000",
+      "status": "blocked"
+    },
+    {
+      "actual_id": "362a234f-cb11-51d3-9e45-c2bea07414d1",
+      "actual_revenue": "286254000",
+      "blocking_reasons": [],
+      "company": "GTLB",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "8609a2e2-4fd1-501f-a13b-f51fc951d2e7"
+      ],
+      "observation_id": "74b4da63-77cc-515b-b0d5-1d68136bb529",
+      "outcome": "above",
+      "period_end": "2026-07-31",
+      "period_start": "2026-05-01",
+      "reported_revenue": "286254000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "c35707df-bfef-51b0-babd-3982e3cbfb60",
+      "actual_revenue": "321981000",
+      "blocking_reasons": [],
+      "company": "IOT",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "8314785d-3123-5174-be7d-d1f8d31b4d29"
+      ],
+      "observation_id": "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+      "outcome": "above",
+      "period_end": "2024-11-02",
+      "period_start": "2024-08-04",
+      "reported_revenue": "321981000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "5e85807f-cb30-5d0d-80e5-eefa10c28741",
+      "actual_revenue": "346290000",
+      "blocking_reasons": [],
+      "company": "IOT",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "fddad161-7f56-5eee-81a0-545454b32964"
+      ],
+      "observation_id": "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+      "outcome": "above",
+      "period_end": "2025-02-01",
+      "period_start": "2024-11-03",
+      "reported_revenue": "346290000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "43e7fbe9-5763-532d-872a-d4c0c9740870",
+      "actual_revenue": "366884000",
+      "blocking_reasons": [],
+      "company": "IOT",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "b9e39c77-967f-5eec-a014-fbca4779d7e0"
+      ],
+      "observation_id": "c3df377b-e059-51f7-be16-6212a9c2f96c",
+      "outcome": "above",
+      "period_end": "2025-05-03",
+      "period_start": "2025-02-02",
+      "reported_revenue": "366884000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "ccb2f9b4-6677-58e1-99ad-a1df2b98495d",
+      "actual_revenue": "391480000",
+      "blocking_reasons": [],
+      "company": "IOT",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "0192eddc-2f6a-57f4-9f91-19933b38043d"
+      ],
+      "observation_id": "a2db7ecb-4217-5078-a05c-351a64d98400",
+      "outcome": "above",
+      "period_end": "2025-08-02",
+      "period_start": "2025-05-04",
+      "reported_revenue": "391480000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "04788f82-92f1-57f8-a852-5c8b7399113c",
+      "actual_revenue": "415975000",
+      "blocking_reasons": [],
+      "company": "IOT",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "be526f84-8160-5a5f-a624-15c39feec219"
+      ],
+      "observation_id": "22b792bc-f915-57e5-b426-a490e1dca5de",
+      "outcome": "above",
+      "period_end": "2025-11-01",
+      "period_start": "2025-08-03",
+      "reported_revenue": "415975000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "b2d15e4a-c0b0-5908-aeda-9bc31060f42b",
+      "actual_revenue": "444296000",
+      "blocking_reasons": [],
+      "company": "IOT",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "56685baa-a236-506c-abc3-dda2a073ce7a"
+      ],
+      "observation_id": "2962c236-49c4-5874-b918-b1fe3a137190",
+      "outcome": "above",
+      "period_end": "2026-01-31",
+      "period_start": "2025-11-02",
+      "reported_revenue": "444296000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "9ced3442-662f-55f5-8a5d-40b2ff444216",
+      "actual_revenue": "478844000",
+      "blocking_reasons": [],
+      "company": "IOT",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "8446e825-3f2b-563a-a7ba-5b72801c1261"
+      ],
+      "observation_id": "85084aa2-014a-54d7-947e-22f48d5c315f",
+      "outcome": "above",
+      "period_end": "2026-05-02",
+      "period_start": "2026-02-01",
+      "reported_revenue": "478844000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "7a2f7950-7018-55f3-b845-e201e16ede21",
+      "actual_revenue": "508437000",
+      "blocking_reasons": [],
+      "company": "IOT",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "63ace526-191d-57f5-a1f9-09c2341d12a4"
+      ],
+      "observation_id": "6b8d169c-4077-5d31-9bee-84dc60f76e50",
+      "outcome": "above",
+      "period_end": "2026-08-01",
+      "period_start": "2026-05-03",
+      "reported_revenue": "508437000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "9776c1de-82d3-5205-968e-9ecf88139f9a",
+      "actual_revenue": "2396660000",
+      "blocking_reasons": [],
+      "company": "LULU",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "650831fd-d5fa-5b4f-adc6-8d8bd37f2f91"
+      ],
+      "observation_id": "696c01eb-7fb0-5926-adad-05ed609f6834",
+      "outcome": "above",
+      "period_end": "2024-10-27",
+      "period_start": "2024-07-29",
+      "reported_revenue": "2396660000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "0d4d804a-1481-5e48-ba07-316fabcde113",
+      "actual_revenue": "3611497000",
+      "blocking_reasons": [],
+      "company": "LULU",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "c238a715-c3f2-5140-90b0-0915ea47dcbe",
+        "428042f8-d727-51ae-9c58-b562f949a824"
+      ],
+      "observation_id": "9546da63-018a-5005-9ff1-661ea58601dd",
+      "outcome": "above",
+      "period_end": "2025-02-02",
+      "period_start": "2024-10-28",
+      "reported_revenue": "3611497000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "5b2798b7-bd39-53b6-b61f-d9b9e4a792cb",
+      "actual_revenue": "2370660000",
+      "blocking_reasons": [],
+      "company": "LULU",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "5690de22-8de0-5635-8526-c01c9cc462a6"
+      ],
+      "observation_id": "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7",
+      "outcome": "above",
+      "period_end": "2025-05-04",
+      "period_start": "2025-02-03",
+      "reported_revenue": "2370660000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "1313a552-c473-5cc8-ac53-dcc71235eb81",
+      "actual_revenue": "2525219000",
+      "blocking_reasons": [],
+      "company": "LULU",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "761d0e8e-cb2e-578f-b009-66c1bbd92387"
+      ],
+      "observation_id": "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+      "outcome": "below",
+      "period_end": "2025-08-03",
+      "period_start": "2025-05-05",
+      "reported_revenue": "2525219000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "1b2a56bd-3d2c-544e-9d20-f3e713d44cc7",
+      "actual_revenue": "2565920000",
+      "blocking_reasons": [],
+      "company": "LULU",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "d3e5d71a-7cdc-5aaf-89e1-3887345fcb2a"
+      ],
+      "observation_id": "13082c66-6956-56e7-9480-2d8655e69685",
+      "outcome": "above",
+      "period_end": "2025-11-02",
+      "period_start": "2025-08-04",
+      "reported_revenue": "2565920000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "d5862710-16dc-5a03-8a51-70eac8e0b3eb",
+      "actual_revenue": "3640801000",
+      "blocking_reasons": [],
+      "company": "LULU",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "06de0fe6-f4dd-5862-b834-4bfcc71e0f34",
+        "a7933c24-91b4-555b-bacc-6c30c5947967"
+      ],
+      "observation_id": "947f28bb-aa24-5d0e-966c-0d5b2faab4bc",
+      "outcome": "above",
+      "period_end": "2026-02-01",
+      "period_start": "2025-11-03",
+      "reported_revenue": "3640801000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "9b1c7efe-b690-54be-8054-e50a3ba8e510",
+      "actual_revenue": "2471603000",
+      "blocking_reasons": [],
+      "company": "LULU",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "795adeb2-8fb6-5a3e-87a4-bdf607d2ebf1"
+      ],
+      "observation_id": "86b2fdd0-9dbf-5d07-aa24-7353fed9d54a",
+      "outcome": "above",
+      "period_end": "2026-05-03",
+      "period_start": "2026-02-02",
+      "reported_revenue": "2471603000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "2c226549-7d49-5601-952b-ec3eb4ac5efa",
+      "actual_revenue": "2415631000",
+      "blocking_reasons": [],
+      "company": "LULU",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "35bdf649-0526-56e8-ad6b-6154e08e39d6"
+      ],
+      "observation_id": "364cd7d9-c11f-5660-ab0b-c5b68cf81ee5",
+      "outcome": "below",
+      "period_end": "2026-08-02",
+      "period_start": "2026-05-04",
+      "reported_revenue": "2415631000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "184cd59c-2be4-5709-922e-6065efa71ba7",
+      "actual_revenue": "529375000",
+      "blocking_reasons": [],
+      "company": "MDB",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "e21db595-0548-5222-88f8-5f70e402f725"
+      ],
+      "observation_id": "3a280442-fd76-50c6-92ca-dba9f6c85118",
+      "outcome": "above",
+      "period_end": "2024-10-31",
+      "period_start": "2024-08-01",
+      "reported_revenue": "529375000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "4921d987-2b3c-5815-bd1d-2711a694cb93",
+      "actual_revenue": "548398000",
+      "blocking_reasons": [],
+      "company": "MDB",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "f1c2056c-9af0-52c0-b96e-2bd460948300"
+      ],
+      "observation_id": "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+      "outcome": "above",
+      "period_end": "2025-01-31",
+      "period_start": "2024-11-01",
+      "reported_revenue": "548398000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "cf8a16f1-cdf8-5c16-b72b-5b6071ed7253",
+      "actual_revenue": "549014000",
+      "blocking_reasons": [],
+      "company": "MDB",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "c04ef45b-be19-52d7-b307-767ac6ead384"
+      ],
+      "observation_id": "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+      "outcome": "above",
+      "period_end": "2025-04-30",
+      "period_start": "2025-02-01",
+      "reported_revenue": "549014000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "88d6ed73-a67b-551d-8636-b4b6e60a5890",
+      "actual_revenue": "591402000",
+      "blocking_reasons": [],
+      "company": "MDB",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "7515ff32-081a-5f97-acfc-c99717fde937"
+      ],
+      "observation_id": "df5055c1-ec9d-59bd-a63c-a5b9f4749b70",
+      "outcome": "above",
+      "period_end": "2025-07-31",
+      "period_start": "2025-05-01",
+      "reported_revenue": "591402000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "5026a0a8-ec76-5c0c-8906-9370f9f62244",
+      "actual_revenue": "628309000",
+      "blocking_reasons": [
+        "EARLY_POST_CLOSE_RESULT_INDICATION: 2025-11-03 precedes formal-release lock window; excluded rather than training on already-public result information"
+      ],
+      "company": "MDB",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "be815840-db94-5925-ad6e-fed0df6b6ccc"
+      ],
+      "observation_id": "fb3a2124-04ac-5345-95bd-addb109a9492",
+      "outcome": null,
+      "period_end": "2025-10-31",
+      "period_start": "2025-08-01",
+      "reported_revenue": "628309000",
+      "status": "blocked"
+    },
+    {
+      "actual_id": "de76a7a6-8e98-5380-a2ec-18070026e4ac",
+      "actual_revenue": "695072000",
+      "blocking_reasons": [],
+      "company": "MDB",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "3dd6278e-19a8-5a1a-8b12-9a28f3cce525",
+        "3f519fed-b8c0-526f-838f-f91a1fedcd8c"
+      ],
+      "observation_id": "3491a815-1b12-5e33-a095-b6d9751ca69f",
+      "outcome": "above",
+      "period_end": "2026-01-31",
+      "period_start": "2025-11-01",
+      "reported_revenue": "695072000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "1091010f-3306-5243-936f-1619393c7db8",
+      "actual_revenue": "687616000",
+      "blocking_reasons": [],
+      "company": "MDB",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "ad14ac79-8c5c-5236-8fae-e508808c519a"
+      ],
+      "observation_id": "1c741a15-67ad-5aea-a1b7-22df9bd45329",
+      "outcome": "above",
+      "period_end": "2026-04-30",
+      "period_start": "2026-02-01",
+      "reported_revenue": "687616000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "870d987b-e8fa-5436-9560-ea5308620d0b",
+      "actual_revenue": "771773000",
+      "blocking_reasons": [],
+      "company": "MDB",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "51b3af46-4bda-59f9-845d-be4e51e6ec65"
+      ],
+      "observation_id": "84c96ecf-c4f6-56da-8800-c767c78b0100",
+      "outcome": "above",
+      "period_end": "2026-07-31",
+      "period_start": "2026-05-01",
+      "reported_revenue": "771773000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "fef7ae92-a06f-5bc7-9a8a-21bfb671e4fa",
+      "actual_revenue": "665000000",
+      "blocking_reasons": [],
+      "company": "OKTA",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "17baa7cc-4cae-5506-83a7-832b2e43150a"
+      ],
+      "observation_id": "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+      "outcome": "above",
+      "period_end": "2024-10-31",
+      "period_start": "2024-08-01",
+      "reported_revenue": "665000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "7ac91f47-562d-52ea-b4fd-4495595a4613",
+      "actual_revenue": "682000000",
+      "blocking_reasons": [
+        "EARLY_POST_CLOSE_RESULT_INDICATION: 2025-02-04 precedes formal-release lock window; excluded rather than training on already-public result information"
+      ],
+      "company": "OKTA",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "7cc5f28b-a6f7-59fc-a3c9-341641c49f12",
+        "62d58fb1-8eba-58f2-a953-77efa5bfe24d"
+      ],
+      "observation_id": "66e63fe9-08d5-58ee-a57f-79b313a11831",
+      "outcome": null,
+      "period_end": "2025-01-31",
+      "period_start": "2024-11-01",
+      "reported_revenue": "682000000",
+      "status": "blocked"
+    },
+    {
+      "actual_id": "c4f372c3-dc1b-5894-b65e-e5e0e6b6ffcc",
+      "actual_revenue": "688000000",
+      "blocking_reasons": [],
+      "company": "OKTA",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "8ef69874-02e3-5144-be84-b60225d962fe"
+      ],
+      "observation_id": "9fd1495d-2e63-5644-9bcb-908133766a3f",
+      "outcome": "above",
+      "period_end": "2025-04-30",
+      "period_start": "2025-02-01",
+      "reported_revenue": "688000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "39e733a3-a78c-51db-951f-082ff99dfdb0",
+      "actual_revenue": "728000000",
+      "blocking_reasons": [],
+      "company": "OKTA",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "ec065d80-95bd-5fc4-8ee7-a9fcbff91f2b"
+      ],
+      "observation_id": "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+      "outcome": "above",
+      "period_end": "2025-07-31",
+      "period_start": "2025-05-01",
+      "reported_revenue": "728000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "fb8f9fd5-7ec4-5e8c-a73f-97a76cbf8356",
+      "actual_revenue": "742000000",
+      "blocking_reasons": [],
+      "company": "OKTA",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "25c8bdf4-b2b1-5677-b987-3a2caa93dba8"
+      ],
+      "observation_id": "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+      "outcome": "above",
+      "period_end": "2025-10-31",
+      "period_start": "2025-08-01",
+      "reported_revenue": "742000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "ef8b682f-587f-5597-bab6-61f25509efb4",
+      "actual_revenue": "761000000",
+      "blocking_reasons": [],
+      "company": "OKTA",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "291f2d05-0368-56a6-a423-5734101169b5"
+      ],
+      "observation_id": "024f6621-98d3-562f-b9ff-913a1c253d95",
+      "outcome": "above",
+      "period_end": "2026-01-31",
+      "period_start": "2025-11-01",
+      "reported_revenue": "761000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "297d5922-9bf3-522f-9145-9d9cfa944074",
+      "actual_revenue": "765000000",
+      "blocking_reasons": [],
+      "company": "OKTA",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "e4299f55-09d5-58a8-a304-c918c6940039"
+      ],
+      "observation_id": "97daa508-ace5-596a-ac8b-367d1eeb8660",
+      "outcome": "above",
+      "period_end": "2026-04-30",
+      "period_start": "2026-02-01",
+      "reported_revenue": "765000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "945ece65-5153-5800-b7ab-5e7604ccf0cc",
+      "actual_revenue": "805000000",
+      "blocking_reasons": [],
+      "company": "OKTA",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "89fe4070-f04b-5293-9aed-55cd43cab1f4"
+      ],
+      "observation_id": "ac7eef4f-1555-5aa1-89d4-79440f6d2225",
+      "outcome": "above",
+      "period_end": "2026-07-31",
+      "period_start": "2026-05-01",
+      "reported_revenue": "805000000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "0f0b370b-ca39-58a8-8f7c-d375e959db99",
+      "actual_revenue": "118946000",
+      "blocking_reasons": [],
+      "company": "PD",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "c3d90f91-f524-5753-8a74-2fefa02420dc"
+      ],
+      "observation_id": "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+      "outcome": "above",
+      "period_end": "2024-10-31",
+      "period_start": "2024-08-01",
+      "reported_revenue": "118946000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "57bbca13-140c-52a1-a153-94ae831223aa",
+      "actual_revenue": "121446000",
+      "blocking_reasons": [],
+      "company": "PD",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "0738986c-6808-5b43-91fe-6c384cfd62ab"
+      ],
+      "observation_id": "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+      "outcome": "above",
+      "period_end": "2025-01-31",
+      "period_start": "2024-11-01",
+      "reported_revenue": "121446000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "98e22e0c-a7e1-50a3-84cb-df8d2aecbb9d",
+      "actual_revenue": "119805000",
+      "blocking_reasons": [],
+      "company": "PD",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "59c4247e-16d3-5bb3-a84e-dfc45b8dcbed"
+      ],
+      "observation_id": "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+      "outcome": "within",
+      "period_end": "2025-04-30",
+      "period_start": "2025-02-01",
+      "reported_revenue": "119805000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "a2e88e61-c1dd-596d-bf4b-89c03003e4d5",
+      "actual_revenue": "123411000",
+      "blocking_reasons": [],
+      "company": "PD",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "1671a9bb-9d5b-52fa-aa21-3972bf0933ff"
+      ],
+      "observation_id": "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+      "outcome": "within",
+      "period_end": "2025-07-31",
+      "period_start": "2025-05-01",
+      "reported_revenue": "123411000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "08e9f9d3-28c0-557e-a12c-d777fa34b8c1",
+      "actual_revenue": "124545000",
+      "blocking_reasons": [],
+      "company": "PD",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "9a2155bb-f38d-5f26-95b1-c419410a6983"
+      ],
+      "observation_id": "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+      "outcome": "within",
+      "period_end": "2025-10-31",
+      "period_start": "2025-08-01",
+      "reported_revenue": "124545000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "0a6dcfdb-d580-5a7d-9f80-a8a0da45e067",
+      "actual_revenue": "124785000",
+      "blocking_reasons": [],
+      "company": "PD",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "a20347e2-5e99-53df-885f-cef3c77f5996"
+      ],
+      "observation_id": "84a9ba93-c747-587b-a061-81986f941573",
+      "outcome": "above",
+      "period_end": "2026-01-31",
+      "period_start": "2025-11-01",
+      "reported_revenue": "124785000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "3e47e23a-24aa-5fb5-8e05-b9acbbc0a68b",
+      "actual_revenue": "120967000",
+      "blocking_reasons": [
+        "EARLY_POST_CLOSE_RESULT_INDICATION: 2026-05-11 precedes formal-release lock window; excluded rather than training on already-public result information"
+      ],
+      "company": "PD",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "e05aa63d-b924-5a97-a4d0-1c2e74d36aa4",
+        "fb5dbb78-bd60-549e-ae62-50e54083d240"
+      ],
+      "observation_id": "bb814677-c91b-5e83-b096-6491b6837114",
+      "outcome": null,
+      "period_end": "2026-04-30",
+      "period_start": "2026-02-01",
+      "reported_revenue": "120967000",
+      "status": "blocked"
+    },
+    {
+      "actual_id": "d73629ff-9070-54df-97e0-08f522fd1552",
+      "actual_revenue": "124436000",
+      "blocking_reasons": [],
+      "company": "PD",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "eb6a3e37-66d7-5c60-9f83-a01eea51edf4"
+      ],
+      "observation_id": "99cd334a-3e30-5017-ada3-4e2ecd92f97d",
+      "outcome": "above",
+      "period_end": "2026-07-31",
+      "period_start": "2026-05-01",
+      "reported_revenue": "124436000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "682ae53e-9563-56f8-94d1-d202b666cd78",
+      "actual_revenue": "210648000",
+      "blocking_reasons": [],
+      "company": "S",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "649f6f17-5213-56b3-9507-689f1ba491e8"
+      ],
+      "observation_id": "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+      "outcome": "above",
+      "period_end": "2024-10-31",
+      "period_start": "2024-08-01",
+      "reported_revenue": "210648000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "49834f3f-4b9b-53eb-8fd4-54e457f8bf20",
+      "actual_revenue": "225521000",
+      "blocking_reasons": [],
+      "company": "S",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "16d17c49-7b99-52a5-a563-f89dd7ee41ec"
+      ],
+      "observation_id": "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+      "outcome": "above",
+      "period_end": "2025-01-31",
+      "period_start": "2024-11-01",
+      "reported_revenue": "225521000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "91314c4d-29de-5945-9556-b079d7a132fc",
+      "actual_revenue": "229029000",
+      "blocking_reasons": [],
+      "company": "S",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "70eef1c1-c372-5991-9fa0-9341e6ee381b"
+      ],
+      "observation_id": "198d111b-9057-515d-ad22-07486dbe75e9",
+      "outcome": "above",
+      "period_end": "2025-04-30",
+      "period_start": "2025-02-01",
+      "reported_revenue": "229029000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "2b64ee86-b7d3-5ab9-9f8e-9686ada7a6aa",
+      "actual_revenue": "242183000",
+      "blocking_reasons": [],
+      "company": "S",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "7d34d32d-ff89-54a9-96b9-54ce1a8e04f3"
+      ],
+      "observation_id": "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+      "outcome": "above",
+      "period_end": "2025-07-31",
+      "period_start": "2025-05-01",
+      "reported_revenue": "242183000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "24be2ebb-7517-56b8-8d06-5bfa9b7161f1",
+      "actual_revenue": "258913000",
+      "blocking_reasons": [],
+      "company": "S",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "512b0e95-f3e4-5e48-bc60-f2c247699f0b"
+      ],
+      "observation_id": "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+      "outcome": "above",
+      "period_end": "2025-10-31",
+      "period_start": "2025-08-01",
+      "reported_revenue": "258913000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "5066a2c6-fd70-5c99-9ffe-39b0e2986f10",
+      "actual_revenue": "271153000",
+      "blocking_reasons": [],
+      "company": "S",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "25216c0c-32d8-57b0-afe5-7e21009d75b6"
+      ],
+      "observation_id": "4b27139d-7ed7-5343-8001-b3720d678486",
+      "outcome": "above",
+      "period_end": "2026-01-31",
+      "period_start": "2025-11-01",
+      "reported_revenue": "271153000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "d5cf1efa-14e1-57b0-8506-ffbe40cc75a6",
+      "actual_revenue": "276657000",
+      "blocking_reasons": [],
+      "company": "S",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "bb88dc24-cbcc-5b98-966e-d0bfe16c3287"
+      ],
+      "observation_id": "1f3f1a34-f8c2-5ff1-a142-99c70061ead5",
+      "outcome": "within",
+      "period_end": "2026-04-30",
+      "period_start": "2026-02-01",
+      "reported_revenue": "276657000",
+      "status": "eligible"
+    },
+    {
+      "actual_id": "367b3223-db74-5d74-8c5d-30871400e280",
+      "actual_revenue": "291981000",
+      "blocking_reasons": [],
+      "company": "S",
+      "discrepancy": "0",
+      "guidance_ids": [
+        "6b0268b6-1db8-5996-bb98-cce8f4dedf4e"
+      ],
+      "observation_id": "df062ed8-23f0-5c80-a674-8c5ab54a68d7",
+      "outcome": "above",
+      "period_end": "2026-07-31",
+      "period_start": "2026-05-01",
+      "reported_revenue": "291981000",
+      "status": "eligible"
+    }
+  ],
+  "verifier": "Codex deterministic SEC source/identity/reconciliation audit v1"
+}

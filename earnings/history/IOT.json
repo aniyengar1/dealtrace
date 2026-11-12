@@ -1,0 +1,1206 @@
+{
+  "review_scope": "Last eight publicly reported quarters as of 2026-11-12; complete reviewed 8-K/8-K-A inventory from 2024-08-01 through 2026-11-12",
+  "source_inventory": [
+    {
+      "accession": "0001642896-24-000059",
+      "filed": "2024-09-05",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000059/iot-20240905.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000059/samsaraepr-q22025.htm"
+      ]
+    },
+    {
+      "accession": "0001642896-24-000073",
+      "filed": "2024-12-05",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000073/iot-20241205.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000073/samsaraepr-q32025.htm"
+      ]
+    },
+    {
+      "accession": "0001642896-25-000007",
+      "filed": "2025-03-06",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000007/iot-20250303.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000007/samsaraepr-q42025.htm"
+      ]
+    },
+    {
+      "accession": "0001642896-25-000053",
+      "filed": "2025-06-05",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000053/iot-20250605.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000053/samsaraepr-q12026.htm"
+      ]
+    },
+    {
+      "accession": "0001642896-25-000070",
+      "filed": "2025-09-04",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000070/iot-20250904.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000070/samsaraepr-q22026.htm"
+      ]
+    },
+    {
+      "accession": "0001628280-25-055355",
+      "filed": "2025-12-04",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025055355/iot-20251204.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1642896/000162828025055355/samsaraepr-q32026.htm"
+      ]
+    },
+    {
+      "accession": "0001628280-26-015170",
+      "filed": "2026-03-05",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026015170/iot-20260305.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1642896/000162828026015170/samsaraepr-q42026.htm"
+      ]
+    },
+    {
+      "accession": "0001628280-26-040788",
+      "filed": "2026-06-04",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026040788/iot-20260604.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1642896/000162828026040788/samsaraepr-q12027.htm"
+      ]
+    },
+    {
+      "accession": "0001628280-26-060438",
+      "filed": "2026-09-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/iot-20260903.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm"
+      ]
+    },
+    {
+      "accession": "0001642896-24-000053",
+      "filed": "2024-08-07",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000053/iot-20240801.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000053/exhibit991-2024x08x07.htm"
+      ]
+    },
+    {
+      "accession": "0001642896-24-000070",
+      "filed": "2024-10-11",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000070/iot-20240801.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001642896-25-000004",
+      "filed": "2025-01-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000004/iot-20250103.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001642896-25-000029",
+      "filed": "2025-03-28",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000029/iot-20250325.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001628280-25-037009",
+      "filed": "2025-07-31",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025037009/iot-20250729.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001642896-25-000066",
+      "filed": "2025-08-21",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000066/iot-20250816.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000066/exhibit991-2025x08x21.htm"
+      ]
+    },
+    {
+      "accession": "0001642896-25-000076",
+      "filed": "2025-09-18",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000076/iot-20250816.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001628280-26-000886",
+      "filed": "2026-01-06",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026000886/iot-20260106.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001193125-26-201457",
+      "filed": "2026-05-01",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000119312526201457/d69859d8k.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001628280-26-039465",
+      "filed": "2026-06-01",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026039465/iot-20260601.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001628280-26-049446",
+      "filed": "2026-07-23",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026049446/iot-20260722.htm",
+      "exhibits": []
+    }
+  ],
+  "inventory_gaps": [],
+  "quarters": [
+    {
+      "company": "IOT",
+      "target": {
+        "start": "2024-08-04",
+        "end": "2024-11-02",
+        "label": "Q3 FY2025",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "8314785d-3123-5174-be7d-d1f8d31b4d29",
+          "company": "IOT",
+          "issued": {
+            "start": "2024-09-05",
+            "end": "2024-09-05",
+            "precision": "day"
+          },
+          "filed": "2024-09-05",
+          "start": "2024-08-04",
+          "end": "2024-11-02",
+          "low": "309000000",
+          "high": "311000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001642896-24-000059",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000059/samsaraepr-q22025.htm",
+          "quote": "Q3 FY2025 Outlook Implied Q4 FY2025 Outlook FY 2025 Outlook Total revenue $309 million \u2013 $311 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "8314785d-3123-5174-be7d-d1f8d31b4d29",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000059/samsaraepr-q22025.htm",
+          "source_sha256": "472bcdd46129663ff43ff11bbf68757fb8a0c3b24c28605749e2a3a21c349520",
+          "fetched_at": "2026-11-12T10:26:46.486784+00:00",
+          "issuance_date_quote": "September 5, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000059/iot-20240905.htm",
+          "exhibit_index_quote": "99.1 Press release issued by Samsara Inc. dated September 5, 2024"
+        }
+      ],
+      "actual": {
+        "id": "c35707df-bfef-51b0-babd-3982e3cbfb60",
+        "company": "IOT",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2024-08-04",
+        "end": "2024-11-02",
+        "value": "321981000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001642896-24-000076",
+        "filed": "2024-12-10",
+        "form": "10-Q",
+        "fiscal_year": 2025,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001642896.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000076/iot-20241102.htm",
+        "filed": "2024-12-10",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000076/iot-20241102.htm",
+          "sha256": "bec3bc92a807c746d8d9aa3d0eef807dbf6e89f568224efeb4902e5b97d0296a",
+          "body": "7b16cc1b575551bdb7ea3c3425d862fc9c870a115f5cee9e7027723961ae45a6-bec3bc92a807c746d8d9aa3d0eef807dbf6e89f568224efeb4902e5b97d0296a.body",
+          "fetched_at": "2026-11-12T10:40:56.588321+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001642896-24-000076-filing.txt"
+      },
+      "result": {
+        "issued_date": "2024-12-05",
+        "formal_release_issued_date": "2024-12-05",
+        "issued_precision": "day",
+        "date_quote": "December 5, 2024",
+        "filed": "2024-12-05",
+        "accession": "0001642896-24-000073",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000073/samsaraepr-q32025.htm",
+        "reported_revenue_quote": "Revenue $ 321,981 $ 237,534 $ 902,909 $ 661,111",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "71d389f75d4dcffcf4084af05ea4307ca9d7191a89a5efec4fe0add9aa1bb924",
+        "fetched_at": "2026-11-12T10:26:47.831237+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.536469+00:00",
+        "guidance_id": "8314785d-3123-5174-be7d-d1f8d31b4d29",
+        "actual_id": "c35707df-bfef-51b0-babd-3982e3cbfb60",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000059/samsaraepr-q22025.htm",
+            "filed_date": "2024-09-05"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000073/samsaraepr-q32025.htm",
+            "filed_date": "2024-12-05"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000076/iot-20241102.htm",
+            "filed_date": "2024-12-10"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2024-12-05"
+    },
+    {
+      "company": "IOT",
+      "target": {
+        "start": "2024-11-03",
+        "end": "2025-02-01",
+        "label": "Q4 FY2025",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "fddad161-7f56-5eee-81a0-545454b32964",
+          "company": "IOT",
+          "issued": {
+            "start": "2024-12-05",
+            "end": "2024-12-05",
+            "precision": "day"
+          },
+          "filed": "2024-12-05",
+          "start": "2024-11-03",
+          "end": "2025-02-01",
+          "low": "334000000",
+          "high": "336000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001642896-24-000073",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000073/samsaraepr-q32025.htm",
+          "quote": "Q4 FY2025 Outlook FY 2025 Outlook Total revenue $334 million \u2013 $336 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "fddad161-7f56-5eee-81a0-545454b32964",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000073/samsaraepr-q32025.htm",
+          "source_sha256": "71d389f75d4dcffcf4084af05ea4307ca9d7191a89a5efec4fe0add9aa1bb924",
+          "fetched_at": "2026-11-12T10:26:47.831237+00:00",
+          "issuance_date_quote": "December 5, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000073/iot-20241205.htm",
+          "exhibit_index_quote": "99.1 Press release issued by Samsara Inc. dated December 5, 2024"
+        }
+      ],
+      "actual": {
+        "id": "5e85807f-cb30-5d0d-80e5-eefa10c28741",
+        "company": "IOT",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2024-11-03",
+        "end": "2025-02-01",
+        "value": "346290000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001642896-25-000022",
+        "filed": "2025-03-25",
+        "form": "DERIVED",
+        "fiscal_year": 2025,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001642896.json",
+        "parents": [
+          "1ca61370-db8f-55b9-9058-92507d595f83",
+          "ebd458c7-0bc6-52e6-9858-059b1d665d93"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "ebd458c7-0bc6-52e6-9858-059b1d665d93",
+          "company": "IOT",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2024-02-04",
+          "end": "2024-11-02",
+          "value": "902909000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001642896-24-000076",
+          "filed": "2024-12-10",
+          "form": "10-Q",
+          "fiscal_year": 2025,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001642896.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "1ca61370-db8f-55b9-9058-92507d595f83",
+          "company": "IOT",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2024-02-04",
+          "end": "2025-02-01",
+          "value": "1249199000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001642896-25-000022",
+          "filed": "2025-03-25",
+          "form": "10-K",
+          "fiscal_year": 2025,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001642896.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000022/iot-20250201.htm",
+        "filed": "2025-03-25",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000022/iot-20250201.htm",
+          "sha256": "17af258b2d18813615d2cd0c76a5602a0c7175d65da6960978d44a1f8e8c06e5",
+          "body": "b23644169f9f8316230d5db488aa42fddb9e4a6343079d63c81d5aa039e06b7a-17af258b2d18813615d2cd0c76a5602a0c7175d65da6960978d44a1f8e8c06e5.body",
+          "fetched_at": "2026-11-12T10:40:57.296550+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001642896-25-000022-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-03-06",
+        "formal_release_issued_date": "2025-03-06",
+        "issued_precision": "day",
+        "date_quote": "March 6, 2025",
+        "filed": "2025-03-06",
+        "accession": "0001642896-25-000007",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000007/samsaraepr-q42025.htm",
+        "reported_revenue_quote": "Revenue $ 346,290 $ 276,274 $ 1,249,199 $ 937,385",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "fa58a2faf2051e717b38ad1c1b1d2b88c02bd902493be0f598638996f92af3d6",
+        "fetched_at": "2026-11-12T10:26:49.152040+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.553120+00:00",
+        "guidance_id": "fddad161-7f56-5eee-81a0-545454b32964",
+        "actual_id": "5e85807f-cb30-5d0d-80e5-eefa10c28741",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000073/samsaraepr-q32025.htm",
+            "filed_date": "2024-12-05"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000007/samsaraepr-q42025.htm",
+            "filed_date": "2025-03-06"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000022/iot-20250201.htm",
+            "filed_date": "2025-03-25"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-03-06"
+    },
+    {
+      "company": "IOT",
+      "target": {
+        "start": "2025-02-02",
+        "end": "2025-05-03",
+        "label": "Q1 FY2026",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "b9e39c77-967f-5eec-a014-fbca4779d7e0",
+          "company": "IOT",
+          "issued": {
+            "start": "2025-03-06",
+            "end": "2025-03-06",
+            "precision": "day"
+          },
+          "filed": "2025-03-06",
+          "start": "2025-02-02",
+          "end": "2025-05-03",
+          "low": "350000000",
+          "high": "352000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001642896-25-000007",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000007/samsaraepr-q42025.htm",
+          "quote": "Q1 FY2026 Outlook FY 2026 Outlook Total revenue $350 million \u2013 $352 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "b9e39c77-967f-5eec-a014-fbca4779d7e0",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000007/samsaraepr-q42025.htm",
+          "source_sha256": "fa58a2faf2051e717b38ad1c1b1d2b88c02bd902493be0f598638996f92af3d6",
+          "fetched_at": "2026-11-12T10:26:49.152040+00:00",
+          "issuance_date_quote": "March 6, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000007/iot-20250303.htm",
+          "exhibit_index_quote": "99.1 Press release issued by Samsara Inc. dated March 6, 2025"
+        }
+      ],
+      "actual": {
+        "id": "43e7fbe9-5763-532d-872a-d4c0c9740870",
+        "company": "IOT",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-02-02",
+        "end": "2025-05-03",
+        "value": "366884000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001642896-25-000058",
+        "filed": "2025-06-10",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001642896.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000058/iot-20250503.htm",
+        "filed": "2025-06-10",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000058/iot-20250503.htm",
+          "sha256": "93efbf2ab52c457d27845f5fc96f33287764390a38c1caa434166df0ac8938db",
+          "body": "7d2f4cde1bf419015ecc2cdd27884f76b867acc3f91f2cbc989d056843033a97-93efbf2ab52c457d27845f5fc96f33287764390a38c1caa434166df0ac8938db.body",
+          "fetched_at": "2026-11-12T10:40:57.961821+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001642896-25-000058-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-06-05",
+        "formal_release_issued_date": "2025-06-05",
+        "issued_precision": "day",
+        "date_quote": "June 5, 2025",
+        "filed": "2025-06-05",
+        "accession": "0001642896-25-000053",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000053/samsaraepr-q12026.htm",
+        "reported_revenue_quote": "Revenue $ 366,884 $ 280,726",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "3f8bf4bce8911249d71489d1e43dfac8f27edd763fa05463bae3882cd1d54942",
+        "fetched_at": "2026-11-12T10:26:50.415563+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.558111+00:00",
+        "guidance_id": "b9e39c77-967f-5eec-a014-fbca4779d7e0",
+        "actual_id": "43e7fbe9-5763-532d-872a-d4c0c9740870",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000007/samsaraepr-q42025.htm",
+            "filed_date": "2025-03-06"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000053/samsaraepr-q12026.htm",
+            "filed_date": "2025-06-05"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000058/iot-20250503.htm",
+            "filed_date": "2025-06-10"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-06-05"
+    },
+    {
+      "company": "IOT",
+      "target": {
+        "start": "2025-05-04",
+        "end": "2025-08-02",
+        "label": "Q2 FY2026",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "0192eddc-2f6a-57f4-9f91-19933b38043d",
+          "company": "IOT",
+          "issued": {
+            "start": "2025-06-05",
+            "end": "2025-06-05",
+            "precision": "day"
+          },
+          "filed": "2025-06-05",
+          "start": "2025-05-04",
+          "end": "2025-08-02",
+          "low": "371000000",
+          "high": "373000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001642896-25-000053",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000053/samsaraepr-q12026.htm",
+          "quote": "Q2 FY2026 Outlook FY 2026 Outlook Total revenue $371 million \u2013 $373 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "0192eddc-2f6a-57f4-9f91-19933b38043d",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000053/samsaraepr-q12026.htm",
+          "source_sha256": "3f8bf4bce8911249d71489d1e43dfac8f27edd763fa05463bae3882cd1d54942",
+          "fetched_at": "2026-11-12T10:26:50.415563+00:00",
+          "issuance_date_quote": "June 5, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000053/iot-20250605.htm",
+          "exhibit_index_quote": "99.1 Press release issued by Samsara Inc. dated June 5, 2025"
+        }
+      ],
+      "actual": {
+        "id": "ccb2f9b4-6677-58e1-99ad-a1df2b98495d",
+        "company": "IOT",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-05-04",
+        "end": "2025-08-02",
+        "value": "391480000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001642896-25-000074",
+        "filed": "2025-09-09",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001642896.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000074/iot-20250802.htm",
+        "filed": "2025-09-09",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000074/iot-20250802.htm",
+          "sha256": "47952bb05b6957500a542ec5506d9e63ae2205d303076bac33272e10e3e9f324",
+          "body": "b4c1199c03e44a6a4a3e86864031d4fd47e316a5e64cf67f8799c52c2bfcf10e-47952bb05b6957500a542ec5506d9e63ae2205d303076bac33272e10e3e9f324.body",
+          "fetched_at": "2026-11-12T10:40:58.655801+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001642896-25-000074-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-09-04",
+        "formal_release_issued_date": "2025-09-04",
+        "issued_precision": "day",
+        "date_quote": "September 4, 2025",
+        "filed": "2025-09-04",
+        "accession": "0001642896-25-000070",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000070/samsaraepr-q22026.htm",
+        "reported_revenue_quote": "Revenue $ 391,480 $ 300,202 $ 758,364 $ 580,928",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "2c754d35f0ed6d543d762c88de0512f05bea9e7ea8322de604f502a23919215f",
+        "fetched_at": "2026-11-12T10:26:51.811140+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.562887+00:00",
+        "guidance_id": "0192eddc-2f6a-57f4-9f91-19933b38043d",
+        "actual_id": "ccb2f9b4-6677-58e1-99ad-a1df2b98495d",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000053/samsaraepr-q12026.htm",
+            "filed_date": "2025-06-05"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000070/samsaraepr-q22026.htm",
+            "filed_date": "2025-09-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000074/iot-20250802.htm",
+            "filed_date": "2025-09-09"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-09-04"
+    },
+    {
+      "company": "IOT",
+      "target": {
+        "start": "2025-08-03",
+        "end": "2025-11-01",
+        "label": "Q3 FY2026",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "be526f84-8160-5a5f-a624-15c39feec219",
+          "company": "IOT",
+          "issued": {
+            "start": "2025-09-04",
+            "end": "2025-09-04",
+            "precision": "day"
+          },
+          "filed": "2025-09-04",
+          "start": "2025-08-03",
+          "end": "2025-11-01",
+          "low": "398000000",
+          "high": "400000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001642896-25-000070",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000070/samsaraepr-q22026.htm",
+          "quote": "Q3 FY2026 Outlook Implied Q4 FY2026 Outlook FY 2026 Outlook Total revenue $398 million \u2013 $400 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "be526f84-8160-5a5f-a624-15c39feec219",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000070/samsaraepr-q22026.htm",
+          "source_sha256": "2c754d35f0ed6d543d762c88de0512f05bea9e7ea8322de604f502a23919215f",
+          "fetched_at": "2026-11-12T10:26:51.811140+00:00",
+          "issuance_date_quote": "September 4, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000070/iot-20250904.htm",
+          "exhibit_index_quote": "99.1 Press release issued by Samsara Inc. dated September 4, 2025"
+        }
+      ],
+      "actual": {
+        "id": "04788f82-92f1-57f8-a852-5c8b7399113c",
+        "company": "IOT",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-08-03",
+        "end": "2025-11-01",
+        "value": "415975000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-25-056069",
+        "filed": "2025-12-09",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001642896.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025056069/iot-20251101.htm",
+        "filed": "2025-12-09",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025056069/iot-20251101.htm",
+          "sha256": "e4ccced68a0b5d5b18f3b66d19960c9f1f441ff908eff437fd63ac0f24056f95",
+          "body": "336bf2a3ce9fcf3633d5c1714bb2d063290514a9b4cbfd002b7aeacef2cdebb5-e4ccced68a0b5d5b18f3b66d19960c9f1f441ff908eff437fd63ac0f24056f95.body",
+          "fetched_at": "2026-11-12T10:40:59.365806+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001628280-25-056069-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-12-04",
+        "formal_release_issued_date": "2025-12-04",
+        "issued_precision": "day",
+        "date_quote": "December 4, 2025",
+        "filed": "2025-12-04",
+        "accession": "0001628280-25-055355",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025055355/samsaraepr-q32026.htm",
+        "reported_revenue_quote": "Revenue $ 415,975 $ 321,981 $ 1,174,339 $ 902,909",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "eeb85922b5cfd9ad91294061a8c79d6cf9e98240ca891ab39360ed5c4265dd6e",
+        "fetched_at": "2026-11-12T07:10:38.455703+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.567803+00:00",
+        "guidance_id": "be526f84-8160-5a5f-a624-15c39feec219",
+        "actual_id": "04788f82-92f1-57f8-a852-5c8b7399113c",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000070/samsaraepr-q22026.htm",
+            "filed_date": "2025-09-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025055355/samsaraepr-q32026.htm",
+            "filed_date": "2025-12-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025056069/iot-20251101.htm",
+            "filed_date": "2025-12-09"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-12-04"
+    },
+    {
+      "company": "IOT",
+      "target": {
+        "start": "2025-11-02",
+        "end": "2026-01-31",
+        "label": "Q4 FY2026",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "56685baa-a236-506c-abc3-dda2a073ce7a",
+          "company": "IOT",
+          "issued": {
+            "start": "2025-12-04",
+            "end": "2025-12-04",
+            "precision": "day"
+          },
+          "filed": "2025-12-04",
+          "start": "2025-11-02",
+          "end": "2026-01-31",
+          "low": "421000000",
+          "high": "423000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001628280-25-055355",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025055355/samsaraepr-q32026.htm",
+          "quote": "Q4 FY2026 Outlook FY 2026 Outlook Total revenue $421 million \u2013 $423 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "56685baa-a236-506c-abc3-dda2a073ce7a",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025055355/samsaraepr-q32026.htm",
+          "source_sha256": "eeb85922b5cfd9ad91294061a8c79d6cf9e98240ca891ab39360ed5c4265dd6e",
+          "fetched_at": "2026-11-12T07:10:38.455703+00:00",
+          "issuance_date_quote": "December 4, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025055355/iot-20251204.htm",
+          "exhibit_index_quote": "99.1 Press release issued by Samsara Inc. dated December 4, 2025"
+        }
+      ],
+      "actual": {
+        "id": "b2d15e4a-c0b0-5908-aeda-9bc31060f42b",
+        "company": "IOT",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-11-02",
+        "end": "2026-01-31",
+        "value": "444296000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-26-018167",
+        "filed": "2026-03-16",
+        "form": "DERIVED",
+        "fiscal_year": 2026,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001642896.json",
+        "parents": [
+          "274703de-9cd2-527f-b898-623f8123dc64",
+          "99265d5a-6e5d-5f90-aa76-7a58d9d2df21"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "99265d5a-6e5d-5f90-aa76-7a58d9d2df21",
+          "company": "IOT",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-02-02",
+          "end": "2025-11-01",
+          "value": "1174339000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001628280-25-056069",
+          "filed": "2025-12-09",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001642896.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "274703de-9cd2-527f-b898-623f8123dc64",
+          "company": "IOT",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-02-02",
+          "end": "2026-01-31",
+          "value": "1618635000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001628280-26-018167",
+          "filed": "2026-03-16",
+          "form": "10-K",
+          "fiscal_year": 2026,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001642896.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026018167/iot-20260131.htm",
+        "filed": "2026-03-16",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026018167/iot-20260131.htm",
+          "sha256": "753712b0f94d6ffa5c477e9e325e9b0b072698bb07fc9697f75074de9aeae48a",
+          "body": "7343a2a33b1e4bc3d5d9a545c551df3f1f956593287d0ea8b70884c62416b116-753712b0f94d6ffa5c477e9e325e9b0b072698bb07fc9697f75074de9aeae48a.body",
+          "fetched_at": "2026-11-12T10:41:00.077844+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001628280-26-018167-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-03-05",
+        "formal_release_issued_date": "2026-03-05",
+        "issued_precision": "day",
+        "date_quote": "March 5, 2026",
+        "filed": "2026-03-05",
+        "accession": "0001628280-26-015170",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026015170/samsaraepr-q42026.htm",
+        "reported_revenue_quote": "Revenue $ 444,296 $ 346,290 $ 1,618,635 $ 1,249,199",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "aed8b5fb4260578dd607e9aae5aa3da14e17b6ec3315ed3efc86b2ede908dc61",
+        "fetched_at": "2026-11-11T23:48:31.241707+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.584961+00:00",
+        "guidance_id": "56685baa-a236-506c-abc3-dda2a073ce7a",
+        "actual_id": "b2d15e4a-c0b0-5908-aeda-9bc31060f42b",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025055355/samsaraepr-q32026.htm",
+            "filed_date": "2025-12-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026015170/samsaraepr-q42026.htm",
+            "filed_date": "2026-03-05"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026018167/iot-20260131.htm",
+            "filed_date": "2026-03-16"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-03-05"
+    },
+    {
+      "company": "IOT",
+      "target": {
+        "start": "2026-02-01",
+        "end": "2026-05-02",
+        "label": "Q1 FY2027",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "8446e825-3f2b-563a-a7ba-5b72801c1261",
+          "company": "IOT",
+          "issued": {
+            "start": "2026-03-05",
+            "end": "2026-03-05",
+            "precision": "day"
+          },
+          "filed": "2026-03-05",
+          "start": "2026-02-01",
+          "end": "2026-05-02",
+          "low": "454000000",
+          "high": "456000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001628280-26-015170",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026015170/samsaraepr-q42026.htm",
+          "quote": "Q1 FY2027 Outlook FY 2027 Outlook Total revenue $454 million \u2013 $456 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "8446e825-3f2b-563a-a7ba-5b72801c1261",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026015170/samsaraepr-q42026.htm",
+          "source_sha256": "aed8b5fb4260578dd607e9aae5aa3da14e17b6ec3315ed3efc86b2ede908dc61",
+          "fetched_at": "2026-11-11T23:48:31.241707+00:00",
+          "issuance_date_quote": "March 5, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026015170/iot-20260305.htm",
+          "exhibit_index_quote": "99.1 Press release issued by Samsara Inc. dated March 5, 2026"
+        }
+      ],
+      "actual": {
+        "id": "9ced3442-662f-55f5-8a5d-40b2ff444216",
+        "company": "IOT",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-02-01",
+        "end": "2026-05-02",
+        "value": "478844000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-26-041893",
+        "filed": "2026-06-09",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001642896.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026041893/iot-20260502.htm",
+        "filed": "2026-06-09",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026041893/iot-20260502.htm",
+          "sha256": "910c87edacd8c8e4b5bbb446ca80bc399a1fa9ae522f6e7af1d710cc713cb0c3",
+          "body": "2a91b00120f2b600081f1d2f3ed68fdb855832c604a30999182c861004f2d7bc-910c87edacd8c8e4b5bbb446ca80bc399a1fa9ae522f6e7af1d710cc713cb0c3.body",
+          "fetched_at": "2026-11-12T10:41:00.813584+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001628280-26-041893-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-06-04",
+        "formal_release_issued_date": "2026-06-04",
+        "issued_precision": "day",
+        "date_quote": "June 4, 2026",
+        "filed": "2026-06-04",
+        "accession": "0001628280-26-040788",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026040788/samsaraepr-q12027.htm",
+        "reported_revenue_quote": "Revenue $ 478,844 $ 366,884",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "ca9eb03f26fc872d19eb0b4b2cec9ef20739eabf03701560f1ce86c88305c31a",
+        "fetched_at": "2026-11-11T10:09:01.344091+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.589563+00:00",
+        "guidance_id": "8446e825-3f2b-563a-a7ba-5b72801c1261",
+        "actual_id": "9ced3442-662f-55f5-8a5d-40b2ff444216",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026015170/samsaraepr-q42026.htm",
+            "filed_date": "2026-03-05"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026040788/samsaraepr-q12027.htm",
+            "filed_date": "2026-06-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026041893/iot-20260502.htm",
+            "filed_date": "2026-06-09"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-06-04"
+    },
+    {
+      "company": "IOT",
+      "target": {
+        "start": "2026-05-03",
+        "end": "2026-08-01",
+        "label": "Q2 FY2027",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "63ace526-191d-57f5-a1f9-09c2341d12a4",
+          "company": "IOT",
+          "issued": {
+            "start": "2026-06-04",
+            "end": "2026-06-04",
+            "precision": "day"
+          },
+          "filed": "2026-06-04",
+          "start": "2026-05-03",
+          "end": "2026-08-01",
+          "low": "482000000",
+          "high": "484000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001628280-26-040788",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026040788/samsaraepr-q12027.htm",
+          "quote": "Q2 FY2027 Outlook FY 2027 Outlook Total revenue $482 million \u2013 $484 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "63ace526-191d-57f5-a1f9-09c2341d12a4",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026040788/samsaraepr-q12027.htm",
+          "source_sha256": "ca9eb03f26fc872d19eb0b4b2cec9ef20739eabf03701560f1ce86c88305c31a",
+          "fetched_at": "2026-11-11T10:09:01.344091+00:00",
+          "issuance_date_quote": "June 4, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026040788/iot-20260604.htm",
+          "exhibit_index_quote": "99.1 Press release issued by Samsara Inc. dated June 4, 2026"
+        }
+      ],
+      "actual": {
+        "id": "7a2f7950-7018-55f3-b845-e201e16ede21",
+        "company": "IOT",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-05-03",
+        "end": "2026-08-01",
+        "value": "508437000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-26-060909",
+        "filed": "2026-09-08",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001642896.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060909/iot-20260801.htm",
+        "filed": "2026-09-08",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060909/iot-20260801.htm",
+          "sha256": "1c3d18f2bc899d85e9d5e3fa16b3749fc7af5cf952839f39b51dd0c6b0875442",
+          "body": "bb08a93c222cd854b977b9b45ac30d3987e700d4cdfc303a5eee188aecf9ac0a-1c3d18f2bc899d85e9d5e3fa16b3749fc7af5cf952839f39b51dd0c6b0875442.body",
+          "fetched_at": "2026-11-12T08:11:46.376555+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001628280-26-060909-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-09-03",
+        "formal_release_issued_date": "2026-09-03",
+        "issued_precision": "day",
+        "date_quote": "September 3, 2026",
+        "filed": "2026-09-03",
+        "accession": "0001628280-26-060438",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm",
+        "reported_revenue_quote": "Revenue $ 508,437 $ 391,480 $ 987,281 $ 758,364",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "4323b6b76f3785cb80b656f18cb96b8b3e37b366c0baad4e18b361aafdc29812",
+        "fetched_at": "2026-11-11T10:09:03.501395+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.594837+00:00",
+        "guidance_id": "63ace526-191d-57f5-a1f9-09c2341d12a4",
+        "actual_id": "7a2f7950-7018-55f3-b845-e201e16ede21",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026040788/samsaraepr-q12027.htm",
+            "filed_date": "2026-06-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm",
+            "filed_date": "2026-09-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060909/iot-20260801.htm",
+            "filed_date": "2026-09-08"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-09-03"
+    }
+  ]
+}

@@ -1,0 +1,1247 @@
+{
+  "review_scope": "Last eight publicly reported quarters as of 2026-11-12; complete reviewed 8-K/8-K-A inventory from 2024-08-01 through 2026-11-12",
+  "source_inventory": [
+    {
+      "accession": "0001535527-24-000017",
+      "filed": "2024-08-28",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000017/crwd-20240828.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000017/crwd-20240828xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001535527-24-000024",
+      "filed": "2024-11-26",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000024/crwd-20241126.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000024/crwd-20241126xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001535527-25-000005",
+      "filed": "2025-03-04",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000005/crwd-20250304.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000005/crwd-20250304xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001104659-25-045244",
+      "filed": "2025-05-07",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000110465925045244/tm2514190d1_8k.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1535527/000110465925045244/tm2514190d1_ex99-1.htm"
+      ]
+    },
+    {
+      "accession": "0001535527-25-000017",
+      "filed": "2025-06-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/crwd-20250603.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/crwd-20250603xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001535527-25-000023",
+      "filed": "2025-08-27",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000023/crwd-20250827.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000023/crwd-20252708xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001535527-25-000030",
+      "filed": "2025-12-02",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000030/crwd-20251202.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000030/crwd-20251202xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001104659-25-124912",
+      "filed": "2025-12-29",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000110465925124912/tm2534248d1_8k.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001535527-26-000007",
+      "filed": "2026-03-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001535527-26-000018",
+      "filed": "2026-04-21",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000018/crwd-20260416.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001535527-26-000022",
+      "filed": "2026-06-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001535527-26-000029",
+      "filed": "2026-08-26",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001104659-24-128515",
+      "filed": "2024-12-13",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000110465924128515/tm2430723d1_8k.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001104659-25-015279",
+      "filed": "2025-02-20",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000110465925015279/tm257102d1_8k.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001104659-25-036392",
+      "filed": "2025-04-18",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000110465925036392/tm2512714d1_8k.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001104659-25-039500",
+      "filed": "2025-04-25",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000110465925039500/tm2513136d1_8k.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001104659-25-061216",
+      "filed": "2025-06-20",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000110465925061216/tm2518570d1_8k.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001535527-26-000013",
+      "filed": "2026-04-06",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000013/crwd-20260406.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000013/sharerepurchaseincreasepre.htm"
+      ]
+    },
+    {
+      "accession": "0001104659-26-076376",
+      "filed": "2026-06-22",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000110465926076376/tm2618192d1_8k.htm",
+      "exhibits": []
+    }
+  ],
+  "inventory_gaps": [],
+  "quarters": [
+    {
+      "company": "CRWD",
+      "target": {
+        "start": "2024-08-01",
+        "end": "2024-10-31",
+        "label": "Q3 FY2025",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "01205c58-db41-52ae-a250-7887b127dba6",
+          "company": "CRWD",
+          "issued": {
+            "start": "2024-08-28",
+            "end": "2024-08-28",
+            "precision": "day"
+          },
+          "filed": "2024-08-28",
+          "start": "2024-08-01",
+          "end": "2024-10-31",
+          "low": "979200000.0",
+          "high": "984700000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001535527-24-000017",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000017/crwd-20240828xex991.htm",
+          "quote": "Q3 FY25 Guidance Full Year FY25 Guidance Total revenue $979.2 - $984.7 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "01205c58-db41-52ae-a250-7887b127dba6",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000017/crwd-20240828xex991.htm",
+          "source_sha256": "b6798b8023304716ce246541b8a89671c334ecd8a7ddbbf0f2f39d6c0b6d7c81",
+          "fetched_at": "2026-11-12T10:26:23.338471+00:00",
+          "issuance_date_quote": "August 28, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000017/crwd-20240828.htm",
+          "exhibit_index_quote": "99.1 Press release dated August 28, 2024"
+        }
+      ],
+      "actual": {
+        "id": "362b7217-5086-5ed2-a7f5-e92b4467cf98",
+        "company": "CRWD",
+        "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+        "start": "2024-08-01",
+        "end": "2024-10-31",
+        "value": "1010178000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001535527-24-000026",
+        "filed": "2024-11-27",
+        "form": "10-Q",
+        "fiscal_year": 2025,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000026/crwd-20241031.htm",
+        "filed": "2024-11-27",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000026/crwd-20241031.htm",
+          "sha256": "d27245c76a9ed85dc93e94d348463ff64aca5398e79ff563b622e1de19cd40c1",
+          "body": "f274540cdf60ab30d3d16df68b1590d0f338124f0226232dbc638a0973e54632-d27245c76a9ed85dc93e94d348463ff64aca5398e79ff563b622e1de19cd40c1.body",
+          "fetched_at": "2026-11-12T10:40:46.884286+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001535527-24-000026-filing.txt"
+      },
+      "result": {
+        "issued_date": "2024-11-26",
+        "formal_release_issued_date": "2024-11-26",
+        "issued_precision": "day",
+        "date_quote": "November 26, 2024",
+        "filed": "2024-11-26",
+        "accession": "0001535527-24-000024",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000024/crwd-20241126xex991.htm",
+        "reported_revenue_quote": "Total revenue 1,010,178 786,014 2,895,086 2,210,220",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "97c1a77f0ec4dbd33d24fd6f6c2ae555133098d1b758af9847174c8e7429021a",
+        "fetched_at": "2026-11-12T10:26:24.573576+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.316084+00:00",
+        "guidance_id": "01205c58-db41-52ae-a250-7887b127dba6",
+        "actual_id": "362b7217-5086-5ed2-a7f5-e92b4467cf98",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000017/crwd-20240828xex991.htm",
+            "filed_date": "2024-08-28"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000024/crwd-20241126xex991.htm",
+            "filed_date": "2024-11-26"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000026/crwd-20241031.htm",
+            "filed_date": "2024-11-27"
+          }
+        ],
+        "scope_evidence": [
+          "f operations for the acquisition have been included in the Company\u2019s condensed consolidated financial statements from the date of acquisition. The acquisition of Flow Security did not have a material impact on the Company\u2019s condensed consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. Bionic On September 28, 2023, the Company acquired 100 % of the equity int",
+          "sults of operations for the acquisition have been included in the Company\u2019s condensed consolidated financial statements from the date of acquisition. The acquisition of Bionic did not have a material impact on the Company\u2019s condensed consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. 10. Net Income (Loss) Per Share Attributable to Common Stockholders Basic "
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2024-11-26"
+    },
+    {
+      "company": "CRWD",
+      "target": {
+        "start": "2024-11-01",
+        "end": "2025-01-31",
+        "label": "Q4 FY2025",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "9e84819f-e81c-5038-ac3a-325e500d9784",
+          "company": "CRWD",
+          "issued": {
+            "start": "2024-11-26",
+            "end": "2024-11-26",
+            "precision": "day"
+          },
+          "filed": "2024-11-26",
+          "start": "2024-11-01",
+          "end": "2025-01-31",
+          "low": "1028700000.0",
+          "high": "1035400000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001535527-24-000024",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000024/crwd-20241126xex991.htm",
+          "quote": "Q4 FY25 Guidance Full Year FY25 Guidance Total revenue $1,028.7 - $1,035.4 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "9e84819f-e81c-5038-ac3a-325e500d9784",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000024/crwd-20241126xex991.htm",
+          "source_sha256": "97c1a77f0ec4dbd33d24fd6f6c2ae555133098d1b758af9847174c8e7429021a",
+          "fetched_at": "2026-11-12T10:26:24.573576+00:00",
+          "issuance_date_quote": "November 26, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000024/crwd-20241126.htm",
+          "exhibit_index_quote": "99.1 Press release dated November 26, 2024"
+        }
+      ],
+      "actual": {
+        "id": "b2645ef9-7872-5146-9088-279228560cfa",
+        "company": "CRWD",
+        "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+        "start": "2024-11-01",
+        "end": "2025-01-31",
+        "value": "1058538000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001535527-25-000009",
+        "filed": "2025-03-10",
+        "form": "DERIVED",
+        "fiscal_year": 2024,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+        "parents": [
+          "a09e471a-8980-5e99-887b-21e226cafe7d",
+          "de81ef37-9975-5273-a337-f6e778585506"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "de81ef37-9975-5273-a337-f6e778585506",
+          "company": "CRWD",
+          "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+          "start": "2024-02-01",
+          "end": "2024-10-31",
+          "value": "2895086000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001535527-24-000026",
+          "filed": "2024-11-27",
+          "form": "10-Q",
+          "fiscal_year": 2025,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "a09e471a-8980-5e99-887b-21e226cafe7d",
+          "company": "CRWD",
+          "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+          "start": "2024-02-01",
+          "end": "2025-01-31",
+          "value": "3953624000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001535527-25-000009",
+          "filed": "2025-03-10",
+          "form": "10-K",
+          "fiscal_year": 2024,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000009/crwd-20250131.htm",
+        "filed": "2025-03-10",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000009/crwd-20250131.htm",
+          "sha256": "e9516353cd13697ccb43ab812b66091cd7d115b67e7c831ccf4916e46bc813a4",
+          "body": "7bb03374bbb919187ef9dde1a703ff4e182baf5f38e7aae35f617aa81b54130f-e9516353cd13697ccb43ab812b66091cd7d115b67e7c831ccf4916e46bc813a4.body",
+          "fetched_at": "2026-11-12T10:40:47.603754+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001535527-25-000009-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-03-04",
+        "formal_release_issued_date": "2025-03-04",
+        "issued_precision": "day",
+        "date_quote": "March 4, 2025",
+        "filed": "2025-03-04",
+        "accession": "0001535527-25-000005",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000005/crwd-20250304xex991.htm",
+        "reported_revenue_quote": "Total revenue 1,058,538 845,335 3,953,624 3,055,555",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "7f617f95a9da9e346f67477c81b83bba8adc3cbdd466b95c0ec00fbe03baeb5e",
+        "fetched_at": "2026-11-12T10:26:25.942389+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.332985+00:00",
+        "guidance_id": "9e84819f-e81c-5038-ac3a-325e500d9784",
+        "actual_id": "b2645ef9-7872-5146-9088-279228560cfa",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000024/crwd-20241126xex991.htm",
+            "filed_date": "2024-11-26"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000005/crwd-20250304xex991.htm",
+            "filed_date": "2025-03-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000009/crwd-20250131.htm",
+            "filed_date": "2025-03-10"
+          }
+        ],
+        "scope_evidence": [
+          "esults of operations for the acquisition have been included in the Company\u2019s consolidated financial statements from the date of acquisition. The acquisition of Adaptive Shield did not have a material impact on the Company\u2019s consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. Flow Security On March 26, 2024, the Company acquired 100 % of the equity interest o",
+          " results of operations for the acquisition have been included in the Company\u2019s consolidated financial statements from the date of acquisition. The acquisition of Flow Security did not have a material impact on the Company\u2019s consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. Bionic On September 28, 2023, the Company acquired 100 % of the equity interest of B",
+          "al. The results of operations for the acquisition have been included in the Company\u2019s consolidated financial statements from the date of acquisition. The acquisition of Bionic did not have a material impact on the Company\u2019s consolidated financial statements, and therefore historical and pro forma disclosures have not been presented . 13. Net Income (Loss) Per Share Attributable to Common Stockholders Basic and dilut"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-03-04"
+    },
+    {
+      "company": "CRWD",
+      "target": {
+        "start": "2025-02-01",
+        "end": "2025-04-30",
+        "label": "Q1 FY2026",
+        "calendar": "months",
+        "days": 89
+      },
+      "guidance_versions": [
+        {
+          "id": "6ff36d6a-7731-580d-b870-86b7885d03a4",
+          "company": "CRWD",
+          "issued": {
+            "start": "2025-03-04",
+            "end": "2025-03-04",
+            "precision": "day"
+          },
+          "filed": "2025-03-04",
+          "start": "2025-02-01",
+          "end": "2025-04-30",
+          "low": "1100600000.0",
+          "high": "1106400000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001535527-25-000005",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000005/crwd-20250304xex991.htm",
+          "quote": "Q1 FY26 Guidance Full Year FY26 Guidance Total revenue $1,100.6 - $1,106.4 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "6ff36d6a-7731-580d-b870-86b7885d03a4",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000005/crwd-20250304xex991.htm",
+          "source_sha256": "7f617f95a9da9e346f67477c81b83bba8adc3cbdd466b95c0ec00fbe03baeb5e",
+          "fetched_at": "2026-11-12T10:26:25.942389+00:00",
+          "issuance_date_quote": "March 4, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000005/crwd-20250304.htm",
+          "exhibit_index_quote": "99.1 Press release dated March 4, 2025"
+        }
+      ],
+      "actual": {
+        "id": "10b46f82-aee8-55a3-9ea5-f829bd7fc80a",
+        "company": "CRWD",
+        "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+        "start": "2025-02-01",
+        "end": "2025-04-30",
+        "value": "1103434000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001535527-25-000019",
+        "filed": "2025-06-04",
+        "form": "10-Q",
+        "fiscal_year": 2025,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000019/crwd-20250430.htm",
+        "filed": "2025-06-04",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000019/crwd-20250430.htm",
+          "sha256": "e61b8c68d53cd3201aeb9341876f2edac859bd3d70205d9d226388c60adbc544",
+          "body": "9b25248f921907a15c079196348cfad7729cabf263717f36e96236638152996f-e61b8c68d53cd3201aeb9341876f2edac859bd3d70205d9d226388c60adbc544.body",
+          "fetched_at": "2026-11-12T10:40:48.397355+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001535527-25-000019-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-06-03",
+        "formal_release_issued_date": "2025-06-03",
+        "issued_precision": "day",
+        "date_quote": "June 3, 2025",
+        "filed": "2025-06-03",
+        "accession": "0001535527-25-000017",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/crwd-20250603xex991.htm",
+        "reported_revenue_quote": "Total revenue 1,103,434 921,036",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "78442d5df834324cc9d9f41045c0c94e809a9e3101128b2091c17ba9d9dfe701",
+        "fetched_at": "2026-11-12T10:26:28.499958+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [
+        {
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000110465925045244/tm2514190d1_8k.htm",
+          "accession": "0001104659-25-045244",
+          "filed": "2025-05-07",
+          "public_date": "2025-05-07",
+          "quote": "expects its fiscal 2026 first quarter (ended April 30, 2025) financial results to be in-line with or above its guidance as provided in its fourth quarter 2025 earnings release on March 4, 2025. The Company also reaffirms its guidance for the fiscal year 2026 (ending Janu",
+          "sha256": "36efdcc71d65afa40be4aa855e0acf657f4fec25a4974e0c3a2f9996d65dc139",
+          "fetched_at": "2026-11-12T10:26:26.613455+00:00",
+          "interpretation": "Completed-quarter preliminary/in-line/reaffirmation indication; conservatively not a clean pre-publication historical target",
+          "public_date_basis": "SEC filing day establishes a known-public-by boundary, not a claimed exact company publication timestamp."
+        }
+      ],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.349106+00:00",
+        "guidance_id": "6ff36d6a-7731-580d-b870-86b7885d03a4",
+        "actual_id": "10b46f82-aee8-55a3-9ea5-f829bd7fc80a",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000005/crwd-20250304xex991.htm",
+            "filed_date": "2025-03-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/crwd-20250603xex991.htm",
+            "filed_date": "2025-06-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000019/crwd-20250430.htm",
+            "filed_date": "2025-06-04"
+          }
+        ],
+        "scope_evidence": [
+          "operations for the acquisition have been included in the Company\u2019s condensed consolidated financial statements from the date of acquisition. The acquisition of Adaptive Shield did not have a material impact on the Company\u2019s condensed consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. Flow Security On March 26, 2024, the Company acquired 100 % of the equity ",
+          "f operations for the acquisition have been included in the Company\u2019s condensed consolidated financial statements from the date of acquisition. The acquisition of Flow Security did not have a material impact on the Company\u2019s condensed consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. 11. Net Income (Loss) Per Share Attributable to Common Stockholders Basic "
+        ]
+      },
+      "blocking_reasons": [
+        "EARLY_POST_CLOSE_RESULT_INDICATION: 2025-05-07 precedes formal-release lock window; excluded rather than training on already-public result information"
+      ],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-05-07"
+    },
+    {
+      "company": "CRWD",
+      "target": {
+        "start": "2025-05-01",
+        "end": "2025-07-31",
+        "label": "Q2 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "fddbd054-6750-589a-816f-b9601159beee",
+          "company": "CRWD",
+          "issued": {
+            "start": "2025-06-03",
+            "end": "2025-06-03",
+            "precision": "day"
+          },
+          "filed": "2025-06-03",
+          "start": "2025-05-01",
+          "end": "2025-07-31",
+          "low": "1144700000.0",
+          "high": "1151600000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001535527-25-000017",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/crwd-20250603xex991.htm",
+          "quote": "Q2 FY26 Guidance Full Year FY26 Guidance Total revenue $1,144.7 - $1,151.6 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "fddbd054-6750-589a-816f-b9601159beee",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/crwd-20250603xex991.htm",
+          "source_sha256": "78442d5df834324cc9d9f41045c0c94e809a9e3101128b2091c17ba9d9dfe701",
+          "fetched_at": "2026-11-12T10:26:28.499958+00:00",
+          "issuance_date_quote": "June 3, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/crwd-20250603.htm",
+          "exhibit_index_quote": "99.1 Press release dated June 3, 2025"
+        }
+      ],
+      "actual": {
+        "id": "413e3afc-4f12-5f15-ae44-96e2a12a10aa",
+        "company": "CRWD",
+        "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+        "start": "2025-05-01",
+        "end": "2025-07-31",
+        "value": "1168952000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001535527-25-000025",
+        "filed": "2025-08-28",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000025/crwd-20250731.htm",
+        "filed": "2025-08-28",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000025/crwd-20250731.htm",
+          "sha256": "d7bc96aa0e37ada67178ef767049bd8fe76f7fb8bfb7eeebf862efc1b38589bf",
+          "body": "f47582c5a9485c1d971d592991f328bc475350524f3014d56d463d1e7d27780b-d7bc96aa0e37ada67178ef767049bd8fe76f7fb8bfb7eeebf862efc1b38589bf.body",
+          "fetched_at": "2026-11-12T10:40:49.207197+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001535527-25-000025-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-08-27",
+        "formal_release_issued_date": "2025-08-27",
+        "issued_precision": "day",
+        "date_quote": "August 27, 2025",
+        "filed": "2025-08-27",
+        "accession": "0001535527-25-000023",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000023/crwd-20252708xex991.htm",
+        "reported_revenue_quote": "Total revenue 1,168,952 963,872 2,272,386 1,884,908",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "13f8a73465a5811ce2bfddef574b3a28abafd53e182f36fd5f5e3b90d26fbd2f",
+        "fetched_at": "2026-11-12T10:26:29.802996+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.361169+00:00",
+        "guidance_id": "fddbd054-6750-589a-816f-b9601159beee",
+        "actual_id": "413e3afc-4f12-5f15-ae44-96e2a12a10aa",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/crwd-20250603xex991.htm",
+            "filed_date": "2025-06-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000023/crwd-20252708xex991.htm",
+            "filed_date": "2025-08-27"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000025/crwd-20250731.htm",
+            "filed_date": "2025-08-28"
+          }
+        ],
+        "scope_evidence": [
+          "operations for the acquisition have been included in the Company\u2019s condensed consolidated financial statements from the date of acquisition. The acquisition of Adaptive Shield did not have a material impact on the Company\u2019s condensed consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. Flow Security On March 26, 2024, the Company acquired 100 % of the equity ",
+          "f operations for the acquisition have been included in the Company\u2019s condensed consolidated financial statements from the date of acquisition. The acquisition of Flow Security did not have a material impact on the Company\u2019s condensed consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. 12. Net Income (Loss) Per Share Attributable to Common Stockholders Basic "
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-08-27"
+    },
+    {
+      "company": "CRWD",
+      "target": {
+        "start": "2025-08-01",
+        "end": "2025-10-31",
+        "label": "Q3 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "0368ce79-a89c-563d-a455-2343829ceccb",
+          "company": "CRWD",
+          "issued": {
+            "start": "2025-08-27",
+            "end": "2025-08-27",
+            "precision": "day"
+          },
+          "filed": "2025-08-27",
+          "start": "2025-08-01",
+          "end": "2025-10-31",
+          "low": "1208000000.0",
+          "high": "1218000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001535527-25-000023",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000023/crwd-20252708xex991.htm",
+          "quote": "Q3 FY26 Guidance Full Year FY26 Guidance Total revenue $1,208.0 - $1,218.0 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "0368ce79-a89c-563d-a455-2343829ceccb",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000023/crwd-20252708xex991.htm",
+          "source_sha256": "13f8a73465a5811ce2bfddef574b3a28abafd53e182f36fd5f5e3b90d26fbd2f",
+          "fetched_at": "2026-11-12T10:26:29.802996+00:00",
+          "issuance_date_quote": "August 27, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000023/crwd-20250827.htm",
+          "exhibit_index_quote": "99.1 Press release dated August 27, 2025"
+        }
+      ],
+      "actual": {
+        "id": "12953b5a-1353-5189-b35f-3eb7d8b0a959",
+        "company": "CRWD",
+        "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+        "start": "2025-08-01",
+        "end": "2025-10-31",
+        "value": "1234244000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001535527-25-000033",
+        "filed": "2025-12-03",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000033/crwd-20251031.htm",
+        "filed": "2025-12-03",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000033/crwd-20251031.htm",
+          "sha256": "c49d2de4b19aae404051cbb161263b8935606ba8f3ff65e08a0a9d8c6c207d74",
+          "body": "39593bf17fbdf9c5df9137209d34137912e7dc0203e1f376558457f7c89350ed-c49d2de4b19aae404051cbb161263b8935606ba8f3ff65e08a0a9d8c6c207d74.body",
+          "fetched_at": "2026-11-12T10:40:50.034558+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001535527-25-000033-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-12-02",
+        "formal_release_issued_date": "2025-12-02",
+        "issued_precision": "day",
+        "date_quote": "December 2, 2025",
+        "filed": "2025-12-02",
+        "accession": "0001535527-25-000030",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000030/crwd-20251202xex991.htm",
+        "reported_revenue_quote": "Total revenue 1,234,244 1,010,178 3,506,630 2,895,086",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "824b53e592e9186f1401138e6502ae79d31726f7c248d6a2bebf534fa711687d",
+        "fetched_at": "2026-11-12T07:10:36.923232+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.373463+00:00",
+        "guidance_id": "0368ce79-a89c-563d-a455-2343829ceccb",
+        "actual_id": "12953b5a-1353-5189-b35f-3eb7d8b0a959",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000023/crwd-20252708xex991.htm",
+            "filed_date": "2025-08-27"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000030/crwd-20251202xex991.htm",
+            "filed_date": "2025-12-02"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000033/crwd-20251031.htm",
+            "filed_date": "2025-12-03"
+          }
+        ],
+        "scope_evidence": [
+          "sults of operations for the acquisition have been included in the Company\u2019s condensed consolidated financial statements from the date of acquisition. The acquisition of Pangea did not have a material impact on the Company\u2019s condensed consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. Onum Technology Inc. On September 12, 2025, the Company acquired 100 % of ",
+          "results of operations for the acquisition have been included in the Company\u2019s condensed consolidated financial statements from the date of acquisition. The acquisition of Onum did not have a material impact on the Company\u2019s condensed consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. Adaptive Shield On November 20, 2024, the Company acquired 100 % of the eq",
+          "operations for the acquisition have been included in the Company\u2019s condensed consolidated financial statements from the date of acquisition. The acquisition of Adaptive Shield did not have a material impact on the Company\u2019s condensed consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. Flow Security On March 26, 2024, the Company acquired 100 % of the equity ",
+          "f operations for the acquisition have been included in the Company\u2019s condensed consolidated financial statements from the date of acquisition. The acquisition of Flow Security did not have a material impact on the Company\u2019s condensed consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. 12. Net Income (Loss) Per Share Attributable to Common Stockholders Basic "
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-12-02"
+    },
+    {
+      "company": "CRWD",
+      "target": {
+        "start": "2025-11-01",
+        "end": "2026-01-31",
+        "label": "Q4 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "01df377c-892b-5b33-8cdc-07191f0a9bb0",
+          "company": "CRWD",
+          "issued": {
+            "start": "2025-12-02",
+            "end": "2025-12-02",
+            "precision": "day"
+          },
+          "filed": "2025-12-02",
+          "start": "2025-11-01",
+          "end": "2026-01-31",
+          "low": "1290000000.0",
+          "high": "1300000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001535527-25-000030",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000030/crwd-20251202xex991.htm",
+          "quote": "Q4 FY26 Guidance Full Year FY26 Guidance Total revenue $1,290.0 - $1,300.0 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "01df377c-892b-5b33-8cdc-07191f0a9bb0",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000030/crwd-20251202xex991.htm",
+          "source_sha256": "824b53e592e9186f1401138e6502ae79d31726f7c248d6a2bebf534fa711687d",
+          "fetched_at": "2026-11-12T07:10:36.923232+00:00",
+          "issuance_date_quote": "December 2, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000030/crwd-20251202.htm",
+          "exhibit_index_quote": "99.1 Press release dated December 2, 2025"
+        }
+      ],
+      "actual": {
+        "id": "e209ef19-679a-58d4-bf08-1e4b3bcb6a40",
+        "company": "CRWD",
+        "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+        "start": "2025-11-01",
+        "end": "2026-01-31",
+        "value": "1305375000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001535527-26-000010",
+        "filed": "2026-03-05",
+        "form": "DERIVED",
+        "fiscal_year": 2026,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+        "parents": [
+          "f9e2446a-2913-5e54-821f-6b3cddc548e3",
+          "d65f1ede-ab9b-58fb-9441-068f18dce14a"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "d65f1ede-ab9b-58fb-9441-068f18dce14a",
+          "company": "CRWD",
+          "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+          "start": "2025-02-01",
+          "end": "2025-10-31",
+          "value": "3506630000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001535527-25-000033",
+          "filed": "2025-12-03",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "f9e2446a-2913-5e54-821f-6b3cddc548e3",
+          "company": "CRWD",
+          "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+          "start": "2025-02-01",
+          "end": "2026-01-31",
+          "value": "4812005000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001535527-26-000010",
+          "filed": "2026-03-05",
+          "form": "10-K",
+          "fiscal_year": 2026,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000010/crwd-20260131.htm",
+        "filed": "2026-03-05",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000010/crwd-20260131.htm",
+          "sha256": "648c726dbbb8a75c362e74be4c17d06e48034307f7fa9cde56066281b17f3cd4",
+          "body": "4e8d0f079e69d5d52838191cfdf8c32f2e6609da654928d93a5b4e0b25159559-648c726dbbb8a75c362e74be4c17d06e48034307f7fa9cde56066281b17f3cd4.body",
+          "fetched_at": "2026-11-12T10:40:50.685135+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001535527-26-000010-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-03-03",
+        "formal_release_issued_date": "2026-03-03",
+        "issued_precision": "day",
+        "date_quote": "March 3, 2026",
+        "filed": "2026-03-03",
+        "accession": "0001535527-26-000007",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm",
+        "reported_revenue_quote": "Total revenue 1,305,375 1,058,538 4,812,005 3,953,624",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "df7a97897d4009706438cf210ff18227268fae98ea1b1655bb9b997450ba873f",
+        "fetched_at": "2026-11-11T23:48:28.066324+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.391493+00:00",
+        "guidance_id": "01df377c-892b-5b33-8cdc-07191f0a9bb0",
+        "actual_id": "e209ef19-679a-58d4-bf08-1e4b3bcb6a40",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000030/crwd-20251202xex991.htm",
+            "filed_date": "2025-12-02"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm",
+            "filed_date": "2026-03-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000010/crwd-20260131.htm",
+            "filed_date": "2026-03-05"
+          }
+        ],
+        "scope_evidence": [
+          "on. The results of operations for the acquisition have been included in the Company\u2019s consolidated financial statements from the date of acquisition. The acquisition of Pangea did not have a material impact on the Company\u2019s consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. Onum Technology Inc. On September 12, 2025, the Company acquired 100 % of the equity",
+          "lion. The results of operations for the acquisition have been included in the Company\u2019s consolidated financial statements from the date of acquisition. The acquisition of Onum did not have a material impact on the Company\u2019s consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. Adaptive Shield On November 20, 2024, the Company acquired 100 % of the equity inter",
+          "esults of operations for the acquisition have been included in the Company\u2019s consolidated financial statements from the date of acquisition. The acquisition of Adaptive Shield did not have a material impact on the Company\u2019s consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. Flow Security On March 26, 2024, the Company acquired 100 % of the equity interest o",
+          " results of operations for the acquisition have been included in the Company\u2019s consolidated financial statements from the date of acquisition. The acquisition of Flow Security did not have a material impact on the Company\u2019s consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. 120 Table of Contents CrowdStrike Holdings, Inc. Notes to Consolidated Financial Sta"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-03-03"
+    },
+    {
+      "company": "CRWD",
+      "target": {
+        "start": "2026-02-01",
+        "end": "2026-04-30",
+        "label": "Q1 FY2027",
+        "calendar": "months",
+        "days": 89
+      },
+      "guidance_versions": [
+        {
+          "id": "7bc596a9-4d6e-5f18-8f95-76b424343da6",
+          "company": "CRWD",
+          "issued": {
+            "start": "2026-03-03",
+            "end": "2026-03-03",
+            "precision": "day"
+          },
+          "filed": "2026-03-03",
+          "start": "2026-02-01",
+          "end": "2026-04-30",
+          "low": "1360000000.0",
+          "high": "1364000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001535527-26-000007",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm",
+          "quote": "Q1 FY27 Guidance Full Year FY27 Guidance Annual recurring revenue $5,501.8 - $5,503.8 million $6,465.8 - $6,516.4 million Total revenue $1,360.0 - $1,364.0 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "7bc596a9-4d6e-5f18-8f95-76b424343da6",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm",
+          "source_sha256": "df7a97897d4009706438cf210ff18227268fae98ea1b1655bb9b997450ba873f",
+          "fetched_at": "2026-11-11T23:48:28.066324+00:00",
+          "issuance_date_quote": "March 3, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303.htm",
+          "exhibit_index_quote": "99.1 Press release dated March 3, 2026"
+        }
+      ],
+      "actual": {
+        "id": "1c0f8e53-a03e-5a18-b09d-06d9c33e99eb",
+        "company": "CRWD",
+        "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+        "start": "2026-02-01",
+        "end": "2026-04-30",
+        "value": "1385629000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001535527-26-000025",
+        "filed": "2026-06-04",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000025/crwd-20260430.htm",
+        "filed": "2026-06-04",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000025/crwd-20260430.htm",
+          "sha256": "20fcc4f7f001f9d07d25be51df14295e876020ffeade4093f4ac67625f6df4dd",
+          "body": "88962851cc4e8977c87e6b140db01b7e2b73f0d0d320b996b6010fb3cf3aa5e0-20fcc4f7f001f9d07d25be51df14295e876020ffeade4093f4ac67625f6df4dd.body",
+          "fetched_at": "2026-11-12T10:40:51.394493+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001535527-26-000025-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-06-03",
+        "formal_release_issued_date": "2026-06-03",
+        "issued_precision": "day",
+        "date_quote": "June 3, 2026",
+        "filed": "2026-06-03",
+        "accession": "0001535527-26-000022",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm",
+        "reported_revenue_quote": "Total revenue 1,385,629 1,103,434",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "5dce1aee74e9d89c4f286de0c09c61a834d9d823eea6464bb3f91ffa8240dcd1",
+        "fetched_at": "2026-11-11T10:08:50.835978+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.403564+00:00",
+        "guidance_id": "7bc596a9-4d6e-5f18-8f95-76b424343da6",
+        "actual_id": "1c0f8e53-a03e-5a18-b09d-06d9c33e99eb",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm",
+            "filed_date": "2026-03-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm",
+            "filed_date": "2026-06-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000025/crwd-20260430.htm",
+            "filed_date": "2026-06-04"
+          }
+        ],
+        "scope_evidence": [
+          "results of operations for the acquisition have been included in the Company\u2019s condensed consolidated financial statements from the date of acquisition. The acquisition of SGNL did not have a material impact on the Company\u2019s condensed consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. Seraphic Algorithms Ltd. On February 3, 2026, the Company completed the ac",
+          "lts of operations for the acquisition have been included in the Company\u2019s condensed consolidated financial statements from the date of acquisition. The acquisition of Seraphic did not have a material impact on the Company\u2019s condensed consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. Pangea Cyber Corporation On September 26, 2025, the Company acquired 100 %",
+          "sults of operations for the acquisition have been included in the Company\u2019s condensed consolidated financial statements from the date of acquisition. The acquisition of Pangea did not have a material impact on the Company\u2019s condensed consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. 29 Table of Contents Onum Technology Inc. On September 12, 2025, the Compa",
+          "results of operations for the acquisition have been included in the Company\u2019s condensed consolidated financial statements from the date of acquisition. The acquisition of Onum did not have a material impact on the Company\u2019s condensed consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. 12. Net Income (Loss) Per Share Attributable to Common Stockholders Basic "
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-06-03"
+    },
+    {
+      "company": "CRWD",
+      "target": {
+        "start": "2026-05-01",
+        "end": "2026-07-31",
+        "label": "Q2 FY2027",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "49a3f9b5-1f5a-54cd-ab80-c173b4ed70fd",
+          "company": "CRWD",
+          "issued": {
+            "start": "2026-06-03",
+            "end": "2026-06-03",
+            "precision": "day"
+          },
+          "filed": "2026-06-03",
+          "start": "2026-05-01",
+          "end": "2026-07-31",
+          "low": "1436000000.0",
+          "high": "1442000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001535527-26-000022",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm",
+          "quote": "Q2 FY27 Guidance Full Year FY27 Guidance Annual recurring revenue $5,792.6 - $5,794.6 million $6,531.7 - $6,555.5 million Total revenue $1,436.0 - $1,442.0 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "49a3f9b5-1f5a-54cd-ab80-c173b4ed70fd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm",
+          "source_sha256": "5dce1aee74e9d89c4f286de0c09c61a834d9d823eea6464bb3f91ffa8240dcd1",
+          "fetched_at": "2026-11-11T10:08:50.835978+00:00",
+          "issuance_date_quote": "June 3, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603.htm",
+          "exhibit_index_quote": "99.1 Press release dated June 3, 2026"
+        }
+      ],
+      "actual": {
+        "id": "44f21ec7-5ad8-58a6-b657-24b0f4f08c13",
+        "company": "CRWD",
+        "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+        "start": "2026-05-01",
+        "end": "2026-07-31",
+        "value": "1470897000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001535527-26-000031",
+        "filed": "2026-08-27",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm",
+        "filed": "2026-08-27",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm",
+          "sha256": "48aa49e6b6544efeccf838f798214906125a1586015985e24ed23454b644bcfe",
+          "body": "4869766771fe9bc04d0dbed6e35a4390a424920a4eb8ab8d7178784dff640faf-48aa49e6b6544efeccf838f798214906125a1586015985e24ed23454b644bcfe.body",
+          "fetched_at": "2026-11-12T08:11:44.963488+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001535527-26-000031-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-08-26",
+        "formal_release_issued_date": "2026-08-26",
+        "issued_precision": "day",
+        "date_quote": "August 26, 2026",
+        "filed": "2026-08-26",
+        "accession": "0001535527-26-000029",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+        "reported_revenue_quote": "Total revenue 1,470,897 1,168,952 2,856,526 2,272,386",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "40fe219bb8e11d46d665cd8f565484b80d6e62d8dd6a1492339a5125a0656d66",
+        "fetched_at": "2026-11-11T10:08:53.511793+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.416787+00:00",
+        "guidance_id": "49a3f9b5-1f5a-54cd-ab80-c173b4ed70fd",
+        "actual_id": "44f21ec7-5ad8-58a6-b657-24b0f4f08c13",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm",
+            "filed_date": "2026-06-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+            "filed_date": "2026-08-26"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm",
+            "filed_date": "2026-08-27"
+          }
+        ],
+        "scope_evidence": [
+          "pany\u2019s condensed consolidated financial statements from the date of acquisition. The acquisition of SGNL, individually or in the aggregate with other fiscal 2027 acquisitions, did not have a material impact on the Company\u2019s condensed consolidated financial statements and therefore historical and pro forma disclosures have not been presented. Seraphic Algorithms Ltd. On February 3, 2026, the Company completed the acq",
+          "\u2019s condensed consolidated financial statements from the date of acquisition. The acquisition of Seraphic, individually or in the aggregate with other fiscal 2027 acquisitions, did not have a material impact on the Company\u2019s condensed consolidated financial statements and therefore historical and pro forma disclosures have not been presented. 31 Table of Contents Pangea Cyber Corporation On September 26, 2025, the Co",
+          "sults of operations for the acquisition have been included in the Company\u2019s condensed consolidated financial statements from the date of acquisition. The acquisition of Pangea did not have a material impact on the Company\u2019s condensed consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. Onum Technology Inc. On September 12, 2025, the Company acquired 100 % of ",
+          "results of operations for the acquisition have been included in the Company\u2019s condensed consolidated financial statements from the date of acquisition. The acquisition of Onum did not have a material impact on the Company\u2019s condensed consolidated financial statements, and therefore historical and pro forma disclosures have not been presented. 13. Net Income (Loss) Per Share Attributable to Common Stockholders Basic "
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-08-26"
+    }
+  ]
+}

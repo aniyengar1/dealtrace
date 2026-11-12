@@ -1,0 +1,1272 @@
+{
+  "review_scope": "Last eight publicly reported quarters as of 2026-11-12; complete reviewed 8-K/8-K-A inventory from 2024-08-01 through 2026-11-12",
+  "source_inventory": [
+    {
+      "accession": "0001568100-24-000107",
+      "filed": "2024-09-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000107/pd-20240903.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000107/ex991-pagerdutyq2fy25earni.htm"
+      ]
+    },
+    {
+      "accession": "0001568100-24-000137",
+      "filed": "2024-11-26",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000137/pd-20241126.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000137/ex991-pagerdutyq3fy25earni.htm"
+      ]
+    },
+    {
+      "accession": "0001568100-24-000142",
+      "filed": "2024-12-05",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000142/pd-20241202.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000142/exhibit991-12520248xk.htm"
+      ]
+    },
+    {
+      "accession": "0001568100-25-000019",
+      "filed": "2025-03-13",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000019/pd-20250310.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000019/ex991-pagerdutyq4fy25earni.htm"
+      ]
+    },
+    {
+      "accession": "0001140361-25-015891",
+      "filed": "2025-04-28",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000114036125015891/ef20048059_8k.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1568100/000114036125015891/ef20048059_ex99-1.htm"
+      ]
+    },
+    {
+      "accession": "0001568100-25-000048",
+      "filed": "2025-05-29",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000048/pd-20250529.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000048/ex991-pagerdutyq1fy26earni.htm"
+      ]
+    },
+    {
+      "accession": "0001568100-25-000098",
+      "filed": "2025-09-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000098/pd-20250828.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000098/ex991-pagerdutyq2fy26earni.htm"
+      ]
+    },
+    {
+      "accession": "0001568100-25-000106",
+      "filed": "2025-11-25",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000106/pd-20251122.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000106/ex991-pagerdutyq3fy26earni.htm"
+      ]
+    },
+    {
+      "accession": "0001568100-26-000003",
+      "filed": "2026-01-20",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000003/pd-20260115.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000003/ex991-8xkxdirectorappointm.htm"
+      ]
+    },
+    {
+      "accession": "0001568100-26-000011",
+      "filed": "2026-03-12",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/pd-20260312.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm"
+      ]
+    },
+    {
+      "accession": "0001140361-26-020610",
+      "filed": "2026-05-11",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000114036126020610/ef20072978_8k.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1568100/000114036126020610/ef20072978_ex99-1.htm"
+      ]
+    },
+    {
+      "accession": "0001568100-26-000030",
+      "filed": "2026-05-28",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000030/pd-20260527.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000030/ex991-pagerdutyq1fy27earni.htm"
+      ]
+    },
+    {
+      "accession": "0001568100-26-000033",
+      "filed": "2026-06-22",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000033/pd-20260622.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000033/ex991-cfoappointment62226.htm"
+      ]
+    },
+    {
+      "accession": "0001568100-26-000040",
+      "filed": "2026-07-14",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000040/pd-20260711.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000040/ex991-8xkxdirectorappointm.htm"
+      ]
+    },
+    {
+      "accession": "0001568100-26-000044",
+      "filed": "2026-08-27",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/pd-20260826.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm"
+      ]
+    },
+    {
+      "accession": "0001568100-25-000016",
+      "filed": "2025-02-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000016/pd-20250131.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001568100-25-000062",
+      "filed": "2025-06-30",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000062/pd-20250626.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001568100-25-000089",
+      "filed": "2025-07-28",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000089/pd-20250725.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001568100-25-000109",
+      "filed": "2025-12-31",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000109/pd-20251230.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001568100-26-000005",
+      "filed": "2026-02-04",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000005/pd-20260201.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001568100-26-000035",
+      "filed": "2026-06-22",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000035/pd-20260618.htm",
+      "exhibits": []
+    }
+  ],
+  "inventory_gaps": [],
+  "quarters": [
+    {
+      "company": "PD",
+      "target": {
+        "start": "2024-08-01",
+        "end": "2024-10-31",
+        "label": "Q3 FY2025",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "c3d90f91-f524-5753-8a74-2fefa02420dc",
+          "company": "PD",
+          "issued": {
+            "start": "2024-09-03",
+            "end": "2024-09-03",
+            "precision": "day"
+          },
+          "filed": "2024-09-03",
+          "start": "2024-08-01",
+          "end": "2024-10-31",
+          "low": "115500000.0",
+          "high": "117500000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001568100-24-000107",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000107/ex991-pagerdutyq2fy25earni.htm",
+          "quote": "third quarter of fiscal 2025, PagerDuty currently expects: \u2022 Total revenue of $115.5 million - $117.5 million,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "c3d90f91-f524-5753-8a74-2fefa02420dc",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000107/ex991-pagerdutyq2fy25earni.htm",
+          "source_sha256": "beefd6e51c761725717750af3f758912f12c078fe287921ece5444392ecae31f",
+          "fetched_at": "2026-11-12T10:25:40.336771+00:00",
+          "issuance_date_quote": "September 3, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000107/pd-20240903.htm",
+          "exhibit_index_quote": "99.1 Press Release Issued by PagerDuty, Inc. dated September 3, 2024"
+        }
+      ],
+      "actual": {
+        "id": "0f0b370b-ca39-58a8-8f7c-d375e959db99",
+        "company": "PD",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2024-08-01",
+        "end": "2024-10-31",
+        "value": "118946000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001568100-24-000139",
+        "filed": "2024-11-27",
+        "form": "10-Q",
+        "fiscal_year": 2025,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000139/pd-20241031.htm",
+        "filed": "2024-11-27",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000139/pd-20241031.htm",
+          "sha256": "0717f5dd9abfe4c91aea5e3272649523876678e0b2097d3ef88be1704c4c30d1",
+          "body": "5f9aa28032cbff14ce9e1b4fb2eca776047a78615343996f4fc1169ba67c36a3-0717f5dd9abfe4c91aea5e3272649523876678e0b2097d3ef88be1704c4c30d1.body",
+          "fetched_at": "2026-11-12T10:41:17.031881+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001568100-24-000139-filing.txt"
+      },
+      "result": {
+        "issued_date": "2024-11-26",
+        "formal_release_issued_date": "2024-11-26",
+        "issued_precision": "day",
+        "date_quote": "November 26, 2024",
+        "filed": "2024-11-26",
+        "accession": "0001568100-24-000137",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000137/ex991-pagerdutyq3fy25earni.htm",
+        "reported_revenue_quote": "Revenue $ 118,946 $ 108,720 $ 346,053 $ 319,582",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "1c69cfa914e32c9b79c6644c07022bc29eab5b499c2392a5095bacc719fc3dd6",
+        "fetched_at": "2026-11-12T10:25:41.578726+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.837547+00:00",
+        "guidance_id": "c3d90f91-f524-5753-8a74-2fefa02420dc",
+        "actual_id": "0f0b370b-ca39-58a8-8f7c-d375e959db99",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000107/ex991-pagerdutyq2fy25earni.htm",
+            "filed_date": "2024-09-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000137/ex991-pagerdutyq3fy25earni.htm",
+            "filed_date": "2024-11-26"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000139/pd-20241031.htm",
+            "filed_date": "2024-11-27"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2024-11-26"
+    },
+    {
+      "company": "PD",
+      "target": {
+        "start": "2024-11-01",
+        "end": "2025-01-31",
+        "label": "Q4 FY2025",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "0738986c-6808-5b43-91fe-6c384cfd62ab",
+          "company": "PD",
+          "issued": {
+            "start": "2024-11-26",
+            "end": "2024-11-26",
+            "precision": "day"
+          },
+          "filed": "2024-11-26",
+          "start": "2024-11-01",
+          "end": "2025-01-31",
+          "low": "118500000.0",
+          "high": "120500000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001568100-24-000137",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000137/ex991-pagerdutyq3fy25earni.htm",
+          "quote": "fourth quarter of fiscal 2025, PagerDuty currently expects: \u2022 Total revenue of $118.5 million - $120.5 million,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "0738986c-6808-5b43-91fe-6c384cfd62ab",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000137/ex991-pagerdutyq3fy25earni.htm",
+          "source_sha256": "1c69cfa914e32c9b79c6644c07022bc29eab5b499c2392a5095bacc719fc3dd6",
+          "fetched_at": "2026-11-12T10:25:41.578726+00:00",
+          "issuance_date_quote": "November 26, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000137/pd-20241126.htm",
+          "exhibit_index_quote": "99.1 Press Release Issued by PagerDuty, Inc. dated November 26, 2024"
+        }
+      ],
+      "actual": {
+        "id": "57bbca13-140c-52a1-a153-94ae831223aa",
+        "company": "PD",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2024-11-01",
+        "end": "2025-01-31",
+        "value": "121446000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001568100-25-000023",
+        "filed": "2025-03-17",
+        "form": "DERIVED",
+        "fiscal_year": 2025,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+        "parents": [
+          "318bae4f-936f-547a-8c7a-4dad964ffd3c",
+          "0de4c88a-196a-505c-8864-693d00f035c7"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "0de4c88a-196a-505c-8864-693d00f035c7",
+          "company": "PD",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2024-02-01",
+          "end": "2024-10-31",
+          "value": "346053000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001568100-24-000139",
+          "filed": "2024-11-27",
+          "form": "10-Q",
+          "fiscal_year": 2025,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "318bae4f-936f-547a-8c7a-4dad964ffd3c",
+          "company": "PD",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2024-02-01",
+          "end": "2025-01-31",
+          "value": "467499000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001568100-25-000023",
+          "filed": "2025-03-17",
+          "form": "10-K",
+          "fiscal_year": 2025,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000023/pd-20250131.htm",
+        "filed": "2025-03-17",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000023/pd-20250131.htm",
+          "sha256": "3c1a6a01c50b3f77b776a89f052dfc775c209779f5adb8a4eba614da8897138c",
+          "body": "44c9c0bd3ae2c73f716a2f86a428915fe87e1fbe25caeef00c438d7f96fd09ea-3c1a6a01c50b3f77b776a89f052dfc775c209779f5adb8a4eba614da8897138c.body",
+          "fetched_at": "2026-11-11T11:29:30.299554+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001568100-25-000023-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-03-13",
+        "formal_release_issued_date": "2025-03-13",
+        "issued_precision": "day",
+        "date_quote": "March 13, 2025",
+        "filed": "2025-03-13",
+        "accession": "0001568100-25-000019",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000019/ex991-pagerdutyq4fy25earni.htm",
+        "reported_revenue_quote": "Revenue $ 121,446 $ 111,117 $ 467,499 $ 430,699",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "d092acabe1616a8816a156c7d2847a1fcdd997aef140e7316ce3f2d1d1676e6c",
+        "fetched_at": "2026-11-12T10:25:44.232604+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.851956+00:00",
+        "guidance_id": "0738986c-6808-5b43-91fe-6c384cfd62ab",
+        "actual_id": "57bbca13-140c-52a1-a153-94ae831223aa",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000137/ex991-pagerdutyq3fy25earni.htm",
+            "filed_date": "2024-11-26"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000019/ex991-pagerdutyq4fy25earni.htm",
+            "filed_date": "2025-03-13"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000023/pd-20250131.htm",
+            "filed_date": "2025-03-17"
+          }
+        ],
+        "scope_evidence": [
+          "ecognize this as stock-based compensation expense over the vesting period of 4 years. From the date of the acquisition, the financial results of Jeli have been included in and are not material to the Company\u2019s consolidated financial statements. Pro forma revenue and results of operations have not been presented because the historical results are not material to the consolidated financial statements in any per",
+          " in and are not material to the Company\u2019s consolidated financial statements. Pro forma revenue and results of operations have not been presented because the historical results are not material to the consolidated financial statements in any period presented. The Company did not complete any other business combinations in the fiscal year ended January 31, 2024. 89 Table of Contents Note 7. Goodwill and Acquire"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-03-13"
+    },
+    {
+      "company": "PD",
+      "target": {
+        "start": "2025-02-01",
+        "end": "2025-04-30",
+        "label": "Q1 FY2026",
+        "calendar": "months",
+        "days": 89
+      },
+      "guidance_versions": [
+        {
+          "id": "59c4247e-16d3-5bb3-a84e-dfc45b8dcbed",
+          "company": "PD",
+          "issued": {
+            "start": "2025-03-13",
+            "end": "2025-03-13",
+            "precision": "day"
+          },
+          "filed": "2025-03-13",
+          "start": "2025-02-01",
+          "end": "2025-04-30",
+          "low": "118000000.0",
+          "high": "120000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001568100-25-000019",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000019/ex991-pagerdutyq4fy25earni.htm",
+          "quote": "first quarter of fiscal 2026, PagerDuty currently expects: \u2022 Total revenue of $118.0 million - $120.0 million,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "59c4247e-16d3-5bb3-a84e-dfc45b8dcbed",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000019/ex991-pagerdutyq4fy25earni.htm",
+          "source_sha256": "d092acabe1616a8816a156c7d2847a1fcdd997aef140e7316ce3f2d1d1676e6c",
+          "fetched_at": "2026-11-12T10:25:44.232604+00:00",
+          "issuance_date_quote": "March 13, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000019/pd-20250310.htm",
+          "exhibit_index_quote": "99.1 Press Release Issued by PagerDuty, Inc. dated March 13, 2025"
+        }
+      ],
+      "actual": {
+        "id": "98e22e0c-a7e1-50a3-84cb-df8d2aecbb9d",
+        "company": "PD",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-02-01",
+        "end": "2025-04-30",
+        "value": "119805000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001568100-25-000051",
+        "filed": "2025-05-30",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000051/pd-20250430.htm",
+        "filed": "2025-05-30",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000051/pd-20250430.htm",
+          "sha256": "5d2dac23bbf26ab4dbe78a2a72dd47ff8913611b3155a1b982d77de2eff58e73",
+          "body": "006a756e4c99d8242df188c53d5aa60837a27f0ab89f3552a99ff7a86d5832fc-5d2dac23bbf26ab4dbe78a2a72dd47ff8913611b3155a1b982d77de2eff58e73.body",
+          "fetched_at": "2026-11-12T10:41:17.706439+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001568100-25-000051-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-05-29",
+        "formal_release_issued_date": "2025-05-29",
+        "issued_precision": "day",
+        "date_quote": "May 29, 2025",
+        "filed": "2025-05-29",
+        "accession": "0001568100-25-000048",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000048/ex991-pagerdutyq1fy26earni.htm",
+        "reported_revenue_quote": "Revenue $ 119,805 $ 111,172",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "b550a1f3388bc580d3d7f86511442d800c9bbba73b9a8dcd9a674e0f2c125649",
+        "fetched_at": "2026-11-12T10:25:46.683854+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.856723+00:00",
+        "guidance_id": "59c4247e-16d3-5bb3-a84e-dfc45b8dcbed",
+        "actual_id": "98e22e0c-a7e1-50a3-84cb-df8d2aecbb9d",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000019/ex991-pagerdutyq4fy25earni.htm",
+            "filed_date": "2025-03-13"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000048/ex991-pagerdutyq1fy26earni.htm",
+            "filed_date": "2025-05-29"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000051/pd-20250430.htm",
+            "filed_date": "2025-05-30"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-05-29"
+    },
+    {
+      "company": "PD",
+      "target": {
+        "start": "2025-05-01",
+        "end": "2025-07-31",
+        "label": "Q2 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "1671a9bb-9d5b-52fa-aa21-3972bf0933ff",
+          "company": "PD",
+          "issued": {
+            "start": "2025-05-29",
+            "end": "2025-05-29",
+            "precision": "day"
+          },
+          "filed": "2025-05-29",
+          "start": "2025-05-01",
+          "end": "2025-07-31",
+          "low": "122500000.0",
+          "high": "124500000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001568100-25-000048",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000048/ex991-pagerdutyq1fy26earni.htm",
+          "quote": "second quarter of fiscal 2026, PagerDuty currently expects: \u2022 Total revenue of $122.5 million - $124.5 million,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "1671a9bb-9d5b-52fa-aa21-3972bf0933ff",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000048/ex991-pagerdutyq1fy26earni.htm",
+          "source_sha256": "b550a1f3388bc580d3d7f86511442d800c9bbba73b9a8dcd9a674e0f2c125649",
+          "fetched_at": "2026-11-12T10:25:46.683854+00:00",
+          "issuance_date_quote": "May 29, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000048/pd-20250529.htm",
+          "exhibit_index_quote": "99.1 Press Release Issued by PagerDuty, Inc. dated May 29, 2025"
+        }
+      ],
+      "actual": {
+        "id": "a2e88e61-c1dd-596d-bf4b-89c03003e4d5",
+        "company": "PD",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-05-01",
+        "end": "2025-07-31",
+        "value": "123411000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001568100-25-000099",
+        "filed": "2025-09-04",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000099/pd-20250731.htm",
+        "filed": "2025-09-04",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000099/pd-20250731.htm",
+          "sha256": "36110d0ef12f0484fa8b1d86dd4c28b487799bf57722cec7db69f0267a1e59b7",
+          "body": "236382eb5b2cfcbd650d7f615177a13b514ac34b7dc2db015633cb0e6953d33d-36110d0ef12f0484fa8b1d86dd4c28b487799bf57722cec7db69f0267a1e59b7.body",
+          "fetched_at": "2026-11-11T11:19:58.364926+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001568100-25-000099-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-09-03",
+        "formal_release_issued_date": "2025-09-03",
+        "issued_precision": "day",
+        "date_quote": "September 3, 2025",
+        "filed": "2025-09-03",
+        "accession": "0001568100-25-000098",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000098/ex991-pagerdutyq2fy26earni.htm",
+        "reported_revenue_quote": "Revenue $ 123,411 $ 115,935 $ 243,216 $ 227,107",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "a87e8f62789f9862b4ae7a822b7c25a570ba7760f14ed6e9488646cb523847e4",
+        "fetched_at": "2026-11-11T11:19:59.659450+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.861627+00:00",
+        "guidance_id": "1671a9bb-9d5b-52fa-aa21-3972bf0933ff",
+        "actual_id": "a2e88e61-c1dd-596d-bf4b-89c03003e4d5",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000048/ex991-pagerdutyq1fy26earni.htm",
+            "filed_date": "2025-05-29"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000098/ex991-pagerdutyq2fy26earni.htm",
+            "filed_date": "2025-09-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000099/pd-20250731.htm",
+            "filed_date": "2025-09-04"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-09-03"
+    },
+    {
+      "company": "PD",
+      "target": {
+        "start": "2025-08-01",
+        "end": "2025-10-31",
+        "label": "Q3 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "9a2155bb-f38d-5f26-95b1-c419410a6983",
+          "company": "PD",
+          "issued": {
+            "start": "2025-09-03",
+            "end": "2025-09-03",
+            "precision": "day"
+          },
+          "filed": "2025-09-03",
+          "start": "2025-08-01",
+          "end": "2025-10-31",
+          "low": "124000000.0",
+          "high": "126000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001568100-25-000098",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000098/ex991-pagerdutyq2fy26earni.htm",
+          "quote": "third quarter of fiscal 2026, PagerDuty currently expects: \u2022 Total revenue of $124.0 million - $126.0 million,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "9a2155bb-f38d-5f26-95b1-c419410a6983",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000098/ex991-pagerdutyq2fy26earni.htm",
+          "source_sha256": "a87e8f62789f9862b4ae7a822b7c25a570ba7760f14ed6e9488646cb523847e4",
+          "fetched_at": "2026-11-11T11:19:59.659450+00:00",
+          "issuance_date_quote": "September 3, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000098/pd-20250828.htm",
+          "exhibit_index_quote": "99.1 Press Release Issued by PagerDuty, Inc. dated September 3, 2025"
+        }
+      ],
+      "actual": {
+        "id": "08e9f9d3-28c0-557e-a12c-d777fa34b8c1",
+        "company": "PD",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-08-01",
+        "end": "2025-10-31",
+        "value": "124545000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001568100-25-000107",
+        "filed": "2025-11-26",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000107/pd-20251031.htm",
+        "filed": "2025-11-26",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000107/pd-20251031.htm",
+          "sha256": "b47d2327911797c05712989eb0af2a7cb64ad83ac195ccd0a230355548e65adf",
+          "body": "d0309991018b58d4864a4c8c60f86643cf0c0ab169ec27e38d333dccf9eb2753-b47d2327911797c05712989eb0af2a7cb64ad83ac195ccd0a230355548e65adf.body",
+          "fetched_at": "2026-11-12T10:41:18.505876+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001568100-25-000107-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-11-25",
+        "formal_release_issued_date": "2025-11-25",
+        "issued_precision": "day",
+        "date_quote": "November 25, 2025",
+        "filed": "2025-11-25",
+        "accession": "0001568100-25-000106",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000106/ex991-pagerdutyq3fy26earni.htm",
+        "reported_revenue_quote": "Revenue $ 124,545 $ 118,946 $ 367,761 $ 346,053",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "3c001cb03f3ccb2ed74925dc94eb4ed9f692790c94f55b9484196f27e0a19f9e",
+        "fetched_at": "2026-11-12T07:10:32.174818+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.867342+00:00",
+        "guidance_id": "9a2155bb-f38d-5f26-95b1-c419410a6983",
+        "actual_id": "08e9f9d3-28c0-557e-a12c-d777fa34b8c1",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000098/ex991-pagerdutyq2fy26earni.htm",
+            "filed_date": "2025-09-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000106/ex991-pagerdutyq3fy26earni.htm",
+            "filed_date": "2025-11-25"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000107/pd-20251031.htm",
+            "filed_date": "2025-11-26"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-11-25"
+    },
+    {
+      "company": "PD",
+      "target": {
+        "start": "2025-11-01",
+        "end": "2026-01-31",
+        "label": "Q4 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "a20347e2-5e99-53df-885f-cef3c77f5996",
+          "company": "PD",
+          "issued": {
+            "start": "2025-11-25",
+            "end": "2025-11-25",
+            "precision": "day"
+          },
+          "filed": "2025-11-25",
+          "start": "2025-11-01",
+          "end": "2026-01-31",
+          "low": "122000000.0",
+          "high": "124000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001568100-25-000106",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000106/ex991-pagerdutyq3fy26earni.htm",
+          "quote": "fourth quarter of fiscal 2026, PagerDuty currently expects: \u2022 Total revenue of $122.0 million - $124.0 million,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "a20347e2-5e99-53df-885f-cef3c77f5996",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000106/ex991-pagerdutyq3fy26earni.htm",
+          "source_sha256": "3c001cb03f3ccb2ed74925dc94eb4ed9f692790c94f55b9484196f27e0a19f9e",
+          "fetched_at": "2026-11-12T07:10:32.174818+00:00",
+          "issuance_date_quote": "November 25, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000106/pd-20251122.htm",
+          "exhibit_index_quote": "99.1 Press Release Issued by PagerDuty, Inc. dated November 25, 2025"
+        }
+      ],
+      "actual": {
+        "id": "0a6dcfdb-d580-5a7d-9f80-a8a0da45e067",
+        "company": "PD",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-11-01",
+        "end": "2026-01-31",
+        "value": "124785000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001568100-26-000012",
+        "filed": "2026-03-12",
+        "form": "DERIVED",
+        "fiscal_year": 2026,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+        "parents": [
+          "2b564457-0624-55e9-8524-c708527109a8",
+          "b903250e-7149-540a-845a-b6fed42623e0"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "b903250e-7149-540a-845a-b6fed42623e0",
+          "company": "PD",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-02-01",
+          "end": "2025-10-31",
+          "value": "367761000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001568100-25-000107",
+          "filed": "2025-11-26",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "2b564457-0624-55e9-8524-c708527109a8",
+          "company": "PD",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-02-01",
+          "end": "2026-01-31",
+          "value": "492546000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001568100-26-000012",
+          "filed": "2026-03-12",
+          "form": "10-K",
+          "fiscal_year": 2026,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000012/pd-20260131.htm",
+        "filed": "2026-03-12",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000012/pd-20260131.htm",
+          "sha256": "26a5280374ad9b4af49525e4b8ec30c1417d17220b190b90683f3c70cde291ee",
+          "body": "9cc5c8099f9a3957ba9e702d690df00649be9a1d6bfbf45dfb700515b2bd2ae3-26a5280374ad9b4af49525e4b8ec30c1417d17220b190b90683f3c70cde291ee.body",
+          "fetched_at": "2026-11-12T10:41:19.461677+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001568100-26-000012-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-03-12",
+        "formal_release_issued_date": "2026-03-12",
+        "issued_precision": "day",
+        "date_quote": "March 12, 2026",
+        "filed": "2026-03-12",
+        "accession": "0001568100-26-000011",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
+        "reported_revenue_quote": "Revenue $ 124,785 $ 121,446 $ 492,546 $ 467,499",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "aae98ec7ef5281daeda6f0a93daad8b0042ec35662fcd8fb8d3e0da28e15af1e",
+        "fetched_at": "2026-11-11T23:48:25.046447+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.882165+00:00",
+        "guidance_id": "a20347e2-5e99-53df-885f-cef3c77f5996",
+        "actual_id": "0a6dcfdb-d580-5a7d-9f80-a8a0da45e067",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000106/ex991-pagerdutyq3fy26earni.htm",
+            "filed_date": "2025-11-25"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
+            "filed_date": "2026-03-12"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000012/pd-20260131.htm",
+            "filed_date": "2026-03-12"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-03-12"
+    },
+    {
+      "company": "PD",
+      "target": {
+        "start": "2026-02-01",
+        "end": "2026-04-30",
+        "label": "Q1 FY2027",
+        "calendar": "months",
+        "days": 89
+      },
+      "guidance_versions": [
+        {
+          "id": "e05aa63d-b924-5a97-a4d0-1c2e74d36aa4",
+          "company": "PD",
+          "issued": {
+            "start": "2026-03-12",
+            "end": "2026-03-12",
+            "precision": "day"
+          },
+          "filed": "2026-03-12",
+          "start": "2026-02-01",
+          "end": "2026-04-30",
+          "low": "118000000.0",
+          "high": "120000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001568100-26-000011",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
+          "quote": "first quarter of fiscal 2027, PagerDuty currently expects: \u2022 Total revenue of $118.0 million - $120.0 million.",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        },
+        {
+          "id": "fb5dbb78-bd60-549e-ae62-50e54083d240",
+          "company": "PD",
+          "issued": {
+            "start": "2026-05-11",
+            "end": "2026-05-11",
+            "precision": "day"
+          },
+          "filed": "2026-05-11",
+          "start": "2026-02-01",
+          "end": "2026-04-30",
+          "low": "118000000.0",
+          "high": "120000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "reaffirmed",
+          "accession": "0001140361-26-020610",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000114036126020610/ef20072978_ex99-1.htm",
+          "quote": "Reaffirms First Quarter and Full Fiscal Year 2027 Guidance SAN FRANCISCO \u2013 May 11, 2026 \u2013 PagerDuty (NYSE: PD), the leader in AI-first operations management, today announced that John DiLullo has been appointed Chief Executive Of",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": false,
+          "notes": "Explicit quarterly reaffirmation; bounds retained from prior source. Post-close indications are separately flagged and excluded from the training cohort."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "e05aa63d-b924-5a97-a4d0-1c2e74d36aa4",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
+          "source_sha256": "aae98ec7ef5281daeda6f0a93daad8b0042ec35662fcd8fb8d3e0da28e15af1e",
+          "fetched_at": "2026-11-11T23:48:25.046447+00:00",
+          "issuance_date_quote": "March 12, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/pd-20260312.htm",
+          "exhibit_index_quote": "99.1 Press Release Issued by PagerDuty, Inc. dated March 12, 2026"
+        },
+        {
+          "guidance_id": "fb5dbb78-bd60-549e-ae62-50e54083d240",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000114036126020610/ef20072978_ex99-1.htm",
+          "source_sha256": "6c553eafde53aa648fb53f3b6cd3dfe5cfd1fa8cd5717ac9b26e62ec3846bd0e",
+          "fetched_at": "2026-11-11T10:08:22.659057+00:00",
+          "issuance_date_quote": "May 11, 2026",
+          "version_kind": "explicit_reaffirmation",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000114036126020610/ef20072978_8k.htm",
+          "exhibit_index_quote": "99.1 Press Release, dated May 11, 2026"
+        }
+      ],
+      "actual": {
+        "id": "3e47e23a-24aa-5fb5-8e05-b9acbbc0a68b",
+        "company": "PD",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-02-01",
+        "end": "2026-04-30",
+        "value": "120967000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001568100-26-000031",
+        "filed": "2026-05-28",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000031/pd-20260430.htm",
+        "filed": "2026-05-28",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000031/pd-20260430.htm",
+          "sha256": "1fae7456e8abae22f296145131d7da516599d111f1adb1e03be9cfb2a4585570",
+          "body": "eab804705b1b27756cee72ee8264b35001bc105244d7ec5fdae0fe2e921878c2-1fae7456e8abae22f296145131d7da516599d111f1adb1e03be9cfb2a4585570.body",
+          "fetched_at": "2026-11-12T10:41:20.172315+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001568100-26-000031-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-05-28",
+        "formal_release_issued_date": "2026-05-28",
+        "issued_precision": "day",
+        "date_quote": "May 28, 2026",
+        "filed": "2026-05-28",
+        "accession": "0001568100-26-000030",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000030/ex991-pagerdutyq1fy27earni.htm",
+        "reported_revenue_quote": "Revenue $ 120,967 $ 119,805",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "d76ad20661ba11259eb4cf2b4a5f5e011867ea253b5544463c4cab98df0c743b",
+        "fetched_at": "2026-11-11T10:08:26.997265+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [
+        {
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000114036126020610/ef20072978_ex99-1.htm",
+          "accession": "0001140361-26-020610",
+          "filed": "2026-05-11",
+          "public_date": "2026-05-11",
+          "quote": "reaffirmed its outlook for the first quarter and full fiscal year 2027, previously provided on March 12, 2026. The Company expects first quarter total revenue of $118 million to $120 million, and full fiscal year total revenue of $488.5 million to $496.5 million. The Company expect",
+          "sha256": "6c553eafde53aa648fb53f3b6cd3dfe5cfd1fa8cd5717ac9b26e62ec3846bd0e",
+          "fetched_at": "2026-11-11T10:08:22.659057+00:00",
+          "interpretation": "Completed-quarter preliminary/in-line/reaffirmation indication; conservatively not a clean pre-publication historical target",
+          "public_date_basis": "SEC filing day establishes a known-public-by boundary, not a claimed exact company publication timestamp."
+        }
+      ],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.887343+00:00",
+        "guidance_id": "e05aa63d-b924-5a97-a4d0-1c2e74d36aa4",
+        "actual_id": "3e47e23a-24aa-5fb5-8e05-b9acbbc0a68b",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
+            "filed_date": "2026-03-12"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000030/ex991-pagerdutyq1fy27earni.htm",
+            "filed_date": "2026-05-28"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000031/pd-20260430.htm",
+            "filed_date": "2026-05-28"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [
+        "EARLY_POST_CLOSE_RESULT_INDICATION: 2026-05-11 precedes formal-release lock window; excluded rather than training on already-public result information"
+      ],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-05-11"
+    },
+    {
+      "company": "PD",
+      "target": {
+        "start": "2026-05-01",
+        "end": "2026-07-31",
+        "label": "Q2 FY2027",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "eb6a3e37-66d7-5c60-9f83-a01eea51edf4",
+          "company": "PD",
+          "issued": {
+            "start": "2026-05-28",
+            "end": "2026-05-28",
+            "precision": "day"
+          },
+          "filed": "2026-05-28",
+          "start": "2026-05-01",
+          "end": "2026-07-31",
+          "low": "122000000.0",
+          "high": "124000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001568100-26-000030",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000030/ex991-pagerdutyq1fy27earni.htm",
+          "quote": "second quarter of fiscal 2027, PagerDuty currently expects: \u2022 Total revenue of $122.0 million - $124.0 million.",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "eb6a3e37-66d7-5c60-9f83-a01eea51edf4",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000030/ex991-pagerdutyq1fy27earni.htm",
+          "source_sha256": "d76ad20661ba11259eb4cf2b4a5f5e011867ea253b5544463c4cab98df0c743b",
+          "fetched_at": "2026-11-11T10:08:26.997265+00:00",
+          "issuance_date_quote": "May 28, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000030/pd-20260527.htm",
+          "exhibit_index_quote": "99.1 Press Release Issued by PagerDuty, Inc. dated May 28, 2026"
+        }
+      ],
+      "actual": {
+        "id": "d73629ff-9070-54df-97e0-08f522fd1552",
+        "company": "PD",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-05-01",
+        "end": "2026-07-31",
+        "value": "124436000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001568100-26-000045",
+        "filed": "2026-08-27",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000045/pd-20260731.htm",
+        "filed": "2026-08-27",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000045/pd-20260731.htm",
+          "sha256": "e7ede2a4463f6a0f709b8977f0ff4725053da9366aabde98c74541304729115c",
+          "body": "c19301bcfd9f63152773d6fb00cf66cded9e0710089db0d714da185f5f1b4200-e7ede2a4463f6a0f709b8977f0ff4725053da9366aabde98c74541304729115c.body",
+          "fetched_at": "2026-11-11T12:14:14.962562+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001568100-26-000045-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-08-27",
+        "formal_release_issued_date": "2026-08-27",
+        "issued_precision": "day",
+        "date_quote": "August 27, 2026",
+        "filed": "2026-08-27",
+        "accession": "0001568100-26-000044",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm",
+        "reported_revenue_quote": "Revenue $ 124,436 $ 123,411 $ 245,403 $ 243,216",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "fbaaad97447a51e013b30f56b21375492b3ad170ddf68dd9e8e11e762205bbd8",
+        "fetched_at": "2026-11-11T10:08:28.871547+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.892628+00:00",
+        "guidance_id": "eb6a3e37-66d7-5c60-9f83-a01eea51edf4",
+        "actual_id": "d73629ff-9070-54df-97e0-08f522fd1552",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000030/ex991-pagerdutyq1fy27earni.htm",
+            "filed_date": "2026-05-28"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm",
+            "filed_date": "2026-08-27"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000045/pd-20260731.htm",
+            "filed_date": "2026-08-27"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-08-27"
+    }
+  ]
+}
