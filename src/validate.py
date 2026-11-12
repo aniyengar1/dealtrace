@@ -304,22 +304,35 @@ def normalize_party_roles(records_by_type: dict[str, list], party_map: dict[str,
     return {**records_by_type, "Proposal": new_proposals}
 
 
-# Merger-agreement defined terms that always stand in for one of the two
-# deal principals, regardless of which deal this is -- "Parent" and "Merger
-# Sub" are the acquirer's defined terms in every DEFM14A's merger agreement
-# (Merger Sub is the acquirer's shell subsidiary doing the actual merging,
-# "Acquiror" is occasionally used in place of "Parent"), and "the Company"
-# is the target's. Unlike normalize_party_roles' advisor names, these carry
-# no information worth preserving when resolved -- "Parent" never means
-# anything other than "whichever entity is acquiring the target", so
-# resolving it to the deal's actual acquirer name loses nothing. That's why
-# this is safe to apply to Event.parties too, where normalize_party_roles
-# deliberately isn't: an advisor's name is itself informative (which firm
-# advised whom), but a defined term is pure legal-drafting shorthand for an
-# identity the deal's own metadata (target/acquirer) already specifies in
-# full.
-_ACQUIRER_DEFINED_TERMS = {"parent", "parent's", "merger sub", "acquiror"}
-_TARGET_DEFINED_TERMS = {"the company", "the company's"}
+# Merger-agreement defined terms and structural role references that
+# always stand in for one of the two deal principals, regardless of
+# which deal this is -- "Parent"/"Merger Sub"/"Acquiror"/"Buyer" are the
+# acquirer's defined terms in every DEFM14A's merger agreement (Merger
+# Sub is the acquirer's shell subsidiary doing the actual merging), and
+# "the Company"/"Company"/"Board"/"Board of Directors"/"Transaction
+# Committee"/"Special Committee" are all the target's -- a DEFM14A is
+# always narrated from the target's own perspective, so its own board or
+# a committee of it is never the ACQUIRER's, regardless of deal. Unlike
+# normalize_party_roles' advisor names, none of these carry information
+# worth preserving when resolved -- "Parent" never means anything other
+# than "whichever entity is acquiring the target", and "the Special
+# Committee" never means anything other than "the target, acting through
+# a committee of its board" -- so resolving either to the deal's actual
+# target/acquirer name loses nothing. That's why this is safe to apply to
+# Event.parties too, where normalize_party_roles deliberately isn't: an
+# advisor's name is itself informative (which firm advised whom), but
+# these are pure legal-drafting/structural shorthand for an identity the
+# deal's own metadata (target/acquirer) already specifies in full.
+_ACQUIRER_DEFINED_TERMS = {"parent", "parent's", "merger sub", "acquiror", "buyer"}
+_TARGET_DEFINED_TERMS = {
+    "the company",
+    "the company's",
+    "company",
+    "board",
+    "board of directors",
+    "transaction committee",
+    "special committee",
+}
 
 
 def _resolve_defined_term(name: Optional[str], target_name: str, acquirer_name: str) -> Optional[str]:
@@ -342,11 +355,16 @@ def _resolve_defined_term(name: Optional[str], target_name: str, acquirer_name: 
 def normalize_defined_terms(
     records_by_type: dict[str, list], target_name: str, acquirer_name: str
 ) -> dict[str, list]:
-    """Resolve merger-agreement defined terms ("Parent", "Merger Sub",
-    "Acquiror" -> acquirer; "the Company" -> target) in both Event.parties
-    and Proposal.proposer/recipient. Deal-agnostic -- the same fixed set of
-    terms applies to every deal's merger agreement, so this needs no
-    per-deal party_map, just the deal's own target/acquirer names.
+    """Resolve generic merger-agreement/structural role terms ("Parent",
+    "Merger Sub", "Acquiror", "Buyer" -> acquirer; "the Company",
+    "Company", "Board", "Board of Directors", "Transaction Committee",
+    "Special Committee" -> target) in both Event.parties and
+    Proposal.proposer/recipient. Deal-agnostic -- the same fixed set of
+    terms applies to every deal's merger agreement and narrative
+    structure, so this needs no per-deal party_map, just the deal's own
+    target/acquirer names. Per-deal party_map (normalize_party_roles) is
+    reserved for advisor/counsel names, which this can't generalize --
+    "Qatalyst Partners" doesn't mean the same thing on every deal.
     """
     new_events = []
     for event in records_by_type.get("Event", []):

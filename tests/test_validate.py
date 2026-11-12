@@ -441,11 +441,18 @@ def test_normalize_defined_terms_maps_event_parties():
 
 
 def test_normalize_defined_terms_maps_all_acquirer_terms():
-    for term in ("Parent", "parent's", "Merger Sub", "ACQUIROR"):
+    for term in ("Parent", "parent's", "Merger Sub", "ACQUIROR", "Buyer"):
         records = {"Event": [], "Proposal": [{"proposer": term, "recipient": "the Company"}]}
         result = normalize_defined_terms(records, "Mandiant", "Google")
         assert result["Proposal"][0]["proposer"] == "Google", term
         assert result["Proposal"][0]["recipient"] == "Mandiant"
+
+
+def test_normalize_defined_terms_maps_all_target_terms():
+    for term in ("Company", "Board", "Board of Directors", "Transaction Committee", "Special Committee"):
+        records = {"Event": [], "Proposal": [{"proposer": "Google", "recipient": term}]}
+        result = normalize_defined_terms(records, "Mandiant", "Google")
+        assert result["Proposal"][0]["recipient"] == "Mandiant", term
 
 
 def test_normalize_defined_terms_maps_the_company_possessive():

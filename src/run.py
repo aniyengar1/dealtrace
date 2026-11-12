@@ -23,14 +23,15 @@ DEALS = {
         "deal_name": "Cisco's Acquisition of Splunk",
         "target": "Splunk",
         "acquirer": "Cisco",
-        # Advisor/counsel/board names the model may use in place of the
-        # company they represent -- gold rolls these up to the company;
-        # see validate.normalize_party_roles.
+        # Advisor/counsel names the model may use in place of the company
+        # they represent -- gold rolls these up to the company; see
+        # validate.normalize_party_roles. "Board" and other generic
+        # structural references are handled without a per-deal entry by
+        # validate.normalize_defined_terms instead.
         "party_map": {
             "Qatalyst": "Splunk",
             "Morgan Stanley": "Splunk",
             "Skadden": "Splunk",
-            "Board": "Splunk",
             "Tidal Partners": "Cisco",
             "Simpson Thacher": "Cisco",
         },
@@ -44,7 +45,6 @@ DEALS = {
             "Qatalyst": "Zendesk",
             "Goldman Sachs": "Zendesk",
             "Wachtell Lipton": "Zendesk",
-            "Board": "Zendesk",
             "Fried Frank": "Consortium",
         },
         # Zendesk's own filing HTML mistags this sub-subsection at the same
