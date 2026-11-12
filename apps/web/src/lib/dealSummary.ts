@@ -10,11 +10,36 @@ export interface DealSummaryStats {
   pctChangeBasis: "low" | "high" | null;
   nRounds: number;
   nBidders: number;
+  nBidderBids: number;
+  nCounteroffers: number;
   daysFirstContactToSigning: number | null;
+  daysFirstBidToFinalBid: number | null;
   marketCheck: "yes" | "no" | "unknown";
+  finalPremiumPct: number | null;
+  hasActivist: boolean;
   nConfirmed: number;
   nUnreviewed: number;
   nRejectedExcluded: number;
+  // Which stat groups above rest on at least one not-yet-reviewed fact --
+  // not known-wrong (that's nRejectedExcluded), just not verified yet. A
+  // consumer surfacing these numbers (the cross-deal stats page, the
+  // memo) should mark them accordingly rather than present them with the
+  // same confidence as a fully-reviewed figure.
+  bidStatsUnreviewed: boolean; // first/final bid, % change, rounds, bidders, counteroffers, premium
+  timelineUnreviewed: boolean; // days first contact -> signing
+  marketCheckUnreviewed: boolean; // market check yes/no/unknown
+  activistUnreviewed: boolean; // activist involvement
+  // The specific fact each headline number was read off of, for anything
+  // that consumes this summary and needs to cite or link to its evidence
+  // (the cross-deal stats page, the memo) instead of recomputing the same
+  // lookup a second time.
+  firstBidProposal: ProposalRow | null;
+  finalBidProposal: ProposalRow | null;
+  firstContactEvent: EventRow | null;
+  signingEvent: EventRow | null;
+  marketCheckEvent: EventRow | null;
+  firstActivistEvent: EventRow | null;
+  counterofferProposals: ProposalRow[];
 }
 
 // Rejected facts are known-wrong, so they're excluded from every figure
@@ -64,11 +89,31 @@ export function computeDealSummary(
     firstBidPriceForPct !== null && finalBidPrice !== null && firstBidPriceForPct !== 0
       ? ((finalBidPrice - firstBidPriceForPct) / firstBidPriceForPct) * 100
       : null;
+  const finalPremiumPct = finalEntry?.proposal.premium_pct ?? null;
+  const daysFirstBidToFinalBid =
+    firstEntry && finalEntry
+      ? Math.round((finalEntry.date.getTime() - firstEntry.date.getTime()) / (1000 * 60 * 60 * 24))
+      : null;
 
   const { rounds } = computeRounds(includedProposals, includedEvents, target);
   const nRounds = rounds.length;
 
-  const nBidders = new Set(includedProposals.map((p) => p.proposer).filter((p) => p !== target)).size;
+  const bidderProposals = includedProposals.filter((p) => p.proposer !== target);
+  const nBidders = new Set(bidderProposals.map((p) => p.proposer)).size;
+  // "N bids" in a talking point reads as "{acquirer} raised its bid ...
+  // across N bids" -- that's the WINNING bidder's own bid count, not
+  // every competing bidder's combined (a multi-bidder auction with 3
+  // other parties who each bid once and dropped out shouldn't inflate
+  // this to "4 bids" when the eventual acquirer itself only revised
+  // twice). Falls back to 0 if there's no final (price-bearing) entry to
+  // anchor "the winning bidder" to.
+  const winningBidder = finalEntry?.proposal.proposer ?? null;
+  const nBidderBids = winningBidder !== null ? dated.filter((d) => d.proposal.proposer === winningBidder).length : 0;
+  const counterofferProposals = includedProposals.filter((p) => p.proposer === target);
+  const nCounteroffers = counterofferProposals.length;
+
+  const activistEvents = includedEvents.filter((e) => e.event_type === "activist");
+  const hasActivist = activistEvents.length > 0;
 
   const firstContact = includedEvents
     .filter((e) => e.event_type === "first_contact" && e.date_start)
@@ -102,11 +147,18 @@ export function computeDealSummary(
   // market_check_decision event existing at all means the board at
   // least considered and decided against (or quietly ran) a broader
   // process, otherwise there's no basis to say either way.
-  const hasMarketCheckEvent = includedEvents.some((e) => e.event_type === "market_check_decision");
+  const marketCheckEvent = includedEvents.find((e) => e.event_type === "market_check_decision");
   let marketCheck: "yes" | "no" | "unknown";
   if (nBidders >= 2) marketCheck = "yes";
-  else if (hasMarketCheckEvent) marketCheck = "no";
+  else if (marketCheckEvent) marketCheck = "no";
   else marketCheck = "unknown";
+
+  const bidStatsUnreviewed = includedProposals.some((p) => p.review_status === "unreviewed");
+  const timelineUnreviewed = [firstContact, signing].some((e) => e?.review_status === "unreviewed");
+  const marketCheckUnreviewed =
+    bidderProposals.some((p) => p.review_status === "unreviewed") ||
+    marketCheckEvent?.review_status === "unreviewed";
+  const activistUnreviewed = activistEvents.some((e) => e.review_status === "unreviewed");
 
   return {
     firstBidPriceLow,
@@ -116,10 +168,26 @@ export function computeDealSummary(
     pctChangeBasis,
     nRounds,
     nBidders,
+    nBidderBids,
+    nCounteroffers,
     daysFirstContactToSigning,
+    daysFirstBidToFinalBid,
     marketCheck,
+    finalPremiumPct,
+    hasActivist,
     nConfirmed,
     nUnreviewed,
     nRejectedExcluded,
+    bidStatsUnreviewed,
+    timelineUnreviewed,
+    marketCheckUnreviewed,
+    activistUnreviewed,
+    firstBidProposal: firstEntry?.proposal ?? null,
+    finalBidProposal: finalEntry?.proposal ?? null,
+    firstContactEvent: firstContact ?? null,
+    signingEvent: signing ?? null,
+    marketCheckEvent: marketCheckEvent ?? null,
+    firstActivistEvent: activistEvents[0] ?? null,
+    counterofferProposals,
   };
 }

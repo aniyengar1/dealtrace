@@ -81,6 +81,10 @@ export async function listDealsSummary(): Promise<DealSummary[]> {
   `);
 }
 
+export async function listDeals(): Promise<Deal[]> {
+  return query<Deal>(`SELECT id, slug, deal_name, target, acquirer, search_term FROM deals ORDER BY deal_name`);
+}
+
 export async function getDealBySlug(slug: string): Promise<Deal | null> {
   return queryOne<Deal>(`SELECT id, slug, deal_name, target, acquirer, search_term FROM deals WHERE slug = $1`, [
     slug,

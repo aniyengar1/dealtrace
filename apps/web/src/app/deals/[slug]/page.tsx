@@ -29,8 +29,15 @@ function pickFinalProposal<T extends { status: string; date_resolved: string | n
   });
 }
 
-export default async function DealPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function DealPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ fact?: string }>;
+}) {
   const { slug } = await params;
+  const { fact: factId } = await searchParams;
   const deal = await getDealBySlug(slug);
   if (!deal) notFound();
 
@@ -60,6 +67,9 @@ export default async function DealPage({ params }: { params: Promise<{ slug: str
   const finalPrice = finalProposal?.price_high ?? finalProposal?.price_low ?? null;
   const signingEvent = events.find((e) => e.event_type === "signing" && e.date_start);
   const summary = computeDealSummary(events, proposals, deal.target);
+  const initialFact = factId
+    ? [...events, ...proposals, ...valuations].find((f) => f.id === factId) ?? null
+    : null;
 
   return (
     <div>
@@ -70,12 +80,20 @@ export default async function DealPage({ params }: { params: Promise<{ slug: str
             {deal.target} <span className="text-neutral-300">→</span> {acquirerDisplayName(deal.slug, deal.acquirer)}
           </p>
         </div>
-        <Link
-          href={`/review/${deal.slug}`}
-          className="rounded-md bg-neutral-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-neutral-700"
-        >
-          Review facts
-        </Link>
+        <div className="flex gap-2">
+          <Link
+            href={`/deals/${deal.slug}/memo`}
+            className="rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-50"
+          >
+            Memo
+          </Link>
+          <Link
+            href={`/review/${deal.slug}`}
+            className="rounded-md bg-neutral-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-neutral-700"
+          >
+            Review facts
+          </Link>
+        </div>
       </div>
 
       <dl className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
@@ -156,6 +174,7 @@ export default async function DealPage({ params }: { params: Promise<{ slug: str
           proposals={proposals}
           valuations={valuations}
           paragraphs={paragraphs}
+          initialFact={initialFact}
         />
       </div>
     </div>

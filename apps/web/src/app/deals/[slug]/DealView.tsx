@@ -15,6 +15,7 @@ export function DealView({
   proposals,
   valuations,
   paragraphs,
+  initialFact = null,
 }: {
   target: string;
   finalPrice: number | null;
@@ -22,8 +23,9 @@ export function DealView({
   proposals: ProposalRow[];
   valuations: ValuationRow[];
   paragraphs: Record<string, ParagraphRow>;
+  initialFact?: Fact | null;
 }) {
-  const [selected, setSelected] = useState<Fact | null>(null);
+  const [selected, setSelected] = useState<Fact | null>(initialFact);
 
   const { reviewed, total } = useMemo(() => {
     const all = [...events, ...proposals, ...valuations];
@@ -34,14 +36,14 @@ export function DealView({
     <div className="space-y-8">
       <ReviewProgressBanner reviewed={reviewed} total={total} />
 
-      <section>
+      <section id="bids">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">Bids over time</h2>
         <div className="mt-3">
           <BidChart proposals={proposals} events={events} target={target} onInspect={setSelected} />
         </div>
       </section>
 
-      <section>
+      <section id="timeline">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">Timeline</h2>
         <div className="mt-3 rounded-lg border border-neutral-200 bg-white p-4">
           <Timeline events={events} onInspect={setSelected} />
