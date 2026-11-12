@@ -401,7 +401,9 @@ Output files must be new paths; previous executions are never overwritten.
 No automatic lock is made from a call date, calendar estimate or search snippet.
 Missing reviewed outcome files block scoring. Outcome reviews verify/ingest SEC
 actual versions and compare with the locked guidance, not later revisions.
-There are no backdated live locks. Current Salesforce, Okta and SentinelOne
-prospective acquisition-scope blocks remain. Visual compatibility remains
+There are no backdated live locks. Salesforce, Okta and SentinelOne
+retain their prior-year growth blocks; categorical prediction eligibility does
+not inherit those flags. Future outcome scoring still needs an independent
+exact-guidance/actual basis review. Visual compatibility remains
 **unverified and required before merging**. Do not merge/push/deploy as part of
 these commands.

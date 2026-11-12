@@ -258,3 +258,22 @@ def test_database_rejects_future_history_inputs(locked):
     b={**b,'historical_ids':b['historical_ids']+[r['id']]}
     with pytest.raises(psycopg.Error,match='unavailable historical'):
         with conn.transaction():live.insert_prediction(conn,COMPANY,target,g,b,e,check)
+
+
+@pytest.mark.parametrize('ticker',['CRM','OKTA','S'])
+def test_prediction_does_not_inherit_growth_or_unreported_outcome_block(db_conn,monkeypatch,ticker):
+    from earnings import predict
+    from earnings.registry import companies
+    c=deepcopy(companies()[ticker]);store.register(db_conn,c)
+    now=db_conn.execute('SELECT clock_timestamp()').fetchone()[0].astimezone(timezone.utc);day=now.date()
+    target={**c['quarter_targets'][-1],'start':str(day-timedelta(days=120)),'end':str(day-timedelta(days=30))}
+    assert target['growth_comparability']['blocked'] and target['outcome_comparability']['blocked']
+    c['quarter_targets']=[target]
+    g=replace(guidance(issued=str(day-timedelta(days=100))),company=ticker,start=date.fromisoformat(target['start']),end=date.fromisoformat(target['end']),metric='quarterly_consolidated_revenue')
+    a=replace(actual(str(day-timedelta(days=150)),str(day-timedelta(days=60)),'700',str(day-timedelta(days=50))),company=ticker)
+    monkeypatch.setattr(predict.history,'ingest',lambda conn:{'inserted':0})
+    monkeypatch.setattr(predict.history,'stored',lambda conn:rows(ticker))
+    monkeypatch.setattr(predict.store,'records',lambda conn,t:([a],[g]))
+    r=predict.run(db_conn,{ticker:c},announcement_loader=lambda company:evidence(day+timedelta(days=3)),refresh=lambda company,e:e,
+        publication=lambda company,target:{'status':'unverified_test_source'})
+    assert not r['locked'] and r['skipped'][0]['code']=='PUBLICATION_CHECK_BLOCKED'

@@ -26,6 +26,35 @@
       "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/76a225f3e35b0f5e19a47014c96fe18d8639fbc3e5a064f512a31d4522e7af38-e529ae64b698b3a80e768fcaffd7566262d5a43e3e7bcc427be6f54f6869b8f0.body",
       "quote": "Results to be released on December 2, 2026, after market close",
       "id": "e82fb6a0-19d2-5391-9516-c866f186a734"
+    },
+    {
+      "company": "CRM",
+      "event_kind": "results_release",
+      "fiscal_period": {
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "label": "Q3 FY2027"
+      },
+      "release_date": "2026-12-02",
+      "time_precision": "market_session",
+      "release_time": "after_market_close",
+      "timezone": "America/New_York",
+      "timezone_provenance": "US market-close context; conservative release-date boundary in America/New_York, release-date-boundary-v1. No exact publication clock time inferred.",
+      "timestamp_verified": false,
+      "announcement_issued_date": "2026-11-10",
+      "verification_status": "independently_verified",
+      "verifier": "Codex",
+      "verification_method": "direct_http_official_ir_full_document_re_review",
+      "checked_at": "2026-11-12T23:46:51.729367+00:00",
+      "retrieved_at": "2026-11-12T23:46:52.000110+00:00",
+      "verified_at": "2026-11-12T23:48:07.518593+00:00",
+      "source_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx",
+      "source_sha256": "c8a640be882cb70fba14d5be638823309652d2025c7baa08b5b96f95ee894b83",
+      "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/76a225f3e35b0f5e19a47014c96fe18d8639fbc3e5a064f512a31d4522e7af38-c8a640be882cb70fba14d5be638823309652d2025c7baa08b5b96f95ee894b83.body",
+      "quote": "Results to be released on December 2, 2026, after market close",
+      "previous_evidence_id": "e82fb6a0-19d2-5391-9516-c866f186a734",
+      "review_note": "Release company, fiscal quarter/year, dateline and results-publication wording re-reviewed. No date or timezone change. Normalized visible text unchanged; raw HTML changed.",
+      "id": "6c11f52b-a7d9-580d-bf77-86c072ba3a30"
     }
   ]
 }

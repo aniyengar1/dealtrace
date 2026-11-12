@@ -1,0 +1,11 @@
+{
+  "recorded_at": "2026-11-12T23:50:58.919814+00:00",
+  "command": ".venv/bin/python -m pytest -q --tb=short",
+  "passed": 364,
+  "skipped": 3,
+  "failed": 0,
+  "targeted_live_baseline_tests": 29,
+  "full_suite_duration_seconds": "2.26",
+  "correction": "Categorical prediction eligibility no longer inherits prior-year growth or missing-future-result blocks",
+  "database_evidence": "session3_evidence_review_database.json; all synthetic mutations rolled back"
+}

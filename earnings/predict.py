@@ -39,9 +39,9 @@ def run(conn,registry,*,announcement_loader=announcement,refresh=refresh_announc
             if current.status=='withdrawn':raise Blocked('GUIDANCE_WITHDRAWN','Current public target guidance is withdrawn')
             g=latest_guidance(available_guidance(guides,guidance_cutoff(e['release_date']),date.fromisoformat(target['start']),date.fromisoformat(target['end']),ticker,metric='quarterly_consolidated_revenue'))
             if g.status=='withdrawn':raise Blocked('GUIDANCE_WITHDRAWN','Frozen horizon guidance is withdrawn')
-            scope=target.get('growth_comparability',{})
-            if scope.get('blocked',True):
-                raise Blocked('INCOMPARABLE_BASIS','Prospective baseline scope review unresolved: '+scope.get('reason','No review'))
+            # This categorical target has no prior-year revenue denominator.
+            # Do not inherit growth-only scope blocks or a missing future actual.
+            # A result must independently pass exact-version comparability at scoring.
             from .models import Policy
             policy=Policy()
             if (now.date()-g.issued.end).days>policy.guidance_days:

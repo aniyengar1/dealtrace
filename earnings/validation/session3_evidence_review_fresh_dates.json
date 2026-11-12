@@ -1,0 +1,153 @@
+[
+  {
+    "company": "CRM",
+    "evidence": {
+      "announcement_issued_date": "2026-11-10",
+      "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/76a225f3e35b0f5e19a47014c96fe18d8639fbc3e5a064f512a31d4522e7af38-c8a640be882cb70fba14d5be638823309652d2025c7baa08b5b96f95ee894b83.body",
+      "checked_at": "2026-11-12T23:48:23.433072+00:00",
+      "company": "CRM",
+      "event_kind": "results_release",
+      "fiscal_period": {
+        "end": "2026-10-31",
+        "label": "Q3 FY2027",
+        "start": "2026-08-01"
+      },
+      "id": "6c11f52b-a7d9-580d-bf77-86c072ba3a30",
+      "previous_evidence_id": "6c11f52b-a7d9-580d-bf77-86c072ba3a30",
+      "quote": "Results to be released on December 2, 2026, after market close",
+      "recheck": {
+        "checked_at": "2026-11-12T23:48:23.433072+00:00",
+        "company": "CRM",
+        "date_evidence": [
+          "ase and Webcast November 10, 2026 Results to be released on December 2, 2026, after market close SAN FRANCISCO--(BUSINESS WIRE)-- Salesforce (NYSE: CRM), the world\u2019s "
+        ],
+        "fetched_at": "2026-11-12T23:48:23.748309+00:00",
+        "report_date": "2026-12-02",
+        "report_date_present": true,
+        "sha256": "c8a640be882cb70fba14d5be638823309652d2025c7baa08b5b96f95ee894b83",
+        "source_date": "2026-11-10",
+        "source_date_present": true,
+        "source_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx",
+        "status": "confirmed"
+      },
+      "release_date": "2026-12-02",
+      "release_time": "after_market_close",
+      "retrieved_at": "2026-11-12T23:48:23.748309+00:00",
+      "review_note": "Release company, fiscal quarter/year, dateline and results-publication wording re-reviewed. No date or timezone change. Normalized visible text unchanged; raw HTML changed.",
+      "source_sha256": "c8a640be882cb70fba14d5be638823309652d2025c7baa08b5b96f95ee894b83",
+      "source_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx",
+      "time_precision": "market_session",
+      "timestamp_verified": false,
+      "timezone": "America/New_York",
+      "timezone_provenance": "US market-close context; conservative release-date boundary in America/New_York, release-date-boundary-v1. No exact publication clock time inferred.",
+      "verification_method": "direct_http_official_ir_full_document_re_review",
+      "verification_status": "independently_verified",
+      "verified_at": "2026-11-12T23:48:07.518593+00:00",
+      "verifier": "Codex deterministic date check; original full-document review retained"
+    },
+    "status": "fresh_full_document_hash_matches"
+  },
+  {
+    "company": "OKTA",
+    "evidence": {
+      "announcement_issued_date": "2026-11-02",
+      "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/1baff785d18b716e62059282389f6e5a9e7a0b62d605938fb202fe6fcda66a19-d60517f2f59870d407a185b7e6497c384447795a6cc2b119407799703091170f.body",
+      "checked_at": "2026-11-12T23:48:23.757662+00:00",
+      "company": "OKTA",
+      "event_kind": "results_release",
+      "fiscal_period": {
+        "end": "2026-10-31",
+        "label": "Q3 FY2027",
+        "start": "2026-08-01"
+      },
+      "id": "4a3e1f16-7b0b-55be-b00b-f43055db57af",
+      "previous_evidence_id": "4a3e1f16-7b0b-55be-b00b-f43055db57af",
+      "quote": "after the U.S. market close on Tuesday, December 1, 2026",
+      "recheck": {
+        "checked_at": "2026-11-12T23:48:23.757662+00:00",
+        "company": "OKTA",
+        "date_evidence": [
+          "nnounce Third Quarter Fiscal Year 2027 Financial Results on December 1, 2026 Skip to main content Overview News & Events News Releases Events & Presentations Stock In"
+        ],
+        "fetched_at": "2026-11-12T23:48:24.057067+00:00",
+        "report_date": "2026-12-01",
+        "report_date_present": true,
+        "sha256": "d60517f2f59870d407a185b7e6497c384447795a6cc2b119407799703091170f",
+        "source_date": "2026-11-02",
+        "source_date_present": true,
+        "source_url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+        "status": "confirmed"
+      },
+      "release_date": "2026-12-01",
+      "release_time": "after_market_close",
+      "retrieved_at": "2026-11-12T23:48:24.057067+00:00",
+      "review_note": "Release company, fiscal quarter/year, dateline and results-publication wording re-reviewed. No date or timezone change. Only visible changes are email-alert form validation/captcha messages; release paragraph unchanged. Call remains separate.",
+      "source_sha256": "d60517f2f59870d407a185b7e6497c384447795a6cc2b119407799703091170f",
+      "source_url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+      "time_precision": "market_session",
+      "timestamp_verified": false,
+      "timezone": "America/New_York",
+      "timezone_provenance": "US market-close context; conservative release-date boundary in America/New_York, release-date-boundary-v1. No exact publication clock time inferred.",
+      "verification_method": "direct_http_official_ir_full_document_re_review",
+      "verification_status": "independently_verified",
+      "verified_at": "2026-11-12T23:48:07.519474+00:00",
+      "verifier": "Codex deterministic date check; original full-document review retained"
+    },
+    "status": "fresh_full_document_hash_matches"
+  },
+  {
+    "company": "IOT",
+    "evidence": {
+      "announcement_issued_date": "2026-11-02",
+      "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/31bd7c94a4aa0a85c8f526e08e9b3666146e4132d257112cbe9f0f2843d9ba13-bb35e403595b4af82df3ffd18d02f30f3859d3ed218ba20ff3224c29faccefc5.body",
+      "call": {
+        "event_kind": "earnings_call",
+        "precision": "minute",
+        "time": "14:00",
+        "timezone": "America/Los_Angeles"
+      },
+      "checked_at": "2026-11-12T23:48:24.087637+00:00",
+      "company": "IOT",
+      "discovery_note": "Another agent supplied a Finviz lead. The lead was not used as verified evidence; original official IR document independently retrieved. No user_verified label.",
+      "event_kind": "results_release",
+      "fiscal_period": {
+        "end": "2026-10-31",
+        "label": "Q3 FY2027",
+        "start": "2026-08-02"
+      },
+      "id": "df34084d-c4ea-5848-ad67-df9dc8b98084",
+      "previous_evidence_id": "df34084d-c4ea-5848-ad67-df9dc8b98084",
+      "quote": "after the U.S. market closes on Thursday, December 3, 2026.",
+      "recheck": {
+        "checked_at": "2026-11-12T23:48:24.087637+00:00",
+        "company": "IOT",
+        "date_evidence": [
+          "nnounce Third Quarter Fiscal Year 2027 Financial Results on December 3, 2026 Skip to main content Overview News Events & Presentations Events Presentations Stock Info"
+        ],
+        "fetched_at": "2026-11-12T23:48:24.370175+00:00",
+        "report_date": "2026-12-03",
+        "report_date_present": true,
+        "sha256": "bb35e403595b4af82df3ffd18d02f30f3859d3ed218ba20ff3224c29faccefc5",
+        "source_date": "2026-11-02",
+        "source_date_present": true,
+        "source_url": "https://investors.samsara.com/news/news-details/2026/Samsara-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-3-2026/default.aspx",
+        "status": "confirmed"
+      },
+      "release_date": "2026-12-03",
+      "release_time": "after_market_close",
+      "retrieved_at": "2026-11-12T23:48:24.370175+00:00",
+      "review_note": "Release company, fiscal quarter/year, dateline and results-publication wording re-reviewed. No date or timezone change. Normalized visible text unchanged; raw HTML changed.",
+      "source_sha256": "bb35e403595b4af82df3ffd18d02f30f3859d3ed218ba20ff3224c29faccefc5",
+      "source_url": "https://investors.samsara.com/news/news-details/2026/Samsara-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-3-2026/default.aspx",
+      "time_precision": "market_session",
+      "timestamp_verified": false,
+      "timezone": "America/New_York",
+      "timezone_provenance": "US market closes reference; release-date boundary interpreted in America/New_York under release-date-boundary-v1. Not an exact publication clock time.",
+      "verification_method": "direct_http_official_ir_full_document_re_review",
+      "verification_status": "independently_verified",
+      "verified_at": "2026-11-12T23:48:07.519940+00:00",
+      "verifier": "Codex deterministic date check; original full-document review retained"
+    },
+    "status": "fresh_full_document_hash_matches"
+  }
+]
