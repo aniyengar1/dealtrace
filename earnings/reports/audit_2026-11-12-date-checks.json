@@ -1,0 +1,289 @@
+{
+  "direct_http": [
+    {
+      "company": "PD",
+      "requested_url": "https://investor.pagerduty.com/news/default.aspx",
+      "source_url": "https://investor.pagerduty.com/news/default.aspx",
+      "checked_at": "2026-11-12T06:33:28.032812+00:00",
+      "fetched_at": "2026-11-12T06:33:28.417714+00:00",
+      "status": "retrieved_unverified",
+      "http_status": 200,
+      "sha256": "aecaf120db259166a2e475a7d6f4b68ca891248f1ab05b8b2a913eb774cd679d",
+      "candidate_links": [],
+      "text_excerpt": "PagerDuty, Inc. - News Skip to main content Overview Why Invest News Events Stock Info Stock Quote Analyst Coverage Financials Quarterly Results Annual Reports SEC Filings Governance Governance Documents Executive Management Board of Directors Committee Composition Resources Investor Email Alerts Investor Contacts Blog Videos Impact Impact Hub Impact Report News Selecting a year value will change the news content Select Year: Loading... Contact Us investor@pagerduty.com Social Media Quick Links SEC Filings opens in new window Investor Email Alerts Personal Information. Email Address * Required"
+    },
+    {
+      "company": "GTLB",
+      "requested_url": "https://ir.gitlab.com/news/default.aspx",
+      "source_url": "https://ir.gitlab.com/news/default.aspx",
+      "checked_at": "2026-11-12T06:33:28.961316+00:00",
+      "fetched_at": "2026-11-12T06:33:29.361562+00:00",
+      "status": "retrieved_unverified",
+      "http_status": 200,
+      "sha256": "5521b2b774bf44f03c3130f8f809f6e26a1ac14f660c047eec995a48f95e2394",
+      "candidate_links": [],
+      "text_excerpt": "GitLab Inc. - News Skip to main content Overview News Events & Presentations Stock Info Stock Quote Analyst Coverage Financials & SEC Filings Quarterly Results Annual Reports SEC Filings Governance Governance Documents Executive Group Board of Directors Committee Composition Resources Investor FAQs Information Request Form Investor Email Alerts Investor Contacts News Selecting a year value will change the news content Select Year: Loading... IR Contact IR@GitLab.com Quick Links Analyst Coverage opens in new window Investor FAQ opens in new window Information Request Form opens in new window E-"
+    },
+    {
+      "company": "CRM",
+      "requested_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx",
+      "source_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx",
+      "checked_at": "2026-11-12T06:33:29.883899+00:00",
+      "fetched_at": "2026-11-12T06:33:30.384424+00:00",
+      "status": "retrieved_unverified",
+      "http_status": 200,
+      "sha256": "e529ae64b698b3a80e768fcaffd7566262d5a43e3e7bcc427be6f54f6869b8f0",
+      "candidate_links": [
+        {
+          "text": "Skip to main content",
+          "url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx#main-content"
+        },
+        {
+          "text": "Skip to main content",
+          "url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx#maincontent"
+        },
+        {
+          "text": "Cookie Preferences",
+          "url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx#"
+        }
+      ],
+      "text_excerpt": "Salesforce.com, Inc. - Salesforce Announces Date of Third Quarter Fiscal 2027 Earnings Release and Webcast Skip to main content Skip to main content Overview Financials Quarterly Results Annual Reports SEC Filings Tax Forms Safe Harbor IAC Financials Events News Stock Quote Governance Governance Corporate Governance Executive Management Board of Directors Committee Composition ESG Resources Resources Investor FAQs Investor Email Alerts Investor Contacts News Details Overview Financials Quarterly Results Annual Reports SEC Filings Tax Forms Safe Harbor IAC Financials Events News Stock Quote Gov",
+      "expected_date_found": true,
+      "date_context": "ontacts View All News Salesforce Announces Date of Third Quarter Fiscal 2027 Earnings Release and Webcast November 10, 2026 Results to be released on December 2, 2026, after market close SAN FRANCISCO--(BUSINESS WIRE)-- Salesforce (NYSE: CRM), the world\u2019s #1 AI CRM, today announced that its third quarter fiscal 2027 results will be released on Wednesday, December 2, 2026, after the close of the ma"
+    },
+    {
+      "company": "CRWD",
+      "requested_url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-announces-date-fiscal-third-quarter-2027-financial",
+      "source_url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-announces-date-fiscal-third-quarter-2027-financial",
+      "checked_at": "2026-11-12T06:33:30.917223+00:00",
+      "fetched_at": null,
+      "status": "unverified",
+      "http_status": 403,
+      "gap": "HTTP 403; no date confirmation from this request"
+    },
+    {
+      "company": "CRWD",
+      "requested_url": "https://ir.crowdstrike.com/news-and-events/news-releases",
+      "source_url": "https://ir.crowdstrike.com/news-and-events/news-releases",
+      "checked_at": "2026-11-12T06:33:33.631787+00:00",
+      "fetched_at": null,
+      "status": "unverified",
+      "http_status": 403,
+      "gap": "HTTP 403; no date confirmation from this request"
+    },
+    {
+      "company": "OKTA",
+      "requested_url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+      "source_url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+      "checked_at": "2026-11-12T06:33:34.351269+00:00",
+      "fetched_at": "2026-11-12T06:33:34.975144+00:00",
+      "status": "retrieved_unverified",
+      "http_status": 200,
+      "sha256": "aa45c5700d23cfc5c29321b3c8e5a5791d4788cb98f8fcdb9f901b5eda833dda",
+      "candidate_links": [
+        {
+          "text": "Skip to main content",
+          "url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx#main-content"
+        }
+      ],
+      "text_excerpt": "Okta Inc. - Okta to Announce Third Quarter Fiscal Year 2027 Financial Results on December 1, 2026 Skip to main content Overview News & Events News Releases Events & Presentations Stock Info Stock Information Analyst Coverage Financials Quarterly Results Annual Reports SEC Filings Responsibility & Governance Responsibility Governance Overview Board of Directors Investor Services Investor FAQs Investor Email Alerts Contact IR News Details View All News Okta to Announce Third Quarter Fiscal Year 2027 Financial Results on December 1, 2026 November 2, 2026 SAN FRANCISCO--(BUSINESS WIRE)-- Okta, Inc",
+      "expected_date_found": true,
+      "date_context": "Okta Inc. - Okta to Announce Third Quarter Fiscal Year 2027 Financial Results on December 1, 2026 Skip to main content Overview News & Events News Releases Events & Presentations Stock Info Stock Information Analyst Coverage Financials Quarterly Results Annual Reports SEC Filings Responsibility & Governance Responsibility Governa"
+    },
+    {
+      "company": "IOT",
+      "requested_url": "https://investors.samsara.com/news/default.aspx",
+      "source_url": "https://investors.samsara.com/news/default.aspx",
+      "checked_at": "2026-11-12T06:33:35.508358+00:00",
+      "fetched_at": "2026-11-12T06:33:35.940742+00:00",
+      "status": "retrieved_unverified",
+      "http_status": 200,
+      "sha256": "42c4564ad8e724fca1776af267f1fbb5ba73aa837a9f4720d7f4d7d68a46b8b2",
+      "candidate_links": [],
+      "text_excerpt": "Samsara Inc. - News Skip to main content Overview News Events & Presentations Events Presentations Stock Info Stock Quote Analyst Coverage Financials Quarterly Results SEC Filings Governance Governance Documents Executive Management Board of Directors Committee Composition ESG Resources Information Request Form Investor Email Alerts Investor Contacts Other Other Modern Slavery Statement Tax Policy ESG Skip to main content News Overview News Events & Presentations Events Presentations Stock Info Stock Quote Analyst Coverage Financials Quarterly Results SEC Filings Governance Governance Document"
+    },
+    {
+      "company": "MDB",
+      "requested_url": "https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-date-third-quarter-fiscal-2027-earnings",
+      "source_url": "https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-date-third-quarter-fiscal-2027-earnings",
+      "checked_at": "2026-11-12T06:33:36.453097+00:00",
+      "fetched_at": null,
+      "status": "unverified",
+      "http_status": 403,
+      "gap": "HTTP 403; no date confirmation from this request"
+    },
+    {
+      "company": "MDB",
+      "requested_url": "https://investors.mongodb.com/news-and-events/news-releases",
+      "source_url": "https://investors.mongodb.com/news-and-events/news-releases",
+      "checked_at": "2026-11-12T06:33:37.425072+00:00",
+      "fetched_at": null,
+      "status": "unverified",
+      "http_status": 403,
+      "gap": "HTTP 403; no date confirmation from this request"
+    },
+    {
+      "company": "S",
+      "requested_url": "https://investors.sentinelone.com/news-and-events/press-releases/default.aspx",
+      "source_url": "https://investors.sentinelone.com/news-and-events/press-releases/default.aspx",
+      "checked_at": "2026-11-12T06:33:38.171002+00:00",
+      "fetched_at": null,
+      "status": "unverified",
+      "http_status": 404,
+      "gap": "HTTP 404; no date confirmation from this request"
+    },
+    {
+      "company": "ADBE",
+      "requested_url": "https://www.adobe.com/investor-relations.html",
+      "source_url": "https://www.adobe.com/investor-relations.html",
+      "checked_at": "2026-11-12T06:33:39.721978+00:00",
+      "fetched_at": "2026-11-12T06:33:40.094403+00:00",
+      "status": "retrieved_unverified",
+      "http_status": 200,
+      "sha256": "5cc9d7af339ee440e2e23cf67e7c278706d2b46721f8f6999e9c5ad0b57d0f47",
+      "candidate_links": [
+        {
+          "text": "Q3 FY2026 earnings press release",
+          "url": "https://www.adobe.com/cc-shared/assets/investor-relations/pdfs/01906202/au56y4ter.pdf#_blank"
+        },
+        {
+          "text": "Q3 FY2026 earnings script and slides",
+          "url": "https://www.adobe.com/cc-shared/assets/investor-relations/pdfs/01906202/c6yetrerew.pdf#_blank"
+        },
+        {
+          "text": "Adobe Announces New $25 Billion Stock Repurchase Program",
+          "url": "https://www.adobe.com/cc-shared/assets/investor-relations/pdfs/b465t3rw34.pdf#_blank"
+        }
+      ],
+      "text_excerpt": "Investor Relations | Adobe #000 Investor Relations Explore investor news, resources, and events to discover how Adobe is changing the world through digital experiences. About Adobe As one of the largest and most diversified software companies in the world, Adobe empowers everyone to create by building innovative platforms and tools that unleash creativity, productivity and personalized customer experiences. Adobe has redefined how people and businesses imagine, create and deliver content that stands out across every medium and surface. Headquartered in San Jose, California, and with a diverse "
+    },
+    {
+      "company": "LULU",
+      "requested_url": "https://corporate.lululemon.com/investors/financial-information/quarterly-results",
+      "source_url": "https://corporate.lululemon.com/investors/financial-information/quarterly-results",
+      "checked_at": "2026-11-12T06:33:40.617494+00:00",
+      "fetched_at": null,
+      "status": "unverified",
+      "http_status": 404,
+      "gap": "HTTP 404; no date confirmation from this request"
+    },
+    {
+      "company": "S",
+      "source_url": "https://investors.sentinelone.com/",
+      "requested_url": "https://investors.sentinelone.com/",
+      "checked_at": "2026-11-12T07:12:59.176328+00:00",
+      "fetched_at": null,
+      "status": "unverified",
+      "http_status": 301,
+      "redirect_url": "https://investors.sentinelone.com/overview/default.aspx"
+    },
+    {
+      "company": "LULU",
+      "source_url": "https://corporate.lululemon.com/investors",
+      "requested_url": "https://corporate.lululemon.com/investors",
+      "checked_at": "2026-11-12T07:12:59.527128+00:00",
+      "fetched_at": "2026-11-12T07:13:01.475622+00:00",
+      "status": "retrieved_unverified",
+      "http_status": 200,
+      "sha256": "e2e56649150393b6708c3c066a6c5858ec00ede14d8562786ac145c7c23abd1e",
+      "candidate_links": [
+        {
+          "text": "Press Releases",
+          "url": "https://corporate.lululemon.com/investors/news-and-events/press-releases"
+        },
+        {
+          "text": "Our Stories & Press Releases",
+          "url": "https://corporate.lululemon.com/newsroom/our-stories-and-press-releases"
+        },
+        {
+          "text": "News & Events",
+          "url": "https://corporate.lululemon.com/investors/news-and-events/press-releases"
+        },
+        {
+          "text": "Press Releases",
+          "url": "https://corporate.lululemon.com/newsroom/press-releases"
+        },
+        {
+          "text": "lululemon Appoints Ben Hallam as Chief Brand...",
+          "url": "https://corporate.lululemon.com/newsroom/press-releases/2026/11-06-2026-210533141"
+        },
+        {
+          "text": "All Press Releases",
+          "url": "https://corporate.lululemon.com/newsroom/press-releases"
+        },
+        {
+          "text": "Press Release",
+          "url": "https://corporate.lululemon.com/newsroom/press-releases/2026/09-03-2026-210528733"
+        }
+      ]
+    },
+    {
+      "company": "S",
+      "source_url": "https://investors.sentinelone.com/press-releases/",
+      "requested_url": "https://investors.sentinelone.com/press-releases/",
+      "checked_at": "2026-11-12T08:14:10.885572+00:00",
+      "fetched_at": "2026-11-12T08:14:11.174091+00:00",
+      "status": "retrieved_unverified",
+      "http_status": 200,
+      "sha256": "f8b86b39d3b78f42f69e87caa79822f58c89b41e0d130918067208deab3be661",
+      "text_excerpt": "SentinelOne, Inc. - Press Releases Skip to main content Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog Skip to main content Press Releases Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog Selecting a year value will change the news content Select Year: Loading Investor Relations 444 Castro Street Suite 400 Mountain View, California 94041 Send Email Overview Press Releases Events & Presentations Financial Info Governance Resources follow us on twitter follow us on facebook follow us on LinkedIn follow us on youtube Privacy Policy Terms of Use \u00a9 Q4 Inc. - Al"
+    },
+    {
+      "company": "LULU",
+      "source_url": "https://corporate.lululemon.com/investors/news-and-events/events-and-presentations",
+      "requested_url": "https://corporate.lululemon.com/investors/news-and-events/events-and-presentations",
+      "checked_at": "2026-11-12T08:14:11.184995+00:00",
+      "fetched_at": "2026-11-12T08:14:11.875914+00:00",
+      "status": "retrieved_unverified",
+      "http_status": 200,
+      "sha256": "03143b9857e81275b6b54076b22b11474998126179436cd0322438df88783d31",
+      "text_excerpt": "Events & Presentations | lululemon Skip to main content . About Us Our Purpose, Mission & Values Inclusion for All Our Strategy Leadership Team Global Presence Our History Our Business Innovation Product Design & Development Digital Platforms Community Engagement Products Apparel Accessories Product Integrity Services In-Store Services Online Services Events & Community Services Operations Our Impact lululemon Gives People Employee Wellbeing Sub Navigation Inclusion, Diversity, Equity & Action Community Wellbeing Supply Chain Wellbeing Sub Navigation Respecting Human and Labor Rights Assessments & Remediation Supplier Programs Supplier Inclusion & Impact Planet Climate Action Circular Innovation Nature Reporting & Governance Impact Governance Sub Navigation Policies & Guidelines Stakeholder Engagement Reporting & Disclosure Partnerships & Memberships Investors Our Unique Proposition Year in Review News & Events Press Releases Events & Presentations Financial Information Results Center "
+    },
+    {
+      "company": "CRWD",
+      "source_url": "https://ir.crowdstrike.com/node/18016/pdf",
+      "requested_url": "https://ir.crowdstrike.com/node/18016/pdf",
+      "checked_at": "2026-11-12T08:14:11.919071+00:00",
+      "fetched_at": null,
+      "status": "unverified",
+      "http_status": 403,
+      "gap": "HTTP 403"
+    },
+    {
+      "company": "MDB",
+      "source_url": "https://investors.mongodb.com/node/14771/pdf",
+      "requested_url": "https://investors.mongodb.com/node/14771/pdf",
+      "checked_at": "2026-11-12T08:14:12.121083+00:00",
+      "fetched_at": null,
+      "status": "unverified",
+      "http_status": 403,
+      "gap": "HTTP 403"
+    }
+  ],
+  "indexed_official_date_observations": [
+    {
+      "company": "CRWD",
+      "source_url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-announces-date-fiscal-third-quarter-2027-financial",
+      "source_date": "2026-11-04",
+      "report_date": "2026-12-01",
+      "status": "confirmed_via_indexed_official_source",
+      "method": "web search restricted to company IR domain; direct HTTP attempts separately recorded",
+      "observed_at": "2026-11-12T08:14:56.846212+00:00",
+      "fetched_at": null,
+      "note": "Observation time recorded now after reviewing the search result; not a claimed HTTP fetch timestamp",
+      "quote": "after the U.S. market close on Tuesday, December 1, 2026"
+    },
+    {
+      "company": "MDB",
+      "source_url": "https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-date-third-quarter-fiscal-2027-earnings",
+      "source_date": "2026-11-05",
+      "report_date": "2026-12-01",
+      "status": "confirmed_via_indexed_official_source",
+      "method": "web search restricted to company IR domain; direct HTTP attempts separately recorded",
+      "observed_at": "2026-11-12T08:14:56.846424+00:00",
+      "fetched_at": null,
+      "note": "Observation time recorded now after reviewing the search result; not a claimed HTTP fetch timestamp",
+      "quote": "after the U.S. financial markets close on Tuesday, December 1, 2026"
+    }
+  ]
+}

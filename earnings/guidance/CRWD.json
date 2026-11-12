@@ -1,6 +1,6 @@
 {
   "history_review": {
-    "cutoff": "2026-11-11",
+    "cutoff": "2026-11-12",
     "scope": "Manual review of all SEC 8-K/8-K/A filings and linked 99.x/earnings/investor exhibits from December 2025 through November 11, 2026; includes non-earnings reaffirmations.",
     "sources_reviewed": [
       "https://www.sec.gov/Archives/edgar/data/1535527/000110465925124912/tm2534248d1_8k.htm",
@@ -32,8 +32,15 @@
       "target": "Q3 FY2027",
       "start": "2026-08-01",
       "end": "2026-10-31",
-      "cutoff": "2026-11-11",
+      "cutoff": "2026-11-12",
       "note": "Reviewed existing SEC source inventory after quarter issuance. MongoDB September 28 explicitly reaffirms Q3; Salesforce October 20 mentions FY27 only and is not treated as quarterly reaffirmation. No inferred quarterly reaffirmations from annual-only statements."
+    },
+    "session2_incremental_review": {
+      "as_of": "2026-11-12",
+      "source_url": "https://data.sec.gov/submissions/CIK0001535527.json",
+      "fetched_at": "2026-11-12T08:12:39.229203+00:00",
+      "sha256": "e197d631d198a73e2e6a2064d2c539136d3d6bab8b825b40ec7de0ecfcc08306",
+      "scope": "Filings dated November 12 after the prior November 11 review; no new filings found in SEC recent submissions."
     }
   },
   "versions": [

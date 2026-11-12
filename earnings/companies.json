@@ -242,9 +242,19 @@
     },
     "comparability": {
       "blocked": true,
-      "available_on": "2026-02-25",
+      "available_on": "2026-10-20",
       "reason": "Informatica contribution and pending Contentful/Fin acquisitions change consolidation scope. October Braze announcement adds uncertainty; explicit evidence reconciliation required.",
-      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm"
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+          "filed_date": "2026-08-27"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312526425881/d516983dex991.htm",
+          "filed_date": "2026-10-20"
+        }
+      ]
     },
     "next_report": {
       "type": "Q3 annual-hurdle update",
@@ -317,7 +327,14 @@
           "reason": "Informatica contribution and pending Contentful/Fin acquisitions change consolidation scope. October Braze announcement adds uncertainty; explicit evidence reconciliation required.",
           "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
           "sources": [
-            "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+              "filed_date": "2026-08-27"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312526425881/d516983dex991.htm",
+              "filed_date": "2026-10-20"
+            }
           ]
         },
         "outcome_comparability": {
