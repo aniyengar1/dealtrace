@@ -1,9 +1,9 @@
 {
-  "action": "Keep dispatch disabled. Establish a documented safe combined bound for the requested endpoint/model before setting verified configuration; otherwise stop. Never use observed small responses to infer a maximum.",
+  "action": "Owner superseded the combined-bound prerequisite. Use the approved conservative estimate, not a guaranteed provider cap. Probe now stopped on missing thinking usage; no further inference.",
   "combined_billable_output_bound_verified": false,
   "documented_context_window": 1048576,
   "documented_maximum_output_tokens": 65536,
-  "gap": "Reviewed Vertex pages provide the model output limit, thinking levels and separate usage counters. They do not explicitly establish the combined candidates+thoughts hard ceiling needed for worst-case billing here. Developer API forum confirmations for other models/endpoints are not treated as Vertex proof. LOW and include_thoughts=False are not a billable token cap. No probe was made.",
+  "gap": "Reviewed Vertex pages provide the model output limit, thinking levels and separate usage counters. They do not explicitly establish the combined candidates+thoughts hard ceiling needed for worst-case billing here. Developer API forum confirmations for other models/endpoints are not treated as Vertex proof. LOW and include_thoughts=False are not a billable token cap. A later authorized probe returned missing thinking usage; it establishes no combined bound.",
   "model": "gemini-3.6-flash",
   "official_sources": [
     "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-6-flash",
@@ -14,5 +14,8 @@
   "requested_max_output_tokens": 8192,
   "reviewed_at": "2026-11-13T10:59:42.369040+00:00",
   "thinking_budget_used": false,
-  "thinking_level": "LOW"
+  "thinking_level": "LOW",
+  "owner_superseding_authorization": "inference_authorization.json",
+  "probe_performed": true,
+  "updated_at": "2026-11-13T20:40:22.617473+00:00"
 }

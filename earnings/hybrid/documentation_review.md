@@ -1,3 +1,13 @@
+Current addendum, November13,2026: owner authorized one diagnostic probe and conditional continuation, accepting the unresolved combined-token billing uncertainty. The historical review below is preserved verbatim in `archive/pre_authorized/documentation_review.md`; its no-inference/no-authorization claims describe preparation only and are superseded.
+
+[Official CountTokens documentation](https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/capabilities/get-token-count) explicitly states no charge for CountTokens. One counting request included the full payload, system instruction, generation schema and a counting-only schema/settings supplement;89940 tokens returned. Actual generation prompt tokens89449 stayed below count+1024. This is not a universal counting guarantee. SDK CountTokens accepted the configured request.
+
+[Official pricing](https://cloud.google.com/model-garden/pricing) was rechecked2026-11-13T20:30:07.503209+00:00. Standard upper rates1.50/M input and7.50/M output incl thinking were used; no intro discounts, current credit balance or billing changes. Requested output8192/LOW; reservation uses2×documented65536 maximum plus counted input+1024, rounded to$1.12. This is an operational estimate, not a provider cap.
+
+The7.16-second probe returned `gemini-3.6-flash`, STOP, input89449, candidates1901, total91350, **thoughts null**. Total minus other counters is0, but the ledger does not silently substitute a missing explicit thinking counter with zero. Final cost remains unknown and$1.12 stays held. No retry or continuation. The missing usage field fails the owner’s required usage gate. No universal token/billing guarantee follows from this single response.
+
+Historical preparation review (superseded status):
+
 Local preparation review, November13,2026. No Vertex endpoint or ADC/access probe was used. Public documentation was read via web requests. These notes describe verified SDK/configuration behavior; they do not establish model access for the owner’s project.
 
 | Requirement | Evidence and preparation decision |

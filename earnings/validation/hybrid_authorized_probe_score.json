@@ -1,0 +1,231 @@
+{
+  "kind": "consumed_diagnostic_NOT_fresh_NOT_human_validated",
+  "performance_status": "DIAGNOSTIC_ONLY",
+  "not_run_cases": [
+    "pilot-1",
+    "pilot-4",
+    "pilot-11",
+    "pilot-14",
+    "pilot-19",
+    "pilot-27",
+    "pilot-28",
+    "IOT-0001642896-24-000059",
+    "CRWD-0001535527-24-000017"
+  ],
+  "abstentions": [
+    {
+      "case_id": "pilot-0",
+      "candidate_id": "5a9242c0-bb8a-551f-bf16-1e63ae41c965",
+      "codes": [
+        "INCOMPLETE_EVIDENCE_ROLES",
+        "INVALID_STATUS_REFERENCE_INPUT",
+        "QUOTE_OFFSET_MISMATCH"
+      ]
+    },
+    {
+      "case_id": "pilot-0",
+      "candidate_id": "9db626ec-e65b-55cc-9ec0-fa9cd4092248",
+      "codes": [
+        "INCOMPLETE_EVIDENCE_ROLES",
+        "QUOTE_OFFSET_MISMATCH"
+      ]
+    }
+  ],
+  "whole_release_pilot_scope": {
+    "strict_record": {
+      "true_positive": 0,
+      "predicted": 0,
+      "gold": 2,
+      "false_positive": 0,
+      "false_negative": 2,
+      "precision": null,
+      "recall": "0"
+    },
+    "fields": {
+      "low": {
+        "true_positive": 0,
+        "predicted": 0,
+        "gold": 2,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": null,
+        "recall": "0"
+      },
+      "high": {
+        "true_positive": 0,
+        "predicted": 0,
+        "gold": 2,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": null,
+        "recall": "0"
+      },
+      "unit": {
+        "true_positive": 0,
+        "predicted": 0,
+        "gold": 2,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": null,
+        "recall": "0"
+      },
+      "basis": {
+        "true_positive": 0,
+        "predicted": 0,
+        "gold": 2,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": null,
+        "recall": "0"
+      },
+      "start": {
+        "true_positive": 0,
+        "predicted": 0,
+        "gold": 2,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": null,
+        "recall": "0"
+      },
+      "end": {
+        "true_positive": 0,
+        "predicted": 0,
+        "gold": 2,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": null,
+        "recall": "0"
+      },
+      "metric": {
+        "true_positive": 0,
+        "predicted": 0,
+        "gold": 2,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": null,
+        "recall": "0"
+      },
+      "issued": {
+        "true_positive": 0,
+        "predicted": 0,
+        "gold": 2,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": null,
+        "recall": "0"
+      },
+      "filed": {
+        "true_positive": 0,
+        "predicted": 0,
+        "gold": 2,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": null,
+        "recall": "0"
+      },
+      "status": {
+        "true_positive": 0,
+        "predicted": 0,
+        "gold": 2,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": null,
+        "recall": "0"
+      },
+      "accession": {
+        "true_positive": 0,
+        "predicted": 0,
+        "gold": 2,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": null,
+        "recall": "0"
+      },
+      "exhibit": {
+        "true_positive": 0,
+        "predicted": 0,
+        "gold": 2,
+        "false_positive": 0,
+        "false_negative": 2,
+        "precision": null,
+        "recall": "0"
+      }
+    },
+    "errors": [
+      {
+        "type": "miss",
+        "gold_id": "2b56f9bf-a909-5253-af89-ad6b2ce01cd2",
+        "company": "A",
+        "expected": {
+          "accession": "0001090872-25-000013",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "A",
+          "end": "2025-07-31",
+          "exhibit": "99.1",
+          "filed": "2025-05-28",
+          "fiscal_label": "Q3 FY2025",
+          "format": "narrative-revenue",
+          "high": "1675000000",
+          "id": "2b56f9bf-a909-5253-af89-ad6b2ce01cd2",
+          "issued": {
+            "end": "2025-05-28",
+            "precision": "day",
+            "start": "2025-05-28"
+          },
+          "low": "1645000000",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": false,
+          "quote": "Full Year 2025 and Q3 Outlook Full-year revenue outlook is now in the range of $6.73 billion to $6.81 billion, representing growth of 3.4% to 4.6% reported, while maintaining growth of 2.5% to 3.5% core (1) . Non-GAAP EPS (3) is expected in the range of $5.54 to $5.61 per share. The outlook for third-quarter revenue is expected to be in the range of $1.645 billion to $1.675 billion, representing growth of 4.2% to 6.1% reported and up 1.7% to 3.6% core (1) . Non-GAAP EPS (3) is expected in the range of $1.35 to $1.37 per share. The outlook is based on forecasted currency exchange rates. 2 Conference Call Agilent\u2019s management will present additional details regarding the company\u2019s second-quarter 2025 financial results on a conference call with investors today at 1:30 p.m. PT. This event will be broadcast live online in listen-only mode. To listen to the webcast, select the \u201cQ2 2025 Agilent Technologies Inc. Earnings Conference Call\u201d link on the Agilent Investor Relations website. The replay of the call will remain on the company site for 90 days. About Agilent Technologies Agilent Technologies Inc. (NYSE: A) is a global leader in analytical and clinical laboratory technologies, delivering insights and innovation that help our customers bring great science to life. Agilent\u2019s full range of solutions includes instruments, software, services, and expertise that provide trusted answers to our customers' most challenging questions. The company generated revenue of $6.51 billion in fiscal year 2024 and employs approximately 18,000 people worldwide. Information about Agilent is available at www.agilent.com. To receive the latest Agilent news, subscribe to the Agilent Newsroom. Follow Agilent on LinkedIn and Facebook. Forward-Looking Statements This news release contains forward-looking statements as defined in the Securities Exchange Act of 1934 and is subject to the safe harbors created therein. The forward-looking statements contained herein include, but are not limited to, information regarding Agilent\u2019s growth prospects, business, financial results, revenue, non-GAAP earnings guidance for Q3 and fiscal year 2025, and the effects of its new organizational structure, operational transformation and market-focused strategy. These forward-looking statements involve risks and uncertainties that could cause Agilent\u2019s results to differ materially from management\u2019s current expectations. Such risks and uncertainties include, but are not limited to, unforeseen changes in the strength of Agilent\u2019s customers\u2019 businesses; unforeseen changes in the demand for current and new products, technologies, and services; unforeseen changes in the currency markets; customer purchasing decisions and timing; and the risk that Agilent is not able to realize the savings expected from integration and restructuring activities. In addition, other risks that Agilent faces in running its operations include the ability to execute successfully through business cycles; the ability to meet and achieve the benefits of its operational transformation, market-focused strategy and cost-reduction goals and otherwise successfully adapt its cost structures to continuing changes in business conditions; ongoing competitive, pricing and gross-margin pressures; the risk that its cost-cutting initiatives will impair its ability to develop products and remain competitive and to operate effectively; the impact of geopolitical uncertainties and global economic conditions on its operations, its markets and its ability to conduct business; the ability to improve asset performance to adapt to cha",
+          "quote_end": 6671,
+          "quote_start": 3071,
+          "sample_index": 0,
+          "source_sha256": "878bb95d6f7f9a34c9f404f6b5d3f8c7160eedd1c684c1eac860d427871334fa",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000013/exhibit991-q225pressrelease.htm",
+          "start": "2025-05-01",
+          "status": "initial",
+          "status_semantics": "Quarter initial = first directly issued range in this release group, not exhaustive original-history claim; annual revisions manually compared with prior same-period revenue source",
+          "unit": "USD"
+        }
+      },
+      {
+        "type": "miss",
+        "gold_id": "2ed5dcba-971e-5ddd-8e67-372035386dce",
+        "company": "A",
+        "expected": {
+          "accession": "0001090872-25-000013",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "A",
+          "end": "2025-10-31",
+          "exhibit": "99.1",
+          "filed": "2025-05-28",
+          "fiscal_label": "FY2025",
+          "format": "narrative-revenue",
+          "high": "6810000000",
+          "id": "2ed5dcba-971e-5ddd-8e67-372035386dce",
+          "issued": {
+            "end": "2025-05-28",
+            "precision": "day",
+            "start": "2025-05-28"
+          },
+          "low": "6730000000",
+          "metric": "consolidated_revenue",
+          "original_verified": false,
+          "quote": "Full Year 2025 and Q3 Outlook Full-year revenue outlook is now in the range of $6.73 billion to $6.81 billion, representing growth of 3.4% to 4.6% reported, while maintaining growth of 2.5% to 3.5% core (1) . Non-GAAP EPS (3) is expected in the range of $5.54 to $5.61 per share. The outlook for third-quarter revenue is expected to be in the range of $1.645 billion to $1.675 billion, representing growth of 4.2% to 6.1% reported and up 1.7% to 3.6% core (1) . Non-GAAP EPS (3) is expected in the range of $1.35 to $1.37 per share. The outlook is based on forecasted currency exchange rates. 2 Conference Call Agilent\u2019s management will present additional details regarding the company\u2019s second-quarter 2025 financial results on a conference call with investors today at 1:30 p.m. PT. This event will be broadcast live online in listen-only mode. To listen to the webcast, select the \u201cQ2 2025 Agilent Technologies Inc. Earnings Conference Call\u201d link on the Agilent Investor Relations website. The replay of the call will remain on the company site for 90 days. About Agilent Technologies Agilent Technologies Inc. (NYSE: A) is a global leader in analytical and clinical laboratory technologies, delivering insights and innovation that help our customers bring great science to life. Agilent\u2019s full range of solutions includes instruments, software, services, and expertise that provide trusted answers to our customers' most challenging questions. The company generated revenue of $6.51 billion in fiscal year 2024 and employs approximately 18,000 people worldwide. Information about Agilent is available at www.agilent.com. To receive the latest Agilent news, subscribe to the Agilent Newsroom. Follow Agilent on LinkedIn and Facebook. Forward-Looking Statements This news release contains forward-looking statements as defined in the Securities Exchange Act of 1934 and is subject to the safe harbors created therein. The forward-looking statements contained herein include, but are not limited to, information regarding Agilent\u2019s growth prospects, business, financial results, revenue, non-GAAP earnings guidance for Q3 and fiscal year 2025, and the effects of its new organizational structure, operational transformation and market-focused strategy. These forward-looking statements involve risks and uncertainties that could cause Agilent\u2019s results to differ materially from management\u2019s current expectations. Such risks and uncertainties include, but are not limited to, unforeseen changes in the strength of Agilent\u2019s customers\u2019 businesses; unforeseen changes in the demand for current and new products, technologies, and services; unforeseen changes in the currency markets; customer purchasing decisions and timing; and the risk that Agilent is not able to realize the savings expected from integration and restructuring activities. In addition, other risks that Agilent faces in running its operations include the ability to execute successfully through business cycles; the ability to meet and achieve the benefits of its operational transformation, market-focused strategy and cost-reduction goals and otherwise successfully adapt its cost structures to continuing changes in business conditions; ongoing competitive, pricing and gross-margin pressures; the risk that its cost-cutting initiatives will impair its ability to develop products and remain competitive and to operate effectively; the impact of geopolitical uncertainties and global economic conditions on its operations, its markets and its ability to conduct business; the ability to improve asset performance to adapt to cha",
+          "quote_end": 6671,
+          "quote_start": 3071,
+          "sample_index": 0,
+          "source_sha256": "878bb95d6f7f9a34c9f404f6b5d3f8c7160eedd1c684c1eac860d427871334fa",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000013/exhibit991-q225pressrelease.htm",
+          "start": "2024-11-01",
+          "status": "raised",
+          "status_semantics": "Quarter initial = first directly issued range in this release group, not exhaustive original-history claim; annual revisions manually compared with prior same-period revenue source",
+          "unit": "USD"
+        }
+      }
+    ],
+    "matches": [],
+    "unjudged_count": 0
+  },
+  "old_positive_only_scope": null,
+  "limitations": "Old positive-only scope leaves other document/metric cells unjudged. Scope qualifiers require review, never silently mapped to generic GAAP. Deterministic-pass proposals remain quarantined and do not establish semantic correctness. No human-reviewed precision claim."
+}

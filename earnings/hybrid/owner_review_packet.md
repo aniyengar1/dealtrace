@@ -1,6 +1,6 @@
 Crosscheck hybrid diagnostic — owner review packet
 
-**No model inference has occurred. Human review is NOT complete.** These are existing source-curated/agent-reviewed examples; they have not been verified by the owner. Initial review can check reference labels; model interpretations/disputes will remain pending until authorized inference. Reviewing a sample does not verify every label or establish generalization.
+**One Agilent diagnostic probe occurred; continuation stopped on missing usage. Human review is NOT complete.** These are existing source-curated/agent-reviewed examples; they have not been verified by the owner. Initial review can check reference labels; all other model interpretations remain unavailable after the probe accounting stop. Reviewing a sample does not verify every label or establish generalization.
 
 Selection: four SHA256-ranked cases using seed `crosscheck-hybrid-owner-review-v1`, plus up to four fixed prior-v2 high-risk cases not already sampled (segment actuals, implied guidance, ARR and acquisition scope). All related evidence for a release stays together. The targeted cases are known v2 diagnostic disputes, not newly observed hybrid errors. After inference, any additional hybrid disputes require a bounded packet revision; do not silently add work beyond two hours.
 
@@ -23,7 +23,7 @@ Source-curated reference interpretations (agent labels; NOT owner verified):
 |---|---|---:|---|---|
 |quarterly_consolidated_revenue|2024-08-04–2024-11-02|2300000000–2500000000|US_GAAP_consolidated_reported|initial|
 
-Model interpretation: **PENDING AUTHORIZED INFERENCE**.
+Model interpretation: **NOT RUN after the probe accounting stop**.
 Owner decision: **NOT PROVIDED**. Corrections / exact evidence / minutes spent: __________.
 
 **pilot-0 — A (random)**
@@ -44,7 +44,7 @@ Source-curated reference interpretations (agent labels; NOT owner verified):
 
 Prior status context: [SEC source](https://www.sec.gov/Archives/edgar/data/1090872/000109087225000003/exhibit991-q125pressrelease.htm) filed 2025-02-26. Compare the same revenue target; do not borrow another metric’s revision.
 
-Model interpretation: **PENDING AUTHORIZED INFERENCE**.
+Model interpretation: **NOT RUN after the probe accounting stop**.
 Owner decision: **NOT PROVIDED**. Corrections / exact evidence / minutes spent: __________.
 
 **pilot-11 — DOCU (random)**
@@ -63,7 +63,7 @@ Source-curated reference interpretations (agent labels; NOT owner verified):
 |quarterly_consolidated_revenue|2025-02-01–2025-04-30|745000000–749000000|US_GAAP_consolidated_reported|initial|
 |consolidated_revenue|2025-02-01–2026-01-31|3129000000–3141000000|US_GAAP_consolidated_reported|initial|
 
-Model interpretation: **PENDING AUTHORIZED INFERENCE**.
+Model interpretation: **NOT RUN after the probe accounting stop**.
 Owner decision: **NOT PROVIDED**. Corrections / exact evidence / minutes spent: __________.
 
 **CRWD-0001535527-24-000017 — CRWD (random)**
@@ -81,7 +81,7 @@ Source-curated reference interpretations (agent labels; NOT owner verified):
 |---|---|---:|---|---|
 |quarterly_consolidated_revenue|2024-08-01–2024-10-31|979200000.0–984700000.0|US_GAAP_consolidated_reported|initial|
 
-Model interpretation: **PENDING AUTHORIZED INFERENCE**.
+Model interpretation: **NOT RUN after the probe accounting stop**.
 Owner decision: **NOT PROVIDED**. Corrections / exact evidence / minutes spent: __________.
 
 **pilot-4 — AMAT (targeted_prior_v2_risk)**
@@ -99,7 +99,7 @@ Source-curated reference interpretations (agent labels; NOT owner verified):
 |---|---|---:|---|---|
 |quarterly_consolidated_revenue|2025-07-28–2025-10-26|6200000000–7200000000|US_GAAP_consolidated_reported|initial|
 
-Model interpretation: **PENDING AUTHORIZED INFERENCE**.
+Model interpretation: **NOT RUN after the probe accounting stop**.
 Owner decision: **NOT PROVIDED**. Corrections / exact evidence / minutes spent: __________.
 
 **IOT-0001642896-24-000059 — IOT (targeted_prior_v2_risk)**
@@ -117,7 +117,7 @@ Source-curated reference interpretations (agent labels; NOT owner verified):
 |---|---|---:|---|---|
 |quarterly_consolidated_revenue|2024-08-04–2024-11-02|309000000–311000000|US_GAAP_consolidated_reported|initial|
 
-Model interpretation: **PENDING AUTHORIZED INFERENCE**.
+Model interpretation: **NOT RUN after the probe accounting stop**.
 Owner decision: **NOT PROVIDED**. Corrections / exact evidence / minutes spent: __________.
 
 **pilot-19 — HIMS (targeted_prior_v2_risk)**
@@ -138,5 +138,13 @@ Source-curated reference interpretations (agent labels; NOT owner verified):
 
 Prior status context: [SEC source](https://www.sec.gov/Archives/edgar/data/1773751/000177375126000019/hims-20251231x8xkearningsr.htm) filed 2026-02-23. Compare the same revenue target; do not borrow another metric’s revision.
 
-Model interpretation: **PENDING AUTHORIZED INFERENCE**.
+Model interpretation: **NOT RUN after the probe accounting stop**.
 Owner decision: **NOT PROVIDED**. Corrections / exact evidence / minutes spent: __________.
+
+
+Agilent probe addendum (same selected case; no extra review case)
+
+The following are untrusted model proposals, not verified source quotes. Review against the complete pinned SEC source above. Every proposal failed evidence checks; no accepted candidate. Original owner decisions remain blank. Budget remains 88min estimate / 120min maximum.
+
+- Proposed revenue, FY2025 Qannual: USD 6730000000.00–6810000000.00; status raised. Errors: INCOMPLETE_EVIDENCE_ROLES, INVALID_STATUS_REFERENCE_INPUT, QUOTE_OFFSET_MISMATCH. Model-supplied evidence (NOT verified): Full-year revenue outlook is now in the range of $6.73 billion to $6.81 billion
+- Proposed revenue, FY2025 Q3: USD 1645000000.000–1675000000.000; status initial. Errors: INCOMPLETE_EVIDENCE_ROLES, QUOTE_OFFSET_MISMATCH. Model-supplied evidence (NOT verified): Q3 revenue outlook is expected to be in the range of $1.645 billion to $1.675 billion

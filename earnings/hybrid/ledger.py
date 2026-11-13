@@ -42,23 +42,34 @@ class Ledger:
     def event(self,c,aid,kind,payload):c.execute('INSERT INTO events(at,attempt_id,kind,payload) VALUES(?,?,?,?)',(now().isoformat(),aid,kind,json.dumps(payload,sort_keys=True)))
     def reserve(self,item,config,metadata,clock=None):
         clock=clock or now();deadline=datetime.fromisoformat(config['deadline'])
-        if not config.get('billable_thinking_bound_verified'):raise Gate('UNVERIFIED_BILLABLE_THINKING_BOUND')
-        max_input=config.get('max_input_tokens_documented');max_output=config.get('max_billable_output_tokens')
-        if not isinstance(max_input,int) or not isinstance(max_output,int):raise Gate('MISSING_SAFE_TOKEN_BOUNDS')
-        maximum=cost(max_input,max_output)
+        operational=config.get('reservation_policy')=='owner_approved_conservative_estimate_not_provider_cap'
+        if operational:
+            counted=metadata.get('counted_input_tokens')
+            if type(counted) is not int or counted<=0:raise Gate('PROVIDER_INPUT_COUNT_REQUIRED')
+            max_input=counted+config['input_reservation_margin_tokens']
+            max_output=config['max_generated_tokens_documented']*config['output_reservation_multiplier']
+            # Owner-approved estimate, NOT a documented maximum. Round up cents.
+            cents=10_000_000
+            maximum=max(1_000_000_000,((cost(max_input,max_output)+cents-1)//cents)*cents)
+        else:
+            if not config.get('billable_thinking_bound_verified'):raise Gate('UNVERIFIED_BILLABLE_THINKING_BOUND')
+            max_input=config.get('max_input_tokens_documented');max_output=config.get('max_billable_output_tokens')
+            if not isinstance(max_input,int) or not isinstance(max_output,int):raise Gate('MISSING_SAFE_TOKEN_BOUNDS')
+            maximum=cost(max_input,max_output)
         with self.connect() as c:
             c.execute('BEGIN IMMEDIATE')
             if c.execute('SELECT 1 FROM halt').fetchone():raise Gate('EXPERIMENT_HALTED')
             count=c.execute('SELECT count(*) FROM attempts WHERE item=?',(item,)).fetchone()[0]
-            if count>=3:raise Gate('RETRIES_EXHAUSTED')
-            remaining=3-count;allowance=300*remaining+sum(config['retry_backoff_seconds'][count:])+5
+            limit=1 if metadata.get('is_probe') else 3
+            if count>=limit:raise Gate('RETRIES_EXHAUSTED')
+            remaining=limit-count;allowance=(600 if operational else 300)*remaining+sum(config['retry_backoff_seconds'][count:limit-1])+5
             if clock+timedelta(seconds=allowance)>=deadline:raise Gate('DEADLINE_RETRY_ALLOWANCE')
             if c.execute('SELECT 1 FROM attempts WHERE item=? AND active=1',(item,)).fetchone():raise Gate('ITEM_ALREADY_IN_FLIGHT')
             if c.execute('SELECT count(*) FROM attempts WHERE active=1').fetchone()[0]>=2:raise Gate('CONCURRENCY_LIMIT')
             held=c.execute('SELECT coalesce(sum(held_nano),0) FROM attempts').fetchone()[0]
             if held+maximum>CEILING:raise Gate('BUDGET_LIMIT')
             aid=str(uuid.uuid4());c.execute('INSERT INTO attempts(id,item,attempt,created_at,state,reserved_nano,held_nano,active,metadata) VALUES(?,?,?,?,?,?,?,?,?)',(aid,item,count+1,clock.isoformat(),'reserved',maximum,maximum,1,json.dumps(metadata,sort_keys=True)))
-            self.event(c,aid,'reserved',{'maximum_nano':maximum,'input_bound':max_input,'output_including_thinking_bound':max_output,'metadata':metadata});return aid
+            self.event(c,aid,'reserved',{'reservation_nano':maximum,'input_estimate':max_input,'output_including_thinking_allowance_estimate':max_output,'provider_billing_cap_guaranteed':not operational,'metadata':metadata});return aid
     def finish(self,aid,usage=None,*,state='response',metadata=None):
         # Cached tokens are a subset of prompt tokens, not additional input.
         # Candidates and thoughts are disjoint SDK counters; never add total
@@ -77,6 +88,7 @@ class Ledger:
             held=accounted if known else row['reserved_nano']
             if known and accounted>row['reserved_nano']:
                 c.execute('INSERT INTO halt(reason) VALUES(?)',('PROVIDER_USAGE_EXCEEDED_RESERVED_BOUND',));state='bound_breach'
+            if known and accounted>500_000_000:c.execute('INSERT INTO halt(reason) VALUES(?)',('INDIVIDUAL_ATTEMPT_EXCEEDS_050_USD',))
             c.execute('UPDATE attempts SET state=?,held_nano=?,active=0,input_tokens=?,candidate_tokens=?,thinking_tokens=?,other_tokens=?,accounted_nano=? WHERE id=?',(state if known else 'unknown_usage_'+state,held,usage.get(keys[0]) if usage else None,usage.get(keys[1]) if usage else None,usage.get(keys[2]) if usage else None,other,accounted,aid))
             self.event(c,aid,'finished',{'state':state,'usage':usage,'usage_known':known,'held_nano':held,'metadata':metadata})
     def summary(self):

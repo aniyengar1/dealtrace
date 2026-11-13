@@ -17,14 +17,14 @@ def no_network(monkeypatch):
 
 @pytest.fixture
 def c():
-    result=runner.configuration();result.update(billable_thinking_bound_verified=True,max_input_tokens_documented=10000,max_billable_output_tokens=8192)
+    result=runner.configuration();result.update(reservation_policy='verified_bound_legacy_for_mock',billable_thinking_bound_verified=True,max_input_tokens_documented=10000,max_billable_output_tokens=8192)
     return result # synthetic verified bounds for tests only; real config false
 
 STAMP=datetime(2026,11,13,12,tzinfo=timezone.utc)
 
 def test_real_configuration_blocks_unverified_bounds_without_charge(tmp_path):
     l=ledger.Ledger(tmp_path/'ledger.sqlite');real=runner.configuration()
-    with pytest.raises(ledger.Gate,match='UNVERIFIED_BILLABLE_THINKING_BOUND'):l.reserve('x',real,{},STAMP)
+    with pytest.raises(ledger.Gate,match='PROVIDER_INPUT_COUNT_REQUIRED'):l.reserve('x',real,{},STAMP)
     assert l.summary()['attempts']==0
 
 def test_thinking_is_separate_and_cached_input_not_added_twice(tmp_path,c):
@@ -105,10 +105,11 @@ def test_actual_sdk_mock_transport_does_not_retry_429(c,monkeypatch):
         with pytest.raises(errors.ClientError):client.models.generate_content(model=c['model'],contents='synthetic local test',config=types.GenerateContentConfig(automatic_continuation=False))
     assert len(calls)==1
 
-def test_preflight_never_constructs_client_before_owner_confirmation(monkeypatch):
+def test_preflight_never_constructs_client_without_authorization(monkeypatch,tmp_path):
     monkeypatch.setattr(runner,'check_prompt_freeze',lambda c:None)
     monkeypatch.setattr(transport,'make_client',lambda *a,**k:pytest.fail('Client constructed'))
-    with pytest.raises(ledger.Gate,match='WAITING_EXPLICIT_OWNER'):runner.preflight(runner.configuration(),STAMP)
+    config=runner.configuration();monkeypatch.setattr(runner,'ROOT',tmp_path)
+    with pytest.raises(ledger.Gate,match='NO_EXPLICIT_INFERENCE_AUTHORIZATION'):runner.preflight(config,STAMP)
 
 def test_cache_key_excludes_provider_but_rejects_mismatched_execution(tmp_path,c):
     other={**c,'provider':'different'};assert runner.key_for('input',c)==runner.key_for('input',other)
@@ -161,6 +162,8 @@ def test_random_review_selection_is_reproducible_and_complete_release_grouped():
     cs=read(ROOT/'diagnostic_manifest.json')['cases'];a=selection(cs);b=selection(list(reversed(cs)))
     assert a==b and len(a[0])==4 and len({x['id'] for x in a[0]+a[1]})==len(a[0]+a[1])
 
+def fake_count(*args):return {'status':'count_response','counted_input_tokens':1234,'accounted_counting_cost_usd':'0'}
+
 def sleepy_mock_worker(config,prompt,payload,output):
     time.sleep(2)
     write(output,{'status':'synthetic_worker'})
@@ -191,10 +194,10 @@ def test_retry_and_cache_reuse_with_only_fake_provider(tmp_path,c,monkeypatch):
         calls.append(payload)
         if len(calls)==1:return {'status':'transport_error','http_code':429,'usage':None}
         return {'status':'response','text':'{"observations":[],"unresolved_sections":[]}','usage':{'prompt_token_count':10,'candidates_token_count':2,'thoughts_token_count':3,'total_token_count':15},'returned_model_version':'gemini-3.6-flash-test'}
-    r=runner.process_case(case,c,l,send=fake,sleep=lambda n:None)
+    r=runner.process_case(case,c,l,send=fake,count_send=fake_count,sleep=lambda n:None)
     assert len(calls)==2 and r['cache_status']=='miss' and l.summary()['attempts']==2
     assert 'gold_ids' not in calls[0] and 'review_excerpt' not in calls[0]
-    r=runner.process_case(case,c,l,send=lambda *a:pytest.fail('Cached result made a call'))
+    r=runner.process_case(case,c,l,send=lambda *a:pytest.fail('Cached result made a call'),count_send=lambda *a:pytest.fail('Cached result recounted'))
     assert r['cache_status']=='hit' and not r['inference_performed'] and l.summary()['attempts']==2
     assert Decimal(l.summary()['outstanding_unknown_or_active_reservations_usd'])>0 # first429 usage unknown
 
@@ -202,11 +205,11 @@ def test_exhausted_transient_attempts_and_unsupported_model(tmp_path,c,monkeypat
     monkeypatch.setattr(runner,'DATA',tmp_path);monkeypatch.setattr(runner,'preflight',lambda c:None)
     case=read(ROOT/'diagnostic_manifest.json')['cases'][0];l=ledger.Ledger(tmp_path/'l')
     fake=lambda *a:{'status':'transport_error','http_code':503,'usage':None}
-    r=runner.process_case(case,c,l,send=fake,sleep=lambda n:None)
+    r=runner.process_case(case,c,l,send=fake,count_send=fake_count,sleep=lambda n:None)
     assert r['status']=='FAILED_RETRIES_EXHAUSTED' and l.summary()['attempts']==3
     case=read(ROOT/'diagnostic_manifest.json')['cases'][1]
     with pytest.raises(ledger.Gate,match='UNSUPPORTED_NO_SUBSTITUTION'):
-        runner.process_case(case,c,l,send=lambda *a:{'status':'transport_error','http_code':404,'usage':None},sleep=lambda n:None)
+        runner.process_case(case,c,l,send=lambda *a:{'status':'transport_error','http_code':404,'usage':None},count_send=fake_count,sleep=lambda n:None)
     assert l.summary()['halted']
 
 def test_prices_above_accounting_or_stale_stop_before_any_call(c):
@@ -256,3 +259,62 @@ def test_unexpected_tool_usage_halts_and_keeps_reservation(tmp_path,c):
     l=ledger.Ledger(tmp_path/'l');aid=l.reserve('x',c,{},STAMP)
     l.finish(aid,{'prompt_token_count':100,'candidates_token_count':10,'thoughts_token_count':20,'tool_use_prompt_token_count':5,'total_token_count':135})
     assert l.summary()['halted'] and l.summary()['records'][0]['accounted_nano'] is None
+
+def test_owner_estimate_uses_twice_documented_max_and_minimum_one_dollar(tmp_path):
+    c=runner.configuration();l=ledger.Ledger(tmp_path/'l')
+    aid=l.reserve('x',c,{'counted_input_tokens':1000,'is_probe':True},STAMP)
+    row=l.summary()['records'][0]
+    assert row['reserved_nano']>=1_000_000_000
+    assert row['reserved_nano']>=ledger.cost(1000+1024,2*65536)
+    l.finish(aid,None,state='timeout')
+    assert l.summary()['total_held_usd']==ledger.usd(row['reserved_nano'])
+    with pytest.raises(ledger.Gate,match='EXHAUSTED'):l.reserve('x',c,{'counted_input_tokens':1000,'is_probe':True},STAMP)
+
+def test_probe_gate_usage_cost_model_and_finish():
+    r={'result':{'status':'response','accounted_nano':500_000_000,'returned_model_version':'gemini-3.6-flash','finish_reasons':['STOP'],'validation':{'observations':[]}}}
+    runner.probe_gate(r)
+    for field,value in [('accounted_nano',500_000_001),('accounted_nano',None),('returned_model_version','different-model'),('finish_reasons',['MAX_TOKENS'])]:
+        bad=deepcopy(r);bad['result'][field]=value
+        with pytest.raises(ledger.Gate):runner.probe_gate(bad)
+
+def test_probe_transport_failure_has_one_attempt_no_retry(tmp_path,c,monkeypatch):
+    monkeypatch.setattr(runner,'DATA',tmp_path);monkeypatch.setattr(runner,'preflight',lambda c:None)
+    case=read(ROOT/'diagnostic_manifest.json')['cases'][0];l=ledger.Ledger(tmp_path/'l');calls=[]
+    def fake(*args):calls.append(1);return {'status':'transport_error','http_code':503,'usage':None}
+    with pytest.raises(ledger.Gate,match='PROBE_FAILED_NO_RETRIES'):runner.process_case(case,c,l,send=fake,count_send=fake_count,is_probe=True)
+    assert len(calls)==1 and l.summary()['attempts']==1
+
+def test_usage_over_fifty_cents_is_accounted_true_and_halts(tmp_path):
+    c=runner.configuration();l=ledger.Ledger(tmp_path/'l');aid=l.reserve('x',c,{'counted_input_tokens':5000},STAMP)
+    usage={'prompt_token_count':5000,'candidates_token_count':1000,'thoughts_token_count':66000,'total_token_count':72000}
+    l.finish(aid,usage)
+    assert l.summary()['records'][0]['accounted_nano']==ledger.cost(5000,67000)
+    assert l.summary()['halted']
+
+def test_sdk_count_request_includes_instructions_schema_and_supplement(c,monkeypatch):
+    import httpx
+    from google import genai
+    from google.genai import types,_transformers
+    from google.oauth2.credentials import Credentials
+    from earnings.hybrid.schema import Extraction
+    monkeypatch.delenv('GOOGLE_API_KEY',raising=False);monkeypatch.delenv('GEMINI_API_KEY',raising=False)
+    sent=[]
+    def handler(request):sent.append(json.loads(request.content));return httpx.Response(200,json={'totalTokens':1234})
+    client=genai.Client(vertexai=True,project=c['project'],location='global',credentials=Credentials(token='synthetic-test-not-a-secret'),http_options=types.HttpOptions(retry_options=types.HttpRetryOptions(attempts=1),client_args={'transport':httpx.MockTransport(handler)}))
+    cfg=types.CountTokensConfig(system_instruction='instruction',generation_config=types.GenerationConfig(response_schema=_transformers.t_schema(None,Extraction),response_mime_type='application/json'))
+    with client:r=client.models.count_tokens(model=c['model'],contents=['payload','SCHEMA '+json.dumps(Extraction.model_json_schema())],config=cfg)
+    assert r.total_tokens==1234 and sent[0]['generationConfig']['responseSchema'] and sent[0]['systemInstruction']
+    assert 'SCHEMA' in json.dumps(sent[0]['contents'])
+
+def test_missing_thinking_counter_stops_probe_and_retains_full_reservation(tmp_path):
+    c=runner.configuration();l=ledger.Ledger(tmp_path/'l')
+    aid=l.reserve('probe',c,{'counted_input_tokens':89940,'is_probe':True},STAMP)
+    usage={'prompt_token_count':89449,'candidates_token_count':1901,
+           'thoughts_token_count':None,'total_token_count':91350}
+    l.finish(aid,usage)
+    row=l.summary()['records'][0]
+    assert row['accounted_nano'] is None and row['thinking_tokens'] is None
+    assert row['held_nano']==row['reserved_nano']==1_120_000_000
+    assert runner.dispatch_status(c,l)=='PROBE_USAGE_UNRESOLVED_STOP_REVIEW_REQUIRED'
+    with pytest.raises(ledger.Gate,match='USAGE_OR_RESPONSE'):
+        runner.probe_gate({'result':{'status':'response','accounted_nano':None}})

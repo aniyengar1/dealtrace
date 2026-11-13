@@ -2,13 +2,12 @@
   "ADC_probed": false,
   "access_probes_performed": false,
   "blocking_reasons": [
-    "WAITING_EXPLICIT_OWNER_DEALS_FINISHED_CONFIRMATION",
-    "UNVERIFIED_VERTEX_COMBINED_BILLABLE_THINKING_OUTPUT_BOUND"
+    "SUCCESS_RESPONSE_USAGE_UNKNOWN_OR_INCONSISTENT_STOP"
   ],
-  "checked_at": "2026-11-13T20:09:47.277108+00:00",
+  "checked_at": "2026-11-13T20:39:32.497736+00:00",
   "deadline": "2026-11-17T18:00:00-08:00",
-  "diagnostic_performance": "NOT_EVALUATED_NO_MODEL_RESULTS",
-  "errors_abstentions": "Not measurable before inference; mocked tests are not model outputs",
+  "diagnostic_performance": "ONE_CONSUMED_CASE_OFFLINE_ONLY_NO_GENERALIZATION",
+  "errors_abstentions": "Two current proposals rejected by deterministic checks; two prior-context proposals also rejected",
   "fresh": {
     "bodies_opened": false,
     "commit": "6e085a5",
@@ -26,26 +25,50 @@
     "reviewed_cases": 0,
     "reviewer": "owner_only"
   },
-  "inference_authorized": false,
-  "inference_performed": false,
+  "inference_authorized": true,
+  "inference_performed": true,
+  "ledger_ceiling_not_provider_billing_cap": true,
   "location": "global",
   "model_requested": "gemini-3.6-flash",
-  "pre_live_requirement": "Refresh official Vertex pricing review and confirm safe documented billing bounds. Do not use access probes or silently substitute model.",
+  "pre_live_requirement": "Owner review of missing thoughts_token_count before any further inference; no automatic retry",
   "production_promotion": false,
   "project": "just-rhythm-506202-j8",
   "provider": "google_vertex_ai",
-  "returned_model_versions": [],
+  "returned_model_versions": [
+    "gemini-3.6-flash"
+  ],
   "sdk_version": "2.34.0",
   "spend": {
     "active_attempts": 0,
-    "attempts": 0,
+    "attempts": 1,
     "ceiling_usd": "15",
     "halted": false,
     "known_accounted_usd": "0",
-    "outstanding_unknown_or_active_reservations_usd": "0",
-    "records": [],
-    "total_held_usd": "0"
+    "outstanding_unknown_or_active_reservations_usd": "1.12",
+    "records": [
+      {
+        "accounted_nano": null,
+        "active": 0,
+        "attempt": 1,
+        "candidate_tokens": 1901,
+        "created_at": "2026-11-13T20:34:39.366553+00:00",
+        "held_nano": 1120000000,
+        "id": "bb7bb97b-f98d-497c-847f-012086b915af",
+        "input_tokens": 89449,
+        "item": "45c12027ec6277c23a025817a8a4e6d61ec9c50c9a671ade824172b11f2e8539",
+        "metadata": "{\"cache_status\": \"miss\", \"case_id\": \"pilot-0\", \"count_id\": \"e07e7b6be3b24e91b229c3c0ac9842a4\", \"counted_input_tokens\": 89940, \"execution_fingerprint\": \"746b8a53f4f6c5d1fbbefbab81868d4c21b7b0c71a8a2ba94835871cfc8e5b05\", \"input_hash\": \"4f22caacecf16a2737b76564051a50a0dc9d4b69d045a519cea0653614a6151a\", \"is_probe\": true, \"location\": \"global\", \"model\": \"gemini-3.6-flash\", \"project\": \"just-rhythm-506202-j8\", \"prompt_version\": \"hybrid-diagnostic-v2-owner-estimate\", \"provider\": \"google_vertex_ai\", \"sdk\": \"google-genai==2.34.0\"}",
+        "other_tokens": 0,
+        "reserved_nano": 1120000000,
+        "state": "unknown_usage_response",
+        "thinking_tokens": null
+      }
+    ],
+    "total_held_usd": "1.12"
   },
-  "stage": "LOCAL_PREPARATION_ONLY",
-  "vertex_requests_dispatched": 0
+  "stage": "AUTHORIZED_PROBE_STOPPED",
+  "vertex_request_types": {
+    "count_tokens": 1,
+    "generate_content": 1
+  },
+  "vertex_requests_dispatched": 2
 }

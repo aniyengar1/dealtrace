@@ -10,7 +10,7 @@
       "human_reviewed_at": null,
       "human_reviewer": null,
       "input_sha256": "7db68f9dbcb6a23f1e29239cda0ac149666e6c597674d5db5ccb15cd74fe572f",
-      "model_review": "not_run",
+      "model_review": "not_run_accounting_gate_stop",
       "selection": "random",
       "source_curation": "source_curated_agent_reviewed_whole_release_not_human_verified",
       "source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000158/adi3q24exhibit991earnings.htm"
@@ -24,7 +24,7 @@
       "human_reviewed_at": null,
       "human_reviewer": null,
       "input_sha256": "88e09e1b38f3905e66438f0660845b80b797d40b5a9e900c04197cceced2a552",
-      "model_review": "not_run",
+      "model_review": "quarantined_probe_response_failed_evidence_checks",
       "selection": "random",
       "source_curation": "source_curated_agent_reviewed_whole_release_not_human_verified",
       "source_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000013/exhibit991-q225pressrelease.htm"
@@ -38,7 +38,7 @@
       "human_reviewed_at": null,
       "human_reviewer": null,
       "input_sha256": "04299f22a749ecdd322c6d7e77b8a6c0a783b3664d5877ad6a670e7bcc6a0497",
-      "model_review": "not_run",
+      "model_review": "not_run_accounting_gate_stop",
       "selection": "random",
       "source_curation": "source_curated_agent_reviewed_whole_release_not_human_verified",
       "source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000016/q425ex-991er.htm"
@@ -52,7 +52,7 @@
       "human_reviewed_at": null,
       "human_reviewer": null,
       "input_sha256": "cd9d081d18da4606d3c0e0364c289783747748705d089a445d700aa509bf5194",
-      "model_review": "not_run",
+      "model_review": "not_run_accounting_gate_stop",
       "selection": "random",
       "source_curation": "existing_positive_only_source_curated_agent_reviewed_not_human_verified",
       "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000017/crwd-20240828xex991.htm"
@@ -66,7 +66,7 @@
       "human_reviewed_at": null,
       "human_reviewer": null,
       "input_sha256": "31dd8f7a1b1a494b343a062990074da2b45500f62faca41f100288862faacaab",
-      "model_review": "not_run",
+      "model_review": "not_run_accounting_gate_stop",
       "selection": "targeted_prior_v2_risk",
       "source_curation": "source_curated_agent_reviewed_whole_release_not_human_verified",
       "source_url": "https://www.sec.gov/Archives/edgar/data/6951/000000695125000032/exhibit991q32025earningsre.htm"
@@ -80,7 +80,7 @@
       "human_reviewed_at": null,
       "human_reviewer": null,
       "input_sha256": "3ec604b30ca89e9d022162985137e02302b9aabc0e4c5801d539f2a104120463",
-      "model_review": "not_run",
+      "model_review": "not_run_accounting_gate_stop",
       "selection": "targeted_prior_v2_risk",
       "source_curation": "existing_positive_only_source_curated_agent_reviewed_not_human_verified",
       "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000059/samsaraepr-q22025.htm"
@@ -94,7 +94,7 @@
       "human_reviewed_at": null,
       "human_reviewer": null,
       "input_sha256": "ba370696f236abb6d38482c832615e6c9fada89db22a6cf0b0780dbe3ce2139f",
-      "model_review": "not_run",
+      "model_review": "not_run_accounting_gate_stop",
       "selection": "targeted_prior_v2_risk",
       "source_curation": "source_curated_agent_reviewed_whole_release_not_human_verified",
       "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000074/hims-20260331x8xkearningsr.htm"
@@ -104,16 +104,19 @@
   "estimated_minutes": 88,
   "hard_owner_workload_minutes": 120,
   "human_review_complete": false,
+  "probe_only": true,
   "random_cases": [
     "pilot-1",
     "pilot-0",
     "pilot-11",
     "CRWD-0001535527-24-000017"
   ],
+  "remaining_diagnostic_inference": "STOPPED_ACCOUNTING_GATE",
   "seed": "crosscheck-hybrid-owner-review-v1",
   "targeted_cases": [
     "pilot-4",
     "IOT-0001642896-24-000059",
     "pilot-19"
-  ]
+  ],
+  "updated_at": "2026-11-13T20:39:32.497736+00:00"
 }

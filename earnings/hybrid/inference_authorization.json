@@ -1,0 +1,13 @@
+{
+  "concurrent_deals_run_authorized": true,
+  "confirmed_by": "owner",
+  "deals_run_finished_confirmed": false,
+  "exact_user_confirmation": "I authorize Vertex inference now, concurrently with the deals run. This supersedes the requirement to wait for that run to finish and the prerequisite for a documented combined thinking/output bound.",
+  "operational_ledger_ceiling_usd": "15",
+  "probe_policy": "One existing diagnostic release, one attempt, no retries. Continue only when model, usage, pricing and controls consistent and accounted cost<=0.50USD.",
+  "provider_billing_cap_guaranteed": false,
+  "recorded_at": "2026-11-13T20:30:07.502970+00:00",
+  "residual_billing_uncertainty_accepted": true,
+  "scope": "Only existing approved10 diagnostic cases. Fresh groups remain untouched. No prediction locks, production promotion, model training or billing changes.",
+  "stage": "diagnostic_only"
+}

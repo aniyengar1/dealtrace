@@ -54,16 +54,14 @@ def price_gate(c,pricing,clock):
 def preflight(c,clock=None):
     clock=clock or datetime.now(timezone.utc);check_prompt_freeze(c)
     deadline=datetime.fromisoformat(c['deadline'])
-    if clock+timedelta(seconds=911)>=deadline:raise Gate('DEADLINE_RETRY_ALLOWANCE')
+    if clock+timedelta(seconds=1811)>=deadline:raise Gate('DEADLINE_RETRY_ALLOWANCE')
     authpath=ROOT/'inference_authorization.json'
-    if not authpath.exists():raise Gate('WAITING_EXPLICIT_OWNER_DEALS_FINISHED_CONFIRMATION')
+    if not authpath.exists():raise Gate('NO_EXPLICIT_INFERENCE_AUTHORIZATION')
     auth=read(authpath)
-    if auth.get('deals_run_finished_confirmed') is not True or auth.get('stage')!='diagnostic_only' or auth.get('confirmed_by')!='owner' or not auth.get('exact_user_confirmation'):raise Gate('NO_EXPLICIT_INFERENCE_AUTHORIZATION')
+    if auth.get('concurrent_deals_run_authorized') is not True or auth.get('residual_billing_uncertainty_accepted') is not True or auth.get('stage')!='diagnostic_only' or auth.get('confirmed_by')!='owner' or not auth.get('exact_user_confirmation'):raise Gate('NO_EXPLICIT_INFERENCE_AUTHORIZATION')
     stamp=datetime.fromisoformat(auth['recorded_at'])
     if stamp.tzinfo is None or stamp>clock:raise Gate('INVALID_AUTHORIZATION_TIMESTAMP')
-    if not c.get('billable_thinking_bound_verified') or not isinstance(c.get('max_billable_output_tokens'),int):raise Gate('UNVERIFIED_BILLABLE_THINKING_BOUND')
-    bounds=read(ROOT/'bounds_review.json')
-    if bounds.get('combined_billable_output_bound_verified') is not True or bounds.get('model')!=c['model'] or bounds.get('max_billable_output_tokens')!=c.get('max_billable_output_tokens'):raise Gate('UNVERIFIED_BILLABLE_THINKING_BOUND')
+    if c.get('reservation_policy')!='owner_approved_conservative_estimate_not_provider_cap' or c.get('output_reservation_multiplier')!=2:raise Gate('UNAPPROVED_RESERVATION_POLICY')
     pricing=read(ROOT/'pricing_review.json');price_gate(c,pricing,clock)
     return auth,pricing
 
@@ -76,13 +74,13 @@ def calendar_for(company):
     from earnings.extraction.rules import period
     return lambda y,q:period(company,y,q)
 
-def process_case(case,c,ledger,*,send=dispatch,sleep=time.sleep):
+def process_case(case,c,ledger,*,send=dispatch,count_send=None,sleep=time.sleep,is_probe=False):
     inputpath=Path(case['input_path']);raw=inputpath.read_bytes()
     if digest(raw)!=case['input_sha256']:raise Gate('DIAGNOSTIC_INPUT_CHANGED')
     item=json.loads(raw);docs=item['documents']
     fresh={i['company'] for i in read(ROOT/'fresh_manifest.json')['issuers']}
     if case['company'] in fresh or any(d['company'] in fresh for d in docs):raise Gate('FRESH_INFERENCE_EMBARGO')
-    payload=json.dumps({'documents':docs},sort_keys=True,separators=(',',':')) # no gold IDs/values/labels
+    payload=json.dumps({'documents':docs},sort_keys=True,separators=(',',':'))
     if len(payload.encode())>c['max_request_utf8_bytes']:return {'case_id':case['id'],'status':'INPUT_TOO_LARGE_NO_TRUNCATION','inference_performed':False}
     ih=digest(payload.encode());key=key_for(ih,c);cache=DATA/'responses';cache.mkdir(parents=True,exist_ok=True);path=cache/(key+'.json')
     with (cache/(key+'.lock')).open('a+') as lock:
@@ -92,19 +90,31 @@ def process_case(case,c,ledger,*,send=dispatch,sleep=time.sleep):
             with ledger.connect() as conn:ledger.event(conn,None,'cache_hit',{'cache_key':key,'provider':c['provider'],'inference_performed':False})
             return {'case_id':case['id'],'cache_status':'hit','result':cached['result'],'inference_performed':False}
         preflight(c)
-        for _ in range(3):
-            # Called immediately before every attempt, not only at run start.
+        if is_probe and any(json.loads(r['metadata']).get('is_probe') for r in ledger.summary()['records']):raise Gate('PROBE_ALREADY_ATTEMPTED_STOP')
+        for _ in range(1 if is_probe else 3):
             preflight(c)
-            aid=ledger.reserve(key,c,{'case_id':case['id'],**PINNED,'cache_status':'miss','input_hash':ih,'prompt_version':c['prompt_version'],'execution_fingerprint':execution_fingerprint(c)})
+            with ledger.connect() as conn:prior_count=conn.execute('SELECT count(*) FROM attempts WHERE item=?',(key,)).fetchone()[0]
+            if prior_count>=(1 if is_probe else 3):raise Gate('RETRIES_EXHAUSTED')
+            count_id=uuid.uuid4().hex;counter=count_send or dispatch
+            with ledger.connect() as conn:ledger.event(conn,None,'count_requested',{'case_id':case['id'],'count_id':count_id,'known_cost_usd':'0','pricing_source':'official Vertex CountTokens documentation','input_hash':ih})
+            counted=counter({**c,'_operation':'count'},(ROOT/'prompt.txt').read_text(),payload,DATA/(count_id+'-count.json'))
+            write(DATA/(count_id+'-count-result.json'),counted)
+            tokens=counted.get('counted_input_tokens')
+            with ledger.connect() as conn:ledger.event(conn,None,'count_completed',{'case_id':case['id'],'count_id':count_id,'result':counted,'known_cost_usd':'0'})
+            if counted['status']!='count_response' or type(tokens) is not int or not 0<tokens<=c['max_input_tokens_documented']:raise Gate('PROVIDER_COUNT_FAILED_STOP')
+            aid=ledger.reserve(key,c,{'case_id':case['id'],**PINNED,'cache_status':'miss','input_hash':ih,'prompt_version':c['prompt_version'],'execution_fingerprint':execution_fingerprint(c),'count_id':count_id,'counted_input_tokens':tokens,'is_probe':is_probe})
             try:preflight(c)
             except Exception:
                 ledger.finish(aid,{'prompt_token_count':0,'candidates_token_count':0,'thoughts_token_count':0,'total_token_count':0},state='cancelled_before_dispatch');raise
-            write(DATA/(aid+'-request.json'),{'provider':c['provider'],'requested_model':c['model'],'project':c['project'],'location':c['location'],'execution_config':c,'execution_fingerprint':execution_fingerprint(c),'prompt_version':c['prompt_version'],'system_prompt':(ROOT/'prompt.txt').read_text(),'response_schema':Extraction.model_json_schema(),'input_hash':ih,'payload':json.loads(payload)})
-            with ledger.connect() as conn:ledger.event(conn,aid,'dispatch_intent',{'requested_model':c['model'],'provider':c['provider']})
+            write(DATA/(aid+'-request.json'),{'provider':c['provider'],'requested_model':c['model'],'project':c['project'],'location':c['location'],'execution_config':c,'execution_fingerprint':execution_fingerprint(c),'prompt_version':c['prompt_version'],'system_prompt':(ROOT/'prompt.txt').read_text(),'response_schema':Extraction.model_json_schema(),'input_hash':ih,'payload':json.loads(payload),'count_id':count_id,'counted_input_tokens':tokens,'is_probe':is_probe})
+            with ledger.connect() as conn:ledger.event(conn,aid,'dispatch_intent',{'requested_model':c['model'],'provider':c['provider'],'is_probe':is_probe})
+            started=time.monotonic()
             try:result=send(c,(ROOT/'prompt.txt').read_text(),payload,DATA/(aid+'-raw.json'))
             except Exception as exc:result={'status':'parent_dispatch_error_unknown_usage','usage':None,'returned_model_version':None,'http_code':None,'error_class':type(exc).__name__}
+            result.setdefault('latency_seconds',str(time.monotonic()-started))
             ledger.finish(aid,result.get('usage'),state=result['status'],metadata={'returned_model_version':result.get('returned_model_version'),'http_code':result.get('http_code'),'error_class':result.get('error_class')})
-            result.update(attempt_id=aid,provider=c['provider'],requested_model=c['model'],project=c['project'],location=c['location'],input_hash=ih,prompt_version=c['prompt_version'])
+            row=next(r for r in ledger.summary()['records'] if r['id']==aid)
+            result.update(attempt_id=aid,provider=c['provider'],requested_model=c['model'],project=c['project'],location=c['location'],input_hash=ih,prompt_version=c['prompt_version'],counted_input_tokens=tokens,is_probe=is_probe,accounted_nano=row['accounted_nano'],reserved_nano=row['reserved_nano'],held_nano=row['held_nano'])
             write(DATA/(aid+'-result.json'),result)
             returned=result.get('returned_model_version')
             if returned and returned!=c['model'] and not returned.startswith(c['model']+'-'):
@@ -114,39 +124,70 @@ def process_case(case,c,ledger,*,send=dispatch,sleep=time.sleep):
                 try:result['validation']=validate(json.loads(result.get('text') or ''),docs,calendar_for(case['company']))
                 except (ValueError,TypeError) as exc:result['validation']={'status':'INVALID_STRUCTURED_OUTPUT','error_class':type(exc).__name__,'quarantined':True}
                 cache_write(path,c,ih,result)
+                if row['accounted_nano'] is None:raise Gate('SUCCESS_RESPONSE_USAGE_UNKNOWN_OR_INCONSISTENT_STOP')
+                if row['accounted_nano']>500_000_000 or ledger.summary()['halted']:raise Gate('ATTEMPT_COST_OR_CONTROL_LIMIT_STOP')
+                if result['usage']['prompt_token_count']>tokens+c['input_reservation_margin_tokens']:raise Gate('PROVIDER_INPUT_COUNT_UNDERESTIMATE_STOP')
                 return {'case_id':case['id'],'cache_status':'miss','result':result,'inference_performed':True}
+            if is_probe:raise Gate('PROBE_FAILED_NO_RETRIES')
             code=result.get('http_code')
             if code in (400,401,403,404):
                 with ledger.connect() as conn:conn.execute('INSERT INTO halt(reason) VALUES(?)',('MODEL_ACCESS_OR_CONFIGURATION_UNSUPPORTED',))
                 raise Gate('MODEL_ACCESS_OR_CONFIGURATION_UNSUPPORTED_NO_SUBSTITUTION')
             transient=code in (408,429,500,502,503,504) or result['status'] in ('timeout_unknown_usage','worker_failed_unknown_usage') or result.get('error_class') in ('TimeoutException','ReadTimeout','ConnectTimeout','ConnectError','TransportError')
             with ledger.connect() as conn:count=conn.execute('SELECT count(*) FROM attempts WHERE item=?',(key,)).fetchone()[0]
-            if not transient or count>=3:return {'case_id':case['id'],'status':'FAILED_RETRIES_EXHAUSTED' if transient else 'FAILED_NONRETRYABLE','inference_performed':True,'last_attempt_id':aid}
+            if not transient or count>=3:
+                if code==429:raise Gate('SUSTAINED_THROTTLING_PAUSED')
+                return {'case_id':case['id'],'status':'FAILED_RETRIES_EXHAUSTED' if transient else 'FAILED_NONRETRYABLE','inference_performed':True,'last_attempt_id':aid}
             sleep(c['retry_backoff_seconds'][count-1])
         return {'case_id':case['id'],'status':'FAILED','inference_performed':True}
 
-def run():
-    c=configuration();ledger=Ledger(LEDGER);result=[];started=datetime.now(timezone.utc).isoformat();before=ledger.summary()['attempts'];stopped=None
+
+def probe_gate(item):
+    result=item.get('result',{})
+    if result.get('status')!='response' or result.get('accounted_nano') is None:raise Gate('PROBE_USAGE_OR_RESPONSE_GATE_FAILED')
+    returned=result.get('returned_model_version')
+    if not returned or returned!='gemini-3.6-flash' and not returned.startswith('gemini-3.6-flash-'):raise Gate('PROBE_MODEL_VERSION_GATE_FAILED')
+    if result['accounted_nano']>500_000_000:raise Gate('PROBE_COST_GATE_FAILED')
+    if result.get('validation',{}).get('status')=='INVALID_STRUCTURED_OUTPUT':raise Gate('PROBE_STRUCTURED_OUTPUT_GATE_FAILED')
+    if not result.get('finish_reasons') or any(x!='STOP' for x in result['finish_reasons']):raise Gate('PROBE_FINISH_REASON_GATE_FAILED')
+
+
+def run(probe_only=False):
+    c=configuration();ledger=Ledger(LEDGER);result=[];started=datetime.now(timezone.utc).isoformat();before=ledger.summary()['attempts'];stopped=None;passed=False
     try:
         check_prompt_freeze(c)
-        for case in read(ROOT/'diagnostic_manifest.json')['cases']:
-            try:result.append(process_case(case,c,ledger))
+        for index,case in enumerate(read(ROOT/'diagnostic_manifest.json')['cases']):
+            try:
+                item=process_case(case,c,ledger,is_probe=index==0);result.append(item)
+                if index==0:
+                    probe_gate(item);passed=True
+                    write(DATA/'probe_control.json',{'passed':True,'recorded_at':datetime.now(timezone.utc).isoformat(),'result':item,'operational_evidence_only':True,'provider_billing_cap_guaranteed':False})
+                    if probe_only:break
             except Gate as exc:
-                if str(exc) in ('RETRIES_EXHAUSTED','ITEM_ALREADY_IN_FLIGHT'):
+                if index>0 and str(exc) in ('RETRIES_EXHAUSTED','ITEM_ALREADY_IN_FLIGHT'):
                     result.append({'case_id':case['id'],'status':str(exc)});continue
                 raise
     except Gate as exc:stopped=str(exc)
     summary=ledger.summary();target=DATA/('run-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')+'.json')
-    write(target,{'stage':'diagnostic_only','started_at':started,'finished_at':datetime.now(timezone.utc).isoformat(),'stopped_reason':stopped,'results':result,'cost_ledger':summary,'inference_attempts_this_run':summary['attempts']-before,'inference_performed':summary['attempts']>before,'human_review_complete':False})
+    write(target,{'stage':'diagnostic_only','probe_only':probe_only,'probe_passed':passed,'started_at':started,'finished_at':datetime.now(timezone.utc).isoformat(),'stopped_reason':stopped,'results':result,'cost_ledger':summary,'inference_attempts_this_run':summary['attempts']-before,'inference_performed':summary['attempts']>before,'human_review_complete':False,'ledger_ceiling_not_provider_billing_cap':True})
     return target
 
+def dispatch_status(c,ledger):
+    summary=ledger.summary()
+    if summary['halted']:return 'EXPERIMENT_HALTED_REVIEW_REQUIRED'
+    probes=[r for r in summary['records'] if json.loads(r['metadata']).get('is_probe')]
+    if probes and probes[0]['accounted_nano'] is None:
+        return 'PROBE_USAGE_UNRESOLVED_STOP_REVIEW_REQUIRED'
+    try:preflight(c)
+    except (Gate,FileNotFoundError) as exc:return str(exc)
+    return 'AUTHORIZED_PROBE_REQUIRED' if not probes else 'PROBE_CONTROLS_REQUIRE_RECHECK'
+
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('command',choices=['status','run']);args=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('command',choices=['status','probe','run']);args=p.parse_args()
     if args.command=='status':
         c=configuration();ledger=Ledger(LEDGER)
-        try:preflight(c);status='READY_AUTHORIZED_DIAGNOSTIC_ONLY'
-        except (Gate,FileNotFoundError) as exc:status=str(exc)
+        status=dispatch_status(c,ledger)
         print(json.dumps({'dispatch_status':status,'inference_performed':False,'configuration':PINNED,'budget':ledger.summary()},indent=2))
     else:
-        try:print(run())
+        try:print(run(probe_only=args.command=='probe'))
         except Gate as exc:print(json.dumps({'status':'BLOCKED','reason':str(exc),'budget':Ledger(LEDGER).summary()}));raise SystemExit(2)
