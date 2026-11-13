@@ -1,0 +1,13 @@
+{
+  "method": "Descriptive issuer cluster bootstrap percentile95%; redraw20 issuer clusters, include all audited records per issuer. Not design-unbiased population inference; selection was purposive and only20 clusters.",
+  "precision": {
+    "high": "0.68",
+    "low": "0.1052631578947368421052631579"
+  },
+  "recall": {
+    "high": "0.3111111111111111111111111111",
+    "low": "0.04651162790697674418604651163"
+  },
+  "replicates": 2000,
+  "seed": "crosscheck-s5-company-cluster-bootstrap-v1"
+}

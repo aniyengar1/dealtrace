@@ -1,0 +1,4355 @@
+{
+  "cutoff": "2026-11-12",
+  "rows": [
+    {
+      "actual_accession": "0001585521-26-000121",
+      "actual_filed": "2026-08-26",
+      "actual_gap": null,
+      "actual_id": "292a30d9-a4ab-5a0e-8464-af3a65dccb5c",
+      "actual_value": "1277217000",
+      "company": "ZM",
+      "group_id": "ZM:0001585521-26-000069",
+      "guidance_filed": "2026-05-21",
+      "result_filed": "2026-08-25",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000119/zm-20260731ex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000069/zm-20260430ex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001585521-26-000121",
+          "end": "2026-07-31",
+          "filed": "2026-08-26",
+          "id": "292a30d9-a4ab-5a0e-8464-af3a65dccb5c",
+          "parents": [],
+          "start": "2026-05-01"
+        },
+        "end": "2026-07-31",
+        "fiscal_label": "2027:2",
+        "start": "2026-05-01"
+      }
+    },
+    {
+      "actual_accession": "0001585521-26-000071",
+      "actual_filed": "2026-05-22",
+      "actual_gap": null,
+      "actual_id": "61ab6b9f-8d88-513c-89be-551167a70cda",
+      "actual_value": "1239006000",
+      "company": "ZM",
+      "group_id": "ZM:0001585521-26-000026",
+      "guidance_filed": "2026-02-25",
+      "result_filed": "2026-05-21",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000069/zm-20260430ex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000026/zm-20260225ex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001585521-26-000071",
+          "end": "2026-04-30",
+          "filed": "2026-05-22",
+          "id": "61ab6b9f-8d88-513c-89be-551167a70cda",
+          "parents": [],
+          "start": "2026-02-01"
+        },
+        "end": "2026-04-30",
+        "fiscal_label": "2027:1",
+        "start": "2026-02-01"
+      }
+    },
+    {
+      "actual_accession": "0001585521-26-000030",
+      "actual_filed": "2026-02-27",
+      "actual_gap": null,
+      "actual_id": "9cbf613a-455b-565d-a6cb-796a3430b2f9",
+      "actual_value": "1246992000",
+      "company": "ZM",
+      "group_id": "ZM:0001585521-25-000200",
+      "guidance_filed": "2025-11-24",
+      "result_filed": "2026-02-25",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000026/zm-20260225ex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552125000200/zm-20251031ex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001585521-26-000030",
+          "end": "2026-01-31",
+          "filed": "2026-02-27",
+          "id": "9cbf613a-455b-565d-a6cb-796a3430b2f9",
+          "parents": [
+            "8091971b-6046-54b2-b49a-ae96ea7ea719",
+            "67d42011-024f-5dad-a6b6-7a18560e9cbc"
+          ],
+          "start": "2025-11-01"
+        },
+        "end": "2026-01-31",
+        "fiscal_label": "2026:4",
+        "start": "2025-11-01"
+      }
+    },
+    {
+      "actual_accession": "0001585521-25-000202",
+      "actual_filed": "2025-11-25",
+      "actual_gap": null,
+      "actual_id": "c61436cc-d1b8-58dc-b8d5-915087297d3c",
+      "actual_value": "1229835000",
+      "company": "ZM",
+      "group_id": "ZM:0001585521-25-000138",
+      "guidance_filed": "2025-08-21",
+      "result_filed": "2025-11-24",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1585521/000158552125000200/zm-20251031ex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552125000138/zm-20250731ex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001585521-25-000202",
+          "end": "2025-10-31",
+          "filed": "2025-11-25",
+          "id": "c61436cc-d1b8-58dc-b8d5-915087297d3c",
+          "parents": [],
+          "start": "2025-08-01"
+        },
+        "end": "2025-10-31",
+        "fiscal_label": "2026:3",
+        "start": "2025-08-01"
+      }
+    },
+    {
+      "actual_accession": "0001585521-25-000141",
+      "actual_filed": "2025-08-22",
+      "actual_gap": null,
+      "actual_id": "38535fb6-83c2-5b17-b7aa-af5f74269ecf",
+      "actual_value": "1217227000",
+      "company": "ZM",
+      "group_id": "ZM:0001585521-25-000087",
+      "guidance_filed": "2025-05-21",
+      "result_filed": "2025-08-21",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1585521/000158552125000138/zm-20250731ex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552125000087/zm-20250430ex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001585521-25-000141",
+          "end": "2025-07-31",
+          "filed": "2025-08-22",
+          "id": "38535fb6-83c2-5b17-b7aa-af5f74269ecf",
+          "parents": [],
+          "start": "2025-05-01"
+        },
+        "end": "2025-07-31",
+        "fiscal_label": "2026:2",
+        "start": "2025-05-01"
+      }
+    },
+    {
+      "actual_accession": "0001585521-25-000090",
+      "actual_filed": "2025-05-23",
+      "actual_gap": null,
+      "actual_id": "75572866-b834-5b28-a3bb-18a217372c5d",
+      "actual_value": "1174715000",
+      "company": "ZM",
+      "group_id": "ZM:0001585521-25-000027",
+      "guidance_filed": "2025-02-24",
+      "result_filed": "2025-05-21",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1585521/000158552125000087/zm-20250430ex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552125000027/zm-20250224ex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001585521-25-000090",
+          "end": "2025-04-30",
+          "filed": "2025-05-23",
+          "id": "75572866-b834-5b28-a3bb-18a217372c5d",
+          "parents": [],
+          "start": "2025-02-01"
+        },
+        "end": "2025-04-30",
+        "fiscal_label": "2026:1",
+        "start": "2025-02-01"
+      }
+    },
+    {
+      "actual_accession": "0001585521-25-000042",
+      "actual_filed": "2025-02-28",
+      "actual_gap": null,
+      "actual_id": "ae395e34-c59d-5735-8aa9-d5e0a7e2f437",
+      "actual_value": "1184138000",
+      "company": "ZM",
+      "group_id": "ZM:0001585521-24-000257",
+      "guidance_filed": "2024-11-25",
+      "result_filed": "2025-02-24",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1585521/000158552125000027/zm-20250224ex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552124000257/zm-20241031ex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001585521-25-000042",
+          "end": "2025-01-31",
+          "filed": "2025-02-28",
+          "id": "ae395e34-c59d-5735-8aa9-d5e0a7e2f437",
+          "parents": [
+            "c70485d3-f2f9-5d62-a475-ce0acdcb399c",
+            "4bc0c6da-e920-5ec9-993f-50c836eb1fe3"
+          ],
+          "start": "2024-11-01"
+        },
+        "end": "2025-01-31",
+        "fiscal_label": "2025:4",
+        "start": "2024-11-01"
+      }
+    },
+    {
+      "actual_accession": "0001585521-24-000260",
+      "actual_filed": "2024-11-26",
+      "actual_gap": null,
+      "actual_id": "6d6c200a-2d9e-527d-a429-c66ef7e555e2",
+      "actual_value": "1177541000",
+      "company": "ZM",
+      "group_id": "ZM:0001585521-24-000178",
+      "guidance_filed": "2024-08-21",
+      "result_filed": "2024-11-25",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1585521/000158552124000257/zm-20241031ex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552124000178/zm-20240731ex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001585521-24-000260",
+          "end": "2024-10-31",
+          "filed": "2024-11-26",
+          "id": "6d6c200a-2d9e-527d-a429-c66ef7e555e2",
+          "parents": [],
+          "start": "2024-08-01"
+        },
+        "end": "2024-10-31",
+        "fiscal_label": "2025:3",
+        "start": "2024-08-01"
+      }
+    },
+    {
+      "actual_accession": "0001261333-26-000099",
+      "actual_filed": "2026-09-04",
+      "actual_gap": null,
+      "actual_id": "cf9b2c50-86be-54a0-883e-c1361bc5cfea",
+      "actual_value": "875746000",
+      "company": "DOCU",
+      "group_id": "DOCU:0001261333-26-000072",
+      "guidance_filed": "2026-06-04",
+      "result_filed": "2026-09-03",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000088/q227ex-991er.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000072/q127ex-991er.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001261333-26-000099",
+          "end": "2026-07-31",
+          "filed": "2026-09-04",
+          "id": "cf9b2c50-86be-54a0-883e-c1361bc5cfea",
+          "parents": [],
+          "start": "2026-05-01"
+        },
+        "end": "2026-07-31",
+        "fiscal_label": "2027:2",
+        "start": "2026-05-01"
+      }
+    },
+    {
+      "actual_accession": "0001261333-26-000074",
+      "actual_filed": "2026-06-05",
+      "actual_gap": null,
+      "actual_id": "24e4ea12-e37d-5da8-bb1c-515d60fb8bcc",
+      "actual_value": "830235000",
+      "company": "DOCU",
+      "group_id": "DOCU:0001261333-26-000017",
+      "guidance_filed": "2026-03-17",
+      "result_filed": "2026-06-04",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000072/q127ex-991er.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000017/q426ex-991er.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001261333-26-000074",
+          "end": "2026-04-30",
+          "filed": "2026-06-05",
+          "id": "24e4ea12-e37d-5da8-bb1c-515d60fb8bcc",
+          "parents": [],
+          "start": "2026-02-01"
+        },
+        "end": "2026-04-30",
+        "fiscal_label": "2027:1",
+        "start": "2026-02-01"
+      }
+    },
+    {
+      "actual_accession": "0001261333-26-000021",
+      "actual_filed": "2026-03-18",
+      "actual_gap": null,
+      "actual_id": "d036468e-7d7e-55a3-bc1a-fc0b57079061",
+      "actual_value": "836860000",
+      "company": "DOCU",
+      "group_id": "DOCU:0001261333-25-000146",
+      "guidance_filed": "2025-12-04",
+      "result_filed": "2026-03-17",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000017/q426ex-991er.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000146/q326ex-991er.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001261333-26-000021",
+          "end": "2026-01-31",
+          "filed": "2026-03-18",
+          "id": "d036468e-7d7e-55a3-bc1a-fc0b57079061",
+          "parents": [
+            "65e37aff-032d-515a-bd44-23f1064c882a",
+            "67bc705a-d4b8-5a61-9b1f-e9712e2fe0a9"
+          ],
+          "start": "2025-11-01"
+        },
+        "end": "2026-01-31",
+        "fiscal_label": "2026:4",
+        "start": "2025-11-01"
+      }
+    },
+    {
+      "actual_accession": "0001261333-25-000150",
+      "actual_filed": "2025-12-05",
+      "actual_gap": null,
+      "actual_id": "2f5bc00f-ea19-519b-8558-d00292a8bd5b",
+      "actual_value": "818350000",
+      "company": "DOCU",
+      "group_id": "DOCU:0001261333-25-000129",
+      "guidance_filed": "2025-09-04",
+      "result_filed": "2025-12-04",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000146/q326ex-991er.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000129/q226ex-991er.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001261333-25-000150",
+          "end": "2025-10-31",
+          "filed": "2025-12-05",
+          "id": "2f5bc00f-ea19-519b-8558-d00292a8bd5b",
+          "parents": [],
+          "start": "2025-08-01"
+        },
+        "end": "2025-10-31",
+        "fiscal_label": "2026:3",
+        "start": "2025-08-01"
+      }
+    },
+    {
+      "actual_accession": "0001261333-25-000132",
+      "actual_filed": "2025-09-05",
+      "actual_gap": null,
+      "actual_id": "94d78740-4981-59f5-94b5-595a284693ef",
+      "actual_value": "800636000",
+      "company": "DOCU",
+      "group_id": "DOCU:0001261333-25-000073",
+      "guidance_filed": "2025-06-05",
+      "result_filed": "2025-09-04",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000129/q226ex-991er.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000073/q126ex-991er.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001261333-25-000132",
+          "end": "2025-07-31",
+          "filed": "2025-09-05",
+          "id": "94d78740-4981-59f5-94b5-595a284693ef",
+          "parents": [],
+          "start": "2025-05-01"
+        },
+        "end": "2025-07-31",
+        "fiscal_label": "2026:2",
+        "start": "2025-05-01"
+      }
+    },
+    {
+      "actual_accession": "0001261333-25-000075",
+      "actual_filed": "2025-06-06",
+      "actual_gap": null,
+      "actual_id": "9e67888a-5cf7-5475-b5d9-9dbf3f7c1b3b",
+      "actual_value": "763654000",
+      "company": "DOCU",
+      "group_id": "DOCU:0001261333-25-000016",
+      "guidance_filed": "2025-03-13",
+      "result_filed": "2025-06-05",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000073/q126ex-991er.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000016/q425ex-991er.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001261333-25-000075",
+          "end": "2025-04-30",
+          "filed": "2025-06-06",
+          "id": "9e67888a-5cf7-5475-b5d9-9dbf3f7c1b3b",
+          "parents": [],
+          "start": "2025-02-01"
+        },
+        "end": "2025-04-30",
+        "fiscal_label": "2026:1",
+        "start": "2025-02-01"
+      }
+    },
+    {
+      "actual_accession": "0001261333-25-000024",
+      "actual_filed": "2025-03-18",
+      "actual_gap": null,
+      "actual_id": "6f719776-836e-5ac1-aaf1-fac7b1ca4766",
+      "actual_value": "776252000",
+      "company": "DOCU",
+      "group_id": "DOCU:0001261333-24-000148",
+      "guidance_filed": "2024-12-05",
+      "result_filed": "2025-03-13",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000016/q425ex-991er.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133324000148/q325ex-991er.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001261333-25-000024",
+          "end": "2025-01-31",
+          "filed": "2025-03-18",
+          "id": "6f719776-836e-5ac1-aaf1-fac7b1ca4766",
+          "parents": [
+            "8bb7bec1-a640-5733-ba07-a9a4a2c3f215",
+            "25293eeb-4bd8-5e47-aba9-0a0293c27657"
+          ],
+          "start": "2024-11-01"
+        },
+        "end": "2025-01-31",
+        "fiscal_label": "2025:4",
+        "start": "2024-11-01"
+      }
+    },
+    {
+      "actual_accession": "0001261333-24-000151",
+      "actual_filed": "2024-12-06",
+      "actual_gap": null,
+      "actual_id": "01a43b8d-7c4b-5e19-bdbe-ae9374bd7825",
+      "actual_value": "754820000",
+      "company": "DOCU",
+      "group_id": "DOCU:0001261333-24-000118",
+      "guidance_filed": "2024-09-05",
+      "result_filed": "2024-12-05",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1261333/000126133324000148/q325ex-991er.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133324000118/q225ex-991er.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001261333-24-000151",
+          "end": "2024-10-31",
+          "filed": "2024-12-06",
+          "id": "01a43b8d-7c4b-5e19-bdbe-ae9374bd7825",
+          "parents": [],
+          "start": "2024-08-01"
+        },
+        "end": "2024-10-31",
+        "fiscal_label": "2025:3",
+        "start": "2024-08-01"
+      }
+    },
+    {
+      "actual_accession": "0001713683-26-000157",
+      "actual_filed": "2026-09-03",
+      "actual_gap": null,
+      "actual_id": "242e630f-ad99-506e-8558-00444629f627",
+      "actual_value": "898185000",
+      "company": "ZS",
+      "group_id": "ZS:0001713683-26-000095",
+      "guidance_filed": "2026-05-26",
+      "result_filed": "2026-09-03",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000156/zs-07312026_991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000095/zs-04302026_991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001713683-26-000157",
+          "end": "2026-07-31",
+          "filed": "2026-09-03",
+          "id": "242e630f-ad99-506e-8558-00444629f627",
+          "parents": [
+            "72ddd510-db61-5788-a7c8-8bbfb9d1424d",
+            "dd9f0759-43bc-571f-84c6-0b63fedce45b"
+          ],
+          "start": "2026-05-01"
+        },
+        "end": "2026-07-31",
+        "fiscal_label": "2026:4",
+        "start": "2026-05-01"
+      }
+    },
+    {
+      "actual_accession": "0001713683-26-000096",
+      "actual_filed": "2026-05-26",
+      "actual_gap": null,
+      "actual_id": "ce8dd1c6-27ce-5e55-ac68-f2bc2fdfda7f",
+      "actual_value": "850475000",
+      "company": "ZS",
+      "group_id": "ZS:0001713683-26-000047",
+      "guidance_filed": "2026-02-26",
+      "result_filed": "2026-05-26",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000095/zs-04302026_991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000047/zs-01312026_991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001713683-26-000096",
+          "end": "2026-04-30",
+          "filed": "2026-05-26",
+          "id": "ce8dd1c6-27ce-5e55-ac68-f2bc2fdfda7f",
+          "parents": [],
+          "start": "2026-02-01"
+        },
+        "end": "2026-04-30",
+        "fiscal_label": "2026:3",
+        "start": "2026-02-01"
+      }
+    },
+    {
+      "actual_accession": "0001713683-26-000048",
+      "actual_filed": "2026-02-26",
+      "actual_gap": null,
+      "actual_id": "228751bf-d002-5ac4-b01a-3d376be9758f",
+      "actual_value": "815751000",
+      "company": "ZS",
+      "group_id": "ZS:0001713683-25-000203",
+      "guidance_filed": "2025-11-25",
+      "result_filed": "2026-02-26",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000047/zs-01312026_991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000203/zs-10312025_991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001713683-26-000048",
+          "end": "2026-01-31",
+          "filed": "2026-02-26",
+          "id": "228751bf-d002-5ac4-b01a-3d376be9758f",
+          "parents": [],
+          "start": "2025-11-01"
+        },
+        "end": "2026-01-31",
+        "fiscal_label": "2026:2",
+        "start": "2025-11-01"
+      }
+    },
+    {
+      "actual_accession": "0001713683-25-000205",
+      "actual_filed": "2025-11-25",
+      "actual_gap": null,
+      "actual_id": "e794f347-cd7c-59a4-b171-013c36654d6f",
+      "actual_value": "788112000",
+      "company": "ZS",
+      "group_id": "ZS:0001713683-25-000138",
+      "guidance_filed": "2025-09-02",
+      "result_filed": "2025-11-25",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000203/zs-10312025_991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000138/zs-07312025_991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001713683-25-000205",
+          "end": "2025-10-31",
+          "filed": "2025-11-25",
+          "id": "e794f347-cd7c-59a4-b171-013c36654d6f",
+          "parents": [],
+          "start": "2025-08-01"
+        },
+        "end": "2025-10-31",
+        "fiscal_label": "2026:1",
+        "start": "2025-08-01"
+      }
+    },
+    {
+      "actual_accession": "0001713683-25-000158",
+      "actual_filed": "2025-09-11",
+      "actual_gap": null,
+      "actual_id": "75af952f-c099-526f-a254-15a83816bfc0",
+      "actual_value": "719226000",
+      "company": "ZS",
+      "group_id": "ZS:0001713683-25-000078",
+      "guidance_filed": "2025-05-29",
+      "result_filed": "2025-09-02",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000138/zs-07312025_991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-04302025_991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001713683-25-000158",
+          "end": "2025-07-31",
+          "filed": "2025-09-11",
+          "id": "75af952f-c099-526f-a254-15a83816bfc0",
+          "parents": [
+            "872fe0ba-9761-5566-9d91-542d641f7393",
+            "3d0fefd1-34db-5733-ac33-a7f4427e7b02"
+          ],
+          "start": "2025-05-01"
+        },
+        "end": "2025-07-31",
+        "fiscal_label": "2025:4",
+        "start": "2025-05-01"
+      }
+    },
+    {
+      "actual_accession": "0001713683-25-000079",
+      "actual_filed": "2025-05-29",
+      "actual_gap": null,
+      "actual_id": "b29d736b-22ae-5e97-9ba6-651b06892868",
+      "actual_value": "678034000",
+      "company": "ZS",
+      "group_id": "ZS:0001713683-25-000025",
+      "guidance_filed": "2025-03-05",
+      "result_filed": "2025-05-29",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-04302025_991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-01312025_991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001713683-25-000079",
+          "end": "2025-04-30",
+          "filed": "2025-05-29",
+          "id": "b29d736b-22ae-5e97-9ba6-651b06892868",
+          "parents": [],
+          "start": "2025-02-01"
+        },
+        "end": "2025-04-30",
+        "fiscal_label": "2025:3",
+        "start": "2025-02-01"
+      }
+    },
+    {
+      "actual_accession": "0001713683-25-000033",
+      "actual_filed": "2025-03-10",
+      "actual_gap": null,
+      "actual_id": "fb1fd736-0d7d-5727-bc9c-b5405e6c4964",
+      "actual_value": "647900000",
+      "company": "ZS",
+      "group_id": "ZS:0001713683-24-000143",
+      "guidance_filed": "2024-12-02",
+      "result_filed": "2025-03-05",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000025/zs-01312025_991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000143/zs-10312024_991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001713683-25-000033",
+          "end": "2025-01-31",
+          "filed": "2025-03-10",
+          "id": "fb1fd736-0d7d-5727-bc9c-b5405e6c4964",
+          "parents": [],
+          "start": "2024-11-01"
+        },
+        "end": "2025-01-31",
+        "fiscal_label": "2025:2",
+        "start": "2024-11-01"
+      }
+    },
+    {
+      "actual_accession": "0001713683-24-000150",
+      "actual_filed": "2024-12-05",
+      "actual_gap": null,
+      "actual_id": "17034b39-257a-5cd0-8e63-c0c200e87ecc",
+      "actual_value": "627955000",
+      "company": "ZS",
+      "group_id": "ZS:0001713683-24-000097",
+      "guidance_filed": "2024-09-03",
+      "result_filed": "2024-12-02",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000143/zs-10312024_991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368324000097/zs-07312024_991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001713683-24-000150",
+          "end": "2024-10-31",
+          "filed": "2024-12-05",
+          "id": "17034b39-257a-5cd0-8e63-c0c200e87ecc",
+          "parents": [],
+          "start": "2024-08-01"
+        },
+        "end": "2024-10-31",
+        "fiscal_label": "2025:1",
+        "start": "2024-08-01"
+      }
+    },
+    {
+      "actual_accession": "0001477720-26-000060",
+      "actual_filed": "2026-09-03",
+      "actual_gap": null,
+      "actual_id": "8a552173-b835-52c9-a239-ca8e53b75f5d",
+      "actual_value": "216429000",
+      "company": "ASAN",
+      "group_id": "ASAN:0001477720-26-000037",
+      "guidance_filed": "2026-05-28",
+      "result_filed": "2026-09-03",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477720/000147772026000058/asana8-kex991q2fy27.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772026000037/asana8-kex991q1fy27.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001477720-26-000060",
+          "end": "2026-07-31",
+          "filed": "2026-09-03",
+          "id": "8a552173-b835-52c9-a239-ca8e53b75f5d",
+          "parents": [],
+          "start": "2026-05-01"
+        },
+        "end": "2026-07-31",
+        "fiscal_label": "2027:2",
+        "start": "2026-05-01"
+      }
+    },
+    {
+      "actual_accession": "0001477720-26-000039",
+      "actual_filed": "2026-05-28",
+      "actual_gap": null,
+      "actual_id": "289f27cc-2fb5-585a-82d9-0953b01b869a",
+      "actual_value": "205095000",
+      "company": "ASAN",
+      "group_id": "ASAN:0001477720-26-000012",
+      "guidance_filed": "2026-03-02",
+      "result_filed": "2026-05-28",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477720/000147772026000037/asana8-kex991q1fy27.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772026000012/asana8-kex991q4fy26.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001477720-26-000039",
+          "end": "2026-04-30",
+          "filed": "2026-05-28",
+          "id": "289f27cc-2fb5-585a-82d9-0953b01b869a",
+          "parents": [],
+          "start": "2026-02-01"
+        },
+        "end": "2026-04-30",
+        "fiscal_label": "2027:1",
+        "start": "2026-02-01"
+      }
+    },
+    {
+      "actual_accession": "0001477720-26-000021",
+      "actual_filed": "2026-03-13",
+      "actual_gap": null,
+      "actual_id": "409787b1-dff6-5350-bfa1-e371cb55bb71",
+      "actual_value": "205570000",
+      "company": "ASAN",
+      "group_id": "ASAN:0001477720-25-000235",
+      "guidance_filed": "2025-12-02",
+      "result_filed": "2026-03-02",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477720/000147772026000012/asana8-kex991q4fy26.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772025000235/asana8-kex991q3fy26.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001477720-26-000021",
+          "end": "2026-01-31",
+          "filed": "2026-03-13",
+          "id": "409787b1-dff6-5350-bfa1-e371cb55bb71",
+          "parents": [
+            "4f790aaa-68ef-5960-bcc0-7bc6e83a89c3",
+            "7c7f0b52-a3a7-5215-a226-a80fbed4e682"
+          ],
+          "start": "2025-11-01"
+        },
+        "end": "2026-01-31",
+        "fiscal_label": "2026:4",
+        "start": "2025-11-01"
+      }
+    },
+    {
+      "actual_accession": "0001477720-25-000237",
+      "actual_filed": "2025-12-02",
+      "actual_gap": null,
+      "actual_id": "8882fc97-6ed0-5ce4-9ec4-9b7a27a0fa7b",
+      "actual_value": "201033000",
+      "company": "ASAN",
+      "group_id": "ASAN:0001477720-25-000198",
+      "guidance_filed": "2025-09-03",
+      "result_filed": "2025-12-02",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477720/000147772025000235/asana8-kex991q3fy26.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772025000198/asana8-kex991q2fy26.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001477720-25-000237",
+          "end": "2025-10-31",
+          "filed": "2025-12-02",
+          "id": "8882fc97-6ed0-5ce4-9ec4-9b7a27a0fa7b",
+          "parents": [],
+          "start": "2025-08-01"
+        },
+        "end": "2025-10-31",
+        "fiscal_label": "2026:3",
+        "start": "2025-08-01"
+      }
+    },
+    {
+      "actual_accession": "0001477720-25-000200",
+      "actual_filed": "2025-09-03",
+      "actual_gap": null,
+      "actual_id": "ce6e71e7-b98a-5474-b5dd-555d44571a87",
+      "actual_value": "196936000",
+      "company": "ASAN",
+      "group_id": "ASAN:0001477720-25-000105",
+      "guidance_filed": "2025-06-03",
+      "result_filed": "2025-09-03",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477720/000147772025000198/asana8-kex991q2fy26.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772025000105/asana8-kex991q1fy26.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001477720-25-000200",
+          "end": "2025-07-31",
+          "filed": "2025-09-03",
+          "id": "ce6e71e7-b98a-5474-b5dd-555d44571a87",
+          "parents": [],
+          "start": "2025-05-01"
+        },
+        "end": "2025-07-31",
+        "fiscal_label": "2026:2",
+        "start": "2025-05-01"
+      }
+    },
+    {
+      "actual_accession": "0001477720-25-000107",
+      "actual_filed": "2025-06-03",
+      "actual_gap": null,
+      "actual_id": "73b11ac2-3e54-56a9-969a-794475289614",
+      "actual_value": "187267000",
+      "company": "ASAN",
+      "group_id": "ASAN:0001477720-25-000033",
+      "guidance_filed": "2025-03-10",
+      "result_filed": "2025-06-03",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477720/000147772025000105/asana8-kex991q1fy26.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772025000033/asana8-kex991q4fy25.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001477720-25-000107",
+          "end": "2025-04-30",
+          "filed": "2025-06-03",
+          "id": "73b11ac2-3e54-56a9-969a-794475289614",
+          "parents": [],
+          "start": "2025-02-01"
+        },
+        "end": "2025-04-30",
+        "fiscal_label": "2026:1",
+        "start": "2025-02-01"
+      }
+    },
+    {
+      "actual_accession": "0001477720-25-000045",
+      "actual_filed": "2025-03-18",
+      "actual_gap": null,
+      "actual_id": "dcf8a880-302c-509b-b7b9-012c1de82f85",
+      "actual_value": "188334000",
+      "company": "ASAN",
+      "group_id": "ASAN:0001477720-24-000105",
+      "guidance_filed": "2024-12-05",
+      "result_filed": "2025-03-10",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477720/000147772025000033/asana8-kex991q4fy25.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772024000105/asana8-kex991q3fy25.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001477720-25-000045",
+          "end": "2025-01-31",
+          "filed": "2025-03-18",
+          "id": "dcf8a880-302c-509b-b7b9-012c1de82f85",
+          "parents": [
+            "feb94abd-038b-5bcc-a18a-460d4a3fef01",
+            "d95dce2c-1834-58a0-b46d-56e515f12b73"
+          ],
+          "start": "2024-11-01"
+        },
+        "end": "2025-01-31",
+        "fiscal_label": "2025:4",
+        "start": "2024-11-01"
+      }
+    },
+    {
+      "actual_accession": "0001477720-24-000107",
+      "actual_filed": "2024-12-05",
+      "actual_gap": null,
+      "actual_id": "2c74ebd8-bf8d-5a48-9b2a-ba15d81079d6",
+      "actual_value": "183882000",
+      "company": "ASAN",
+      "group_id": "ASAN:0001477720-24-000075",
+      "guidance_filed": "2024-09-03",
+      "result_filed": "2024-12-05",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477720/000147772024000105/asana8-kex991q3fy25.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772024000075/asana8-kex991q2fy25.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001477720-24-000107",
+          "end": "2024-10-31",
+          "filed": "2024-12-05",
+          "id": "2c74ebd8-bf8d-5a48-9b2a-ba15d81079d6",
+          "parents": [],
+          "start": "2024-08-01"
+        },
+        "end": "2024-10-31",
+        "fiscal_label": "2025:3",
+        "start": "2024-08-01"
+      }
+    },
+    {
+      "actual_accession": "0001707753-26-000054",
+      "actual_filed": "2026-08-28",
+      "actual_gap": null,
+      "actual_id": "3b6ac396-0d47-5351-882a-dee85daa6f0d",
+      "actual_value": "478113000",
+      "company": "ESTC",
+      "group_id": "ESTC:0001707753-26-000008",
+      "guidance_filed": "2026-05-28",
+      "result_filed": "2026-08-27",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1707753/000170775326000035/a27q1erex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775326000008/a26q4erex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001707753-26-000054",
+          "end": "2026-07-31",
+          "filed": "2026-08-28",
+          "id": "3b6ac396-0d47-5351-882a-dee85daa6f0d",
+          "parents": [],
+          "start": "2026-05-01"
+        },
+        "end": "2026-07-31",
+        "fiscal_label": "2027:1",
+        "start": "2026-05-01"
+      }
+    },
+    {
+      "actual_accession": "0001707753-26-000018",
+      "actual_filed": "2026-06-08",
+      "actual_gap": null,
+      "actual_id": "3eb15f46-8517-5bc4-8f78-ba9abb04ccc6",
+      "actual_value": "450681000",
+      "company": "ESTC",
+      "group_id": "ESTC:0001707753-26-000003",
+      "guidance_filed": "2026-02-26",
+      "result_filed": "2026-05-28",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1707753/000170775326000008/a26q4erex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775326000003/a26q3erex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001707753-26-000018",
+          "end": "2026-04-30",
+          "filed": "2026-06-08",
+          "id": "3eb15f46-8517-5bc4-8f78-ba9abb04ccc6",
+          "parents": [
+            "88473ed3-debe-55c4-8658-58051b3433f4",
+            "5c8204d4-01b7-5af3-9e6b-f633b9265c02"
+          ],
+          "start": "2026-02-01"
+        },
+        "end": "2026-04-30",
+        "fiscal_label": "2026:4",
+        "start": "2026-02-01"
+      }
+    },
+    {
+      "actual_accession": "0001707753-26-000006",
+      "actual_filed": "2026-02-27",
+      "actual_gap": null,
+      "actual_id": "b02dd9e7-e181-571b-a277-ba867364fed1",
+      "actual_value": "449881000",
+      "company": "ESTC",
+      "group_id": "ESTC:0001707753-25-000053",
+      "guidance_filed": "2025-11-20",
+      "result_filed": "2026-02-26",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1707753/000170775326000003/a26q3erex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000053/a26q2erex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001707753-26-000006",
+          "end": "2026-01-31",
+          "filed": "2026-02-27",
+          "id": "b02dd9e7-e181-571b-a277-ba867364fed1",
+          "parents": [],
+          "start": "2025-11-01"
+        },
+        "end": "2026-01-31",
+        "fiscal_label": "2026:3",
+        "start": "2025-11-01"
+      }
+    },
+    {
+      "actual_accession": "0001707753-25-000056",
+      "actual_filed": "2025-11-24",
+      "actual_gap": null,
+      "actual_id": "0ef2c406-4673-5b43-a218-033e7a88132a",
+      "actual_value": "423481000",
+      "company": "ESTC",
+      "group_id": "ESTC:0001707753-25-000034",
+      "guidance_filed": "2025-08-28",
+      "result_filed": "2025-11-20",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000053/a26q2erex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000034/a26q1erex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001707753-25-000056",
+          "end": "2025-10-31",
+          "filed": "2025-11-24",
+          "id": "0ef2c406-4673-5b43-a218-033e7a88132a",
+          "parents": [],
+          "start": "2025-08-01"
+        },
+        "end": "2025-10-31",
+        "fiscal_label": "2026:2",
+        "start": "2025-08-01"
+      }
+    },
+    {
+      "actual_accession": "0001707753-25-000040",
+      "actual_filed": "2025-08-29",
+      "actual_gap": null,
+      "actual_id": "d576f350-79cf-5473-800d-ef7cb0e8e037",
+      "actual_value": "415288000",
+      "company": "ESTC",
+      "group_id": "ESTC:0001707753-25-000015",
+      "guidance_filed": "2025-05-29",
+      "result_filed": "2025-08-28",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000034/a26q1erex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000015/a25q4erex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001707753-25-000040",
+          "end": "2025-07-31",
+          "filed": "2025-08-29",
+          "id": "d576f350-79cf-5473-800d-ef7cb0e8e037",
+          "parents": [],
+          "start": "2025-05-01"
+        },
+        "end": "2025-07-31",
+        "fiscal_label": "2026:1",
+        "start": "2025-05-01"
+      }
+    },
+    {
+      "actual_accession": "0001707753-25-000021",
+      "actual_filed": "2025-06-10",
+      "actual_gap": null,
+      "actual_id": "1ce1f4c0-ed4f-55f8-bc53-cb72ea39210b",
+      "actual_value": "388432000",
+      "company": "ESTC",
+      "group_id": "ESTC:0001707753-25-000008",
+      "guidance_filed": "2025-02-27",
+      "result_filed": "2025-05-29",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000015/a25q4erex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000008/a25q3erex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001707753-25-000021",
+          "end": "2025-04-30",
+          "filed": "2025-06-10",
+          "id": "1ce1f4c0-ed4f-55f8-bc53-cb72ea39210b",
+          "parents": [
+            "4d96c8ba-4532-55fd-95b2-074711764acb",
+            "57896c6c-92c4-589d-9d93-a29e277e2de8"
+          ],
+          "start": "2025-02-01"
+        },
+        "end": "2025-04-30",
+        "fiscal_label": "2025:4",
+        "start": "2025-02-01"
+      }
+    },
+    {
+      "actual_accession": "0001707753-25-000010",
+      "actual_filed": "2025-02-28",
+      "actual_gap": null,
+      "actual_id": "a2803e58-007d-5fb8-bfe8-1e490166475c",
+      "actual_value": "382083000",
+      "company": "ESTC",
+      "group_id": "ESTC:0001707753-24-000044",
+      "guidance_filed": "2024-11-21",
+      "result_filed": "2025-02-27",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000008/a25q3erex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775324000044/a25q2erex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001707753-25-000010",
+          "end": "2025-01-31",
+          "filed": "2025-02-28",
+          "id": "a2803e58-007d-5fb8-bfe8-1e490166475c",
+          "parents": [],
+          "start": "2024-11-01"
+        },
+        "end": "2025-01-31",
+        "fiscal_label": "2025:3",
+        "start": "2024-11-01"
+      }
+    },
+    {
+      "actual_accession": "0001707753-24-000047",
+      "actual_filed": "2024-11-25",
+      "actual_gap": null,
+      "actual_id": "8da25ad5-028f-55fb-8655-1df51eb0e70f",
+      "actual_value": "365361000",
+      "company": "ESTC",
+      "group_id": "ESTC:0001707753-24-000034",
+      "guidance_filed": "2024-08-29",
+      "result_filed": "2024-11-21",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1707753/000170775324000044/a25q2erex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775324000034/a25q1erex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001707753-24-000047",
+          "end": "2024-10-31",
+          "filed": "2024-11-25",
+          "id": "8da25ad5-028f-55fb-8655-1df51eb0e70f",
+          "parents": [],
+          "start": "2024-08-01"
+        },
+        "end": "2024-10-31",
+        "fiscal_label": "2025:2",
+        "start": "2024-08-01"
+      }
+    },
+    {
+      "actual_accession": null,
+      "actual_filed": null,
+      "actual_gap": "MISSING_COMPATIBLE_QUARTER_ACTUAL",
+      "actual_id": null,
+      "actual_value": null,
+      "company": "AMAT",
+      "group_id": "AMAT:0001628280-26-056699",
+      "guidance_filed": "2026-08-13",
+      "result_filed": "2026-11-12",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6951/000162828026073360/exhibit991q42026earningsre.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026056699/exhibit991q32026earningsre.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "end": "2026-10-25",
+          "reason": "Physical quarter is day after reported Q3 end through reported Q4 end. ADI FY2024 has 53 weeks before Q4; AMAT latest annual 10-K not yet filed at cutoff. Calendar bounds only, no synthetic actual amount.",
+          "result_manifest": {
+            "body": "84b62988ce45112f7bf25a0d60bb58d48de1bb9f0b963739ab58bedc8e348669-e6faa0782a05a00c233524289e301f4bbf1815b98fdfcc0ec8a3a353cc23d599.body",
+            "fetched_at": "2026-11-13T04:52:04.056006+00:00",
+            "sha256": "e6faa0782a05a00c233524289e301f4bbf1815b98fdfcc0ec8a3a353cc23d599",
+            "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026073360/exhibit991q42026earningsre.htm"
+          },
+          "source_manifest": {
+            "body": "19be71e03330890afe777013867552f73d8df426c4201093bb70bb71df6699d1-2597b2a85c2733bdfe5141fa0de5dced968fc96e4331b3f1417accb975653a8c.body",
+            "fetched_at": "2026-11-13T04:52:05.356485+00:00",
+            "sha256": "2597b2a85c2733bdfe5141fa0de5dced968fc96e4331b3f1417accb975653a8c",
+            "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026056699/exhibit991q32026earningsre.htm"
+          },
+          "start": "2026-07-27"
+        },
+        "end": "2026-10-25",
+        "fiscal_label": "2026:4",
+        "start": "2026-07-27"
+      }
+    },
+    {
+      "actual_accession": "0001628280-26-058235",
+      "actual_filed": "2026-08-20",
+      "actual_gap": null,
+      "actual_id": "54234007-007e-5e14-a5e2-c17aaa53ed50",
+      "actual_value": "9115000000",
+      "company": "AMAT",
+      "group_id": "AMAT:0001628280-26-035071",
+      "guidance_filed": "2026-05-14",
+      "result_filed": "2026-08-13",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6951/000162828026056699/exhibit991q32026earningsre.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026035071/exhibit991q22026earningsre.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-26-058235",
+          "end": "2026-07-26",
+          "filed": "2026-08-20",
+          "id": "54234007-007e-5e14-a5e2-c17aaa53ed50",
+          "parents": [],
+          "start": "2026-04-27"
+        },
+        "end": "2026-07-26",
+        "fiscal_label": "2026:3",
+        "start": "2026-04-27"
+      }
+    },
+    {
+      "actual_accession": "0001628280-26-037227",
+      "actual_filed": "2026-05-21",
+      "actual_gap": null,
+      "actual_id": "11476ff4-4025-595e-964a-860a9583e36a",
+      "actual_value": "7910000000",
+      "company": "AMAT",
+      "group_id": "AMAT:0001628280-26-007661",
+      "guidance_filed": "2026-02-12",
+      "result_filed": "2026-05-14",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6951/000162828026035071/exhibit991q22026earningsre.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026007661/exhibit991q12026earningsre.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-26-037227",
+          "end": "2026-04-26",
+          "filed": "2026-05-21",
+          "id": "11476ff4-4025-595e-964a-860a9583e36a",
+          "parents": [],
+          "start": "2026-01-26"
+        },
+        "end": "2026-04-26",
+        "fiscal_label": "2026:2",
+        "start": "2026-01-26"
+      }
+    },
+    {
+      "actual_accession": "0001628280-26-009694",
+      "actual_filed": "2026-02-19",
+      "actual_gap": null,
+      "actual_id": "e7445766-6878-5e3e-bc68-98ae1c147f5f",
+      "actual_value": "7012000000",
+      "company": "AMAT",
+      "group_id": "AMAT:0001628280-25-051998",
+      "guidance_filed": "2025-11-13",
+      "result_filed": "2026-02-12",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6951/000162828026007661/exhibit991q12026earningsre.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828025051998/exhibit991q42025earningsre.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-26-009694",
+          "end": "2026-01-25",
+          "filed": "2026-02-19",
+          "id": "e7445766-6878-5e3e-bc68-98ae1c147f5f",
+          "parents": [],
+          "start": "2025-10-27"
+        },
+        "end": "2026-01-25",
+        "fiscal_label": "2026:1",
+        "start": "2025-10-27"
+      }
+    },
+    {
+      "actual_accession": "0001628280-25-056742",
+      "actual_filed": "2025-12-12",
+      "actual_gap": null,
+      "actual_id": "f85da046-1848-576e-b817-bcc3752e9eb8",
+      "actual_value": "6800000000",
+      "company": "AMAT",
+      "group_id": "AMAT:0000006951-25-000032",
+      "guidance_filed": "2025-08-14",
+      "result_filed": "2025-11-13",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6951/000162828025051998/exhibit991q42025earningsre.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6951/000000695125000032/exhibit991q32025earningsre.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-25-056742",
+          "end": "2025-10-26",
+          "filed": "2025-12-12",
+          "id": "f85da046-1848-576e-b817-bcc3752e9eb8",
+          "parents": [
+            "9f056065-4198-5927-9aeb-944a580c31a0",
+            "c37f0aa9-145a-586c-b69e-276959e3dd64"
+          ],
+          "start": "2025-07-28"
+        },
+        "end": "2025-10-26",
+        "fiscal_label": "2025:4",
+        "start": "2025-07-28"
+      }
+    },
+    {
+      "actual_accession": "0000006951-25-000037",
+      "actual_filed": "2025-08-21",
+      "actual_gap": null,
+      "actual_id": "e9cefd97-ece1-52af-b431-8ccdbdfa0d0e",
+      "actual_value": "7302000000",
+      "company": "AMAT",
+      "group_id": "AMAT:0000006951-25-000017",
+      "guidance_filed": "2025-05-15",
+      "result_filed": "2025-08-14",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6951/000000695125000032/exhibit991q32025earningsre.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6951/000000695125000017/exhibit991q22025earningsre.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000006951-25-000037",
+          "end": "2025-07-27",
+          "filed": "2025-08-21",
+          "id": "e9cefd97-ece1-52af-b431-8ccdbdfa0d0e",
+          "parents": [],
+          "start": "2025-04-28"
+        },
+        "end": "2025-07-27",
+        "fiscal_label": "2025:3",
+        "start": "2025-04-28"
+      }
+    },
+    {
+      "actual_accession": "0000006951-25-000024",
+      "actual_filed": "2025-05-22",
+      "actual_gap": null,
+      "actual_id": "f40e1f03-2735-557b-83cd-d2153c9eb69b",
+      "actual_value": "7100000000",
+      "company": "AMAT",
+      "group_id": "AMAT:0000006951-25-000005",
+      "guidance_filed": "2025-02-13",
+      "result_filed": "2025-05-15",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6951/000000695125000017/exhibit991q22025earningsre.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6951/000000695125000005/exhibit991q12025earningsre.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000006951-25-000024",
+          "end": "2025-04-27",
+          "filed": "2025-05-22",
+          "id": "f40e1f03-2735-557b-83cd-d2153c9eb69b",
+          "parents": [],
+          "start": "2025-01-27"
+        },
+        "end": "2025-04-27",
+        "fiscal_label": "2025:2",
+        "start": "2025-01-27"
+      }
+    },
+    {
+      "actual_accession": "0000006951-25-000011",
+      "actual_filed": "2025-02-20",
+      "actual_gap": null,
+      "actual_id": "307b2cca-ab22-54e7-a9f9-de3618c67584",
+      "actual_value": "7166000000",
+      "company": "AMAT",
+      "group_id": "AMAT:0000006951-24-000037",
+      "guidance_filed": "2024-11-14",
+      "result_filed": "2025-02-13",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6951/000000695125000005/exhibit991q12025earningsre.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6951/000000695124000037/exhibit991q42024earningsre.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000006951-25-000011",
+          "end": "2025-01-26",
+          "filed": "2025-02-20",
+          "id": "307b2cca-ab22-54e7-a9f9-de3618c67584",
+          "parents": [],
+          "start": "2024-10-28"
+        },
+        "end": "2025-01-26",
+        "fiscal_label": "2025:1",
+        "start": "2024-10-28"
+      }
+    },
+    {
+      "actual_accession": "0000723125-26-000023",
+      "actual_filed": "2026-10-09",
+      "actual_gap": null,
+      "actual_id": "11f8c564-b18e-5f3a-9d87-a95bbd4c6355",
+      "actual_value": "54229000000",
+      "company": "MU",
+      "group_id": "MU:0000723125-26-000013",
+      "guidance_filed": "2026-06-24",
+      "result_filed": "2026-09-30",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/a2026q4ex991-pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000013/a2026q3ex991-pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000723125-26-000023",
+          "end": "2026-09-03",
+          "filed": "2026-10-09",
+          "id": "11f8c564-b18e-5f3a-9d87-a95bbd4c6355",
+          "parents": [
+            "396fb637-8e2e-5487-be14-eea3ae4a6e5b",
+            "7f02f8ea-e3b6-572b-b8d6-a260cbe09df6"
+          ],
+          "start": "2026-05-29"
+        },
+        "end": "2026-09-03",
+        "fiscal_label": "2026:4",
+        "start": "2026-05-29"
+      }
+    },
+    {
+      "actual_accession": "0000723125-26-000015",
+      "actual_filed": "2026-06-25",
+      "actual_gap": null,
+      "actual_id": "69f0303c-42df-52c9-8511-6b01a8e222d4",
+      "actual_value": "41456000000",
+      "company": "MU",
+      "group_id": "MU:0000723125-26-000004",
+      "guidance_filed": "2026-03-18",
+      "result_filed": "2026-06-24",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000013/a2026q3ex991-pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000004/a2026q2ex991-pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000723125-26-000015",
+          "end": "2026-05-28",
+          "filed": "2026-06-25",
+          "id": "69f0303c-42df-52c9-8511-6b01a8e222d4",
+          "parents": [],
+          "start": "2026-02-27"
+        },
+        "end": "2026-05-28",
+        "fiscal_label": "2026:3",
+        "start": "2026-02-27"
+      }
+    },
+    {
+      "actual_accession": "0000723125-26-000006",
+      "actual_filed": "2026-03-19",
+      "actual_gap": null,
+      "actual_id": "a73aa524-0c74-572b-8e6b-747fe03f962e",
+      "actual_value": "23860000000",
+      "company": "MU",
+      "group_id": "MU:0000723125-25-000044",
+      "guidance_filed": "2025-12-17",
+      "result_filed": "2026-03-18",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000004/a2026q2ex991-pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000044/a2026q1ex991-pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000723125-26-000006",
+          "end": "2026-02-26",
+          "filed": "2026-03-19",
+          "id": "a73aa524-0c74-572b-8e6b-747fe03f962e",
+          "parents": [],
+          "start": "2025-11-28"
+        },
+        "end": "2026-02-26",
+        "fiscal_label": "2026:2",
+        "start": "2025-11-28"
+      }
+    },
+    {
+      "actual_accession": "0000723125-25-000046",
+      "actual_filed": "2025-12-18",
+      "actual_gap": null,
+      "actual_id": "cac8b450-6b51-5eb1-bb1d-68f5e198108c",
+      "actual_value": "13643000000",
+      "company": "MU",
+      "group_id": "MU:0000723125-25-000024",
+      "guidance_filed": "2025-09-23",
+      "result_filed": "2025-12-17",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000044/a2026q1ex991-pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000024/a2025q4ex991-pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000723125-25-000046",
+          "end": "2025-11-27",
+          "filed": "2025-12-18",
+          "id": "cac8b450-6b51-5eb1-bb1d-68f5e198108c",
+          "parents": [],
+          "start": "2025-08-29"
+        },
+        "end": "2025-11-27",
+        "fiscal_label": "2026:1",
+        "start": "2025-08-29"
+      }
+    },
+    {
+      "actual_accession": "0000723125-25-000028",
+      "actual_filed": "2025-10-03",
+      "actual_gap": null,
+      "actual_id": "028ef169-56be-5439-8801-df5d7f8699b9",
+      "actual_value": "11315000000",
+      "company": "MU",
+      "group_id": "MU:0000723125-25-000019",
+      "guidance_filed": "2025-06-25",
+      "result_filed": "2025-09-23",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000024/a2025q4ex991-pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000019/a2025q3ex991-pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000723125-25-000028",
+          "end": "2025-08-28",
+          "filed": "2025-10-03",
+          "id": "028ef169-56be-5439-8801-df5d7f8699b9",
+          "parents": [
+            "6f3eeeda-8f35-5de6-bc48-b5a2137c47a4",
+            "0c857ccd-1d32-5f6a-b13e-28371f436a9d"
+          ],
+          "start": "2025-05-30"
+        },
+        "end": "2025-08-28",
+        "fiscal_label": "2025:4",
+        "start": "2025-05-30"
+      }
+    },
+    {
+      "actual_accession": "0000723125-25-000021",
+      "actual_filed": "2025-06-26",
+      "actual_gap": null,
+      "actual_id": "1bf680a4-a9ec-58dd-a95e-714d010a7121",
+      "actual_value": "9301000000",
+      "company": "MU",
+      "group_id": "MU:0000723125-25-000006",
+      "guidance_filed": "2025-03-20",
+      "result_filed": "2025-06-25",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000019/a2025q3ex991-pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000006/a2025q2ex991-pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000723125-25-000021",
+          "end": "2025-05-29",
+          "filed": "2025-06-26",
+          "id": "1bf680a4-a9ec-58dd-a95e-714d010a7121",
+          "parents": [],
+          "start": "2025-02-28"
+        },
+        "end": "2025-05-29",
+        "fiscal_label": "2025:3",
+        "start": "2025-02-28"
+      }
+    },
+    {
+      "actual_accession": "0000723125-25-000009",
+      "actual_filed": "2025-03-21",
+      "actual_gap": null,
+      "actual_id": "413f5185-dcac-510e-b3c2-046411ab9f3e",
+      "actual_value": "8053000000",
+      "company": "MU",
+      "group_id": "MU:0000723125-24-000046",
+      "guidance_filed": "2024-12-18",
+      "result_filed": "2025-03-20",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000006/a2025q2ex991-pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312524000046/a2025q1ex991-pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000723125-25-000009",
+          "end": "2025-02-27",
+          "filed": "2025-03-21",
+          "id": "413f5185-dcac-510e-b3c2-046411ab9f3e",
+          "parents": [],
+          "start": "2024-11-29"
+        },
+        "end": "2025-02-27",
+        "fiscal_label": "2025:2",
+        "start": "2024-11-29"
+      }
+    },
+    {
+      "actual_accession": "0000723125-24-000047",
+      "actual_filed": "2024-12-19",
+      "actual_gap": null,
+      "actual_id": "839d829f-438d-56fd-8da0-909d97320ee7",
+      "actual_value": "8709000000",
+      "company": "MU",
+      "group_id": "MU:0000723125-24-000023",
+      "guidance_filed": "2024-09-25",
+      "result_filed": "2024-12-18",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/723125/000072312524000046/a2025q1ex991-pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312524000023/a2024q4ex991-pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000723125-24-000047",
+          "end": "2024-11-28",
+          "filed": "2024-12-19",
+          "id": "839d829f-438d-56fd-8da0-909d97320ee7",
+          "parents": [],
+          "start": "2024-08-30"
+        },
+        "end": "2024-11-28",
+        "fiscal_label": "2025:1",
+        "start": "2024-08-30"
+      }
+    },
+    {
+      "actual_accession": "0000006281-26-000073",
+      "actual_filed": "2026-08-19",
+      "actual_gap": null,
+      "actual_id": "82017b2a-13ad-5116-8e70-3b456b22f275",
+      "actual_value": "4021899000",
+      "company": "ADI",
+      "group_id": "ADI:0000006281-26-000050",
+      "guidance_filed": "2026-05-20",
+      "result_filed": "2026-08-19",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000072/adi3q26exhibit991earnings.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000050/adi2q26exhibit991earnings.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000006281-26-000073",
+          "end": "2026-08-01",
+          "filed": "2026-08-19",
+          "id": "82017b2a-13ad-5116-8e70-3b456b22f275",
+          "parents": [],
+          "start": "2026-05-03"
+        },
+        "end": "2026-08-01",
+        "fiscal_label": "2026:3",
+        "start": "2026-05-03"
+      }
+    },
+    {
+      "actual_accession": "0000006281-26-000052",
+      "actual_filed": "2026-05-20",
+      "actual_gap": null,
+      "actual_id": "71912a09-c677-5b3c-a58b-2bf6de309e60",
+      "actual_value": "3623465000",
+      "company": "ADI",
+      "group_id": "ADI:0000006281-26-000015",
+      "guidance_filed": "2026-02-18",
+      "result_filed": "2026-05-20",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000050/adi2q26exhibit991earnings.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000015/adi1q26exhibit991earnings.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000006281-26-000052",
+          "end": "2026-05-02",
+          "filed": "2026-05-20",
+          "id": "71912a09-c677-5b3c-a58b-2bf6de309e60",
+          "parents": [],
+          "start": "2026-02-01"
+        },
+        "end": "2026-05-02",
+        "fiscal_label": "2026:2",
+        "start": "2026-02-01"
+      }
+    },
+    {
+      "actual_accession": "0000006281-26-000016",
+      "actual_filed": "2026-02-18",
+      "actual_gap": null,
+      "actual_id": "d87429f0-0a4e-5856-b944-55e5f8b2d273",
+      "actual_value": "3160263000",
+      "company": "ADI",
+      "group_id": "ADI:0000006281-25-000151",
+      "guidance_filed": "2025-11-25",
+      "result_filed": "2026-02-18",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000015/adi1q26exhibit991earnings.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000151/adiq425exhibit991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000006281-26-000016",
+          "end": "2026-01-31",
+          "filed": "2026-02-18",
+          "id": "d87429f0-0a4e-5856-b944-55e5f8b2d273",
+          "parents": [],
+          "start": "2025-11-02"
+        },
+        "end": "2026-01-31",
+        "fiscal_label": "2026:1",
+        "start": "2025-11-02"
+      }
+    },
+    {
+      "actual_accession": "0000006281-25-000153",
+      "actual_filed": "2025-11-25",
+      "actual_gap": null,
+      "actual_id": "915b00f4-ce4f-5976-9213-fd2546853264",
+      "actual_value": "3076117000",
+      "company": "ADI",
+      "group_id": "ADI:0000006281-25-000142",
+      "guidance_filed": "2025-08-20",
+      "result_filed": "2025-11-25",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000151/adiq425exhibit991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000142/adi3q25exhibit991earnings.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000006281-25-000153",
+          "end": "2025-11-01",
+          "filed": "2025-11-25",
+          "id": "915b00f4-ce4f-5976-9213-fd2546853264",
+          "parents": [
+            "cdf11abc-8449-59b6-bda4-370db56c79e9",
+            "59627dc5-01fa-5a26-af42-a2b00d486c36"
+          ],
+          "start": "2025-08-03"
+        },
+        "end": "2025-11-01",
+        "fiscal_label": "2025:4",
+        "start": "2025-08-03"
+      }
+    },
+    {
+      "actual_accession": "0000006281-25-000144",
+      "actual_filed": "2025-08-20",
+      "actual_gap": null,
+      "actual_id": "bf512015-2bd4-57f9-b881-4fd32c2af8c0",
+      "actual_value": "2880348000",
+      "company": "ADI",
+      "group_id": "ADI:0000006281-25-000124",
+      "guidance_filed": "2025-05-22",
+      "result_filed": "2025-08-20",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000142/adi3q25exhibit991earnings.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000124/adi2q25exhibit991earnings.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000006281-25-000144",
+          "end": "2025-08-02",
+          "filed": "2025-08-20",
+          "id": "bf512015-2bd4-57f9-b881-4fd32c2af8c0",
+          "parents": [],
+          "start": "2025-05-04"
+        },
+        "end": "2025-08-02",
+        "fiscal_label": "2025:3",
+        "start": "2025-05-04"
+      }
+    },
+    {
+      "actual_accession": "0000006281-25-000125",
+      "actual_filed": "2025-05-22",
+      "actual_gap": null,
+      "actual_id": "3b1e35f6-4934-54c8-b691-7a2c32faad20",
+      "actual_value": "2640068000",
+      "company": "ADI",
+      "group_id": "ADI:0000006281-25-000022",
+      "guidance_filed": "2025-02-19",
+      "result_filed": "2025-05-22",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000124/adi2q25exhibit991earnings.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000022/adi1q25exhibit991earnings.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000006281-25-000125",
+          "end": "2025-05-03",
+          "filed": "2025-05-22",
+          "id": "3b1e35f6-4934-54c8-b691-7a2c32faad20",
+          "parents": [],
+          "start": "2025-02-02"
+        },
+        "end": "2025-05-03",
+        "fiscal_label": "2025:2",
+        "start": "2025-02-02"
+      }
+    },
+    {
+      "actual_accession": "0000006281-25-000023",
+      "actual_filed": "2025-02-19",
+      "actual_gap": null,
+      "actual_id": "4a20efe6-552e-51f2-be52-cf29f1869536",
+      "actual_value": "2423174000",
+      "company": "ADI",
+      "group_id": "ADI:0000006281-24-000202",
+      "guidance_filed": "2024-11-26",
+      "result_filed": "2025-02-19",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000022/adi1q25exhibit991earnings.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000202/adiq424exhibit991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000006281-25-000023",
+          "end": "2025-02-01",
+          "filed": "2025-02-19",
+          "id": "4a20efe6-552e-51f2-be52-cf29f1869536",
+          "parents": [],
+          "start": "2024-11-03"
+        },
+        "end": "2025-02-01",
+        "fiscal_label": "2025:1",
+        "start": "2024-11-03"
+      }
+    },
+    {
+      "actual_accession": null,
+      "actual_filed": null,
+      "actual_gap": "MISSING_COMPATIBLE_QUARTER_ACTUAL",
+      "actual_id": null,
+      "actual_value": null,
+      "company": "ADI",
+      "group_id": "ADI:0000006281-24-000158",
+      "guidance_filed": "2024-08-21",
+      "result_filed": "2024-11-26",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000202/adiq424exhibit991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000158/adi3q24exhibit991earnings.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "end": "2024-11-02",
+          "reason": "Physical quarter is day after reported Q3 end through reported Q4 end. ADI FY2024 has 53 weeks before Q4; AMAT latest annual 10-K not yet filed at cutoff. Calendar bounds only, no synthetic actual amount.",
+          "result_manifest": {
+            "body": "46cf72f9aed824963ab77e6a217ab7b5d155021c2236469ad386e7db8817af4b-7857aa0a7d464cf75f83be48c8acac23c386db0b49c4e4df2dc854917f60e2ac.body",
+            "fetched_at": "2026-11-13T05:09:57.821324+00:00",
+            "sha256": "7857aa0a7d464cf75f83be48c8acac23c386db0b49c4e4df2dc854917f60e2ac",
+            "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000202/adiq424exhibit991.htm"
+          },
+          "source_manifest": {
+            "body": "91121c95d18fa45d0259b6bd34de10baac9b3f6b613a5071463b9d14e7bf7fae-f3f864ad2b2bb0db677d800fd5b555a5c6ed2b3c297633198496b2ea1e7f2312.body",
+            "fetched_at": "2026-11-13T05:09:59.145108+00:00",
+            "sha256": "f3f864ad2b2bb0db677d800fd5b555a5c6ed2b3c297633198496b2ea1e7f2312",
+            "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000158/adi3q24exhibit991earnings.htm"
+          },
+          "start": "2024-08-04"
+        },
+        "end": "2024-11-02",
+        "fiscal_label": "2024:4",
+        "start": "2024-08-04"
+      }
+    },
+    {
+      "actual_accession": "0000827054-26-000062",
+      "actual_filed": "2026-11-05",
+      "actual_gap": null,
+      "actual_id": "eb1d05a4-cb4b-5370-a1c6-dd26a945c4f3",
+      "actual_value": "1621500000",
+      "company": "MCHP",
+      "group_id": "MCHP:0000827054-26-000037",
+      "guidance_filed": "2026-08-06",
+      "result_filed": "2026-11-05",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000061/exhibit991q2fy27.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000037/exhibit991q1fy27.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000827054-26-000062",
+          "end": "2026-09-30",
+          "filed": "2026-11-05",
+          "id": "eb1d05a4-cb4b-5370-a1c6-dd26a945c4f3",
+          "parents": [],
+          "start": "2026-07-01"
+        },
+        "end": "2026-09-30",
+        "fiscal_label": "2027:2",
+        "start": "2026-07-01"
+      }
+    },
+    {
+      "actual_accession": "0000827054-26-000038",
+      "actual_filed": "2026-08-06",
+      "actual_gap": null,
+      "actual_id": "44d271f3-604f-5ef3-85c9-9df4b1adeb91",
+      "actual_value": "1484700000",
+      "company": "MCHP",
+      "group_id": "MCHP:0000827054-26-000012",
+      "guidance_filed": "2026-05-07",
+      "result_filed": "2026-08-06",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000037/exhibit991q1fy27.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/exhibit991q4fy26.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000827054-26-000038",
+          "end": "2026-06-30",
+          "filed": "2026-08-06",
+          "id": "44d271f3-604f-5ef3-85c9-9df4b1adeb91",
+          "parents": [],
+          "start": "2026-04-01"
+        },
+        "end": "2026-06-30",
+        "fiscal_label": "2027:1",
+        "start": "2026-04-01"
+      }
+    },
+    {
+      "actual_accession": "0000827054-26-000016",
+      "actual_filed": "2026-05-21",
+      "actual_gap": null,
+      "actual_id": "5461bb28-7d3c-5821-be4e-301934c98eb2",
+      "actual_value": "1311200000",
+      "company": "MCHP",
+      "group_id": "MCHP:0000827054-26-000008",
+      "guidance_filed": "2026-02-05",
+      "result_filed": "2026-05-07",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/exhibit991q4fy26.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000008/exhibit991q3fy26.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000827054-26-000016",
+          "end": "2026-03-31",
+          "filed": "2026-05-21",
+          "id": "5461bb28-7d3c-5821-be4e-301934c98eb2",
+          "parents": [
+            "80390f20-0518-5e88-b81d-4b840286dfa9",
+            "9dc46637-890b-54f4-bf11-ec21587945e9"
+          ],
+          "start": "2026-01-01"
+        },
+        "end": "2026-03-31",
+        "fiscal_label": "2026:4",
+        "start": "2026-01-01"
+      }
+    },
+    {
+      "actual_accession": "0000827054-26-000009",
+      "actual_filed": "2026-02-05",
+      "actual_gap": null,
+      "actual_id": "c04e80e5-7247-5adc-8557-a10165c62979",
+      "actual_value": "1186000000",
+      "company": "MCHP",
+      "group_id": "MCHP:0000827054-25-000182",
+      "guidance_filed": "2025-11-06",
+      "result_filed": "2026-02-05",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000008/exhibit991q3fy26.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/827054/000082705425000182/exhibit991q2fy26.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000827054-26-000009",
+          "end": "2025-12-31",
+          "filed": "2026-02-05",
+          "id": "c04e80e5-7247-5adc-8557-a10165c62979",
+          "parents": [],
+          "start": "2025-10-01"
+        },
+        "end": "2025-12-31",
+        "fiscal_label": "2026:3",
+        "start": "2025-10-01"
+      }
+    },
+    {
+      "actual_accession": "0000827054-25-000183",
+      "actual_filed": "2025-11-06",
+      "actual_gap": null,
+      "actual_id": "73b658e6-ae94-5b77-aad5-c5152b6f78f7",
+      "actual_value": "1140400000",
+      "company": "MCHP",
+      "group_id": "MCHP:0000827054-25-000132",
+      "guidance_filed": "2025-08-07",
+      "result_filed": "2025-11-06",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/827054/000082705425000182/exhibit991q2fy26.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/827054/000082705425000132/exhibit991q1fy26.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000827054-25-000183",
+          "end": "2025-09-30",
+          "filed": "2025-11-06",
+          "id": "73b658e6-ae94-5b77-aad5-c5152b6f78f7",
+          "parents": [],
+          "start": "2025-07-01"
+        },
+        "end": "2025-09-30",
+        "fiscal_label": "2026:2",
+        "start": "2025-07-01"
+      }
+    },
+    {
+      "actual_accession": "0000827054-25-000133",
+      "actual_filed": "2025-08-07",
+      "actual_gap": null,
+      "actual_id": "5accebbf-c2ed-51bc-8797-ec9ef3d55c6b",
+      "actual_value": "1075500000",
+      "company": "MCHP",
+      "group_id": "MCHP:0000827054-25-000061",
+      "guidance_filed": "2025-05-08",
+      "result_filed": "2025-08-07",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/827054/000082705425000132/exhibit991q1fy26.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/827054/000082705425000061/exhibit991q4fy25.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000827054-25-000133",
+          "end": "2025-06-30",
+          "filed": "2025-08-07",
+          "id": "5accebbf-c2ed-51bc-8797-ec9ef3d55c6b",
+          "parents": [],
+          "start": "2025-04-01"
+        },
+        "end": "2025-06-30",
+        "fiscal_label": "2026:1",
+        "start": "2025-04-01"
+      }
+    },
+    {
+      "actual_accession": "0000827054-25-000077",
+      "actual_filed": "2025-05-23",
+      "actual_gap": null,
+      "actual_id": "ab4cc76e-abcd-5879-89c1-d0fb23314f07",
+      "actual_value": "970500000",
+      "company": "MCHP",
+      "group_id": "MCHP:0000827054-25-000018",
+      "guidance_filed": "2025-02-06",
+      "result_filed": "2025-05-08",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/827054/000082705425000061/exhibit991q4fy25.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/827054/000082705425000018/exhibit991q3fy25.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000827054-25-000077",
+          "end": "2025-03-31",
+          "filed": "2025-05-23",
+          "id": "ab4cc76e-abcd-5879-89c1-d0fb23314f07",
+          "parents": [
+            "17a69bbb-a334-5247-9101-f523e4822ae2",
+            "d01b2b02-0aed-501b-ba17-b0342f7a5c52"
+          ],
+          "start": "2025-01-01"
+        },
+        "end": "2025-03-31",
+        "fiscal_label": "2025:4",
+        "start": "2025-01-01"
+      }
+    },
+    {
+      "actual_accession": "0000827054-25-000019",
+      "actual_filed": "2025-02-06",
+      "actual_gap": null,
+      "actual_id": "1b631413-4d14-5bc8-833e-716fce44c7c5",
+      "actual_value": "1026000000",
+      "company": "MCHP",
+      "group_id": "MCHP:0000827054-24-000205",
+      "guidance_filed": "2024-11-05",
+      "result_filed": "2025-02-06",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/827054/000082705425000018/exhibit991q3fy25.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/827054/000082705424000205/exhibit991q2fy25.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000827054-25-000019",
+          "end": "2024-12-31",
+          "filed": "2025-02-06",
+          "id": "1b631413-4d14-5bc8-833e-716fce44c7c5",
+          "parents": [],
+          "start": "2024-10-01"
+        },
+        "end": "2024-12-31",
+        "fiscal_label": "2025:3",
+        "start": "2024-10-01"
+      }
+    },
+    {
+      "actual_accession": "0001177609-26-000027",
+      "actual_filed": "2026-09-03",
+      "actual_gap": null,
+      "actual_id": "9482445f-1f62-57da-924e-35ccdc68e0a9",
+      "actual_value": "1261493000",
+      "company": "FIVE",
+      "group_id": "FIVE:0001177609-26-000015",
+      "guidance_filed": "2026-06-03",
+      "result_filed": "2026-09-02",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1177609/000117760926000023/q22026fivebelowexhibit991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760926000015/q12026fivebelowexhibit991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001177609-26-000027",
+          "end": "2026-08-01",
+          "filed": "2026-09-03",
+          "id": "9482445f-1f62-57da-924e-35ccdc68e0a9",
+          "parents": [],
+          "start": "2026-05-03"
+        },
+        "end": "2026-08-01",
+        "fiscal_label": "2026:2",
+        "start": "2026-05-03"
+      }
+    },
+    {
+      "actual_accession": "0001177609-26-000020",
+      "actual_filed": "2026-06-04",
+      "actual_gap": null,
+      "actual_id": "4928a7f6-133e-53d2-975f-2cae10b6fe9a",
+      "actual_value": "1285602000",
+      "company": "FIVE",
+      "group_id": "FIVE:0001177609-26-000006",
+      "guidance_filed": "2026-03-18",
+      "result_filed": "2026-06-03",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1177609/000117760926000015/q12026fivebelowexhibit991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760926000006/q42025fivebelowexhibit991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001177609-26-000020",
+          "end": "2026-05-02",
+          "filed": "2026-06-04",
+          "id": "4928a7f6-133e-53d2-975f-2cae10b6fe9a",
+          "parents": [],
+          "start": "2026-02-01"
+        },
+        "end": "2026-05-02",
+        "fiscal_label": "2026:1",
+        "start": "2026-02-01"
+      }
+    },
+    {
+      "actual_accession": "0001177609-26-000010",
+      "actual_filed": "2026-03-19",
+      "actual_gap": null,
+      "actual_id": "f0e88dca-1f85-52a1-b604-29bfba1ac307",
+      "actual_value": "1728480000",
+      "company": "FIVE",
+      "group_id": "FIVE:0001177609-25-000048",
+      "guidance_filed": "2025-12-03",
+      "result_filed": "2026-03-18",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1177609/000117760926000006/q42025fivebelowexhibit991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000048/q32025fivebelowexhibit991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001177609-26-000010",
+          "end": "2026-01-31",
+          "filed": "2026-03-19",
+          "id": "f0e88dca-1f85-52a1-b604-29bfba1ac307",
+          "parents": [
+            "d696beda-21ea-5c45-815e-5aa3675f1f72",
+            "824306c8-6510-59c8-8f16-fa85a132c937"
+          ],
+          "start": "2025-11-02"
+        },
+        "end": "2026-01-31",
+        "fiscal_label": "2025:4",
+        "start": "2025-11-02"
+      }
+    },
+    {
+      "actual_accession": "0001177609-25-000052",
+      "actual_filed": "2025-12-04",
+      "actual_gap": null,
+      "actual_id": "6663c315-6797-5a29-bc91-510b42e55e1d",
+      "actual_value": "1038293000",
+      "company": "FIVE",
+      "group_id": "FIVE:0001177609-25-000037",
+      "guidance_filed": "2025-08-27",
+      "result_filed": "2025-12-03",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000048/q32025fivebelowexhibit991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000037/q22025fivebelowexhibit991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001177609-25-000052",
+          "end": "2025-11-01",
+          "filed": "2025-12-04",
+          "id": "6663c315-6797-5a29-bc91-510b42e55e1d",
+          "parents": [],
+          "start": "2025-08-03"
+        },
+        "end": "2025-11-01",
+        "fiscal_label": "2025:3",
+        "start": "2025-08-03"
+      }
+    },
+    {
+      "actual_accession": "0001177609-25-000041",
+      "actual_filed": "2025-08-28",
+      "actual_gap": null,
+      "actual_id": "3b23b657-f8f0-59a6-9a39-f45a5bb118c2",
+      "actual_value": "1026847000",
+      "company": "FIVE",
+      "group_id": "FIVE:0001177609-25-000019",
+      "guidance_filed": "2025-06-04",
+      "result_filed": "2025-08-27",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000037/q22025fivebelowexhibit991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000019/q12025fivebelowexhibit991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001177609-25-000041",
+          "end": "2025-08-02",
+          "filed": "2025-08-28",
+          "id": "3b23b657-f8f0-59a6-9a39-f45a5bb118c2",
+          "parents": [],
+          "start": "2025-05-04"
+        },
+        "end": "2025-08-02",
+        "fiscal_label": "2025:2",
+        "start": "2025-05-04"
+      }
+    },
+    {
+      "actual_accession": "0001177609-25-000025",
+      "actual_filed": "2025-06-05",
+      "actual_gap": null,
+      "actual_id": "e8ee0650-1bd1-5c92-938f-dd6d26776e4c",
+      "actual_value": "970527000",
+      "company": "FIVE",
+      "group_id": "FIVE:0001177609-25-000006",
+      "guidance_filed": "2025-03-19",
+      "result_filed": "2025-06-04",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000019/q12025fivebelowexhibit991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000006/q42024fivebelowexhibit991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001177609-25-000025",
+          "end": "2025-05-03",
+          "filed": "2025-06-05",
+          "id": "e8ee0650-1bd1-5c92-938f-dd6d26776e4c",
+          "parents": [],
+          "start": "2025-02-02"
+        },
+        "end": "2025-05-03",
+        "fiscal_label": "2025:1",
+        "start": "2025-02-02"
+      }
+    },
+    {
+      "actual_accession": "0001177609-25-000009",
+      "actual_filed": "2025-03-20",
+      "actual_gap": null,
+      "actual_id": "c8a92a8d-2cd3-5359-8fd2-33d155be8ec3",
+      "actual_value": "1390885000",
+      "company": "FIVE",
+      "group_id": "FIVE:0001177609-24-000029",
+      "guidance_filed": "2024-12-04",
+      "result_filed": "2025-03-19",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000006/q42024fivebelowexhibit991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760924000029/q32024fivebelowexhibit991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001177609-25-000009",
+          "end": "2025-02-01",
+          "filed": "2025-03-20",
+          "id": "dce388e7-bc3e-524d-b8fe-8d47ec541354",
+          "parents": [
+            "1d0eb658-8a87-597d-8732-a221a2522f7e",
+            "8da4a59d-4031-57fb-883b-8995acfbfbf1"
+          ],
+          "start": "2024-11-03"
+        },
+        "end": "2025-02-01",
+        "fiscal_label": "2024:4",
+        "start": "2024-11-03"
+      }
+    },
+    {
+      "actual_accession": "0001177609-24-000033",
+      "actual_filed": "2024-12-05",
+      "actual_gap": null,
+      "actual_id": "c8730f25-86e9-580c-92fd-995e90078874",
+      "actual_value": "843710000",
+      "company": "FIVE",
+      "group_id": "FIVE:0001177609-24-000020",
+      "guidance_filed": "2024-08-28",
+      "result_filed": "2024-12-04",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1177609/000117760924000029/q32024fivebelowexhibit991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760924000020/q22024fivebelowexhibit991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001177609-24-000033",
+          "end": "2024-11-02",
+          "filed": "2024-12-05",
+          "id": "c8730f25-86e9-580c-92fd-995e90078874",
+          "parents": [],
+          "start": "2024-08-04"
+        },
+        "end": "2024-11-02",
+        "fiscal_label": "2024:3",
+        "start": "2024-08-04"
+      }
+    },
+    {
+      "actual_accession": "0000935703-26-000109",
+      "actual_filed": "2026-08-27",
+      "actual_gap": null,
+      "actual_id": "4e17c5b6-cfcd-5b4e-b1e1-a296bb61290c",
+      "actual_value": "4886500000",
+      "company": "DLTR",
+      "group_id": "DLTR:0000935703-26-000064",
+      "guidance_filed": "2026-05-28",
+      "result_filed": "2026-08-27",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000108/ex991q2-26earningspressrel.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000064/ex991q1-26earningspressrel.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000935703-26-000109",
+          "end": "2026-08-01",
+          "filed": "2026-08-27",
+          "id": "4e17c5b6-cfcd-5b4e-b1e1-a296bb61290c",
+          "parents": [],
+          "start": "2026-05-03"
+        },
+        "end": "2026-08-01",
+        "fiscal_label": "2026:2",
+        "start": "2026-05-03"
+      }
+    },
+    {
+      "actual_accession": "0000935703-26-000065",
+      "actual_filed": "2026-05-28",
+      "actual_gap": null,
+      "actual_id": "1be8e101-4dc3-5da6-868c-00ed62ccfd30",
+      "actual_value": "4970500000",
+      "company": "DLTR",
+      "group_id": "DLTR:0000935703-26-000024",
+      "guidance_filed": "2026-03-16",
+      "result_filed": "2026-05-28",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000064/ex991q1-26earningspressrel.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000024/ex991q4-25earningspressrel.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000935703-26-000065",
+          "end": "2026-05-02",
+          "filed": "2026-05-28",
+          "id": "1be8e101-4dc3-5da6-868c-00ed62ccfd30",
+          "parents": [],
+          "start": "2026-02-01"
+        },
+        "end": "2026-05-02",
+        "fiscal_label": "2026:1",
+        "start": "2026-02-01"
+      }
+    },
+    {
+      "actual_accession": "0000935703-26-000025",
+      "actual_filed": "2026-03-16",
+      "actual_gap": null,
+      "actual_id": "82155412-b56e-54c8-a690-59645807c34c",
+      "actual_value": "5446100000",
+      "company": "DLTR",
+      "group_id": "DLTR:0000935703-25-000104",
+      "guidance_filed": "2025-12-03",
+      "result_filed": "2026-03-16",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000024/ex991q4-25earningspressrel.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000104/ex991q3-25earningspressrel.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000935703-26-000025",
+          "end": "2026-01-31",
+          "filed": "2026-03-16",
+          "id": "82155412-b56e-54c8-a690-59645807c34c",
+          "parents": [
+            "c5fa1d32-20ad-54c9-90ab-abbc760e4dd0",
+            "c7fe7002-f959-5128-bf60-1257f2664b0e"
+          ],
+          "start": "2025-11-02"
+        },
+        "end": "2026-01-31",
+        "fiscal_label": "2025:4",
+        "start": "2025-11-02"
+      }
+    },
+    {
+      "actual_accession": "0000935703-25-000105",
+      "actual_filed": "2025-12-03",
+      "actual_gap": null,
+      "actual_id": "d7e5e8dd-3799-57d7-a6a8-7d08c21249e3",
+      "actual_value": "4746300000",
+      "company": "DLTR",
+      "group_id": "DLTR:0000935703-25-000060",
+      "guidance_filed": "2025-09-03",
+      "result_filed": "2025-12-03",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000104/ex991q3-25earningspressrel.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000060/ex991q2-25earningspressrel.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000935703-25-000105",
+          "end": "2025-11-01",
+          "filed": "2025-12-03",
+          "id": "d7e5e8dd-3799-57d7-a6a8-7d08c21249e3",
+          "parents": [],
+          "start": "2025-08-03"
+        },
+        "end": "2025-11-01",
+        "fiscal_label": "2025:3",
+        "start": "2025-08-03"
+      }
+    },
+    {
+      "actual_accession": "0000935703-25-000061",
+      "actual_filed": "2025-09-03",
+      "actual_gap": null,
+      "actual_id": "0f423c46-a3d2-5b32-af04-f4644aa518a4",
+      "actual_value": "4566800000",
+      "company": "DLTR",
+      "group_id": "DLTR:0000935703-25-000024",
+      "guidance_filed": "2025-06-04",
+      "result_filed": "2025-09-03",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000060/ex991q2-25earningspressrel.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000024/ex991q1-25earningspressrel.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000935703-25-000061",
+          "end": "2025-08-02",
+          "filed": "2025-09-03",
+          "id": "0f423c46-a3d2-5b32-af04-f4644aa518a4",
+          "parents": [],
+          "start": "2025-05-04"
+        },
+        "end": "2025-08-02",
+        "fiscal_label": "2025:2",
+        "start": "2025-05-04"
+      }
+    },
+    {
+      "actual_accession": "0000935703-25-000026",
+      "actual_filed": "2025-06-04",
+      "actual_gap": null,
+      "actual_id": "9c53d6bc-d7ea-54a1-b1ab-24829ca9d331",
+      "actual_value": "4636500000",
+      "company": "DLTR",
+      "group_id": "DLTR:0000935703-25-000012",
+      "guidance_filed": "2025-03-26",
+      "result_filed": "2025-06-04",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000024/ex991q1-25earningspressrel.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000012/ex991q4-24earningspressrel.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000935703-25-000026",
+          "end": "2025-05-03",
+          "filed": "2025-06-04",
+          "id": "9c53d6bc-d7ea-54a1-b1ab-24829ca9d331",
+          "parents": [],
+          "start": "2025-02-02"
+        },
+        "end": "2025-05-03",
+        "fiscal_label": "2025:1",
+        "start": "2025-02-02"
+      }
+    },
+    {
+      "actual_accession": "0000935703-25-000015",
+      "actual_filed": "2025-03-26",
+      "actual_gap": null,
+      "actual_id": "7562a844-2028-5330-a6a7-c83918227531",
+      "actual_value": "4996700000",
+      "company": "DLTR",
+      "group_id": "DLTR:0000935703-24-000057",
+      "guidance_filed": "2024-12-04",
+      "result_filed": "2025-03-26",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/935703/000093570325000012/ex991q4-24earningspressrel.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000057/ex991q3-24earningspr.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000935703-25-000015",
+          "end": "2025-02-01",
+          "filed": "2025-03-26",
+          "id": "a44b8574-7496-56a8-ae16-9f759777d0eb",
+          "parents": [
+            "c25e671a-808c-52cc-83cf-d13c2efc23b3",
+            "7ca83fb4-4945-507c-91cb-35ae1c593968"
+          ],
+          "start": "2024-11-03"
+        },
+        "end": "2025-02-01",
+        "fiscal_label": "2024:4",
+        "start": "2024-11-03"
+      }
+    },
+    {
+      "actual_accession": "0000935703-24-000059",
+      "actual_filed": "2024-12-04",
+      "actual_gap": null,
+      "actual_id": "de2a257b-7d84-5dfc-9aa5-51c1548ce83d",
+      "actual_value": "7561700000",
+      "company": "DLTR",
+      "group_id": "DLTR:0000935703-24-000039",
+      "guidance_filed": "2024-09-04",
+      "result_filed": "2024-12-04",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000057/ex991q3-24earningspr.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000039/ex991q2-24earningspr.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000935703-24-000059",
+          "end": "2024-11-02",
+          "filed": "2024-12-04",
+          "id": "de2a257b-7d84-5dfc-9aa5-51c1548ce83d",
+          "parents": [],
+          "start": "2024-08-04"
+        },
+        "end": "2024-11-02",
+        "fiscal_label": "2024:3",
+        "start": "2024-08-04"
+      }
+    },
+    {
+      "actual_accession": "0001104659-26-119705",
+      "actual_filed": "2026-10-28",
+      "actual_gap": null,
+      "actual_id": "8192b44a-3240-53d9-9954-8ea340e863cd",
+      "actual_value": "581809000",
+      "company": "BOOT",
+      "group_id": "BOOT:0001104659-26-088137",
+      "guidance_filed": "2026-07-29",
+      "result_filed": "2026-10-28",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1610250/000110465926119615/boot-ex99d1.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1610250/000110465926088137/boot-20260728xex99d1.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001104659-26-119705",
+          "end": "2026-09-26",
+          "filed": "2026-10-28",
+          "id": "8192b44a-3240-53d9-9954-8ea340e863cd",
+          "parents": [],
+          "start": "2026-06-28"
+        },
+        "end": "2026-09-26",
+        "fiscal_label": "2027:2",
+        "start": "2026-06-28"
+      }
+    },
+    {
+      "actual_accession": "0001104659-26-088262",
+      "actual_filed": "2026-07-29",
+      "actual_gap": null,
+      "actual_id": "16ed5d60-b296-52c4-b440-d66605cce7ca",
+      "actual_value": "593515000",
+      "company": "BOOT",
+      "group_id": "BOOT:0001104659-26-061169",
+      "guidance_filed": "2026-05-14",
+      "result_filed": "2026-07-29",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1610250/000110465926088137/boot-20260728xex99d1.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1610250/000110465926061169/boot-20260514xex99d1.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001104659-26-088262",
+          "end": "2026-06-27",
+          "filed": "2026-07-29",
+          "id": "16ed5d60-b296-52c4-b440-d66605cce7ca",
+          "parents": [],
+          "start": "2026-03-29"
+        },
+        "end": "2026-06-27",
+        "fiscal_label": "2027:1",
+        "start": "2026-03-29"
+      }
+    },
+    {
+      "actual_accession": "0001104659-26-061346",
+      "actual_filed": "2026-05-14",
+      "actual_gap": null,
+      "actual_id": "097e8131-866f-5dd8-bf26-d11383ae6335",
+      "actual_value": "538753000",
+      "company": "BOOT",
+      "group_id": "BOOT:0001104659-26-010309",
+      "guidance_filed": "2026-02-04",
+      "result_filed": "2026-05-14",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1610250/000110465926061169/boot-20260514xex99d1.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1610250/000110465926010309/boot-20260204xex99d1.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001104659-26-061346",
+          "end": "2026-03-28",
+          "filed": "2026-05-14",
+          "id": "097e8131-866f-5dd8-bf26-d11383ae6335",
+          "parents": [
+            "5bff3916-2260-5f5b-89ac-31c09c8de87e",
+            "d89bcd77-a93c-59ae-9183-d49372f2bd1e"
+          ],
+          "start": "2025-12-28"
+        },
+        "end": "2026-03-28",
+        "fiscal_label": "2026:4",
+        "start": "2025-12-28"
+      }
+    },
+    {
+      "actual_accession": "0001104659-26-010386",
+      "actual_filed": "2026-02-05",
+      "actual_gap": null,
+      "actual_id": "7f913f3f-d7ea-53f1-be6d-b308d60892f9",
+      "actual_value": "705643000",
+      "company": "BOOT",
+      "group_id": "BOOT:0001104659-25-103720",
+      "guidance_filed": "2025-10-29",
+      "result_filed": "2026-02-04",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1610250/000110465926010309/boot-20260204xex99d1.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1610250/000110465925103720/boot-20251029xex99d1.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001104659-26-010386",
+          "end": "2025-12-27",
+          "filed": "2026-02-05",
+          "id": "7f913f3f-d7ea-53f1-be6d-b308d60892f9",
+          "parents": [],
+          "start": "2025-09-28"
+        },
+        "end": "2025-12-27",
+        "fiscal_label": "2026:3",
+        "start": "2025-09-28"
+      }
+    },
+    {
+      "actual_accession": "0001104659-25-105082",
+      "actual_filed": "2025-11-03",
+      "actual_gap": null,
+      "actual_id": "9877605b-3325-56d6-b225-972511ce2844",
+      "actual_value": "505396000",
+      "company": "BOOT",
+      "group_id": "BOOT:0001558370-25-009888",
+      "guidance_filed": "2025-07-31",
+      "result_filed": "2025-10-29",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1610250/000110465925103720/boot-20251029xex99d1.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025009888/boot-20250731xex99d1.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001104659-25-105082",
+          "end": "2025-09-27",
+          "filed": "2025-11-03",
+          "id": "9877605b-3325-56d6-b225-972511ce2844",
+          "parents": [],
+          "start": "2025-06-29"
+        },
+        "end": "2025-09-27",
+        "fiscal_label": "2026:2",
+        "start": "2025-06-29"
+      }
+    },
+    {
+      "actual_accession": "0001558370-25-009902",
+      "actual_filed": "2025-07-31",
+      "actual_gap": null,
+      "actual_id": "025c00c7-a291-5563-9386-8086f719914d",
+      "actual_value": "504067000",
+      "company": "BOOT",
+      "group_id": "BOOT:0001558370-25-007745",
+      "guidance_filed": "2025-05-14",
+      "result_filed": "2025-07-31",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025009888/boot-20250731xex99d1.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025007745/boot-20250514xex99d1.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001558370-25-009902",
+          "end": "2025-06-28",
+          "filed": "2025-07-31",
+          "id": "025c00c7-a291-5563-9386-8086f719914d",
+          "parents": [],
+          "start": "2025-03-30"
+        },
+        "end": "2025-06-28",
+        "fiscal_label": "2026:1",
+        "start": "2025-03-30"
+      }
+    },
+    {
+      "actual_accession": "0001558370-25-007889",
+      "actual_filed": "2025-05-15",
+      "actual_gap": null,
+      "actual_id": "a0468b3b-cf5a-5afd-90fc-10679881a8cc",
+      "actual_value": "453749000",
+      "company": "BOOT",
+      "group_id": "BOOT:0001558370-25-000540",
+      "guidance_filed": "2025-01-30",
+      "result_filed": "2025-05-14",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025007745/boot-20250514xex99d1.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025000540/boot-20250130xex99d1.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001558370-25-007889",
+          "end": "2025-03-29",
+          "filed": "2025-05-15",
+          "id": "a0468b3b-cf5a-5afd-90fc-10679881a8cc",
+          "parents": [
+            "30a81ef8-7ccf-58f0-b69f-abf843e64170",
+            "b25cfda3-446c-5bb1-b097-5c023a68e2f2"
+          ],
+          "start": "2024-12-29"
+        },
+        "end": "2025-03-29",
+        "fiscal_label": "2025:4",
+        "start": "2024-12-29"
+      }
+    },
+    {
+      "actual_accession": "0001558370-25-000549",
+      "actual_filed": "2025-01-31",
+      "actual_gap": null,
+      "actual_id": "bcb09eb6-31c6-5b5b-8e72-5eeff17adb00",
+      "actual_value": "608170000",
+      "company": "BOOT",
+      "group_id": "BOOT:0001558370-24-013745",
+      "guidance_filed": "2024-10-28",
+      "result_filed": "2025-01-30",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025000540/boot-20250130xex99d1.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1610250/000155837024013745/boot-20241022xex99d1.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001558370-25-000549",
+          "end": "2024-12-28",
+          "filed": "2025-01-31",
+          "id": "bcb09eb6-31c6-5b5b-8e72-5eeff17adb00",
+          "parents": [],
+          "start": "2024-09-29"
+        },
+        "end": "2024-12-28",
+        "fiscal_label": "2025:3",
+        "start": "2024-09-29"
+      }
+    },
+    {
+      "actual_accession": "0001628280-26-063365",
+      "actual_filed": "2026-09-24",
+      "actual_gap": null,
+      "actual_id": "74834a59-f89c-5a02-ab97-296dc3d24c24",
+      "actual_value": "324418000",
+      "company": "SFIX",
+      "group_id": "SFIX:0001628280-26-042186",
+      "guidance_filed": "2026-06-10",
+      "result_filed": "2026-09-23",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1576942/000162828026063208/exhibit991-fy26.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1576942/000162828026042186/exhibit991-q326.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-26-063365",
+          "end": "2026-08-01",
+          "filed": "2026-09-24",
+          "id": "74834a59-f89c-5a02-ab97-296dc3d24c24",
+          "parents": [
+            "3c17da9f-5e31-58ab-a728-f758b80485a5",
+            "f9f39b25-a36f-5bac-8dcd-8f0f32e917ac"
+          ],
+          "start": "2026-05-03"
+        },
+        "end": "2026-08-01",
+        "fiscal_label": "2026:4",
+        "start": "2026-05-03"
+      }
+    },
+    {
+      "actual_accession": "0001628280-26-042504",
+      "actual_filed": "2026-06-11",
+      "actual_gap": null,
+      "actual_id": "4cd64bff-4dca-5abf-901b-6420e36a79b7",
+      "actual_value": "340277000",
+      "company": "SFIX",
+      "group_id": "SFIX:0001628280-26-016819",
+      "guidance_filed": "2026-03-11",
+      "result_filed": "2026-06-10",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1576942/000162828026042186/exhibit991-q326.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1576942/000162828026016819/exhibit991-q226.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-26-042504",
+          "end": "2026-05-02",
+          "filed": "2026-06-11",
+          "id": "4cd64bff-4dca-5abf-901b-6420e36a79b7",
+          "parents": [],
+          "start": "2026-02-01"
+        },
+        "end": "2026-05-02",
+        "fiscal_label": "2026:3",
+        "start": "2026-02-01"
+      }
+    },
+    {
+      "actual_accession": "0001628280-26-017247",
+      "actual_filed": "2026-03-12",
+      "actual_gap": null,
+      "actual_id": "f3d34ad7-8e8e-59d8-9520-fdb3344c6202",
+      "actual_value": "341297000",
+      "company": "SFIX",
+      "group_id": "SFIX:0001628280-25-055353",
+      "guidance_filed": "2025-12-04",
+      "result_filed": "2026-03-11",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1576942/000162828026016819/exhibit991-q226.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1576942/000162828025055353/exhibit991-q126.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-26-017247",
+          "end": "2026-01-31",
+          "filed": "2026-03-12",
+          "id": "f3d34ad7-8e8e-59d8-9520-fdb3344c6202",
+          "parents": [],
+          "start": "2025-11-02"
+        },
+        "end": "2026-01-31",
+        "fiscal_label": "2026:2",
+        "start": "2025-11-02"
+      }
+    },
+    {
+      "actual_accession": "0001628280-25-055606",
+      "actual_filed": "2025-12-05",
+      "actual_gap": null,
+      "actual_id": "a6e9e5bd-2fa2-50bb-a7a2-a3dfb0aa1bff",
+      "actual_value": "342127000",
+      "company": "SFIX",
+      "group_id": "SFIX:0001628280-25-042587",
+      "guidance_filed": "2025-09-24",
+      "result_filed": "2025-12-04",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1576942/000162828025055353/exhibit991-q126.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1576942/000162828025042587/exhibit991-q425.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-25-055606",
+          "end": "2025-11-01",
+          "filed": "2025-12-05",
+          "id": "a6e9e5bd-2fa2-50bb-a7a2-a3dfb0aa1bff",
+          "parents": [],
+          "start": "2025-08-03"
+        },
+        "end": "2025-11-01",
+        "fiscal_label": "2026:1",
+        "start": "2025-08-03"
+      }
+    },
+    {
+      "actual_accession": "0001628280-25-042782",
+      "actual_filed": "2025-09-25",
+      "actual_gap": null,
+      "actual_id": "99df5f32-5e44-5898-ba87-ac693f554819",
+      "actual_value": "311227000",
+      "company": "SFIX",
+      "group_id": "SFIX:0001576942-25-000026",
+      "guidance_filed": "2025-06-10",
+      "result_filed": "2025-09-24",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1576942/000162828025042587/exhibit991-q425.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1576942/000157694225000026/exhibit991-q325.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-25-042782",
+          "end": "2025-08-02",
+          "filed": "2025-09-25",
+          "id": "99df5f32-5e44-5898-ba87-ac693f554819",
+          "parents": [
+            "ca7a0354-f396-5850-8e59-165d0679dcc7",
+            "acb38d0c-a088-54cf-bd0e-d1f8b64c8b03"
+          ],
+          "start": "2025-05-04"
+        },
+        "end": "2025-08-02",
+        "fiscal_label": "2025:4",
+        "start": "2025-05-04"
+      }
+    },
+    {
+      "actual_accession": "0001576942-25-000028",
+      "actual_filed": "2025-06-11",
+      "actual_gap": null,
+      "actual_id": "6e527961-1a9f-5f75-8e2e-dcb8a61cf7f2",
+      "actual_value": "325016000",
+      "company": "SFIX",
+      "group_id": "SFIX:0001576942-25-000006",
+      "guidance_filed": "2025-03-11",
+      "result_filed": "2025-06-10",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1576942/000157694225000026/exhibit991-q325.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1576942/000157694225000006/exhibit991-q225.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001576942-25-000028",
+          "end": "2025-05-03",
+          "filed": "2025-06-11",
+          "id": "6e527961-1a9f-5f75-8e2e-dcb8a61cf7f2",
+          "parents": [],
+          "start": "2025-02-02"
+        },
+        "end": "2025-05-03",
+        "fiscal_label": "2025:3",
+        "start": "2025-02-02"
+      }
+    },
+    {
+      "actual_accession": "0001576942-25-000009",
+      "actual_filed": "2025-03-12",
+      "actual_gap": null,
+      "actual_id": "bbf8f2e3-79a2-5ecc-8ee5-58f2cfcd61d8",
+      "actual_value": "312110000",
+      "company": "SFIX",
+      "group_id": "SFIX:0001576942-24-000130",
+      "guidance_filed": "2024-12-10",
+      "result_filed": "2025-03-11",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1576942/000157694225000006/exhibit991-q225.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1576942/000157694224000130/exhibit991-q125.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001576942-25-000009",
+          "end": "2025-02-01",
+          "filed": "2025-03-12",
+          "id": "bbf8f2e3-79a2-5ecc-8ee5-58f2cfcd61d8",
+          "parents": [],
+          "start": "2024-11-03"
+        },
+        "end": "2025-02-01",
+        "fiscal_label": "2025:2",
+        "start": "2024-11-03"
+      }
+    },
+    {
+      "actual_accession": "0001576942-24-000133",
+      "actual_filed": "2024-12-11",
+      "actual_gap": null,
+      "actual_id": "decd1e85-57db-5ce5-bf7e-e9ef0278673b",
+      "actual_value": "318818000",
+      "company": "SFIX",
+      "group_id": "SFIX:0001576942-24-000087",
+      "guidance_filed": "2024-09-24",
+      "result_filed": "2024-12-10",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1576942/000157694224000130/exhibit991-q125.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1576942/000157694224000087/exhibit991-q424.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001576942-24-000133",
+          "end": "2024-11-02",
+          "filed": "2024-12-11",
+          "id": "decd1e85-57db-5ce5-bf7e-e9ef0278673b",
+          "parents": [],
+          "start": "2024-08-04"
+        },
+        "end": "2024-11-02",
+        "fiscal_label": "2025:1",
+        "start": "2024-08-04"
+      }
+    },
+    {
+      "actual_accession": "0001090872-26-000064",
+      "actual_filed": "2026-09-01",
+      "actual_gap": null,
+      "actual_id": "7a078659-3b32-5d4d-8b18-fd7d48d412d2",
+      "actual_value": "1878000000",
+      "company": "A",
+      "group_id": "A:0001090872-26-000052",
+      "guidance_filed": "2026-05-27",
+      "result_filed": "2026-08-26",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1090872/000109087226000062/exhibit991-q326pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087226000052/exhibit991-q226pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001090872-26-000064",
+          "end": "2026-07-31",
+          "filed": "2026-09-01",
+          "id": "7a078659-3b32-5d4d-8b18-fd7d48d412d2",
+          "parents": [],
+          "start": "2026-05-01"
+        },
+        "end": "2026-07-31",
+        "fiscal_label": "2026:3",
+        "start": "2026-05-01"
+      }
+    },
+    {
+      "actual_accession": "0001090872-26-000055",
+      "actual_filed": "2026-06-01",
+      "actual_gap": null,
+      "actual_id": "7c677bdb-fec5-542b-8265-5bed7755efc1",
+      "actual_value": "1835000000",
+      "company": "A",
+      "group_id": "A:0001090872-26-000015",
+      "guidance_filed": "2026-02-25",
+      "result_filed": "2026-05-27",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1090872/000109087226000052/exhibit991-q226pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087226000015/exhibit991-q126pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001090872-26-000055",
+          "end": "2026-04-30",
+          "filed": "2026-06-01",
+          "id": "7c677bdb-fec5-542b-8265-5bed7755efc1",
+          "parents": [],
+          "start": "2026-02-01"
+        },
+        "end": "2026-04-30",
+        "fiscal_label": "2026:2",
+        "start": "2026-02-01"
+      }
+    },
+    {
+      "actual_accession": "0001090872-26-000023",
+      "actual_filed": "2026-03-03",
+      "actual_gap": null,
+      "actual_id": "2f7ce430-2433-5f10-acec-3e31e898af3c",
+      "actual_value": "1798000000",
+      "company": "A",
+      "group_id": "A:0001090872-25-000070",
+      "guidance_filed": "2025-11-24",
+      "result_filed": "2026-02-25",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1090872/000109087226000015/exhibit991-q126pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000070/exhibit991-q425pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001090872-26-000023",
+          "end": "2026-01-31",
+          "filed": "2026-03-03",
+          "id": "2f7ce430-2433-5f10-acec-3e31e898af3c",
+          "parents": [],
+          "start": "2025-11-01"
+        },
+        "end": "2026-01-31",
+        "fiscal_label": "2026:1",
+        "start": "2025-11-01"
+      }
+    },
+    {
+      "actual_accession": "0001090872-25-000087",
+      "actual_filed": "2025-12-22",
+      "actual_gap": null,
+      "actual_id": "f050edfa-7490-575a-8d07-5d01eb2e05c4",
+      "actual_value": "1861000000",
+      "company": "A",
+      "group_id": "A:0001090872-25-000034",
+      "guidance_filed": "2025-08-27",
+      "result_filed": "2025-11-24",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000070/exhibit991-q425pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000034/exhibit991-q325pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001090872-25-000087",
+          "end": "2025-10-31",
+          "filed": "2025-12-22",
+          "id": "f050edfa-7490-575a-8d07-5d01eb2e05c4",
+          "parents": [
+            "7bf7e260-3a38-5ffd-9373-b04e0109bd54",
+            "50357c55-a6ff-5c2c-bdd7-dfc5a078dd53"
+          ],
+          "start": "2025-08-01"
+        },
+        "end": "2025-10-31",
+        "fiscal_label": "2025:4",
+        "start": "2025-08-01"
+      }
+    },
+    {
+      "actual_accession": "0001090872-25-000036",
+      "actual_filed": "2025-08-29",
+      "actual_gap": null,
+      "actual_id": "09dfc2f4-9a7c-5b75-a1ec-2a737f82a679",
+      "actual_value": "1738000000",
+      "company": "A",
+      "group_id": "A:0001090872-25-000013",
+      "guidance_filed": "2025-05-28",
+      "result_filed": "2025-08-27",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000034/exhibit991-q325pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000013/exhibit991-q225pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001090872-25-000036",
+          "end": "2025-07-31",
+          "filed": "2025-08-29",
+          "id": "09dfc2f4-9a7c-5b75-a1ec-2a737f82a679",
+          "parents": [],
+          "start": "2025-05-01"
+        },
+        "end": "2025-07-31",
+        "fiscal_label": "2025:3",
+        "start": "2025-05-01"
+      }
+    },
+    {
+      "actual_accession": "0001090872-25-000021",
+      "actual_filed": "2025-06-02",
+      "actual_gap": null,
+      "actual_id": "65227203-9f72-593a-82cd-c9e2581f269e",
+      "actual_value": "1668000000",
+      "company": "A",
+      "group_id": "A:0001090872-25-000003",
+      "guidance_filed": "2025-02-26",
+      "result_filed": "2025-05-28",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000013/exhibit991-q225pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000003/exhibit991-q125pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001090872-25-000021",
+          "end": "2025-04-30",
+          "filed": "2025-06-02",
+          "id": "65227203-9f72-593a-82cd-c9e2581f269e",
+          "parents": [],
+          "start": "2025-02-01"
+        },
+        "end": "2025-04-30",
+        "fiscal_label": "2025:2",
+        "start": "2025-02-01"
+      }
+    },
+    {
+      "actual_accession": "0001090872-25-000008",
+      "actual_filed": "2025-03-03",
+      "actual_gap": null,
+      "actual_id": "9ab5538a-d84e-5f84-9a1a-f5d41606272c",
+      "actual_value": "1681000000",
+      "company": "A",
+      "group_id": "A:0001090872-24-000042",
+      "guidance_filed": "2024-11-25",
+      "result_filed": "2025-02-26",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000003/exhibit991-q125pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087224000042/exhibit991-q424pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001090872-25-000008",
+          "end": "2025-01-31",
+          "filed": "2025-03-03",
+          "id": "9ab5538a-d84e-5f84-9a1a-f5d41606272c",
+          "parents": [],
+          "start": "2024-11-01"
+        },
+        "end": "2025-01-31",
+        "fiscal_label": "2025:1",
+        "start": "2024-11-01"
+      }
+    },
+    {
+      "actual_accession": "0001090872-24-000049",
+      "actual_filed": "2024-12-20",
+      "actual_gap": null,
+      "actual_id": "9b2311f2-dc8d-558e-b4db-193073ef268f",
+      "actual_value": "1701000000",
+      "company": "A",
+      "group_id": "A:0001090872-24-000024",
+      "guidance_filed": "2024-08-21",
+      "result_filed": "2024-11-25",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1090872/000109087224000042/exhibit991-q424pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087224000024/exhibit991-q324pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001090872-24-000049",
+          "end": "2024-10-31",
+          "filed": "2024-12-20",
+          "id": "9b2311f2-dc8d-558e-b4db-193073ef268f",
+          "parents": [
+            "5e6d5a7d-3cbf-5650-be0c-da4b6b4422f1",
+            "b2fa9aa1-4200-5d13-9911-0eb72e3cc3df"
+          ],
+          "start": "2024-08-01"
+        },
+        "end": "2024-10-31",
+        "fiscal_label": "2024:4",
+        "start": "2024-08-01"
+      }
+    },
+    {
+      "actual_accession": "0001773751-26-000246",
+      "actual_filed": "2026-11-09",
+      "actual_gap": null,
+      "actual_id": "6916b93b-71c1-58d8-8850-903ccb7e9f40",
+      "actual_value": "890373000",
+      "company": "HIMS",
+      "group_id": "HIMS:0001773751-26-000161",
+      "guidance_filed": "2026-08-10",
+      "result_filed": "2026-11-09",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000242/hims-20260930x8xkearningsr.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000161/hims-20260630x8xkearningsr.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001773751-26-000246",
+          "end": "2026-09-30",
+          "filed": "2026-11-09",
+          "id": "6916b93b-71c1-58d8-8850-903ccb7e9f40",
+          "parents": [],
+          "start": "2026-07-01"
+        },
+        "end": "2026-09-30",
+        "fiscal_label": "2026:3",
+        "start": "2026-07-01"
+      }
+    },
+    {
+      "actual_accession": "0001773751-26-000163",
+      "actual_filed": "2026-08-10",
+      "actual_gap": null,
+      "actual_id": "f00b7c55-0f83-5375-8886-da211fd85547",
+      "actual_value": "753214000",
+      "company": "HIMS",
+      "group_id": "HIMS:0001773751-26-000074",
+      "guidance_filed": "2026-05-11",
+      "result_filed": "2026-08-10",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000161/hims-20260630x8xkearningsr.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000074/hims-20260331x8xkearningsr.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001773751-26-000163",
+          "end": "2026-06-30",
+          "filed": "2026-08-10",
+          "id": "f00b7c55-0f83-5375-8886-da211fd85547",
+          "parents": [],
+          "start": "2026-04-01"
+        },
+        "end": "2026-06-30",
+        "fiscal_label": "2026:2",
+        "start": "2026-04-01"
+      }
+    },
+    {
+      "actual_accession": "0001773751-26-000076",
+      "actual_filed": "2026-05-11",
+      "actual_gap": null,
+      "actual_id": "26686f93-facd-5bd5-b459-5d974c5eb36f",
+      "actual_value": "608104000",
+      "company": "HIMS",
+      "group_id": "HIMS:0001773751-26-000019",
+      "guidance_filed": "2026-02-23",
+      "result_filed": "2026-05-11",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000074/hims-20260331x8xkearningsr.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000019/hims-20251231x8xkearningsr.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001773751-26-000076",
+          "end": "2026-03-31",
+          "filed": "2026-05-11",
+          "id": "26686f93-facd-5bd5-b459-5d974c5eb36f",
+          "parents": [],
+          "start": "2026-01-01"
+        },
+        "end": "2026-03-31",
+        "fiscal_label": "2026:1",
+        "start": "2026-01-01"
+      }
+    },
+    {
+      "actual_accession": "0001773751-26-000022",
+      "actual_filed": "2026-02-23",
+      "actual_gap": null,
+      "actual_id": "7064482a-63af-55d7-a9fc-b350543d78c1",
+      "actual_value": "617818000",
+      "company": "HIMS",
+      "group_id": "HIMS:0001773751-25-000352",
+      "guidance_filed": "2025-11-03",
+      "result_filed": "2026-02-23",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000019/hims-20251231x8xkearningsr.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000352/hims-20250930x8xkearningsr.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001773751-26-000022",
+          "end": "2025-12-31",
+          "filed": "2026-02-23",
+          "id": "7064482a-63af-55d7-a9fc-b350543d78c1",
+          "parents": [
+            "d6723f21-9d21-5fa4-b3cf-a9c9ad3fa2be",
+            "c00294c6-ca95-56cb-8449-e63a4afc2b00"
+          ],
+          "start": "2025-10-01"
+        },
+        "end": "2025-12-31",
+        "fiscal_label": "2025:4",
+        "start": "2025-10-01"
+      }
+    },
+    {
+      "actual_accession": "0001773751-25-000354",
+      "actual_filed": "2025-11-03",
+      "actual_gap": null,
+      "actual_id": "9aed74b7-efe5-5936-8c6d-196103f07a90",
+      "actual_value": "598976000",
+      "company": "HIMS",
+      "group_id": "HIMS:0001773751-25-000248",
+      "guidance_filed": "2025-08-04",
+      "result_filed": "2025-11-03",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000352/hims-20250930x8xkearningsr.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000248/hims-20250630x8xkearningsr.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001773751-25-000354",
+          "end": "2025-09-30",
+          "filed": "2025-11-03",
+          "id": "9aed74b7-efe5-5936-8c6d-196103f07a90",
+          "parents": [],
+          "start": "2025-07-01"
+        },
+        "end": "2025-09-30",
+        "fiscal_label": "2025:3",
+        "start": "2025-07-01"
+      }
+    },
+    {
+      "actual_accession": "0001773751-25-000250",
+      "actual_filed": "2025-08-04",
+      "actual_gap": null,
+      "actual_id": "e85dddac-82c4-5c74-a872-dc2b00cd8806",
+      "actual_value": "544833000",
+      "company": "HIMS",
+      "group_id": "HIMS:0001773751-25-000152",
+      "guidance_filed": "2025-05-05",
+      "result_filed": "2025-08-04",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000248/hims-20250630x8xkearningsr.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000152/hims-20250331x8xkearningsr.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001773751-25-000250",
+          "end": "2025-06-30",
+          "filed": "2025-08-04",
+          "id": "e85dddac-82c4-5c74-a872-dc2b00cd8806",
+          "parents": [],
+          "start": "2025-04-01"
+        },
+        "end": "2025-06-30",
+        "fiscal_label": "2025:2",
+        "start": "2025-04-01"
+      }
+    },
+    {
+      "actual_accession": "0001773751-25-000154",
+      "actual_filed": "2025-05-05",
+      "actual_gap": null,
+      "actual_id": "14004b8d-fd68-5591-8c46-37e8d02f6d68",
+      "actual_value": "586010000",
+      "company": "HIMS",
+      "group_id": "HIMS:0001773751-25-000059",
+      "guidance_filed": "2025-02-24",
+      "result_filed": "2025-05-05",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000152/hims-20250331x8xkearningsr.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000059/hims-20241231x8xkearningsr.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001773751-25-000154",
+          "end": "2025-03-31",
+          "filed": "2025-05-05",
+          "id": "14004b8d-fd68-5591-8c46-37e8d02f6d68",
+          "parents": [],
+          "start": "2025-01-01"
+        },
+        "end": "2025-03-31",
+        "fiscal_label": "2025:1",
+        "start": "2025-01-01"
+      }
+    },
+    {
+      "actual_accession": "0001773751-25-000062",
+      "actual_filed": "2025-02-24",
+      "actual_gap": null,
+      "actual_id": "0cd70ce5-8996-5bda-9ecb-3e205575b193",
+      "actual_value": "481139000",
+      "company": "HIMS",
+      "group_id": "HIMS:0001773751-24-000337",
+      "guidance_filed": "2024-11-04",
+      "result_filed": "2025-02-24",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000059/hims-20241231x8xkearningsr.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375124000337/hims-20240930x8xkearningsr.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001773751-25-000062",
+          "end": "2024-12-31",
+          "filed": "2025-02-24",
+          "id": "0cd70ce5-8996-5bda-9ecb-3e205575b193",
+          "parents": [
+            "baaa6c56-1398-53e5-8405-126c113621e7",
+            "7e05248d-7b79-5e79-9ed5-3b12ef9b54be"
+          ],
+          "start": "2024-10-01"
+        },
+        "end": "2024-12-31",
+        "fiscal_label": "2024:4",
+        "start": "2024-10-01"
+      }
+    },
+    {
+      "actual_accession": "0001477449-26-000052",
+      "actual_filed": "2026-10-29",
+      "actual_gap": null,
+      "actual_id": "35ded8df-0e26-552c-a0ca-264630b8cdf1",
+      "actual_value": "605102000",
+      "company": "TDOC",
+      "group_id": "TDOC:0001477449-26-000036",
+      "guidance_filed": "2026-07-29",
+      "result_filed": "2026-10-28",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477449/000147744926000050/tdoc-20260930xexx991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744926000036/tdoc-20260630xexx991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001477449-26-000052",
+          "end": "2026-09-30",
+          "filed": "2026-10-29",
+          "id": "35ded8df-0e26-552c-a0ca-264630b8cdf1",
+          "parents": [],
+          "start": "2026-07-01"
+        },
+        "end": "2026-09-30",
+        "fiscal_label": "2026:3",
+        "start": "2026-07-01"
+      }
+    },
+    {
+      "actual_accession": "0001477449-26-000038",
+      "actual_filed": "2026-07-30",
+      "actual_gap": null,
+      "actual_id": "d990a908-e5bc-5db7-bb10-03cc361cf759",
+      "actual_value": "606927000",
+      "company": "TDOC",
+      "group_id": "TDOC:0001477449-26-000026",
+      "guidance_filed": "2026-04-29",
+      "result_filed": "2026-07-29",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477449/000147744926000036/tdoc-20260630xexx991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744926000026/tdoc-20260331xexx991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001477449-26-000038",
+          "end": "2026-06-30",
+          "filed": "2026-07-30",
+          "id": "d990a908-e5bc-5db7-bb10-03cc361cf759",
+          "parents": [],
+          "start": "2026-04-01"
+        },
+        "end": "2026-06-30",
+        "fiscal_label": "2026:2",
+        "start": "2026-04-01"
+      }
+    },
+    {
+      "actual_accession": "0001477449-26-000028",
+      "actual_filed": "2026-04-30",
+      "actual_gap": null,
+      "actual_id": "2b8e2ed0-d282-58ba-a07e-f1a13910a0f0",
+      "actual_value": "613845000",
+      "company": "TDOC",
+      "group_id": "TDOC:0001477449-26-000010",
+      "guidance_filed": "2026-02-25",
+      "result_filed": "2026-04-29",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477449/000147744926000026/tdoc-20260331xexx991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744926000010/tdoc-20251231xexx991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001477449-26-000028",
+          "end": "2026-03-31",
+          "filed": "2026-04-30",
+          "id": "2b8e2ed0-d282-58ba-a07e-f1a13910a0f0",
+          "parents": [],
+          "start": "2026-01-01"
+        },
+        "end": "2026-03-31",
+        "fiscal_label": "2026:1",
+        "start": "2026-01-01"
+      }
+    },
+    {
+      "actual_accession": "0001477449-26-000012",
+      "actual_filed": "2026-02-26",
+      "actual_gap": null,
+      "actual_id": "a7a994c9-cb03-5688-a502-e004e2f3cdb0",
+      "actual_value": "642269000",
+      "company": "TDOC",
+      "group_id": "TDOC:0001477449-25-000117",
+      "guidance_filed": "2025-10-29",
+      "result_filed": "2026-02-25",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477449/000147744926000010/tdoc-20251231xexx991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000117/tdoc-20250930xexx991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001477449-26-000012",
+          "end": "2025-12-31",
+          "filed": "2026-02-26",
+          "id": "a7a994c9-cb03-5688-a502-e004e2f3cdb0",
+          "parents": [
+            "119e6089-dc35-53a1-891f-5a4d8eff8d48",
+            "f3dbdcd2-4374-5a40-bb52-4ae58d7697c9"
+          ],
+          "start": "2025-10-01"
+        },
+        "end": "2025-12-31",
+        "fiscal_label": "2025:4",
+        "start": "2025-10-01"
+      }
+    },
+    {
+      "actual_accession": "0001477449-25-000120",
+      "actual_filed": "2025-10-30",
+      "actual_gap": null,
+      "actual_id": "e4f57f5c-46a0-5967-8b8c-771fb93ee6ba",
+      "actual_value": "626439000",
+      "company": "TDOC",
+      "group_id": "TDOC:0001477449-25-000096",
+      "guidance_filed": "2025-07-29",
+      "result_filed": "2025-10-29",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000117/tdoc-20250930xexx991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000096/tdoc-20250630xexx991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001477449-25-000120",
+          "end": "2025-09-30",
+          "filed": "2025-10-30",
+          "id": "e4f57f5c-46a0-5967-8b8c-771fb93ee6ba",
+          "parents": [],
+          "start": "2025-07-01"
+        },
+        "end": "2025-09-30",
+        "fiscal_label": "2025:3",
+        "start": "2025-07-01"
+      }
+    },
+    {
+      "actual_accession": "0001477449-25-000099",
+      "actual_filed": "2025-07-30",
+      "actual_gap": null,
+      "actual_id": "f4d2b10e-592c-59b8-a332-249fb9fda3c6",
+      "actual_value": "631900000",
+      "company": "TDOC",
+      "group_id": "TDOC:0001477449-25-000047",
+      "guidance_filed": "2025-04-30",
+      "result_filed": "2025-07-29",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000096/tdoc-20250630xexx991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000047/tdoc-20250331xexx991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001477449-25-000099",
+          "end": "2025-06-30",
+          "filed": "2025-07-30",
+          "id": "f4d2b10e-592c-59b8-a332-249fb9fda3c6",
+          "parents": [],
+          "start": "2025-04-01"
+        },
+        "end": "2025-06-30",
+        "fiscal_label": "2025:2",
+        "start": "2025-04-01"
+      }
+    },
+    {
+      "actual_accession": "0001477449-25-000049",
+      "actual_filed": "2025-05-01",
+      "actual_gap": null,
+      "actual_id": "7b8704f1-6485-5279-a34e-a59003dc09e3",
+      "actual_value": "629369000",
+      "company": "TDOC",
+      "group_id": "TDOC:0001477449-25-000002",
+      "guidance_filed": "2025-02-26",
+      "result_filed": "2025-04-30",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000047/tdoc-20250331xexx991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000002/tdoc-20241231xexx991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001477449-25-000049",
+          "end": "2025-03-31",
+          "filed": "2025-05-01",
+          "id": "7b8704f1-6485-5279-a34e-a59003dc09e3",
+          "parents": [],
+          "start": "2025-01-01"
+        },
+        "end": "2025-03-31",
+        "fiscal_label": "2025:1",
+        "start": "2025-01-01"
+      }
+    },
+    {
+      "actual_accession": "0001477449-25-000005",
+      "actual_filed": "2025-02-27",
+      "actual_gap": null,
+      "actual_id": "fadb0a27-ce25-57d1-a57f-c3926050266b",
+      "actual_value": "640491000",
+      "company": "TDOC",
+      "group_id": "TDOC:0001477449-24-000224",
+      "guidance_filed": "2024-10-30",
+      "result_filed": "2025-02-26",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000002/tdoc-20241231xexx991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744924000224/tdoc-20240930xexx991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001477449-25-000005",
+          "end": "2024-12-31",
+          "filed": "2025-02-27",
+          "id": "fadb0a27-ce25-57d1-a57f-c3926050266b",
+          "parents": [
+            "56af6f4d-8c7e-5bd2-a8e5-e2bb09415fe0",
+            "f2ae66ac-5001-556f-8e19-826bbe7a2f80"
+          ],
+          "start": "2024-10-01"
+        },
+        "end": "2024-12-31",
+        "fiscal_label": "2024:4",
+        "start": "2024-10-01"
+      }
+    },
+    {
+      "actual_accession": "0001628280-26-061160",
+      "actual_filed": "2026-09-09",
+      "actual_gap": null,
+      "actual_id": "d199b41c-4039-5378-921e-f27fb2a0fdd7",
+      "actual_value": "1066200000",
+      "company": "COO",
+      "group_id": "COO:0001628280-26-040823",
+      "guidance_filed": "2026-06-04",
+      "result_filed": "2026-09-09",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/711404/000162828026061155/cooperq32026pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/711404/000162828026040823/cooperq22026pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-26-061160",
+          "end": "2026-07-31",
+          "filed": "2026-09-09",
+          "id": "d199b41c-4039-5378-921e-f27fb2a0fdd7",
+          "parents": [],
+          "start": "2026-05-01"
+        },
+        "end": "2026-07-31",
+        "fiscal_label": "2026:3",
+        "start": "2026-05-01"
+      }
+    },
+    {
+      "actual_accession": "0001628280-26-041305",
+      "actual_filed": "2026-06-05",
+      "actual_gap": null,
+      "actual_id": "c27b87fc-18ff-5e19-83c0-7f6814626c0a",
+      "actual_value": "1081500000",
+      "company": "COO",
+      "group_id": "COO:0001628280-26-015231",
+      "guidance_filed": "2026-03-05",
+      "result_filed": "2026-06-04",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/711404/000162828026040823/cooperq22026pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/711404/000162828026015231/cooperq12026pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-26-041305",
+          "end": "2026-04-30",
+          "filed": "2026-06-05",
+          "id": "c27b87fc-18ff-5e19-83c0-7f6814626c0a",
+          "parents": [],
+          "start": "2026-02-01"
+        },
+        "end": "2026-04-30",
+        "fiscal_label": "2026:2",
+        "start": "2026-02-01"
+      }
+    },
+    {
+      "actual_accession": "0001628280-26-015620",
+      "actual_filed": "2026-03-06",
+      "actual_gap": null,
+      "actual_id": "32c6eaae-4560-5de9-b032-c9e6450a0296",
+      "actual_value": "1024100000",
+      "company": "COO",
+      "group_id": "COO:0001628280-25-055405",
+      "guidance_filed": "2025-12-04",
+      "result_filed": "2026-03-05",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/711404/000162828026015231/cooperq12026pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/711404/000162828025055405/cooperq42025pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-26-015620",
+          "end": "2026-01-31",
+          "filed": "2026-03-06",
+          "id": "32c6eaae-4560-5de9-b032-c9e6450a0296",
+          "parents": [],
+          "start": "2025-11-01"
+        },
+        "end": "2026-01-31",
+        "fiscal_label": "2026:1",
+        "start": "2025-11-01"
+      }
+    },
+    {
+      "actual_accession": "0001628280-25-055615",
+      "actual_filed": "2025-12-05",
+      "actual_gap": null,
+      "actual_id": "96739ba2-7caa-5c0d-ac98-410082f68790",
+      "actual_value": "1065100000",
+      "company": "COO",
+      "group_id": "COO:0000711404-25-000046",
+      "guidance_filed": "2025-08-27",
+      "result_filed": "2025-12-04",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/711404/000162828025055405/cooperq42025pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/711404/000071140425000046/cooperq32025pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-25-055615",
+          "end": "2025-10-31",
+          "filed": "2025-12-05",
+          "id": "96739ba2-7caa-5c0d-ac98-410082f68790",
+          "parents": [
+            "82d8da66-6ee1-5686-a951-16c35cbeab95",
+            "440d9ab4-9503-5b73-bada-20c9a6115b7d"
+          ],
+          "start": "2025-08-01"
+        },
+        "end": "2025-10-31",
+        "fiscal_label": "2025:4",
+        "start": "2025-08-01"
+      }
+    },
+    {
+      "actual_accession": "0000711404-25-000051",
+      "actual_filed": "2025-08-28",
+      "actual_gap": null,
+      "actual_id": "08d8629b-f4a2-5711-a161-2493ed107de5",
+      "actual_value": "1060300000",
+      "company": "COO",
+      "group_id": "COO:0000711404-25-000036",
+      "guidance_filed": "2025-05-29",
+      "result_filed": "2025-08-27",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/711404/000071140425000046/cooperq32025pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/711404/000071140425000036/cooperq22025pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000711404-25-000051",
+          "end": "2025-07-31",
+          "filed": "2025-08-28",
+          "id": "08d8629b-f4a2-5711-a161-2493ed107de5",
+          "parents": [],
+          "start": "2025-05-01"
+        },
+        "end": "2025-07-31",
+        "fiscal_label": "2025:3",
+        "start": "2025-05-01"
+      }
+    },
+    {
+      "actual_accession": "0000711404-25-000040",
+      "actual_filed": "2025-05-30",
+      "actual_gap": null,
+      "actual_id": "d6dbff9c-af4b-5861-bd95-147cccfdfced",
+      "actual_value": "1002300000",
+      "company": "COO",
+      "group_id": "COO:0000711404-25-000010",
+      "guidance_filed": "2025-03-06",
+      "result_filed": "2025-05-29",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/711404/000071140425000036/cooperq22025pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/711404/000071140425000010/cooperq12025pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000711404-25-000040",
+          "end": "2025-04-30",
+          "filed": "2025-05-30",
+          "id": "d6dbff9c-af4b-5861-bd95-147cccfdfced",
+          "parents": [],
+          "start": "2025-02-01"
+        },
+        "end": "2025-04-30",
+        "fiscal_label": "2025:2",
+        "start": "2025-02-01"
+      }
+    },
+    {
+      "actual_accession": "0000711404-25-000015",
+      "actual_filed": "2025-03-07",
+      "actual_gap": null,
+      "actual_id": "4b6ebd1f-c548-529d-8d04-36d382f57af8",
+      "actual_value": "964700000",
+      "company": "COO",
+      "group_id": "COO:0000711404-24-000069",
+      "guidance_filed": "2024-12-05",
+      "result_filed": "2025-03-06",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/711404/000071140425000010/cooperq12025pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/711404/000071140424000069/cooperq42024pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000711404-25-000015",
+          "end": "2025-01-31",
+          "filed": "2025-03-07",
+          "id": "4b6ebd1f-c548-529d-8d04-36d382f57af8",
+          "parents": [],
+          "start": "2024-11-01"
+        },
+        "end": "2025-01-31",
+        "fiscal_label": "2025:1",
+        "start": "2024-11-01"
+      }
+    },
+    {
+      "actual_accession": "0000711404-24-000074",
+      "actual_filed": "2024-12-06",
+      "actual_gap": null,
+      "actual_id": "fb790b53-74e5-515f-b884-177dd6d8fb6a",
+      "actual_value": "1018400000",
+      "company": "COO",
+      "group_id": "COO:0000711404-24-000058",
+      "guidance_filed": "2024-08-28",
+      "result_filed": "2024-12-05",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/711404/000071140424000069/cooperq42024pressrelease.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/711404/000071140424000058/cooperq32024pressrelease.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000711404-24-000074",
+          "end": "2024-10-31",
+          "filed": "2024-12-06",
+          "id": "fb790b53-74e5-515f-b884-177dd6d8fb6a",
+          "parents": [
+            "7d56bdbe-76bb-54e2-a3ec-fad74ff53e2a",
+            "610d7b35-a3c1-54b2-a03a-5275030ad99c"
+          ],
+          "start": "2024-08-01"
+        },
+        "end": "2024-10-31",
+        "fiscal_label": "2024:4",
+        "start": "2024-08-01"
+      }
+    },
+    {
+      "actual_accession": "0001628280-26-067038",
+      "actual_filed": "2026-10-23",
+      "actual_gap": null,
+      "actual_id": "5e88b408-fc2d-5e89-8888-53ce2cc33159",
+      "actual_value": "10616000000",
+      "company": "JBL",
+      "group_id": "JBL:0001628280-26-043719",
+      "guidance_filed": "2026-06-17",
+      "result_filed": "2026-09-30",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/898293/000162828026063890/jbl-20260930ex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828026043719/jbl-20260617ex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-26-067038",
+          "end": "2026-08-31",
+          "filed": "2026-10-23",
+          "id": "5e88b408-fc2d-5e89-8888-53ce2cc33159",
+          "parents": [
+            "d04e04b3-3e65-5747-88e7-d813f65a75d9",
+            "5e128dd1-402b-5698-858d-d53d4ab9a386"
+          ],
+          "start": "2026-06-01"
+        },
+        "end": "2026-08-31",
+        "fiscal_label": "2026:4",
+        "start": "2026-06-01"
+      }
+    },
+    {
+      "actual_accession": null,
+      "actual_filed": null,
+      "actual_gap": "UNRESOLVED_REPORTED_QUARTER_BOUNDARIES",
+      "actual_id": null,
+      "actual_value": null,
+      "company": "JBL",
+      "group_id": "JBL:0001628280-26-019043",
+      "guidance_filed": "2026-03-18",
+      "result_filed": "2026-06-17",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/898293/000162828026043719/jbl-20260617ex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828026019043/jbl-20260318ex991.htm",
+      "target_period": null
+    },
+    {
+      "actual_accession": null,
+      "actual_filed": null,
+      "actual_gap": "UNRESOLVED_REPORTED_QUARTER_BOUNDARIES",
+      "actual_id": null,
+      "actual_value": null,
+      "company": "JBL",
+      "group_id": "JBL:0001628280-25-057488",
+      "guidance_filed": "2025-12-17",
+      "result_filed": "2026-03-18",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/898293/000162828026019043/jbl-20260318ex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025057488/jbl-20251217ex991.htm",
+      "target_period": null
+    },
+    {
+      "actual_accession": null,
+      "actual_filed": null,
+      "actual_gap": "UNRESOLVED_REPORTED_QUARTER_BOUNDARIES",
+      "actual_id": null,
+      "actual_value": null,
+      "company": "JBL",
+      "group_id": "JBL:0001628280-25-042693",
+      "guidance_filed": "2025-09-25",
+      "result_filed": "2025-12-17",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/898293/000162828025057488/jbl-20251217ex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025042693/jbl-20250925ex991.htm",
+      "target_period": null
+    },
+    {
+      "actual_accession": "0001628280-25-045293",
+      "actual_filed": "2025-10-17",
+      "actual_gap": null,
+      "actual_id": "db23ff57-2e36-5b71-8951-b7e3040b6ec5",
+      "actual_value": "8252000000",
+      "company": "JBL",
+      "group_id": "JBL:0001628280-25-031712",
+      "guidance_filed": "2025-06-17",
+      "result_filed": "2025-09-25",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/898293/000162828025042693/jbl-20250925ex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025031712/jbl-20250617ex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-25-045293",
+          "end": "2025-08-31",
+          "filed": "2025-10-17",
+          "id": "db23ff57-2e36-5b71-8951-b7e3040b6ec5",
+          "parents": [
+            "6d64eead-279e-587a-ae6d-bd766895dea1",
+            "d150741e-cbe7-5380-9b12-5a9bddfa852e"
+          ],
+          "start": "2025-06-01"
+        },
+        "end": "2025-08-31",
+        "fiscal_label": "2025:4",
+        "start": "2025-06-01"
+      }
+    },
+    {
+      "actual_accession": null,
+      "actual_filed": null,
+      "actual_gap": "UNRESOLVED_REPORTED_QUARTER_BOUNDARIES",
+      "actual_id": null,
+      "actual_value": null,
+      "company": "JBL",
+      "group_id": "JBL:0001628280-25-014001",
+      "guidance_filed": "2025-03-20",
+      "result_filed": "2025-06-17",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/898293/000162828025031712/jbl-20250617ex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025014001/jbl-20250320ex991.htm",
+      "target_period": null
+    },
+    {
+      "actual_accession": null,
+      "actual_filed": null,
+      "actual_gap": "UNRESOLVED_REPORTED_QUARTER_BOUNDARIES",
+      "actual_id": null,
+      "actual_value": null,
+      "company": "JBL",
+      "group_id": "JBL:0001628280-24-051805",
+      "guidance_filed": "2024-12-18",
+      "result_filed": "2025-03-20",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/898293/000162828025014001/jbl-20250320ex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828024051805/jbl-20241218ex991.htm",
+      "target_period": null
+    },
+    {
+      "actual_accession": null,
+      "actual_filed": null,
+      "actual_gap": "UNRESOLVED_REPORTED_QUARTER_BOUNDARIES",
+      "actual_id": null,
+      "actual_value": null,
+      "company": "JBL",
+      "group_id": "JBL:0001193125-24-226499",
+      "guidance_filed": "2024-09-26",
+      "result_filed": "2024-12-18",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/898293/000162828024051805/jbl-20241218ex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/898293/000119312524226499/d872548dex991.htm",
+      "target_period": null
+    },
+    {
+      "actual_accession": null,
+      "actual_filed": null,
+      "actual_gap": "UNRESOLVED_REPORTED_QUARTER_BOUNDARIES",
+      "actual_id": null,
+      "actual_value": null,
+      "company": "SANM",
+      "group_id": "SANM:0000897723-26-000036",
+      "guidance_filed": "2026-07-27",
+      "result_filed": "2026-11-09",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/897723/000089772326000044/sanmina_exx991xoctober32026.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/897723/000089772326000036/sanmina_exx991xjune272026.htm",
+      "target_period": null
+    },
+    {
+      "actual_accession": "0000897723-26-000037",
+      "actual_filed": "2026-07-27",
+      "actual_gap": null,
+      "actual_id": "c88a9d87-e137-5f60-ae94-b2fc3bd62cc5",
+      "actual_value": "3464016000",
+      "company": "SANM",
+      "group_id": "SANM:0000897723-26-000024",
+      "guidance_filed": "2026-04-27",
+      "result_filed": "2026-07-27",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/897723/000089772326000036/sanmina_exx991xjune272026.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/897723/000089772326000024/sanmina_exx991xmarch282026.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000897723-26-000037",
+          "end": "2026-06-27",
+          "filed": "2026-07-27",
+          "id": "c88a9d87-e137-5f60-ae94-b2fc3bd62cc5",
+          "parents": [],
+          "start": "2026-03-29"
+        },
+        "end": "2026-06-27",
+        "fiscal_label": "2026:3",
+        "start": "2026-03-29"
+      }
+    },
+    {
+      "actual_accession": "0000897723-26-000025",
+      "actual_filed": "2026-04-27",
+      "actual_gap": null,
+      "actual_id": "b3b9f14c-ce9c-50af-b6fb-e0115ee50958",
+      "actual_value": "4013271000",
+      "company": "SANM",
+      "group_id": "SANM:0000897723-26-000014",
+      "guidance_filed": "2026-01-26",
+      "result_filed": "2026-04-27",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/897723/000089772326000024/sanmina_exx991xmarch282026.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/897723/000089772326000014/sanmina_exx991xdec272025.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000897723-26-000025",
+          "end": "2026-03-28",
+          "filed": "2026-04-27",
+          "id": "b3b9f14c-ce9c-50af-b6fb-e0115ee50958",
+          "parents": [],
+          "start": "2025-12-28"
+        },
+        "end": "2026-03-28",
+        "fiscal_label": "2026:2",
+        "start": "2025-12-28"
+      }
+    },
+    {
+      "actual_accession": "0000897723-26-000015",
+      "actual_filed": "2026-01-26",
+      "actual_gap": null,
+      "actual_id": "eeaf606c-e831-5087-bbd1-dd08da58f186",
+      "actual_value": "3189693000",
+      "company": "SANM",
+      "group_id": "SANM:0000897723-25-000036",
+      "guidance_filed": "2025-11-03",
+      "result_filed": "2026-01-26",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/897723/000089772326000014/sanmina_exx991xdec272025.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/897723/000089772325000036/sanmina_exx991xsep272025.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000897723-26-000015",
+          "end": "2025-12-27",
+          "filed": "2026-01-26",
+          "id": "eeaf606c-e831-5087-bbd1-dd08da58f186",
+          "parents": [],
+          "start": "2025-09-28"
+        },
+        "end": "2025-12-27",
+        "fiscal_label": "2026:1",
+        "start": "2025-09-28"
+      }
+    },
+    {
+      "actual_accession": "0000897723-25-000042",
+      "actual_filed": "2025-11-13",
+      "actual_gap": null,
+      "actual_id": "f98b3531-4085-5723-a42c-4752e93c78eb",
+      "actual_value": "2096392000",
+      "company": "SANM",
+      "group_id": "SANM:0000897723-25-000029",
+      "guidance_filed": "2025-07-28",
+      "result_filed": "2025-11-03",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/897723/000089772325000036/sanmina_exx991xsep272025.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/897723/000089772325000029/sanmina_exx991xjun282025.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000897723-25-000042",
+          "end": "2025-09-27",
+          "filed": "2025-11-13",
+          "id": "f98b3531-4085-5723-a42c-4752e93c78eb",
+          "parents": [
+            "2ea371df-292c-5e42-98d1-ed755ccbbae0",
+            "302c9ca2-9d99-5025-8280-4398a9fcf56a"
+          ],
+          "start": "2025-06-29"
+        },
+        "end": "2025-09-27",
+        "fiscal_label": "2025:4",
+        "start": "2025-06-29"
+      }
+    },
+    {
+      "actual_accession": "0000897723-25-000031",
+      "actual_filed": "2025-07-28",
+      "actual_gap": null,
+      "actual_id": "34fbd1f8-c048-528d-87af-3f538e3a2739",
+      "actual_value": "2041562000",
+      "company": "SANM",
+      "group_id": "SANM:0000897723-25-000015",
+      "guidance_filed": "2025-04-28",
+      "result_filed": "2025-07-28",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/897723/000089772325000029/sanmina_exx991xjun282025.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/897723/000089772325000015/sanmina_exx991xmar292025.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000897723-25-000031",
+          "end": "2025-06-28",
+          "filed": "2025-07-28",
+          "id": "34fbd1f8-c048-528d-87af-3f538e3a2739",
+          "parents": [],
+          "start": "2025-03-30"
+        },
+        "end": "2025-06-28",
+        "fiscal_label": "2025:3",
+        "start": "2025-03-30"
+      }
+    },
+    {
+      "actual_accession": "0000897723-25-000016",
+      "actual_filed": "2025-04-28",
+      "actual_gap": null,
+      "actual_id": "55ed65fc-4699-5058-bf16-45668f836e72",
+      "actual_value": "1984080000",
+      "company": "SANM",
+      "group_id": "SANM:0000897723-25-000004",
+      "guidance_filed": "2025-01-27",
+      "result_filed": "2025-04-28",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/897723/000089772325000015/sanmina_exx991xmar292025.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/897723/000089772325000004/sanmina_exx991xdec282024.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000897723-25-000016",
+          "end": "2025-03-29",
+          "filed": "2025-04-28",
+          "id": "55ed65fc-4699-5058-bf16-45668f836e72",
+          "parents": [],
+          "start": "2024-12-29"
+        },
+        "end": "2025-03-29",
+        "fiscal_label": "2025:2",
+        "start": "2024-12-29"
+      }
+    },
+    {
+      "actual_accession": "0000897723-25-000007",
+      "actual_filed": "2025-01-28",
+      "actual_gap": null,
+      "actual_id": "3a5579e3-c9e1-5e0a-95fb-27d12490c75f",
+      "actual_value": "2006348000",
+      "company": "SANM",
+      "group_id": "SANM:0000897723-24-000049",
+      "guidance_filed": "2024-11-04",
+      "result_filed": "2025-01-27",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/897723/000089772325000004/sanmina_exx991xdec282024.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/897723/000089772324000049/sanmina_exx991xsep282024.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000897723-25-000007",
+          "end": "2024-12-28",
+          "filed": "2025-01-28",
+          "id": "3a5579e3-c9e1-5e0a-95fb-27d12490c75f",
+          "parents": [],
+          "start": "2024-09-29"
+        },
+        "end": "2024-12-28",
+        "fiscal_label": "2025:1",
+        "start": "2024-09-29"
+      }
+    },
+    {
+      "actual_accession": null,
+      "actual_filed": null,
+      "actual_gap": "UNRESOLVED_REPORTED_QUARTER_BOUNDARIES",
+      "actual_id": null,
+      "actual_value": null,
+      "company": "PLXS",
+      "group_id": "PLXS:0000785786-26-000049",
+      "guidance_filed": "2026-07-29",
+      "result_filed": "2026-10-28",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000062/plxsf26q4earningsrelease-e.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000049/plxsf26q3er-ex991.htm",
+      "target_period": null
+    },
+    {
+      "actual_accession": "0000785786-26-000054",
+      "actual_filed": "2026-08-06",
+      "actual_gap": null,
+      "actual_id": "eb5f665c-80c3-599d-b835-11fbcda64ea2",
+      "actual_value": "1304778",
+      "company": "PLXS",
+      "group_id": "PLXS:0000785786-26-000028",
+      "guidance_filed": "2026-04-29",
+      "result_filed": "2026-07-29",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000049/plxsf26q3er-ex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000028/plxsf26q2er-ex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000785786-26-000054",
+          "end": "2026-07-04",
+          "filed": "2026-08-06",
+          "id": "eb5f665c-80c3-599d-b835-11fbcda64ea2",
+          "parents": [],
+          "start": "2026-04-05"
+        },
+        "end": "2026-07-04",
+        "fiscal_label": "2026:3",
+        "start": "2026-04-05"
+      }
+    },
+    {
+      "actual_accession": "0000785786-26-000031",
+      "actual_filed": "2026-05-07",
+      "actual_gap": null,
+      "actual_id": "bdf3dbda-14e6-5d29-8ac4-43bd0505088a",
+      "actual_value": "1163757",
+      "company": "PLXS",
+      "group_id": "PLXS:0000785786-26-000005",
+      "guidance_filed": "2026-01-28",
+      "result_filed": "2026-04-29",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000028/plxsf26q2er-ex991.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000005/plxsf26q1earningsrelease-e.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000785786-26-000031",
+          "end": "2026-04-04",
+          "filed": "2026-05-07",
+          "id": "bdf3dbda-14e6-5d29-8ac4-43bd0505088a",
+          "parents": [],
+          "start": "2026-01-04"
+        },
+        "end": "2026-04-04",
+        "fiscal_label": "2026:2",
+        "start": "2026-01-04"
+      }
+    },
+    {
+      "actual_accession": "0000785786-26-000016",
+      "actual_filed": "2026-02-05",
+      "actual_gap": null,
+      "actual_id": "6fa76520-68db-515a-b127-5e8297728b0e",
+      "actual_value": "1069852",
+      "company": "PLXS",
+      "group_id": "PLXS:0000785786-25-000057",
+      "guidance_filed": "2025-10-22",
+      "result_filed": "2026-01-28",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000005/plxsf26q1earningsrelease-e.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000057/plxsf25q4earningsrelease-e.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000785786-26-000016",
+          "end": "2026-01-03",
+          "filed": "2026-02-05",
+          "id": "6fa76520-68db-515a-b127-5e8297728b0e",
+          "parents": [],
+          "start": "2025-09-28"
+        },
+        "end": "2026-01-03",
+        "fiscal_label": "2026:1",
+        "start": "2025-09-28"
+      }
+    },
+    {
+      "actual_accession": "0000785786-25-000064",
+      "actual_filed": "2025-11-14",
+      "actual_gap": null,
+      "actual_id": "f7f89187-50ad-5ea8-b523-eb4fd18e9a0a",
+      "actual_value": "4029991400",
+      "company": "PLXS",
+      "group_id": "PLXS:0000785786-25-000045",
+      "guidance_filed": "2025-07-23",
+      "result_filed": "2025-10-22",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000057/plxsf25q4earningsrelease-e.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000045/plxsf25q3earningsrelease-e.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000785786-25-000064",
+          "end": "2025-09-27",
+          "filed": "2025-11-14",
+          "id": "f7f89187-50ad-5ea8-b523-eb4fd18e9a0a",
+          "parents": [
+            "06c7b5c4-ca3a-54d0-ba19-fa437ff88b9a",
+            "abb3c64f-0947-5197-86d5-fa302440f46b"
+          ],
+          "start": "2025-06-29"
+        },
+        "end": "2025-09-27",
+        "fiscal_label": "2025:4",
+        "start": "2025-06-29"
+      }
+    },
+    {
+      "actual_accession": "0000785786-25-000049",
+      "actual_filed": "2025-08-01",
+      "actual_gap": null,
+      "actual_id": "17a2543e-480a-5366-8d1e-2ad3736705bd",
+      "actual_value": "1018308",
+      "company": "PLXS",
+      "group_id": "PLXS:0000785786-25-000020",
+      "guidance_filed": "2025-04-23",
+      "result_filed": "2025-07-23",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000045/plxsf25q3earningsrelease-e.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000020/plxsf25q2earningsrelease-e.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000785786-25-000049",
+          "end": "2025-06-28",
+          "filed": "2025-08-01",
+          "id": "17a2543e-480a-5366-8d1e-2ad3736705bd",
+          "parents": [],
+          "start": "2025-03-30"
+        },
+        "end": "2025-06-28",
+        "fiscal_label": "2025:3",
+        "start": "2025-03-30"
+      }
+    },
+    {
+      "actual_accession": "0000785786-25-000024",
+      "actual_filed": "2025-05-02",
+      "actual_gap": null,
+      "actual_id": "e6b70f5d-af3d-5f13-8b20-99c643541518",
+      "actual_value": "980170",
+      "company": "PLXS",
+      "group_id": "PLXS:0000785786-25-000006",
+      "guidance_filed": "2025-01-22",
+      "result_filed": "2025-04-23",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000020/plxsf25q2earningsrelease-e.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000006/plxsf25q1earningsrelease-e.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000785786-25-000024",
+          "end": "2025-03-29",
+          "filed": "2025-05-02",
+          "id": "e6b70f5d-af3d-5f13-8b20-99c643541518",
+          "parents": [],
+          "start": "2024-12-29"
+        },
+        "end": "2025-03-29",
+        "fiscal_label": "2025:2",
+        "start": "2024-12-29"
+      }
+    },
+    {
+      "actual_accession": "0000785786-25-000013",
+      "actual_filed": "2025-01-31",
+      "actual_gap": null,
+      "actual_id": "874156e5-524b-5400-86ca-a899cda50174",
+      "actual_value": "976122",
+      "company": "PLXS",
+      "group_id": "PLXS:0000785786-24-000067",
+      "guidance_filed": "2024-10-23",
+      "result_filed": "2025-01-22",
+      "result_source": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000006/plxsf25q1earningsrelease-e.htm",
+      "review_status": "PROVISIONAL_INVENTORY; see separate manual sample result_reviews for approved scope checks",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578624000067/plxsf24q4earningsrelease-e.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0000785786-25-000013",
+          "end": "2024-12-28",
+          "filed": "2025-01-31",
+          "id": "874156e5-524b-5400-86ca-a899cda50174",
+          "parents": [],
+          "start": "2024-09-29"
+        },
+        "end": "2024-12-28",
+        "fiscal_label": "2025:1",
+        "start": "2024-09-29"
+      }
+    }
+  ]
+}

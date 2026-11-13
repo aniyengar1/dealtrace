@@ -1,0 +1,242 @@
+{
+  "evidence": [
+    {
+      "company": "JBL",
+      "group_id": "JBL:0001628280-26-019043",
+      "quote": "EX-99.1 2 jbl-20260617ex991.htm EX-99.1 Document Exhibit 99.1 Jabil Posts Third Quarter Results Raises Fiscal 2026 Outlook ST. PETERSBURG, Fla. \u2013 June 17, 2026 \u2013 Today, Jabil Inc. (NYSE: JBL), reported preliminary, unaudited financial results for its third quarter of fiscal year 2026. Third Quarter of Fiscal Year 2026 Highlights: \u2022 Net revenue: $8.8 billion \u2022 U.S. GAAP operating income: $445 million \u2022 U.S. GAAP diluted earnings per share: $2.59 \u2022 Core operating income (Non-GAAP): $504 million \u2022 Core diluted earnings per share (Non-GAAP): $3.16 \u201cJabil delivered a very strong third quarter, with results ahead of our expectations across revenue, core operating margin, core EPS, and free cash flow,\u201d said CEO Mike Dastoor. \u201cAI infrastructure dem",
+      "reason": "Source heading identifies fiscal quarter/year; exact original10-Q monthly bounds independently match it. Headline omitted physical end date, so generic date matching abstained.",
+      "reviewed_at": "2026-11-13T08:09:28.407930+00:00",
+      "reviewer": "Codex source curator",
+      "source_manifest": {
+        "body": "d89d2810660e48651ace93fd56eecc695a8762573ef06e6a99c08ce61e84a80c-84ca4ba0d593d29b38098e2434f61fdf8d7e1aec861bf28fa4b6be884dd400ab.body",
+        "fetched_at": "2026-11-13T04:53:04.063478+00:00",
+        "sha256": "84ca4ba0d593d29b38098e2434f61fdf8d7e1aec861bf28fa4b6be884dd400ab",
+        "url": "https://www.sec.gov/Archives/edgar/data/898293/000162828026043719/jbl-20260617ex991.htm"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828026043719/jbl-20260617ex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-26-046138",
+          "end": "2026-05-31",
+          "filed": "2026-06-30",
+          "id": "fab16bfa-d74c-564b-8b76-2d0a2b6f9e94",
+          "parents": [],
+          "start": "2026-03-01"
+        },
+        "end": "2026-05-31",
+        "fiscal_label": "2026:3",
+        "start": "2026-03-01"
+      },
+      "use": "period inventory only, not extractor rules/gold, production or live inputs"
+    },
+    {
+      "company": "JBL",
+      "group_id": "JBL:0001628280-25-057488",
+      "quote": "EX-99.1 2 jbl-20260318ex991.htm EX-99.1 Document Exhibit 99.1 Jabil Posts Second Quarter Results Raises Fiscal 2026 Outlook ST. PETERSBURG, Fla. \u2013 March 18, 2026 \u2013 Today, Jabil Inc. (NYSE: JBL), reported preliminary, unaudited financial results for its second quarter of fiscal year 2026. Second Quarter of Fiscal Year 2026 Highlights: \u2022 Net revenue: $8.3 billion \u2022 U.S. GAAP operating income: $374 million \u2022 U.S. GAAP diluted earnings per share: $2.08 \u2022 Core operating income (Non-GAAP): $436 million \u2022 Core diluted earnings per share (Non-GAAP): $2.69 \u201cJabil delivered a very strong second quarter, with results ahead of our expectations across revenue, core operating margin, and core EPS,\u201d said CEO Mike Dastoor. \u201cOur better-than-expected perform",
+      "reason": "Source heading identifies fiscal quarter/year; exact original10-Q monthly bounds independently match it. Headline omitted physical end date, so generic date matching abstained.",
+      "reviewed_at": "2026-11-13T08:09:28.455718+00:00",
+      "reviewer": "Codex source curator",
+      "source_manifest": {
+        "body": "1e961fa2e74570c5defc2642f7bd46e64e1d285573f9a27855b60456febc98bd-66ee859ce688fdb11f3e6f3f72fa5dc6169a6bff50a2058a45a83dea997650a9.body",
+        "fetched_at": "2026-11-13T05:12:30.099851+00:00",
+        "sha256": "66ee859ce688fdb11f3e6f3f72fa5dc6169a6bff50a2058a45a83dea997650a9",
+        "url": "https://www.sec.gov/Archives/edgar/data/898293/000162828026019043/jbl-20260318ex991.htm"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828026019043/jbl-20260318ex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-26-024148",
+          "end": "2026-02-28",
+          "filed": "2026-04-08",
+          "id": "9de24f1b-81b9-5cce-80ec-347df7de22ca",
+          "parents": [],
+          "start": "2025-12-01"
+        },
+        "end": "2026-02-28",
+        "fiscal_label": "2026:2",
+        "start": "2025-12-01"
+      },
+      "use": "period inventory only, not extractor rules/gold, production or live inputs"
+    },
+    {
+      "company": "JBL",
+      "group_id": "JBL:0001628280-25-042693",
+      "quote": "EX-99.1 2 jbl-20251217ex991.htm EX-99.1 Document Exhibit 99.1 Jabil Posts First Quarter Results Raises Fiscal 2026 Outlook ST. PETERSBURG, Fla. \u2013 December 17, 2025 \u2013 Today, Jabil Inc. (NYSE: JBL), reported preliminary, unaudited financial results for its first quarter of fiscal year 2026. First Quarter of Fiscal Year 2026 Highlights: \u2022 Net revenue: $8.3 billion \u2022 U.S. GAAP operating income: $283 million \u2022 U.S. GAAP diluted earnings per share: $1.35 \u2022 Core operating income (Non-GAAP): $454 million \u2022 Core diluted earnings per share (Non-GAAP): $2.85 \u201cFiscal 2026 is off to an excellent start, with Q1 performance ahead of expectations across revenue, core operating margins, and core EPS,\u201d said CEO Mike Dastoor. \u201cOur Intelligent Infrastructure s",
+      "reason": "Source heading identifies fiscal quarter/year; exact original10-Q monthly bounds independently match it. Headline omitted physical end date, so generic date matching abstained.",
+      "reviewed_at": "2026-11-13T08:09:28.498786+00:00",
+      "reviewer": "Codex source curator",
+      "source_manifest": {
+        "body": "cde01cf7ede51cf312f4da210661291521f0a4467bc3917352e6aa45eb02ea47-be12bbfc384701f4eeccb72a197eff2a8b2f206ae9d6f468624983fb0a227bd8.body",
+        "fetched_at": "2026-11-13T05:12:31.693178+00:00",
+        "sha256": "be12bbfc384701f4eeccb72a197eff2a8b2f206ae9d6f468624983fb0a227bd8",
+        "url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025057488/jbl-20251217ex991.htm"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025057488/jbl-20251217ex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-26-001450",
+          "end": "2025-11-30",
+          "filed": "2026-01-09",
+          "id": "29efaffc-64dc-5796-99fa-2053a8c08fb9",
+          "parents": [],
+          "start": "2025-09-01"
+        },
+        "end": "2025-11-30",
+        "fiscal_label": "2026:1",
+        "start": "2025-09-01"
+      },
+      "use": "period inventory only, not extractor rules/gold, production or live inputs"
+    },
+    {
+      "company": "JBL",
+      "group_id": "JBL:0001628280-25-014001",
+      "quote": "EX-99.1 2 jbl-20250617ex991.htm EX-99.1 Document Exhibit 99.1 Jabil Posts Third Quarter Results Raises Fiscal 2025 Outlook ST. PETERSBURG, Fla. \u2013 June 17, 2025 \u2013 Today, Jabil Inc. (NYSE: JBL), reported preliminary, unaudited financial results for its third quarter of fiscal year 2025. Third Quarter of Fiscal Year 2025 Highlights: \u2022 Net revenue: $7.8 billion \u2022 U.S. GAAP operating income: $403 million \u2022 U.S. GAAP diluted earnings per share: $2.03 \u2022 Core operating income (Non-GAAP): $420 million \u2022 Core diluted earnings per share (Non-GAAP): $2.55 \"We delivered a strong third quarter, outperforming expectations across key end-markets such as cloud, data center infrastructure, and capital equipment,\u201d said CEO Mike Dastoor. Our Intelligent Infras",
+      "reason": "Source heading identifies fiscal quarter/year; exact original10-Q monthly bounds independently match it. Headline omitted physical end date, so generic date matching abstained.",
+      "reviewed_at": "2026-11-13T08:09:28.546292+00:00",
+      "reviewer": "Codex source curator",
+      "source_manifest": {
+        "body": "8dc8913fbf0bc4861b7367266a2ea9b322b1b7d6032c5ceba12b82514623b16c-bc685ed51dde7ffb97373d5cb70df368a8e3866fe86cf24e6e453d02689fdb7a.body",
+        "fetched_at": "2026-11-13T05:12:35.112443+00:00",
+        "sha256": "bc685ed51dde7ffb97373d5cb70df368a8e3866fe86cf24e6e453d02689fdb7a",
+        "url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025031712/jbl-20250617ex991.htm"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025031712/jbl-20250617ex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-25-033410",
+          "end": "2025-05-31",
+          "filed": "2025-06-30",
+          "id": "2b455e86-d189-5d74-824a-a484fb9ab08c",
+          "parents": [],
+          "start": "2025-03-01"
+        },
+        "end": "2025-05-31",
+        "fiscal_label": "2025:3",
+        "start": "2025-03-01"
+      },
+      "use": "period inventory only, not extractor rules/gold, production or live inputs"
+    },
+    {
+      "company": "JBL",
+      "group_id": "JBL:0001628280-24-051805",
+      "quote": "EX-99.1 2 jbl-20250320ex991.htm EX-99.1 Document Exhibit 99.1 Jabil Posts Second Quarter Results Raises Fiscal 2025 Outlook ST. PETERSBURG, Fla. \u2013 March 20, 2025 \u2013 Today, Jabil Inc. (NYSE: JBL), reported preliminary, unaudited financial results for its second quarter of fiscal year 2025. Second Quarter of Fiscal Year 2025 Highlights: \u2022 Net revenue: $6.7 billion \u2022 U.S. GAAP operating income: $245 million \u2022 U.S. GAAP diluted earnings per share: $1.06 \u2022 Core operating income (Non-GAAP): $334 million \u2022 Core diluted earnings per share (Non-GAAP): $1.94 \u201cI am very pleased with our strong year-to-date results, which underscore the resilience and strength of our diversified portfolio. In Q2, we exceeded our expectations due to continued strength in",
+      "reason": "Source heading identifies fiscal quarter/year; exact original10-Q monthly bounds independently match it. Headline omitted physical end date, so generic date matching abstained.",
+      "reviewed_at": "2026-11-13T08:09:28.592909+00:00",
+      "reviewer": "Codex source curator",
+      "source_manifest": {
+        "body": "177feed53c30ffb6fa86929fc197fe00e87f2ecc3f7f50b6e6d85c4fc5a54c22-24ecda40e51cd9b36f18473cfd33d1e5322a5f274b9651920df65ac27eedbf86.body",
+        "fetched_at": "2026-11-13T05:12:36.709626+00:00",
+        "sha256": "24ecda40e51cd9b36f18473cfd33d1e5322a5f274b9651920df65ac27eedbf86",
+        "url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025014001/jbl-20250320ex991.htm"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025014001/jbl-20250320ex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-25-017004",
+          "end": "2025-02-28",
+          "filed": "2025-04-08",
+          "id": "fc33561b-4f7f-5d87-991f-c935a7705c9f",
+          "parents": [],
+          "start": "2024-12-01"
+        },
+        "end": "2025-02-28",
+        "fiscal_label": "2025:2",
+        "start": "2024-12-01"
+      },
+      "use": "period inventory only, not extractor rules/gold, production or live inputs"
+    },
+    {
+      "company": "JBL",
+      "group_id": "JBL:0001193125-24-226499",
+      "quote": "EX-99.1 2 jbl-20241218ex991.htm EX-99.1 Document Exhibit 99.1 Jabil Posts Strong First Quarter Results Raises Fiscal 2025 Outlook ST. PETERSBURG, Fla. \u2013 December 18, 2024 \u2013 Today, Jabil Inc. (NYSE: JBL), reported preliminary, unaudited financial results for its first quarter of fiscal year 2025. First Quarter of Fiscal Year 2025 Highlights: \u2022 Net revenue: $7.0 billion \u2022 U.S. GAAP operating income: $197 million \u2022 U.S. GAAP diluted earnings per share: $0.88 \u2022 Core operating income (Non-GAAP): $347 million \u2022 Core diluted earnings per share (Non-GAAP): $2.00 \u201cI am very pleased with our first fiscal quarter results, which came in stronger than we anticipated driven by incremental strength in our Cloud, Data Center Infrastructure, and Digital Com",
+      "reason": "Source heading identifies fiscal quarter/year; exact original10-Q monthly bounds independently match it. Headline omitted physical end date, so generic date matching abstained.",
+      "reviewed_at": "2026-11-13T08:09:28.639863+00:00",
+      "reviewer": "Codex source curator",
+      "source_manifest": {
+        "body": "54281ee9c656eea46ffeff3a623c5c692addbfbc15bddcb714d1d316d79f43c7-79cd4c87978a9b0ed85db3032d25ba65530f54319c04270b6cd8b48687189fb0.body",
+        "fetched_at": "2026-11-13T05:12:38.302789+00:00",
+        "sha256": "79cd4c87978a9b0ed85db3032d25ba65530f54319c04270b6cd8b48687189fb0",
+        "url": "https://www.sec.gov/Archives/edgar/data/898293/000162828024051805/jbl-20241218ex991.htm"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828024051805/jbl-20241218ex991.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "accession": "0001628280-25-001058",
+          "end": "2024-11-30",
+          "filed": "2025-01-10",
+          "id": "c81ea7c6-ece7-54f2-8f6b-5f8f15d6fd79",
+          "parents": [],
+          "start": "2024-09-01"
+        },
+        "end": "2024-11-30",
+        "fiscal_label": "2025:1",
+        "start": "2024-09-01"
+      },
+      "use": "period inventory only, not extractor rules/gold, production or live inputs"
+    },
+    {
+      "company": "SANM",
+      "group_id": "SANM:0000897723-26-000036",
+      "quote": "EX-99.1 2 sanmina_exx991xoctober32026.htm EX-99.1 Document Exhibit 99.1 FINANCIAL NEWS Sanmina Reports Fourth Quarter and Fiscal 2026 Financial Results San Jose, CA \u2013 November 9, 2026. Sanmina Corporation (\u201cSanmina\u201d or the \u201cCompany\u201d) (NASDAQ: SANM), a leading integrated manufacturing solutions company, today reported financial results for the fourth quarter ended October 3, 2026 and outlook for its first fiscal quarter ending January 2, 2027. Fourth Quarter Fiscal 2026 Financial Highlights \u2022 Revenue: $3.86 billion \u2022 GAAP operating margin: 6.0% \u2022 GAAP diluted EPS: $2.14 \u2022 Non-GAAP (1) operating margin: 9.0% \u2022 Non-GAAP (1) diluted EPS: $4.43 Fiscal Year 2026 Financial Highlights \u2022 Revenue: $14.53 billion \u2022 GAAP operating margin: 4.7% \u2022 GAAP d",
+      "reason": "Explicit result dateline gives Q4 endOctober3,2026; previous original Q3 fact gives preceding end. SANM Q4 is98days, PLXS Q4 is91days. Fiscal-week difference preserved, no amount derived from an incompatible nine-month duration.",
+      "reviewed_at": "2026-11-13T08:09:28.688601+00:00",
+      "reviewer": "Codex source curator",
+      "source_manifest": {
+        "body": "9532284b175fd9fae1845f7f9a267fa436260bcbdc371eea875f00a5e781c44e-ec554c989cbd43d67e2fda6c6d6e7b81cb302092f765aa274a74c1d3a73688b1.body",
+        "fetched_at": "2026-11-13T04:53:06.247587+00:00",
+        "sha256": "ec554c989cbd43d67e2fda6c6d6e7b81cb302092f765aa274a74c1d3a73688b1",
+        "url": "https://www.sec.gov/Archives/edgar/data/897723/000089772326000044/sanmina_exx991xoctober32026.htm"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/897723/000089772326000044/sanmina_exx991xoctober32026.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "preceding_quarter": {
+            "accession": "0000897723-26-000037",
+            "end": "2026-06-27",
+            "filed": "2026-07-27",
+            "id": "c88a9d87-e137-5f60-ae94-b2fc3bd62cc5",
+            "parents": [],
+            "start": "2026-03-29"
+          },
+          "reported_end_quote": "EX-99.1 2 sanmina_exx991xoctober32026.htm EX-99.1 Document Exhibit 99.1 FINANCIAL NEWS Sanmina Reports Fourth Quarter and Fiscal 2026 Financial Results San Jose, CA \u2013 November 9, 2026. Sanmina Corporation (\u201cSanmina\u201d or the \u201cCompany\u201d) (NASDAQ: SANM), a leading integrated manufacturing solutions company, today reported financial results for the fourth quarter ended October 3, 2026 and outlook for its first fiscal quarter ending January 2, 2027. Fourth Quarter Fiscal 2026 Financial Highlights \u2022 Revenue: $3.86 billion \u2022 GAAP operating margin: 6.0% \u2022 GAAP diluted EPS: $2.14 \u2022 Non-GAAP (1) operating margin: 9.0% \u2022 Non-GAAP (1) diluted EPS: $4.43 Fiscal Year 2026 Financial Highlights \u2022 Revenue: $14.53 billion \u2022 GAAP operating margin: 4.7% \u2022 GAAP d"
+        },
+        "end": "2026-10-03",
+        "fiscal_label": "2026:4",
+        "start": "2026-06-28"
+      },
+      "use": "period inventory only, not extractor rules/gold, production or live inputs"
+    },
+    {
+      "company": "PLXS",
+      "group_id": "PLXS:0000785786-26-000049",
+      "quote": "EX-99.1 2 plxsf26q4earningsrelease-e.htm EX-99.1 Document Plexus Announces Fiscal Fourth Quarter and Fiscal Year 2026 Financial Results NEENAH, WI \u2013 October 28, 2026 - Plexus Corp. (NASDAQ: PLXS) today announced financial results for our fiscal fourth quarter and fiscal year ended October 3, 2026, and guidance for our fiscal first quarter ending January 2, 2027. \u2022 Reports fiscal fourth quarter revenue of $1.427 billion, GAAP operating margin of 6.0% and GAAP diluted EPS of $2.51. \u2022 Reports fiscal 2026 revenue of $4.965 billion, GAAP operating margin of 5.3% and GAAP diluted EPS of $7.41. \u2022 Reports fiscal fourth quarter non-GAAP operating margin of 6.7% and non-GAAP diluted EPS of $2.84, excluding $0.33 of stock-based compensation expense. \u2022",
+      "reason": "Explicit result dateline gives Q4 endOctober3,2026; previous original Q3 fact gives preceding end. SANM Q4 is98days, PLXS Q4 is91days. Fiscal-week difference preserved, no amount derived from an incompatible nine-month duration.",
+      "reviewed_at": "2026-11-13T08:09:28.745971+00:00",
+      "reviewer": "Codex source curator",
+      "source_manifest": {
+        "body": "7010c3e78f82686b8bc732e42884d60780a816745a501e53271f84193d2e99ab-e43f94a29105522d70e73f1688c61901960a9968d4b912b03568f12c86c746ad.body",
+        "fetched_at": "2026-11-13T04:53:10.156110+00:00",
+        "sha256": "e43f94a29105522d70e73f1688c61901960a9968d4b912b03568f12c86c746ad",
+        "url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000062/plxsf26q4earningsrelease-e.htm"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000062/plxsf26q4earningsrelease-e.htm",
+      "target_period": {
+        "boundary_evidence": {
+          "preceding_quarter": {
+            "accession": "0000785786-26-000054",
+            "end": "2026-07-04",
+            "filed": "2026-08-06",
+            "id": "eb5f665c-80c3-599d-b835-11fbcda64ea2",
+            "parents": [],
+            "start": "2026-04-05"
+          },
+          "reported_end_quote": "EX-99.1 2 plxsf26q4earningsrelease-e.htm EX-99.1 Document Plexus Announces Fiscal Fourth Quarter and Fiscal Year 2026 Financial Results NEENAH, WI \u2013 October 28, 2026 - Plexus Corp. (NASDAQ: PLXS) today announced financial results for our fiscal fourth quarter and fiscal year ended October 3, 2026, and guidance for our fiscal first quarter ending January 2, 2027. \u2022 Reports fiscal fourth quarter revenue of $1.427 billion, GAAP operating margin of 6.0% and GAAP diluted EPS of $2.51. \u2022 Reports fiscal 2026 revenue of $4.965 billion, GAAP operating margin of 5.3% and GAAP diluted EPS of $7.41. \u2022 Reports fiscal fourth quarter non-GAAP operating margin of 6.7% and non-GAAP diluted EPS of $2.84, excluding $0.33 of stock-based compensation expense. \u2022"
+        },
+        "end": "2026-10-03",
+        "fiscal_label": "2026:4",
+        "start": "2026-07-05"
+      },
+      "use": "period inventory only, not extractor rules/gold, production or live inputs"
+    }
+  ]
+}

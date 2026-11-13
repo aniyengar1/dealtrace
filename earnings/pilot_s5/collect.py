@@ -6,6 +6,7 @@ until source review. Missing links/facts stay gaps, not synthetic observations.
 """
 import argparse, hashlib, json, re
 from datetime import date,datetime,timezone
+from decimal import Decimal
 from pathlib import Path
 from urllib.parse import urljoin
 from bs4 import BeautifulSoup
@@ -17,7 +18,7 @@ ROOT=Path(__file__).parent
 CACHE_ROOT=CACHE/'pilot_s5'
 SEED='crosscheck-session5-pilot-audit-v1'
 
-def read(path):return json.loads(Path(path).read_text())
+def read(path):return json.loads(Path(path).read_text(),parse_float=Decimal)
 def write(path,obj):Path(path).write_text(dumps(obj)+'\n')
 def archive(cik,accession,filename):return f'https://www.sec.gov/Archives/edgar/data/{int(cik)}/{accession.replace("-","")}/{filename}'
 def source_release(c,filing):
@@ -89,7 +90,12 @@ def run():
         r=collect_company(c,plan['cutoff']);gs=groups(r);allgroups+=gs
         coverage.append({'company':c['ticker'],'groups':len(gs),'guidance_filed_dates':[g['source']['filed'] for g in gs],'result_filed_dates':[g['result']['filed'] for g in gs],'gaps':r['gaps']})
         print(c['ticker'],len(gs),'completed target release pairs',flush=True)
-    write(ROOT/'inventory.json',{'created_at':datetime.now(timezone.utc).isoformat(),'groups':allgroups,'coverage':coverage})
+    inventory={'groups':allgroups,'coverage':coverage}
+    ip=ROOT/'inventory.json'
+    if ip.exists():
+        old=read(ip)
+        if any(old[k]!=inventory[k] for k in inventory):raise ValueError('Frozen inventory drift; preserve existing audit and reserve a new version')
+    else:write(ip,{'created_at':datetime.now(timezone.utc).isoformat(),**inventory})
     target=ROOT/'sample.json'
     reservation={'seed':SEED,'algorithm':'one minimum SHA256(seed|group-id) per company then ten globally ranked unused groups','created_at':datetime.now(timezone.utc).isoformat(),'inventory_sha256':hashlib.sha256((ROOT/'inventory.json').read_bytes()).hexdigest(),'groups':sample(allgroups)}
     if target.exists():

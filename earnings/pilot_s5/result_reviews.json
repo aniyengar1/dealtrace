@@ -1,0 +1,1538 @@
+{
+  "limitations": "Sample-only retrospective audit. Gold input is never production guidance; no live predictions. 130 other groups have no manual result-basis approval. Five sampled comparisons remain blocked, including three numeric/source-availability issues and two target-scope issues.",
+  "reviewed_at": "2026-11-13T07:42:08.619612+00:00",
+  "reviews": [
+    {
+      "actual": {
+        "accession": "0001090872-25-000036",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "A",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2025-07-31",
+        "filed": "2025-08-29",
+        "fiscal_period": "Q3",
+        "fiscal_year": 2025,
+        "form": "10-Q",
+        "id": "09dfc2f4-9a7c-5b75-a1ec-2a737f82a679",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001090872.json",
+        "start": "2025-05-01",
+        "unit": "USD",
+        "value": "1738000000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "A",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "2b56f9bf-a909-5253-af89-ad6b2ce01cd2",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "844c433f-e27c-5286-af96-c016ceb972a7",
+      "outcome": "above",
+      "period": [
+        "2025-05-01",
+        "2025-07-31"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "1738000000",
+      "result_manifest": {
+        "body": "b93212a750a3dd86aadfec7cef6d771c31bae95a6d9d49857f1afaa940952c4d-58e2c79118c5b1fa98361c049d5e990b6817098905f84866e0695a5b1fd12d61.body",
+        "fetched_at": "2026-11-13T05:11:27.385525+00:00",
+        "sha256": "58e2c79118c5b1fa98361c049d5e990b6817098905f84866e0695a5b1fd12d61",
+        "url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000034/exhibit991-q325pressrelease.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000034/exhibit991-q325pressrelease.htm",
+      "reviewed_at": "2026-11-13T07:42:07.510819+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 0,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 exhibit991-q325pressrelease.htm EX-99.1 Document Exhibit 99.1 Agilent Reports Third-Quarter Fiscal Year 2025 Financial Results Agilent delivers strong revenue growth, raises growth outlook Highlights \u2022 Revenue of $1.74 billion for the third quarter ended July 31, 2025, exceeding revenue guidance and representing growth of 10.1% reported and up 6.1% on a core (1) basis compared with the third quarter of 2024. \u2022 GAAP net income of $336 million; earnings per share (EPS) of $1.18, up 22% from the third quarter of 2024. \u2022 Non-GAAP (2) net income of $390 million; EPS of $1.37, up 4% from the third quarter of 2024. \u2022 These results reflect a full quarter of the dynamic tariff environment. Outlook for full 2025 fiscal year and Q4 \u2022 Full-year revenue outlook revised at a range of $6.91 billion to $6.93 billion, representing a range of up 6.2% to 6.5% reported and up 4.3% to 4.6% core (1) . Non-GAAP EPS (3) is expected in the range of $5.56 to $5.59. \u2022 Q4 revenue outlook is expected to be in the range of $1.822 billion to $1.842 billion, an increase of 7.1% to 8.3% reported and up 4.8% to 6.0% core (1) . Non-GAAP EPS (3) is expected in the range of $1.57 to $1.60 per share. SANTA CLARA, California, Aug. 27, 2025 \u2014 Agilent Technologies Inc. (NYSE: A) today reported revenue of $1.74 billion for the third quarter ended July 31, 2025, exceeding revenue guidance and representing growth of 10.1% reported and up 6.1% core (1) compared with the third quarter of 2024. Third-quarter GAAP net income was $336 million, or $1.18 per share. This compares with $282 million, or $0.97 per share, in the third quarter of 2024. Non-GAAP (2) net income was $390 million, or $1.37 per share durin",
+      "table_windows": [
+        {
+          "quote": " +1 408-345-8948 parmeet_ahuja@agilent.com Media Contact: Andr\u00e9a Topper +1 408-709-0060 andrea.topper@agilent.com 4 AGILENT TECHNOLOGIES, INC. CONDENSED CONSOLIDATED STATEMENT OF OPERATIONS (In millions, except per share data) (Unaudited) PRELIMINARY Three Months Ended Nine Months Ended July 31, July 31, 2025 2024 2025 2024 Net revenue $ 1,738 $ 1,578 $ 5,087 $ 4,809 Costs and expenses: Cost of products and services 850 723 2,434 2,190 Research and development 111 127 336 368 Selling, general and administrative 417 395 1,281 1,171 Total costs and expense",
+          "scale": "1000000",
+          "token": "1,738"
+        }
+      ]
+    },
+    {
+      "actual": null,
+      "block": "Q4_DERIVATION_CALENDAR_UNSUPPORTED",
+      "block_detail": "FY2024 is 53 weeks with 280-day nine-month YTD and 91-day Q4. Existing protected derive_q4 requires273-day YTD. Press release reports2443205000USD; no compatible direct companyfact found. Clear by separately reviewed fiscal-week derivation support and parent reconciliation; do not alter protected prediction code in this pilot.",
+      "company": "ADI",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "7ddb492a-6994-55f5-8303-784ae4516c2b",
+      "guidance_to_result_comparability": "INPUT_BLOCK; no forced outcome",
+      "id": "d7a3db5b-7715-5c55-9312-d64fd55e233d",
+      "outcome": null,
+      "period": [
+        "2024-08-04",
+        "2024-11-02"
+      ],
+      "reported_value": "2443205000",
+      "result_manifest": {
+        "body": "46cf72f9aed824963ab77e6a217ab7b5d155021c2236469ad386e7db8817af4b-7857aa0a7d464cf75f83be48c8acac23c386db0b49c4e4df2dc854917f60e2ac.body",
+        "fetched_at": "2026-11-13T05:09:57.821324+00:00",
+        "sha256": "7857aa0a7d464cf75f83be48c8acac23c386db0b49c4e4df2dc854917f60e2ac",
+        "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000202/adiq424exhibit991.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000202/adiq424exhibit991.htm",
+      "reviewed_at": "2026-11-13T07:42:07.559424+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 1,
+      "source_dateline": "EX-99.1 2 adiq424exhibit991.htm EX-99.1 Document Exhibit 99.1 Analog Devices Reports Fourth Quarter and Fiscal 2024 Financial Results \u2022 Fourth quarter revenue of more than $2.4 billion, above the midpoint of guidance with sequential growth across all end markets \u2022 Fiscal 2024 revenue of more than $9.4 billion \u2022 Fiscal 2024 operating cash flow of $3.9 billion and free cash flow of $3.1 billion \u2022 Returned more than $2.4 billion to shareholders in fiscal 2024, including $0.6 billion of share repurchases and $1.8 billion of dividends WILMINGTON, Mass.--November 26, 2024-- Analog Devices, Inc. (Nasdaq: ADI), a global semiconductor leader, today announced financial results for its fiscal fourth quarter and fiscal year 2024, which ended November 2, 2024. \u201cADI\u2019s revenue, profitability, and earnings per share all finished above our guided midpoint, underscoring continued business momentum and solid execution,\u201d said Vincent Roche, CEO and Chair. \u201cWhile unprecedented customer inventory headwinds drove a historic revenue decline during fiscal 2024, we maintained operating margins north of 40%, which is a testament to our business model\u2019s resilience. We also continued to make strategic, long-term investments across engineering, manufacturing, and the end-to-end customer experience. As such, we enter 2025 as an even stronger enterprise, giving me the utmost confidence in our ability to drive increased value for customers and shareholders over the long term.\u201d \u201cAfter a brief decline in overall bookings during our third quarter, orders picked up steadily throughout the fourth quarter, particularly in the Automotive end market. While macro uncertainty continues to limit the pace of our rec",
+      "table_windows": []
+    },
+    {
+      "actual": {
+        "accession": "0000006281-25-000144",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "ADI",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2025-08-02",
+        "filed": "2025-08-20",
+        "fiscal_period": "Q3",
+        "fiscal_year": 2025,
+        "form": "10-Q",
+        "id": "bf512015-2bd4-57f9-b881-4fd32c2af8c0",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000006281.json",
+        "start": "2025-05-04",
+        "unit": "USD",
+        "value": "2880348000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "ADI",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "f20f7f56-fbaf-58f6-8918-a5b02ae91c27",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "52db4dfe-b726-5245-a4e8-3547c0c8bb5d",
+      "outcome": "above",
+      "period": [
+        "2025-05-04",
+        "2025-08-02"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "2880348000",
+      "result_manifest": {
+        "body": "34305606e611839978d09a917247898f5abe20fdef3cb6cafd976c22e01198a7-d0d73f120ebaf15d791f64c98e2711c23160763ce8f9beefca96df914d891ba9.body",
+        "fetched_at": "2026-11-13T05:09:53.730418+00:00",
+        "sha256": "d0d73f120ebaf15d791f64c98e2711c23160763ce8f9beefca96df914d891ba9",
+        "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000142/adi3q25exhibit991earnings.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000142/adi3q25exhibit991earnings.htm",
+      "reviewed_at": "2026-11-13T07:42:07.603096+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 2,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 adi3q25exhibit991earnings.htm EX-99.1 Document Exhibit 99.1 Analog Devices Reports Fiscal Third Quarter 2025 Financial Results \u2022 Revenue of $2.88 billion, with double-digit year-over-year growth across all end markets \u2022 Operating cash flow of $4.2 billion and free cash flow of $3.7 billion on a trailing twelve-month basis or 40% and 35% of revenue, respectively \u2022 Returned $1.6 billion to shareholders during the third quarter via $0.5 billion in dividends and $1.1 billion in repurchases WILMINGTON, Mass.--August 20, 2025 --Analog Devices, Inc. (Nasdaq: ADI), a global semiconductor leader, today announced financial results for its fiscal third quarter 2025, which ended August 2, 2025. \u201cDespite geopolitical challenges, ADI\u2019s third-quarter revenue and earnings per share exceeded the high end of our expectations,\u201d stated CEO and Chair Vincent Roche. \u201cWhile tariffs and trade fluctuations are creating market uncertainty, the demand for ADI\u2019s products remains robust. The company\u2019s relentless focus on cutting-edge innovation positions us to capitalize on the growth of the intelligent physical edge. In addition, our diverse and resilient business model enables ADI to navigate various market conditions and consistently create long-term value for our shareholders.\u201d CFO Richard Puccio added, \u201cWe closed the third quarter with continued backlog growth and healthy bookings trends, notably in the Industrial end market. Our favorable third quarter results and outlook for continued growth in the fourth quarter, position us well to finish fiscal 2025 from a position of strength.\u201d Performance for the Third Quarter of Fiscal 2025 Results Summary (1) (in millions, except per-share amo",
+      "table_windows": [
+        {
+          "quote": "s or trademarks of Analog Devices, Inc. All other trademarks mentioned in this document are the property of their respective owners. ANALOG DEVICES, INC. CONSOLIDATED STATEMENTS OF INCOME (Unaudited) (In thousands, except per share amounts) Three Months Ended Nine Months Ended Aug. 2, 2025 Aug. 3, 2024 Aug. 2, 2025 Aug. 3, 2024 Revenue $ 2,880,348 $ 2,312,209 $ 7,943,590 $ 6,983,952 Cost of sales 1,090,600 1,000,970 3,111,929 3,018,737 Gross margin 1,789,748 1,311,239 4,831,661 3,965,215 Operating expenses: Research and development 454,251 362,671 1,298,",
+          "scale": "1000",
+          "token": "2,880,348"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0000006281-26-000073",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "ADI",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2026-08-01",
+        "filed": "2026-08-19",
+        "fiscal_period": "Q3",
+        "fiscal_year": 2026,
+        "form": "10-Q",
+        "id": "82017b2a-13ad-5116-8e70-3b456b22f275",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000006281.json",
+        "start": "2026-05-03",
+        "unit": "USD",
+        "value": "4021899000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "ADI",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "91870a72-b6f1-561b-ba89-1c2aa4a05552",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "4c37c818-36fe-5005-9e63-1ebb50d2fa51",
+      "outcome": "above",
+      "period": [
+        "2026-05-03",
+        "2026-08-01"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "4021899000",
+      "result_manifest": {
+        "body": "310c5240a631ebce535f654635bdfc9f2a4072702140a1b7d3e7bf1e5528809f-185d2fa1dbad5b9356ca1d57bfb837476dd14c3a1a2ddf8ce9e6af2ffa17ec1c.body",
+        "fetched_at": "2026-11-13T04:52:16.634007+00:00",
+        "sha256": "185d2fa1dbad5b9356ca1d57bfb837476dd14c3a1a2ddf8ce9e6af2ffa17ec1c",
+        "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000072/adi3q26exhibit991earnings.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000072/adi3q26exhibit991earnings.htm",
+      "reviewed_at": "2026-11-13T07:42:07.647391+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 3,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 adi3q26exhibit991earnings.htm EX-99.1 Document Exhibit 99.1 Analog Devices Reports Record Fiscal Third Quarter 2026 Financial Results \u2022 Revenue of $4.02 billion, with year-over-year growth led by Data Center and Industrial \u2022 Operating cash flow of $5.5 billion and free cash flow of $4.9 billion on a trailing twelve-month basis or 40% and 36% of revenue, respectively \u2022 Returned $1.7 billion to shareholders via dividends and share repurchases in the third quarter WILMINGTON, Mass.--August 19, 2026 --Analog Devices, Inc. (Nasdaq: ADI), a global semiconductor leader, today announced financial results for its fiscal third quarter 2026, which ended August 1, 2026. \u201cADI delivered a strong third quarter, exceeding the midpoint of our revenue, margin, and earnings outlook as we capitalized on broad-based demand,\u201d said Vincent Roche, CEO and Chair. \u201cWe continue to extend our leadership through a powerful combination of innovation, deep customer collaboration, and manufacturing agility. Our investments in these foundational areas, combined with the trust we have built over decades, provide a unique advantage to create, deliver, and capture value in the AI era \u2013 for customers and investors alike.\u201d \u201cDemand continued to strengthen across our product portfolio and regions throughout the third quarter, which is reflected in our record fourth quarter outlook\u201d said Richard Puccio, CFO. \u201cWe believe our balance of disciplined execution and targeted growth investments will enable us to finish the year strongly and carry that momentum into fiscal 2027.\u201d Performance for the Third Quarter of Fiscal 2026 Results Summary (1) (in millions, except per-share amounts and percentages) Three M",
+      "table_windows": [
+        {
+          "quote": "s or trademarks of Analog Devices, Inc. All other trademarks mentioned in this document are the property of their respective owners. ANALOG DEVICES, INC. CONSOLIDATED STATEMENTS OF INCOME (Unaudited) (In thousands, except per share amounts) Three Months Ended Nine Months Ended Aug. 1, 2026 Aug. 2, 2025 Aug. 1, 2026 Aug. 2, 2025 Revenue $ 4,021,899 $ 2,880,348 $ 10,805,627 $ 7,943,590 Cost of sales 1,314,355 1,090,600 3,613,309 3,111,929 Gross margin 2,707,544 1,789,748 7,192,318 4,831,661 Operating expenses: Research and development 533,480 454,251 1,510",
+          "scale": "1000",
+          "token": "4,021,899"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0001628280-25-056742",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "AMAT",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": "annual-minus-ytd-v1",
+        "end": "2025-10-26",
+        "filed": "2025-12-12",
+        "fiscal_period": "REMAINING",
+        "fiscal_year": 2025,
+        "form": "DERIVED",
+        "id": "f85da046-1848-576e-b817-bcc3752e9eb8",
+        "parents": [
+          "9f056065-4198-5927-9aeb-944a580c31a0",
+          "c37f0aa9-145a-586c-b69e-276959e3dd64"
+        ],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000006951.json",
+        "start": "2025-07-28",
+        "unit": "USD",
+        "value": "6800000000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "AMAT",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "ca00bf03-023f-5ac9-b346-93b9c30a3bcc",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "25cf2046-2d04-5c18-854d-889501a4f727",
+      "outcome": "within",
+      "period": [
+        "2025-07-28",
+        "2025-10-26"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "6800000000",
+      "result_manifest": {
+        "body": "ab6d5bd40cfd392f38c7aaf5c4cf4a22ce2ae1f68da3ec6e855b2e17bae3f622-4a9735212d31699b2e18b67a1b29ba21ba39a3ccbf430864ca468ebcadd23ddd.body",
+        "fetched_at": "2026-11-13T05:09:28.556864+00:00",
+        "sha256": "4a9735212d31699b2e18b67a1b29ba21ba39a3ccbf430864ca468ebcadd23ddd",
+        "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828025051998/exhibit991q42025earningsre.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6951/000162828025051998/exhibit991q42025earningsre.htm",
+      "reviewed_at": "2026-11-13T07:42:07.708166+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 4,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 exhibit991q42025earningsre.htm EX-99.1 EARNINGS RELEASE Document Exhibit 99.1 Investor Relations Contact: Mike Sullivan (408) 986-7977 mike_sullivan@amat.com Media Contact: Ricky Gradwohl (408) 235-4676 ricky_gradwohl@amat.com APPLIED MATERIALS ANNOUNCES FOURTH QUARTER AND FISCAL YEAR 2025 RESULTS \u2022 Record annual revenue $28.37 billion, up 4 percent year over year \u2022 Record annual GAAP EPS $8.66 and record non-GAAP EPS $9.42, up 1 percent and 9 percent year over year, respectively \u2022 Quarterly revenue $6.80 billion, down 3 percent year over year \u2022 Quarterly GAAP EPS $2.38 and non-GAAP EPS $2.17, up 14 percent and down 6 percent year over year, respectively SANTA CLARA, Calif., Nov. 13, 2025 \u2014 Applied Materials, Inc. (NASDAQ : AMAT) today reported results for its fourth quarter and fiscal year ended Oct. 26, 2025. \u201cAs AI adoption drives substantial investment in advanced semiconductors and wafer fab equipment, Applied Materials delivered its sixth consecutive year of growth in fiscal 2025,\u201d said Gary Dickerson, President and CEO. \u201cWe are well positioned at the highest value technology inflections in the fastest growing areas of the market, enabling us to extend our leadership in leading-edge logic, DRAM and advanced packaging as next-generation technologies ramp in volume production over the coming years.\u201d \u201cBased on our conversations with our customers and partners, we are preparing Applied\u2019s operations and service organizations to be ready to support higher demand beginning in the second half of calendar 2026,\u201d said Brice Hill, Senior Vice President and CFO. \u201cWe have targeted our R&D investments to create new products and technologies that will enable even faster ",
+      "table_windows": [
+        {
+          "quote": "ogies that will enable even faster and more energy-efficient transistors, chips and systems and drive our growth in the years ahead.\u201d Applied Materials, Inc. Page 4 of 13 Results Summary Change Q4 FY2025 Q4 FY2024 FY2025 FY2024 Q4 FY2025 vs. Q4 FY2024 FY2025 vs. FY2024 (In millions, except per share amounts and percentages) Net revenue $ 6,800 $ 7,045 $ 28,368 $ 27,176 (3)% 4% Gross margin 48.0 % 47.3 % 48.7 % 47.5 % 0.7 points 1.2 points Operating margin 25.2 % 29.0 % 29.2 % 28.9 % (3.8) points 0.3 points Net income $ 1,897 $ 1,731 $ 6,998 $ 7,177 10% (",
+          "scale": "1000000",
+          "token": "6,800"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0001628280-26-009694",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "AMAT",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2026-01-25",
+        "filed": "2026-02-19",
+        "fiscal_period": "Q1",
+        "fiscal_year": 2026,
+        "form": "10-Q",
+        "id": "e7445766-6878-5e3e-bc68-98ae1c147f5f",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000006951.json",
+        "start": "2025-10-27",
+        "unit": "USD",
+        "value": "7012000000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "AMAT",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "a10af8ec-677e-5599-918a-996670f0fd7a",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "6f7c559c-fb59-5dd7-9946-41a35c2e5e59",
+      "outcome": "within",
+      "period": [
+        "2025-10-27",
+        "2026-01-25"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "7012000000",
+      "result_manifest": {
+        "body": "1587d8e0f6c301414827f0e9921f53410ff5069a5df66cb7156745c78bac58b0-e86a5624086b54e82f547559f010dfdd3263596b19d0ff9abe485eb59bec9ebc.body",
+        "fetched_at": "2026-11-13T05:09:27.219862+00:00",
+        "sha256": "e86a5624086b54e82f547559f010dfdd3263596b19d0ff9abe485eb59bec9ebc",
+        "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026007661/exhibit991q12026earningsre.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6951/000162828026007661/exhibit991q12026earningsre.htm",
+      "reviewed_at": "2026-11-13T07:42:07.762418+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 5,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 exhibit991q12026earningsre.htm EX-99.1 EARNINGS RELEASE Document Exhibit 99.1 Investor Relations Contact: Mike Sullivan (408) 986-7977 mike_sullivan@amat.com Media Contact: Ricky Gradwohl (408) 235-4676 ricky_gradwohl@amat.com APPLIED MATERIALS ANNOUNCES FIRST QUARTER 2026 RESULTS \u2022 Revenue $7.01 billion, down 2 percent year over year \u2022 GAAP gross margin 49.0 percent and non-GAAP gross margin 49.1 percent \u2022 GAAP EPS $2.54 and non-GAAP EPS $2.38, up 75 percent and flat year over year, respectively \u2022 Semiconductor Systems achieved record DRAM revenue \u2022 Applied Global Services delivered record services and spares revenue SANTA CLARA, Calif., Feb. 12, 2026 \u2014 Applied Materials, Inc. (NASDAQ : AMAT) today reported results for its first quarter ended Jan. 25, 2026. First Quarter Results Applied generated revenue of $7.01 billion. On a GAAP basis, the company reported gross margin of 49.0 percent, operating income of $1.83 billion or 26.1 percent of net revenue, and earnings per share (EPS) of $2.54. On a non-GAAP basis, the company reported gross margin of 49.1 percent, operating income of $2.11 billion or 30.0 percent of net revenue, and EPS of $2.38. The company generated $1.69 billion in cash from operations and distributed $702 million to shareholders through $337 million in share repurchases and $365 million in dividends. \u201cApplied Materials delivered strong results in our fiscal first quarter, fueled by the acceleration of industry investments in AI computing,\u201d said Gary Dickerson, President and CEO. \u201cThe need for higher performance and more energy-efficient chips is driving high growth rates for leading-edge logic, high-bandwidth memory and advanced packaging. Th",
+      "table_windows": [
+        {
+          "quote": "and CFO. \u201cOver the past several years, we have nearly doubled our system manufacturing capability, strengthened our supply chain and increased our inventories in preparation for market growth.\u201d Applied Materials, Inc. Page 2 of 13 Results Summary Q1 FY2026 Q1 FY2025 Change (In millions, except per share amounts and percentages) Revenue $ 7,012 $ 7,166 (2)% Gross margin 49.0 % 48.8 % 0.2 points Operating margin 26.1 % 30.4 % (4.3) points Net income $ 2,026 $ 1,185 71% Diluted earnings per share $ 2.54 $ 1.45 75% Non-GAAP Results Non-GAAP gross margin 49.1",
+          "scale": "1000000",
+          "token": "7,012"
+        }
+      ]
+    },
+    {
+      "actual": null,
+      "block": "MISSING_COMPANYFACT_AT_CUTOFF",
+      "block_detail": "Nov12,2026 results report10409millionUSD, but annual10-K/companyfacts input is unavailable at cutoff. Clear by original annual filing and compatible nine-month parent or direct quarter fact; retain filing availability.",
+      "company": "AMAT",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "c01d8555-2493-5b85-9b35-cf7f1195df11",
+      "guidance_to_result_comparability": "INPUT_BLOCK; no forced outcome",
+      "id": "43086c74-ba84-52ad-a0c2-dbe0741b095a",
+      "outcome": null,
+      "period": [
+        "2026-07-27",
+        "2026-10-25"
+      ],
+      "reported_value": "10409000000",
+      "result_manifest": {
+        "body": "84b62988ce45112f7bf25a0d60bb58d48de1bb9f0b963739ab58bedc8e348669-e6faa0782a05a00c233524289e301f4bbf1815b98fdfcc0ec8a3a353cc23d599.body",
+        "fetched_at": "2026-11-13T04:52:04.056006+00:00",
+        "sha256": "e6faa0782a05a00c233524289e301f4bbf1815b98fdfcc0ec8a3a353cc23d599",
+        "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026073360/exhibit991q42026earningsre.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/6951/000162828026073360/exhibit991q42026earningsre.htm",
+      "reviewed_at": "2026-11-13T07:42:07.829143+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 6,
+      "source_dateline": "EX-99.1 2 exhibit991q42026earningsre.htm EX-99.1 EARNINGS RELEASE Document Exhibit 99.1 Investor Relations Contact: Mike Sullivan (408) 986-7977 mike_sullivan@amat.com Media Contact: Ricky Gradwohl (408) 235-4676 ricky_gradwohl@amat.com APPLIED MATERIALS ANNOUNCES FOURTH QUARTER AND FISCAL YEAR 2026 RESULTS \u2022 Record quarterly revenue $10.41 billion, up 53 percent year over year \u2022 Quarterly GAAP gross margin 50.4 percent and non-GAAP gross margin 50.6 percent, up 240 basis points and 250 basis points year over year, respectively \u2022 Quarterly GAAP EPS $3.40 and record non-GAAP EPS $4.16, up 43 percent and 92 percent year over year, respectively \u2022 Record annual revenue $34.45 billion, up 21 percent year over year \u2022 Annual GAAP gross margin 50.0 percent and non-GAAP gross margin 50.1 percent, both up 130 basis points year over year \u2022 Record annual GAAP EPS $12.62 and record non-GAAP EPS $12.89, up 46 percent and 37 percent year over year, respectively \u2022 Unveiled the EPIC Center in Silicon Valley and added four new R&D partnerships, bringing our total number of announced EPIC engagements to 15 SANTA CLARA, Calif., Nov. 12, 2026 \u2014 Applied Materials, Inc. (NASDAQ: AMAT) today reported results for its fourth quarter and fiscal year ended Oct. 25, 2026. Fourth Quarter Results Applied generated record revenue of $10.41 billion. On a GAAP basis, the company reported gross margin of 50.4 percent, record operating income of $3.66 billion or 35.1 percent of revenue, and earnings per share (EPS) of $3.40. On a non-GAAP basis, the company reported gross margin of 50.6 percent, record operating income of $3.68 billion or 35.3 percent of revenue, and record EPS of $4.16. The company generat",
+      "table_windows": []
+    },
+    {
+      "actual": {
+        "accession": "0001477720-26-000021",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "ASAN",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": "annual-minus-ytd-v1",
+        "end": "2026-01-31",
+        "filed": "2026-03-13",
+        "fiscal_period": "REMAINING",
+        "fiscal_year": 2026,
+        "form": "DERIVED",
+        "id": "409787b1-dff6-5350-bfa1-e371cb55bb71",
+        "parents": [
+          "4f790aaa-68ef-5960-bcc0-7bc6e83a89c3",
+          "7c7f0b52-a3a7-5215-a226-a80fbed4e682"
+        ],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001477720.json",
+        "start": "2025-11-01",
+        "unit": "USD",
+        "value": "205570000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "ASAN",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "9d0e85e3-9f9d-5eec-ab2a-e04d2655af7a",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "bc049ff6-758c-5aac-9237-8514338ff931",
+      "outcome": "within",
+      "period": [
+        "2025-11-01",
+        "2026-01-31"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "205570000",
+      "result_manifest": {
+        "body": "d413c3fcca4b674f3cc5d619aa8f6c3735427f9ba8a6101e3f0997cabd6d0392-8bc0d805e515613e73c4c6abbdecae353c55d8c3d468701cbbaf6f8269c13cf6.body",
+        "fetched_at": "2026-11-13T05:08:55.047970+00:00",
+        "sha256": "8bc0d805e515613e73c4c6abbdecae353c55d8c3d468701cbbaf6f8269c13cf6",
+        "url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772026000012/asana8-kex991q4fy26.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477720/000147772026000012/asana8-kex991q4fy26.htm",
+      "reviewed_at": "2026-11-13T07:42:07.864218+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 7,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 3 asana8-kex991q4fy26.htm EX-99.1 Document Exhibit 99.1 Asana Announces Fourth Quarter and Fiscal Year 2026 Results Delivered Q4 revenue of $205.6 million, up 9% year over year Expanded Q4 GAAP operating margin by over 17 percentage points and non-GAAP operating margin by 10 percentage points Grew Q4 operating cash flow by 74% and adjusted free cash flow by 108% year over year Board authorized an additional $160M for share repurchases, bringing total authorization available to approximately $200M March 2, 2026 \u2013 San Francisco, CA \u2013 Asana, Inc. (NYSE: ASAN)(LTSE: ASAN), the system of action where humans and AI run work together, today reported financial results for its fourth quarter and fiscal year ended January 31, 2026. \u201c FY26 was a year of meaningful progress as we advanced Asana into a multi-product platform and strengthened our position as the foundational system of action layer for the Agentic Enterprise,\u201d said Dan Rogers, Chief Executive Officer of Asana. \u201cWe exited Q4 with improving enterprise productivity, strong renewal performance, and rapid adoption of AI Studio. The expected launch of AI Teammates later this quarter marks the next phase of our AI platform, embedding agents directly into the coordinated flow of work. Our Work Graph, task-based system of action, and enterprise governance provide the persistent memory and accountability required to move agents from experimentation to trusted execution at scale.\u201d \u201cIn Q4, we delivered a 9 percent non-GAAP operating margin, representing a 10 percentage point improvement year-over-year, driven by continued productivity and efficiency gains across the organization, and saw continued improvement in NRR driven ",
+      "table_windows": [
+        {
+          "quote": " material information. Eva Leung Asana Investor Relations ir@asana.com Frances Ward Asana Communications press@asana.com 6 Exhibit 99.1 ASANA, INC. CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS (in thousands, except per share data) (unaudited) Three Months Ended January 31, Twelve Months Ended January 31, 2026 2025 2026 2025 Revenues $ 205,570 $ 188,334 $ 790,806 $ 723,876 Cost of revenues (1) 25,004 19,604 86,759 77,193 Gross profit 180,566 168,730 704,047 646,683 Operating expenses: Research and development (1) 73,180 84,239 301,496 341,467 Sales and",
+          "scale": "1000",
+          "token": "205,570"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0001558370-25-007889",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "BOOT",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": "annual-minus-ytd-v1",
+        "end": "2025-03-29",
+        "filed": "2025-05-15",
+        "fiscal_period": "REMAINING",
+        "fiscal_year": 2025,
+        "form": "DERIVED",
+        "id": "a0468b3b-cf5a-5afd-90fc-10679881a8cc",
+        "parents": [
+          "30a81ef8-7ccf-58f0-b69f-abf843e64170",
+          "b25cfda3-446c-5bb1-b097-5c023a68e2f2"
+        ],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001610250.json",
+        "start": "2024-12-29",
+        "unit": "USD",
+        "value": "453749000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "BOOT",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "965a2795-bdc6-5a58-8070-af156c07e5f4",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "9ed4e2e0-5b4e-5c81-8385-13e279785a16",
+      "outcome": "within",
+      "period": [
+        "2024-12-29",
+        "2025-03-29"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "453749000",
+      "result_manifest": {
+        "body": "2a5cf6d2f8916a6e3d35aa1e87db64231ad9b222ddc813431994e1dd488a27b7-c833f35c43ec6513e1154a1814c4201e2dd46e847376bc25cab8152c61dee339.body",
+        "fetched_at": "2026-11-13T05:10:55.950352+00:00",
+        "sha256": "c833f35c43ec6513e1154a1814c4201e2dd46e847376bc25cab8152c61dee339",
+        "url": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025007745/boot-20250514xex99d1.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025007745/boot-20250514xex99d1.htm",
+      "reviewed_at": "2026-11-13T07:42:07.916934+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 8,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 boot-20250514xex99d1.htm EX-99.1 Exhibit 99.1 Boot Barn Holdings, Inc. Announces Fourth Quarter and Fiscal Year 2025 Financial Results and $200 Million Share Repurchase Program IRVINE, California \u2013 May 14, 2025 \u2013 Boot Barn Holdings, Inc. (NYSE: BOOT) (the \u201cCompany\u201d) today announced its financial results for the fourth fiscal quarter and fiscal year ended March 29, 2025 (\u201cFiscal Year 2025\u201d). A Supplemental Financial Presentation is available at investor.bootbarn.com. For the quarter ended March 29, 2025 compared to the quarter ended March 30, 2024: \u25cf Net sales increased 16.8% over the prior-year period to $453.7 million. \u25cf Same store sales increased 6.0% , with retail store same store sales increasing 5.5% and e-commerce same store sales increasing 9.8%. \u25cf Net income was $37.5 million, or $1.22 per diluted share, compared to $29.4 million, or $0.96 per diluted share, in the prior-year period. \u25cf The Company opened 21 new stores, bringing its total store count to 459 as of the quarter end. For the fiscal year ended March 29, 2025 compared to the fiscal year ended March 30, 2024: \u25cf Net sales increased 14.6% over Fiscal Year 2024 to $1.911 billion. \u25cf Same store sales increased 5.5% , with retail store same store sales increasing 5.0% and e-commerce same store sales increasing 9.7%. \u25cf Net income was $180.9 million, or $5.88 per diluted share in Fiscal Year 2025, compared to $147.0 million, or $4.80 per diluted share, in Fiscal Year 2024. \u25cf The Company opened 60 new stores, bringing its total store count to 459 as of the fiscal year end. John Hazen, Chief Executive Officer, commented, \u201cOur team delivered a solid finish to fiscal year 2025 highlighted by 15% annual tota",
+      "table_windows": [
+        {
+          "quote": "21 \u200b $ 1,705,592 \u200b \u200b 6 Boot Barn Holdings, Inc. Consolidated Statements of Operations (In thousands, except per share data) (Unaudited) \u200b \u200b \u200b \u200b \u200b \u200b \u200b \u200b \u200b \u200b \u200b \u200b \u200b \u200b Thirteen Weeks Ended \u200b Thirteen Weeks Ended Fifty-Two Weeks Ended \u200b Fifty-Two Weeks Ended \u200b March 29, \u200b March 30, \u200b March 29, \u200b March 30, \u200b \u200b 2025 2024 2025 2024 Net sales \u200b $ 453,749 \u200b $ 388,459 \u200b $ 1,911,104 \u200b $ 1,667,009 Cost of goods sold \u200b 285,187 \u200b 249,021 \u200b 1,194,066 \u200b 1,052,585 Gross profit \u200b 168,562 \u200b 139,438 \u200b 717,038 \u200b 614,424 Selling, general and administrative expenses \u200b 118,875 \u200b",
+          "scale": "1000",
+          "token": "453,749"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0000935703-24-000059",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "DLTR",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2024-11-02",
+        "filed": "2024-12-04",
+        "fiscal_period": "Q3",
+        "fiscal_year": 2024,
+        "form": "10-Q",
+        "id": "de2a257b-7d84-5dfc-9aa5-51c1548ce83d",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000935703.json",
+        "start": "2024-08-04",
+        "unit": "USD",
+        "value": "7561700000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "DLTR",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_net_sales",
+      "guidance_id": "626cb590-ca8e-5e24-93a6-7761f4ee6c82",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "e800d459-c011-5115-a066-ac801d0606a0",
+      "outcome": "within",
+      "period": [
+        "2024-08-04",
+        "2024-11-02"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "7561700000",
+      "result_manifest": {
+        "body": "da354beb90706b9d3c35525708ec6fcb4df8f8d23fc13843e5130fac8abc456d-478a8ab66adf85e7688dfb86a5731cca380b8fbaec56f0f596640162115b8689.body",
+        "fetched_at": "2026-11-13T05:10:41.892482+00:00",
+        "sha256": "478a8ab66adf85e7688dfb86a5731cca380b8fbaec56f0f596640162115b8689",
+        "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000057/ex991q3-24earningspr.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000057/ex991q3-24earningspr.htm",
+      "reviewed_at": "2026-11-13T07:42:08.002306+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 10,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence. Original2024 companyfact maps to NET SALES7561.7m, not total revenue7568.2m; retain original Family Dollar scope, not later discontinued-operation comparatives.",
+      "source_dateline": "EX-99.1 2 ex991q3-24earningspr.htm EX-99.1 Document Exhibit 99.1 Dollar Tree, Inc. Reports Results for the Third Quarter Fiscal 2024 \u2022 Same-Store Net Sales: Dollar Tree +1.8%; Family Dollar +1.9%; Enterprise +1.8% \u2022 Diluted Earnings per Share (EPS) of $1.08 and Adjusted Diluted EPS of $1.12 \u2022 Fourth Quarter Fiscal 2024 Net Sales Outlook Range of $8.1 Billion to $8.3 Billion \u2022 Fourth Quarter Fiscal 2024 Adjusted Diluted EPS Outlook Range of $2.10 to $2.30 \u2022 Full-Year Fiscal 2024 Net Sales Outlook Range of $30.7 Billion to $30.9 Billion \u2022 Full-Year Fiscal 2024 Adjusted Diluted EPS Outlook Range of $5.31 to $5.51 \u2022 Family Dollar Review of Strategic Alternatives Remains on Track \u2022 Announces Chief Financial Officer Transition CHESAPEAKE, Va.--December 4, 2024--Dollar Tree, Inc. (NASDAQ: DLTR) today reported financial results for its third quarter ended November 2, 2024. \u201cOur Dollar Tree and Family Dollar merchandising efforts produced tangible results, and our third quarter sales came in at the high-end of our expected range,\u201d said Mike Creedon, Interim Chief Executive Officer. \u201cAs an organization, our top priorities remain accelerating the growth of the Dollar Tree segment, completing the Family Dollar strategic review process, and unlocking value for Dollar Tree shareholders.\u201d Dollar Tree, Inc. and Jeff Davis have agreed that he will step down from his role as the Company\u2019s Chief Financial Officer. The company has launched an external search and to ensure a smooth transition, Mr. Davis has agreed to remain with the company through the filing of its fiscal 2024 Form 10-K. \u201cWe thank Jeff for his service and appreciate the contributions he made to the business during his time w",
+      "table_windows": [
+        {
+          "quote": "ree.com DLTR-E DOLLAR TREE, INC. Condensed Consolidated Income Statements (In millions, except per share data) (Unaudited) 13 Weeks Ended 39 Weeks Ended November 2, 2024 October 28, 2023 November 2, 2024 October 28, 2023 Revenues Net sales $ 7,561.7 $ 7,309.1 $ 22,560.8 $ 21,948.7 Other revenue 6.5 5.7 19.0 15.2 Total revenue 7,568.2 7,314.8 22,579.8 21,963.9 Expenses Cost of sales 5,224.3 5,136.1 15,661.2 15,410.6 Selling, general and administrative expenses 2,010.5 1,877.0 5,961.5 5,544.1 Operating income 333.4 301.7 957.1 1,009.2 Interest expense, net 27.5 30.4 80.8 80.5 Other expense, net 0.1 0.2 0.2 0.2 Income before income taxes 305.8 271.1 876.1 928.5 Provision for income taxes 72.5 59.1 210.3 217.1 Net income $ 233.3 $ 212.0 $ 665.8 $ 711.4 Net earnings per share: Basic $ 1.09 $ 0.97 $ 3.08 $ 3.23 Weighted average number of shares 215.0 218.9 215.9 220.0 Dilut",
+          "scale": "1000000",
+          "token": "7,561.7"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0001261333-25-000075",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "DOCU",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2025-04-30",
+        "filed": "2025-06-06",
+        "fiscal_period": "Q1",
+        "fiscal_year": 2026,
+        "form": "10-Q",
+        "id": "9e67888a-5cf7-5475-b5d9-9dbf3f7c1b3b",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001261333.json",
+        "start": "2025-02-01",
+        "unit": "USD",
+        "value": "763654000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "DOCU",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "46f00532-1e96-5d8d-9ddd-17ee2b1ab913",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "6d17ff00-a836-5df8-ba08-5f067ef72972",
+      "outcome": "above",
+      "period": [
+        "2025-02-01",
+        "2025-04-30"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "763654000",
+      "result_manifest": {
+        "body": "3c16e22bf6a3419bba800bfff94e4219c2f02c3af22be052ef241b9ac33b2375-b2631f2164ce4a12b29e7f983e9e505459b5256d478470d09e07b782bc8579d5.body",
+        "fetched_at": "2026-11-13T05:08:31.497539+00:00",
+        "sha256": "b2631f2164ce4a12b29e7f983e9e505459b5256d478470d09e07b782bc8579d5",
+        "url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000073/q126ex-991er.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000073/q126ex-991er.htm",
+      "reviewed_at": "2026-11-13T07:42:08.036593+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 11,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 q126ex-991er.htm EX-99.1 Document DOCUSIGN, INC. Exhibit 99.1 Docusign Announces First Quarter Fiscal 2026 Financial Results; Announces $1.0 Billion Increase to Share Repurchase Program San Francisco \u2013 June 5, 2025 \u2013 Docusign, Inc. (NASDAQ: DOCU) today announced results for its fiscal quarter ended April 30, 2025. Prepared remarks and the news release with the financial results will be accessible on Docusign\u2019s website at investor.docusign.com prior to its webcast. \u201cQ1 was an important quarter for Docusign\u2019s long-term transformation as we delivered on an ambitious product roadmap and surpassed 10,000 Intelligent Agreement Management customers,\u201d said Allan Thygesen, CEO of Docusign. \u201cIn Q1, our financial performance was strong across revenue growth and profitability.\u201d First Quarter Financial Highlights \u25aa Revenue was $763.7 million, an 8% year-over-year increase, including 0.6% negative impact of foreign currency exchange rates . Subscription revenue was $746.2 million, an 8% year-over-year increase. Professional services and other revenue was $17.5 million, a 4% year-over-year decrease. \u25aa Billings were $739.6 million , a 4% year-over-year increase. \u25aa GAAP gross margin was 79.4% compared to 78.9% in the same period last year. Non-GAAP gross margin was 82.3% compared to 82.0% in the same period last year. \u25aa GAAP net income per basic share was $0.35 on 203 million shares outstanding compared to $0.16 on 206 million shares outstanding in the same period last year. \u25aa GAAP net income per diluted share was $0.34 on 213 million shares outstanding compared to $0.16 on 210 million shares outstanding in the same period last year. \u25aa Non-GAAP net income per diluted share was $",
+      "table_windows": [
+        {
+          "quote": " measure, please see \u201cReconciliation of GAAP to Non-GAAP Financial Measures\u201d below. 6 DOCUSIGN, INC. CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS (Unaudited) Three Months Ended April 30, (in thousands, except per share data) 2025 2024 Revenue: Subscription $ 746,202 $ 691,483 Professional services and other 17,452 18,157 Total revenue 763,654 709,640 Cost of revenue: Subscription 137,343 126,602 Professional services and other 19,926 22,844 Total cost of revenue 157,269 149,446 Gross profit 606,385 560,194 Operating expenses: Sales and marketing 296,4",
+          "scale": "1000",
+          "token": "763,654"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0001261333-26-000021",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "DOCU",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": "annual-minus-ytd-v1",
+        "end": "2026-01-31",
+        "filed": "2026-03-18",
+        "fiscal_period": "REMAINING",
+        "fiscal_year": 2026,
+        "form": "DERIVED",
+        "id": "d036468e-7d7e-55a3-bc1a-fc0b57079061",
+        "parents": [
+          "65e37aff-032d-515a-bd44-23f1064c882a",
+          "67bc705a-d4b8-5a61-9b1f-e9712e2fe0a9"
+        ],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001261333.json",
+        "start": "2025-11-01",
+        "unit": "USD",
+        "value": "836860000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "DOCU",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "df22830b-ae9a-5e94-907e-c70c24e67beb",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "073ae4cb-e555-50c1-bcba-d4939510b706",
+      "outcome": "above",
+      "period": [
+        "2025-11-01",
+        "2026-01-31"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "836860000",
+      "result_manifest": {
+        "body": "f568b5372abc4932cf1449f8b64ffff9ba64cac3e6ca8c8ebc8865f2207450c8-1ae7cce7608fdd5e08f2907e2c65838eb7211b64281c4ed1f329e75f7360876e.body",
+        "fetched_at": "2026-11-13T05:08:27.552621+00:00",
+        "sha256": "1ae7cce7608fdd5e08f2907e2c65838eb7211b64281c4ed1f329e75f7360876e",
+        "url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000017/q426ex-991er.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000017/q426ex-991er.htm",
+      "reviewed_at": "2026-11-13T07:42:08.081785+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 12,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 q426ex-991er.htm EX-99.1 Document DOCUSIGN, INC. Exhibit 99.1 Docusign Announces Fourth Quarter and Fiscal Year 2026 Financial Results; Announces $2.0 Billion Increase to Share Repurchase Program San Francisco \u2013 March 17, 2026 \u2013 Docusign, Inc. (NASDAQ: DOCU) today announced results for its fourth quarter and fiscal year ended January 31, 2026. Prepared remarks and the news release with the financial results will be accessible on Docusign\u2019s website at investor.docusign.com prior to its webcast. \u201cDocusign\u2019s AI-native IAM platform has established clear market leadership as the agreement system of action for companies of all sizes,\u201d said Allan Thygesen, CEO of Docusign. \u201cIn 2026, customers using IAM represented over $350 million in ARR, and Docusign reached record highs for operating margin and free cash flow.\u201d Fourth Quarter Financial Highlights \u25aa Total revenue was $836.9 million, an 8% year-over-year increase including approximately 0.8% positive impact from foreign exchange rates . Subscription revenue was $819.0 million, an 8% year-over-year increase. Professional services and other revenue was $17.9 million, a 3% year-over-year decrease. \u25aa Billings were $1.0 billion , a 10% year-over-year increase including approximately 2.3% positive impact of foreign currency exchange rates . \u25aa GAAP gross margin was 79.7% compared to 79.4% in the same period last year. Non-GAAP gross margin was 81.8% compared to 82.3% in the same period last year. \u25aa GAAP net income per basic share was $0.45 on 200 million shares outstanding compared to $0.41 on 203 million shares outstanding in the same period last year. \u25aa GAAP net income per diluted share was $0.44 on 205 million shares outs",
+      "table_windows": [
+        {
+          "quote": "below. | 6 | DOCUSIGN, INC. CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS (Unaudited) Three Months Ended January 31, Year Ended January 31, (in thousands, except per share data) 2026 2025 2026 2025 Revenue: Subscription $ 819,003 $ 757,767 $ 3,150,551 $ 2,901,309 Professional services and other 17,857 18,485 68,949 75,430 Total revenue 836,860 776,252 3,219,500 2,976,739 Cost of revenue: Subscription 149,246 138,884 581,058 532,445 Professional services and other 20,538 21,327 82,004 89,214 Total cost of revenue 169,784 160,211 663,062 621,659 Gross pr",
+          "scale": "1000",
+          "token": "836,860"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0001707753-25-000021",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "ESTC",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": "annual-minus-ytd-v1",
+        "end": "2025-04-30",
+        "filed": "2025-06-10",
+        "fiscal_period": "REMAINING",
+        "fiscal_year": 2025,
+        "form": "DERIVED",
+        "id": "1ce1f4c0-ed4f-55f8-bc53-cb72ea39210b",
+        "parents": [
+          "4d96c8ba-4532-55fd-95b2-074711764acb",
+          "57896c6c-92c4-589d-9d93-a29e277e2de8"
+        ],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001707753.json",
+        "start": "2025-02-01",
+        "unit": "USD",
+        "value": "388432000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "ESTC",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "aa0b4ffd-ae3f-529d-8cfe-655bde7f2e8a",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "3e9fbbb5-086a-5bf4-8fe1-dc8e51e3aa1e",
+      "outcome": "above",
+      "period": [
+        "2025-02-01",
+        "2025-04-30"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "388432000",
+      "result_manifest": {
+        "body": "b72ae2c33a5117b1b9deb628463f4087abb98c6bb5dcbb85a78a4004f6fa7819-f486c811af3f210c9692ab1dbc7d2658f7f1131d7e74d8f0a68a913eaa84df00.body",
+        "fetched_at": "2026-11-13T05:09:15.259720+00:00",
+        "sha256": "f486c811af3f210c9692ab1dbc7d2658f7f1131d7e74d8f0a68a913eaa84df00",
+        "url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000015/a25q4erex991.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000015/a25q4erex991.htm",
+      "reviewed_at": "2026-11-13T07:42:08.123328+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 13,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 a25q4erex991.htm EX-99.1 Document Elastic Reports Fourth Quarter and Fiscal 2025 Financial Results Q4 Revenue of $388 million, up 16% year-over-year (16% in constant currency) Q4 Elastic Cloud Revenue of $182 million, up 23% year-over-year (23% in constant currency) FY25 Revenue of $1.483 billion, up 17% year-over-year (17% in constant currency) SAN FRANCISCO, Calif., May 29, 2025 -- Elastic (NYSE: ESTC) (\u201cElastic\u201d), the Search AI Company, announced financial results for its fourth quarter and full fiscal year ended April 30, 2025. Fourth Quarter Fiscal 2025 Financial Highlights \u2022 Total revenue was $388 million, an increase of 16% year-over-year, as reported and on a constant currency basis \u2022 Elastic Cloud revenue was $182 million, an increase of 23% year-over-year, as reported and on a constant currency basis \u2022 GAAP operating loss was $12 million; GAAP operating margin was -3% \u2022 Non-GAAP operating income was $60 million; non-GAAP operating margin was 15% \u2022 GAAP net loss per share was $0.16; non-GAAP diluted earnings per share was $0.47 \u2022 Operating cash flow was $87 million with adjusted free cash flow of $85 million \u2022 Cash, cash equivalents, and marketable securities were $1.397 billion as of April 30, 2025 Full Fiscal 2025 Financial Highlights \u2022 Total revenue was $1.483 billion, an increase of 17% year-over-year, as reported and on a constant currency basis \u2022 Elastic Cloud revenue was $688 million, an increase of 26% year-over-year, as reported and on a constant currency basis \u2022 GAAP operating loss was $55 million; GAAP operating margin was -4% \u2022 Non-GAAP operating income was $225 million; non-GAAP operating margin was 15% \u2022 GAAP net loss per share was $1.04; ",
+      "table_windows": [
+        {
+          "quote": "ommunications PR-Team@elastic.co Elastic N.V. Condensed Consolidated Statements of Operations (in thousands, except share and per share data) (unaudited) Three Months Ended April 30, Year Ended April 30, 2025 2024 2025 2024 Revenue Subscription $ 361,741 $ 310,984 $ 1,384,520 $ 1,176,606 Services 26,691 24,015 98,776 90,715 Total revenue 388,432 334,999 1,483,296 1,267,321 Cost of revenue Subscription 72,092 65,047 282,585 246,285 Services 25,693 22,824 97,288 83,794 Total cost of revenue 97,785 87,871 379,873 330,079 Gross profit 290,647 247,128 1,103,4",
+          "scale": "1000",
+          "token": "388,432"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0001177609-25-000025",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "FIVE",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2025-05-03",
+        "filed": "2025-06-05",
+        "fiscal_period": "Q1",
+        "fiscal_year": 2025,
+        "form": "10-Q",
+        "id": "e8ee0650-1bd1-5c92-938f-dd6d26776e4c",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001177609.json",
+        "start": "2025-02-02",
+        "unit": "USD",
+        "value": "970527000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "FIVE",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "26b6b262-4076-5434-9880-c0cc9fac9028",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "2d5a863d-e491-5f04-9353-d278f73dd354",
+      "outcome": "above",
+      "period": [
+        "2025-02-02",
+        "2025-05-03"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "970527000",
+      "result_manifest": {
+        "body": "aa8ba83319168632391b0c5305d3a6e2b493c3593e8038cedc3dc894f1ef9df0-aa7a46f39fc4a8b3ee031989955c1dc59d53c281907dafadbed79e19d22350b7.body",
+        "fetched_at": "2026-11-13T05:10:23.572255+00:00",
+        "sha256": "aa7a46f39fc4a8b3ee031989955c1dc59d53c281907dafadbed79e19d22350b7",
+        "url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000019/q12025fivebelowexhibit991.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000019/q12025fivebelowexhibit991.htm",
+      "reviewed_at": "2026-11-13T07:42:08.146703+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 14,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 4 q12025fivebelowexhibit991.htm EXHIBIT 99.1 Document NEWS RELEASE Five Below, Inc. Announces First Quarter Fiscal 2025 Financial Results Q1 Net Sales Increase of 19.5% to $970.5 million; Comparable Sales Increase of 7.1% Q1 GAAP Diluted EPS of $0.75, Q1 Adjusted Diluted EPS of $0.86 Increases Full Year 2025 Sales Guidance; Raises Low End of EPS Guidance Range Announces CFO Transition PHILADELPHIA , PA \u2013 (June 4, 2025) \u2013 Five Below, Inc. (NASDAQ: FIVE) today announced financial results for the first quarter ended May 3, 2025. For the first quarter ended May 3, 2025: \u2022 Net sales increased by 19.5% to $970.5 million from $811.9 million in the first quarter of fiscal 2024; comparable sales increased by 7.1%. \u2022 The Company opened 55 new stores and ended the quarter with 1,826 stores in 44 states. This represents an increase in stores of 13.8% from the end of the first quarter of fiscal 2024. \u2022 Operating income was $50.8 million compared to $36.2 million in the first quarter of fiscal 2024. Adjusted operating income (1) was $59.6 million compared to $38.1 million in the first quarter of fiscal 2024. \u2022 The effective tax rate was 27.2% compared to 23.5% in the first quarter of fiscal 2024. \u2022 Net income was $41.1 million compared to $31.5 million in the first quarter of fiscal 2024. Adjusted net income (1) was $47.5 million compared to $33.0 million in the first quarter of fiscal 2024. \u2022 Diluted income per common share was $0.75 compared to $0.57 in the first quarter of fiscal 2024. Adjusted diluted income per common share (1) was $0.86 compared to $0.60 in the first quarter of fiscal 2024. (1) A reconciliation of adjusted operating income, adjusted net income, and adjust",
+      "table_windows": [
+        {
+          "quote": "al 161,058 152,471 150,948 Retained earnings 1,696,455 1,655,307 1,433,163 Total shareholders\u2019 equity 1,858,062 1,808,327 1,584,661 $ 4,452,802 $ 4,339,574 $ 3,947,304 FIVE BELOW, INC. Consolidated Statements of Operations (Unaudited) (in thousands, except share and per share data) Thirteen Weeks Ended May 3, 2025 May 4, 2024 Net sales $ 970,527 $ 811,863 Cost of goods sold (exclusive of items shown separately below) 646,614 548,343 Selling, general and administrative expenses 226,502 190,186 Depreciation and amortization 46,564 37,184 Operating income 5",
+          "scale": "1000",
+          "token": "970,527"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0001177609-25-000052",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "FIVE",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2025-11-01",
+        "filed": "2025-12-04",
+        "fiscal_period": "Q3",
+        "fiscal_year": 2025,
+        "form": "10-Q",
+        "id": "6663c315-6797-5a29-bc91-510b42e55e1d",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001177609.json",
+        "start": "2025-08-03",
+        "unit": "USD",
+        "value": "1038293000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "FIVE",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "84879fdb-94b1-5d00-847a-075cf7532b44",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "dcae2c3d-9c1d-5357-b19a-b47546d091b5",
+      "outcome": "above",
+      "period": [
+        "2025-08-03",
+        "2025-11-01"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "1038293000",
+      "result_manifest": {
+        "body": "dd1f0176de7937d73631fdb8245d80110f5c5b57eb527aad0bf4368329ec5717-f32c662435013ccd14c1fd1f2608feca717cc26bfcc01a6ec202b5f3c0fb6079.body",
+        "fetched_at": "2026-11-13T05:10:20.553503+00:00",
+        "sha256": "f32c662435013ccd14c1fd1f2608feca717cc26bfcc01a6ec202b5f3c0fb6079",
+        "url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000048/q32025fivebelowexhibit991.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000048/q32025fivebelowexhibit991.htm",
+      "reviewed_at": "2026-11-13T07:42:08.178071+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 15,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 q32025fivebelowexhibit991.htm EXHIBIT 99.1 Document NEWS RELEASE Five Below, Inc. Announces Third Quarter Fiscal 2025 Financial Results Q3 Net Sales Increase of 23.1% to $1.0 Billion; Comparable Sales Increase of 14.3% Q3 GAAP Diluted EPS of $0.66, Q3 Adjusted Diluted EPS of $0.68 Increases Full Year 2025 Sales and EPS Outlook PHILADELPHIA , PA \u2013 (December 3, 2025) \u2013 Five Below, Inc. (NASDAQ: FIVE) today announced financial results for the third quarter and year to date period ended November 1, 2025. For the third quarter ended November 1, 2025: \u2022 Net sales increased by 23.1% to $1,038.3 million from $843.7 million in the third quarter of fiscal 2024; comparable sales increased by 14.3%. \u2022 The Company opened 49 net new stores and ended the quarter with 1,907 stores in 44 states. This represents an increase in stores of 9.0% from the end of the third quarter of fiscal 2024. \u2022 Operating income was $43.3 million compared to an operating loss of $0.6 million in the third quarter of fiscal 2024. Adjusted operating income (1) was $45.1 million compared to $27.6 million in the third quarter of fiscal 2024. \u2022 The effective tax rate was 25.7% compared to 23.4% in the third quarter of fiscal 2024. \u2022 Net income was $36.5 million compared to $1.7 million in the third quarter of fiscal 2024. Adjusted net income (1) was $37.8 million compared to $23.3 million in the third quarter of fiscal 2024. \u2022 Diluted income per common share was $0.66 compared to $0.03 in the third quarter of fiscal 2024. Adjusted diluted income per common share (1) was $0.68 com pared to $0.42 in the third quarter of fiscal 2024. (1) A reconciliation of adjusted operating income, adjusted net income, and",
+      "table_windows": [
+        {
+          "quote": "67,850 Total shareholders\u2019 equity 1,950,236 1,808,327 1,615,852 $ 4,789,318 $ 4,339,574 $ 4,185,319 FIVE BELOW, INC. Consolidated Statements of Operations (Unaudited) (in thousands, except share and per share data) Thirteen Weeks Ended Thirty-Nine Weeks Ended November 1, 2025 November 2, 2024 November 1, 2025 November 2, 2024 Net sales $ 1,038,293 $ 843,710 $ 3,035,667 $ 2,485,642 Cost of goods sold (exclusive of items shown separately below) 686,873 585,668 2,017,965 1,692,294 Selling, general and administrative expenses 259,238 215,367 728,054 594,362 ",
+          "scale": "1000",
+          "token": "1,038,293"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0001773751-25-000062",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "HIMS",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": "annual-minus-ytd-v1",
+        "end": "2024-12-31",
+        "filed": "2025-02-24",
+        "fiscal_period": "REMAINING",
+        "fiscal_year": 2024,
+        "form": "DERIVED",
+        "id": "0cd70ce5-8996-5bda-9ecb-3e205575b193",
+        "parents": [
+          "baaa6c56-1398-53e5-8405-126c113621e7",
+          "7e05248d-7b79-5e79-9ed5-3b12ef9b54be"
+        ],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001773751.json",
+        "start": "2024-10-01",
+        "unit": "USD",
+        "value": "481139000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "HIMS",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "0daa24be-4785-534f-bca7-491b5ba4caaf",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "50f06762-2202-55d1-9c19-b49c37a0881d",
+      "outcome": "above",
+      "period": [
+        "2024-10-01",
+        "2024-12-31"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "481139000",
+      "result_manifest": {
+        "body": "aa307e9cf2519d881cba29b9b85d6c6680d883747de6eff899ef2442a3cc38e0-498a09cb3c3459d1b168db99dd915da2bdfeee39efd23b4768662647d2b3dcd1.body",
+        "fetched_at": "2026-11-13T05:11:49.811056+00:00",
+        "sha256": "498a09cb3c3459d1b168db99dd915da2bdfeee39efd23b4768662647d2b3dcd1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000059/hims-20241231x8xkearningsr.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000059/hims-20241231x8xkearningsr.htm",
+      "reviewed_at": "2026-11-13T07:42:08.205540+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 16,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 hims-20241231x8xkearningsr.htm EX-99.1 Document Hims & Hers Health, Inc. Reports Fourth Quarter and Full Year 2024 Financial Results Revenue of $1.5 billion, up 69% year-over-year in 2024 Net income of $126 million; Adjusted EBITDA of $177 million in 2024 Subscribers grew to 2.2 million, up 45% year-over-year in 2024 Provides Q1 and full year 2025 guidance, with full year 2025 revenue in the range of $2.3 billion to $2.4 billion and Adjusted EBITDA in the range of $270 million to $320 million SAN FRANCISCO, February 24, 2025 \u2013 Hims & Hers Health, Inc. (\u201cHims & Hers\u201d or the \u201cCompany\u201d, NYSE: HIMS), the leading health and wellness platform, today announced financial results for th e fourth quarter and full year ended December 31, 2024 in a shareholder letter that is posted at investors.hims.com. \u201c2024 was a fantastic year at Hims and Hers as we continue to build a platform that leverages personalization and technology unlike any traditional healthcare system,\u201d said Andrew Dudum, co-founder and CEO. \u201cOver 2 million subscribers now entrust Hims & Hers to aid them in their journey to better health - with thousands more joining daily. In the coming years, we expect to further transform how individuals can improve their health with more comprehensive treatments, technologies that normalize unlimited follow up support, and tools that can eventually be exported beyond Hims and Hers, enabling even more Americans to access this care. We believe an ongoing focus in these areas will allow every household in the country to access high quality, precision care that is convenient and affordable and expect 2025 will be another exciting step toward our vision of this next-generatio",
+      "table_windows": [
+        {
+          "quote": "s 2,807 2,298 22 % 10,459 8,676 21 % AOV $ 168 $ 103 63 % $ 137 $ 97 41 % Revenue (In Thousands, Unaudited) Three Months Ended December 31, Year Ended December 31, 2024 2023 % Change 2024 2023 % Change Online Revenue $ 470,760 $ 237,363 98 % $ 1,437,937 $ 842,381 71 % Wholesale Revenue 10,379 9,256 12 % 38,577 29,619 30 % Total revenue $ 481,139 $ 246,619 95 % $ 1,476,514 $ 872,000 69 % Fourth Quarter 2024 Financial Highlights \u2022 Revenue was $481.1 million for the fourth quarter of 2024 compared to $246.6 million for the fourth quarter of 2023, an increas",
+          "scale": "1000",
+          "token": "481,139"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0001773751-25-000154",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "HIMS",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2025-03-31",
+        "filed": "2025-05-05",
+        "fiscal_period": "Q1",
+        "fiscal_year": 2025,
+        "form": "10-Q",
+        "id": "14004b8d-fd68-5591-8c46-37e8d02f6d68",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001773751.json",
+        "start": "2025-01-01",
+        "unit": "USD",
+        "value": "586010000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "HIMS",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "fb27eac6-0dfa-5061-abd1-bfe7e570b4a6",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "f43f5e99-41ca-56d5-a899-ea1494d9e9f3",
+      "outcome": "above",
+      "period": [
+        "2025-01-01",
+        "2025-03-31"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "586010000",
+      "result_manifest": {
+        "body": "68062981dec1c31f73ba18a2e67f485f92e6a14582fb367537b8144faa3a411a-b005561fc4d6f143df573b7c20c3ad2a5e139287dfd2b19cae2bd9611e4e7e04.body",
+        "fetched_at": "2026-11-13T05:11:48.301033+00:00",
+        "sha256": "b005561fc4d6f143df573b7c20c3ad2a5e139287dfd2b19cae2bd9611e4e7e04",
+        "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000152/hims-20250331x8xkearningsr.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000152/hims-20250331x8xkearningsr.htm",
+      "reviewed_at": "2026-11-13T07:42:08.227415+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 17,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 hims-20250331x8xkearningsr.htm EX-99.1 Document Hims & Hers Health, Inc. Reports First Quarter 2025 Financial Results Revenue of $586.0 million, up 111% year-over-year in Q1 2025 Net income of $49.5 million; Adjusted EBITDA of $91.1 million in Q1 2025 Subscribers grew to 2.4 million, up 38% year-over-year in Q1 2025 Affirms full year 2025 revenue guidance of $2.3 billion to $2.4 billion and raises Adjusted EBITDA guidance to a range of $295 million to $335 million Introduces 2030 targets of at least $6.5 billion in revenue and $1.3 billion in Adjusted EBITDA SAN FRANCISCO, May 5, 2025 \u2013 Hims & Hers Health, Inc. (\u201cHims & Hers\u201d or the \u201cCompany\u201d, NYSE: HIMS), the leading health and wellness platform, today announced financial results for the first quarter ended March 31, 2025, in a shareholder letter that is posted at investors.hims.com. \u201cWe\u2019re starting 2025 with incredible momentum. Millions of people are turning to us for access to care that is personal, affordable, and has the potential to drive better outcomes,\u201d said Andrew Dudum, co-founder and CEO. \u201cWe\u2019re building a platform that puts the individual at the center of every decision and others are taking notice. Over time, we expect wider collaboration across the industry, inclusive of pharmaceutical players, innovative leaders in diagnostic and preventative testing, and world class providers. We believe this will strengthen our ecosystem and position us to curate a best-in-class offering that can reach tens of millions of people. This is the future of our platform, allowing a historically disjointed industry to reach more consumers, for the benefit of those consumers.\u201d Yemi Okupe, CFO, stated, \u201cDuring the firs",
+      "table_windows": [
+        {
+          "quote": "naudited) Three Months Ended March 31, 2025 2024 % Change Subscribers (end of period) 2,366 1,709 38 % Monthly Online Revenue per Average Subscriber $ 84 $ 55 53 % Revenue (In Thousands, Unaudited) Three Months Ended March 31, 2025 2024 % Change Online Revenue $ 576,361 $ 267,761 115 % Wholesale Revenue 9,649 10,410 (7) % Total revenue $ 586,010 $ 278,171 111 % First Quarter 2025 Financial Highlights \u2022 Revenue was $586.0 million for the first quarter of 2025 compared to $278.2 million for the first quarter of 2024, an increase of 111% year-over-year. \u2022 G",
+          "scale": "1000",
+          "token": "586,010"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0001773751-25-000354",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "HIMS",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2025-09-30",
+        "filed": "2025-11-03",
+        "fiscal_period": "Q3",
+        "fiscal_year": 2025,
+        "form": "10-Q",
+        "id": "9aed74b7-efe5-5936-8c6d-196103f07a90",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001773751.json",
+        "start": "2025-07-01",
+        "unit": "USD",
+        "value": "598976000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "HIMS",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "eef1b7fb-57aa-5f25-ad45-94092b796fbd",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "85cf5260-cdfb-5091-88b8-f5914605d582",
+      "outcome": "above",
+      "period": [
+        "2025-07-01",
+        "2025-09-30"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "598976000",
+      "result_manifest": {
+        "body": "45422156b1011b320dcfdeb225edaa22b21751125bb56e7cb2404259d8ed38b5-d7f97a2ae5938531891df4754f9777a41b0709bfeb42b6ede3ae2f67a03b970f.body",
+        "fetched_at": "2026-11-13T05:11:44.435528+00:00",
+        "sha256": "d7f97a2ae5938531891df4754f9777a41b0709bfeb42b6ede3ae2f67a03b970f",
+        "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000352/hims-20250930x8xkearningsr.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000352/hims-20250930x8xkearningsr.htm",
+      "reviewed_at": "2026-11-13T07:42:08.255397+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 18,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 hims-20250930x8xkearningsr.htm EX-99.1 Document Hims & Hers Health, Inc. Reports Third Quarter 2025 Financial Results Revenue of nearly $600 million, up 49% year-over-year in Q3 2025 Net income of nearly $16 million; Adjusted EBITDA of over $78 million in Q3 2025 Subscribers grew to almost 2.5 million, up 21% year-over-year in Q3 2025 Narrows full year 2025 revenue guidance to $2.335 billion to $2.355 billion and Adjusted EBITDA guidance to $307 million to $317 million SAN FRANCISCO, November 3, 2025 \u2013 Hims & Hers Health, Inc. (\u201cHims & Hers\u201d or the \u201cCompany\u201d, NYSE: HIMS), the leading health and wellness platform, today announced financial results for the third quarter ended September 30, 2025, in a shareholder letter that is posted at investors.hims.com. \u201cThis quarter we continued to prove that our vision of helping tens of millions of people around the world access best-in-class, personalized care, from the comfort of their own home is more real than ever. We\u2019re building a platform that gets more personal, more proactive, and resonates with more people as we scale,\u201d said Andrew Dudum, co-founder and CEO. \u201cWe\u2019re launching new specialties at an increasing pace, we\u2019re partnering with leaders across healthcare to bring new solutions and services to our users, and we\u2019re making significant progress in establishing Hims & Hers as a truly global brand. The number of people we can help is accelerating rapidly and we\u2019ve never been more confident in our ability to lead this transformation in how the world accesses care.\u201d Yemi Okupe, CFO, stated, \u201cWe delivered another quarter of strong, profitable growth as our model continues to scale and deepen its impact. In the third q",
+      "table_windows": [
+        {
+          "quote": "ine Revenue per Average Subscriber $ 80 $ 67 19 % $ 80 $ 60 33 % Revenue (In Thousands, Unaudited) Three Months Ended September 30, Nine Months Ended September 30, 2025 2024 % Change 2025 2024 % Change Online Revenue $ 589,095 $ 392,573 50 % $ 1,702,336 $ 967,177 76 % Wholesale Revenue 9,881 8,983 10 % 27,483 28,198 (3) % Total revenue $ 598,976 $ 401,556 49 % $ 1,729,819 $ 995,375 74 % Third Quarter 2025 Financial Highlights \u2022 Revenue was $599.0 million for the third quarter of 2025 compared to $401.6 million for the third quarter of 2024, an increase o",
+          "scale": "1000",
+          "token": "598,976"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0001773751-26-000163",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "HIMS",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2026-06-30",
+        "filed": "2026-08-10",
+        "fiscal_period": "Q2",
+        "fiscal_year": 2026,
+        "form": "10-Q",
+        "id": "f00b7c55-0f83-5375-8886-da211fd85547",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001773751.json",
+        "start": "2026-04-01",
+        "unit": "USD",
+        "value": "753214000"
+      },
+      "block": "ACQUISITION_TARGET_SCOPE_MISMATCH",
+      "block_detail": "Guidance explicitly excludes Eucalyptus; Q2 result says Eucalyptus closed in June and reports753214000USD consolidated including it. Require separately evidenced comparable revenue excluding the acquisition, or explicit company comparable-scope confirmation. Do not equate Rest-of-World revenue with acquisition contribution.",
+      "company": "HIMS",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported_excluding_Eucalyptus",
+      "guidance_id": "9fc3e193-bd2f-583a-a8b3-1d63f53d5d65",
+      "guidance_to_result_comparability": "UNRESOLVED_OR_INCOMPARABLE",
+      "id": "457ed73b-801c-5ab1-9de0-13f882e7abc6",
+      "outcome": null,
+      "period": [
+        "2026-04-01",
+        "2026-06-30"
+      ],
+      "result_manifest": {
+        "body": "4ffcd62696abaed46196a4da20f4add9445dcbde534f0bde6455d2633c9a4589-f53f01a22420acf8ba2e4d7fd89a2d27d9164d4e9fb83b94f127a42480b7dfda.body",
+        "fetched_at": "2026-11-13T04:58:54.326438+00:00",
+        "sha256": "f53f01a22420acf8ba2e4d7fd89a2d27d9164d4e9fb83b94f127a42480b7dfda",
+        "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000161/hims-20260630x8xkearningsr.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000161/hims-20260630x8xkearningsr.htm",
+      "reviewed_at": "2026-11-13T07:42:08.304054+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 19,
+      "source_dateline": "EX-99.1 2 hims-20260630x8xkearningsr.htm EX-99.1 Document Hims & Hers Health, Inc. Reports Second Quarter 2026 Financial Results Revenue of approximately $753 million, up 38% year-over-year in Q2 2026 Subscribers grew to nearly 2.9 million, up 19% year-over-year in Q2 2026 Raises full year 2026 revenue guidance to a range of $3.1 billion to $3.3 billion and updates Adjusted EBITDA guidance to a range of $275 million to $325 million SAN FRANCISCO, August 10, 2026 \u2013 Hims & Hers Health, Inc. (\u201cHims & Hers\u201d or the \u201cCompany\u201d, NYSE: HIMS), the leading global health and wellness platform, today announced financial results for the second quarter ended June 30, 2026. \u201cHims & Hers is delivering a world-class health experience at a global scale and a reasonable price for the nearly 3 million people who rely on us for access to care. We\u2019re proving, quarter after quarter, that helping people feel great and delivering strong results aren\u2019t mutually exclusive,\u201d said Andrew Dudum, co-founder and CEO. \u201cWe have never been better positioned to move faster or go further than we are today. As we rebuild the consumer health experience from the ground up with a doctor-led AI clinical engine, the depth and breadth of our relationships with customers worldwide has never been greater. Every quarter, we raise the standard for what care should look like everywhere: high-quality, personal, and accessible.\u201d \u201cOur second quarter results were defined by a significant re-acceleration in our growth profile and the continued expanding reach of our platform,\u201d said Yemi Okupe, Chief Financial Officer. \u201cDomestic revenue growth accelerated to 16% year-over-year, and our international business grew more than 17-",
+      "table_windows": [
+        {
+          "quote": "per Average Subscriber $ 92 $ 76 21 % $ 84 $ 81 4 % Revenue (In Thousands, Unaudited) Three Months Ended June 30, Six Months Ended June 30, 2026 2025 % Change 2026 2025 % Change United States Revenue $ 621,830 $ 537,286 16 % $ 1,151,739 $ 1,115,978 3 % Rest of the World Revenue 131,384 7,547 1,641 % 209,579 14,865 1,310 % Total revenue $ 753,214 $ 544,833 38 % $ 1,361,318 $ 1,130,843 20 % Second Quarter 2026 Financial Highlights \u2022 Revenue was $753.2 million for the second quarter of 2026 compared to $544.8 million for the second quarter of 2025, an incre",
+          "scale": "1000",
+          "token": "753,214"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0001628280-25-045293",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "JBL",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": "annual-minus-ytd-v1",
+        "end": "2025-08-31",
+        "filed": "2025-10-17",
+        "fiscal_period": "REMAINING",
+        "fiscal_year": 2025,
+        "form": "DERIVED",
+        "id": "db23ff57-2e36-5b71-8951-b7e3040b6ec5",
+        "parents": [
+          "6d64eead-279e-587a-ae6d-bd766895dea1",
+          "d150741e-cbe7-5380-9b12-5a9bddfa852e"
+        ],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000898293.json",
+        "start": "2025-06-01",
+        "unit": "USD",
+        "value": "8252000000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "JBL",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "c79aa6d3-3c7e-5c0c-bd15-63a581b3d582",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "5de1cf08-ac7b-56f1-9230-7ba5b12a7415",
+      "outcome": "above",
+      "period": [
+        "2025-06-01",
+        "2025-08-31"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "8252000000",
+      "result_manifest": {
+        "body": "c02480d6a7e07471722152d645db86c40420244c5909603f6156f93b3ec60b3c-0aebadf968c542aea9a3a7d340e7bae5169a60cbee5e520101b681958a52e469.body",
+        "fetched_at": "2026-11-13T05:12:33.434534+00:00",
+        "sha256": "0aebadf968c542aea9a3a7d340e7bae5169a60cbee5e520101b681958a52e469",
+        "url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025042693/jbl-20250925ex991.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/898293/000162828025042693/jbl-20250925ex991.htm",
+      "reviewed_at": "2026-11-13T07:42:08.324748+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 20,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 jbl-20250925ex991.htm EX-99.1 Document Exhibit 99.1 Jabil Posts Fourth Quarter and Fiscal Year 2025 Results Provides Strong Fiscal 2026 Outlook ST. PETERSBURG, Fla. \u2013 September 25, 2025 \u2013 Today, Jabil Inc. (NYSE: JBL), reported preliminary, unaudited financial results for its fourth quarter and fiscal year ended August 31, 2025. \u201cFiscal 2025 was a strong year for Jabil as we grew revenue, delivered solid core margins, increased core diluted EPS, and generated robust free cash flow,\u201d said CEO Mike Dastoor. \u201cStrength in AI-driven demand across capital equipment, data centers, and networking, combined with deliberate portfolio actions in Connected Living & Digital Commerce, more than offset pressures in Automotive and Renewables, highlighting the resilience of our diversified business model. These results underscore our ability to execute in a dynamic environment while continuing to advance our long-term strategy.\u201d Fourth Quarter of Fiscal Year 2025 Highlights: \u2022 Net revenue: $8.3 billion \u2022 U.S. GAAP operating income: $337 million \u2022 U.S. GAAP diluted earnings per share: $1.99 \u2022 Core operating income (Non-GAAP): $519 million \u2022 Core diluted earnings per share (Non-GAAP): $3.29 Fiscal Year 2025 Highlights: \u2022 Net revenue: $29.8 billion \u2022 U.S. GAAP operating income: $1.2 billion \u2022 U.S. GAAP diluted earnings per share: $5.92 \u2022 Core operating income (Non-GAAP): $1.6 billion \u2022 Core diluted earnings per share (Non-GAAP): $9.75 First Quarter of Fiscal Year 2026 Outlook: \u2022 Net revenue $7.7 billion to $8.3 billion \u2022 U.S. GAAP operating income $263 million to $343 million \u2022 U.S. GAAP diluted earnings per share $1.27 to $1.84 per diluted share \u2022 Core operating income (Non-GAAP) ",
+      "table_windows": [
+        {
+          "quote": "ntrolling interests 4 \u2014 Total equity 1,517 1,737 Total liabilities and equity $ 18,543 $ 17,351 JABIL INC. AND SUBSIDIARIES CONDENSED CONSOLIDATED STATEMENTS OF OPERATIONS (in millions, except for per share data) (Unaudited) Three Months Ended Fiscal Year Ended August 31, 2025 August 31, 2024 August 31, 2025 August 31, 2024 Net revenue $ 8,252 $ 6,964 $ 29,802 $ 28,883 Cost of revenue 7,469 6,301 27,156 26,207 Gross profit 783 663 2,646 2,676 Operating expenses: Selling, general and administrative 287 270 1,122 1,160 Research and development 4 10 26 39 A",
+          "scale": "1000000",
+          "token": "8,252"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0000827054-26-000038",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "MCHP",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2026-06-30",
+        "filed": "2026-08-06",
+        "fiscal_period": "Q1",
+        "fiscal_year": 2027,
+        "form": "10-Q",
+        "id": "44d271f3-604f-5ef3-85c9-9df4b1adeb91",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000827054.json",
+        "start": "2026-04-01",
+        "unit": "USD",
+        "value": "1484700000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "MCHP",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "933799ac-7163-5ec2-8978-8b1aeadd7f99",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "afe886a6-a8c7-5178-b4a0-5be17176bf66",
+      "outcome": "above",
+      "period": [
+        "2026-04-01",
+        "2026-06-30"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "1484700000",
+      "result_manifest": {
+        "body": "0104aa8e48c57a3502b6475d344ca40f19c247ba7bc79ee63a5aaef6fa56909e-d609854013c66d75cee2553b9df2a92440d304b126d30f754e01b004e6294b33.body",
+        "fetched_at": "2026-11-13T04:58:45.244150+00:00",
+        "sha256": "d609854013c66d75cee2553b9df2a92440d304b126d30f754e01b004e6294b33",
+        "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000037/exhibit991q1fy27.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000037/exhibit991q1fy27.htm",
+      "reviewed_at": "2026-11-13T07:42:08.355003+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 21,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 exhibit991q1fy27.htm EX-99.1 Document EXHIBIT 99.1 NEWS RELEASE INVESTOR RELATIONS CONTACT: Sajid Daudi -- Head of Investor Relations..... (480) 792-7385 MICROCHIP TECHNOLOGY ANNOUNCES FINANCIAL RESULTS FOR FIRST QUARTER OF FISCAL YEAR 2027 \u2022 Net sales of $1.485 billion, increased 38.0% from the year-ago quarter and up 13.2% sequentially. The midpoint of our guidance provided on May 7, 2026 was net sales of $1.456 billion. \u2022 On a GAAP basis: gross profit of 63.2%; operating income of $336.8 million and 22.7% of net sales; net income attributable to common stockholders of $202.0 million; and EPS of $0.37 per diluted share. Our guidance provided on May 7, 2026 was GAAP EPS per diluted share of $0.28 to $0.29. \u2022 On a Non-GAAP basis: gross profit of 63.8%; operating income of $521.1 million and 35.1% of net sales; net income of $438.6 million; and EPS of $0.76 per diluted share. Our guidance provided on May 7, 2026 was Non-GAAP EPS per diluted share of $0.67 to $0.71. \u2022 Returned approximately $246.9 million to common stockholders in the June quarter through dividends. \u2022 Quarterly dividend on common stock declared for the September quarter of 45.5 cents per share. \u2022 Continued balance sheet deleveraging with approximately $170 million reduction in net debt during the June quarter. CHANDLER, Arizona - August 6, 2026 - (NASDAQ: MCHP) - Microchip Technology Incorporated, a leading provider of smart, connected, and secure embedded control solutions, today reported results for the three months ended June 30, 2026. \"We kicked off fiscal 2027 on a strong note, with net sales increasing 38% year over year and 13.2% sequentially to $1.485 billion, above the high end of our gui",
+      "table_windows": [
+        {
+          "quote": "- more - - Microchip Technology Reports First Quarter Fiscal 2027 Financial Results Page 3 The following table summarizes Microchip's reported results for the three months ended June 30, 2026. Three Months Ended June 30, 2026 (1) Net sales $1,484.7 GAAP % Non-GAAP (2) % Gross profit $938.9 63.2% $947.6 63.8% Operating income $336.8 22.7% $521.1 35.1% Other expense $(46.9) $(46.9) Income tax provision $60.1 $35.6 Net income $229.8 $438.6 Dividends on Series A Preferred Stock $(27.8) \u2014 Net income attributable to common stockholders $202.0 13.6% $438.6 29.5% Diluted net income per common share $0.37 $0.76 (1) In millions, except per share amounts and percentages of net sales. (2) See the \"Use of Non-GAAP Financial Measures\" section of this release. Net sales for the first quarter of fiscal 2027 were $1.485 billion, up 38.0% from net sales of $1.076 billion in the prior y",
+          "scale": "1000000",
+          "token": "1,484.7"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0000723125-25-000021",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "MU",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2025-05-29",
+        "filed": "2025-06-26",
+        "fiscal_period": "Q3",
+        "fiscal_year": 2025,
+        "form": "10-Q",
+        "id": "1bf680a4-a9ec-58dd-a95e-714d010a7121",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000723125.json",
+        "start": "2025-02-28",
+        "unit": "USD",
+        "value": "9301000000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "MU",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "66a9c2f1-56e8-5bed-9424-f97b391ae2bb",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "235b20ee-2206-5feb-babc-707753c278bd",
+      "outcome": "above",
+      "period": [
+        "2025-02-28",
+        "2025-05-29"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "9301000000",
+      "result_manifest": {
+        "body": "f1ded0518928d02b3d6b9398296f486825fcfeed40e53c0420048e4cb3a1c119-c7bd013c6541c049294e33acdb13ffeb4aaed0e2a68e6871b6bdc73b325f6974.body",
+        "fetched_at": "2026-11-13T05:09:42.525087+00:00",
+        "sha256": "c7bd013c6541c049294e33acdb13ffeb4aaed0e2a68e6871b6bdc73b325f6974",
+        "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000019/a2025q3ex991-pressrelease.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000019/a2025q3ex991-pressrelease.htm",
+      "reviewed_at": "2026-11-13T07:42:08.379551+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 22,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 a2025q3ex991-pressrelease.htm EX-99.1 EARNINGS RELEASE Document Exhibit 99.1 FOR IMMEDIATE RELEASE Contacts: Satya Kumar Mark Plungy Investor Relations Media Relations satyakumar@micron.com mplungy@micron.com (408) 450-6199 (408) 203-2910 MICRON TECHNOLOGY, INC. REPORTS RESULTS FOR THE THIRD QUARTER OF FISCAL 2025 Record revenue in fiscal Q3 with growth across end markets Fiscal Q4 revenue projected to grow another 15% sequentially BOISE, Idaho, June 25, 2025 \u2013 Micron Technology, Inc. (Nasdaq: MU) today announced results for its third quarter of fiscal 2025, which ended May 29, 2025. Fiscal Q3 2025 highlights \u2022 Revenue of $9.30 billion versus $8.05 billion for the prior quarter and $6.81 billion for the same period last year \u2022 GAAP net income of $1.89 billion, or $1.68 per diluted share \u2022 Non-GAAP net income of $2.18 billion, or $1.91 per diluted share \u2022 Operating cash flow of $4.61 billion versus $3.94 billion for the prior quarter and $2.48 billion for the same period last year \u201cMicron delivered record revenue in fiscal Q3, driven by all-time-high DRAM revenue including nearly 50% sequential growth in HBM revenue. Data center revenue more than doubled year-over-year and reached a quarterly record, and consumer-oriented end markets had strong sequential growth,\u201d said Sanjay Mehrotra, Chairman, President and CEO of Micron Technology. \u201cWe are on track to deliver record revenue with solid profitability and free cash flow in fiscal 2025, while we make disciplined investments to build on our technology leadership and manufacturing excellence to satisfy growing AI-driven memory demand.\u201d Quarterly Financial Results (in millions, except per share amounts) GAAP (1) Non-",
+      "table_windows": [
+        {
+          "quote": "rofitability and free cash flow in fiscal 2025, while we make disciplined investments to build on our technology leadership and manufacturing excellence to satisfy growing AI-driven memory demand.\u201d Quarterly Financial Results (in millions, except per share amounts) GAAP (1) Non-GAAP (2) FQ3-25 FQ2-25 FQ3-24 FQ3-25 FQ2-25 FQ3-24 Revenue $ 9,301 $ 8,053 $ 6,811 $ 9,301 $ 8,053 $ 6,811 Gross margin 3,508 2,963 1,832 3,623 3,053 1,917 percent of revenue 37.7 % 36.8 % 26.9 % 39.0 % 37.9 % 28.1 % Operating expenses 1,339 1,190 1,113 1,133 1,046 976 Operating i",
+          "scale": "1000000",
+          "token": "9,301"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0000785786-25-000049",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "PLXS",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2025-06-28",
+        "filed": "2025-08-01",
+        "fiscal_period": "Q3",
+        "fiscal_year": 2025,
+        "form": "10-Q",
+        "id": "17a2543e-480a-5366-8d1e-2ad3736705bd",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000785786.json",
+        "start": "2025-03-30",
+        "unit": "USD",
+        "value": "1018308"
+      },
+      "block": "SOURCE_FACT_SCALE_MISMATCH",
+      "block_detail": "Original selected companyfact says1018308USD; release table says1018308 in THOUSANDS, i.e.1018308000USD. Difference -99.9%. Do not multiply automatically. Require corrected XBRL/source scale evidence and a separately reviewed actual version.",
+      "company": "PLXS",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "24923a4a-69be-5e1d-8d3b-0c03210dc543",
+      "guidance_to_result_comparability": "INPUT_BLOCK; no forced outcome",
+      "id": "320af687-25ba-553c-be6b-630bfa192f11",
+      "outcome": null,
+      "period": [
+        "2025-03-30",
+        "2025-06-28"
+      ],
+      "reported_value": "1018308000",
+      "result_manifest": {
+        "body": "0018449faf560bd110f419284a27786d90f7f0a37e7e8a200a89b32cbf2f15ae-8279a192e136318f5b7e28d49cf422c77168f308f4d44e2f5a94c133119cd121.body",
+        "fetched_at": "2026-11-13T05:13:02.872499+00:00",
+        "sha256": "8279a192e136318f5b7e28d49cf422c77168f308f4d44e2f5a94c133119cd121",
+        "url": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000045/plxsf25q3earningsrelease-e.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000045/plxsf25q3earningsrelease-e.htm",
+      "reviewed_at": "2026-11-13T07:42:08.410902+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 23,
+      "source_dateline": "EX-99.1 2 plxsf25q3earningsrelease-e.htm EX-99.1 Document Plexus Announces Fiscal Third Quarter Financial Results NEENAH, WI \u2013 July 23, 2025 - Plexus Corp. (NASDAQ: PLXS) today announced financial results for our fiscal third quarter ended June 28, 2025, and guidance for our fiscal fourth quarter ending September 27, 2025. \u2022 Reports fiscal third quarter 2025 revenue of $1.018 billion, GAAP operating margin of 5.3% and GAAP diluted EPS of $1.64. \u2022 Reports fiscal third quarter 2025 non-GAAP operating margin of 6.0% and non-GAAP diluted EPS of $1.90, excluding $0.26 of stock-based compensation expense. \u2022 Initiates fiscal fourth quarter 2025 revenue guidance of $1.025 billion to $1.065 billion with GAAP diluted EPS of $1.57 to $1.72, including $0.25 of stock-based compensation expense. Fiscal fourth quarter non-GAAP EPS guidance of $1.82 to $1.97 excludes stock-based compensation expense. Three Months Ended Jun 28, 2025 Jun 28, 2025 Sep 27, 2025 Q3F25 Results Q3F25 Guidance Q4F25 Guidance Summary GAAP Items Revenue (in billions) $1.018 $1.000 to $1.040 $1.025 to $1.065 Operating margin 5.3 % 5.0% to 5.4% 5.0% to 5.4% Diluted EPS $1.64 $1.40 to $1.55 $1.57 to $1.72 Summary Non-GAAP Items (1) Adjusted operating margin (2) 6.0 % 5.7% to 6.1% 5.7% to 6.1% Adjusted EPS (3) $1.90 $1.65 to $1.80 $1.82 to $1.97 Return on invested capital (ROIC) 14.1 % Economic return 5.2 % (1) Refer to Non-GAAP Supplemental Information tables for additional information regarding non-GAAP financial measures. (2) Excludes stock-based compensation expense of approximately 70 bps for Q3F25 results, Q3F25 guidance and Q4F25 guidance. (3) Excludes stock-based compensation expense, net of tax, of $0.26 for ",
+      "table_windows": [
+        {
+          "quote": "ectors provide. Our strategy is creating opportunities to gain share and capture new outsourcing opportunities in support of delivering sustained strong financial performance and growth exceeding that of our end markets.\u201d 2 Quarterly Comparison Three Months Ended (in thousands, except EPS) Jun 28, 2025 Mar 29, 2025 Jun 29, 2024 Revenue $ 1,018,308 $ 980,170 $ 960,751 Gross profit 103,288 97,751 94,415 Operating income 53,608 48,791 39,246 Net income 45,116 39,073 25,140 Diluted EPS $ 1.64 $ 1.41 $ 0.91 Gross margin 10.1 % 10.0 % 9.8 % Operating margin 5.",
+          "scale": "1",
+          "token": "1,018,308"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0000897723-25-000007",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "SANM",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2024-12-28",
+        "filed": "2025-01-28",
+        "fiscal_period": "Q1",
+        "fiscal_year": 2025,
+        "form": "10-Q",
+        "id": "3a5579e3-c9e1-5e0a-95fb-27d12490c75f",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000897723.json",
+        "start": "2024-09-29",
+        "unit": "USD",
+        "value": "2006348000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "SANM",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "ac8e6f34-7f91-5c59-8f56-000c452fd507",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "40109cfa-e6e3-5510-af0a-89e7a7868bc9",
+      "outcome": "within",
+      "period": [
+        "2024-09-29",
+        "2024-12-28"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "2006348000",
+      "result_manifest": {
+        "body": "c26850aaae0580c11ee816742b0805f8318f6684373ac7ff82a682f74923f9dc-f9b9c906dc5d76d6a3f2d99949299a9c312038497005fb01c64d61b1c374666d.body",
+        "fetched_at": "2026-11-13T05:12:51.291334+00:00",
+        "sha256": "f9b9c906dc5d76d6a3f2d99949299a9c312038497005fb01c64d61b1c374666d",
+        "url": "https://www.sec.gov/Archives/edgar/data/897723/000089772325000004/sanmina_exx991xdec282024.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/897723/000089772325000004/sanmina_exx991xdec282024.htm",
+      "reviewed_at": "2026-11-13T07:42:08.437001+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 24,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 sanmina_exx991xdec282024.htm EX-99.1 Document Exhibit 99.1 FINANCIAL NEWS Sanmina Reports First Quarter Fiscal 2025 Financial Results San Jose, CA \u2013 January 27, 2025. Sanmina Corporation (\u201cSanmina\u201d or the \u201cCompany\u201d) (NASDAQ: SANM), a leading integrated manufacturing solutions company, today reported financial results for the first quarter ended December 28, 2024 and outlook for its second fiscal quarter ending March 29, 2025. First Quarter Fiscal 2025 Financial Highlights \u2022 Revenue: $2.01 billion \u2022 GAAP operating margin: 4.4% \u2022 GAAP diluted EPS: $1.16 \u2022 Non-GAAP (1) operating margin: 5.6% \u2022 Non-GAAP (1) diluted EPS: $1.44 Additional Highlights \u2022 Cash flow from operations: $64 million \u2022 Free cash flow (2) : $47 million \u2022 Share repurchases: 0.2 million shares for $16 million \u2022 Ending cash and cash equivalents: $642 million (1) See Schedule 1 below for information regarding the items excluded from and our use of non-GAAP financial measures. A reconciliation of the non-GAAP financial information contained in this release to their most directly comparable GAAP measures is included in the financial statements furnished with this release. (2) See Condensed Consolidated Cash Flow Statement included in the financial statements furnished with this release. \u201cWe delivered solid first quarter financial results, with revenue towards the high end and non-GAAP earnings per share exceeding our outlook. We continue to execute well, as evident in our consistent operating margin and cash generation,\u201d stated Jure Sola, Chairman and Chief Executive Officer of Sanmina Corporation. \u201cOur operational discipline and ability to service our customers will further strengthen our operating mo",
+      "table_windows": [
+        {
+          "quote": "al long-term liabilities 507,891 520,658 Stockholders' equity 2,421,192 2,361,508 Total liabilities and stockholders' equity $ 4,812,022 $ 4,822,845 Sanmina Corporation Condensed Consolidated Statements of Income (in thousands, except per share amounts) (GAAP) (Unaudited) Three Months Ended December 28, 2024 December 30, 2023 Net sales $ 2,006,348 $ 1,874,798 Cost of sales 1,838,433 1,713,958 Gross profit 167,915 160,840 Operating expenses: Selling, general and administrative 70,845 64,785 Research and development 7,024 6,289 Restructuring 1,436 2,190 To",
+          "scale": "1000",
+          "token": "2,006,348"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0001628280-26-017247",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "SFIX",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2026-01-31",
+        "filed": "2026-03-12",
+        "fiscal_period": "Q2",
+        "fiscal_year": 2026,
+        "form": "10-Q",
+        "id": "f3d34ad7-8e8e-59d8-9520-fdb3344c6202",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001576942.json",
+        "start": "2025-11-02",
+        "unit": "USD",
+        "value": "341297000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "SFIX",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_continuing_operations",
+      "guidance_id": "151513a5-29f7-53d2-a5c7-c4ed6514d39a",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "cd69326b-61b0-5185-acb5-d99d15221b90",
+      "outcome": "above",
+      "period": [
+        "2025-11-02",
+        "2026-01-31"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "341297000",
+      "result_manifest": {
+        "body": "d6891be0bf8c3df294af4a25af1a09aa6b33a11a0f3198166b50fed40fefa17a-1e68f3b040903c35206085dc57ac036780020fba99f678bb56a49e328f7798e6.body",
+        "fetched_at": "2026-11-13T05:11:06.674752+00:00",
+        "sha256": "1e68f3b040903c35206085dc57ac036780020fba99f678bb56a49e328f7798e6",
+        "url": "https://www.sec.gov/Archives/edgar/data/1576942/000162828026016819/exhibit991-q226.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1576942/000162828026016819/exhibit991-q226.htm",
+      "reviewed_at": "2026-11-13T07:42:08.459518+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 25,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence. Both guidance and result expressly relate to continuing operations excluding UK; no recast performed.",
+      "source_dateline": "EX-99.1 2 exhibit991-q226.htm EX-99.1 Document Exhibit 99.1 Stitch Fix Announces Second Quarter of Fiscal 2026 Financial Results SAN FRANCISCO, March 11, 2026 (BUSINESSWIRE) -- Stitch Fix, Inc. (NASDAQ: SFIX), the leading online personal styling service, today announced its financial results for the second quarter of fiscal 2026 ended January 31, 2026. \u201cWe delivered a strong Q2 with 9.4% revenue growth year over year,\u201d said Matt Baer, CEO, Stitch Fix. \u201cOur client experience enhancements, improvements to the quality and breadth of our assortment, and new AI features are resonating and driving increased client engagement. We are gaining market share and strengthening our role as our clients\u2019 retailer of choice for apparel, footwear and accessories as we remain focused on offering the most client-centric and personalized shopping experience in apparel retail.\u201d Second Quarter Fiscal 2026 Key Metrics and Financial Highlights \u2022 Net revenue of $341.3 million, an increase of 9.4% year-over-year. \u2022 Active clients of 2.288 million, a decrease of 0.8% quarter-over-quarter and a decrease of 3.5% year-over-year. \u2022 Net revenue per active client of $577, an increase of 7.4% year-over-year. \u2022 Gross margin of 43.6%, a decrease of 90 basis points year-over-year. \u2022 Net loss of $2.7 million and net loss margin of 0.8%; diluted loss per share of $0.02. \u2022 Adjusted EBITDA of $15.9 million and Adjusted EBITDA margin of 4.7%. \u2022 Net cash provided by operating activities of $7.3 million and free cash flow of $3.4 million. \u2022 Cash, cash equivalents, and investments of $240.5 million. The Company has no debt. Financial Outlook Stitch Fix\u2019s financial outlook for the third quarter of fiscal 2026, ending",
+      "table_windows": [
+        {
+          "quote": "abilities and stockholders\u2019 equity $ 507,815 $ 480,622 3 STITCH FIX, INC. UNAUDITED CONDENSED CONSOLIDATED STATEMENT OF OPERATIONS AND COMPREHENSIVE LOSS For the Three Months Ended For the Six Months Ended (In thousands, except share and per share amounts) January 31, 2026 February 1, 2025 January 31, 2026 February 1, 2025 Revenue, net $ 341,297 $ 312,110 $ 683,424 $ 630,928 Cost of goods sold 192,352 173,249 385,155 347,262 Gross profit 148,945 138,861 298,269 283,666 Gross margin 43.6 % 44.5 % 43.6 % 45.0 % Selling, general, and administrative expenses",
+          "scale": "1000",
+          "token": "341,297"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0001477449-25-000049",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "TDOC",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2025-03-31",
+        "filed": "2025-05-01",
+        "fiscal_period": "Q1",
+        "fiscal_year": 2025,
+        "form": "10-Q",
+        "id": "7b8704f1-6485-5279-a34e-a59003dc09e3",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001477449.json",
+        "start": "2025-01-01",
+        "unit": "USD",
+        "value": "629369000"
+      },
+      "block": "PURCHASE_ACCOUNTING_REVENUE_EFFECT_UNRESOLVED",
+      "block_detail": "Guidance excludes purchase-accounting effects from Catapult. Reported revenue629369000USD reconciles numerically; release discusses goodwill impairment and compares revenue to guidance qualitatively but does not establish an exact purchase-accounting-neutral revenue amount. Require evidence that revenue impact is nil or a direct compatible figure. This is a target-result scope question, not a prior-year growth block.",
+      "company": "TDOC",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported_excluding_purchase_accounting_effects",
+      "guidance_id": "b009afcf-7fbd-5ba5-a4f1-2fad43ded2bf",
+      "guidance_to_result_comparability": "UNRESOLVED_OR_INCOMPARABLE",
+      "id": "777b8d3e-60e7-5310-ada8-032a115f15c6",
+      "outcome": null,
+      "period": [
+        "2025-01-01",
+        "2025-03-31"
+      ],
+      "result_manifest": {
+        "body": "ac0e130e2b7fa15a723ba7b720eceb6b1227174fc593fb30fe2031dfe42212ee-fae9d0ccf5d42fa9c4fe3934968e7afcf93bdcb491000f50a5513541a1b88391.body",
+        "fetched_at": "2026-11-13T05:12:05.186643+00:00",
+        "sha256": "fae9d0ccf5d42fa9c4fe3934968e7afcf93bdcb491000f50a5513541a1b88391",
+        "url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000047/tdoc-20250331xexx991.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000047/tdoc-20250331xexx991.htm",
+      "reviewed_at": "2026-11-13T07:42:08.491051+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 26,
+      "source_dateline": "EX-99.1 2 tdoc-20250331xexx991.htm EX-99.1 Document Exhibit 99.1 Teladoc Health Reports First Quarter 2025 Results PURCHASE, NY, April 30, 2025 \u2014 Teladoc Health, Inc. (NYSE: TDOC), the global leader in virtual care, today reported financial results for the three months ended March 31, 2025 (\u201cFirst Quarter 2025\u201d). Unless otherwise noted, percentage and other changes are relative to the three months ended March 31, 2024 (\u201cFirst Quarter 2024\u201d). First Quarter 2025 Highlights \u2022 First Quarter 2025 revenue of $629.4 million, down 3% year-over-year \u2022 First Quarter 2025 net loss of $93.0 million, or $0.53 per share, including a pre-tax goodwill impairment charge of $59.1 million, or $0.34 per share, which occurred after the issuance of the previously provided outlook and was not included \u2022 First Quarter 2025 adjusted EBITDA of $58.1 million, down 8% year-over-year \u2022 Integrated Care segment revenue of $389.5 million, up 3% year-over-year, and adjusted EBITDA margin improved to 12.9% \u2022 BetterHelp segment revenue of $239.9 million, down 11% year-over-year, and adjusted EBITDA margin of 3.2% \u2022 Teladoc Health announced acquisition of UpLift Health Technologies, Inc., a virtual mental health provider with in-network health plan relationships representing more than 100 million covered lives \u201cWe are pleased with the solid start to 2025. Consolidated revenue and adjusted EBITDA were towards the higher end of our first quarter guidance ranges, including our Integrated Care segment being above our ranges for both measures and BetterHelp segment results in the upper half of our ranges as well. We also continue to make progress towards strategic priorities aimed at driving sustainable performa",
+      "table_windows": [
+        {
+          "quote": "l. Despite uncertainties in the macro environment, we remain focused on what we can most impact, and are executing with urgency against the key strategic priorities that we have previously outlined,\u201d Divita added. Key Financial Data ($ in thousands, except per share data, unaudited) Three Months Ended March 31, 2025 2024 Change Revenue $ 629,369 $ 646,131 (3) % Net loss $ (93,012) $ (81,889) (14) % Net loss per share, basic and diluted $ (0.53) $ (0.49) (8) % Adjusted EBITDA (1) $ 58,093 $ 63,140 (8) % See note (1) in the Notes section that follows. 1 Fi",
+          "scale": "1000",
+          "token": "629,369"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0001477449-25-000099",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "TDOC",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2025-06-30",
+        "filed": "2025-07-30",
+        "fiscal_period": "Q2",
+        "fiscal_year": 2025,
+        "form": "10-Q",
+        "id": "f4d2b10e-592c-59b8-a332-249fb9fda3c6",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001477449.json",
+        "start": "2025-04-01",
+        "unit": "USD",
+        "value": "631900000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "TDOC",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "5f37b878-d482-5138-98b8-f1bb79a9d6f3",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "56bcfd7a-b5de-54e1-a9bc-337607025359",
+      "outcome": "within",
+      "period": [
+        "2025-04-01",
+        "2025-06-30"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "631900000",
+      "result_manifest": {
+        "body": "c57d276fd3b2989620d0a8711640c62bcaabeffbf34f6737e0a7daa118b1382a-f7933d0909f1a0f85ca7abf65a5d4fc4fd9fccd45efe1fb1dfc2d7764577cc02.body",
+        "fetched_at": "2026-11-13T05:12:03.296977+00:00",
+        "sha256": "f7933d0909f1a0f85ca7abf65a5d4fc4fd9fccd45efe1fb1dfc2d7764577cc02",
+        "url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000096/tdoc-20250630xexx991.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000096/tdoc-20250630xexx991.htm",
+      "reviewed_at": "2026-11-13T07:42:08.558100+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 27,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence. Guidance anticipates UpLift, result is reported total company revenue; acquisition existence alone does not block target-result comparison.",
+      "source_dateline": "EX-99.1 2 tdoc-20250630xexx991.htm EX-99.1 Document Exhibit 99.1 Teladoc Health Reports Second Quarter 2025 Results NEW YORK, NY, July 29, 2025 \u2014 Teladoc Health, Inc. (NYSE: TDOC), the global leader in virtual care, today reported financial results for the three months ended June 30, 2025 (\u201cSecond Quarter 2025\u201d). Unless otherwise noted, percentage and other changes are relative to the three months ended June 30, 2024 (\u201cSecond Quarter 2024\u201d). Highlights \u2022 Second Quarter 2025 revenue of $631.9 million, down 2% year-over-year \u2022 Second Quarter 2025 net loss of $32.7 million, or $0.19 per share \u2022 Second Quarter 2025 adjusted EBITDA of $69.3 million, down 23% year-over-year \u2022 Integrated Care segment revenue of $391.5 million, up 4% year-over-year, and adjusted EBITDA margin of 14.7% \u2022 BetterHelp segment revenue of $240.4 million, down 9% year-over-year, and adjusted EBITDA margin of 4.9% \u2022 Paid $550.6 million using cash on hand to retire convertible senior notes due in Second Quarter 2025 \u2022 On July 17, 2025, we e n tered into a credit agreement providing for a five-year, $300.0 million senior secured revolving credit facility to preserve and enhance our financial and operational flexibility \u201cI\u2019m pleased with our performance in the second quarter, with consolidated revenue and adjusted EBITDA both at the higher end of our guidance ranges. This reflects continued disciplined execution and builds on our solid results from the first quarter. We continue to work with focus and urgency to advance our strategic priorities, invest in products and capabilities, and deliver solid financial performance,\u201d said Chuck Divita, Chief Executive Officer of Teladoc Health. \u201cWe believe virtual car",
+      "table_windows": [
+        {
+          "quote": "ross patients, providers, platforms, and partners, enhancing the patient experience, improving clinical outcomes, and driving greater value for our clients,\u201d Divita added. Key Financial Data ($ in thousands, except per share data, unaudited) Three Months Ended Six Months Ended June 30, June 30, 2025 2024 Change 2025 2024 Change Revenue $ 631,900 $ 642,444 (2) % $ 1,261,269 $ 1,288,575 (2) % Net loss $ (32,660) $ (837,671) 96 % $ (125,672) $ (919,560) 86 % Net loss per share $ (0.19) $ (4.92) 96 % $ (0.72) $ (5.44) 87 % Adjusted EBITDA (1) $ 69,311 $ 89,4",
+          "scale": "1000",
+          "token": "631,900"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0001585521-26-000071",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "ZM",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": null,
+        "end": "2026-04-30",
+        "filed": "2026-05-22",
+        "fiscal_period": "Q1",
+        "fiscal_year": 2027,
+        "form": "10-Q",
+        "id": "61ab6b9f-8d88-513c-89be-551167a70cda",
+        "parents": [],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001585521.json",
+        "start": "2026-02-01",
+        "unit": "USD",
+        "value": "1239006000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "ZM",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "aa8c13ff-5d2a-5f34-b4b9-5d785d8769ee",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "b1d2a6b1-c2be-5ce8-bd9b-e21dee48946a",
+      "outcome": "above",
+      "period": [
+        "2026-02-01",
+        "2026-04-30"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "1239006000",
+      "result_manifest": {
+        "body": "bc9a075c9103a9a9f7a9b5766105be4b5392a59a67be971bec3549429a1280a3-72ef20f385fe8500a5f9c510b9e830a671999a26830ef80117ef98962983427f.body",
+        "fetched_at": "2026-11-13T04:51:48.458006+00:00",
+        "sha256": "72ef20f385fe8500a5f9c510b9e830a671999a26830ef80117ef98962983427f",
+        "url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000069/zm-20260430ex991.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000069/zm-20260430ex991.htm",
+      "reviewed_at": "2026-11-13T07:42:08.582005+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 28,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 zm-20260430ex991.htm EX-99.1 Document Exhibit 99.1 Zoom Communications Reports Financial Results for the First Quarter of Fiscal Year 2027 \u2022 First quarter total revenue of $1,239.0 million, up 5.5% year over year as reported and 4.6% in constant currency \u2022 First quarter Enterprise revenue of $755.7 million, up 7.2% year over year \u2022 Trailing 12-month net dollar expansion rate for Enterprise customers increased to 99% from 98% as of the same quarter last fiscal year \u2022 First quarter GAAP operating margin of 25.1%, up 450 bps year over year, and non-GAAP operating margin of 41.1%, up 130 bps year over year \u2022 Increased total common stock repurchase authorization by $1.0 billion, incremental to the $625.0 million remaining authorization as of April 30, 2026 San Jose, California \u2013 May 21, 2026 \u2013 Zoom Communications, Inc. (NASDAQ: ZM), today announced financial results for the first fiscal quarter ended April 30, 2026. \u201cWe saw continued momentum in the first quarter, with revenue up 5.5% year over year, exceeding the high end of our guidance,\u201d said Eric S. Yuan, Zoom\u2019s founder and CEO. \u201cCustomers are increasingly adopting Zoom as an AI-first system of action for modern work, with AI Companion paid users growing 184% year over year, and My Notes reaching 1.5 million licensed users within just four months of launch. We also saw strong progress across new AI monetization streams and Zoom Customer Experience, which continued to see accelerating high double-digit growth. With strong profitability, cash flow, and an increased share repurchase authorization, we remain focused on turning AI innovation into durable growth, measurable customer value, and long-term shareholder ret",
+      "table_windows": [
+        {
+          "quote": " receivable, net on the condensed consolidated balance sheets was $87.8 million and $84.9 million as of April 30, 2026 and January 31, 2026, respectively. Zoom Communications, Inc. Condensed Consolidated Statements of Operations (Unaudited, in thousands, except share and per share amounts) Three Months Ended April 30, 2026 2025 Revenue $ 1,239,006 $ 1,174,715 Cost of revenue 274,287 278,402 Gross profit 964,719 896,313 Operating expenses: Research and development 227,926 205,416 Sales and marketing 330,050 346,970 General and administrative 96,270 102,33",
+          "scale": "1000",
+          "token": "1,239,006"
+        }
+      ]
+    },
+    {
+      "actual": {
+        "accession": "0001713683-25-000158",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "ZS",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "derivation": "annual-minus-ytd-v1",
+        "end": "2025-07-31",
+        "filed": "2025-09-11",
+        "fiscal_period": "REMAINING",
+        "fiscal_year": 2025,
+        "form": "DERIVED",
+        "id": "75af952f-c099-526f-a254-15a83816bfc0",
+        "parents": [
+          "872fe0ba-9761-5566-9d91-542d641f7393",
+          "3d0fefd1-34db-5733-ac33-a7f4427e7b02"
+        ],
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001713683.json",
+        "start": "2025-05-01",
+        "unit": "USD",
+        "value": "719226000"
+      },
+      "block": null,
+      "block_detail": null,
+      "company": "ZS",
+      "growth_comparability": "NOT_REVIEWED; independent decision, no growth calculation used",
+      "guidance_basis": "US_GAAP_consolidated_reported",
+      "guidance_id": "cc6b6177-8425-575d-bbb0-503590d24c5a",
+      "guidance_to_result_comparability": "REVIEWED_SAME_TARGET_REPORTED_SCOPE",
+      "id": "cf78d6ab-45cb-546d-980b-58ce55c9285c",
+      "outcome": "above",
+      "period": [
+        "2025-05-01",
+        "2025-07-31"
+      ],
+      "reconciliation_difference": "0",
+      "reported_value": "719226000",
+      "result_manifest": {
+        "body": "1b0896f771bf2626fe272e8691d3eb2b122e53fb88513a766a014897a5db72d5-735ecd21151a9a73a098eb1a65847c3284a14d89a957ecfa9b39120c64144475.body",
+        "fetched_at": "2026-11-13T05:08:43.573395+00:00",
+        "sha256": "735ecd21151a9a73a098eb1a65847c3284a14d89a957ecfa9b39120c64144475",
+        "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000138/zs-07312025_991.htm"
+      },
+      "result_source": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000138/zs-07312025_991.htm",
+      "reviewed_at": "2026-11-13T07:42:08.619566+00:00",
+      "reviewer": "Codex single source curator",
+      "sample_index": 29,
+      "scope_review": "Same consolidated reported quarter and revenue/sales label in guidance and result; exact original fact reconciles to reported table. No acquisition or week normalization performed; no assertion about prior-year growth. Single-curator scope check, not exhaustive acquisition due diligence.",
+      "source_dateline": "EX-99.1 2 zs-07312025_991.htm EX-99.1 Document Exhibit 99.1 Zscaler Reports Fourth Quarter and Fiscal 2025 Financial Results Fourth Quarter Highlights \u2022 Revenue grows 21% year-over-year to $719.2 million \u2022 Annual Recurring Revenue (\"ARR\") grows 22% year-over-year to $3,015 million \u2022 Calculated billings grows 32% year-over-year to $1,202.3 million \u2022 Deferred revenue grows 30% year-over-year to $2,468.0 million \u2022 GAAP net loss of $17.6 million compared to GAAP net loss of $14.9 million on a year-over-year basis \u2022 Non-GAAP net income of $146.7 million compared to non-GAAP net income of $115.8 million on a year-over-year basis SAN JOSE, California - Sept 2, 2025 - Zscaler, Inc. (Nasdaq: ZS), the leader in cloud security, today announced financial results for its fiscal fourth quarter and fiscal year ended July 31, 2025 . \u201cWe had an outstanding Q4, in which we achieved a new milestone of more than $3 billion of Annual Recurring Revenue while achieving our highest ever operating margin for a quarter. We believe Zscaler's Zero Trust and AI security solutions are imperative in today\u2019s world and are driving robust demand,\u201d said Jay Chaudhry, Chairman and CEO of Zscaler. \u201cWe recently delivered AI Guardrails for Public and Private apps, and we are rapidly expanding our AI security portfolio to address the emerging risks of AI models and applications.\u201d Fourth Quarter Fiscal 2025 Financial Highlights \u2022 Revenue: $719.2 million, an increase of 21% year-over-year. \u2022 Income (loss) from operations: GAAP loss from operations was $32.2 million, or 4% of revenue, compared to $27.0 million, or 5% of revenue, in the fourth quarter of fiscal 2024. Non-GAAP income from operations was $158.9 milli",
+      "table_windows": [
+        {
+          "quote": "shwin Kesireddy VP, Investor Relations and Strategic Finance (415) 798-1475 ir@zscaler.com Pavel Radda Media Relations Contact press@zscaler.com 4 ZSCALER, INC. Condensed Consolidated Statements of Operations (in thousands, except per share amounts) (unaudited) Three Months Ended Year Ended July 31, July 31, 2025 2024 2025 2024 Revenue $ 719,226 $ 592,868 $ 2,673,115 $ 2,167,771 Cost of revenue (1) (2) (3) 172,240 130,205 618,178 477,129 Gross profit 546,986 462,663 2,054,937 1,690,642 Operating expenses: Sales and marketing (1) (2) 330,594 294,200 1,259",
+          "scale": "1000",
+          "token": "719,226"
+        }
+      ]
+    }
+  ]
+}
