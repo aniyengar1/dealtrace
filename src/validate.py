@@ -105,6 +105,41 @@ def load_paragraph_lookup(sections_dir: Path) -> dict[str, str]:
     return lookup
 
 
+_PARAGRAPH_ID_RE = re.compile(r"^([A-Za-z]*)(\d+)$")
+
+
+def _expand_to_contiguous_span(paragraph_ids: list[str]) -> list[str]:
+    """Some filings hard-wrap a single real sentence across many short
+    paragraph fragments (one real-world case: 288 paragraphs for a 4,437-
+    word section, ~15 words each). A model correctly quoting the whole
+    sentence can cite a gappy subset of that span's paragraph IDs (e.g.
+    p03315, p03317, p03318, skipping p03316's few words in the middle)
+    without the quote being wrong -- it's a citation-completeness miss,
+    not a hallucination. Filling in the gap from the lowest to the
+    highest cited ID (inclusive) is a much closer match to "did this
+    model actually quote real text" than requiring every single
+    paragraph it touched to be explicitly listed.
+
+    Falls back to the original list unchanged if the IDs don't look like
+    the fixed "p" + zero-padded-sequential-number scheme every paragraph
+    in this pipeline is actually assigned (see sections.py's Paragraph
+    id generation) -- never guesses at a span for an unfamiliar ID format.
+    """
+    if len(paragraph_ids) < 2:
+        return paragraph_ids
+    parsed = [_PARAGRAPH_ID_RE.match(pid) for pid in paragraph_ids]
+    if not all(parsed):
+        return paragraph_ids
+    prefixes = {m.group(1) for m in parsed}
+    widths = {len(m.group(2)) for m in parsed}
+    if len(prefixes) != 1 or len(widths) != 1:
+        return paragraph_ids
+    prefix = next(iter(prefixes))
+    width = next(iter(widths))
+    numbers = sorted(int(m.group(2)) for m in parsed)
+    return [f"{prefix}{n:0{width}d}" for n in range(numbers[0], numbers[-1] + 1)]
+
+
 def check_quotes_in_paragraphs(
     source_quotes: list[str], source_paragraph_ids: list[str], paragraph_lookup: dict[str, str]
 ) -> tuple[bool, str]:
@@ -117,7 +152,10 @@ def check_quotes_in_paragraphs(
     if not source_quotes:
         return False, "no source_quotes given"
 
-    combined = normalize_for_match(" ".join(paragraph_lookup[pid] for pid in source_paragraph_ids))
+    span_ids = _expand_to_contiguous_span(source_paragraph_ids)
+    combined = normalize_for_match(
+        " ".join(paragraph_lookup[pid] for pid in span_ids if pid in paragraph_lookup)
+    )
     not_found = [q for q in source_quotes if normalize_for_match(q) not in combined]
     if not_found:
         return False, f"source_quote(s) not found verbatim in cited paragraphs: {not_found}"

@@ -80,6 +80,71 @@ def test_one_of_multiple_quotes_not_found_fails():
     assert "this part is fabricated" in reason
 
 
+# --- fragmented-filing citations: fill a gap between cited paragraph IDs ---
+
+# A real case: LCI Industries' DEFM14A hard-wraps one sentence across four
+# short paragraphs; the model correctly quoted the whole sentence but
+# cited p03315/p03317/p03318, skipping p03316's few words in the middle.
+LCI_LOOKUP = {
+    "p03315": "In September 2025, at the request of the LCI board, representatives of PWP communicated to representatives of",
+    "p03316": "Party A that in light of the proposed relative pro forma ownership that LCI and Party A stockholders would own in a",
+    "p03317": "combination and the governance arrangements proposed by Party A, the LCI board was not interested in pursuing a",
+    "p03318": "transaction with Party A unless such transaction included a premium for LCI stockholders.",
+}
+LCI_QUOTE = (
+    "In September 2025, at the request of the LCI board, representatives of PWP communicated to "
+    "representatives of Party A that in light of the proposed relative pro forma ownership that LCI "
+    "and Party A stockholders would own in a combination and the governance arrangements proposed by "
+    "Party A, the LCI board was not interested in pursuing a transaction with Party A unless such "
+    "transaction included a premium for LCI stockholders."
+)
+
+
+def test_quote_matches_across_a_gap_in_cited_paragraph_ids():
+    ok, reason = check_quotes_in_paragraphs(
+        [LCI_QUOTE], ["p03315", "p03317", "p03318"], LCI_LOOKUP
+    )
+    assert ok, reason
+
+
+def test_gap_expansion_does_not_make_a_genuinely_fabricated_quote_pass():
+    ok, reason = check_quotes_in_paragraphs(
+        ["the board unanimously rejected Party A's proposal outright"],
+        ["p03315", "p03317", "p03318"],
+        LCI_LOOKUP,
+    )
+    assert not ok
+    assert "not found" in reason
+
+
+def test_expand_to_contiguous_span_fills_the_gap():
+    assert validate._expand_to_contiguous_span(["p03315", "p03317", "p03318"]) == [
+        "p03315",
+        "p03316",
+        "p03317",
+        "p03318",
+    ]
+
+
+def test_expand_to_contiguous_span_is_a_no_op_when_already_contiguous():
+    assert validate._expand_to_contiguous_span(["p1", "p2"]) == ["p1", "p2"]
+
+
+def test_expand_to_contiguous_span_is_a_no_op_for_a_single_id():
+    assert validate._expand_to_contiguous_span(["p00042"]) == ["p00042"]
+
+
+def test_expand_to_contiguous_span_falls_back_on_mixed_prefixes():
+    # Never seen in practice (every paragraph in one document shares the
+    # same id scheme), but a mismatch must not be silently misinterpreted
+    # as a span to fill in.
+    assert validate._expand_to_contiguous_span(["p1", "q2"]) == ["p1", "q2"]
+
+
+def test_expand_to_contiguous_span_falls_back_on_non_numeric_ids():
+    assert validate._expand_to_contiguous_span(["para-a", "para-b"]) == ["para-a", "para-b"]
+
+
 def test_numbers_in_quotes_pass():
     record = {"price_low": 100.0, "price_high": 110.0}
     ok, reason = check_numbers_in_quotes(record, [LOOKUP["p1"]])
