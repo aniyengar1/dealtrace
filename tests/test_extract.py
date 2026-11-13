@@ -1,3 +1,5 @@
+import time
+
 import pytest
 from google.genai import errors
 
@@ -357,6 +359,26 @@ def test_reset_session_calls_clears_the_log(monkeypatch):
     assert extract.session_cost_summary()["total_calls"] == 0
 
     assert client.models.calls == 1
+
+
+def test_per_minute_429_records_a_rate_limit_event(monkeypatch):
+    before = time.time()
+    monkeypatch.setattr(extract, "_rate_limit_events", [])
+    client = FakeClient(
+        [_quota_error(["GenerateRequestsPerMinutePerProjectPerModel-FreeTier"]), FakeResponse()]
+    )
+    monkeypatch.setattr(extract, "_get_client", lambda: client)
+
+    _call_gemini("prompt", BackgroundExtraction, "fake-model")
+
+    assert extract.rate_limit_events_since(before) == 1
+
+
+def test_rate_limit_events_since_only_counts_events_after_the_cutoff(monkeypatch):
+    monkeypatch.setattr(extract, "_rate_limit_events", [])
+    extract.record_rate_limit_event()
+    cutoff = time.time() + 1
+    assert extract.rate_limit_events_since(cutoff) == 0
 
 
 def _paras(n):

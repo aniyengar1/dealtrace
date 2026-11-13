@@ -32,7 +32,9 @@ design. Unknown pricing for any call is itself treated as a hard stop
 
 import argparse
 import json
+import logging
 import os
+import statistics
 import subprocess
 import threading
 import time
@@ -55,7 +57,15 @@ load_env()
 
 MAX_BACKGROUND_WORDS = 25000
 BULK_OUTPUT_DIR = Path(__file__).resolve().parent.parent / "data" / "output" / "bulk_runs"
+BULK_LOG_DIR = Path(__file__).resolve().parent.parent / "data" / "output" / "bulk_logs"
 BULK_LOG_EVERY = 10
+# Safety-check cadence and auto-pause thresholds, checked over a rolling
+# window of the most recently completed deals (not the whole run so far)
+# -- a problem introduced partway through should trip this quickly, not
+# get diluted by a large clean history before it.
+SAFETY_CHECK_EVERY = 50
+MAX_ROLLING_FAILURE_RATE = 0.10
+MIN_ROLLING_QUOTE_MATCH_MEDIAN = 0.90
 # "Batch jobs must not be submitted after BULK_DEADLINE minus this many
 # hours; anything after that goes through the live path" -- batch has no
 # turnaround guarantee, so this margin protects against a batch job that
@@ -83,6 +93,103 @@ _CANDIDATE_COLUMNS = [
     "background_section_found",
     "background_word_count",
 ]
+
+
+# --- logging -----------------------------------------------------------------
+
+
+def setup_logging() -> logging.Logger:
+    """Logs to both stdout and a timestamped file in BULK_LOG_DIR -- this
+    is meant to run for hours under caffeinate in the background, so the
+    file is the durable record even if the terminal that launched it is
+    long gone by the time anyone checks on it.
+    """
+    BULK_LOG_DIR.mkdir(parents=True, exist_ok=True)
+    log_path = BULK_LOG_DIR / f"{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}_bulk_run.log"
+    logger = logging.getLogger("bulk_run")
+    logger.setLevel(logging.INFO)
+    logger.handlers.clear()
+    fmt = logging.Formatter("%(asctime)s %(message)s")
+    file_handler = logging.FileHandler(log_path)
+    file_handler.setFormatter(fmt)
+    stream_handler = logging.StreamHandler()
+    stream_handler.setFormatter(fmt)
+    logger.addHandler(file_handler)
+    logger.addHandler(stream_handler)
+    logger.info(f"[bulk] logging to {log_path}")
+    return logger
+
+
+_logger = logging.getLogger("bulk_run")
+
+
+# --- adaptive concurrency ----------------------------------------------------
+
+
+class AdaptiveConcurrency:
+    """Starts at `initial`; raises to `high` once `raise_after_seconds`
+    have passed with zero 429s recorded anywhere in this process. Any new
+    429 drops capacity by 1 (floor `floor`) immediately and restarts the
+    clean-time clock, so a single noisy patch doesn't get immediately
+    followed by another raise.
+
+    acquire()/release() gate actual concurrent work; the ThreadPoolExecutor
+    itself is sized to `high` so there are always enough OS threads to
+    reach full capacity once raised, but at most `capacity` of them are
+    ever let through the gate at once.
+    """
+
+    def __init__(self, initial: int, high: int, floor: int = 1, raise_after_seconds: float = 1800.0):
+        self._capacity = initial
+        self._high = high
+        self._floor = floor
+        self._raise_after = raise_after_seconds
+        self._cond = threading.Condition()
+        self._in_use = 0
+        self._clean_since = time.monotonic()
+        self._last_checked_ts = time.time()
+        self._raised_since_last_backoff = False
+
+    def acquire(self) -> None:
+        with self._cond:
+            while self._in_use >= self._capacity:
+                self._cond.wait(timeout=1.0)
+            self._in_use += 1
+
+    def release(self) -> None:
+        with self._cond:
+            self._in_use -= 1
+            self._cond.notify_all()
+
+    @property
+    def capacity(self) -> int:
+        with self._cond:
+            return self._capacity
+
+    def tick(self) -> Optional[str]:
+        """Call periodically from a monitor thread. Returns a short
+        description of what changed, or None."""
+        now_ts = time.time()
+        new_events = extract.rate_limit_events_since(self._last_checked_ts)
+        self._last_checked_ts = now_ts
+        with self._cond:
+            if new_events > 0:
+                if self._capacity > self._floor:
+                    self._capacity -= 1
+                self._clean_since = time.monotonic()
+                self._raised_since_last_backoff = False
+                self._cond.notify_all()
+                return f"backed off to {self._capacity} ({new_events} 429(s) observed)"
+            if (
+                not self._raised_since_last_backoff
+                and self._capacity < self._high
+                and (time.monotonic() - self._clean_since) >= self._raise_after
+            ):
+                self._capacity = self._high
+                self._raised_since_last_backoff = True
+                self._cond.notify_all()
+                return f"raised to {self._capacity} ({self._raise_after / 60:.0f} clean minutes)"
+        return None
 
 
 # --- queue -----------------------------------------------------------------
@@ -144,6 +251,54 @@ def deadline_hit(deadline: Optional[datetime]) -> bool:
     return deadline is not None and datetime.now(timezone.utc) >= deadline
 
 
+# --- rolling safety check / auto-pause ---------------------------------------
+
+
+def rolling_quality_check(recent_done_results: list[dict]) -> dict:
+    """Free (no LLM, no new fetch) validation+sanity re-check of a window
+    of recently-completed results -- the same logic bulk_quality_check.py
+    runs standalone, applied here as an inline, continuous safety net.
+    Deferred import to avoid a circular import (bulk_quality_check itself
+    imports from this module).
+    """
+    from src.bulk_quality_check import check_one
+
+    reports = [check_one(r) for r in recent_done_results]
+    rates = [r["validation_pass_rate"] for r in reports if r.get("validation_pass_rate") is not None]
+    quote_rates = [r["quote_match_rate"] for r in reports if r.get("quote_match_rate") is not None]
+    failure_rate = (1 - statistics.mean(rates)) if rates else None
+    quote_match_median = statistics.median(quote_rates) if quote_rates else None
+    return {"n": len(reports), "failure_rate": failure_rate, "quote_match_median": quote_match_median}
+
+
+def check_auto_pause(quality: dict) -> Optional[str]:
+    """None if nothing is wrong; otherwise the reason to pause."""
+    if quality["failure_rate"] is not None and quality["failure_rate"] > MAX_ROLLING_FAILURE_RATE:
+        return (
+            f"rolling failure rate {quality['failure_rate']:.1%} > {MAX_ROLLING_FAILURE_RATE:.0%} "
+            f"over the last {quality['n']} deals"
+        )
+    if quality["quote_match_median"] is not None and quality["quote_match_median"] < MIN_ROLLING_QUOTE_MATCH_MEDIAN:
+        return (
+            f"rolling quote-match median {quality['quote_match_median']:.1%} < "
+            f"{MIN_ROLLING_QUOTE_MATCH_MEDIAN:.0%} over the last {quality['n']} deals"
+        )
+    return None
+
+
+def write_pause_reason(reason: str, stats: dict) -> Path:
+    BULK_LOG_DIR.mkdir(parents=True, exist_ok=True)
+    path = BULK_LOG_DIR / "PAUSED.json"
+    path.write_text(
+        json.dumps(
+            {"reason": reason, "paused_at": datetime.now(timezone.utc).isoformat(), **stats},
+            indent=2,
+            default=str,
+        )
+    )
+    return path
+
+
 # --- live path ---------------------------------------------------------------
 
 
@@ -196,7 +351,24 @@ def process_candidate_live(row: dict, model: str) -> dict:
             "proposals": [p.model_dump(mode="json") for p in instance.proposals],
         }
     except extract.ExtractionError as exc:
+        # An expected, already-understood failure mode (daily quota,
+        # malformed-output retries exhausted, transient-retry budget
+        # exhausted) -- recorded like any other failed candidate, not an
+        # auto-pause trigger on its own.
         result = {"status": "failed", "reason": str(exc), "row": row, "cost_usd": 0.0}
+        out_path.write_text(json.dumps(result, indent=2, default=str))
+        return result
+    except Exception as exc:
+        # Anything else is, by definition, a failure mode this pipeline
+        # hasn't seen and doesn't have a specific handler for -- the
+        # caller treats this as the "unexpected error class" auto-pause
+        # trigger. Deliberately NOT written to disk: unlike a genuine
+        # extraction failure (same input, same deterministic malformed
+        # output every time), there's no reason to believe retrying this
+        # candidate after whatever caused the pause gets investigated
+        # would fail the same way, so a resume should retry it fresh
+        # rather than permanently blacklist it on one occurrence.
+        return {"status": "error", "reason": f"{type(exc).__name__}: {exc}", "row": row, "cost_usd": 0.0}
 
     out_path.write_text(json.dumps(result, indent=2, default=str))
     return result
@@ -208,6 +380,7 @@ class BulkStats:
     done: int = 0
     failed: int = 0
     skipped: int = 0
+    errors: int = 0
     start_time: float = field(default_factory=time.monotonic)
 
     def record(self, status: str) -> int:
@@ -216,9 +389,11 @@ class BulkStats:
                 self.done += 1
             elif status == "failed":
                 self.failed += 1
+            elif status == "error":
+                self.errors += 1
             else:
                 self.skipped += 1
-            return self.done + self.failed + self.skipped
+            return self.done + self.failed + self.skipped + self.errors
 
 
 def run_bulk_live(
@@ -226,32 +401,58 @@ def run_bulk_live(
     model: str,
     limit: Optional[int] = None,
     concurrency: int = 4,
+    concurrency_high: int = 6,
     spend_cap_usd: float = 260.0,
     calibration_multiplier: float = 1.0,
     deadline: Optional[datetime] = None,
+    logger: Optional[logging.Logger] = None,
 ) -> dict:
+    log = logger or _logger
     extract.reset_session_calls()
     with connect() as conn:
         candidates = queue_candidates(conn)
+    log.info(f"[bulk] queued {len(candidates)} public_company_acquisition candidates")
 
     stats = BulkStats()
     skip_log: list[dict] = []
     stop_event = threading.Event()
     stop_reason: list[str] = []
+    gate = AdaptiveConcurrency(initial=concurrency, high=concurrency_high)
+    since_last_safety_check: list[dict] = []
+    safety_lock = threading.Lock()
+
+    def monitor_loop() -> None:
+        while not stop_event.is_set():
+            change = gate.tick()
+            if change:
+                log.info(f"[bulk] concurrency {change}")
+            hit, reason = spend_cap_hit(spend_cap_usd, calibration_multiplier)
+            if hit:
+                stop_reason.append(reason)
+                log.warning(f"[bulk] STOPPING: {reason}")
+                stop_event.set()
+                break
+            if deadline_hit(deadline):
+                stop_reason.append(f"deadline reached ({deadline.isoformat()})")
+                log.warning(f"[bulk] STOPPING: deadline reached ({deadline.isoformat()})")
+                stop_event.set()
+                break
+            time.sleep(15.0)
+
+    monitor_thread = threading.Thread(target=monitor_loop, daemon=True)
+    monitor_thread.start()
 
     def worker(row: dict) -> dict:
         if stop_event.is_set():
-            return {"status": "skipped", "reason": "stopped (cap or deadline)", "row": row, "cost_usd": 0.0}
-        hit, reason = spend_cap_hit(spend_cap_usd, calibration_multiplier)
-        if hit or deadline_hit(deadline):
-            if not stop_event.is_set():
-                stop_reason.append(reason or "deadline reached")
-            stop_event.set()
-            return {"status": "skipped", "reason": "stopped (cap or deadline)", "row": row, "cost_usd": 0.0}
-        return process_candidate_live(row, model)
+            return {"status": "skipped", "reason": "stopped", "row": row, "cost_usd": 0.0}
+        gate.acquire()
+        try:
+            return process_candidate_live(row, model)
+        finally:
+            gate.release()
 
     attempted: list[dict] = []
-    with ThreadPoolExecutor(max_workers=concurrency) as pool:
+    with ThreadPoolExecutor(max_workers=concurrency_high) as pool:
         futures = {}
         submitted = 0
         for row in candidates:
@@ -270,10 +471,47 @@ def run_bulk_live(
             result = future.result()
             n = stats.record(result["status"])
             attempted.append(result)
+
             if result["status"] == "skipped":
                 skip_log.append(
                     {"target_cik": row["target_cik"], "accession": row["primary_accession"], "reason": result.get("reason")}
                 )
+            elif result["status"] == "error":
+                reason = f"unexpected error class: {result['reason']}"
+                stop_reason.append(reason)
+                log.error(f"[bulk] STOPPING: {reason}")
+                write_pause_reason(
+                    reason,
+                    {"done": stats.done, "failed": stats.failed, "skipped": stats.skipped, "errors": stats.errors},
+                )
+                stop_event.set()
+            elif result["status"] == "done":
+                with safety_lock:
+                    since_last_safety_check.append(result)
+                    if len(since_last_safety_check) >= SAFETY_CHECK_EVERY:
+                        window = list(since_last_safety_check)
+                        since_last_safety_check.clear()
+                        quality = rolling_quality_check(window)
+                        log.info(
+                            f"[bulk] safety check (n={quality['n']}): "
+                            f"failure_rate={quality['failure_rate']}, "
+                            f"quote_match_median={quality['quote_match_median']}"
+                        )
+                        pause_reason = check_auto_pause(quality)
+                        if pause_reason:
+                            log.error(f"[bulk] AUTO-PAUSE: {pause_reason}")
+                            write_pause_reason(
+                                pause_reason,
+                                {
+                                    "done": stats.done,
+                                    "failed": stats.failed,
+                                    "skipped": stats.skipped,
+                                    "errors": stats.errors,
+                                    "quality": quality,
+                                },
+                            )
+                            stop_reason.append(pause_reason)
+                            stop_event.set()
 
             if n % BULK_LOG_EVERY == 0:
                 elapsed_hr = (time.monotonic() - stats.start_time) / 3600
@@ -282,15 +520,17 @@ def run_bulk_live(
                 n_attempted = stats.done + stats.failed
                 rate = n_attempted / elapsed_hr if elapsed_hr > 0 else 0.0
                 per_deal = spent / n_attempted if n_attempted > 0 else 0.0
-                print(
-                    f"[bulk] done={stats.done} failed={stats.failed} skipped={stats.skipped} "
-                    f"deals/hr={rate:.1f} spent=${spent:.2f} $/deal=${per_deal:.4f}"
+                log.info(
+                    f"[bulk] done={stats.done} failed={stats.failed} skipped={stats.skipped} errors={stats.errors} "
+                    f"concurrency={gate.capacity} deals/hr={rate:.1f} spent=${spent:.2f} $/deal=${per_deal:.4f}"
                 )
 
+    stop_event.set()
     return {
         "done": stats.done,
         "failed": stats.failed,
         "skipped": stats.skipped,
+        "errors": stats.errors,
         "skip_log": skip_log,
         "stop_reason": stop_reason[0] if stop_reason else None,
         "cost_summary": extract.session_cost_summary(),
@@ -406,23 +646,34 @@ def main() -> None:
     parser.add_argument("--pilot", type=int, default=None, help="Process only N attempted candidates")
     parser.add_argument("--model", default="gemini-3.6-flash", help="Explicit model (default: the locked model)")
     parser.add_argument("--concurrency", type=int, default=int(os.environ.get("BULK_CONCURRENCY", 4)))
+    parser.add_argument(
+        "--concurrency-high", type=int, default=int(os.environ.get("BULK_CONCURRENCY_HIGH", 6)),
+        help="Ceiling the adaptive controller may raise to after a clean period",
+    )
     parser.add_argument("--spend-cap-usd", type=float, default=float(os.environ.get("BULK_SPEND_CAP_USD", 260.0)))
     parser.add_argument("--calibration-multiplier", type=float, default=1.0)
     parser.add_argument("--deadline", default=os.environ.get("BULK_DEADLINE"))
     parser.add_argument("--mode", choices=["live", "batch"], default="live")
     args = parser.parse_args()
 
+    log = setup_logging()
     deadline = _parse_deadline(args.deadline)
+    log.info(
+        f"[bulk] starting: model={args.model} concurrency={args.concurrency}->{args.concurrency_high} "
+        f"spend_cap=${args.spend_cap_usd} calibration=x{args.calibration_multiplier} deadline={deadline}"
+    )
     if args.mode == "live":
         result = run_bulk_live(
             model=args.model,
             limit=args.pilot,
             concurrency=args.concurrency,
+            concurrency_high=args.concurrency_high,
             spend_cap_usd=args.spend_cap_usd,
             calibration_multiplier=args.calibration_multiplier,
             deadline=deadline,
+            logger=log,
         )
-        print(json.dumps({k: v for k, v in result.items() if k != "results"}, indent=2, default=str))
+        log.info(json.dumps({k: v for k, v in result.items() if k != "results"}, indent=2, default=str))
     else:
         raise SystemExit("--mode batch: use src.batch_test for the Part C gold-deal test; full batch-mode queue integration isn't wired into main() yet.")
 

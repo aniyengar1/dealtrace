@@ -95,6 +95,22 @@ _client: Optional[genai.Client] = None
 # persisted; a fresh process starts at zero (the bulk runner tracks its
 # own persisted spend separately, since it's expected to span restarts).
 _session_calls: list[dict] = []
+# Timestamps of every per-minute 429 this process has hit (NOT daily-quota
+# exhaustion, which raises instead of retrying) -- the bulk runner's
+# adaptive concurrency controller watches this to back off, independent
+# of whether the retry inside _call_gemini itself ultimately succeeded.
+_rate_limit_events: list[float] = []
+_rate_limit_lock = threading.Lock()
+
+
+def record_rate_limit_event() -> None:
+    with _rate_limit_lock:
+        _rate_limit_events.append(time.time())
+
+
+def rate_limit_events_since(since: float) -> int:
+    with _rate_limit_lock:
+        return sum(1 for t in _rate_limit_events if t >= since)
 
 
 def _resolve_provider() -> str:
@@ -662,6 +678,7 @@ def _call_gemini(
                 ) from exc
             if code == 429:
                 last_exc = exc
+                record_rate_limit_event()
                 delay = min(RATE_LIMIT_BACKOFF_BASE**attempt, RATE_LIMIT_BACKOFF_CAP)
                 print(
                     f"    429 (per-minute) from Gemini, retrying in {delay:.0f}s "

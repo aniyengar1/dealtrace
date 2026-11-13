@@ -1,4 +1,5 @@
 import json
+import time
 from datetime import datetime, timedelta, timezone
 
 import pytest
@@ -86,8 +87,10 @@ def test_load_cached_html_returns_none_when_not_cached(tmp_path, monkeypatch):
 @pytest.fixture(autouse=True)
 def isolate_session_calls():
     extract.reset_session_calls()
+    extract._rate_limit_events.clear()
     yield
     extract.reset_session_calls()
+    extract._rate_limit_events.clear()
 
 
 def test_spend_cap_hit_is_false_with_no_calls_made():
@@ -192,3 +195,130 @@ def test_queue_candidates_uses_db_conn(db_conn):
     assert isinstance(rows, list)
     if rows:
         assert set(bulk_run._CANDIDATE_COLUMNS) <= set(rows[0].keys())
+
+
+# --- AdaptiveConcurrency ----------------------------------------------------
+
+
+def test_adaptive_concurrency_starts_at_initial_capacity():
+    gate = bulk_run.AdaptiveConcurrency(initial=4, high=6)
+    assert gate.capacity == 4
+
+
+def test_adaptive_concurrency_acquire_blocks_past_capacity():
+    gate = bulk_run.AdaptiveConcurrency(initial=1, high=6)
+    gate.acquire()
+
+    results = []
+
+    def try_acquire():
+        gate.acquire()
+        results.append("acquired")
+
+    import threading
+
+    t = threading.Thread(target=try_acquire, daemon=True)
+    t.start()
+    t.join(timeout=0.3)
+    assert results == []  # still blocked, capacity is 1 and already held
+
+    gate.release()
+    t.join(timeout=1.0)
+    assert results == ["acquired"]
+
+
+def test_adaptive_concurrency_raises_after_clean_period(monkeypatch):
+    monkeypatch.setattr(extract, "_rate_limit_events", [])
+    gate = bulk_run.AdaptiveConcurrency(initial=4, high=6, raise_after_seconds=0.05)
+    time.sleep(0.1)
+    change = gate.tick()
+    assert gate.capacity == 6
+    assert "raised" in change
+
+
+def test_adaptive_concurrency_does_not_raise_before_the_clean_period():
+    gate = bulk_run.AdaptiveConcurrency(initial=4, high=6, raise_after_seconds=3600.0)
+    change = gate.tick()
+    assert gate.capacity == 4
+    assert change is None
+
+
+def test_adaptive_concurrency_backs_off_on_a_429():
+    gate = bulk_run.AdaptiveConcurrency(initial=4, high=6)
+    extract.record_rate_limit_event()
+    change = gate.tick()
+    assert gate.capacity == 3
+    assert "backed off" in change
+
+
+def test_adaptive_concurrency_does_not_go_below_the_floor():
+    gate = bulk_run.AdaptiveConcurrency(initial=1, high=6, floor=1)
+    extract.record_rate_limit_event()
+    gate.tick()
+    assert gate.capacity == 1
+
+
+def test_adaptive_concurrency_backoff_delays_the_next_raise(monkeypatch):
+    monkeypatch.setattr(extract, "_rate_limit_events", [])
+    gate = bulk_run.AdaptiveConcurrency(initial=4, high=6, raise_after_seconds=0.05)
+    extract.record_rate_limit_event()
+    gate.tick()  # backs off, resets the clean-time clock
+    assert gate.capacity == 3
+    change = gate.tick()  # immediately after -- not clean for raise_after_seconds yet
+    assert gate.capacity == 3
+    assert change is None
+
+
+# --- rolling safety check / auto-pause --------------------------------------
+
+
+def test_rolling_quality_check_aggregates_across_the_window(monkeypatch):
+    fake_reports = [
+        {"validation_pass_rate": 1.0, "quote_match_rate": 1.0},
+        {"validation_pass_rate": 0.5, "quote_match_rate": 0.6},
+    ]
+    calls = iter(fake_reports)
+    monkeypatch.setattr("src.bulk_quality_check.check_one", lambda r: next(calls))
+
+    quality = bulk_run.rolling_quality_check([{"status": "done"}, {"status": "done"}])
+
+    assert quality["n"] == 2
+    assert quality["failure_rate"] == pytest.approx(1 - (1.0 + 0.5) / 2)
+    assert quality["quote_match_median"] == pytest.approx(0.8)
+
+
+def test_rolling_quality_check_handles_an_empty_window():
+    quality = bulk_run.rolling_quality_check([])
+    assert quality == {"n": 0, "failure_rate": None, "quote_match_median": None}
+
+
+def test_check_auto_pause_triggers_on_high_failure_rate():
+    reason = bulk_run.check_auto_pause({"n": 50, "failure_rate": 0.15, "quote_match_median": 0.95})
+    assert reason is not None
+    assert "failure rate" in reason
+
+
+def test_check_auto_pause_triggers_on_low_quote_match_median():
+    reason = bulk_run.check_auto_pause({"n": 50, "failure_rate": 0.02, "quote_match_median": 0.85})
+    assert reason is not None
+    assert "quote-match" in reason
+
+
+def test_check_auto_pause_is_none_when_healthy():
+    reason = bulk_run.check_auto_pause({"n": 50, "failure_rate": 0.02, "quote_match_median": 0.97})
+    assert reason is None
+
+
+def test_check_auto_pause_is_none_with_no_data():
+    reason = bulk_run.check_auto_pause({"n": 0, "failure_rate": None, "quote_match_median": None})
+    assert reason is None
+
+
+def test_write_pause_reason_writes_the_expected_json(tmp_path, monkeypatch):
+    monkeypatch.setattr(bulk_run, "BULK_LOG_DIR", tmp_path)
+    path = bulk_run.write_pause_reason("something went wrong", {"done": 5, "failed": 1})
+    data = json.loads(path.read_text())
+    assert data["reason"] == "something went wrong"
+    assert data["done"] == 5
+    assert data["failed"] == 1
+    assert "paused_at" in data
