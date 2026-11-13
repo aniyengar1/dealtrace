@@ -430,11 +430,19 @@ def run_bulk_live(
             if hit:
                 stop_reason.append(reason)
                 log.warning(f"[bulk] STOPPING: {reason}")
+                # Every intentional stop (spend cap, deadline, quality
+                # auto-pause, unexpected error) writes this same marker --
+                # a supervising watchdog restarting on exit/stall needs
+                # exactly one place to check "was this exit on purpose"
+                # regardless of which reason triggered it.
+                write_pause_reason(reason, {"done": stats.done, "failed": stats.failed, "skipped": stats.skipped, "errors": stats.errors})
                 stop_event.set()
                 break
             if deadline_hit(deadline):
-                stop_reason.append(f"deadline reached ({deadline.isoformat()})")
-                log.warning(f"[bulk] STOPPING: deadline reached ({deadline.isoformat()})")
+                reason = f"deadline reached ({deadline.isoformat()})"
+                stop_reason.append(reason)
+                log.warning(f"[bulk] STOPPING: {reason}")
+                write_pause_reason(reason, {"done": stats.done, "failed": stats.failed, "skipped": stats.skipped, "errors": stats.errors})
                 stop_event.set()
                 break
             time.sleep(15.0)

@@ -1,5 +1,4 @@
 import json
-import time
 from datetime import datetime, timedelta, timezone
 
 import pytest
@@ -228,40 +227,48 @@ def test_adaptive_concurrency_acquire_blocks_past_capacity():
 
 
 def test_adaptive_concurrency_raises_after_clean_period(monkeypatch):
-    monkeypatch.setattr(extract, "_rate_limit_events", [])
-    gate = bulk_run.AdaptiveConcurrency(initial=4, high=6, raise_after_seconds=0.05)
-    time.sleep(0.1)
+    # Isolated from real wall-clock time and the shared global event log --
+    # relying on either made this flaky under system load (a slow test
+    # run alone could exceed a tight sleep-based margin, or a sibling
+    # test's leftover global-list event could bleed in). A fake
+    # rate_limit_events_since gives this exact, deterministic control.
+    monkeypatch.setattr(extract, "rate_limit_events_since", lambda since: 0)
+    gate = bulk_run.AdaptiveConcurrency(initial=4, high=6, raise_after_seconds=0.0)
     change = gate.tick()
     assert gate.capacity == 6
     assert "raised" in change
 
 
-def test_adaptive_concurrency_does_not_raise_before_the_clean_period():
+def test_adaptive_concurrency_does_not_raise_before_the_clean_period(monkeypatch):
+    monkeypatch.setattr(extract, "rate_limit_events_since", lambda since: 0)
     gate = bulk_run.AdaptiveConcurrency(initial=4, high=6, raise_after_seconds=3600.0)
     change = gate.tick()
     assert gate.capacity == 4
     assert change is None
 
 
-def test_adaptive_concurrency_backs_off_on_a_429():
+def test_adaptive_concurrency_backs_off_on_a_429(monkeypatch):
+    monkeypatch.setattr(extract, "rate_limit_events_since", lambda since: 1)
     gate = bulk_run.AdaptiveConcurrency(initial=4, high=6)
-    extract.record_rate_limit_event()
     change = gate.tick()
     assert gate.capacity == 3
     assert "backed off" in change
 
 
-def test_adaptive_concurrency_does_not_go_below_the_floor():
+def test_adaptive_concurrency_does_not_go_below_the_floor(monkeypatch):
+    monkeypatch.setattr(extract, "rate_limit_events_since", lambda since: 1)
     gate = bulk_run.AdaptiveConcurrency(initial=1, high=6, floor=1)
-    extract.record_rate_limit_event()
     gate.tick()
     assert gate.capacity == 1
 
 
 def test_adaptive_concurrency_backoff_delays_the_next_raise(monkeypatch):
-    monkeypatch.setattr(extract, "_rate_limit_events", [])
-    gate = bulk_run.AdaptiveConcurrency(initial=4, high=6, raise_after_seconds=0.05)
-    extract.record_rate_limit_event()
+    calls = iter([1, 0])  # first tick sees a 429, second sees none
+    monkeypatch.setattr(extract, "rate_limit_events_since", lambda since: next(calls))
+    # A large raise_after_seconds means "not clean long enough to raise
+    # yet" is true regardless of how much real time elapses between the
+    # two tick() calls below -- no timing assumption to flake on.
+    gate = bulk_run.AdaptiveConcurrency(initial=4, high=6, raise_after_seconds=3600.0)
     gate.tick()  # backs off, resets the clean-time clock
     assert gate.capacity == 3
     change = gate.tick()  # immediately after -- not clean for raise_after_seconds yet

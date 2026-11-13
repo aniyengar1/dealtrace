@@ -601,7 +601,7 @@ def _save_cache(key: str, item: dict, usage: dict) -> None:
 # and retried instead of stalling the whole bulk run. A generous pool
 # means a handful of permanently-abandoned threads from past hangs can't
 # exhaust it and start blocking fresh calls behind them.
-_CALL_DEADLINE_SECONDS = 180.0
+_CALL_DEADLINE_SECONDS = 300.0
 _call_executor = ThreadPoolExecutor(max_workers=16)
 
 
