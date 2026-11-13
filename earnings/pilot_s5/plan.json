@@ -14,7 +14,11 @@
         "ZM",
         "BOX",
         "DOCU",
-        "ZS"
+        "ZS",
+        "ASAN",
+        "ESTC",
+        "BILL",
+        "NTNX"
       ]
     },
     {
@@ -26,7 +30,10 @@
         "AVGO",
         "MU",
         "MRVL",
-        "ADI"
+        "ADI",
+        "MCHP",
+        "ON",
+        "TXN"
       ]
     },
     {
@@ -51,7 +58,10 @@
         "INSP",
         "ILMN",
         "DXCM",
-        "HOLX"
+        "HOLX",
+        "HIMS",
+        "TDOC",
+        "COO"
       ]
     },
     {
@@ -71,5 +81,8 @@
   "stop": "No full universe expansion, LLM calls, promotion, website change, merge, push or deploy. Report failure rather than automatic collection beyond this pilot. Preserve session3-lock-ready and all original prediction inputs/schema.",
   "cutoff_timezone": "America/New_York",
   "policy_clarified_at": "2026-11-13T04:50:47.577205+00:00",
-  "clarification": "Before source inspection/extraction: require an explicit quarterly dollar range for selection; use actual New York reporting date as cutoff. No historical records excluded merely for being point guidance."
+  "clarification": "Before source inspection/extraction: require an explicit quarterly dollar range for selection; use actual New York reporting date as cutoff. No historical records excluded merely for being point guidance.",
+  "eligibility_representation_note": "An explicitly dollar-denominated center plus/minus an explicitly dollar-denominated tolerance is a management-issued absolute revenue interval and remains eligible, despite requiring transparent endpoint arithmetic. Percentage-only tolerances and standalone point estimates do not satisfy company selection. Do not exclude an absolute-dollar tolerance because v2 may not parse it. Preserve literal center/tolerance, calculate Decimal endpoints only as a labeled normalization; never claim those endpoint numbers are verbatim quotes.",
+  "pool_extension_at": "2026-11-13T04:58:27.313064+00:00",
+  "pool_extension_reason": "Before extraction: initial pools include subscription/product-only, point-only, annual-only and inactive-ticker candidates. Extend fixed within-sector orders to fill the same quotas, not based on parser output or formatting."
 }
