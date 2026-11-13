@@ -1,0 +1,825 @@
+{
+  "selected_at": "2026-11-13T05:05:12.416903+00:00",
+  "companies": [
+    {
+      "ticker": "ZM",
+      "cik": "0001585521",
+      "name": "Zoom Communications, Inc.",
+      "sector": "software",
+      "sic": "7370",
+      "sic_description": "Services-Computer Programming, Data Processing, Etc.",
+      "fiscal_year_end": "0131",
+      "eligibility_source": {
+        "accession": "0001585521-26-000119",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "318c67501fe47756edc3f9257a6791bc16cbc9d3b7f3f5a4b9ff340c4ea8413b-3ef1b94cb4fa05a591807f3fbd1ec79b56a02a0f7c623fba401b484eab2b9ddc.body",
+              "fetched_at": "2026-11-13T04:51:47.209149+00:00",
+              "sha256": "3ef1b94cb4fa05a591807f3fbd1ec79b56a02a0f7c623fba401b484eab2b9ddc",
+              "url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000119/zm-20260731ex991.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/ZM-0001585521-26-000119.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000119/zm-20260731ex991.htm"
+          }
+        ],
+        "filed": "2026-08-25",
+        "primary": "zm-20260825.htm",
+        "primary_manifest": {
+          "body": "32c80f2586cfd1a863d5d43b21968c56a4fc9d93fbf7da1348b67abf3a15e841-c9c0ffa8ca04c2763ad19ccbacf660ff0513f6266d92cdc53e582df34dcee35d.body",
+          "fetched_at": "2026-11-13T04:51:46.574627+00:00",
+          "sha256": "c9c0ffa8ca04c2763ad19ccbacf660ff0513f6266d92cdc53e582df34dcee35d",
+          "url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000119/zm-20260825.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000119/zm-20260825.htm"
+      },
+      "eligibility_quote": "Financial Outlook: Zoom is providing the following guidance for its third quarter of fiscal year 2027 and updating its guidance for full fiscal year 2027. \u2022 Third Quarter Fiscal Year 2027: Total revenue is expected to be between $1.275 billion and $1.280 billion and revenue in constant currency is expected to be between $1.275 billion and $1.280 billion. Non-GAAP income from operations is expected to be between $510.0 million and $515.0 million. Non-GAAP diluted EPS is expected to be between $1.46 and $1.48 with approximately 301 million weighted average shares outstanding. \u2022 Full Fiscal Year 2027: Total revenue is expected to be between $5.085 billion and $5.095 billion and revenue in constant currency is expected to be between $5.071 billion and $5.081 billion. Non-GAAP income from operations is expected to be between $2.065 billion and $2.075 billion. Non-GAAP diluted EPS is expected to be between $6.08 and $6.12 with approximately 301 million weighted average shares outstanding. Full fiscal year free cash flow is expected to be between $1.780 billion and $1.820 billion. The EPS and share count figures do not include the impact from approximately $1.3 billion of authorized share repurchase remaining as of July 31, 2026. Additional information on Zoom's reported results, including a reconciliation of the non-GAAP results to their most comparable GAAP measures, is included in the financial tables below. A reconciliation of non-GAAP guidance measures to corresponding GAAP measures is not available on a forward-looking basis without unreasonable effort due to the uncertainty of expenses that may be incurred in the future, although it is important to note that these factors could be material to Zoom's results computed in accordance with GAAP. A supplemental financial presentation and other information can be accessed through Zoom\u2019s investor relations website at investors.zoom.com. Zoom Video Earnings Call Zoom will host a Zoom Video Webinar for investors on August 25, 2026 at 2:00 p.m. Pacific Time / 5:00 p.m. Eastern Time to discuss the company\u2019s financial results, business highlights and financial outlook. Investors are invited to join the Zoom Video Webinar by visiting: https://investors.zoom.com/ About Zoom Zoom (NASDAQ:ZM) is a system of action for modern work, turning live collaboration into completed results. From entrepreneurs to global enterprises, cu",
+      "quote_start": 4829,
+      "quote_end": 7229,
+      "canonical_sha256": "322cab63b837f20f17fafa2bda88528061cc0b0b30097206bebae625e2b3ec87",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "DOCU",
+      "cik": "0001261333",
+      "name": "DOCUSIGN, INC.",
+      "sector": "software",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "fiscal_year_end": "0131",
+      "eligibility_source": {
+        "accession": "0001261333-26-000088",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "7582a1ff3111b2169b7389e5eac609f455c068f82227019a22e2f0581e0a2342-efeef5c65aa44ba7081d8a0546dab1d6e8f2c5c535f70e7d72b628cb1b072274.body",
+              "fetched_at": "2026-11-13T04:51:54.171368+00:00",
+              "sha256": "efeef5c65aa44ba7081d8a0546dab1d6e8f2c5c535f70e7d72b628cb1b072274",
+              "url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000088/q227ex-991er.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/DOCU-0001261333-26-000088.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000088/q227ex-991er.htm"
+          }
+        ],
+        "filed": "2026-09-03",
+        "primary": "docu-20260903.htm",
+        "primary_manifest": {
+          "body": "2f5985ab2c7cb22a7ae02598b0d78a9c94f3320e70b054f9cfb745b8ca050243-684e3b9992cb88f56793bbba12586cf4998d8ac69099b7a5bbdf023f3b11f002.body",
+          "fetched_at": "2026-11-13T04:51:53.516982+00:00",
+          "sha256": "684e3b9992cb88f56793bbba12586cf4998d8ac69099b7a5bbdf023f3b11f002",
+          "url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000088/docu-20260903.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000088/docu-20260903.htm"
+      },
+      "eligibility_quote": "Three Months Ended October 31, 2026 YoY Midpoint Change Revenue [1] $886 to $890 9% Non-GAAP gross margin 81.5% to 81.9% NA Non-GAAP operating margin 31.3% to 31.7% NA Non-GAAP diluted weighted-average shares outstanding 191 to 196 NA (in millions, except percentages) Year Ended January 31, 2027 YoY Midpoint Change Revenue [1] $3,499 to $3,507 9% Annual recurring revenue year-over-year growth rate [2] 8.50% to 9.00% 8.75% Non-GAAP gross margin 81.5% to 82.0% NA Non-GAAP operating margin 31.0% to 31.5% NA Non-GAAP diluted weighted-average shares outstanding 190 to 195 NA [1] Excluding the impact of foreign currency exchange rates on year-over-year guided revenue growth, revenue guidance range would be approximately 1.0% points lower for the quarter ending October 31, 2026 and 1.2% points lower for the fiscal year ending January 31, 2027. [2] We expect that IAM will represent approximately 18% to 19% of total ARR exiting Q4 of Fiscal 2027. A reconciliation of non-GAAP guidance measures to corresponding GAAP guidance measures is not available on a forward-looking basis without unreasonable effort due to the uncertainty regarding, and the potential variability of, expenses that may be incurred in the future. Stock-based compensation-related charges, including employer payroll tax-related items on employee stock transactions, are impacted by many factors, including the timing of employee stock transactions, the future fair market value of our common stock, and our future hiring and retention needs, all of which are difficult to predict and subject to constant change. We have provided a reconciliation of GAAP to non-GAAP financial measures in the financial statement tables for our historical non-GAAP financial results included in this release. 2 DOCUSIGN, INC. Webcast Conference Call Information The company will host a conference call and live webcast on September 3, 2026 at 5:00 p.m. Eastern Time (2:00 p.m. Pacific Time) to discuss its financial performance and business outlook. Prepared remarks will also be available on Docusign\u2019s investor relations website prior to the webcast. Conference Call Details \u2022 Live webcast will be available on Docusign\u2019s investor relations website at investor.docusign.com \u2022 Domestic Toll-Free Dial-In: (877) 407-0784 \u2022 International Dial-In: (201) 689-8560 An archived replay of the webcast will be available the following day at investo",
+      "quote_start": 4531,
+      "quote_end": 6931,
+      "canonical_sha256": "d727e77d3fdb9b174b1f8453de287647e96fdbf77998a357ab73b5c3394e0a48",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "ZS",
+      "cik": "0001713683",
+      "name": "Zscaler, Inc.",
+      "sector": "software",
+      "sic": "7371",
+      "sic_description": "Services-Computer Programming Services",
+      "fiscal_year_end": "0731",
+      "eligibility_source": {
+        "accession": "0001713683-26-000156",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "25c34c81bdaa5cd395b1891d2bec4f6a545784648fd751d16919add7eb868fd5-0d8132f7a10ff0d19e65c496febba261b0654d33126fb4ec8d18d75076d79efb.body",
+              "fetched_at": "2026-11-13T04:51:57.510738+00:00",
+              "sha256": "0d8132f7a10ff0d19e65c496febba261b0654d33126fb4ec8d18d75076d79efb",
+              "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000156/zs-07312026_991.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/ZS-0001713683-26-000156.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000156/zs-07312026_991.htm"
+          }
+        ],
+        "filed": "2026-09-03",
+        "primary": "zs-20260901.htm",
+        "primary_manifest": {
+          "body": "f640214aaf7daa65cf8788a43c52dff9b3738a512916534ae142b03b2fcc5fe1-13c847de58d785ef6fbb632fbc9fc7dcefdb03913ac2d725659daf8db001188e.body",
+          "fetched_at": "2026-11-13T04:51:56.834953+00:00",
+          "sha256": "13c847de58d785ef6fbb632fbc9fc7dcefdb03913ac2d725659daf8db001188e",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000156/zs-20260901.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368326000156/zs-20260901.htm"
+      },
+      "eligibility_quote": "Financial Outlook For the first quarter of fiscal 2027, the company expects: \u2022 Revenue of $935 million to $939 million, approximately 19% year-over-year growth. \u2022 Non-GAAP gross margin of approximately 80% \u2022 Non-GAAP income from operations of $215 million to $217 million, approximately 25% to 26% year-over-year growth, representing a 23% operating margin. \u2022 Non-GAAP net income per share of approximat ely $1.15 to $1.16, assuming approximately 170 million fully diluted shares outstanding and a non-GAAP tax rate of 21%. For the full year fiscal 2027, the company expects: \u2022 ARR of $4.396 billion to $4.426 billion, growth of approximately 16.6% to 17.4%. \u2022 Revenue of approximately $3.908 billion to $3.938 billion, growth of 16.6% to 17.5%. \u2022 Non-GAAP gross margin of approximately 80% \u2022 Non-GAAP income from operations of $924 million to $932 million, growth of approximately 21%. \u2022 Non-GAAP net income per share of $4.86 to $4.90, assuming approximately 173 million fully diluted shares outstanding and a non-GAAP tax rate of 21%. \u2022 Free cash flow margin of approximately 23.0 to 23.5%. These statements are forward-looking and actual results may differ materially. Refer to the Forward-Looking Statements safe harbor below for information on the factors that could cause our actual results to differ materially from these forward-looking statements. Guidance for non-GAAP income from operations and non-GAAP net income per share exclude, as applicable, stock-based compensation expense and related employer payroll taxes, amortization expense of acquired intangible assets and amortization of debt issuance costs. We have not reconciled our expectations of non-GAAP income from operations and non-GAAP net income per share to their most directly comparable GAAP measures because certain items are out of our control or cannot be reasonably predicted. For those reasons, we are also unable to address the probable significance of the unavailable information, the variability of which may have a significant impact on future results. Accordingly, a reconciliation for the guidance for non-GAAP income from operations and non-GAAP net income per share is not available without unreasonable effort. For further information regarding why we believe that these non-GAAP measures provide useful information to investors, the specific manner in which management uses these measures, and some of the l",
+      "quote_start": 5134,
+      "quote_end": 7534,
+      "canonical_sha256": "b3ce0f9eaf794b7c9a67e2a635c2234844465e49eb00c74f3ad183b8d7f28085",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "ASAN",
+      "cik": "0001477720",
+      "name": "Asana, Inc.",
+      "sector": "software",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "fiscal_year_end": "0131",
+      "eligibility_source": {
+        "accession": "0001477720-26-000058",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "83b84d242734cac2280e8473ee4f4312aea8c2f1a04faddc605dd0bc5e1a25f5-1bfc57d90766902031f6f00fc15794cd5e2680c16afcc50ba4cf7133afd82476.body",
+              "fetched_at": "2026-11-13T04:58:29.225559+00:00",
+              "sha256": "1bfc57d90766902031f6f00fc15794cd5e2680c16afcc50ba4cf7133afd82476",
+              "url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772026000058/asana8-kex991q2fy27.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/ASAN-0001477720-26-000058.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772026000058/asana8-kex991q2fy27.htm"
+          }
+        ],
+        "filed": "2026-09-03",
+        "primary": "asan-20260903.htm",
+        "primary_manifest": {
+          "body": "84bf1a4c810ae6a70f335028370a84d80d7881647e707e8639c0be6d3069ff35-1952be908d1d9b664cbaa9ec4f3c1bd7211b64357a4c8878020686fa4bac859e.body",
+          "fetched_at": "2026-11-13T04:58:28.565411+00:00",
+          "sha256": "1952be908d1d9b664cbaa9ec4f3c1bd7211b64357a4c8878020686fa4bac859e",
+          "url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772026000058/asan-20260903.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772026000058/asan-20260903.htm"
+      },
+      "eligibility_quote": "Financial Outlook For the third quarter of fiscal 2027, Asana expects: \u2022 Revenues of $217 million to $219 million, representing year-over-year growth of 8% to 9%. \u2022 Non-GAAP operating income of $18 million to $19 million, with 8% to 9% operating margin. \u2022 Non-GAAP net income per share of $0.08, assuming diluted weighted average shares outstanding of approximately 236 million. For fiscal 2027, Asana expects: \u2022 Revenues of $858.5 million to $863.5 million, representing year-over-year growth of 9%. \u2022 Non-GAAP operating income of $84.5 million to $86.5 million, with approximately 10% operating margin. \u2022 Non-GAAP net income per share of $0.37, assuming diluted weighted average shares outstanding of approximately 239 million. These statements are forward-looking and actual results may materially differ. Refer to the \u201cForward-Looking Statements\u201d section below for information on the factors that could cause Asana\u2019s actual results to materially differ from these forward-looking statements. A reconciliation of non-GAAP outlook measures to corresponding GAAP measures is not available on a forward-looking basis without unreasonable effort due to the uncertainty regarding, and the potential variability of, many of these costs and expenses that may be 2 Exhibit 99.1 incurred in the future. Asana has provided a reconciliation of GAAP to non-GAAP financial measures in the financial statement tables for its second quarter fiscal year 2027 non-GAAP results included in this press release. Earnings Conference Call Information Asana will hold a conference call and live webcast today to discuss these results at 1:30 p.m. Pacific Time. A live webcast and replay will be available on the Asana Investor Relations webpage at: https://investors.asana.com. Forward-Looking Statements This press release contains \u201cforward-looking\u201d statements within the meaning of the Private Securities Litigation Reform Act of 1995 that are based on management\u2019s beliefs and assumptions and on information currently available to management. Forward-looking statements include, but are not limited to, statements about our financial and operational performance, including our financial discipline, expectations related to our market opportunity, the potential and impact of AI for our products, the expected benefits of AI Studio, AI Teammates, and Asana Dash, including our expectations regarding revenue to be gene",
+      "quote_start": 4896,
+      "quote_end": 7296,
+      "canonical_sha256": "ae18667372b3767173636898773fa86f98c1c5b563ecbcda000cf9d4f0a91008",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "ESTC",
+      "cik": "0001707753",
+      "name": "Elastic N.V.",
+      "sector": "software",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "fiscal_year_end": "0430",
+      "eligibility_source": {
+        "accession": "0001707753-26-000035",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "94bc840ed43937c6e8eb89125582e1e3f6d79bdd18cb0ed6d22181e13d8ebdc5-0cb180a618827cafa607ef4bca08349298901a8b1108202108834d101b359942.body",
+              "fetched_at": "2026-11-13T04:58:33.272578+00:00",
+              "sha256": "0cb180a618827cafa607ef4bca08349298901a8b1108202108834d101b359942",
+              "url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775326000035/a27q1erex991.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/ESTC-0001707753-26-000035.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775326000035/a27q1erex991.htm"
+          }
+        ],
+        "filed": "2026-08-27",
+        "primary": "estc-20260827.htm",
+        "primary_manifest": {
+          "body": "704842042f257b4fe469d236d207c10e5caa2f7fb42be3e71a23c72a87ad653c-cc19e54d9c4bcc80bba00e962af88db84e01dc3655a12ee8d8eb874e10ca3a3b.body",
+          "fetched_at": "2026-11-13T04:58:32.582092+00:00",
+          "sha256": "cc19e54d9c4bcc80bba00e962af88db84e01dc3655a12ee8d8eb874e10ca3a3b",
+          "url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775326000035/estc-20260827.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775326000035/estc-20260827.htm"
+      },
+      "eligibility_quote": "Outlook The Company is providing the following guidance: For the second quarter of fiscal 2027 (ending October 31, 2026): \u2022 Total revenue is expected to be between $486 million and $487 million, representing 14.9% year-over-year growth at the midpoint (15.0% year-over-year constant currency growth at the midpoint) \u2022 Sales-led subscription revenue is expected to be between $407.5 million and $408.5 million, representing 16.9% year-over-year growth at the midpoint (17.1% year-over-year constant currency growth at the midpoint) \u2022 GAAP operating margin is expected to be positive \u2022 Non-GAAP operating margin is expected to be approximately 19.0% \u2022 Non-GAAP diluted earnings per share is expected to be between $0.80 and $0.82, assuming between 108.0 million and 109.0 million diluted weighted average ordinary shares outstanding For fiscal 2027 (ending April 30, 2027): \u2022 Total revenue is expected to be between $1.998 billion and $2.010 billion, representing 15.2% year-over-year growth at the midpoint (15.3% year-over-year constant currency growth at the midpoint) \u2022 Sales-led subscription revenue is expected to be between $1.682 billion and $1.694 billion, representing 17.4% year-over-year growth at the midpoint (17.5% year-over-year constant currency growth at the midpoint) \u2022 GAAP operating margin is expected to be positive \u2022 Non-GAAP operating margin is expected to be approximately 19.4% \u2022 Non-GAAP diluted earnings per share is expected to be between $3.29 and $3.37, assuming between 108.5 million and 109.5 million diluted weighted average ordinary shares outstanding \u2022 Adjusted free cash flow margin is expected to be approximately 21.5%, excluding any acquisitions or other one-time charges The diluted weighted average ordinary shares outstanding reflect only share buybacks completed as of July 31, 2026. The guidance assumes, among others, the following exchange rates: 1 Euro = 1.166 US Dollars; and 1 Great British Pound = 1.361 US Dollars. See the section titled \u201cForward-Looking Statements\u201d below for information on the risks and uncertainties that could cause our actual results to differ materially from those expressed or implied in our forward-looking statements. We present historical and forward-looking non-GAAP financial measures in addition to, and not as a substitute for, or superior to, financial measures calculated in accordance with GAAP. See the section enti",
+      "quote_start": 5314,
+      "quote_end": 7714,
+      "canonical_sha256": "1e805c319874d34b81aa285305ed85709a19effb02ae40ab50ae1ded0cc2a898",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "AMAT",
+      "cik": "0000006951",
+      "name": "APPLIED MATERIALS INC /DE",
+      "sector": "semiconductors",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "fiscal_year_end": "1026",
+      "eligibility_source": {
+        "accession": "0001628280-26-073360",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "84b62988ce45112f7bf25a0d60bb58d48de1bb9f0b963739ab58bedc8e348669-e6faa0782a05a00c233524289e301f4bbf1815b98fdfcc0ec8a3a353cc23d599.body",
+              "fetched_at": "2026-11-13T04:52:04.056006+00:00",
+              "sha256": "e6faa0782a05a00c233524289e301f4bbf1815b98fdfcc0ec8a3a353cc23d599",
+              "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026073360/exhibit991q42026earningsre.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/AMAT-0001628280-26-073360.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026073360/exhibit991q42026earningsre.htm"
+          }
+        ],
+        "filed": "2026-11-12",
+        "primary": "amat-20261112.htm",
+        "primary_manifest": {
+          "body": "5a79672dd99ef2d40b478eba8fbc3b829d4f80b4fc0dab36f9c2f30c84e341fc-f4774df826a103a0ddebc1e0497ce4833dadd188e9074d7f49d9b5e8632eb78b.body",
+          "fetched_at": "2026-11-13T04:52:03.375704+00:00",
+          "sha256": "f4774df826a103a0ddebc1e0497ce4833dadd188e9074d7f49d9b5e8632eb78b",
+          "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026073360/amat-20261112.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026073360/amat-20261112.htm"
+      },
+      "eligibility_quote": "Business Outlook Applied\u2019s total revenue and non-GAAP diluted EPS for the first quarter of fiscal 2027 are expected to be as follows: Q1 FY2027 (In millions, except per share amounts) Total revenue $ 11,100 +/- $ 500 Non-GAAP diluted EPS $ 4.35 +/- $ 0.20 This outlook for non-GAAP diluted EPS excludes known charges related to completed acquisitions of $0.01 per share and includes a net income tax benefit related to intra-entity intangible asset transfers of $0.04 per share, but does not reflect any items that are unknown at this time, such as any additional charges related to acquisitions or other non-operational or unusual items, as well as other tax-related items, which we are not able to predict without unreasonable efforts due to their inherent uncertainty. Fourth Quarter and Fiscal Year Reportable Segment Information Effective in the first quarter of fiscal 2026, management moved our 200-millimeter equipment business to Semiconductor Systems. The business was previously included in Applied Global Services. Additionally, effective in the first quarter of fiscal 2026, management began fully allocating corporate support costs to our operating segments. Prior-period numbers have been recast to conform to the current-year presentation. Display operating segment financial results are included in the Other category balances below. Semiconductor Systems Q4 FY2026 Q4 FY2025 FY2026 FY2025 (in millions, except percentages) Revenue $ 7,996 $ 4,879 $ 26,142 $ 21,441 Foundry and logic 58 % 66 % 63 % 68 % DRAM 33 % 28 % 30 % 26 % Flash memory 9 % 6 % 7 % 6 % Gross margin 55.0 % 52.7 % 54.9 % 53.2 % Operating income $ 3,101 $ 1,430 $ 9,277 $ 6,909 Operating margin 38.8 % 29.3 % 35.5 % 32.2 % Non-GAAP Results Non-GAAP gross margin 55.2 % 52.8 % 55.0 % 53.4 % Non-GAAP operating income $ 3,115 $ 1,442 $ 9,581 $ 6,958 Non-GAAP operating margin 39.0 % 29.6 % 36.6 % 32.5 % Applied Global Services Q4 FY2026 Q4 FY2025 FY2026 FY2025 (in millions, except percentages) Revenue $ 1,896 $ 1,506 $ 6,901 $ 5,742 Gross margin 35.1 % 34.1 % 35.0 % 33.5 % Operating income $ 578 $ 433 $ 2,039 $ 1,547 Operating margin 30.5 % 28.8 % 29.5 % 26.9 % Non-GAAP Results Non-GAAP gross margin 35.1 % 34.1 % 35.0 % 33.5 % Non-GAAP operating income $ 578 $ 434 $ 2,039 $ 1,549 Non-GAAP operating margin 30.5 % 28.8 % 29.5 % 27.0 % Other Q4 FY2026 Q4 FY2025 FY2026 FY2025 (in millions) Revenue $ 517 $ 415",
+      "quote_start": 7595,
+      "quote_end": 9995,
+      "canonical_sha256": "19f22ac4f2690fcb0649eefafa869f8944ded61c6ffd2be9d06bd478c01c486a",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "MU",
+      "cik": "0000723125",
+      "name": "MICRON TECHNOLOGY INC",
+      "sector": "semiconductors",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "fiscal_year_end": "0902",
+      "eligibility_source": {
+        "accession": "0000723125-26-000018",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "20af87012182fbd468bd61aaf5dbebe630af6ba3339f9a4825a008d63759f912-314d9e54d242de3228d8fd6d570f6750d999daaf4dffde2ad48a4cb5393e99f8.body",
+              "fetched_at": "2026-11-13T04:52:10.572156+00:00",
+              "sha256": "314d9e54d242de3228d8fd6d570f6750d999daaf4dffde2ad48a4cb5393e99f8",
+              "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/a2026q4ex991-pressrelease.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/MU-0000723125-26-000018.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/a2026q4ex991-pressrelease.htm"
+          }
+        ],
+        "filed": "2026-09-30",
+        "primary": "mu-20260930.htm",
+        "primary_manifest": {
+          "body": "fd46d5bc97da7f0c63a276da067f52b2eeb51b5c779b0028d930a815df8aecfc-d70de61c34f776d59a2156de362c5b4bb8e647b041caa88475a9faf59b93d641.body",
+          "fetched_at": "2026-11-13T04:52:09.943817+00:00",
+          "sha256": "d70de61c34f776d59a2156de362c5b4bb8e647b041caa88475a9faf59b93d641",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/mu-20260930.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/mu-20260930.htm"
+      },
+      "eligibility_quote": "FQ1-27 GAAP (1) Outlook Non-GAAP (2) Outlook Revenue $61.5 billion \u00b1 $1.5 billion $61.5 billion \u00b1 $1.5 billion Gross margin Approximately 85.95% Approximately 86.25% Operating expenses Approximately $2.31 billion Approximately $2.06 billion Diluted earnings per share $37.84 \u00b1 $1.00 $38.15 \u00b1 $1.00 Further information regarding Micron\u2019s business outlook is included in the prepared remarks and slides, which have been posted at investors.micron.com . Product Highlights \u2022 We began sampling the industry's first 512GB ultra dense high-capacity DDR5 RDIMM modules capable of speeds up to 9,200 MT/s. \u2022 We have completed multiple customer qualifications of our 1-gamma based, 8,800 MT/s high-speed server RDIMM modules. \u2022 Our industry leading server LPDDR SOCAMM portfolio revenue more than doubled sequentially in the fourth quarter of 2026. \u2022 Our 7600 PCIe Gen 5 and 9650 PCIe Gen 6 SSD high-performance products are now shipping to market-leading customers for KV-cache applications. \u2022 Our 6600 ION SSD achieved a strong volume ramp in the fourth quarter of 2026. \u2022 We are now shipping 6-channel 1-gamma LPDDR5X for flagship mobile devices. \u2022 We have secured design wins with every Tier 1 OEM customer for AI workstation product. \u2022 Our 4600 SSD secured additional qualifications with leading PC OEMs. \u2022 We began sampling 1-gamma based LPDDR6 products to multiple physical AI markets. Investor Webcast Micron will host a conference call on Wednesday, September 30, 2026 at 2:30 p.m. Mountain Time to discuss its fourth-quarter and full-year financial results and provide forward-looking guidance for its first quarter. A live webcast of the call will be available online at investors.micron.com . A webcast replay will be available for one year after the call. We encourage you to visit our website at micron.com throughout the quarter for the most current information on the company, including information on financial conferences that we may be attending. You can also follow us on LinkedIn, X (@MicronTech) and YouTube (@MicronTechnology). About Micron Technology, Inc. Micron Technology, Inc. is a global leader in semiconductor memory and storage, powering AI and compute-intensive applications from cloud to edge. With a relentless focus on our customers, technology and product leadership, and manufacturing and operational excellence, Micron\u2019s comprehensive portfolio of high-performance DRAM,",
+      "quote_start": 4151,
+      "quote_end": 6551,
+      "canonical_sha256": "2741ea15bb98ccfa4b942ebb12fe8c08482ac019a15de14cb6e1ee515eff3f12",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "ADI",
+      "cik": "0000006281",
+      "name": "ANALOG DEVICES INC",
+      "sector": "semiconductors",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "fiscal_year_end": "1031",
+      "eligibility_source": {
+        "accession": "0000006281-26-000072",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "310c5240a631ebce535f654635bdfc9f2a4072702140a1b7d3e7bf1e5528809f-185d2fa1dbad5b9356ca1d57bfb837476dd14c3a1a2ddf8ce9e6af2ffa17ec1c.body",
+              "fetched_at": "2026-11-13T04:52:16.634007+00:00",
+              "sha256": "185d2fa1dbad5b9356ca1d57bfb837476dd14c3a1a2ddf8ce9e6af2ffa17ec1c",
+              "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000072/adi3q26exhibit991earnings.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/ADI-0000006281-26-000072.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000072/adi3q26exhibit991earnings.htm"
+          }
+        ],
+        "filed": "2026-08-19",
+        "primary": "adi-20260819.htm",
+        "primary_manifest": {
+          "body": "a106cccced0588482942986d6e43429bd307f6996439e6cdf100260d6fa36af0-8735f0ca54c5e346fa013addceb09bce31cbe16039bf75b9e23382967f110aa5.body",
+          "fetched_at": "2026-11-13T04:52:15.927487+00:00",
+          "sha256": "8735f0ca54c5e346fa013addceb09bce31cbe16039bf75b9e23382967f110aa5",
+          "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000072/adi-20260819.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000072/adi-20260819.htm"
+      },
+      "eligibility_quote": "Outlook for the Fourth Quarter of Fiscal Year 2026 For the fourth quarter of fiscal 2026, we are forecasting revenue of $4.3 billion, +/- $100 million. At the midpoint of this revenue outlook, we expect reported operating margin of approximately 42.6%, +/-150 bps, and adjusted operating margin of approximately 52.0%, +/-100 bps. We are planning for reported EPS to be $3.14, +/-$0.15, and adjusted EPS to be $3.86, +/-$0.15. Our fourth quarter fiscal 2026 outlook is based on current expectations and actual results may differ materially as a result of, among other things, the important factors discussed at the end of this release. The statements about our fourth quarter fiscal 2026 outlook supersede all prior statements regarding our business outlook set forth in prior ADI news releases, and ADI disclaims any obligation to update these forward-looking statements. The adjusted results and adjusted anticipated results above are financial measures presented on a non-GAAP basis. Reconciliations of these non-GAAP financial measures to their most directly comparable GAAP financial measures are provided in the financial tables included in this release. See also the \u201cNon-GAAP Financial Information\u201d section for additional information. Dividend Payment The ADI Board of Directors has declared a quarterly cash dividend of $1.10 per outstanding share of common stock. The dividend will be paid on September 15, 2026 to all shareholders of record at the close of business on September 1, 2026. Conference Call Scheduled for Today, Wednesday, August 19, 2026 at 10:00 am ET ADI will host a conference call to discuss our third quarter fiscal 2026 results and short-term outlook today, beginning at 10:00 am ET. Investors may join via webcast, accessible at investor.analog.com. Non-GAAP Financial Information This release includes non-GAAP financial measures that are not in accordance with, nor an alternative to, U.S. generally accepted accounting principles (GAAP) and may be different from non-GAAP measures presented by other companies. In addition, these non-GAAP measures are not based on any comprehensive set of accounting rules or principles. These non-GAAP measures have material limitations in that they do not reflect all of the amounts associated with the Company\u2019s results of operations as determined in accordance with GAAP and should not be considered in isolation from, or as a ",
+      "quote_start": 3051,
+      "quote_end": 5451,
+      "canonical_sha256": "412a5ededd5bf403c53b73f935a22e247ac93f47dc5fd5bd64c845d5d1f7c1dc",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "MCHP",
+      "cik": "0000827054",
+      "name": "MICROCHIP TECHNOLOGY INC",
+      "sector": "semiconductors",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "fiscal_year_end": "0331",
+      "eligibility_source": {
+        "accession": "0000827054-26-000061",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "17e956af99582a8cdfda405d884eb682afefd3442a0ce7094be00154332e7da0-6c85c6ce3577e15409fa890b4ca468430ed24574c4a9e977ba79563e2792be47.body",
+              "fetched_at": "2026-11-13T04:58:43.866414+00:00",
+              "sha256": "6c85c6ce3577e15409fa890b4ca468430ed24574c4a9e977ba79563e2792be47",
+              "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000061/exhibit991q2fy27.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/MCHP-0000827054-26-000061.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000061/exhibit991q2fy27.htm"
+          }
+        ],
+        "filed": "2026-11-05",
+        "primary": "mchp-20261105.htm",
+        "primary_manifest": {
+          "body": "17ad59af43e9cdea6f9c87d91ea4f8a6d7b55a8aa3d3f3631e7e4c0d7ea3b265-7deccad23c0556ad74e6e8d781ad135f87ec2e38aa539e8b98443d45b4f3145b.body",
+          "fetched_at": "2026-11-13T04:58:43.219810+00:00",
+          "sha256": "7deccad23c0556ad74e6e8d781ad135f87ec2e38aa539e8b98443d45b4f3145b",
+          "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000061/mchp-20261105.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000061/mchp-20261105.htm"
+      },
+      "eligibility_quote": "Outlook: The following statements are based on current expectations. These statements are forward-looking, and actual results may differ materially. Microchip Consolidated Guidance Net Sales $1.573 to $1.638 billion GAAP (5) Non-GAAP Adjustments (1) Non-GAAP (1) Gross Profit 62.9% to 63.9% $17.7 to $18.7 million 64.0% to 65.0% Operating Expenses (2) 36.7% to 37.4% $163.0 to $167.0 million 26.5% to 27.0% Operating Income 25.5% to 27.2% $180.8 to $185.8 million 37.0% to 38.5% Other Expense, net $47.7 to $48.3 million $(0.2) to $0.2 million $47.5 to $48.5 million Income Tax Provision $67.1 to $91.3 million (3) $(53.4) to $(32.4) million $34.7 to $37.9 million (4) Net income $285.9 to $305.8 million $212.9 to $239.3 million $498.8 to $545.1 million Dividends on Series A Preferred Stock $(27.8) million $27.8 million \u2014 Net income attributable to common stockholders $258.1 to $278.0 million $240.7 to $267.1 million $498.8 to $545.1 million Diluted Common Shares Outstanding Approximately 551.0 to 552.0 million shares 23.8 million shares Approximately 574.8 to 575.8 million shares Diluted net income per common share $0.47 to $0.50 $0.40 to $0.45 $0.87 to $0.95 (1) See the \"Use of Non-GAAP Financial Measures\" section of this release for information regarding our non-GAAP guidance. (2) We are not able to estimate the amount of certain Special Charges and Other, net that may be incurred during the quarter ending December 31, 2026. Therefore, our estimate of GAAP operating expenses excludes certain amounts that may be recognized as Special Charges and Other, net in the quarter ending December 31, 2026. (3) The forecast for GAAP tax expense excludes any unexpected tax events that may occur during the quarter, as these amounts cannot be forecasted. (4) Represents the expected cash tax rate for fiscal 2027, excluding any transition tax payments associated with the Tax Cuts and Jobs Act. (5) Our GAAP guidance excludes the impact of any potential gains or charges related to our ongoing evaluation of restructuring activities including the sale of our Fab 2 wafer fabrication facility in Tempe, Arizona. Capital expenditures for the quarter ending December 31, 2026 are expected to be about $35 million. Capital expenditures for all of fiscal 2027 are expected to be approximately $100 million. Consistent with the slow macroeconomic environment in fiscal 2025, we have paused most of",
+      "quote_start": 8271,
+      "quote_end": 10671,
+      "canonical_sha256": "f445e49c3ee35d6c3fab663ee47a94cddfaa2da09cd1bf2363dc7505c1bb0372",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "FIVE",
+      "cik": "0001177609",
+      "name": "FIVE BELOW, INC",
+      "sector": "retail",
+      "sic": "5331",
+      "sic_description": "Retail-Variety Stores",
+      "fiscal_year_end": "0130",
+      "eligibility_source": {
+        "accession": "0001177609-26-000023",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "d06f69e8bdf1f24529049ace78b4021c5ce5ff1bd9f57643d0b5a11e7f0974a7-54bf5bc2aa327e2a38f88bd8490ade44b1fb58758ff0e8f894bfb07213e5c649.body",
+              "fetched_at": "2026-11-13T04:52:20.021421+00:00",
+              "sha256": "54bf5bc2aa327e2a38f88bd8490ade44b1fb58758ff0e8f894bfb07213e5c649",
+              "url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760926000023/q22026fivebelowexhibit991.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/FIVE-0001177609-26-000023.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760926000023/q22026fivebelowexhibit991.htm"
+          }
+        ],
+        "filed": "2026-09-02",
+        "primary": "five-20260902.htm",
+        "primary_manifest": {
+          "body": "da7698e289ddab7a1bffddc96e48497e3f63cbeea0bc1a5bfcf12730a7af8dfa-040bdb47362537237040f77f3d9758619d79d6f503ba625e7534a7a226e8f4f4.body",
+          "fetched_at": "2026-11-13T04:52:19.369402+00:00",
+          "sha256": "040bdb47362537237040f77f3d9758619d79d6f503ba625e7534a7a226e8f4f4",
+          "url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760926000023/five-20260902.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760926000023/five-20260902.htm"
+      },
+      "eligibility_quote": "For the third quarter of Fiscal 2026: Current Outlook Net sales $1.21 billion to $1.23 billion Net new stores approximately 40 Comparable sales +8% to +10% Net income $56 million to $63 million Diluted income per common share $1.01 to $1.13 Diluted weighted average shares outstanding 55.4 million For the full year of Fiscal 2026: Current Outlook Prior Outlook Net sales $5.63 billion to $5.71 billion $5.40 billion to $5.48 billion Net new stores approximately 150 approximately 150 Comparable sales +10% to +12% +6% to +8% Net income $672 million to $698 million $480 million to $502 million Adjusted net income (3) $546 million to $572 million $482 million to $504 million Diluted income per common share $12.10 to $12.58 $8.62 to $9.02 Adjusted diluted income per common share (3) $9.83 to $10.31 $8.65 to $9.05 Diluted weighted average shares outstanding 55.5 million 55.7 million Gross capital expenditures $250 million to $260 million $230 million to $250 million (3) Adjusted net income and adjusted diluted income per common share excludes the impact of tariff refunds and related interest recorded through the year to date period ended August 1, 2026 and retention awards granted in fiscal 2024, net of income tax impacts. Share Repurchase Authorization: On August 29, 2026, the Board of Directors approved a new share repurchase program authorizing the repurchase of up to $600 million of the Company\u2019s common stock. The new share repurchase program replaces and supersedes the remaining capacity under the Company's prior share repurchase program authorized on November 27, 2023. The new repurchase program has no fixed expiration date and will remain in effect until all common stock authorized to be repurchased thereunder has been acquired, or until the repurchase program is otherwise replaced, suspended, or terminated. Conference Call Information: A conference call to discuss the financial results for the second quarter of fiscal 2026 is scheduled for today, September 2, 2026, at 4:30 p.m. Eastern Time. A live audio webcast of the conference call will be available online at investor.fivebelow.com, where a replay will be available shortly after the conclusion of the call. Investors and analysts interested in participating in the call are invited to dial 412-902-6753 approximately 10 minutes prior to the start of the call. Non-GAAP Information: This press release includes ",
+      "quote_start": 4794,
+      "quote_end": 7194,
+      "canonical_sha256": "9df3f6d90b64b86255384cede8eb070a6d51ba2a73d59cadeeefe439f2e36e6a",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "DLTR",
+      "cik": "0000935703",
+      "name": "DOLLAR TREE, INC.",
+      "sector": "retail",
+      "sic": "5331",
+      "sic_description": "Retail-Variety Stores",
+      "fiscal_year_end": "0130",
+      "eligibility_source": {
+        "accession": "0000935703-26-000108",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "e6592e2e2d8d88bd85ba9971d26cc802d39ee94cf2812b78c3444c0683b0c523-d017e288324426115cd7dec42a98e8e3769d07afe8074a1b64d26105010a10c9.body",
+              "fetched_at": "2026-11-13T04:52:23.631573+00:00",
+              "sha256": "d017e288324426115cd7dec42a98e8e3769d07afe8074a1b64d26105010a10c9",
+              "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000108/ex991q2-26earningspressrel.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/DLTR-0000935703-26-000108.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000108/ex991q2-26earningspressrel.htm"
+          }
+        ],
+        "filed": "2026-08-27",
+        "primary": "dltr-20260827.htm",
+        "primary_manifest": {
+          "body": "1036abaae52eb9316331a1b2a431b681bdb2fbd5a1a9ca9528334724534ac0d1-d443c9ab627ef529a8372559013a8f8195483bcf6f9ebb2beb76e8bab6f61f5e.body",
+          "fetched_at": "2026-11-13T04:52:22.689686+00:00",
+          "sha256": "d443c9ab627ef529a8372559013a8f8195483bcf6f9ebb2beb76e8bab6f61f5e",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000108/dltr-20260827.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570326000108/dltr-20260827.htm"
+      },
+      "eligibility_quote": "Third Quarter 2026 Outlook \u2022 Net sales from continui ng operations of $5.0 to $5.1 billion, based on comparable store net sales growth in the range of 3.0% to 4.0%. \u2022 Third quarter diluted EPS is currently expected to be in the range of $0.80 to $0.95 including an approximate $0.50 impact related to tariff refund reinvestments Conference Call Information On August 27, 2026, the Company will host a conference call to discuss its earnings results at 8:00 a.m. Eastern Time. The telephone number for the call is (877) 407-3943 or (201) 689-8855. A recorded version of the call will be available for seven days after the call and may be accessed by dialing (877) 660-6853 or (201) 612-7415. The access code is 13762117. A webcast of the call is also accessible through the Investor Relations portion of the Company\u2019s website. Supplemental financial information for the second quarter is available on the Investor Relations portion of the Company\u2019s website, at https://corporate.dollartree.com/investors. Dollar Tree, Inc., headquartered in Chesapeake, VA, is one of North America\u2019s largest and most loved value retailers, known for delivering great value, convenience, and a \u201cthrill-of-the-hunt\u201d discovery shopping experience. With a team of more than 150,000 associates, Dollar Tree operates more than 9,400 stores and 19 distribution centers across 48 contiguous states and seven Canadian provinces under the brands Dollar Tree and Dollar Tree Canada. The Company is committed to being a responsible steward of its business \u2013 supporting its people, serving its communities, and creating lasting value. To learn more about the Company, visit www.DollarTree.com. 4 Use of Non-GAAP Financial Measures The Company reports its financial results in accordance with accounting principles generally accepted in the United States (\u201cGAAP\u201d). From time to time, the Company supplements the reporting of its financial information determined under GAAP with certain non-GAAP financial information. The non-GAAP financial measures we have disclosed include adjusted corporate selling, general and administrative expenses, exclusive and inclusive of transition services agreement income, net; adjusted corporate selling, general and administrative expenses, exclusive and inclusive of transition services agreement income, net as a percentage of total revenue; adjusted selling, general and administrative expenses",
+      "quote_start": 8388,
+      "quote_end": 10788,
+      "canonical_sha256": "40e284577bb4b04fb833b9fe14bae989cb6fe7e0532c28d4187161d9156a11e5",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "BOOT",
+      "cik": "0001610250",
+      "name": "Boot Barn Holdings, Inc.",
+      "sector": "retail",
+      "sic": "5661",
+      "sic_description": "Retail-Shoe Stores",
+      "fiscal_year_end": "0327",
+      "eligibility_source": {
+        "accession": "0001104659-26-119615",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "8454497eee0c03ad9cc4d2a4069ee9ab0f2b76a942ee3a5102085cf40d986fcf-eb87081a2d4215d6964335ccaa9d2e3579b1a7c7a91b9bab80d866a9b9a111db.body",
+              "fetched_at": "2026-11-13T04:52:33.451988+00:00",
+              "sha256": "eb87081a2d4215d6964335ccaa9d2e3579b1a7c7a91b9bab80d866a9b9a111db",
+              "url": "https://www.sec.gov/Archives/edgar/data/1610250/000110465926119615/boot-ex99d1.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/BOOT-0001104659-26-119615.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/1610250/000110465926119615/boot-ex99d1.htm"
+          }
+        ],
+        "filed": "2026-10-28",
+        "primary": "boot-20261028x8k.htm",
+        "primary_manifest": {
+          "body": "fe0c94578ed611e3c432e5889f4a9899cd4e1f1dd4184fb4757cf9aa1fc28c84-99b1055eaccad6320248ad90095c299e28ca6f7c3bbffa53673cbe00002819b5.body",
+          "fetched_at": "2026-11-13T04:52:32.567943+00:00",
+          "sha256": "99b1055eaccad6320248ad90095c299e28ca6f7c3bbffa53673cbe00002819b5",
+          "url": "https://www.sec.gov/Archives/edgar/data/1610250/000110465926119615/boot-20261028x8k.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1610250/000110465926119615/boot-20261028x8k.htm"
+      },
+      "eligibility_quote": "For the third fiscal quarter ending December 26, 2026, the Company expects: \u200b \u25cf Total sales of $785 million to $802 million, representing growth of 11% to 14% over the prior-year period. \u25cf Consolidated same store sales declines of (1.0)% to growth of 1.0%, with retail store same store sales declines of (1.0)% to growth of 1.0%, and e-commerce same store sales declines of (1.0)% to growth of 1.0%. \u25cf Merchandise margin between $404 million and $413 million, or approximately 51.5% of sales. Included in merchandise margin is an estimated $0.7 million benefit related to tariff refunds. \u25cf Gross profit between $311 million and $319 million, or approximately 39.6% to 39.8% of sales. \u25cf SG&A expenses between $187 million and $189 million, or approximately 23.9% to 23.6% of sales. \u25cf Income from operations between $123 million and $130 million, or approximately 15.7% to 16.2% of sales. \u25cf Net income per diluted share of $3.03 to $3.19, based on 30.0 million weighted average diluted shares outstanding. Conference Call Information A conference call to discuss the financial results for the second fiscal quarter ended September 26, 2026, is scheduled for today, October 28, 2026, at 4:30 p.m. ET (1:30 p.m. PT). Investors and analysts interested in participating in the call are invited to dial (833) 890-4545. The conference call will also be available to interested parties through a live webcast at investor.bootbarn.com. Please visit the website and select the \u201cEvents and Presentations\u201d link at least 15 minutes prior to the start of the call to register and download any necessary software. A Supplemental Financial Presentation is also available on the investor relations section of the Company\u2019s website. A telephone replay of the call will be available until November 28, 2026, by dialing (844) 512-2921 (domestic) or (412) 317-6671 (international) and entering the conference identification number: 10212968. Please note participants must enter the conference identification number in order to access the replay. 4 About Boot Barn Boot Barn is the nation\u2019s leading lifestyle retailer of western and work-related footwear, apparel and accessories for men, women and children. The Company offers its loyal customer base a wide selection of work and lifestyle brands. As of the date of this release, Boot Barn operates 594 stores in 49 states. For more information, call 888-Boot-Barn or visi",
+      "quote_start": 12148,
+      "quote_end": 14548,
+      "canonical_sha256": "4c71aef607c25c1feeeccc8555eff506b611844edacea9129fe5cb0d3ad285fa",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "SFIX",
+      "cik": "0001576942",
+      "name": "Stitch Fix, Inc.",
+      "sector": "retail",
+      "sic": "5961",
+      "sic_description": "Retail-Catalog & Mail-Order Houses",
+      "fiscal_year_end": "0731",
+      "eligibility_source": {
+        "accession": "0001628280-26-063208",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "6f80bb264f78ea3c60a9348d02108a1d37e497a7207f450d6ed31519a4db0d53-abb33424b80961839e5241678434ef8b2f7855954393698dcf99e670ca1bec96.body",
+              "fetched_at": "2026-11-13T04:52:37.052457+00:00",
+              "sha256": "abb33424b80961839e5241678434ef8b2f7855954393698dcf99e670ca1bec96",
+              "url": "https://www.sec.gov/Archives/edgar/data/1576942/000162828026063208/exhibit991-fy26.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/SFIX-0001628280-26-063208.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/1576942/000162828026063208/exhibit991-fy26.htm"
+          }
+        ],
+        "filed": "2026-09-23",
+        "primary": "sfix-20260923.htm",
+        "primary_manifest": {
+          "body": "5236752afea94a6feb6a22a550b9e8ddeb92a74cc8223b02e9a9cce1b074ef99-1925934eee14ace1e6a5b95d4e23e6e21cec6a5ed294365fd8122247a9cf692c.body",
+          "fetched_at": "2026-11-13T04:52:36.404863+00:00",
+          "sha256": "1925934eee14ace1e6a5b95d4e23e6e21cec6a5ed294365fd8122247a9cf692c",
+          "url": "https://www.sec.gov/Archives/edgar/data/1576942/000162828026063208/sfix-20260923.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1576942/000162828026063208/sfix-20260923.htm"
+      },
+      "eligibility_quote": "Q1 2027 Net Revenue $323 million - $328 million (5.6)% - (4.1)% YoY Adjusted EBITDA $3 million - $6 million 0.9% - 1.8% margin 1 Stitch Fix\u2019s financial outlook for fiscal year 2027 is as follows: Fiscal Year 2027 Net Revenue $1.310 billion - $1.360 billion (2.8)% - 0.9% YoY Adjusted EBITDA $27 million - $42 million 2.1% - 3.1% margin Stitch Fix expects its full fiscal year 2027 gross margin to be between 43% and 44%. Stitch Fix also expects to generate positive free cash flow for the full year. Stitch Fix\u2019s fiscal year is a 52- or 53-week period ending on the Saturday closest to July 31. Fiscal years 2025 and 2026 are 52-week years. Stitch Fix has not reconciled its Adjusted EBITDA outlook to GAAP net income (loss) or free cash flow outlook to net cash flows used in operating activities from continuing operations because it does not provide an outlook for GAAP net income (loss) or net cash flows used in operating activities from continuing operations due to the uncertainty and potential variability of restructuring and other one-time costs, net other income (expense), provision for income taxes, stock-based compensation expense, or net cash flows used in operating activities from continuing operations, which are reconciling items between the non-GAAP financial measure and the corresponding GAAP measure. Because Stitch Fix cannot reasonably predict such items, a reconciliation of the non-GAAP financial measure outlooks to the corresponding GAAP measures are not available without unreasonable effort. We caution, however, that such items could have a significant impact on the calculation of GAAP net income (loss) and free cash flow. For more information regarding the non-GAAP financial measures discussed in this release, please see \u201cNon-GAAP Financial Measures\u201d below. Discontinued Operations During the first quarter of fiscal 2024, Stitch Fix ceased operations of its UK business and met the accounting requirements for reporting the UK business as a discontinued operation. Accordingly, its unaudited condensed consolidated financial statements reflect the results of the UK business as a discontinued operation for all periods presented. Unless otherwise noted, amounts and disclosures relate to its continuing operations. Conference Call and Webcast Information Matt Baer, Chief Executive Officer of Stitch Fix, and David Aufderhaar, Chief Financial Officer of Stitch ",
+      "quote_start": 3335,
+      "quote_end": 5735,
+      "canonical_sha256": "59c2da2594a679d73b3d4e965f912ac8681ea6e114abe6a060ecac39a8b1c015",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "A",
+      "cik": "0001090872",
+      "name": "AGILENT TECHNOLOGIES, INC.",
+      "sector": "healthcare_life_science",
+      "sic": "3826",
+      "sic_description": "Laboratory Analytical Instruments",
+      "fiscal_year_end": "1031",
+      "eligibility_source": {
+        "accession": "0001090872-26-000062",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "a557be8aa4aeeeccfa9bed8e990f1f5215926177e3763af597516c5726ef8a79-610587ae799fd911e19e222fa2d6448d8daad3f2c25bdc8c18c7d9a9559380f5.body",
+              "fetched_at": "2026-11-13T04:52:47.775535+00:00",
+              "sha256": "610587ae799fd911e19e222fa2d6448d8daad3f2c25bdc8c18c7d9a9559380f5",
+              "url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087226000062/exhibit991-q326pressrelease.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/A-0001090872-26-000062.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087226000062/exhibit991-q326pressrelease.htm"
+          }
+        ],
+        "filed": "2026-08-26",
+        "primary": "a-20260826.htm",
+        "primary_manifest": {
+          "body": "c1248f40b2cdfd13bdbf535ec0c107fea96d7314cb4a020dc23b8f788a2e1eae-5eb6f3edc52b77992172d2b07aeb4c5fa4d4442f80557e8407da4a92489788f0.body",
+          "fetched_at": "2026-11-13T04:52:47.107660+00:00",
+          "sha256": "5eb6f3edc52b77992172d2b07aeb4c5fa4d4442f80557e8407da4a92489788f0",
+          "url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087226000062/a-20260826.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087226000062/a-20260826.htm"
+      },
+      "eligibility_quote": "Fiscal year 2026 improved outlook and fourth-quarter guidance \u2022 Fiscal year 2026 revenue is now expected in the range of $7.49 billion to $7.51 billion, representing a range of up 7.8% to 8.1% reported and up 5.8% to 6.0% core, (1)(5) an increase of 65 basis points at the midpoint. \u2022 Non-GAAP fiscal year 2026 operating margin expansion (2) at the midpoint of core revenue growth guidance is now expected to be over 130 basis points (including approximately 30 basis points in net benefit from tariff refunds in the third quarter). \u2022 Non-GAAP fiscal year 2026 EPS (4) is now expected in the range of $6.18 to $6.21, an increase of 15 cents at the midpoint (including $0.06 net benefit from tariff refunds in the third quarter) versus our prior guide. 1 \u2022 Fourth-quarter 2026 revenue is expected in the range of $1.98 billion to $2.0 billion, growth of 6.4% to 7.4% reported and up 5.2% to 6.2% core (1)(5) . Non-GAAP EPS (4) is expected in the range of $1.71 to $1.74 per share. This guidance does not include any future benefit from tariff refunds. SANTA CLARA, California, August 26, 2026 \u2014 Agilent Technologies Inc. (NYSE: A) today reported revenue of $1.88 billion for the third quarter ended July 31, 2026, representing growth of 8.1% reported and up 7.3% core (1) compared with the third quarter of fiscal year 2025. Third-quarter GAAP net income was $362 million, or $1.28 per share. This compares with $336 million, or $1.18 per share, in the third quarter of fiscal year 2025. Non-GAAP net income (3) was $459 million (including a $17 million net benefit from tariff refunds), or $1.62 per share (including a $0.06 net benefit from tariff refunds), during the quarter, compared with $390 million, or $1.37 per share, during the year-ago quarter. \u201cAgilent\u2019s exceptional third-quarter performance reflects the sustained momentum created by our strategy, our execution discipline, and the compounding impact of the Ignite Operating System,\u201d said Agilent CEO Padraig McDonnell. \u201cWe are seeing improving end markets, stronger demand in key regions, and excellent customer response to our innovative product launches. All of this gives us confidence in our increased outlook and our ability to sustainably outperform our end markets.\u201d Financial Highlights Life Sciences and Diagnostics Markets Group The Life Sciences and Diagnostics Markets Group (LDG) reported third-quarter revenue of $746 mil",
+      "quote_start": 1176,
+      "quote_end": 3576,
+      "canonical_sha256": "42d5453470dede733be8b7f610de8891e01ad6319c6846d15addcf513dd1e68f",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "HIMS",
+      "cik": "0001773751",
+      "name": "Hims & Hers Health, Inc.",
+      "sector": "healthcare_life_science",
+      "sic": "8011",
+      "sic_description": "Services-Offices & Clinics of  Doctors of  Medicine",
+      "fiscal_year_end": "1231",
+      "eligibility_source": {
+        "accession": "0001773751-26-000242",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "37463823a0ddf92eeecac50381abadabdf89a169c172842f18ef44a90615f7a8-ec9f3f36e25b809509c30771d68f3f12f89e58ea402a70c28ca253a6c1be15cd.body",
+              "fetched_at": "2026-11-13T04:58:52.960342+00:00",
+              "sha256": "ec9f3f36e25b809509c30771d68f3f12f89e58ea402a70c28ca253a6c1be15cd",
+              "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000242/hims-20260930x8xkearningsr.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/HIMS-0001773751-26-000242.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000242/hims-20260930x8xkearningsr.htm"
+          }
+        ],
+        "filed": "2026-11-09",
+        "primary": "hims-20261109.htm",
+        "primary_manifest": {
+          "body": "d295015d31b0f932da2904aa21cd99b1959b98940265ed46da78c457ec822c60-e326ef6700178e30dd48885d148cbc7e681cfc9b0d4e01701a63d249d1624cbe.body",
+          "fetched_at": "2026-11-13T04:58:52.057280+00:00",
+          "sha256": "e326ef6700178e30dd48885d148cbc7e681cfc9b0d4e01701a63d249d1624cbe",
+          "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000242/hims-20261109.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000242/hims-20261109.htm"
+      },
+      "eligibility_quote": "Financial Outlook Hims & Hers is providing the following guidance: For the fourth quarter 2026, we expect: \u2022 Revenue of $875 million to $895 million. \u2022 Adjusted EBITDA of $70 million to $90 million, reflecting an Adjusted EBITDA margin of 8% to 10%. For the full year 2026, we expect: \u2022 Revenue of $3.13 billion to $3.15 billion. \u2022 Adjusted EBITDA of $257 million to $277 million, reflecting an Adjusted EBITDA margin of 8% to 9%. The guidance provided above constitutes forward-looking statements and actual results may differ materially. Refer to the \u201cCautionary Note Regarding Forward-Looking Statements\u201d safe harbor section below for information on the factors that could cause our actual results to differ materially from these forward-looking statements. We have relied upon the exception in Item 10(e)(1)(i)(B) of Regulation S-K and have not reconciled forward-looking Adjusted EBITDA to its most directly comparable U.S. GAAP measure, net income or loss, because we cannot predict with reasonable certainty the ultimate outcome of certain components of such reconciliations, including market-related assumptions that are not within our control, or others that may arise, without unreasonable effort. For these reasons, we are unable to assess the probable significance of the unavailable information, which could materially impact the amount of future net income or loss. See \u201cNon-GAAP Financial Measures\u201d for additional important information regarding Adjusted EBITDA. Conference Call Hims & Hers will host a conference call to review the third quarter 2026 results on November 9, 2026, at 5:00 p.m. ET. The conference call can be accessed by dialing +1 (833) 461-5787 for U.S. participants and +1 (585) 542-9983 for international participants, and referencing conference ID #461 746 058. A live audio webcast will be available online at investors.hims.com. A replay of the call will be available via webcast for on-demand listening shortly after the completion of the call at the same link. About Hims & Hers Health, Inc. Hims & Hers is the leading global health and wellness platform on a mission to help the world feel great through the power of better health. We believe how you feel in your body and mind transforms how you show up in life. That\u2019s why we\u2019re building a future where nothing stands in the way of harnessing this power. Hims & Hers normalizes health & wellness challenges\u2014",
+      "quote_start": 4148,
+      "quote_end": 6548,
+      "canonical_sha256": "6214a543e1e0925d47c0b5287ea30286e4c62a19cc4fac56d3af025c7ff85bcc",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "TDOC",
+      "cik": "0001477449",
+      "name": "Teladoc Health, Inc.",
+      "sector": "healthcare_life_science",
+      "sic": "8011",
+      "sic_description": "Services-Offices & Clinics of  Doctors of  Medicine",
+      "fiscal_year_end": "1231",
+      "eligibility_source": {
+        "accession": "0001477449-26-000050",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "c21ca6a3af44484c9bcd2e0573ac4c499ed30be087cd774d1b68e19ff5e3022f-2be359c888a9c8de0596134edb38cc6bf566f2d2ff5ad3a403fa257e0859cc01.body",
+              "fetched_at": "2026-11-13T04:58:56.342592+00:00",
+              "sha256": "2be359c888a9c8de0596134edb38cc6bf566f2d2ff5ad3a403fa257e0859cc01",
+              "url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744926000050/tdoc-20260930xexx991.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/TDOC-0001477449-26-000050.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744926000050/tdoc-20260930xexx991.htm"
+          }
+        ],
+        "filed": "2026-10-28",
+        "primary": "tdoc-20261028.htm",
+        "primary_manifest": {
+          "body": "2618ad67da4195aa40d4c33d1103957ba9706167c2466eda709e541187550c08-76237b571f40c00922dc97147eb9a924e64560fc68cb5a76dc0d6a37e27d4289.body",
+          "fetched_at": "2026-11-13T04:58:55.664569+00:00",
+          "sha256": "76237b571f40c00922dc97147eb9a924e64560fc68cb5a76dc0d6a37e27d4289",
+          "url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744926000050/tdoc-20261028.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744926000050/tdoc-20261028.htm"
+      },
+      "eligibility_quote": "For the fourth quarter of 2026, we expect: 4Q 2026 Outlook Range Revenue $569 - $615 million Adjusted EBITDA $74 - $100 million Net loss per share ($0.23) - ($0.03) U.S. Integrated Care Members (2) 99.5 - 100.5 million Integrated Care Revenue growth percentage (year-over-year) 0.0% - 3.8% Adjusted EBITDA margin 14.5% - 16.8% BetterHelp Revenue growth percentage (year-over-year) (31.5%) - (18.5%) Adjusted EBITDA margin 9.2% - 15.1% See note (2) in the Notes section that follows. 3 Earnings Conference Call The Third Quarter 2026 earnings conference call and webcast will be held Wednesday, October 28, 2026 at 5:00 p.m. E.T. The conference call can be accessed by dialing 833-461-5787 for U.S. participants and using the meeting ID # 404 870 451. For international participants, please visit the following link for global dial-in numbers, using the same meeting ID # 404 870 451: https://help.events.q4inc.com/eahc/international-dial-in-numbers. A live audio webcast will also be available online at http://ir.teladoc.com/news-and-events/events-and-presentations/. A replay of the call will be available via webcast for on-demand listening shortly after the completion of the call, at the same web link, and will remain available for approximately 90 days. About Teladoc Health Teladoc Health is the global leader in virtual care. The company is delivering and orchestrating care across patients, care providers, platforms, and partners \u2014 transforming virtual care into a catalyst for how better health happens. Through our relationships with health plans, employers, providers, health systems and consumers, we are enabling more access, driving better outcomes, extending provider capacity and lowering costs. Learn more at www.teladochealth.com. Cautionary Note Regarding Forward-Looking Statements This press release contains \u201cforward-looking statements\u201d within the meaning of the safe harbor provisions of the U.S. Private Securities Litigation Reform Act of 1995. Forward-looking statements can be identified by words such as: \u201canticipate,\u201d \u201cintend,\u201d \u201cplan,\u201d \u201cbelieve,\u201d \u201cproject,\u201d \u201cestimate,\u201d \u201cexpect,\u201d \u201cmay,\u201d \u201cshould,\u201d \u201cwill\u201d and similar references to future periods. Examples of forward-looking statements include, among others, the information under the caption \u201cFinancial Outlook\u201d and statements we make regarding future financial or operating results, future numbers of members, BetterH",
+      "quote_start": 8077,
+      "quote_end": 10477,
+      "canonical_sha256": "8630751ff6b1f4f352cf03aaf93581d56c2909ba2f2f46ad4ca7f3da46ce8f52",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "COO",
+      "cik": "0000711404",
+      "name": "COOPER COMPANIES, INC.",
+      "sector": "healthcare_life_science",
+      "sic": "3851",
+      "sic_description": "Ophthalmic Goods",
+      "fiscal_year_end": "1031",
+      "eligibility_source": {
+        "accession": "0001628280-26-061155",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "19b217dc91d629b85a15edd68eb7693305a2ad3dfd3b25879d9b89d84ce680a2-25cbb0a9d959cc07dc324aa0a6686829081749060b3cb1cc240fd7b4014cb94d.body",
+              "fetched_at": "2026-11-13T04:58:59.992333+00:00",
+              "sha256": "25cbb0a9d959cc07dc324aa0a6686829081749060b3cb1cc240fd7b4014cb94d",
+              "url": "https://www.sec.gov/Archives/edgar/data/711404/000162828026061155/cooperq32026pressrelease.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/COO-0001628280-26-061155.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/711404/000162828026061155/cooperq32026pressrelease.htm"
+          }
+        ],
+        "filed": "2026-09-09",
+        "primary": "coo-20260909.htm",
+        "primary_manifest": {
+          "body": "32672000b52c5101c19274fbf99e51cb5ac2946788e55ce6faa06b833b16d0a5-619fc5f31bfffe4f9b7245f662995827dc33ad7c518aeef1be3334b47e519b0f.body",
+          "fetched_at": "2026-11-13T04:58:59.307697+00:00",
+          "sha256": "619fc5f31bfffe4f9b7245f662995827dc33ad7c518aeef1be3334b47e519b0f",
+          "url": "https://www.sec.gov/Archives/edgar/data/711404/000162828026061155/coo-20260909.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/711404/000162828026061155/coo-20260909.htm"
+      },
+      "eligibility_quote": "Fiscal Year 2026 Financial Guidance The Company updated its fiscal year 2026 financial guidance. Details are summarized as follows: \u2022 Fiscal fourth quarter 2026 total revenue of $1.057 - $1.080 billion (organic growth of 0% to 2%) \u25e6 CVI revenue of $692 -$706 million (organic growth of -2% to 0%) \u25e6 CSI revenue of $364 - $374 million (organic growth of 4% to 6%) \u2022 Fiscal fourth quarter 2026 non-GAAP diluted EPS of $1.05 -$1.09 \u2022 Fiscal 2026 total revenue of $4.229 - $4.252 billion (organic growth of 2% to 3%) \u2022 CVI revenue of $2.828 - $2.842 billion (organic growth of 1% to 2%) \u2022 CSI revenue of $1.401 - $1.410 billion (organic growth of 4% to 5%) \u2022 Fiscal 2026 non-GAAP diluted EPS of $4.51 - $4.55 \u2022 Reaffirm previously communicated long-term free cash flow objective exceeding $2.2 billion for fiscal years 2026 through 2028 Non-GAAP diluted earnings per share guidance excludes amortization and impairment of intangible assets, and certain income or gains and charges or expenses including acquisition and integration costs which we may incur as part of our continuing operations. With respect to the Company\u2019s guidance expectations, the Company has not reconciled non-GAAP diluted earnings per share guidance to GAAP diluted earnings per share due to the inherent difficulty in forecasting acquisition-related, integration and restructuring charges and expenses, which are reconciling items between the non-GAAP and GAAP measures. Due to the unknown effect, timing and potential significance of such charges and expenses that impact GAAP diluted earnings per share, the Company is not able to provide such guidance. Reconciliation of Selected GAAP Results to Non-GAAP Results To supplement our financial results and guidance presented on a GAAP basis, we provide non-GAAP measures such as non-GAAP gross margin, non-GAAP operating margin, non-GAAP diluted earnings per share, as well as constant currency and organic revenue growth because we believe they are helpful for the investors to understand our consolidated operating results. Management uses supplemental non-GAAP financial measures internally to understand, manage and evaluate our business, to make operating decisions, and to plan and forecast for future periods. The non-GAAP measures exclude costs which we generally would not have otherwise incurred in the periods presented as a part of our continuing operations. We provid",
+      "quote_start": 4742,
+      "quote_end": 7142,
+      "canonical_sha256": "6425718208fbdaf55fb3094991605dafd5d2330113fb56bdde857e9355d9f63f",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "JBL",
+      "cik": "0000898293",
+      "name": "JABIL INC",
+      "sector": "electronics_manufacturing",
+      "sic": "3672",
+      "sic_description": "Printed Circuit Boards",
+      "fiscal_year_end": "0831",
+      "eligibility_source": {
+        "accession": "0001628280-26-063890",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "3ac4759c5d6c86ee1c2a794db359d22df2f0ec7e7f5eda55bef545de8bce49dd-8dad5ef9c18107f04be1d6c50bbc5f65b061686615bb08ae8e1190884f88de5d.body",
+              "fetched_at": "2026-11-13T04:53:02.479573+00:00",
+              "sha256": "8dad5ef9c18107f04be1d6c50bbc5f65b061686615bb08ae8e1190884f88de5d",
+              "url": "https://www.sec.gov/Archives/edgar/data/898293/000162828026063890/jbl-20260930ex991.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/JBL-0001628280-26-063890.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/898293/000162828026063890/jbl-20260930ex991.htm"
+          }
+        ],
+        "filed": "2026-09-30",
+        "primary": "jbl-20260930.htm",
+        "primary_manifest": {
+          "body": "40ce405ec8b6542b8f4943b4ba364ccdac3d370290a874f4e8c1ab8d7e6ead51-827832bf596443ff559793f3fb37f02023f82f82b886e52b86e63473770834df.body",
+          "fetched_at": "2026-11-13T04:53:01.830167+00:00",
+          "sha256": "827832bf596443ff559793f3fb37f02023f82f82b886e52b86e63473770834df",
+          "url": "https://www.sec.gov/Archives/edgar/data/898293/000162828026063890/jbl-20260930.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828026063890/jbl-20260930.htm"
+      },
+      "eligibility_quote": "First Quarter of Fiscal Year 2027 Outlook: \u2022 Net revenue $10.6 billion to $11.4 billion \u2022 U.S. GAAP operating income $481 million to $541 million \u2022 U.S. GAAP diluted earnings per share $2.78 to $3.18 per diluted share \u2022 Core operating income (Non-GAAP) (1) $592 million to $652 million \u2022 Core diluted earnings per share (Non-GAAP) (1) $3.80 to $4.20 per diluted share (1) Core operating income and core diluted earnings per share exclude anticipated adjustments of $24 million for amortization of intangibles (or $0.21 per diluted share) and $62 million for stock-based compensation expense and related charges (or $0.58 per diluted share) and $25 million (or $0.23 per diluted share) for restructuring, severance and related charges. \u201cOur fiscal 2027 outlook reflects the strength of Jabil\u2019s diversified portfolio, with accelerating AI demand complemented by solid growth in automotive, healthcare, energy infrastructure, defense and aerospace, and warehouse and retail automation,\u201d Dastoor continued. \u201cThis breadth of growth, together with expanding customer relationships and committed business supporting our new capacity, gives us confidence in the year ahead. We expect revenue of $44.5 billion, up 24%, core operating margin expansion of 30 basis points to 6.1%, core diluted earnings per share growth of 34% to $17.55, and adjusted free cash flow of approximately $1.6 billion. As customers turn to Jabil for more of their engineering, supply chain and manufacturing needs, we see significant opportunities to sustain profitable growth, invest in our capabilities and return substantial capital to shareholders.\u201d Fiscal Year 2027 Outlook: \u2022 Net revenue $44.5 billion \u2022 Core operating margin (Non-GAAP) 6.1% \u2022 Core diluted earnings per share (Non-GAAP) $17.55 per diluted share \u2022 Adjusted free cash flow (Non-GAAP) ~$1.6 billion ( Definitions : \u201cU.S. GAAP\u201d means U.S. generally accepted accounting principles. Jabil defines core operating income as U.S. GAAP operating income less amortization of intangibles, stock-based compensation expense and related charges, restructuring, severance and related charges, distressed customer charges, loss on disposal of subsidiaries, settlement of receivables and related charges, impairment of notes receivable and related charges, goodwill impairment charges, business interruption and impairment charges, net, (gain) loss from the divestiture of busin",
+      "quote_start": 1551,
+      "quote_end": 3951,
+      "canonical_sha256": "65b97c492c19849b5ed5b42a0a464774417c39b0fcfceb7196f479e3012c7e61",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "SANM",
+      "cik": "0000897723",
+      "name": "SANMINA CORP",
+      "sector": "electronics_manufacturing",
+      "sic": "3672",
+      "sic_description": "Printed Circuit Boards",
+      "fiscal_year_end": "1003",
+      "eligibility_source": {
+        "accession": "0000897723-26-000044",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "9532284b175fd9fae1845f7f9a267fa436260bcbdc371eea875f00a5e781c44e-ec554c989cbd43d67e2fda6c6d6e7b81cb302092f765aa274a74c1d3a73688b1.body",
+              "fetched_at": "2026-11-13T04:53:06.247587+00:00",
+              "sha256": "ec554c989cbd43d67e2fda6c6d6e7b81cb302092f765aa274a74c1d3a73688b1",
+              "url": "https://www.sec.gov/Archives/edgar/data/897723/000089772326000044/sanmina_exx991xoctober32026.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/SANM-0000897723-26-000044.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/897723/000089772326000044/sanmina_exx991xoctober32026.htm"
+          }
+        ],
+        "filed": "2026-11-09",
+        "primary": "sanm-20261027.htm",
+        "primary_manifest": {
+          "body": "63a792865e536a1f88d57a7d6c8f890748c66d032339ace049c0dd16f56ee0b3-5dfe162fcf014bfdaa31b8f82cf0f743a54b65e58be25456e5f76e218fef447e.body",
+          "fetched_at": "2026-11-13T04:53:05.483294+00:00",
+          "sha256": "5dfe162fcf014bfdaa31b8f82cf0f743a54b65e58be25456e5f76e218fef447e",
+          "url": "https://www.sec.gov/Archives/edgar/data/897723/000089772326000044/sanm-20261027.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/897723/000089772326000044/sanm-20261027.htm"
+      },
+      "eligibility_quote": "First Quarter Fiscal 2027 Outlook Revenue: $3.8 billion - $4.1 billion Non-GAAP operating margin (3) : 7.0% - 7.5% Non-GAAP diluted EPS (3) : $3.50 - $3.85 Fiscal 2027 Outlook Revenue: $17.5 billion - $19.5 billion Non-GAAP operating margin (3) : 7.0% - 7.5% Non-GAAP diluted EPS (3) : $15.50 - $17.50 (3) This is a forward-looking non-GAAP financial measure that cannot be reconciled to its equivalent GAAP financial measure without unreasonable effort. Safe Harbor Statement The statements above relating to our expectations and the outlook above, constitute forward-looking statements within the meaning of the safe harbor provisions of Section 21E of the Securities Exchange Act of 1934. Actual results could differ materially from those projected in these statements as a result of a number of factors, including the risk that the expected benefits from the ZT Systems acquisition may not be realized or may take longer to realize than anticipated; adverse changes in the key markets we target, in particular the cloud and AI infrastructure sectors; the impact of recent or future changes in tariffs and trade policy, which may adversely affect our costs, supply chain, and customer demand; our reliance on a limited number of customers for a substantial portion of our sales; risks arising from our international operations and expansion into new geographic markets; geopolitical uncertainty, including relating to the conflict in the Middle East, and the other risk factors set forth in the Company's annual and quarterly reports filed with the Securities Exchange Commission. The Company is under no obligation to (and expressly disclaims any such obligation to) update or alter any of the forward-looking statements made in this earnings release, the conference call or the Investor Relations section of our website whether as a result of new information, future events or otherwise, unless otherwise required by law. Company Conference Call Information Sanmina will hold a conference call to review its financial results for the fourth quarter of fiscal 2026 and outlook for the first quarter fiscal 2027 and full year fiscal 2027 on Monday, November 9, 2026 at 5:00 p.m. ET (2:00 p.m. PT). The access numbers are: domestic 800-836-8184 and international 646-357-8785. The conference call will also be webcast live over the Internet. You can log on to the live webcast at Q4'26 Earnings . A",
+      "quote_start": 3127,
+      "quote_end": 5527,
+      "canonical_sha256": "82ae490ea686bf1dcdad3a54ab4135b506d117dfa6e9c3e1f6d51076ead92f42",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    },
+    {
+      "ticker": "PLXS",
+      "cik": "0000785786",
+      "name": "PLEXUS CORP",
+      "sector": "electronics_manufacturing",
+      "sic": "3672",
+      "sic_description": "Printed Circuit Boards",
+      "fiscal_year_end": "1003",
+      "eligibility_source": {
+        "accession": "0000785786-26-000062",
+        "exhibits": [
+          {
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "7010c3e78f82686b8bc732e42884d60780a816745a501e53271f84193d2e99ab-e43f94a29105522d70e73f1688c61901960a9968d4b912b03568f12c86c746ad.body",
+              "fetched_at": "2026-11-13T04:53:10.156110+00:00",
+              "sha256": "e43f94a29105522d70e73f1688c61901960a9968d4b912b03568f12c86c746ad",
+              "url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000062/plxsf26q4earningsrelease-e.htm"
+            },
+            "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/PLXS-0000785786-26-000062.txt",
+            "url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000062/plxsf26q4earningsrelease-e.htm"
+          }
+        ],
+        "filed": "2026-10-28",
+        "primary": "plxs-20261028.htm",
+        "primary_manifest": {
+          "body": "8f3fea97d42d7a554f8d1dc037eeb2126a230a45590c4297c4daad17178a4d9f-9359a67751592e440f4e0b2613c8b8527ef4c842cbd1d42a533be6e81be9ba94.body",
+          "fetched_at": "2026-11-13T04:53:09.375294+00:00",
+          "sha256": "9359a67751592e440f4e0b2613c8b8527ef4c842cbd1d42a533be6e81be9ba94",
+          "url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000062/plxs-20261028.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578626000062/plxs-20261028.htm"
+      },
+      "eligibility_quote": "Three Months Ended Oct 3, 2026 Oct 3, 2026 Jan 2, 2027 Q4F26 Results Q4F26 Guidance Q1F27 Guidance Summary GAAP Items Revenue (in billions) $1.427 $1.330 to $1.380 $1.410 to $1.460 Operating margin 6.0 % 5.5% to 5.9% 5.5% to 5.9% Diluted EPS $2.51 $2.18 to $2.34 $2.16 to $2.32 Summary Non-GAAP Items (1) Adjusted operating margin (2) 6.7 % 6.1% to 6.5% 6.0% to 6.4% Adjusted EPS (3) $2.84 $2.47 to $2.63 $2.46 to $2.62 Return on invested capital (ROIC) 15.8 % Economic return 6.8 % (1) Refer to Non-GAAP Supplemental Information tables for additional information regarding non-GAAP financial measures. (2) Excludes stock-based compensation expense of approximately 70 bps for Q4F26 results, 60 bps for Q4F26 guidance and 50 bps for Q1F27 guidance. (3) Excludes stock-based compensation expense, net of tax, of $0.33 for Q4F26 results, $0.29 for Q4F26 guidance and $0.30 for Q1F27 guidance. Fiscal Fourth Quarter 2026 Information \u2022 Won 36 manufacturing programs representing $290 million in annualized revenue when fully ramped into production. \u2022 Generated free cash flow of $6.4 million . \u2022 Purchased $21.4 million of our shares at an average price of $254.32 per share, completing the 2026 Share Repurchase Program. The 2027 Share Repurchase Program was approved by Plexus' Board of Directors in August 2026 for an additional $100 million. The entirety of the 2027 Share Repurchase Program is available to begin fiscal 2027. Fiscal Year 2026 Information \u2022 Produced ROIC of 15.8%, representing an economic return of 680 basis points above our weighted average cost of capital of 9.0%. \u2022 Delivered cash cycle of 62 days. \u2022 Purchased $85.0 million of our shares at an average price of $199.68 per share. Todd Kelsey, President and Chief Executive Officer, \u201c Plexus delivered an outstanding fiscal 2026 that exceeded expectations, achieving record revenue of $5 billion, representing 23% year-over-year growth, and non-GAAP operating margin of 6.2%. In addition, ROIC surpassed our 15% enduring goal, supported by exceptional working capital performance. Finally, fiscal fourth quarter revenue of $1.43 billion, non-GAAP operating margin of 6.7% and non-GAAP EPS of $2.84 all exceeded guidance ranges as our team effectively captured stronger end-market demand and continued to support new program ramps.\u201d Mr. Kelsey added, \u201cIn support of sustaining our diversified and accelerating growth momentum, ou",
+      "quote_start": 1190,
+      "quote_end": 3590,
+      "canonical_sha256": "b4b2424820afd4ab811cdfe557f20ecca5d5bc6bea42a49fe2c2a96211fbafa7",
+      "reviewer": "Codex source curator; no extractor outputs viewed",
+      "basis": "consolidated reported USD; per-period scope review still required",
+      "calendar_status": "UNREGISTERED_PILOT_ONLY; no default dates permitted"
+    }
+  ]
+}
