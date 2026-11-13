@@ -407,3 +407,18 @@ not inherit those flags. Future outcome scoring still needs an independent
 exact-guidance/actual basis review. Visual compatibility remains
 **unverified and required before merging**. Do not merge/push/deploy as part of
 these commands.
+
+## Session 4 extractor research: quality gate failed
+
+The frozen manual gold remains unchanged; extracted candidates are separate and
+are not production guidance or baseline inputs. See
+[extraction/README.md](extraction/README.md) and
+[the full evaluation report](reports/session4_extraction_review_2026-11-12.md).
+Held-out strict precision is **47.92%**, recall **60.53%**; do not promote the
+extractor or claim the 98%/90% gate passed. No LLM calls were made.
+
+The local `session3-lock-ready` tag points to
+`94984fc3ce33c6e85a287738d3a617561cd0cefc`. The preserved environment,
+read-only dry-run commands, tag-versus-HEAD regression results and next manual
+live windows are documented in [lock_ready/README.md](lock_ready/README.md).
+Session 3's prospective gate remains pending; a dry run is not a live lock.

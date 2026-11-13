@@ -1,0 +1,1163 @@
+{
+  "recorded_at": "2026-11-13T00:32:48.649137+00:00",
+  "tag": "session3-lock-ready",
+  "tag_commit": "94984fc3ce33c6e85a287738d3a617561cd0cefc",
+  "protected_code_data_schema_checks": [
+    {
+      "path": "db/migrations/0001_enums.sql",
+      "same": true,
+      "sha256": "df5f30bab807fb704c1d553992228dee86eb7b9ddead8c873705514cab8c4582"
+    },
+    {
+      "path": "db/migrations/0002_deals.sql",
+      "same": true,
+      "sha256": "476101b177910cc20a850ecdc6ed9764d8292d935cc803cec2c42ab2fabfc200"
+    },
+    {
+      "path": "db/migrations/0003_paragraphs.sql",
+      "same": true,
+      "sha256": "fbae23b72fc39fff05774c54f01691fb5a92a0dd4c9bc2dc741e3899b89ea093"
+    },
+    {
+      "path": "db/migrations/0004_extraction_runs.sql",
+      "same": true,
+      "sha256": "0dc34c5290a98fabf87e2049409736eb50dfaf8768c67df9868d2a43aa2cbc74"
+    },
+    {
+      "path": "db/migrations/0005_events.sql",
+      "same": true,
+      "sha256": "ee4d47adcfb5dd5fe00741bac2b2394c5f05affb93cd094e80de21a5de097304"
+    },
+    {
+      "path": "db/migrations/0006_proposals.sql",
+      "same": true,
+      "sha256": "24131c56f89799f9517ff26832a71d426c2fdd98b6607b3358ce9e27a4cdf30b"
+    },
+    {
+      "path": "db/migrations/0007_valuations.sql",
+      "same": true,
+      "sha256": "e66500712149f3703dd58a3bc1d7fdc82ab2f051b2a2843d98976125f5b25752"
+    },
+    {
+      "path": "db/migrations/0008_rls_policies.sql",
+      "same": true,
+      "sha256": "36324b6b181b495cd82e34f6b37581bb533976f1e25158179efe3b1c616020f7"
+    },
+    {
+      "path": "db/migrations/0009_reviewer_note.sql",
+      "same": true,
+      "sha256": "db4267ffc86abf89c1d90a01fa12e3988a2572c03a1caa1099a033fcf95b00b6"
+    },
+    {
+      "path": "db/migrations/0100_crosscheck.sql",
+      "same": true,
+      "sha256": "22a93a04bbff8e150f615081a8b153e5d272944d6596fdd9191a551ae0a848ae"
+    },
+    {
+      "path": "db/migrations/0101_crosscheck_product.sql",
+      "same": true,
+      "sha256": "cbbd71d317e15ca12575d825b45076f7291098945c93042a3f09fd8cb08260f1"
+    },
+    {
+      "path": "db/migrations/0102_crosscheck_quarters.sql",
+      "same": true,
+      "sha256": "fc7299be4f30cff3a3ceaa2f5f86005c24f480783bbff35d8922d4df372e9bc6"
+    },
+    {
+      "path": "db/migrations/0103_crosscheck_live_ledger.sql",
+      "same": true,
+      "sha256": "314549a7dcf967928da2c25454b13b96e803ccd99a74c922aa41cd7907818156"
+    },
+    {
+      "path": "earnings/__init__.py",
+      "same": true,
+      "sha256": "01cce727c851576a940111951671a5642c208b121171d6d5f67a78d65edbdc63"
+    },
+    {
+      "path": "earnings/__main__.py",
+      "same": true,
+      "sha256": "66f7200a8371a6a1e7416b755bd7df92446675f1c33158b096360b1b3c773525"
+    },
+    {
+      "path": "earnings/actuals.py",
+      "same": true,
+      "sha256": "a4273af5bc58d93cb0616a160cbc0963e5dd1eac771f9c99d0f5231a0e7ce09f"
+    },
+    {
+      "path": "earnings/announcements/CRM.json",
+      "same": true,
+      "sha256": "4ba8806850ab266ea3890d6e6b7b7eb046e32c7410bc6a9d4aa9c5b612a9e74f"
+    },
+    {
+      "path": "earnings/announcements/IOT.json",
+      "same": true,
+      "sha256": "325ec5c0c73a748c3432db3cb4d5ecdaf27f26b2acca9860921174eae97eb6c0"
+    },
+    {
+      "path": "earnings/announcements/OKTA.json",
+      "same": true,
+      "sha256": "f58f0cb6ffa784c513260d9fd1e48f714122f4501a537e12a879d958cd49cabd"
+    },
+    {
+      "path": "earnings/announcements/S.json",
+      "same": true,
+      "sha256": "7d9a65108130c66f581555f35ebad563560a780f49575b4bc894f98f032608f7"
+    },
+    {
+      "path": "earnings/baseline.py",
+      "same": true,
+      "sha256": "190b21d59d244d3b8e381cee9a911ff48f9bff46b07f033f50d422a060954e53"
+    },
+    {
+      "path": "earnings/baseline_evaluation.py",
+      "same": true,
+      "sha256": "65525c1f65b3cb2e6e9ab3d40e53a2629a6f333b1f89fbdc4ed66242700fc36d"
+    },
+    {
+      "path": "earnings/companies.json",
+      "same": true,
+      "sha256": "f77384ce1b2dbb17e4466cf4cb82aa36ef5071f08dda04298412cb47282827d0"
+    },
+    {
+      "path": "earnings/dates.py",
+      "same": true,
+      "sha256": "1781266af2a44458e2df2b359f7c598161fc63a45618b27960953a35fd118c2d"
+    },
+    {
+      "path": "earnings/engine.py",
+      "same": true,
+      "sha256": "ed64954189edab9554fbc4471304aaf614d7dec35c243a08d9efbd80f1fa2875"
+    },
+    {
+      "path": "earnings/evaluate.py",
+      "same": true,
+      "sha256": "073e98dcfe85b1cf3e4d72f9a07c90bf9ca17a9b06be221cb6590036a6b94dc5"
+    },
+    {
+      "path": "earnings/forecast.py",
+      "same": true,
+      "sha256": "a4caf3feb75934b1082d1e7dcff8ebf04b51f9e37493a7e8a20d417a4da1caeb"
+    },
+    {
+      "path": "earnings/guidance/ADBE.json",
+      "same": true,
+      "sha256": "4f01619babac179c20248beef17a08fc6e7e2dbdaf90716b92f2fdb8c67566ce"
+    },
+    {
+      "path": "earnings/guidance/CRM.json",
+      "same": true,
+      "sha256": "0c645b74c8475fc117b2123f8cfc2bc5b9a4b032c1fc6679074b933eb6b285dd"
+    },
+    {
+      "path": "earnings/guidance/CRWD.json",
+      "same": true,
+      "sha256": "eb488e605c1a6acea6816d09ba431bb8975ab713d72e2aae830eb26b8a809f28"
+    },
+    {
+      "path": "earnings/guidance/GTLB.json",
+      "same": true,
+      "sha256": "9dd3517e361b9a7086d14ed30436d80a1bef4f90ff1023fae0dc61afe4d737b2"
+    },
+    {
+      "path": "earnings/guidance/IOT.json",
+      "same": true,
+      "sha256": "842a0882c1954b3f593f6f45b6ef3a2f274f53581c72ac53211e8cd984e1a66b"
+    },
+    {
+      "path": "earnings/guidance/LULU.json",
+      "same": true,
+      "sha256": "8d47921d78b00edf32d8598e6daea7c869a3f041b9955a7d4a1d4d2c3816193b"
+    },
+    {
+      "path": "earnings/guidance/MDB.json",
+      "same": true,
+      "sha256": "297a10343e1ea5e57d1557a8fa415f32417f4dc752eef0059d71c99d75a6cc79"
+    },
+    {
+      "path": "earnings/guidance/OKTA.json",
+      "same": true,
+      "sha256": "2632d99ddb0413fd8c08ce0b9785f6876fb98a4ab120e4ab3d6e862369e1ad05"
+    },
+    {
+      "path": "earnings/guidance/PD.json",
+      "same": true,
+      "sha256": "0a420a2d65c03bf74a9eb59c859fd3537834a915087138e5d4efacb8f26daa01"
+    },
+    {
+      "path": "earnings/guidance/S.json",
+      "same": true,
+      "sha256": "5227e3ec89229110428a050dcf865e1b0ba54c8f0d7dc3b71b75216ac701d864"
+    },
+    {
+      "path": "earnings/history.py",
+      "same": true,
+      "sha256": "623a086a85ee18ccfad4fb1f4b255840b9a991805fb37b3992a7da4aec5a1ab4"
+    },
+    {
+      "path": "earnings/history/ADBE.json",
+      "same": true,
+      "sha256": "5cdd276e2b5a005790dd8d2d745886c89d5035994a9a5408c49e22005a9971b1"
+    },
+    {
+      "path": "earnings/history/CRM.json",
+      "same": true,
+      "sha256": "8dabe2c86c013106cf35b8c5801e3e60b04203722dcd5790aace7770b263c0e8"
+    },
+    {
+      "path": "earnings/history/CRWD.json",
+      "same": true,
+      "sha256": "0be45692d5d1ebf5e7e1c95a09fa297864350160b4c6e6b1cb50ef0cd44bdb97"
+    },
+    {
+      "path": "earnings/history/GTLB.json",
+      "same": true,
+      "sha256": "c05c37d3676ef7a27fdcaa1dae5f328dca62299b23108e0a905ba846c742d38c"
+    },
+    {
+      "path": "earnings/history/IOT.json",
+      "same": true,
+      "sha256": "165e213b1e798310793fddb25ad28742cc25ed0312d9055ab72c1391ca271a3a"
+    },
+    {
+      "path": "earnings/history/LULU.json",
+      "same": true,
+      "sha256": "a7a24d5a08e2a289e85d33d7b33ca892d916f46273335e612561d34b3c052f7d"
+    },
+    {
+      "path": "earnings/history/MDB.json",
+      "same": true,
+      "sha256": "fdc3198d640789e4c7c2c11970d1c268b16f9c0970f92272e54fae1531ce3bd1"
+    },
+    {
+      "path": "earnings/history/OKTA.json",
+      "same": true,
+      "sha256": "9006c5aafd892d1d5aa312e62a17d9ae061492ffda89814290849ee3dcec095b"
+    },
+    {
+      "path": "earnings/history/PD.json",
+      "same": true,
+      "sha256": "ac0dac6d1ba021d12a1f2bc363a2a3ba8d0faf8de50111aff817462c381ccca3"
+    },
+    {
+      "path": "earnings/history/S.json",
+      "same": true,
+      "sha256": "4b4d77a0fa4a6581acb23a1348010daf3fe57fc1553c705db4776e12dad73872"
+    },
+    {
+      "path": "earnings/history_audit.py",
+      "same": true,
+      "sha256": "305febdb171a0b5aecfbff23b7700e53b8eb318c061301ecc7914f34cdc2b5ea"
+    },
+    {
+      "path": "earnings/live.py",
+      "same": true,
+      "sha256": "c81f1c8c56de8c44655e5d722078649db52035241c48e01c8553701d869dd1e9"
+    },
+    {
+      "path": "earnings/manual_dates.py",
+      "same": true,
+      "sha256": "10685ac84eed2cb03b6960ac03468f46459e650e3966089bf45c75f49dc4ec8f"
+    },
+    {
+      "path": "earnings/metrics.py",
+      "same": true,
+      "sha256": "3a990e0a7b6d8dd53e1c980be6a8d864393118b5c3527dd7482dc1a4ed30b6de"
+    },
+    {
+      "path": "earnings/models.py",
+      "same": true,
+      "sha256": "691c40735c11eb2b563d203e8ffef789937dfc7a8b8a1dd392497b286ed04705"
+    },
+    {
+      "path": "earnings/predict.py",
+      "same": true,
+      "sha256": "51041579d8ab154518b1bc69f566f6e4406276d6d61831bf0b30335c3cdb4e99"
+    },
+    {
+      "path": "earnings/product.py",
+      "same": true,
+      "sha256": "8e6cc4c6af9be56e0eb93043c807239db62927a5af11a4110282cbab25fbb35e"
+    },
+    {
+      "path": "earnings/quarters.py",
+      "same": true,
+      "sha256": "f88c41964b768731567746bff32c9f4715420a477e6c8de8f2c8996184e20bbe"
+    },
+    {
+      "path": "earnings/registry.py",
+      "same": true,
+      "sha256": "b776ad270267b2d0eca73f5aa1263703bb11aa1abc8293467c541dd9b18df246"
+    },
+    {
+      "path": "earnings/score_live.py",
+      "same": true,
+      "sha256": "7a6f5f792653b76488880b1b9496fd328d96bf629a814cfd774f41665df650a4"
+    },
+    {
+      "path": "earnings/sec.py",
+      "same": true,
+      "sha256": "5a5fdb2eb0cae0df4f934d7254c6534d726975af70395a713053e2230c725309"
+    },
+    {
+      "path": "earnings/smoke.py",
+      "same": true,
+      "sha256": "9265576dfc5df88dd4702521fe2c2a1ab7e6b3627333674bb27f383d5d63f492"
+    },
+    {
+      "path": "earnings/store.py",
+      "same": true,
+      "sha256": "727f6b404c6c8c70d61271e7f8aa43fa63f677a7208645181775170ac17edc91"
+    },
+    {
+      "path": "earnings/verification.py",
+      "same": true,
+      "sha256": "d6e081df39d35a5bd587d716a900ab9363fd8fc4d66c9e6496af593ed7e4ccba"
+    },
+    {
+      "path": "requirements.txt",
+      "same": true,
+      "sha256": "49ff69b6fe9c5371cccc22d3cafaea6df0d766e6529d343901df2be0e29734db"
+    },
+    {
+      "path": "src/fetch.py",
+      "same": true,
+      "sha256": "0855c9dc1701c059a14141aaf5537cbe746eda624ae9686cbd958e4e299726f0"
+    }
+  ],
+  "all_protected_files_unchanged": true,
+  "dependency_freeze_unchanged": true,
+  "synthetic_regression_identical": true,
+  "synthetic_cases": [
+    {
+      "case": "outside",
+      "fixed_time": "2026-11-13T12:00:00+00:00",
+      "eligible_companies": [],
+      "rejection_codes": {
+        "PD": "UNVERIFIED_RELEASE_DATE",
+        "GTLB": "UNVERIFIED_RELEASE_DATE",
+        "CRM": "OUTSIDE_14_DAY_WINDOW",
+        "CRWD": "UNVERIFIED_RELEASE_DATE",
+        "OKTA": "OUTSIDE_14_DAY_WINDOW",
+        "IOT": "OUTSIDE_14_DAY_WINDOW",
+        "MDB": "UNVERIFIED_RELEASE_DATE",
+        "S": "OUTSIDE_14_DAY_WINDOW",
+        "ADBE": "UNVERIFIED_RELEASE_DATE",
+        "LULU": "UNVERIFIED_RELEASE_DATE"
+      }
+    },
+    {
+      "case": "inside",
+      "fixed_time": "2026-11-20T12:00:00+00:00",
+      "eligible_companies": [
+        "CRM",
+        "OKTA",
+        "IOT",
+        "S"
+      ],
+      "rejection_codes": {
+        "PD": "UNVERIFIED_RELEASE_DATE",
+        "GTLB": "UNVERIFIED_RELEASE_DATE",
+        "CRWD": "UNVERIFIED_RELEASE_DATE",
+        "MDB": "UNVERIFIED_RELEASE_DATE",
+        "ADBE": "UNVERIFIED_RELEASE_DATE",
+        "LULU": "UNVERIFIED_RELEASE_DATE"
+      }
+    },
+    {
+      "case": "deadline",
+      "fixed_time": "2026-12-03T05:00:00+00:00",
+      "eligible_companies": [],
+      "rejection_codes": {
+        "PD": "UNVERIFIED_RELEASE_DATE",
+        "GTLB": "UNVERIFIED_RELEASE_DATE",
+        "CRM": "LOCK_DEADLINE_PASSED",
+        "CRWD": "UNVERIFIED_RELEASE_DATE",
+        "OKTA": "LOCK_DEADLINE_PASSED",
+        "IOT": "LOCK_DEADLINE_PASSED",
+        "MDB": "UNVERIFIED_RELEASE_DATE",
+        "S": "LOCK_DEADLINE_PASSED",
+        "ADBE": "UNVERIFIED_RELEASE_DATE",
+        "LULU": "UNVERIFIED_RELEASE_DATE"
+      }
+    },
+    {
+      "case": "withdrawn",
+      "fixed_time": "2026-11-20T12:00:00+00:00",
+      "eligible_companies": [],
+      "rejection_codes": {
+        "PD": "UNVERIFIED_RELEASE_DATE",
+        "GTLB": "UNVERIFIED_RELEASE_DATE",
+        "CRM": "GUIDANCE_WITHDRAWN",
+        "CRWD": "UNVERIFIED_RELEASE_DATE",
+        "OKTA": "GUIDANCE_WITHDRAWN",
+        "IOT": "GUIDANCE_WITHDRAWN",
+        "MDB": "UNVERIFIED_RELEASE_DATE",
+        "S": "GUIDANCE_WITHDRAWN",
+        "ADBE": "UNVERIFIED_RELEASE_DATE",
+        "LULU": "UNVERIFIED_RELEASE_DATE"
+      }
+    },
+    {
+      "case": "stale_actual",
+      "fixed_time": "2026-11-20T12:00:00+00:00",
+      "eligible_companies": [],
+      "rejection_codes": {
+        "PD": "UNVERIFIED_RELEASE_DATE",
+        "GTLB": "UNVERIFIED_RELEASE_DATE",
+        "CRM": "STALE_INPUT",
+        "CRWD": "UNVERIFIED_RELEASE_DATE",
+        "OKTA": "STALE_INPUT",
+        "IOT": "STALE_INPUT",
+        "MDB": "UNVERIFIED_RELEASE_DATE",
+        "S": "STALE_INPUT",
+        "ADBE": "UNVERIFIED_RELEASE_DATE",
+        "LULU": "UNVERIFIED_RELEASE_DATE"
+      }
+    },
+    {
+      "case": "already_public",
+      "fixed_time": "2026-11-20T12:00:00+00:00",
+      "eligible_companies": [],
+      "rejection_codes": {
+        "PD": "UNVERIFIED_RELEASE_DATE",
+        "GTLB": "UNVERIFIED_RELEASE_DATE",
+        "CRM": "PUBLICATION_CHECK_BLOCKED",
+        "CRWD": "UNVERIFIED_RELEASE_DATE",
+        "OKTA": "PUBLICATION_CHECK_BLOCKED",
+        "IOT": "PUBLICATION_CHECK_BLOCKED",
+        "MDB": "UNVERIFIED_RELEASE_DATE",
+        "S": "PUBLICATION_CHECK_BLOCKED",
+        "ADBE": "UNVERIFIED_RELEASE_DATE",
+        "LULU": "UNVERIFIED_RELEASE_DATE"
+      }
+    },
+    {
+      "case": "missing_history",
+      "fixed_time": "2026-11-20T12:00:00+00:00",
+      "eligible_companies": [],
+      "rejection_codes": {
+        "PD": "UNVERIFIED_RELEASE_DATE",
+        "GTLB": "UNVERIFIED_RELEASE_DATE",
+        "CRM": "INSUFFICIENT_HISTORY",
+        "CRWD": "UNVERIFIED_RELEASE_DATE",
+        "OKTA": "INSUFFICIENT_HISTORY",
+        "IOT": "INSUFFICIENT_HISTORY",
+        "MDB": "UNVERIFIED_RELEASE_DATE",
+        "S": "INSUFFICIENT_HISTORY",
+        "ADBE": "UNVERIFIED_RELEASE_DATE",
+        "LULU": "UNVERIFIED_RELEASE_DATE"
+      }
+    }
+  ],
+  "compared_fields": [
+    "eligibility",
+    "target fiscal period",
+    "locked guidance ID",
+    "historical input IDs",
+    "probabilities",
+    "method version",
+    "rejection codes and reasons"
+  ],
+  "dry_runs": {
+    "tag": {
+      "clock_source": "PostgreSQL clock_timestamp()",
+      "dry_run": true,
+      "eligible_candidates": [],
+      "execution_finished_at": "2026-11-13T00:30:20.112298+00:00",
+      "execution_started_at": "2026-11-13T00:30:20.088848+00:00",
+      "history_ingestion": {
+        "dry_run_history_ingestion_suppressed": true,
+        "inserted": 0
+      },
+      "ledger_count_after": 0,
+      "ledger_count_before": 0,
+      "ledger_writes_possible": false,
+      "locked": [],
+      "method_version": "quarter-frequency-v1",
+      "schema_compatible": true,
+      "schema_migrations": [
+        "0001_enums.sql",
+        "0002_deals.sql",
+        "0003_paragraphs.sql",
+        "0004_extraction_runs.sql",
+        "0005_events.sql",
+        "0006_proposals.sql",
+        "0007_valuations.sql",
+        "0008_rls_policies.sql",
+        "0009_reviewer_note.sql",
+        "0010_deal_candidates.sql",
+        "0011_deal_candidates_rls.sql",
+        "0012_classification.sql",
+        "0100_crosscheck.sql",
+        "0101_crosscheck_product.sql",
+        "0102_crosscheck_quarters.sql",
+        "0103_crosscheck_live_ledger.sql"
+      ],
+      "skipped": [
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "PD",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "GTLB",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "announcement_evidence": {
+            "announcement_issued_date": "2026-11-10",
+            "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/76a225f3e35b0f5e19a47014c96fe18d8639fbc3e5a064f512a31d4522e7af38-c8a640be882cb70fba14d5be638823309652d2025c7baa08b5b96f95ee894b83.body",
+            "checked_at": "2026-11-12T23:46:51.729367+00:00",
+            "company": "CRM",
+            "event_kind": "results_release",
+            "fiscal_period": {
+              "end": "2026-10-31",
+              "label": "Q3 FY2027",
+              "start": "2026-08-01"
+            },
+            "id": "6c11f52b-a7d9-580d-bf77-86c072ba3a30",
+            "previous_evidence_id": "e82fb6a0-19d2-5391-9516-c866f186a734",
+            "quote": "Results to be released on December 2, 2026, after market close",
+            "release_date": "2026-12-02",
+            "release_time": "after_market_close",
+            "retrieved_at": "2026-11-12T23:46:52.000110+00:00",
+            "review_note": "Release company, fiscal quarter/year, dateline and results-publication wording re-reviewed. No date or timezone change. Normalized visible text unchanged; raw HTML changed.",
+            "source_sha256": "c8a640be882cb70fba14d5be638823309652d2025c7baa08b5b96f95ee894b83",
+            "source_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx",
+            "time_precision": "market_session",
+            "timestamp_verified": false,
+            "timezone": "America/New_York",
+            "timezone_provenance": "US market-close context; conservative release-date boundary in America/New_York, release-date-boundary-v1. No exact publication clock time inferred.",
+            "verification_method": "direct_http_official_ir_full_document_re_review",
+            "verification_status": "independently_verified",
+            "verified_at": "2026-11-12T23:48:07.518593+00:00",
+            "verifier": "Codex"
+          },
+          "code": "OUTSIDE_14_DAY_WINDOW",
+          "company": "CRM",
+          "deadline": "2026-12-02T05:00:00+00:00",
+          "next_eligibility_at": "2026-11-18T05:00:00+00:00",
+          "release_date": "2026-12-02"
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "CRWD",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "announcement_evidence": {
+            "announcement_issued_date": "2026-11-02",
+            "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/1baff785d18b716e62059282389f6e5a9e7a0b62d605938fb202fe6fcda66a19-d60517f2f59870d407a185b7e6497c384447795a6cc2b119407799703091170f.body",
+            "checked_at": "2026-11-12T23:46:52.041483+00:00",
+            "company": "OKTA",
+            "event_kind": "results_release",
+            "fiscal_period": {
+              "end": "2026-10-31",
+              "label": "Q3 FY2027",
+              "start": "2026-08-01"
+            },
+            "id": "4a3e1f16-7b0b-55be-b00b-f43055db57af",
+            "previous_evidence_id": "c28a2554-0a0a-51fd-946a-3d4a129a1c6c",
+            "quote": "after the U.S. market close on Tuesday, December 1, 2026",
+            "release_date": "2026-12-01",
+            "release_time": "after_market_close",
+            "retrieved_at": "2026-11-12T23:46:52.326318+00:00",
+            "review_note": "Release company, fiscal quarter/year, dateline and results-publication wording re-reviewed. No date or timezone change. Only visible changes are email-alert form validation/captcha messages; release paragraph unchanged. Call remains separate.",
+            "source_sha256": "d60517f2f59870d407a185b7e6497c384447795a6cc2b119407799703091170f",
+            "source_url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+            "time_precision": "market_session",
+            "timestamp_verified": false,
+            "timezone": "America/New_York",
+            "timezone_provenance": "US market-close context; conservative release-date boundary in America/New_York, release-date-boundary-v1. No exact publication clock time inferred.",
+            "verification_method": "direct_http_official_ir_full_document_re_review",
+            "verification_status": "independently_verified",
+            "verified_at": "2026-11-12T23:48:07.519474+00:00",
+            "verifier": "Codex"
+          },
+          "code": "OUTSIDE_14_DAY_WINDOW",
+          "company": "OKTA",
+          "deadline": "2026-12-01T05:00:00+00:00",
+          "next_eligibility_at": "2026-11-17T05:00:00+00:00",
+          "release_date": "2026-12-01"
+        },
+        {
+          "announcement_evidence": {
+            "announcement_issued_date": "2026-11-02",
+            "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/31bd7c94a4aa0a85c8f526e08e9b3666146e4132d257112cbe9f0f2843d9ba13-bb35e403595b4af82df3ffd18d02f30f3859d3ed218ba20ff3224c29faccefc5.body",
+            "call": {
+              "event_kind": "earnings_call",
+              "precision": "minute",
+              "time": "14:00",
+              "timezone": "America/Los_Angeles"
+            },
+            "checked_at": "2026-11-12T23:46:52.384801+00:00",
+            "company": "IOT",
+            "discovery_note": "Another agent supplied a Finviz lead. The lead was not used as verified evidence; original official IR document independently retrieved. No user_verified label.",
+            "event_kind": "results_release",
+            "fiscal_period": {
+              "end": "2026-10-31",
+              "label": "Q3 FY2027",
+              "start": "2026-08-02"
+            },
+            "id": "df34084d-c4ea-5848-ad67-df9dc8b98084",
+            "previous_evidence_id": "7e01749a-258c-5831-aace-9e0d050eb715",
+            "quote": "after the U.S. market closes on Thursday, December 3, 2026.",
+            "release_date": "2026-12-03",
+            "release_time": "after_market_close",
+            "retrieved_at": "2026-11-12T23:46:52.622261+00:00",
+            "review_note": "Release company, fiscal quarter/year, dateline and results-publication wording re-reviewed. No date or timezone change. Normalized visible text unchanged; raw HTML changed.",
+            "source_sha256": "bb35e403595b4af82df3ffd18d02f30f3859d3ed218ba20ff3224c29faccefc5",
+            "source_url": "https://investors.samsara.com/news/news-details/2026/Samsara-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-3-2026/default.aspx",
+            "time_precision": "market_session",
+            "timestamp_verified": false,
+            "timezone": "America/New_York",
+            "timezone_provenance": "US market closes reference; release-date boundary interpreted in America/New_York under release-date-boundary-v1. Not an exact publication clock time.",
+            "verification_method": "direct_http_official_ir_full_document_re_review",
+            "verification_status": "independently_verified",
+            "verified_at": "2026-11-12T23:48:07.519940+00:00",
+            "verifier": "Codex"
+          },
+          "code": "OUTSIDE_14_DAY_WINDOW",
+          "company": "IOT",
+          "deadline": "2026-12-03T05:00:00+00:00",
+          "next_eligibility_at": "2026-11-19T05:00:00+00:00",
+          "release_date": "2026-12-03"
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "MDB",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "announcement_evidence": {
+            "announcement_issued_date": "2026-11-12",
+            "announcement_text": "SentinelOne, Inc. - SentinelOne Announces Date of Fiscal Third Quarter 2027 Financial Results Conference Call and Participation in Upcoming Investor Conference Skip to main content Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog Skip to main content News Details Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog View All News SentinelOne Announces Date of Fiscal Third Quarter 2027 Financial Results Conference Call and Participation in Upcoming Investor Conference November 12, 2026 MOUNTAIN VIEW, Calif.--(BUSINESS WIRE)-- SentinelOne, Inc. (NYSE: S) today announced that it will release financial results for its fiscal third quarter 2027, which ended October 31, 2026. Results will be released after market close on Thursday, December 3, 2026. SentinelOne will host a conference call to discuss the results at 2:00 p.m. PT (5:00 p.m. ET) on the same day. To register for the live event, please visit Q3 FY2027 Earnings Conference Call Webcast . SentinelOne is also scheduled to present at the following investor conference: Event: Barclays Global Technology Conference Date: Thursday, December 10, 2026 Presentation Time: 12:50 p.m. PT (3:50 p.m. ET) Live webcasts for both events will be available on SentinelOne\u2019s Investor Relations website at investors.sentinelone.com , along with related earnings materials. Replays will be accessible through the same link shortly after each event. Disclosure Information SentinelOne uses, and intends to continue using, its Investor Relations website ( investors.sentinelone.com ) as a means of disclosing material information to the public and complying with its disclosure obligations under Regulation FD. Accordingly, investors should monitor the Investor Relations website, in addition to the company\u2019s press releases, blog ( sentinelone.com/blog ), SEC filings, public conference calls, presentations, and webcasts. About SentinelOne SentinelOne (NYSE: S) is the leader in AI security, setting the standard for leveraging AI and automation to give defenders a decisive operating advantage. Built for those who secure our world, Singularity Platform delivers unified coverage across endpoints, identity, cloud, and AI. Powered by Autonomous Security Intelligence, SentinelOne stops attacks at machine speed, reducing risk and delivering clarity and control to stay one step ahead. Headquartered in Mountain View, California with teams worldwide, SentinelOne protects nearly one-fifth of the Fortune 500 and hundreds of Global 2000 enterprises. From Main Street to Wall Street, the world\u2019s most critical organizations trust SentinelOne for cybersecurity. For more information, please visit www.sentinelone.com Category: Investors Investor Contact Saad Nazir investors@sentinelone.com Press Contact Craig VerColen press@sentinelone.com Source: SentinelOne View All News Investor Relations 444 Castro Street Suite 400 Mountain View, California 94041 Send Email Overview Press Releases Events & Presentations Financial Info Governance Resources follow us on twitter follow us on facebook follow us on LinkedIn follow us on youtube Privacy Policy Terms of Use \u00a9 Q4 Inc. - All rights reserved | Powered By Q4 Inc.",
+            "cached_body": "data/cache/earnings/release-leads/S-exact-3a34812800b483533dd1f0839a4447fcb9c6e86b778ad44218ca8a1d81744da5.body",
+            "call": {
+              "event_kind": "earnings_call",
+              "precision": "minute",
+              "time": "14:00",
+              "timezone": "America/Los_Angeles"
+            },
+            "checked_at": "2026-11-12T23:57:07.320887+00:00",
+            "company": "S",
+            "discovery_note": "User supplied an unverified Stockhouse reprint lead. Original official IR announcement independently retrieved and reviewed. Not user_verified; directory/search excerpts not used as verification.",
+            "event_kind": "results_release",
+            "fiscal_period": {
+              "end": "2026-10-31",
+              "label": "Q3 FY2027",
+              "start": "2026-08-01"
+            },
+            "fiscal_period_quote": "SentinelOne, Inc. (NYSE: S) today announced that it will release financial results for its fiscal third quarter 2027, which ended October 31, 2026.",
+            "id": "44c674b9-16d2-5a39-b330-225112d7752a",
+            "quote": "Results will be released after market close on Thursday, December 3, 2026.",
+            "release_date": "2026-12-03",
+            "release_time": "after_market_close",
+            "retrieved_at": "2026-11-12T23:57:07.549302+00:00",
+            "source_sha256": "3a34812800b483533dd1f0839a4447fcb9c6e86b778ad44218ca8a1d81744da5",
+            "source_url": "https://investors.sentinelone.com/press-releases/news-details/2026/SentinelOne-Announces-Date-of-Fiscal-Third-Quarter-2027-Financial-Results-Conference-Call-and-Participation-in-Upcoming-Investor-Conference/default.aspx",
+            "time_precision": "market_session",
+            "timestamp_verified": false,
+            "timezone": "America/New_York",
+            "timezone_provenance": "NYSE-listed company and US market-close context; release-date-boundary-v1 uses start of the release day in America/New_York. Documented conservative policy interpretation, not an exact publication clock time.",
+            "verification_method": "direct_http_official_ir_full_document",
+            "verification_status": "independently_verified",
+            "verified_at": "2026-11-12T23:57:43.472150+00:00",
+            "verifier": "Codex"
+          },
+          "code": "OUTSIDE_14_DAY_WINDOW",
+          "company": "S",
+          "deadline": "2026-12-03T05:00:00+00:00",
+          "next_eligibility_at": "2026-11-19T05:00:00+00:00",
+          "release_date": "2026-12-03"
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "ADBE",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "LULU",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        }
+      ],
+      "transaction_read_only": "on",
+      "unimported_history_ids": []
+    },
+    "head": {
+      "clock_source": "PostgreSQL clock_timestamp()",
+      "dry_run": true,
+      "eligible_candidates": [],
+      "execution_finished_at": "2026-11-13T00:30:20.349237+00:00",
+      "execution_started_at": "2026-11-13T00:30:20.335544+00:00",
+      "history_ingestion": {
+        "dry_run_history_ingestion_suppressed": true,
+        "inserted": 0
+      },
+      "ledger_count_after": 0,
+      "ledger_count_before": 0,
+      "ledger_writes_possible": false,
+      "locked": [],
+      "method_version": "quarter-frequency-v1",
+      "schema_compatible": true,
+      "schema_migrations": [
+        "0001_enums.sql",
+        "0002_deals.sql",
+        "0003_paragraphs.sql",
+        "0004_extraction_runs.sql",
+        "0005_events.sql",
+        "0006_proposals.sql",
+        "0007_valuations.sql",
+        "0008_rls_policies.sql",
+        "0009_reviewer_note.sql",
+        "0010_deal_candidates.sql",
+        "0011_deal_candidates_rls.sql",
+        "0012_classification.sql",
+        "0100_crosscheck.sql",
+        "0101_crosscheck_product.sql",
+        "0102_crosscheck_quarters.sql",
+        "0103_crosscheck_live_ledger.sql"
+      ],
+      "skipped": [
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "PD",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "GTLB",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "announcement_evidence": {
+            "announcement_issued_date": "2026-11-10",
+            "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/76a225f3e35b0f5e19a47014c96fe18d8639fbc3e5a064f512a31d4522e7af38-c8a640be882cb70fba14d5be638823309652d2025c7baa08b5b96f95ee894b83.body",
+            "checked_at": "2026-11-12T23:46:51.729367+00:00",
+            "company": "CRM",
+            "event_kind": "results_release",
+            "fiscal_period": {
+              "end": "2026-10-31",
+              "label": "Q3 FY2027",
+              "start": "2026-08-01"
+            },
+            "id": "6c11f52b-a7d9-580d-bf77-86c072ba3a30",
+            "previous_evidence_id": "e82fb6a0-19d2-5391-9516-c866f186a734",
+            "quote": "Results to be released on December 2, 2026, after market close",
+            "release_date": "2026-12-02",
+            "release_time": "after_market_close",
+            "retrieved_at": "2026-11-12T23:46:52.000110+00:00",
+            "review_note": "Release company, fiscal quarter/year, dateline and results-publication wording re-reviewed. No date or timezone change. Normalized visible text unchanged; raw HTML changed.",
+            "source_sha256": "c8a640be882cb70fba14d5be638823309652d2025c7baa08b5b96f95ee894b83",
+            "source_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx",
+            "time_precision": "market_session",
+            "timestamp_verified": false,
+            "timezone": "America/New_York",
+            "timezone_provenance": "US market-close context; conservative release-date boundary in America/New_York, release-date-boundary-v1. No exact publication clock time inferred.",
+            "verification_method": "direct_http_official_ir_full_document_re_review",
+            "verification_status": "independently_verified",
+            "verified_at": "2026-11-12T23:48:07.518593+00:00",
+            "verifier": "Codex"
+          },
+          "code": "OUTSIDE_14_DAY_WINDOW",
+          "company": "CRM",
+          "deadline": "2026-12-02T05:00:00+00:00",
+          "next_eligibility_at": "2026-11-18T05:00:00+00:00",
+          "release_date": "2026-12-02"
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "CRWD",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "announcement_evidence": {
+            "announcement_issued_date": "2026-11-02",
+            "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/1baff785d18b716e62059282389f6e5a9e7a0b62d605938fb202fe6fcda66a19-d60517f2f59870d407a185b7e6497c384447795a6cc2b119407799703091170f.body",
+            "checked_at": "2026-11-12T23:46:52.041483+00:00",
+            "company": "OKTA",
+            "event_kind": "results_release",
+            "fiscal_period": {
+              "end": "2026-10-31",
+              "label": "Q3 FY2027",
+              "start": "2026-08-01"
+            },
+            "id": "4a3e1f16-7b0b-55be-b00b-f43055db57af",
+            "previous_evidence_id": "c28a2554-0a0a-51fd-946a-3d4a129a1c6c",
+            "quote": "after the U.S. market close on Tuesday, December 1, 2026",
+            "release_date": "2026-12-01",
+            "release_time": "after_market_close",
+            "retrieved_at": "2026-11-12T23:46:52.326318+00:00",
+            "review_note": "Release company, fiscal quarter/year, dateline and results-publication wording re-reviewed. No date or timezone change. Only visible changes are email-alert form validation/captcha messages; release paragraph unchanged. Call remains separate.",
+            "source_sha256": "d60517f2f59870d407a185b7e6497c384447795a6cc2b119407799703091170f",
+            "source_url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+            "time_precision": "market_session",
+            "timestamp_verified": false,
+            "timezone": "America/New_York",
+            "timezone_provenance": "US market-close context; conservative release-date boundary in America/New_York, release-date-boundary-v1. No exact publication clock time inferred.",
+            "verification_method": "direct_http_official_ir_full_document_re_review",
+            "verification_status": "independently_verified",
+            "verified_at": "2026-11-12T23:48:07.519474+00:00",
+            "verifier": "Codex"
+          },
+          "code": "OUTSIDE_14_DAY_WINDOW",
+          "company": "OKTA",
+          "deadline": "2026-12-01T05:00:00+00:00",
+          "next_eligibility_at": "2026-11-17T05:00:00+00:00",
+          "release_date": "2026-12-01"
+        },
+        {
+          "announcement_evidence": {
+            "announcement_issued_date": "2026-11-02",
+            "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/31bd7c94a4aa0a85c8f526e08e9b3666146e4132d257112cbe9f0f2843d9ba13-bb35e403595b4af82df3ffd18d02f30f3859d3ed218ba20ff3224c29faccefc5.body",
+            "call": {
+              "event_kind": "earnings_call",
+              "precision": "minute",
+              "time": "14:00",
+              "timezone": "America/Los_Angeles"
+            },
+            "checked_at": "2026-11-12T23:46:52.384801+00:00",
+            "company": "IOT",
+            "discovery_note": "Another agent supplied a Finviz lead. The lead was not used as verified evidence; original official IR document independently retrieved. No user_verified label.",
+            "event_kind": "results_release",
+            "fiscal_period": {
+              "end": "2026-10-31",
+              "label": "Q3 FY2027",
+              "start": "2026-08-02"
+            },
+            "id": "df34084d-c4ea-5848-ad67-df9dc8b98084",
+            "previous_evidence_id": "7e01749a-258c-5831-aace-9e0d050eb715",
+            "quote": "after the U.S. market closes on Thursday, December 3, 2026.",
+            "release_date": "2026-12-03",
+            "release_time": "after_market_close",
+            "retrieved_at": "2026-11-12T23:46:52.622261+00:00",
+            "review_note": "Release company, fiscal quarter/year, dateline and results-publication wording re-reviewed. No date or timezone change. Normalized visible text unchanged; raw HTML changed.",
+            "source_sha256": "bb35e403595b4af82df3ffd18d02f30f3859d3ed218ba20ff3224c29faccefc5",
+            "source_url": "https://investors.samsara.com/news/news-details/2026/Samsara-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-3-2026/default.aspx",
+            "time_precision": "market_session",
+            "timestamp_verified": false,
+            "timezone": "America/New_York",
+            "timezone_provenance": "US market closes reference; release-date boundary interpreted in America/New_York under release-date-boundary-v1. Not an exact publication clock time.",
+            "verification_method": "direct_http_official_ir_full_document_re_review",
+            "verification_status": "independently_verified",
+            "verified_at": "2026-11-12T23:48:07.519940+00:00",
+            "verifier": "Codex"
+          },
+          "code": "OUTSIDE_14_DAY_WINDOW",
+          "company": "IOT",
+          "deadline": "2026-12-03T05:00:00+00:00",
+          "next_eligibility_at": "2026-11-19T05:00:00+00:00",
+          "release_date": "2026-12-03"
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "MDB",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "announcement_evidence": {
+            "announcement_issued_date": "2026-11-12",
+            "announcement_text": "SentinelOne, Inc. - SentinelOne Announces Date of Fiscal Third Quarter 2027 Financial Results Conference Call and Participation in Upcoming Investor Conference Skip to main content Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog Skip to main content News Details Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog View All News SentinelOne Announces Date of Fiscal Third Quarter 2027 Financial Results Conference Call and Participation in Upcoming Investor Conference November 12, 2026 MOUNTAIN VIEW, Calif.--(BUSINESS WIRE)-- SentinelOne, Inc. (NYSE: S) today announced that it will release financial results for its fiscal third quarter 2027, which ended October 31, 2026. Results will be released after market close on Thursday, December 3, 2026. SentinelOne will host a conference call to discuss the results at 2:00 p.m. PT (5:00 p.m. ET) on the same day. To register for the live event, please visit Q3 FY2027 Earnings Conference Call Webcast . SentinelOne is also scheduled to present at the following investor conference: Event: Barclays Global Technology Conference Date: Thursday, December 10, 2026 Presentation Time: 12:50 p.m. PT (3:50 p.m. ET) Live webcasts for both events will be available on SentinelOne\u2019s Investor Relations website at investors.sentinelone.com , along with related earnings materials. Replays will be accessible through the same link shortly after each event. Disclosure Information SentinelOne uses, and intends to continue using, its Investor Relations website ( investors.sentinelone.com ) as a means of disclosing material information to the public and complying with its disclosure obligations under Regulation FD. Accordingly, investors should monitor the Investor Relations website, in addition to the company\u2019s press releases, blog ( sentinelone.com/blog ), SEC filings, public conference calls, presentations, and webcasts. About SentinelOne SentinelOne (NYSE: S) is the leader in AI security, setting the standard for leveraging AI and automation to give defenders a decisive operating advantage. Built for those who secure our world, Singularity Platform delivers unified coverage across endpoints, identity, cloud, and AI. Powered by Autonomous Security Intelligence, SentinelOne stops attacks at machine speed, reducing risk and delivering clarity and control to stay one step ahead. Headquartered in Mountain View, California with teams worldwide, SentinelOne protects nearly one-fifth of the Fortune 500 and hundreds of Global 2000 enterprises. From Main Street to Wall Street, the world\u2019s most critical organizations trust SentinelOne for cybersecurity. For more information, please visit www.sentinelone.com Category: Investors Investor Contact Saad Nazir investors@sentinelone.com Press Contact Craig VerColen press@sentinelone.com Source: SentinelOne View All News Investor Relations 444 Castro Street Suite 400 Mountain View, California 94041 Send Email Overview Press Releases Events & Presentations Financial Info Governance Resources follow us on twitter follow us on facebook follow us on LinkedIn follow us on youtube Privacy Policy Terms of Use \u00a9 Q4 Inc. - All rights reserved | Powered By Q4 Inc.",
+            "cached_body": "data/cache/earnings/release-leads/S-exact-3a34812800b483533dd1f0839a4447fcb9c6e86b778ad44218ca8a1d81744da5.body",
+            "call": {
+              "event_kind": "earnings_call",
+              "precision": "minute",
+              "time": "14:00",
+              "timezone": "America/Los_Angeles"
+            },
+            "checked_at": "2026-11-12T23:57:07.320887+00:00",
+            "company": "S",
+            "discovery_note": "User supplied an unverified Stockhouse reprint lead. Original official IR announcement independently retrieved and reviewed. Not user_verified; directory/search excerpts not used as verification.",
+            "event_kind": "results_release",
+            "fiscal_period": {
+              "end": "2026-10-31",
+              "label": "Q3 FY2027",
+              "start": "2026-08-01"
+            },
+            "fiscal_period_quote": "SentinelOne, Inc. (NYSE: S) today announced that it will release financial results for its fiscal third quarter 2027, which ended October 31, 2026.",
+            "id": "44c674b9-16d2-5a39-b330-225112d7752a",
+            "quote": "Results will be released after market close on Thursday, December 3, 2026.",
+            "release_date": "2026-12-03",
+            "release_time": "after_market_close",
+            "retrieved_at": "2026-11-12T23:57:07.549302+00:00",
+            "source_sha256": "3a34812800b483533dd1f0839a4447fcb9c6e86b778ad44218ca8a1d81744da5",
+            "source_url": "https://investors.sentinelone.com/press-releases/news-details/2026/SentinelOne-Announces-Date-of-Fiscal-Third-Quarter-2027-Financial-Results-Conference-Call-and-Participation-in-Upcoming-Investor-Conference/default.aspx",
+            "time_precision": "market_session",
+            "timestamp_verified": false,
+            "timezone": "America/New_York",
+            "timezone_provenance": "NYSE-listed company and US market-close context; release-date-boundary-v1 uses start of the release day in America/New_York. Documented conservative policy interpretation, not an exact publication clock time.",
+            "verification_method": "direct_http_official_ir_full_document",
+            "verification_status": "independently_verified",
+            "verified_at": "2026-11-12T23:57:43.472150+00:00",
+            "verifier": "Codex"
+          },
+          "code": "OUTSIDE_14_DAY_WINDOW",
+          "company": "S",
+          "deadline": "2026-12-03T05:00:00+00:00",
+          "next_eligibility_at": "2026-11-19T05:00:00+00:00",
+          "release_date": "2026-12-03"
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "ADBE",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "LULU",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        }
+      ],
+      "transaction_read_only": "on",
+      "unimported_history_ids": []
+    }
+  },
+  "final_actual_clock_dry_run": {
+    "clock_source": "PostgreSQL clock_timestamp()",
+    "dry_run": true,
+    "eligible_candidates": [],
+    "execution_finished_at": "2026-11-13T02:39:13.708773+00:00",
+    "execution_started_at": "2026-11-13T02:39:13.685520+00:00",
+    "history_ingestion": {
+      "dry_run_history_ingestion_suppressed": true,
+      "inserted": 0
+    },
+    "ledger_count_after": 0,
+    "ledger_count_before": 0,
+    "ledger_writes_possible": false,
+    "locked": [],
+    "method_version": "quarter-frequency-v1",
+    "schema_compatible": true,
+    "schema_migrations": [
+      "0001_enums.sql",
+      "0002_deals.sql",
+      "0003_paragraphs.sql",
+      "0004_extraction_runs.sql",
+      "0005_events.sql",
+      "0006_proposals.sql",
+      "0007_valuations.sql",
+      "0008_rls_policies.sql",
+      "0009_reviewer_note.sql",
+      "0010_deal_candidates.sql",
+      "0011_deal_candidates_rls.sql",
+      "0012_classification.sql",
+      "0100_crosscheck.sql",
+      "0101_crosscheck_product.sql",
+      "0102_crosscheck_quarters.sql",
+      "0103_crosscheck_live_ledger.sql"
+    ],
+    "skipped": [
+      {
+        "code": "UNVERIFIED_RELEASE_DATE",
+        "company": "PD",
+        "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+        "unverified_release_lead": null
+      },
+      {
+        "code": "UNVERIFIED_RELEASE_DATE",
+        "company": "GTLB",
+        "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+        "unverified_release_lead": null
+      },
+      {
+        "announcement_evidence": {
+          "announcement_issued_date": "2026-11-10",
+          "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/76a225f3e35b0f5e19a47014c96fe18d8639fbc3e5a064f512a31d4522e7af38-c8a640be882cb70fba14d5be638823309652d2025c7baa08b5b96f95ee894b83.body",
+          "checked_at": "2026-11-12T23:46:51.729367+00:00",
+          "company": "CRM",
+          "event_kind": "results_release",
+          "fiscal_period": {
+            "end": "2026-10-31",
+            "label": "Q3 FY2027",
+            "start": "2026-08-01"
+          },
+          "id": "6c11f52b-a7d9-580d-bf77-86c072ba3a30",
+          "previous_evidence_id": "e82fb6a0-19d2-5391-9516-c866f186a734",
+          "quote": "Results to be released on December 2, 2026, after market close",
+          "release_date": "2026-12-02",
+          "release_time": "after_market_close",
+          "retrieved_at": "2026-11-12T23:46:52.000110+00:00",
+          "review_note": "Release company, fiscal quarter/year, dateline and results-publication wording re-reviewed. No date or timezone change. Normalized visible text unchanged; raw HTML changed.",
+          "source_sha256": "c8a640be882cb70fba14d5be638823309652d2025c7baa08b5b96f95ee894b83",
+          "source_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx",
+          "time_precision": "market_session",
+          "timestamp_verified": false,
+          "timezone": "America/New_York",
+          "timezone_provenance": "US market-close context; conservative release-date boundary in America/New_York, release-date-boundary-v1. No exact publication clock time inferred.",
+          "verification_method": "direct_http_official_ir_full_document_re_review",
+          "verification_status": "independently_verified",
+          "verified_at": "2026-11-12T23:48:07.518593+00:00",
+          "verifier": "Codex"
+        },
+        "code": "OUTSIDE_14_DAY_WINDOW",
+        "company": "CRM",
+        "deadline": "2026-12-02T05:00:00+00:00",
+        "next_eligibility_at": "2026-11-18T05:00:00+00:00",
+        "release_date": "2026-12-02"
+      },
+      {
+        "code": "UNVERIFIED_RELEASE_DATE",
+        "company": "CRWD",
+        "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+        "unverified_release_lead": "2026-12-01"
+      },
+      {
+        "announcement_evidence": {
+          "announcement_issued_date": "2026-11-02",
+          "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/1baff785d18b716e62059282389f6e5a9e7a0b62d605938fb202fe6fcda66a19-d60517f2f59870d407a185b7e6497c384447795a6cc2b119407799703091170f.body",
+          "checked_at": "2026-11-12T23:46:52.041483+00:00",
+          "company": "OKTA",
+          "event_kind": "results_release",
+          "fiscal_period": {
+            "end": "2026-10-31",
+            "label": "Q3 FY2027",
+            "start": "2026-08-01"
+          },
+          "id": "4a3e1f16-7b0b-55be-b00b-f43055db57af",
+          "previous_evidence_id": "c28a2554-0a0a-51fd-946a-3d4a129a1c6c",
+          "quote": "after the U.S. market close on Tuesday, December 1, 2026",
+          "release_date": "2026-12-01",
+          "release_time": "after_market_close",
+          "retrieved_at": "2026-11-12T23:46:52.326318+00:00",
+          "review_note": "Release company, fiscal quarter/year, dateline and results-publication wording re-reviewed. No date or timezone change. Only visible changes are email-alert form validation/captcha messages; release paragraph unchanged. Call remains separate.",
+          "source_sha256": "d60517f2f59870d407a185b7e6497c384447795a6cc2b119407799703091170f",
+          "source_url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+          "time_precision": "market_session",
+          "timestamp_verified": false,
+          "timezone": "America/New_York",
+          "timezone_provenance": "US market-close context; conservative release-date boundary in America/New_York, release-date-boundary-v1. No exact publication clock time inferred.",
+          "verification_method": "direct_http_official_ir_full_document_re_review",
+          "verification_status": "independently_verified",
+          "verified_at": "2026-11-12T23:48:07.519474+00:00",
+          "verifier": "Codex"
+        },
+        "code": "OUTSIDE_14_DAY_WINDOW",
+        "company": "OKTA",
+        "deadline": "2026-12-01T05:00:00+00:00",
+        "next_eligibility_at": "2026-11-17T05:00:00+00:00",
+        "release_date": "2026-12-01"
+      },
+      {
+        "announcement_evidence": {
+          "announcement_issued_date": "2026-11-02",
+          "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/31bd7c94a4aa0a85c8f526e08e9b3666146e4132d257112cbe9f0f2843d9ba13-bb35e403595b4af82df3ffd18d02f30f3859d3ed218ba20ff3224c29faccefc5.body",
+          "call": {
+            "event_kind": "earnings_call",
+            "precision": "minute",
+            "time": "14:00",
+            "timezone": "America/Los_Angeles"
+          },
+          "checked_at": "2026-11-12T23:46:52.384801+00:00",
+          "company": "IOT",
+          "discovery_note": "Another agent supplied a Finviz lead. The lead was not used as verified evidence; original official IR document independently retrieved. No user_verified label.",
+          "event_kind": "results_release",
+          "fiscal_period": {
+            "end": "2026-10-31",
+            "label": "Q3 FY2027",
+            "start": "2026-08-02"
+          },
+          "id": "df34084d-c4ea-5848-ad67-df9dc8b98084",
+          "previous_evidence_id": "7e01749a-258c-5831-aace-9e0d050eb715",
+          "quote": "after the U.S. market closes on Thursday, December 3, 2026.",
+          "release_date": "2026-12-03",
+          "release_time": "after_market_close",
+          "retrieved_at": "2026-11-12T23:46:52.622261+00:00",
+          "review_note": "Release company, fiscal quarter/year, dateline and results-publication wording re-reviewed. No date or timezone change. Normalized visible text unchanged; raw HTML changed.",
+          "source_sha256": "bb35e403595b4af82df3ffd18d02f30f3859d3ed218ba20ff3224c29faccefc5",
+          "source_url": "https://investors.samsara.com/news/news-details/2026/Samsara-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-3-2026/default.aspx",
+          "time_precision": "market_session",
+          "timestamp_verified": false,
+          "timezone": "America/New_York",
+          "timezone_provenance": "US market closes reference; release-date boundary interpreted in America/New_York under release-date-boundary-v1. Not an exact publication clock time.",
+          "verification_method": "direct_http_official_ir_full_document_re_review",
+          "verification_status": "independently_verified",
+          "verified_at": "2026-11-12T23:48:07.519940+00:00",
+          "verifier": "Codex"
+        },
+        "code": "OUTSIDE_14_DAY_WINDOW",
+        "company": "IOT",
+        "deadline": "2026-12-03T05:00:00+00:00",
+        "next_eligibility_at": "2026-11-19T05:00:00+00:00",
+        "release_date": "2026-12-03"
+      },
+      {
+        "code": "UNVERIFIED_RELEASE_DATE",
+        "company": "MDB",
+        "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+        "unverified_release_lead": "2026-12-01"
+      },
+      {
+        "announcement_evidence": {
+          "announcement_issued_date": "2026-11-12",
+          "announcement_text": "SentinelOne, Inc. - SentinelOne Announces Date of Fiscal Third Quarter 2027 Financial Results Conference Call and Participation in Upcoming Investor Conference Skip to main content Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog Skip to main content News Details Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog View All News SentinelOne Announces Date of Fiscal Third Quarter 2027 Financial Results Conference Call and Participation in Upcoming Investor Conference November 12, 2026 MOUNTAIN VIEW, Calif.--(BUSINESS WIRE)-- SentinelOne, Inc. (NYSE: S) today announced that it will release financial results for its fiscal third quarter 2027, which ended October 31, 2026. Results will be released after market close on Thursday, December 3, 2026. SentinelOne will host a conference call to discuss the results at 2:00 p.m. PT (5:00 p.m. ET) on the same day. To register for the live event, please visit Q3 FY2027 Earnings Conference Call Webcast . SentinelOne is also scheduled to present at the following investor conference: Event: Barclays Global Technology Conference Date: Thursday, December 10, 2026 Presentation Time: 12:50 p.m. PT (3:50 p.m. ET) Live webcasts for both events will be available on SentinelOne\u2019s Investor Relations website at investors.sentinelone.com , along with related earnings materials. Replays will be accessible through the same link shortly after each event. Disclosure Information SentinelOne uses, and intends to continue using, its Investor Relations website ( investors.sentinelone.com ) as a means of disclosing material information to the public and complying with its disclosure obligations under Regulation FD. Accordingly, investors should monitor the Investor Relations website, in addition to the company\u2019s press releases, blog ( sentinelone.com/blog ), SEC filings, public conference calls, presentations, and webcasts. About SentinelOne SentinelOne (NYSE: S) is the leader in AI security, setting the standard for leveraging AI and automation to give defenders a decisive operating advantage. Built for those who secure our world, Singularity Platform delivers unified coverage across endpoints, identity, cloud, and AI. Powered by Autonomous Security Intelligence, SentinelOne stops attacks at machine speed, reducing risk and delivering clarity and control to stay one step ahead. Headquartered in Mountain View, California with teams worldwide, SentinelOne protects nearly one-fifth of the Fortune 500 and hundreds of Global 2000 enterprises. From Main Street to Wall Street, the world\u2019s most critical organizations trust SentinelOne for cybersecurity. For more information, please visit www.sentinelone.com Category: Investors Investor Contact Saad Nazir investors@sentinelone.com Press Contact Craig VerColen press@sentinelone.com Source: SentinelOne View All News Investor Relations 444 Castro Street Suite 400 Mountain View, California 94041 Send Email Overview Press Releases Events & Presentations Financial Info Governance Resources follow us on twitter follow us on facebook follow us on LinkedIn follow us on youtube Privacy Policy Terms of Use \u00a9 Q4 Inc. - All rights reserved | Powered By Q4 Inc.",
+          "cached_body": "data/cache/earnings/release-leads/S-exact-3a34812800b483533dd1f0839a4447fcb9c6e86b778ad44218ca8a1d81744da5.body",
+          "call": {
+            "event_kind": "earnings_call",
+            "precision": "minute",
+            "time": "14:00",
+            "timezone": "America/Los_Angeles"
+          },
+          "checked_at": "2026-11-12T23:57:07.320887+00:00",
+          "company": "S",
+          "discovery_note": "User supplied an unverified Stockhouse reprint lead. Original official IR announcement independently retrieved and reviewed. Not user_verified; directory/search excerpts not used as verification.",
+          "event_kind": "results_release",
+          "fiscal_period": {
+            "end": "2026-10-31",
+            "label": "Q3 FY2027",
+            "start": "2026-08-01"
+          },
+          "fiscal_period_quote": "SentinelOne, Inc. (NYSE: S) today announced that it will release financial results for its fiscal third quarter 2027, which ended October 31, 2026.",
+          "id": "44c674b9-16d2-5a39-b330-225112d7752a",
+          "quote": "Results will be released after market close on Thursday, December 3, 2026.",
+          "release_date": "2026-12-03",
+          "release_time": "after_market_close",
+          "retrieved_at": "2026-11-12T23:57:07.549302+00:00",
+          "source_sha256": "3a34812800b483533dd1f0839a4447fcb9c6e86b778ad44218ca8a1d81744da5",
+          "source_url": "https://investors.sentinelone.com/press-releases/news-details/2026/SentinelOne-Announces-Date-of-Fiscal-Third-Quarter-2027-Financial-Results-Conference-Call-and-Participation-in-Upcoming-Investor-Conference/default.aspx",
+          "time_precision": "market_session",
+          "timestamp_verified": false,
+          "timezone": "America/New_York",
+          "timezone_provenance": "NYSE-listed company and US market-close context; release-date-boundary-v1 uses start of the release day in America/New_York. Documented conservative policy interpretation, not an exact publication clock time.",
+          "verification_method": "direct_http_official_ir_full_document",
+          "verification_status": "independently_verified",
+          "verified_at": "2026-11-12T23:57:43.472150+00:00",
+          "verifier": "Codex"
+        },
+        "code": "OUTSIDE_14_DAY_WINDOW",
+        "company": "S",
+        "deadline": "2026-12-03T05:00:00+00:00",
+        "next_eligibility_at": "2026-11-19T05:00:00+00:00",
+        "release_date": "2026-12-03"
+      },
+      {
+        "code": "UNVERIFIED_RELEASE_DATE",
+        "company": "ADBE",
+        "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+        "unverified_release_lead": null
+      },
+      {
+        "code": "UNVERIFIED_RELEASE_DATE",
+        "company": "LULU",
+        "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+        "unverified_release_lead": null
+      }
+    ],
+    "transaction_read_only": "on",
+    "unimported_history_ids": []
+  },
+  "final_actual_rejection_codes_match_reviewed_run": true
+}

@@ -1,0 +1,14 @@
+{
+  "recorded_at": "2026-11-13T02:40:44.450882+00:00",
+  "command": ".venv/bin/python -m pytest -q --tb=short",
+  "passed": 384,
+  "skipped": 3,
+  "xfailed": 2,
+  "failed": 0,
+  "duration_seconds": "2.31",
+  "known_quality_failures": [
+    "annual recurring revenue is misclassified",
+    "implied-quarter headings are mistaken for direct targets"
+  ],
+  "fixture_correction": "Synthetic filing dates now use America/New_York at UTC midnight; production scoring unchanged"
+}

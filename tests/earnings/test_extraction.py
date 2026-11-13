@@ -95,3 +95,20 @@ def test_gold_checksum_source_files_and_group_split_frozen():
     assert {r['company'] for r in data['records'] if r['split']=='heldout'}=={'CRWD','IOT','LULU'}
     root=ROOT.parents[1]
     for path,expected in data['source_file_sha256'].items():assert sha256((root/path).read_bytes()).hexdigest()==expected
+
+
+def test_frozen_rule_files_match_pre_heldout_hashes():
+    frozen=json.loads((ROOT/'rules_frozen_v1.json').read_text())
+    for name,expected in frozen['files'].items():assert sha256((ROOT/name).read_bytes()).hexdigest()==expected
+
+
+@pytest.mark.xfail(strict=True,reason='Known held-out failure: frozen v1 accepts annual recurring revenue as total revenue; do not tune and relabel this holdout')
+def test_known_gap_annual_recurring_revenue_must_not_be_consolidated_target():
+    _,(cs,_)=get('Q3 FY2027 Guidance: Annual recurring revenue $500 million to $510 million.')
+    assert cs==[]
+
+
+@pytest.mark.xfail(strict=True,reason='Known held-out failure: frozen v1 confuses implied-quarter headings with directly issued quarterly targets')
+def test_known_gap_implied_quarter_is_not_direct_guidance():
+    _,(cs,_)=get('Q3 FY2027 Outlook Implied Q4 FY2027 Outlook Total revenue $398 million to $400 million.')
+    assert not cs or all(c['start']=='2026-08-01' for c in cs)

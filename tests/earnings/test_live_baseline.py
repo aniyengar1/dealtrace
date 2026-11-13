@@ -3,6 +3,7 @@ from dataclasses import replace
 from datetime import date,datetime,timedelta,timezone
 from decimal import Decimal as D
 from uuid import uuid4
+from zoneinfo import ZoneInfo
 import json
 import pytest
 import psycopg
@@ -144,10 +145,11 @@ def test_db_timing_already_public_and_forged_rates(locked):
 
 def scoring_review(g,saved):
     made=baseline.aware(saved['made_at']);public=made+timedelta(microseconds=1)
-    a=replace(actual(str(g.start),str(g.end),'325',str(made.date())),source_url='https://www.sec.gov/Archives/result')
+    local_day=made.astimezone(ZoneInfo('America/New_York')).date()
+    a=replace(actual(str(g.start),str(g.end),'325',str(local_day)),source_url='https://www.sec.gov/Archives/result')
     review=dict(actual={'id':a.id,**plain(a)},first_result_publication_lower_bound=public.isoformat(),actual_filing_accepted_at=public.isoformat(),evidence_available_at=public.isoformat(),
-        result_source=dict(url='https://www.sec.gov/Archives/result',accession=a.accession,filed_date=str(made.date()),quote='Revenue results issued today'),
-        outcome_basis_review=dict(actual_id=a.id,guidance_id=g.id,blocked=False,available_on=str(made.date()),sources=['https://www.sec.gov/Archives/result']))
+        result_source=dict(url='https://www.sec.gov/Archives/result',accession=a.accession,filed_date=str(local_day),quote='Revenue results issued today'),
+        outcome_basis_review=dict(actual_id=a.id,guidance_id=g.id,blocked=False,available_on=str(local_day),sources=['https://www.sec.gov/Archives/result']))
     return review
 
 
@@ -277,3 +279,11 @@ def test_prediction_does_not_inherit_growth_or_unreported_outcome_block(db_conn,
     r=predict.run(db_conn,{ticker:c},announcement_loader=lambda company:evidence(day+timedelta(days=3)),refresh=lambda company,e:e,
         publication=lambda company,target:{'status':'unverified_test_source'})
     assert not r['locked'] and r['skipped'][0]['code']=='PUBLICATION_CHECK_BLOCKED'
+
+
+def test_scoring_fixture_uses_new_york_filing_day_at_utc_rollover():
+    g=replace(guidance(),end=date(2026,10,31))
+    r=scoring_review(g,{'made_at':'2026-11-13T00:30:00+00:00'})
+    assert r['actual']['filed']=='2026-11-12'
+    assert r['result_source']['filed_date']=='2026-11-12'
+    assert r['outcome_basis_review']['available_on']=='2026-11-12'
