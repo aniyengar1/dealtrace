@@ -92,6 +92,21 @@ def isolate_session_calls():
     extract._rate_limit_events.clear()
 
 
+@pytest.fixture(autouse=True)
+def isolate_concurrency_state_file(tmp_path, monkeypatch):
+    # Any test exercising AdaptiveConcurrency.tick()'s backoff/raise
+    # branches calls save_state(), which writes CONCURRENCY_STATE_FILE --
+    # without this, running the test suite pollutes the REAL bulk run's
+    # operational state file with test data (caught live: a test run
+    # left {"capacity": 3, "ever_backed_off": true} in the actual
+    # data/output/bulk_logs/concurrency_state.json, which would have
+    # made the real run's next restart resume conservatively based on a
+    # fabricated backoff that never happened against the real API).
+    # Autouse so a future test gets this for free without remembering to
+    # ask for it explicitly.
+    monkeypatch.setattr(bulk_run, "CONCURRENCY_STATE_FILE", tmp_path / "concurrency_state.json")
+
+
 def _write_done_result(out_dir, cik, accession, cost_usd):
     path = out_dir / f"{cik}_{accession.replace('-', '')}.json"
     path.write_text(json.dumps({"status": "done", "cost_usd": cost_usd, "row": {"target_cik": cik}}))
