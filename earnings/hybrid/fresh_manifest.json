@@ -1,0 +1,605 @@
+{
+  "embargo": "No body fetch, label creation or fresh inference in diagnostic stage. Entire reserved issuer is excluded from prompt development.",
+  "issuers": [
+    {
+      "cik": "0001596532",
+      "company": "ANET",
+      "name": "Arista Networks, Inc.",
+      "releases": [
+        {
+          "accession": "0001596532-24-000041",
+          "filed": "2024-02-12",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653224000041/anet-20240212.htm",
+          "release_body_opened": false,
+          "release_group": "ANET:2024-02-12",
+          "report_date": "2024-02-12"
+        },
+        {
+          "accession": "0001596532-24-000171",
+          "filed": "2024-05-07",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,8.01,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653224000171/anet-20240503.htm",
+          "release_body_opened": false,
+          "release_group": "ANET:2024-05-03",
+          "report_date": "2024-05-03"
+        },
+        {
+          "accession": "0001596532-24-000277",
+          "filed": "2024-07-30",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653224000277/anet-20240730.htm",
+          "release_body_opened": false,
+          "release_group": "ANET:2024-07-30",
+          "report_date": "2024-07-30"
+        },
+        {
+          "accession": "0001596532-24-000366",
+          "filed": "2024-11-07",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,8.01,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1596532/000159653224000366/anet-20241107.htm",
+          "release_body_opened": false,
+          "release_group": "ANET:2024-11-07",
+          "report_date": "2024-11-07"
+        }
+      ],
+      "status": "RESERVED_METADATA_ONLY",
+      "submissions_manifests": [
+        {
+          "body": "85d63f42afc6fbad4cb225c666406b13f233f5a7a239897825c0e7c31678a5ae-c7f5c1074706c45fb6d1c9383ca9047cb8f03746445ae2c09b4092f9e1569171.body",
+          "fetched_at": "2026-11-13T09:59:38.128309+00:00",
+          "sha256": "c7f5c1074706c45fb6d1c9383ca9047cb8f03746445ae2c09b4092f9e1569171",
+          "url": "https://data.sec.gov/submissions/CIK0001596532.json"
+        }
+      ]
+    },
+    {
+      "cik": "0001571996",
+      "company": "DELL",
+      "name": "Dell Technologies Inc.",
+      "releases": [
+        {
+          "accession": "0001571996-24-000008",
+          "filed": "2024-02-29",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1571996/000157199624000008/dell-20240229.htm",
+          "release_body_opened": false,
+          "release_group": "DELL:2024-02-29",
+          "report_date": "2024-02-29"
+        },
+        {
+          "accession": "0001571996-24-000050",
+          "filed": "2024-05-30",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1571996/000157199624000050/dell-20240530.htm",
+          "release_body_opened": false,
+          "release_group": "DELL:2024-05-30",
+          "report_date": "2024-05-30"
+        },
+        {
+          "accession": "0001571996-24-000081",
+          "filed": "2024-08-29",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1571996/000157199624000081/dell-20240829.htm",
+          "release_body_opened": false,
+          "release_group": "DELL:2024-08-29",
+          "report_date": "2024-08-29"
+        },
+        {
+          "accession": "0001571996-24-000130",
+          "filed": "2024-11-26",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1571996/000157199624000130/dell-20241126.htm",
+          "release_body_opened": false,
+          "release_group": "DELL:2024-11-26",
+          "report_date": "2024-11-26"
+        }
+      ],
+      "status": "RESERVED_METADATA_ONLY",
+      "submissions_manifests": [
+        {
+          "body": "86b63356032031c7db2f65727dda462ae4014ac2d5811daa03905b17f0f3795b-41dc5b75b68db2abf0294a043016b624abf132a6bd068caf953f3474b9218925.body",
+          "fetched_at": "2026-11-13T09:59:38.741171+00:00",
+          "sha256": "41dc5b75b68db2abf0294a043016b624abf132a6bd068caf953f3474b9218925",
+          "url": "https://data.sec.gov/submissions/CIK0001571996.json"
+        },
+        {
+          "body": "da916986f82d028356db2dbd2129d8435b61021759d02bafd36af7aa1c72c10a-c8b46ee720ec1993865c377f6a9c6505c70509ebd0405528e67b64d1c5d140e4.body",
+          "fetched_at": "2026-11-13T09:59:39.461524+00:00",
+          "sha256": "c8b46ee720ec1993865c377f6a9c6505c70509ebd0405528e67b64d1c5d140e4",
+          "url": "https://data.sec.gov/submissions/CIK0001571996-submissions-001.json"
+        }
+      ]
+    },
+    {
+      "cik": "0000858877",
+      "company": "CSCO",
+      "name": "CISCO SYSTEMS, INC.",
+      "releases": [
+        {
+          "accession": "0001193125-24-036201",
+          "filed": "2024-02-14",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,2.05,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/858877/000119312524036201/d719981d8k.htm",
+          "release_body_opened": false,
+          "release_group": "CSCO:2024-02-14",
+          "report_date": "2024-02-14"
+        },
+        {
+          "accession": "0001193125-24-139371",
+          "filed": "2024-05-15",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,5.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/858877/000119312524139371/d826117d8k.htm",
+          "release_body_opened": false,
+          "release_group": "CSCO:2024-05-12",
+          "report_date": "2024-05-12"
+        },
+        {
+          "accession": "0001193125-24-200636",
+          "filed": "2024-08-14",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,2.05,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/858877/000119312524200636/d878533d8k.htm",
+          "release_body_opened": false,
+          "release_group": "CSCO:2024-08-14",
+          "report_date": "2024-08-14"
+        },
+        {
+          "accession": "0001193125-24-257224",
+          "filed": "2024-11-13",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/858877/000119312524257224/d875468d8k.htm",
+          "release_body_opened": false,
+          "release_group": "CSCO:2024-11-13",
+          "report_date": "2024-11-13"
+        }
+      ],
+      "status": "RESERVED_METADATA_ONLY",
+      "submissions_manifests": [
+        {
+          "body": "b277c4f102c6fd4e6d05058da3c04e5c998b8fecd0aafe272f653ed0761f1df6-ce4c2df281f32947e0cea6c28297b53c0e2060215ba38f62da51b760beeee801.body",
+          "fetched_at": "2026-11-13T09:59:40.076751+00:00",
+          "sha256": "ce4c2df281f32947e0cea6c28297b53c0e2060215ba38f62da51b760beeee801",
+          "url": "https://data.sec.gov/submissions/CIK0000858877.json"
+        }
+      ]
+    },
+    {
+      "cik": "0001477333",
+      "company": "NET",
+      "name": "Cloudflare, Inc.",
+      "releases": [
+        {
+          "accession": "0001477333-24-000004",
+          "filed": "2024-02-08",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,7.01,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1477333/000147733324000004/cloud-20240208.htm",
+          "release_body_opened": false,
+          "release_group": "NET:2024-02-08",
+          "report_date": "2024-02-08"
+        },
+        {
+          "accession": "0001477333-24-000048",
+          "filed": "2024-05-02",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,7.01,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1477333/000147733324000048/cloud-20240502.htm",
+          "release_body_opened": false,
+          "release_group": "NET:2024-05-02",
+          "report_date": "2024-05-02"
+        },
+        {
+          "accession": "0001477333-24-000069",
+          "filed": "2024-08-01",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,7.01,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1477333/000147733324000069/cloud-20240801.htm",
+          "release_body_opened": false,
+          "release_group": "NET:2024-08-01",
+          "report_date": "2024-08-01"
+        },
+        {
+          "accession": "0001477333-24-000083",
+          "filed": "2024-11-07",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,7.01,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1477333/000147733324000083/cloud-20241107.htm",
+          "release_body_opened": false,
+          "release_group": "NET:2024-11-07",
+          "report_date": "2024-11-07"
+        }
+      ],
+      "status": "RESERVED_METADATA_ONLY",
+      "submissions_manifests": [
+        {
+          "body": "458936f931e8265cc66517b1577befd09045abceb3a17e27642e1c9d96d1643e-f7f48846a9638b23a1f25417f08f304f5ba3a12285a43aa797829a6de5038619.body",
+          "fetched_at": "2026-11-13T09:59:40.692609+00:00",
+          "sha256": "f7f48846a9638b23a1f25417f08f304f5ba3a12285a43aa797829a6de5038619",
+          "url": "https://data.sec.gov/submissions/CIK0001477333.json"
+        }
+      ]
+    },
+    {
+      "cik": "0001561550",
+      "company": "DDOG",
+      "name": "Datadog, Inc.",
+      "releases": [
+        {
+          "accession": "0001561550-24-000004",
+          "filed": "2024-02-13",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155024000004/ddog-20240213.htm",
+          "release_body_opened": false,
+          "release_group": "DDOG:2024-02-13",
+          "report_date": "2024-02-13"
+        },
+        {
+          "accession": "0001561550-24-000048",
+          "filed": "2024-05-07",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,5.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155024000048/ddog-20240507.htm",
+          "release_body_opened": false,
+          "release_group": "DDOG:2024-05-07",
+          "report_date": "2024-05-07"
+        },
+        {
+          "accession": "0001561550-24-000109",
+          "filed": "2024-08-08",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155024000109/ddog-20240808.htm",
+          "release_body_opened": false,
+          "release_group": "DDOG:2024-08-08",
+          "report_date": "2024-08-08"
+        },
+        {
+          "accession": "0001561550-24-000171",
+          "filed": "2024-11-07",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1561550/000156155024000171/ddog-20241107.htm",
+          "release_body_opened": false,
+          "release_group": "DDOG:2024-11-07",
+          "report_date": "2024-11-07"
+        }
+      ],
+      "status": "RESERVED_METADATA_ONLY",
+      "submissions_manifests": [
+        {
+          "body": "ec13bde29aa31540197cbdee946f581f7f4e69e37ad6425c8dbcfb6d47d0513f-2d5480197a71a8cca361fc549dc0a6ad3eca7833af35bbd612e9ccbdcbdd8a4e.body",
+          "fetched_at": "2026-11-13T09:59:41.325973+00:00",
+          "sha256": "2d5480197a71a8cca361fc549dc0a6ad3eca7833af35bbd612e9ccbdcbdd8a4e",
+          "url": "https://data.sec.gov/submissions/CIK0001561550.json"
+        }
+      ]
+    },
+    {
+      "cik": "0001404655",
+      "company": "HUBS",
+      "name": "HUBSPOT INC",
+      "releases": [
+        {
+          "accession": "0000950170-24-015231",
+          "filed": "2024-02-14",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1404655/000095017024015231/hubs-20240214.htm",
+          "release_body_opened": false,
+          "release_group": "HUBS:2024-02-14",
+          "report_date": "2024-02-14"
+        },
+        {
+          "accession": "0000950170-24-055778",
+          "filed": "2024-05-08",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1404655/000095017024055778/hubs-20240508.htm",
+          "release_body_opened": false,
+          "release_group": "HUBS:2024-05-08",
+          "report_date": "2024-05-08"
+        },
+        {
+          "accession": "0000950170-24-092811",
+          "filed": "2024-08-07",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1404655/000095017024092811/hubs-20240807.htm",
+          "release_body_opened": false,
+          "release_group": "HUBS:2024-08-07",
+          "report_date": "2024-08-07"
+        },
+        {
+          "accession": "0000950170-24-122326",
+          "filed": "2024-11-06",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1404655/000095017024122326/hubs-20241106.htm",
+          "release_body_opened": false,
+          "release_group": "HUBS:2024-11-06",
+          "report_date": "2024-11-06"
+        }
+      ],
+      "status": "RESERVED_METADATA_ONLY",
+      "submissions_manifests": [
+        {
+          "body": "477033e6478f054d6f666420475a75d5d1ca0bc65ba3894b291e1bda16563250-69e00b63f52b004c30f3b615e76461421e954a73974217714012c51b55d0e806.body",
+          "fetched_at": "2026-11-13T09:59:42.023398+00:00",
+          "sha256": "69e00b63f52b004c30f3b615e76461421e954a73974217714012c51b55d0e806",
+          "url": "https://data.sec.gov/submissions/CIK0001404655.json"
+        }
+      ]
+    },
+    {
+      "cik": "0001650372",
+      "company": "TEAM",
+      "name": "Atlassian Corp",
+      "releases": [
+        {
+          "accession": "0001650372-24-000007",
+          "filed": "2024-02-01",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1650372/000165037224000007/team-20240201.htm",
+          "release_body_opened": false,
+          "release_group": "TEAM:2024-02-01",
+          "report_date": "2024-02-01"
+        },
+        {
+          "accession": "0001650372-24-000013",
+          "filed": "2024-04-25",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,5.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1650372/000165037224000013/team-20240425.htm",
+          "release_body_opened": false,
+          "release_group": "TEAM:2024-04-25",
+          "report_date": "2024-04-25"
+        },
+        {
+          "accession": "0001650372-24-000023",
+          "filed": "2024-08-01",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1650372/000165037224000023/team-20240801.htm",
+          "release_body_opened": false,
+          "release_group": "TEAM:2024-08-01",
+          "report_date": "2024-08-01"
+        },
+        {
+          "accession": "0001650372-24-000054",
+          "filed": "2024-10-31",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,8.01,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1650372/000165037224000054/team-20241031.htm",
+          "release_body_opened": false,
+          "release_group": "TEAM:2024-10-31",
+          "report_date": "2024-10-31"
+        }
+      ],
+      "status": "RESERVED_METADATA_ONLY",
+      "submissions_manifests": [
+        {
+          "body": "21e8ade80cccb3081a264a0a699b3632a676f6e3c66e6358a4d018cde62fc634-ecd3dbef53015e3751bbc277cb1cca433c9b08d39ecef140a157337a14cc3f0d.body",
+          "fetched_at": "2026-11-13T09:59:42.630084+00:00",
+          "sha256": "ecd3dbef53015e3751bbc277cb1cca433c9b08d39ecef140a157337a14cc3f0d",
+          "url": "https://data.sec.gov/submissions/CIK0001650372.json"
+        },
+        {
+          "body": "32626d9dc610ef0c18fa4cec85dbeb4431a611f92645f71768eae1d72c51ce00-fe847ef12b9fe00df991d1a63e6d539c31a80296ab7766bdbf2589e9ac328100.body",
+          "fetched_at": "2026-11-13T09:59:43.356047+00:00",
+          "sha256": "fe847ef12b9fe00df991d1a63e6d539c31a80296ab7766bdbf2589e9ac328100",
+          "url": "https://data.sec.gov/submissions/CIK0001650372-submissions-001.json"
+        }
+      ]
+    },
+    {
+      "cik": "0001734722",
+      "company": "PATH",
+      "name": "UiPath, Inc.",
+      "releases": [
+        {
+          "accession": "0001734722-24-000007",
+          "filed": "2024-03-13",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1734722/000173472224000007/path-20240313.htm",
+          "release_body_opened": false,
+          "release_group": "PATH:2024-03-13",
+          "report_date": "2024-03-13"
+        },
+        {
+          "accession": "0001734722-24-000032",
+          "filed": "2024-05-29",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1734722/000173472224000032/path-20240529.htm",
+          "release_body_opened": false,
+          "release_group": "PATH:2024-05-29",
+          "report_date": "2024-05-29"
+        },
+        {
+          "accession": "0001734722-24-000049",
+          "filed": "2024-09-05",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,5.02,7.01,8.01,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1734722/000173472224000049/path-20240830.htm",
+          "release_body_opened": false,
+          "release_group": "PATH:2024-08-30",
+          "report_date": "2024-08-30"
+        },
+        {
+          "accession": "0001734722-24-000055",
+          "filed": "2024-12-05",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1734722/000173472224000055/path-20241205.htm",
+          "release_body_opened": false,
+          "release_group": "PATH:2024-12-05",
+          "report_date": "2024-12-05"
+        }
+      ],
+      "status": "RESERVED_METADATA_ONLY",
+      "submissions_manifests": [
+        {
+          "body": "60a05bc5c5d326dc19028d9e99bdeb807166f88c6337ee8f3a86c04fa8823df9-dd4fd4820b824d01db65865bf94e138466e873e41e94a2dd1a30b53642e7f969.body",
+          "fetched_at": "2026-11-13T09:59:43.963865+00:00",
+          "sha256": "dd4fd4820b824d01db65865bf94e138466e873e41e94a2dd1a30b53642e7f969",
+          "url": "https://data.sec.gov/submissions/CIK0001734722.json"
+        }
+      ]
+    },
+    {
+      "company": "CFLT",
+      "status": "METADATA_GAP_NO_CURRENT_SEC_TICKER_MATCH"
+    },
+    {
+      "cik": "0001517413",
+      "company": "FSLY",
+      "name": "Fastly, Inc.",
+      "releases": [
+        {
+          "accession": "0001517413-24-000029",
+          "filed": "2024-02-14",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1517413/000151741324000029/fsly-20240214.htm",
+          "release_body_opened": false,
+          "release_group": "FSLY:2024-02-14",
+          "report_date": "2024-02-14"
+        },
+        {
+          "accession": "0001517413-24-000101",
+          "filed": "2024-05-01",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1517413/000151741324000101/fsly-20240501.htm",
+          "release_body_opened": false,
+          "release_group": "FSLY:2024-05-01",
+          "report_date": "2024-05-01"
+        },
+        {
+          "accession": "0001517413-24-000171",
+          "filed": "2024-08-07",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1517413/000151741324000171/fsly-20240807.htm",
+          "release_body_opened": false,
+          "release_group": "FSLY:2024-08-07",
+          "report_date": "2024-08-07"
+        },
+        {
+          "accession": "0001517413-24-000214",
+          "filed": "2024-11-06",
+          "form": "8-K",
+          "inference_performed": false,
+          "items": "2.02,9.01",
+          "labels_created": false,
+          "primary_url": "https://www.sec.gov/Archives/edgar/data/1517413/000151741324000214/fsly-20241106.htm",
+          "release_body_opened": false,
+          "release_group": "FSLY:2024-11-06",
+          "report_date": "2024-11-06"
+        }
+      ],
+      "status": "RESERVED_METADATA_ONLY",
+      "submissions_manifests": [
+        {
+          "body": "da366765f71c6bce57edcdf328c4156ecc7d6eb28b2045176b8ca423be0e75be-d9aa502569eddd955d7015b254743d2095794a4c5840c94471efd50a890a5696.body",
+          "fetched_at": "2026-11-13T10:00:29.128907+00:00",
+          "sha256": "d9aa502569eddd955d7015b254743d2095794a4c5840c94471efd50a890a5696",
+          "url": "https://data.sec.gov/submissions/CIK0001517413.json"
+        }
+      ]
+    }
+  ],
+  "plan_sha256": "9b68f1a8db0227efdd7b691870d1f8a35e6ec068751f2d737eef312ab3347a24",
+  "reserved_at": "2026-11-13T10:00:29.133960+00:00",
+  "tickers_manifest": {
+    "body": "ace4a0fb8e9e22bbcc3aac993c3d786cd9ad1d6184ae5640bed2a7a320809f3c-391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f.body",
+    "fetched_at": "2026-11-13T04:51:39.344593+00:00",
+    "sha256": "391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f",
+    "url": "https://www.sec.gov/files/company_tickers.json"
+  }
+}
