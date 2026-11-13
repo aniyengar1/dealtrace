@@ -11,7 +11,7 @@
   "http_timeout_ms": 300000,
   "individual_attempt_limit_usd": "0.50",
   "input_reservation_margin_tokens": 1024,
-  "live_authorization": "OWNER_AUTHORIZED_CONCURRENT_DIAGNOSTICS",
+  "live_authorization": "OFFLINE_CORRECTION_ONLY_NO_NEW_INFERENCE",
   "location": "global",
   "max_attempts_per_item": 3,
   "max_concurrency": 2,
@@ -23,7 +23,7 @@
   "model": "gemini-3.6-flash",
   "output_reservation_multiplier": 2,
   "project": "just-rhythm-506202-j8",
-  "prompt_version": "hybrid-diagnostic-v2-owner-estimate",
+  "prompt_version": "hybrid-diagnostic-v3-offline-evidence",
   "provider": "google_vertex_ai",
   "reservation_policy": "owner_approved_conservative_estimate_not_provider_cap",
   "retry_backoff_seconds": [

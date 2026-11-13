@@ -122,8 +122,8 @@ def test_cache_key_excludes_provider_but_rejects_mismatched_execution(tmp_path,c
 def fixture():
     text='For the third quarter fiscal2026 consolidated reported USD revenue is $2.40 billion +/- $100 million. Issued May20,2026.'
     doc={'source_id':'current','company':'TEST','filed':'2026-05-20','canonical_text':text,'tables':[]}
-    roles=['metric','scope','period','units','basis','guidance_type','amount','issuance']
-    obs={'source_id':'current','metric_label':'revenue','metric_class':'consolidated_revenue','scope':'consolidated','scope_support':'explicit','basis_kind':'reported','scope_qualifiers':[],'fiscal_year':2026,'fiscal_quarter':3,'period_start':'2026-05-01','period_end':'2026-07-31','issued_start':'2026-05-20','issued_end':'2026-05-20','issued_precision':'day','currency':'USD','guidance_type':'direct','amount_style':'absolute_tolerance','low':None,'high':None,'center':{'value':'2.40','scale':'1000000000'},'tolerance':{'value':'100','scale':'1000000'},'status':'initial','status_support':'first_observed_quarter','prior_observation_index':None,'table_id':None,'column_label':None,'table_row_index':None,'table_column_index':None,'evidence':[{'source_id':'current','start':0,'end':len(text),'quote':text,'role':r} for r in roles],'review_note':'synthetic, not real guidance'}
+    roles=['metric','scope','period','units','basis','guidance_type','amount','issuance','status']
+    obs={'source_id':'current','metric_label':'revenue','metric_class':'consolidated_revenue','scope':'consolidated','scope_support':'explicit','basis_kind':'reported','scope_qualifiers':[],'fiscal_year':2026,'fiscal_quarter':3,'period_start':'2026-05-01','period_end':'2026-07-31','issued_start':'2026-05-20','issued_end':'2026-05-20','issued_precision':'day','currency':'USD','guidance_type':'direct','amount_style':'absolute_tolerance','low':None,'high':None,'center':{'value':'2.40','scale':'1000000000'},'tolerance':{'value':'100','scale':'1000000'},'status':'initial','status_support':'explicit_issuance','prior_observation_index':None,'table_id':None,'column_label':None,'table_row_index':None,'table_column_index':None,'evidence':[{'source_id':'current','start':0,'end':len(text),'quote':text,'role':r} for r in roles],'review_note':'synthetic, not real guidance'}
     return {'observations':[obs],'unresolved_sections':[]},[doc]
 
 def cal(y,q):return '2026-05-01','2026-07-31'
@@ -140,7 +140,7 @@ def test_rejects_unsupported_interpretations(field,value,reason):
 
 def test_quote_checks_do_not_approve_semantics_and_missing_money_stays_missing():
     d,docs=fixture();d['observations'][0]['evidence'][0]['quote']='invented'
-    assert 'QUOTE_OFFSET_MISMATCH' in validate(d,docs,cal)['observations'][0]['deterministic_errors']
+    assert 'MISSING_EXACT_MATCH' in validate(d,docs,cal)['observations'][0]['deterministic_errors']
     d,docs=fixture();o=d['observations'][0];o['amount_style']='range';o['center']=o['tolerance']=None
     r=validate(d,docs,cal)['observations'][0];assert r['normalized_low'] is None and 'MISSING_AMOUNT' in r['deterministic_errors']
 
@@ -318,3 +318,72 @@ def test_missing_thinking_counter_stops_probe_and_retains_full_reservation(tmp_p
     assert runner.dispatch_status(c,l)=='PROBE_USAGE_UNRESOLVED_STOP_REVIEW_REQUIRED'
     with pytest.raises(ledger.Gate,match='USAGE_OR_RESPONSE'):
         runner.probe_gate({'result':{'status':'response','accounted_nano':None}})
+
+def test_unique_quote_location_preserves_wrong_model_offsets_and_multiple_roles():
+    d,docs=fixture();o=d['observations'][0]
+    span=deepcopy(o['evidence'][0]);span.update(start=99,end=100,roles=[e['role'] for e in o['evidence']]);span.pop('role');o['evidence']=[span]
+    before=deepcopy(d);r=validate(d,docs,cal)['observations'][0]
+    assert not r['deterministic_errors'] and d==before
+    assert r['evidence_locations'][0]['original']['start']==99
+    assert r['evidence_locations'][0]['resolved']=={'start':0,'end':len(docs[0]['canonical_text'])}
+    assert r['evidence_locations'][0]['semantic_validation']=='NOT_GUARANTEED'
+
+def test_duplicate_exact_quote_blocks_even_if_model_offset_matches():
+    d,docs=fixture();docs[0]['canonical_text']+=' '+docs[0]['canonical_text']
+    r=validate(d,docs,cal)['observations'][0]
+    assert 'REPEATED_EXACT_MATCH' in r['deterministic_errors']
+    assert r['evidence_locations'][0]['original_offsets_match']
+    assert r['evidence_locations'][0]['resolved'] is None
+
+def test_missing_status_evidence_and_first_observed_are_unresolved():
+    d,docs=fixture();o=d['observations'][0]
+    o['evidence']=[e for e in o['evidence'] if e['role']!='status']
+    o['status_support']='first_observed_quarter'
+    r=validate(d,docs,cal)['observations'][0]
+    assert {'MISSING_STATUS_EVIDENCE','INITIAL_NOT_ESTABLISHED'}<=set(r['deterministic_errors'])
+    assert r['resolved_status']=='unresolved'
+
+def test_none_boundaries_do_not_allow_revision_across_fiscal_targets():
+    d,docs=fixture();o=d['observations'][0];prior=deepcopy(o)
+    o.update(period_start=None,period_end=None,status='reaffirmed',status_support='prior_range',prior_observation_index=1)
+    prior.update(source_id='prior',fiscal_quarter=2,period_start=None,period_end=None)
+    docs.append({**docs[0],'source_id':'prior','filed':'2026-05-19'})
+    d['observations'].append(prior)
+    assert 'INCOMPARABLE_STATUS_REFERENCE' in validate(d,docs,cal)['observations'][0]['deterministic_errors']
+
+@pytest.mark.parametrize('counter,attribute',[('promptTokenCount','prompt_token_count'),('candidatesTokenCount','candidates_token_count'),('thoughtsTokenCount','thoughts_token_count'),('totalTokenCount','total_token_count'),('cachedContentTokenCount','cached_content_token_count'),('toolUsePromptTokenCount','tool_use_prompt_token_count')])
+@pytest.mark.parametrize('kind,value',[('absent',None),('null',None),('zero',0),('numeric',37)])
+def test_original_wire_usage_presence_through_supported_sdk_http_hook(c,monkeypatch,kind,value,counter,attribute):
+    import httpx
+    from google import genai
+    from google.genai import types
+    from google.oauth2.credentials import Credentials
+    from earnings.hybrid.wire import ResponseCapture
+    monkeypatch.delenv('GOOGLE_API_KEY',raising=False);monkeypatch.delenv('GEMINI_API_KEY',raising=False)
+    usage={'promptTokenCount':100,'candidatesTokenCount':10,'totalTokenCount':110+(value or 0)}
+    usage.pop(counter,None)
+    if kind!='absent':usage[counter]=value
+    body={'usageMetadata':usage,'modelVersion':'gemini-3.6-flash','authorization':'DO_NOT_LOG','candidates':[{'content':{'parts':[{'text':'{}'}]},'finishReason':'STOP'}]}
+    capture=ResponseCapture();http,_=transport.sdk_options(c,capture)
+    http.client_args['transport']=httpx.MockTransport(lambda req:httpx.Response(200,json=body,headers={'Authorization':'DO_NOT_LOG','set-cookie':'DO_NOT_LOG'}))
+    with genai.Client(vertexai=True,project=c['project'],location='global',credentials=Credentials(token='synthetic-test'),http_options=http) as client:
+        r=client.models.generate_content(model=c['model'],contents='synthetic',config=types.GenerateContentConfig(automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True)))
+    f=capture.responses[0]['usage_fields'][counter]
+    assert f['present']==(kind!='absent') and f['is_null']==(kind=='null') and f['value']==value
+    assert getattr(r.usage_metadata,attribute)==value
+    assert 'DO_NOT_LOG' not in json.dumps(capture.responses)
+
+def test_offline_correction_authorization_blocks_before_provider_count(monkeypatch):
+    c=runner.configuration();monkeypatch.setattr(runner,'check_prompt_freeze',lambda c:None)
+    with pytest.raises(ledger.Gate,match='OFFLINE_CORRECTION_NO_NEW_INFERENCE'):runner.preflight(c)
+
+def test_compact_proposal_preserves_all_source_and_table_content():
+    from earnings.hybrid.offline_review import compact_document
+    from earnings.hybrid.prepare import DATA
+    doc=read(DATA/'pilot-0-input.json')['documents'][0];small=compact_document(doc)
+    assert small['canonical_text']==doc['canonical_text'] and small['source_sha256']==doc['source_sha256']
+    for old,new in zip(doc['tables'],small['tables'],strict=True):
+        assert new['rows']==[[c['text'] for c in row] for row in old['rows']]
+        assert (new['start'],new['end'])==(old['start'],old['end'])
+        assert new['header_cells']==[[i,j] for i,row in enumerate(old['rows']) for j,c in enumerate(row) if c['tag']=='th']
+    assert len(json.dumps(small))<len(json.dumps(doc))

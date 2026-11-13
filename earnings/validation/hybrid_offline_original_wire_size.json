@@ -1,0 +1,14 @@
+{
+  "kind": "OFFLINE_SDK_HTTP_MOCK_RECONSTRUCTION_NOT_ORIGINAL_WIRE_CAPTURE",
+  "provider_calls": 0,
+  "schema_source": "archived original probe v2 schema",
+  "sizes_json_bytes": {
+    "body": 338670,
+    "contents": 329924,
+    "system_instruction": 3163,
+    "generation_config": 5529,
+    "wire_response_schema": 5345,
+    "user_text_utf8_bytes": 270971
+  },
+  "token_counts_by_component": "Not available; provider counted aggregate only. No offline proxy presented as actual token counts."
+}

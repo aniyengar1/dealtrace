@@ -22,7 +22,7 @@ def configuration():
 
 def execution_fingerprint(c):
     # Provider is metadata, deliberately NOT a cache-key component.
-    files=['prompt.txt','schema.py','prepare.py','validation.py','transport.py','diagnostic_manifest.json','fresh_manifest.json']
+    files=['prompt.txt','schema.py','prepare.py','validation.py','evidence.py','wire.py','transport.py','diagnostic_manifest.json','fresh_manifest.json']
     return digest(json.dumps({'config':c,'files':{f:digest((ROOT/f).read_bytes()) for f in files},'schema':Extraction.model_json_schema(),'calendar_dependencies':{str(f):digest(f.read_bytes()) for f in [ROOT.parent/'pilot_s5/calendars.json',ROOT.parent/'pilot_s5/calendar.py',ROOT.parent/'extraction/calendars.json',ROOT.parent/'extraction/rules.py']}},sort_keys=True).encode())
 
 def check_prompt_freeze(c):
@@ -61,6 +61,7 @@ def preflight(c,clock=None):
     if auth.get('concurrent_deals_run_authorized') is not True or auth.get('residual_billing_uncertainty_accepted') is not True or auth.get('stage')!='diagnostic_only' or auth.get('confirmed_by')!='owner' or not auth.get('exact_user_confirmation'):raise Gate('NO_EXPLICIT_INFERENCE_AUTHORIZATION')
     stamp=datetime.fromisoformat(auth['recorded_at'])
     if stamp.tzinfo is None or stamp>clock:raise Gate('INVALID_AUTHORIZATION_TIMESTAMP')
+    if c.get('live_authorization')!='OWNER_AUTHORIZED_CONCURRENT_DIAGNOSTICS':raise Gate('OFFLINE_CORRECTION_NO_NEW_INFERENCE')
     if c.get('reservation_policy')!='owner_approved_conservative_estimate_not_provider_cap' or c.get('output_reservation_multiplier')!=2:raise Gate('UNAPPROVED_RESERVATION_POLICY')
     pricing=read(ROOT/'pricing_review.json');price_gate(c,pricing,clock)
     return auth,pricing

@@ -1,9 +1,10 @@
 {
-  "diagnostic_only": true,
-  "execution_fingerprint": "746b8a53f4f6c5d1fbbefbab81868d4c21b7b0c71a8a2ba94835871cfc8e5b05",
-  "fresh_inference_forbidden": true,
+  "prompt_version": "hybrid-diagnostic-v3-offline-evidence",
+  "execution_fingerprint": "50c0a360d7500425d1d3781397d1304577def4f3a91cb01a33dcfee42e6c02e9",
+  "frozen_at": "2026-11-13T22:17:12.401208+00:00",
   "fresh_reservation_commit": "6e085a5",
-  "frozen_at": "2026-11-13T20:34:26.603041+00:00",
-  "policy": "Owner-authorized operational reservation estimates; no documented/provider billing cap claimed. Prompt/schema/validation unchanged; generation/counting/control provenance version bumped before any actual inference.",
-  "prompt_version": "hybrid-diagnostic-v2-owner-estimate"
+  "diagnostic_only": true,
+  "fresh_inference_forbidden": true,
+  "inference_authorized": false,
+  "policy": "Offline correction only. New evidence schema, deterministic location and wire metadata require explicit approval before any further count or inference; original probe preserved."
 }

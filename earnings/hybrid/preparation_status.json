@@ -70,5 +70,13 @@
     "count_tokens": 1,
     "generate_content": 1
   },
-  "vertex_requests_dispatched": 2
+  "vertex_requests_dispatched": 2,
+  "offline_correction": {
+    "prompt_version": "hybrid-diagnostic-v3-offline-evidence",
+    "new_inference_authorized": false,
+    "new_inference_performed": false,
+    "revalidation": "../validation/hybrid_offline_correction_revalidation_v2.json",
+    "original_reservation_held_usd": "1.12",
+    "source_and_ledger_unchanged": true
+  }
 }

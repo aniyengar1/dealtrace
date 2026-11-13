@@ -5,17 +5,18 @@ from importlib.metadata import version
 from .prepare import write
 
 
-def sdk_options(config):
+def sdk_options(config,capture=None):
     from google.genai import types
     from .schema import Extraction
     http=types.HttpOptions(api_version='v1',base_url='https://aiplatform.googleapis.com',timeout=config['http_timeout_ms'],retry_options=types.HttpRetryOptions(attempts=1))
+    if capture is not None:http.client_args={'event_hooks':{'response':[capture]}}
     generation=types.GenerateContentConfig(temperature=0,candidate_count=1,max_output_tokens=config['max_output_tokens'],response_schema=Extraction,response_mime_type='application/json',thinking_config=types.ThinkingConfig(thinking_level=types.ThinkingLevel.LOW,include_thoughts=False),automatic_function_calling=types.AutomaticFunctionCallingConfig(disable=True),automatic_continuation=False)
     return http,generation
 
 
-def make_client(config,factory=None):
+def make_client(config,factory=None,capture=None):
     if version('google-genai')!='2.34.0':raise ValueError('Pinned SDK mismatch')
-    http,generation=sdk_options(config)
+    http,generation=sdk_options(config,capture)
     if factory is None:
         from google import genai
         factory=genai.Client
@@ -25,10 +26,12 @@ def make_client(config,factory=None):
 def _worker(config,prompt,payload,output):
     for name in ('GOOGLE_API_KEY','GEMINI_API_KEY'):os.environ.pop(name,None)
     started=time.monotonic();operation=config.get('_operation','generate')
+    from .wire import ResponseCapture
+    capture=ResponseCapture()
     try:
         from google.genai import types,_transformers
         from .schema import Extraction
-        client,generation=make_client(config);generation.system_instruction=prompt
+        client,generation=make_client(config,capture=capture);generation.system_instruction=prompt
         with client:
             if operation=='count':
                 # Count same content/instructions/settings. Explicitly supplement
@@ -47,7 +50,8 @@ def _worker(config,prompt,payload,output):
     except Exception as exc:
         code=getattr(exc,'code',None)
         result={'status':'transport_error','error_class':type(exc).__name__,'http_code':code if isinstance(code,int) else None,'usage':None,'returned_model_version':None}
-    result.update(provider='google_vertex_ai',requested_model='gemini-3.6-flash',project='just-rhythm-506202-j8',location='global',operation=operation,sdk_version=version('google-genai'),latency_seconds=str(time.monotonic()-started))
+    if 'raw_response' in result:result['raw_response_format']='SDK_MODEL_DUMP_NOT_ORIGINAL_HTTP_BODY'
+    result.update(wire_response_metadata=capture.responses,provider='google_vertex_ai',requested_model='gemini-3.6-flash',project='just-rhythm-506202-j8',location='global',operation=operation,sdk_version=version('google-genai'),latency_seconds=str(time.monotonic()-started))
     write(output,result)
 
 

@@ -1,15 +1,23 @@
 """Interpretation proposals only. Source membership is not semantic validation."""
 from typing import Literal
-from pydantic import BaseModel,ConfigDict
+from pydantic import BaseModel,ConfigDict,Field,model_validator
+
+Role=Literal['metric','scope','period','units','basis','guidance_type','amount','issuance','status','surrounding_context','table_header']
 
 class Strict(BaseModel):
     model_config=ConfigDict(extra='forbid')
 class Span(Strict):
     source_id:str
-    start:int
-    end:int
+    start:int|None=None
+    end:int|None=None
     quote:str
-    role:Literal['metric','scope','period','units','basis','guidance_type','amount','issuance','status','surrounding_context','table_header']
+    roles:list[Role]=Field(default_factory=list,description='All roles this exact passage supports; no duplicate quotations needed. Role assignment remains subject to semantic review.')
+    role:Role|None=None # Read original cached v2 proposals without changing them.
+
+    @model_validator(mode='after')
+    def require_roles(self):
+        if not self.roles and self.role is None:raise ValueError('Evidence roles required')
+        return self
 class Money(Strict):
     value:str
     scale:Literal['1','1000','1000000','1000000000']

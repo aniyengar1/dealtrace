@@ -4,6 +4,7 @@ from decimal import Decimal,InvalidOperation
 from datetime import date
 from earnings.models import record_id
 from .schema import Extraction
+from .evidence import locate,roles as evidence_roles
 REQUIRED={'metric','scope','period','units','basis','guidance_type','amount','issuance'}
 
 def number(m):
@@ -16,15 +17,19 @@ def validate(payload,documents,calendar):
     for i,o in enumerate(parsed.observations):
         errors=[];notes=['SEMANTIC_HUMAN_REVIEW_REQUIRED'];src=docs.get(o.source_id)
         if not src:errors.append('UNKNOWN_SOURCE')
-        roles=set()
+        roles=set();locations=[];valid=[]
         for span in o.evidence:
-            d=docs.get(span.source_id)
-            if not d or span.start<0 or span.end<=span.start or d['canonical_text'][span.start:span.end]!=span.quote:errors.append('QUOTE_OFFSET_MISMATCH')
-            elif span.source_id==o.source_id:roles.add(span.role)
+            location=locate(span,docs.get(span.source_id));locations.append(location)
+            if location['status']!='UNIQUE_EXACT_MATCH':errors.append(location['status'])
+            else:
+                valid.append(span)
+                if not location['original_offsets_match'] and span.start is not None:
+                    notes.append('MODEL_OFFSETS_DIFFER_DETERMINISTIC_LOCATION_PROPOSED')
+                if span.source_id==o.source_id:roles.update(evidence_roles(span))
         if not REQUIRED.issubset(roles):errors.append('INCOMPLETE_EVIDENCE_ROLES')
         if o.table_id:
             if not src or o.table_id not in {t['id'] for t in src['tables']}:errors.append('UNKNOWN_TABLE')
-            elif not any(s.role=='table_header' and s.quote in next(t['text'] for t in src['tables'] if t['id']==o.table_id) for s in o.evidence):errors.append('MISSING_MATCHING_TABLE_HEADER')
+            elif not any('table_header' in evidence_roles(s) and s.quote in next(t['text'] for t in src['tables'] if t['id']==o.table_id) for s in valid):errors.append('MISSING_MATCHING_TABLE_HEADER')
             if not o.column_label or o.table_row_index is None or o.table_column_index is None:errors.append('MISSING_COLUMN_IDENTITY')
             elif o.table_row_index<0 or o.table_column_index<0:errors.append('INVALID_TABLE_COORDINATE')
             else:
@@ -49,8 +54,8 @@ def validate(payload,documents,calendar):
             elif lo is None or hi is None:errors.append('MISSING_AMOUNT')
             elif lo>hi:errors.append('REVERSED_BOUNDS')
         except (InvalidOperation,ValueError):errors.append('INVALID_LITERAL_OR_TOLERANCE')
-        amount_quotes=' '.join(s.quote for s in o.evidence if s.role=='amount' and s.source_id==o.source_id)
-        unit_quotes=' '.join(s.quote for s in o.evidence if s.role in ('amount','units','table_header') and s.source_id==o.source_id)
+        amount_quotes=' '.join(s.quote for s in valid if 'amount' in evidence_roles(s) and s.source_id==o.source_id)
+        unit_quotes=' '.join(s.quote for s in valid if evidence_roles(s)&{'amount','units','table_header'} and s.source_id==o.source_id)
         for m in (o.low,o.high,o.center,o.tolerance):
             if m:
                 literal=m.value.replace('$','').strip()
@@ -80,7 +85,7 @@ def validate(payload,documents,calendar):
             else:
                 prior=parsed.observations[j];pd=docs.get(prior.source_id)
                 if not pd or not src or pd['filed']>=src['filed'] or prior.source_id==o.source_id:errors.append('FUTURE_OR_SAME_RELEASE_STATUS_REFERENCE')
-                key=lambda x:(x.metric_class,x.scope,x.basis_kind,tuple(x.scope_qualifiers),x.currency,x.period_start,x.period_end,x.guidance_type)
+                key=lambda x:(x.metric_class,x.scope,x.basis_kind,tuple(x.scope_qualifiers),x.currency,x.fiscal_year,x.fiscal_quarter,x.period_start,x.period_end,x.guidance_type)
                 if key(o)!=key(prior) or prior.guidance_type!='direct':errors.append('INCOMPARABLE_STATUS_REFERENCE')
                 try:
                     def endpoints(x):
@@ -94,14 +99,16 @@ def validate(payload,documents,calendar):
                     if o.status!=status:errors.append('STATUS_ARITHMETIC_MISMATCH')
                 except (ValueError,TypeError,InvalidOperation):errors.append('STATUS_AMOUNTS_UNRESOLVED')
         elif o.status=='initial':
-            if o.fiscal_quarter is None and o.status_support!='explicit_issuance':errors.append('ANNUAL_INITIAL_NOT_ESTABLISHED')
+            if o.status_support!='explicit_issuance':errors.append('INITIAL_NOT_ESTABLISHED')
         elif o.status not in ('withdrawn','unresolved'):errors.append('STATUS_REFERENCE_REQUIRED')
-        if o.status in ('withdrawn','reinstated') and 'status' not in roles:errors.append('MISSING_STATUS_EVIDENCE')
-        result={'index':i,'proposal':o.model_dump(),'resolved_period_start':resolved_start,'resolved_period_end':resolved_end,'normalized_low':str(lo) if lo is not None else None,'normalized_high':str(hi) if hi is not None else None,'normalization':'USD center-/+USD tolerance; endpoints not verbatim' if o.amount_style=='absolute_tolerance' else 'Decimal explicit literals','deterministic_errors':sorted(set(errors)),'review_flags':notes,'semantic_validation':'NOT_GUARANTEED','quarantined':True,'review_status':'human_review_pending','deterministic_checks_passed':not errors}
+        if o.status!='unresolved' and 'status' not in roles:errors.append('MISSING_STATUS_EVIDENCE')
+        result={'evidence_locations':locations,'index':i,'proposal':o.model_dump(),'resolved_period_start':resolved_start,'resolved_period_end':resolved_end,'normalized_low':str(lo) if lo is not None else None,'normalized_high':str(hi) if hi is not None else None,'normalization':'USD center-/+USD tolerance; endpoints not verbatim' if o.amount_style=='absolute_tolerance' else 'Decimal explicit literals','deterministic_errors':sorted(set(errors)),'review_flags':notes,'semantic_validation':'NOT_GUARANTEED','quarantined':True,'review_status':'human_review_pending','deterministic_checks_passed':not errors}
         result['id']=record_id('hybrid-diagnostic-candidate-v1',result);out.append(result)
     # A referenced proposal that failed checks cannot approve a revision.
     for result in out:
         j=result['proposal']['prior_observation_index']
         if j is not None and 0<=j<len(out) and out[j]['deterministic_errors']:
             result['deterministic_errors']=sorted(set(result['deterministic_errors']+['INVALID_STATUS_REFERENCE_INPUT']));result['deterministic_checks_passed']=False
+    for result in out:
+        result['resolved_status']='unresolved' if result['deterministic_errors'] else result['proposal']['status']
     return {'observations':out,'unresolved_sections':parsed.unresolved_sections,'human_review_complete':False}
