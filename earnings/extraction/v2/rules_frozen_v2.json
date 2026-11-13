@@ -1,0 +1,14 @@
+{
+  "frozen_at": "2026-11-13T04:06:56.800825+00:00",
+  "method_version": "revenue-rules-v2",
+  "policy": "Final rule-only repair frozen before opening reserved release bodies or creating fresh gold; no tuning after fresh evaluation. V1 heldout is diagnostic only.",
+  "files": {
+    "__init__.py": "1b76a355e9c2b671dfb954ee37217c6d99c39e4218c663f29f5242bd9aa39500",
+    "rules.py": "41fc69dfb9394ea0a9147b060b01a40996970fc573f4137b94860a3a0f58eaed",
+    "pipeline.py": "0448e131e714dd6b944af0b6a2f2092ca0d99b03e414ea15530b72179c8fa24f",
+    "corpus.py": "b7a482ed76d05f1c76e70dd1aa7981efe5d0acc45389d20717c9a4e46dcbbb33",
+    "evaluate.py": "c68436a250abf96bae60059a56b9a931b8f2ec40bdc29575d0f97b662ca4c2ed"
+  },
+  "reservation_sha256": "4da30f9263c94364d4d3ae10fbe98df6494f6d06fe6e50f02e4117ea5e661ecd",
+  "original_v1_freeze_sha256": "c944e10728565260155bd0ffb8414ce7e40a1962d5fee62e137d2fb4ff2fe1e0"
+}
