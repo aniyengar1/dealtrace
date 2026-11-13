@@ -1,0 +1,4621 @@
+{
+  "frozen_at": "2026-11-13T00:10:16.963158+00:00",
+  "limitations": [
+    "Author previously inspected all companies in Sessions 1\u20133; this is a held-out development split, not a pristine blind test.",
+    "Manual gold is positive-only and does not exhaustively label every other valid guidance fact in each document. Unmatched candidates require separate adjudication, not automatic false-positive labels."
+  ],
+  "policy": "All unique reviewed manual guidance versions from guidance/ and history/ at tag; no manual edits. Company-held-out split fixed before extraction rules; all versions/exhibits in each issuer/accession stay together.",
+  "records": [
+    {
+      "accession": "0000796343-24-000200",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "ADBE",
+      "end": "2024-11-29",
+      "exhibit": "99.1",
+      "filed": "2024-09-12",
+      "high": "5550000000.00",
+      "id": "943db843-f2f6-5304-8af1-768f655f4e69",
+      "issued": {
+        "end": "2024-09-12",
+        "precision": "day",
+        "start": "2024-09-12"
+      },
+      "low": "5500000000.00",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/ADBE.json"
+      ],
+      "quote": "fourth quarter fiscal year 2024 targets: Total revenue $5.50 billion to $5.55 billion ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000200/adbeex991q324.htm",
+      "split": "development",
+      "start": "2024-08-31",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0000796343-24-000250",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "ADBE",
+      "end": "2025-02-28",
+      "exhibit": "99.1",
+      "filed": "2024-12-11",
+      "high": "5680000000.00",
+      "id": "4092b1fe-aebe-5693-997f-d6ab62f6c620",
+      "issued": {
+        "end": "2024-12-11",
+        "precision": "day",
+        "start": "2024-12-11"
+      },
+      "low": "5630000000.00",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/ADBE.json"
+      ],
+      "quote": "first quarter fiscal year 2025 targets 2 : Total revenue $5.63 billion to $5.68 billion ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000250/adbeex991q424.htm",
+      "split": "development",
+      "start": "2024-11-30",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0000796343-25-000052",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "ADBE",
+      "end": "2025-05-30",
+      "exhibit": "99.1",
+      "filed": "2025-03-12",
+      "high": "5820000000.00",
+      "id": "2053bcc5-9b6a-5ec5-8291-2e4ee2e6ba59",
+      "issued": {
+        "end": "2025-03-12",
+        "precision": "day",
+        "start": "2025-03-12"
+      },
+      "low": "5770000000.00",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/ADBE.json"
+      ],
+      "quote": "second quarter fiscal year 2025 targets 1 : Total revenue $5.77 billion to $5.82 billion ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000052/adbeex991q125.htm",
+      "split": "development",
+      "start": "2025-03-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0000796343-25-000064",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "ADBE",
+      "end": "2025-08-29",
+      "exhibit": "99.1",
+      "filed": "2025-06-12",
+      "high": "5925000000.000",
+      "id": "bc676721-36d2-586e-b72a-97e04af6f2fd",
+      "issued": {
+        "end": "2025-06-12",
+        "precision": "day",
+        "start": "2025-06-12"
+      },
+      "low": "5875000000.000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/ADBE.json"
+      ],
+      "quote": "third quarter fiscal year 2025 targets, which assumes current macroeconomic conditions 1 : Total revenue $5.875 billion to $5.925 billion ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000064/adbeex991q225.htm",
+      "split": "development",
+      "start": "2025-05-31",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0000796343-25-000102",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "ADBE",
+      "end": "2025-11-28",
+      "exhibit": "99.1",
+      "filed": "2025-09-11",
+      "high": "6125000000.000",
+      "id": "57807be0-c9a0-5ce4-ba88-b787def5f7cf",
+      "issued": {
+        "end": "2025-09-11",
+        "precision": "day",
+        "start": "2025-09-11"
+      },
+      "low": "6075000000.000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/ADBE.json"
+      ],
+      "quote": "fourth quarter fiscal year 2025 targets, which assumes current macroeconomic conditions 1 : Total revenue $6.075 billion to $6.125 billion ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000102/adbeex991q325.htm",
+      "split": "development",
+      "start": "2025-08-30",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0000796343-25-000135",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "ADBE",
+      "end": "2026-02-27",
+      "exhibit": "99.1",
+      "filed": "2025-12-10",
+      "high": "6300000000.00",
+      "id": "1515cf4f-d53f-542c-a786-4321a261155b",
+      "issued": {
+        "end": "2025-12-10",
+        "precision": "day",
+        "start": "2025-12-10"
+      },
+      "low": "6250000000.00",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/ADBE.json"
+      ],
+      "quote": "first quarter FY2026 targets 2 : Total revenue $6.25 billion to $6.30 billion ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+      "split": "development",
+      "start": "2025-11-29",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0000796343-25-000135",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "ADBE",
+      "end": "2026-11-27",
+      "exhibit": "99.1",
+      "filed": "2025-12-10",
+      "high": "26100000000.00",
+      "id": "b7c14351-ad44-5757-b7f8-b816b58002ff",
+      "issued": {
+        "end": "2025-12-10",
+        "precision": "day",
+        "start": "2025-12-10"
+      },
+      "low": "25900000000.00",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/ADBE.json"
+      ],
+      "quote": "FY2026 targets 1 : Total revenue $25.90 billion to $26.10 billion Business Professionals & Consumers subscription revenue $7.35 billion to $7.40 billion Creative & Marketing Professionals subscription revenue $17.75 billion to $17.90 billion Total Adobe ending ARR growth 10.2% year over year Earnings per share GAAP: $1",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+      "split": "development",
+      "start": "2025-11-29",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0000796343-26-000048",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "ADBE",
+      "end": "2026-05-29",
+      "exhibit": "99.1",
+      "filed": "2026-03-12",
+      "high": "6480000000.00",
+      "id": "0a890adf-1833-5ec9-8455-10f6ae14dc06",
+      "issued": {
+        "end": "2026-03-12",
+        "precision": "day",
+        "start": "2026-03-12"
+      },
+      "low": "6430000000.00",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/ADBE.json"
+      ],
+      "quote": "second quarter FY2026 targets: Total revenue $6.43 billion to $6.48 billion ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbeex991q126.htm",
+      "split": "development",
+      "start": "2026-02-28",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0000796343-26-000048",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "ADBE",
+      "end": "2026-11-27",
+      "exhibit": "99.1",
+      "filed": "2026-03-12",
+      "high": "26100000000.00",
+      "id": "87aa0e07-6f3c-5db0-8a9b-eb0aca2d79d4",
+      "issued": {
+        "end": "2026-03-12",
+        "precision": "day",
+        "start": "2026-03-12"
+      },
+      "low": "25900000000.00",
+      "metric": "consolidated_revenue",
+      "notes": "Bounds carried from explicitly referenced previous guidance; no new numerical range.",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/ADBE.json"
+      ],
+      "quote": "In addition, Adobe is reaffirming previously issued FY2026 targets.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbeex991q126.htm",
+      "split": "development",
+      "start": "2025-11-29",
+      "status": "reaffirmed",
+      "unit": "USD"
+    },
+    {
+      "accession": "0000796343-26-000109",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "ADBE",
+      "end": "2026-11-27",
+      "exhibit": "99.1",
+      "filed": "2026-06-11",
+      "high": "26600000000.00",
+      "id": "812b1c5c-9ce3-5ba1-8524-479d49c18149",
+      "issued": {
+        "end": "2026-06-11",
+        "precision": "day",
+        "start": "2026-06-11"
+      },
+      "low": "26500000000.00",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/ADBE.json"
+      ],
+      "quote": "updated FY2026 targets: Total revenue $26.50 billion to $26.60 billion Business Professionals & Consumers subscription revenue $7.44 billion to $7.48 billion Creative & Marketing Professionals subscription revenue $18.21 billion to $18.27 billion Total Adobe ending ARR growth 10.2% year over year Earnings per share 2 G",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm",
+      "split": "development",
+      "start": "2025-11-29",
+      "status": "raised",
+      "unit": "USD"
+    },
+    {
+      "accession": "0000796343-26-000109",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "ADBE",
+      "end": "2026-08-28",
+      "exhibit": "99.1",
+      "filed": "2026-06-11",
+      "high": "6720000000.00",
+      "id": "e8524bc3-89c0-5a87-965e-9a97fe4dea07",
+      "issued": {
+        "end": "2026-06-11",
+        "precision": "day",
+        "start": "2026-06-11"
+      },
+      "low": "6670000000.00",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/ADBE.json"
+      ],
+      "quote": "third quarter FY2026 targets: Total revenue $6.67 billion to $6.72 billion ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm",
+      "split": "development",
+      "start": "2026-05-30",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0000796343-26-000147",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "ADBE",
+      "end": "2026-11-27",
+      "exhibit": "99.1",
+      "filed": "2026-09-10",
+      "high": "26626000000.000",
+      "id": "04d7cd94-ee0a-56f9-b9d5-7329de346f83",
+      "issued": {
+        "end": "2026-09-10",
+        "precision": "day",
+        "start": "2026-09-10"
+      },
+      "low": "26576000000.000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/ADBE.json"
+      ],
+      "quote": "updated FY2026 targets: Total revenue $26.576 billion to $26.626 billion Business Professionals & Consumers subscription revenue $7.470 billion to $7.490 billion Creative & Marketing Professionals subscription revenue $18.242 billion to $18.272 billion Total Adobe ending ARR growth 10.2% year over year Earnings per sha",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+      "split": "development",
+      "start": "2025-11-29",
+      "status": "raised",
+      "unit": "USD"
+    },
+    {
+      "accession": "0000796343-26-000147",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "ADBE",
+      "end": "2026-11-27",
+      "exhibit": "99.1",
+      "filed": "2026-09-10",
+      "high": "6850000000",
+      "id": "c6af4c68-dde8-57b1-bf4d-2f0c56c4c3ce",
+      "issued": {
+        "end": "2026-09-10",
+        "precision": "day",
+        "start": "2026-09-10"
+      },
+      "low": "6800000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/ADBE.json"
+      ],
+      "quote": "fourth quarter FY2026 targets, which assumes current macroeconomic conditions: Total revenue $6.80 billion to $6.85 billion Business Professionals & Consumers subscription revenue $1.93 billion to $1.95 billion Creative & Marketing Professionals subscription",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+      "split": "development",
+      "start": "2026-08-29",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001108524-24-000020",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRM",
+      "end": "2024-10-31",
+      "exhibit": "99.1",
+      "filed": "2024-08-28",
+      "high": "9360000000.00",
+      "id": "9b41e06c-3f35-590e-a0f2-fc66d81dfb10",
+      "issued": {
+        "end": "2024-08-28",
+        "precision": "day",
+        "start": "2024-08-28"
+      },
+      "low": "9310000000.00",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/CRM.json"
+      ],
+      "quote": "Q3 FY25 Guidance Full Year FY25 Guidance Total Revenue $9.31 - $9.36 Billion ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000020/crm-q2fy25xexhibit991.htm",
+      "split": "development",
+      "start": "2024-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001108524-24-000033",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRM",
+      "end": "2025-01-31",
+      "exhibit": "99.1",
+      "filed": "2024-12-03",
+      "high": "10100000000.00",
+      "id": "8b3165b3-9aef-506e-828d-ff866b6d38f1",
+      "issued": {
+        "end": "2024-12-03",
+        "precision": "day",
+        "start": "2024-12-03"
+      },
+      "low": "9900000000.00",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/CRM.json"
+      ],
+      "quote": "Q4 FY25 Guidance 5 Full Year FY25 Guidance 5 Total Revenue $9.90 - $10.10 Billion ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000033/crm-q3fy25xexhibit991.htm",
+      "split": "development",
+      "start": "2024-11-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001108524-25-000002",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRM",
+      "end": "2025-04-30",
+      "exhibit": "99.1",
+      "filed": "2025-02-26",
+      "high": "9760000000.00",
+      "id": "569a87b8-437e-54d9-a6d1-dd69cfd4d9ac",
+      "issued": {
+        "end": "2025-02-26",
+        "precision": "day",
+        "start": "2025-02-26"
+      },
+      "low": "9710000000.00",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/CRM.json"
+      ],
+      "quote": "Q1 FY26 Guidance Full Year FY26 Guidance Total revenue $9.71 - $9.76 billion ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000002/crm-q4fy25xexhibit991.htm",
+      "split": "development",
+      "start": "2025-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001108524-25-000027",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRM",
+      "end": "2025-07-31",
+      "exhibit": "99.1",
+      "filed": "2025-05-28",
+      "high": "10160000000.00",
+      "id": "984df744-7f57-51d3-a70c-2910e19cb04b",
+      "issued": {
+        "end": "2025-05-28",
+        "precision": "day",
+        "start": "2025-05-28"
+      },
+      "low": "10110000000.00",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/CRM.json"
+      ],
+      "quote": "Q2 FY26 Guidance GAAP Non-GAAP (1) Revenue $10.11 - $10.16 billion ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000027/crm-q1fy26xexhibit991.htm",
+      "split": "development",
+      "start": "2025-05-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001108524-25-000083",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRM",
+      "end": "2025-10-31",
+      "exhibit": "99.1",
+      "filed": "2025-09-03",
+      "high": "10290000000.00",
+      "id": "42930d56-cae9-5290-9732-17206bc8ea2d",
+      "issued": {
+        "end": "2025-09-03",
+        "precision": "day",
+        "start": "2025-09-03"
+      },
+      "low": "10240000000.00",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/CRM.json"
+      ],
+      "quote": "Q3 FY26 Guidance GAAP Non-GAAP (1) Revenue $10.24 - $10.29 billion ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000083/crm-q2fy26xexhibit991.htm",
+      "split": "development",
+      "start": "2025-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001108524-25-000234",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRM",
+      "end": "2026-01-31",
+      "exhibit": "99.1",
+      "filed": "2025-12-03",
+      "high": "11230000000.00",
+      "id": "559547e2-f9f8-5b6c-b0e2-ab07f37b7c55",
+      "issued": {
+        "end": "2025-12-03",
+        "precision": "day",
+        "start": "2025-12-03"
+      },
+      "low": "11130000000.00",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/CRM.json"
+      ],
+      "quote": "Q4 FY26 Guidance GAAP Non-GAAP (1) Revenue $11.13 - $11.23 billion ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000234/crm-q3fy26xexhibit991.htm",
+      "split": "development",
+      "start": "2025-11-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001108524-26-000056",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRM",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-02-25",
+      "high": "46200000000.0",
+      "id": "2e224c9b-77d6-5665-97ce-f8cf535ce5bc",
+      "issued": {
+        "end": "2026-02-25",
+        "precision": "day",
+        "start": "2026-02-25"
+      },
+      "low": "45800000000.0",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/CRM.json"
+      ],
+      "quote": "Initiates full year FY27 revenue guidance of $45.8 billion to $46.2 billion, up 10% - 11% Y/Y and in CC, including approximately 3pts Informatica contribution \u2022 Expects organic revenue re-acceleration in the second half of FY27 \u2022 Initiates full year FY27 subscription & support revenue growth guidance of slightly under ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-q4fy26xexhibit991.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001108524-26-000056",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRM",
+      "end": "2026-04-30",
+      "exhibit": "99.1",
+      "filed": "2026-02-25",
+      "high": "11080000000.00",
+      "id": "903f9e16-b90d-5951-be33-6b25eb3a6b6b",
+      "issued": {
+        "end": "2026-02-25",
+        "precision": "day",
+        "start": "2026-02-25"
+      },
+      "low": "11030000000.00",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/CRM.json"
+      ],
+      "quote": "Q1 FY27 Guidance GAAP Non-GAAP (1) Revenue $11.03 - $11.08 billion ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-q4fy26xexhibit991.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001108524-26-000125",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRM",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-05-27",
+      "high": "46200000000.0",
+      "id": "6efd228a-70fb-51dc-9d1c-93c55ff84e16",
+      "issued": {
+        "end": "2026-05-27",
+        "precision": "day",
+        "start": "2026-05-27"
+      },
+      "low": "45900000000.0",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/CRM.json"
+      ],
+      "quote": "Raises midpoint of full year FY27 revenue guidance, now expects full year FY27 revenue of $45.9 billion to $46.2 billion, up 11% Y/Y and 10% - 11% in CC, including approximately 3pts Informatica contribution \u2022 Maintains full year FY27 subscription & support revenue growth guidance of slightly under 12% Y/Y and approxim",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000125/crm-q1fy27xexhibit991.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "raised",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001108524-26-000125",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRM",
+      "end": "2026-07-31",
+      "exhibit": "99.1",
+      "filed": "2026-05-27",
+      "high": "11350000000.00",
+      "id": "b81cf032-a16f-5631-bb29-024ecd5ca379",
+      "issued": {
+        "end": "2026-05-27",
+        "precision": "day",
+        "start": "2026-05-27"
+      },
+      "low": "11270000000.00",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/CRM.json"
+      ],
+      "quote": "Q2 FY27 Guidance GAAP Non-GAAP (1) Revenue $11.27 - $11.35 billion ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000125/crm-q1fy27xexhibit991.htm",
+      "split": "development",
+      "start": "2026-05-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001108524-26-000187",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRM",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-08-26",
+      "high": "46400000000.0",
+      "id": "01731e6e-0166-552d-baba-021e4d237bf7",
+      "issued": {
+        "end": "2026-08-26",
+        "precision": "day",
+        "start": "2026-08-26"
+      },
+      "low": "46100000000.0",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/CRM.json"
+      ],
+      "quote": "Salesforce raises full year FY27 revenue guidance to $46.1 billion to $46.4 billion, up 11% - 12% Y/Y and 11% Y/Y in CC. In June, Salesforce announced separate definitive agreements to acquire Contentful and Fin. The Company now expects both transactions to close independently in the coming weeks, during the third quar",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "raised",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001108524-26-000187",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRM",
+      "end": "2026-10-31",
+      "exhibit": "99.1",
+      "filed": "2026-08-26",
+      "high": "11500000000",
+      "id": "3b513a29-59c1-51a3-bf16-fa1001da216c",
+      "issued": {
+        "end": "2026-08-26",
+        "precision": "day",
+        "start": "2026-08-26"
+      },
+      "low": "11420000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/CRM.json"
+      ],
+      "quote": "Initiates third quarter FY27 revenue guidance of $11.42 billion to $11.5 billion, up 11% - 12% Y/Y and in CC, including slightly above 4pts Informatica contribution \u2022 Initiates third qu",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
+      "split": "development",
+      "start": "2026-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001193125-26-425881",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRM",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-10-20",
+      "high": "46400000000.0",
+      "id": "a83bd1cc-d8c3-5a31-8aff-ffb4022e9f8a",
+      "issued": {
+        "end": "2026-10-20",
+        "precision": "day",
+        "start": "2026-10-20"
+      },
+      "low": "46100000000.0",
+      "metric": "consolidated_revenue",
+      "notes": "Bounds carried from explicitly referenced previous guidance; no new numerical range.",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/CRM.json"
+      ],
+      "quote": "There is no anticipated change to Salesforce\u2019s FY27 guidance.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312526425881/d516983dex991.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "reaffirmed",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001535527-24-000017",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRWD",
+      "end": "2024-10-31",
+      "exhibit": "99.1",
+      "filed": "2024-08-28",
+      "high": "984700000.0",
+      "id": "01205c58-db41-52ae-a250-7887b127dba6",
+      "issued": {
+        "end": "2024-08-28",
+        "precision": "day",
+        "start": "2024-08-28"
+      },
+      "low": "979200000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/CRWD.json"
+      ],
+      "quote": "Q3 FY25 Guidance Full Year FY25 Guidance Total revenue $979.2 - $984.7 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000017/crwd-20240828xex991.htm",
+      "split": "heldout",
+      "start": "2024-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001535527-24-000024",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRWD",
+      "end": "2025-01-31",
+      "exhibit": "99.1",
+      "filed": "2024-11-26",
+      "high": "1035400000.0",
+      "id": "9e84819f-e81c-5038-ac3a-325e500d9784",
+      "issued": {
+        "end": "2024-11-26",
+        "precision": "day",
+        "start": "2024-11-26"
+      },
+      "low": "1028700000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/CRWD.json"
+      ],
+      "quote": "Q4 FY25 Guidance Full Year FY25 Guidance Total revenue $1,028.7 - $1,035.4 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000024/crwd-20241126xex991.htm",
+      "split": "heldout",
+      "start": "2024-11-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001535527-25-000005",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRWD",
+      "end": "2025-04-30",
+      "exhibit": "99.1",
+      "filed": "2025-03-04",
+      "high": "1106400000.0",
+      "id": "6ff36d6a-7731-580d-b870-86b7885d03a4",
+      "issued": {
+        "end": "2025-03-04",
+        "precision": "day",
+        "start": "2025-03-04"
+      },
+      "low": "1100600000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/CRWD.json"
+      ],
+      "quote": "Q1 FY26 Guidance Full Year FY26 Guidance Total revenue $1,100.6 - $1,106.4 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000005/crwd-20250304xex991.htm",
+      "split": "heldout",
+      "start": "2025-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001535527-25-000017",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRWD",
+      "end": "2025-07-31",
+      "exhibit": "99.1",
+      "filed": "2025-06-03",
+      "high": "1151600000.0",
+      "id": "fddbd054-6750-589a-816f-b9601159beee",
+      "issued": {
+        "end": "2025-06-03",
+        "precision": "day",
+        "start": "2025-06-03"
+      },
+      "low": "1144700000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/CRWD.json"
+      ],
+      "quote": "Q2 FY26 Guidance Full Year FY26 Guidance Total revenue $1,144.7 - $1,151.6 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000017/crwd-20250603xex991.htm",
+      "split": "heldout",
+      "start": "2025-05-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001535527-25-000023",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRWD",
+      "end": "2025-10-31",
+      "exhibit": "99.1",
+      "filed": "2025-08-27",
+      "high": "1218000000.0",
+      "id": "0368ce79-a89c-563d-a455-2343829ceccb",
+      "issued": {
+        "end": "2025-08-27",
+        "precision": "day",
+        "start": "2025-08-27"
+      },
+      "low": "1208000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/CRWD.json"
+      ],
+      "quote": "Q3 FY26 Guidance Full Year FY26 Guidance Total revenue $1,208.0 - $1,218.0 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000023/crwd-20252708xex991.htm",
+      "split": "heldout",
+      "start": "2025-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001535527-25-000030",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRWD",
+      "end": "2026-01-31",
+      "exhibit": "99.1",
+      "filed": "2025-12-02",
+      "high": "1300000000.0",
+      "id": "01df377c-892b-5b33-8cdc-07191f0a9bb0",
+      "issued": {
+        "end": "2025-12-02",
+        "precision": "day",
+        "start": "2025-12-02"
+      },
+      "low": "1290000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/CRWD.json"
+      ],
+      "quote": "Q4 FY26 Guidance Full Year FY26 Guidance Total revenue $1,290.0 - $1,300.0 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000030/crwd-20251202xex991.htm",
+      "split": "heldout",
+      "start": "2025-11-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001535527-26-000007",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRWD",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-03-03",
+      "high": "5927600000.0000",
+      "id": "6a52f11e-61b8-554e-826f-4dc433be1b18",
+      "issued": {
+        "end": "2026-03-03",
+        "precision": "day",
+        "start": "2026-03-03"
+      },
+      "low": "5867600000.0000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/CRWD.json"
+      ],
+      "quote": "Full Year FY27 Guidance Annual recurring revenue $5,501.8 - $5,503.8 million $6,465.8 - $6,516.4 million Total revenue $1,360.0 - $1,364.0 million $5,867.6 - $5,927.6 million Non-GAAP income from operations $308.0 - $310.4 million $1,422.2 - $1,462.2 million Non-GAAP net income attributable to CrowdStrike $275.2 - $277.1 million $1,241.0 - $1,271.1 million Non-GAAP net income per share attributable to CrowdStrike com",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm",
+      "split": "heldout",
+      "start": "2026-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001535527-26-000007",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRWD",
+      "end": "2026-04-30",
+      "exhibit": "99.1",
+      "filed": "2026-03-03",
+      "high": "1364000000.0",
+      "id": "7bc596a9-4d6e-5f18-8f95-76b424343da6",
+      "issued": {
+        "end": "2026-03-03",
+        "precision": "day",
+        "start": "2026-03-03"
+      },
+      "low": "1360000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/CRWD.json"
+      ],
+      "quote": "Q1 FY27 Guidance Full Year FY27 Guidance Annual recurring revenue $5,501.8 - $5,503.8 million $6,465.8 - $6,516.4 million Total revenue $1,360.0 - $1,364.0 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm",
+      "split": "heldout",
+      "start": "2026-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001535527-26-000022",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRWD",
+      "end": "2026-07-31",
+      "exhibit": "99.1",
+      "filed": "2026-06-03",
+      "high": "1442000000.0",
+      "id": "49a3f9b5-1f5a-54cd-ab80-c173b4ed70fd",
+      "issued": {
+        "end": "2026-06-03",
+        "precision": "day",
+        "start": "2026-06-03"
+      },
+      "low": "1436000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/CRWD.json"
+      ],
+      "quote": "Q2 FY27 Guidance Full Year FY27 Guidance Annual recurring revenue $5,792.6 - $5,794.6 million $6,531.7 - $6,555.5 million Total revenue $1,436.0 - $1,442.0 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm",
+      "split": "heldout",
+      "start": "2026-05-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001535527-26-000022",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRWD",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-06-03",
+      "high": "5958700000.0000",
+      "id": "a31172b0-3168-5009-8472-59282faee637",
+      "issued": {
+        "end": "2026-06-03",
+        "precision": "day",
+        "start": "2026-06-03"
+      },
+      "low": "5914700000.0000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/CRWD.json"
+      ],
+      "quote": "Full Year FY27 Guidance Annual recurring revenue $5,792.6 - $5,794.6 million $6,531.7 - $6,555.5 million Total revenue $1,436.0 - $1,442.0 million $5,914.7 - $5,958.7 million Non-GAAP income from operations $345.6 - $349.1 million $1,452.3 - $1,480.3 million Non-GAAP net income attributable to CrowdStrike $300.7 - $303.4 million $1,263.1 - $1,285.2 million Non-GAAP net income per share attributable to CrowdStrike com",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm",
+      "split": "heldout",
+      "start": "2026-02-01",
+      "status": "raised",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001535527-26-000029",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRWD",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-08-26",
+      "high": "6011100000.0000",
+      "id": "20136ed5-16e2-50dc-b46c-8f4833b1db90",
+      "issued": {
+        "end": "2026-08-26",
+        "precision": "day",
+        "start": "2026-08-26"
+      },
+      "low": "5991100000.0000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/CRWD.json"
+      ],
+      "quote": "Full Year FY27 Guidance Annual recurring revenue $6,184.4 - $6,188.4 million $6,603.0 - $6,611.9 million Total revenue $1,523.2 - $1,529.2 million $5,991.1 - $6,011.1 million Non-GAAP income from operations $372.7 - $375.9 million $1,497.2 - $1,508.4 million Non-GAAP net income attributable to CrowdStrike $325.4 - $327.9 million $1,302.7 - $1,311.6 million Non-GAAP net income per share attributable to CrowdStrike com",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+      "split": "heldout",
+      "start": "2026-02-01",
+      "status": "raised",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001535527-26-000029",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRWD",
+      "end": "2026-10-31",
+      "exhibit": "99.1",
+      "filed": "2026-08-26",
+      "high": "1529200000",
+      "id": "f6ff18dc-8880-5f65-b254-cdbbf1a488ba",
+      "issued": {
+        "end": "2026-08-26",
+        "precision": "day",
+        "start": "2026-08-26"
+      },
+      "low": "1523200000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/CRWD.json"
+      ],
+      "quote": "Total revenue $1,523.2 - $1,529.2 million $5,991.1 - $6,011.1 million Non-GAAP income from operations $372.7 - $375.9 mill",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+      "split": "heldout",
+      "start": "2026-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-24-039118",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "GTLB",
+      "end": "2024-10-31",
+      "exhibit": "99.1",
+      "filed": "2024-09-03",
+      "high": "188000000.0",
+      "id": "2a49ff7a-c5b4-505a-beb9-2c251836a12e",
+      "issued": {
+        "end": "2024-09-03",
+        "precision": "day",
+        "start": "2024-09-03"
+      },
+      "low": "187000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/GTLB.json"
+      ],
+      "quote": "Q3 FY 2025 Guidance FY 2025 Guidance Revenue $187.0 - $188.0 $",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024039118/gitlab-ex99120240731fy25.htm",
+      "split": "development",
+      "start": "2024-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-24-050064",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "GTLB",
+      "end": "2025-01-31",
+      "exhibit": "99.1",
+      "filed": "2024-12-05",
+      "high": "206000000.0",
+      "id": "2b515a2c-98ca-5023-98ea-7161d57f254d",
+      "issued": {
+        "end": "2024-12-05",
+        "precision": "day",
+        "start": "2024-12-05"
+      },
+      "low": "205000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/GTLB.json"
+      ],
+      "quote": "Q4 FY 2025 Guidance FY 2025 Guidance Revenue $205.0 - $206.0 $",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828024050064/gitlab-ex99120241031fy25.htm",
+      "split": "development",
+      "start": "2024-11-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-25-009422",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "GTLB",
+      "end": "2025-04-30",
+      "exhibit": "99.1",
+      "filed": "2025-03-03",
+      "high": "213000000.0",
+      "id": "ff19701e-1677-57da-bf36-9a6734ef2072",
+      "issued": {
+        "end": "2025-03-03",
+        "precision": "day",
+        "start": "2025-03-03"
+      },
+      "low": "212000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/GTLB.json"
+      ],
+      "quote": "Q1 FY 2026 Guidance FY 2026 Guidance Revenue $212.0 - $213.0 $",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025009422/gitlab-ex99120250131fy25.htm",
+      "split": "development",
+      "start": "2025-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-25-030455",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "GTLB",
+      "end": "2025-07-31",
+      "exhibit": "99.1",
+      "filed": "2025-06-10",
+      "high": "227000000.0",
+      "id": "0db01af0-bc40-5023-befb-130f4f1a9ac0",
+      "issued": {
+        "end": "2025-06-10",
+        "precision": "day",
+        "start": "2025-06-10"
+      },
+      "low": "226000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/GTLB.json"
+      ],
+      "quote": "Q2 FY 2026 Guidance FY 2026 Guidance Revenue $226.0 - $227.0 $",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025030455/gitlab-ex99120250430fy26.htm",
+      "split": "development",
+      "start": "2025-05-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001653482-25-000008",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "GTLB",
+      "end": "2025-10-31",
+      "exhibit": "99.1",
+      "filed": "2025-09-03",
+      "high": "239000000.0",
+      "id": "e4cd15bc-a65b-5deb-ad3e-401211258e69",
+      "issued": {
+        "end": "2025-09-03",
+        "precision": "day",
+        "start": "2025-09-03"
+      },
+      "low": "238000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/GTLB.json"
+      ],
+      "quote": "Q3 FY 2026 Guidance FY 2026 Guidance Revenue $238.0 - $239.0 $",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348225000008/gitlab-ex99120250731fy26.htm",
+      "split": "development",
+      "start": "2025-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-25-054758",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "GTLB",
+      "end": "2026-01-31",
+      "exhibit": "99.1",
+      "filed": "2025-12-02",
+      "high": "252000000.0",
+      "id": "3f56fa7c-ed4c-5791-85b6-7c6abb59c449",
+      "issued": {
+        "end": "2025-12-02",
+        "precision": "day",
+        "start": "2025-12-02"
+      },
+      "low": "251000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/GTLB.json"
+      ],
+      "quote": "Q4 FY 2026 Guidance FY 2026 Guidance Revenue $251.0 - $252.0 $",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054758/gitlab-ex99120251031fy26.htm",
+      "split": "development",
+      "start": "2025-11-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-25-054895",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "GTLB",
+      "end": "2026-01-31",
+      "exhibit": "99.1",
+      "filed": "2025-12-03",
+      "high": "252000000.0",
+      "id": "b520ab79-a73e-5310-bcf7-50e2d838de7f",
+      "issued": {
+        "end": "2025-12-02",
+        "precision": "day",
+        "start": "2025-12-02"
+      },
+      "low": "251000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance. Amended exhibit retains revenue range; not treated as a new explicit reaffirmation.",
+      "original_verified": false,
+      "origins": [
+        "earnings/history/GTLB.json"
+      ],
+      "quote": "Q4 FY 2026 Guidance FY 2026 Guidance Revenue $251.0 - $252.0 $",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054895/gitlab-ex99120251031fy26am.htm",
+      "split": "development",
+      "start": "2025-11-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001653482-26-000009",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "GTLB",
+      "end": "2026-01-31",
+      "exhibit": "8-K Item 7.01 (primary document; no exhibit)",
+      "filed": "2026-01-12",
+      "high": "252000000.0",
+      "id": "1871a1e8-7e00-5f1c-8e28-a262fa6ce510",
+      "issued": {
+        "end": "2026-01-12",
+        "precision": "day",
+        "start": "2026-01-12"
+      },
+      "low": "251000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Explicit quarterly reaffirmation; bounds retained from prior source. Post-close indications are separately flagged and excluded from the training cohort.",
+      "original_verified": false,
+      "origins": [
+        "earnings/history/GTLB.json"
+      ],
+      "quote": "reaffirmed its fourth quarter and fiscal year 2026 guidance previously provided in the Company\u2019s third quarter fiscal year 2026 earnings release issued on December 2, 2025. SIGNATURES Pursuant to the requirements of the Securities",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000009/gtlb-20260109.htm",
+      "split": "development",
+      "start": "2025-11-01",
+      "status": "reaffirmed",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-013795",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "GTLB",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-03-03",
+      "high": "1118000000",
+      "id": "0b4891ac-f765-5fb8-a0cb-39130819cb06",
+      "issued": {
+        "end": "2026-03-03",
+        "precision": "day",
+        "start": "2026-03-03"
+      },
+      "low": "1099000000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/GTLB.json"
+      ],
+      "quote": "First Quarter and Fiscal Year 2027 Financial Outlook For the first quarter and fiscal year 2027, GitLab Inc. expects ( in millions , except share and per share data) : Q1 FY 2027 Guidance FY 2027 Guidance Revenue $253.0 - $255.0 $1,099 - $1,118 Non-GAAP operating income $32.0 - $34.0 $129 - $137 Non-GAAP diluted net income per share assuming approximately 173 million and 175 million weighted average shares outstanding during Q1 FY 2027 and FY 2027, respectively. $0.20 - $0.21 $0.76 - $0.80 These statements are forward-looking and actual results may differ materially as a result of many factors. Refer to the Forward-Looking Statements safe har",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-013795",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "GTLB",
+      "end": "2026-04-30",
+      "exhibit": "99.1",
+      "filed": "2026-03-03",
+      "high": "255000000.0",
+      "id": "ee4713fc-9132-59fe-a528-d651a7200100",
+      "issued": {
+        "end": "2026-03-03",
+        "precision": "day",
+        "start": "2026-03-03"
+      },
+      "low": "253000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/GTLB.json"
+      ],
+      "quote": "Q1 FY 2027 Guidance FY 2027 Guidance Revenue $253.0 - $255.0 $",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001653482-26-000095",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "GTLB",
+      "end": "2026-04-30",
+      "exhibit": "99.1",
+      "filed": "2026-05-11",
+      "high": "255000000.0",
+      "id": "8b7bce64-dc28-5fcf-87c4-1a4028543b8a",
+      "issued": {
+        "end": "2026-05-11",
+        "precision": "day",
+        "start": "2026-05-11"
+      },
+      "low": "253000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Explicit quarterly reaffirmation; bounds retained from prior source. Post-close indications are separately flagged and excluded from the training cohort.",
+      "original_verified": false,
+      "origins": [
+        "earnings/history/GTLB.json"
+      ],
+      "quote": "reaffirming our Q1 and full year FY27 guidance today. The final scope and financial impact of the restructuring will be shared on our June 2 earnings call, once we\u2019ve finished the plan and received approval by our board. Our Core B",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000095/exhibit991-letterfromwilla.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "reaffirmed",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001653482-26-000095",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "GTLB",
+      "end": "2027-01-31",
+      "exhibit": "8-K Item 2.02",
+      "filed": "2026-05-11",
+      "high": "1118000000",
+      "id": "ff4be85a-dde0-5573-b3b9-9f26b067046e",
+      "issued": {
+        "end": "2026-05-11",
+        "precision": "day",
+        "start": "2026-05-11"
+      },
+      "low": "1099000000",
+      "metric": "consolidated_revenue",
+      "notes": "Reaffirmation incorporates the March 3 original range by reference.",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/GTLB.json"
+      ],
+      "quote": "The Company also reaffirms its guidance for the fiscal year 2027 (ending January 31, 2027), as provided in its earnings press release issued March 3, 2026, that was previously furnished as Exhibit 99.1 to the Company\u2019s Form 8-K filed with the Securities and Exchange Commission (the \u201cSEC\u201d) on March 3, 2026. These results are based on preliminary unaudited financial and other information, and subject to normal quarterly closing processes and accounting review. The Company will provide financial results for the quarter ending April 30, 2026 and guidance for the fiscal year ending January 31, 2027 at its next earnings call, which is expected to b",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000095/gtlb-20260511.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "reaffirmed",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-039805",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "GTLB",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-06-02",
+      "high": "1118000000",
+      "id": "4b3e8896-8091-59ff-beb6-4fc03caed6d5",
+      "issued": {
+        "end": "2026-06-02",
+        "precision": "day",
+        "start": "2026-06-02"
+      },
+      "low": "1112000000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/GTLB.json"
+      ],
+      "quote": "Second Quarter and Fiscal Year 2027 Financial Outlook For the second quarter and fiscal year 2027, GitLab Inc. expects ( in millions , except share and per share data) : Q2 FY 2027 Guidance FY 2027 Guidance Revenue $272 - $274 $1,112 - $1,118 Non-GAAP operating income $30 - $32 $135 - $141 Non-GAAP diluted net income per share assuming approximately 168 million and 166 million weighted average shares outstanding during Q2 FY 2027 and FY 2027, respectively. $0.17 - $0.18 $0.79 - $0.82 These statements are forward-looking and actual results may differ materially as a result of many factors. Refer to the Forward-Looking Statements safe harbor be",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039805/gitlab-ex99120260430fy27.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "raised",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-039805",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "GTLB",
+      "end": "2026-07-31",
+      "exhibit": "99.1",
+      "filed": "2026-06-02",
+      "high": "274000000",
+      "id": "8609a2e2-4fd1-501f-a13b-f51fc951d2e7",
+      "issued": {
+        "end": "2026-06-02",
+        "precision": "day",
+        "start": "2026-06-02"
+      },
+      "low": "272000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/GTLB.json"
+      ],
+      "quote": "Q2 FY 2027 Guidance FY 2027 Guidance Revenue $272 - $274 $",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039805/gitlab-ex99120260430fy27.htm",
+      "split": "development",
+      "start": "2026-05-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-059820",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "GTLB",
+      "end": "2026-10-31",
+      "exhibit": "99.1",
+      "filed": "2026-09-01",
+      "high": "283000000",
+      "id": "acbb63cf-a5ed-5c74-a414-e6a5e957b408",
+      "issued": {
+        "end": "2026-09-01",
+        "precision": "day",
+        "start": "2026-09-01"
+      },
+      "low": "281000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/GTLB.json"
+      ],
+      "quote": "Q3 FY 2027 Guidance FY 2027 Guidance Revenue $281 - $283 $1,129 - $1,133 Non-GAAP operating income $35 - $37 $148 - $152 Non-GAAP diluted net income per share assuming approximately 172 million and 172 million weighted average sh",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm",
+      "split": "development",
+      "start": "2026-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-059820",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "GTLB",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-09-01",
+      "high": "1133000000",
+      "id": "ba14fe0d-bc14-582c-89f3-deb673b23254",
+      "issued": {
+        "end": "2026-09-01",
+        "precision": "day",
+        "start": "2026-09-01"
+      },
+      "low": "1129000000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/GTLB.json"
+      ],
+      "quote": "Third Quarter and Fiscal Year 2027 Financial Outlook For the third quarter and fiscal year 2027, GitLab Inc. expects ( in millions , except share and per share data) : Q3 FY 2027 Guidance FY 2027 Guidance Revenue $281 - $283 $1,129 - $1,133 Non-GAAP operating income $35 - $37 $148 - $152 Non-GAAP diluted net income per share assuming approximately 172 million and 172 million weighted average shares outstanding during Q3 FY 2027 and FY 2027, respectively. $0.19 - $0.20 $0.85 - $0.87 These statements are forward-looking and actual results may differ materially as a result of many factors. Refer to the Forward-Looking Statements safe harbor belo",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "raised",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001642896-24-000059",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "IOT",
+      "end": "2024-11-02",
+      "exhibit": "99.1",
+      "filed": "2024-09-05",
+      "high": "311000000",
+      "id": "8314785d-3123-5174-be7d-d1f8d31b4d29",
+      "issued": {
+        "end": "2024-09-05",
+        "precision": "day",
+        "start": "2024-09-05"
+      },
+      "low": "309000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/IOT.json"
+      ],
+      "quote": "Q3 FY2025 Outlook Implied Q4 FY2025 Outlook FY 2025 Outlook Total revenue $309 million \u2013 $311 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000059/samsaraepr-q22025.htm",
+      "split": "heldout",
+      "start": "2024-08-04",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001642896-24-000073",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "IOT",
+      "end": "2025-02-01",
+      "exhibit": "99.1",
+      "filed": "2024-12-05",
+      "high": "336000000",
+      "id": "fddad161-7f56-5eee-81a0-545454b32964",
+      "issued": {
+        "end": "2024-12-05",
+        "precision": "day",
+        "start": "2024-12-05"
+      },
+      "low": "334000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/IOT.json"
+      ],
+      "quote": "Q4 FY2025 Outlook FY 2025 Outlook Total revenue $334 million \u2013 $336 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000073/samsaraepr-q32025.htm",
+      "split": "heldout",
+      "start": "2024-11-03",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001642896-25-000007",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "IOT",
+      "end": "2025-05-03",
+      "exhibit": "99.1",
+      "filed": "2025-03-06",
+      "high": "352000000",
+      "id": "b9e39c77-967f-5eec-a014-fbca4779d7e0",
+      "issued": {
+        "end": "2025-03-06",
+        "precision": "day",
+        "start": "2025-03-06"
+      },
+      "low": "350000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/IOT.json"
+      ],
+      "quote": "Q1 FY2026 Outlook FY 2026 Outlook Total revenue $350 million \u2013 $352 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000007/samsaraepr-q42025.htm",
+      "split": "heldout",
+      "start": "2025-02-02",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001642896-25-000053",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "IOT",
+      "end": "2025-08-02",
+      "exhibit": "99.1",
+      "filed": "2025-06-05",
+      "high": "373000000",
+      "id": "0192eddc-2f6a-57f4-9f91-19933b38043d",
+      "issued": {
+        "end": "2025-06-05",
+        "precision": "day",
+        "start": "2025-06-05"
+      },
+      "low": "371000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/IOT.json"
+      ],
+      "quote": "Q2 FY2026 Outlook FY 2026 Outlook Total revenue $371 million \u2013 $373 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000053/samsaraepr-q12026.htm",
+      "split": "heldout",
+      "start": "2025-05-04",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001642896-25-000070",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "IOT",
+      "end": "2025-11-01",
+      "exhibit": "99.1",
+      "filed": "2025-09-04",
+      "high": "400000000",
+      "id": "be526f84-8160-5a5f-a624-15c39feec219",
+      "issued": {
+        "end": "2025-09-04",
+        "precision": "day",
+        "start": "2025-09-04"
+      },
+      "low": "398000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/IOT.json"
+      ],
+      "quote": "Q3 FY2026 Outlook Implied Q4 FY2026 Outlook FY 2026 Outlook Total revenue $398 million \u2013 $400 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289625000070/samsaraepr-q22026.htm",
+      "split": "heldout",
+      "start": "2025-08-03",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-25-055355",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "IOT",
+      "end": "2026-01-31",
+      "exhibit": "99.1",
+      "filed": "2025-12-04",
+      "high": "423000000",
+      "id": "56685baa-a236-506c-abc3-dda2a073ce7a",
+      "issued": {
+        "end": "2025-12-04",
+        "precision": "day",
+        "start": "2025-12-04"
+      },
+      "low": "421000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/IOT.json"
+      ],
+      "quote": "Q4 FY2026 Outlook FY 2026 Outlook Total revenue $421 million \u2013 $423 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025055355/samsaraepr-q32026.htm",
+      "split": "heldout",
+      "start": "2025-11-02",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-015170",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "IOT",
+      "end": "2027-01-30",
+      "exhibit": "99.1",
+      "filed": "2026-03-05",
+      "high": "1975000000.000",
+      "id": "2824c751-b7ba-52a9-a9af-1b995d6933ac",
+      "issued": {
+        "end": "2026-03-05",
+        "precision": "day",
+        "start": "2026-03-05"
+      },
+      "low": "1965000000.000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/IOT.json"
+      ],
+      "quote": "Financial Outlook Our guidance includes GAAP and non-GAAP financial measures. For the first quarter and fiscal year 2027, Samsara expects the following: Q1 FY2027 Outlook FY 2027 Outlook Total revenue $454 million \u2013 $456 million $1.965 billion \u2013 $1.975 billion Year/Year revenue growth 24% 21% \u2013 22% Year/Year revenue growth in constant currency (1) 22%  \u2013 23% 21% Non-GAAP operating margin (2) 15% 19% Non-GAAP net income per share, diluted (2) $0.12 \u2013 $0.13 $0.65 \u2013 $0.69 GAAP net income per share, diluted GAAP Profitable __________ (1) Constant currency impact to revenue guidance is expected to be a $5M positive im",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026015170/samsaraepr-q42026.htm",
+      "split": "heldout",
+      "start": "2026-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-015170",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "IOT",
+      "end": "2026-05-02",
+      "exhibit": "99.1",
+      "filed": "2026-03-05",
+      "high": "456000000",
+      "id": "8446e825-3f2b-563a-a7ba-5b72801c1261",
+      "issued": {
+        "end": "2026-03-05",
+        "precision": "day",
+        "start": "2026-03-05"
+      },
+      "low": "454000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/IOT.json"
+      ],
+      "quote": "Q1 FY2027 Outlook FY 2027 Outlook Total revenue $454 million \u2013 $456 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026015170/samsaraepr-q42026.htm",
+      "split": "heldout",
+      "start": "2026-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-040788",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "IOT",
+      "end": "2026-08-01",
+      "exhibit": "99.1",
+      "filed": "2026-06-04",
+      "high": "484000000",
+      "id": "63ace526-191d-57f5-a1f9-09c2341d12a4",
+      "issued": {
+        "end": "2026-06-04",
+        "precision": "day",
+        "start": "2026-06-04"
+      },
+      "low": "482000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/IOT.json"
+      ],
+      "quote": "Q2 FY2027 Outlook FY 2027 Outlook Total revenue $482 million \u2013 $484 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026040788/samsaraepr-q12027.htm",
+      "split": "heldout",
+      "start": "2026-05-03",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-040788",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "IOT",
+      "end": "2027-01-30",
+      "exhibit": "99.1",
+      "filed": "2026-06-04",
+      "high": "2013000000.000",
+      "id": "a2756a8b-c638-59e9-bca2-1f8a39215c85",
+      "issued": {
+        "end": "2026-06-04",
+        "precision": "day",
+        "start": "2026-06-04"
+      },
+      "low": "2005000000.000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/IOT.json"
+      ],
+      "quote": "Financial Outlook Our guidance includes GAAP and non-GAAP financial measures. For the second quarter and fiscal year 2027, Samsara expects the following: Q2 FY2027 Outlook FY 2027 Outlook Total revenue $482 million \u2013 $484 million $2.005 billion \u2013 $2.013 billion Year/Year revenue growth 23% \u2013 24% 24% Year/Year revenue growth in constant currency (1) 22%  \u2013 23% 23% - 24% Non-GAAP operating margin (2) 18% 20% Non-GAAP net income per share, diluted (2) $0.15 \u2013 $0.16 $0.70 \u2013 $0.72 GAAP net income per share, diluted GAAP Profitable GAAP Profitable (3) __________ (1) Constant currency impact to revenue guidance is expec",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026040788/samsaraepr-q12027.htm",
+      "split": "heldout",
+      "start": "2026-02-01",
+      "status": "raised",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-060438",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "IOT",
+      "end": "2027-01-30",
+      "exhibit": "99.1",
+      "filed": "2026-09-03",
+      "high": "2047000000.000",
+      "id": "76e27739-b53d-537d-92b7-cdfcef7fb397",
+      "issued": {
+        "end": "2026-09-03",
+        "precision": "day",
+        "start": "2026-09-03"
+      },
+      "low": "2043000000.000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/IOT.json"
+      ],
+      "quote": "Financial Outlook Our guidance includes GAAP and non-GAAP financial measures. For the third quarter and fiscal year 2027, Samsara expects the following: Q3 FY2027 Outlook FY2027 Outlook Total revenue $514 million \u2013 $516 million $2.043 billion \u2013 $2.047 billion Year/Year revenue growth 24% 26% Year/Year revenue growth in constant currency (1) 23%  \u2013 24% 26% Non-GAAP operating margin (2) 21% 21% Non-GAAP net income per share, diluted (2) $0.18 \u2013 $0.19 $0.76 \u2013 $0.78 GAAP net income per share, diluted GAAP Profitable GAAP Profitable __________ (1) Constant currency impact to revenue guidance is $2 million for Q3 FY202",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm",
+      "split": "heldout",
+      "start": "2026-02-01",
+      "status": "raised",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-060438",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "IOT",
+      "end": "2026-10-31",
+      "exhibit": "99.1",
+      "filed": "2026-09-03",
+      "high": "516000000",
+      "id": "ce9fd475-3519-55ce-b28a-9c85f104d074",
+      "issued": {
+        "end": "2026-09-03",
+        "precision": "day",
+        "start": "2026-09-03"
+      },
+      "low": "514000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/IOT.json"
+      ],
+      "quote": "Q3 FY2027 Outlook FY2027 Outlook Total revenue $514 million \u2013 $516 million $2.043 billion \u2013 $2.047 billion Year/Year revenue growth 24% 26% Year/Year revenue growth in constant currency (1) 23% \u2013 24% 26% Non-GAAP operating margin (2) 21% 21% Non-GAAP net income per share, diluted (2) $0.18 \u2013 $0.19 $0.76 \u2013 $0.78 GAAP",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm",
+      "split": "heldout",
+      "start": "2026-08-02",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001397187-24-000033",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "LULU",
+      "end": "2024-10-27",
+      "exhibit": "99.1",
+      "filed": "2024-08-29",
+      "high": "2365000000.000",
+      "id": "650831fd-d5fa-5b4f-adc6-8d8bd37f2f91",
+      "issued": {
+        "end": "2024-08-29",
+        "precision": "day",
+        "start": "2024-08-29"
+      },
+      "low": "2340000000.000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/LULU.json"
+      ],
+      "quote": "third quarter of 2024, the Company expects net revenue to be in the range of $2.340 billion to $2.365 billion,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000033/lulu-20240728xex991.htm",
+      "split": "heldout",
+      "start": "2024-07-29",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001397187-24-000040",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "LULU",
+      "end": "2025-02-02",
+      "exhibit": "99.1",
+      "filed": "2024-12-05",
+      "high": "3510000000.000",
+      "id": "c238a715-c3f2-5140-90b0-0915ea47dcbe",
+      "issued": {
+        "end": "2024-12-05",
+        "precision": "day",
+        "start": "2024-12-05"
+      },
+      "low": "3475000000.000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/LULU.json"
+      ],
+      "quote": "fourth quarter of 2024, the Company expects net revenue to be in the range of $3.475 billion to $3.510 billion,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000040/lulu-20241027xex991.htm",
+      "split": "heldout",
+      "start": "2024-10-28",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001397187-25-000004",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "LULU",
+      "end": "2025-02-02",
+      "exhibit": "99.1",
+      "filed": "2025-01-13",
+      "high": "3580000000.000",
+      "id": "428042f8-d727-51ae-9c58-b562f949a824",
+      "issued": {
+        "end": "2025-01-13",
+        "precision": "day",
+        "start": "2025-01-13"
+      },
+      "low": "3560000000.000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": false,
+      "origins": [
+        "earnings/history/LULU.json"
+      ],
+      "quote": "fourth quarter of fiscal 2024, the Company now expects net revenue will be in the range of $3.560 billion to $3.580 billion,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000004/lulu-20250113xex991.htm",
+      "split": "heldout",
+      "start": "2024-10-28",
+      "status": "raised",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001397187-25-000012",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "LULU",
+      "end": "2025-05-04",
+      "exhibit": "99.1",
+      "filed": "2025-03-27",
+      "high": "2355000000.000",
+      "id": "5690de22-8de0-5635-8526-c01c9cc462a6",
+      "issued": {
+        "end": "2025-03-27",
+        "precision": "day",
+        "start": "2025-03-27"
+      },
+      "low": "2335000000.000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/LULU.json"
+      ],
+      "quote": "first quarter of 2025, the Company expects net revenue to be in the range of $2.335 billion to $2.355 billion,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000012/lulu-20250202xex991.htm",
+      "split": "heldout",
+      "start": "2025-02-03",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001397187-25-000026",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "LULU",
+      "end": "2025-08-03",
+      "exhibit": "99.1",
+      "filed": "2025-06-05",
+      "high": "2560000000.000",
+      "id": "761d0e8e-cb2e-578f-b009-66c1bbd92387",
+      "issued": {
+        "end": "2025-06-05",
+        "precision": "day",
+        "start": "2025-06-05"
+      },
+      "low": "2535000000.000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/LULU.json"
+      ],
+      "quote": "second quarter of 2025, the Company expects net revenue to be in the range of $2.535 billion to $2.560 billion,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/lulu-20250504xex991.htm",
+      "split": "heldout",
+      "start": "2025-05-05",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001397187-25-000038",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "LULU",
+      "end": "2025-11-02",
+      "exhibit": "99.1",
+      "filed": "2025-09-04",
+      "high": "2500000000.000",
+      "id": "d3e5d71a-7cdc-5aaf-89e1-3887345fcb2a",
+      "issued": {
+        "end": "2025-09-04",
+        "precision": "day",
+        "start": "2025-09-04"
+      },
+      "low": "2470000000.000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/LULU.json"
+      ],
+      "quote": "third quarter of 2025, the Company expects net revenue to be in the range of $2.470 billion to $2.500 billion,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000038/lulu-20250803xex991.htm",
+      "split": "heldout",
+      "start": "2025-08-04",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001397187-25-000054",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "LULU",
+      "end": "2026-02-01",
+      "exhibit": "99.1",
+      "filed": "2025-12-11",
+      "high": "3585000000.000",
+      "id": "06de0fe6-f4dd-5862-b834-4bfcc71e0f34",
+      "issued": {
+        "end": "2025-12-11",
+        "precision": "day",
+        "start": "2025-12-11"
+      },
+      "low": "3500000000.000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/LULU.json"
+      ],
+      "quote": "fourth quarter of 2025, the Company expects net revenue to be in the range of $3.500 billion to $3.585 billion,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000054/lulu-20251102xex991.htm",
+      "split": "heldout",
+      "start": "2025-11-03",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001397187-26-000005",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "LULU",
+      "end": "2026-02-01",
+      "exhibit": "99.1",
+      "filed": "2026-01-12",
+      "high": "3585000000.000",
+      "id": "a7933c24-91b4-555b-bacc-6c30c5947967",
+      "issued": {
+        "end": "2026-01-12",
+        "precision": "day",
+        "start": "2026-01-12"
+      },
+      "low": "3500000000.000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Explicit unchanged range incorporated by reference; qualitative toward-high-end wording does not define a narrower numerical range.",
+      "original_verified": false,
+      "origins": [
+        "earnings/history/LULU.json"
+      ],
+      "quote": "now expects net revenue and diluted earnings per share for the fourth quarter of fiscal 2025 to be toward the high end of the previously guided ranges of $3.500 billion to $3.585 billion and $4.66 to $4.76, respectively. There is no change to the Company\u2019s previous guidance ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000005/lulu-20260112xex991.htm",
+      "split": "heldout",
+      "start": "2025-11-03",
+      "status": "reaffirmed",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001397187-26-000019",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "LULU",
+      "end": "2026-05-03",
+      "exhibit": "99.1",
+      "filed": "2026-03-17",
+      "high": "2430000000.000",
+      "id": "795adeb2-8fb6-5a3e-87a4-bdf607d2ebf1",
+      "issued": {
+        "end": "2026-03-17",
+        "precision": "day",
+        "start": "2026-03-17"
+      },
+      "low": "2400000000.000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/LULU.json"
+      ],
+      "quote": "first quarter of 2026, the Company expects net revenue to be in the range of $2.400 billion to $2.430 billion,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260201xex991.htm",
+      "split": "heldout",
+      "start": "2026-02-02",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001397187-26-000019",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "LULU",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-03-17",
+      "high": "11500000000.000",
+      "id": "97e0b842-2159-5e01-9e6f-c0e00779a660",
+      "issued": {
+        "end": "2026-03-17",
+        "precision": "day",
+        "start": "2026-03-17"
+      },
+      "low": "11350000000.000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/LULU.json"
+      ],
+      "quote": "For 2026, the Company expects net revenue to be in the range of $11.350 billion to $11.500 billion, representing growth of 2% to 4%. Diluted earnings per share are expected to be in the range of $12.10 to $12.30 for the year. This assumes a tax rate of approximately 30%. The guidance does not reflect potential future r",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260201xex991.htm",
+      "split": "heldout",
+      "start": "2026-02-02",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001397187-26-000077",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "LULU",
+      "end": "2026-08-02",
+      "exhibit": "99.1",
+      "filed": "2026-06-04",
+      "high": "2475000000.000",
+      "id": "35bdf649-0526-56e8-ad6b-6154e08e39d6",
+      "issued": {
+        "end": "2026-06-04",
+        "precision": "day",
+        "start": "2026-06-04"
+      },
+      "low": "2450000000.000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/LULU.json"
+      ],
+      "quote": "second quarter of 2026, the Company expects net revenue to be in the range of $2.450 billion to $2.475 billion,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260503xex991.htm",
+      "split": "heldout",
+      "start": "2026-05-04",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001397187-26-000077",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "LULU",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-06-04",
+      "high": "11150000000.000",
+      "id": "5e5e884b-d835-52b8-96b1-b89aee84dd31",
+      "issued": {
+        "end": "2026-06-04",
+        "precision": "day",
+        "start": "2026-06-04"
+      },
+      "low": "11000000000.000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/LULU.json"
+      ],
+      "quote": "For 2026, the Company now expects net revenue to be in the range of $11.000 billion to $11.150 billion, representing a decline of 1% to 0%. Diluted earnings per share are now expected to be in the range of $10.95 to $11.15 for the year. This assumes a tax rate of approximately 30%. The guidance does not reflect any pot",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260503xex991.htm",
+      "split": "heldout",
+      "start": "2026-02-02",
+      "status": "lowered",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001397187-26-000126",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "LULU",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-09-03",
+      "high": "10500000000.000",
+      "id": "922c08aa-ed21-56eb-8898-fe746b19f388",
+      "issued": {
+        "end": "2026-09-03",
+        "precision": "day",
+        "start": "2026-09-03"
+      },
+      "low": "10350000000.000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/LULU.json"
+      ],
+      "quote": "For 2026, the Company now expects net revenue to be in the range of $10.350 billion to $10.500 billion, representing a decline of 5% to 7%. Diluted earnings per share are now expected to be in the range of $9.48 to $9.73 for the year. This assumes a tax rate of approximately 30%. The 2026 outlook includes $0.86 per sha",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm",
+      "split": "heldout",
+      "start": "2026-02-02",
+      "status": "lowered",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001397187-26-000126",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "LULU",
+      "end": "2026-11-01",
+      "exhibit": "99.1",
+      "filed": "2026-09-03",
+      "high": "2320000000",
+      "id": "b4df8722-2f08-5d6c-b609-69396c6c3500",
+      "issued": {
+        "end": "2026-09-03",
+        "precision": "day",
+        "start": "2026-09-03"
+      },
+      "low": "2290000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/LULU.json"
+      ],
+      "quote": "For the third quarter of 2026, the Company expects net revenue to be in the range of $2.290 billion to $2.320 billion, representing a decline of 10% to 11%. Diluted earnings per share are expected to be in the range of $0.93 to $0.98 for the quarter. This assumes a tax",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm",
+      "split": "heldout",
+      "start": "2026-08-03",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001441816-24-000185",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "MDB",
+      "end": "2024-10-31",
+      "exhibit": "99.1",
+      "filed": "2024-08-29",
+      "high": "497000000.0",
+      "id": "e21db595-0548-5222-88f8-5f70e402f725",
+      "issued": {
+        "end": "2024-08-29",
+        "precision": "day",
+        "start": "2024-08-29"
+      },
+      "low": "493000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/MDB.json"
+      ],
+      "quote": "Third Quarter Fiscal 2025 Full Year Fiscal 2025 Revenue $493.0 million to $497.0 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000185/mdb-73124xex991xrelease.htm",
+      "split": "development",
+      "start": "2024-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001441816-24-000257",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "MDB",
+      "end": "2025-01-31",
+      "exhibit": "99.1",
+      "filed": "2024-12-09",
+      "high": "519000000.0",
+      "id": "f1c2056c-9af0-52c0-b96e-2bd460948300",
+      "issued": {
+        "end": "2024-12-09",
+        "precision": "day",
+        "start": "2024-12-09"
+      },
+      "low": "515000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/MDB.json"
+      ],
+      "quote": "Fourth Quarter Fiscal 2025 Full Year Fiscal 2025 Revenue $515.0 million to $519.0 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000257/mdb-103124xex991xrelease.htm",
+      "split": "development",
+      "start": "2024-11-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001441816-25-000046",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "MDB",
+      "end": "2025-04-30",
+      "exhibit": "99.1",
+      "filed": "2025-03-05",
+      "high": "529000000.0",
+      "id": "c04ef45b-be19-52d7-b307-767ac6ead384",
+      "issued": {
+        "end": "2025-03-05",
+        "precision": "day",
+        "start": "2025-03-05"
+      },
+      "low": "524000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/MDB.json"
+      ],
+      "quote": "First Quarter Fiscal 2026 Full Year Fiscal 2026 Revenue $524.0 million to $529.0 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000046/mdb-13125xex991xrelease.htm",
+      "split": "development",
+      "start": "2025-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001441816-25-000116",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "MDB",
+      "end": "2025-07-31",
+      "exhibit": "99.1",
+      "filed": "2025-06-04",
+      "high": "553000000.0",
+      "id": "7515ff32-081a-5f97-acfc-c99717fde937",
+      "issued": {
+        "end": "2025-06-04",
+        "precision": "day",
+        "start": "2025-06-04"
+      },
+      "low": "548000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/MDB.json"
+      ],
+      "quote": "Second Quarter Fiscal 2026 Full Year Fiscal 2026 Revenue $548.0 million to $553.0 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/mdb-43025xex991xrelease.htm",
+      "split": "development",
+      "start": "2025-05-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001441816-25-000176",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "MDB",
+      "end": "2025-10-31",
+      "exhibit": "99.1",
+      "filed": "2025-08-26",
+      "high": "592000000.0",
+      "id": "be815840-db94-5925-ad6e-fed0df6b6ccc",
+      "issued": {
+        "end": "2025-08-26",
+        "precision": "day",
+        "start": "2025-08-26"
+      },
+      "low": "587000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/MDB.json"
+      ],
+      "quote": "Third Quarter Fiscal 2026 Full Year Fiscal 2026 Revenue $587.0 million to $592.0 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000176/mdb-73125xex991xrelease.htm",
+      "split": "development",
+      "start": "2025-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-25-054425",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "MDB",
+      "end": "2026-01-31",
+      "exhibit": "99.1",
+      "filed": "2025-12-01",
+      "high": "670000000.0",
+      "id": "3dd6278e-19a8-5a1a-8b12-9a28f3cce525",
+      "issued": {
+        "end": "2025-12-01",
+        "precision": "day",
+        "start": "2025-12-01"
+      },
+      "low": "665000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/MDB.json"
+      ],
+      "quote": "Fourth Quarter Fiscal 2026 Full Year Fiscal 2026 Revenue $665.0 million to $670.0 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054425/mdb-103125xex991xrelease.htm",
+      "split": "development",
+      "start": "2025-11-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-25-054569",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "MDB",
+      "end": "2026-01-31",
+      "exhibit": "99.1",
+      "filed": "2025-12-02",
+      "high": "670000000.0",
+      "id": "3f519fed-b8c0-526f-838f-f91a1fedcd8c",
+      "issued": {
+        "end": "2025-12-01",
+        "precision": "day",
+        "start": "2025-12-01"
+      },
+      "low": "665000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance. Amended exhibit retains revenue range; not treated as a new explicit reaffirmation.",
+      "original_verified": false,
+      "origins": [
+        "earnings/history/MDB.json"
+      ],
+      "quote": "Fourth Quarter Fiscal 2026 Full Year Fiscal 2026 Revenue $665.0 million to $670.0 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054569/a8-kaexhibit991revised.htm",
+      "split": "development",
+      "start": "2025-11-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-013199",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "MDB",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-03-02",
+      "high": "2900000000.000",
+      "id": "7c6457c8-02c2-5d4f-8e62-43c1654db87c",
+      "issued": {
+        "end": "2026-03-02",
+        "precision": "day",
+        "start": "2026-03-02"
+      },
+      "low": "2860000000.000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/MDB.json"
+      ],
+      "quote": "Full Year Fiscal 2027 Guidance Base d on information available to management as of today, March\u00a02, 2026, MongoDB is issuing the following financial guidance for the full year fiscal 2027. Revenues are expected to be in the range of: $2.860 billion to $2.900 billion GAAP Non-GAAP Income (Loss) from Operations are expected to be in the range of: $(117.0) million to $(97.0) million $545.0 million to $565.0 million Net I",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-013199",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "MDB",
+      "end": "2026-04-30",
+      "exhibit": "99.1",
+      "filed": "2026-03-02",
+      "high": "664000000",
+      "id": "ad14ac79-8c5c-5236-8fae-e508808c519a",
+      "issued": {
+        "end": "2026-03-02",
+        "precision": "day",
+        "start": "2026-03-02"
+      },
+      "low": "659000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/MDB.json"
+      ],
+      "quote": "First Quarter Fiscal Year 2027 Guidance Based on information available to management as of today, March 2, 2026, MongoDB is issuing the following financial guidance for the first quarter fiscal 2027. Revenues are expected to be in the range of: $659 million to $664 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-038798",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "MDB",
+      "end": "2026-07-31",
+      "exhibit": "99.1",
+      "filed": "2026-05-28",
+      "high": "734000000",
+      "id": "51b3af46-4bda-59f9-845d-be4e51e6ec65",
+      "issued": {
+        "end": "2026-05-28",
+        "precision": "day",
+        "start": "2026-05-28"
+      },
+      "low": "729000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/MDB.json"
+      ],
+      "quote": "Second Quarter Fiscal 2027 Guidance Based on information available to management as of today, May 28, 2026, MongoDB is issuing the following financial guidance for the second quarter fiscal 2027. Revenues are expected to be in the range of: $729 million to $734 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026038798/mdb-043026xex991xrelease.htm",
+      "split": "development",
+      "start": "2026-05-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-038798",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "MDB",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-05-28",
+      "high": "2960000000.00",
+      "id": "7b108550-6b06-5d1b-8022-af76c8392409",
+      "issued": {
+        "end": "2026-05-28",
+        "precision": "day",
+        "start": "2026-05-28"
+      },
+      "low": "2920000000.00",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/MDB.json"
+      ],
+      "quote": "Full Year Fiscal 2027 Guidance Based on information available to management as of today, May\u00a028, 2026, MongoDB is issuing the following financial guidance for the full year fiscal 2027. Revenues are expected to be in the range of: $2.92 billion to $2.96 billion GAAP Non-GAAP Income (Loss) from Operations are expected to be in the range of: $(78.0) million to $(58.0) million $571.0 million to $591.0 million Net Income",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026038798/mdb-043026xex991xrelease.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "raised",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-059794",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "MDB",
+      "end": "2026-10-31",
+      "exhibit": "99.1",
+      "filed": "2026-09-01",
+      "high": "761000000",
+      "id": "6bad7bb3-f126-5ebe-97c1-24329e436e43",
+      "issued": {
+        "end": "2026-09-01",
+        "precision": "day",
+        "start": "2026-09-01"
+      },
+      "low": "756000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/MDB.json"
+      ],
+      "quote": "Third Quarter Fiscal 2027 Guidance Based on information available to management as of today, September 1, 2026, MongoDB is issuing the following financial guidance for the third quarter fiscal 2027. Revenues are expected to be in the range of: $756 million to $761 million GAAP Non-GAAP Income (Loss) from Operations are expected to be in the range of: $(14.5) million to $(10.5) million $1",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm",
+      "split": "development",
+      "start": "2026-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-059794",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "MDB",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-09-01",
+      "high": "3030000000.00",
+      "id": "dbe9f61c-41c3-566e-8579-275f228ff342",
+      "issued": {
+        "end": "2026-09-01",
+        "precision": "day",
+        "start": "2026-09-01"
+      },
+      "low": "2990000000.00",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/MDB.json"
+      ],
+      "quote": "Full Year Fiscal 2027 Guidance Based on information available to management as of today, September\u00a01, 2026, MongoDB is issuing the following financial guidance for the full year fiscal 2027. Revenues are expected to be in the range of: $2.99 billion to $3.03 billion GAAP Non-GAAP Income (Loss) from Operations are expected to be in the range of: $(28.0) million to $(8.0) million $616.3 million to $636.3 million Net In",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "raised",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-063657",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "MDB",
+      "end": "2026-10-31",
+      "exhibit": "99.1",
+      "filed": "2026-09-28",
+      "high": "761000000",
+      "id": "c9ec8438-b130-526e-b905-0cb8c0c3815e",
+      "issued": {
+        "end": "2026-09-28",
+        "precision": "day",
+        "start": "2026-09-28"
+      },
+      "low": "756000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Explicit reaffirmation of Q3 and full-year guidance from September 1. Quarterly dollar bounds retain the September 1 evidence.",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/MDB.json"
+      ],
+      "quote": "The company remains confident in the outlook for the business and is reaffirming its  guidance for Q3 and the full year fiscal 2027 provided on September 1st, 2026.    Investor Day     MongoDB will be hosting an Investor Day at Nasdaq MarketSite on Tuesday, September  29th from 11:00 am\u20133:15 pm ET. The MongoDB leadership team will share an in-depth look  at our long-term strategy, market opportunities, and product in",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026063657/pressreleasedatedseptemb.htm",
+      "split": "development",
+      "start": "2026-08-01",
+      "status": "reaffirmed",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-26-063657",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "MDB",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-09-28",
+      "high": "3030000000.00",
+      "id": "e7b96f8a-bebf-55c3-8efd-957619bf8a90",
+      "issued": {
+        "end": "2026-09-28",
+        "precision": "day",
+        "start": "2026-09-28"
+      },
+      "low": "2990000000.00",
+      "metric": "consolidated_revenue",
+      "notes": "Bounds carried from explicitly referenced previous guidance; no new numerical range.",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/MDB.json"
+      ],
+      "quote": "The company remains confident in the outlook for the business and is reaffirming its  guidance for Q3 and the full year fiscal 2027 provided on September 1st, 2026.    Investor Day     MongoDB will be hosting an Investor Day at Nasdaq MarketSite on Tuesday, September  29th from 11:00 am\u20133:15 pm ET. The MongoDB leadership team will share an in-depth look  at our long-term strategy, market opportunities, and product in",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026063657/pressreleasedatedseptemb.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "reaffirmed",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001660134-24-000134",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "OKTA",
+      "end": "2024-10-31",
+      "exhibit": "99.1",
+      "filed": "2024-08-28",
+      "high": "650000000",
+      "id": "17baa7cc-4cae-5506-83a7-832b2e43150a",
+      "issued": {
+        "end": "2024-08-28",
+        "precision": "day",
+        "start": "2024-08-28"
+      },
+      "low": "648000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/OKTA.json"
+      ],
+      "quote": "third quarter of fiscal 2025, the Company expects: \u2022 Total revenue of $648 million to $650 million,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000134/okta-7312024_ex991.htm",
+      "split": "development",
+      "start": "2024-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001660134-24-000165",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "OKTA",
+      "end": "2025-01-31",
+      "exhibit": "99.1",
+      "filed": "2024-12-03",
+      "high": "669000000",
+      "id": "7cc5f28b-a6f7-59fc-a3c9-341641c49f12",
+      "issued": {
+        "end": "2024-12-03",
+        "precision": "day",
+        "start": "2024-12-03"
+      },
+      "low": "667000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/OKTA.json"
+      ],
+      "quote": "fourth quarter of fiscal 2025, the Company expects: \u2022 Total revenue of $667 million to $669 million,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000165/okta-10312024_ex991.htm",
+      "split": "development",
+      "start": "2024-11-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001660134-25-000015",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "OKTA",
+      "end": "2025-01-31",
+      "exhibit": "8-K Item 7.01 (primary document; no exhibit)",
+      "filed": "2025-02-04",
+      "high": "669000000",
+      "id": "62d58fb1-8eba-58f2-a953-77efa5bfe24d",
+      "issued": {
+        "end": "2025-02-04",
+        "precision": "day",
+        "start": "2025-02-04"
+      },
+      "low": "667000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Explicit quarterly reaffirmation; bounds retained from prior source. Post-close indications are separately flagged and excluded from the training cohort.",
+      "original_verified": false,
+      "origins": [
+        "earnings/history/OKTA.json"
+      ],
+      "quote": "reaffirms its financial guidance for the fourth quarter and fiscal year ending January 31, 2025, as provided in a press release issued December 3, 2024, that was previously furnished as Exhibit 99.1 to the Company\u2019s Form 8-K file",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000015/okta-20250204.htm",
+      "split": "development",
+      "start": "2024-11-01",
+      "status": "reaffirmed",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001660134-25-000043",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "OKTA",
+      "end": "2025-04-30",
+      "exhibit": "99.1",
+      "filed": "2025-03-03",
+      "high": "680000000",
+      "id": "8ef69874-02e3-5144-be84-b60225d962fe",
+      "issued": {
+        "end": "2025-03-03",
+        "precision": "day",
+        "start": "2025-03-03"
+      },
+      "low": "678000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/OKTA.json"
+      ],
+      "quote": "first quarter of fiscal 2026, the Company expects: \u2022 Total revenue of $678 million to $680 million,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000043/okta-1312025_ex991.htm",
+      "split": "development",
+      "start": "2025-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001660134-25-000091",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "OKTA",
+      "end": "2025-07-31",
+      "exhibit": "99.1",
+      "filed": "2025-05-27",
+      "high": "712000000",
+      "id": "ec065d80-95bd-5fc4-8ee7-a9fcbff91f2b",
+      "issued": {
+        "end": "2025-05-27",
+        "precision": "day",
+        "start": "2025-05-27"
+      },
+      "low": "710000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/OKTA.json"
+      ],
+      "quote": "second quarter of fiscal 2026, the Company expects: \u2022 Total revenue of $710 million to $712 million,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000091/okta-4302025_ex991.htm",
+      "split": "development",
+      "start": "2025-05-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001660134-25-000156",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "OKTA",
+      "end": "2025-10-31",
+      "exhibit": "99.1",
+      "filed": "2025-08-26",
+      "high": "730000000",
+      "id": "25c8bdf4-b2b1-5677-b987-3a2caa93dba8",
+      "issued": {
+        "end": "2025-08-26",
+        "precision": "day",
+        "start": "2025-08-26"
+      },
+      "low": "728000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/OKTA.json"
+      ],
+      "quote": "third quarter of fiscal 2026, the Company expects: \u2022 Total revenue of $728 million to $730 million,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000156/okta-7312025_ex991.htm",
+      "split": "development",
+      "start": "2025-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001660134-25-000170",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "OKTA",
+      "end": "2026-01-31",
+      "exhibit": "99.1",
+      "filed": "2025-12-02",
+      "high": "750000000",
+      "id": "291f2d05-0368-56a6-a423-5734101169b5",
+      "issued": {
+        "end": "2025-12-02",
+        "precision": "day",
+        "start": "2025-12-02"
+      },
+      "low": "748000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/OKTA.json"
+      ],
+      "quote": "fourth quarter of fiscal 2026, the Company expects: \u2022 Total revenue of $748 million to $750 million,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000170/okta-10312025_ex991.htm",
+      "split": "development",
+      "start": "2025-11-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001660134-26-000016",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "OKTA",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-03-04",
+      "high": "3190000000.000",
+      "id": "c070d7c9-4e74-5c1c-a790-ff98b6b9d38b",
+      "issued": {
+        "end": "2026-03-04",
+        "precision": "day",
+        "start": "2026-03-04"
+      },
+      "low": "3170000000.000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/OKTA.json"
+      ],
+      "quote": "For the full year fiscal 2027, the Company now expects: \u2022 Total revenue of $3.170 billion to $3.190 billion , representing a growth rate of 9% year-over-year; \u25e6 Reflected in the revenue guidance is an approximately one percentage point impact to total revenue growth resulting from our decision to accelerate the shift o",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-1312026_ex991.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001660134-26-000016",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "OKTA",
+      "end": "2026-04-30",
+      "exhibit": "99.1",
+      "filed": "2026-03-04",
+      "high": "753000000",
+      "id": "e4299f55-09d5-58a8-a304-c918c6940039",
+      "issued": {
+        "end": "2026-03-04",
+        "precision": "day",
+        "start": "2026-03-04"
+      },
+      "low": "749000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/OKTA.json"
+      ],
+      "quote": "first quarter of fiscal 2027, the Company expects: \u2022 Total revenue of $749 million to $753 million,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-1312026_ex991.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001660134-26-000050",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "OKTA",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-05-28",
+      "high": "3205000000.000",
+      "id": "5fd99f26-b4f5-5e1e-922a-5a4436d040cd",
+      "issued": {
+        "end": "2026-05-28",
+        "precision": "day",
+        "start": "2026-05-28"
+      },
+      "low": "3185000000.000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/OKTA.json"
+      ],
+      "quote": "For the full year fiscal 2027, the Company now expects: \u2022 Total revenue of $3.185 billion to $3.205 billion , representing a growth rate of 9% to 10% year-over-year; \u25e6 Reflected in the revenue guidance is an approximately one percentage point impact to total revenue growth resulting from our decision to accelerate the ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000050/okta-4302026_ex991.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "raised",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001660134-26-000050",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "OKTA",
+      "end": "2026-07-31",
+      "exhibit": "99.1",
+      "filed": "2026-05-28",
+      "high": "794000000",
+      "id": "89fe4070-f04b-5293-9aed-55cd43cab1f4",
+      "issued": {
+        "end": "2026-05-28",
+        "precision": "day",
+        "start": "2026-05-28"
+      },
+      "low": "790000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/OKTA.json"
+      ],
+      "quote": "second quarter of fiscal 2027, the Company expects: \u2022 Total revenue of $790 million to $794 million,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000050/okta-4302026_ex991.htm",
+      "split": "development",
+      "start": "2026-05-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001660134-26-000068",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "OKTA",
+      "end": "2026-10-31",
+      "exhibit": "99.1",
+      "filed": "2026-08-26",
+      "high": "817000000",
+      "id": "7790a72a-98d9-57b3-9287-bf22cba52401",
+      "issued": {
+        "end": "2026-08-26",
+        "precision": "day",
+        "start": "2026-08-26"
+      },
+      "low": "813000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/OKTA.json"
+      ],
+      "quote": "For the third quarter of fiscal 2027, the Company expects: \u2022 Total revenue of $813 million to $817 million, representing a growth rate of 10% year-over-year; \u2022 Current RPO of $2.590 billion to $2.600 billion , representing a growth rate of 11% to 12% year-over-year; \u2022 Non-GAAP operating income of $196 million to $200 million, which yi",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm",
+      "split": "development",
+      "start": "2026-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001660134-26-000068",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "OKTA",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-08-26",
+      "high": "3226000000.000",
+      "id": "8bd0f82d-d6cc-5ce4-ad32-0526621af3e8",
+      "issued": {
+        "end": "2026-08-26",
+        "precision": "day",
+        "start": "2026-08-26"
+      },
+      "low": "3216000000.000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/OKTA.json"
+      ],
+      "quote": "For the full year fiscal 2027, the Company now expects: \u2022 Total revenue of $3.216 billion to $3.226 billion , representing a growth rate of 10% to 11% year-over-year; \u25e6 Reflected in the revenue guidance is an approximately one percentage point impact to total revenue growth resulting from our decision to accelerate the",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "raised",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001568100-24-000107",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "PD",
+      "end": "2024-10-31",
+      "exhibit": "99.1",
+      "filed": "2024-09-03",
+      "high": "117500000.0",
+      "id": "c3d90f91-f524-5753-8a74-2fefa02420dc",
+      "issued": {
+        "end": "2024-09-03",
+        "precision": "day",
+        "start": "2024-09-03"
+      },
+      "low": "115500000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/PD.json"
+      ],
+      "quote": "third quarter of fiscal 2025, PagerDuty currently expects: \u2022 Total revenue of $115.5 million - $117.5 million,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000107/ex991-pagerdutyq2fy25earni.htm",
+      "split": "development",
+      "start": "2024-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001568100-24-000137",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "PD",
+      "end": "2025-01-31",
+      "exhibit": "99.1",
+      "filed": "2024-11-26",
+      "high": "120500000.0",
+      "id": "0738986c-6808-5b43-91fe-6c384cfd62ab",
+      "issued": {
+        "end": "2024-11-26",
+        "precision": "day",
+        "start": "2024-11-26"
+      },
+      "low": "118500000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/PD.json"
+      ],
+      "quote": "fourth quarter of fiscal 2025, PagerDuty currently expects: \u2022 Total revenue of $118.5 million - $120.5 million,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810024000137/ex991-pagerdutyq3fy25earni.htm",
+      "split": "development",
+      "start": "2024-11-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001568100-25-000019",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "PD",
+      "end": "2025-04-30",
+      "exhibit": "99.1",
+      "filed": "2025-03-13",
+      "high": "120000000.0",
+      "id": "59c4247e-16d3-5bb3-a84e-dfc45b8dcbed",
+      "issued": {
+        "end": "2025-03-13",
+        "precision": "day",
+        "start": "2025-03-13"
+      },
+      "low": "118000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/PD.json"
+      ],
+      "quote": "first quarter of fiscal 2026, PagerDuty currently expects: \u2022 Total revenue of $118.0 million - $120.0 million,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000019/ex991-pagerdutyq4fy25earni.htm",
+      "split": "development",
+      "start": "2025-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001568100-25-000048",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "PD",
+      "end": "2025-07-31",
+      "exhibit": "99.1",
+      "filed": "2025-05-29",
+      "high": "124500000.0",
+      "id": "1671a9bb-9d5b-52fa-aa21-3972bf0933ff",
+      "issued": {
+        "end": "2025-05-29",
+        "precision": "day",
+        "start": "2025-05-29"
+      },
+      "low": "122500000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/PD.json"
+      ],
+      "quote": "second quarter of fiscal 2026, PagerDuty currently expects: \u2022 Total revenue of $122.5 million - $124.5 million,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000048/ex991-pagerdutyq1fy26earni.htm",
+      "split": "development",
+      "start": "2025-05-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001568100-25-000098",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "PD",
+      "end": "2025-10-31",
+      "exhibit": "99.1",
+      "filed": "2025-09-03",
+      "high": "126000000.0",
+      "id": "9a2155bb-f38d-5f26-95b1-c419410a6983",
+      "issued": {
+        "end": "2025-09-03",
+        "precision": "day",
+        "start": "2025-09-03"
+      },
+      "low": "124000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/PD.json"
+      ],
+      "quote": "third quarter of fiscal 2026, PagerDuty currently expects: \u2022 Total revenue of $124.0 million - $126.0 million,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000098/ex991-pagerdutyq2fy26earni.htm",
+      "split": "development",
+      "start": "2025-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001568100-25-000106",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "PD",
+      "end": "2026-01-31",
+      "exhibit": "99.1",
+      "filed": "2025-11-25",
+      "high": "124000000.0",
+      "id": "a20347e2-5e99-53df-885f-cef3c77f5996",
+      "issued": {
+        "end": "2025-11-25",
+        "precision": "day",
+        "start": "2025-11-25"
+      },
+      "low": "122000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/PD.json"
+      ],
+      "quote": "fourth quarter of fiscal 2026, PagerDuty currently expects: \u2022 Total revenue of $122.0 million - $124.0 million,",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000106/ex991-pagerdutyq3fy26earni.htm",
+      "split": "development",
+      "start": "2025-11-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001568100-26-000011",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "PD",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-03-12",
+      "high": "496500000",
+      "id": "a2aed39a-a88c-5b65-91e8-0bf81f743819",
+      "issued": {
+        "end": "2026-03-12",
+        "precision": "day",
+        "start": "2026-03-12"
+      },
+      "low": "488500000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/PD.json"
+      ],
+      "quote": "For the full fiscal year 2027, PagerDuty currently expects: \u2022 Total revenue of $488.5 million - $496.5 million. \u2022 Non-GAAP net income per diluted share attributable to PagerDuty, Inc. common stockholders of $1.23 - $1.28 assuming approximately 81 million diluted shares and a non-GAAP tax rate of 20%. These statements are forward-looking and actual results may differ materially. Please refer to the section titled \"For",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001568100-26-000011",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "PD",
+      "end": "2026-04-30",
+      "exhibit": "99.1",
+      "filed": "2026-03-12",
+      "high": "120000000.0",
+      "id": "e05aa63d-b924-5a97-a4d0-1c2e74d36aa4",
+      "issued": {
+        "end": "2026-03-12",
+        "precision": "day",
+        "start": "2026-03-12"
+      },
+      "low": "118000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/PD.json"
+      ],
+      "quote": "first quarter of fiscal 2027, PagerDuty currently expects: \u2022 Total revenue of $118.0 million - $120.0 million.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001140361-26-020610",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "PD",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-05-11",
+      "high": "496500000",
+      "id": "b07444c7-67c4-5721-8456-be175b6d1f02",
+      "issued": {
+        "end": "2026-05-11",
+        "precision": "day",
+        "start": "2026-05-11"
+      },
+      "low": "488500000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/PD.json"
+      ],
+      "quote": "Company Outlook The Company also reaffirmed its outlook for the first quarter and full fiscal year 2027, previously provided on March 12, 2026. The Company expects first\n        quarter total revenue of $118 million to $120 million, and full fiscal year total revenue of $488.5 million to $496.5 million. The Company expects Non-GAAP net income per diluted share of $0.23 - $0.25 for the first quarter (assuming approxim",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000114036126020610/ef20072978_ex99-1.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "reaffirmed",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001140361-26-020610",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "PD",
+      "end": "2026-04-30",
+      "exhibit": "99.1",
+      "filed": "2026-05-11",
+      "high": "120000000.0",
+      "id": "fb5dbb78-bd60-549e-ae62-50e54083d240",
+      "issued": {
+        "end": "2026-05-11",
+        "precision": "day",
+        "start": "2026-05-11"
+      },
+      "low": "118000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Explicit quarterly reaffirmation; bounds retained from prior source. Post-close indications are separately flagged and excluded from the training cohort.",
+      "original_verified": false,
+      "origins": [
+        "earnings/history/PD.json"
+      ],
+      "quote": "Reaffirms First Quarter and Full Fiscal Year 2027 Guidance SAN FRANCISCO \u2013 May 11, 2026 \u2013 PagerDuty (NYSE: PD), the leader in AI-first operations management, today announced that John DiLullo has been appointed Chief Executive Of",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000114036126020610/ef20072978_ex99-1.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "reaffirmed",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001568100-26-000030",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "PD",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-05-28",
+      "high": "496500000",
+      "id": "148e716d-7fcd-540e-8b80-ef316212127d",
+      "issued": {
+        "end": "2026-05-28",
+        "precision": "day",
+        "start": "2026-05-28"
+      },
+      "low": "488500000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/PD.json"
+      ],
+      "quote": "For the full fiscal year 2027, PagerDuty currently expects: \u2022 Total revenue of $488.5 million - $496.5 million, consistent with previous guidance. \u2022 Non-GAAP net income per diluted share attributable to PagerDuty, Inc. common stockholders of $1.27 - $1.32 (up from $1.23 - $1.28) assuming approximately 79 million diluted shares and a non-GAAP tax rate of 20%. These statements are forward-looking and actual results may",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000030/ex991-pagerdutyq1fy27earni.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "reaffirmed",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001568100-26-000030",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "PD",
+      "end": "2026-07-31",
+      "exhibit": "99.1",
+      "filed": "2026-05-28",
+      "high": "124000000.0",
+      "id": "eb6a3e37-66d7-5c60-9f83-a01eea51edf4",
+      "issued": {
+        "end": "2026-05-28",
+        "precision": "day",
+        "start": "2026-05-28"
+      },
+      "low": "122000000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/PD.json"
+      ],
+      "quote": "second quarter of fiscal 2027, PagerDuty currently expects: \u2022 Total revenue of $122.0 million - $124.0 million.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000030/ex991-pagerdutyq1fy27earni.htm",
+      "split": "development",
+      "start": "2026-05-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001568100-26-000044",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "PD",
+      "end": "2026-10-31",
+      "exhibit": "99.1",
+      "filed": "2026-08-27",
+      "high": "125000000",
+      "id": "83256569-74d8-5e11-ac48-1cd719c80460",
+      "issued": {
+        "end": "2026-08-27",
+        "precision": "day",
+        "start": "2026-08-27"
+      },
+      "low": "123000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/PD.json"
+      ],
+      "quote": "For the third quarter of fiscal 2027, PagerDuty currently expects: \u2022 Total revenue of $123.0 million - $125.0 million. \u2022 Non-GAAP operating margin of 26.5% to 27.5%. \u2022 Non-GAAP net income per diluted share attributable to PagerDuty, Inc. common stockholders of $0.34",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm",
+      "split": "development",
+      "start": "2026-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001568100-26-000044",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "PD",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-08-27",
+      "high": "496500000",
+      "id": "f9d37849-bf95-50da-9956-cd557de8254d",
+      "issued": {
+        "end": "2026-08-27",
+        "precision": "day",
+        "start": "2026-08-27"
+      },
+      "low": "491500000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/PD.json"
+      ],
+      "quote": "For the full fiscal year 2027, PagerDuty currently expects: \u2022 Total revenue of $491.5 million - $496.5 million. \u2022 Non-GAAP operating margin of 25.0% to 26.0%. \u2022 Non-GAAP net income per diluted share attributable to PagerDuty, Inc. common stockholders of $1.33 - $1.37, assuming approximately 80 million diluted shares and a non-GAAP tax rate of 20%. These statements are forward-looking and actual results may differ mat",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "raised",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001583708-24-000076",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "S",
+      "end": "2024-10-31",
+      "exhibit": "99.1",
+      "filed": "2024-08-27",
+      "high": "209500000.0",
+      "id": "649f6f17-5213-56b3-9507-689f1ba491e8",
+      "issued": {
+        "end": "2024-08-27",
+        "precision": "day",
+        "start": "2024-08-27"
+      },
+      "low": "209500000.0",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/S.json"
+      ],
+      "quote": "Q3FY25 Guidance Full FY2025 Guidance Revenue $209.5 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000076/sentineloneq225exhibit991.htm",
+      "split": "development",
+      "start": "2024-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001583708-24-000123",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "S",
+      "end": "2025-01-31",
+      "exhibit": "99.1",
+      "filed": "2024-12-04",
+      "high": "222000000",
+      "id": "16d17c49-7b99-52a5-a563-f89dd7ee41ec",
+      "issued": {
+        "end": "2024-12-04",
+        "precision": "day",
+        "start": "2024-12-04"
+      },
+      "low": "222000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/S.json"
+      ],
+      "quote": "Q4FY25 Guidance Full FY2025 Guidance Revenue $222 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000123/sentineloneq325exhibit991.htm",
+      "split": "development",
+      "start": "2024-11-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001583708-25-000031",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "S",
+      "end": "2025-04-30",
+      "exhibit": "99.1",
+      "filed": "2025-03-12",
+      "high": "228000000",
+      "id": "70eef1c1-c372-5991-9fa0-9341e6ee381b",
+      "issued": {
+        "end": "2025-03-12",
+        "precision": "day",
+        "start": "2025-03-12"
+      },
+      "low": "228000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/S.json"
+      ],
+      "quote": "Q1FY26 Guidance Full FY2026 Guidance Revenue $228 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000031/sentineloneq425exhibit991.htm",
+      "split": "development",
+      "start": "2025-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001583708-25-000104",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "S",
+      "end": "2025-07-31",
+      "exhibit": "99.1",
+      "filed": "2025-05-28",
+      "high": "242000000",
+      "id": "7d34d32d-ff89-54a9-96b9-54ce1a8e04f3",
+      "issued": {
+        "end": "2025-05-28",
+        "precision": "day",
+        "start": "2025-05-28"
+      },
+      "low": "242000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/S.json"
+      ],
+      "quote": "Q2FY26 Guidance Full FY2026 Guidance Revenue $242 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000104/sentineloneq126exhibit991.htm",
+      "split": "development",
+      "start": "2025-05-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001583708-25-000146",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "S",
+      "end": "2025-10-31",
+      "exhibit": "99.1",
+      "filed": "2025-08-28",
+      "high": "256000000",
+      "id": "512b0e95-f3e4-5e48-bc60-f2c247699f0b",
+      "issued": {
+        "end": "2025-08-28",
+        "precision": "day",
+        "start": "2025-08-28"
+      },
+      "low": "256000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/S.json"
+      ],
+      "quote": "Q3FY26 Guidance Full FY2026 Guidance Revenue $256 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000146/sentineloneq226exhibit991.htm",
+      "split": "development",
+      "start": "2025-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001583708-25-000157",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "S",
+      "end": "2026-01-31",
+      "exhibit": "99.1",
+      "filed": "2025-12-04",
+      "high": "271000000",
+      "id": "25216c0c-32d8-57b0-afe5-7e21009d75b6",
+      "issued": {
+        "end": "2025-12-04",
+        "precision": "day",
+        "start": "2025-12-04"
+      },
+      "low": "271000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/S.json"
+      ],
+      "quote": "Q4FY26 Guidance Full FY2026 Guidance Revenue $271 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000157/sentineloneq326exhibit991.htm",
+      "split": "development",
+      "start": "2025-11-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001583708-26-000014",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "S",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-03-12",
+      "high": "1205000000.000",
+      "id": "9d5b2b30-61e6-57cd-b6fc-39a0905bb865",
+      "issued": {
+        "end": "2026-03-12",
+        "precision": "day",
+        "start": "2026-03-12"
+      },
+      "low": "1195000000.000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/S.json"
+      ],
+      "quote": "Q1 Fiscal Year 2027 Guidance Fiscal Year 2027 Guidance Revenue $276 - 278 million $1.195 - 1.205 billion Non-GAAP operating income $4 - 6 million $110 - 120 million Non-GAAP diluted EPS $0.01 - 0.02 $0.32 - 0.38 Diluted weighted average shares outstanding 345 million 352 million Non-GAAP tax rate 17% 17% These statemen",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/sentineloneq426exhibit991.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001583708-26-000014",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "S",
+      "end": "2026-04-30",
+      "exhibit": "99.1",
+      "filed": "2026-03-12",
+      "high": "278000000",
+      "id": "bb88dc24-cbcc-5b98-966e-d0bfe16c3287",
+      "issued": {
+        "end": "2026-03-12",
+        "precision": "day",
+        "start": "2026-03-12"
+      },
+      "low": "276000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/S.json"
+      ],
+      "quote": "Q1 Fiscal Year 2027 Guidance Fiscal Year 2027 Guidance Revenue $276 - 278 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/sentineloneq426exhibit991.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001583708-26-000039",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "S",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-05-28",
+      "high": "1205000000.000",
+      "id": "02538201-d254-53be-9b06-35b0cafc8df2",
+      "issued": {
+        "end": "2026-05-28",
+        "precision": "day",
+        "start": "2026-05-28"
+      },
+      "low": "1195000000.000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/S.json"
+      ],
+      "quote": "Q2 Fiscal Year 2027 Guidance Fiscal Year 2027 Guidance Revenue $289 - 291 million $1.195 - 1.205 billion Non-GAAP operating income $23 - 25 million $115 - 125 million Non-GAAP diluted earnings per share (EPS) $0.06 - 0.08 $0.32 - 0.38 Diluted weighted average shares outstanding 347 million 350 million Non-GAAP tax rate",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000039/sentineloneq127exhibit991.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "reaffirmed",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001583708-26-000039",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "S",
+      "end": "2026-07-31",
+      "exhibit": "99.1",
+      "filed": "2026-05-28",
+      "high": "291000000",
+      "id": "6b0268b6-1db8-5996-bb98-cce8f4dedf4e",
+      "issued": {
+        "end": "2026-05-28",
+        "precision": "day",
+        "start": "2026-05-28"
+      },
+      "low": "289000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance.",
+      "original_verified": true,
+      "origins": [
+        "earnings/history/S.json"
+      ],
+      "quote": "Q2 Fiscal Year 2027 Guidance Fiscal Year 2027 Guidance Revenue $289 - 291 million ",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000039/sentineloneq127exhibit991.htm",
+      "split": "development",
+      "start": "2026-05-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001583708-26-000052",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "S",
+      "end": "2027-01-31",
+      "exhibit": "99.1",
+      "filed": "2026-08-27",
+      "high": "1207000000.000",
+      "id": "79f71ece-aabc-5851-9ac3-a6cccd6a8004",
+      "issued": {
+        "end": "2026-08-27",
+        "precision": "day",
+        "start": "2026-08-27"
+      },
+      "low": "1202000000.000",
+      "metric": "consolidated_revenue",
+      "notes": "",
+      "original_verified": false,
+      "origins": [
+        "earnings/guidance/S.json"
+      ],
+      "quote": "Q3 Fiscal Year 2027 Guidance Fiscal Year 2027 Guidance Revenue $309 - 311 million $1.202 - 1.207 billion Non-GAAP operating income $38 - 40 million $124 - 128 million Non-GAAP diluted earnings per share (EPS) $0.08 - 0.09 $0.30 - 0.32 Diluted weighted average shares outstanding 370 million 361 million Non-GAAP tax rate",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm",
+      "split": "development",
+      "start": "2026-02-01",
+      "status": "raised",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001583708-26-000052",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "S",
+      "end": "2026-10-31",
+      "exhibit": "99.1",
+      "filed": "2026-08-27",
+      "high": "311000000",
+      "id": "c5bf519b-08d3-5b8b-a2ad-bdd3636e8dba",
+      "issued": {
+        "end": "2026-08-27",
+        "precision": "day",
+        "start": "2026-08-27"
+      },
+      "low": "309000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "original_verified": true,
+      "origins": [
+        "earnings/guidance/S.json"
+      ],
+      "quote": "Q3 Fiscal Year 2027 Guidance Fiscal Year 2027 Guidance Revenue $309 - 311 million $1.202 - 1.207 billion Non-GAAP operating income $38 - 40 million $124 - 128 million Non-GAAP diluted earnings per share (EPS) $0.08 - 0.09 $0.30",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm",
+      "split": "development",
+      "start": "2026-08-01",
+      "status": "initial",
+      "unit": "USD"
+    }
+  ],
+  "release_groups": [
+    {
+      "accession": "0000796343-24-000200",
+      "company": "ADBE",
+      "gold_ids": [
+        "943db843-f2f6-5304-8af1-768f655f4e69"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0000796343-24-000250",
+      "company": "ADBE",
+      "gold_ids": [
+        "4092b1fe-aebe-5693-997f-d6ab62f6c620"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0000796343-25-000052",
+      "company": "ADBE",
+      "gold_ids": [
+        "2053bcc5-9b6a-5ec5-8291-2e4ee2e6ba59"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0000796343-25-000064",
+      "company": "ADBE",
+      "gold_ids": [
+        "bc676721-36d2-586e-b72a-97e04af6f2fd"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0000796343-25-000102",
+      "company": "ADBE",
+      "gold_ids": [
+        "57807be0-c9a0-5ce4-ba88-b787def5f7cf"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0000796343-25-000135",
+      "company": "ADBE",
+      "gold_ids": [
+        "1515cf4f-d53f-542c-a786-4321a261155b",
+        "b7c14351-ad44-5757-b7f8-b816b58002ff"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0000796343-26-000048",
+      "company": "ADBE",
+      "gold_ids": [
+        "0a890adf-1833-5ec9-8455-10f6ae14dc06",
+        "87aa0e07-6f3c-5db0-8a9b-eb0aca2d79d4"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0000796343-26-000109",
+      "company": "ADBE",
+      "gold_ids": [
+        "812b1c5c-9ce3-5ba1-8524-479d49c18149",
+        "e8524bc3-89c0-5a87-965e-9a97fe4dea07"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0000796343-26-000147",
+      "company": "ADBE",
+      "gold_ids": [
+        "04d7cd94-ee0a-56f9-b9d5-7329de346f83",
+        "c6af4c68-dde8-57b1-bf4d-2f0c56c4c3ce"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001108524-24-000020",
+      "company": "CRM",
+      "gold_ids": [
+        "9b41e06c-3f35-590e-a0f2-fc66d81dfb10"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001108524-24-000033",
+      "company": "CRM",
+      "gold_ids": [
+        "8b3165b3-9aef-506e-828d-ff866b6d38f1"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001108524-25-000002",
+      "company": "CRM",
+      "gold_ids": [
+        "569a87b8-437e-54d9-a6d1-dd69cfd4d9ac"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001108524-25-000027",
+      "company": "CRM",
+      "gold_ids": [
+        "984df744-7f57-51d3-a70c-2910e19cb04b"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001108524-25-000083",
+      "company": "CRM",
+      "gold_ids": [
+        "42930d56-cae9-5290-9732-17206bc8ea2d"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001108524-25-000234",
+      "company": "CRM",
+      "gold_ids": [
+        "559547e2-f9f8-5b6c-b0e2-ab07f37b7c55"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001108524-26-000056",
+      "company": "CRM",
+      "gold_ids": [
+        "2e224c9b-77d6-5665-97ce-f8cf535ce5bc",
+        "903f9e16-b90d-5951-be33-6b25eb3a6b6b"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001108524-26-000125",
+      "company": "CRM",
+      "gold_ids": [
+        "6efd228a-70fb-51dc-9d1c-93c55ff84e16",
+        "b81cf032-a16f-5631-bb29-024ecd5ca379"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001108524-26-000187",
+      "company": "CRM",
+      "gold_ids": [
+        "01731e6e-0166-552d-baba-021e4d237bf7",
+        "3b513a29-59c1-51a3-bf16-fa1001da216c"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001193125-26-425881",
+      "company": "CRM",
+      "gold_ids": [
+        "a83bd1cc-d8c3-5a31-8aff-ffb4022e9f8a"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001535527-24-000017",
+      "company": "CRWD",
+      "gold_ids": [
+        "01205c58-db41-52ae-a250-7887b127dba6"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001535527-24-000024",
+      "company": "CRWD",
+      "gold_ids": [
+        "9e84819f-e81c-5038-ac3a-325e500d9784"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001535527-25-000005",
+      "company": "CRWD",
+      "gold_ids": [
+        "6ff36d6a-7731-580d-b870-86b7885d03a4"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001535527-25-000017",
+      "company": "CRWD",
+      "gold_ids": [
+        "fddbd054-6750-589a-816f-b9601159beee"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001535527-25-000023",
+      "company": "CRWD",
+      "gold_ids": [
+        "0368ce79-a89c-563d-a455-2343829ceccb"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001535527-25-000030",
+      "company": "CRWD",
+      "gold_ids": [
+        "01df377c-892b-5b33-8cdc-07191f0a9bb0"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001535527-26-000007",
+      "company": "CRWD",
+      "gold_ids": [
+        "6a52f11e-61b8-554e-826f-4dc433be1b18",
+        "7bc596a9-4d6e-5f18-8f95-76b424343da6"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001535527-26-000022",
+      "company": "CRWD",
+      "gold_ids": [
+        "49a3f9b5-1f5a-54cd-ab80-c173b4ed70fd",
+        "a31172b0-3168-5009-8472-59282faee637"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001535527-26-000029",
+      "company": "CRWD",
+      "gold_ids": [
+        "20136ed5-16e2-50dc-b46c-8f4833b1db90",
+        "f6ff18dc-8880-5f65-b254-cdbbf1a488ba"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001628280-24-039118",
+      "company": "GTLB",
+      "gold_ids": [
+        "2a49ff7a-c5b4-505a-beb9-2c251836a12e"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001628280-24-050064",
+      "company": "GTLB",
+      "gold_ids": [
+        "2b515a2c-98ca-5023-98ea-7161d57f254d"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001628280-25-009422",
+      "company": "GTLB",
+      "gold_ids": [
+        "ff19701e-1677-57da-bf36-9a6734ef2072"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001628280-25-030455",
+      "company": "GTLB",
+      "gold_ids": [
+        "0db01af0-bc40-5023-befb-130f4f1a9ac0"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001628280-25-054758",
+      "company": "GTLB",
+      "gold_ids": [
+        "3f56fa7c-ed4c-5791-85b6-7c6abb59c449"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001628280-25-054895",
+      "company": "GTLB",
+      "gold_ids": [
+        "b520ab79-a73e-5310-bcf7-50e2d838de7f"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001628280-26-013795",
+      "company": "GTLB",
+      "gold_ids": [
+        "0b4891ac-f765-5fb8-a0cb-39130819cb06",
+        "ee4713fc-9132-59fe-a528-d651a7200100"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001628280-26-039805",
+      "company": "GTLB",
+      "gold_ids": [
+        "4b3e8896-8091-59ff-beb6-4fc03caed6d5",
+        "8609a2e2-4fd1-501f-a13b-f51fc951d2e7"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001628280-26-059820",
+      "company": "GTLB",
+      "gold_ids": [
+        "acbb63cf-a5ed-5c74-a414-e6a5e957b408",
+        "ba14fe0d-bc14-582c-89f3-deb673b23254"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001653482-25-000008",
+      "company": "GTLB",
+      "gold_ids": [
+        "e4cd15bc-a65b-5deb-ad3e-401211258e69"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001653482-26-000009",
+      "company": "GTLB",
+      "gold_ids": [
+        "1871a1e8-7e00-5f1c-8e28-a262fa6ce510"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001653482-26-000095",
+      "company": "GTLB",
+      "gold_ids": [
+        "8b7bce64-dc28-5fcf-87c4-1a4028543b8a",
+        "ff4be85a-dde0-5573-b3b9-9f26b067046e"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001628280-25-055355",
+      "company": "IOT",
+      "gold_ids": [
+        "56685baa-a236-506c-abc3-dda2a073ce7a"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001628280-26-015170",
+      "company": "IOT",
+      "gold_ids": [
+        "2824c751-b7ba-52a9-a9af-1b995d6933ac",
+        "8446e825-3f2b-563a-a7ba-5b72801c1261"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001628280-26-040788",
+      "company": "IOT",
+      "gold_ids": [
+        "63ace526-191d-57f5-a1f9-09c2341d12a4",
+        "a2756a8b-c638-59e9-bca2-1f8a39215c85"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001628280-26-060438",
+      "company": "IOT",
+      "gold_ids": [
+        "76e27739-b53d-537d-92b7-cdfcef7fb397",
+        "ce9fd475-3519-55ce-b28a-9c85f104d074"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001642896-24-000059",
+      "company": "IOT",
+      "gold_ids": [
+        "8314785d-3123-5174-be7d-d1f8d31b4d29"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001642896-24-000073",
+      "company": "IOT",
+      "gold_ids": [
+        "fddad161-7f56-5eee-81a0-545454b32964"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001642896-25-000007",
+      "company": "IOT",
+      "gold_ids": [
+        "b9e39c77-967f-5eec-a014-fbca4779d7e0"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001642896-25-000053",
+      "company": "IOT",
+      "gold_ids": [
+        "0192eddc-2f6a-57f4-9f91-19933b38043d"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001642896-25-000070",
+      "company": "IOT",
+      "gold_ids": [
+        "be526f84-8160-5a5f-a624-15c39feec219"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001397187-24-000033",
+      "company": "LULU",
+      "gold_ids": [
+        "650831fd-d5fa-5b4f-adc6-8d8bd37f2f91"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001397187-24-000040",
+      "company": "LULU",
+      "gold_ids": [
+        "c238a715-c3f2-5140-90b0-0915ea47dcbe"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001397187-25-000004",
+      "company": "LULU",
+      "gold_ids": [
+        "428042f8-d727-51ae-9c58-b562f949a824"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001397187-25-000012",
+      "company": "LULU",
+      "gold_ids": [
+        "5690de22-8de0-5635-8526-c01c9cc462a6"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001397187-25-000026",
+      "company": "LULU",
+      "gold_ids": [
+        "761d0e8e-cb2e-578f-b009-66c1bbd92387"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001397187-25-000038",
+      "company": "LULU",
+      "gold_ids": [
+        "d3e5d71a-7cdc-5aaf-89e1-3887345fcb2a"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001397187-25-000054",
+      "company": "LULU",
+      "gold_ids": [
+        "06de0fe6-f4dd-5862-b834-4bfcc71e0f34"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001397187-26-000005",
+      "company": "LULU",
+      "gold_ids": [
+        "a7933c24-91b4-555b-bacc-6c30c5947967"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001397187-26-000019",
+      "company": "LULU",
+      "gold_ids": [
+        "795adeb2-8fb6-5a3e-87a4-bdf607d2ebf1",
+        "97e0b842-2159-5e01-9e6f-c0e00779a660"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001397187-26-000077",
+      "company": "LULU",
+      "gold_ids": [
+        "35bdf649-0526-56e8-ad6b-6154e08e39d6",
+        "5e5e884b-d835-52b8-96b1-b89aee84dd31"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001397187-26-000126",
+      "company": "LULU",
+      "gold_ids": [
+        "922c08aa-ed21-56eb-8898-fe746b19f388",
+        "b4df8722-2f08-5d6c-b609-69396c6c3500"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accession": "0001441816-24-000185",
+      "company": "MDB",
+      "gold_ids": [
+        "e21db595-0548-5222-88f8-5f70e402f725"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001441816-24-000257",
+      "company": "MDB",
+      "gold_ids": [
+        "f1c2056c-9af0-52c0-b96e-2bd460948300"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001441816-25-000046",
+      "company": "MDB",
+      "gold_ids": [
+        "c04ef45b-be19-52d7-b307-767ac6ead384"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001441816-25-000116",
+      "company": "MDB",
+      "gold_ids": [
+        "7515ff32-081a-5f97-acfc-c99717fde937"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001441816-25-000176",
+      "company": "MDB",
+      "gold_ids": [
+        "be815840-db94-5925-ad6e-fed0df6b6ccc"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001628280-25-054425",
+      "company": "MDB",
+      "gold_ids": [
+        "3dd6278e-19a8-5a1a-8b12-9a28f3cce525"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001628280-25-054569",
+      "company": "MDB",
+      "gold_ids": [
+        "3f519fed-b8c0-526f-838f-f91a1fedcd8c"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001628280-26-013199",
+      "company": "MDB",
+      "gold_ids": [
+        "7c6457c8-02c2-5d4f-8e62-43c1654db87c",
+        "ad14ac79-8c5c-5236-8fae-e508808c519a"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001628280-26-038798",
+      "company": "MDB",
+      "gold_ids": [
+        "51b3af46-4bda-59f9-845d-be4e51e6ec65",
+        "7b108550-6b06-5d1b-8022-af76c8392409"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001628280-26-059794",
+      "company": "MDB",
+      "gold_ids": [
+        "6bad7bb3-f126-5ebe-97c1-24329e436e43",
+        "dbe9f61c-41c3-566e-8579-275f228ff342"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001628280-26-063657",
+      "company": "MDB",
+      "gold_ids": [
+        "c9ec8438-b130-526e-b905-0cb8c0c3815e",
+        "e7b96f8a-bebf-55c3-8efd-957619bf8a90"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001660134-24-000134",
+      "company": "OKTA",
+      "gold_ids": [
+        "17baa7cc-4cae-5506-83a7-832b2e43150a"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001660134-24-000165",
+      "company": "OKTA",
+      "gold_ids": [
+        "7cc5f28b-a6f7-59fc-a3c9-341641c49f12"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001660134-25-000015",
+      "company": "OKTA",
+      "gold_ids": [
+        "62d58fb1-8eba-58f2-a953-77efa5bfe24d"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001660134-25-000043",
+      "company": "OKTA",
+      "gold_ids": [
+        "8ef69874-02e3-5144-be84-b60225d962fe"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001660134-25-000091",
+      "company": "OKTA",
+      "gold_ids": [
+        "ec065d80-95bd-5fc4-8ee7-a9fcbff91f2b"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001660134-25-000156",
+      "company": "OKTA",
+      "gold_ids": [
+        "25c8bdf4-b2b1-5677-b987-3a2caa93dba8"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001660134-25-000170",
+      "company": "OKTA",
+      "gold_ids": [
+        "291f2d05-0368-56a6-a423-5734101169b5"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001660134-26-000016",
+      "company": "OKTA",
+      "gold_ids": [
+        "c070d7c9-4e74-5c1c-a790-ff98b6b9d38b",
+        "e4299f55-09d5-58a8-a304-c918c6940039"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001660134-26-000050",
+      "company": "OKTA",
+      "gold_ids": [
+        "5fd99f26-b4f5-5e1e-922a-5a4436d040cd",
+        "89fe4070-f04b-5293-9aed-55cd43cab1f4"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001660134-26-000068",
+      "company": "OKTA",
+      "gold_ids": [
+        "7790a72a-98d9-57b3-9287-bf22cba52401",
+        "8bd0f82d-d6cc-5ce4-ad32-0526621af3e8"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001140361-26-020610",
+      "company": "PD",
+      "gold_ids": [
+        "b07444c7-67c4-5721-8456-be175b6d1f02",
+        "fb5dbb78-bd60-549e-ae62-50e54083d240"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001568100-24-000107",
+      "company": "PD",
+      "gold_ids": [
+        "c3d90f91-f524-5753-8a74-2fefa02420dc"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001568100-24-000137",
+      "company": "PD",
+      "gold_ids": [
+        "0738986c-6808-5b43-91fe-6c384cfd62ab"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001568100-25-000019",
+      "company": "PD",
+      "gold_ids": [
+        "59c4247e-16d3-5bb3-a84e-dfc45b8dcbed"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001568100-25-000048",
+      "company": "PD",
+      "gold_ids": [
+        "1671a9bb-9d5b-52fa-aa21-3972bf0933ff"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001568100-25-000098",
+      "company": "PD",
+      "gold_ids": [
+        "9a2155bb-f38d-5f26-95b1-c419410a6983"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001568100-25-000106",
+      "company": "PD",
+      "gold_ids": [
+        "a20347e2-5e99-53df-885f-cef3c77f5996"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001568100-26-000011",
+      "company": "PD",
+      "gold_ids": [
+        "a2aed39a-a88c-5b65-91e8-0bf81f743819",
+        "e05aa63d-b924-5a97-a4d0-1c2e74d36aa4"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001568100-26-000030",
+      "company": "PD",
+      "gold_ids": [
+        "148e716d-7fcd-540e-8b80-ef316212127d",
+        "eb6a3e37-66d7-5c60-9f83-a01eea51edf4"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001568100-26-000044",
+      "company": "PD",
+      "gold_ids": [
+        "83256569-74d8-5e11-ac48-1cd719c80460",
+        "f9d37849-bf95-50da-9956-cd557de8254d"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001583708-24-000076",
+      "company": "S",
+      "gold_ids": [
+        "649f6f17-5213-56b3-9507-689f1ba491e8"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001583708-24-000123",
+      "company": "S",
+      "gold_ids": [
+        "16d17c49-7b99-52a5-a563-f89dd7ee41ec"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001583708-25-000031",
+      "company": "S",
+      "gold_ids": [
+        "70eef1c1-c372-5991-9fa0-9341e6ee381b"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001583708-25-000104",
+      "company": "S",
+      "gold_ids": [
+        "7d34d32d-ff89-54a9-96b9-54ce1a8e04f3"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001583708-25-000146",
+      "company": "S",
+      "gold_ids": [
+        "512b0e95-f3e4-5e48-bc60-f2c247699f0b"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001583708-25-000157",
+      "company": "S",
+      "gold_ids": [
+        "25216c0c-32d8-57b0-afe5-7e21009d75b6"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001583708-26-000014",
+      "company": "S",
+      "gold_ids": [
+        "9d5b2b30-61e6-57cd-b6fc-39a0905bb865",
+        "bb88dc24-cbcc-5b98-966e-d0bfe16c3287"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001583708-26-000039",
+      "company": "S",
+      "gold_ids": [
+        "02538201-d254-53be-9b06-35b0cafc8df2",
+        "6b0268b6-1db8-5996-bb98-cce8f4dedf4e"
+      ],
+      "split": "development"
+    },
+    {
+      "accession": "0001583708-26-000052",
+      "company": "S",
+      "gold_ids": [
+        "79f71ece-aabc-5851-9ac3-a6cccd6a8004",
+        "c5bf519b-08d3-5b8b-a2ad-bdd3636e8dba"
+      ],
+      "split": "development"
+    }
+  ],
+  "source_commit": "94984fc3ce33c6e85a287738d3a617561cd0cefc",
+  "source_file_sha256": {
+    "earnings/guidance/ADBE.json": "4f01619babac179c20248beef17a08fc6e7e2dbdaf90716b92f2fdb8c67566ce",
+    "earnings/guidance/CRM.json": "0c645b74c8475fc117b2123f8cfc2bc5b9a4b032c1fc6679074b933eb6b285dd",
+    "earnings/guidance/CRWD.json": "eb488e605c1a6acea6816d09ba431bb8975ab713d72e2aae830eb26b8a809f28",
+    "earnings/guidance/GTLB.json": "9dd3517e361b9a7086d14ed30436d80a1bef4f90ff1023fae0dc61afe4d737b2",
+    "earnings/guidance/IOT.json": "842a0882c1954b3f593f6f45b6ef3a2f274f53581c72ac53211e8cd984e1a66b",
+    "earnings/guidance/LULU.json": "8d47921d78b00edf32d8598e6daea7c869a3f041b9955a7d4a1d4d2c3816193b",
+    "earnings/guidance/MDB.json": "297a10343e1ea5e57d1557a8fa415f32417f4dc752eef0059d71c99d75a6cc79",
+    "earnings/guidance/OKTA.json": "2632d99ddb0413fd8c08ce0b9785f6876fb98a4ab120e4ab3d6e862369e1ad05",
+    "earnings/guidance/PD.json": "0a420a2d65c03bf74a9eb59c859fd3537834a915087138e5d4efacb8f26daa01",
+    "earnings/guidance/S.json": "5227e3ec89229110428a050dcf865e1b0ba54c8f0d7dc3b71b75216ac701d864",
+    "earnings/history/ADBE.json": "5cdd276e2b5a005790dd8d2d745886c89d5035994a9a5408c49e22005a9971b1",
+    "earnings/history/CRM.json": "8dabe2c86c013106cf35b8c5801e3e60b04203722dcd5790aace7770b263c0e8",
+    "earnings/history/CRWD.json": "0be45692d5d1ebf5e7e1c95a09fa297864350160b4c6e6b1cb50ef0cd44bdb97",
+    "earnings/history/GTLB.json": "c05c37d3676ef7a27fdcaa1dae5f328dca62299b23108e0a905ba846c742d38c",
+    "earnings/history/IOT.json": "165e213b1e798310793fddb25ad28742cc25ed0312d9055ab72c1391ca271a3a",
+    "earnings/history/LULU.json": "a7a24d5a08e2a289e85d33d7b33ca892d916f46273335e612561d34b3c052f7d",
+    "earnings/history/MDB.json": "fdc3198d640789e4c7c2c11970d1c268b16f9c0970f92272e54fae1531ce3bd1",
+    "earnings/history/OKTA.json": "9006c5aafd892d1d5aa312e62a17d9ae061492ffda89814290849ee3dcec095b",
+    "earnings/history/PD.json": "ac0dac6d1ba021d12a1f2bc363a2a3ba8d0faf8de50111aff817462c381ccca3",
+    "earnings/history/S.json": "4b4d77a0fa4a6581acb23a1348010daf3fe57fc1553c705db4776e12dad73872"
+  }
+}

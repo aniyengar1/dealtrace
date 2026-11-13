@@ -1,0 +1,14 @@
+{
+  "base_prefix": "/opt/homebrew/opt/python@3.14/Frameworks/Python.framework/Versions/3.14",
+  "commit": "94984fc3ce33c6e85a287738d3a617561cd0cefc",
+  "dependency_lock_sha256": "e913ed0f541ebd44df806e124e31d2ed46b9526ef9c513641d97798cadd8775b",
+  "executable": "/Users/anirudhiyengar/dealtrace-earnings/.venv/bin/python",
+  "isolated": true,
+  "no_environment_changed": true,
+  "platform": "macOS-15.7.4-arm64-arm-64bit-Mach-O",
+  "python": "3.14.7 (main, Aug  5 2026, 10:29:49) [Clang 17.0.0 (clang-1700.6.4.2)]",
+  "recorded_at": "2026-11-13T00:10:17.148723+00:00",
+  "requirements_sha256": "49ff69b6fe9c5371cccc22d3cafaea6df0d766e6529d343901df2be0e29734db",
+  "tag": "session3-lock-ready",
+  "venv_prefix": "/Users/anirudhiyengar/dealtrace-earnings/.venv"
+}

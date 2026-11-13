@@ -1,0 +1,14 @@
+{
+  "counts": {
+    "development": 96,
+    "heldout": 38
+  },
+  "frozen_at": "2026-11-13T00:10:16.963158+00:00",
+  "gold_sha256": "d6de1dd51f61e5eb4ee5f51350859dd0799494eb9cd75d8514099617c6f16b4c",
+  "heldout_companies": [
+    "CRWD",
+    "IOT",
+    "LULU"
+  ],
+  "release_groups": 100
+}
