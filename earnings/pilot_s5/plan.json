@@ -1,0 +1,72 @@
+{
+  "created_at": "2026-11-13T04:46:08.032251+00:00",
+  "pilot_limit": 20,
+  "quarters_per_company_maximum": 8,
+  "cutoff": "2026-11-13",
+  "selection_method": "Fixed sector quotas and ordered candidate lists. Within each sector take first eligible SEC domestic 10-K/8-K reporter outside original ten. Eligibility requires a current directly issued next-quarter consolidated reported USD absolute revenue range/point in SEC Exhibit 99.1 (point is permitted as in v2). No ranking or replacement by parse success, HTML layout, calendar convenience or extraction output. Record all screened candidates and failures before extraction. Declined/foreign/merged/no-quarterly-dollar-guidance candidates remain exclusions; do not replace blocked historical quarters to make eight.",
+  "sector_quotas": [
+    {
+      "sector": "software",
+      "quota": 5,
+      "candidate_order": [
+        "WDAY",
+        "SNOW",
+        "ZM",
+        "BOX",
+        "DOCU",
+        "ZS"
+      ]
+    },
+    {
+      "sector": "semiconductors",
+      "quota": 4,
+      "candidate_order": [
+        "NVDA",
+        "AMAT",
+        "AVGO",
+        "MU",
+        "MRVL",
+        "ADI"
+      ]
+    },
+    {
+      "sector": "retail",
+      "quota": 4,
+      "candidate_order": [
+        "FIVE",
+        "DLTR",
+        "DKS",
+        "BBY",
+        "BOOT",
+        "SFIX",
+        "WSM"
+      ]
+    },
+    {
+      "sector": "healthcare_life_science",
+      "quota": 4,
+      "candidate_order": [
+        "IQV",
+        "A",
+        "INSP",
+        "ILMN",
+        "DXCM",
+        "HOLX"
+      ]
+    },
+    {
+      "sector": "electronics_manufacturing",
+      "quota": 3,
+      "candidate_order": [
+        "JBL",
+        "SANM",
+        "PLXS"
+      ]
+    }
+  ],
+  "collection": "Up to last eight completed reported quarterly target periods at cutoff, with preceding guidance release and reported result evidence. Preserve raw SEC filings, companyfacts, versions and availability metadata in isolated gitignored cache. Keep original release/amendment groups together. No production ingestion or DB writes.",
+  "audit_sample": "Before extraction, reserve 30 target company-quarter release groups: one uniformly hash-ranked group per selected company, then ten globally hash-ranked remaining groups. Fixed SHA256 seed crosscheck-session5-pilot-audit-v1. This is a stratified random audit (20 guaranteed issuer slots +10 extras), not simple random over 160. Preserve sample IDs and inclusion procedure, report unweighted audit quality and limitations; do not cherry-pick formatting.",
+  "gold_review": "Read whole relevant annual/quarterly revenue guidance including every metric row, table heading, units, fiscal context and qualitative references. Label missed/abstained records as well as positives before running or viewing extractor outputs. One curator Codex; independent-of-extractor source checks, not a second human adjudicator. Include negative metric/implied-guidance notes, physical fiscal boundary provenance and comparability uncertainty.",
+  "frozen_extractor": "revenue-rules-v2, rules_frozen_v2.json; original artifacts immutable. No tuning against sample. Pilot-only issuer calendar metadata adapter may supply exact registered fiscal bounds; no format/metric/status heuristic changes. Declare adapter and its manual-source assumptions separately and verify old issuer results unchanged. Unknown metadata blocks, never defaults to a January calendar.",
+  "stop": "No full universe expansion, LLM calls, promotion, website change, merge, push or deploy. Report failure rather than automatic collection beyond this pilot. Preserve session3-lock-ready and all original prediction inputs/schema."
+}
