@@ -126,6 +126,34 @@ _logger = logging.getLogger("bulk_run")
 # --- adaptive concurrency ----------------------------------------------------
 
 
+CONCURRENCY_STATE_FILE = BULK_LOG_DIR / "concurrency_state.json"
+
+
+def load_resume_capacity(default_initial: int, high: int) -> int:
+    """Where a fresh process should start its own AdaptiveConcurrency --
+    `default_initial` unless the previous process instance's last-known
+    state was clean (zero 429s observed that whole instance) and sitting
+    at or above `default_initial`, in which case resume there instead.
+
+    Exists because every restart (the watchdog on a crash/stall, or a
+    deliberate one for a code/config fix) previously reset to
+    `default_initial` even when the prior instance had been running
+    cleanly at `high` for hours -- a restart for an unrelated reason
+    shouldn't cost 30 minutes of reduced throughput re-proving what the
+    last instance already proved.
+    """
+    if not CONCURRENCY_STATE_FILE.exists():
+        return default_initial
+    try:
+        state = json.loads(CONCURRENCY_STATE_FILE.read_text())
+    except (json.JSONDecodeError, OSError):
+        return default_initial
+    if state.get("ever_backed_off"):
+        return default_initial
+    last_capacity = state.get("capacity", default_initial)
+    return max(default_initial, min(last_capacity, high))
+
+
 class AdaptiveConcurrency:
     """Starts at `initial`; raises to `high` once `raise_after_seconds`
     have passed with zero 429s recorded anywhere in this process. Any new
@@ -149,6 +177,7 @@ class AdaptiveConcurrency:
         self._clean_since = time.monotonic()
         self._last_checked_ts = time.time()
         self._raised_since_last_backoff = False
+        self._ever_backed_off = False
 
     def acquire(self) -> None:
         with self._cond:
@@ -166,6 +195,16 @@ class AdaptiveConcurrency:
         with self._cond:
             return self._capacity
 
+    def save_state(self) -> None:
+        """Persisted on every tick (not just on a clean shutdown -- most
+        restarts are a kill, not a graceful exit, so "write on shutdown"
+        would usually never run) so the NEXT process instance's
+        load_resume_capacity() has a recent, accurate picture."""
+        with self._cond:
+            state = {"capacity": self._capacity, "ever_backed_off": self._ever_backed_off}
+        CONCURRENCY_STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
+        CONCURRENCY_STATE_FILE.write_text(json.dumps(state))
+
     def tick(self) -> Optional[str]:
         """Call periodically from a monitor thread. Returns a short
         description of what changed, or None."""
@@ -178,7 +217,9 @@ class AdaptiveConcurrency:
                     self._capacity -= 1
                 self._clean_since = time.monotonic()
                 self._raised_since_last_backoff = False
+                self._ever_backed_off = True
                 self._cond.notify_all()
+                self.save_state()
                 return f"backed off to {self._capacity} ({new_events} 429(s) observed)"
             if (
                 not self._raised_since_last_backoff
@@ -188,6 +229,7 @@ class AdaptiveConcurrency:
                 self._capacity = self._high
                 self._raised_since_last_backoff = True
                 self._cond.notify_all()
+                self.save_state()
                 return f"raised to {self._capacity} ({self._raise_after / 60:.0f} clean minutes)"
         return None
 
@@ -452,7 +494,10 @@ def run_bulk_live(
     skip_log: list[dict] = []
     stop_event = threading.Event()
     stop_reason: list[str] = []
-    gate = AdaptiveConcurrency(initial=concurrency, high=concurrency_high)
+    resume_capacity = load_resume_capacity(concurrency, concurrency_high)
+    if resume_capacity != concurrency:
+        log.info(f"[bulk] resuming concurrency at {resume_capacity} (previous instance was clean at that level)")
+    gate = AdaptiveConcurrency(initial=resume_capacity, high=concurrency_high)
     since_last_safety_check: list[dict] = []
     safety_lock = threading.Lock()
 

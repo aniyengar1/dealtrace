@@ -244,6 +244,80 @@ def test_queue_candidates_uses_db_conn(db_conn):
         assert set(bulk_run._CANDIDATE_COLUMNS) <= set(rows[0].keys())
 
 
+# --- concurrency resume across restarts -------------------------------------
+
+
+def test_load_resume_capacity_defaults_when_no_state_file(tmp_path, monkeypatch):
+    monkeypatch.setattr(bulk_run, "CONCURRENCY_STATE_FILE", tmp_path / "concurrency_state.json")
+    assert bulk_run.load_resume_capacity(4, 6) == 4
+
+
+def test_load_resume_capacity_resumes_high_after_a_clean_instance(tmp_path, monkeypatch):
+    state_file = tmp_path / "concurrency_state.json"
+    monkeypatch.setattr(bulk_run, "CONCURRENCY_STATE_FILE", state_file)
+    state_file.write_text(json.dumps({"capacity": 6, "ever_backed_off": False}))
+    assert bulk_run.load_resume_capacity(4, 6) == 6
+
+
+def test_load_resume_capacity_does_not_resume_high_after_any_429(tmp_path, monkeypatch):
+    state_file = tmp_path / "concurrency_state.json"
+    monkeypatch.setattr(bulk_run, "CONCURRENCY_STATE_FILE", state_file)
+    # Even though it ended at capacity 6 (recovered and re-raised), a 429
+    # happened at some point in that instance -- restart conservatively.
+    state_file.write_text(json.dumps({"capacity": 6, "ever_backed_off": True}))
+    assert bulk_run.load_resume_capacity(4, 6) == 4
+
+
+def test_load_resume_capacity_never_resumes_below_the_configured_default(tmp_path, monkeypatch):
+    state_file = tmp_path / "concurrency_state.json"
+    monkeypatch.setattr(bulk_run, "CONCURRENCY_STATE_FILE", state_file)
+    state_file.write_text(json.dumps({"capacity": 2, "ever_backed_off": False}))
+    assert bulk_run.load_resume_capacity(4, 6) == 4
+
+
+def test_load_resume_capacity_caps_at_high(tmp_path, monkeypatch):
+    state_file = tmp_path / "concurrency_state.json"
+    monkeypatch.setattr(bulk_run, "CONCURRENCY_STATE_FILE", state_file)
+    state_file.write_text(json.dumps({"capacity": 99, "ever_backed_off": False}))
+    assert bulk_run.load_resume_capacity(4, 6) == 6
+
+
+def test_load_resume_capacity_handles_a_corrupt_state_file(tmp_path, monkeypatch):
+    state_file = tmp_path / "concurrency_state.json"
+    monkeypatch.setattr(bulk_run, "CONCURRENCY_STATE_FILE", state_file)
+    state_file.write_text("not json")
+    assert bulk_run.load_resume_capacity(4, 6) == 4
+
+
+def test_adaptive_concurrency_save_state_persists_capacity_and_flag(tmp_path, monkeypatch):
+    state_file = tmp_path / "concurrency_state.json"
+    monkeypatch.setattr(bulk_run, "CONCURRENCY_STATE_FILE", state_file)
+    gate = bulk_run.AdaptiveConcurrency(initial=6, high=6)
+    gate.save_state()
+    state = json.loads(state_file.read_text())
+    assert state == {"capacity": 6, "ever_backed_off": False}
+
+
+def test_adaptive_concurrency_tick_persists_state_on_backoff(tmp_path, monkeypatch):
+    state_file = tmp_path / "concurrency_state.json"
+    monkeypatch.setattr(bulk_run, "CONCURRENCY_STATE_FILE", state_file)
+    monkeypatch.setattr(extract, "rate_limit_events_since", lambda since: 1)
+    gate = bulk_run.AdaptiveConcurrency(initial=6, high=6)
+    gate.tick()
+    state = json.loads(state_file.read_text())
+    assert state == {"capacity": 5, "ever_backed_off": True}
+
+
+def test_adaptive_concurrency_tick_persists_state_on_raise(tmp_path, monkeypatch):
+    state_file = tmp_path / "concurrency_state.json"
+    monkeypatch.setattr(bulk_run, "CONCURRENCY_STATE_FILE", state_file)
+    monkeypatch.setattr(extract, "rate_limit_events_since", lambda since: 0)
+    gate = bulk_run.AdaptiveConcurrency(initial=4, high=6, raise_after_seconds=0.0)
+    gate.tick()
+    state = json.loads(state_file.read_text())
+    assert state == {"capacity": 6, "ever_backed_off": False}
+
+
 # --- AdaptiveConcurrency ----------------------------------------------------
 
 
