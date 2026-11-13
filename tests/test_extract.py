@@ -197,6 +197,19 @@ def test_compute_cost_is_unknown_not_zero_for_an_unpriced_vertex_model():
     assert extract._compute_cost_usd("vertex", "some-future-model", usage) is None
 
 
+def test_compute_cost_for_gemini_3_6_flash_uses_conservative_rate():
+    usage = extract.Usage(prompt_tokens=1_000_000, output_tokens=1_000_000)
+    cost = extract._compute_cost_usd("vertex", "gemini-3.6-flash", usage)
+    assert cost == pytest.approx(1.50 + 7.50)
+
+
+def test_compute_cost_batch_mode_is_half_of_live_mode():
+    usage = extract.Usage(prompt_tokens=1_000_000, output_tokens=1_000_000, thinking_tokens=500_000)
+    live = extract._compute_cost_usd("vertex", "gemini-3.6-flash", usage, mode="live")
+    batch = extract._compute_cost_usd("vertex", "gemini-3.6-flash", usage, mode="batch")
+    assert batch == pytest.approx(live * 0.5)
+
+
 def test_compute_cost_bills_thinking_tokens_at_the_output_rate():
     # Gemini 3.x's thinking models return reasoning tokens separately from
     # candidates_token_count, but Google bills them as output tokens --
@@ -231,6 +244,50 @@ def test_call_gemini_captures_and_bills_thinking_tokens(monkeypatch):
     call = extract._session_calls[0]
     assert call["thinking_tokens"] == 299
     assert call["cost_usd"] == pytest.approx((56 / 1_000_000) * 1.50 + ((5 + 299) / 1_000_000) * 9.00)
+
+
+def test_call_gemini_passes_thinking_level_into_the_request_config(monkeypatch):
+    from google.genai import types as genai_types
+
+    captured_configs = []
+
+    class SpyModels:
+        def generate_content(self, **kwargs):
+            captured_configs.append(kwargs["config"])
+            return FakeResponse()
+
+    class SpyClient:
+        models = SpyModels()
+
+    monkeypatch.setattr(extract, "_get_client", lambda: SpyClient())
+
+    _call_gemini("prompt", BackgroundExtraction, "fake-model", thinking_level="low")
+
+    assert captured_configs[0].thinking_config == genai_types.ThinkingConfig(thinking_level="LOW")
+
+
+def test_call_gemini_leaves_thinking_config_unset_by_default(monkeypatch):
+    captured_configs = []
+
+    class SpyModels:
+        def generate_content(self, **kwargs):
+            captured_configs.append(kwargs["config"])
+            return FakeResponse()
+
+    class SpyClient:
+        models = SpyModels()
+
+    monkeypatch.setattr(extract, "_get_client", lambda: SpyClient())
+
+    _call_gemini("prompt", BackgroundExtraction, "fake-model")
+
+    assert captured_configs[0].thinking_config is None
+
+
+def test_cache_key_differs_by_thinking_level():
+    k_default = extract._cache_key([{"id": "p1", "text": "x"}], "m", BackgroundExtraction, None)
+    k_low = extract._cache_key([{"id": "p1", "text": "x"}], "m", BackgroundExtraction, "low")
+    assert k_default != k_low
 
 
 def test_call_gemini_on_vertex_logs_a_session_call_with_cost(monkeypatch):

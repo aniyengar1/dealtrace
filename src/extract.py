@@ -24,6 +24,7 @@ import hashlib
 import json
 import os
 import re
+import threading
 import time
 from dataclasses import dataclass, field
 from datetime import date, datetime
@@ -65,16 +66,28 @@ FREE_TIER_DAILY_QUOTA = 20
 CACHE_DIR = Path(__file__).resolve().parent.parent / "data" / "cache"
 QUOTA_FILE = CACHE_DIR / "quota_usage.json"
 
-# USD per million tokens, Vertex AI on-demand pricing. The AI Studio free
-# tier (the only aistudio mode this pipeline uses) is $0 and tracked via
-# FREE_TIER_DAILY_QUOTA instead -- this table only matters for
-# GEMINI_PROVIDER=vertex. Populated as models are actually used on
+# USD per million tokens, Vertex AI on-demand ("live") pricing. The AI
+# Studio free tier (the only aistudio mode this pipeline uses) is $0 and
+# tracked via FREE_TIER_DAILY_QUOTA instead -- this table only matters
+# for GEMINI_PROVIDER=vertex. Populated as models are actually used on
 # Vertex; an unlisted model's cost comes back as unknown (None) from
 # _compute_cost_usd, never silently assumed to be free, since that's a
 # real budget-cap risk during a paid bulk run.
+#
+# gemini-3.6-flash: deliberately the CONSERVATIVE published rate
+# ($1.50/$7.50), not the $0.75/$3.75 introductory rate some sources cite
+# through 2026-12-31 -- that rate's applicability to Vertex (vs. AI
+# Studio, vs. a specific region) couldn't be confirmed, and overestimating
+# spend against a hard cap is the safe direction to be wrong in.
 VERTEX_PRICING_USD_PER_MILLION_TOKENS: dict[str, dict[str, float]] = {
     "gemini-3.5-flash": {"input": 1.50, "output": 9.00},
+    "gemini-3.6-flash": {"input": 1.50, "output": 7.50},
 }
+
+# Batch prediction is billed at half the live rate (Vertex AI batch
+# pricing) -- derived from the live table rather than duplicated, so the
+# two can never drift apart.
+BATCH_PRICE_DISCOUNT = 0.5
 
 _client: Optional[genai.Client] = None
 # Every live call this process has made, in order -- the "running session
@@ -88,29 +101,44 @@ def _resolve_provider() -> str:
     return os.environ.get("GEMINI_PROVIDER", "aistudio")
 
 
+_client_lock = threading.Lock()
+
+
 def _get_client() -> genai.Client:
     global _client
     if _client is None:
-        provider = _resolve_provider()
-        if provider == "vertex":
-            _client = genai.Client(
-                vertexai=True,
-                project=os.environ["GOOGLE_CLOUD_PROJECT"],
-                location=os.environ.get("GOOGLE_CLOUD_LOCATION", "global"),
-            )
-        elif provider == "aistudio":
-            _client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
-        else:
-            raise ExtractionError(f"Unknown GEMINI_PROVIDER '{provider}' -- expected 'aistudio' or 'vertex'")
+        # The bulk runner calls this from several worker threads at once
+        # on first use -- without the lock, concurrent callers could each
+        # construct and discard their own Client before one wins the
+        # race, which is wasteful but more importantly makes "the client"
+        # not a single, predictable object for anything that might later
+        # want to inspect or close it.
+        with _client_lock:
+            if _client is None:
+                provider = _resolve_provider()
+                if provider == "vertex":
+                    _client = genai.Client(
+                        vertexai=True,
+                        project=os.environ["GOOGLE_CLOUD_PROJECT"],
+                        location=os.environ.get("GOOGLE_CLOUD_LOCATION", "global"),
+                    )
+                elif provider == "aistudio":
+                    _client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+                else:
+                    raise ExtractionError(
+                        f"Unknown GEMINI_PROVIDER '{provider}' -- expected 'aistudio' or 'vertex'"
+                    )
     return _client
 
 
-def _compute_cost_usd(provider: str, model: str, usage: "Usage") -> Optional[float]:
+def _compute_cost_usd(provider: str, model: str, usage: "Usage", mode: str = "live") -> Optional[float]:
     """None means unknown pricing, never $0 by default -- a caller
     tracking spend against a cap must be able to tell "known free"
     (aistudio) apart from "don't actually know" (an unpriced Vertex
     model), since treating the latter as free would silently blow
-    through a budget cap.
+    through a budget cap. `mode="batch"` applies BATCH_PRICE_DISCOUNT to
+    the same per-model rates -- Vertex batch jobs aren't priced
+    separately, just discounted off the live rate.
     """
     if provider != "vertex":
         return 0.0
@@ -118,9 +146,12 @@ def _compute_cost_usd(provider: str, model: str, usage: "Usage") -> Optional[flo
     if pricing is None:
         return None
     billed_output_tokens = usage.output_tokens + usage.thinking_tokens
-    return (usage.prompt_tokens / 1_000_000) * pricing["input"] + (
+    cost = (usage.prompt_tokens / 1_000_000) * pricing["input"] + (
         billed_output_tokens / 1_000_000
     ) * pricing["output"]
+    if mode == "batch":
+        cost *= BATCH_PRICE_DISCOUNT
+    return cost
 
 
 def session_cost_summary() -> dict:
@@ -507,13 +538,18 @@ def resolve_dates(merged: dict[str, list], paragraphs: list[dict]) -> None:
             proposal.date_resolved = anchor_for(proposal.source_paragraph_ids)
 
 
-def _cache_key(chunk: list[dict], model: str, schema: type[BaseModel]) -> str:
+def _cache_key(chunk: list[dict], model: str, schema: type[BaseModel], thinking_level: Optional[str] = None) -> str:
+    # thinking_level IS part of the cache key, unlike provider -- a lower
+    # thinking setting genuinely changes the model's reasoning process
+    # and therefore its output, so it can't share a cache entry with the
+    # default-thinking result the way a cross-provider replay safely can.
     payload = json.dumps(
         {
             "chunk": chunk,
             "model": model,
             "prompt_version": PROMPT_VERSION,
             "schema": schema.__name__,
+            "thinking_level": thinking_level,
         },
         sort_keys=True,
     )
@@ -536,7 +572,9 @@ def _save_cache(key: str, item: dict, usage: dict) -> None:
     _cache_path(key).write_text(json.dumps({"item": item, "usage": usage}, indent=2))
 
 
-def _call_gemini(prompt: str, schema: type[BaseModel], model: str) -> tuple[dict, Usage]:
+def _call_gemini(
+    prompt: str, schema: type[BaseModel], model: str, thinking_level: Optional[str] = None
+) -> tuple[dict, Usage]:
     """Call Gemini with structured JSON output, retrying on transient errors.
 
     A daily-quota 429 fails immediately (see _is_daily_quota_exhausted) --
@@ -546,9 +584,22 @@ def _call_gemini(prompt: str, schema: type[BaseModel], model: str) -> tuple[dict
     either branch below, so it propagates immediately on the first
     attempt -- exactly what a dry run needs to "stop and show the exact
     error" rather than retry into a confusing wrapped failure.
+
+    thinking_level (e.g. "low") is a deliberate, explicit experiment knob
+    -- None (the default) means "don't touch it", leaving the model's own
+    default thinking behavior in place, exactly as every production run
+    before this used.
     """
     client = _get_client()
     provider = _resolve_provider()
+
+    config_kwargs: dict = {
+        "response_mime_type": "application/json",
+        "response_schema": schema,
+        "temperature": GENERATION_TEMPERATURE,
+    }
+    if thinking_level is not None:
+        config_kwargs["thinking_config"] = types.ThinkingConfig(thinking_level=thinking_level.upper())
 
     last_exc: Exception | None = None
     for attempt in range(MAX_TRANSIENT_RETRIES):
@@ -556,11 +607,7 @@ def _call_gemini(prompt: str, schema: type[BaseModel], model: str) -> tuple[dict
             response = client.models.generate_content(
                 model=model,
                 contents=prompt,
-                config=types.GenerateContentConfig(
-                    response_mime_type="application/json",
-                    response_schema=schema,
-                    temperature=GENERATION_TEMPERATURE,
-                ),
+                config=types.GenerateContentConfig(**config_kwargs),
             )
             # The free-tier daily-quota tracker is an aistudio-only concept
             # (Vertex is billed, not quota-capped the same way) -- printing
@@ -569,7 +616,7 @@ def _call_gemini(prompt: str, schema: type[BaseModel], model: str) -> tuple[dict
                 used, remaining = _record_call(model)
                 print(f"    [quota] {model}: {used}/{FREE_TIER_DAILY_QUOTA} used today, {remaining} remaining (local estimate)")
             print(f"    [model_version] {response.model_version}")
-            print(f"    [generation_config] temperature={GENERATION_TEMPERATURE}")
+            print(f"    [generation_config] temperature={GENERATION_TEMPERATURE} thinking_level={thinking_level or 'default'}")
 
             usage_meta = response.usage_metadata
             usage = Usage(
@@ -580,11 +627,12 @@ def _call_gemini(prompt: str, schema: type[BaseModel], model: str) -> tuple[dict
                 calls=1,
             )
 
-            cost_usd = _compute_cost_usd(provider, model, usage)
+            cost_usd = _compute_cost_usd(provider, model, usage, mode="live")
             _session_calls.append(
                 {
                     "provider": provider,
                     "model": model,
+                    "mode": "live",
                     "prompt_tokens": usage.prompt_tokens,
                     "output_tokens": usage.output_tokens,
                     "thinking_tokens": usage.thinking_tokens,
@@ -645,18 +693,20 @@ def llm_extract(
     schema: type[BaseModel],
     *,
     model: Optional[str] = None,
+    thinking_level: Optional[str] = None,
 ) -> tuple[BaseModel, Usage]:
     """Extract one `schema` instance (a container of typed lists) from a chunk.
 
     This is the single seam for the LLM provider: everything above calls
     only this function, so swapping providers means rewriting this body.
-    Results are cached by (chunk content, model, prompt version, schema) --
-    a cache hit never calls the API, regardless of today's quota.
+    Results are cached by (chunk content, model, prompt version, schema,
+    thinking_level) -- a cache hit never calls the API, regardless of
+    today's quota.
     """
     resolved_model = _resolve_model(model)
     prompt = _build_prompt(paragraphs)
 
-    key = _cache_key(paragraphs, resolved_model, schema)
+    key = _cache_key(paragraphs, resolved_model, schema, thinking_level)
     cached = _load_cache(key)
     if cached is not None:
         instance = schema.model_validate(cached["item"])
@@ -666,7 +716,7 @@ def llm_extract(
 
     last_error: Exception | None = None
     for attempt in range(MAX_MALFORMED_RETRIES + 1):
-        raw_item, usage = _call_gemini(prompt, schema, resolved_model)
+        raw_item, usage = _call_gemini(prompt, schema, resolved_model, thinking_level=thinking_level)
         try:
             validated = schema.model_validate(raw_item)
         except ValidationError as exc:
@@ -694,6 +744,7 @@ def extract_section(
     *,
     model: Optional[str] = None,
     target_chunks: Optional[int] = None,
+    thinking_level: Optional[str] = None,
 ) -> tuple[BaseModel, Usage]:
     """Run `schema` over all chunks of a section and merge the results.
 
@@ -712,7 +763,7 @@ def extract_section(
 
     for i, chunk in enumerate(chunks):
         print(f"  chunk {i + 1}/{len(chunks)} ({len(chunk)} paragraphs)")
-        instance, usage = llm_extract(chunk, schema, model=model)
+        instance, usage = llm_extract(chunk, schema, model=model, thinking_level=thinking_level)
         for f in schema.model_fields:
             merged[f].extend(getattr(instance, f))
         total_usage.add(usage)
