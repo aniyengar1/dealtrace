@@ -1,0 +1,10 @@
+{
+  "ADC_status": "NOT_PROBED; SDK-only ADC after explicit future authorization",
+  "environment": "worktree-local .venv",
+  "existing_lock_sha256": "e913ed0f541ebd44df806e124e31d2ed46b9526ef9c513641d97798cadd8775b",
+  "google_genai": "2.34.0",
+  "new_dependencies_installed": false,
+  "pydantic": "2.14.3",
+  "python": "3.14.7",
+  "recorded_at": "2026-11-13T10:20:24.193802+00:00"
+}

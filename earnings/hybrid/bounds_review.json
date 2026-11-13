@@ -1,0 +1,18 @@
+{
+  "action": "Keep dispatch disabled. Establish a documented safe combined bound for the requested endpoint/model before setting verified configuration; otherwise stop. Never use observed small responses to infer a maximum.",
+  "combined_billable_output_bound_verified": false,
+  "documented_context_window": 1048576,
+  "documented_maximum_output_tokens": 65536,
+  "gap": "Reviewed Vertex pages provide the model output limit, thinking levels and separate usage counters. They do not explicitly establish the combined candidates+thoughts hard ceiling needed for worst-case billing here. Developer API forum confirmations for other models/endpoints are not treated as Vertex proof. LOW and include_thoughts=False are not a billable token cap. No probe was made.",
+  "model": "gemini-3.6-flash",
+  "official_sources": [
+    "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/gemini/3-6-flash",
+    "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/thinking",
+    "https://docs.cloud.google.com/gemini-enterprise-agent-platform/reference/rest/v1/GenerateContentResponse"
+  ],
+  "provider": "google_vertex_ai",
+  "requested_max_output_tokens": 8192,
+  "reviewed_at": "2026-11-13T10:59:42.369040+00:00",
+  "thinking_budget_used": false,
+  "thinking_level": "LOW"
+}
