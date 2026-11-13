@@ -1,0 +1,16 @@
+{
+  "version": "registered-fiscal-calendar-v1",
+  "policy": "Manual issuer-calendar metadata, separate from extracted financial values. Month quarters begin February 1. Weekly Q1-Q3 are 13 weeks, Q4 retains the residual 13/14 weeks. End-weekday anchors follow the registered issuer fiscal-calendar conventions; no week normalization.",
+  "companies": {
+    "ADBE": {"kind":"weeks","end_month":11,"anchor_day":30,"weekday":4,"end_year_offset":0},
+    "CRM": {"kind":"months","end_year_offset":0},
+    "CRWD": {"kind":"months","end_year_offset":0},
+    "GTLB": {"kind":"months","end_year_offset":0},
+    "IOT": {"kind":"weeks","end_month":1,"anchor_day":31,"weekday":5,"end_year_offset":0},
+    "LULU": {"kind":"weeks","end_month":1,"anchor_day":31,"weekday":6,"end_year_offset":1},
+    "MDB": {"kind":"months","end_year_offset":0},
+    "OKTA": {"kind":"months","end_year_offset":0},
+    "PD": {"kind":"months","end_year_offset":0},
+    "S": {"kind":"months","end_year_offset":0}
+  }
+}
