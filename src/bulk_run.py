@@ -237,11 +237,46 @@ def result_path(target_cik: str, primary_accession: str) -> Path:
 # --- spend / deadline hard stops --------------------------------------------
 
 
+def cumulative_spend_from_disk() -> tuple[float, bool, int]:
+    """(total_cost_usd, any_unknown_pricing, n_done) across every "done"
+    result file ever written to BULK_OUTPUT_DIR, regardless of which
+    process instance wrote it.
+
+    extract.session_cost_summary() is NOT the right source for the spend
+    cap: it resets to zero on every process restart (reset_session_calls
+    runs at the start of run_bulk_live), so it only ever reflects the
+    CURRENT instance's own new calls. A supervising watchdog that
+    restarts this process on a crash or stall -- which is exactly the
+    scenario the cap most needs to hold up through -- would silently
+    reset the counter each time, letting true cumulative spend run past
+    the cap by however many restarts occur. Reading every result file
+    already on disk is restart-proof by construction: a resumed
+    candidate replays its already-recorded cost, never a fresh $0.
+    """
+    total = 0.0
+    any_unknown = False
+    n_done = 0
+    for path in BULK_OUTPUT_DIR.glob("*.json"):
+        try:
+            result = json.loads(path.read_text())
+        except (json.JSONDecodeError, OSError):
+            continue
+        if result.get("status") != "done":
+            continue
+        n_done += 1
+        cost = result.get("cost_usd")
+        if cost is None:
+            any_unknown = True
+        else:
+            total += cost
+    return total, any_unknown, n_done
+
+
 def spend_cap_hit(cap_usd: float, calibration_multiplier: float) -> tuple[bool, str]:
-    summary = extract.session_cost_summary()
-    if summary["cost_unknown_for_some_calls"]:
-        return True, "pricing unknown for at least one call -- treating as a hard stop"
-    spent = summary["total_cost_usd"] * calibration_multiplier
+    spent_raw, any_unknown, _ = cumulative_spend_from_disk()
+    if any_unknown:
+        return True, "pricing unknown for at least one completed candidate -- treating as a hard stop"
+    spent = spent_raw * calibration_multiplier
     if spent >= cap_usd:
         return True, f"spend cap hit (${spent:.2f} >= ${cap_usd:.2f} at calibration x{calibration_multiplier})"
     return False, ""
@@ -523,17 +558,24 @@ def run_bulk_live(
 
             if n % BULK_LOG_EVERY == 0:
                 elapsed_hr = (time.monotonic() - stats.start_time) / 3600
-                cost_summary = extract.session_cost_summary()
-                spent = cost_summary["total_cost_usd"] * calibration_multiplier
-                n_attempted = stats.done + stats.failed
-                rate = n_attempted / elapsed_hr if elapsed_hr > 0 else 0.0
-                per_deal = spent / n_attempted if n_attempted > 0 else 0.0
+                spent_raw, _, n_done_cumulative = cumulative_spend_from_disk()
+                spent = spent_raw * calibration_multiplier
+                # deals/hr is still THIS process instance's own rate (a
+                # restart's instant cache-replay of old candidates would
+                # otherwise make it meaningless), but spent/$-per-deal are
+                # cumulative across every restart, matching what the
+                # spend cap actually checks.
+                n_attempted_this_instance = stats.done + stats.failed
+                rate = n_attempted_this_instance / elapsed_hr if elapsed_hr > 0 else 0.0
+                per_deal = spent / n_done_cumulative if n_done_cumulative > 0 else 0.0
                 log.info(
                     f"[bulk] done={stats.done} failed={stats.failed} skipped={stats.skipped} errors={stats.errors} "
-                    f"concurrency={gate.capacity} deals/hr={rate:.1f} spent=${spent:.2f} $/deal=${per_deal:.4f}"
+                    f"concurrency={gate.capacity} deals/hr={rate:.1f} "
+                    f"cumulative_done={n_done_cumulative} cumulative_spent=${spent:.2f} $/deal=${per_deal:.4f}"
                 )
 
     stop_event.set()
+    cumulative_spent, cumulative_unknown, cumulative_done = cumulative_spend_from_disk()
     return {
         "done": stats.done,
         "failed": stats.failed,
@@ -541,7 +583,10 @@ def run_bulk_live(
         "errors": stats.errors,
         "skip_log": skip_log,
         "stop_reason": stop_reason[0] if stop_reason else None,
-        "cost_summary": extract.session_cost_summary(),
+        "cost_summary": extract.session_cost_summary(),  # this instance's own calls only
+        "cumulative_spent_usd": cumulative_spent,  # across every process instance/restart
+        "cumulative_spend_unknown_for_some": cumulative_unknown,
+        "cumulative_done": cumulative_done,
         "results": attempted,
     }
 

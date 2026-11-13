@@ -92,37 +92,85 @@ def isolate_session_calls():
     extract._rate_limit_events.clear()
 
 
-def test_spend_cap_hit_is_false_with_no_calls_made():
+def _write_done_result(out_dir, cik, accession, cost_usd):
+    path = out_dir / f"{cik}_{accession.replace('-', '')}.json"
+    path.write_text(json.dumps({"status": "done", "cost_usd": cost_usd, "row": {"target_cik": cik}}))
+
+
+# spend_cap_hit reads cumulative spend from every result file on disk,
+# never extract.session_cost_summary() -- that resets to zero on every
+# process restart (see cumulative_spend_from_disk's own docstring for
+# why: a watchdog-restarted process would otherwise silently forget
+# everything spent before the restart). BULK_OUTPUT_DIR is monkeypatched
+# to an empty tmp_path in every test below so these never see the real
+# bulk run's actual result files sitting in the real data directory.
+
+
+def test_spend_cap_hit_is_false_with_no_calls_made(tmp_path, monkeypatch):
+    monkeypatch.setattr(bulk_run, "BULK_OUTPUT_DIR", tmp_path)
     hit, reason = bulk_run.spend_cap_hit(260.0, 1.0)
     assert hit is False
     assert reason == ""
 
 
-def test_spend_cap_hit_true_once_total_crosses_the_cap():
-    extract._session_calls.append(
-        {"provider": "vertex", "model": "gemini-3.6-flash", "mode": "live", "prompt_tokens": 0, "output_tokens": 0, "thinking_tokens": 0, "cost_usd": 300.0}
-    )
+def test_spend_cap_hit_true_once_total_crosses_the_cap(tmp_path, monkeypatch):
+    monkeypatch.setattr(bulk_run, "BULK_OUTPUT_DIR", tmp_path)
+    _write_done_result(tmp_path, "123", "0001-23-000001", 300.0)
     hit, reason = bulk_run.spend_cap_hit(260.0, 1.0)
     assert hit is True
     assert "cap" in reason
 
 
-def test_spend_cap_hit_applies_the_calibration_multiplier():
-    extract._session_calls.append(
-        {"provider": "vertex", "model": "gemini-3.6-flash", "mode": "live", "prompt_tokens": 0, "output_tokens": 0, "thinking_tokens": 0, "cost_usd": 200.0}
-    )
+def test_spend_cap_hit_sums_across_multiple_result_files(tmp_path, monkeypatch):
+    # The real-world case this exists for: several restarts, each
+    # writing its own batch of result files, must still sum to the true
+    # total rather than only the latest instance's own spend.
+    monkeypatch.setattr(bulk_run, "BULK_OUTPUT_DIR", tmp_path)
+    _write_done_result(tmp_path, "123", "0001-23-000001", 100.0)
+    _write_done_result(tmp_path, "456", "0001-23-000002", 100.0)
+    _write_done_result(tmp_path, "789", "0001-23-000003", 100.0)
+    hit, reason = bulk_run.spend_cap_hit(260.0, 1.0)
+    assert hit is True
+    assert "300.00" in reason
+
+
+def test_spend_cap_hit_ignores_non_done_results(tmp_path, monkeypatch):
+    monkeypatch.setattr(bulk_run, "BULK_OUTPUT_DIR", tmp_path)
+    _write_done_result(tmp_path, "123", "0001-23-000001", 100.0)
+    skipped_path = tmp_path / "999_000199923000099.json"
+    skipped_path.write_text(json.dumps({"status": "skipped", "cost_usd": 0.0, "row": {}}))
+    hit, reason = bulk_run.spend_cap_hit(260.0, 1.0)
+    assert hit is False
+
+
+def test_spend_cap_hit_applies_the_calibration_multiplier(tmp_path, monkeypatch):
+    monkeypatch.setattr(bulk_run, "BULK_OUTPUT_DIR", tmp_path)
+    _write_done_result(tmp_path, "123", "0001-23-000001", 200.0)
     # 200 * 1.0 is under a 260 cap, but 200 * 1.5 = 300 is over.
     assert bulk_run.spend_cap_hit(260.0, 1.0)[0] is False
     assert bulk_run.spend_cap_hit(260.0, 1.5)[0] is True
 
 
-def test_spend_cap_hit_treats_unknown_pricing_as_a_hard_stop():
-    extract._session_calls.append(
-        {"provider": "vertex", "model": "some-future-model", "mode": "live", "prompt_tokens": 0, "output_tokens": 0, "thinking_tokens": 0, "cost_usd": None}
-    )
+def test_spend_cap_hit_treats_unknown_pricing_as_a_hard_stop(tmp_path, monkeypatch):
+    monkeypatch.setattr(bulk_run, "BULK_OUTPUT_DIR", tmp_path)
+    _write_done_result(tmp_path, "123", "0001-23-000001", None)
     hit, reason = bulk_run.spend_cap_hit(260.0, 1.0)
     assert hit is True
     assert "unknown" in reason.lower()
+
+
+def test_cumulative_spend_from_disk_survives_a_simulated_restart(tmp_path, monkeypatch):
+    # Simulates exactly the watchdog scenario: instance 1 writes some
+    # results and "spends" via the in-process tracker, then "restarts"
+    # (reset_session_calls, as run_bulk_live does on every launch).
+    # Cumulative spend must still reflect instance 1's results.
+    monkeypatch.setattr(bulk_run, "BULK_OUTPUT_DIR", tmp_path)
+    _write_done_result(tmp_path, "123", "0001-23-000001", 50.0)
+    extract.reset_session_calls()  # the restart
+    total, unknown, n_done = bulk_run.cumulative_spend_from_disk()
+    assert total == pytest.approx(50.0)
+    assert unknown is False
+    assert n_done == 1
 
 
 def test_deadline_hit_false_when_no_deadline_set():
