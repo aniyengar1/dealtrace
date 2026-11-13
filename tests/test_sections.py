@@ -375,6 +375,69 @@ def test_management_projections_patterns_match_each_known_variant(heading_text):
     assert any(p.match(heading_text) for p in patterns), heading_text
 
 
+@pytest.mark.parametrize(
+    "heading_text",
+    [
+        "Background of the Mergers",
+        "Background for the Merger",
+        "Background of the Transaction",
+        "Background of the Transactions",
+        "Background to the Transaction",
+        "Background of the Acquisition",
+        "Background of the Business Combination",
+        "Background to the Business Combination",
+        "Background of the Sale",
+        "Background of the Asset Sale",
+        "Background of the Plan of Liquidation",
+    ],
+)
+def test_background_of_the_merger_patterns_match_each_known_variant(heading_text):
+    # Found diagnosing a 40-DEFM14A sample of section-not-found candidates
+    # from the EDGAR discovery scan -- "Background of the Mergers"
+    # (plural) alone covered 16/40 on its own.
+    patterns = [re.compile(p, re.IGNORECASE) for p in SECTION_SPECS["background_of_the_merger"]]
+    assert any(p.match(heading_text) for p in patterns), heading_text
+
+
+def test_background_of_the_merger_patterns_do_not_match_a_bare_background():
+    # Deliberately NOT a supported variant -- a bare "Background"/
+    # "BACKGROUND" is too generic (real filings also use it for a
+    # director's bio section, an ESPP section, or a bare TOC page-number
+    # artifact like "Background 1"); adding it would trade these new
+    # true positives for new false positives elsewhere.
+    patterns = [re.compile(p, re.IGNORECASE) for p in SECTION_SPECS["background_of_the_merger"]]
+    for heading_text in ["Background", "BACKGROUND", "Background 1", "Board Skills, Experience and Background"]:
+        assert not any(p.match(heading_text) for p in patterns), heading_text
+
+
+def test_known_standard_heading_recognizes_an_unstyled_new_variant_as_a_candidate(low_fallback_prose_threshold):
+    # Regression guard for a second, separate bug these variants also
+    # exposed: SECTION_SPECS matching a heading's TEXT is not enough on
+    # its own -- the fallback parser only looks at paragraphs its OWN
+    # candidate detector (_looks_like_heading_candidate) already flagged,
+    # and that falls through to _KNOWN_STANDARD_HEADING_RE whenever a
+    # heading isn't bold/underlined/all-caps (a real, unstyled-heading
+    # filing in the wild: Criteo's "Background for the Merger"). Without
+    # also adding the new phrases there, an unstyled instance of any of
+    # these headings would never even become a heading candidate,
+    # regardless of how complete SECTION_SPECS is.
+    html = """
+    <html><body>
+    <p>Background for the Merger</p>
+    <p>On January 1, 2022, the parties began discussing a potential transaction and continued
+    negotiating the terms of a potential transaction over several additional weeks, exchanging
+    drafts of the merger agreement and related disclosure schedules in the process.</p>
+    <p>Recommendation of the Board of Directors and Reasons for the Merger</p>
+    <p>The Board of Directors recommends that stockholders vote in favor of the merger.</p>
+    </body></html>
+    """
+    sections = extract_sections(html)
+    assert "background_of_the_merger" in sections
+    texts = " ".join(p["text"] for p in sections["background_of_the_merger"]["paragraphs"])
+    assert "negotiating the terms" in texts
+    assert "recommends that stockholders" not in texts
+
+
 def test_management_projections_patterns_do_not_match_unrelated_headings():
     patterns = [re.compile(p, re.IGNORECASE) for p in SECTION_SPECS["management_projections"]]
     for heading_text in ["Background of the Merger", "Opinion of Qatalyst Partners", "Regulatory Approvals"]:
