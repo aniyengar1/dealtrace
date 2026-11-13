@@ -26,6 +26,8 @@ import os
 import re
 import threading
 import time
+from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import TimeoutError as FutureTimeoutError
 from dataclasses import dataclass, field
 from datetime import date, datetime
 from pathlib import Path
@@ -588,6 +590,29 @@ def _save_cache(key: str, item: dict, usage: dict) -> None:
     _cache_path(key).write_text(json.dumps({"item": item, "usage": usage}, indent=2))
 
 
+# A generate_content call can hang indefinitely with zero CPU and no
+# error -- found live during the bulk run's first night (a worker sat at
+# 0% CPU for 2.5+ hours, no exception, no log line, no new result file).
+# Same root cause already diagnosed once in this codebase for EDGAR
+# fetches (src/discover.py's _get_with_deadline): a slow/stalled network
+# read can sit well past any sane call duration without the SDK's own
+# HTTP client ever raising. Wrapped in a thread so a hung call can be
+# abandoned (not killed -- Python can't forcibly stop a blocked thread)
+# and retried instead of stalling the whole bulk run. A generous pool
+# means a handful of permanently-abandoned threads from past hangs can't
+# exhaust it and start blocking fresh calls behind them.
+_CALL_DEADLINE_SECONDS = 180.0
+_call_executor = ThreadPoolExecutor(max_workers=16)
+
+
+def _generate_content_with_deadline(client, model: str, prompt: str, config, max_seconds: float = _CALL_DEADLINE_SECONDS):
+    future = _call_executor.submit(client.models.generate_content, model=model, contents=prompt, config=config)
+    try:
+        return future.result(timeout=max_seconds)
+    except FutureTimeoutError as exc:
+        raise TimeoutError(f"generate_content exceeded {max_seconds:.0f}s wall-clock deadline") from exc
+
+
 def _call_gemini(
     prompt: str, schema: type[BaseModel], model: str, thinking_level: Optional[str] = None
 ) -> tuple[dict, Usage]:
@@ -620,10 +645,8 @@ def _call_gemini(
     last_exc: Exception | None = None
     for attempt in range(MAX_TRANSIENT_RETRIES):
         try:
-            response = client.models.generate_content(
-                model=model,
-                contents=prompt,
-                config=types.GenerateContentConfig(**config_kwargs),
+            response = _generate_content_with_deadline(
+                client, model, prompt, types.GenerateContentConfig(**config_kwargs)
             )
             # The free-tier daily-quota tracker is an aistudio-only concept
             # (Vertex is billed, not quota-capped the same way) -- printing
@@ -699,6 +722,18 @@ def _call_gemini(
                 time.sleep(delay)
                 continue
             raise
+        except TimeoutError as exc:
+            # The hung call itself is abandoned, not cancelled (Python
+            # can't forcibly stop it) -- if it eventually does complete,
+            # its result is simply discarded.
+            last_exc = exc
+            delay = min(RATE_LIMIT_BACKOFF_BASE**attempt, RATE_LIMIT_BACKOFF_CAP)
+            print(
+                f"    {exc} from Gemini, retrying in {delay:.0f}s "
+                f"(attempt {attempt + 1}/{MAX_TRANSIENT_RETRIES})"
+            )
+            time.sleep(delay)
+            continue
 
     raise ExtractionError(
         f"Gemini call failed after {MAX_TRANSIENT_RETRIES} transient-error retries"

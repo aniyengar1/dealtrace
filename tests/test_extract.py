@@ -146,6 +146,40 @@ def test_server_overload_is_retried_then_succeeds(monkeypatch):
     assert client.models.calls == 3
 
 
+class _Hang:
+    """A FakeModels response item that blocks past the deadline -- real
+    case: a Vertex call sat at 0% CPU for 2.5+ hours with no exception."""
+
+    def __init__(self, seconds):
+        self.seconds = seconds
+
+
+class FakeModelsWithHangs(FakeModels):
+    def generate_content(self, **kwargs):
+        self.calls += 1
+        item = self._responses.pop(0)
+        if isinstance(item, _Hang):
+            import time as _time
+
+            _time.sleep(item.seconds)
+            return FakeResponse()
+        if isinstance(item, Exception):
+            raise item
+        return item
+
+
+def test_hung_call_times_out_and_is_retried(monkeypatch):
+    monkeypatch.setattr(extract, "_CALL_DEADLINE_SECONDS", 0.05)
+    client = FakeClient([_Hang(10.0), FakeResponse()])
+    client.models = FakeModelsWithHangs([_Hang(10.0), FakeResponse()])
+    monkeypatch.setattr(extract, "_get_client", lambda: client)
+
+    item, usage = _call_gemini("prompt", BackgroundExtraction, "fake-model")
+
+    assert item == {}
+    assert usage.calls == 1
+
+
 def test_transient_errors_exhaust_retry_budget(monkeypatch):
     client = FakeClient([_server_error(503)] * extract.MAX_TRANSIENT_RETRIES)
     monkeypatch.setattr(extract, "_get_client", lambda: client)
