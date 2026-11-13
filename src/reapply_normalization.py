@@ -20,14 +20,14 @@ import json
 import sys
 
 import psycopg
-from dotenv import load_dotenv
 
 from src import fetch, sanity
+from src.env import load_env
 from src.load_db import DATA_RUNS, connect, content_hash
 from src.run import DEALS
 from src.validate import normalize_defined_terms, normalize_party_roles
 
-load_dotenv()
+load_env()
 
 
 def _find_loaded_run(conn: psycopg.Connection, slug: str) -> tuple[str, str] | None:

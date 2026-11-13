@@ -12,9 +12,10 @@ import os
 from pathlib import Path
 
 import psycopg
-from dotenv import load_dotenv
 
-load_dotenv()
+from src.env import load_env
+
+load_env()
 
 MIGRATIONS_DIR = Path(__file__).resolve().parent / "migrations"
 

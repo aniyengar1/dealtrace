@@ -79,6 +79,16 @@ def no_sleep(monkeypatch):
     monkeypatch.setattr(extract.time, "sleep", lambda _seconds: None)
 
 
+@pytest.fixture(autouse=True)
+def isolate_session_calls():
+    # _call_gemini appends to the module-level session call log on every
+    # live call; reset it so one test's calls never leak into another's
+    # running-total assertions.
+    extract.reset_session_calls()
+    yield
+    extract.reset_session_calls()
+
+
 def test_is_daily_quota_exhausted_true_for_per_day_violation():
     exc = _quota_error(["GenerateRequestsPerDayPerProjectPerModel-FreeTier"])
     assert _is_daily_quota_exhausted(exc)
@@ -150,6 +160,144 @@ def test_non_retryable_client_error_raises_immediately(monkeypatch):
 
     with pytest.raises(errors.ClientError):
         _call_gemini("prompt", BackgroundExtraction, "fake-model")
+
+
+# --- Vertex provider / cost logging --------------------------------------
+
+
+def test_resolve_provider_defaults_to_aistudio(monkeypatch):
+    monkeypatch.delenv("GEMINI_PROVIDER", raising=False)
+    assert extract._resolve_provider() == "aistudio"
+
+
+def test_resolve_provider_reads_env(monkeypatch):
+    monkeypatch.setenv("GEMINI_PROVIDER", "vertex")
+    assert extract._resolve_provider() == "vertex"
+
+
+def test_compute_cost_is_zero_for_aistudio_regardless_of_model():
+    usage = extract.Usage(prompt_tokens=1_000_000, output_tokens=1_000_000)
+    assert extract._compute_cost_usd("aistudio", "gemini-3.5-flash", usage) == 0.0
+
+
+def test_compute_cost_for_a_known_vertex_model():
+    usage = extract.Usage(prompt_tokens=1_000_000, output_tokens=1_000_000)
+    cost = extract._compute_cost_usd("vertex", "gemini-3.5-flash", usage)
+    assert cost == pytest.approx(1.50 + 9.00)
+
+
+def test_compute_cost_for_a_known_vertex_model_scales_with_tokens():
+    usage = extract.Usage(prompt_tokens=500_000, output_tokens=0)
+    cost = extract._compute_cost_usd("vertex", "gemini-3.5-flash", usage)
+    assert cost == pytest.approx(0.75)
+
+
+def test_compute_cost_is_unknown_not_zero_for_an_unpriced_vertex_model():
+    usage = extract.Usage(prompt_tokens=1_000, output_tokens=1_000)
+    assert extract._compute_cost_usd("vertex", "some-future-model", usage) is None
+
+
+def test_compute_cost_bills_thinking_tokens_at_the_output_rate():
+    # Gemini 3.x's thinking models return reasoning tokens separately from
+    # candidates_token_count, but Google bills them as output tokens --
+    # a real call was observed with 5 candidates tokens and 299 thinking
+    # tokens, so missing this would undercount real cost by ~60x.
+    usage = extract.Usage(prompt_tokens=0, output_tokens=5, thinking_tokens=299)
+    cost = extract._compute_cost_usd("vertex", "gemini-3.5-flash", usage)
+    assert cost == pytest.approx((5 + 299) / 1_000_000 * 9.00)
+
+
+class FakeUsageMetadataWithThinking:
+    prompt_token_count = 56
+    candidates_token_count = 5
+    thoughts_token_count = 299
+    total_token_count = 360
+
+
+class FakeResponseWithThinking:
+    model_version = "fake-model-version"
+    usage_metadata = FakeUsageMetadataWithThinking()
+    text = "{}"
+
+
+def test_call_gemini_captures_and_bills_thinking_tokens(monkeypatch):
+    monkeypatch.setenv("GEMINI_PROVIDER", "vertex")
+    client = FakeClient([FakeResponseWithThinking()])
+    monkeypatch.setattr(extract, "_get_client", lambda: client)
+
+    _, usage = _call_gemini("prompt", BackgroundExtraction, "gemini-3.5-flash")
+
+    assert usage.thinking_tokens == 299
+    call = extract._session_calls[0]
+    assert call["thinking_tokens"] == 299
+    assert call["cost_usd"] == pytest.approx((56 / 1_000_000) * 1.50 + ((5 + 299) / 1_000_000) * 9.00)
+
+
+def test_call_gemini_on_vertex_logs_a_session_call_with_cost(monkeypatch):
+    monkeypatch.setenv("GEMINI_PROVIDER", "vertex")
+    client = FakeClient([FakeResponse()])
+    monkeypatch.setattr(extract, "_get_client", lambda: client)
+
+    _call_gemini("prompt", BackgroundExtraction, "gemini-3.5-flash")
+
+    assert len(extract._session_calls) == 1
+    call = extract._session_calls[0]
+    assert call["provider"] == "vertex"
+    assert call["model"] == "gemini-3.5-flash"
+    assert call["prompt_tokens"] == 10
+    assert call["output_tokens"] == 5
+    assert call["cost_usd"] == pytest.approx((10 / 1_000_000) * 1.50 + (5 / 1_000_000) * 9.00)
+
+
+def test_call_gemini_on_vertex_does_not_touch_the_aistudio_quota_file(monkeypatch, tmp_path):
+    monkeypatch.setenv("GEMINI_PROVIDER", "vertex")
+    quota_file = tmp_path / "quota_usage.json"
+    monkeypatch.setattr(extract, "QUOTA_FILE", quota_file)
+    client = FakeClient([FakeResponse()])
+    monkeypatch.setattr(extract, "_get_client", lambda: client)
+
+    _call_gemini("prompt", BackgroundExtraction, "gemini-3.5-flash")
+
+    assert not quota_file.exists()
+
+
+def test_session_cost_summary_aggregates_across_calls(monkeypatch):
+    monkeypatch.setenv("GEMINI_PROVIDER", "vertex")
+    client = FakeClient([FakeResponse(), FakeResponse()])
+    monkeypatch.setattr(extract, "_get_client", lambda: client)
+
+    _call_gemini("prompt", BackgroundExtraction, "gemini-3.5-flash")
+    _call_gemini("prompt", BackgroundExtraction, "gemini-3.5-flash")
+
+    summary = extract.session_cost_summary()
+    assert summary["total_calls"] == 2
+    assert summary["total_prompt_tokens"] == 20
+    assert summary["total_output_tokens"] == 10
+    assert summary["cost_unknown_for_some_calls"] is False
+    assert summary["total_cost_usd"] == pytest.approx(2 * ((10 / 1_000_000) * 1.50 + (5 / 1_000_000) * 9.00))
+
+
+def test_session_cost_summary_flags_unknown_pricing(monkeypatch):
+    monkeypatch.setenv("GEMINI_PROVIDER", "vertex")
+    client = FakeClient([FakeResponse()])
+    monkeypatch.setattr(extract, "_get_client", lambda: client)
+
+    _call_gemini("prompt", BackgroundExtraction, "some-future-model")
+
+    summary = extract.session_cost_summary()
+    assert summary["cost_unknown_for_some_calls"] is True
+    assert summary["total_cost_usd"] == 0  # unknown calls excluded, not treated as $0
+
+
+def test_reset_session_calls_clears_the_log(monkeypatch):
+    monkeypatch.setenv("GEMINI_PROVIDER", "vertex")
+    client = FakeClient([FakeResponse()])
+    monkeypatch.setattr(extract, "_get_client", lambda: client)
+    _call_gemini("prompt", BackgroundExtraction, "gemini-3.5-flash")
+
+    extract.reset_session_calls()
+
+    assert extract.session_cost_summary()["total_calls"] == 0
 
     assert client.models.calls == 1
 

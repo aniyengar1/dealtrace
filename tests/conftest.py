@@ -11,9 +11,10 @@ import os
 
 import psycopg
 import pytest
-from dotenv import load_dotenv
 
-load_dotenv()
+from src.env import load_env
+
+load_env()
 
 
 @pytest.fixture(scope="session", autouse=True)

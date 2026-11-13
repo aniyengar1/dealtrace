@@ -9,13 +9,12 @@ fetch -> sections -> extract -> validate, for the one deal in DEALS.
 import argparse
 import os
 
-from dotenv import load_dotenv
-
 from src import extract, fetch, sanity, sections, validate
+from src.env import load_env
 from src.extract import Usage
 from src.schemas import BackgroundExtraction, ValuationExtraction
 
-load_dotenv()
+load_env()
 
 DEALS = {
     "splunk": {

@@ -24,11 +24,11 @@ from pathlib import Path
 from typing import Optional
 
 import psycopg
-from dotenv import load_dotenv
 
+from src.env import load_env
 from src.run import DEALS
 
-load_dotenv()
+load_env()
 
 DATA_SECTIONS = Path(__file__).resolve().parent.parent / "data" / "sections"
 DATA_RUNS = Path(__file__).resolve().parent.parent / "data" / "output" / "runs"
