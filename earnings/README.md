@@ -422,3 +422,18 @@ The local `session3-lock-ready` tag points to
 read-only dry-run commands, tag-versus-HEAD regression results and next manual
 live windows are documented in [lock_ready/README.md](lock_ready/README.md).
 Session 3's prospective gate remains pending; a dry run is not a live lock.
+
+## Final bounded v2 rule repair
+
+V1 and its original failed-gate scores remain preserved. The former holdout is
+now diagnostic data. V2's once-evaluated reserved 2023 releases produced
+**100% strict precision and 90% recall (18/18 emitted, 20 gold)**. This meets the
+point-estimate thresholds on a small familiar-issuer sample; it does not establish
+a general 98% precision rate. Two annual-status abstentions remain, and the old
+diagnostic subset's recall is 86.84%. No candidates were promoted, no LLM calls
+were made, and Session 5 remains blocked for review.
+
+See [v2 methods and immutable checkpoints](extraction/v2/README.md) and
+[the repair evidence report](reports/session4_repair_review_2026-11-13.md).
+Session 3 code/data/schema and the tag remain unchanged; repeated fixed-input
+regressions and READ ONLY dry runs produced zero real locks.

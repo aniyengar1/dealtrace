@@ -70,3 +70,34 @@ def test_ambiguous_multitarget_prose_does_not_emit_wrong_ranges():
 def test_no_date_is_not_replaced_by_filing_date():
     _,obs,blocked=extract(b'<p>For Q3 FY2027 the Company expects revenue of $100 million to $110 million.</p>',META)
     assert not obs and any(b['code']=='UNRESOLVED_ISSUANCE_DATE' for b in blocked)
+
+
+def test_repair_freeze_and_reserved_set_are_immutable_and_disjoint():
+    import json,hashlib
+    from pathlib import Path
+    from datetime import datetime
+    root=Path(__file__).resolve().parents[2]/'earnings/extraction/v2'
+    frozen=json.loads((root/'rules_frozen_v2.json').read_text())
+    for name,expected in frozen['files'].items():assert hashlib.sha256((root/name).read_bytes()).hexdigest()==expected
+    assert hashlib.sha256((root/'reservation.json').read_bytes()).hexdigest()==frozen['reservation_sha256']
+    gold=json.loads((root/'fresh_gold.json').read_text());old=json.loads((root.parent/'gold_v1.json').read_text())
+    assert datetime.fromisoformat(frozen['frozen_at'])<datetime.fromisoformat(gold['curated_at'])
+    assert hashlib.sha256((root/'fresh_gold.json').read_bytes()).hexdigest()==(root/'fresh_gold.sha256').read_text().strip()
+    old_targets={(r['company'],r['metric'],r['start'],r['end']) for r in old['records']}
+    assert not any((r['company'],r['metric'],r['start'],r['end']) in old_targets for r in gold['records'])
+    old_accessions={r['accession'] for r in old['records']}
+    assert not any(d['accession'] in old_accessions for d in gold['evaluation_documents']+gold['context_documents'])
+    assert len(gold['records'])==20 and len(gold['evaluation_documents'])==10
+
+
+def test_fresh_scores_count_abstentions_as_misses_not_invented_records():
+    import json
+    from pathlib import Path
+    root=Path(__file__).resolve().parents[2]
+    result=json.loads((root/'earnings/validation/session4_repair_fresh_once.json').read_text())
+    assert result['strict_record']['gold']==20 and result['strict_record']['predicted']==18
+    assert result['strict_record']['true_positive']==18 and result['strict_record']['false_negative']==2
+    assert D(result['strict_record']['precision'])==1 and D(result['strict_record']['recall'])==D('.9')
+    assert result['abstention_counts']['ANNUAL_STATUS_HISTORY_MISSING']==2
+    assert {e['company'] for e in result['errors']}=={'ADBE','LULU'}
+    assert all(e['type']=='miss' for e in result['errors'])
