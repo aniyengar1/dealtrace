@@ -1,5 +1,6 @@
-"""Headline stats across the loaded bulk deals (deals.slug LIKE
-'bulk_%'), computed directly from Postgres after src.load_bulk has run.
+"""Headline stats across canonical deals (deals.is_canonical, after
+src.dedup_deals has run -- both curated and bulk-discovered rows,
+whichever one is each transaction's canonical representative).
 
     python -m src.bulk_stats
 
@@ -9,14 +10,17 @@ and accepted-else-last-dated, daysFirstContactToSigning via
 first_contact-else-earliest-date to latest signing) rather than
 inventing new definitions, except where this task's own spec is
 explicitly narrower (percent-increase is restricted to cash deals with
-both prices, which dealSummary.ts's pctChange does not do).
+both prices, which dealSummary.ts's pctChange does not do) or adds
+data-quality filtering dealSummary.ts doesn't need (that code runs over
+hand-curated, reviewed deals; this runs over ~1000 unreviewed
+extractions, where a stray near-zero first price or a misdated event
+can produce a nonsense outlier -- see QUALITY_FLAGS below).
 
 Target-side placeholder terms ("the Company", "Target", "Board", etc.)
 are resolved to each deal's own target name before any proposer/
-recipient comparison -- bulk extraction skips the normalization pass
-that the curated-deal pipeline runs, so literal placeholders would
-otherwise make every deal's "first bidder" or "eventual acquirer"
-compare equal to each other instead of to the target.
+recipient comparison via src.entity_match.is_same_entity, not exact
+string equality -- extracted text uses informal short names ("Knoll")
+that never exactly match EDGAR's raw legal name ("KNOLL INC").
 """
 
 import json
@@ -27,32 +31,33 @@ from typing import Optional
 import psycopg
 
 from src import validate
+from src.entity_match import is_same_entity
 from src.env import load_env
 from src.load_db import connect
 
 load_env()
 
-# Event types counted as evidence a party was contacted/approached, even
-# if it never went on to submit a priced proposal (e.g. it signed an NDA
-# and walked away, or only ever appears in a "discussion" narrative).
 CONTACT_EVENT_TYPES = {"first_contact", "nda", "discussion"}
-
 N_OUTLIERS = 10
+
+# Data-quality thresholds for the two stats most exposed to a single bad
+# extracted number (a near-zero first price, or a misdated event).
+# Excluded deals are listed by reason, never silently dropped.
+MIN_FIRST_PRICE_USD = 0.10
+MIN_FIRST_PRICE_PCT_OF_FINAL = 0.05
+MAX_ABS_PCT_CHANGE = 300.0
+MAX_DAYS_FOR_REVIEW = 2000
 
 
 def _resolve_target(name: Optional[str], target: str) -> Optional[str]:
-    if name and name.strip().lower() in validate._TARGET_DEFINED_TERMS:
+    if name and (name.strip().lower() in validate._TARGET_DEFINED_TERMS or is_same_entity(name, target)):
         return target
     return name
 
 
-def _fetch_bulk_deals(conn: psycopg.Connection) -> list[dict]:
+def _fetch_canonical_deals(conn: psycopg.Connection) -> list[dict]:
     rows = conn.execute(
-        """
-        SELECT d.id, d.slug, d.deal_name, d.target, d.acquirer
-        FROM deals d
-        WHERE d.slug LIKE 'bulk_%'
-        """
+        "SELECT d.id, d.slug, d.deal_name, d.target, d.acquirer FROM deals d WHERE d.is_canonical"
     ).fetchall()
     deals = []
     for deal_id, slug, deal_name, target, acquirer in rows:
@@ -153,7 +158,7 @@ def stat_parties_contacted(deals: list[dict]) -> dict:
         values.append(len(contacted))
     return {
         "definition": "Number of distinct non-target parties named in any first_contact, nda, or discussion event for the deal.",
-        **{"n": len(values)},
+        "n": len(values),
         **_distribution(values),
         "exclusions": "none -- 0 counted for deals with no such event",
     }
@@ -184,29 +189,45 @@ def stat_n_proposals(deals: list[dict]) -> dict:
 
 def stat_pct_increase_cash(deals: list[dict]) -> dict:
     values = []
-    excluded = {"not_cash_or_no_final": 0, "missing_first_price": 0, "missing_final_price": 0, "fewer_than_2_dated_proposals": 0}
+    excluded_counts = {
+        "not_cash_or_no_final": 0, "missing_first_price": 0, "missing_final_price": 0,
+        "fewer_than_2_dated_proposals": 0, "first_price_below_10_cents": 0,
+        "first_price_below_5pct_of_final": 0, "abs_change_over_300pct": 0,
+    }
+    excluded_deals = []
     for d in deals:
         dated = _dated_proposals(d["proposals"])
         if len(dated) < 2:
-            excluded["fewer_than_2_dated_proposals"] += 1
+            excluded_counts["fewer_than_2_dated_proposals"] += 1
             continue
         final = _final_entry(dated)
         if final is None or final["consideration_type"] != "cash":
-            excluded["not_cash_or_no_final"] += 1
+            excluded_counts["not_cash_or_no_final"] += 1
             continue
         first = dated[0]
         first_price = _price(first)
         final_price = _price(final)
         if first_price is None:
-            excluded["missing_first_price"] += 1
+            excluded_counts["missing_first_price"] += 1
             continue
         if final_price is None:
-            excluded["missing_final_price"] += 1
+            excluded_counts["missing_final_price"] += 1
             continue
-        if first_price == 0:
-            excluded["missing_first_price"] += 1
+        if first_price == 0 or first_price < MIN_FIRST_PRICE_USD:
+            excluded_counts["first_price_below_10_cents"] += 1
+            excluded_deals.append({"deal_name": d["deal_name"], "first_price": first_price, "final_price": final_price, "reason": "first_price_below_10_cents"})
             continue
-        values.append((d["deal_name"], (final_price - first_price) / first_price * 100))
+        if final_price != 0 and first_price < MIN_FIRST_PRICE_PCT_OF_FINAL * abs(final_price):
+            excluded_counts["first_price_below_5pct_of_final"] += 1
+            excluded_deals.append({"deal_name": d["deal_name"], "first_price": first_price, "final_price": final_price, "reason": "first_price_below_5pct_of_final"})
+            continue
+        pct = (final_price - first_price) / first_price * 100
+        if abs(pct) > MAX_ABS_PCT_CHANGE:
+            excluded_counts["abs_change_over_300pct"] += 1
+            excluded_deals.append({"deal_name": d["deal_name"], "first_price": first_price, "final_price": final_price, "pct_increase": pct, "reason": "abs_change_over_300pct"})
+            continue
+        values.append((d["deal_name"], pct))
+
     pct_values = [v for _, v in values]
     top = sorted(values, key=lambda t: t[1], reverse=True)[:N_OUTLIERS]
     return {
@@ -214,7 +235,8 @@ def stat_pct_increase_cash(deals: list[dict]) -> dict:
         "n": len(pct_values),
         **_distribution(pct_values),
         "top_outliers": [{"deal_name": name, "pct_increase": v} for name, v in top],
-        "exclusions": excluded,
+        "exclusions": excluded_counts,
+        "excluded_deals": excluded_deals,
     }
 
 
@@ -245,40 +267,57 @@ def stat_first_bidder_is_acquirer(deals: list[dict]) -> dict:
     }
 
 
+def _process_start_date(d: dict):
+    first_contact = sorted(
+        (e for e in d["events"] if e["event_type"] == "first_contact" and e["date_start"]),
+        key=lambda e: e["date_start"],
+    )
+    if first_contact:
+        return first_contact[0]["date_start"]
+    all_dates = sorted(
+        [e["date_start"] for e in d["events"] if e["date_start"]]
+        + [p["date_resolved"] for p in d["proposals"] if p["date_resolved"]]
+    )
+    return all_dates[0] if all_dates else None
+
+
+def _latest_signing_date(d: dict):
+    signings = sorted(
+        (e for e in d["events"] if e["event_type"] == "signing" and e["date_start"]),
+        key=lambda e: e["date_start"],
+    )
+    return signings[-1]["date_start"] if signings else None
+
+
+def _days_between(start, end) -> int:
+    if isinstance(start, str):
+        start = date.fromisoformat(start)
+    if isinstance(end, str):
+        end = date.fromisoformat(end)
+    return (end - start).days
+
+
 def stat_days_first_contact_to_signing(deals: list[dict]) -> dict:
     values = []
-    excluded = {"no_process_start_date": 0, "no_signing_event": 0}
+    excluded_counts = {"no_process_start_date": 0, "no_signing_event": 0, "negative_duration": 0}
+    flagged_for_review = []
     for d in deals:
-        events = d["events"]
-        first_contact = sorted(
-            (e for e in events if e["event_type"] == "first_contact" and e["date_start"]),
-            key=lambda e: e["date_start"],
-        )
-        process_start = first_contact[0]["date_start"] if first_contact else None
+        process_start = _process_start_date(d)
         if process_start is None:
-            all_dates = sorted(
-                [e["date_start"] for e in events if e["date_start"]]
-                + [p["date_resolved"] for p in d["proposals"] if p["date_resolved"]]
-            )
-            process_start = all_dates[0] if all_dates else None
-        if process_start is None:
-            excluded["no_process_start_date"] += 1
+            excluded_counts["no_process_start_date"] += 1
             continue
-
-        signings = sorted(
-            (e for e in events if e["event_type"] == "signing" and e["date_start"]),
-            key=lambda e: e["date_start"],
-        )
-        if not signings:
-            excluded["no_signing_event"] += 1
+        signing_date = _latest_signing_date(d)
+        if signing_date is None:
+            excluded_counts["no_signing_event"] += 1
             continue
-        signing_date = signings[-1]["date_start"]
-
-        if isinstance(process_start, date):
-            days = (signing_date - process_start).days
-        else:
-            days = (date.fromisoformat(signing_date) - date.fromisoformat(process_start)).days
+        days = _days_between(process_start, signing_date)
+        if days < 0:
+            excluded_counts["negative_duration"] += 1
+            continue
+        if days > MAX_DAYS_FOR_REVIEW:
+            flagged_for_review.append({"deal_name": d["deal_name"], "days": days})
         values.append((d["deal_name"], days))
+
     day_values = [v for _, v in values]
     top = sorted(values, key=lambda t: t[1], reverse=True)[:N_OUTLIERS]
     return {
@@ -286,21 +325,57 @@ def stat_days_first_contact_to_signing(deals: list[dict]) -> dict:
         "n": len(day_values),
         **_distribution(day_values),
         "top_outliers": [{"deal_name": name, "days": v} for name, v in top],
-        "exclusions": excluded,
+        "flagged_for_review_over_2000_days": flagged_for_review,
+        "exclusions": excluded_counts,
+    }
+
+
+def stat_days_first_proposal_to_signing(deals: list[dict]) -> dict:
+    values = []
+    excluded_counts = {"no_dated_proposal": 0, "no_signing_event": 0, "negative_duration": 0}
+    flagged_for_review = []
+    for d in deals:
+        dated = _dated_proposals(d["proposals"])
+        if not dated:
+            excluded_counts["no_dated_proposal"] += 1
+            continue
+        first_proposal_date = dated[0]["date_resolved"]
+        signing_date = _latest_signing_date(d)
+        if signing_date is None:
+            excluded_counts["no_signing_event"] += 1
+            continue
+        days = _days_between(first_proposal_date, signing_date)
+        if days < 0:
+            excluded_counts["negative_duration"] += 1
+            continue
+        if days > MAX_DAYS_FOR_REVIEW:
+            flagged_for_review.append({"deal_name": d["deal_name"], "days": days})
+        values.append((d["deal_name"], days))
+
+    day_values = [v for _, v in values]
+    top = sorted(values, key=lambda t: t[1], reverse=True)[:N_OUTLIERS]
+    return {
+        "definition": "Days from the deal's earliest dated proposal to its latest signing event -- a cleaner anchor than first_contact, which many deals never extract.",
+        "n": len(day_values),
+        **_distribution(day_values),
+        "top_outliers": [{"deal_name": name, "days": v} for name, v in top],
+        "flagged_for_review_over_2000_days": flagged_for_review,
+        "exclusions": excluded_counts,
     }
 
 
 def compute_all() -> dict:
     with connect() as conn:
-        deals = _fetch_bulk_deals(conn)
+        deals = _fetch_canonical_deals(conn)
     return {
-        "n_loaded_deals": len(deals),
+        "n_canonical_deals": len(deals),
         "parties_contacted": stat_parties_contacted(deals),
         "bidders_who_submitted_a_proposal": stat_n_bidders(deals),
         "proposals_per_deal": stat_n_proposals(deals),
         "pct_increase_cash_deals": stat_pct_increase_cash(deals),
         "pct_first_bidder_is_eventual_acquirer": stat_first_bidder_is_acquirer(deals),
         "days_first_contact_to_signing": stat_days_first_contact_to_signing(deals),
+        "days_first_proposal_to_signing": stat_days_first_proposal_to_signing(deals),
     }
 
 

@@ -23,6 +23,7 @@ from typing import Optional
 
 from src import sanity, sections, validate
 from src.bulk_run import BULK_OUTPUT_DIR, load_cached_html
+from src.entity_match import is_same_entity
 
 
 def _resolve_target_placeholder(name: Optional[str], target_name: str) -> Optional[str]:
@@ -30,13 +31,18 @@ def _resolve_target_placeholder(name: Optional[str], target_name: str) -> Option
     entirely (that's a later-pass step, not extraction) -- but without
     it, "Company"/"Board"/etc. placeholders are still literal, which
     would make guess_acquirer below pick "Company" as the most common
-    non-target name instead of the real acquirer. Resolves only the
-    TARGET side (the one name we actually know here); acquirer-side
+    non-target name instead of the real acquirer. Resolves the TARGET
+    side (the one name we actually know here) via both its defined-term
+    placeholders AND is_same_entity, since an informal short name
+    ("Knoll") used as proposer/recipient text doesn't equal the raw
+    EDGAR legal name ("KNOLL INC") under exact string comparison --
+    that near-miss previously let the target's own short name slip
+    through uncounted as a candidate "acquirer". Acquirer-side
     placeholders (Parent, Merger Sub, Buyer) are deliberately left
     as-is -- they're informative as "unresolved" rather than disappearing
     into a guessed value.
     """
-    if name and name.strip().lower() in validate._TARGET_DEFINED_TERMS:
+    if name and (name.strip().lower() in validate._TARGET_DEFINED_TERMS or is_same_entity(name, target_name)):
         return target_name
     return name
 
