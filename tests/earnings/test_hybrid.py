@@ -17,7 +17,7 @@ def no_network(monkeypatch):
 
 @pytest.fixture
 def c():
-    result=runner.configuration();result.update(reservation_policy='verified_bound_legacy_for_mock',billable_thinking_bound_verified=True,max_input_tokens_documented=10000,max_billable_output_tokens=8192)
+    result=runner.configuration();result.update(reservation_policy='verified_bound_legacy_for_mock',billable_thinking_bound_verified=True,max_input_tokens_documented=10000,max_billable_output_tokens=8192,max_attempts_per_item=3)
     return result # synthetic verified bounds for tests only; real config false
 
 STAMP=datetime(2026,11,13,12,tzinfo=timezone.utc)
@@ -260,8 +260,8 @@ def test_unexpected_tool_usage_halts_and_keeps_reservation(tmp_path,c):
     l.finish(aid,{'prompt_token_count':100,'candidates_token_count':10,'thoughts_token_count':20,'tool_use_prompt_token_count':5,'total_token_count':135})
     assert l.summary()['halted'] and l.summary()['records'][0]['accounted_nano'] is None
 
-def test_owner_estimate_uses_twice_documented_max_and_minimum_one_dollar(tmp_path):
-    c=runner.configuration();l=ledger.Ledger(tmp_path/'l')
+def test_original_owner_estimate_preserved_for_existing_reservation(tmp_path):
+    c=read(ROOT/'archive/probe_v2/config.json');l=ledger.Ledger(tmp_path/'l')
     aid=l.reserve('x',c,{'counted_input_tokens':1000,'is_probe':True},STAMP)
     row=l.summary()['records'][0]
     assert row['reserved_nano']>=1_000_000_000
@@ -306,9 +306,9 @@ def test_sdk_count_request_includes_instructions_schema_and_supplement(c,monkeyp
     assert r.total_tokens==1234 and sent[0]['generationConfig']['responseSchema'] and sent[0]['systemInstruction']
     assert 'SCHEMA' in json.dumps(sent[0]['contents'])
 
-def test_missing_thinking_counter_stops_probe_and_retains_full_reservation(tmp_path):
-    c=runner.configuration();l=ledger.Ledger(tmp_path/'l')
-    aid=l.reserve('probe',c,{'counted_input_tokens':89940,'is_probe':True},STAMP)
+def test_original_missing_thinking_counter_preserves_full_reservation(tmp_path):
+    c=read(ROOT/'archive/probe_v2/config.json');l=ledger.Ledger(tmp_path/'l')
+    aid=l.reserve('probe',c,{'counted_input_tokens':89940,'is_probe':True,'prompt_version':c['prompt_version']},STAMP)
     usage={'prompt_token_count':89449,'candidates_token_count':1901,
            'thoughts_token_count':None,'total_token_count':91350}
     l.finish(aid,usage)
@@ -374,7 +374,7 @@ def test_original_wire_usage_presence_through_supported_sdk_http_hook(c,monkeypa
     assert 'DO_NOT_LOG' not in json.dumps(capture.responses)
 
 def test_offline_correction_authorization_blocks_before_provider_count(monkeypatch):
-    c=runner.configuration();monkeypatch.setattr(runner,'check_prompt_freeze',lambda c:None)
+    c={**runner.configuration(),'live_authorization':'OFFLINE_CORRECTION_ONLY_NO_NEW_INFERENCE'};monkeypatch.setattr(runner,'check_prompt_freeze',lambda c:None)
     with pytest.raises(ledger.Gate,match='OFFLINE_CORRECTION_NO_NEW_INFERENCE'):runner.preflight(c)
 
 def test_compact_proposal_preserves_all_source_and_table_content():
@@ -387,3 +387,48 @@ def test_compact_proposal_preserves_all_source_and_table_content():
         assert (new['start'],new['end'])==(old['start'],old['end'])
         assert new['header_cells']==[[i,j] for i,row in enumerate(old['rows']) for j,c in enumerate(row) if c['tag']=='th']
     assert len(json.dumps(small))<len(json.dumps(doc))
+
+def test_revised_reservation_exact_formula_one_attempt_and_unknown_no_double_count(tmp_path):
+    c=runner.configuration();l=ledger.Ledger(tmp_path/'l')
+    a=l.reserve('new',c,{'counted_input_tokens':1000},STAMP)
+    assert l.summary()['records'][0]['reserved_nano']==ledger.cost(1000,8192*2)
+    l.finish(a,{'prompt_token_count':900,'candidates_token_count':100,'thoughts_token_count':None,'total_token_count':1000})
+    s=l.summary();assert s['known_accounted_usd']=='0' and s['total_held_usd']==ledger.usd(ledger.cost(1000,16384))
+    assert s['known_counter_subtotals_usd_not_extra_charges']==ledger.usd(ledger.cost(900,100))
+    with pytest.raises(ledger.Gate,match='RETRIES_EXHAUSTED'):l.reserve('new',c,{'counted_input_tokens':1000},STAMP)
+
+def test_known_subtotal_over_reservation_halts_even_without_thinking(tmp_path):
+    c=runner.configuration();l=ledger.Ledger(tmp_path/'l');a=l.reserve('new',c,{'counted_input_tokens':1000},STAMP)
+    l.finish(a,{'prompt_token_count':1000,'candidates_token_count':20000,'thoughts_token_count':None})
+    assert l.summary()['halted'] and l.summary()['records'][0]['held_nano']==ledger.cost(1000,20000)
+    assert l.summary()['records'][0]['accounted_nano'] is None
+
+def test_revised_diagnostic_gate_allows_quarantined_missing_usage_not_acceptance():
+    r={'result':{'status':'response','returned_model_version':'gemini-3.6-flash','accounted_nano':None,'validation':{'observations':[{'quarantined':True,'review_status':'human_review_pending','evidence_locations':[],'deterministic_errors':['MISSING_EXACT_MATCH']}]}}}
+    runner.diagnostic_gate(r)
+    r['result']['validation']['observations'][0]['quarantined']=False
+    with pytest.raises(ledger.Gate,match='QUARANTINE'):runner.diagnostic_gate(r)
+
+def test_revised_single_attempt_transport_failure_no_retry(tmp_path,monkeypatch):
+    c=runner.configuration();monkeypatch.setattr(runner,'DATA',tmp_path);monkeypatch.setattr(runner,'preflight',lambda c:None)
+    l=ledger.Ledger(tmp_path/'l');calls=[]
+    def fake(*args):calls.append(1);return {'status':'transport_error','http_code':503,'usage':None}
+    case=read(ROOT/'diagnostic_manifest.json')['cases'][1]
+    r=runner.process_case(case,c,l,send=fake,count_send=fake_count,sleep=lambda n:pytest.fail('No retry allowed'))
+    assert r['status']=='FAILED_SINGLE_ATTEMPT' and len(calls)==1 and l.summary()['attempts']==1
+
+def test_revised_missing_thinking_still_evaluates_quarantined_response(tmp_path,monkeypatch):
+    c=runner.configuration();monkeypatch.setattr(runner,'DATA',tmp_path);monkeypatch.setattr(runner,'preflight',lambda c:None)
+    l=ledger.Ledger(tmp_path/'l');case=read(ROOT/'diagnostic_manifest.json')['cases'][0]
+    def fake(*args):return {'status':'response','returned_model_version':c['model'],'usage':{'prompt_token_count':1000,'candidates_token_count':100,'thoughts_token_count':None,'total_token_count':1100},'text':'{"observations":[],"unresolved_sections":[]}','finish_reasons':['STOP']}
+    item=runner.process_case(case,c,l,send=fake,count_send=fake_count,is_probe=True)
+    runner.diagnostic_gate(item)
+    assert item['result']['accounted_nano'] is None and item['result']['validation']['observations']==[]
+    assert l.summary()['records'][0]['held_nano']==ledger.cost(1234,16384)
+
+def test_flagged_diagnostic_is_never_counted_as_accepted():
+    from earnings.hybrid.batch_review import disposition
+    r={'deterministic_errors':[],'review_flags':['SEMANTIC_HUMAN_REVIEW_REQUIRED'],'review_status':'human_review_pending'}
+    assert disposition(r)=='flagged'
+    r['deterministic_errors']=['UNRESOLVED_STATUS'];assert disposition(r)=='rejected'
+    with pytest.raises(ValueError):disposition({'deterministic_errors':[],'review_flags':[],'review_status':'human_review_approved'})

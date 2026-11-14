@@ -1,0 +1,28 @@
+{
+  "authorized_original_protected_files_changed": [
+    "earnings/live.py",
+    "earnings/predict.py"
+  ],
+  "batch_attempts": 10,
+  "batch_retries": 0,
+  "fresh_bodies_opened": false,
+  "fresh_inference": false,
+  "live_predictions_created": 0,
+  "original_empirical_module_unchanged": true,
+  "original_method_outputs_identical": true,
+  "original_probe_held_usd": "1.12",
+  "original_probe_response_unchanged": true,
+  "original_probe_row_and_prior_events_unchanged": true,
+  "other_protected_files_unchanged": 82,
+  "recorded_at": "2026-11-14T03:58:43.274558+00:00",
+  "tests": {
+    "passed": 498,
+    "skipped": 3,
+    "xfailed": 2
+  },
+  "two_method_checkpoint_critical_code_unchanged": true,
+  "two_method_tag_created_at": "2026-11-13T19:56:23-08:00",
+  "two_method_checkpoint_tag": "session3-two-method-lock-ready-20261113-r2",
+  "two_method_checkpoint_commit": "7dc952c635446bb4ed3a6717d58cb7dc003f62cb",
+  "owner_source_freshness_enforced_in_application_and_database": true
+}

@@ -1,0 +1,10 @@
+{
+  "prompt_version": "hybrid-diagnostic-v3-offline-evidence",
+  "execution_fingerprint": "50c0a360d7500425d1d3781397d1304577def4f3a91cb01a33dcfee42e6c02e9",
+  "frozen_at": "2026-11-13T22:17:12.401208+00:00",
+  "fresh_reservation_commit": "6e085a5",
+  "diagnostic_only": true,
+  "fresh_inference_forbidden": true,
+  "inference_authorized": false,
+  "policy": "Offline correction only. New evidence schema, deterministic location and wire metadata require explicit approval before any further count or inference; original probe preserved."
+}

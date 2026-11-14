@@ -16,13 +16,13 @@ PINNED={'provider':'google_vertex_ai','project':'just-rhythm-506202-j8','locatio
 def configuration():
     c=read(ROOT/'config.json')
     if any(c[k]!=v for k,v in PINNED.items()) or version('google-genai')!='2.34.0':raise Gate('PINNED_EXECUTION_CONFIG_MISMATCH')
-    limits={'temperature':0,'http_timeout_ms':300000,'wall_timeout_seconds':300,'sdk_attempts':1,'max_attempts_per_item':3,'max_concurrency':2,'max_input_tokens_documented':1048576,'ceiling_usd':'15.00','accounting_input_usd_per_million':'1.50','accounting_output_including_thinking_usd_per_million':'7.50','deadline':'2026-11-17T18:00:00-08:00'}
+    limits={'temperature':0,'http_timeout_ms':300000,'wall_timeout_seconds':300,'sdk_attempts':1,'max_attempts_per_item':1,'max_concurrency':2,'max_input_tokens_documented':1048576,'ceiling_usd':'15.00','accounting_input_usd_per_million':'1.50','accounting_output_including_thinking_usd_per_million':'7.50','deadline':'2026-11-17T18:00:00-08:00'}
     if any(c.get(k)!=v for k,v in limits.items()):raise Gate('PINNED_SAFETY_LIMIT_MISMATCH')
     return c
 
 def execution_fingerprint(c):
     # Provider is metadata, deliberately NOT a cache-key component.
-    files=['prompt.txt','schema.py','prepare.py','validation.py','evidence.py','wire.py','transport.py','diagnostic_manifest.json','fresh_manifest.json']
+    files=['prompt.txt','schema.py','prepare.py','context.py','runner.py','ledger.py','validation.py','evidence.py','wire.py','transport.py','diagnostic_manifest.json','fresh_manifest.json']
     return digest(json.dumps({'config':c,'files':{f:digest((ROOT/f).read_bytes()) for f in files},'schema':Extraction.model_json_schema(),'calendar_dependencies':{str(f):digest(f.read_bytes()) for f in [ROOT.parent/'pilot_s5/calendars.json',ROOT.parent/'pilot_s5/calendar.py',ROOT.parent/'extraction/calendars.json',ROOT.parent/'extraction/rules.py']}},sort_keys=True).encode())
 
 def check_prompt_freeze(c):
@@ -54,7 +54,7 @@ def price_gate(c,pricing,clock):
 def preflight(c,clock=None):
     clock=clock or datetime.now(timezone.utc);check_prompt_freeze(c)
     deadline=datetime.fromisoformat(c['deadline'])
-    if clock+timedelta(seconds=1811)>=deadline:raise Gate('DEADLINE_RETRY_ALLOWANCE')
+    if clock+timedelta(seconds=605)>=deadline:raise Gate('DEADLINE_RETRY_ALLOWANCE')
     authpath=ROOT/'inference_authorization.json'
     if not authpath.exists():raise Gate('NO_EXPLICIT_INFERENCE_AUTHORIZATION')
     auth=read(authpath)
@@ -62,7 +62,7 @@ def preflight(c,clock=None):
     stamp=datetime.fromisoformat(auth['recorded_at'])
     if stamp.tzinfo is None or stamp>clock:raise Gate('INVALID_AUTHORIZATION_TIMESTAMP')
     if c.get('live_authorization')!='OWNER_AUTHORIZED_CONCURRENT_DIAGNOSTICS':raise Gate('OFFLINE_CORRECTION_NO_NEW_INFERENCE')
-    if c.get('reservation_policy')!='owner_approved_conservative_estimate_not_provider_cap' or c.get('output_reservation_multiplier')!=2:raise Gate('UNAPPROVED_RESERVATION_POLICY')
+    if c.get('reservation_policy')!='owner_approved_requested_output_estimate_v4' or c.get('output_reservation_multiplier')!=2:raise Gate('UNAPPROVED_RESERVATION_POLICY')
     pricing=read(ROOT/'pricing_review.json');price_gate(c,pricing,clock)
     return auth,pricing
 
@@ -81,7 +81,8 @@ def process_case(case,c,ledger,*,send=dispatch,count_send=None,sleep=time.sleep,
     item=json.loads(raw);docs=item['documents']
     fresh={i['company'] for i in read(ROOT/'fresh_manifest.json')['issuers']}
     if case['company'] in fresh or any(d['company'] in fresh for d in docs):raise Gate('FRESH_INFERENCE_EMBARGO')
-    payload=json.dumps({'documents':docs},sort_keys=True,separators=(',',':'))
+    from .context import compact_document
+    payload=json.dumps({'documents':[compact_document(d) for d in docs]},sort_keys=True,separators=(',',':'))
     if len(payload.encode())>c['max_request_utf8_bytes']:return {'case_id':case['id'],'status':'INPUT_TOO_LARGE_NO_TRUNCATION','inference_performed':False}
     ih=digest(payload.encode());key=key_for(ih,c);cache=DATA/'responses';cache.mkdir(parents=True,exist_ok=True);path=cache/(key+'.json')
     with (cache/(key+'.lock')).open('a+') as lock:
@@ -91,11 +92,11 @@ def process_case(case,c,ledger,*,send=dispatch,count_send=None,sleep=time.sleep,
             with ledger.connect() as conn:ledger.event(conn,None,'cache_hit',{'cache_key':key,'provider':c['provider'],'inference_performed':False})
             return {'case_id':case['id'],'cache_status':'hit','result':cached['result'],'inference_performed':False}
         preflight(c)
-        if is_probe and any(json.loads(r['metadata']).get('is_probe') for r in ledger.summary()['records']):raise Gate('PROBE_ALREADY_ATTEMPTED_STOP')
-        for _ in range(1 if is_probe else 3):
+        if is_probe and any(json.loads(r['metadata']).get('is_probe') and json.loads(r['metadata']).get('prompt_version')==c['prompt_version'] for r in ledger.summary()['records']):raise Gate('PROBE_ALREADY_ATTEMPTED_STOP')
+        for _ in range(1 if is_probe else c['max_attempts_per_item']):
             preflight(c)
             with ledger.connect() as conn:prior_count=conn.execute('SELECT count(*) FROM attempts WHERE item=?',(key,)).fetchone()[0]
-            if prior_count>=(1 if is_probe else 3):raise Gate('RETRIES_EXHAUSTED')
+            if prior_count>=(1 if is_probe else c['max_attempts_per_item']):raise Gate('RETRIES_EXHAUSTED')
             count_id=uuid.uuid4().hex;counter=count_send or dispatch
             with ledger.connect() as conn:ledger.event(conn,None,'count_requested',{'case_id':case['id'],'count_id':count_id,'known_cost_usd':'0','pricing_source':'official Vertex CountTokens documentation','input_hash':ih})
             counted=counter({**c,'_operation':'count'},(ROOT/'prompt.txt').read_text(),payload,DATA/(count_id+'-count.json'))
@@ -125,15 +126,17 @@ def process_case(case,c,ledger,*,send=dispatch,count_send=None,sleep=time.sleep,
                 try:result['validation']=validate(json.loads(result.get('text') or ''),docs,calendar_for(case['company']))
                 except (ValueError,TypeError) as exc:result['validation']={'status':'INVALID_STRUCTURED_OUTPUT','error_class':type(exc).__name__,'quarantined':True}
                 cache_write(path,c,ih,result)
-                if row['accounted_nano'] is None:raise Gate('SUCCESS_RESPONSE_USAGE_UNKNOWN_OR_INCONSISTENT_STOP')
-                if row['accounted_nano']>500_000_000 or ledger.summary()['halted']:raise Gate('ATTEMPT_COST_OR_CONTROL_LIMIT_STOP')
-                if result['usage']['prompt_token_count']>tokens+c['input_reservation_margin_tokens']:raise Gate('PROVIDER_INPUT_COUNT_UNDERESTIMATE_STOP')
+                if row['accounted_nano'] is None and c['reservation_policy']!='owner_approved_requested_output_estimate_v4':raise Gate('SUCCESS_RESPONSE_USAGE_UNKNOWN_OR_INCONSISTENT_STOP')
+                if (row['accounted_nano'] is not None and row['accounted_nano']>500_000_000) or ledger.summary()['halted']:raise Gate('ATTEMPT_COST_OR_CONTROL_LIMIT_STOP')
+                if type((result.get('usage') or {}).get('prompt_token_count')) is int and result['usage']['prompt_token_count']>tokens+1024:raise Gate('PROVIDER_INPUT_COUNT_UNDERESTIMATE_STOP')
                 return {'case_id':case['id'],'cache_status':'miss','result':result,'inference_performed':True}
-            if is_probe:raise Gate('PROBE_FAILED_NO_RETRIES')
+            if is_probe and c['reservation_policy']!='owner_approved_requested_output_estimate_v4':raise Gate('PROBE_FAILED_NO_RETRIES')
             code=result.get('http_code')
             if code in (400,401,403,404):
                 with ledger.connect() as conn:conn.execute('INSERT INTO halt(reason) VALUES(?)',('MODEL_ACCESS_OR_CONFIGURATION_UNSUPPORTED',))
                 raise Gate('MODEL_ACCESS_OR_CONFIGURATION_UNSUPPORTED_NO_SUBSTITUTION')
+            if c['reservation_policy']=='owner_approved_requested_output_estimate_v4':
+                return {'case_id':case['id'],'status':'FAILED_SINGLE_ATTEMPT','http_code':code,'inference_performed':True,'last_attempt_id':aid}
             transient=code in (408,429,500,502,503,504) or result['status'] in ('timeout_unknown_usage','worker_failed_unknown_usage') or result.get('error_class') in ('TimeoutException','ReadTimeout','ConnectTimeout','ConnectError','TransportError')
             with ledger.connect() as conn:count=conn.execute('SELECT count(*) FROM attempts WHERE item=?',(key,)).fetchone()[0]
             if not transient or count>=3:
@@ -153,15 +156,35 @@ def probe_gate(item):
     if not result.get('finish_reasons') or any(x!='STOP' for x in result['finish_reasons']):raise Gate('PROBE_FINISH_REASON_GATE_FAILED')
 
 
+def diagnostic_gate(item):
+    r=item.get('result',{})
+    if r.get('status')!='response':raise Gate('REVISED_AGILENT_RESPONSE_GATE_FAILED')
+    returned=r.get('returned_model_version')
+    if not returned or returned!='gemini-3.6-flash' and not returned.startswith('gemini-3.6-flash-'):raise Gate('PROBE_MODEL_VERSION_GATE_FAILED')
+    validation=r.get('validation',{})
+    if not isinstance(validation,dict) or 'observations' not in validation and validation.get('status')!='INVALID_STRUCTURED_OUTPUT':raise Gate('MISSING_VALIDATION_RECORD_STOP')
+    if validation.get('status')=='INVALID_STRUCTURED_OUTPUT':return # Correctly quarantined, never accepted.
+    for record in validation.get('observations',[]):
+        if record.get('quarantined') is not True or record.get('review_status')!='human_review_pending':raise Gate('CANDIDATE_QUARANTINE_INVARIANT_FAILED')
+        for location in record.get('evidence_locations',[]):
+            if location['status']!='UNIQUE_EXACT_MATCH' and location['resolved'] is not None:raise Gate('BROKEN_EVIDENCE_LOCATION_LOGIC')
+
 def run(probe_only=False):
     c=configuration();ledger=Ledger(LEDGER);result=[];started=datetime.now(timezone.utc).isoformat();before=ledger.summary()['attempts'];stopped=None;passed=False
+    throttled=0
     try:
         check_prompt_freeze(c)
+        if len(read(ROOT/'diagnostic_manifest.json')['cases'])!=10:raise Gate('APPROVED_BATCH_SIZE_MISMATCH')
         for index,case in enumerate(read(ROOT/'diagnostic_manifest.json')['cases']):
             try:
                 item=process_case(case,c,ledger,is_probe=index==0);result.append(item)
+                if item.get('result',{}).get('status')=='response':diagnostic_gate(item)
+                if item.get('http_code')==429:
+                    throttled+=1;sleep_seconds=min(2**throttled,30);time.sleep(sleep_seconds)
+                    if throttled>=2:raise Gate('SUSTAINED_THROTTLING_PAUSED')
+                else:throttled=0
                 if index==0:
-                    probe_gate(item);passed=True
+                    diagnostic_gate(item);passed=True
                     write(DATA/'probe_control.json',{'passed':True,'recorded_at':datetime.now(timezone.utc).isoformat(),'result':item,'operational_evidence_only':True,'provider_billing_cap_guaranteed':False})
                     if probe_only:break
             except Gate as exc:
@@ -169,6 +192,7 @@ def run(probe_only=False):
                     result.append({'case_id':case['id'],'status':str(exc)});continue
                 raise
     except Gate as exc:stopped=str(exc)
+    except Exception as exc:stopped='SYSTEMIC_UNHANDLED:'+type(exc).__name__
     summary=ledger.summary();target=DATA/('run-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ')+'.json')
     write(target,{'stage':'diagnostic_only','probe_only':probe_only,'probe_passed':passed,'started_at':started,'finished_at':datetime.now(timezone.utc).isoformat(),'stopped_reason':stopped,'results':result,'cost_ledger':summary,'inference_attempts_this_run':summary['attempts']-before,'inference_performed':summary['attempts']>before,'human_review_complete':False,'ledger_ceiling_not_provider_billing_cap':True})
     return target
@@ -176,8 +200,8 @@ def run(probe_only=False):
 def dispatch_status(c,ledger):
     summary=ledger.summary()
     if summary['halted']:return 'EXPERIMENT_HALTED_REVIEW_REQUIRED'
-    probes=[r for r in summary['records'] if json.loads(r['metadata']).get('is_probe')]
-    if probes and probes[0]['accounted_nano'] is None:
+    probes=[r for r in summary['records'] if json.loads(r['metadata']).get('is_probe') and json.loads(r['metadata']).get('prompt_version')==c['prompt_version']]
+    if probes and probes[0]['accounted_nano'] is None and c['reservation_policy']!='owner_approved_requested_output_estimate_v4':
         return 'PROBE_USAGE_UNRESOLVED_STOP_REVIEW_REQUIRED'
     try:preflight(c)
     except (Gate,FileNotFoundError) as exc:return str(exc)

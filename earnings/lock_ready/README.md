@@ -40,3 +40,12 @@ When eligible, follow the source-refresh/review steps in `earnings/reports/sessi
 ```
 
 Session 4 candidates are intentionally not production inputs. The lock command rechecks the actual time and all rejection gates, generates a uniquely timed execution record and permits zero locks. A dry run does not satisfy the prospective gate. No merge, push, deployment or Session 5 work is authorized here.
+
+
+## November13 two-method checkpoint
+
+Use **session3-two-method-lock-ready-20261113-r2** at **7dc952c635446bb4ed3a6717d58cb7dc003f62cb** for the owner-authorized empirical+Laplace workflow. The earlier preparation tag at87f48d4 is preserved, superseded by r2's explicit owner-source freshness guard. Neither tag is a claim of completed owner human review. Original `session3-lock-ready` remains at94984fc3ce33c6e85a287738d3a617561cd0cefc. Frozen dependencies are in `two_method_requirements.lock`; the only added package is isolated pypdf7.0.1.
+
+The methods share guidance/evidence/history and a probability cutoff; actual creation times remain database-generated. Use `python -m earnings.predict --lock --methods both` manually when eligible after current source refresh and review. There are still **zero live predictions**. No scheduler exists.
+
+Owner PDFs are intake-ready, but CRWD/MDB files are pending. Approved owner evidence uses its actual reported retrieval time for the ten-minute source-freshness gate; a new local hash check cannot freshen it. A new genuine owner retrieval/review version or explicit policy change is needed if stale. The separate SEC+official-news already-public check is still mandatory and may block inaccessible inventories. Details: `earnings/OWNER_EVIDENCE.md` and `earnings/reports/two_method_readiness_2026-11-13.md`.

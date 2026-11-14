@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-11-13T20:30:07.503209+00:00",
+  "checked_at": "2026-11-14T03:17:58.817991+00:00",
   "count_tokens_charge_usd": "0",
   "count_tokens_source": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/capabilities/get-token-count",
   "counting_note": "Official documentation explicitly states no charge for CountTokens. Record every operation separately; generated-token billing settled from usage, not counts.",
@@ -8,5 +8,6 @@
   "model": "gemini-3.6-flash",
   "output_including_thinking_upper_usd_per_million": "7.50",
   "provider": "google_vertex_ai",
-  "source_url": "https://cloud.google.com/model-garden/pricing"
+  "source_url": "https://cloud.google.com/model-garden/pricing",
+  "pricing_note": "Rechecked official global on-demand pricing; approved upper accounting rates retained, no discounts/credits assumed. Output includes response and reasoning."
 }

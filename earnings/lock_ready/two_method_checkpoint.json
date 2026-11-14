@@ -1,0 +1,21 @@
+{
+  "recorded_at": "2026-11-14T03:58:43.272993+00:00",
+  "tag": "session3-two-method-lock-ready-20261113-r2",
+  "commit": "7dc952c635446bb4ed3a6717d58cb7dc003f62cb",
+  "owner_authorized": true,
+  "owner_review_status": "pending; agent-tested checkpoint, not completed human review",
+  "original_tag_commit": "94984fc3ce33c6e85a287738d3a617561cd0cefc",
+  "dependencies_sha256": "724e79d85f370754531901af2f5c65d07f4b98ef24acffb60e6dddfde0c6b527",
+  "dependency_lock": "earnings/lock_ready/two_method_requirements.lock",
+  "tests_at_freeze": {
+    "passed": 498,
+    "skipped": 3,
+    "xfailed": 2
+  },
+  "original_method_regression_identical": true,
+  "live_predictions": 0,
+  "frozen_before_deadline": "2026-11-16T21:00:00-08:00",
+  "tag_created_at": "2026-11-13T19:56:23-08:00",
+  "supersedes_initial_preparation_tag": "session3-two-method-lock-ready-20261113",
+  "owner_source_freshness": "Existing ten-minute retrieval freshness retained; local integrity check does not refresh retrieval time"
+}
