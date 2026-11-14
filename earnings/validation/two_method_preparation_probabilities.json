@@ -1,0 +1,967 @@
+{
+  "kind": "PREPARATION_NOT_LIVE_PREDICTIONS",
+  "as_of": "2026-11-13T18:58:31.859046-08:00",
+  "companies": [
+    {
+      "company": "PD",
+      "empirical": {
+        "method_version": "quarter-frequency-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 7,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 7,
+        "pool_companies": [
+          "PD"
+        ],
+        "counts": {
+          "below": 0,
+          "within": 3,
+          "above": 4
+        },
+        "probabilities": {
+          "below": "0E-24",
+          "within": "0.428571428571428571428571",
+          "above": "0.571428571428571428571429"
+        },
+        "historical_ids": [
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+          "84a9ba93-c747-587b-a061-81986f941573",
+          "99cd334a-3e30-5017-ada3-4e2ecd92f97d"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "none",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day"
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ]
+      },
+      "laplace": {
+        "method_version": "quarter-frequency-laplace-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 7,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 7,
+        "pool_companies": [
+          "PD"
+        ],
+        "counts": {
+          "below": 0,
+          "within": 3,
+          "above": 4
+        },
+        "probabilities": {
+          "below": "0.100000000000000000000000",
+          "within": "0.400000000000000000000000",
+          "above": "0.500000000000000000000000"
+        },
+        "historical_ids": [
+          "1e799aab-c7c7-535b-9cab-2a8fd81a06b0",
+          "2d97c7c9-c8ae-5325-9642-e71f1ec6df62",
+          "34e4020c-2ed2-5ffc-b592-6e4af2459376",
+          "5f1dacd5-1ff0-5dc8-a0dd-832f4aad4547",
+          "5f8f0df6-7ba9-5817-a0ed-79d0171b78ef",
+          "84a9ba93-c747-587b-a061-81986f941573",
+          "99cd334a-3e30-5017-ada3-4e2ecd92f97d"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "fixed Dirichlet(1,1,1) / add-one Laplace; no fitting",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "prior_counts": {
+            "below": 1,
+            "within": 1,
+            "above": 1
+          }
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim.",
+          "Fixed symmetric prior shrinks extreme sample rates; it is not calibrated or tuned to future outcomes."
+        ]
+      }
+    },
+    {
+      "company": "GTLB",
+      "empirical": {
+        "method_version": "quarter-frequency-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 7,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 7,
+        "pool_companies": [
+          "GTLB"
+        ],
+        "counts": {
+          "below": 0,
+          "within": 0,
+          "above": 7
+        },
+        "probabilities": {
+          "below": "0E-24",
+          "within": "0E-24",
+          "above": "1.000000000000000000000000"
+        },
+        "historical_ids": [
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "5be8a598-88a3-5c80-bc30-0ebe07725aed",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "74b4da63-77cc-515b-b0d5-1d68136bb529",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "dbf0f839-7e82-553b-b2c7-3689455d65b0"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "none",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day"
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ]
+      },
+      "laplace": {
+        "method_version": "quarter-frequency-laplace-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 7,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 7,
+        "pool_companies": [
+          "GTLB"
+        ],
+        "counts": {
+          "below": 0,
+          "within": 0,
+          "above": 7
+        },
+        "probabilities": {
+          "below": "0.100000000000000000000000",
+          "within": "0.100000000000000000000000",
+          "above": "0.800000000000000000000000"
+        },
+        "historical_ids": [
+          "27efaa4f-840e-5bbd-ad4e-777f8a453f10",
+          "5be8a598-88a3-5c80-bc30-0ebe07725aed",
+          "5d74f01c-2864-53e2-ab6b-d487154bcdea",
+          "74b4da63-77cc-515b-b0d5-1d68136bb529",
+          "9f2fc1c8-63a0-5a26-b1fc-e1b1c71de910",
+          "cffc5c61-8bfd-5403-8ce7-34930cb477f2",
+          "dbf0f839-7e82-553b-b2c7-3689455d65b0"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "fixed Dirichlet(1,1,1) / add-one Laplace; no fitting",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "prior_counts": {
+            "below": 1,
+            "within": 1,
+            "above": 1
+          }
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim.",
+          "Fixed symmetric prior shrinks extreme sample rates; it is not calibrated or tuned to future outcomes."
+        ]
+      }
+    },
+    {
+      "company": "CRM",
+      "empirical": {
+        "method_version": "quarter-frequency-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 8,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 8,
+        "pool_companies": [
+          "CRM"
+        ],
+        "counts": {
+          "below": 0,
+          "within": 4,
+          "above": 4
+        },
+        "probabilities": {
+          "below": "0E-24",
+          "within": "0.500000000000000000000000",
+          "above": "0.500000000000000000000000"
+        },
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "4f05be77-b1b5-58c4-98d1-e5de94c3deab",
+          "5efe5d24-e4b0-5e01-a6be-a1380b221681",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "da0c0e00-f25d-5903-bde5-70e92d18d5f1",
+          "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "none",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day"
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ]
+      },
+      "laplace": {
+        "method_version": "quarter-frequency-laplace-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 8,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 8,
+        "pool_companies": [
+          "CRM"
+        ],
+        "counts": {
+          "below": 0,
+          "within": 4,
+          "above": 4
+        },
+        "probabilities": {
+          "below": "0.090909090909090909090909",
+          "within": "0.454545454545454545454545",
+          "above": "0.454545454545454545454546"
+        },
+        "historical_ids": [
+          "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+          "2938884f-fc6a-596d-81fa-6c78134cbed0",
+          "4f05be77-b1b5-58c4-98d1-e5de94c3deab",
+          "5efe5d24-e4b0-5e01-a6be-a1380b221681",
+          "8a009902-473a-5cf2-a231-c05e6da94253",
+          "bf133a27-52cd-537a-ac37-e413923a952b",
+          "da0c0e00-f25d-5903-bde5-70e92d18d5f1",
+          "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "fixed Dirichlet(1,1,1) / add-one Laplace; no fitting",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "prior_counts": {
+            "below": 1,
+            "within": 1,
+            "above": 1
+          }
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim.",
+          "Fixed symmetric prior shrinks extreme sample rates; it is not calibrated or tuned to future outcomes."
+        ]
+      }
+    },
+    {
+      "company": "CRWD",
+      "empirical": {
+        "method_version": "quarter-frequency-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 7,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 7,
+        "pool_companies": [
+          "CRWD"
+        ],
+        "counts": {
+          "below": 0,
+          "within": 0,
+          "above": 7
+        },
+        "probabilities": {
+          "below": "0E-24",
+          "within": "0E-24",
+          "above": "1.000000000000000000000000"
+        },
+        "historical_ids": [
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "1cb5bc39-8a5b-5d70-a2ce-768ca1cb3cdb",
+          "5bce9a70-7c70-5e88-87d2-4b00a37f569b",
+          "61267a3e-6b9b-56d5-9a00-98c88507f0c5",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "b1b6fc6b-229c-5e40-9ecc-8c3019e378ba",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "none",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day"
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ]
+      },
+      "laplace": {
+        "method_version": "quarter-frequency-laplace-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 7,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 7,
+        "pool_companies": [
+          "CRWD"
+        ],
+        "counts": {
+          "below": 0,
+          "within": 0,
+          "above": 7
+        },
+        "probabilities": {
+          "below": "0.100000000000000000000000",
+          "within": "0.100000000000000000000000",
+          "above": "0.800000000000000000000000"
+        },
+        "historical_ids": [
+          "1942669c-4809-50d5-a57c-610f6f1a313d",
+          "1cb5bc39-8a5b-5d70-a2ce-768ca1cb3cdb",
+          "5bce9a70-7c70-5e88-87d2-4b00a37f569b",
+          "61267a3e-6b9b-56d5-9a00-98c88507f0c5",
+          "ab20acd2-1365-59c1-a465-84ce9bf9997d",
+          "b1b6fc6b-229c-5e40-9ecc-8c3019e378ba",
+          "d4555f84-c328-5b53-a00c-4a509faeaad9"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "fixed Dirichlet(1,1,1) / add-one Laplace; no fitting",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "prior_counts": {
+            "below": 1,
+            "within": 1,
+            "above": 1
+          }
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim.",
+          "Fixed symmetric prior shrinks extreme sample rates; it is not calibrated or tuned to future outcomes."
+        ]
+      }
+    },
+    {
+      "company": "OKTA",
+      "empirical": {
+        "method_version": "quarter-frequency-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 7,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 7,
+        "pool_companies": [
+          "OKTA"
+        ],
+        "counts": {
+          "below": 0,
+          "within": 0,
+          "above": 7
+        },
+        "probabilities": {
+          "below": "0E-24",
+          "within": "0E-24",
+          "above": "1.000000000000000000000000"
+        },
+        "historical_ids": [
+          "024f6621-98d3-562f-b9ff-913a1c253d95",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+          "97daa508-ace5-596a-ac8b-367d1eeb8660",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "ac7eef4f-1555-5aa1-89d4-79440f6d2225"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "none",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day"
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ]
+      },
+      "laplace": {
+        "method_version": "quarter-frequency-laplace-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 7,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 7,
+        "pool_companies": [
+          "OKTA"
+        ],
+        "counts": {
+          "below": 0,
+          "within": 0,
+          "above": 7
+        },
+        "probabilities": {
+          "below": "0.100000000000000000000000",
+          "within": "0.100000000000000000000000",
+          "above": "0.800000000000000000000000"
+        },
+        "historical_ids": [
+          "024f6621-98d3-562f-b9ff-913a1c253d95",
+          "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+          "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+          "97daa508-ace5-596a-ac8b-367d1eeb8660",
+          "9fd1495d-2e63-5644-9bcb-908133766a3f",
+          "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+          "ac7eef4f-1555-5aa1-89d4-79440f6d2225"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "fixed Dirichlet(1,1,1) / add-one Laplace; no fitting",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "prior_counts": {
+            "below": 1,
+            "within": 1,
+            "above": 1
+          }
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim.",
+          "Fixed symmetric prior shrinks extreme sample rates; it is not calibrated or tuned to future outcomes."
+        ]
+      }
+    },
+    {
+      "company": "IOT",
+      "empirical": {
+        "method_version": "quarter-frequency-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 8,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 8,
+        "pool_companies": [
+          "IOT"
+        ],
+        "counts": {
+          "below": 0,
+          "within": 0,
+          "above": 8
+        },
+        "probabilities": {
+          "below": "0E-24",
+          "within": "0E-24",
+          "above": "1.000000000000000000000000"
+        },
+        "historical_ids": [
+          "22b792bc-f915-57e5-b426-a490e1dca5de",
+          "2962c236-49c4-5874-b918-b1fe3a137190",
+          "6b8d169c-4077-5d31-9bee-84dc60f76e50",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "85084aa2-014a-54d7-947e-22f48d5c315f",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "none",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day"
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ]
+      },
+      "laplace": {
+        "method_version": "quarter-frequency-laplace-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 8,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 8,
+        "pool_companies": [
+          "IOT"
+        ],
+        "counts": {
+          "below": 0,
+          "within": 0,
+          "above": 8
+        },
+        "probabilities": {
+          "below": "0.090909090909090909090909",
+          "within": "0.090909090909090909090909",
+          "above": "0.818181818181818181818182"
+        },
+        "historical_ids": [
+          "22b792bc-f915-57e5-b426-a490e1dca5de",
+          "2962c236-49c4-5874-b918-b1fe3a137190",
+          "6b8d169c-4077-5d31-9bee-84dc60f76e50",
+          "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+          "85084aa2-014a-54d7-947e-22f48d5c315f",
+          "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+          "a2db7ecb-4217-5078-a05c-351a64d98400",
+          "c3df377b-e059-51f7-be16-6212a9c2f96c"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "fixed Dirichlet(1,1,1) / add-one Laplace; no fitting",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "prior_counts": {
+            "below": 1,
+            "within": 1,
+            "above": 1
+          }
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim.",
+          "Fixed symmetric prior shrinks extreme sample rates; it is not calibrated or tuned to future outcomes."
+        ]
+      }
+    },
+    {
+      "company": "MDB",
+      "empirical": {
+        "method_version": "quarter-frequency-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 7,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 7,
+        "pool_companies": [
+          "MDB"
+        ],
+        "counts": {
+          "below": 0,
+          "within": 0,
+          "above": 7
+        },
+        "probabilities": {
+          "below": "0E-24",
+          "within": "0E-24",
+          "above": "1.000000000000000000000000"
+        },
+        "historical_ids": [
+          "1c741a15-67ad-5aea-a1b7-22df9bd45329",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "3491a815-1b12-5e33-a095-b6d9751ca69f",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "84c96ecf-c4f6-56da-8800-c767c78b0100",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "none",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day"
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ]
+      },
+      "laplace": {
+        "method_version": "quarter-frequency-laplace-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 7,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 7,
+        "pool_companies": [
+          "MDB"
+        ],
+        "counts": {
+          "below": 0,
+          "within": 0,
+          "above": 7
+        },
+        "probabilities": {
+          "below": "0.100000000000000000000000",
+          "within": "0.100000000000000000000000",
+          "above": "0.800000000000000000000000"
+        },
+        "historical_ids": [
+          "1c741a15-67ad-5aea-a1b7-22df9bd45329",
+          "32817be8-bba7-5203-8f7a-4e6e567f6e1b",
+          "3491a815-1b12-5e33-a095-b6d9751ca69f",
+          "3a280442-fd76-50c6-92ca-dba9f6c85118",
+          "84c96ecf-c4f6-56da-8800-c767c78b0100",
+          "8565e3f5-2570-5b30-b34f-d52d0042d05a",
+          "df5055c1-ec9d-59bd-a63c-a5b9f4749b70"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "fixed Dirichlet(1,1,1) / add-one Laplace; no fitting",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "prior_counts": {
+            "below": 1,
+            "within": 1,
+            "above": 1
+          }
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim.",
+          "Fixed symmetric prior shrinks extreme sample rates; it is not calibrated or tuned to future outcomes."
+        ]
+      }
+    },
+    {
+      "company": "S",
+      "empirical": {
+        "method_version": "quarter-frequency-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 8,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 8,
+        "pool_companies": [
+          "S"
+        ],
+        "counts": {
+          "below": 0,
+          "within": 1,
+          "above": 7
+        },
+        "probabilities": {
+          "below": "0E-24",
+          "within": "0.125000000000000000000000",
+          "above": "0.875000000000000000000000"
+        },
+        "historical_ids": [
+          "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1f3f1a34-f8c2-5ff1-a142-99c70061ead5",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "4b27139d-7ed7-5343-8001-b3720d678486",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "df062ed8-23f0-5c80-a674-8c5ab54a68d7"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "none",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day"
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ]
+      },
+      "laplace": {
+        "method_version": "quarter-frequency-laplace-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 8,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 8,
+        "pool_companies": [
+          "S"
+        ],
+        "counts": {
+          "below": 0,
+          "within": 1,
+          "above": 7
+        },
+        "probabilities": {
+          "below": "0.090909090909090909090909",
+          "within": "0.181818181818181818181818",
+          "above": "0.727272727272727272727273"
+        },
+        "historical_ids": [
+          "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+          "198d111b-9057-515d-ad22-07486dbe75e9",
+          "1f3f1a34-f8c2-5ff1-a142-99c70061ead5",
+          "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+          "4b27139d-7ed7-5343-8001-b3720d678486",
+          "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+          "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+          "df062ed8-23f0-5c80-a674-8c5ab54a68d7"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "fixed Dirichlet(1,1,1) / add-one Laplace; no fitting",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "prior_counts": {
+            "below": 1,
+            "within": 1,
+            "above": 1
+          }
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim.",
+          "Fixed symmetric prior shrinks extreme sample rates; it is not calibrated or tuned to future outcomes."
+        ]
+      }
+    },
+    {
+      "company": "ADBE",
+      "empirical": {
+        "method_version": "quarter-frequency-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 8,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 8,
+        "pool_companies": [
+          "ADBE"
+        ],
+        "counts": {
+          "below": 0,
+          "within": 0,
+          "above": 8
+        },
+        "probabilities": {
+          "below": "0E-24",
+          "within": "0E-24",
+          "above": "1.000000000000000000000000"
+        },
+        "historical_ids": [
+          "47babbbb-32d1-5b8e-b5ea-4cfe4af7bc5e",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5c56819d-c45e-58ab-9f19-09e5752f4259",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "7fd6d96b-29a4-5413-9d34-6f06bd45dee8",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "none",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day"
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ]
+      },
+      "laplace": {
+        "method_version": "quarter-frequency-laplace-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 8,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 8,
+        "pool_companies": [
+          "ADBE"
+        ],
+        "counts": {
+          "below": 0,
+          "within": 0,
+          "above": 8
+        },
+        "probabilities": {
+          "below": "0.090909090909090909090909",
+          "within": "0.090909090909090909090909",
+          "above": "0.818181818181818181818182"
+        },
+        "historical_ids": [
+          "47babbbb-32d1-5b8e-b5ea-4cfe4af7bc5e",
+          "4cb019e3-d201-54cc-8cf5-3981af360031",
+          "5b215876-aedd-5e65-a33b-3921cb483b69",
+          "5c56819d-c45e-58ab-9f19-09e5752f4259",
+          "7d3a833b-3c50-5241-b529-462ee9726e0f",
+          "7fd6d96b-29a4-5413-9d34-6f06bd45dee8",
+          "a6f28946-ce79-54eb-8be7-ddfcc549a398",
+          "d3bc3b23-b0d2-5dd4-9970-abe15fb89ca6"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "fixed Dirichlet(1,1,1) / add-one Laplace; no fitting",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "prior_counts": {
+            "below": 1,
+            "within": 1,
+            "above": 1
+          }
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim.",
+          "Fixed symmetric prior shrinks extreme sample rates; it is not calibrated or tuned to future outcomes."
+        ]
+      }
+    },
+    {
+      "company": "LULU",
+      "empirical": {
+        "method_version": "quarter-frequency-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 8,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 8,
+        "pool_companies": [
+          "LULU"
+        ],
+        "counts": {
+          "below": 2,
+          "within": 0,
+          "above": 6
+        },
+        "probabilities": {
+          "below": "0.250000000000000000000000",
+          "within": "0E-24",
+          "above": "0.750000000000000000000000"
+        },
+        "historical_ids": [
+          "13082c66-6956-56e7-9480-2d8655e69685",
+          "364cd7d9-c11f-5660-ab0b-c5b68cf81ee5",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "86b2fdd0-9dbf-5d07-aa24-7353fed9d54a",
+          "947f28bb-aa24-5d0e-966c-0d5b2faab4bc",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "none",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day"
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+        ]
+      },
+      "laplace": {
+        "method_version": "quarter-frequency-laplace-v1",
+        "as_of": "2026-11-14T02:58:31.859046+00:00",
+        "mode": "company",
+        "sample_size": 8,
+        "evaluation_kind": "as_recorded",
+        "company_sample_size": 8,
+        "pool_companies": [
+          "LULU"
+        ],
+        "counts": {
+          "below": 2,
+          "within": 0,
+          "above": 6
+        },
+        "probabilities": {
+          "below": "0.272727272727272727272727",
+          "within": "0.090909090909090909090909",
+          "above": "0.636363636363636363636364"
+        },
+        "historical_ids": [
+          "13082c66-6956-56e7-9480-2d8655e69685",
+          "364cd7d9-c11f-5660-ab0b-c5b68cf81ee5",
+          "5e60d46d-51eb-5f07-a8d7-0476149150c3",
+          "696c01eb-7fb0-5926-adad-05ed609f6834",
+          "86b2fdd0-9dbf-5d07-aa24-7353fed9d54a",
+          "947f28bb-aa24-5d0e-966c-0d5b2faab4bc",
+          "9546da63-018a-5005-9ff1-661ea58601dd",
+          "dbaaaf8a-f74b-5b4e-9177-75e9a70b74c7"
+        ],
+        "policy": {
+          "quarters_per_company": 8,
+          "company_minimum": 6,
+          "pool_minimum": 12,
+          "pool_company_minimum": 2,
+          "smoothing": "fixed Dirichlet(1,1,1) / add-one Laplace; no fitting",
+          "rounding": "first two rates half-even at 24 places; above receives residual",
+          "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+          "prior_counts": {
+            "below": 1,
+            "within": 1,
+            "above": 1
+          }
+        },
+        "limitations": [
+          "Empirical frequencies, not calibrated probabilities or confidence scores.",
+          "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim.",
+          "Fixed symmetric prior shrinks extreme sample rates; it is not calibrated or tuned to future outcomes."
+        ]
+      }
+    }
+  ],
+  "live_prediction_count": 0
+}

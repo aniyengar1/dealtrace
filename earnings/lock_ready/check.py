@@ -10,7 +10,7 @@ from datetime import datetime,timezone
 from contextlib import nullcontext
 from dataclasses import replace
 
-p=argparse.ArgumentParser();p.add_argument('--code-root',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--regression',action='store_true');args=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--code-root',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--regression',action='store_true');p.add_argument('--methods',choices=['empirical','both'],default='empirical');args=p.parse_args()
 sys.path.insert(0,str(args.code_root.resolve()))
 # Load secrets only through dotenv, never display or serialize environment values.
 from dotenv import load_dotenv
@@ -23,6 +23,7 @@ from earnings.models import dumps,Actual,DateInterval
 
 
 def protected_run(conn,registry,**kwargs):
+    if args.methods=='both':kwargs['methods']=('quarter-frequency-v1','quarter-frequency-laplace-v1')
     original_ingest=history.ingest;original_insert=predict.insert_prediction
     captures=[]
     try:

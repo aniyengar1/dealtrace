@@ -1,0 +1,10 @@
+{
+  "recorded_at": "2026-11-14T02:59:55.134028+00:00",
+  "python": "3.14.7",
+  "environment": "isolated worktree .venv",
+  "requirements": "earnings/lock_ready/two_method_requirements.lock",
+  "requirements_sha256": "724e79d85f370754531901af2f5c65d07f4b98ef24acffb60e6dddfde0c6b527",
+  "only_added_dependency": "pypdf==7.0.1",
+  "original_tag_unchanged": "94984fc3ce33c6e85a287738d3a617561cd0cefc",
+  "live_locks_created": 0
+}

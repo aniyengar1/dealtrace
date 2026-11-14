@@ -57,6 +57,9 @@ def deadline(evidence):
 
 
 def refresh_announcement(company,evidence):
+    if evidence.get('verification_status')=='user_verified' and evidence.get('verification_method')=='owner_pdf_document_review_v1':
+        from .owner_evidence import refresh
+        return refresh(company,evidence)
     check=check_source(company['ticker'],evidence['source_url'],source_date=evidence['announcement_issued_date'],report_date=evidence['release_date'])
     if check['status']!='confirmed':raise Blocked('ANNOUNCEMENT_ACCESS_GAP','Fresh full official announcement could not be verified: '+str(check.get('http_status',check.get('error_type',check['status']))))
     if check['sha256']!=evidence.get('source_sha256'):
