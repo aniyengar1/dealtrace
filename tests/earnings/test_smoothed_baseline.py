@@ -50,3 +50,13 @@ def test_partial_pair_does_not_silently_change_input_cutoff(locked,monkeypatch):
     monkeypatch.setattr(predict.history,'stored',lambda conn:[])
     result=predict.run(conn,{'TEST':c},methods=(baseline.METHOD,smooth.METHOD))
     assert not result['locked'] and result['skipped'][0]['code']=='PARTIAL_METHOD_PAIR_REVIEW'
+
+def test_database_owner_pdf_stale_retrieval_cannot_be_freshened_by_checked_at(locked):
+    from datetime import datetime,timezone,timedelta
+    conn,g,b,e,check,target,saved=locked
+    now=datetime.now(timezone.utc)
+    forged={**e,'verification_method':'owner_pdf_document_review_v1','verification_status':'user_verified',
+        'owner_retrieved_at':(now-timedelta(hours=1)).isoformat(),'checked_at':now.isoformat(),
+        'source_sha256':'a'*64,'owner_intake_id':'synthetic','supplied_by':'synthetic owner'}
+    with pytest.raises(psycopg.Error,match='Fresh owner source retrieval'):
+        with conn.transaction():live.insert_prediction(conn,{'ticker':'TEST'},target,g,b,forged,check)
