@@ -66,6 +66,14 @@ BULK_LOG_EVERY = 10
 SAFETY_CHECK_EVERY = 50
 MAX_ROLLING_FAILURE_RATE = 0.10
 MIN_ROLLING_QUOTE_MATCH_MEDIAN = 0.90
+# monitor_loop's periodic spend_cap_hit check only runs every 15s and
+# can't see calls already in flight when it fires -- a worker that's
+# already past its own check keeps going regardless of stop_event. This
+# buffer is subtracted from the real cap for the SYNCHRONOUS check each
+# worker does immediately before starting a new candidate (see worker()
+# in run_bulk_live), so the effective stop point is comfortably below
+# the real $250 even if several calls are in flight when it trips.
+SPEND_CAP_BUFFER_USD = 2.0
 # "Batch jobs must not be submitted after BULK_DEADLINE minus this many
 # hours; anything after that goes through the live path" -- batch has no
 # turnaround guarantee, so this margin protects against a batch job that
@@ -529,12 +537,34 @@ def run_bulk_live(
 
     monitor_thread = threading.Thread(target=monitor_loop, daemon=True)
     monitor_thread.start()
+    pause_write_lock = threading.Lock()
+
+    def _stop_for_spend_cap(reason: str) -> None:
+        with pause_write_lock:
+            if stop_event.is_set():
+                return
+            stop_reason.append(reason)
+            log.warning(f"[bulk] STOPPING (pre-call check): {reason}")
+            write_pause_reason(reason, {"done": stats.done, "failed": stats.failed, "skipped": stats.skipped, "errors": stats.errors})
+            stop_event.set()
 
     def worker(row: dict) -> dict:
         if stop_event.is_set():
             return {"status": "skipped", "reason": "stopped", "row": row, "cost_usd": 0.0}
         gate.acquire()
         try:
+            # Synchronous, per-call check -- monitor_loop's own check only
+            # runs every 15s and can't see calls already in flight when it
+            # fires. This is the last possible moment before the next
+            # expensive call starts, checked against cap - buffer so a
+            # few calls already past this point when the real cap is
+            # crossed still land comfortably under it.
+            if stop_event.is_set():
+                return {"status": "skipped", "reason": "stopped", "row": row, "cost_usd": 0.0}
+            hit, reason = spend_cap_hit(spend_cap_usd - SPEND_CAP_BUFFER_USD, calibration_multiplier)
+            if hit:
+                _stop_for_spend_cap(reason)
+                return {"status": "skipped", "reason": "stopped (spend cap)", "row": row, "cost_usd": 0.0}
             return process_candidate_live(row, model)
         finally:
             gate.release()
