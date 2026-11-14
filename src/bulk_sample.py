@@ -1,8 +1,14 @@
-"""Generates a fixed-seed random sample of loaded bulk deals as a
-markdown file for manual accuracy spot-checking against the real
-filings.
+"""Generates a fixed-seed random sample of canonical, post-fix bulk
+deals as a markdown file for manual accuracy spot-checking against the
+real filings, with a fillable checklist per deal.
 
     python -m src.bulk_sample
+
+Scoped to canonical BULK deals (is_canonical AND slug LIKE 'bulk_%') --
+curated deals are excluded since they're already hand-reviewed and
+don't have a bulk-style slug to derive an EDGAR filing link from, and a
+duplicate bulk row that lost to another canonical row shouldn't be
+spot-checked as if it were representative.
 
 CIK and accession number are recovered by parsing them back out of the
 deal's own slug (minted by src.load_bulk.bulk_slug as
@@ -16,14 +22,23 @@ from pathlib import Path
 
 import psycopg
 
+from src.bulk_stats import _dated_proposals, _final_entry, _latest_signing_date, _price, _resolve_target
 from src.env import load_env
 from src.load_db import connect
 
 load_env()
 
-SEED = 42
+SEED = 2026
 N_SAMPLE = 20
 OUTPUT_PATH = Path("data/output/bulk_sample_spotcheck.md")
+
+CHECKLIST_ITEMS = [
+    "Acquirer correct?",
+    "Signing date correct?",
+    "Final price correct?",
+    "# bidders plausible?",
+    "Any wrong/missing major event?",
+]
 
 
 def _accession_with_dashes(accession_nodash: str) -> str:
@@ -41,10 +56,10 @@ def filing_link(cik: str, accession_nodash: str) -> str:
     return f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{accession_nodash}/{accession_dashed}-index.htm"
 
 
-def _fetch_timeline(conn: psycopg.Connection, deal_id: str) -> tuple[list[dict], list[dict]]:
+def _fetch_timeline(conn: psycopg.Connection, deal_id: str, target: str) -> tuple[list[dict], list[dict]]:
     events = conn.execute(
         """
-        SELECT date_text, event_type, parties, summary
+        SELECT date_text, date_start, event_type, parties, summary
         FROM events e JOIN extraction_runs r ON r.id = e.run_id
         WHERE r.deal_id = %s AND e.passed
         ORDER BY date_start NULLS LAST
@@ -53,7 +68,8 @@ def _fetch_timeline(conn: psycopg.Connection, deal_id: str) -> tuple[list[dict],
     ).fetchall()
     proposals = conn.execute(
         """
-        SELECT date_text, proposer, recipient, price_low, price_high, currency, consideration_type, status
+        SELECT date_text, date_resolved, proposer, recipient, price_low, price_high,
+               currency, consideration_type, status
         FROM proposals p JOIN extraction_runs r ON r.id = p.run_id
         WHERE r.deal_id = %s AND p.passed
         ORDER BY date_resolved NULLS LAST
@@ -61,28 +77,36 @@ def _fetch_timeline(conn: psycopg.Connection, deal_id: str) -> tuple[list[dict],
         (deal_id,),
     ).fetchall()
     return (
-        [{"date": e[0], "type": e[1], "parties": e[2], "summary": e[3]} for e in events],
         [
             {
-                "date": p[0], "proposer": p[1], "recipient": p[2],
-                "price_low": p[3], "price_high": p[4], "currency": p[5],
-                "consideration_type": p[6], "status": p[7],
+                "date": e[0], "date_start": e[1], "event_type": e[2],
+                "parties": [_resolve_target(p, target) for p in (e[3] or [])],
+                "summary": e[4],
+            }
+            for e in events
+        ],
+        [
+            {
+                "date": p[0], "date_resolved": p[1],
+                "proposer": _resolve_target(p[2], target), "recipient": _resolve_target(p[3], target),
+                "price_low": p[4], "price_high": p[5], "currency": p[6],
+                "consideration_type": p[7], "status": p[8],
             }
             for p in proposals
         ],
     )
 
 
-def render_deal(slug: str, deal_name: str, target: str, events: list[dict], proposals: list[dict]) -> str:
+def render_deal(slug: str, target: str, acquirer: str, events: list[dict], proposals: list[dict]) -> str:
     cik, accession_nodash = _parse_slug(slug)
     link = filing_link(cik, accession_nodash)
-    lines = [f"## {deal_name}", "", f"- Target: {target}", f"- Filing: {link}", ""]
+    lines = [f"## {target} <- {acquirer}", "", f"- Filing: {link}", ""]
 
     lines.append("### Events")
     if events:
         for e in events:
             parties = ", ".join(e["parties"] or [])
-            lines.append(f"- **{e['date']}** [{e['type']}] {e['summary']} (parties: {parties})")
+            lines.append(f"- **{e['date']}** [{e['event_type']}] {e['summary']} (parties: {parties})")
     else:
         lines.append("- (none)")
     lines.append("")
@@ -98,27 +122,46 @@ def render_deal(slug: str, deal_name: str, target: str, events: list[dict], prop
     else:
         lines.append("- (none)")
     lines.append("")
+
+    dated = _dated_proposals(proposals)
+    final = _final_entry(dated)
+    final_price = _price(final) if final else None
+    signing_date = _latest_signing_date({"events": events})
+    bidders = {p["proposer"] for p in proposals if p["proposer"] and p["proposer"] != target}
+
+    lines.append("### Extracted-as-loaded (reference for the checklist below)")
+    lines.append(f"- Acquirer (as loaded): {acquirer}")
+    lines.append(f"- Signing date (as loaded): {signing_date}")
+    lines.append(f"- Final price (as loaded): {final_price}")
+    lines.append(f"- # bidders (as loaded): {len(bidders)} ({', '.join(sorted(bidders)) or 'none'})")
+    lines.append("")
+
+    lines.append("### Spot-check checklist")
+    for item in CHECKLIST_ITEMS:
+        lines.append(f"- {item} (Y/N): ____  Note: ____")
+    lines.append("")
     return "\n".join(lines)
 
 
 def main() -> None:
     with connect() as conn:
         rows = conn.execute(
-            "SELECT id, slug, deal_name, target FROM deals WHERE slug LIKE 'bulk_%' ORDER BY slug"
+            "SELECT id, slug, target, acquirer FROM deals WHERE slug LIKE 'bulk_%' AND is_canonical ORDER BY slug"
         ).fetchall()
 
         rng = random.Random(SEED)
         sample = rng.sample(rows, min(N_SAMPLE, len(rows)))
 
         sections = []
-        for deal_id, slug, deal_name, target in sample:
-            events, proposals = _fetch_timeline(conn, deal_id)
-            sections.append(render_deal(slug, deal_name, target, events, proposals))
+        for deal_id, slug, target, acquirer in sample:
+            events, proposals = _fetch_timeline(conn, deal_id, target)
+            sections.append(render_deal(slug, target, acquirer, events, proposals))
 
     header = (
         f"# Bulk deal sample for manual spot-check\n\n"
-        f"Random sample of {len(sample)} deals out of {len(rows)} loaded bulk deals, "
-        f"seed={SEED} (Python `random.Random({SEED}).sample(...)` over deals sorted by slug).\n\n"
+        f"Random sample of {len(sample)} deals out of {len(rows)} canonical bulk deals "
+        f"(curated deals and non-canonical duplicates excluded), seed={SEED} "
+        f"(Python `random.Random({SEED}).sample(...)` over canonical bulk deals sorted by slug).\n\n"
     )
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(header + "\n".join(sections))

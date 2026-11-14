@@ -47,6 +47,7 @@ MIN_FIRST_PRICE_USD = 0.10
 MIN_FIRST_PRICE_PCT_OF_FINAL = 0.05
 MAX_ABS_PCT_CHANGE = 300.0
 MAX_DAYS_FOR_REVIEW = 2000
+REVIEW_PCT_DROP_THRESHOLD = -90.0
 
 
 def _resolve_target(name: Optional[str], target: str) -> Optional[str]:
@@ -192,9 +193,11 @@ def stat_pct_increase_cash(deals: list[dict]) -> dict:
     excluded_counts = {
         "not_cash_or_no_final": 0, "missing_first_price": 0, "missing_final_price": 0,
         "fewer_than_2_dated_proposals": 0, "first_price_below_10_cents": 0,
-        "first_price_below_5pct_of_final": 0, "abs_change_over_300pct": 0,
+        "first_price_below_5pct_of_final": 0, "final_price_non_positive": 0,
+        "abs_change_over_300pct": 0,
     }
     excluded_deals = []
+    flagged_for_review = []
     for d in deals:
         dated = _dated_proposals(d["proposals"])
         if len(dated) < 2:
@@ -213,11 +216,15 @@ def stat_pct_increase_cash(deals: list[dict]) -> dict:
         if final_price is None:
             excluded_counts["missing_final_price"] += 1
             continue
+        if final_price <= 0:
+            excluded_counts["final_price_non_positive"] += 1
+            excluded_deals.append({"deal_name": d["deal_name"], "first_price": first_price, "final_price": final_price, "reason": "final_price_non_positive"})
+            continue
         if first_price == 0 or first_price < MIN_FIRST_PRICE_USD:
             excluded_counts["first_price_below_10_cents"] += 1
             excluded_deals.append({"deal_name": d["deal_name"], "first_price": first_price, "final_price": final_price, "reason": "first_price_below_10_cents"})
             continue
-        if final_price != 0 and first_price < MIN_FIRST_PRICE_PCT_OF_FINAL * abs(final_price):
+        if first_price < MIN_FIRST_PRICE_PCT_OF_FINAL * abs(final_price):
             excluded_counts["first_price_below_5pct_of_final"] += 1
             excluded_deals.append({"deal_name": d["deal_name"], "first_price": first_price, "final_price": final_price, "reason": "first_price_below_5pct_of_final"})
             continue
@@ -226,6 +233,8 @@ def stat_pct_increase_cash(deals: list[dict]) -> dict:
             excluded_counts["abs_change_over_300pct"] += 1
             excluded_deals.append({"deal_name": d["deal_name"], "first_price": first_price, "final_price": final_price, "pct_increase": pct, "reason": "abs_change_over_300pct"})
             continue
+        if pct <= REVIEW_PCT_DROP_THRESHOLD:
+            flagged_for_review.append({"deal_name": d["deal_name"], "first_price": first_price, "final_price": final_price, "pct_increase": pct})
         values.append((d["deal_name"], pct))
 
     pct_values = [v for _, v in values]
@@ -235,6 +244,7 @@ def stat_pct_increase_cash(deals: list[dict]) -> dict:
         "n": len(pct_values),
         **_distribution(pct_values),
         "top_outliers": [{"deal_name": name, "pct_increase": v} for name, v in top],
+        "flagged_for_review_drop_90pct_or_more": flagged_for_review,
         "exclusions": excluded_counts,
         "excluded_deals": excluded_deals,
     }
