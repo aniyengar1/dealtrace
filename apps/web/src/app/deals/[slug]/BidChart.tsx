@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
+import { motion } from "framer-motion";
 import type { EventRow, ProposalRow } from "@/lib/types";
 import { formatDate, formatPrice } from "@/lib/format";
 import { eventTypeLabel } from "@/lib/labels";
@@ -138,13 +139,16 @@ function RoundPanel({
           return (
             <g key={proposer}>
               {realBids.length > 1 && (
-                <path
+                <motion.path
                   d={linePath}
                   fill="none"
                   stroke={color}
                   strokeWidth={1.5}
                   strokeDasharray={isTarget ? "4 3" : undefined}
-                  opacity={0.5}
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  whileInView={{ pathLength: 1, opacity: 0.5 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 1, ease: "easeInOut" }}
                 />
               )}
               {sorted.map((p) => {
@@ -163,7 +167,16 @@ function RoundPanel({
                     : formatPrice(high ?? low);
 
                 return (
-                  <g key={p.proposal.id} onClick={() => onInspect(p.proposal)} className="cursor-pointer">
+                  <motion.g
+                    key={p.proposal.id}
+                    onClick={() => onInspect(p.proposal)}
+                    className="cursor-pointer"
+                    initial={{ opacity: 0, scale: 0.6 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.3, delay: (x / PANEL_WIDTH) * 0.9 }}
+                    style={{ transformOrigin: `${x}px ${y}px` }}
+                  >
                     {isHedged ? (
                       <circle cx={x} cy={y} r={5} fill="var(--color-surface)" stroke={color} strokeWidth={2} opacity={dimmed} />
                     ) : isRange ? (
@@ -181,7 +194,7 @@ function RoundPanel({
                     <text x={x} y={y - 10} textAnchor="middle" fontSize={10} fill="var(--color-ink)">
                       {priceLabel}
                     </text>
-                  </g>
+                  </motion.g>
                 );
               })}
             </g>

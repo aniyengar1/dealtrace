@@ -46,17 +46,20 @@ function buildHistogram(values: number[]): PctBumpBucket[] {
 // Every deal with a completed (locked) extraction run -- the same
 // "latest facts run" each deal page and the stats page already key off
 // of, so the home page never shows a number that page wouldn't back up.
+// Fetched concurrently (not one deal at a time) -- with 1000+ deals now
+// in the bulk-loaded table, a sequential per-deal loop was the actual
+// bottleneck on the home page, not the hero video.
 async function loadDealStatsRows(): Promise<DealStatsRow[]> {
   const deals = await listDeals();
-  const rows: DealStatsRow[] = [];
-  for (const deal of deals) {
-    const run = await getLatestFactsRunForDeal(deal.id);
-    if (!run) continue;
-    const [events, proposals] = await Promise.all([getEventsForRun(run.id), getProposalsForRun(run.id)]);
-    const row = computeDealStatsRow(deal, events, proposals);
-    if (row) rows.push(row);
-  }
-  return rows;
+  const rows = await Promise.all(
+    deals.map(async (deal) => {
+      const run = await getLatestFactsRunForDeal(deal.id);
+      if (!run) return null;
+      const [events, proposals] = await Promise.all([getEventsForRun(run.id), getProposalsForRun(run.id)]);
+      return computeDealStatsRow(deal, events, proposals);
+    })
+  );
+  return rows.filter((r): r is DealStatsRow => r !== null);
 }
 
 function stat(values: number[]): HomeStat | null {

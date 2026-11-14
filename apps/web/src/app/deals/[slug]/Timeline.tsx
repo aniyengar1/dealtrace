@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { motion } from "framer-motion";
 import type { EventRow } from "@/lib/types";
 import { formatEventDate } from "@/lib/format";
 import { eventTypeLabel, CORE_EVENT_TYPES } from "@/lib/labels";
@@ -56,13 +57,17 @@ export function Timeline({
       </div>
 
       <ol className="space-y-1">
-        {visible.map((event) => {
+        {visible.map((event, i) => {
           const isCore = CORE_EVENT_TYPES.has(event.event_type);
           return (
-            <li
+            <motion.li
               key={event.id}
               onClick={() => onInspect(event)}
               className={factRowClassName("flex gap-3 rounded px-2 py-2")}
+              initial={{ opacity: 0, x: -8 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.8 }}
+              transition={{ duration: 0.25, delay: Math.min(i * 0.03, 0.3) }}
             >
               <span className="w-32 flex-shrink-0 tabular-nums text-xs text-ink-muted">
                 {formatEventDate(event)}
@@ -82,7 +87,7 @@ export function Timeline({
                   {event.summary}
                 </p>
               </div>
-            </li>
+            </motion.li>
           );
         })}
         {visible.length === 0 && (

@@ -7,7 +7,7 @@ export function FeaturedDealCard({ deal }: { deal: DealSummary }) {
   return (
     <Link
       href={`/deals/${deal.slug}`}
-      className="group flex flex-col gap-2 rounded-lg border border-border bg-surface p-5 transition-colors hover:border-border-strong hover:bg-surface-raised"
+      className="group flex flex-col gap-2 rounded-lg border border-border bg-surface p-5 transition-[color,background-color,border-color,transform,box-shadow] duration-200 hover:-translate-y-1 hover:border-border-strong hover:bg-surface-raised hover:shadow-lg hover:shadow-black/20"
     >
       <p className="font-serif text-lg text-ink">
         {deal.target} <span className="text-ink-faint">→</span> {acquirerDisplayName(deal.slug, deal.acquirer)}

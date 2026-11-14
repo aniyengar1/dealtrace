@@ -1,39 +1,23 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 
-// Subtle fade/slide-in the first time a section scrolls into view --
-// skipped entirely for prefers-reduced-motion via the CSS override in
-// globals.css, and resolved immediately (no flash-in) if the section is
-// already on screen at mount.
+// Fade/slide-in the first time a section scrolls into view. Framer
+// Motion's `whileInView` already no-ops under prefers-reduced-motion at
+// the OS level isn't automatic, but the global CSS override in
+// globals.css (animation/transition-duration: 0.01ms) still collapses
+// this to an instant appearance, so reduced-motion users never wait on it.
 export function Reveal({ children, className = "", delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.15 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <div
-      ref={ref}
-      className={`transition-all duration-700 ease-out ${visible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.5, delay: delay / 1000, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
-    </div>
+    </motion.div>
   );
 }

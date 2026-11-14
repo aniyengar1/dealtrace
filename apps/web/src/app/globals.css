@@ -7,15 +7,15 @@
  * background and reads less like unstyled browser defaults.
  */
 @theme {
-  --color-bg: #070b1f;
-  --color-surface: #0e1330;
-  --color-surface-raised: #141a3d;
-  --color-border: #232a52;
-  --color-border-strong: #333c6e;
+  --color-bg: #050a34;
+  --color-surface: #0c1348;
+  --color-surface-raised: #141c58;
+  --color-border: #232c66;
+  --color-border-strong: #333f7e;
 
-  --color-ink: #eef0f8;
-  --color-ink-muted: #97a0c3;
-  --color-ink-faint: #5c6490;
+  --color-ink: #f1f2f8;
+  --color-ink-muted: #99a2c7;
+  --color-ink-faint: #5f6796;
 
   --color-gold: #c9a44c;
   --color-gold-ink: #1a1403;
@@ -64,6 +64,19 @@ body {
 
 ::selection {
   background-color: color-mix(in srgb, var(--color-gold) 35%, transparent);
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-ticker {
+  animation: ticker 50s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -14,6 +14,29 @@ export function Footer() {
             for exclusions.
           </p>
           <p>Research project; not investment advice.</p>
+          <p className="text-ink-faint">
+            Hero imagery:{" "}
+            <a href="https://unsplash.com/@flyshoot" className="hover:text-gold" target="_blank" rel="noreferrer">
+              Ryan Fleischer
+            </a>
+            ,{" "}
+            <a href="https://unsplash.com/@jorgenchu" className="hover:text-gold" target="_blank" rel="noreferrer">
+              Jorge Garcia
+            </a>
+            , Dominik Hofbauer,{" "}
+            <a href="https://unsplash.com/@andersjilden" className="hover:text-gold" target="_blank" rel="noreferrer">
+              Anders Jildén
+            </a>{" "}
+            (Unsplash) &amp; video via{" "}
+            <a href="https://mixkit.co" className="hover:text-gold" target="_blank" rel="noreferrer">
+              Mixkit
+            </a>
+            . Full{" "}
+            <a href="/CREDITS.md" className="hover:text-gold" target="_blank" rel="noreferrer">
+              credits
+            </a>
+            .
+          </p>
         </div>
         <div className="flex items-center gap-4 text-ink-muted">
           <span>

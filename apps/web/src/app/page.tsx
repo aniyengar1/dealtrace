@@ -9,6 +9,8 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { HeroBumpChart } from "./HeroBumpChart";
 import { FeaturedDealCard } from "./FeaturedDealCard";
+import { HeroMedia } from "./HeroMedia";
+import { DealTicker } from "./DealTicker";
 
 export const dynamic = "force-dynamic";
 
@@ -42,8 +44,12 @@ export default async function HomePage() {
   return (
     <div>
       {/* Hero */}
-      <section className="border-b border-border">
-        <Container wide className="grid grid-cols-1 gap-10 py-16 sm:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+      <section className="relative isolate overflow-hidden border-b border-border">
+        <HeroMedia />
+        <Container
+          wide
+          className="relative grid grid-cols-1 gap-10 py-20 sm:py-28 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-36"
+        >
           <div>
             <h1 className="font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-ink sm:text-5xl lg:text-6xl">
               Every public-company sale process since 2021, extracted from SEC filings.
@@ -75,16 +81,22 @@ export default async function HomePage() {
             )}
           </Card>
         </Container>
+        {deals.length > 0 && (
+          <div className="relative border-t border-border/60 bg-bg/70 py-3 backdrop-blur-sm">
+            <DealTicker deals={deals} />
+          </div>
+        )}
       </section>
 
       {/* Stats band */}
       <section className="border-b border-border bg-surface/40">
         <Container wide className="py-12">
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-            <StatNumber value={String(stats.nDealsCovered)} label="Deals covered" size="lg" />
+            <StatNumber value={stats.nDealsCovered} label="Deals covered" size="lg" />
             {stats.medianBidders && (
               <StatNumber
-                value={stats.medianBidders.value.toFixed(1)}
+                value={stats.medianBidders.value}
+                decimals={1}
                 label="Median distinct bidders per deal"
                 n={stats.medianBidders.n}
                 size="lg"
@@ -92,7 +104,7 @@ export default async function HomePage() {
             )}
             {stats.medianProposals && (
               <StatNumber
-                value={stats.medianProposals.value.toFixed(0)}
+                value={stats.medianProposals.value}
                 label="Median proposals per deal"
                 n={stats.medianProposals.n}
                 size="lg"
@@ -100,7 +112,9 @@ export default async function HomePage() {
             )}
             {stats.medianPctBump && (
               <StatNumber
-                value={`${stats.medianPctBump.value >= 0 ? "+" : ""}${stats.medianPctBump.value.toFixed(0)}%`}
+                value={stats.medianPctBump.value}
+                prefix={stats.medianPctBump.value >= 0 ? "+" : ""}
+                suffix="%"
                 label="Median first → final bump"
                 n={stats.medianPctBump.n}
                 size="lg"
@@ -108,7 +122,7 @@ export default async function HomePage() {
             )}
             {stats.medianDaysToSigning && (
               <StatNumber
-                value={stats.medianDaysToSigning.value.toFixed(0)}
+                value={stats.medianDaysToSigning.value}
                 label="Median days, first contact → signing"
                 n={stats.medianDaysToSigning.n}
                 size="lg"
