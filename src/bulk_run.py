@@ -666,6 +666,91 @@ def run_bulk_live(
     }
 
 
+# --- retrying failures -------------------------------------------------------
+
+
+def average_cost_per_word() -> float:
+    """Empirical $/word across every "done" result on disk right now --
+    recomputed fresh each call rather than a hardcoded constant, so it
+    stays current as more real data accumulates instead of freezing in
+    whatever the ratio happened to be on some earlier day.
+    """
+    total_cost = 0.0
+    total_words = 0
+    for path in BULK_OUTPUT_DIR.glob("*.json"):
+        try:
+            result = json.loads(path.read_text())
+        except (json.JSONDecodeError, OSError):
+            continue
+        if result.get("status") != "done" or result.get("cost_usd") is None:
+            continue
+        wc = result["row"].get("background_word_count")
+        if wc:
+            total_cost += result["cost_usd"]
+            total_words += wc
+    return total_cost / total_words if total_words else 0.0
+
+
+def list_failed_candidates() -> list[tuple[Path, dict]]:
+    failed = []
+    for path in BULK_OUTPUT_DIR.glob("*.json"):
+        try:
+            result = json.loads(path.read_text())
+        except (json.JSONDecodeError, OSError):
+            continue
+        if result.get("status") == "failed":
+            failed.append((path, result))
+    return failed
+
+
+def retry_failed_candidates(model: str, cap_usd: float, calibration_multiplier: float = 1.0) -> dict:
+    """Retries every currently-"failed" result, cheapest-estimated-first
+    (by background_word_count -- the only size signal available before
+    actually re-running one, via average_cost_per_word's live ratio).
+    Before each retry, checks whether cumulative spend plus this one's
+    OWN estimate would push the total past cap_usd; if so, skips it
+    (leaving its original failed result on disk, untouched) rather than
+    attempting it. Does not assume every later, more-expensive-estimated
+    candidate would also be skipped -- each gets its own check, since
+    the estimate is a ratio, not a guarantee.
+    """
+    cost_per_word = average_cost_per_word()
+    failed = list_failed_candidates()
+    failed.sort(key=lambda pr: pr[1]["row"].get("background_word_count") or 0)
+
+    retried: list[dict] = []
+    skipped: list[dict] = []
+    for path, result in failed:
+        row = result["row"]
+        wc = row.get("background_word_count") or 0
+        estimated_cost = wc * cost_per_word
+        current_spent, any_unknown, _ = cumulative_spend_from_disk()
+        projected = (current_spent + estimated_cost) * calibration_multiplier
+        if any_unknown or projected > cap_usd:
+            skipped.append(
+                {
+                    "target_name": row["target_name"],
+                    "background_word_count": wc,
+                    "estimated_cost_usd": estimated_cost,
+                    "reason": f"projected ${projected:.2f} > ${cap_usd:.2f} cap" if not any_unknown else "unknown pricing on disk",
+                }
+            )
+            continue
+        path.unlink()  # clear the stale failed result so process_candidate_live retries fresh, not from cache
+        new_result = process_candidate_live(row, model)
+        retried.append(
+            {
+                "target_name": row["target_name"],
+                "background_word_count": wc,
+                "estimated_cost_usd": estimated_cost,
+                "status": new_result["status"],
+                "cost_usd": new_result.get("cost_usd"),
+                "reason": new_result.get("reason"),
+            }
+        )
+    return {"retried": retried, "skipped": skipped, "cost_per_word_used": cost_per_word}
+
+
 # --- batch path --------------------------------------------------------------
 
 
@@ -782,10 +867,21 @@ def main() -> None:
     parser.add_argument("--calibration-multiplier", type=float, default=1.0)
     parser.add_argument("--deadline", default=os.environ.get("BULK_DEADLINE"))
     parser.add_argument("--mode", choices=["live", "batch"], default="live")
+    parser.add_argument(
+        "--retry-failures", action="store_true",
+        help="Retry every currently-failed candidate, cheapest-estimated-first, instead of the normal queue run",
+    )
     args = parser.parse_args()
 
     log = setup_logging()
     deadline = _parse_deadline(args.deadline)
+
+    if args.retry_failures:
+        log.info(f"[bulk] retrying failures: model={args.model} spend_cap=${args.spend_cap_usd} calibration=x{args.calibration_multiplier}")
+        result = retry_failed_candidates(args.model, args.spend_cap_usd, args.calibration_multiplier)
+        log.info(json.dumps(result, indent=2, default=str))
+        return
+
     log.info(
         f"[bulk] starting: model={args.model} concurrency={args.concurrency}->{args.concurrency_high} "
         f"spend_cap=${args.spend_cap_usd} calibration=x{args.calibration_multiplier} deadline={deadline}"

@@ -466,3 +466,136 @@ def test_write_pause_reason_writes_the_expected_json(tmp_path, monkeypatch):
     assert data["done"] == 5
     assert data["failed"] == 1
     assert "paused_at" in data
+
+
+# --- retrying failures -------------------------------------------------------
+
+
+def _write_result(out_dir, cik, accession, status, word_count, cost_usd=None, target_name=None):
+    path = out_dir / f"{cik}_{accession.replace('-', '')}.json"
+    path.write_text(
+        json.dumps(
+            {
+                "status": status,
+                "cost_usd": cost_usd,
+                "row": {
+                    "target_cik": cik,
+                    "target_name": target_name or cik,
+                    "primary_accession": accession,
+                    "background_word_count": word_count,
+                },
+            }
+        )
+    )
+    return path
+
+
+def test_average_cost_per_word_computes_the_empirical_ratio(tmp_path, monkeypatch):
+    monkeypatch.setattr(bulk_run, "BULK_OUTPUT_DIR", tmp_path)
+    _write_result(tmp_path, "1", "0001-23-000001", "done", word_count=1000, cost_usd=0.20)
+    _write_result(tmp_path, "2", "0001-23-000002", "done", word_count=1000, cost_usd=0.20)
+    assert bulk_run.average_cost_per_word() == pytest.approx(0.0002)
+
+
+def test_average_cost_per_word_ignores_non_done_and_missing_word_count(tmp_path, monkeypatch):
+    monkeypatch.setattr(bulk_run, "BULK_OUTPUT_DIR", tmp_path)
+    _write_result(tmp_path, "1", "0001-23-000001", "done", word_count=1000, cost_usd=0.20)
+    _write_result(tmp_path, "2", "0001-23-000002", "failed", word_count=5000, cost_usd=None)
+    _write_result(tmp_path, "3", "0001-23-000003", "done", word_count=None, cost_usd=0.50)
+    assert bulk_run.average_cost_per_word() == pytest.approx(0.0002)
+
+
+def test_average_cost_per_word_is_zero_with_no_done_results(tmp_path, monkeypatch):
+    monkeypatch.setattr(bulk_run, "BULK_OUTPUT_DIR", tmp_path)
+    assert bulk_run.average_cost_per_word() == 0.0
+
+
+def test_list_failed_candidates_finds_only_failed(tmp_path, monkeypatch):
+    monkeypatch.setattr(bulk_run, "BULK_OUTPUT_DIR", tmp_path)
+    _write_result(tmp_path, "1", "0001-23-000001", "done", word_count=1000, cost_usd=0.2)
+    _write_result(tmp_path, "2", "0001-23-000002", "failed", word_count=2000)
+    _write_result(tmp_path, "3", "0001-23-000003", "failed", word_count=3000)
+    failed = bulk_run.list_failed_candidates()
+    assert len(failed) == 2
+
+
+def test_retry_failed_candidates_retries_cheapest_first(tmp_path, monkeypatch):
+    monkeypatch.setattr(bulk_run, "BULK_OUTPUT_DIR", tmp_path)
+    # Establishes a $0.0001/word ratio from real "done" history.
+    _write_result(tmp_path, "9", "0001-23-000009", "done", word_count=1000, cost_usd=0.10)
+    _write_result(tmp_path, "1", "0001-23-000001", "failed", word_count=5000, target_name="Expensive")
+    _write_result(tmp_path, "2", "0001-23-000002", "failed", word_count=1000, target_name="Cheap")
+
+    order = []
+
+    def fake_process(row, model):
+        order.append(row["target_name"])
+        return {"status": "done", "cost_usd": 0.05, "row": row}
+
+    monkeypatch.setattr(bulk_run, "process_candidate_live", fake_process)
+
+    result = bulk_run.retry_failed_candidates("fake-model", cap_usd=1000.0)
+
+    assert order == ["Cheap", "Expensive"]
+    assert len(result["retried"]) == 2
+    assert result["skipped"] == []
+
+
+def test_retry_failed_candidates_skips_when_projection_exceeds_cap(tmp_path, monkeypatch):
+    monkeypatch.setattr(bulk_run, "BULK_OUTPUT_DIR", tmp_path)
+    _write_result(tmp_path, "9", "0001-23-000009", "done", word_count=1000, cost_usd=10.0)  # $0.01/word ratio
+    _write_result(tmp_path, "1", "0001-23-000001", "failed", word_count=100, target_name="A")
+
+    def fake_process(row, model):
+        return {"status": "done", "cost_usd": 1.0, "row": row}
+
+    monkeypatch.setattr(bulk_run, "process_candidate_live", fake_process)
+
+    # current spend (10.0) + estimated (100*0.01=1.0) = 11.0 > cap 10.5
+    result = bulk_run.retry_failed_candidates("fake-model", cap_usd=10.5)
+
+    assert result["retried"] == []
+    assert len(result["skipped"]) == 1
+    assert result["skipped"][0]["target_name"] == "A"
+    assert "cap" in result["skipped"][0]["reason"]
+
+
+def test_retry_failed_candidates_leaves_a_skipped_result_file_untouched(tmp_path, monkeypatch):
+    monkeypatch.setattr(bulk_run, "BULK_OUTPUT_DIR", tmp_path)
+    _write_result(tmp_path, "9", "0001-23-000009", "done", word_count=1000, cost_usd=10.0)
+    path = _write_result(tmp_path, "1", "0001-23-000001", "failed", word_count=100, target_name="A")
+
+    monkeypatch.setattr(bulk_run, "process_candidate_live", lambda row, model: (_ for _ in ()).throw(AssertionError("should not be called")))
+
+    bulk_run.retry_failed_candidates("fake-model", cap_usd=10.5)
+
+    assert path.exists()
+    assert json.loads(path.read_text())["status"] == "failed"
+
+
+def test_retry_failed_candidates_checks_each_candidate_independently(tmp_path, monkeypatch):
+    # A later candidate (cheaper estimate, due to a smaller word count)
+    # can still fit even after an earlier one was skipped -- no
+    # short-circuit on the first skip.
+    monkeypatch.setattr(bulk_run, "BULK_OUTPUT_DIR", tmp_path)
+    _write_result(tmp_path, "9", "0001-23-000009", "done", word_count=1000, cost_usd=1.0)  # ratio 0.001/word
+    _write_result(tmp_path, "1", "0001-23-000001", "failed", word_count=100, target_name="SkipMe")  # est 0.1
+    _write_result(tmp_path, "2", "0001-23-000002", "failed", word_count=50, target_name="FitsAfter")  # est 0.05
+
+    retried_names = []
+
+    def fake_process(row, model):
+        retried_names.append(row["target_name"])
+        return {"status": "done", "cost_usd": 0.0, "row": row}
+
+    monkeypatch.setattr(bulk_run, "process_candidate_live", fake_process)
+
+    # current spend is fixed at 1.0 (no retried candidate actually adds
+    # to cumulative_spend_from_disk in this test, since fake_process
+    # returns cost_usd=0.0 and doesn't write a new "done" file) -- cap
+    # 1.08 excludes SkipMe (1.0+0.1=1.10 > 1.08) but allows FitsAfter
+    # (1.0+0.05=1.05 <= 1.08).
+    result = bulk_run.retry_failed_candidates("fake-model", cap_usd=1.08)
+
+    assert retried_names == ["FitsAfter"]
+    assert [s["target_name"] for s in result["skipped"]] == ["SkipMe"]
