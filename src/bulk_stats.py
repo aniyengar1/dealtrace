@@ -1,4 +1,4 @@
-"""Five headline stats across the loaded bulk deals (deals.slug LIKE
+"""Headline stats across the loaded bulk deals (deals.slug LIKE
 'bulk_%'), computed directly from Postgres after src.load_bulk has run.
 
     python -m src.bulk_stats
@@ -32,6 +32,13 @@ from src.load_db import connect
 
 load_env()
 
+# Event types counted as evidence a party was contacted/approached, even
+# if it never went on to submit a priced proposal (e.g. it signed an NDA
+# and walked away, or only ever appears in a "discussion" narrative).
+CONTACT_EVENT_TYPES = {"first_contact", "nda", "discussion"}
+
+N_OUTLIERS = 10
+
 
 def _resolve_target(name: Optional[str], target: str) -> Optional[str]:
     if name and name.strip().lower() in validate._TARGET_DEFINED_TERMS:
@@ -42,13 +49,13 @@ def _resolve_target(name: Optional[str], target: str) -> Optional[str]:
 def _fetch_bulk_deals(conn: psycopg.Connection) -> list[dict]:
     rows = conn.execute(
         """
-        SELECT d.id, d.slug, d.target, d.acquirer
+        SELECT d.id, d.slug, d.deal_name, d.target, d.acquirer
         FROM deals d
         WHERE d.slug LIKE 'bulk_%'
         """
     ).fetchall()
     deals = []
-    for deal_id, slug, target, acquirer in rows:
+    for deal_id, slug, deal_name, target, acquirer in rows:
         events = conn.execute(
             """
             SELECT e.date_start, e.event_type, e.parties
@@ -71,9 +78,17 @@ def _fetch_bulk_deals(conn: psycopg.Connection) -> list[dict]:
         deals.append(
             {
                 "slug": slug,
+                "deal_name": deal_name,
                 "target": target,
                 "acquirer": acquirer,
-                "events": [{"date_start": e[0], "event_type": e[1], "parties": e[2]} for e in events],
+                "events": [
+                    {
+                        "date_start": e[0],
+                        "event_type": e[1],
+                        "parties": [_resolve_target(p, target) for p in (e[2] or [])],
+                    }
+                    for e in events
+                ],
                 "proposals": [
                     {
                         "date_resolved": p[0],
@@ -108,17 +123,63 @@ def _final_entry(dated: list[dict]) -> Optional[dict]:
     return dated[-1] if dated else None
 
 
+def _distribution(values: list[float]) -> dict:
+    if not values:
+        return {"min": None, "p25": None, "median": None, "p75": None, "max": None}
+    sorted_values = sorted(values)
+    if len(values) >= 4:
+        q1, _, q3 = statistics.quantiles(sorted_values, n=4, method="inclusive")
+    else:
+        q1 = q3 = statistics.median(sorted_values)
+    return {
+        "min": sorted_values[0],
+        "p25": q1,
+        "median": statistics.median(sorted_values),
+        "p75": q3,
+        "max": sorted_values[-1],
+    }
+
+
+def stat_parties_contacted(deals: list[dict]) -> dict:
+    values = []
+    for d in deals:
+        contacted = {
+            name
+            for e in d["events"]
+            if e["event_type"] in CONTACT_EVENT_TYPES
+            for name in e["parties"]
+            if name and name != d["target"]
+        }
+        values.append(len(contacted))
+    return {
+        "definition": "Number of distinct non-target parties named in any first_contact, nda, or discussion event for the deal.",
+        **{"n": len(values)},
+        **_distribution(values),
+        "exclusions": "none -- 0 counted for deals with no such event",
+    }
+
+
 def stat_n_bidders(deals: list[dict]) -> dict:
     values = []
     for d in deals:
         bidders = {p["proposer"] for p in d["proposals"] if p["proposer"] and p["proposer"] != d["target"]}
         values.append(len(bidders))
-    return {"n": len(values), "median": statistics.median(values) if values else None, "exclusions": "none -- 0 counted for deals with no non-target proposer"}
+    return {
+        "definition": "Number of distinct non-target proposers across the deal's proposals (parties that actually submitted a priced bid, not just made contact).",
+        "n": len(values),
+        **_distribution(values),
+        "exclusions": "none -- 0 counted for deals with no non-target proposer",
+    }
 
 
 def stat_n_proposals(deals: list[dict]) -> dict:
     values = [len(d["proposals"]) for d in deals]
-    return {"n": len(values), "median": statistics.median(values) if values else None, "exclusions": "none -- 0 counted for deals with no proposals"}
+    return {
+        "definition": "Total count of Proposal records (from any proposer, including the target's own counteroffers) extracted for the deal.",
+        "n": len(values),
+        **_distribution(values),
+        "exclusions": "none -- 0 counted for deals with no proposals",
+    }
 
 
 def stat_pct_increase_cash(deals: list[dict]) -> dict:
@@ -145,10 +206,14 @@ def stat_pct_increase_cash(deals: list[dict]) -> dict:
         if first_price == 0:
             excluded["missing_first_price"] += 1
             continue
-        values.append((final_price - first_price) / first_price * 100)
+        values.append((d["deal_name"], (final_price - first_price) / first_price * 100))
+    pct_values = [v for _, v in values]
+    top = sorted(values, key=lambda t: t[1], reverse=True)[:N_OUTLIERS]
     return {
-        "n": len(values),
-        "median_pct_increase": statistics.median(values) if values else None,
+        "definition": "Percent change from the earliest dated proposal's price (price_high if present else price_low) to the final (accepted, else latest-dated) proposal's price, restricted to deals whose final proposal is cash and where both prices are known.",
+        "n": len(pct_values),
+        **_distribution(pct_values),
+        "top_outliers": [{"deal_name": name, "pct_increase": v} for name, v in top],
         "exclusions": excluded,
     }
 
@@ -173,6 +238,7 @@ def stat_first_bidder_is_acquirer(deals: list[dict]) -> dict:
         if first_bidder.strip().lower() == eventual_acquirer.strip().lower():
             matches += 1
     return {
+        "definition": "Share of deals where the proposer of the earliest dated non-target proposal is the same (case-insensitive) as the proposer of the final (accepted, else latest-dated) proposal.",
         "n": n,
         "pct_first_bidder_is_eventual_acquirer": (matches / n * 100) if n else None,
         "exclusions": excluded,
@@ -212,8 +278,16 @@ def stat_days_first_contact_to_signing(deals: list[dict]) -> dict:
             days = (signing_date - process_start).days
         else:
             days = (date.fromisoformat(signing_date) - date.fromisoformat(process_start)).days
-        values.append(days)
-    return {"n": len(values), "median_days": statistics.median(values) if values else None, "exclusions": excluded}
+        values.append((d["deal_name"], days))
+    day_values = [v for _, v in values]
+    top = sorted(values, key=lambda t: t[1], reverse=True)[:N_OUTLIERS]
+    return {
+        "definition": "Days from the deal's process-start date (earliest first_contact event, else the earliest dated event/proposal of any kind) to its latest signing event.",
+        "n": len(day_values),
+        **_distribution(day_values),
+        "top_outliers": [{"deal_name": name, "days": v} for name, v in top],
+        "exclusions": excluded,
+    }
 
 
 def compute_all() -> dict:
@@ -221,11 +295,12 @@ def compute_all() -> dict:
         deals = _fetch_bulk_deals(conn)
     return {
         "n_loaded_deals": len(deals),
-        "median_bidders_contacted": stat_n_bidders(deals),
-        "median_proposals_per_deal": stat_n_proposals(deals),
-        "median_pct_increase_cash_deals": stat_pct_increase_cash(deals),
+        "parties_contacted": stat_parties_contacted(deals),
+        "bidders_who_submitted_a_proposal": stat_n_bidders(deals),
+        "proposals_per_deal": stat_n_proposals(deals),
+        "pct_increase_cash_deals": stat_pct_increase_cash(deals),
         "pct_first_bidder_is_eventual_acquirer": stat_first_bidder_is_acquirer(deals),
-        "median_days_first_contact_to_signing": stat_days_first_contact_to_signing(deals),
+        "days_first_contact_to_signing": stat_days_first_contact_to_signing(deals),
     }
 
 

@@ -163,9 +163,41 @@ def upsert_extraction_run(
 def content_hash(record: dict) -> str:
     """Stable identity for a record's own fields -- excludes validation
     metadata (passed/failure_reasons) so re-validating in place (rather
-    than writing a new run folder) wouldn't change a record's identity."""
+    than writing a new run folder) wouldn't change a record's identity.
+    Hashes the record as extracted, before _strip_nuls -- storage-layer
+    sanitization shouldn't change a record's identity either."""
     canonical = json.dumps(record, sort_keys=True, default=str)
     return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+
+
+def _strip_nuls(value):
+    """Postgres TEXT columns reject NUL (0x00) bytes outright; a source
+    document can contain one (seen live in a BIO-TECHNE filing) and the
+    model just carries it through into a quote. Recurses through
+    lists/dicts so it's safe to apply to an entire record in one call."""
+    if isinstance(value, str):
+        return value.replace("\x00", "")
+    if isinstance(value, list):
+        return [_strip_nuls(v) for v in value]
+    if isinstance(value, dict):
+        return {k: _strip_nuls(v) for k, v in value.items()}
+    return value
+
+
+# proposals.price_low/high is NUMERIC(14,4), sized for a per-share dollar
+# amount -- a correctly-extracted aggregate/enterprise-value figure (e.g.
+# "$25 billion to Endeavor") overflows it, so anything at or past this
+# magnitude is treated as a total deal value instead of a per-share price.
+PRICE_NUMERIC_LIMIT = 10**10
+
+
+def _split_price(value: Optional[float]) -> tuple[Optional[float], Optional[float]]:
+    """Returns (price, total_value): value goes into whichever of the two
+    fits -- total_value if it's too large to be a per-share price,
+    price otherwise (including the common case where value is None)."""
+    if value is not None and abs(value) >= PRICE_NUMERIC_LIMIT:
+        return None, value
+    return value, None
 
 
 def upsert_event(conn: psycopg.Connection, run_id: str, record: dict, passed: bool, failure_reasons: list[str]) -> bool:
@@ -182,15 +214,15 @@ def upsert_event(conn: psycopg.Connection, run_id: str, record: dict, passed: bo
         (
             run_id,
             content_hash(record),
-            record["date_text"],
+            _strip_nuls(record["date_text"]),
             record.get("date_start"),
             record.get("date_end"),
             record["date_precision"],
             record["event_type"],
-            record.get("parties", []),
-            record["summary"],
-            record.get("source_paragraph_ids", []),
-            record.get("source_quotes", []),
+            _strip_nuls(record.get("parties", [])),
+            _strip_nuls(record["summary"]),
+            _strip_nuls(record.get("source_paragraph_ids", [])),
+            _strip_nuls(record.get("source_quotes", [])),
             passed,
             failure_reasons,
         ),
@@ -199,32 +231,40 @@ def upsert_event(conn: psycopg.Connection, run_id: str, record: dict, passed: bo
 
 
 def upsert_proposal(conn: psycopg.Connection, run_id: str, record: dict, passed: bool, failure_reasons: list[str]) -> bool:
+    price_low, total_value_low = _split_price(record.get("price_low"))
+    price_high, total_value_high = _split_price(record.get("price_high"))
+    if total_value_low is not None or total_value_high is not None:
+        failure_reasons = list(failure_reasons) + [
+            "price_low/high too large for a per-share price; stored in total_value_low/high instead"
+        ]
     cur = conn.execute(
         """
         INSERT INTO proposals (
             run_id, content_hash, date_text, date_resolved, proposer, recipient,
-            price_low, price_high, premium_pct, currency, consideration_type,
-            proposal_kind, status, source_paragraph_ids, source_quotes,
-            passed, failure_reasons
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            price_low, price_high, total_value_low, total_value_high, premium_pct,
+            currency, consideration_type, proposal_kind, status,
+            source_paragraph_ids, source_quotes, passed, failure_reasons
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         ON CONFLICT (run_id, content_hash) DO NOTHING
         """,
         (
             run_id,
             content_hash(record),
-            record["date"],
+            _strip_nuls(record["date"]),
             record.get("date_resolved"),
-            record["proposer"],
-            record["recipient"],
-            record.get("price_low"),
-            record.get("price_high"),
+            _strip_nuls(record["proposer"]),
+            _strip_nuls(record["recipient"]),
+            price_low,
+            price_high,
+            total_value_low,
+            total_value_high,
             record.get("premium_pct"),
             record.get("currency"),
             record["consideration_type"],
             record["proposal_kind"],
             record["status"],
-            record.get("source_paragraph_ids", []),
-            record.get("source_quotes", []),
+            _strip_nuls(record.get("source_paragraph_ids", [])),
+            _strip_nuls(record.get("source_quotes", [])),
             passed,
             failure_reasons,
         ),
