@@ -15,21 +15,21 @@ export function ReviewStatusBadge({
 }) {
   if (status === "confirmed") {
     return (
-      <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700">
+      <span className="inline-flex items-center gap-1 rounded-full bg-positive/15 px-2 py-0.5 text-xs font-medium text-positive">
         verified
       </span>
     );
   }
   if (status === "rejected") {
     return (
-      <span className="inline-flex items-center gap-1 rounded-full bg-red-50 px-2 py-0.5 text-xs font-medium text-red-700">
+      <span className="inline-flex items-center gap-1 rounded-full bg-negative/15 px-2 py-0.5 text-xs font-medium text-negative">
         rejected
       </span>
     );
   }
   if (context === "deal") return null;
   return (
-    <span className="inline-flex items-center gap-1 rounded-full border border-dashed border-amber-400 bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700">
+    <span className="inline-flex items-center gap-1 rounded-full border border-dashed border-gold/50 bg-gold/10 px-2 py-0.5 text-xs font-medium text-gold">
       not yet reviewed
     </span>
   );
@@ -37,29 +37,29 @@ export function ReviewStatusBadge({
 
 export function ValidationBadge({ passed }: { passed: boolean }) {
   return passed ? (
-    <span className="inline-flex items-center gap-1 rounded-full bg-neutral-100 px-2 py-0.5 text-xs text-neutral-600">
+    <span className="inline-flex items-center gap-1 rounded-full bg-surface-raised px-2 py-0.5 text-xs text-ink-muted">
       source check passed
     </span>
   ) : (
-    <span className="inline-flex items-center gap-1 rounded-full bg-orange-50 px-2 py-0.5 text-xs text-orange-700">
+    <span className="inline-flex items-center gap-1 rounded-full bg-negative/15 px-2 py-0.5 text-xs text-negative">
       source check failed
     </span>
   );
 }
 
 export function factRowClassName(extra = ""): string {
-  return `cursor-pointer transition-colors hover:bg-neutral-50 ${extra}`;
+  return `cursor-pointer transition-colors hover:bg-surface-raised ${extra}`;
 }
 
 export function ReviewProgressBanner({ reviewed, total }: { reviewed: number; total: number }) {
   const pct = total > 0 ? Math.round((reviewed / total) * 100) : 0;
   return (
-    <div className="flex items-center gap-3 rounded-lg border border-neutral-200 bg-white px-4 py-2.5 text-sm">
-      <div className="h-1.5 w-32 overflow-hidden rounded-full bg-neutral-200">
-        <div className="h-full rounded-full bg-emerald-500" style={{ width: `${pct}%` }} />
+    <div className="flex items-center gap-3 rounded-lg border border-border bg-surface px-4 py-2.5 text-sm">
+      <div className="h-1.5 w-32 overflow-hidden rounded-full bg-surface-raised">
+        <div className="h-full rounded-full bg-positive" style={{ width: `${pct}%` }} />
       </div>
-      <span className="text-neutral-600">
-        <span className="font-medium text-neutral-900">{reviewed}</span> of {total} facts reviewed
+      <span className="text-ink-muted">
+        <span className="font-medium text-ink">{reviewed}</span> of {total} facts reviewed
       </span>
     </div>
   );

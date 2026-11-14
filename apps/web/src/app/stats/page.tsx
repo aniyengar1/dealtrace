@@ -9,8 +9,14 @@ import {
 import { computeDealStatsRow, computeCrossDealSummary, type DealStatsRow } from "@/lib/crossDealStats";
 import { acquirerDisplayName, BUYER_TYPE_LABELS } from "@/lib/labels";
 import { formatPriceRange, formatPrice, formatPct } from "@/lib/format";
+import { Container } from "@/components/ui/Container";
 
 export const dynamic = "force-dynamic";
+
+export const metadata = {
+  title: "Cross-deal stats",
+  description: "Early, small-sample aggregate findings across every deal with a completed extraction.",
+};
 
 // Every row here is built from a deal's latest (locked) facts run only --
 // the same run getLatestFactsRunForDeal resolves on the deal page itself
@@ -31,7 +37,7 @@ async function loadRows(): Promise<DealStatsRow[]> {
 function UnreviewedMark({ show }: { show: boolean }) {
   if (!show) return null;
   return (
-    <sup className="ml-0.5 text-amber-600" title="Includes at least one unreviewed fact">
+    <sup className="ml-0.5 text-gold" title="Includes at least one unreviewed fact">
       •
     </sup>
   );
@@ -69,26 +75,26 @@ function pctChangeLabel(row: DealStatsRow): string {
 
 function GroupStatsCard({ label, stats }: { label: string; stats: { n: number; medianPctChange: number | null; meanPctChange: number | null; medianRounds: number | null; medianDaysToSigning: number | null } }) {
   return (
-    <div className="rounded-lg border border-neutral-200 bg-white p-4">
+    <div className="rounded-lg border border-border bg-surface p-4">
       <div className="flex items-baseline justify-between">
         <h3 className="text-sm font-semibold">{label}</h3>
-        <span className="text-xs text-neutral-500">n = {stats.n} deal{stats.n === 1 ? "" : "s"}</span>
+        <span className="text-xs text-ink-muted">n = {stats.n} deal{stats.n === 1 ? "" : "s"}</span>
       </div>
       <dl className="mt-3 grid grid-cols-2 gap-3 text-sm">
         <div>
-          <dt className="text-xs text-neutral-500">Median bump</dt>
+          <dt className="text-xs text-ink-muted">Median bump</dt>
           <dd className="tabular-nums">{formatPct(stats.medianPctChange)}</dd>
         </div>
         <div>
-          <dt className="text-xs text-neutral-500">Mean bump</dt>
+          <dt className="text-xs text-ink-muted">Mean bump</dt>
           <dd className="tabular-nums">{formatPct(stats.meanPctChange)}</dd>
         </div>
         <div>
-          <dt className="text-xs text-neutral-500">Median rounds</dt>
+          <dt className="text-xs text-ink-muted">Median rounds</dt>
           <dd className="tabular-nums">{stats.medianRounds ?? "—"}</dd>
         </div>
         <div>
-          <dt className="text-xs text-neutral-500">Median days to signing</dt>
+          <dt className="text-xs text-ink-muted">Median days to signing</dt>
           <dd className="tabular-nums">{stats.medianDaysToSigning ?? "—"}</dd>
         </div>
       </dl>
@@ -101,13 +107,13 @@ export default async function StatsPage() {
   const summary = computeCrossDealSummary(rows);
 
   return (
-    <div>
-      <h1 className="text-xl font-semibold tracking-tight">Cross-deal findings</h1>
-      <p className="mt-1 text-sm text-neutral-600">
+    <Container wide className="py-10">
+      <h1 className="font-serif text-3xl font-semibold tracking-tight text-ink">Cross-deal findings</h1>
+      <p className="mt-1 text-sm text-ink-muted">
         n = {summary.nDeals} deal{summary.nDeals === 1 ? "" : "s"} —{" "}
-        <span className="font-medium text-amber-700">early / small-sample findings</span>, not a statistically
+        <span className="font-medium text-gold">early / small-sample findings</span>, not a statistically
         reliable base rate. Every figure is read from each deal&apos;s latest locked extraction run only; cells
-        marked <span className="text-amber-600">•</span> include at least one unreviewed fact.
+        marked <span className="text-gold">•</span> include at least one unreviewed fact.
       </p>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-3">
@@ -116,9 +122,9 @@ export default async function StatsPage() {
         <GroupStatsCard label={BUYER_TYPE_LABELS.sponsor} stats={summary.byBuyerType.sponsor} />
       </div>
 
-      <div className="mt-8 overflow-x-auto rounded-lg border border-neutral-200 bg-white">
+      <div className="mt-8 overflow-x-auto rounded-lg border border-border bg-surface">
         <table className="w-full text-left text-sm">
-          <thead className="border-b border-neutral-200 bg-neutral-50 text-xs uppercase tracking-wide text-neutral-500">
+          <thead className="border-b border-border bg-surface-raised text-xs uppercase tracking-wide text-ink-muted">
             <tr>
               <th className="px-3 py-2.5 font-medium">Target</th>
               <th className="px-3 py-2.5 font-medium">Acquirer</th>
@@ -133,16 +139,16 @@ export default async function StatsPage() {
               <th className="px-3 py-2.5 font-medium">Activist</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-neutral-100">
+          <tbody className="divide-y divide-border">
             {rows.map((row) => (
-              <tr key={row.slug} className="hover:bg-neutral-50">
+              <tr key={row.slug} className="hover:bg-surface-raised">
                 <td className="px-3 py-3 font-medium">
                   <Link href={`/deals/${row.slug}`} className="hover:underline">
                     {row.target}
                   </Link>
                 </td>
-                <td className="px-3 py-3 text-neutral-600">{acquirerDisplayName(row.slug, row.acquirer)}</td>
-                <td className="px-3 py-3 text-neutral-600">{BUYER_TYPE_LABELS[row.buyerType]}</td>
+                <td className="px-3 py-3 text-ink-muted">{acquirerDisplayName(row.slug, row.acquirer)}</td>
+                <td className="px-3 py-3 text-ink-muted">{BUYER_TYPE_LABELS[row.buyerType]}</td>
                 <td className="px-3 py-3 tabular-nums">
                   <Cell
                     href={`/deals/${row.slug}?fact=${row.finalBidFactId ?? row.firstBidFactId ?? ""}`}
@@ -208,6 +214,6 @@ export default async function StatsPage() {
           </tbody>
         </table>
       </div>
-    </div>
+    </Container>
   );
 }

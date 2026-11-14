@@ -16,6 +16,9 @@ export interface DealStatsRow {
   nRounds: number;
   nBidders: number;
   nCounteroffers: number;
+  nProposals: number;
+  signingDate: string | null;
+  considerationType: string | null;
   daysFirstContactToSigning: number | null;
   marketCheck: "yes" | "no" | "unknown";
   finalPremiumPct: number | null;
@@ -54,6 +57,9 @@ export function computeDealStatsRow(deal: Deal, events: EventRow[], proposals: P
     nRounds: s.nRounds,
     nBidders: s.nBidders,
     nCounteroffers: s.nCounteroffers,
+    nProposals: proposals.filter((p) => p.review_status !== "rejected").length,
+    signingDate: s.signingEvent?.date_start ?? null,
+    considerationType: s.finalBidProposal?.consideration_type ?? null,
     daysFirstContactToSigning: s.daysFirstContactToSigning,
     marketCheck: s.marketCheck,
     finalPremiumPct: s.finalPremiumPct,

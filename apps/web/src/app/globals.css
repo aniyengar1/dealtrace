@@ -1,5 +1,78 @@
 @import "tailwindcss";
 
+/*
+ * Design tokens -- single source of truth for the dark-first theme.
+ * Colors are deliberately off-white/muted-slate rather than pure
+ * white/gray (see redesign brief): easier on the eyes on a near-black
+ * background and reads less like unstyled browser defaults.
+ */
+@theme {
+  --color-bg: #070b1f;
+  --color-surface: #0e1330;
+  --color-surface-raised: #141a3d;
+  --color-border: #232a52;
+  --color-border-strong: #333c6e;
+
+  --color-ink: #eef0f8;
+  --color-ink-muted: #97a0c3;
+  --color-ink-faint: #5c6490;
+
+  --color-gold: #c9a44c;
+  --color-gold-ink: #1a1403;
+
+  /* Small, accessible palette reserved for chart series/categories --
+     never used for UI chrome, so a reader can rely on "gold = the
+     headline number" everywhere. */
+  --color-chart-1: #5b8def;
+  --color-chart-2: #4fd1c5;
+  --color-chart-3: #9d8cf1;
+  --color-chart-4: #e0776b;
+  --color-chart-5: #6ee7b7;
+  --color-chart-6: #93a5cf;
+
+  --color-positive: #4fd1a0;
+  --color-negative: #e8846b;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+}
+
+html {
+  color-scheme: dark;
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum" 1;
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-gold) 35%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

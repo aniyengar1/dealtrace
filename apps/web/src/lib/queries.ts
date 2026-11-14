@@ -181,6 +181,23 @@ export async function getAllFactsForDeal(dealId: string): Promise<Fact[]> {
   return [...events, ...proposals, ...valuations];
 }
 
+// Best-effort link from a deal to the SEC filing it was extracted from --
+// "deals" has no filing reference of its own (it's hand-registered in
+// src/run.py's DEALS dict, independent of the automated discovery table),
+// so this joins on the discovery table's own fuzzy name match instead.
+// Null (hidden, never guessed) when no confident match exists.
+export async function getFilingUrlForDeal(searchTerm: string): Promise<string | null> {
+  const row = await queryOne<{ primary_file_name: string }>(
+    `SELECT primary_file_name FROM deal_candidates
+     WHERE target_name ILIKE '%' || $1 || '%'
+       AND classification = 'public_company_acquisition'
+     ORDER BY primary_filed_date DESC
+     LIMIT 1`,
+    [searchTerm]
+  );
+  return row ? `https://www.sec.gov/Archives/${row.primary_file_name}` : null;
+}
+
 export async function getParagraphsForDeal(dealId: string): Promise<Record<string, ParagraphRow>> {
   const rows = await query<ParagraphRow>(
     `SELECT paragraph_id, section_key, text FROM paragraphs WHERE deal_id = $1`,

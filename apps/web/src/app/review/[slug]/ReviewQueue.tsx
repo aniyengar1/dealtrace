@@ -226,7 +226,7 @@ export function ReviewQueue({
 
   return (
     <div>
-      <div className="mb-4 flex items-center justify-between text-sm text-neutral-500">
+      <div className="mb-4 flex items-center justify-between text-sm text-ink-muted">
         <div className="flex items-center gap-4">
           <span>
             {current ? `${index + 1} of ${visibleFacts.length}` : "0 of 0"}
@@ -235,33 +235,33 @@ export function ReviewQueue({
           <button
             onClick={toggleCoreOnly}
             className={`rounded-full px-2.5 py-1 text-xs transition-colors ${
-              coreOnly ? "bg-neutral-900 text-white" : "border border-neutral-300 text-neutral-600 hover:bg-neutral-50"
+              coreOnly ? "bg-gold text-gold-ink" : "border border-border-strong text-ink-muted hover:bg-surface-raised"
             }`}
           >
             Core only
           </button>
         </div>
         <span className="text-xs">
-          <kbd className="rounded border border-neutral-300 bg-neutral-50 px-1">a</kbd> approve ·{" "}
-          <kbd className="rounded border border-neutral-300 bg-neutral-50 px-1">c</kbd> correct ·{" "}
-          <kbd className="rounded border border-neutral-300 bg-neutral-50 px-1">r</kbd> reject ·{" "}
-          <kbd className="rounded border border-neutral-300 bg-neutral-50 px-1">j</kbd>/
-          <kbd className="rounded border border-neutral-300 bg-neutral-50 px-1">k</kbd> next/prev
+          <kbd className="rounded border border-border-strong bg-surface-raised px-1">a</kbd> approve ·{" "}
+          <kbd className="rounded border border-border-strong bg-surface-raised px-1">c</kbd> correct ·{" "}
+          <kbd className="rounded border border-border-strong bg-surface-raised px-1">r</kbd> reject ·{" "}
+          <kbd className="rounded border border-border-strong bg-surface-raised px-1">j</kbd>/
+          <kbd className="rounded border border-border-strong bg-surface-raised px-1">k</kbd> next/prev
         </span>
       </div>
 
       {!current ? (
-        <p className="text-sm text-neutral-500">
+        <p className="text-sm text-ink-muted">
           {facts.length === 0
             ? "No facts to review for this deal."
             : "No core facts (proposals/core events) to review -- turn off Core only to see the rest."}
         </p>
       ) : (
       <div className="grid grid-cols-2 gap-6">
-        <div className="rounded-lg border border-neutral-200 bg-white p-4">
+        <div className="rounded-lg border border-border bg-surface p-4">
           <div className="mb-3 flex items-center justify-between">
             <div>
-              <div className="text-xs uppercase tracking-wide text-neutral-500">{current.record_type}</div>
+              <div className="text-xs uppercase tracking-wide text-ink-muted">{current.record_type}</div>
               <div className="text-sm font-medium">{factSummaryLine(current)}</div>
             </div>
             <div className="flex items-center gap-2">
@@ -274,17 +274,17 @@ export function ReviewQueue({
             <div className="space-y-2.5">
               {fields.map((field) => (
                 <div key={field.key}>
-                  <label className="block text-xs text-neutral-500">{field.label}</label>
+                  <label className="block text-xs text-ink-muted">{field.label}</label>
                   {field.type === "textarea" ? (
                     <textarea
-                      className="mt-0.5 w-full rounded border border-neutral-300 px-2 py-1 text-sm"
+                      className="mt-0.5 w-full rounded border border-border-strong px-2 py-1 text-sm"
                       rows={3}
                       value={editValues[field.key] ?? ""}
                       onChange={(e) => setEditValues((v) => ({ ...v, [field.key]: e.target.value }))}
                     />
                   ) : field.type === "select" ? (
                     <select
-                      className="mt-0.5 w-full rounded border border-neutral-300 px-2 py-1 text-sm"
+                      className="mt-0.5 w-full rounded border border-border-strong px-2 py-1 text-sm"
                       value={editValues[field.key] ?? ""}
                       onChange={(e) => setEditValues((v) => ({ ...v, [field.key]: e.target.value }))}
                     >
@@ -298,7 +298,7 @@ export function ReviewQueue({
                     <input
                       type={field.type === "number" ? "number" : "text"}
                       step="any"
-                      className="mt-0.5 w-full rounded border border-neutral-300 px-2 py-1 text-sm"
+                      className="mt-0.5 w-full rounded border border-border-strong px-2 py-1 text-sm"
                       value={editValues[field.key] ?? ""}
                       onChange={(e) => setEditValues((v) => ({ ...v, [field.key]: e.target.value }))}
                     />
@@ -306,9 +306,9 @@ export function ReviewQueue({
                 </div>
               ))}
               <div>
-                <label className="block text-xs text-neutral-500">Note (optional)</label>
+                <label className="block text-xs text-ink-muted">Note (optional)</label>
                 <textarea
-                  className="mt-0.5 w-full rounded border border-neutral-300 px-2 py-1 text-sm"
+                  className="mt-0.5 w-full rounded border border-border-strong px-2 py-1 text-sm"
                   rows={2}
                   value={noteValue}
                   onChange={(e) => setNoteValue(e.target.value)}
@@ -318,13 +318,13 @@ export function ReviewQueue({
                 <button
                   onClick={submitCorrect}
                   disabled={pending}
-                  className="rounded bg-neutral-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-neutral-700 disabled:opacity-50"
+                  className="rounded bg-gold px-3 py-1.5 text-sm font-medium text-gold-ink hover:bg-gold/90 disabled:opacity-50"
                 >
                   Save correction
                 </button>
                 <button
                   onClick={resetModeState}
-                  className="rounded border border-neutral-300 px-3 py-1.5 text-sm hover:bg-neutral-50"
+                  className="rounded border border-border-strong px-3 py-1.5 text-sm hover:bg-surface-raised"
                 >
                   Cancel
                 </button>
@@ -338,7 +338,7 @@ export function ReviewQueue({
                   const display = toEditString(raw, field.type);
                   return (
                     <Fragment key={field.key}>
-                      <dt className="text-neutral-500">{field.label}</dt>
+                      <dt className="text-ink-muted">{field.label}</dt>
                       <dd className="tabular-nums">{display || "—"}</dd>
                     </Fragment>
                   );
@@ -346,12 +346,12 @@ export function ReviewQueue({
               </dl>
 
               {current.failure_reasons.length > 0 && (
-                <div className="mt-3 rounded bg-orange-50 px-3 py-2 text-xs text-orange-800">
+                <div className="mt-3 rounded bg-negative/15 px-3 py-2 text-xs text-negative">
                   {current.failure_reasons.join("; ")}
                 </div>
               )}
               {current.reviewer_note && (
-                <div className="mt-3 rounded bg-neutral-100 px-3 py-2 text-xs text-neutral-700">
+                <div className="mt-3 rounded bg-surface-raised px-3 py-2 text-xs text-ink">
                   <span className="font-medium">Note: </span>
                   {current.reviewer_note}
                 </div>
@@ -359,10 +359,10 @@ export function ReviewQueue({
 
               {mode === "reject" ? (
                 <div className="mt-4">
-                  <label className="block text-xs text-neutral-500">Reason for rejection (required)</label>
+                  <label className="block text-xs text-ink-muted">Reason for rejection (required)</label>
                   <textarea
                     ref={noteInputRef}
-                    className="mt-0.5 w-full rounded border border-neutral-300 px-2 py-1 text-sm"
+                    className="mt-0.5 w-full rounded border border-border-strong px-2 py-1 text-sm"
                     rows={2}
                     value={noteValue}
                     onChange={(e) => setNoteValue(e.target.value)}
@@ -371,13 +371,13 @@ export function ReviewQueue({
                     <button
                       onClick={submitReject}
                       disabled={pending || noteValue.trim() === ""}
-                      className="rounded bg-red-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-red-500 disabled:opacity-50"
+                      className="rounded bg-negative px-3 py-1.5 text-sm font-medium text-bg hover:bg-negative/90 disabled:opacity-50"
                     >
                       Confirm reject
                     </button>
                     <button
                       onClick={resetModeState}
-                      className="rounded border border-neutral-300 px-3 py-1.5 text-sm hover:bg-neutral-50"
+                      className="rounded border border-border-strong px-3 py-1.5 text-sm hover:bg-surface-raised"
                     >
                       Cancel
                     </button>
@@ -388,21 +388,21 @@ export function ReviewQueue({
                   <button
                     onClick={handleApprove}
                     disabled={pending}
-                    className="rounded bg-emerald-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-emerald-500 disabled:opacity-50"
+                    className="rounded bg-positive px-3 py-1.5 text-sm font-medium text-bg hover:bg-positive/90 disabled:opacity-50"
                   >
                     Approve
                   </button>
                   <button
                     onClick={startCorrect}
                     disabled={pending}
-                    className="rounded border border-neutral-300 px-3 py-1.5 text-sm hover:bg-neutral-50 disabled:opacity-50"
+                    className="rounded border border-border-strong px-3 py-1.5 text-sm hover:bg-surface-raised disabled:opacity-50"
                   >
                     Correct
                   </button>
                   <button
                     onClick={startReject}
                     disabled={pending}
-                    className="rounded border border-red-300 px-3 py-1.5 text-sm text-red-700 hover:bg-red-50 disabled:opacity-50"
+                    className="rounded border border-negative/40 px-3 py-1.5 text-sm text-negative hover:bg-negative/10 disabled:opacity-50"
                   >
                     Reject
                   </button>
@@ -411,34 +411,34 @@ export function ReviewQueue({
             </>
           )}
 
-          <div className="mt-4 flex justify-between border-t border-neutral-100 pt-3">
+          <div className="mt-4 flex justify-between border-t border-border pt-3">
             <button
               onClick={() => goTo(index - 1)}
               disabled={index === 0}
-              className="text-sm text-neutral-500 hover:text-neutral-900 disabled:opacity-30"
+              className="text-sm text-ink-muted hover:text-ink disabled:opacity-30"
             >
               ← previous
             </button>
             <button
               onClick={() => goTo(index + 1)}
               disabled={index === visibleFacts.length - 1}
-              className="text-sm text-neutral-500 hover:text-neutral-900 disabled:opacity-30"
+              className="text-sm text-ink-muted hover:text-ink disabled:opacity-30"
             >
               next →
             </button>
           </div>
         </div>
 
-        <div className="rounded-lg border border-neutral-200 bg-white p-4">
-          <h3 className="text-xs font-medium uppercase tracking-wide text-neutral-500">
+        <div className="rounded-lg border border-border bg-surface p-4">
+          <h3 className="text-xs font-medium uppercase tracking-wide text-ink-muted">
             Source paragraph{current.source_paragraph_ids.length > 1 ? "s" : ""}
           </h3>
           <div className="mt-2 space-y-3">
             {current.source_paragraph_ids.map((pid) => {
               const paragraph = paragraphs[pid];
               return (
-                <div key={pid} className="rounded border border-neutral-200 p-3">
-                  <div className="mb-1.5 flex items-center justify-between text-xs text-neutral-500">
+                <div key={pid} className="rounded border border-border p-3">
+                  <div className="mb-1.5 flex items-center justify-between text-xs text-ink-muted">
                     <span className="font-mono">{pid}</span>
                     {paragraph && <span>{paragraph.section_key.replace(/_/g, " ")}</span>}
                   </div>

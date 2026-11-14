@@ -9,13 +9,19 @@ import {
   getValuationsForRun,
 } from "@/lib/queries";
 import { buildDealMemo, type MemoLine } from "@/lib/memo";
+import { Container } from "@/components/ui/Container";
+import { EmptyState } from "@/components/ui/EmptyState";
 
 export const dynamic = "force-dynamic";
+
+export const metadata = {
+  title: "Deal memo",
+};
 
 function Citation({ slug, factId }: { slug: string; factId: string | null }) {
   if (!factId) return null;
   return (
-    <Link href={`/deals/${slug}?fact=${factId}`} className="ml-1 text-xs text-sky-600 hover:underline">
+    <Link href={`/deals/${slug}?fact=${factId}`} className="ml-1 text-xs text-gold hover:underline">
       [source]
     </Link>
   );
@@ -45,10 +51,12 @@ export default async function DealMemoPage({ params }: { params: Promise<{ slug:
   ]);
   if (!factsRun) {
     return (
-      <div>
-        <h1 className="text-xl font-semibold">{deal.deal_name}</h1>
-        <p className="mt-2 text-sm text-neutral-500">No extraction run has completed for this deal yet.</p>
-      </div>
+      <Container wide className="py-10">
+        <h1 className="font-serif text-2xl font-semibold text-ink">{deal.deal_name}</h1>
+        <div className="mt-6">
+          <EmptyState title="Not extracted yet" description="No completed extraction run exists for this deal yet." />
+        </div>
+      </Container>
     );
   }
 
@@ -61,25 +69,25 @@ export default async function DealMemoPage({ params }: { params: Promise<{ slug:
   const memo = buildDealMemo(deal, events, proposals, valuations);
 
   return (
-    <div>
+    <Container wide className="py-10">
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="text-xl font-semibold tracking-tight">{memo.dealName} — Deal memo</h1>
-          <p className="mt-1 text-sm text-neutral-500">
-            {memo.target} <span className="text-neutral-300">→</span> {memo.acquirer}
+          <h1 className="font-serif text-2xl font-semibold tracking-tight text-ink">{memo.dealName} — Deal memo</h1>
+          <p className="mt-1 text-sm text-ink-muted">
+            {memo.target} <span className="text-ink-faint">→</span> {memo.acquirer}
           </p>
         </div>
         <div className="flex gap-2">
           <a
             href={`/deals/${slug}/memo/export`}
             download={`${slug}-memo.md`}
-            className="rounded-md border border-neutral-300 bg-white px-3 py-1.5 text-sm font-medium text-neutral-700 hover:bg-neutral-50"
+            className="rounded-md border border-border-strong bg-surface px-3 py-1.5 text-sm font-medium text-ink hover:bg-surface-raised"
           >
             Download Markdown
           </a>
           <Link
             href={`/deals/${slug}`}
-            className="rounded-md bg-neutral-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-neutral-700"
+            className="rounded-md bg-gold px-3 py-1.5 text-sm font-medium text-gold-ink hover:bg-gold/90"
           >
             Back to deal
           </Link>
@@ -87,31 +95,31 @@ export default async function DealMemoPage({ params }: { params: Promise<{ slug:
       </div>
 
       <section className="mt-6">
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">Deal terms</h2>
-        <div className="mt-2 rounded-lg border border-neutral-200 bg-white p-4">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-muted">Deal terms</h2>
+        <div className="mt-2 rounded-lg border border-border bg-surface p-4">
           <LineList slug={slug} lines={memo.dealTerms} />
         </div>
       </section>
 
       <section className="mt-6">
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">Parties and advisors</h2>
-        <div className="mt-2 rounded-lg border border-neutral-200 bg-white p-4">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-muted">Parties and advisors</h2>
+        <div className="mt-2 rounded-lg border border-border bg-surface p-4">
           <LineList slug={slug} lines={memo.partiesAndAdvisors} />
         </div>
       </section>
 
       <section className="mt-6">
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">Process timeline</h2>
-        <div className="mt-2 rounded-lg border border-neutral-200 bg-white p-4">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-muted">Process timeline</h2>
+        <div className="mt-2 rounded-lg border border-border bg-surface p-4">
           <LineList slug={slug} lines={memo.timeline} />
         </div>
       </section>
 
       <section className="mt-6">
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">Bid history</h2>
-        <div className="mt-2 overflow-x-auto rounded-lg border border-neutral-200 bg-white">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-muted">Bid history</h2>
+        <div className="mt-2 overflow-x-auto rounded-lg border border-border bg-surface">
           <table className="w-full text-left text-sm">
-            <thead className="border-b border-neutral-200 bg-neutral-50 text-xs uppercase tracking-wide text-neutral-500">
+            <thead className="border-b border-border bg-surface-raised text-xs uppercase tracking-wide text-ink-muted">
               <tr>
                 <th className="px-3 py-2 font-medium">Date</th>
                 <th className="px-3 py-2 font-medium">Proposer</th>
@@ -123,7 +131,7 @@ export default async function DealMemoPage({ params }: { params: Promise<{ slug:
                 <th className="px-3 py-2 font-medium">Source</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-100">
+            <tbody className="divide-y divide-border">
               {memo.bidHistory.map((r, i) => (
                 <tr key={i}>
                   <td className="px-3 py-2">{r.dateLabel}</td>
@@ -144,10 +152,10 @@ export default async function DealMemoPage({ params }: { params: Promise<{ slug:
       </section>
 
       <section className="mt-6">
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">Valuation summary</h2>
-        <div className="mt-2 overflow-x-auto rounded-lg border border-neutral-200 bg-white">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-muted">Valuation summary</h2>
+        <div className="mt-2 overflow-x-auto rounded-lg border border-border bg-surface">
           <table className="w-full text-left text-sm">
-            <thead className="border-b border-neutral-200 bg-neutral-50 text-xs uppercase tracking-wide text-neutral-500">
+            <thead className="border-b border-border bg-surface-raised text-xs uppercase tracking-wide text-ink-muted">
               <tr>
                 <th className="px-3 py-2 font-medium">Advisor</th>
                 <th className="px-3 py-2 font-medium">Method</th>
@@ -156,7 +164,7 @@ export default async function DealMemoPage({ params }: { params: Promise<{ slug:
                 <th className="px-3 py-2 font-medium">Source</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-neutral-100">
+            <tbody className="divide-y divide-border">
               {memo.valuationSummary.map((r, i) => (
                 <tr key={i}>
                   <td className="px-3 py-2">{r.advisor}</td>
@@ -174,18 +182,18 @@ export default async function DealMemoPage({ params }: { params: Promise<{ slug:
       </section>
 
       <section className="mt-6">
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">Notable features</h2>
-        <div className="mt-2 rounded-lg border border-neutral-200 bg-white p-4">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-muted">Notable features</h2>
+        <div className="mt-2 rounded-lg border border-border bg-surface p-4">
           <LineList slug={slug} lines={memo.notableFeatures} />
         </div>
       </section>
 
       <section className="mt-6">
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">Talking points</h2>
-        <div className="mt-2 rounded-lg border border-neutral-200 bg-white p-4">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-muted">Talking points</h2>
+        <div className="mt-2 rounded-lg border border-border bg-surface p-4">
           <LineList slug={slug} lines={memo.talkingPoints} />
         </div>
       </section>
-    </div>
+    </Container>
   );
 }
