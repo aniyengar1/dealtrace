@@ -51,3 +51,26 @@ def is_same_entity(name_a: str, name_b: str) -> bool:
         return True
     shorter, longer = (a, b) if len(a) <= len(b) else (b, a)
     return len(shorter) >= 3 and longer.startswith(shorter)
+
+
+def initials(name: str) -> str:
+    """"United States Steel Corp" -> "USS" (legal suffix stripped first,
+    so "Corp" doesn't contribute a letter)."""
+    words = core_name(name).split()
+    return "".join(w[0] for w in words if w).upper()
+
+
+def is_acronym_of(short: str, long_name: str) -> bool:
+    """True if `short` looks like an initials/acronym abbreviation of
+    `long_name` -- "USS" for "UNITED STATES STEEL CORP". Requires the
+    long name to have at least 2 significant words (so a single-word
+    name can't trivially "match" any one-letter string) and the
+    candidate acronym to look like one (letters only, 2-6 characters) --
+    guards against an unrelated short name coincidentally matching."""
+    s = short.strip()
+    if not s or not s.isalpha() or not (2 <= len(s) <= 6):
+        return False
+    words = core_name(long_name).split()
+    if len(words) < 2:
+        return False
+    return s.upper() == initials(long_name)

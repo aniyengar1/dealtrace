@@ -31,7 +31,7 @@ from typing import Optional
 import psycopg
 
 from src import validate
-from src.entity_match import is_same_entity
+from src.entity_match import is_acronym_of, is_same_entity
 from src.env import load_env
 from src.load_db import connect
 
@@ -51,7 +51,11 @@ REVIEW_PCT_DROP_THRESHOLD = -90.0
 
 
 def _resolve_target(name: Optional[str], target: str) -> Optional[str]:
-    if name and (name.strip().lower() in validate._TARGET_DEFINED_TERMS or is_same_entity(name, target)):
+    if name and (
+        name.strip().lower() in validate._TARGET_DEFINED_TERMS
+        or is_same_entity(name, target)
+        or is_acronym_of(name, target)
+    ):
         return target
     return name
 

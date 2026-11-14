@@ -23,7 +23,7 @@ from typing import Optional
 
 from src import sanity, sections, validate
 from src.bulk_run import BULK_OUTPUT_DIR, load_cached_html
-from src.entity_match import is_same_entity
+from src.entity_match import is_acronym_of, is_same_entity
 
 
 def _resolve_target_placeholder(name: Optional[str], target_name: str) -> Optional[str]:
@@ -32,17 +32,22 @@ def _resolve_target_placeholder(name: Optional[str], target_name: str) -> Option
     it, "Company"/"Board"/etc. placeholders are still literal, which
     would make guess_acquirer below pick "Company" as the most common
     non-target name instead of the real acquirer. Resolves the TARGET
-    side (the one name we actually know here) via both its defined-term
-    placeholders AND is_same_entity, since an informal short name
-    ("Knoll") used as proposer/recipient text doesn't equal the raw
-    EDGAR legal name ("KNOLL INC") under exact string comparison --
-    that near-miss previously let the target's own short name slip
-    through uncounted as a candidate "acquirer". Acquirer-side
-    placeholders (Parent, Merger Sub, Buyer) are deliberately left
-    as-is -- they're informative as "unresolved" rather than disappearing
-    into a guessed value.
+    side (the one name we actually know here) via its defined-term
+    placeholders, is_same_entity (an informal short name like "Knoll"
+    never exactly equals the raw EDGAR legal name "KNOLL INC"), and
+    is_acronym_of (a filing's own initials-style short name, like "USS"
+    for "UNITED STATES STEEL CORP", which is neither a defined-term
+    placeholder nor a prefix of the legal name) -- all three previously
+    let the target's own short name slip through uncounted as a
+    candidate "acquirer". Acquirer-side placeholders (Parent, Merger
+    Sub, Buyer) are deliberately left as-is -- they're informative as
+    "unresolved" rather than disappearing into a guessed value.
     """
-    if name and (name.strip().lower() in validate._TARGET_DEFINED_TERMS or is_same_entity(name, target_name)):
+    if name and (
+        name.strip().lower() in validate._TARGET_DEFINED_TERMS
+        or is_same_entity(name, target_name)
+        or is_acronym_of(name, target_name)
+    ):
         return target_name
     return name
 
