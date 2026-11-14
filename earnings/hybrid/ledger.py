@@ -8,7 +8,7 @@ import json,sqlite3,uuid
 from datetime import datetime,timezone,timedelta
 from decimal import Decimal
 from pathlib import Path
-CEILING=15_000_000_000
+CEILING=8_000_000_000
 INPUT_NANO=1500
 OUTPUT_NANO=7500
 
@@ -106,4 +106,4 @@ class Ledger:
             rows=[dict(r) for r in c.execute('SELECT * FROM attempts ORDER BY created_at,id')]
             for r in rows:
                 r['known_counter_subtotal_nano_not_extra_charge']=known_subtotal({'prompt_token_count':r['input_tokens'],'candidates_token_count':r['candidate_tokens'],'thoughts_token_count':r['thinking_tokens']})
-            return {'known_counter_subtotals_usd_not_extra_charges':usd(sum(r['known_counter_subtotal_nano_not_extra_charge'] or 0 for r in rows)),'ceiling_usd':usd(CEILING),'attempts':len(rows),'known_accounted_usd':usd(sum(r['accounted_nano'] for r in rows if r['accounted_nano'] is not None)),'outstanding_unknown_or_active_reservations_usd':usd(sum(r['held_nano'] for r in rows if r['accounted_nano'] is None)),'total_held_usd':usd(sum(r['held_nano'] for r in rows)),'active_attempts':sum(r['active'] for r in rows),'halted':bool(c.execute('SELECT 1 FROM halt').fetchone()),'records':rows}
+            return {'headroom_usd':usd(CEILING-sum(r['held_nano'] for r in rows)),'known_counter_subtotals_usd_not_extra_charges':usd(sum(r['known_counter_subtotal_nano_not_extra_charge'] or 0 for r in rows)),'ceiling_usd':usd(CEILING),'attempts':len(rows),'known_accounted_usd':usd(sum(r['accounted_nano'] for r in rows if r['accounted_nano'] is not None)),'outstanding_unknown_or_active_reservations_usd':usd(sum(r['held_nano'] for r in rows if r['accounted_nano'] is None)),'total_held_usd':usd(sum(r['held_nano'] for r in rows)),'active_attempts':sum(r['active'] for r in rows),'halted':bool(c.execute('SELECT 1 FROM halt').fetchone()),'records':rows}

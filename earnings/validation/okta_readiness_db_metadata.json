@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-11-14T13:28:49.924766-08:00",
+  "transaction_read_only": "on",
+  "required_migrations_present": true,
+  "service_can_insert_company_column": true,
+  "service_can_insert_made_at": false,
+  "service_can_update_predictions": false,
+  "target_actual_rows": 0,
+  "existing_target_prediction_rows": 0,
+  "schema_migrations": [
+    "0001_enums.sql",
+    "0002_deals.sql",
+    "0003_paragraphs.sql",
+    "0004_extraction_runs.sql",
+    "0005_events.sql",
+    "0006_proposals.sql",
+    "0007_valuations.sql",
+    "0008_rls_policies.sql",
+    "0009_reviewer_note.sql",
+    "0010_deal_candidates.sql",
+    "0011_deal_candidates_rls.sql",
+    "0012_classification.sql",
+    "0013_proposal_total_value.sql",
+    "0100_crosscheck.sql",
+    "0101_crosscheck_product.sql",
+    "0102_crosscheck_quarters.sql",
+    "0103_crosscheck_live_ledger.sql",
+    "0104_crosscheck_laplace.sql",
+    "0105_crosscheck_owner_evidence.sql"
+  ]
+}

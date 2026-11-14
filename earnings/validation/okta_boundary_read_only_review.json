@@ -1,0 +1,825 @@
+{
+  "SQL_insert_guards_executed_with_test_time": false,
+  "actual_execution_finished_at": "2026-11-14T13:23:01.308026-08:00",
+  "actual_execution_started_at": "2026-11-14T13:23:00.727626-08:00",
+  "cases": [
+    {
+      "database_insert_guards_executed": false,
+      "mode": "hypothetical_clean_checks",
+      "result": {
+        "clock_source": "TEST_ONLY_CONTROLLED_CLOCK_NOT_POSTGRES_CREATION_TIME",
+        "conditional_candidates_NOT_live": [],
+        "execution_finished_at": "2026-11-17T04:59:59.999999+00:00",
+        "execution_started_at": "2026-11-17T04:59:59.999999+00:00",
+        "history_ingestion": {
+          "inserted": 0,
+          "suppressed_for_read_only_rehearsal": true
+        },
+        "locked": [],
+        "method_version": "quarter-frequency-v1",
+        "method_versions": [
+          "quarter-frequency-v1",
+          "quarter-frequency-laplace-v1"
+        ],
+        "skipped": [
+          {
+            "announcement_evidence": {
+              "announcement_issued_date": "2026-11-02",
+              "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/1baff785d18b716e62059282389f6e5a9e7a0b62d605938fb202fe6fcda66a19-d60517f2f59870d407a185b7e6497c384447795a6cc2b119407799703091170f.body",
+              "checked_at": "2026-11-12T23:46:52.041483+00:00",
+              "company": "OKTA",
+              "event_kind": "results_release",
+              "fiscal_period": {
+                "end": "2026-10-31",
+                "label": "Q3 FY2027",
+                "start": "2026-08-01"
+              },
+              "id": "4a3e1f16-7b0b-55be-b00b-f43055db57af",
+              "previous_evidence_id": "c28a2554-0a0a-51fd-946a-3d4a129a1c6c",
+              "quote": "after the U.S. market close on Tuesday, December 1, 2026",
+              "release_date": "2026-12-01",
+              "release_time": "after_market_close",
+              "retrieved_at": "2026-11-12T23:46:52.326318+00:00",
+              "review_note": "Release company, fiscal quarter/year, dateline and results-publication wording re-reviewed. No date or timezone change. Only visible changes are email-alert form validation/captcha messages; release paragraph unchanged. Call remains separate.",
+              "source_sha256": "d60517f2f59870d407a185b7e6497c384447795a6cc2b119407799703091170f",
+              "source_url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+              "time_precision": "market_session",
+              "timestamp_verified": false,
+              "timezone": "America/New_York",
+              "timezone_provenance": "US market-close context; conservative release-date boundary in America/New_York, release-date-boundary-v1. No exact publication clock time inferred.",
+              "verification_method": "direct_http_official_ir_full_document_re_review",
+              "verification_status": "independently_verified",
+              "verified_at": "2026-11-12T23:48:07.519474+00:00",
+              "verifier": "Codex"
+            },
+            "code": "OUTSIDE_14_DAY_WINDOW",
+            "company": "OKTA",
+            "deadline": "2026-12-01T05:00:00+00:00",
+            "next_eligibility_at": "2026-11-17T05:00:00+00:00",
+            "release_date": "2026-12-01"
+          }
+        ]
+      },
+      "test_clock": "2026-11-17T04:59:59.999999+00:00"
+    },
+    {
+      "database_insert_guards_executed": false,
+      "mode": "hypothetical_clean_checks",
+      "result": {
+        "clock_source": "TEST_ONLY_CONTROLLED_CLOCK_NOT_POSTGRES_CREATION_TIME",
+        "conditional_candidates_NOT_live": [
+          {
+            "announcement_evidence_id": "4a3e1f16-7b0b-55be-b00b-f43055db57af",
+            "baseline": {
+              "as_of": "2026-11-17T05:00:00+00:00",
+              "company_sample_size": 7,
+              "counts": {
+                "above": 7,
+                "below": 0,
+                "within": 0
+              },
+              "evaluation_kind": "as_recorded",
+              "historical_ids": [
+                "024f6621-98d3-562f-b9ff-913a1c253d95",
+                "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+                "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+                "97daa508-ace5-596a-ac8b-367d1eeb8660",
+                "9fd1495d-2e63-5644-9bcb-908133766a3f",
+                "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+                "ac7eef4f-1555-5aa1-89d4-79440f6d2225"
+              ],
+              "limitations": [
+                "Empirical frequencies, not calibrated probabilities or confidence scores.",
+                "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+              ],
+              "method_version": "quarter-frequency-v1",
+              "mode": "company",
+              "policy": {
+                "company_minimum": 6,
+                "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+                "pool_company_minimum": 2,
+                "pool_minimum": 12,
+                "quarters_per_company": 8,
+                "rounding": "first two rates half-even at 24 places; above receives residual",
+                "smoothing": "none"
+              },
+              "pool_companies": [
+                "OKTA"
+              ],
+              "probabilities": {
+                "above": "1.000000000000000000000000",
+                "below": "0E-24",
+                "within": "0E-24"
+              },
+              "sample_size": 7
+            },
+            "company": "OKTA",
+            "guidance": {
+              "accession": "0001660134-26-000068",
+              "basis": "US_GAAP_consolidated_reported",
+              "company": "OKTA",
+              "end": "2026-10-31",
+              "exhibit": "99.1",
+              "filed": "2026-08-26",
+              "high": "817000000",
+              "issued": {
+                "end": "2026-08-26",
+                "precision": "day",
+                "start": "2026-08-26"
+              },
+              "low": "813000000",
+              "metric": "quarterly_consolidated_revenue",
+              "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+              "original_verified": true,
+              "quote": "For the third quarter of fiscal 2027, the Company expects: \u2022 Total revenue of $813 million to $817 million, representing a growth rate of 10% year-over-year; \u2022 Current RPO of $2.590 billion to $2.600 billion , representing a growth rate of 11% to 12% year-over-year; \u2022 Non-GAAP operating income of $196 million to $200 million, which yi",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm",
+              "start": "2026-08-01",
+              "status": "initial",
+              "unit": "USD"
+            },
+            "guidance_id": "7790a72a-98d9-57b3-9287-bf22cba52401",
+            "hypothetical_source_checks": true,
+            "method_version": "quarter-frequency-v1",
+            "target": {
+              "available_on": "2026-08-26",
+              "boundary_evidence": {
+                "accession": "0001660134-26-000068",
+                "filed_date": "2026-08-26",
+                "prior_actual_accession": "0001660134-25-000171",
+                "prior_actual_id": "fb8f9fd5-7ec4-5e8c-a73f-97a76cbf8356",
+                "rule": "Three calendar months on the registered month-based fiscal calendar",
+                "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+              },
+              "end": "2026-10-31",
+              "growth_comparability": {
+                "available_on": "2026-11-11",
+                "blocked": true,
+                "reason": "August 26 Permiso acquisition is a subsequent event with consideration still under evaluation. Annual guidance and prior-year comparison scope require reconciliation; partner-services shift is also disclosed.",
+                "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000069/okta-20260731.htm",
+                "sources": [
+                  "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+                ]
+              },
+              "label": "Q3 FY2027",
+              "outcome_comparability": {
+                "available_on": "2026-11-11",
+                "blocked": true,
+                "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+                "sources": [
+                  "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+                ]
+              },
+              "prior_end": "2025-10-31",
+              "prior_start": "2025-08-01",
+              "start": "2026-08-01"
+            }
+          },
+          {
+            "announcement_evidence_id": "4a3e1f16-7b0b-55be-b00b-f43055db57af",
+            "baseline": {
+              "as_of": "2026-11-17T05:00:00+00:00",
+              "company_sample_size": 7,
+              "counts": {
+                "above": 7,
+                "below": 0,
+                "within": 0
+              },
+              "evaluation_kind": "as_recorded",
+              "historical_ids": [
+                "024f6621-98d3-562f-b9ff-913a1c253d95",
+                "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+                "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+                "97daa508-ace5-596a-ac8b-367d1eeb8660",
+                "9fd1495d-2e63-5644-9bcb-908133766a3f",
+                "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+                "ac7eef4f-1555-5aa1-89d4-79440f6d2225"
+              ],
+              "limitations": [
+                "Empirical frequencies, not calibrated probabilities or confidence scores.",
+                "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim.",
+                "Fixed symmetric prior shrinks extreme sample rates; it is not calibrated or tuned to future outcomes."
+              ],
+              "method_version": "quarter-frequency-laplace-v1",
+              "mode": "company",
+              "policy": {
+                "company_minimum": 6,
+                "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+                "pool_company_minimum": 2,
+                "pool_minimum": 12,
+                "prior_counts": {
+                  "above": 1,
+                  "below": 1,
+                  "within": 1
+                },
+                "quarters_per_company": 8,
+                "rounding": "first two rates half-even at 24 places; above receives residual",
+                "smoothing": "fixed Dirichlet(1,1,1) / add-one Laplace; no fitting"
+              },
+              "pool_companies": [
+                "OKTA"
+              ],
+              "probabilities": {
+                "above": "0.800000000000000000000000",
+                "below": "0.100000000000000000000000",
+                "within": "0.100000000000000000000000"
+              },
+              "sample_size": 7
+            },
+            "company": "OKTA",
+            "guidance": {
+              "accession": "0001660134-26-000068",
+              "basis": "US_GAAP_consolidated_reported",
+              "company": "OKTA",
+              "end": "2026-10-31",
+              "exhibit": "99.1",
+              "filed": "2026-08-26",
+              "high": "817000000",
+              "issued": {
+                "end": "2026-08-26",
+                "precision": "day",
+                "start": "2026-08-26"
+              },
+              "low": "813000000",
+              "metric": "quarterly_consolidated_revenue",
+              "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+              "original_verified": true,
+              "quote": "For the third quarter of fiscal 2027, the Company expects: \u2022 Total revenue of $813 million to $817 million, representing a growth rate of 10% year-over-year; \u2022 Current RPO of $2.590 billion to $2.600 billion , representing a growth rate of 11% to 12% year-over-year; \u2022 Non-GAAP operating income of $196 million to $200 million, which yi",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm",
+              "start": "2026-08-01",
+              "status": "initial",
+              "unit": "USD"
+            },
+            "guidance_id": "7790a72a-98d9-57b3-9287-bf22cba52401",
+            "hypothetical_source_checks": true,
+            "method_version": "quarter-frequency-laplace-v1",
+            "target": {
+              "available_on": "2026-08-26",
+              "boundary_evidence": {
+                "accession": "0001660134-26-000068",
+                "filed_date": "2026-08-26",
+                "prior_actual_accession": "0001660134-25-000171",
+                "prior_actual_id": "fb8f9fd5-7ec4-5e8c-a73f-97a76cbf8356",
+                "rule": "Three calendar months on the registered month-based fiscal calendar",
+                "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+              },
+              "end": "2026-10-31",
+              "growth_comparability": {
+                "available_on": "2026-11-11",
+                "blocked": true,
+                "reason": "August 26 Permiso acquisition is a subsequent event with consideration still under evaluation. Annual guidance and prior-year comparison scope require reconciliation; partner-services shift is also disclosed.",
+                "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000069/okta-20260731.htm",
+                "sources": [
+                  "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+                ]
+              },
+              "label": "Q3 FY2027",
+              "outcome_comparability": {
+                "available_on": "2026-11-11",
+                "blocked": true,
+                "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+                "sources": [
+                  "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+                ]
+              },
+              "prior_end": "2025-10-31",
+              "prior_start": "2025-08-01",
+              "start": "2026-08-01"
+            }
+          }
+        ],
+        "execution_finished_at": "2026-11-17T05:00:00+00:00",
+        "execution_started_at": "2026-11-17T05:00:00+00:00",
+        "history_ingestion": {
+          "inserted": 0,
+          "suppressed_for_read_only_rehearsal": true
+        },
+        "locked": [],
+        "method_version": "quarter-frequency-v1",
+        "method_versions": [
+          "quarter-frequency-v1",
+          "quarter-frequency-laplace-v1"
+        ],
+        "skipped": []
+      },
+      "test_clock": "2026-11-17T05:00:00+00:00"
+    },
+    {
+      "database_insert_guards_executed": false,
+      "mode": "hypothetical_clean_checks",
+      "result": {
+        "clock_source": "TEST_ONLY_CONTROLLED_CLOCK_NOT_POSTGRES_CREATION_TIME",
+        "conditional_candidates_NOT_live": [
+          {
+            "announcement_evidence_id": "4a3e1f16-7b0b-55be-b00b-f43055db57af",
+            "baseline": {
+              "as_of": "2026-11-17T05:00:00.000001+00:00",
+              "company_sample_size": 7,
+              "counts": {
+                "above": 7,
+                "below": 0,
+                "within": 0
+              },
+              "evaluation_kind": "as_recorded",
+              "historical_ids": [
+                "024f6621-98d3-562f-b9ff-913a1c253d95",
+                "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+                "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+                "97daa508-ace5-596a-ac8b-367d1eeb8660",
+                "9fd1495d-2e63-5644-9bcb-908133766a3f",
+                "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+                "ac7eef4f-1555-5aa1-89d4-79440f6d2225"
+              ],
+              "limitations": [
+                "Empirical frequencies, not calibrated probabilities or confidence scores.",
+                "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim."
+              ],
+              "method_version": "quarter-frequency-v1",
+              "mode": "company",
+              "policy": {
+                "company_minimum": 6,
+                "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+                "pool_company_minimum": 2,
+                "pool_minimum": 12,
+                "quarters_per_company": 8,
+                "rounding": "first two rates half-even at 24 places; above receives residual",
+                "smoothing": "none"
+              },
+              "pool_companies": [
+                "OKTA"
+              ],
+              "probabilities": {
+                "above": "1.000000000000000000000000",
+                "below": "0E-24",
+                "within": "0E-24"
+              },
+              "sample_size": 7
+            },
+            "company": "OKTA",
+            "guidance": {
+              "accession": "0001660134-26-000068",
+              "basis": "US_GAAP_consolidated_reported",
+              "company": "OKTA",
+              "end": "2026-10-31",
+              "exhibit": "99.1",
+              "filed": "2026-08-26",
+              "high": "817000000",
+              "issued": {
+                "end": "2026-08-26",
+                "precision": "day",
+                "start": "2026-08-26"
+              },
+              "low": "813000000",
+              "metric": "quarterly_consolidated_revenue",
+              "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+              "original_verified": true,
+              "quote": "For the third quarter of fiscal 2027, the Company expects: \u2022 Total revenue of $813 million to $817 million, representing a growth rate of 10% year-over-year; \u2022 Current RPO of $2.590 billion to $2.600 billion , representing a growth rate of 11% to 12% year-over-year; \u2022 Non-GAAP operating income of $196 million to $200 million, which yi",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm",
+              "start": "2026-08-01",
+              "status": "initial",
+              "unit": "USD"
+            },
+            "guidance_id": "7790a72a-98d9-57b3-9287-bf22cba52401",
+            "hypothetical_source_checks": true,
+            "method_version": "quarter-frequency-v1",
+            "target": {
+              "available_on": "2026-08-26",
+              "boundary_evidence": {
+                "accession": "0001660134-26-000068",
+                "filed_date": "2026-08-26",
+                "prior_actual_accession": "0001660134-25-000171",
+                "prior_actual_id": "fb8f9fd5-7ec4-5e8c-a73f-97a76cbf8356",
+                "rule": "Three calendar months on the registered month-based fiscal calendar",
+                "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+              },
+              "end": "2026-10-31",
+              "growth_comparability": {
+                "available_on": "2026-11-11",
+                "blocked": true,
+                "reason": "August 26 Permiso acquisition is a subsequent event with consideration still under evaluation. Annual guidance and prior-year comparison scope require reconciliation; partner-services shift is also disclosed.",
+                "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000069/okta-20260731.htm",
+                "sources": [
+                  "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+                ]
+              },
+              "label": "Q3 FY2027",
+              "outcome_comparability": {
+                "available_on": "2026-11-11",
+                "blocked": true,
+                "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+                "sources": [
+                  "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+                ]
+              },
+              "prior_end": "2025-10-31",
+              "prior_start": "2025-08-01",
+              "start": "2026-08-01"
+            }
+          },
+          {
+            "announcement_evidence_id": "4a3e1f16-7b0b-55be-b00b-f43055db57af",
+            "baseline": {
+              "as_of": "2026-11-17T05:00:00.000001+00:00",
+              "company_sample_size": 7,
+              "counts": {
+                "above": 7,
+                "below": 0,
+                "within": 0
+              },
+              "evaluation_kind": "as_recorded",
+              "historical_ids": [
+                "024f6621-98d3-562f-b9ff-913a1c253d95",
+                "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+                "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+                "97daa508-ace5-596a-ac8b-367d1eeb8660",
+                "9fd1495d-2e63-5644-9bcb-908133766a3f",
+                "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+                "ac7eef4f-1555-5aa1-89d4-79440f6d2225"
+              ],
+              "limitations": [
+                "Empirical frequencies, not calibrated probabilities or confidence scores.",
+                "Small curated cohort and period-dependent management guidance practices; no predictive-quality claim.",
+                "Fixed symmetric prior shrinks extreme sample rates; it is not calibrated or tuned to future outcomes."
+              ],
+              "method_version": "quarter-frequency-laplace-v1",
+              "mode": "company",
+              "policy": {
+                "company_minimum": 6,
+                "guidance_horizon": "entry to 14-day window; day-precision guidance must be public before entry day",
+                "pool_company_minimum": 2,
+                "pool_minimum": 12,
+                "prior_counts": {
+                  "above": 1,
+                  "below": 1,
+                  "within": 1
+                },
+                "quarters_per_company": 8,
+                "rounding": "first two rates half-even at 24 places; above receives residual",
+                "smoothing": "fixed Dirichlet(1,1,1) / add-one Laplace; no fitting"
+              },
+              "pool_companies": [
+                "OKTA"
+              ],
+              "probabilities": {
+                "above": "0.800000000000000000000000",
+                "below": "0.100000000000000000000000",
+                "within": "0.100000000000000000000000"
+              },
+              "sample_size": 7
+            },
+            "company": "OKTA",
+            "guidance": {
+              "accession": "0001660134-26-000068",
+              "basis": "US_GAAP_consolidated_reported",
+              "company": "OKTA",
+              "end": "2026-10-31",
+              "exhibit": "99.1",
+              "filed": "2026-08-26",
+              "high": "817000000",
+              "issued": {
+                "end": "2026-08-26",
+                "precision": "day",
+                "start": "2026-08-26"
+              },
+              "low": "813000000",
+              "metric": "quarterly_consolidated_revenue",
+              "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+              "original_verified": true,
+              "quote": "For the third quarter of fiscal 2027, the Company expects: \u2022 Total revenue of $813 million to $817 million, representing a growth rate of 10% year-over-year; \u2022 Current RPO of $2.590 billion to $2.600 billion , representing a growth rate of 11% to 12% year-over-year; \u2022 Non-GAAP operating income of $196 million to $200 million, which yi",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm",
+              "start": "2026-08-01",
+              "status": "initial",
+              "unit": "USD"
+            },
+            "guidance_id": "7790a72a-98d9-57b3-9287-bf22cba52401",
+            "hypothetical_source_checks": true,
+            "method_version": "quarter-frequency-laplace-v1",
+            "target": {
+              "available_on": "2026-08-26",
+              "boundary_evidence": {
+                "accession": "0001660134-26-000068",
+                "filed_date": "2026-08-26",
+                "prior_actual_accession": "0001660134-25-000171",
+                "prior_actual_id": "fb8f9fd5-7ec4-5e8c-a73f-97a76cbf8356",
+                "rule": "Three calendar months on the registered month-based fiscal calendar",
+                "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+              },
+              "end": "2026-10-31",
+              "growth_comparability": {
+                "available_on": "2026-11-11",
+                "blocked": true,
+                "reason": "August 26 Permiso acquisition is a subsequent event with consideration still under evaluation. Annual guidance and prior-year comparison scope require reconciliation; partner-services shift is also disclosed.",
+                "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000069/okta-20260731.htm",
+                "sources": [
+                  "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+                ]
+              },
+              "label": "Q3 FY2027",
+              "outcome_comparability": {
+                "available_on": "2026-11-11",
+                "blocked": true,
+                "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+                "sources": [
+                  "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+                ]
+              },
+              "prior_end": "2025-10-31",
+              "prior_start": "2025-08-01",
+              "start": "2026-08-01"
+            }
+          }
+        ],
+        "execution_finished_at": "2026-11-17T05:00:00.000001+00:00",
+        "execution_started_at": "2026-11-17T05:00:00.000001+00:00",
+        "history_ingestion": {
+          "inserted": 0,
+          "suppressed_for_read_only_rehearsal": true
+        },
+        "locked": [],
+        "method_version": "quarter-frequency-v1",
+        "method_versions": [
+          "quarter-frequency-v1",
+          "quarter-frequency-laplace-v1"
+        ],
+        "skipped": []
+      },
+      "test_clock": "2026-11-17T05:00:00.000001+00:00"
+    },
+    {
+      "database_insert_guards_executed": false,
+      "mode": "hypothetical_clean_checks",
+      "result": {
+        "clock_source": "TEST_ONLY_CONTROLLED_CLOCK_NOT_POSTGRES_CREATION_TIME",
+        "conditional_candidates_NOT_live": [],
+        "execution_finished_at": "2026-12-01T05:00:00+00:00",
+        "execution_started_at": "2026-12-01T05:00:00+00:00",
+        "history_ingestion": {
+          "inserted": 0,
+          "suppressed_for_read_only_rehearsal": true
+        },
+        "locked": [],
+        "method_version": "quarter-frequency-v1",
+        "method_versions": [
+          "quarter-frequency-v1",
+          "quarter-frequency-laplace-v1"
+        ],
+        "skipped": [
+          {
+            "code": "LOCK_DEADLINE_PASSED",
+            "company": "OKTA",
+            "reason": "Publication deadline has passed; no retrospective live prediction",
+            "unverified_release_lead": "2026-12-01"
+          }
+        ]
+      },
+      "test_clock": "2026-12-01T05:00:00+00:00"
+    },
+    {
+      "database_insert_guards_executed": false,
+      "mode": "stored_announcement_only",
+      "result": {
+        "clock_source": "TEST_ONLY_CONTROLLED_CLOCK_NOT_POSTGRES_CREATION_TIME",
+        "conditional_candidates_NOT_live": [],
+        "execution_finished_at": "2026-11-17T05:00:00+00:00",
+        "execution_started_at": "2026-11-17T05:00:00+00:00",
+        "history_ingestion": {
+          "inserted": 0,
+          "suppressed_for_read_only_rehearsal": true
+        },
+        "locked": [],
+        "method_version": "quarter-frequency-v1",
+        "method_versions": [
+          "quarter-frequency-v1",
+          "quarter-frequency-laplace-v1"
+        ],
+        "skipped": [
+          {
+            "code": "REHEARSAL_SQL_ANNOUNCEMENT_STALE",
+            "company": "OKTA",
+            "reason": "Current0103 freshness expression would reject unchanged stored checked_at",
+            "unverified_release_lead": "2026-12-01"
+          }
+        ]
+      },
+      "test_clock": "2026-11-17T05:00:00+00:00"
+    },
+    {
+      "database_insert_guards_executed": false,
+      "mode": "announcement_403",
+      "result": {
+        "clock_source": "TEST_ONLY_CONTROLLED_CLOCK_NOT_POSTGRES_CREATION_TIME",
+        "conditional_candidates_NOT_live": [],
+        "execution_finished_at": "2026-11-17T05:00:00+00:00",
+        "execution_started_at": "2026-11-17T05:00:00+00:00",
+        "history_ingestion": {
+          "inserted": 0,
+          "suppressed_for_read_only_rehearsal": true
+        },
+        "locked": [],
+        "method_version": "quarter-frequency-v1",
+        "method_versions": [
+          "quarter-frequency-v1",
+          "quarter-frequency-laplace-v1"
+        ],
+        "skipped": [
+          {
+            "code": "ANNOUNCEMENT_ACCESS_GAP",
+            "company": "OKTA",
+            "reason": "Synthetic403: NOT an actual source observation",
+            "unverified_release_lead": "2026-12-01"
+          }
+        ]
+      },
+      "test_clock": "2026-11-17T05:00:00+00:00"
+    },
+    {
+      "database_insert_guards_executed": false,
+      "mode": "announcement_hash_change",
+      "result": {
+        "clock_source": "TEST_ONLY_CONTROLLED_CLOCK_NOT_POSTGRES_CREATION_TIME",
+        "conditional_candidates_NOT_live": [],
+        "execution_finished_at": "2026-11-17T05:00:00+00:00",
+        "execution_started_at": "2026-11-17T05:00:00+00:00",
+        "history_ingestion": {
+          "inserted": 0,
+          "suppressed_for_read_only_rehearsal": true
+        },
+        "locked": [],
+        "method_version": "quarter-frequency-v1",
+        "method_versions": [
+          "quarter-frequency-v1",
+          "quarter-frequency-laplace-v1"
+        ],
+        "skipped": [
+          {
+            "code": "ANNOUNCEMENT_SOURCE_CHANGED",
+            "company": "OKTA",
+            "reason": "Synthetic changed raw HTML hash; NOT an actual source observation",
+            "unverified_release_lead": "2026-12-01"
+          }
+        ]
+      },
+      "test_clock": "2026-11-17T05:00:00+00:00"
+    },
+    {
+      "database_insert_guards_executed": false,
+      "mode": "publication_403",
+      "result": {
+        "clock_source": "TEST_ONLY_CONTROLLED_CLOCK_NOT_POSTGRES_CREATION_TIME",
+        "conditional_candidates_NOT_live": [],
+        "execution_finished_at": "2026-11-17T05:00:00+00:00",
+        "execution_started_at": "2026-11-17T05:00:00+00:00",
+        "history_ingestion": {
+          "inserted": 0,
+          "suppressed_for_read_only_rehearsal": true
+        },
+        "locked": [],
+        "method_version": "quarter-frequency-v1",
+        "method_versions": [
+          "quarter-frequency-v1",
+          "quarter-frequency-laplace-v1"
+        ],
+        "skipped": [
+          {
+            "code": "PUBLICATION_CHECK_BLOCKED",
+            "company": "OKTA",
+            "reason": "{\"checked_at\": \"2026-11-17T04:59:59+00:00\", \"official_ir\": {\"http_status\": 403, \"success\": false, \"synthetic_test_fixture\": true}, \"sec\": {\"success\": true, \"synthetic_test_fixture\": true}, \"status\": \"unverified\", \"synthetic_test_fixture\": true, \"target_end\": \"2026-10-31\", \"target_start\": \"2026-08-01\"}",
+            "unverified_release_lead": "2026-12-01"
+          }
+        ]
+      },
+      "test_clock": "2026-11-17T05:00:00+00:00"
+    },
+    {
+      "database_insert_guards_executed": false,
+      "mode": "publication_empty",
+      "result": {
+        "clock_source": "TEST_ONLY_CONTROLLED_CLOCK_NOT_POSTGRES_CREATION_TIME",
+        "conditional_candidates_NOT_live": [],
+        "execution_finished_at": "2026-11-17T05:00:00+00:00",
+        "execution_started_at": "2026-11-17T05:00:00+00:00",
+        "history_ingestion": {
+          "inserted": 0,
+          "suppressed_for_read_only_rehearsal": true
+        },
+        "locked": [],
+        "method_version": "quarter-frequency-v1",
+        "method_versions": [
+          "quarter-frequency-v1",
+          "quarter-frequency-laplace-v1"
+        ],
+        "skipped": [
+          {
+            "code": "PUBLICATION_CHECK_BLOCKED",
+            "company": "OKTA",
+            "reason": "{\"checked_at\": \"2026-11-17T04:59:59+00:00\", \"official_ir\": {\"gap\": \"Synthetic empty/loading inventory\", \"success\": false}, \"sec\": {\"success\": true, \"synthetic_test_fixture\": true}, \"status\": \"unverified\", \"synthetic_test_fixture\": true, \"target_end\": \"2026-10-31\", \"target_start\": \"2026-08-01\"}",
+            "unverified_release_lead": "2026-12-01"
+          }
+        ]
+      },
+      "test_clock": "2026-11-17T05:00:00+00:00"
+    },
+    {
+      "database_insert_guards_executed": false,
+      "mode": "already_public",
+      "result": {
+        "clock_source": "TEST_ONLY_CONTROLLED_CLOCK_NOT_POSTGRES_CREATION_TIME",
+        "conditional_candidates_NOT_live": [],
+        "execution_finished_at": "2026-11-17T05:00:00+00:00",
+        "execution_started_at": "2026-11-17T05:00:00+00:00",
+        "history_ingestion": {
+          "inserted": 0,
+          "suppressed_for_read_only_rehearsal": true
+        },
+        "locked": [],
+        "method_version": "quarter-frequency-v1",
+        "method_versions": [
+          "quarter-frequency-v1",
+          "quarter-frequency-laplace-v1"
+        ],
+        "skipped": [
+          {
+            "code": "PUBLICATION_CHECK_BLOCKED",
+            "company": "OKTA",
+            "reason": "{\"checked_at\": \"2026-11-17T04:59:59+00:00\", \"official_ir\": {\"success\": true, \"synthetic_test_fixture\": true}, \"sec\": {\"success\": true, \"synthetic_test_fixture\": true}, \"status\": \"already_public_or_unresolved_ir_results\", \"synthetic_test_fixture\": true, \"target_end\": \"2026-10-31\", \"target_start\": \"2026-08-01\"}",
+            "unverified_release_lead": "2026-12-01"
+          }
+        ]
+      },
+      "test_clock": "2026-11-17T05:00:00+00:00"
+    },
+    {
+      "database_insert_guards_executed": false,
+      "mode": "possible_sec_result",
+      "result": {
+        "clock_source": "TEST_ONLY_CONTROLLED_CLOCK_NOT_POSTGRES_CREATION_TIME",
+        "conditional_candidates_NOT_live": [],
+        "execution_finished_at": "2026-11-17T05:00:00+00:00",
+        "execution_started_at": "2026-11-17T05:00:00+00:00",
+        "history_ingestion": {
+          "inserted": 0,
+          "suppressed_for_read_only_rehearsal": true
+        },
+        "locked": [],
+        "method_version": "quarter-frequency-v1",
+        "method_versions": [
+          "quarter-frequency-v1",
+          "quarter-frequency-laplace-v1"
+        ],
+        "skipped": [
+          {
+            "code": "PUBLICATION_CHECK_BLOCKED",
+            "company": "OKTA",
+            "reason": "{\"checked_at\": \"2026-11-17T04:59:59+00:00\", \"official_ir\": {\"success\": true, \"synthetic_test_fixture\": true}, \"sec\": {\"success\": true, \"synthetic_test_fixture\": true}, \"status\": \"already_public_or_unresolved_sec_results\", \"synthetic_test_fixture\": true, \"target_end\": \"2026-10-31\", \"target_start\": \"2026-08-01\"}",
+            "unverified_release_lead": "2026-12-01"
+          }
+        ]
+      },
+      "test_clock": "2026-11-17T05:00:00+00:00"
+    },
+    {
+      "database_insert_guards_executed": false,
+      "mode": "stale_publication",
+      "result": {
+        "clock_source": "TEST_ONLY_CONTROLLED_CLOCK_NOT_POSTGRES_CREATION_TIME",
+        "conditional_candidates_NOT_live": [],
+        "execution_finished_at": "2026-11-17T05:00:00+00:00",
+        "execution_started_at": "2026-11-17T05:00:00+00:00",
+        "history_ingestion": {
+          "inserted": 0,
+          "suppressed_for_read_only_rehearsal": true
+        },
+        "locked": [],
+        "method_version": "quarter-frequency-v1",
+        "method_versions": [
+          "quarter-frequency-v1",
+          "quarter-frequency-laplace-v1"
+        ],
+        "skipped": [
+          {
+            "code": "REHEARSAL_SQL_PUBLICATION_STALE",
+            "company": "OKTA",
+            "reason": "Current0103 freshness expression would reject this publication check",
+            "unverified_release_lead": "2026-12-01"
+          }
+        ]
+      },
+      "test_clock": "2026-11-17T05:00:00+00:00"
+    }
+  ],
+  "company": "OKTA",
+  "freshness_actual_ids": [
+    "945ece65-5153-5800-b7ab-5e7604ccf0cc",
+    "f907271d-b0f4-5ff0-aea8-9408f9a9a003"
+  ],
+  "kind": "TEST_ONLY_BOUNDARY_REHEARSAL_NOT_LIVE_NOT_FUTURE_SOURCE_VERIFICATION",
+  "latest_actual_period_end": "2026-07-31",
+  "ledger_count_after": 0,
+  "ledger_count_before": 0,
+  "opening": "2026-11-17T05:00:00+00:00",
+  "production_clock_or_code_changed": false,
+  "provider_or_HTTP_calls": 0,
+  "source_snapshot_limit": "Only currently stored inputs, not unknown future updates. Successful source checks are hypothetical fixtures; not real verification.",
+  "stored_history_rows": 80,
+  "strict_deadline": "2026-12-01T05:00:00+00:00",
+  "transaction_read_only": "on"
+}

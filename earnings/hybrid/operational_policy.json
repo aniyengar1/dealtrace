@@ -1,0 +1,13 @@
+{
+  "version": "owner-budget-8-paused-v1",
+  "recorded_at": "2026-11-14T10:30:12.994122+00:00",
+  "ceiling_usd": "8.00",
+  "inference_authorized": false,
+  "all_ten_revised_releases_complete": true,
+  "preserve_all_prior_spend_and_reservations": true,
+  "billing_or_credit_or_quota_error_action": "stop_dispatch_no_retry_no_account_or_billing_changes",
+  "owner_reported_project_usage_approx_usd": "279",
+  "owner_reported_trial_credit_usd": "300",
+  "remaining_shared_credit": "uncertain; not queried or inferred from console banner",
+  "local_ceiling_is_provider_billing_cap": false
+}

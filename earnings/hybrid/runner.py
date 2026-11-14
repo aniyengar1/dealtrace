@@ -16,7 +16,7 @@ PINNED={'provider':'google_vertex_ai','project':'just-rhythm-506202-j8','locatio
 def configuration():
     c=read(ROOT/'config.json')
     if any(c[k]!=v for k,v in PINNED.items()) or version('google-genai')!='2.34.0':raise Gate('PINNED_EXECUTION_CONFIG_MISMATCH')
-    limits={'temperature':0,'http_timeout_ms':300000,'wall_timeout_seconds':300,'sdk_attempts':1,'max_attempts_per_item':1,'max_concurrency':2,'max_input_tokens_documented':1048576,'ceiling_usd':'15.00','accounting_input_usd_per_million':'1.50','accounting_output_including_thinking_usd_per_million':'7.50','deadline':'2026-11-17T18:00:00-08:00'}
+    limits={'temperature':0,'http_timeout_ms':300000,'wall_timeout_seconds':300,'sdk_attempts':1,'max_attempts_per_item':1,'max_concurrency':2,'max_input_tokens_documented':1048576,'ceiling_usd':'8.00','accounting_input_usd_per_million':'1.50','accounting_output_including_thinking_usd_per_million':'7.50','deadline':'2026-11-17T18:00:00-08:00'}
     if any(c.get(k)!=v for k,v in limits.items()):raise Gate('PINNED_SAFETY_LIMIT_MISMATCH')
     return c
 
@@ -61,6 +61,7 @@ def preflight(c,clock=None):
     if auth.get('concurrent_deals_run_authorized') is not True or auth.get('residual_billing_uncertainty_accepted') is not True or auth.get('stage')!='diagnostic_only' or auth.get('confirmed_by')!='owner' or not auth.get('exact_user_confirmation'):raise Gate('NO_EXPLICIT_INFERENCE_AUTHORIZATION')
     stamp=datetime.fromisoformat(auth['recorded_at'])
     if stamp.tzinfo is None or stamp>clock:raise Gate('INVALID_AUTHORIZATION_TIMESTAMP')
+    if c.get('live_authorization')=='OWNER_PAUSED_OFFLINE_REVIEW':raise Gate('INFERENCE_PAUSED_OWNER_REVIEW')
     if c.get('live_authorization')!='OWNER_AUTHORIZED_CONCURRENT_DIAGNOSTICS':raise Gate('OFFLINE_CORRECTION_NO_NEW_INFERENCE')
     if c.get('reservation_policy')!='owner_approved_requested_output_estimate_v4' or c.get('output_reservation_multiplier')!=2:raise Gate('UNAPPROVED_RESERVATION_POLICY')
     pricing=read(ROOT/'pricing_review.json');price_gate(c,pricing,clock)
@@ -97,12 +98,16 @@ def process_case(case,c,ledger,*,send=dispatch,count_send=None,sleep=time.sleep,
             preflight(c)
             with ledger.connect() as conn:prior_count=conn.execute('SELECT count(*) FROM attempts WHERE item=?',(key,)).fetchone()[0]
             if prior_count>=(1 if is_probe else c['max_attempts_per_item']):raise Gate('RETRIES_EXHAUSTED')
+            if ledger.summary()['halted']:raise Gate('EXPERIMENT_HALTED')
             count_id=uuid.uuid4().hex;counter=count_send or dispatch
             with ledger.connect() as conn:ledger.event(conn,None,'count_requested',{'case_id':case['id'],'count_id':count_id,'known_cost_usd':'0','pricing_source':'official Vertex CountTokens documentation','input_hash':ih})
             counted=counter({**c,'_operation':'count'},(ROOT/'prompt.txt').read_text(),payload,DATA/(count_id+'-count.json'))
             write(DATA/(count_id+'-count-result.json'),counted)
             tokens=counted.get('counted_input_tokens')
             with ledger.connect() as conn:ledger.event(conn,None,'count_completed',{'case_id':case['id'],'count_id':count_id,'result':counted,'known_cost_usd':'0'})
+            if counted.get('dispatch_stop_reason') or counted.get('http_code') in (402,403,429):
+                with ledger.connect() as conn:conn.execute('INSERT INTO halt(reason) VALUES(?)',('BILLING_CREDIT_QUOTA_OR_ACCESS_ERROR_STOP',))
+                raise Gate('BILLING_CREDIT_QUOTA_OR_ACCESS_ERROR_STOP_NO_RETRY')
             if counted['status']!='count_response' or type(tokens) is not int or not 0<tokens<=c['max_input_tokens_documented']:raise Gate('PROVIDER_COUNT_FAILED_STOP')
             aid=ledger.reserve(key,c,{'case_id':case['id'],**PINNED,'cache_status':'miss','input_hash':ih,'prompt_version':c['prompt_version'],'execution_fingerprint':execution_fingerprint(c),'count_id':count_id,'counted_input_tokens':tokens,'is_probe':is_probe})
             try:preflight(c)
@@ -118,6 +123,9 @@ def process_case(case,c,ledger,*,send=dispatch,count_send=None,sleep=time.sleep,
             row=next(r for r in ledger.summary()['records'] if r['id']==aid)
             result.update(attempt_id=aid,provider=c['provider'],requested_model=c['model'],project=c['project'],location=c['location'],input_hash=ih,prompt_version=c['prompt_version'],counted_input_tokens=tokens,is_probe=is_probe,accounted_nano=row['accounted_nano'],reserved_nano=row['reserved_nano'],held_nano=row['held_nano'])
             write(DATA/(aid+'-result.json'),result)
+            if result.get('dispatch_stop_reason') or result.get('http_code') in (402,403,429):
+                with ledger.connect() as conn:conn.execute('INSERT INTO halt(reason) VALUES(?)',('BILLING_CREDIT_QUOTA_OR_ACCESS_ERROR_STOP',))
+                raise Gate('BILLING_CREDIT_QUOTA_OR_ACCESS_ERROR_STOP_NO_RETRY')
             returned=result.get('returned_model_version')
             if returned and returned!=c['model'] and not returned.startswith(c['model']+'-'):
                 with ledger.connect() as conn:conn.execute('INSERT INTO halt(reason) VALUES(?)',('UNEXPECTED_RETURNED_MODEL_VERSION',))

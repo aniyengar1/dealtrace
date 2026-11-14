@@ -1,0 +1,1014 @@
+{
+  "kind": "OFFLINE_FAILURE_CLASSIFICATION_NOT_RESCORING_NOT_TUNING",
+  "recorded_at": "2026-11-14T21:24:57.565855+00:00",
+  "source_run_sha256": "eea5b5458242a033a53c8582645f6b601b59d42bb72a161e751f85723a9c98d2",
+  "new_calls": 0,
+  "current_observations": 21,
+  "prior_context_observations": 5,
+  "rule_hits_nonexclusive": 58,
+  "rule_groups": {
+    "CALENDAR_BOUNDARY_MISMATCH": {
+      "count": 1,
+      "candidates": [
+        {
+          "company": "ADI",
+          "case_id": "pilot-1",
+          "id": "402d44de-e41b-5b28-9562-7bb243a6aac3",
+          "fiscal_year": 2024,
+          "fiscal_quarter": 4,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "CALENDAR_BOUNDARY_MISMATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        }
+      ]
+    },
+    "CURRENCY_NOT_SUPPORTED": {
+      "count": 1,
+      "candidates": [
+        {
+          "company": "AMAT",
+          "case_id": "pilot-4",
+          "id": "c2203212-3efa-5d18-84ba-ccd5553230ea",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 4,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "CURRENCY_NOT_SUPPORTED",
+            "NUMBER_NOT_IN_AMOUNT_EVIDENCE",
+            "UNRESOLVED_STATUS"
+          ]
+        }
+      ]
+    },
+    "INCOMPARABLE_STATUS_REFERENCE": {
+      "count": 2,
+      "candidates": [
+        {
+          "company": "HIMS",
+          "case_id": "pilot-19",
+          "id": "548513a1-0585-5e00-a97e-29742c2324e7",
+          "fiscal_year": 2026,
+          "fiscal_quarter": null,
+          "status": "raised",
+          "source_id": "current",
+          "errors": [
+            "INCOMPARABLE_STATUS_REFERENCE",
+            "INVALID_STATUS_REFERENCE_INPUT"
+          ]
+        },
+        {
+          "company": "TDOC",
+          "case_id": "pilot-27",
+          "id": "867d9225-d821-57a6-9e36-51fd8f63d955",
+          "fiscal_year": 2025,
+          "fiscal_quarter": null,
+          "status": "reaffirmed",
+          "source_id": "current",
+          "errors": [
+            "INCOMPARABLE_STATUS_REFERENCE",
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "INVALID_STATUS_REFERENCE_INPUT",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "MISSING_STATUS_EVIDENCE",
+            "NUMBER_NOT_IN_AMOUNT_EVIDENCE",
+            "REPEATED_EXACT_MATCH"
+          ]
+        }
+      ]
+    },
+    "INCOMPLETE_EVIDENCE_ROLES": {
+      "count": 9,
+      "candidates": [
+        {
+          "company": "DOCU",
+          "case_id": "pilot-11",
+          "id": "006b55d7-09ee-52b5-b60c-4ea03a4c69e0",
+          "fiscal_year": 2026,
+          "fiscal_quarter": 1,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "MISSING_COLUMN_IDENTITY",
+            "MISSING_EXACT_MATCH",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "REPEATED_EXACT_MATCH",
+            "SCALE_NOT_SUPPORTED",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "DOCU",
+          "case_id": "pilot-11",
+          "id": "6385b5e4-5038-53ff-8ef9-144ea37f93f5",
+          "fiscal_year": 2026,
+          "fiscal_quarter": null,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "MISSING_COLUMN_IDENTITY",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "TDOC",
+          "case_id": "pilot-27",
+          "id": "867d9225-d821-57a6-9e36-51fd8f63d955",
+          "fiscal_year": 2025,
+          "fiscal_quarter": null,
+          "status": "reaffirmed",
+          "source_id": "current",
+          "errors": [
+            "INCOMPARABLE_STATUS_REFERENCE",
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "INVALID_STATUS_REFERENCE_INPUT",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "MISSING_STATUS_EVIDENCE",
+            "NUMBER_NOT_IN_AMOUNT_EVIDENCE",
+            "REPEATED_EXACT_MATCH"
+          ]
+        },
+        {
+          "company": "TDOC",
+          "case_id": "pilot-27",
+          "id": "3af69ec2-6423-5816-b8e8-e197b8d00499",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 2,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "IOT",
+          "case_id": "IOT-0001642896-24-000059",
+          "id": "46afa159-502c-52d1-8591-f8d3ce6eadb5",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 3,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "IOT",
+          "case_id": "IOT-0001642896-24-000059",
+          "id": "21c61de9-e6bb-5663-aec5-93adcaabc7b7",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 4,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "NONELIGIBLE_OR_AMBIGUOUS_INTERPRETATION",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "IOT",
+          "case_id": "IOT-0001642896-24-000059",
+          "id": "c798cacf-56f7-5036-9952-de899dffba90",
+          "fiscal_year": 2025,
+          "fiscal_quarter": null,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "CRWD",
+          "case_id": "CRWD-0001535527-24-000017",
+          "id": "f7663476-0113-5f9f-972c-47f14acb7ead",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 3,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "CRWD",
+          "case_id": "CRWD-0001535527-24-000017",
+          "id": "3986701f-1548-5cba-8e94-d8bb026ee683",
+          "fiscal_year": 2025,
+          "fiscal_quarter": null,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        }
+      ]
+    },
+    "INVALID_STATUS_REFERENCE_INPUT": {
+      "count": 3,
+      "candidates": [
+        {
+          "company": "A",
+          "case_id": "pilot-0",
+          "id": "c10f9eb9-018a-513c-b6ef-8d1ffd4bfb1a",
+          "fiscal_year": 2025,
+          "fiscal_quarter": null,
+          "status": "raised",
+          "source_id": "current",
+          "errors": [
+            "INVALID_STATUS_REFERENCE_INPUT"
+          ]
+        },
+        {
+          "company": "HIMS",
+          "case_id": "pilot-19",
+          "id": "548513a1-0585-5e00-a97e-29742c2324e7",
+          "fiscal_year": 2026,
+          "fiscal_quarter": null,
+          "status": "raised",
+          "source_id": "current",
+          "errors": [
+            "INCOMPARABLE_STATUS_REFERENCE",
+            "INVALID_STATUS_REFERENCE_INPUT"
+          ]
+        },
+        {
+          "company": "TDOC",
+          "case_id": "pilot-27",
+          "id": "867d9225-d821-57a6-9e36-51fd8f63d955",
+          "fiscal_year": 2025,
+          "fiscal_quarter": null,
+          "status": "reaffirmed",
+          "source_id": "current",
+          "errors": [
+            "INCOMPARABLE_STATUS_REFERENCE",
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "INVALID_STATUS_REFERENCE_INPUT",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "MISSING_STATUS_EVIDENCE",
+            "NUMBER_NOT_IN_AMOUNT_EVIDENCE",
+            "REPEATED_EXACT_MATCH"
+          ]
+        }
+      ]
+    },
+    "MISSING_COLUMN_IDENTITY": {
+      "count": 2,
+      "candidates": [
+        {
+          "company": "DOCU",
+          "case_id": "pilot-11",
+          "id": "006b55d7-09ee-52b5-b60c-4ea03a4c69e0",
+          "fiscal_year": 2026,
+          "fiscal_quarter": 1,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "MISSING_COLUMN_IDENTITY",
+            "MISSING_EXACT_MATCH",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "REPEATED_EXACT_MATCH",
+            "SCALE_NOT_SUPPORTED",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "DOCU",
+          "case_id": "pilot-11",
+          "id": "6385b5e4-5038-53ff-8ef9-144ea37f93f5",
+          "fiscal_year": 2026,
+          "fiscal_quarter": null,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "MISSING_COLUMN_IDENTITY",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        }
+      ]
+    },
+    "MISSING_EXACT_MATCH": {
+      "count": 1,
+      "candidates": [
+        {
+          "company": "DOCU",
+          "case_id": "pilot-11",
+          "id": "006b55d7-09ee-52b5-b60c-4ea03a4c69e0",
+          "fiscal_year": 2026,
+          "fiscal_quarter": 1,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "MISSING_COLUMN_IDENTITY",
+            "MISSING_EXACT_MATCH",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "REPEATED_EXACT_MATCH",
+            "SCALE_NOT_SUPPORTED",
+            "UNRESOLVED_STATUS"
+          ]
+        }
+      ]
+    },
+    "MISSING_MATCHING_TABLE_HEADER": {
+      "count": 4,
+      "candidates": [
+        {
+          "company": "DOCU",
+          "case_id": "pilot-11",
+          "id": "006b55d7-09ee-52b5-b60c-4ea03a4c69e0",
+          "fiscal_year": 2026,
+          "fiscal_quarter": 1,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "MISSING_COLUMN_IDENTITY",
+            "MISSING_EXACT_MATCH",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "REPEATED_EXACT_MATCH",
+            "SCALE_NOT_SUPPORTED",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "DOCU",
+          "case_id": "pilot-11",
+          "id": "6385b5e4-5038-53ff-8ef9-144ea37f93f5",
+          "fiscal_year": 2026,
+          "fiscal_quarter": null,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "MISSING_COLUMN_IDENTITY",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "TDOC",
+          "case_id": "pilot-27",
+          "id": "867d9225-d821-57a6-9e36-51fd8f63d955",
+          "fiscal_year": 2025,
+          "fiscal_quarter": null,
+          "status": "reaffirmed",
+          "source_id": "current",
+          "errors": [
+            "INCOMPARABLE_STATUS_REFERENCE",
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "INVALID_STATUS_REFERENCE_INPUT",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "MISSING_STATUS_EVIDENCE",
+            "NUMBER_NOT_IN_AMOUNT_EVIDENCE",
+            "REPEATED_EXACT_MATCH"
+          ]
+        },
+        {
+          "company": "TDOC",
+          "case_id": "pilot-27",
+          "id": "3af69ec2-6423-5816-b8e8-e197b8d00499",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 2,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        }
+      ]
+    },
+    "MISSING_STATUS_EVIDENCE": {
+      "count": 1,
+      "candidates": [
+        {
+          "company": "TDOC",
+          "case_id": "pilot-27",
+          "id": "867d9225-d821-57a6-9e36-51fd8f63d955",
+          "fiscal_year": 2025,
+          "fiscal_quarter": null,
+          "status": "reaffirmed",
+          "source_id": "current",
+          "errors": [
+            "INCOMPARABLE_STATUS_REFERENCE",
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "INVALID_STATUS_REFERENCE_INPUT",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "MISSING_STATUS_EVIDENCE",
+            "NUMBER_NOT_IN_AMOUNT_EVIDENCE",
+            "REPEATED_EXACT_MATCH"
+          ]
+        }
+      ]
+    },
+    "NONELIGIBLE_OR_AMBIGUOUS_INTERPRETATION": {
+      "count": 3,
+      "candidates": [
+        {
+          "company": "ZM",
+          "case_id": "pilot-28",
+          "id": "721e9de2-b89a-5048-8c0f-8cedd00c13e1",
+          "fiscal_year": 2027,
+          "fiscal_quarter": 1,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "NONELIGIBLE_OR_AMBIGUOUS_INTERPRETATION",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "ZM",
+          "case_id": "pilot-28",
+          "id": "5b0f4bcc-e7b2-5fdc-a5c4-f66bead2fcd7",
+          "fiscal_year": 2027,
+          "fiscal_quarter": null,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "NONELIGIBLE_OR_AMBIGUOUS_INTERPRETATION",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "IOT",
+          "case_id": "IOT-0001642896-24-000059",
+          "id": "21c61de9-e6bb-5663-aec5-93adcaabc7b7",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 4,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "NONELIGIBLE_OR_AMBIGUOUS_INTERPRETATION",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        }
+      ]
+    },
+    "NUMBER_NOT_IN_AMOUNT_EVIDENCE": {
+      "count": 2,
+      "candidates": [
+        {
+          "company": "AMAT",
+          "case_id": "pilot-4",
+          "id": "c2203212-3efa-5d18-84ba-ccd5553230ea",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 4,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "CURRENCY_NOT_SUPPORTED",
+            "NUMBER_NOT_IN_AMOUNT_EVIDENCE",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "TDOC",
+          "case_id": "pilot-27",
+          "id": "867d9225-d821-57a6-9e36-51fd8f63d955",
+          "fiscal_year": 2025,
+          "fiscal_quarter": null,
+          "status": "reaffirmed",
+          "source_id": "current",
+          "errors": [
+            "INCOMPARABLE_STATUS_REFERENCE",
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "INVALID_STATUS_REFERENCE_INPUT",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "MISSING_STATUS_EVIDENCE",
+            "NUMBER_NOT_IN_AMOUNT_EVIDENCE",
+            "REPEATED_EXACT_MATCH"
+          ]
+        }
+      ]
+    },
+    "REPEATED_EXACT_MATCH": {
+      "count": 10,
+      "candidates": [
+        {
+          "company": "DOCU",
+          "case_id": "pilot-11",
+          "id": "006b55d7-09ee-52b5-b60c-4ea03a4c69e0",
+          "fiscal_year": 2026,
+          "fiscal_quarter": 1,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "MISSING_COLUMN_IDENTITY",
+            "MISSING_EXACT_MATCH",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "REPEATED_EXACT_MATCH",
+            "SCALE_NOT_SUPPORTED",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "DOCU",
+          "case_id": "pilot-11",
+          "id": "6385b5e4-5038-53ff-8ef9-144ea37f93f5",
+          "fiscal_year": 2026,
+          "fiscal_quarter": null,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "MISSING_COLUMN_IDENTITY",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "HIMS",
+          "case_id": "pilot-19",
+          "id": "a49b858c-dc3e-5f67-ac14-3ede901ffbf7",
+          "fiscal_year": 2026,
+          "fiscal_quarter": 2,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "TDOC",
+          "case_id": "pilot-27",
+          "id": "867d9225-d821-57a6-9e36-51fd8f63d955",
+          "fiscal_year": 2025,
+          "fiscal_quarter": null,
+          "status": "reaffirmed",
+          "source_id": "current",
+          "errors": [
+            "INCOMPARABLE_STATUS_REFERENCE",
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "INVALID_STATUS_REFERENCE_INPUT",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "MISSING_STATUS_EVIDENCE",
+            "NUMBER_NOT_IN_AMOUNT_EVIDENCE",
+            "REPEATED_EXACT_MATCH"
+          ]
+        },
+        {
+          "company": "TDOC",
+          "case_id": "pilot-27",
+          "id": "3af69ec2-6423-5816-b8e8-e197b8d00499",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 2,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "IOT",
+          "case_id": "IOT-0001642896-24-000059",
+          "id": "46afa159-502c-52d1-8591-f8d3ce6eadb5",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 3,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "IOT",
+          "case_id": "IOT-0001642896-24-000059",
+          "id": "21c61de9-e6bb-5663-aec5-93adcaabc7b7",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 4,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "NONELIGIBLE_OR_AMBIGUOUS_INTERPRETATION",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "IOT",
+          "case_id": "IOT-0001642896-24-000059",
+          "id": "c798cacf-56f7-5036-9952-de899dffba90",
+          "fiscal_year": 2025,
+          "fiscal_quarter": null,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "CRWD",
+          "case_id": "CRWD-0001535527-24-000017",
+          "id": "f7663476-0113-5f9f-972c-47f14acb7ead",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 3,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "CRWD",
+          "case_id": "CRWD-0001535527-24-000017",
+          "id": "3986701f-1548-5cba-8e94-d8bb026ee683",
+          "fiscal_year": 2025,
+          "fiscal_quarter": null,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        }
+      ]
+    },
+    "SCALE_NOT_SUPPORTED": {
+      "count": 1,
+      "candidates": [
+        {
+          "company": "DOCU",
+          "case_id": "pilot-11",
+          "id": "006b55d7-09ee-52b5-b60c-4ea03a4c69e0",
+          "fiscal_year": 2026,
+          "fiscal_quarter": 1,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "MISSING_COLUMN_IDENTITY",
+            "MISSING_EXACT_MATCH",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "REPEATED_EXACT_MATCH",
+            "SCALE_NOT_SUPPORTED",
+            "UNRESOLVED_STATUS"
+          ]
+        }
+      ]
+    },
+    "UNRESOLVED_STATUS": {
+      "count": 18,
+      "candidates": [
+        {
+          "company": "A",
+          "case_id": "pilot-0",
+          "id": "94426604-d814-557e-ac35-bdd8c2fdf939",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 3,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "ADI",
+          "case_id": "pilot-1",
+          "id": "402d44de-e41b-5b28-9562-7bb243a6aac3",
+          "fiscal_year": 2024,
+          "fiscal_quarter": 4,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "CALENDAR_BOUNDARY_MISMATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "AMAT",
+          "case_id": "pilot-4",
+          "id": "c2203212-3efa-5d18-84ba-ccd5553230ea",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 4,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "CURRENCY_NOT_SUPPORTED",
+            "NUMBER_NOT_IN_AMOUNT_EVIDENCE",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "DOCU",
+          "case_id": "pilot-11",
+          "id": "006b55d7-09ee-52b5-b60c-4ea03a4c69e0",
+          "fiscal_year": 2026,
+          "fiscal_quarter": 1,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "MISSING_COLUMN_IDENTITY",
+            "MISSING_EXACT_MATCH",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "REPEATED_EXACT_MATCH",
+            "SCALE_NOT_SUPPORTED",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "DOCU",
+          "case_id": "pilot-11",
+          "id": "6385b5e4-5038-53ff-8ef9-144ea37f93f5",
+          "fiscal_year": 2026,
+          "fiscal_quarter": null,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "MISSING_COLUMN_IDENTITY",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "FIVE",
+          "case_id": "pilot-14",
+          "id": "c7f986a0-0c38-513a-949b-7ece5a16d632",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 1,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "FIVE",
+          "case_id": "pilot-14",
+          "id": "e4154cfd-d3b2-52a1-a786-edb78c6a9802",
+          "fiscal_year": 2025,
+          "fiscal_quarter": null,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "HIMS",
+          "case_id": "pilot-19",
+          "id": "a49b858c-dc3e-5f67-ac14-3ede901ffbf7",
+          "fiscal_year": 2026,
+          "fiscal_quarter": 2,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "TDOC",
+          "case_id": "pilot-27",
+          "id": "3af69ec2-6423-5816-b8e8-e197b8d00499",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 2,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "MISSING_MATCHING_TABLE_HEADER",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "ZM",
+          "case_id": "pilot-28",
+          "id": "2b730179-9370-544e-ad8e-23b4651970c1",
+          "fiscal_year": 2027,
+          "fiscal_quarter": 1,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "ZM",
+          "case_id": "pilot-28",
+          "id": "721e9de2-b89a-5048-8c0f-8cedd00c13e1",
+          "fiscal_year": 2027,
+          "fiscal_quarter": 1,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "NONELIGIBLE_OR_AMBIGUOUS_INTERPRETATION",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "ZM",
+          "case_id": "pilot-28",
+          "id": "b25d3f2e-2c4e-5180-b1cb-5127189786b0",
+          "fiscal_year": 2027,
+          "fiscal_quarter": null,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "ZM",
+          "case_id": "pilot-28",
+          "id": "5b0f4bcc-e7b2-5fdc-a5c4-f66bead2fcd7",
+          "fiscal_year": 2027,
+          "fiscal_quarter": null,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "NONELIGIBLE_OR_AMBIGUOUS_INTERPRETATION",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "IOT",
+          "case_id": "IOT-0001642896-24-000059",
+          "id": "46afa159-502c-52d1-8591-f8d3ce6eadb5",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 3,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "IOT",
+          "case_id": "IOT-0001642896-24-000059",
+          "id": "21c61de9-e6bb-5663-aec5-93adcaabc7b7",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 4,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "NONELIGIBLE_OR_AMBIGUOUS_INTERPRETATION",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "IOT",
+          "case_id": "IOT-0001642896-24-000059",
+          "id": "c798cacf-56f7-5036-9952-de899dffba90",
+          "fiscal_year": 2025,
+          "fiscal_quarter": null,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "CRWD",
+          "case_id": "CRWD-0001535527-24-000017",
+          "id": "f7663476-0113-5f9f-972c-47f14acb7ead",
+          "fiscal_year": 2025,
+          "fiscal_quarter": 3,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        },
+        {
+          "company": "CRWD",
+          "case_id": "CRWD-0001535527-24-000017",
+          "id": "3986701f-1548-5cba-8e94-d8bb026ee683",
+          "fiscal_year": 2025,
+          "fiscal_quarter": null,
+          "status": "unresolved",
+          "source_id": "current",
+          "errors": [
+            "INCOMPLETE_EVIDENCE_ROLES",
+            "REPEATED_EXACT_MATCH",
+            "UNRESOLVED_STATUS"
+          ]
+        }
+      ]
+    }
+  },
+  "prior_context_records": [
+    {
+      "company": "A",
+      "case_id": "pilot-0",
+      "id": "037f152b-9090-5028-a034-0e13417d34cb",
+      "fiscal_year": 2025,
+      "fiscal_quarter": null,
+      "status": "unresolved",
+      "source_id": "prior",
+      "errors": [
+        "UNRESOLVED_STATUS"
+      ]
+    },
+    {
+      "company": "A",
+      "case_id": "pilot-0",
+      "id": "dcccea85-4913-533a-8039-d0d65d345a08",
+      "fiscal_year": 2025,
+      "fiscal_quarter": 2,
+      "status": "unresolved",
+      "source_id": "prior",
+      "errors": [
+        "UNRESOLVED_STATUS"
+      ]
+    },
+    {
+      "company": "HIMS",
+      "case_id": "pilot-19",
+      "id": "ff66ba09-63ce-5b70-972e-3025c18eb07a",
+      "fiscal_year": 2026,
+      "fiscal_quarter": null,
+      "status": "unresolved",
+      "source_id": "prior",
+      "errors": [
+        "UNRESOLVED_STATUS"
+      ]
+    },
+    {
+      "company": "TDOC",
+      "case_id": "pilot-27",
+      "id": "382a8ea1-1797-58ae-91de-5b2b9f409786",
+      "fiscal_year": 2025,
+      "fiscal_quarter": null,
+      "status": "initial",
+      "source_id": "prior",
+      "errors": [
+        "INCOMPLETE_EVIDENCE_ROLES",
+        "MISSING_MATCHING_TABLE_HEADER",
+        "NUMBER_NOT_IN_AMOUNT_EVIDENCE",
+        "REPEATED_EXACT_MATCH"
+      ]
+    },
+    {
+      "company": "TDOC",
+      "case_id": "pilot-27",
+      "id": "d6c5373b-e0d3-500a-b107-828e36779206",
+      "fiscal_year": 2025,
+      "fiscal_quarter": 1,
+      "status": "unresolved",
+      "source_id": "prior",
+      "errors": [
+        "INCOMPLETE_EVIDENCE_ROLES",
+        "MISSING_MATCHING_TABLE_HEADER",
+        "REPEATED_EXACT_MATCH",
+        "UNRESOLVED_STATUS"
+      ]
+    }
+  ],
+  "original_outputs_and_scores_unchanged": true
+}

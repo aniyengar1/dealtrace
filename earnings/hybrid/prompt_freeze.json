@@ -1,10 +1,8 @@
 {
-  "prompt_version": "hybrid-diagnostic-v4-compact-owner-reservation",
-  "execution_fingerprint": "3ed28a6e2dce36b3bec92a6d35318c6f9180387d8cb733addf4c51e93127a4db",
-  "frozen_at": "2026-11-14T03:19:17.344205+00:00",
-  "fresh_reservation_commit": "6e085a5",
-  "diagnostic_only": true,
-  "fresh_inference_forbidden": true,
-  "approved_release_count": 10,
-  "policy": "Owner November13 compact-context diagnostic authorization; one inference attempt per release; estimated requested-output reservation; unknown thinking retains reservation without blocking quarantined evaluation."
+  "prompt_version": "hybrid-diagnostic-v4-budget8-paused",
+  "execution_fingerprint": "687fa6481bce6496fd46917cc39e50ab33292887ece58d71639cc25e28045320",
+  "frozen_at": "2026-11-14T10:30:13.332094+00:00",
+  "inference_authorized": false,
+  "generation_rules_changed": false,
+  "reason": "Budget reduced to8; controls paused; completed v4 configs/code retained in archive/completed_v4. No inference occurred under this new control version."
 }

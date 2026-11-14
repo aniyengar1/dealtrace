@@ -23,6 +23,13 @@ def make_client(config,factory=None,capture=None):
     return factory(vertexai=True,project='just-rhythm-506202-j8',location='global',api_key=None,http_options=http),generation
 
 
+def dispatch_stop_reason(code,message):
+    # Inspect only to classify, never persist arbitrary provider error text.
+    import re
+    if code in (402,403,429) or re.search(r'billing|quota|resource.exhausted|credit.*exhaust|trial.*(?:expired|exhaust)',str(message).lower()):
+        return 'BILLING_CREDIT_QUOTA_OR_ACCESS_ERROR'
+    return None
+
 def _worker(config,prompt,payload,output):
     for name in ('GOOGLE_API_KEY','GEMINI_API_KEY'):os.environ.pop(name,None)
     started=time.monotonic();operation=config.get('_operation','generate')
@@ -49,7 +56,7 @@ def _worker(config,prompt,payload,output):
                 result={'status':'response','raw_response':r.model_dump(mode='json',exclude={'sdk_http_response'}),'text':text,'usage':r.usage_metadata.model_dump(mode='json') if r.usage_metadata else None,'returned_model_version':r.model_version,'finish_reasons':[str(x.finish_reason.value if hasattr(x.finish_reason,'value') else x.finish_reason) for x in r.candidates or []]}
     except Exception as exc:
         code=getattr(exc,'code',None)
-        result={'status':'transport_error','error_class':type(exc).__name__,'http_code':code if isinstance(code,int) else None,'usage':None,'returned_model_version':None}
+        result={'status':'transport_error','error_class':type(exc).__name__,'http_code':code if isinstance(code,int) else None,'dispatch_stop_reason':dispatch_stop_reason(code,getattr(exc,'message','')),'usage':None,'returned_model_version':None}
     if 'raw_response' in result:result['raw_response_format']='SDK_MODEL_DUMP_NOT_ORIGINAL_HTTP_BODY'
     result.update(wire_response_metadata=capture.responses,provider='google_vertex_ai',requested_model='gemini-3.6-flash',project='just-rhythm-506202-j8',location='global',operation=operation,sdk_version=version('google-genai'),latency_seconds=str(time.monotonic()-started))
     write(output,result)

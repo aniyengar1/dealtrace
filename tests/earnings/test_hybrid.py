@@ -45,9 +45,9 @@ def test_inconsistent_total_retains_reservation(tmp_path,c):
     assert l.summary()['records'][0]['accounted_nano'] is None
 
 def test_atomic_budget_unknown_failures_and_retry_charge(tmp_path,c):
-    c.update(max_input_tokens_documented=1000000,max_billable_output_tokens=1000000)
+    c.update(max_input_tokens_documented=600000,max_billable_output_tokens=600000)
     l=ledger.Ledger(tmp_path/'l');aid=l.reserve('x',c,{},STAMP);l.finish(aid,None,state='timeout')
-    assert l.summary()['total_held_usd']=='9'
+    assert l.summary()['total_held_usd']=='5.4'
     with pytest.raises(ledger.Gate,match='BUDGET_LIMIT'):l.reserve('x',c,{},STAMP)
 
 def test_concurrency_shared_across_independent_connections(tmp_path,c):
@@ -192,7 +192,7 @@ def test_retry_and_cache_reuse_with_only_fake_provider(tmp_path,c,monkeypatch):
     case=read(ROOT/'diagnostic_manifest.json')['cases'][0];l=ledger.Ledger(tmp_path/'l');calls=[]
     def fake(config,prompt,payload,output):
         calls.append(payload)
-        if len(calls)==1:return {'status':'transport_error','http_code':429,'usage':None}
+        if len(calls)==1:return {'status':'transport_error','http_code':503,'usage':None} # legacy transient-only retry fixture; quota must stop
         return {'status':'response','text':'{"observations":[],"unresolved_sections":[]}','usage':{'prompt_token_count':10,'candidates_token_count':2,'thoughts_token_count':3,'total_token_count':15},'returned_model_version':'gemini-3.6-flash-test'}
     r=runner.process_case(case,c,l,send=fake,count_send=fake_count,sleep=lambda n:None)
     assert len(calls)==2 and r['cache_status']=='miss' and l.summary()['attempts']==2
@@ -432,3 +432,34 @@ def test_flagged_diagnostic_is_never_counted_as_accepted():
     assert disposition(r)=='flagged'
     r['deterministic_errors']=['UNRESOLVED_STATUS'];assert disposition(r)=='rejected'
     with pytest.raises(ValueError):disposition({'deterministic_errors':[],'review_flags':[],'review_status':'human_review_approved'})
+
+def test_lowered_eight_dollar_budget_and_owner_pause_no_calls(tmp_path,monkeypatch):
+    c=runner.configuration();assert c['ceiling_usd']=='8.00' and ledger.CEILING==8_000_000_000
+    monkeypatch.setattr(transport,'dispatch',lambda *a:pytest.fail('No provider calls authorized'))
+    monkeypatch.setattr(runner,'check_prompt_freeze',lambda c:None)
+    with pytest.raises(ledger.Gate,match='INFERENCE_PAUSED_OWNER_REVIEW'):runner.preflight(c)
+
+def test_eight_dollar_guard_includes_unresolved_reservations(tmp_path,c):
+    c.update(max_input_tokens_documented=600000,max_billable_output_tokens=600000)
+    l=ledger.Ledger(tmp_path/'l');a=l.reserve('a',c,{},STAMP);l.finish(a,None)
+    assert l.summary()['ceiling_usd']=='8' and l.summary()['total_held_usd']=='5.4'
+    with pytest.raises(ledger.Gate,match='BUDGET_LIMIT'):l.reserve('b',c,{},STAMP)
+    assert l.summary()['records'][0]['held_nano']==5_400_000_000
+
+@pytest.mark.parametrize('code,message',[(402,''),(403,''),(429,''),(400,'Free trial credit exhausted'),(400,'Billing disabled')])
+def test_billing_and_quota_classification_without_logging_message(code,message):
+    assert transport.dispatch_stop_reason(code,message)=='BILLING_CREDIT_QUOTA_OR_ACCESS_ERROR'
+
+def test_quota_error_stops_single_attempt_and_future_dispatch(tmp_path,monkeypatch):
+    c=runner.configuration();monkeypatch.setattr(runner,'DATA',tmp_path);monkeypatch.setattr(runner,'preflight',lambda c:None)
+    l=ledger.Ledger(tmp_path/'l');case=read(ROOT/'diagnostic_manifest.json')['cases'][0];calls=[]
+    def fake(*args):calls.append(1);return {'status':'transport_error','http_code':429,'usage':None}
+    with pytest.raises(ledger.Gate,match='NO_RETRY'):runner.process_case(case,c,l,send=fake,count_send=fake_count,is_probe=True)
+    assert len(calls)==1 and l.summary()['halted'] and l.summary()['records'][0]['held_nano']>0
+
+def test_quota_count_failure_halts_before_generation_without_retry(tmp_path,monkeypatch):
+    c=runner.configuration();monkeypatch.setattr(runner,'DATA',tmp_path);monkeypatch.setattr(runner,'preflight',lambda c:None)
+    l=ledger.Ledger(tmp_path/'l');case=read(ROOT/'diagnostic_manifest.json')['cases'][0]
+    with pytest.raises(ledger.Gate,match='NO_RETRY'):
+        runner.process_case(case,c,l,count_send=lambda *a:{'status':'transport_error','http_code':429},send=lambda *a:pytest.fail('Generation forbidden after quota error'))
+    assert l.summary()['halted'] and l.summary()['attempts']==0

@@ -266,5 +266,13 @@
   "inference_attempts_revised": 10,
   "authorization_consumed": true,
   "further_inference_authorized": false,
-  "ADC_used_by_SDK": true
+  "ADC_used_by_SDK": true,
+  "current_budget_policy": {
+    "ceiling_usd": "8.00",
+    "occupied_usd": "2.6009185",
+    "headroom_usd": "5.3990815",
+    "inference_authorized": false,
+    "original_probe_held_usd": "1.12",
+    "shared_credit": "uncertain; not a guarantee"
+  }
 }
