@@ -155,6 +155,29 @@ lookup is intentionally tiny -- a wrong guess there would be worse than
 falling back to the short form -- so most short/ticker-form acquirers
 with no fuller local mention are left as-is.
 
+## Display names and price plausibility
+
+`deal_metrics.target_display` and `.acquirer_display` are cleaned,
+website-ready names: EDGAR legal suffixes ("Inc.", "Corp", "Holdings,
+Inc.") and state-of-incorporation artifacts ("\DE\", "/DE/") stripped,
+then title-cased (preserving a small curated list of known acronyms
+like "PTC"/"ACV"/"BP" so they don't get lowercased into "Ptc"/"Acv"/
+"Bp" -- see `src/display_name.py`). `acquirer_display` additionally
+can never be a generic role placeholder ("Parent", "Buyer",
+"Purchaser"), an anonymized placeholder ("Company A"), a board/
+committee reference, a ticker/acronym that's actually the target
+itself, or the target's own name under another form -- any of those
+becomes `'Undisclosed'` instead. Across 1,125 deals (canonical and
+non-canonical), **121 ended up `'Undisclosed'`** (mostly deals where
+the underlying `deals.acquirer` was already "Parent"/"Unknown"/a
+committee name, pre-existing from earlier acquirer-guess limitations,
+not new failures from this display layer).
+
+`deal_metrics.price_plausible` is `false` when the final price is
+≤ $0.10/share or the final proposal is a quoted range rather than a
+single settled price, `true` when neither applies, and `NULL` when
+there's no final price at all to judge (393 of 1,125 deals).
+
 ## Versioning
 
 `data/output/stats/headline_stats.json` carries `generated_at` (UTC)

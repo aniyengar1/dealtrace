@@ -206,6 +206,18 @@ def compute_first_final_price_for_deal(d: dict) -> tuple[Optional[float], Option
     return first_price, final_price
 
 
+def compute_final_price_range_for_deal(d: dict) -> tuple[Optional[float], Optional[float]]:
+    """The final entry's raw (price_low, price_high) -- distinct from
+    compute_first_final_price_for_deal's single combined final_price,
+    needed to tell a genuine single price (price_low == price_high)
+    apart from a quoted range (price_low != price_high)."""
+    dated = _dated_proposals(d["proposals"])
+    final = _final_entry(dated)
+    if final is None:
+        return None, None
+    return final["price_low"], final["price_high"]
+
+
 def compute_pct_bump_for_deal(d: dict) -> tuple[Optional[float], Optional[str]]:
     """Returns (pct, exclusion_reason). reason is None exactly when pct
     is a valid, includable value. For abs_change_over_300pct, pct still

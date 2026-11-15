@@ -41,7 +41,7 @@ load_env()
 # Wilks Brothers, three unrelated deals that all guessed "Parent") before
 # this exclusion existed.
 _GENERIC_ACQUIRER_TERMS = {
-    "unknown", "parent", "merger sub", "acquiror", "buyer", "consortium", "sponsor",
+    "unknown", "parent", "merger sub", "acquiror", "buyer", "consortium", "sponsor", "purchaser",
 }
 
 

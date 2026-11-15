@@ -49,12 +49,29 @@ def test_is_safe_fuller_name_accepts_real_structural_suffix():
 
 
 def test_resolve_acquirer_display_uses_curated_expansion():
-    assert resolve_acquirer_display("NSC", "UNITED STATES STEEL CORP", [], []) == "Nippon Steel Corporation"
+    # Also suffix-stripped/cleaned, same as target_display.
+    assert resolve_acquirer_display("NSC", "UNITED STATES STEEL CORP", [], []) == "Nippon Steel"
 
 
 def test_resolve_acquirer_display_prefers_fuller_local_mention():
     proposals = [{"proposer": "Diamondback Energy, Inc.", "recipient": "Endeavor"}, {"proposer": "Diamondback", "recipient": "Endeavor"}]
-    assert resolve_acquirer_display("Diamondback", "Endeavor", proposals, []) == "Diamondback Energy, Inc."
+    assert resolve_acquirer_display("Diamondback", "Endeavor", proposals, []) == "Diamondback Energy"
+
+
+def test_resolve_acquirer_display_replaces_placeholder_with_undisclosed():
+    assert resolve_acquirer_display("Parent", "Acme Inc", [], []) == "Undisclosed"
+    assert resolve_acquirer_display("Company A", "Acme Inc", [], []) == "Undisclosed"
+    assert resolve_acquirer_display("Purchaser", "Acme Inc", [], []) == "Undisclosed"
+
+
+def test_resolve_acquirer_display_replaces_committee_with_undisclosed():
+    assert resolve_acquirer_display("Special Committee", "Acme Inc", [], []) == "Undisclosed"
+    assert resolve_acquirer_display("Conflicts Committee", "Acme Inc", [], []) == "Undisclosed"
+
+
+def test_resolve_acquirer_display_replaces_self_reference_with_undisclosed():
+    assert resolve_acquirer_display("USS", "UNITED STATES STEEL CORP", [], []) == "Undisclosed"
+    assert resolve_acquirer_display("Acme Inc", "Acme Inc", [], []) == "Undisclosed"
 
 
 def test_resolve_acquirer_display_falls_back_to_stored_value():

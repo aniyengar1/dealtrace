@@ -21,9 +21,18 @@ from typing import Optional
 import psycopg
 
 from src import bulk_stats
-from src.entity_match import is_anonymized_placeholder
+from src.dedup_deals import _is_generic
+from src.display_name import clean_display_name
+from src.entity_match import is_acronym_of, is_anonymized_placeholder, is_same_entity
 from src.env import load_env
 from src.load_db import connect
+
+UNDISCLOSED = "Undisclosed"
+
+# Minimum plausible per-share final price for price_plausible -- a
+# final_price at or below this is almost certainly a stray cents-level
+# or unit-mismatched extraction, not a real deal price.
+MIN_PLAUSIBLE_FINAL_PRICE_USD = 0.10
 
 load_env()
 
@@ -93,42 +102,89 @@ def _is_safe_fuller_name(candidate: str, base: str) -> bool:
     return trailing_word not in _ORG_REFERENCE_WORDS
 
 
+_COMMITTEE_RE = re.compile(r"\bcommittee\b", re.IGNORECASE)
+
+
+def _is_invalid_acquirer_display(name: str, target: str) -> bool:
+    """True when `name` is unusable as a public-facing acquirer name:
+    a generic role placeholder ("Parent", "Buyer", "Purchaser", ...),
+    an anonymized placeholder ("Company A"), a board/special/conflicts
+    committee reference, a ticker/acronym/short-name that's actually
+    the target itself, or the target's own (cleaned) name verbatim."""
+    if not name:
+        return True
+    if _is_generic(name) or is_anonymized_placeholder(name):
+        return True
+    if _COMMITTEE_RE.search(name):
+        return True
+    if is_same_entity(name, target) or is_acronym_of(name, target):
+        return True
+    if clean_display_name(name).strip().lower() == clean_display_name(target).strip().lower():
+        return True
+    return False
+
+
 def resolve_acquirer_display(acquirer: str, target: str, proposals: list[dict], events: list[dict]) -> str:
     """"Best available" full name for the stored (possibly short-form)
     acquirer: a curated expansion if we have high-confidence outside
     knowledge of one, else the longest locally-mentioned name that is a
     literal, safe completion of it (a deal's own text sometimes uses
     both "Cisco" and "Cisco Systems, Inc." -- prefer the fuller one),
-    else the stored value unchanged."""
+    else the stored value unchanged -- cleaned (suffix-stripped,
+    title-cased) the same way target_display is, and replaced with
+    "Undisclosed" if what's left is a placeholder, a committee, or the
+    target itself under another name, rather than ever showing one of
+    those to a site visitor as if it were a real acquirer."""
     if acquirer in KNOWN_SHORT_NAME_EXPANSIONS:
-        return KNOWN_SHORT_NAME_EXPANSIONS[acquirer]
+        resolved = KNOWN_SHORT_NAME_EXPANSIONS[acquirer]
+    else:
+        mentioned = set()
+        for p in proposals:
+            mentioned.add(p.get("proposer"))
+            mentioned.add(p.get("recipient"))
+        for e in events:
+            mentioned.update(e.get("parties") or [])
+        mentioned.discard(None)
 
-    mentioned = set()
-    for p in proposals:
-        mentioned.add(p.get("proposer"))
-        mentioned.add(p.get("recipient"))
-    for e in events:
-        mentioned.update(e.get("parties") or [])
-    mentioned.discard(None)
+        candidates = [acquirer] + [m for m in mentioned if m != target and _is_safe_fuller_name(m, acquirer)]
+        resolved = max(candidates, key=len)
 
-    candidates = [acquirer] + [m for m in mentioned if m != target and _is_safe_fuller_name(m, acquirer)]
-    return max(candidates, key=len)
+    if _is_invalid_acquirer_display(resolved, target):
+        return UNDISCLOSED
+    return clean_display_name(resolved)
+
+
+def compute_price_plausible(final_price: Optional[float], final_price_low: Optional[float], final_price_high: Optional[float]) -> Optional[bool]:
+    """False when the final price is at or below the implausibly-low
+    threshold, or when the final proposal is a quoted range
+    (price_low != price_high) rather than a single settled price.
+    None (not applicable) when there's no final price at all."""
+    if final_price is None:
+        return None
+    if final_price <= MIN_PLAUSIBLE_FINAL_PRICE_USD:
+        return False
+    if final_price_low is not None and final_price_high is not None and final_price_low != final_price_high:
+        return False
+    return True
 
 
 def compute_metrics_for_deal(d: dict) -> dict:
     first_price, final_price = bulk_stats.compute_first_final_price_for_deal(d)
+    final_price_low, final_price_high = bulk_stats.compute_final_price_range_for_deal(d)
     pct_bump, pct_bump_reason = bulk_stats.compute_pct_bump_for_deal(d)
     days_contact, _ = bulk_stats.compute_days_first_contact_to_signing_for_deal(d)
     days_proposal, _ = bulk_stats.compute_days_first_proposal_to_signing_for_deal(d)
     first_bidder_won, _ = bulk_stats.compute_first_bidder_won_for_deal(d)
 
     return {
+        "target_display": clean_display_name(d["target"]),
         "acquirer_display": resolve_acquirer_display(d["acquirer"], d["target"], d["proposals"], d["events"]),
         "n_parties_contacted": bulk_stats.compute_n_parties_contacted_for_deal(d),
         "n_bidders": bulk_stats.compute_n_bidders_for_deal(d),
         "n_proposals": bulk_stats.compute_n_proposals_for_deal(d),
         "first_price": first_price,
         "final_price": final_price,
+        "price_plausible": compute_price_plausible(final_price, final_price_low, final_price_high),
         "pct_bump": pct_bump if pct_bump_reason is None else None,
         "pct_bump_exclusion_reason": pct_bump_reason,
         "pct_bump_bucket": bulk_stats.pct_bump_bucket(pct_bump if pct_bump_reason is None else None),
@@ -149,19 +205,21 @@ def refresh_deal_metrics(conn: psycopg.Connection) -> int:
         conn.execute(
             """
             INSERT INTO deal_metrics (
-                deal_id, is_canonical, acquirer_display, n_parties_contacted, n_bidders,
-                n_proposals, first_price, final_price, pct_bump, pct_bump_exclusion_reason,
+                deal_id, is_canonical, target_display, acquirer_display, n_parties_contacted, n_bidders,
+                n_proposals, first_price, final_price, price_plausible, pct_bump, pct_bump_exclusion_reason,
                 pct_bump_bucket, days_first_contact_to_signing, days_first_proposal_to_signing,
                 first_bidder_won, computed_at
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, now())
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, now())
             ON CONFLICT (deal_id) DO UPDATE SET
                 is_canonical = EXCLUDED.is_canonical,
+                target_display = EXCLUDED.target_display,
                 acquirer_display = EXCLUDED.acquirer_display,
                 n_parties_contacted = EXCLUDED.n_parties_contacted,
                 n_bidders = EXCLUDED.n_bidders,
                 n_proposals = EXCLUDED.n_proposals,
                 first_price = EXCLUDED.first_price,
                 final_price = EXCLUDED.final_price,
+                price_plausible = EXCLUDED.price_plausible,
                 pct_bump = EXCLUDED.pct_bump,
                 pct_bump_exclusion_reason = EXCLUDED.pct_bump_exclusion_reason,
                 pct_bump_bucket = EXCLUDED.pct_bump_bucket,
@@ -171,9 +229,9 @@ def refresh_deal_metrics(conn: psycopg.Connection) -> int:
                 computed_at = now()
             """,
             (
-                d["deal_id"], is_canonical_by_id[d["deal_id"]], m["acquirer_display"],
+                d["deal_id"], is_canonical_by_id[d["deal_id"]], m["target_display"], m["acquirer_display"],
                 m["n_parties_contacted"], m["n_bidders"], m["n_proposals"],
-                m["first_price"], m["final_price"], m["pct_bump"], m["pct_bump_exclusion_reason"],
+                m["first_price"], m["final_price"], m["price_plausible"], m["pct_bump"], m["pct_bump_exclusion_reason"],
                 m["pct_bump_bucket"], m["days_first_contact_to_signing"],
                 m["days_first_proposal_to_signing"], m["first_bidder_won"],
             ),
