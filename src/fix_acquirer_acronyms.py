@@ -45,7 +45,7 @@ def main() -> None:
     for r in reports:
         slug = bulk_slug(r["row"]["target_cik"], r["row"]["primary_accession"])
         result = json.loads(Path(r["result_path"]).read_text())
-        proposals_by_slug[slug] = (r["row"]["target_name"], result["proposals"])
+        proposals_by_slug[slug] = (r["row"]["target_name"], result["proposals"], result["events"])
 
     found = []
     fixed = []
@@ -64,8 +64,8 @@ def main() -> None:
             if slug not in proposals_by_slug:
                 unresolved.append({"slug": slug, "target": target, "old_acquirer": old_acquirer, "reason": "no cached proposals to re-derive from"})
                 continue
-            target_name, proposals = proposals_by_slug[slug]
-            new_guess = guess_acquirer(target_name, proposals)
+            target_name, proposals, events = proposals_by_slug[slug]
+            new_guess = guess_acquirer(target_name, proposals, events)
 
             is_still_self_or_generic = (
                 new_guess is None

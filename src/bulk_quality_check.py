@@ -23,7 +23,7 @@ from typing import Optional
 
 from src import sanity, sections, validate
 from src.bulk_run import BULK_OUTPUT_DIR, load_cached_html
-from src.entity_match import is_acronym_of, is_same_entity
+from src.entity_match import is_acronym_of, is_anonymized_placeholder, is_same_entity
 
 
 def _resolve_target_placeholder(name: Optional[str], target_name: str) -> Optional[str]:
@@ -52,16 +52,48 @@ def _resolve_target_placeholder(name: Optional[str], target_name: str) -> Option
     return name
 
 
-def guess_acquirer(target_name: str, proposals: list[dict]) -> Optional[str]:
+def guess_acquirer(
+    target_name: str, proposals: list[dict], events: Optional[list[dict]] = None
+) -> Optional[str]:
+    """Most common non-target, non-placeholder proposer/recipient name
+    wins, same as before -- that's usually the real acquirer, and an
+    anonymized placeholder ("Company A", "Party B") is now excluded
+    from candidacy entirely so it can never win just by raw count (see
+    Global Blood Therapeutics / Pfizer, where "Company A" outnumbered
+    "Pfizer" but "Pfizer" is the only real name left once placeholders
+    are excluded).
+
+    Only when that leaves NO real candidate at all does this fall back
+    to the deal's latest signing event's named party -- deliberately a
+    fallback, not consulted first, because a signing event's own
+    language can itself be generic ("Purchaser") even when an earlier
+    proposal already named the real acquirer ("WHP Global" for Lands'
+    End), and a target can carry an earlier, unrelated signing in its
+    own history (EQRx's prior SPAC-formation signing lists "Legacy
+    EQRx" and "CM Life Sciences III Inc.", nothing to do with its real
+    Revolution Medicines merger) -- so letting the signing event
+    override an already-good frequency answer caused real regressions.
+    Sorted to the latest signing event when this fallback does run,
+    for the same EQRx reason. Returns None (an explicit "unresolved",
+    never a placeholder) if nothing real is found either way.
+    """
     counts = Counter()
     for p in proposals:
         for raw_name in (p.get("proposer"), p.get("recipient")):
             name = _resolve_target_placeholder(raw_name, target_name)
-            if name and name != target_name:
+            if name and name != target_name and not is_anonymized_placeholder(name):
                 counts[name] += 1
-    if not counts:
-        return None
-    return counts.most_common(1)[0][0]
+    if counts:
+        return counts.most_common(1)[0][0]
+
+    signings = [e for e in (events or []) if e.get("event_type") == "signing"]
+    signings.sort(key=lambda e: e.get("date_start") or "")
+    for e in reversed(signings):
+        for raw_name in e.get("parties") or []:
+            name = _resolve_target_placeholder(raw_name, target_name)
+            if name and name != target_name and not is_anonymized_placeholder(name):
+                return name
+    return None
 
 
 def check_one(result: dict) -> dict:
@@ -83,7 +115,7 @@ def check_one(result: dict) -> dict:
     n_quote_match = sum(1 for r in validated if r["checks"].get("quotes_in_paragraphs"))
     failure_reasons = sorted({reason for r in validated for reason in r["failure_reasons"]})
 
-    acquirer_guess = guess_acquirer(target_name, result["proposals"])
+    acquirer_guess = guess_acquirer(target_name, result["proposals"], result["events"])
 
     # Same target-side-only resolution for the sanity input: check_signing_
     # event_exists substring-matches target_name against Event.parties, so

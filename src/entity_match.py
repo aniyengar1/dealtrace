@@ -60,6 +60,36 @@ def initials(name: str) -> str:
     return "".join(w[0] for w in words if w).upper()
 
 
+def _initials_including_suffix(name: str) -> str:
+    """Some real tickers DO include a letter from the legal suffix --
+    "Mechanical Technology Inc" -> "MTI", "Healthy Choice Wellness
+    Corp." -> "HCWC" -- the opposite case from `initials`, which
+    deliberately strips the suffix. "&" is treated as "and" so it still
+    contributes a letter instead of vanishing as punctuation."""
+    n = name.strip().lower().replace("&", " and ")
+    n = _PAREN_SUFFIX_RE.sub(" ", n)
+    n = _PUNCT_RE.sub(" ", n)
+    words = _SPACE_RE.sub(" ", n).strip().split()
+    return "".join(w[0] for w in words if w).upper()
+
+
+_ANONYMIZED_PLACEHOLDER_RE = re.compile(
+    r"^(the\s+)?(company|party|bidder|buyer|acquiror|acquirer|counterparty|sponsor)\s*[a-z0-9]{1,3}$",
+    re.IGNORECASE,
+)
+
+
+def is_anonymized_placeholder(name: str) -> bool:
+    """True for a filing's own anonymization label ("Company A", "Party
+    B", "Bidder 1") -- never a real company, so never a valid answer for
+    "who is the acquirer" even when it's the most frequently mentioned
+    name in a deal's proposals (see Global Blood Therapeutics / Pfizer,
+    where "Company A" outnumbered "Pfizer" by raw mention count)."""
+    if not name:
+        return False
+    return bool(_ANONYMIZED_PLACEHOLDER_RE.match(name.strip()))
+
+
 def is_acronym_of(short: str, long_name: str) -> bool:
     """True if `short` looks like an initials/acronym abbreviation of
     `long_name` -- "USS" for "UNITED STATES STEEL CORP". Requires the
@@ -73,4 +103,4 @@ def is_acronym_of(short: str, long_name: str) -> bool:
     words = core_name(long_name).split()
     if len(words) < 2:
         return False
-    return s.upper() == initials(long_name)
+    return s.upper() in (initials(long_name), _initials_including_suffix(long_name))

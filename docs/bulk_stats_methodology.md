@@ -59,6 +59,42 @@ acquirer when no real name was ever the most frequent mention --
 expected, not a bug, just a case where the heuristic has no better
 answer.
 
+An anonymized placeholder ("Company A", "Party B", "Bidder 1" --
+`src.entity_match.is_anonymized_placeholder`) is excluded from
+candidacy entirely; it can never win by raw mention count even when
+it's the most frequent name (parties often stay anonymous through
+negotiation and get named only at signing -- see Global Blood
+Therapeutics, where "Company A" outnumbered "Pfizer"). When frequency
+finds no real candidate at all, the deal's latest signing event's
+named party is used as a fallback (never as an override of an
+already-good frequency answer -- doing that caused real regressions,
+since a signing event's own language can be generic too, e.g. Lands'
+End's signing event used "Purchaser" while an earlier proposal already
+named "WHP Global"). A deal with no real name either way is set to
+`acquirer='Unknown'`, an explicit unresolved marker.
+
+**Known residual gap: stock-ticker-style self-references.** The
+acronym check (`is_acronym_of`) catches initials-of-words tickers
+("USS" for "UNITED STATES STEEL CORP") including ones that fold in a
+legal-suffix letter ("MTI" for "Mechanical Technology Inc", "HCWC" for
+"Healthy Choice Wellness Corp."). It cannot catch a ticker that isn't
+derived from word-initials at all (a truncation like "MIRA" for "MIRA
+Pharmaceuticals", or an arbitrary one like "FTAI" for "Fortress
+Transportation & Infrastructure") -- there is no local, LLM-free way to
+verify an arbitrary ticker against a company name without an external
+ticker database. Three deals were left deliberately unresolved
+(`acquirer='Unknown'`) rather than guessed, because the only candidate
+name found looked ticker-like and self-referential but couldn't be
+verified either way: Telomir Pharmaceuticals ("TELI"), Fortress
+Transportation & Infrastructure Investors ("FTAI"), and Mobile
+Infrastructure Trust ("MIC"). A handful of other ticker-like guesses
+(KKR, OBDC, FSK, GBDC, PIF, GRI, GSP, HEL, LCIF, SKNY) were manually
+verified against the deal's own proposals/signing-event context and
+applied, since each clearly named a different real entity (often an
+affiliated flagship fund absorbing a numbered-series sibling fund,
+e.g. "FS KKR Capital Corp. II" being acquired by "FSK" = the original,
+larger FS KKR Capital Corp).
+
 ## Signing-event extraction recall
 
 Across all 1,174 processed candidates, ~95.6% have at least one
