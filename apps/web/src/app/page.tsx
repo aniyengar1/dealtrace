@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { listDealsSummary } from "@/lib/queries";
 import { computeHomeStats } from "@/lib/homeStats";
+import { selectTickerDeals } from "@/lib/tickerDeals";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { LinkButton } from "@/components/ui/Button";
@@ -35,24 +36,33 @@ const STEPS = [
 
 const FEATURED_SLUGS = ["splunk", "zendesk", "activision", "mandiant", "citrix", "coupa"];
 
+// Shared "semi-transparent dark panel" treatment every section below the
+// hero sits on, so the fixed background montage (see HeroMedia -- it
+// persists behind the whole page, not just the hero) never undermines
+// text contrast once a reader has scrolled past the hero's own overlay.
+const SECTION_PANEL = "bg-bg/80 backdrop-blur-sm";
+
 export default async function HomePage() {
   const [deals, stats] = await Promise.all([listDealsSummary(), computeHomeStats()]);
   const featured = FEATURED_SLUGS.map((slug) => deals.find((d) => d.slug === slug)).filter(
     (d): d is NonNullable<typeof d> => d !== undefined && d.n_facts_total > 0
   );
+  const headlineCount = stats.nDealsCovered;
+  const tickerDeals = selectTickerDeals(deals);
 
   return (
     <div>
+      <HeroMedia />
+
       {/* Hero */}
-      <section className="relative isolate overflow-hidden border-b border-border">
-        <HeroMedia />
+      <section className="relative border-b border-border">
         <Container
           wide
           className="relative grid grid-cols-1 gap-10 py-20 sm:py-28 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-36"
         >
           <div>
             <h1 className="font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-ink sm:text-5xl lg:text-6xl">
-              Every public-company sale process since 2021, extracted from SEC filings.
+              {headlineCount} public-company sale processes since 2021, extracted from SEC filings.
             </h1>
             <p className="mt-5 max-w-xl text-lg text-ink-muted">
               DealTrace reconstructs how M&amp;A sale processes actually unfold &mdash; who was contacted, how bids
@@ -74,22 +84,24 @@ export default async function HomePage() {
             {stats.medianPctBump ? (
               <div className="mt-3">
                 <HeroBumpChart data={stats.pctBumpHistogram} />
-                <p className="mt-1 text-xs text-ink-faint">n = {stats.medianPctBump.n} deals with a priced first and final proposal</p>
+                <p className="mt-1 text-xs text-ink-faint">
+                  n = {stats.medianPctBump.n} canonical cash deals with a priced first and final proposal
+                </p>
               </div>
             ) : (
               <p className="mt-3 text-sm text-ink-faint">Not enough priced proposals yet to chart.</p>
             )}
           </Card>
         </Container>
-        {deals.length > 0 && (
+        {tickerDeals.length > 0 && (
           <div className="relative border-t border-border/60 bg-bg/70 py-3 backdrop-blur-sm">
-            <DealTicker deals={deals} />
+            <DealTicker deals={tickerDeals} />
           </div>
         )}
       </section>
 
       {/* Stats band */}
-      <section className="border-b border-border bg-surface/40">
+      <section className={`border-b border-border ${SECTION_PANEL}`}>
         <Container wide className="py-12">
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
             <StatNumber value={stats.nDealsCovered} label="Deals covered" size="lg" />
@@ -115,7 +127,7 @@ export default async function HomePage() {
                 value={stats.medianPctBump.value}
                 prefix={stats.medianPctBump.value >= 0 ? "+" : ""}
                 suffix="%"
-                label="Median first → final bump"
+                label="Median first → final bump (cash deals)"
                 n={stats.medianPctBump.n}
                 size="lg"
               />
@@ -133,7 +145,7 @@ export default async function HomePage() {
       </section>
 
       {/* How it works */}
-      <section className="py-20">
+      <section className={`py-20 ${SECTION_PANEL}`}>
         <Container wide>
           <Reveal>
             <SectionHeading
@@ -146,7 +158,7 @@ export default async function HomePage() {
             {STEPS.map((step, i) => (
               <Reveal key={step.title} delay={i * 80}>
                 <div className="relative rounded-lg border border-border bg-surface p-5">
-                  <span className="font-serif text-3xl text-gold">{String(i + 1).padStart(2, "0")}</span>
+                  <span className="font-serif text-3xl text-accent">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="mt-3 text-base font-semibold text-ink">{step.title}</h3>
                   <p className="mt-2 text-sm text-ink-muted">{step.body}</p>
                 </div>
@@ -154,7 +166,7 @@ export default async function HomePage() {
             ))}
           </div>
           <p className="mt-6 text-sm text-ink-muted">
-            <Link href="/methodology" className="text-gold hover:underline">
+            <Link href="/methodology" className="text-accent hover:underline">
               Read the full methodology →
             </Link>
           </p>
@@ -163,7 +175,7 @@ export default async function HomePage() {
 
       {/* Featured deals */}
       {featured.length > 0 && (
-        <section className="border-t border-border py-20">
+        <section className={`border-t border-border py-20 ${SECTION_PANEL}`}>
           <Container wide>
             <Reveal>
               <SectionHeading eyebrow="Coverage" title="Featured deals" />
@@ -176,7 +188,7 @@ export default async function HomePage() {
               ))}
             </div>
             <p className="mt-6 text-sm text-ink-muted">
-              <Link href="/deals" className="text-gold hover:underline">
+              <Link href="/deals" className="text-accent hover:underline">
                 Browse all {deals.length} deals →
               </Link>
             </p>
@@ -185,7 +197,7 @@ export default async function HomePage() {
       )}
 
       {/* Credibility */}
-      <section className="border-t border-border bg-surface/40 py-20">
+      <section className={`border-t border-border py-20 ${SECTION_PANEL}`}>
         <Container wide>
           <Reveal>
             <SectionHeading
@@ -198,20 +210,20 @@ export default async function HomePage() {
             <Reveal>
               <Card className="p-5">
                 <p className="text-sm font-medium text-ink">Splunk &mdash; Cisco (development set)</p>
-                <p className="mt-1 text-2xl font-serif text-gold">100%</p>
+                <p className="mt-1 text-2xl font-serif text-accent">100%</p>
                 <p className="mt-1 text-sm text-ink-muted">core events and proposals match the gold answer key</p>
               </Card>
             </Reveal>
             <Reveal delay={80}>
               <Card className="p-5">
                 <p className="text-sm font-medium text-ink">Zendesk &mdash; Consortium (held-out)</p>
-                <p className="mt-1 text-2xl font-serif text-gold">97% / 100%</p>
+                <p className="mt-1 text-2xl font-serif text-accent">97% / 100%</p>
                 <p className="mt-1 text-sm text-ink-muted">recall / precision on core events and proposals, never seen during development</p>
               </Card>
             </Reveal>
           </div>
           <p className="mt-6 text-sm text-ink-muted">
-            <Link href="/methodology" className="text-gold hover:underline">
+            <Link href="/methodology" className="text-accent hover:underline">
               See the full accuracy methodology →
             </Link>
           </p>

@@ -13,13 +13,13 @@ export function FeaturedDealCard({ deal }: { deal: DealSummary }) {
         {deal.target} <span className="text-ink-faint">→</span> {acquirerDisplayName(deal.slug, deal.acquirer)}
       </p>
       <div className="mt-1 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm text-ink-muted">
-        <span className="tabular-nums text-gold">
+        <span className="tabular-nums text-accent">
           {formatPriceRange(deal.final_price_low, deal.final_price_high)}
         </span>
         <span className="tabular-nums">{formatDate(deal.signing_date)}</span>
         <span className="tabular-nums">{deal.n_proposals} proposals</span>
       </div>
-      <span className="mt-2 text-sm text-ink-muted transition-colors group-hover:text-gold">View deal →</span>
+      <span className="mt-2 text-sm text-ink-muted transition-colors group-hover:text-accent">View deal →</span>
     </Link>
   );
 }

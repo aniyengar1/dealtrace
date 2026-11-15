@@ -2,6 +2,38 @@
 
 Branch: `ui-redesign` in `~/dealtrace-ui` (worktree off `main`, not merged/pushed). Dev server: `npm run dev -- -p 3001` in `apps/web`, running at **http://localhost:3001**.
 
+## Round 2 — black/silver palette, persistent background, verified data accuracy
+
+### Palette
+Replaced the navy/gold theme with monochrome black/silver, same token structure: `--color-bg` (#0a0a0b), `--color-surface` (#111214), `--color-surface-raised` (#1a1b1e), `--color-border`/`-strong` (#2a2b2e / #3d3f44), `--color-ink` (#f2f2f3), `--color-ink-muted` (#8b8e94), `--color-ink-faint` (#56585d), `--color-accent` (#c0c4cc) + `--color-accent-bright` (#e5e7eb) replacing gold everywhere (`gold`→`accent` renamed across ~20 files). Chart series (`--color-chart-1..6`) are now a white→dark-silver ramp instead of the old blue/teal/violet/coral palette — bidders on the bid chart and timeline categories are now distinguished by value, not hue. Kept `--color-positive`/`--color-negative` (muted green/red) for bump-direction and review-status semantics — these are functional indicators, not brand accent, so they stay outside the "one accent" rule.
+
+### Persistent background
+`HeroMedia` is now `position: fixed` (was `absolute`, scoped to the hero section) and rendered as a sibling at the top of the page, not nested inside the hero `<section>` — `position: fixed` escapes normal document flow entirely, so it keeps covering the full viewport as the page scrolls, which is what makes it read as a backdrop behind every section instead of just the hero. Mounted on `/` and `/methodology` only; data pages never render it. Every section below the hero sits on a `bg-bg/80 backdrop-blur-sm` panel (methodology wraps its whole content in one such panel, since it reads as a single long-form document rather than distinct alternating sections like home). The hero's own overlay gradient was darkened (0.92/0.85/0.68/0.82 steps, up from the navy version's 0.88/0.8/0.6/0.75) since the montage now includes daylight boardroom/park photos, which need more darkening than night skylines to hold AA contrast.
+
+### New photos mixed into the montage
+Added 4 verified-free Unsplash photos (`hero-photo-5..8`: Benjamin Child's conference table, Bennie Bates' conference room, David Vives' glass building, Amelia's park) to the existing 4 night-skyline photos + 3 Mixkit clips, for an 11-slide loop that alternates video → boardroom → skyline-photo → video → boardroom → skyline-photo → video → Manhattan building → park → skyline → skyline. Mobile still gets the 8-photo-only path (no video). All sourcing is in `apps/web/public/CREDITS.md` and credited in the footer.
+
+### Ticker
+Slowed from 50s to 75s per full loop (your 60–90s target; the literal "3–4x" framing was likely driven by how crowded the *unfiltered* ticker was before the accuracy fix below, not the raw duration). Pause-on-hover needed a real fix, not just a Tailwind class: `group-hover:[animation-play-state:paused]` lives in Tailwind's `@layer utilities`, which CSS always ranks *below* unlayered rules regardless of specificity or source order — so it silently lost to the plain `.animate-ticker { animation: ... }` rule in the same file. Fixed with an explicit unlayered `.group:hover .animate-ticker { animation-play-state: paused }` rule. Verified via `getComputedStyle(...).animationPlayState` before/after (`"running"` → `"paused"`), not just visually, since a screenshot diff alone couldn't distinguish "paused" from "very slow."
+
+### Data accuracy (the main point of this round)
+The hero histogram and headline count now come from **canonical deals only** (`deals.is_canonical`), matching `src/bulk_stats.py`'s exact definitions and exclusion thresholds — not read from `data/output/stats/headline_stats.json` directly, but a from-scratch TypeScript port (`src/lib/entityMatch.ts`, `src/lib/canonicalStats.ts`) verified against a real snapshot of that file:
+- `n_canonical_deals`: **964** — exact match.
+- `pct_increase_cash_deals`: **n=353**, min/median/max all exact matches (-85.37 / 9.52 / 296.83). This is the number that used to show as 847 (all deals, no cash/exclusion filtering) then 353 after switching to the right definition.
+- `bidders_who_submitted_a_proposal`: median **2**, max **43** — exact match, but only after porting `entity_match.py`'s `core_name`/`is_same_entity`/`is_acronym_of`/`resolveTarget` (a naive proposer≠target string check alone gave median 3, not 2 — plenty of "distinct bidders" were really the target company under an informal name or acronym).
+- `proposals_per_deal`: median **7** — exact match.
+- `days_first_contact_to_signing`: **n=948**, median **290.5**, and the exclusion counts matched exactly too (2 no-start, 13 no-signing, 1 negative-duration).
+
+**Why port the logic instead of reading the file** (you said "ideally read it directly"): `headline_stats.json` lives in `~/dealtrace/data/output/stats/`, gitignored and outside this worktree entirely (a separate git worktree of the same repo). It also only carries summary statistics (n, min/p25/median/p75/max, top-10 outliers) — not the full 353-value array the histogram needs to bucket. Reading it would mean (a) a fragile cross-worktree filesystem dependency that breaks on any other machine/deployment, and (b) still needing to recompute the histogram from the DB anyway. Given I had to replicate the per-deal logic regardless, doing it for all five stats and verifying exact parity seemed more robust than a partial file-read. If you'd still prefer the literal file read (e.g. for provenance/freshness display), it's a small addition on top of what's here — ask and I'll add it.
+
+Also fixed **the ticker**: now filters to `is_canonical` deals with a real, resolved acquirer — excluding generic placeholders (`unknown`/`parent`/`merger sub`/`acquiror`/`buyer`/`consortium`/`sponsor`, matching `dedup_deals.py`'s own exclusion set), anonymized filing labels (`Company A`, `Party B`), anything containing "committee", and the target appearing as its own acquirer (entity-matched, not just exact string equality). Curated (non-`bulk_`-slug) deals sort first since those are the well-known ones.
+
+### New files
+`src/lib/entityMatch.ts` (port of `entity_match.py`), `src/lib/canonicalStats.ts` (port of `bulk_stats.py`'s five headline stats), `src/lib/tickerDeals.ts` (ticker filtering). `homeStats.ts` was rewritten to call `canonicalStats.ts` instead of the old all-deals DB fan-out — as a side effect, the home page also got faster (~2.3s → ~1.4s warm), since it's now 3 bulk queries instead of one SQL call per deal.
+
+### Verification
+`npx tsc --noEmit`, `npx eslint .`, `npx vitest run` (47/47) all clean. Visually checked `/`, `/methodology`, `/deals`, `/deals/splunk`, `/stats` at 1440px; confirmed via DOM/computed-style inspection (not just screenshots) that the ticker pause and the canonical-stat numbers are actually correct, not just visually plausible.
+
 ## Pages to review
 
 - `/` — home

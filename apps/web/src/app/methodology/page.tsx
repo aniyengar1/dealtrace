@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { HeroMedia } from "../HeroMedia";
 
 export const metadata: Metadata = {
   title: "Methodology",
@@ -54,7 +55,10 @@ const ACCURACY_ROWS: {
 
 export default function MethodologyPage() {
   return (
-    <Container wide className="py-14">
+    <div>
+      <HeroMedia />
+      <div className="relative bg-bg/80 backdrop-blur-sm">
+        <Container wide className="py-14">
       <Reveal>
         <SectionHeading
           eyebrow="Methodology"
@@ -71,7 +75,7 @@ export default function MethodologyPage() {
           {PIPELINE_STEPS.map((step, i) => (
             <Reveal key={step.title} delay={i * 70} className="relative">
               <Card className="h-full p-4">
-                <span className="font-serif text-2xl text-gold">{String(i + 1).padStart(2, "0")}</span>
+                <span className="font-serif text-2xl text-accent">{String(i + 1).padStart(2, "0")}</span>
                 <h3 className="mt-2 text-sm font-semibold text-ink">{step.title}</h3>
                 <p className="mt-1.5 text-sm text-ink-muted">{step.body}</p>
               </Card>
@@ -155,7 +159,7 @@ export default function MethodologyPage() {
                     <td className="px-4 py-3 font-medium text-ink">{row.deal}</td>
                     <td className="px-4 py-3 text-ink-muted">{row.set}</td>
                     <td className="px-4 py-3 text-ink-muted">{row.metric}</td>
-                    <td className={`px-4 py-3 tabular-nums ${row.pending ? "text-ink-faint italic" : "text-gold"}`}>
+                    <td className={`px-4 py-3 tabular-nums ${row.pending ? "text-ink-faint italic" : "text-accent"}`}>
                       {row.result}
                     </td>
                   </tr>
@@ -215,10 +219,12 @@ export default function MethodologyPage() {
       </section>
 
       <p className="text-sm text-ink-muted">
-        <Link href="/" className="text-gold hover:underline">
+        <Link href="/" className="text-accent hover:underline">
           ← Back to home
         </Link>
       </p>
-    </Container>
+        </Container>
+      </div>
+    </div>
   );
 }

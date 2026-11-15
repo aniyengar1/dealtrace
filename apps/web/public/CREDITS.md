@@ -26,6 +26,10 @@ Source: https://unsplash.com/license
 | `img/hero-photo-2.jpg` | https://unsplash.com/photos/city-skyline-illuminated-at-night-with-reflections-on-water-TlswXan_O_8 | Jorge Garcia ([@jorgenchu](https://unsplash.com/@jorgenchu)) |
 | `img/hero-photo-3.jpg` | https://unsplash.com/photos/aerial-photography-of-city-with-high-rise-buildings-during-night-time-AaceTp_LRAM | Dominik Hofbauer |
 | `img/hero-photo-4.jpg` | https://unsplash.com/photos/aerial-photography-of-city-buildings-with-lights-nxCtO8W9JLo | Anders Jildén ([@andersjilden](https://unsplash.com/@andersjilden)) |
+| `img/hero-photo-5.jpg` | https://unsplash.com/photos/oval-brown-wooden-conference-table-and-chairs-inside-conference-room-GWe0dlVD9e0 | Benjamin Child |
+| `img/hero-photo-6.jpg` | https://unsplash.com/photos/a-conference-room-with-a-large-wooden-table-and-leather-chairs-znrDHyqHpSI | Bennie Bates ([@bennieray](https://unsplash.com/@bennieray)) |
+| `img/hero-photo-7.jpg` | https://unsplash.com/photos/a-tall-glass-building-in-a-city-sVxO8xArW1c | David Vives ([@davidvives](https://unsplash.com/@davidvives)) |
+| `img/hero-photo-8.jpg` | https://unsplash.com/photos/a-view-of-a-park-with-trees-and-buildings-in-the-background-WKI4sh0rCyc | Amelia ([@redtulipsky](https://unsplash.com/@redtulipsky)) |
 
 Each photo was downscaled to a max dimension of 1920px and re-compressed as JPEG (quality 78) for use as Ken
 Burns hero slides.

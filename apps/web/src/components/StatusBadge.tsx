@@ -29,7 +29,7 @@ export function ReviewStatusBadge({
   }
   if (context === "deal") return null;
   return (
-    <span className="inline-flex items-center gap-1 rounded-full border border-dashed border-gold/50 bg-gold/10 px-2 py-0.5 text-xs font-medium text-gold">
+    <span className="inline-flex items-center gap-1 rounded-full border border-dashed border-accent/50 bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent">
       not yet reviewed
     </span>
   );

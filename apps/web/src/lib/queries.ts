@@ -62,7 +62,7 @@ export async function listDealsSummary(): Promise<DealSummary[]> {
       ORDER BY run_id, date_start DESC
     )
     SELECT
-      d.id, d.slug, d.deal_name, d.target, d.acquirer, d.search_term,
+      d.id, d.slug, d.deal_name, d.target, d.acquirer, d.search_term, d.is_canonical,
       fprop.price_low AS final_price_low,
       fprop.price_high AS final_price_high,
       s.date_start AS signing_date,

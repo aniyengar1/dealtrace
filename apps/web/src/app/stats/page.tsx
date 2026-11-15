@@ -37,7 +37,7 @@ async function loadRows(): Promise<DealStatsRow[]> {
 function UnreviewedMark({ show }: { show: boolean }) {
   if (!show) return null;
   return (
-    <sup className="ml-0.5 text-gold" title="Includes at least one unreviewed fact">
+    <sup className="ml-0.5 text-accent" title="Includes at least one unreviewed fact">
       •
     </sup>
   );
@@ -111,9 +111,9 @@ export default async function StatsPage() {
       <h1 className="font-serif text-3xl font-semibold tracking-tight text-ink">Cross-deal findings</h1>
       <p className="mt-1 text-sm text-ink-muted">
         n = {summary.nDeals} deal{summary.nDeals === 1 ? "" : "s"} —{" "}
-        <span className="font-medium text-gold">early / small-sample findings</span>, not a statistically
+        <span className="font-medium text-accent">early / small-sample findings</span>, not a statistically
         reliable base rate. Every figure is read from each deal&apos;s latest locked extraction run only; cells
-        marked <span className="text-gold">•</span> include at least one unreviewed fact.
+        marked <span className="text-accent">•</span> include at least one unreviewed fact.
       </p>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-3">

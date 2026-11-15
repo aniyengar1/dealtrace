@@ -14,18 +14,18 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          backgroundColor: "#070b1f",
-          color: "#eef0f8",
+          backgroundColor: "#0a0a0b",
+          color: "#f2f2f3",
           fontFamily: "serif",
         }}
       >
-        <div style={{ display: "flex", fontSize: 32, color: "#c9a44c", letterSpacing: 4, textTransform: "uppercase" }}>
+        <div style={{ display: "flex", fontSize: 32, color: "#c0c4cc", letterSpacing: 4, textTransform: "uppercase" }}>
           DealTrace
         </div>
         <div style={{ display: "flex", marginTop: 24, fontSize: 56, lineHeight: 1.15, maxWidth: 980 }}>
           Every public-company sale process, extracted from SEC filings.
         </div>
-        <div style={{ display: "flex", marginTop: 32, fontSize: 24, color: "#97a0c3", fontFamily: "sans-serif" }}>
+        <div style={{ display: "flex", marginTop: 32, fontSize: 24, color: "#8b8e94", fontFamily: "sans-serif" }}>
           Who was contacted · how bids moved · how long it took — every fact sourced.
         </div>
       </div>

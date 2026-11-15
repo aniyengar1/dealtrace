@@ -110,7 +110,7 @@ export default async function DealPage({
       <dl className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <Card className="p-3.5">
           <dt className="text-xs text-ink-muted">Price per share</dt>
-          <dd className="mt-0.5 text-lg font-semibold tabular-nums text-gold">
+          <dd className="mt-0.5 text-lg font-semibold tabular-nums text-accent">
             {formatPriceRange(finalProposal?.price_low ?? null, finalProposal?.price_high ?? null)}
           </dd>
         </Card>
@@ -132,7 +132,7 @@ export default async function DealPage({
 
       {filingUrl && (
         <p className="mt-3 text-sm">
-          <a href={filingUrl} target="_blank" rel="noreferrer" className="text-gold hover:underline">
+          <a href={filingUrl} target="_blank" rel="noreferrer" className="text-accent hover:underline">
             View the SEC filing on EDGAR →
           </a>
         </p>

@@ -21,7 +21,7 @@ export const metadata = {
 function Citation({ slug, factId }: { slug: string; factId: string | null }) {
   if (!factId) return null;
   return (
-    <Link href={`/deals/${slug}?fact=${factId}`} className="ml-1 text-xs text-gold hover:underline">
+    <Link href={`/deals/${slug}?fact=${factId}`} className="ml-1 text-xs text-accent hover:underline">
       [source]
     </Link>
   );
@@ -87,7 +87,7 @@ export default async function DealMemoPage({ params }: { params: Promise<{ slug:
           </a>
           <Link
             href={`/deals/${slug}`}
-            className="rounded-md bg-gold px-3 py-1.5 text-sm font-medium text-gold-ink hover:bg-gold/90"
+            className="rounded-md bg-accent px-3 py-1.5 text-sm font-medium text-accent-ink hover:bg-accent/90"
           >
             Back to deal
           </Link>

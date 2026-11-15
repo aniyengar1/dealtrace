@@ -8,7 +8,7 @@ import { eventTypeLabel, CORE_EVENT_TYPES } from "@/lib/labels";
 import { ReviewStatusBadge, factRowClassName } from "@/components/StatusBadge";
 
 function chipClassName(active: boolean, isCore: boolean): string {
-  if (active && isCore) return "bg-gold text-gold-ink border border-gold";
+  if (active && isCore) return "bg-accent text-accent-ink border border-accent";
   if (active) return "bg-surface-raised text-ink border border-border-strong";
   if (isCore) return "bg-transparent text-ink-muted border-2 border-border-strong";
   return "bg-transparent text-ink-faint border border-border";
@@ -76,7 +76,7 @@ export function Timeline({
                 <div className="flex items-center gap-2">
                   <span
                     className={`rounded px-1.5 py-0.5 text-xs ${
-                      isCore ? "bg-gold text-gold-ink" : "bg-surface-raised text-ink-muted"
+                      isCore ? "bg-accent text-accent-ink" : "bg-surface-raised text-ink-muted"
                     }`}
                   >
                     {eventTypeLabel(event.event_type)}

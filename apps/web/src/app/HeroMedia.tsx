@@ -3,22 +3,36 @@
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { motion } from "framer-motion";
 
-// Mixed loop of the 3 licensed video clips and 4 Ken Burns photo slides
-// (see public/CREDITS.md for sources/licenses) -- alternating video/photo
-// keeps the loop visually varied without needing more raw footage than
-// was actually cleared for use. Mobile and prefers-reduced-motion each
-// get a cheaper path (see below) rather than a scaled-down version of
-// this one, since neither should ever pay for video decode at all.
+// Mixed loop of the 3 licensed video clips and 8 Ken Burns photo slides
+// (see public/CREDITS.md for sources/licenses) -- alternating night
+// skyline footage with boardroom interiors and Manhattan/Central Park
+// stills keeps the loop visually varied without needing more raw
+// footage than was actually cleared for use. Mobile and
+// prefers-reduced-motion each get a cheaper path (see below) rather
+// than a scaled-down version of this one, since neither should ever pay
+// for video decode at all.
+//
+// Rendered `fixed` (not `absolute`) and mounted once per page by the
+// page itself (home, methodology) -- `position: fixed` escapes the
+// normal document flow entirely, so it keeps covering the full
+// viewport as the page scrolls past it, which is what makes the
+// montage read as a persistent backdrop behind every section instead
+// of just the hero. Data pages (deal explorer, deal pages, stats)
+// simply never render this component.
 type Slide =
   | { kind: "video"; id: string; mp4: string; webm: string; poster: string; duration: number }
   | { kind: "photo"; id: string; src: string; duration: number; zoom: "in" | "out" };
 
 const SLIDES: Slide[] = [
   { kind: "video", id: "v4334", mp4: "/video/4334.mp4", webm: "/video/4334.webm", poster: "/video/4334-poster.jpg", duration: 7000 },
-  { kind: "photo", id: "p1", src: "/img/hero-photo-1.jpg", duration: 9000, zoom: "in" },
+  { kind: "photo", id: "p5", src: "/img/hero-photo-5.jpg", duration: 9000, zoom: "in" },
+  { kind: "photo", id: "p1", src: "/img/hero-photo-1.jpg", duration: 9000, zoom: "out" },
   { kind: "video", id: "v4330", mp4: "/video/4330.mp4", webm: "/video/4330.webm", poster: "/video/4330-poster.jpg", duration: 7000 },
+  { kind: "photo", id: "p6", src: "/img/hero-photo-6.jpg", duration: 9000, zoom: "in" },
   { kind: "photo", id: "p2", src: "/img/hero-photo-2.jpg", duration: 9000, zoom: "out" },
   { kind: "video", id: "v24511", mp4: "/video/24511.mp4", webm: "/video/24511.webm", poster: "/video/24511-poster.jpg", duration: 7000 },
+  { kind: "photo", id: "p7", src: "/img/hero-photo-7.jpg", duration: 9000, zoom: "in" },
+  { kind: "photo", id: "p8", src: "/img/hero-photo-8.jpg", duration: 9000, zoom: "out" },
   { kind: "photo", id: "p3", src: "/img/hero-photo-3.jpg", duration: 9000, zoom: "in" },
   { kind: "photo", id: "p4", src: "/img/hero-photo-4.jpg", duration: 9000, zoom: "out" },
 ];
@@ -51,6 +65,16 @@ function useMounted(): boolean {
     () => true,
     () => false
   );
+}
+
+function usePageVisible(): boolean {
+  const subscribe = useCallback((onChange: () => void) => {
+    document.addEventListener("visibilitychange", onChange);
+    return () => document.removeEventListener("visibilitychange", onChange);
+  }, []);
+  const getSnapshot = useCallback(() => !document.hidden, []);
+  const getServerSnapshot = useCallback(() => true, []);
+  return useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 }
 
 function PhotoSlide({ slide, active }: { slide: Extract<Slide, { kind: "photo" }>; active: boolean }) {
@@ -104,25 +128,13 @@ function VideoSlide({ slide, active }: { slide: Extract<Slide, { kind: "video" }
 }
 
 // Full motion loop: mixed video+photo slides, crossfading, paused
-// whenever the tab is hidden or the hero scrolls offscreen so it never
-// burns battery/bandwidth for a background a visitor isn't looking at.
+// whenever the tab is hidden so it never burns battery/bandwidth in a
+// background tab. It no longer pauses on scroll -- being `fixed` means
+// it's always the thing visible behind whatever's on screen, so "off
+// screen" no longer applies the way it did when it was hero-only.
 function MotionLoop({ slides }: { slides: Slide[] }) {
   const [index, setIndex] = useState(0);
-  const [running, setRunning] = useState(true);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(([entry]) => setRunning(entry.isIntersecting), { threshold: 0.1 });
-    observer.observe(el);
-    const onVisibility = () => setRunning(!document.hidden && (el.getBoundingClientRect().bottom > 0));
-    document.addEventListener("visibilitychange", onVisibility);
-    return () => {
-      observer.disconnect();
-      document.removeEventListener("visibilitychange", onVisibility);
-    };
-  }, []);
+  const running = usePageVisible();
 
   useEffect(() => {
     if (!running) return;
@@ -131,12 +143,12 @@ function MotionLoop({ slides }: { slides: Slide[] }) {
     return () => clearTimeout(timer);
   }, [index, running, slides]);
 
-  // Only the active slide and its immediate neighbor stay mounted, so a
-  // 7-slide loop never has more than 2 videos decoding (or loaded) at once.
+  // Only the active slide and its immediate neighbor stay mounted, so an
+  // 11-slide loop never has more than 2 videos/photos decoding at once.
   const nextIndex = (index + 1) % slides.length;
 
   return (
-    <div ref={containerRef} className="absolute inset-0 overflow-hidden">
+    <div className="absolute inset-0 overflow-hidden">
       {slides.map((slide, i) => {
         const active = i === index;
         const shouldMount = i === index || i === nextIndex;
@@ -165,7 +177,7 @@ export function HeroMedia() {
   const prefersReducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
 
   return (
-    <div className="absolute inset-0 -z-10">
+    <div className="fixed inset-0 -z-50">
       {/* Static poster -- the only thing rendered at first paint/SSR, and
           the permanent fallback for prefers-reduced-motion. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -173,16 +185,20 @@ export function HeroMedia() {
 
       {mounted && !prefersReducedMotion && <MotionLoop slides={isMobile ? MOBILE_SLIDES : SLIDES} />}
 
-      {/* Navy wash -- strong enough that headline/body text stays WCAG
-          AA-readable regardless of what's playing underneath. */}
+      {/* Black wash -- strong enough that headline/body text (and, now
+          that daylight boardroom/park stills are in the mix, text over
+          much brighter frames too) stays WCAG AA-readable regardless of
+          what's playing underneath. Section content below the hero adds
+          its own semi-transparent panel on top of this for extra
+          contrast; this layer alone only has to carry the hero. */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(115deg, rgba(5,10,52,0.88) 0%, rgba(5,10,52,0.8) 35%, rgba(5,10,52,0.6) 65%, rgba(5,10,52,0.75) 100%)",
+            "linear-gradient(115deg, rgba(10,10,11,0.92) 0%, rgba(10,10,11,0.85) 35%, rgba(10,10,11,0.68) 65%, rgba(10,10,11,0.82) 100%)",
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-bg via-transparent to-bg/40" />
+      <div className="absolute inset-0 bg-gradient-to-b from-bg/20 via-bg/70 to-bg" />
     </div>
   );
 }

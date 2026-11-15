@@ -31,7 +31,7 @@ export function SortableHeader({
       className={`inline-flex items-center gap-1 hover:text-ink ${isActive ? "text-ink" : ""} ${align === "right" ? "justify-end" : ""}`}
     >
       {label}
-      {isActive && <span className="text-gold">{currentDir === "desc" ? "↓" : "↑"}</span>}
+      {isActive && <span className="text-accent">{currentDir === "desc" ? "↓" : "↑"}</span>}
     </Link>
   );
 }

@@ -24,7 +24,7 @@ export function SearchBox() {
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="Search deals…"
-        className="w-full rounded-md border border-border bg-surface px-3 py-1.5 text-sm text-ink placeholder:text-ink-faint focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+        className="w-full rounded-md border border-border bg-surface px-3 py-1.5 text-sm text-ink placeholder:text-ink-faint focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
       />
     </form>
   );

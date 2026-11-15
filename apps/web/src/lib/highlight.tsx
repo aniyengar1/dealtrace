@@ -64,7 +64,7 @@ export function renderHighlighted(text: string, quotes: string[]): ReactNode[] {
   spans.forEach((span, i) => {
     if (span.start > cursor) nodes.push(text.slice(cursor, span.start));
     nodes.push(
-      <mark key={i} className="rounded bg-gold/25 px-0.5 text-ink">
+      <mark key={i} className="rounded bg-accent/25 px-0.5 text-ink">
         {text.slice(span.start, span.end)}
       </mark>
     );

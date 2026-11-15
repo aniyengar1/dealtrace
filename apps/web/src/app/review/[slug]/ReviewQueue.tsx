@@ -235,7 +235,7 @@ export function ReviewQueue({
           <button
             onClick={toggleCoreOnly}
             className={`rounded-full px-2.5 py-1 text-xs transition-colors ${
-              coreOnly ? "bg-gold text-gold-ink" : "border border-border-strong text-ink-muted hover:bg-surface-raised"
+              coreOnly ? "bg-accent text-accent-ink" : "border border-border-strong text-ink-muted hover:bg-surface-raised"
             }`}
           >
             Core only
@@ -318,7 +318,7 @@ export function ReviewQueue({
                 <button
                   onClick={submitCorrect}
                   disabled={pending}
-                  className="rounded bg-gold px-3 py-1.5 text-sm font-medium text-gold-ink hover:bg-gold/90 disabled:opacity-50"
+                  className="rounded bg-accent px-3 py-1.5 text-sm font-medium text-accent-ink hover:bg-accent/90 disabled:opacity-50"
                 >
                   Save correction
                 </button>

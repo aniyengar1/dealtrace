@@ -38,7 +38,7 @@ export function StatNumber({
     <div>
       <span
         ref={ref}
-        className={`font-serif tabular-nums text-gold ${size === "lg" ? "text-4xl sm:text-5xl" : "text-3xl"}`}
+        className={`font-serif tabular-nums text-accent ${size === "lg" ? "text-4xl sm:text-5xl" : "text-3xl"}`}
       >
         {prefix}
         {display.toFixed(decimals)}

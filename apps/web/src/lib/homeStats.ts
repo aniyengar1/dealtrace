@@ -1,7 +1,6 @@
 import "server-only";
 
-import { listDeals, getLatestFactsRunForDeal, getEventsForRun, getProposalsForRun } from "./queries";
-import { computeDealStatsRow, median, type DealStatsRow } from "./crossDealStats";
+import { computeCanonicalStats } from "./canonicalStats";
 
 export interface HomeStat {
   value: number;
@@ -20,10 +19,9 @@ export interface HomeStats {
   medianPctBump: HomeStat | null;
   medianDaysToSigning: HomeStat | null;
   // Histogram of first-proposal -> final-price % change, open-ended on
-  // both tails -- with hundreds of deals (and extractions that haven't
-  // been through review yet), a handful of per-deal outliers are
-  // expected; a bounded bucket absorbs them instead of a chart with one
-  // bar a thousand times taller than the rest.
+  // both tails -- a handful of per-deal outliers are expected even
+  // after bulk_stats.py's own sanity thresholds; a bounded bucket
+  // absorbs them instead of a chart with one bar towering over the rest.
   pctBumpHistogram: PctBumpBucket[];
 }
 
@@ -43,42 +41,19 @@ function buildHistogram(values: number[]): PctBumpBucket[] {
   }));
 }
 
-// Every deal with a completed (locked) extraction run -- the same
-// "latest facts run" each deal page and the stats page already key off
-// of, so the home page never shows a number that page wouldn't back up.
-// Fetched concurrently (not one deal at a time) -- with 1000+ deals now
-// in the bulk-loaded table, a sequential per-deal loop was the actual
-// bottleneck on the home page, not the hero video.
-async function loadDealStatsRows(): Promise<DealStatsRow[]> {
-  const deals = await listDeals();
-  const rows = await Promise.all(
-    deals.map(async (deal) => {
-      const run = await getLatestFactsRunForDeal(deal.id);
-      if (!run) return null;
-      const [events, proposals] = await Promise.all([getEventsForRun(run.id), getProposalsForRun(run.id)]);
-      return computeDealStatsRow(deal, events, proposals);
-    })
-  );
-  return rows.filter((r): r is DealStatsRow => r !== null);
-}
-
-function stat(values: number[]): HomeStat | null {
-  const m = median(values);
-  return m === null ? null : { value: m, n: values.length };
-}
-
+// Every number here is canonical-deals-only (deals.is_canonical), using
+// the exact definitions and exclusion thresholds src/bulk_stats.py uses
+// for data/output/stats/headline_stats.json -- see canonicalStats.ts
+// for why this is computed here rather than read from that file.
 export async function computeHomeStats(): Promise<HomeStats> {
-  const rows = await loadDealStatsRows();
-  const pctBumps = rows.map((r) => r.pctChange).filter((v): v is number => v !== null);
+  const canon = await computeCanonicalStats();
 
   return {
-    nDealsCovered: rows.length,
-    medianBidders: stat(rows.map((r) => r.nBidders)),
-    medianProposals: stat(rows.map((r) => r.nProposals)),
-    medianPctBump: stat(pctBumps),
-    medianDaysToSigning: stat(
-      rows.map((r) => r.daysFirstContactToSigning).filter((v): v is number => v !== null)
-    ),
-    pctBumpHistogram: buildHistogram(pctBumps),
+    nDealsCovered: canon.nCanonicalDeals,
+    medianBidders: canon.medianBidders,
+    medianProposals: canon.medianProposals,
+    medianPctBump: canon.medianPctIncreaseCash,
+    medianDaysToSigning: canon.medianDaysToSigning,
+    pctBumpHistogram: buildHistogram(canon.pctIncreaseCashValues),
   };
 }

@@ -97,4 +97,5 @@ export interface DealSummary extends Deal {
   n_proposals: number;
   n_facts_total: number;
   n_facts_reviewed: number;
+  is_canonical: boolean;
 }

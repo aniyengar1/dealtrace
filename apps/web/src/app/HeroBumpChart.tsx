@@ -46,7 +46,7 @@ export function HeroBumpChart({ data }: { data: PctBumpBucket[] }) {
               x={x}
               width={barWidth}
               rx={2}
-              fill="var(--color-gold)"
+              fill="var(--color-accent)"
               initial={{ y: plotHeight, height: 0 }}
               animate={{ y, height: Math.max(barHeight, 1) }}
               transition={{ delay: i * 0.07, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}

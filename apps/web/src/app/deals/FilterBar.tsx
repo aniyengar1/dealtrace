@@ -19,7 +19,7 @@ function Select({
     <select
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="rounded-md border border-border bg-surface px-2.5 py-1.5 text-sm text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+      className="rounded-md border border-border bg-surface px-2.5 py-1.5 text-sm text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
     >
       <option value="">{allLabel}</option>
       {options.map((o) => (
@@ -57,7 +57,7 @@ export function FilterBar({ years }: { years: string[] }) {
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="Search target or acquirer…"
-          className="w-full rounded-md border border-border bg-surface px-3 py-1.5 text-sm text-ink placeholder:text-ink-faint focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+          className="w-full rounded-md border border-border bg-surface px-3 py-1.5 text-sm text-ink placeholder:text-ink-faint focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         />
       </form>
       <Select

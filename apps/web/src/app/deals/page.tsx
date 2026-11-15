@@ -25,7 +25,7 @@ const SORT_KEYS: SortKey[] = ["signingDate", "finalPrice", "nBidders", "nProposa
 function UnreviewedMark({ show }: { show: boolean }) {
   if (!show) return null;
   return (
-    <sup className="ml-0.5 text-gold" title="Rests on at least one unreviewed fact">
+    <sup className="ml-0.5 text-accent" title="Rests on at least one unreviewed fact">
       •
     </sup>
   );
@@ -75,7 +75,7 @@ export default async function DealsPage({
       <h1 className="font-serif text-3xl font-semibold tracking-tight text-ink">Deal explorer</h1>
       <p className="mt-1.5 text-sm text-ink-muted">
         {total} deal{total === 1 ? "" : "s"} with a completed extraction, out of {allRows.length} tracked. A{" "}
-        <span className="text-gold">•</span> marks a figure resting on at least one not-yet-reviewed fact.
+        <span className="text-accent">•</span> marks a figure resting on at least one not-yet-reviewed fact.
       </p>
 
       <div className="mt-6">
@@ -118,7 +118,7 @@ export default async function DealsPage({
               {rows.map((row) => (
                 <tr key={row.slug} className="transition-colors hover:bg-surface-raised">
                   <td className="px-3 py-3 font-medium">
-                    <Link href={`/deals/${row.slug}`} className="hover:text-gold">
+                    <Link href={`/deals/${row.slug}`} className="hover:text-accent">
                       {row.target}
                     </Link>
                   </td>
@@ -127,7 +127,7 @@ export default async function DealsPage({
                   <td className="px-3 py-3 text-ink-muted">
                     {row.considerationType ? CONSIDERATION_TYPE_LABELS[row.considerationType] ?? row.considerationType : "—"}
                   </td>
-                  <td className="px-3 py-3 text-right tabular-nums text-gold">
+                  <td className="px-3 py-3 text-right tabular-nums text-accent">
                     {formatPrice(row.finalBidPrice)}
                     <UnreviewedMark show={row.bidStatsUnreviewed} />
                   </td>
