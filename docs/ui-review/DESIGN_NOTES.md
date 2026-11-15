@@ -2,6 +2,22 @@
 
 Branch: `ui-redesign` in `~/dealtrace-ui` (worktree off `main`, not merged/pushed). Dev server: `npm run dev -- -p 3001` in `apps/web`, running at **http://localhost:3001**.
 
+## Round 3 — imagery visible through the whole page, brighter photos
+
+Round 2 kept the montage `fixed` (good) but then blanketed every section below the hero in a `bg-bg/80 backdrop-blur-sm` panel, which made it read as "plain black below the hero" exactly as flagged. Fix was architectural, not just a number tweak:
+
+- **Removed the full-section panels entirely.** Sections are transparent now; the montage shows fully in the gaps between content.
+- **Local contrast only where text sits**, two flavors depending on what's already there:
+  - Where text already sat on an opaque `Card` (pipeline steps, featured deal cards, credibility cards, methodology's tables/lists) — nothing to change, those were already "local panels" by construction.
+  - Where text sat directly on the page background (every `SectionHeading`, `StatNumber`, and a few standalone links/paragraphs) — added a `bg-bg/55 backdrop-blur-sm` panel sized to the text itself (`inline-block`, not full section width) via `SectionHeading.tsx` and `StatNumber.tsx` directly, so every call site got it for free.
+  - The hero headline gets its own local **radial gradient** (not a box) behind the text column specifically, strong at the text and fading to nothing by the time it reaches the histogram card's side of the hero — stronger contrast exactly where the biggest, most important text is, without darkening the rest of the hero.
+- **Lightened `HeroMedia`'s shared overlay** roughly in half (diagonal layer: 0.92/0.85/0.68/0.82 → 0.5/0.4/0.25/0.38; vertical layer: 0.20→0.70→solid → 0.05→0.22→0.38) since it now only has to carry general legibility, not the hero by itself.
+- **Brightened the footage**: `filter: brightness(1.2) contrast(1.05)` on the actual `<video>`/`<img>` elements (and the static poster, for the reduced-motion/first-paint case) — applied to the media layer only, never the overlay or any text, so brightening the montage can't touch headline crispness.
+
+Visually verified every section on `/` and `/methodology` after this change: imagery (NYC skyline, boardroom interiors, Central Park) is clearly visible and bright behind every section, every panel of text stays crisp, hero headline is unaffected. Didn't touch the `isMobile`/`prefersReducedMotion` branching in `HeroMedia.tsx` at all this round — only the shared overlay/filter values that apply uniformly regardless of device — so those fallbacks are unchanged by construction, not just by re-test.
+
+One unrelated hazard hit mid-verification: the dev server OOM-crashed (`JavaScript heap out of memory`), almost certainly from a stray browser tab stuck repeatedly hitting `/stats` (which does a full per-deal DB fan-out) combined with a long HMR session. Restarted cleanly; not a regression from this round's code.
+
 ## Round 2 — black/silver palette, persistent background, verified data accuracy
 
 ### Palette

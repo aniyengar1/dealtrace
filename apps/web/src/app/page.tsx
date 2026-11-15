@@ -36,12 +36,6 @@ const STEPS = [
 
 const FEATURED_SLUGS = ["splunk", "zendesk", "activision", "mandiant", "citrix", "coupa"];
 
-// Shared "semi-transparent dark panel" treatment every section below the
-// hero sits on, so the fixed background montage (see HeroMedia -- it
-// persists behind the whole page, not just the hero) never undermines
-// text contrast once a reader has scrolled past the hero's own overlay.
-const SECTION_PANEL = "bg-bg/80 backdrop-blur-sm";
-
 export default async function HomePage() {
   const [deals, stats] = await Promise.all([listDealsSummary(), computeHomeStats()]);
   const featured = FEATURED_SLUGS.map((slug) => deals.find((d) => d.slug === slug)).filter(
@@ -60,7 +54,19 @@ export default async function HomePage() {
           wide
           className="relative grid grid-cols-1 gap-10 py-20 sm:py-28 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-36"
         >
-          <div>
+          <div className="relative">
+            {/* Local gradient, not a page-wide darkening -- strong right
+                behind the headline/subhead, fading to nothing past the
+                text column, so the montage stays visible everywhere
+                else in the hero. */}
+            <div
+              aria-hidden
+              className="absolute -inset-x-6 -inset-y-10 -z-10 sm:-inset-x-10"
+              style={{
+                background:
+                  "radial-gradient(60% 90% at 30% 40%, rgba(10,10,11,0.75) 0%, rgba(10,10,11,0.55) 45%, rgba(10,10,11,0.15) 75%, transparent 100%)",
+              }}
+            />
             <h1 className="font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-ink sm:text-5xl lg:text-6xl">
               {headlineCount} public-company sale processes since 2021, extracted from SEC filings.
             </h1>
@@ -101,7 +107,7 @@ export default async function HomePage() {
       </section>
 
       {/* Stats band */}
-      <section className={`border-b border-border ${SECTION_PANEL}`}>
+      <section className="border-b border-border">
         <Container wide className="py-12">
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
             <StatNumber value={stats.nDealsCovered} label="Deals covered" size="lg" />
@@ -145,7 +151,7 @@ export default async function HomePage() {
       </section>
 
       {/* How it works */}
-      <section className={`py-20 ${SECTION_PANEL}`}>
+      <section className="py-20">
         <Container wide>
           <Reveal>
             <SectionHeading
@@ -165,7 +171,7 @@ export default async function HomePage() {
               </Reveal>
             ))}
           </div>
-          <p className="mt-6 text-sm text-ink-muted">
+          <p className="mt-6 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
             <Link href="/methodology" className="text-accent hover:underline">
               Read the full methodology →
             </Link>
@@ -175,7 +181,7 @@ export default async function HomePage() {
 
       {/* Featured deals */}
       {featured.length > 0 && (
-        <section className={`border-t border-border py-20 ${SECTION_PANEL}`}>
+        <section className="border-t border-border py-20">
           <Container wide>
             <Reveal>
               <SectionHeading eyebrow="Coverage" title="Featured deals" />
@@ -187,7 +193,7 @@ export default async function HomePage() {
                 </Reveal>
               ))}
             </div>
-            <p className="mt-6 text-sm text-ink-muted">
+            <p className="mt-6 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
               <Link href="/deals" className="text-accent hover:underline">
                 Browse all {deals.length} deals →
               </Link>
@@ -197,7 +203,7 @@ export default async function HomePage() {
       )}
 
       {/* Credibility */}
-      <section className={`border-t border-border py-20 ${SECTION_PANEL}`}>
+      <section className="border-t border-border py-20">
         <Container wide>
           <Reveal>
             <SectionHeading
@@ -222,7 +228,7 @@ export default async function HomePage() {
               </Card>
             </Reveal>
           </div>
-          <p className="mt-6 text-sm text-ink-muted">
+          <p className="mt-6 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
             <Link href="/methodology" className="text-accent hover:underline">
               See the full accuracy methodology →
             </Link>

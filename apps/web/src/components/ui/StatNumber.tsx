@@ -35,7 +35,7 @@ export function StatNumber({
   }, [inView, value]);
 
   return (
-    <div>
+    <div className="rounded-lg bg-bg/55 px-4 py-3 backdrop-blur-sm">
       <span
         ref={ref}
         className={`font-serif tabular-nums text-accent ${size === "lg" ? "text-4xl sm:text-5xl" : "text-3xl"}`}

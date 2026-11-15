@@ -57,8 +57,7 @@ export default function MethodologyPage() {
   return (
     <div>
       <HeroMedia />
-      <div className="relative bg-bg/80 backdrop-blur-sm">
-        <Container wide className="py-14">
+      <Container wide className="relative py-14">
       <Reveal>
         <SectionHeading
           eyebrow="Methodology"
@@ -69,7 +68,7 @@ export default function MethodologyPage() {
 
       <section className="mt-12">
         <Reveal>
-          <h2 className="text-lg font-semibold text-ink">Pipeline</h2>
+          <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Pipeline</h2>
         </Reveal>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {PIPELINE_STEPS.map((step, i) => (
@@ -89,7 +88,7 @@ export default function MethodologyPage() {
 
       <section className="mt-14">
         <Reveal>
-          <h2 className="text-lg font-semibold text-ink">What&apos;s extracted</h2>
+          <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">What&apos;s extracted</h2>
         </Reveal>
         <Reveal delay={60}>
           <div className="mt-5 overflow-x-auto rounded-lg border border-border">
@@ -111,7 +110,7 @@ export default function MethodologyPage() {
             </table>
           </div>
         </Reveal>
-        <p className="mt-3 text-sm text-ink-muted">
+        <p className="mt-3 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
           Every record also carries its 1–3 source quotes, the paragraph(s) they came from, a pass/fail
           validation flag, and a review status — visible on each deal page via the evidence drawer.
         </p>
@@ -119,7 +118,7 @@ export default function MethodologyPage() {
 
       <section className="mt-14">
         <Reveal>
-          <h2 className="text-lg font-semibold text-ink">Validation rules</h2>
+          <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Validation rules</h2>
         </Reveal>
         <div className="mt-5 grid gap-5 sm:grid-cols-3">
           {VALIDATION_RULES.map((rule, i) => (
@@ -135,12 +134,14 @@ export default function MethodologyPage() {
 
       <section className="mt-14">
         <Reveal>
-          <h2 className="text-lg font-semibold text-ink">Accuracy</h2>
-          <p className="mt-2 max-w-2xl text-sm text-ink-muted">
-            Measured by scoring an extraction run against a hand-checked gold answer key read directly off the
-            filing (see <code className="text-ink">src/score.py</code>). A held-out deal is one whose gold key was
-            never consulted while the extraction prompt was being developed.
-          </p>
+          <div className="inline-block max-w-2xl rounded-lg bg-bg/55 px-5 py-4 backdrop-blur-sm">
+            <h2 className="text-lg font-semibold text-ink">Accuracy</h2>
+            <p className="mt-2 text-sm text-ink-muted">
+              Measured by scoring an extraction run against a hand-checked gold answer key read directly off the
+              filing (see <code className="text-ink">src/score.py</code>). A held-out deal is one whose gold key was
+              never consulted while the extraction prompt was being developed.
+            </p>
+          </div>
         </Reveal>
         <Reveal delay={60}>
           <div className="mt-5 overflow-x-auto rounded-lg border border-border">
@@ -172,7 +173,7 @@ export default function MethodologyPage() {
 
       <section className="mt-14">
         <Reveal>
-          <h2 className="text-lg font-semibold text-ink">Coverage</h2>
+          <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Coverage</h2>
           <Card className="mt-5 p-5 text-sm text-ink-muted">
             <p>
               <span className="text-ink">Date range:</span> deals announced 2021 onward (bounded by when the
@@ -193,7 +194,7 @@ export default function MethodologyPage() {
 
       <section className="mt-14 mb-4">
         <Reveal>
-          <h2 className="text-lg font-semibold text-ink">Known limitations</h2>
+          <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Known limitations</h2>
           <Card className="mt-5 p-5 text-sm text-ink-muted">
             <ul className="list-disc space-y-2 pl-5">
               <li>
@@ -218,13 +219,12 @@ export default function MethodologyPage() {
         </Reveal>
       </section>
 
-      <p className="text-sm text-ink-muted">
+      <p className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
         <Link href="/" className="text-accent hover:underline">
           ← Back to home
         </Link>
       </p>
-        </Container>
-      </div>
+      </Container>
     </div>
   );
 }

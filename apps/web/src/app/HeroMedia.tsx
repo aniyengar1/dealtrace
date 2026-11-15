@@ -42,6 +42,11 @@ const MOBILE_SLIDES: Slide[] = SLIDES.filter((s): s is Extract<Slide, { kind: "p
 const FIRST_POSTER = "/video/4334-poster.jpg";
 const CROSSFADE_MS = 1500;
 
+// Mild brightness/contrast lift on the raw footage/photos themselves --
+// applied to the media layer only, never the overlay or any text, so
+// brightening the montage never touches how crisp the headline reads.
+const MEDIA_FILTER = "brightness(1.2) contrast(1.05)";
+
 // useSyncExternalStore (not state+effect) so there's no setState-in-effect
 // render cascade, and the server snapshot is a real, correct value rather
 // than a placeholder that flips after mount.
@@ -88,7 +93,7 @@ function PhotoSlide({ slide, active }: { slide: Extract<Slide, { kind: "photo" }
       initial={false}
       animate={active ? { scale: zoomIn ? [1, 1.12] : [1.12, 1] } : {}}
       transition={active ? { duration: slide.duration / 1000, ease: "linear" } : undefined}
-      style={{ scale: zoomIn ? 1 : 1.12 }}
+      style={{ scale: zoomIn ? 1 : 1.12, filter: MEDIA_FILTER }}
     />
   );
 }
@@ -111,6 +116,7 @@ function VideoSlide({ slide, active }: { slide: Extract<Slide, { kind: "video" }
     <video
       ref={ref}
       className="absolute inset-0 h-full w-full object-cover"
+      style={{ filter: MEDIA_FILTER }}
       muted
       playsInline
       loop
@@ -181,24 +187,32 @@ export function HeroMedia() {
       {/* Static poster -- the only thing rendered at first paint/SSR, and
           the permanent fallback for prefers-reduced-motion. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={FIRST_POSTER} alt="" aria-hidden className="absolute inset-0 h-full w-full object-cover" />
+      <img
+        src={FIRST_POSTER}
+        alt=""
+        aria-hidden
+        className="absolute inset-0 h-full w-full object-cover"
+        style={{ filter: MEDIA_FILTER }}
+      />
 
       {mounted && !prefersReducedMotion && <MotionLoop slides={isMobile ? MOBILE_SLIDES : SLIDES} />}
 
-      {/* Black wash -- strong enough that headline/body text (and, now
-          that daylight boardroom/park stills are in the mix, text over
-          much brighter frames too) stays WCAG AA-readable regardless of
-          what's playing underneath. Section content below the hero adds
-          its own semi-transparent panel on top of this for extra
-          contrast; this layer alone only has to carry the hero. */}
+      {/* Light wash, uniform across the whole fixed layer -- just enough
+          that body text everywhere stays AA-readable against brightened
+          footage, without flattening the imagery to "plain black" the
+          way the old, much darker overlay did below the hero. The
+          hero's own headline needs more than this alone to stay crisp;
+          that extra contrast comes from a local gradient/panel behind
+          the hero text specifically (see page.tsx), not from darkening
+          this shared layer for the whole page. */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(115deg, rgba(10,10,11,0.92) 0%, rgba(10,10,11,0.85) 35%, rgba(10,10,11,0.68) 65%, rgba(10,10,11,0.82) 100%)",
+            "linear-gradient(115deg, rgba(10,10,11,0.5) 0%, rgba(10,10,11,0.4) 35%, rgba(10,10,11,0.25) 65%, rgba(10,10,11,0.38) 100%)",
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-bg/20 via-bg/70 to-bg" />
+      <div className="absolute inset-0 bg-gradient-to-b from-bg/5 via-bg/22 to-bg/38" />
     </div>
   );
 }
