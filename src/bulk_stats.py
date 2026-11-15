@@ -14,13 +14,22 @@ both prices, which dealSummary.ts's pctChange does not do) or adds
 data-quality filtering dealSummary.ts doesn't need (that code runs over
 hand-curated, reviewed deals; this runs over ~1000 unreviewed
 extractions, where a stray near-zero first price or a misdated event
-can produce a nonsense outlier -- see QUALITY_FLAGS below).
+can produce a nonsense outlier -- see the thresholds below).
 
 Target-side placeholder terms ("the Company", "Target", "Board", etc.)
 are resolved to each deal's own target name before any proposer/
 recipient comparison via src.entity_match.is_same_entity, not exact
 string equality -- extracted text uses informal short names ("Knoll")
 that never exactly match EDGAR's raw legal name ("KNOLL INC").
+
+Per-deal compute_*_for_deal functions are the single source of truth
+for both this module's aggregate stats AND src.deal_metrics's
+per-deal row -- a deal's exclusion reason (and often its raw computed
+value, even when excluded) is returned alongside the value so
+deal_metrics can store exactly what each aggregate used or skipped,
+instead of recomputing a second, possibly-drifting copy of the same
+logic. When this module runs standalone it also refreshes both DB
+metrics tables (src.deal_metrics.refresh_all) and the JSON file.
 """
 
 import json
@@ -61,9 +70,18 @@ def _resolve_target(name: Optional[str], target: str) -> Optional[str]:
 
 
 def _fetch_canonical_deals(conn: psycopg.Connection) -> list[dict]:
-    rows = conn.execute(
-        "SELECT d.id, d.slug, d.deal_name, d.target, d.acquirer FROM deals d WHERE d.is_canonical"
-    ).fetchall()
+    return fetch_deals(conn, canonical_only=True)
+
+
+def fetch_deals(conn: psycopg.Connection, canonical_only: bool = False) -> list[dict]:
+    """Like _fetch_canonical_deals, but canonical_only=False also
+    returns non-canonical deals (deal_id included) -- src.deal_metrics
+    needs a row for every deal, not just the canonical ones used in
+    aggregates."""
+    query = "SELECT d.id, d.slug, d.deal_name, d.target, d.acquirer FROM deals d"
+    if canonical_only:
+        query += " WHERE d.is_canonical"
+    rows = conn.execute(query).fetchall()
     deals = []
     for deal_id, slug, deal_name, target, acquirer in rows:
         events = conn.execute(
@@ -87,6 +105,7 @@ def _fetch_canonical_deals(conn: psycopg.Connection) -> list[dict]:
         ).fetchall()
         deals.append(
             {
+                "deal_id": deal_id,
                 "slug": slug,
                 "deal_name": deal_name,
                 "target": target,
@@ -150,135 +169,98 @@ def _distribution(values: list[float]) -> dict:
     }
 
 
-def stat_parties_contacted(deals: list[dict]) -> dict:
-    values = []
-    for d in deals:
-        contacted = {
-            name
-            for e in d["events"]
-            if e["event_type"] in CONTACT_EVENT_TYPES
-            for name in e["parties"]
-            if name and name != d["target"]
-        }
-        values.append(len(contacted))
-    return {
-        "definition": "Number of distinct non-target parties named in any first_contact, nda, or discussion event for the deal.",
-        "n": len(values),
-        **_distribution(values),
-        "exclusions": "none -- 0 counted for deals with no such event",
+# --- per-deal computations (shared with src.deal_metrics) --------------------
+
+
+def compute_n_parties_contacted_for_deal(d: dict) -> int:
+    contacted = {
+        name
+        for e in d["events"]
+        if e["event_type"] in CONTACT_EVENT_TYPES
+        for name in e["parties"]
+        if name and name != d["target"]
     }
+    return len(contacted)
 
 
-def stat_n_bidders(deals: list[dict]) -> dict:
-    values = []
-    for d in deals:
-        bidders = {p["proposer"] for p in d["proposals"] if p["proposer"] and p["proposer"] != d["target"]}
-        values.append(len(bidders))
-    return {
-        "definition": "Number of distinct non-target proposers across the deal's proposals (parties that actually submitted a priced bid, not just made contact).",
-        "n": len(values),
-        **_distribution(values),
-        "exclusions": "none -- 0 counted for deals with no non-target proposer",
-    }
+def compute_n_bidders_for_deal(d: dict) -> int:
+    return len({p["proposer"] for p in d["proposals"] if p["proposer"] and p["proposer"] != d["target"]})
 
 
-def stat_n_proposals(deals: list[dict]) -> dict:
-    values = [len(d["proposals"]) for d in deals]
-    return {
-        "definition": "Total count of Proposal records (from any proposer, including the target's own counteroffers) extracted for the deal.",
-        "n": len(values),
-        **_distribution(values),
-        "exclusions": "none -- 0 counted for deals with no proposals",
-    }
+def compute_n_proposals_for_deal(d: dict) -> int:
+    return len(d["proposals"])
 
 
-def stat_pct_increase_cash(deals: list[dict]) -> dict:
-    values = []
-    excluded_counts = {
-        "not_cash_or_no_final": 0, "missing_first_price": 0, "missing_final_price": 0,
-        "fewer_than_2_dated_proposals": 0, "first_price_below_10_cents": 0,
-        "first_price_below_5pct_of_final": 0, "final_price_non_positive": 0,
-        "abs_change_over_300pct": 0,
-    }
-    excluded_deals = []
-    flagged_for_review = []
-    for d in deals:
-        dated = _dated_proposals(d["proposals"])
-        if len(dated) < 2:
-            excluded_counts["fewer_than_2_dated_proposals"] += 1
-            continue
-        final = _final_entry(dated)
-        if final is None or final["consideration_type"] != "cash":
-            excluded_counts["not_cash_or_no_final"] += 1
-            continue
-        first = dated[0]
-        first_price = _price(first)
-        final_price = _price(final)
-        if first_price is None:
-            excluded_counts["missing_first_price"] += 1
-            continue
-        if final_price is None:
-            excluded_counts["missing_final_price"] += 1
-            continue
-        if final_price <= 0:
-            excluded_counts["final_price_non_positive"] += 1
-            excluded_deals.append({"deal_name": d["deal_name"], "first_price": first_price, "final_price": final_price, "reason": "final_price_non_positive"})
-            continue
-        if first_price == 0 or first_price < MIN_FIRST_PRICE_USD:
-            excluded_counts["first_price_below_10_cents"] += 1
-            excluded_deals.append({"deal_name": d["deal_name"], "first_price": first_price, "final_price": final_price, "reason": "first_price_below_10_cents"})
-            continue
-        if first_price < MIN_FIRST_PRICE_PCT_OF_FINAL * abs(final_price):
-            excluded_counts["first_price_below_5pct_of_final"] += 1
-            excluded_deals.append({"deal_name": d["deal_name"], "first_price": first_price, "final_price": final_price, "reason": "first_price_below_5pct_of_final"})
-            continue
-        pct = (final_price - first_price) / first_price * 100
-        if abs(pct) > MAX_ABS_PCT_CHANGE:
-            excluded_counts["abs_change_over_300pct"] += 1
-            excluded_deals.append({"deal_name": d["deal_name"], "first_price": first_price, "final_price": final_price, "pct_increase": pct, "reason": "abs_change_over_300pct"})
-            continue
-        if pct <= REVIEW_PCT_DROP_THRESHOLD:
-            flagged_for_review.append({"deal_name": d["deal_name"], "first_price": first_price, "final_price": final_price, "pct_increase": pct})
-        values.append((d["deal_name"], pct))
-
-    pct_values = [v for _, v in values]
-    top = sorted(values, key=lambda t: t[1], reverse=True)[:N_OUTLIERS]
-    return {
-        "definition": "Percent change from the earliest dated proposal's price (price_high if present else price_low) to the final (accepted, else latest-dated) proposal's price, restricted to deals whose final proposal is cash and where both prices are known.",
-        "n": len(pct_values),
-        **_distribution(pct_values),
-        "top_outliers": [{"deal_name": name, "pct_increase": v} for name, v in top],
-        "flagged_for_review_drop_90pct_or_more": flagged_for_review,
-        "exclusions": excluded_counts,
-        "excluded_deals": excluded_deals,
-    }
+def compute_first_final_price_for_deal(d: dict) -> tuple[Optional[float], Optional[float]]:
+    """First dated proposal's price and the final (accepted, else
+    latest-dated) proposal's price -- independent of the stricter cash/
+    threshold rules compute_pct_bump_for_deal applies, so a deal can
+    have a determinable first/final price here even when it's excluded
+    from the % bump stat itself (e.g. the final proposal isn't cash)."""
+    dated = _dated_proposals(d["proposals"])
+    if not dated:
+        return None, None
+    first_price = _price(dated[0])
+    final = _final_entry(dated)
+    final_price = _price(final) if final else None
+    return first_price, final_price
 
 
-def stat_first_bidder_is_acquirer(deals: list[dict]) -> dict:
-    matches = 0
-    n = 0
-    excluded = {"no_non_target_proposal": 0, "no_final_entry": 0}
-    for d in deals:
-        dated = _dated_proposals(d["proposals"])
-        bidder_dated = [p for p in dated if p["proposer"] and p["proposer"] != d["target"]]
-        if not bidder_dated:
-            excluded["no_non_target_proposal"] += 1
-            continue
-        final = _final_entry(dated)
-        if final is None or not final["proposer"]:
-            excluded["no_final_entry"] += 1
-            continue
-        first_bidder = bidder_dated[0]["proposer"]
-        eventual_acquirer = final["proposer"]
-        n += 1
-        if first_bidder.strip().lower() == eventual_acquirer.strip().lower():
-            matches += 1
-    return {
-        "definition": "Share of deals where the proposer of the earliest dated non-target proposal is the same (case-insensitive) as the proposer of the final (accepted, else latest-dated) proposal.",
-        "n": n,
-        "pct_first_bidder_is_eventual_acquirer": (matches / n * 100) if n else None,
-        "exclusions": excluded,
-    }
+def compute_pct_bump_for_deal(d: dict) -> tuple[Optional[float], Optional[str]]:
+    """Returns (pct, exclusion_reason). reason is None exactly when pct
+    is a valid, includable value. For abs_change_over_300pct, pct still
+    carries the (excluded) computed value -- useful for a diagnostic
+    listing of what got excluded and why; every other exclusion reason
+    means pct couldn't be computed at all, so it's None."""
+    dated = _dated_proposals(d["proposals"])
+    if len(dated) < 2:
+        return None, "fewer_than_2_dated_proposals"
+    final = _final_entry(dated)
+    if final is None or final["consideration_type"] != "cash":
+        return None, "not_cash_or_no_final"
+    first_price = _price(dated[0])
+    final_price = _price(final)
+    if first_price is None:
+        return None, "missing_first_price"
+    if final_price is None:
+        return None, "missing_final_price"
+    if final_price <= 0:
+        return None, "final_price_non_positive"
+    if first_price == 0 or first_price < MIN_FIRST_PRICE_USD:
+        return None, "first_price_below_10_cents"
+    if first_price < MIN_FIRST_PRICE_PCT_OF_FINAL * abs(final_price):
+        return None, "first_price_below_5pct_of_final"
+    pct = (final_price - first_price) / first_price * 100
+    if abs(pct) > MAX_ABS_PCT_CHANGE:
+        return pct, "abs_change_over_300pct"
+    return pct, None
+
+
+def pct_bump_bucket(pct: Optional[float]) -> Optional[str]:
+    """Histogram bucket label for a % bump value, width 10 (e.g. "0% to
+    10%", "-10% to 0%"), with an overflow bucket above 100%. None input
+    (not computed, or excluded) yields None, not a bucket -- a consumer
+    must check pct_bump_exclusion_reason to tell "excluded" apart from
+    "genuinely in a bucket"."""
+    if pct is None:
+        return None
+    if pct > 100:
+        return ">100%"
+    lower = int(pct // 10) * 10
+    return f"{lower}% to {lower + 10}%"
+
+
+def compute_first_bidder_won_for_deal(d: dict) -> tuple[Optional[bool], Optional[str]]:
+    dated = _dated_proposals(d["proposals"])
+    bidder_dated = [p for p in dated if p["proposer"] and p["proposer"] != d["target"]]
+    if not bidder_dated:
+        return None, "no_non_target_proposal"
+    final = _final_entry(dated)
+    if final is None or not final["proposer"]:
+        return None, "no_final_entry"
+    first_bidder = bidder_dated[0]["proposer"]
+    eventual_acquirer = final["proposer"]
+    return (first_bidder.strip().lower() == eventual_acquirer.strip().lower()), None
 
 
 def _process_start_date(d: dict):
@@ -311,22 +293,139 @@ def _days_between(start, end) -> int:
     return (end - start).days
 
 
+def compute_days_first_contact_to_signing_for_deal(d: dict) -> tuple[Optional[int], Optional[str]]:
+    process_start = _process_start_date(d)
+    if process_start is None:
+        return None, "no_process_start_date"
+    signing_date = _latest_signing_date(d)
+    if signing_date is None:
+        return None, "no_signing_event"
+    days = _days_between(process_start, signing_date)
+    if days < 0:
+        return days, "negative_duration"
+    return days, None
+
+
+def compute_days_first_proposal_to_signing_for_deal(d: dict) -> tuple[Optional[int], Optional[str]]:
+    dated = _dated_proposals(d["proposals"])
+    if not dated:
+        return None, "no_dated_proposal"
+    first_proposal_date = dated[0]["date_resolved"]
+    signing_date = _latest_signing_date(d)
+    if signing_date is None:
+        return None, "no_signing_event"
+    days = _days_between(first_proposal_date, signing_date)
+    if days < 0:
+        return days, "negative_duration"
+    return days, None
+
+
+# --- aggregate stats -----------------------------------------------------
+
+
+def stat_parties_contacted(deals: list[dict]) -> dict:
+    values = [compute_n_parties_contacted_for_deal(d) for d in deals]
+    return {
+        "definition": "Number of distinct non-target parties named in any first_contact, nda, or discussion event for the deal.",
+        "n": len(values),
+        **_distribution(values),
+        "exclusions": "none -- 0 counted for deals with no such event",
+    }
+
+
+def stat_n_bidders(deals: list[dict]) -> dict:
+    values = [compute_n_bidders_for_deal(d) for d in deals]
+    return {
+        "definition": "Number of distinct non-target proposers across the deal's proposals (parties that actually submitted a priced bid, not just made contact).",
+        "n": len(values),
+        **_distribution(values),
+        "exclusions": "none -- 0 counted for deals with no non-target proposer",
+    }
+
+
+def stat_n_proposals(deals: list[dict]) -> dict:
+    values = [compute_n_proposals_for_deal(d) for d in deals]
+    return {
+        "definition": "Total count of Proposal records (from any proposer, including the target's own counteroffers) extracted for the deal.",
+        "n": len(values),
+        **_distribution(values),
+        "exclusions": "none -- 0 counted for deals with no proposals",
+    }
+
+
+_PCT_BUMP_EXCLUDED_DEAL_REASONS = {
+    "final_price_non_positive", "first_price_below_10_cents",
+    "first_price_below_5pct_of_final", "abs_change_over_300pct",
+}
+
+
+def stat_pct_increase_cash(deals: list[dict]) -> dict:
+    values = []
+    excluded_counts = {
+        "not_cash_or_no_final": 0, "missing_first_price": 0, "missing_final_price": 0,
+        "fewer_than_2_dated_proposals": 0, "first_price_below_10_cents": 0,
+        "first_price_below_5pct_of_final": 0, "final_price_non_positive": 0,
+        "abs_change_over_300pct": 0,
+    }
+    excluded_deals = []
+    flagged_for_review = []
+    for d in deals:
+        pct, reason = compute_pct_bump_for_deal(d)
+        if reason is not None:
+            excluded_counts[reason] += 1
+            if reason in _PCT_BUMP_EXCLUDED_DEAL_REASONS:
+                first_price, final_price = compute_first_final_price_for_deal(d)
+                entry = {"deal_name": d["deal_name"], "first_price": first_price, "final_price": final_price, "reason": reason}
+                if reason == "abs_change_over_300pct":
+                    entry["pct_increase"] = pct
+                excluded_deals.append(entry)
+            continue
+        if pct <= REVIEW_PCT_DROP_THRESHOLD:
+            first_price, final_price = compute_first_final_price_for_deal(d)
+            flagged_for_review.append({"deal_name": d["deal_name"], "first_price": first_price, "final_price": final_price, "pct_increase": pct})
+        values.append((d["deal_name"], pct))
+
+    pct_values = [v for _, v in values]
+    top = sorted(values, key=lambda t: t[1], reverse=True)[:N_OUTLIERS]
+    return {
+        "definition": "Percent change from the earliest dated proposal's price (price_high if present else price_low) to the final (accepted, else latest-dated) proposal's price, restricted to deals whose final proposal is cash and where both prices are known.",
+        "n": len(pct_values),
+        **_distribution(pct_values),
+        "top_outliers": [{"deal_name": name, "pct_increase": v} for name, v in top],
+        "flagged_for_review_drop_90pct_or_more": flagged_for_review,
+        "exclusions": excluded_counts,
+        "excluded_deals": excluded_deals,
+    }
+
+
+def stat_first_bidder_is_acquirer(deals: list[dict]) -> dict:
+    matches = 0
+    n = 0
+    excluded = {"no_non_target_proposal": 0, "no_final_entry": 0}
+    for d in deals:
+        won, reason = compute_first_bidder_won_for_deal(d)
+        if reason is not None:
+            excluded[reason] += 1
+            continue
+        n += 1
+        if won:
+            matches += 1
+    return {
+        "definition": "Share of deals where the proposer of the earliest dated non-target proposal is the same (case-insensitive) as the proposer of the final (accepted, else latest-dated) proposal.",
+        "n": n,
+        "pct_first_bidder_is_eventual_acquirer": (matches / n * 100) if n else None,
+        "exclusions": excluded,
+    }
+
+
 def stat_days_first_contact_to_signing(deals: list[dict]) -> dict:
     values = []
     excluded_counts = {"no_process_start_date": 0, "no_signing_event": 0, "negative_duration": 0}
     flagged_for_review = []
     for d in deals:
-        process_start = _process_start_date(d)
-        if process_start is None:
-            excluded_counts["no_process_start_date"] += 1
-            continue
-        signing_date = _latest_signing_date(d)
-        if signing_date is None:
-            excluded_counts["no_signing_event"] += 1
-            continue
-        days = _days_between(process_start, signing_date)
-        if days < 0:
-            excluded_counts["negative_duration"] += 1
+        days, reason = compute_days_first_contact_to_signing_for_deal(d)
+        if reason is not None:
+            excluded_counts[reason] += 1
             continue
         if days > MAX_DAYS_FOR_REVIEW:
             flagged_for_review.append({"deal_name": d["deal_name"], "days": days})
@@ -349,18 +448,9 @@ def stat_days_first_proposal_to_signing(deals: list[dict]) -> dict:
     excluded_counts = {"no_dated_proposal": 0, "no_signing_event": 0, "negative_duration": 0}
     flagged_for_review = []
     for d in deals:
-        dated = _dated_proposals(d["proposals"])
-        if not dated:
-            excluded_counts["no_dated_proposal"] += 1
-            continue
-        first_proposal_date = dated[0]["date_resolved"]
-        signing_date = _latest_signing_date(d)
-        if signing_date is None:
-            excluded_counts["no_signing_event"] += 1
-            continue
-        days = _days_between(first_proposal_date, signing_date)
-        if days < 0:
-            excluded_counts["negative_duration"] += 1
+        days, reason = compute_days_first_proposal_to_signing_for_deal(d)
+        if reason is not None:
+            excluded_counts[reason] += 1
             continue
         if days > MAX_DAYS_FOR_REVIEW:
             flagged_for_review.append({"deal_name": d["deal_name"], "days": days})
@@ -394,7 +484,12 @@ def compute_all() -> dict:
 
 
 def main() -> None:
-    print(json.dumps(compute_all(), indent=2, default=str))
+    from src.deal_metrics import refresh_all
+
+    result = compute_all()
+    print(json.dumps(result, indent=2, default=str))
+    summary = refresh_all()
+    print(json.dumps(summary, indent=2, default=str))
 
 
 if __name__ == "__main__":

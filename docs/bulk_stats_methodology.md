@@ -132,8 +132,32 @@ not genuine absences.
   manual review, since a ~5.5-year-plus gap is unusual enough to be
   worth a human look even if it's genuine.
 
+## Postgres as the single source of truth (`src.deal_metrics`)
+
+`deal_metrics` (one row per deal, canonical or not) and `headline_stats`
+(one row per aggregate stat) hold the same numbers as
+`headline_stats.json`, computed by the same per-deal functions in
+`src.bulk_stats` so the two can never drift apart. `acquirer_display`
+is a "best available" full name for the stored (often short-form)
+acquirer: a small, deliberately curated lookup
+(`deal_metrics.KNOWN_SHORT_NAME_EXPANSIONS`, e.g. "NSC" -> "Nippon
+Steel Corporation") for the few cases verified with high confidence
+where the full name never appears anywhere in the deal's own extracted
+text; otherwise the longest locally-mentioned name that is a *literal,
+safe* completion of the stored one (`deal_metrics._is_safe_fuller_name`)
+-- guarded against several real false-positive patterns found while
+building this: a reference to the acquirer ("SeaSpine" -> "SeaSpine
+Board"), an anonymized-placeholder suffix ("Transocean" -> "Transocean
+Party A"), two sponsors' names joined with "and", a bare ticker that
+happens to start with this one's but names a different fund ("FSK" ->
+"FSKR"), and a numbered sibling fund ("GBDC" -> "GBDC 3"). The curated
+lookup is intentionally tiny -- a wrong guess there would be worse than
+falling back to the short form -- so most short/ticker-form acquirers
+with no fuller local mention are left as-is.
+
 ## Versioning
 
 `data/output/stats/headline_stats.json` carries `generated_at` (UTC)
 and `code_commit` (the git commit the numbers were computed from) so a
-consumer can tell which code version produced a given file.
+consumer can tell which code version produced a given file; the same
+two values are stored on every `headline_stats` row.
