@@ -49,7 +49,7 @@ Before the short evidence window, refresh actuals/reviewed manual guidance and a
 
 No one has supplied a current owner attestation in this pass. Do not execute earlier merely because a company is eligible. No future process is waiting or scheduled.
 
-New checkpoint: `session3-entry17-lock-ready-20261115` (exact code commit recorded in `lock_ready/entry17_checkpoint.json` after tagging). It is owner-authorized and agent-tested, not a claim of final owner acceptance or a passed live gate. All prior tags remain intact; their older timing enforcement is superseded. Do not disable newer DB guards to run old code.
+New checkpoint: **`session3-entry17-lock-ready-20261115` → `c53cb3a617fd0cee086a16539e0e10e69e89ba9e`**, created **2026-11-15T12:52:28-08:00**; [checkpoint metadata](../lock_ready/entry17_checkpoint.json) records the actual tag time and dependencies. It is owner-authorized and agent-tested, not a claim of final owner acceptance or a passed live gate. All prior tags remain intact; their older timing enforcement is superseded. Do not disable newer DB guards to run old code.
 
 ## Extractor shelved and budget preserved
 
