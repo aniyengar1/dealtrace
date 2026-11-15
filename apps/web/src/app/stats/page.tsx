@@ -1,79 +1,58 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
-import {
-  listDeals,
-  getLatestFactsRunForDeal,
-  getEventsForRun,
-  getProposalsForRun,
-} from "@/lib/queries";
-import { computeDealStatsRow, computeCrossDealSummary, type DealStatsRow } from "@/lib/crossDealStats";
-import { acquirerDisplayName, BUYER_TYPE_LABELS } from "@/lib/labels";
-import { formatPriceRange, formatPrice, formatPct } from "@/lib/format";
+import { listCanonicalDealMetrics, type DealMetricsRow } from "@/lib/dealMetrics";
+import { buyerType, BUYER_TYPE_LABELS, type BuyerType } from "@/lib/labels";
+import { statDecimals } from "@/lib/format";
+import { PriceValue } from "@/components/ui/PriceValue";
 import { Container } from "@/components/ui/Container";
 
 export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Cross-deal stats",
-  description: "Early, small-sample aggregate findings across every deal with a completed extraction.",
+  description: "Aggregate findings across every canonical deal, computed once per bulk-load run.",
 };
 
-// Every row here is built from a deal's latest (locked) facts run only --
-// the same run getLatestFactsRunForDeal resolves on the deal page itself
-// -- never a mix of several historical runs for the same deal.
-async function loadRows(): Promise<DealStatsRow[]> {
-  const deals = await listDeals();
-  const rows: DealStatsRow[] = [];
-  for (const deal of deals) {
-    const run = await getLatestFactsRunForDeal(deal.id);
-    if (!run) continue;
-    const [events, proposals] = await Promise.all([getEventsForRun(run.id), getProposalsForRun(run.id)]);
-    const row = computeDealStatsRow(deal, events, proposals);
-    if (row) rows.push(row);
-  }
-  return rows;
+function median(values: number[]): number | null {
+  if (values.length === 0) return null;
+  const sorted = [...values].sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+  return sorted.length % 2 === 0 ? (sorted[mid - 1] + sorted[mid]) / 2 : sorted[mid];
 }
 
-function UnreviewedMark({ show }: { show: boolean }) {
-  if (!show) return null;
-  return (
-    <sup className="ml-0.5 text-accent" title="Includes at least one unreviewed fact">
-      •
-    </sup>
-  );
+function mean(values: number[]): number | null {
+  if (values.length === 0) return null;
+  return values.reduce((a, b) => a + b, 0) / values.length;
 }
 
-function Cell({
-  href,
-  unreviewed,
-  children,
-}: {
-  href: string | null;
-  unreviewed: boolean;
-  children: ReactNode;
-}) {
-  const content = (
-    <>
-      {children}
-      <UnreviewedMark show={unreviewed} />
-    </>
-  );
-  if (!href) return <span>{content}</span>;
-  return (
-    <Link href={href} className="hover:underline">
-      {content}
-    </Link>
-  );
+interface GroupStats {
+  n: number;
+  medianPctBump: number | null;
+  meanPctBump: number | null;
+  medianBidders: number | null;
+  medianDaysToSigning: number | null;
 }
 
-function pctChangeLabel(row: DealStatsRow): string {
-  if (row.pctChange === null) return "—";
-  const sign = row.pctChange >= 0 ? "+" : "";
-  const basis = row.pctChangeBasis ? ` (${row.pctChangeBasis} end)` : "";
-  return `${sign}${row.pctChange.toFixed(1)}%${basis}`;
+function groupStats(rows: DealMetricsRow[]): GroupStats {
+  const bump = rows.map((r) => r.pctBump).filter((v): v is number => v !== null);
+  return {
+    n: rows.length,
+    medianPctBump: median(bump),
+    meanPctBump: mean(bump),
+    medianBidders: median(rows.map((r) => r.nBidders)),
+    medianDaysToSigning: median(
+      rows.map((r) => r.daysFirstContactToSigning).filter((v): v is number => v !== null)
+    ),
+  };
 }
 
-function GroupStatsCard({ label, stats }: { label: string; stats: { n: number; medianPctChange: number | null; meanPctChange: number | null; medianRounds: number | null; medianDaysToSigning: number | null } }) {
+function pctLabel(value: number | null): string {
+  if (value === null) return "—";
+  return `${value >= 0 ? "+" : ""}${value.toFixed(statDecimals(value))}%`;
+}
+
+const PAGE_SIZE = 25;
+
+function GroupStatsCard({ label, stats }: { label: string; stats: GroupStats }) {
   return (
     <div className="rounded-lg border border-border bg-surface p-4">
       <div className="flex items-baseline justify-between">
@@ -83,15 +62,15 @@ function GroupStatsCard({ label, stats }: { label: string; stats: { n: number; m
       <dl className="mt-3 grid grid-cols-2 gap-3 text-sm">
         <div>
           <dt className="text-xs text-ink-muted">Median bump</dt>
-          <dd className="tabular-nums">{formatPct(stats.medianPctChange)}</dd>
+          <dd className="tabular-nums">{pctLabel(stats.medianPctBump)}</dd>
         </div>
         <div>
           <dt className="text-xs text-ink-muted">Mean bump</dt>
-          <dd className="tabular-nums">{formatPct(stats.meanPctChange)}</dd>
+          <dd className="tabular-nums">{pctLabel(stats.meanPctBump)}</dd>
         </div>
         <div>
-          <dt className="text-xs text-ink-muted">Median rounds</dt>
-          <dd className="tabular-nums">{stats.medianRounds ?? "—"}</dd>
+          <dt className="text-xs text-ink-muted">Median bidders</dt>
+          <dd className="tabular-nums">{stats.medianBidders ?? "—"}</dd>
         </div>
         <div>
           <dt className="text-xs text-ink-muted">Median days to signing</dt>
@@ -102,24 +81,41 @@ function GroupStatsCard({ label, stats }: { label: string; stats: { n: number; m
   );
 }
 
-export default async function StatsPage() {
-  const rows = await loadRows();
-  const summary = computeCrossDealSummary(rows);
+export default async function StatsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  // One query, no per-deal fan-out: deal_metrics already carries the
+  // bidder/proposal/bump/days figures this page used to recompute from
+  // raw events and proposals on every request.
+  const rows = await listCanonicalDealMetrics();
+
+  const byType: Record<BuyerType, DealMetricsRow[]> = { strategic: [], sponsor: [], unknown: [] };
+  for (const row of rows) byType[buyerType(row.slug, row.acquirerDisplay)].push(row);
+
+  // The group-stats cards above summarize all 964 canonical deals;
+  // only the per-deal table below is paginated -- a single response
+  // rendering every row as its own <tr> is the thing that was actually
+  // slow, not the deal_metrics query itself.
+  const sp = await searchParams;
+  const page = Math.max(1, sp.page ? parseInt(sp.page, 10) || 1 : 1);
+  const totalPages = Math.max(1, Math.ceil(rows.length / PAGE_SIZE));
+  const currentPage = Math.min(page, totalPages);
+  const pageRows = rows.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
   return (
     <Container wide className="py-10">
       <h1 className="font-serif text-3xl font-semibold tracking-tight text-ink">Cross-deal findings</h1>
       <p className="mt-1 text-sm text-ink-muted">
-        n = {summary.nDeals} deal{summary.nDeals === 1 ? "" : "s"} —{" "}
-        <span className="font-medium text-accent">early / small-sample findings</span>, not a statistically
-        reliable base rate. Every figure is read from each deal&apos;s latest locked extraction run only; cells
-        marked <span className="text-accent">•</span> include at least one unreviewed fact.
+        n = {rows.length} canonical deal{rows.length === 1 ? "" : "s"} — every figure is read from{" "}
+        <code className="text-ink">deal_metrics</code>, computed once per bulk-load run.
       </p>
 
       <div className="mt-6 grid gap-4 sm:grid-cols-3">
-        <GroupStatsCard label="All deals" stats={summary.overall} />
-        <GroupStatsCard label={BUYER_TYPE_LABELS.strategic} stats={summary.byBuyerType.strategic} />
-        <GroupStatsCard label={BUYER_TYPE_LABELS.sponsor} stats={summary.byBuyerType.sponsor} />
+        <GroupStatsCard label="All deals" stats={groupStats(rows)} />
+        <GroupStatsCard label={BUYER_TYPE_LABELS.strategic} stats={groupStats(byType.strategic)} />
+        <GroupStatsCard label={BUYER_TYPE_LABELS.sponsor} stats={groupStats(byType.sponsor)} />
       </div>
 
       <div className="mt-8 overflow-x-auto rounded-lg border border-border bg-surface">
@@ -129,91 +125,63 @@ export default async function StatsPage() {
               <th className="px-3 py-2.5 font-medium">Target</th>
               <th className="px-3 py-2.5 font-medium">Acquirer</th>
               <th className="px-3 py-2.5 font-medium">Buyer type</th>
-              <th className="px-3 py-2.5 font-medium">First bid → final</th>
-              <th className="px-3 py-2.5 font-medium">Rounds</th>
-              <th className="px-3 py-2.5 font-medium">Bidders</th>
-              <th className="px-3 py-2.5 font-medium">Counters</th>
-              <th className="px-3 py-2.5 font-medium">Days to signing</th>
-              <th className="px-3 py-2.5 font-medium">Market check</th>
-              <th className="px-3 py-2.5 font-medium">Final premium</th>
-              <th className="px-3 py-2.5 font-medium">Activist</th>
+              <th className="px-3 py-2.5 text-right font-medium">Price / share</th>
+              <th className="px-3 py-2.5 text-right font-medium">Bidders</th>
+              <th className="px-3 py-2.5 text-right font-medium">Proposals</th>
+              <th className="px-3 py-2.5 text-right font-medium">1st → final</th>
+              <th className="px-3 py-2.5 text-right font-medium">Days to signing</th>
+              <th className="px-3 py-2.5">First bidder won</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-border">
-            {rows.map((row) => (
+            {pageRows.map((row) => (
               <tr key={row.slug} className="hover:bg-surface-raised">
                 <td className="px-3 py-3 font-medium">
                   <Link href={`/deals/${row.slug}`} className="hover:underline">
-                    {row.target}
+                    {row.targetDisplay}
                   </Link>
                 </td>
-                <td className="px-3 py-3 text-ink-muted">{acquirerDisplayName(row.slug, row.acquirer)}</td>
-                <td className="px-3 py-3 text-ink-muted">{BUYER_TYPE_LABELS[row.buyerType]}</td>
-                <td className="px-3 py-3 tabular-nums">
-                  <Cell
-                    href={`/deals/${row.slug}?fact=${row.finalBidFactId ?? row.firstBidFactId ?? ""}`}
-                    unreviewed={row.bidStatsUnreviewed}
-                  >
-                    {formatPriceRange(row.firstBidPriceLow, row.firstBidPriceHigh)} →{" "}
-                    {formatPrice(row.finalBidPrice)} ({pctChangeLabel(row)})
-                  </Cell>
+                <td className="px-3 py-3 text-ink-muted">{row.acquirerDisplay}</td>
+                <td className="px-3 py-3 text-ink-muted">
+                  {BUYER_TYPE_LABELS[buyerType(row.slug, row.acquirerDisplay)]}
                 </td>
-                <td className="px-3 py-3 tabular-nums">
-                  <Cell href={`/deals/${row.slug}#bids`} unreviewed={row.bidStatsUnreviewed}>
-                    {row.nRounds}
-                  </Cell>
+                <td className="px-3 py-3 text-right tabular-nums">
+                  <PriceValue price={row.finalPrice} plausible={row.pricePlausible} />
                 </td>
-                <td className="px-3 py-3 tabular-nums">
-                  <Cell href={`/deals/${row.slug}#bids`} unreviewed={row.bidStatsUnreviewed}>
-                    {row.nBidders}
-                  </Cell>
-                </td>
-                <td className="px-3 py-3 tabular-nums">
-                  <Cell href={`/deals/${row.slug}#bids`} unreviewed={row.bidStatsUnreviewed}>
-                    {row.nCounteroffers}
-                  </Cell>
-                </td>
-                <td className="px-3 py-3 tabular-nums">
-                  <Cell
-                    href={row.signingFactId ? `/deals/${row.slug}?fact=${row.signingFactId}` : `/deals/${row.slug}#timeline`}
-                    unreviewed={row.timelineUnreviewed}
-                  >
-                    {row.daysFirstContactToSigning ?? "—"}
-                  </Cell>
-                </td>
-                <td className="px-3 py-3 capitalize">
-                  <Cell
-                    href={row.marketCheckFactId ? `/deals/${row.slug}?fact=${row.marketCheckFactId}` : `/deals/${row.slug}#bids`}
-                    unreviewed={row.marketCheckUnreviewed}
-                  >
-                    {row.marketCheck}
-                  </Cell>
-                </td>
-                <td className="px-3 py-3 tabular-nums">
-                  <Cell
-                    href={row.finalBidFactId ? `/deals/${row.slug}?fact=${row.finalBidFactId}` : `/deals/${row.slug}`}
-                    unreviewed={row.bidStatsUnreviewed}
-                  >
-                    {formatPct(row.finalPremiumPct)}
-                  </Cell>
-                </td>
-                <td className="px-3 py-3">
-                  {row.hasActivist ? (
-                    <Cell
-                      href={row.activistFactId ? `/deals/${row.slug}?fact=${row.activistFactId}` : `/deals/${row.slug}#timeline`}
-                      unreviewed={row.activistUnreviewed}
-                    >
-                      Yes
-                    </Cell>
-                  ) : (
-                    "No"
-                  )}
+                <td className="px-3 py-3 text-right tabular-nums">{row.nBidders}</td>
+                <td className="px-3 py-3 text-right tabular-nums">{row.nProposals}</td>
+                <td className="px-3 py-3 text-right tabular-nums">{pctLabel(row.pctBump)}</td>
+                <td className="px-3 py-3 text-right tabular-nums">{row.daysFirstContactToSigning ?? "—"}</td>
+                <td className="px-3 py-3 text-ink-muted">
+                  {row.firstBidderWon === null ? "—" : row.firstBidderWon ? "Yes" : "No"}
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
+
+      {totalPages > 1 && (
+        <nav className="mt-5 flex items-center justify-between text-sm text-ink-muted">
+          <Link
+            href={`/stats?page=${Math.max(1, currentPage - 1)}`}
+            aria-disabled={currentPage <= 1}
+            className={currentPage <= 1 ? "pointer-events-none opacity-40" : "hover:text-ink"}
+          >
+            ← Previous
+          </Link>
+          <span>
+            Page {currentPage} of {totalPages}
+          </span>
+          <Link
+            href={`/stats?page=${Math.min(totalPages, currentPage + 1)}`}
+            aria-disabled={currentPage >= totalPages}
+            className={currentPage >= totalPages ? "pointer-events-none opacity-40" : "hover:text-ink"}
+          >
+            Next →
+          </Link>
+        </nav>
+      )}
     </Container>
   );
 }

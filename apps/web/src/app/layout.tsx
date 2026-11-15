@@ -3,6 +3,7 @@ import { Fraunces, Inter } from "next/font/google";
 import { NavBar } from "@/components/layout/NavBar";
 import { Footer } from "@/components/layout/Footer";
 import { PageTransition } from "@/components/layout/PageTransition";
+import { query } from "@/lib/db";
 import "./globals.css";
 
 const inter = Inter({
@@ -20,28 +21,35 @@ const fraunces = Fraunces({
 
 const siteUrl = "https://dealtrace.example";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: {
-    default: "DealTrace — Every public-company sale process, sourced from SEC filings",
-    template: "%s · DealTrace",
-  },
-  description:
-    "DealTrace extracts how public-company M&A sale processes actually unfold -- who was contacted, how bids moved, how long it took -- from SEC merger-proxy filings, with every fact linked to its source quote.",
-  openGraph: {
-    title: "DealTrace",
-    description:
-      "Every public-company sale process since 2021, extracted from SEC filings and linked to its source.",
-    url: siteUrl,
-    siteName: "DealTrace",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "DealTrace",
-    description: "Every public-company sale process since 2021, extracted from SEC filings.",
-  },
-};
+// Dynamic rather than a static `metadata` export so the headline count
+// in <title> and the meta description always matches the real
+// canonical deal count instead of a claim that drifts out of date
+// (or a blanket "every" that promises more coverage than exists).
+export async function generateMetadata(): Promise<Metadata> {
+  const rows = await query<{ count: number }>(`SELECT count(*)::int AS count FROM deals WHERE is_canonical`);
+  const n = rows[0]?.count ?? 0;
+  const description = `DealTrace has extracted ${n} public-company sale processes from SEC filings since 2021 -- who was contacted, how bids moved, how long it took -- with every fact linked to its source quote.`;
+  return {
+    metadataBase: new URL(siteUrl),
+    title: {
+      default: `DealTrace — ${n} public-company sale processes, sourced from SEC filings`,
+      template: "%s · DealTrace",
+    },
+    description,
+    openGraph: {
+      title: "DealTrace",
+      description,
+      url: siteUrl,
+      siteName: "DealTrace",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "DealTrace",
+      description,
+    },
+  };
+}
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (

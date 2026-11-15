@@ -1,9 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { listAllDealStatsRows, filterAndSortDeals, availableYears } from "@/lib/dealsExplorer";
+import { listCanonicalDealMetrics, filterAndSortDeals, availableYears } from "@/lib/dealMetrics";
 import { CONSIDERATION_TYPE_LABELS, PRICE_BUCKET_LABELS, type SortKey, type PriceBucket } from "@/lib/dealLabels";
-import { formatPrice, formatDate } from "@/lib/format";
-import { acquirerDisplayName } from "@/lib/labels";
+import { formatDate } from "@/lib/format";
+import { PriceValue } from "@/components/ui/PriceValue";
 import { Container } from "@/components/ui/Container";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { FilterBar } from "./FilterBar";
@@ -17,19 +17,6 @@ export const metadata: Metadata = {
 };
 
 const SORT_KEYS: SortKey[] = ["signingDate", "finalPrice", "nBidders", "nProposals", "pctChange", "daysToSigning"];
-
-// Bulk extraction runs land here before a human reviews them, so an
-// occasional bad number (wrong units, a misread price) is expected --
-// flag it the same way /stats already does rather than silently
-// presenting unreviewed figures with full confidence.
-function UnreviewedMark({ show }: { show: boolean }) {
-  if (!show) return null;
-  return (
-    <sup className="ml-0.5 text-accent" title="Rests on at least one unreviewed fact">
-      •
-    </sup>
-  );
-}
 
 function isSortKey(value: string | undefined): value is SortKey {
   return !!value && (SORT_KEYS as string[]).includes(value);
@@ -47,7 +34,7 @@ export default async function DealsPage({
   searchParams: Promise<Record<string, string | undefined>>;
 }) {
   const sp = await searchParams;
-  const allRows = await listAllDealStatsRows();
+  const allRows = await listCanonicalDealMetrics();
   const years = availableYears(allRows);
 
   const sort = isSortKey(sp.sort) ? sp.sort : "signingDate";
@@ -74,8 +61,7 @@ export default async function DealsPage({
     <Container wide className="py-10">
       <h1 className="font-serif text-3xl font-semibold tracking-tight text-ink">Deal explorer</h1>
       <p className="mt-1.5 text-sm text-ink-muted">
-        {total} deal{total === 1 ? "" : "s"} with a completed extraction, out of {allRows.length} tracked. A{" "}
-        <span className="text-accent">•</span> marks a figure resting on at least one not-yet-reviewed fact.
+        {total} of {allRows.length} canonical deals.
       </p>
 
       <div className="mt-6">
@@ -119,23 +105,21 @@ export default async function DealsPage({
                 <tr key={row.slug} className="transition-colors hover:bg-surface-raised">
                   <td className="px-3 py-3 font-medium">
                     <Link href={`/deals/${row.slug}`} className="hover:text-accent">
-                      {row.target}
+                      {row.targetDisplay}
                     </Link>
                   </td>
-                  <td className="px-3 py-3 text-ink-muted">{acquirerDisplayName(row.slug, row.acquirer)}</td>
+                  <td className="px-3 py-3 text-ink-muted">{row.acquirerDisplay}</td>
                   <td className="px-3 py-3 tabular-nums text-ink-muted">{formatDate(row.signingDate)}</td>
                   <td className="px-3 py-3 text-ink-muted">
                     {row.considerationType ? CONSIDERATION_TYPE_LABELS[row.considerationType] ?? row.considerationType : "—"}
                   </td>
                   <td className="px-3 py-3 text-right tabular-nums text-accent">
-                    {formatPrice(row.finalBidPrice)}
-                    <UnreviewedMark show={row.bidStatsUnreviewed} />
+                    <PriceValue price={row.finalPrice} plausible={row.pricePlausible} />
                   </td>
                   <td className="px-3 py-3 text-right tabular-nums">{row.nBidders}</td>
                   <td className="px-3 py-3 text-right tabular-nums">{row.nProposals}</td>
                   <td className="px-3 py-3 text-right tabular-nums">
-                    {row.pctChange !== null ? `${row.pctChange >= 0 ? "+" : ""}${row.pctChange.toFixed(0)}%` : "—"}
-                    <UnreviewedMark show={row.bidStatsUnreviewed} />
+                    {row.pctBump !== null ? `${row.pctBump >= 0 ? "+" : ""}${row.pctBump.toFixed(1)}%` : "—"}
                   </td>
                   <td className="px-3 py-3 text-right tabular-nums">{row.daysFirstContactToSigning ?? "—"}</td>
                 </tr>

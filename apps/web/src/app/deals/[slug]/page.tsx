@@ -10,9 +10,11 @@ import {
   getParagraphsForDeal,
   getFilingUrlForDeal,
 } from "@/lib/queries";
+import { getDealMetricsBySlug } from "@/lib/dealMetrics";
 import { formatDate, formatPrice, formatPriceRange } from "@/lib/format";
-import { acquirerDisplayName } from "@/lib/labels";
+import { dealTitle } from "@/lib/labels";
 import { computeDealSummary } from "@/lib/dealSummary";
+import { PriceValue } from "@/components/ui/PriceValue";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { LinkButton } from "@/components/ui/Button";
@@ -23,10 +25,11 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const deal = await getDealBySlug(slug);
+  const [deal, metrics] = await Promise.all([getDealBySlug(slug), getDealMetricsBySlug(slug)]);
   if (!deal) return {};
+  const title = metrics ? dealTitle(metrics.acquirerDisplay, metrics.targetDisplay) : deal.deal_name;
   return {
-    title: `${deal.target} → ${acquirerDisplayName(deal.slug, deal.acquirer)}`,
+    title,
     description: `Sourced sale-process timeline, bid history, and valuation analysis for ${deal.deal_name}, extracted from its SEC merger-proxy filing.`,
   };
 }
@@ -53,7 +56,7 @@ export default async function DealPage({
 }) {
   const { slug } = await params;
   const { fact: factId } = await searchParams;
-  const deal = await getDealBySlug(slug);
+  const [deal, metrics] = await Promise.all([getDealBySlug(slug), getDealMetricsBySlug(slug)]);
   if (!deal) notFound();
 
   const [factsRun, valuationsRun] = await Promise.all([
@@ -80,29 +83,27 @@ export default async function DealPage({
   ]);
 
   const finalProposal = pickFinalProposal(proposals);
-  const finalPrice = finalProposal?.price_high ?? finalProposal?.price_low ?? null;
+  const finalPrice = metrics?.finalPrice ?? finalProposal?.price_high ?? finalProposal?.price_low ?? null;
   const signingEvent = events.find((e) => e.event_type === "signing" && e.date_start);
   const summary = computeDealSummary(events, proposals, deal.target);
   const initialFact = factId
     ? [...events, ...proposals, ...valuations].find((f) => f.id === factId) ?? null
     : null;
+  const targetDisplay = metrics?.targetDisplay ?? deal.target;
+  const acquirerDisplay = metrics?.acquirerDisplay ?? deal.acquirer;
 
   return (
     <Container wide className="py-10">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <h1 className="font-serif text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
-            {deal.target} <span className="text-ink-faint">→</span>{" "}
-            {acquirerDisplayName(deal.slug, deal.acquirer)}
+            {dealTitle(acquirerDisplay, targetDisplay)}
           </h1>
           <p className="mt-1.5 text-sm text-ink-muted">{deal.deal_name}</p>
         </div>
         <div className="flex gap-2">
           <LinkButton href={`/deals/${deal.slug}/memo`} variant="secondary">
             Memo
-          </LinkButton>
-          <LinkButton href={`/review/${deal.slug}`} variant="primary">
-            Review facts
           </LinkButton>
         </div>
       </div>
@@ -111,7 +112,7 @@ export default async function DealPage({
         <Card className="p-3.5">
           <dt className="text-xs text-ink-muted">Price per share</dt>
           <dd className="mt-0.5 text-lg font-semibold tabular-nums text-accent">
-            {formatPriceRange(finalProposal?.price_low ?? null, finalProposal?.price_high ?? null)}
+            <PriceValue price={finalPrice} plausible={metrics?.pricePlausible ?? null} />
           </dd>
         </Card>
         <Card className="p-3.5">
@@ -178,17 +179,13 @@ export default async function DealPage({
             <dd className="mt-0.5 text-sm font-medium capitalize text-ink">{summary.marketCheck}</dd>
           </div>
         </dl>
-        <p className="mt-3 text-xs text-ink-faint">
-          Based on {summary.nConfirmed} confirmed and {summary.nUnreviewed} unreviewed fact
-          {summary.nConfirmed + summary.nUnreviewed === 1 ? "" : "s"}
-          {summary.nRejectedExcluded > 0 && ` (${summary.nRejectedExcluded} rejected fact${summary.nRejectedExcluded === 1 ? "" : "s"} excluded)`}.
-        </p>
+        <p className="mt-3 text-xs text-ink-faint">Every fact is machine-verified against a quote from the filing.</p>
       </Card>
 
       <div className="mt-10">
         <DealView
-          target={deal.target}
-          acquirer={acquirerDisplayName(deal.slug, deal.acquirer)}
+          target={targetDisplay}
+          acquirer={acquirerDisplay}
           finalPrice={finalPrice}
           events={events}
           proposals={proposals}

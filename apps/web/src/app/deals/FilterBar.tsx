@@ -63,7 +63,7 @@ export function FilterBar({ years }: { years: string[] }) {
       <Select
         value={searchParams.get("year") ?? ""}
         onChange={(v) => updateParam("year", v)}
-        allLabel="All years"
+        allLabel="All signing years"
         options={years.map((y) => ({ value: y, label: y }))}
       />
       <Select

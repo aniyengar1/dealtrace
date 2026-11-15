@@ -1,6 +1,6 @@
-// Pure constants/types shared by the server-only deal explorer query
-// logic (dealsExplorer.ts) and client components (FilterBar) that render
-// filter controls -- kept out of dealsExplorer.ts itself so importing
+// Pure constants/types shared by the server-only deal metrics query
+// logic (dealMetrics.ts) and client components (FilterBar) that render
+// filter controls -- kept out of dealMetrics.ts itself so importing
 // them never pulls the "server-only" / pg-backed module into a client
 // bundle.
 

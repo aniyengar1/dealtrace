@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import type { EventRow, Fact, ParagraphRow, ProposalRow, ValuationRow } from "@/lib/types";
 import { BidChart } from "./BidChart";
 import { HorizontalTimeline } from "./HorizontalTimeline";
@@ -8,7 +8,6 @@ import { Timeline } from "./Timeline";
 import { ValuationPanel } from "./ValuationPanel";
 import { EvidenceDrawer } from "./EvidenceDrawer";
 import { PartiesPanel } from "./PartiesPanel";
-import { ReviewProgressBanner } from "@/components/StatusBadge";
 
 export function DealView({
   target,
@@ -31,15 +30,8 @@ export function DealView({
 }) {
   const [selected, setSelected] = useState<Fact | null>(initialFact);
 
-  const { reviewed, total } = useMemo(() => {
-    const all = [...events, ...proposals, ...valuations];
-    return { reviewed: all.filter((f) => f.review_status !== "unreviewed").length, total: all.length };
-  }, [events, proposals, valuations]);
-
   return (
     <div className="space-y-10">
-      <ReviewProgressBanner reviewed={reviewed} total={total} />
-
       <section id="timeline">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-muted">Process timeline</h2>
         <div className="mt-3">

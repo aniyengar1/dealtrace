@@ -1,42 +1,61 @@
 import "server-only";
 
-import type { DealSummary } from "./types";
-import { isAnonymizedPlaceholder, isGenericAcquirerTerm, isSameEntity } from "./entityMatch";
+import { query } from "./db";
 
-const COMMITTEE_RE = /\bcommittee\b/i;
-
-// A deal only belongs in the ticker if it has a real, resolved acquirer
-// name -- never a generic placeholder ("Parent", "Unknown"), an
-// anonymized filing label ("Company A", "Party B"), a board/deal
-// committee ("Conflicts Committee", "Special Committee"), or the target
-// itself under a slightly different name (entity-matched, not just
-// exact string equality).
-function hasRealAcquirer(deal: DealSummary): boolean {
-  const acquirer = deal.acquirer?.trim();
-  if (!acquirer) return false;
-  if (isGenericAcquirerTerm(acquirer)) return false;
-  if (isAnonymizedPlaceholder(acquirer)) return false;
-  if (COMMITTEE_RE.test(acquirer)) return false;
-  if (isSameEntity(acquirer, deal.target)) return false;
-  return true;
+export interface TickerDeal {
+  slug: string;
+  targetDisplay: string;
+  acquirerDisplay: string;
+  finalPrice: number | null;
 }
 
-const MAX_TICKER_ITEMS = 40;
+// A fixed, hand-picked list of well-known deals, not a heuristic filter
+// over the full bulk-loaded set -- the bulk table's entity matching is
+// good enough for cross-deal stats but occasionally resolves an
+// acquirer to a ticker symbol or a generic noun, which reads fine
+// buried in a histogram n but looks broken scrolling past in a hero
+// marquee. Every slug here was checked against deal_metrics: canonical,
+// price_plausible, and a single non-null final_price.
+const CURATED_TICKER_SLUGS = [
+  "splunk",
+  "activision",
+  "mandiant",
+  "citrix",
+  "coupa",
+  "anaplan",
+  "zendesk",
+  "cvent",
+  "bulk_1124610_000114036122035833", // VMware -> Broadcom
+  "bulk_1060736_000119312523112984", // Seagen -> Pfizer
+  "bulk_702165_000119312525226601", // Norfolk Southern -> Union Pacific
+  "bulk_804753_000119312522012548", // Cerner -> Oracle
+  "bulk_899866_000104746921000931", // Alexion Pharmaceuticals -> AstraZeneca
+  "bulk_933136_000110465925072383", // Mr. Cooper -> Rocket
+  "bulk_1604778_000110465925124244", // Qorvo -> Skyworks
+];
 
-export function selectTickerDeals(deals: DealSummary[]): DealSummary[] {
-  const eligible = deals.filter(
-    (d) =>
-      d.is_canonical &&
-      (d.final_price_low !== null || d.final_price_high !== null) &&
-      hasRealAcquirer(d)
+export async function getTickerDeals(): Promise<TickerDeal[]> {
+  const rows = await query<{
+    slug: string;
+    target_display: string;
+    acquirer_display: string;
+    final_price: number | null;
+  }>(
+    `SELECT d.slug, dm.target_display, dm.acquirer_display, dm.final_price
+     FROM deal_metrics dm
+     JOIN deals d ON d.id = dm.deal_id
+     WHERE d.slug = ANY($1) AND dm.is_canonical AND dm.price_plausible IS DISTINCT FROM false
+       AND dm.final_price IS NOT NULL`,
+    [CURATED_TICKER_SLUGS]
   );
 
-  // Curated (hand-registered, slug not "bulk_...") deals are the
-  // well-known names this project started with -- Splunk/Cisco,
-  // Zendesk, Activision, etc. -- so they lead the loop; everything else
-  // follows in whatever order listDealsSummary already sorted them.
-  const curated = eligible.filter((d) => !d.slug.startsWith("bulk_"));
-  const bulk = eligible.filter((d) => d.slug.startsWith("bulk_"));
-
-  return [...curated, ...bulk].slice(0, MAX_TICKER_ITEMS);
+  const bySlug = new Map(rows.map((r) => [r.slug, r]));
+  return CURATED_TICKER_SLUGS.map((slug) => bySlug.get(slug))
+    .filter((r): r is NonNullable<typeof r> => r !== undefined)
+    .map((r) => ({
+      slug: r.slug,
+      targetDisplay: r.target_display,
+      acquirerDisplay: r.acquirer_display,
+      finalPrice: r.final_price,
+    }));
 }

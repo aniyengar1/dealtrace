@@ -9,6 +9,8 @@ import {
   getValuationsForRun,
 } from "@/lib/queries";
 import { buildDealMemo, type MemoLine } from "@/lib/memo";
+import { getDealMetricsBySlug } from "@/lib/dealMetrics";
+import { dealTitle } from "@/lib/labels";
 import { Container } from "@/components/ui/Container";
 import { EmptyState } from "@/components/ui/EmptyState";
 
@@ -42,7 +44,7 @@ function LineList({ slug, lines }: { slug: string; lines: MemoLine[] }) {
 
 export default async function DealMemoPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const deal = await getDealBySlug(slug);
+  const [deal, metrics] = await Promise.all([getDealBySlug(slug), getDealMetricsBySlug(slug)]);
   if (!deal) notFound();
 
   const [factsRun, valuationsRun] = await Promise.all([
@@ -74,7 +76,7 @@ export default async function DealMemoPage({ params }: { params: Promise<{ slug:
         <div>
           <h1 className="font-serif text-2xl font-semibold tracking-tight text-ink">{memo.dealName} — Deal memo</h1>
           <p className="mt-1 text-sm text-ink-muted">
-            {memo.target} <span className="text-ink-faint">→</span> {memo.acquirer}
+            {metrics ? dealTitle(metrics.acquirerDisplay, metrics.targetDisplay) : dealTitle(memo.acquirer, memo.target)}
           </p>
         </div>
         <div className="flex gap-2">

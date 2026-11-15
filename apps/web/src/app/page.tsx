@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { listDealsSummary } from "@/lib/queries";
+import { listCanonicalDealMetrics } from "@/lib/dealMetrics";
 import { computeHomeStats } from "@/lib/homeStats";
-import { selectTickerDeals } from "@/lib/tickerDeals";
+import { getTickerDeals } from "@/lib/tickerDeals";
+import { statDecimals } from "@/lib/format";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { LinkButton } from "@/components/ui/Button";
@@ -18,7 +19,7 @@ export const dynamic = "force-dynamic";
 const STEPS = [
   {
     title: "SEC filing",
-    body: "A DEFM14A, SC 14D9, or S-4 merger proxy is fetched and cached from EDGAR the moment it's filed.",
+    body: "A DEFM14A, SC 14D9, or S-4 merger proxy is fetched and cached from EDGAR.",
   },
   {
     title: "Extraction",
@@ -37,12 +38,15 @@ const STEPS = [
 const FEATURED_SLUGS = ["splunk", "zendesk", "activision", "mandiant", "citrix", "coupa"];
 
 export default async function HomePage() {
-  const [deals, stats] = await Promise.all([listDealsSummary(), computeHomeStats()]);
-  const featured = FEATURED_SLUGS.map((slug) => deals.find((d) => d.slug === slug)).filter(
-    (d): d is NonNullable<typeof d> => d !== undefined && d.n_facts_total > 0
+  const [allCanonical, stats, tickerDeals] = await Promise.all([
+    listCanonicalDealMetrics(),
+    computeHomeStats(),
+    getTickerDeals(),
+  ]);
+  const featured = FEATURED_SLUGS.map((slug) => allCanonical.find((d) => d.slug === slug)).filter(
+    (d): d is NonNullable<typeof d> => d !== undefined
   );
   const headlineCount = stats.nDealsCovered;
-  const tickerDeals = selectTickerDeals(deals);
 
   return (
     <div>
@@ -109,12 +113,12 @@ export default async function HomePage() {
       {/* Stats band */}
       <section className="border-b border-border">
         <Container wide className="py-12">
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
             <StatNumber value={stats.nDealsCovered} label="Deals covered" size="lg" />
             {stats.medianBidders && (
               <StatNumber
                 value={stats.medianBidders.value}
-                decimals={1}
+                decimals={statDecimals(stats.medianBidders.value)}
                 label="Median distinct bidders per deal"
                 n={stats.medianBidders.n}
                 size="lg"
@@ -123,6 +127,7 @@ export default async function HomePage() {
             {stats.medianProposals && (
               <StatNumber
                 value={stats.medianProposals.value}
+                decimals={statDecimals(stats.medianProposals.value)}
                 label="Median proposals per deal"
                 n={stats.medianProposals.n}
                 size="lg"
@@ -131,6 +136,7 @@ export default async function HomePage() {
             {stats.medianPctBump && (
               <StatNumber
                 value={stats.medianPctBump.value}
+                decimals={statDecimals(stats.medianPctBump.value)}
                 prefix={stats.medianPctBump.value >= 0 ? "+" : ""}
                 suffix="%"
                 label="Median first → final bump (cash deals)"
@@ -141,8 +147,19 @@ export default async function HomePage() {
             {stats.medianDaysToSigning && (
               <StatNumber
                 value={stats.medianDaysToSigning.value}
+                decimals={statDecimals(stats.medianDaysToSigning.value)}
                 label="Median days, first contact → signing"
                 n={stats.medianDaysToSigning.n}
+                size="lg"
+              />
+            )}
+            {stats.pctFirstBidderWon && (
+              <StatNumber
+                value={stats.pctFirstBidderWon.value}
+                decimals={statDecimals(stats.pctFirstBidderWon.value)}
+                suffix="%"
+                label="The first bidder is the eventual acquirer"
+                n={stats.pctFirstBidderWon.n}
                 size="lg"
               />
             )}
@@ -195,7 +212,7 @@ export default async function HomePage() {
             </div>
             <p className="mt-6 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
               <Link href="/deals" className="text-accent hover:underline">
-                Browse all {deals.length} deals →
+                Browse all {headlineCount} deals →
               </Link>
             </p>
           </Container>
@@ -224,7 +241,7 @@ export default async function HomePage() {
               <Card className="p-5">
                 <p className="text-sm font-medium text-ink">Zendesk &mdash; Consortium (held-out)</p>
                 <p className="mt-1 text-2xl font-serif text-accent">97% / 100%</p>
-                <p className="mt-1 text-sm text-ink-muted">recall / precision on core events and proposals, never seen during development</p>
+                <p className="mt-1 text-sm text-ink-muted">core-event recall / proposal recall, never seen during development</p>
               </Card>
             </Reveal>
           </div>

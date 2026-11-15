@@ -20,6 +20,13 @@ const PIPELINE_STEPS = [
   { title: "Load + review", body: "Validated records land in Postgres keyed to their source paragraphs. A human reviewer can confirm, correct, or reject any fact — review status is tracked but never blocks a fact from showing, just from being presented as verified." },
 ];
 
+const DISCOVERY_FUNNEL: { label: string; count: number }[] = [
+  { label: "Candidate filings", count: 3388 },
+  { label: "Public-company acquisitions", count: 1607 },
+  { label: "Extracted", count: 1174 },
+  { label: "Unique deals (after de-duplication)", count: 964 },
+];
+
 const EXTRACTED_FIELDS: { type: string; fields: string }[] = [
   { type: "Event", fields: "date (as written + resolved), event type, parties involved, a one-sentence summary" },
   { type: "Proposal", fields: "date, proposer/recipient, price range, premium %, consideration type, proposal kind, status (open/accepted/rejected/superseded/withdrawn)" },
@@ -49,7 +56,7 @@ const ACCURACY_ROWS: {
   pending?: boolean;
 }[] = [
   { deal: "Splunk — Cisco", set: "Development", metric: "Core events & proposals vs. gold answer key", result: "100%" },
-  { deal: "Zendesk — Consortium", set: "Held-out", metric: "Recall / precision, core events & proposals", result: "97% / 100%" },
+  { deal: "Zendesk — Consortium", set: "Held-out", metric: "Core-event recall / proposal recall", result: "97% / 100%" },
   { deal: "20-deal spot check", set: "Bulk extraction sample", metric: "Manual spot-check against source filings", result: "Pending", pending: true },
 ];
 
@@ -84,6 +91,36 @@ export default function MethodologyPage() {
             </Reveal>
           ))}
         </div>
+      </section>
+
+      <section className="mt-14">
+        <Reveal>
+          <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Discovery funnel</h2>
+        </Reveal>
+        <Reveal delay={60}>
+          <div className="mt-5 grid gap-3 sm:grid-cols-4">
+            {DISCOVERY_FUNNEL.map((step, i) => (
+              <div key={step.label} className="relative">
+                <Card className="h-full p-4">
+                  <span className="font-serif text-2xl text-accent tabular-nums">{step.count.toLocaleString()}</span>
+                  <p className="mt-1.5 text-sm text-ink-muted">{step.label}</p>
+                </Card>
+                {i < DISCOVERY_FUNNEL.length - 1 && (
+                  <span className="absolute -right-3 top-1/2 hidden -translate-y-1/2 text-ink-faint sm:block">→</span>
+                )}
+              </div>
+            ))}
+          </div>
+        </Reveal>
+        <p className="mt-3 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
+          De-duplication (<code className="text-ink">src/dedup_deals.py</code>) resolves cases where the same
+          underlying deal surfaces as two or more separately discovered filings &mdash; a target company
+          refiling an amended proxy, or a tender offer and a merger-proxy for the same transaction both getting
+          picked up by discovery. Matches are grouped by target entity and announcement window; one deal in each
+          group is marked canonical (<code className="text-ink">is_canonical</code>), the rest point to it via{" "}
+          <code className="text-ink">duplicate_of</code> and are excluded from every count and statistic on this
+          site.
+        </p>
       </section>
 
       <section className="mt-14">
@@ -198,8 +235,9 @@ export default function MethodologyPage() {
           <Card className="mt-5 p-5 text-sm text-ink-muted">
             <ul className="list-disc space-y-2 pl-5">
               <li>
-                Bulk-extracted deals are loaded before human review. A figure resting on at least one unreviewed
-                fact is marked (see the Deal Explorer and Stats pages) — treat it as provisional until reviewed.
+                Every fact shown is machine-verified against a quote from its filing before it&apos;s loaded, but
+                human review of bulk-extracted deals is still in progress behind the scenes — a figure can be
+                accurate to its source quote and still reflect a model misreading of that quote.
               </li>
               <li>
                 Automated deal discovery and classification is best-effort: the same underlying filing can
