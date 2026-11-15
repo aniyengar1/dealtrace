@@ -16,6 +16,7 @@ from .sec import fetch,CACHE
 from src.fetch import USER_AGENT
 from .actuals import Blocked
 from uuid import UUID
+from urllib.parse import urljoin
 
 WATCH={
  'PD':'https://investor.pagerduty.com/news/default.aspx',
@@ -56,19 +57,53 @@ def deadline(evidence):
     return datetime.combine(day,time.min,zone).astimezone(timezone.utc)
 
 
-def refresh_announcement(company,evidence):
+def verify_durable(company,evidence):
+    """Integrity and provenance only; historical retrieval time never refreshed."""
+    target=company['quarter_targets'][-1]
+    if evidence.get('company')!=company['ticker'] or any(evidence.get('fiscal_period',{}).get(k)!=target[k] for k in ('start','end')):
+        raise Blocked('DURABLE_EVIDENCE_TARGET_MISMATCH','Exact issuer and target fiscal period required')
     if evidence.get('verification_status')=='user_verified' and evidence.get('verification_method')=='owner_pdf_document_review_v1':
         from .owner_evidence import refresh
-        return refresh(company,evidence)
+        try:return refresh(company,evidence)
+        except (OSError,ValueError,KeyError) as exc:raise Blocked('DURABLE_EVIDENCE_INTEGRITY_GAP',type(exc).__name__) from exc
+    path=evidence.get('cached_body')
+    if not path or not Path(path).resolve().is_relative_to(CACHE.resolve()):
+        raise Blocked('DURABLE_EVIDENCE_MISSING','Preserved official source body required')
+    try:body=Path(path).read_bytes()
+    except OSError as exc:raise Blocked('DURABLE_EVIDENCE_MISSING','Preserved source body unavailable') from exc
+    if hashlib.sha256(body).hexdigest()!=evidence.get('source_sha256'):
+        raise Blocked('DURABLE_EVIDENCE_INTEGRITY_GAP','Preserved announcement bytes changed')
+    return dict(evidence)
+
+def refresh_announcement(company,evidence):
+    evidence=verify_durable(company,evidence)
+    if evidence.get('verification_method')=='owner_pdf_document_review_v1':
+        raise Blocked('CURRENT_STATE_CHECK_REQUIRED','Historical owner PDF is valid durable evidence; supply a fresh owner-browser current-state check, not a new PDF retrieval')
     check=check_source(company['ticker'],evidence['source_url'],source_date=evidence['announcement_issued_date'],report_date=evidence['release_date'])
     if check['status']!='confirmed':raise Blocked('ANNOUNCEMENT_ACCESS_GAP','Fresh full official announcement could not be verified: '+str(check.get('http_status',check.get('error_type',check['status']))))
     if check['sha256']!=evidence.get('source_sha256'):
         raise Blocked('ANNOUNCEMENT_SOURCE_CHANGED','The source body changed; review and append new evidence instead of reusing or rewriting the old date.')
-    # check_source already retains the actual body, hash and retrieval timestamp.
-    return {**evidence,'previous_evidence_id':evidence.get('id'),'checked_at':check['checked_at'],
-            'retrieved_at':check['fetched_at'],'source_sha256':check['sha256'],
-            'verifier':'Codex deterministic date check; original full-document review retained',
-            'recheck':check}
+    # Durable provenance is unchanged. New HTTP observation is a separate check.
+    target=company['quarter_targets'][-1]
+    current={'policy_version':'current-state-checks-v2','method':'automated_http','status':'unchanged',
+        'checked_at':check['checked_at'],'company':company['ticker'],'target_start':target['start'],'target_end':target['end'],
+        'source_url':evidence['source_url'],'verification_status':'independently_verified',
+        'observed_schedule':{k:evidence.get(k) for k in ('release_date','timezone','time_precision','release_time','release_timestamp','timestamp_kind','timestamp_source_quote')},'http_check':check}
+    return {**evidence,'prelock_schedule_check':current}
+
+
+def sec_publication_check(company,target):
+    result={'success':False,'status':'unverified','checked_at':datetime.now(timezone.utc).isoformat()}
+    try:
+        b,m=fetch(f'https://data.sec.gov/submissions/CIK{company["cik"]}.json',refresh=True)
+        filings=json.loads(b)['filings']['recent'];suspects=[]
+        for i,form in enumerate(filings['form']):
+            if form in ('8-K','8-K/A','10-Q','10-K') and filings['filingDate'][i]>=target['end']:
+                if form in ('10-Q','10-K') or '2.02' in filings.get('items',['']*len(filings['form']))[i]:
+                    suspects.append({'form':form,'filed':filings['filingDate'][i],'accession':filings['accessionNumber'][i]})
+        result.update(success=True,status='possible_results' if suspects else 'clear',manifest=m,possible_results_filings=suspects)
+    except (requests.RequestException,RuntimeError,ValueError,OSError) as exc:result['error_type']=type(exc).__name__
+    return result
 
 
 def publication_check(company,target):
@@ -78,17 +113,11 @@ def publication_check(company,target):
     Source absence is not a guarantee against undisclosed/third-party publication.
     """
     result={'checked_at':datetime.now(timezone.utc).isoformat(),'target_start':target['start'],'target_end':target['end'],
-            'status':'unverified','sec':{'success':False},'official_ir':{'success':False},'verifier':'Crosscheck publication-metadata checker v1'}
+            'policy_version':'current-state-checks-v2','status':'unverified','sec':{'success':False},'official_ir':{'success':False},'verifier':'Crosscheck publication-metadata checker v1'}
     try:
-        b,m=fetch(f'https://data.sec.gov/submissions/CIK{company["cik"]}.json',refresh=True)
-        filings=json.loads(b)['filings']['recent'];suspects=[]
-        for i,form in enumerate(filings['form']):
-            if form in ('8-K','8-K/A','10-Q','10-K') and filings['filingDate'][i]>=target['end']:
-                if form in ('10-Q','10-K') or '2.02' in filings.get('items',['']*len(filings['form']))[i]:
-                    suspects.append({'form':form,'filed':filings['filingDate'][i],'accession':filings['accessionNumber'][i]})
-        # Any target-period-or-later results filing requires manual disambiguation.
-        result['sec']={'success':True,'manifest':m,'possible_results_filings':suspects}
-        if suspects:result['status']='already_public_or_unresolved_sec_results';return result
+        result['sec']=sec_publication_check(company,target)
+        if not result['sec']['success']:return result
+        if result['sec']['status']!='clear':result['status']='already_public_or_unresolved_sec_results';return result
         url=WATCH[company['ticker']]
         if url.split('/')[2] not in IR_HOSTS[company['ticker']]:raise ValueError('Official source outside allowlist')
         response=requests.get(url,headers={'User-Agent':USER_AGENT},timeout=20,allow_redirects=False)
@@ -101,8 +130,16 @@ def publication_check(company,target):
         suspect=[s for s in titles if (WORDS[q]+' quarter' in s.lower() or re.search(r'Q\s*'+str(q),s)) and
             (fy in s or 'FY'+fy[-2:] in s) and any(x in s.lower() for x in ('results','revenue','earnings')) and
             not any(x in s.lower() for x in ('announces date','to announce','conference call','earnings call','webcast','guidance','outlook'))]
-        result['official_ir'].update(sha256=sha,retrieved_at=datetime.now(timezone.utc).isoformat(),possible_results_titles=suspect)
+        result['official_ir'].update(sha256=sha,checked_at=result['checked_at'],retrieved_at=datetime.now(timezone.utc).isoformat(),possible_results_titles=suspect,method='automated_http')
         if suspect:result['status']='already_public_or_unresolved_ir_results';return result
+        try:known=announcement(company)['source_url']
+        except Blocked:known=None
+        notices=[{'title':' '.join(a.get_text(' ',strip=True).split()),'url':urljoin(url,a['href'])} for a in soup.find_all('a',href=True)
+            if (WORDS[q]+' quarter' in a.get_text(' ',strip=True).lower() or re.search(r'Q\s*'+str(q),a.get_text())) and
+            (fy in a.get_text() or 'FY'+fy[-2:] in a.get_text()) and
+            any(w in a.get_text().lower() for w in ('to announce','announces date','reschedul','postpon','delay')) and urljoin(url,a['href'])!=known]
+        result['official_ir']['possible_schedule_notices']=notices
+        if notices:result['status']='schedule_update_or_unresolved_ir_notice';return result
         # An accessible, dated news inventory is required, not a JS loading shell.
         dated=bool(re.search(r'(?:20\d{2}[-/]\d{2}[-/]\d{2}|(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2},?\s+20\d{2})',text))
         news=any('financial results' in s.lower() or 'reports' in s.lower() for s in titles)

@@ -89,7 +89,10 @@ def locked(db_conn):
     for r in historical:
         store.insert(conn,'earnings_historical_observations',dict(id=r['id'],company_id=store.company_id('TEST'),period_start=r['period_start'],period_end=r['period_end'],guidance_id=g.id,actual_id=str(uuid4()),status=r['status'],outcome=r['outcome'],public_available_at=baseline.aware(r['public_available_at']),payload=Jsonb(r)))
     obs=history.stored(conn);b=baseline.probabilities('TEST',obs,conn.execute('SELECT clock_timestamp()').fetchone()[0])
-    e=evidence(release);check=dict(status='not_observed',checked_at=datetime.now(timezone.utc).isoformat(),target_start=str(start),target_end=str(end),sec={'success':True},official_ir={'success':True})
+    e=evidence(release);stamp=datetime.now(timezone.utc).isoformat()
+    e['fiscal_period']={'start':str(start),'end':str(end)}
+    e['prelock_schedule_check']={'policy_version':'current-state-checks-v2','method':'automated_http','status':'unchanged','checked_at':stamp,'company':'TEST','target_start':str(start),'target_end':str(end),'source_url':e['source_url'],'verification_status':'independently_verified','observed_schedule':{k:e.get(k) for k in ('release_date','timezone','time_precision','release_time')}}
+    check=dict(policy_version='current-state-checks-v2',status='not_observed',checked_at=stamp,target_start=str(start),target_end=str(end),sec={'success':True,'status':'clear','checked_at':stamp,'manifest':{'url':'https://data.sec.gov/submissions/CIK0000000001.json'},'possible_results_filings':[]},official_ir={'success':True,'method':'automated_http','checked_at':stamp})
     target=dict(start=str(start),end=str(end))
     saved=live.insert_prediction(conn,COMPANY,target,g,b,e,check)
     return conn,g,b,e,check,target,saved
@@ -191,6 +194,7 @@ def test_publication_checks_fail_closed(monkeypatch,tmp_path):
 
 
 def test_changed_announcement_does_not_reuse_date(monkeypatch):
+    monkeypatch.setattr(live,'verify_durable',lambda c,e:e)
     monkeypatch.setattr(live,'check_source',lambda *a,**k:{'status':'confirmed','sha256':'changed'})
     with pytest.raises(Blocked,match='source body changed'):
         live.refresh_announcement({'ticker':'PD'},dict(source_url='official',announcement_issued_date='2026-11-01',release_date='2026-12-01',source_sha256='old'))

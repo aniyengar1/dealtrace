@@ -15,7 +15,7 @@ from .actuals import Blocked
 from .models import plain,dumps
 
 
-def run(conn,registry,*,methods=(METHOD,),announcement_loader=announcement,refresh=refresh_announcement,publication=publication_check):
+def run(conn,registry,*,methods=(METHOD,),checks=None,announcement_loader=announcement,refresh=refresh_announcement,publication=publication_check):
     if tuple(methods) not in ((METHOD,),(LAPLACE_METHOD,),(METHOD,LAPLACE_METHOD)):
         raise ValueError('Use empirical, laplace, or both in their fixed order')
     # Use application write privileges even with a local owner connection.
@@ -43,7 +43,8 @@ def run(conn,registry,*,methods=(METHOD,),announcement_loader=announcement,refre
             if due-now>timedelta(days=14):
                 result['skipped'].append({'company':ticker,'code':'OUTSIDE_14_DAY_WINDOW','release_date':e['release_date'],
                     'next_eligibility_at':(due-timedelta(days=14)).isoformat(),'deadline':due.isoformat(),'announcement_evidence':e});continue
-            e=refresh(c,e)
+            if checks is None:e=refresh(c,e);checked=None
+            else:e,checked=checks(c,target,e)
             actuals,guides=store.records(conn,ticker)
             current=latest_guidance(available_guidance(guides,now.astimezone(ZoneInfo('America/New_York')).date(),date.fromisoformat(target['start']),date.fromisoformat(target['end']),ticker,metric='quarterly_consolidated_revenue'))
             if current.status=='withdrawn':raise Blocked('GUIDANCE_WITHDRAWN','Current public target guidance is withdrawn')
@@ -60,7 +61,7 @@ def run(conn,registry,*,methods=(METHOD,),announcement_loader=announcement,refre
             if not recent or (now.date()-max(a.end for a in recent)).days>policy.actual_days:
                 raise Blocked('STALE_INPUT',f'Manual {policy.version}: actual_days={policy.actual_days} exceeded or no available actual')
             b=probabilities(ticker,observations,now)
-            checked=publication(c,target)
+            if checked is None:checked=publication(c,target)
             if checked['status']!='not_observed':raise Blocked('PUBLICATION_CHECK_BLOCKED',json.dumps(checked,sort_keys=True))
             baselines={METHOD:b,LAPLACE_METHOD:from_empirical(b)}
             pending=[]
@@ -83,11 +84,12 @@ def run(conn,registry,*,methods=(METHOD,),announcement_loader=announcement,refre
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--lock',action='store_true',required=True);parser.add_argument('--output',type=Path);parser.add_argument('--methods',choices=['empirical','laplace','both'],default='empirical')
+    parser=argparse.ArgumentParser();parser.add_argument('--lock',action='store_true',required=True);parser.add_argument('--output',type=Path);parser.add_argument('--owner-check-dir',type=Path);parser.add_argument('--methods',choices=['empirical','laplace','both'],default='empirical')
     args=parser.parse_args()
     if args.output and args.output.exists():parser.error('--output already exists; choose a new execution record')
     try:
-        with store.connect() as conn:r=run(conn,companies(),methods={'empirical':(METHOD,),'laplace':(LAPLACE_METHOD,),'both':(METHOD,LAPLACE_METHOD)}[args.methods])
+        from .current_checks import directory_checker
+        with store.connect() as conn:r=run(conn,companies(),checks=directory_checker(args.owner_check_dir) if args.owner_check_dir else None,methods={'empirical':(METHOD,),'laplace':(LAPLACE_METHOD,),'both':(METHOD,LAPLACE_METHOD)}[args.methods])
         output=args.output or Path('data/cache/earnings/lock-runs')/(r['execution_started_at'].replace(':','-')+'-'+str(uuid4())+'.json')
         output.parent.mkdir(parents=True,exist_ok=True)
         with output.open('x') as stream:stream.write(dumps(r)+'\n')

@@ -110,11 +110,9 @@ def refresh(company,evidence,*,root=CACHE_ROOT):
     if company['ticker']!=intake['company'] or sha(path.read_bytes())!=evidence['source_sha256'] or reviewed!=evidence:
         raise Blocked('OWNER_EVIDENCE_INTEGRITY_GAP','Owner file/review identity or hash changed; append new evidence')
     if evidence['verification_status']!='user_verified' or evidence['gaps']:raise Blocked('OWNER_EVIDENCE_REVIEW_GAP','Complete document review required')
-    now=stamp();retrieved=aware(intake['owner_retrieved_at'])
-    if not timedelta(0)<=aware(now)-retrieved<=timedelta(minutes=10):
-        raise Blocked('OWNER_SOURCE_RECHECK_REQUIRED','Owner-reported source retrieval is older than ten minutes. Supply a new actual owner retrieval/review version or obtain an explicit freshness-policy change; local hashing is not a source refresh.')
-    return {**evidence,'checked_at':intake['owner_retrieved_at'],'recheck':{'kind':'local_owner_file_integrity_check_not_HTTP_refresh','integrity_checked_at':now,
-        'source_retrieval_time_unchanged':intake['owner_retrieved_at'],'pdf_sha256':intake['pdf_sha256']}}
+    return {**evidence,'integrity_check':{'kind':'local_owner_file_integrity_not_current_state_verification',
+        'integrity_checked_at':stamp(),'source_retrieval_time_unchanged':intake['owner_retrieved_at'],'pdf_sha256':intake['pdf_sha256']}}
+
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();sub=p.add_subparsers(dest='command',required=True)

@@ -23,7 +23,7 @@
   "model": "gemini-3.6-flash",
   "output_reservation_multiplier": 2,
   "project": "just-rhythm-506202-j8",
-  "prompt_version": "hybrid-diagnostic-v4-budget8-paused",
+  "prompt_version": "hybrid-post-diagnostic-validator-repair-v1-paused",
   "provider": "google_vertex_ai",
   "reservation_policy": "owner_approved_requested_output_estimate_v4",
   "retry_backoff_seconds": [

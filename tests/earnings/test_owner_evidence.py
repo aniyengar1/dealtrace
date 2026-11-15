@@ -35,8 +35,8 @@ def test_intake_integrity_provenance_review_and_append(tmp_path):
     import json
     data=json.loads((folder/'CRWD.json').read_text());assert len(data['versions'])==2 and data['versions'][0]['http_status']==403
     refreshed=owner.refresh({'ticker':'CRWD'},e,root=root)
-    assert refreshed['checked_at']==i['owner_retrieved_at'] and refreshed['owner_retrieved_at']==e['owner_retrieved_at']
-    assert refreshed['recheck']['kind']=='local_owner_file_integrity_check_not_HTTP_refresh'
+    assert refreshed['checked_at']==e['checked_at'] and refreshed['owner_retrieved_at']==e['owner_retrieved_at']
+    assert refreshed['integrity_check']['kind']=='local_owner_file_integrity_not_current_state_verification'
     Path(i['preserved_file']).write_bytes(b'changed')
     with pytest.raises(Blocked):owner.refresh({'ticker':'CRWD'},e,root=root)
 
@@ -55,4 +55,6 @@ def test_local_hash_does_not_refresh_old_owner_source_retrieval(tmp_path,monkeyp
     p,root,i,r=setup(tmp_path);e=owner.review(i['id'],r,root=root)
     later=(datetime.now(timezone.utc)+timedelta(minutes=11)).isoformat()
     monkeypatch.setattr(owner,'stamp',lambda:later)
-    with pytest.raises(Blocked,match='older than ten minutes'):owner.refresh({'ticker':'CRWD'},e,root=root)
+    refreshed=owner.refresh({'ticker':'CRWD'},e,root=root)
+    assert refreshed['owner_retrieved_at']==e['owner_retrieved_at'] and refreshed['checked_at']==e['checked_at']
+    assert refreshed['integrity_check']['integrity_checked_at']==later

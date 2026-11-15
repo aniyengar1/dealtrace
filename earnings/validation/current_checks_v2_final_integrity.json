@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-11-15T00:25:49.609821+00:00",
+  "read_only": true,
+  "database_functions_match_final_0106": {
+    "earnings_prediction_guard": true,
+    "earnings_owner_pdf_prediction_guard": true,
+    "earnings_current_state_guard": true
+  },
+  "live_predictions": 0,
+  "live_results": 0,
+  "previous_tags": {
+    "session3-lock-ready": "94984fc3ce33c6e85a287738d3a617561cd0cefc",
+    "session3-two-method-lock-ready-20261113": "87f48d40dfba363a7732cbb0b3cf68f473b3d56f",
+    "session3-two-method-lock-ready-20261113-r2": "7dc952c635446bb4ed3a6717d58cb7dc003f62cb"
+  },
+  "protected_financial_method_files_unchanged": [
+    "earnings/baseline.py",
+    "earnings/smoothed_baseline.py",
+    "earnings/history.py",
+    "earnings/score_live.py"
+  ],
+  "accounting_unchanged": {
+    "read_only": true,
+    "attempts": 11,
+    "active_attempts": 0,
+    "ceiling_usd": "8",
+    "known_accounted_usd": "0.363525",
+    "outstanding_reservations_usd": "2.2373935",
+    "occupancy_usd": "2.6009185",
+    "headroom_usd": "5.3990815",
+    "original_probe_reservation_usd": "1.12",
+    "known_subtotals_usd_NOT_ADDITIONAL_CHARGES": "0.9593205",
+    "attempt_rows_sha256": "6d07b5971cef31372ef2234e69311e939521d603b9ff0305a3d74c65319b94d2",
+    "event_rows_sha256": "fd9dbbe31106b39c06c74999ccd351d01e837a04a35c7d36eb269d87b4cf03e1",
+    "provider_billing_cap_guaranteed": false
+  },
+  "dependencies_sha256": "724e79d85f370754531901af2f5c65d07f4b98ef24acffb60e6dddfde0c6b527",
+  "provider_and_count_calls": 0,
+  "fresh_bodies_opened": 0,
+  "inference_paused_freeze_valid": true
+}

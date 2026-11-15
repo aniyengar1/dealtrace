@@ -1,0 +1,8 @@
+{
+  "prompt_version": "hybrid-diagnostic-v4-budget8-paused",
+  "execution_fingerprint": "687fa6481bce6496fd46917cc39e50ab33292887ece58d71639cc25e28045320",
+  "frozen_at": "2026-11-14T10:30:13.332094+00:00",
+  "inference_authorized": false,
+  "generation_rules_changed": false,
+  "reason": "Budget reduced to8; controls paused; completed v4 configs/code retained in archive/completed_v4. No inference occurred under this new control version."
+}

@@ -5,6 +5,7 @@ from datetime import date
 from earnings.models import record_id
 from .schema import Extraction
 from .evidence import locate,roles as evidence_roles
+STATUS_ERRORS={'UNRESOLVED_STATUS','INITIAL_NOT_ESTABLISHED','MISSING_STATUS_EVIDENCE','MISSING_STATUS_REFERENCE','FUTURE_OR_SAME_RELEASE_STATUS_REFERENCE','INCOMPARABLE_STATUS_REFERENCE','STATUS_ARITHMETIC_MISMATCH','STATUS_AMOUNTS_UNRESOLVED','INVALID_STATUS_REFERENCE_INPUT','STATUS_REFERENCE_REQUIRED'}
 REQUIRED={'metric','scope','period','units','basis','guidance_type','amount','issuance'}
 
 def number(m):
@@ -67,9 +68,11 @@ def validate(payload,documents,calendar):
         try:
             if o.fiscal_year is None or o.fiscal_quarter not in (None,1,2,3,4):raise ValueError()
             expected=calendar(o.fiscal_year,o.fiscal_quarter)
-            if o.period_start is None and o.period_end is None:
-                resolved_start,resolved_end=expected;notes.append('PERIOD_RESOLVED_FROM_REGISTERED_CALENDAR_NOT_MODEL')
-            elif expected!=(o.period_start,o.period_end):errors.append('CALENDAR_BOUNDARY_MISMATCH')
+            if any(given is not None and given!=bound for given,bound in zip((o.period_start,o.period_end),expected)):
+                errors.append('CALENDAR_BOUNDARY_MISMATCH')
+            else:
+                resolved_start,resolved_end=expected
+                if o.period_start is None or o.period_end is None:notes.append('PERIOD_RESOLVED_FROM_REGISTERED_CALENDAR_NOT_MODEL')
         except (ValueError,KeyError):errors.append('UNRESOLVED_FISCAL_CALENDAR')
         try:
             issued1=date.fromisoformat(o.issued_start);issued2=date.fromisoformat(o.issued_end)
@@ -85,8 +88,8 @@ def validate(payload,documents,calendar):
             else:
                 prior=parsed.observations[j];pd=docs.get(prior.source_id)
                 if not pd or not src or pd['filed']>=src['filed'] or prior.source_id==o.source_id:errors.append('FUTURE_OR_SAME_RELEASE_STATUS_REFERENCE')
-                key=lambda x:(x.metric_class,x.scope,x.basis_kind,tuple(x.scope_qualifiers),x.currency,x.fiscal_year,x.fiscal_quarter,x.period_start,x.period_end,x.guidance_type)
-                if key(o)!=key(prior) or prior.guidance_type!='direct':errors.append('INCOMPARABLE_STATUS_REFERENCE')
+                key=lambda x:(x.metric_class,x.scope,x.basis_kind,tuple(x.scope_qualifiers),x.currency,x.fiscal_year,x.fiscal_quarter,x.guidance_type)
+                if key(o)!=key(prior) or prior.guidance_type!='direct' or (pd and src and pd.get('company')!=src.get('company')):errors.append('INCOMPARABLE_STATUS_REFERENCE')
                 try:
                     def endpoints(x):
                         if x.amount_style=='point':return number(x.low),number(x.low)
@@ -103,12 +106,20 @@ def validate(payload,documents,calendar):
         elif o.status not in ('withdrawn','unresolved'):errors.append('STATUS_REFERENCE_REQUIRED')
         if o.status!='unresolved' and 'status' not in roles:errors.append('MISSING_STATUS_EVIDENCE')
         result={'evidence_locations':locations,'index':i,'proposal':o.model_dump(),'resolved_period_start':resolved_start,'resolved_period_end':resolved_end,'normalized_low':str(lo) if lo is not None else None,'normalized_high':str(hi) if hi is not None else None,'normalization':'USD center-/+USD tolerance; endpoints not verbatim' if o.amount_style=='absolute_tolerance' else 'Decimal explicit literals','deterministic_errors':sorted(set(errors)),'review_flags':notes,'semantic_validation':'NOT_GUARANTEED','quarantined':True,'review_status':'human_review_pending','deterministic_checks_passed':not errors}
-        result['id']=record_id('hybrid-diagnostic-candidate-v1',result);out.append(result)
-    # A referenced proposal that failed checks cannot approve a revision.
+        result['id']=record_id('hybrid-post-diagnostic-validator-repair-v1',result);out.append(result)
+    # Status history is separate from validity of a quoted range as evidence.
+    # All metric/scope/source/unit/basis/period/availability checks remain required.
+    for result in out:
+        result['range_evidence_errors']=sorted(set(result['deterministic_errors'])-STATUS_ERRORS)
+        if result['proposal']['status']=='withdrawn' or result['normalized_low'] is None or result['normalized_high'] is None:
+            result['range_evidence_errors']=sorted(set(result['range_evidence_errors']+['RANGE_WITHDRAWN_OR_MISSING']))
+        result['range_evidence_checks_passed']=not result['range_evidence_errors']
+    # An unsupported range still cannot support a revision; its own unknown
+    # revision label alone does not invalidate otherwise supported amounts.
     for result in out:
         j=result['proposal']['prior_observation_index']
-        if j is not None and 0<=j<len(out) and out[j]['deterministic_errors']:
+        if j is not None and 0<=j<len(out) and not out[j]['range_evidence_checks_passed']:
             result['deterministic_errors']=sorted(set(result['deterministic_errors']+['INVALID_STATUS_REFERENCE_INPUT']));result['deterministic_checks_passed']=False
     for result in out:
         result['resolved_status']='unresolved' if result['deterministic_errors'] else result['proposal']['status']
-    return {'observations':out,'unresolved_sections':parsed.unresolved_sections,'human_review_complete':False}
+    return {'validation_version':'post-diagnostic-validator-repair-v1','observations':out,'unresolved_sections':parsed.unresolved_sections,'human_review_complete':False}
