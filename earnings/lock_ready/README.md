@@ -1,5 +1,7 @@
 # Preserved Session 3 lock-ready workflow
 
+**Current superseding operating policy:**17 release-local calendar days (`live-entry-17-calendar-days-v1`). Older checkpoint/window descriptions below are historical. Use the17-day checkpoint and [current owner checklist](../CURRENT_CHECKS.md). The planned owner session remains November16 after21:00Pacific; no earlier execution is authorized. Extractor review is deferred, not performed.
+
 Local annotated tag **session3-lock-ready** resolves to **94984fc3ce33c6e85a287738d3a617561cd0cefc**. Verify with `git rev-parse 'session3-lock-ready^{}'`; do not move an existing tag. Session 4's ordering exception does not mark the prospective live gate passed.
 
 `environment.json` records Python **3.14.7**, the existing isolated worktree `.venv`, platform and dependency fingerprints. `requirements.lock` pins all installed direct/transitive versions; the existing top-level requirements were not changed. No dependency was installed or upgraded in Session 4. To reconstruct elsewhere, create an isolated venv with the recorded Python and install `-r earnings/lock_ready/requirements.lock`; psycopg and psycopg-binary are pinned binary builds. Reproduction on another OS may require compatible binary wheels; do not reuse Claude's shared environment.
@@ -11,7 +13,7 @@ The tag freezes **code, not live evidence**. Actual locks must refresh SEC facts
 `check.py` is external to the lock import graph. It does not modify production modules on disk. The read-only adapter suppresses history INSERTs and captures proposed ledger INSERTs as research diagnostics. PostgreSQL `BEGIN READ ONLY` is a separate write barrier; all connections roll back. No prediction ID or made_at is fabricated, and `locked` is always empty. Missing unimported history versions are reported rather than silently inserted. It checks that required earnings migrations already exist and then exercises production queries against the schema.
 
 ```sh
-.venv/bin/python earnings/lock_ready/check.py --code-root . --output /tmp/crosscheck-dry-run-new.json
+.venv/bin/python earnings/lock_ready/check.py --code-root . --methods both --offline-sources --output /tmp/crosscheck-dry-run-new.json
 ```
 
 For the reviewed version, the session used a `git archive session3-lock-ready` copy under `/tmp/crosscheck-lock-ready-94984fc`; it did not change either active worktree or branch. Run the same external harness with `--code-root /tmp/crosscheck-lock-ready-94984fc`. The harness loads required environment variables through python-dotenv from the active worktree; it never prints them. It uses the same pinned isolated interpreter for both code copies.
@@ -24,10 +26,10 @@ All four verified releases have after-close wording, not exact results timestamp
 
 | Company | Window opens | Strict deadline |
 |---|---|---|
-| OKTA | Nov 17, 2026 00:00 EST / 05:00 UTC | Dec 1, 2026 00:00 EST / 05:00 UTC |
-| CRM | Nov 18, 2026 00:00 EST / 05:00 UTC | Dec 2, 2026 00:00 EST / 05:00 UTC |
-| IOT | Nov 19, 2026 00:00 EST / 05:00 UTC | Dec 3, 2026 00:00 EST / 05:00 UTC |
-| S | Nov 19, 2026 00:00 EST / 05:00 UTC | Dec 3, 2026 00:00 EST / 05:00 UTC |
+| OKTA | Nov 14, 2026 00:00 EST / 05:00 UTC | Dec 1, 2026 00:00 EST / 05:00 UTC |
+| CRM | Nov 15, 2026 00:00 EST / 05:00 UTC | Dec 2, 2026 00:00 EST / 05:00 UTC |
+| IOT | Nov 16, 2026 00:00 EST / 05:00 UTC | Dec 3, 2026 00:00 EST / 05:00 UTC |
+| S | Nov 16, 2026 00:00 EST / 05:00 UTC | Dec 3, 2026 00:00 EST / 05:00 UTC |
 
 CRWD/MDB remain unverified because full direct-source retrieval was blocked; ADBE's call is insufficient; PD/GTLB/LULU remain unverified. A missing verified date does not mean an announcement does not exist. No automatic scheduler or future waiting process exists.
 
@@ -55,3 +57,7 @@ Owner PDFs are intake-ready, but CRWD/MDB files are pending. Approved owner evid
 The owner-authorized `current-state-checks-v2` checkpoint supersedes the old retrieval-age rules above. Durable files retain their true dates; fresh current schedule/publication and independent SEC checks have ten-minute limits. Historical tags remain intact, but their older insertion shape is intentionally incompatible with migration0106's current-check guard; use the new checkpoint for actual locks. Do not drop the new guard to run old code. See [CURRENT_CHECKS.md](../CURRENT_CHECKS.md) and the current-state review report for the new tag/hash, checklist and commands. Existing baseline math and financial selection are unchanged and tested against both older checkpoints. No dependencies changed in this correction pass.
 
 New tested local tag **`session3-current-state-v2-lock-ready-20261114`** → **`c2c587fdeb550b7afe70a1a54098299d8874589e`**. Metadata: [current_state_v2_checkpoint.json](current_state_v2_checkpoint.json). Full tests549 passed,3 skipped,2 preserved xfails;17 read-only boundary scenarios; zero live predictions. Runtime dependency versions match the existing lock exactly (installer pip26.2.1 is recorded separately). This checkpoint precedes the Nov16 21:00Pacific opening; source freshness must still be established at actual execution.
+
+##17-calendar-day checkpoint
+
+The new checkpoint supersedes earlier **entry timing only**, with migration0107. Both frozen baseline methods/history remain unchanged. The old14-day guidance horizon is retained, capped by actual public availability during early entry; no future guidance is selected. See `window_policy_17.json` and the17-day checkpoint metadata/report for exact change/application timestamps and tag hash. Preserve all older tags. Never disable newer database guards to run an old archive. Offline dry runs must pass `--offline-sources` now that current real time may already be inside the earlier eligibility window; this reports missing current checks instead of making HTTP requests. No dry run can write ledger records.

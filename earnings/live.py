@@ -152,7 +152,7 @@ def publication_check(company,target):
 
 
 def insert_prediction(conn,company,target,guidance,baseline,evidence,check):
-    snapshot={'baseline':plain(baseline),'prediction_kind':'prospective_live','guidance_selection_rule':'latest fully public before the 14-day entry date',
+    snapshot={'baseline':plain(baseline),'prediction_kind':'prospective_live','guidance_selection_rule':'original D-15 guidance horizon, capped by actual public availability at locking',
               'latest_registry_target':target,'threat_model_version':'application-role-immutable-v1'}
     p=baseline['probabilities']
     row=conn.execute('''INSERT INTO earnings_live_predictions(company_id,metric,period_start,period_end,method_version,

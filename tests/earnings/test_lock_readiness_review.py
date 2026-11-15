@@ -17,7 +17,7 @@ from earnings.registry import companies
 from earnings.models import plain,dumps
 from earnings.actuals import Blocked
 
-OPEN=datetime.fromisoformat('2026-11-17T05:00:00+00:00')
+OPEN=datetime.fromisoformat('2026-11-14T05:00:00+00:00')
 DUE=datetime.fromisoformat('2026-12-01T05:00:00+00:00')
 METHODS=('quarter-frequency-v1','quarter-frequency-laplace-v1')
 
@@ -97,7 +97,7 @@ def rehearse(conn):
         (OPEN,'stored_announcement_only'),(OPEN,'announcement_403'),(OPEN,'announcement_hash_change'),
         (OPEN,'publication_403'),(OPEN,'publication_empty'),(OPEN,'already_public'),(OPEN,'possible_sec_result'),(OPEN,'stale_publication'),(OPEN,'owner_complete'),(OPEN,'owner_incomplete'),(OPEN,'owner_schedule_changed'),(OPEN,'owner_already_public'),(OPEN,'owner_stale')]:
         cases.append(scenario(conn,company,clock,mode))
-    assert cases[0]['result']['skipped'][0]['code']=='OUTSIDE_14_DAY_WINDOW'
+    assert cases[0]['result']['skipped'][0]['code']=='OUTSIDE_LOCK_WINDOW'
     for i in (1,2):
         a,b=cases[i]['result']['conditional_candidates_NOT_live'];assert (a['method_version'],b['method_version'])==METHODS
         assert a['guidance_id']==b['guidance_id'] and a['baseline']['historical_ids']==b['baseline']['historical_ids']
@@ -108,6 +108,14 @@ def rehearse(conn):
             a,b=c['result']['conditional_candidates_NOT_live'];assert a['guidance_id']==b['guidance_id'] and a['baseline']['historical_ids']==b['baseline']['historical_ids']
             assert a['durable_checked_at_preserved'] and b['durable_checked_at_preserved']
         else:assert not c['result']['conditional_candidates_NOT_live'] and c['result']['skipped']
+    planned=[]
+    # Planned owner session is after21:00 Pacific; this is test time only.
+    planned_time=datetime.fromisoformat('2026-11-17T05:00:00.000001+00:00')
+    for ticker in ('OKTA','CRM','IOT','S'):
+        item=scenario(conn,deepcopy(companies()[ticker]),planned_time,'hypothetical_clean_checks')
+        a,b=item['result']['conditional_candidates_NOT_live']
+        assert a['guidance_id']==b['guidance_id'] and a['baseline']['historical_ids']==b['baseline']['historical_ids']
+        item['company']=ticker;planned.append(item)
     after=conn.execute('SELECT count(*) FROM earnings_live_predictions').fetchone()[0]
     assert before==after==0
     actuals,guides=store.records(conn,'OKTA');obs=history.stored(conn)
@@ -116,19 +124,19 @@ def rehearse(conn):
         'actual_execution_started_at':real_start.isoformat(),'actual_execution_finished_at':conn.execute('SELECT clock_timestamp()').fetchone()[0].isoformat(),
         'transaction_read_only':conn.execute('SHOW transaction_read_only').fetchone()[0],
         'ledger_count_before':before,'ledger_count_after':after,'provider_or_HTTP_calls':0,
-        'production_clock_or_code_changed':False,'SQL_insert_guards_executed_with_test_time':False,
+        'production_clock_changed':False,'test_clock_only_in_adapter':True,'SQL_insert_guards_executed_with_test_time':False,
         'source_snapshot_limit':'Only currently stored inputs, not unknown future updates. Successful source checks are hypothetical fixtures; not real verification.',
         'opening':OPEN.isoformat(),'strict_deadline':DUE.isoformat(),'company':'OKTA',
         'latest_actual_period_end':str(max(a.end for a in actuals)),
         'freshness_actual_ids':sorted(a.id for a in actuals if a.end==max(v.end for v in actuals)),
-        'stored_history_rows':len(obs),'cases':cases}
+        'stored_history_rows':len(obs),'cases':cases,'planned_session_conditional_cases':planned}
     return result
 
 def test_opening_and_closing_are_exact():
     e={'verification_status':'independently_verified','event_kind':'results_release','timezone':'America/New_York','release_date':'2026-12-01','time_precision':'market_session'}
-    assert live.deadline(e)==DUE and DUE-timedelta(days=14)==OPEN
-    assert DUE-(OPEN-timedelta(microseconds=1))>timedelta(days=14)
-    assert DUE-OPEN==timedelta(days=14)
+    assert live.deadline(e)==DUE and DUE-timedelta(days=17)==OPEN
+    assert DUE-(OPEN-timedelta(microseconds=1))>timedelta(days=17)
+    assert DUE-OPEN==timedelta(days=17)
 
 def test_ttl_exact_limits_and_future_rejection():
     assert ttl_passes(OPEN-timedelta(minutes=10),OPEN,600)

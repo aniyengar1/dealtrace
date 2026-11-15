@@ -1,0 +1,14 @@
+{
+  "recorded_at": "2026-11-15T03:06:29.923377+00:00",
+  "experiment_status": "shelved_by_owner",
+  "owner_review_status": "deferred, not performed",
+  "human_decisions_received": 0,
+  "inference_authorized": false,
+  "token_count_calls_authorized": false,
+  "tuning_authorized": false,
+  "extraction_review_authorized": false,
+  "fresh_evaluation": "reserved and untouched",
+  "prior_artifacts": "Preserved unchanged; previous pending labels are historical states, superseded by this administrative status.",
+  "budget_ceiling_usd": "8",
+  "reservations": "Unchanged; no releases or resets"
+}

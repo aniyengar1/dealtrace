@@ -6,11 +6,11 @@ is an independent guard even if a future code path attempts a write.
 """
 import argparse,json,sys
 from pathlib import Path
-from datetime import datetime,timezone
+from datetime import datetime,timezone,timedelta
 from contextlib import nullcontext
 from dataclasses import replace
 
-p=argparse.ArgumentParser();p.add_argument('--code-root',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--regression',action='store_true');p.add_argument('--methods',choices=['empirical','both'],default='empirical');args=p.parse_args()
+p=argparse.ArgumentParser();p.add_argument('--code-root',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--regression',action='store_true');p.add_argument('--offline-sources',action='store_true');p.add_argument('--methods',choices=['empirical','both'],default='empirical');args=p.parse_args()
 sys.path.insert(0,str(args.code_root.resolve()))
 # Load secrets only through dotenv, never display or serialize environment values.
 from dotenv import load_dotenv
@@ -24,6 +24,9 @@ from earnings.models import dumps,Actual,DateInterval
 
 def protected_run(conn,registry,**kwargs):
     if args.methods=='both':kwargs['methods']=('quarter-frequency-v1','quarter-frequency-laplace-v1')
+    if args.offline_sources:
+        def no_source_refresh(*a):raise Blocked('READ_ONLY_CURRENT_CHECK_REQUIRED','Offline rehearsal: no fresh schedule/publication check performed; no HTTP permitted')
+        kwargs['refresh']=no_source_refresh;kwargs['publication']=no_source_refresh
     original_ingest=history.ingest;original_insert=predict.insert_prediction
     captures=[]
     try:
@@ -51,7 +54,7 @@ if not args.regression:
         result=protected_run(conn,companies());after=conn.execute('SELECT count(*) FROM earnings_live_predictions').fetchone()[0]
         result.update(dry_run=True,ledger_writes_possible=False,transaction_read_only=readonly,
             ledger_count_before=before,ledger_count_after=after,unimported_history_ids=missing,
-            schema_migrations=schema,schema_compatible=True)
+            schema_migrations=schema,schema_compatible=True,offline_sources=args.offline_sources,source_checks_performed=False if args.offline_sources else None)
     finally:conn.rollback();conn.close()
 else:
     from decimal import Decimal
@@ -72,7 +75,7 @@ else:
     original_stored=history.stored;original_records=store.records
     try:
         results=[]
-        for case,stamp in [('outside','2026-11-13T12:00:00+00:00'),('inside','2026-11-20T12:00:00+00:00'),('deadline','2026-12-03T05:00:00+00:00'),('withdrawn','2026-11-20T12:00:00+00:00'),('stale_actual','2026-11-20T12:00:00+00:00'),('already_public','2026-11-20T12:00:00+00:00'),('missing_history','2026-11-20T12:00:00+00:00')]:
+        for case,stamp in [('outside','2026-11-13T12:00:00+00:00'),('inside','2026-11-20T12:00:00+00:00'),('deadline','2026-12-03T05:00:00+00:00'),('withdrawn','2026-11-20T12:00:00+00:00'),('stale_actual','2026-11-20T12:00:00+00:00'),('already_public','2026-11-20T12:00:00+00:00'),('missing_history','2026-11-20T12:00:00+00:00')]+[(f'new_opening_{day}_{position}',stamp) for day,stamp0 in [('dec1','2026-11-14T05:00:00+00:00'),('dec2','2026-11-15T05:00:00+00:00'),('dec3','2026-11-16T05:00:00+00:00'),('old_dec1','2026-11-17T05:00:00+00:00'),('old_dec2','2026-11-18T05:00:00+00:00'),('old_dec3','2026-11-19T05:00:00+00:00')] for position,stamp in [('before',(datetime.fromisoformat(stamp0)-timedelta(microseconds=1)).isoformat()),('at',stamp0),('after',(datetime.fromisoformat(stamp0)+timedelta(microseconds=1)).isoformat())]]:
             clock=datetime.fromisoformat(stamp)
             history.stored=lambda conn:[] if case=='missing_history' else observations
             def records(conn,ticker):

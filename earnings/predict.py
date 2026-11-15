@@ -13,6 +13,7 @@ from .smoothed_baseline import METHOD as LAPLACE_METHOD,from_empirical
 from .live import announcement,deadline,refresh_announcement,publication_check,insert_prediction
 from .actuals import Blocked
 from .models import plain,dumps
+from .lock_window import opening,VERSION as WINDOW_VERSION,DAYS as WINDOW_DAYS
 
 
 def run(conn,registry,*,methods=(METHOD,),checks=None,announcement_loader=announcement,refresh=refresh_announcement,publication=publication_check):
@@ -22,7 +23,7 @@ def run(conn,registry,*,methods=(METHOD,),checks=None,announcement_loader=announ
     conn.execute('SET LOCAL ROLE service_role');loaded=history.ingest(conn)
     now=conn.execute('SELECT clock_timestamp()').fetchone()[0].astimezone(timezone.utc)
     result={'execution_started_at':now.isoformat(),'clock_source':'PostgreSQL clock_timestamp()',
-            'method_version':METHOD,'history_ingestion':loaded,'locked':[],'skipped':[]}
+            'entry_policy':{'version':WINDOW_VERSION,'calendar_days':WINDOW_DAYS},'method_version':METHOD,'history_ingestion':loaded,'locked':[],'skipped':[]}
     if tuple(methods)!=(METHOD,):result['method_versions']=list(methods)
     observations=history.stored(conn)
     for ticker,c in registry.items():
@@ -40,15 +41,18 @@ def run(conn,registry,*,methods=(METHOD,),checks=None,announcement_loader=announ
                 continue
             e=announcement_loader(c);due=deadline(e)
             if now>=due:raise Blocked('LOCK_DEADLINE_PASSED','Publication deadline has passed; no retrospective live prediction')
-            if due-now>timedelta(days=14):
-                result['skipped'].append({'company':ticker,'code':'OUTSIDE_14_DAY_WINDOW','release_date':e['release_date'],
-                    'next_eligibility_at':(due-timedelta(days=14)).isoformat(),'deadline':due.isoformat(),'announcement_evidence':e});continue
+            if now<opening(due,e['timezone']):
+                result['skipped'].append({'company':ticker,'code':'OUTSIDE_LOCK_WINDOW','release_date':e['release_date'],
+                    'next_eligibility_at':opening(due,e['timezone']).isoformat(),'deadline':due.isoformat(),'announcement_evidence':e});continue
             if checks is None:e=refresh(c,e);checked=None
             else:e,checked=checks(c,target,e)
             actuals,guides=store.records(conn,ticker)
             current=latest_guidance(available_guidance(guides,now.astimezone(ZoneInfo('America/New_York')).date(),date.fromisoformat(target['start']),date.fromisoformat(target['end']),ticker,metric='quarterly_consolidated_revenue'))
             if current.status=='withdrawn':raise Blocked('GUIDANCE_WITHDRAWN','Current public target guidance is withdrawn')
-            g=latest_guidance(available_guidance(guides,guidance_cutoff(e['release_date']),date.fromisoformat(target['start']),date.fromisoformat(target['end']),ticker,metric='quarterly_consolidated_revenue'))
+            # The historical D-15 horizon is unchanged. Early entry cannot see
+            # future or still-open day-precision public-availability intervals.
+            cutoff=min(guidance_cutoff(e['release_date']),now.astimezone(ZoneInfo('America/New_York')).date()-timedelta(days=1))
+            g=latest_guidance(available_guidance(guides,cutoff,date.fromisoformat(target['start']),date.fromisoformat(target['end']),ticker,metric='quarterly_consolidated_revenue'))
             if g.status=='withdrawn':raise Blocked('GUIDANCE_WITHDRAWN','Frozen horizon guidance is withdrawn')
             # This categorical target has no prior-year revenue denominator.
             # Do not inherit growth-only scope blocks or a missing future actual.

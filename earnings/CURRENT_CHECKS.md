@@ -4,9 +4,9 @@ This is a manual procedure, not a scheduled job or a completed owner attestation
 
 Durable evidence retains its original source URL, PDF/body, SHA-256, supplier, true retrieval/ingestion/verification times and attribution. File hashing checks integrity only. The ten-minute rule now applies to **current schedule and publication checks**, including each independent SEC/IR component, at insertion; it does not expire a historical announcement. This supersedes the former two-minute publication and ten-minute PDF retrieval rules. Migration0106 enforces the new policy alongside existing immutable snapshots, probability guards and duplicate protection. Old tags are preserved but must not be used to bypass the current schema guard.
 
-## Okta opening
+## Entry windows and planned owner session
 
-Provided the reviewed December1 results date remains unchanged: **November16,2026 21:00 America/Los_Angeles = November17 05:00UTC**. Lock strictly before **December1 00:00 America/New_York = December1 05:00UTC**. “After market close” is not an exact publication time. Do not substitute the call time or16:00. Before the opening, the CLI skips; at the deadline it rejects. These are eligibility boundaries, not automatic jobs or authorization to execute a lock in this preparation pass.
+Provided the reviewed December1 results date remains unchanged: **November13,2026 21:00 America/Los_Angeles = November14 05:00UTC**. Lock strictly before **December1 00:00 America/New_York = December1 05:00UTC**. “After market close” is not an exact publication time. Do not substitute the call time or16:00. Before the opening, the CLI skips; at the deadline it rejects. The old14-day entry rule is superseded by **17 release-local calendar days**, policy `live-entry-17-calendar-days-v1`, enforced in Python and migration0107. These are eligibility boundaries, not automatic jobs or authorization to lock earlier. **The planned owner lock session remains Monday, November16 after21:00 Pacific (November17 after05:00UTC).** No live predictions are authorized by this preparation.
 
 Target: Q3FY2027, **August1–October31,2026**. Current stored range: **$813–817million**, guidance `7790a72a-98d9-57b3-9287-bf22cba52401` (August26 issuance/SEC availability, accession0001660134-26-000068). Seven eligible outcomes: below0 / within0 / above7. Empirical probabilities0/0/1; Laplace0.1/0.1/0.8. Both methods use the same selected inputs and cutoff. Refreshing input data may reveal a legitimate new block; these figures are not frozen future source checks.
 
@@ -19,7 +19,7 @@ Target: Q3FY2027, **August1–October31,2026**. Current stored range: **$813–8
 5. Report target or preliminary results already public, contradictions, missing coverage or unresolved timing as a block. SEC absence alone is insufficient. Only attest `not_observed` if you actually completed all coverage. Identify yourself as the observer; browser observations are `user_verified`, not independently HTTP-verified by Codex.
 6. Fill a copy of [owner_current_check_template.json](owner_current_check_template.json) outside the intake record directory. It intentionally contains null times and false/unknown observations. It is **not** an attestation. All observations must be supplied by you. The one schedule passage may cover multiple roles if that accurately describes your inspection; no invented duplicate evidence is needed.
 7. Intake the completed form. It preserves original JSON bytes/hash and actual ingestion time; it never locks a prediction. Confirm assessment `usable`, correct target and original announcement ID. Blocked observations are also preserved; a latest blocked intake is not replaced by an older favorable one. Recheck pages honestly if the earliest page time will be older than ten minutes by insertion.
-8. At or after the opening, manually invoke both-method locking only under separate live-lock authorization. The command performs its **own independent fresh SEC submissions check**, then revalidates owner freshness after the fetch. Failure or possible SEC results blocks. It records both methods atomically, with actual DB creation times and self-contained evidence. No `--as-of` option exists. Keep the execution output even for zero locks.
+8. During the planned November16 after21:00Pacific session, manually invoke both-method locking only under separate live-lock authorization. Earlier eligibility alone is not permission to execute. The command performs its **own independent fresh SEC submissions check**, then revalidates owner freshness after the fetch. Failure or possible SEC results blocks. It records both methods atomically, with actual DB creation times and self-contained evidence. No `--as-of` option exists. Keep the execution output even for zero locks.
 
 Official pages for Okta (check the entire relevant content):
 
@@ -28,7 +28,7 @@ Official pages for Okta (check the entire relevant content):
 - Quarterly results: https://investor.okta.com/financials/quarterly-results/default.aspx
 - Independent SEC check, fetched by code: https://data.sec.gov/submissions/CIK0001660134.json
 
-Run from the earnings worktree with the isolated `.venv`. Verify the checkpoint/schema first. Migration0106 must be applied. Dependencies remain pinned in `earnings/lock_ready/two_method_requirements.lock`; no shared environment changes.
+Run from the earnings worktree with the isolated `.venv`. Verify the checkpoint/schema first. Migrations0106 and0107 must be applied. The baseline/history selection remains unchanged; early locks cannot select guidance unavailable at actual locking. Dependencies remain pinned in `earnings/lock_ready/two_method_requirements.lock`; no shared environment changes.
 
 ```sh
 # Before the short evidence window; review updated data before proceeding:
@@ -39,7 +39,7 @@ Run from the earnings worktree with the isolated `.venv`. Verify the checkpoint/
 # After your actual checks; does not lock anything:
 .venv/bin/python -m earnings.current_checks /absolute/path/completed-owner-check.json --directory data/cache/earnings/current-checks
 
-# FUTURE MANUAL COMMAND ONLY: at/after Nov16 21:00 Pacific, with fresh usable checks:
+# FUTURE MANUAL COMMAND ONLY: planned Nov16 AFTER21:00 Pacific, with fresh usable checks:
 .venv/bin/python -m earnings.predict --lock --methods both --owner-check-dir data/cache/earnings/current-checks
 ```
 
@@ -50,3 +50,15 @@ The default unique execution filename is printed and saved under `data/cache/ear
 No owner-browser checks have actually been supplied. Actual source checks must be performed at the future lock attempt; this document, the old announcement, and synthetic rehearsals do not establish freshness. Historical evidence must still pass local integrity checks. Original CRWD/MDB owner PDFs remain outstanding. Missing dates for other companies remain unverified.
 
 Human observations can be incomplete or mistaken; browser caching, wrong clocks, overlooked preliminary publication and incomplete inventories remain risks. Official sources plus SEC are not complete internet surveillance; a check-to-insert race remains. An attestation or SHA does not establish authenticity by itself. The DB protects ordinary application writes and immutable locked snapshots, not a DBA who changes enforcement or a dishonest operator. No eligibility, probability or outcome-quality guarantee follows from passing these checks.
+
+## Uniform17-day entry table
+
+| Company/current verified release | Eligibility opens Eastern | Eligibility opens Pacific | Strict deadline Eastern |
+|---|---|---|---|
+| OKTA / December1 | November14,00:00 | November13,21:00 | December1,00:00 |
+| CRM / December2 | November15,00:00 | November14,21:00 | December2,00:00 |
+| IOT and S / December3 | November16,00:00 | November15,21:00 | December3,00:00 |
+
+All four are within the timing window at the planned Monday session, **conditional on all evidence and other gates**. CRWD/MDB's December1 leads would share the first opening only after their evidence is accepted; they are not currently verified/locked. Other unsupported dates remain unverified. Prepare company-specific current checks using each actual official announcement, news and results URL; do not copy Okta observations to another company. Existing owner-attribution, coverage, timestamp, freshness and SEC requirements are unchanged.
+
+The extractor is shelved. Owner extraction review is **deferred, not performed**; do not resume inference, tuning or extraction review. Manual reviewed guidance remains the only target input. Preserve the original random packet/fresh groups and all reservations.
