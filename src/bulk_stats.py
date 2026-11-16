@@ -35,6 +35,7 @@ metrics tables (src.deal_metrics.refresh_all) and the JSON file.
 import json
 import statistics
 from datetime import date
+from pathlib import Path
 from typing import Optional
 
 import psycopg
@@ -45,6 +46,8 @@ from src.env import load_env
 from src.load_db import connect
 
 load_env()
+
+PROMPT_LOCK_PATH = Path("config/prompt_lock.json")
 
 CONTACT_EVENT_TYPES = {"first_contact", "nda", "discussion"}
 N_OUTLIERS = 10
@@ -69,6 +72,44 @@ def _resolve_target(name: Optional[str], target: str) -> Optional[str]:
     return name
 
 
+def _load_prompt_lock_run_dirs() -> dict[str, str]:
+    if not PROMPT_LOCK_PATH.exists():
+        return {}
+    data = json.loads(PROMPT_LOCK_PATH.read_text())
+    return {slug: info["run_dir"] for slug, info in data.get("results", {}).items()}
+
+
+_PROMPT_LOCK_RUN_DIRS = _load_prompt_lock_run_dirs()
+
+
+def _resolve_run_id_for_deal(conn: psycopg.Connection, deal_id: str, slug: str) -> Optional[str]:
+    """Exactly one extraction_runs row per deal, never a sum across
+    several -- a curated deal that went through the v8-v12 prompt
+    iteration cycle (Splunk, Zendesk) has one extraction_runs row PER
+    ITERATION, and joining on deal_id alone (the previous behavior)
+    silently summed proposals/events across all of them, inflating
+    every count (Splunk showed 43 proposals across 3 runs instead of
+    the locked v11 run's real 14). config/prompt_lock.json's own
+    run_dir is authoritative when present (it can name an OLDER run
+    than the globally "locked_prompt_version" -- e.g. Splunk's locked
+    run is explicitly v11, not v12, because v12 only added unrelated
+    functionality and v11's validated result stands). Otherwise falls
+    back to the most recently started run, which is a no-op for the
+    ~1123 deals that only ever had exactly one run anyway."""
+    if slug in _PROMPT_LOCK_RUN_DIRS:
+        row = conn.execute(
+            "SELECT id FROM extraction_runs WHERE deal_id = %s AND run_dir = %s",
+            (deal_id, _PROMPT_LOCK_RUN_DIRS[slug]),
+        ).fetchone()
+        if row:
+            return row[0]
+    row = conn.execute(
+        "SELECT id FROM extraction_runs WHERE deal_id = %s ORDER BY started_at DESC LIMIT 1",
+        (deal_id,),
+    ).fetchone()
+    return row[0] if row else None
+
+
 def _fetch_canonical_deals(conn: psycopg.Connection) -> list[dict]:
     return fetch_deals(conn, canonical_only=True)
 
@@ -84,25 +125,27 @@ def fetch_deals(conn: psycopg.Connection, canonical_only: bool = False) -> list[
     rows = conn.execute(query).fetchall()
     deals = []
     for deal_id, slug, deal_name, target, acquirer in rows:
-        events = conn.execute(
-            """
-            SELECT e.date_start, e.event_type, e.parties
-            FROM events e
-            JOIN extraction_runs r ON r.id = e.run_id
-            WHERE r.deal_id = %s AND e.passed
-            """,
-            (deal_id,),
-        ).fetchall()
-        proposals = conn.execute(
-            """
-            SELECT p.date_resolved, p.proposer, p.recipient, p.price_low, p.price_high,
-                   p.consideration_type, p.status
-            FROM proposals p
-            JOIN extraction_runs r ON r.id = p.run_id
-            WHERE r.deal_id = %s AND p.passed
-            """,
-            (deal_id,),
-        ).fetchall()
+        run_id = _resolve_run_id_for_deal(conn, deal_id, slug)
+        if run_id is None:
+            events, proposals = [], []
+        else:
+            events = conn.execute(
+                """
+                SELECT e.date_start, e.event_type, e.parties
+                FROM events e
+                WHERE e.run_id = %s AND e.passed
+                """,
+                (run_id,),
+            ).fetchall()
+            proposals = conn.execute(
+                """
+                SELECT p.date_resolved, p.proposer, p.recipient, p.price_low, p.price_high,
+                       p.consideration_type, p.status
+                FROM proposals p
+                WHERE p.run_id = %s AND p.passed
+                """,
+                (run_id,),
+            ).fetchall()
         deals.append(
             {
                 "deal_id": deal_id,
