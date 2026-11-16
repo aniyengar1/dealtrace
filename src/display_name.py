@@ -43,13 +43,26 @@ ACRONYM_WHITELIST = {
     "KKR", "EQT", "GIP", "MSD", "DXC", "CSX", "CSR", "UHS", "WES",
     "FSK", "GBDC", "OBDC", "NI", "HGV", "SIC", "KCS", "RBA", "WBD",
     "MBI", "CHP", "CHMI", "GRI", "PIF", "GSP", "HEL", "LCIF", "SKNY",
-    "XOMA",
+    "XOMA", "HIG", "USA", "USAR", "SMTC",
 }
 
-# Whole-name overrides for stylizations that aren't recoverable from an
-# all-caps source at all. Keyed by the suffix-stripped name, uppercased.
-DISPLAY_NAME_OVERRIDES = {
+# Word-level stylization overrides -- same entity, just a capitalization
+# no algorithm can recover from an all-caps source ("VMWARE" has no way
+# to know the internal capital in "VMware"). Applied per word, so it
+# still fires if the name appears as part of a longer phrase, not just
+# as the entire cleaned name (unlike DISPLAY_NAME_OVERRIDES below).
+WORD_OVERRIDES = {
+    "VMWARE": "VMware",
     "MARINEMAX": "MarineMax",
+}
+
+# Whole-name overrides for when the fix isn't a capitalization of the
+# SAME word but an expansion to the fuller name a short acronym stands
+# for ("DFH" -> "Dream Finders Homes") -- preferring the full name over
+# preserving the acronym, the opposite of what ACRONYM_WHITELIST does.
+# Keyed by the suffix-stripped name, uppercased.
+DISPLAY_NAME_OVERRIDES = {
+    "DFH": "Dream Finders Homes",
 }
 
 
@@ -63,12 +76,19 @@ def _strip_edgar_artifacts(name: str) -> str:
 
 
 def _strip_legal_suffixes(name: str) -> str:
+    """The trailing rstrip(",.") below cleans up a comma/period left
+    dangling by the suffix removal ("Holdings, Inc." -> "Holdings,"
+    after removing "Inc." -> "Holdings") -- but must only run when the
+    regex actually matched something. Running it unconditionally on
+    every pass would also strip a genuine trailing period from a name
+    that was never a legal-suffix match at all ("H.I.G." -> "H.I.G",
+    destroying real punctuation in an initialism)."""
     n = name.strip()
     prev = None
     while prev != n:
         prev = n
-        n = _TRAILING_LEGAL_SUFFIX_RE.sub("", n).strip()
-        n = n.rstrip(",.").strip()
+        stripped = _TRAILING_LEGAL_SUFFIX_RE.sub("", n).strip()
+        n = stripped.rstrip(",.").strip() if stripped != n else stripped
     return n
 
 
@@ -76,6 +96,8 @@ def _title_case_word(word: str) -> str:
     bare = re.sub(r"[^A-Za-z]", "", word)
     if not bare:
         return word
+    if bare.upper() in WORD_OVERRIDES:
+        return WORD_OVERRIDES[bare.upper()]
     if bare.upper() in ACRONYM_WHITELIST:
         return word.upper()
     if any(c.islower() for c in word):
