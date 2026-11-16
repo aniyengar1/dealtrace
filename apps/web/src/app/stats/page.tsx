@@ -74,7 +74,9 @@ function GroupStatsCard({ label, stats }: { label: string; stats: GroupStats }) 
         </div>
         <div>
           <dt className="text-xs text-ink-muted">Median days to signing</dt>
-          <dd className="tabular-nums">{stats.medianDaysToSigning ?? "—"}</dd>
+          <dd className="tabular-nums">
+            {stats.medianDaysToSigning !== null ? Math.round(stats.medianDaysToSigning) : "—"}
+          </dd>
         </div>
       </dl>
     </div>

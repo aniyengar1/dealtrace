@@ -46,7 +46,7 @@ export function StatNumber({
       </span>
       <p className="mt-1.5 text-sm text-ink-muted">
         {label}
-        {n !== undefined && <span className="text-ink-faint"> (n = {n})</span>}
+        {n !== undefined && <span className="text-ink"> (n = {n})</span>}
       </p>
     </div>
   );

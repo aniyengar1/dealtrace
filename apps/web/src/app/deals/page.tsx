@@ -37,7 +37,7 @@ export default async function DealsPage({
   const allRows = await listCanonicalDealMetrics();
   const years = availableYears(allRows);
 
-  const sort = isSortKey(sp.sort) ? sp.sort : "signingDate";
+  const sort = isSortKey(sp.sort) ? sp.sort : "nProposals";
   const dir = sp.dir === "asc" ? "asc" : "desc";
   const page = sp.page ? parseInt(sp.page, 10) || 1 : 1;
 

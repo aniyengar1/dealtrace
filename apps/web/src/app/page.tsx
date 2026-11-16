@@ -146,8 +146,7 @@ export default async function HomePage() {
             )}
             {stats.medianDaysToSigning && (
               <StatNumber
-                value={stats.medianDaysToSigning.value}
-                decimals={statDecimals(stats.medianDaysToSigning.value)}
+                value={Math.round(stats.medianDaysToSigning.value)}
                 label="Median days, first contact → signing"
                 n={stats.medianDaysToSigning.n}
                 size="lg"

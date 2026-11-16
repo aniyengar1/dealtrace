@@ -148,7 +148,7 @@ export function filterAndSortDeals(rows: DealMetricsRow[], filter: DealsFilter) 
     filtered = filtered.filter((r) => priceBucketOf(r.finalPrice) === filter.priceBucket);
   }
 
-  const sortKey = filter.sort ?? "signingDate";
+  const sortKey = filter.sort ?? "nProposals";
   const dir = filter.dir === "asc" ? 1 : -1;
   const valueOf = (r: DealMetricsRow): number | null => {
     switch (sortKey) {
@@ -166,12 +166,25 @@ export function filterAndSortDeals(rows: DealMetricsRow[], filter: DealsFilter) 
         return r.daysFirstContactToSigning;
     }
   };
+  // Signing date (most recent first) breaks ties on the primary sort --
+  // most visible on the default "most proposals" sort, where dozens of
+  // deals share a small integer proposal count and would otherwise fall
+  // back to whatever order the query happened to return them in.
+  const byRecentSigningDate = (a: DealMetricsRow, b: DealMetricsRow): number => {
+    const ad = a.signingDate ? Date.parse(a.signingDate) : null;
+    const bd = b.signingDate ? Date.parse(b.signingDate) : null;
+    if (ad === null && bd === null) return 0;
+    if (ad === null) return 1;
+    if (bd === null) return -1;
+    return bd - ad;
+  };
   const sorted = [...filtered].sort((a, b) => {
     const av = valueOf(a);
     const bv = valueOf(b);
-    if (av === null && bv === null) return 0;
+    if (av === null && bv === null) return byRecentSigningDate(a, b);
     if (av === null) return 1;
     if (bv === null) return -1;
+    if (av === bv) return byRecentSigningDate(a, b);
     return (av - bv) * dir;
   });
 
