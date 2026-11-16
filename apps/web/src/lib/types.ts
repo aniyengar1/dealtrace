@@ -8,6 +8,8 @@ export interface Deal {
   target: string;
   acquirer: string;
   search_term: string;
+  is_canonical: boolean;
+  duplicate_of: string | null;
 }
 
 export interface ExtractionRun {

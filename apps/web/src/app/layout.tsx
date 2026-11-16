@@ -4,6 +4,7 @@ import { NavBar } from "@/components/layout/NavBar";
 import { Footer } from "@/components/layout/Footer";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { query } from "@/lib/db";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -19,7 +20,7 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
-const siteUrl = "https://dealtrace.example";
+const siteUrl = SITE_URL;
 
 // Dynamic rather than a static `metadata` export so the headline count
 // in <title> and the meta description always matches the real

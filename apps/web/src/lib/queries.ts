@@ -86,9 +86,19 @@ export async function listDeals(): Promise<Deal[]> {
 }
 
 export async function getDealBySlug(slug: string): Promise<Deal | null> {
-  return queryOne<Deal>(`SELECT id, slug, deal_name, target, acquirer, search_term FROM deals WHERE slug = $1`, [
-    slug,
-  ]);
+  return queryOne<Deal>(
+    `SELECT id, slug, deal_name, target, acquirer, search_term, is_canonical, duplicate_of
+     FROM deals WHERE slug = $1`,
+    [slug]
+  );
+}
+
+// Resolves a duplicate deal's `duplicate_of` id to the slug of the
+// canonical deal it was merged into -- the only lookup a non-canonical
+// deal page needs before redirecting away.
+export async function getDealSlugById(id: string): Promise<string | null> {
+  const row = await queryOne<{ slug: string }>(`SELECT slug FROM deals WHERE id = $1`, [id]);
+  return row?.slug ?? null;
 }
 
 // The most recent run that actually extracted events/proposals (the

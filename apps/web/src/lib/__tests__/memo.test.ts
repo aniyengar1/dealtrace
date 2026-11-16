@@ -84,6 +84,8 @@ const DEAL: Deal = {
   target: "Target Inc",
   acquirer: "Acquirer Co",
   search_term: "target inc",
+  is_canonical: true,
+  duplicate_of: null,
 };
 
 const EVENTS: EventRow[] = [
