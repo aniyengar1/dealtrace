@@ -15,6 +15,12 @@ deal's own slug (minted by src.load_bulk.bulk_slug as
 "bulk_{cik}_{accession_nodash}") rather than from a separate stored
 column -- accession numbers are always exactly 18 digits (10+2+6), so
 re-inserting the dashes is unambiguous.
+
+The "as loaded" reference block (acquirer, final price, bidder counts)
+reads directly from deal_metrics -- the same single source of truth
+the website reads -- rather than recomputing independently, so this
+file can never show something different from what deal_metrics
+actually holds.
 """
 
 import random
@@ -22,7 +28,7 @@ from pathlib import Path
 
 import psycopg
 
-from src.bulk_stats import _dated_proposals, _final_entry, _latest_signing_date, _price, _resolve_target
+from src.bulk_stats import _latest_signing_date, _resolve_target
 from src.env import load_env
 from src.load_db import connect
 
@@ -97,10 +103,10 @@ def _fetch_timeline(conn: psycopg.Connection, deal_id: str, target: str) -> tupl
     )
 
 
-def render_deal(slug: str, target: str, acquirer: str, events: list[dict], proposals: list[dict]) -> str:
+def render_deal(slug: str, target: str, metrics: dict, events: list[dict], proposals: list[dict]) -> str:
     cik, accession_nodash = _parse_slug(slug)
     link = filing_link(cik, accession_nodash)
-    lines = [f"## {target} <- {acquirer}", "", f"- Filing: {link}", ""]
+    lines = [f"## {metrics['target_display']} <- {metrics['acquirer_display']}", "", f"- Filing: {link}", ""]
 
     lines.append("### Events")
     if events:
@@ -123,17 +129,16 @@ def render_deal(slug: str, target: str, acquirer: str, events: list[dict], propo
         lines.append("- (none)")
     lines.append("")
 
-    dated = _dated_proposals(proposals)
-    final = _final_entry(dated)
-    final_price = _price(final) if final else None
     signing_date = _latest_signing_date({"events": events})
     bidders = {p["proposer"] for p in proposals if p["proposer"] and p["proposer"] != target}
 
-    lines.append("### Extracted-as-loaded (reference for the checklist below)")
-    lines.append(f"- Acquirer (as loaded): {acquirer}")
+    lines.append("### deal_metrics (reference for the checklist below -- single source of truth, not recomputed here)")
+    lines.append(f"- Acquirer (acquirer_display): {metrics['acquirer_display']}")
     lines.append(f"- Signing date (as loaded): {signing_date}")
-    lines.append(f"- Final price (as loaded): {final_price}")
-    lines.append(f"- # bidders (as loaded): {len(bidders)} ({', '.join(sorted(bidders)) or 'none'})")
+    lines.append(f"- Final price (final_price): {metrics['final_price']}  (price_plausible: {metrics['price_plausible']})")
+    lines.append(f"- # bidders (n_bidders): {metrics['n_bidders']}  ({', '.join(sorted(bidders)) or 'none'})")
+    lines.append(f"- # parties contacted (n_parties_contacted): {metrics['n_parties_contacted']}")
+    lines.append(f"- # proposals (n_proposals): {metrics['n_proposals']}")
     lines.append("")
 
     lines.append("### Spot-check checklist")
@@ -141,6 +146,19 @@ def render_deal(slug: str, target: str, acquirer: str, events: list[dict], propo
         lines.append(f"- {item} (Y/N): ____  Note: ____")
     lines.append("")
     return "\n".join(lines)
+
+
+def _fetch_metrics(conn: psycopg.Connection, deal_id: str) -> dict:
+    row = conn.execute(
+        """
+        SELECT target_display, acquirer_display, final_price, price_plausible,
+               n_bidders, n_parties_contacted, n_proposals
+        FROM deal_metrics WHERE deal_id = %s
+        """,
+        (deal_id,),
+    ).fetchone()
+    keys = ["target_display", "acquirer_display", "final_price", "price_plausible", "n_bidders", "n_parties_contacted", "n_proposals"]
+    return dict(zip(keys, row))
 
 
 def main() -> None:
@@ -155,7 +173,8 @@ def main() -> None:
         sections = []
         for deal_id, slug, target, acquirer in sample:
             events, proposals = _fetch_timeline(conn, deal_id, target)
-            sections.append(render_deal(slug, target, acquirer, events, proposals))
+            metrics = _fetch_metrics(conn, deal_id)
+            sections.append(render_deal(slug, target, metrics, events, proposals))
 
     header = (
         f"# Bulk deal sample for manual spot-check\n\n"
