@@ -21,10 +21,12 @@ from typing import Optional
 import psycopg
 
 from src import bulk_stats
+from src.bulk_run import load_cached_html
 from src.dedup_deals import _is_generic
 from src.display_name import clean_display_name
 from src.entity_match import is_acronym_of, is_anonymized_placeholder, is_same_entity
 from src.env import load_env
+from src.filing_party_names import extract_acquirer_from_filing, is_shell_name
 from src.load_db import connect
 from src.run import DEALS
 
@@ -138,6 +140,10 @@ def _is_invalid_acquirer_display(name: str, target: str) -> bool:
         return True
     if _is_generic(name) or is_anonymized_placeholder(name):
         return True
+    from src import validate
+
+    if name.strip().lower() in validate._TARGET_DEFINED_TERMS:
+        return True
     if _COMMITTEE_RE.search(name):
         return True
     if is_same_entity(name, target) or is_acronym_of(name, target):
@@ -147,20 +153,66 @@ def _is_invalid_acquirer_display(name: str, target: str) -> bool:
     return False
 
 
-def resolve_acquirer_display(acquirer: str, target: str, proposals: list[dict], events: list[dict]) -> str:
-    """"Best available" full name for the stored (possibly short-form)
-    acquirer: a curated expansion if we have high-confidence outside
-    knowledge of one, else the longest locally-mentioned name that is a
-    literal, safe completion of it (a deal's own text sometimes uses
-    both "Cisco" and "Cisco Systems, Inc." -- prefer the fuller one),
-    else the stored value unchanged -- cleaned (suffix-stripped,
-    title-cased) the same way target_display is, and replaced with
-    "Undisclosed" if what's left is a placeholder, a committee, or the
-    target itself under another name, rather than ever showing one of
-    those to a site visitor as if it were a real acquirer."""
+def _bulk_slug_to_cik_accession(slug: str) -> Optional[tuple[str, str]]:
+    if not slug.startswith("bulk_"):
+        return None
+    _, cik, accession_nodash = slug.split("_")
+    accession = f"{accession_nodash[:10]}-{accession_nodash[10:12]}-{accession_nodash[12:18]}"
+    return cik, accession
+
+
+def _filing_definition_acquirer(slug: str, target: str) -> Optional[str]:
+    """Tries to resolve the acquirer from the filing's own "Parent"/
+    "Purchaser" party definitions (src.filing_party_names) -- a bulk
+    deal only, since a curated deal never reaches this function at
+    all (see compute_metrics_for_deal). Returns None if the slug isn't
+    a bulk one, the cached HTML is missing, or nothing usable is
+    found."""
+    parsed = _bulk_slug_to_cik_accession(slug)
+    if parsed is None:
+        return None
+    html = load_cached_html(*parsed)
+    if html is None:
+        return None
+    return extract_acquirer_from_filing(html, target)
+
+
+def resolve_acquirer_display(
+    acquirer: str, target: str, proposals: list[dict], events: list[dict], slug: str = ""
+) -> str:
+    """"Best available" name for the stored (possibly short-form)
+    acquirer, tried in priority order: (1) a curated expansion if we
+    have high-confidence outside knowledge of one with no local
+    evidence to resolve it any other way (e.g. "NSC" -> "Nippon Steel
+    Corporation"); (2) the filing's OWN "Parent"/"Purchaser" party
+    definition (src.filing_party_names) -- more authoritative than
+    guessing from proposal frequency, since it's the legal name the
+    merger agreement itself uses; (3) the longest locally-mentioned
+    name that is a literal, safe completion of the stored acquirer
+    (a deal's own text sometimes uses both "Cisco" and "Cisco Systems,
+    Inc." -- prefer the fuller one); (4) the stored value unchanged.
+    Whichever wins is cleaned (suffix-stripped, title-cased) the same
+    way target_display is, and replaced with "Undisclosed" if what's
+    left is a placeholder, a committee, or the target itself under
+    another name, rather than ever showing one of those to a site
+    visitor as if it were a real acquirer.
+
+    A filing definition that only resolves to a deal-specific shell
+    ("FP Acquisition Parent, LLC", "Cyclades Parent, Inc") is NOT
+    treated as an improvement over an already-good heuristic answer --
+    several real cases (Chase Corp/KKR, GCP Applied Technologies/
+    Saint-Gobain, MMA Capital Holdings/Hunt) had the filing definition
+    resolve to a shell with no further "affiliate of"/"subsidiary of"
+    refinement available, which would have wrongly replaced an already
+    -correct, already-named real acquirer with a less informative shell
+    name. The shell is still used as a last resort when the heuristic
+    has nothing valid either (better than "Undisclosed")."""
     if acquirer in KNOWN_SHORT_NAME_EXPANSIONS:
         resolved = KNOWN_SHORT_NAME_EXPANSIONS[acquirer]
     else:
+        filing_name = _filing_definition_acquirer(slug, target) if slug else None
+        filing_valid = bool(filing_name) and not _is_invalid_acquirer_display(filing_name, target)
+
         mentioned = set()
         for p in proposals:
             mentioned.add(p.get("proposer"))
@@ -168,9 +220,15 @@ def resolve_acquirer_display(acquirer: str, target: str, proposals: list[dict], 
         for e in events:
             mentioned.update(e.get("parties") or [])
         mentioned.discard(None)
-
         candidates = [acquirer] + [m for m in mentioned if m != target and _is_safe_fuller_name(m, acquirer)]
-        resolved = max(candidates, key=len)
+        heuristic_resolved = max(candidates, key=len)
+
+        if filing_valid and not is_shell_name(filing_name):
+            resolved = filing_name
+        elif _is_invalid_acquirer_display(heuristic_resolved, target) and filing_valid:
+            resolved = filing_name
+        else:
+            resolved = heuristic_resolved
 
     if _is_invalid_acquirer_display(resolved, target):
         return UNDISCLOSED
@@ -203,7 +261,7 @@ def compute_metrics_for_deal(d: dict) -> dict:
         target_display, acquirer_display = _curated_display_names(d["slug"])
     else:
         target_display = clean_display_name(d["target"])
-        acquirer_display = resolve_acquirer_display(d["acquirer"], d["target"], d["proposals"], d["events"])
+        acquirer_display = resolve_acquirer_display(d["acquirer"], d["target"], d["proposals"], d["events"], d["slug"])
 
     return {
         "target_display": target_display,

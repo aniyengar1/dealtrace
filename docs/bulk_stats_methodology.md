@@ -95,6 +95,58 @@ affiliated flagship fund absorbing a numbered-series sibling fund,
 e.g. "FS KKR Capital Corp. II" being acquired by "FSK" = the original,
 larger FS KKR Capital Corp).
 
+## Filing-definition acquirer resolution (`src.filing_party_names`)
+
+`deal_metrics.acquirer_display` no longer relies primarily on the
+proposal-frequency heuristic above. For a bulk deal, the priority is:
+**(1) curated registry name** (only for the 10 hand-built `DEALS`) >
+**(2) the merger agreement's own party definition**, parsed directly
+out of the cached filing text (cover page / summary / opening
+recitals) -- "by and among [Target], [Acquirer], a Delaware
+corporation ("Parent"), and [Merger Sub]" in a merger proxy, or
+"[Acquirer] ("Purchaser")" in a tender offer -- > **(3) the existing
+frequency heuristic**. This is strictly more authoritative than
+frequency-counting when it resolves cleanly: it's the literal legal
+name the merger agreement itself uses, not a guess.
+
+When the defined party is itself an obvious deal-specific shell
+("Heron BidCo, LLC", "Rand Parent, LLC", "Project Merci Merger Sub,
+Inc.", or a single opaque all-caps token like "LEWHP, LLC";
+`src.filing_party_names.is_shell_name`), the extractor first looks for
+a nearby refinement -- "Parent is an affiliate of X", "a wholly-owned
+subsidiary of X", "does business as X" -- and uses X instead when
+found (e.g. Chembio's "Project Merci Merger Sub, Inc." resolves
+through "a wholly-owned indirect subsidiary of Biosynex SA" to
+"Biosynex SA"). If no refinement exists, the shell name is used only
+as a last resort when the frequency heuristic ALSO has nothing valid
+-- never as a replacement for an already-good heuristic answer. This
+ordering was added after several real regressions during development:
+a shell with no refinement ("FP Acquisition Parent, LLC", "Formulations
+Parent Corporation") was initially allowed to overwrite already-correct
+answers like "Hunt" and "KKR" simply because it came from the
+"more authoritative" source; now the heuristic wins whenever the
+filing definition is itself uninformative.
+
+Across 1,115 bulk deals: **179 resolved to a confident, non-shell
+filing-defined name**; **131 more** found only a shell/opaque name from
+the filing (used only where the heuristic had nothing valid either);
+**39 remain `'Undisclosed'`** (down from 121 before this feature).
+
+**Known residual gap: deal code names.** A filing sometimes uses an
+internal project code name ("Project Thunder", "Project Polaris") well
+before any "Parent"/"Purchaser" is named, and once stripped of that
+framing a code name ("Thunder") is a single ordinary English word --
+indistinguishable from a real short company name by any local,
+LLM-free heuristic. A small number of deals picked up a code name in
+place of an already-correct heuristic answer (e.g. UserTesting's
+acquirer briefly read "Thunder" instead of "Thoma Bravo" during
+development, before being caught in spot-checking) -- this specific
+class of regression was not fully eliminated, only reduced via the
+shell/opaque-acronym checks above, which catch conventionally-named
+shells but not code names styled as ordinary words. A site consumer
+treating `acquirer_display` as authoritative should expect occasional
+code names like this, not just "Undisclosed" or a correct name.
+
 ## Signing-event extraction recall
 
 Across all 1,174 processed candidates, ~95.6% have at least one

@@ -25,8 +25,13 @@ stylizations no algorithm can recover from an all-caps source at all
 import re
 
 _EDGAR_STATE_TAG_RE = re.compile(r"[\\/]\s*[A-Za-z]{1,3}\s*[\\/]\s*$")
+# "and Company"/"and Co." is NOT a strippable corporate-form suffix --
+# it's integral to several real, well-known legal names ("Eli Lilly
+# and Company") -- the negative lookbehind keeps "company"/"co" from
+# matching when directly preceded by "and ".
 _TRAILING_LEGAL_SUFFIX_RE = re.compile(
-    r",?\s*\b(incorporated|inc|corporation|corp|company|co|limited|ltd|"
+    r",?\s*\b(incorporated|inc|corporation|corp|(?<!and )(?<!and\s)company|"
+    r"(?<!and )(?<!and\s)co|limited|ltd|"
     r"l\.l\.c\.?|llc|l\.p\.?|lp|p\.l\.c\.?|plc|holdings?|holding|group|"
     r"international|technologies|systems?)\b\.?\s*$",
     re.IGNORECASE,
@@ -43,7 +48,7 @@ ACRONYM_WHITELIST = {
     "KKR", "EQT", "GIP", "MSD", "DXC", "CSX", "CSR", "UHS", "WES",
     "FSK", "GBDC", "OBDC", "NI", "HGV", "SIC", "KCS", "RBA", "WBD",
     "MBI", "CHP", "CHMI", "GRI", "PIF", "GSP", "HEL", "LCIF", "SKNY",
-    "XOMA", "HIG", "USA", "USAR", "SMTC",
+    "XOMA", "HIG", "USA", "USAR", "SMTC", "WHP",
 }
 
 # Word-level stylization overrides -- same entity, just a capitalization
@@ -88,7 +93,15 @@ def _strip_legal_suffixes(name: str) -> str:
     while prev != n:
         prev = n
         stripped = _TRAILING_LEGAL_SUFFIX_RE.sub("", n).strip()
-        n = stripped.rstrip(",.").strip() if stripped != n else stripped
+        candidate = stripped.rstrip(",.").strip() if stripped != n else stripped
+        # A name that's ENTIRELY a suffix word ("Company" on its own,
+        # a Target-side defined-term placeholder that leaked in from a
+        # caller that didn't filter it) would otherwise strip to an
+        # empty string -- keep the original instead of discarding all
+        # information.
+        n = candidate if candidate else n
+        if not candidate:
+            break
     return n
 
 
