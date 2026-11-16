@@ -173,6 +173,18 @@ the underlying `deals.acquirer` was already "Parent"/"Unknown"/a
 committee name, pre-existing from earlier acquirer-guess limitations,
 not new failures from this display layer).
 
+**Curated deals** (the hand-built `src.run.DEALS` registry: Splunk,
+Zendesk, Activision, Mandiant, Citrix, Coupa, Anaplan, Cvent, Twitter,
+New Relic) always use the registry's own names for `target_display`/
+`acquirer_display`, never the heuristic resolver above -- a gold deal
+has no business being re-guessed. The richer acquirer description
+often lives in the registry's `deal_name` field rather than its
+shorthand `acquirer` field (Zendesk's `acquirer` is just "Consortium";
+`deal_name` spells out "Hellman & Friedman and Permira's Acquisition
+of Zendesk"), so `deal_metrics.py` parses it out of `deal_name` instead
+of hardcoding it a second time, falling back to the raw `acquirer`
+field if that parse doesn't come out clean.
+
 `deal_metrics.price_plausible` is `false` when the final price is
 ≤ $0.10/share or the final proposal is a quoted range rather than a
 single settled price, `true` when neither applies, and `NULL` when

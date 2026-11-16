@@ -26,8 +26,31 @@ from src.display_name import clean_display_name
 from src.entity_match import is_acronym_of, is_anonymized_placeholder, is_same_entity
 from src.env import load_env
 from src.load_db import connect
+from src.run import DEALS
 
 UNDISCLOSED = "Undisclosed"
+
+# Curated deals (src.run.DEALS) carry a hand-verified target/acquirer
+# pair -- always use those over the heuristic resolver below, which was
+# built for ~1000 unreviewed bulk extractions and has no business
+# overriding a gold deal. DEALS[slug]["acquirer"] is sometimes a
+# shorthand ("Consortium" for Zendesk, "Vista" for Citrix) that the
+# richer deal_name spells out in full ("Hellman & Friedman and
+# Permira's Acquisition of Zendesk") -- parsed out here rather than
+# hardcoded a second time, so the two can't drift apart. Falls back to
+# the raw acquirer field if deal_name doesn't parse as expected.
+_ACQUISITION_OF_RE = re.compile(r"^(.*)'s Acquisition of (.+)$")
+
+
+def _curated_display_names(slug: str) -> tuple[str, str]:
+    deal = DEALS[slug]
+    target_display = deal["target"]
+    match = _ACQUISITION_OF_RE.match(deal["deal_name"])
+    if match and match.group(2).strip() == target_display.strip():
+        acquirer_display = match.group(1).strip()
+    else:
+        acquirer_display = deal["acquirer"]
+    return target_display, acquirer_display
 
 # Minimum plausible per-share final price for price_plausible -- a
 # final_price at or below this is almost certainly a stray cents-level
@@ -176,9 +199,15 @@ def compute_metrics_for_deal(d: dict) -> dict:
     days_proposal, _ = bulk_stats.compute_days_first_proposal_to_signing_for_deal(d)
     first_bidder_won, _ = bulk_stats.compute_first_bidder_won_for_deal(d)
 
+    if d["slug"] in DEALS:
+        target_display, acquirer_display = _curated_display_names(d["slug"])
+    else:
+        target_display = clean_display_name(d["target"])
+        acquirer_display = resolve_acquirer_display(d["acquirer"], d["target"], d["proposals"], d["events"])
+
     return {
-        "target_display": clean_display_name(d["target"]),
-        "acquirer_display": resolve_acquirer_display(d["acquirer"], d["target"], d["proposals"], d["events"]),
+        "target_display": target_display,
+        "acquirer_display": acquirer_display,
         "n_parties_contacted": bulk_stats.compute_n_parties_contacted_for_deal(d),
         "n_bidders": bulk_stats.compute_n_bidders_for_deal(d),
         "n_proposals": bulk_stats.compute_n_proposals_for_deal(d),

@@ -1,4 +1,4 @@
-from src.deal_metrics import KNOWN_SHORT_NAME_EXPANSIONS, _is_safe_fuller_name, resolve_acquirer_display
+from src.deal_metrics import KNOWN_SHORT_NAME_EXPANSIONS, _curated_display_names, _is_safe_fuller_name, resolve_acquirer_display
 
 
 def test_is_safe_fuller_name_accepts_legal_suffix_completions():
@@ -82,3 +82,22 @@ def test_known_short_name_expansions_is_small_and_curated():
     # Deliberately small -- a wrong guess here is worse than the short
     # form, so this is documentation as much as it is a test.
     assert KNOWN_SHORT_NAME_EXPANSIONS["NSC"] == "Nippon Steel Corporation"
+
+
+def test_curated_display_names_parses_the_richer_acquirer_from_deal_name():
+    # Zendesk's own acquirer field is just "Consortium" -- the full
+    # story lives in deal_name, and must never fall through to
+    # resolve_acquirer_display's heuristic (which would reject
+    # "Consortium" as generic and show "Undisclosed").
+    target, acquirer = _curated_display_names("zendesk")
+    assert target == "Zendesk"
+    assert acquirer == "Hellman & Friedman and Permira"
+
+
+def test_curated_display_names_covers_every_curated_deal():
+    from src.run import DEALS
+
+    for slug in DEALS:
+        target, acquirer = _curated_display_names(slug)
+        assert target and acquirer
+        assert acquirer not in {"Consortium", "Unknown", "Undisclosed"}
