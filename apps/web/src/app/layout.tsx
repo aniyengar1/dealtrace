@@ -1,27 +1,72 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Fraunces, Inter } from "next/font/google";
+import { NavBar } from "@/components/layout/NavBar";
+import { Footer } from "@/components/layout/Footer";
+import { PageTransition } from "@/components/layout/PageTransition";
+import { query } from "@/lib/db";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: "DealTrace",
-  description: "Merger-proxy deal timelines, bids, and valuations",
-};
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-fraunces",
+  axes: ["opsz", "SOFT", "WONK"],
+  display: "swap",
+});
+
+const siteUrl = SITE_URL;
+
+// Dynamic rather than a static `metadata` export so the headline count
+// in <title> and the meta description always matches the real
+// canonical deal count instead of a claim that drifts out of date
+// (or a blanket "every" that promises more coverage than exists).
+export async function generateMetadata(): Promise<Metadata> {
+  const rows = await query<{ count: number }>(`SELECT count(*)::int AS count FROM deals WHERE is_canonical`);
+  const n = rows[0]?.count ?? 0;
+  const description = `DealTrace has extracted ${n} public-company sale processes from SEC filings since 2021 -- who was contacted, how bids moved, how long it took -- with every fact linked to its source quote.`;
+  return {
+    metadataBase: new URL(siteUrl),
+    title: {
+      default: `DealTrace — ${n} public-company sale processes, sourced from SEC filings`,
+      template: "%s · DealTrace",
+    },
+    description,
+    openGraph: {
+      title: "DealTrace",
+      description,
+      url: siteUrl,
+      siteName: "DealTrace",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "DealTrace",
+      description,
+    },
+  };
+}
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-neutral-50 text-neutral-900">
-        <header className="border-b border-neutral-200 bg-white">
-          <nav className="mx-auto flex max-w-5xl items-center gap-4 px-6 py-3">
-            <Link href="/" className="text-sm font-semibold tracking-tight">
-              DealTrace
-            </Link>
-            <Link href="/stats" className="text-sm text-neutral-600 hover:text-neutral-900">
-              Stats
-            </Link>
-          </nav>
-        </header>
-        <main className="mx-auto w-full max-w-5xl flex-1 px-6 py-8">{children}</main>
+    <html lang="en" className={`h-full antialiased ${inter.variable} ${fraunces.variable}`}>
+      <body className="flex min-h-full flex-col bg-bg text-ink">
+        <a
+          href="#main"
+          className="absolute left-2 top-2 -translate-y-16 rounded-md bg-surface-raised px-3 py-2 text-sm text-ink focus-visible:translate-y-0"
+        >
+          Skip to content
+        </a>
+        <NavBar />
+        <main id="main" className="flex-1">
+          <PageTransition>{children}</PageTransition>
+        </main>
+        <Footer />
       </body>
     </html>
   );

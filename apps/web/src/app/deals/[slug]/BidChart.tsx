@@ -1,12 +1,20 @@
 "use client";
 
 import { useMemo } from "react";
+import { motion } from "framer-motion";
 import type { EventRow, ProposalRow } from "@/lib/types";
 import { formatDate, formatPrice } from "@/lib/format";
 import { eventTypeLabel } from "@/lib/labels";
 import { computeRounds, type PlottableProposal, type Round } from "@/lib/rounds";
 
-const BIDDER_COLORS = ["#2563eb", "#7c3aed", "#d97706", "#059669", "#db2777", "#0891b2"];
+const BIDDER_COLORS = [
+  "var(--color-chart-1)",
+  "var(--color-chart-2)",
+  "var(--color-chart-3)",
+  "var(--color-chart-4)",
+  "var(--color-chart-5)",
+  "var(--color-chart-6)",
+];
 const PANEL_WIDTH = 720;
 const PANEL_HEIGHT = 240;
 const MARGIN = { top: 16, right: 20, bottom: 32, left: 56 };
@@ -85,8 +93,8 @@ function RoundPanel({
   }
 
   return (
-    <div className="rounded-lg border border-neutral-200 bg-white p-4">
-      <div className="mb-2 text-xs font-medium text-neutral-500">
+    <div className="rounded-lg border border-border bg-surface p-4">
+      <div className="mb-2 text-xs font-medium text-ink-muted">
         Round {roundIndex + 1} · {formatDate(isoDate(points[0].date))} – {formatDate(isoDate(points[points.length - 1].date))}
       </div>
       <svg
@@ -102,16 +110,16 @@ function RoundPanel({
               x2={PANEL_WIDTH - MARGIN.right}
               y1={yScale(price)}
               y2={yScale(price)}
-              stroke="#e5e5e5"
+              stroke="var(--color-border)"
               strokeWidth={1}
             />
-            <text x={MARGIN.left - 8} y={yScale(price)} textAnchor="end" dominantBaseline="middle" fontSize={11} fill="#737373">
+            <text x={MARGIN.left - 8} y={yScale(price)} textAnchor="end" dominantBaseline="middle" fontSize={11} fill="var(--color-ink-muted)">
               {formatPrice(price)}
             </text>
           </g>
         ))}
         {uniqueDates.map((t) => (
-          <text key={t} x={xScale(t)} y={PANEL_HEIGHT - 10} textAnchor="middle" fontSize={11} fill="#737373">
+          <text key={t} x={xScale(t)} y={PANEL_HEIGHT - 10} textAnchor="middle" fontSize={11} fill="var(--color-ink-muted)">
             {formatDate(isoDate(new Date(t)))}
           </text>
         ))}
@@ -131,13 +139,16 @@ function RoundPanel({
           return (
             <g key={proposer}>
               {realBids.length > 1 && (
-                <path
+                <motion.path
                   d={linePath}
                   fill="none"
                   stroke={color}
                   strokeWidth={1.5}
                   strokeDasharray={isTarget ? "4 3" : undefined}
-                  opacity={0.5}
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  whileInView={{ pathLength: 1, opacity: 0.5 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 1, ease: "easeInOut" }}
                 />
               )}
               {sorted.map((p) => {
@@ -156,9 +167,18 @@ function RoundPanel({
                     : formatPrice(high ?? low);
 
                 return (
-                  <g key={p.proposal.id} onClick={() => onInspect(p.proposal)} className="cursor-pointer">
+                  <motion.g
+                    key={p.proposal.id}
+                    onClick={() => onInspect(p.proposal)}
+                    className="cursor-pointer"
+                    initial={{ opacity: 0, scale: 0.6 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.3, delay: (x / PANEL_WIDTH) * 0.9 }}
+                    style={{ transformOrigin: `${x}px ${y}px` }}
+                  >
                     {isHedged ? (
-                      <circle cx={x} cy={y} r={5} fill="white" stroke={color} strokeWidth={2} opacity={dimmed} />
+                      <circle cx={x} cy={y} r={5} fill="var(--color-surface)" stroke={color} strokeWidth={2} opacity={dimmed} />
                     ) : isRange ? (
                       <>
                         <line x1={x} x2={x} y1={yScale(low!)} y2={yScale(high!)} stroke={color} strokeWidth={3} opacity={dimmed * 0.85} />
@@ -170,11 +190,11 @@ function RoundPanel({
                     ) : (
                       <circle cx={x} cy={y} r={4.5} fill={color} opacity={dimmed} />
                     )}
-                    {isAccepted && <circle cx={x} cy={y} r={9} fill="none" stroke="#16a34a" strokeWidth={2} />}
-                    <text x={x} y={y - 10} textAnchor="middle" fontSize={10} fill="#171717">
+                    {isAccepted && <circle cx={x} cy={y} r={9} fill="none" stroke="var(--color-positive)" strokeWidth={2} />}
+                    <text x={x} y={y - 10} textAnchor="middle" fontSize={10} fill="var(--color-ink)">
                       {priceLabel}
                     </text>
-                  </g>
+                  </motion.g>
                 );
               })}
             </g>
@@ -206,14 +226,14 @@ export function BidChart({
   );
   const colorByBidder = useMemo(() => {
     const map = new Map<string, string>(bidders.map((b, i) => [b, BIDDER_COLORS[i % BIDDER_COLORS.length]]));
-    map.set(target, "#737373");
+    map.set(target, "var(--color-ink-faint)");
     return map;
   }, [bidders, target]);
 
   const accepted = allPlotted.find((p) => p.proposal.status === "accepted");
 
   if (rounds.length === 0) {
-    return <p className="text-sm text-neutral-500">No proposals with both a resolvable date and price to chart.</p>;
+    return <p className="text-sm text-ink-muted">No proposals with both a resolvable date and price to chart.</p>;
   }
 
   return (
@@ -229,20 +249,20 @@ export function BidChart({
             onInspect={onInspect}
           />
           {breaks[i] && (
-            <div className="my-2 flex items-center gap-2 px-2 text-xs text-neutral-500">
-              <div className="h-px flex-1 bg-neutral-200" />
+            <div className="my-2 flex items-center gap-2 px-2 text-xs text-ink-muted">
+              <div className="h-px flex-1 bg-border" />
               <span>
                 {breaks[i].events.length > 0
                   ? breaks[i].events.map((e) => eventTypeLabel(e.event_type)).join(", ")
                   : "process break"}
               </span>
-              <div className="h-px flex-1 bg-neutral-200" />
+              <div className="h-px flex-1 bg-border" />
             </div>
           )}
         </div>
       ))}
 
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 pt-1 text-xs text-neutral-600">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-1 pt-1 text-xs text-ink-muted">
         {Array.from(colorByBidder.entries()).map(([bidder, color]) => (
           <span key={bidder} className="inline-flex items-center gap-1.5">
             {bidder === target ? (
@@ -256,21 +276,21 @@ export function BidChart({
         ))}
         {accepted && (
           <span className="inline-flex items-center gap-1.5">
-            <span className="inline-block h-2.5 w-2.5 rounded-full border-2 border-green-600" />
+            <span className="inline-block h-2.5 w-2.5 rounded-full border-2 border-positive" />
             accepted
           </span>
         )}
         <span className="inline-flex items-center gap-1.5">
-          <span className="inline-block h-0.5 w-3 bg-neutral-400" />
+          <span className="inline-block h-0.5 w-3 bg-ink-faint" />
           range bid (low–high)
         </span>
         <span className="inline-flex items-center gap-1.5">
-          <span className="inline-block h-2.5 w-2.5 rounded-full border-2 border-neutral-400 bg-white" />
+          <span className="inline-block h-2.5 w-2.5 rounded-full border-2 border-border-strong bg-surface" />
           hedged / suggested valuation
         </span>
       </div>
       {unplottable > 0 && (
-        <p className="text-xs text-neutral-400">
+        <p className="text-xs text-ink-faint">
           {unplottable} proposal{unplottable === 1 ? "" : "s"} not shown (no per-share price) — see the timeline below.
         </p>
       )}

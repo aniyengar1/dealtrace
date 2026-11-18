@@ -34,8 +34,12 @@ function getPool(): Pool {
       throw new Error("DATABASE_URL is not set -- check the repo root .env");
     }
     // Cached on `global` so Next.js's dev-mode module reloading doesn't
-    // open a fresh pool on every file edit.
-    global.__dealtracePool = new Pool({ connectionString: databaseUrl });
+    // open a fresh pool on every file edit. max bumped from pg's default
+    // of 10 -- pages like home/deals now fan out one query per deal
+    // (1000+ deals in the bulk-loaded table) via Promise.all, and a
+    // too-small pool just serializes those into batches instead of
+    // actually running them concurrently.
+    global.__dealtracePool = new Pool({ connectionString: databaseUrl, max: 30 });
   }
   return global.__dealtracePool;
 }

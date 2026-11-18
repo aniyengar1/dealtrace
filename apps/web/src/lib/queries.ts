@@ -62,7 +62,7 @@ export async function listDealsSummary(): Promise<DealSummary[]> {
       ORDER BY run_id, date_start DESC
     )
     SELECT
-      d.id, d.slug, d.deal_name, d.target, d.acquirer, d.search_term,
+      d.id, d.slug, d.deal_name, d.target, d.acquirer, d.search_term, d.is_canonical,
       fprop.price_low AS final_price_low,
       fprop.price_high AS final_price_high,
       s.date_start AS signing_date,
@@ -86,9 +86,19 @@ export async function listDeals(): Promise<Deal[]> {
 }
 
 export async function getDealBySlug(slug: string): Promise<Deal | null> {
-  return queryOne<Deal>(`SELECT id, slug, deal_name, target, acquirer, search_term FROM deals WHERE slug = $1`, [
-    slug,
-  ]);
+  return queryOne<Deal>(
+    `SELECT id, slug, deal_name, target, acquirer, search_term, is_canonical, duplicate_of
+     FROM deals WHERE slug = $1`,
+    [slug]
+  );
+}
+
+// Resolves a duplicate deal's `duplicate_of` id to the slug of the
+// canonical deal it was merged into -- the only lookup a non-canonical
+// deal page needs before redirecting away.
+export async function getDealSlugById(id: string): Promise<string | null> {
+  const row = await queryOne<{ slug: string }>(`SELECT slug FROM deals WHERE id = $1`, [id]);
+  return row?.slug ?? null;
 }
 
 // The most recent run that actually extracted events/proposals (the
@@ -179,6 +189,23 @@ export async function getAllFactsForDeal(dealId: string): Promise<Fact[]> {
     valuationsRun ? getValuationsForRun(valuationsRun.id) : Promise.resolve([]),
   ]);
   return [...events, ...proposals, ...valuations];
+}
+
+// Best-effort link from a deal to the SEC filing it was extracted from --
+// "deals" has no filing reference of its own (it's hand-registered in
+// src/run.py's DEALS dict, independent of the automated discovery table),
+// so this joins on the discovery table's own fuzzy name match instead.
+// Null (hidden, never guessed) when no confident match exists.
+export async function getFilingUrlForDeal(searchTerm: string): Promise<string | null> {
+  const row = await queryOne<{ primary_file_name: string }>(
+    `SELECT primary_file_name FROM deal_candidates
+     WHERE target_name ILIKE '%' || $1 || '%'
+       AND classification = 'public_company_acquisition'
+     ORDER BY primary_filed_date DESC
+     LIMIT 1`,
+    [searchTerm]
+  );
+  return row ? `https://www.sec.gov/Archives/${row.primary_file_name}` : null;
 }
 
 export async function getParagraphsForDeal(dealId: string): Promise<Record<string, ParagraphRow>> {

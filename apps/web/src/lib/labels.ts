@@ -128,3 +128,10 @@ export function buyerType(slug: string, acquirer: string): BuyerType {
   if (slug in BUYER_TYPE_OVERRIDES) return BUYER_TYPE_OVERRIDES[slug];
   return SPONSOR_NAME_PATTERN.test(acquirer) ? "sponsor" : "unknown";
 }
+
+// One direction convention for every deal title on the site: the
+// acquirer always leads, the target always follows, and it reads as a
+// sentence -- no arrow glyph to point the wrong way on half the pages.
+export function dealTitle(acquirerDisplay: string, targetDisplay: string): string {
+  return `${acquirerDisplay} acquires ${targetDisplay}`;
+}

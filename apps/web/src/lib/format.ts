@@ -30,6 +30,14 @@ export function formatMultipleRange(
   return `${formatMultiple(low)}–${formatMultiple(high)}`;
 }
 
+// True precision for a stat band number: a median that landed on a
+// whole number (e.g. 2 bidders) shows as "2", not "2.0"; one that
+// didn't (e.g. a days-to-signing median of 290.5, or any percentage)
+// shows its real first decimal instead of rounding it away.
+export function statDecimals(value: number): number {
+  return Number.isInteger(value) ? 0 : 1;
+}
+
 export function formatPct(value: number | null | undefined): string {
   if (value === null || value === undefined) return "—";
   return `${value.toFixed(1)}%`;
