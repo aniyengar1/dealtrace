@@ -19,3 +19,36 @@ export function validProbabilities(p:Record<string,string>){
     return values.every(v=>v.n<=v.scale)&&values.reduce((s,v)=>s+v.n*(scale/v.scale),BigInt(0))===scale;
   }catch{return false;}
 }
+
+function roundedScaled(value:string,unit:bigint,places:number){
+  const {n,scale}=parts(value);const power=BigInt(10)**BigInt(places);const numerator=n*power;const denominator=scale*unit;
+  let q=numerator/denominator;const r=numerator%denominator;
+  if(r*BigInt(2)>denominator||(r*BigInt(2)===denominator&&q%BigInt(2)===BigInt(1)))q++;
+  return `${q/power}.${(q%power).toString().padStart(places,'0')}`;
+}
+export function compactUsd(value:string){
+  const {n,scale}=parts(value);
+  if(n>=scale*BigInt(1000000000))return `$${roundedScaled(value,BigInt(1000000000),2)}B`;
+  if(n>=scale*BigInt(1000000))return `$${roundedScaled(value,BigInt(1000000),2).replace(/\.?0+$/,'')}M`;
+  return usd(value);
+}
+export function dateLabel(value:string,year=true){
+  return new Intl.DateTimeFormat('en-US',{month:'short',day:'numeric',...(year?{year:'numeric' as const}:{}),timeZone:'UTC'}).format(new Date(value+'T12:00:00Z'));
+}
+export function periodLabel(start:string,end:string){
+  return `${dateLabel(start,start.slice(0,4)!==end.slice(0,4))} – ${dateLabel(end)}`;
+}
+export function leadDays(lockTimestamp:string,releaseDate:string,releaseTimezone:string){
+  const local=new Intl.DateTimeFormat('en-US',{year:'numeric',month:'2-digit',day:'2-digit',timeZone:releaseTimezone}).formatToParts(new Date(lockTimestamp));
+  const part=(name:string)=>local.find(p=>p.type===name)!.value;
+  const day=`${part('year')}-${part('month')}-${part('day')}`;
+  return (Date.parse(releaseDate+'T00:00:00Z')-Date.parse(day+'T00:00:00Z'))/86400000;
+}
+// Emphasize all ties at the same two-decimal precision users see. The frozen
+// residual convention may distinguish equal-count rates at the 24th place.
+export function highestDisplayedBuckets(p:Record<'below'|'within'|'above',string>){
+  const labels=['below','within','above'] as const;
+  const value=(key:typeof labels[number])=>BigInt(percent(p[key]).replace(/[.%]/g,''));
+  const max=labels.reduce((m,k)=>value(k)>m?value(k):m,BigInt(0));
+  return labels.filter(k=>value(k)===max);
+}
