@@ -59,4 +59,11 @@ describe('publication copy',()=>{
   expect(html).not.toContain('`');expect(JSON.stringify(snapshot)).toBe(before);
  });
 
+ it('keeps scoped classes and explicit separators in server-rendered content',()=>{
+  const html=renderToStaticMarkup(<Predictions state={{kind:'ready',snapshot:validateSnapshot(source())}}/>);
+  expect(html).toMatch(/class="[^"]+"[^>]*data-crosscheck-predictions="true"/);
+  expect(html).toMatch(/<section class="[^"]+"[^>]*data-prediction-id=/);
+  expect(html).toContain(' · </span>');expect(html).toContain('Locked management range:</span> <strong>');
+ });
+
 });
