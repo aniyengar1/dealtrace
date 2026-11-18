@@ -1,0 +1,148 @@
+{
+  "checks": [
+    {
+      "checked_at": "2026-11-18T06:31:31.263174+00:00",
+      "company": "CRWD",
+      "fetched_at": null,
+      "finished_at": "2026-11-18T06:31:31.421244+00:00",
+      "http_status": 403,
+      "sha256": null,
+      "url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-announces-date-fiscal-third-quarter-2027-financial"
+    },
+    {
+      "checked_at": "2026-11-18T06:31:31.421299+00:00",
+      "company": "CRWD",
+      "fetched_at": null,
+      "finished_at": "2026-11-18T06:31:31.550654+00:00",
+      "http_status": 403,
+      "sha256": null,
+      "url": "https://ir.crowdstrike.com/press-releases/"
+    },
+    {
+      "checked_at": "2026-11-18T06:31:31.550721+00:00",
+      "company": "MDB",
+      "fetched_at": null,
+      "finished_at": "2026-11-18T06:31:31.728432+00:00",
+      "http_status": 403,
+      "sha256": null,
+      "url": "https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-date-third-quarter-fiscal-2027-earnings"
+    },
+    {
+      "checked_at": "2026-11-18T06:31:31.728494+00:00",
+      "company": "MDB",
+      "fetched_at": null,
+      "finished_at": "2026-11-18T06:31:32.144283+00:00",
+      "http_status": 403,
+      "sha256": null,
+      "url": "https://investors.mongodb.com/node/14771/pdf"
+    },
+    {
+      "checked_at": "2026-11-18T06:31:32.144353+00:00",
+      "company": "MDB",
+      "fetched_at": null,
+      "finished_at": "2026-11-18T06:31:32.242779+00:00",
+      "http_status": 403,
+      "sha256": null,
+      "url": "https://investors.mongodb.com/news-events/news-releases"
+    },
+    {
+      "cached_body": "data/cache/earnings/watchlist-20261118/7fd8a3c8dd0b77d643f98d13c96af9d9aae85d6b008a6e51eabae8b9a2a6bd07.body",
+      "checked_at": "2026-11-18T06:31:32.242833+00:00",
+      "company": "ADBE",
+      "fetched_at": "2026-11-18T06:31:32.345525+00:00",
+      "finished_at": "2026-11-18T06:31:32.351387+00:00",
+      "http_status": 200,
+      "relevant_passages": [
+        " more than 30,000 employees, we achieved revenue of $23.77 billion in fiscal year 2025. Our stock is traded on the Nasdaq under the symbol ADBE. #f8f8f8 Investor highlights Upcoming events Wednesday, December 9, 2026 Q4 & FY2026 earnings call 2:00pm Pacific Time See all upcoming events Latest quarterly results September 10, 2026 Q3 FY2026 earnings press release Q3 FY2026 earnings script and slides Q3 FY2026 investor datasheet Watch webcast Featured event April 21, 2026 Adobe Summit 2026 Investor Session Investor Presentation Adobe Announces New $25 Billion Stock Repurchase Program Watch webcast style three up, m-spacing, static-links background #f8f8f8 Quick links Quarterly results Access all our financial documents. Investor news See recent press releases and other news items. Leadership "
+      ],
+      "sha256": "7fd8a3c8dd0b77d643f98d13c96af9d9aae85d6b008a6e51eabae8b9a2a6bd07",
+      "title": "Investor Relations | Adobe",
+      "url": "https://www.adobe.com/investor-relations.html"
+    },
+    {
+      "checked_at": "2026-11-18T06:31:32.351439+00:00",
+      "company": "ADBE",
+      "fetched_at": null,
+      "finished_at": "2026-11-18T06:31:32.449712+00:00",
+      "http_status": 301,
+      "redirect_location": "https://www.adobe.com/investor-relations/events-presentations.html",
+      "sha256": null,
+      "url": "https://www.adobe.com/investor-relations/calendar.html"
+    },
+    {
+      "cached_body": "data/cache/earnings/watchlist-20261118/190c579d57e91d9b1ed83f39f403151e82a74e0a50d9334ca0150e8263b96d28.body",
+      "checked_at": "2026-11-18T06:31:32.449762+00:00",
+      "company": "PD",
+      "fetched_at": "2026-11-18T06:31:32.818136+00:00",
+      "finished_at": "2026-11-18T06:31:32.842042+00:00",
+      "http_status": 200,
+      "relevant_passages": [],
+      "sha256": "190c579d57e91d9b1ed83f39f403151e82a74e0a50d9334ca0150e8263b96d28",
+      "title": "PagerDuty, Inc. - News",
+      "url": "https://investor.pagerduty.com/news/default.aspx"
+    },
+    {
+      "cached_body": "data/cache/earnings/watchlist-20261118/07dbbea934f58b2800a8ce66e7f22110af406f1e725beec0b2853d4d9d35a9fc.body",
+      "checked_at": "2026-11-18T06:31:32.842117+00:00",
+      "company": "GTLB",
+      "fetched_at": "2026-11-18T06:31:33.077052+00:00",
+      "finished_at": "2026-11-18T06:31:33.083160+00:00",
+      "http_status": 200,
+      "relevant_passages": [],
+      "sha256": "07dbbea934f58b2800a8ce66e7f22110af406f1e725beec0b2853d4d9d35a9fc",
+      "title": "GitLab Inc. - News",
+      "url": "https://ir.gitlab.com/news/default.aspx"
+    },
+    {
+      "cached_body": "data/cache/earnings/watchlist-20261118/94adeca1823d653d113eefe4bb20204b9e431bbd4e844771ec841e346f52810a.body",
+      "checked_at": "2026-11-18T06:31:33.083206+00:00",
+      "company": "GTLB",
+      "fetched_at": "2026-11-18T06:31:34.088993+00:00",
+      "finished_at": "2026-11-18T06:31:34.112705+00:00",
+      "http_status": 200,
+      "relevant_passages": [
+        "GitLab Inc. - GitLab To Announce Third Quarter Fiscal 2027 Financial Results Skip to main content Overview News Events & Presentations Stock Info Stock Quote Analyst Coverage Financials & SEC Filings Quarterly Results Annual Reports SEC Filings Governance Governance Documents Executive Group Board of Directors Committee Composition Resources Investor FAQs Information Request Form Investor Email Alerts Investor Contacts News View All News GitLab To Announce Third Quarter Fiscal 2027 Financial Results November 17, 2026 Download (opens in new window) SAN FRANCISCO--(BUSINESS WIRE)-- All Remote - GitLab Inc., (NASDAQ: GTLB), the ",
+        "GitLab Inc. - GitLab To Announce Third Quarter Fiscal 2027 Financial Results Skip to main content Overview News Events & Presentations Stock Info Stock Quote Analyst Coverage Financials & SEC Filings Quarterly Results Annual Reports SEC Filings Governance Governance Documents Executive Group Board of Directors Committee Composition Resources Investor FAQs Information Request Form Investor Email Alerts Investor Contacts News View All News GitLab To Announce Third Quarter Fiscal 2027 Financial Results November 17, 2026 Download (opens in new window) SAN FRANCISCO--(BUSINESS WIRE)-- All Remote - GitLab Inc., (NASDAQ: GTLB), the intelligent or",
+        "nance Documents Executive Group Board of Directors Committee Composition Resources Investor FAQs Information Request Form Investor Email Alerts Investor Contacts News View All News GitLab To Announce Third Quarter Fiscal 2027 Financial Results November 17, 2026 Download (opens in new window) SAN FRANCISCO--(BUSINESS WIRE)-- All Remote - GitLab Inc., (NASDAQ: GTLB), the intelligent orchestration platform for DevSecOps, today announced that it will report its financial results for the third quarter fiscal year 2027, which ended October 31, 2026, after U.S. markets close on Tuesday, December 1, 2026. Management will host a conference call and webcast on the same day to discuss the company\u2019s financial results at 4:30 p.m. ET / 1:30 p.m. PT. GitLab Third Quarter Fiscal 2027 Financial Results Co",
+        "s Executive Group Board of Directors Committee Composition Resources Investor FAQs Information Request Form Investor Email Alerts Investor Contacts News View All News GitLab To Announce Third Quarter Fiscal 2027 Financial Results November 17, 2026 Download (opens in new window) SAN FRANCISCO--(BUSINESS WIRE)-- All Remote - GitLab Inc., (NASDAQ: GTLB), the intelligent orchestration platform for DevSecOps, today announced that it will report its financial results for the third quarter fiscal year 2027, which ended October 31, 2026, after U.S. markets close on Tuesday, December 1, 2026. Management will host a conference call and webcast on the same day to discuss the company\u2019s financial results at 4:30 p.m. ET / 1:30 p.m. PT. GitLab Third Quarter Fiscal 2027 Financial Results Conference Call ",
+        "ectors Committee Composition Resources Investor FAQs Information Request Form Investor Email Alerts Investor Contacts News View All News GitLab To Announce Third Quarter Fiscal 2027 Financial Results November 17, 2026 Download (opens in new window) SAN FRANCISCO--(BUSINESS WIRE)-- All Remote - GitLab Inc., (NASDAQ: GTLB), the intelligent orchestration platform for DevSecOps, today announced that it will report its financial results for the third quarter fiscal year 2027, which ended October 31, 2026, after U.S. markets close on Tuesday, December 1, 2026. Management will host a conference call and webcast on the same day to discuss the company\u2019s financial results at 4:30 p.m. ET / 1:30 p.m. PT. GitLab Third Quarter Fiscal 2027 Financial Results Conference Call and Webcast When: Tuesday, Dec",
+        "dow) SAN FRANCISCO--(BUSINESS WIRE)-- All Remote - GitLab Inc., (NASDAQ: GTLB), the intelligent orchestration platform for DevSecOps, today announced that it will report its financial results for the third quarter fiscal year 2027, which ended October 31, 2026, after U.S. markets close on Tuesday, December 1, 2026. Management will host a conference call and webcast on the same day to discuss the company\u2019s financial results at 4:30 p.m. ET / 1:30 p.m. PT. GitLab Third Quarter Fiscal 2027 Financial Results Conference Call and Webcast When: Tuesday, December 1, 2026 Time: 4:30 p.m. ET / 1:30 p.m. PT Earnings Call Registration Replay: A webcast replay of the conference call will be available on the investor relations website for one year. GitLab uses its Investor Relations website ir.gitlab.co",
+        "hestration platform for DevSecOps, today announced that it will report its financial results for the third quarter fiscal year 2027, which ended October 31, 2026, after U.S. markets close on Tuesday, December 1, 2026. Management will host a conference call and webcast on the same day to discuss the company\u2019s financial results at 4:30 p.m. ET / 1:30 p.m. PT. GitLab Third Quarter Fiscal 2027 Financial Results Conference Call and Webcast When: Tuesday, December 1, 2026 Time: 4:30 p.m. ET / 1:30 p.m. PT Earnings Call Registration Replay: A webcast replay of the conference call will be available on the investor relations website for one year. GitLab uses its Investor Relations website ir.gitlab.com and its X feed ( @gitlab ), among other channels, as a means of disclosing material nonpublic inf",
+        "r U.S. markets close on Tuesday, December 1, 2026. Management will host a conference call and webcast on the same day to discuss the company\u2019s financial results at 4:30 p.m. ET / 1:30 p.m. PT. GitLab Third Quarter Fiscal 2027 Financial Results Conference Call and Webcast When: Tuesday, December 1, 2026 Time: 4:30 p.m. ET / 1:30 p.m. PT Earnings Call Registration Replay: A webcast replay of the conference call will be available on the investor relations website for one year. GitLab uses its Investor Relations website ir.gitlab.com and its X feed ( @gitlab ), among other channels, as a means of disclosing material nonpublic information and for complying with its disclosure obligations under Regulation FD. About GitLab GitLab is the intelligent orchestration platform for DevSecOps. GitLab ena",
+        " close on Tuesday, December 1, 2026. Management will host a conference call and webcast on the same day to discuss the company\u2019s financial results at 4:30 p.m. ET / 1:30 p.m. PT. GitLab Third Quarter Fiscal 2027 Financial Results Conference Call and Webcast When: Tuesday, December 1, 2026 Time: 4:30 p.m. ET / 1:30 p.m. PT Earnings Call Registration Replay: A webcast replay of the conference call will be available on the investor relations website for one year. GitLab uses its Investor Relations website ir.gitlab.com and its X feed ( @gitlab ), among other channels, as a means of disclosing material nonpublic information and for complying with its disclosure obligations under Regulation FD. About GitLab GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizat",
+        "ll and webcast on the same day to discuss the company\u2019s financial results at 4:30 p.m. ET / 1:30 p.m. PT. GitLab Third Quarter Fiscal 2027 Financial Results Conference Call and Webcast When: Tuesday, December 1, 2026 Time: 4:30 p.m. ET / 1:30 p.m. PT Earnings Call Registration Replay: A webcast replay of the conference call will be available on the investor relations website for one year. GitLab uses its Investor Relations website ir.gitlab.com and its X feed ( @gitlab ), among other channels, as a means of disclosing material nonpublic information and for complying with its disclosure obligations under Regulation FD. About GitLab GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, "
+      ],
+      "sha256": "94adeca1823d653d113eefe4bb20204b9e431bbd4e844771ec841e346f52810a",
+      "title": "GitLab Inc. - GitLab To Announce Third Quarter Fiscal 2027 Financial Results",
+      "url": "https://ir.gitlab.com/news/news-details/2026/GitLab-To-Announce-Third-Quarter-Fiscal-2027-Financial-Results/default.aspx"
+    },
+    {
+      "checked_at": "2026-11-18T06:31:34.112871+00:00",
+      "company": "LULU",
+      "fetched_at": null,
+      "finished_at": "2026-11-18T06:31:34.395757+00:00",
+      "http_status": 302,
+      "redirect_location": "/newsroom/press-releases",
+      "sha256": null,
+      "url": "https://corporate.lululemon.com/investors/news-and-events/press-releases"
+    },
+    {
+      "cached_body": "data/cache/earnings/watchlist-20261118/069df53c19740d9ad8c5062c0980ed76a6fd8d2a0049c90c46cabf8261411da3.body",
+      "checked_at": "2026-11-18T06:31:34.395848+00:00",
+      "company": "LULU",
+      "fetched_at": "2026-11-18T06:31:35.108097+00:00",
+      "finished_at": "2026-11-18T06:31:35.140172+00:00",
+      "http_status": 200,
+      "relevant_passages": [
+        "pplements PDF Quarterly Infographic PDF Jun 1, 2023 lululemon athletica Q1 2023 Results More event details Listen to Webcast Quarterly Financial Supplements PDF Quarterly Infographic PDF Mar 28, 2023 Fourth Quarter and Year End 2022 Conference Call More event details Listen to Webcast Quarterly Financial Supplements PDF Quarterly Infographic PDF Dec 8, 2022 lululemon athletica Q3 2022 Results More event details Listen to Webcast Quarterly Financial Supplements PDF Quarterly Infographic PDF Sep 1, 2022 lululemon athletica Q2 2022 Results More event details Listen to Webcast Quarterly Financial Supplements PDF Quarterly Infographic PDF Jun 2, 2022 lululemon athletica Q1 2022 Results More event details Listen to Webcast Quarterly Financial Supplements PDF Quarterly Infographic PDF Apr 20, 202",
+        "t Quarterly Financial Supplements PDF Quarterly Infographic PDF Apr 20, 2022 lululemon athletica Inc. 2022 Analyst Day More event details Listen to Webcast lululemon Analyst Day 2022 PDF Mar 29, 2022 Fourth Quarter and Year End 2021 Conference Call More event details Listen to Webcast Quarterly Financial Supplements PDF Quarterly Infographic PDF Dec 9, 2021 lululemon athletica Q3 2021 Results More event details Listen to Webcast Quarterly Financial Supplements PDF Quarterly Infographic PDF Sep 8, 2021 lululemon athletica Q2 2021 Results More event details Listen to Webcast Quarterly Financial Supplements PDF Quarterly Infographic PDF Jun 3, 2021 lululemon athletica Q1 2021 Results More event details Listen to Webcast Quarterly Financial Supplements PDF Quarterly Infographic PDF Mar 30, 202",
+        "5 lululemon athletica Annual Meeting More event details Mar 26, 2015 lululemon athletica Q4 and Full Year Fiscal 2014 Results More event details View Transcript PDF Lululemon Athletica Inc. Announces Fourth Quarter And Full Year Fiscal 2014 Results PDF Dec 11, 2014 lululemon athletica Q3 2014 results More event details View Transcript PDF Aug 11, 2014 lululemon athletica Q2 2014 results More event details View Transcript PDF Jun 12, 2014 lululemon athletica Q1 2014 results More event details Jun 11, 2014 lululemon athletica Annual Meeting More event details Apr 17, 2014 Analyst Day More event details Mar 27, 2014 lululemon athletica Q4 2013 results More event details Jan 14, 2014 16th Annual ICR XChange Conference More event details View Presentation PDF On this site About Us Our Business "
+      ],
+      "sha256": "069df53c19740d9ad8c5062c0980ed76a6fd8d2a0049c90c46cabf8261411da3",
+      "title": "Events & Presentations | lululemon",
+      "url": "https://corporate.lululemon.com/investors/news-and-events/events-and-presentations"
+    }
+  ],
+  "recorded_at": "2026-11-18T06:31:35.140234+00:00",
+  "scope": "Announcement metadata only; no live records or source allowlist changes"
+}

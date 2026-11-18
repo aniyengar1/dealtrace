@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-11-18T08:36:23.714878+00:00",
+  "source_transaction_read_only": "on",
+  "ledger_before_sha256": "8bca62620e2355b3151c73e0e3118681f1abbf03f8cae006c9e99e30a160dead",
+  "ledger_after_sha256": "8bca62620e2355b3151c73e0e3118681f1abbf03f8cae006c9e99e30a160dead",
+  "unchanged": true,
+  "live_predictions": 8,
+  "live_results": 0,
+  "protected_score_lock_math_schema_unchanged": [
+    "earnings/score_live.py",
+    "earnings/baseline.py",
+    "earnings/smoothed_baseline.py",
+    "earnings/history.py",
+    "earnings/predict.py",
+    "earnings/live.py",
+    "earnings/current_checks.py",
+    "db/migrations"
+  ],
+  "checkpoint_tags": {
+    "session3-current-state-v2-lock-ready-20261114": "c2c587fdeb550b7afe70a1a54098299d8874589e",
+    "session3-entry17-lock-ready-20261115": "c53cb3a617fd0cee086a16539e0e10e69e89ba9e",
+    "session3-lock-ready": "94984fc3ce33c6e85a287738d3a617561cd0cefc",
+    "session3-two-method-lock-ready-20261113": "87f48d40dfba363a7732cbb0b3cf68f473b3d56f",
+    "session3-two-method-lock-ready-20261113-r2": "7dc952c635446bb4ed3a6717d58cb7dc003f62cb"
+  },
+  "provider_calls": 0,
+  "browser_automation": false,
+  "shared_frontend_files_changed": [],
+  "page_files": "Only new crosscheck/predictions app and library folders",
+  "extractor": "shelved; owner review deferred, not performed",
+  "operational_ceiling_usd": "8",
+  "occupancy_usd": "2.6009185",
+  "unresolved_reservations_usd": "2.2373935"
+}

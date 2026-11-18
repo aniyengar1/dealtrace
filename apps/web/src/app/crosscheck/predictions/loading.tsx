@@ -1,0 +1,1 @@
+export default function Loading(){return <div role="status" aria-busy="true" className="rounded-xl border border-neutral-700 bg-neutral-950 p-8 text-neutral-200">Loading the published prediction copy…</div>;}
