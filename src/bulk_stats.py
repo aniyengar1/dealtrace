@@ -6,15 +6,19 @@ whichever one is each transaction's canonical representative).
 
 Mirrors the established conventions in apps/web/src/lib/dealSummary.ts
 (nBidders, firstBidProposal/finalBidProposal via price_high ?? price_low
-and accepted-else-last-dated, daysFirstContactToSigning via
-first_contact-else-earliest-date to latest signing) rather than
-inventing new definitions, except where this task's own spec is
-explicitly narrower (percent-increase is restricted to cash deals with
-both prices, which dealSummary.ts's pctChange does not do) or adds
-data-quality filtering dealSummary.ts doesn't need (that code runs over
-hand-curated, reviewed deals; this runs over ~1000 unreviewed
-extractions, where a stray near-zero first price or a misdated event
-can produce a nonsense outlier -- see the thresholds below).
+and accepted-else-last-dated) rather than inventing new definitions,
+except where this task's own spec is explicitly narrower (percent
+-increase is restricted to cash deals with both prices, which
+dealSummary.ts's pctChange does not do), adds data-quality filtering
+dealSummary.ts doesn't need (that code runs over hand-curated, reviewed
+deals; this runs over ~1000 unreviewed extractions, where a stray
+near-zero first price or a misdated event can produce a nonsense
+outlier -- see the thresholds below), or is deliberately stricter:
+daysFirstContactToSigning here requires a real first_contact event and
+is excluded (not backfilled from the earliest dated event of any kind)
+when there isn't one, since dealSummary.ts's own fallback was found to
+both understate some deals' real process length and fabricate a date
+for others with no usable first-contact signal at all.
 
 Target-side placeholder terms ("the Company", "Target", "Board", etc.)
 are resolved to each deal's own target name before any proposer/
@@ -33,6 +37,7 @@ metrics tables (src.deal_metrics.refresh_all) and the JSON file.
 """
 
 import json
+import re
 import statistics
 from datetime import date
 from pathlib import Path
@@ -41,7 +46,8 @@ from typing import Optional
 import psycopg
 
 from src import validate
-from src.entity_match import is_acronym_of, is_same_entity
+from src.dedup_deals import _is_generic
+from src.entity_match import is_acronym_of, is_anonymized_placeholder, is_governance_body_reference, is_same_entity
 from src.env import load_env
 from src.load_db import connect
 
@@ -111,7 +117,21 @@ def _resolve_run_id_for_deal(conn: psycopg.Connection, deal_id: str, slug: str) 
 
 
 def _fetch_canonical_deals(conn: psycopg.Connection) -> list[dict]:
-    return fetch_deals(conn, canonical_only=True)
+    """Canonical deals, further excluding any that src.classify_deal_type
+    flags as not a genuine arm's-length sale process (a spin-off, an
+    affiliated-manager merger, or a filer/target reversal) -- these
+    stay in the deals/deal_metrics tables and on their own deal page,
+    but never feed a cross-deal aggregate (parties contacted, bidders,
+    days to signing...), which would otherwise mix a handful of
+    structurally different transactions into stats meant to describe
+    ordinary competitive sale processes."""
+    from src.classify_deal_type import classify_deal
+
+    deals = fetch_deals(conn, canonical_only=True)
+    return [
+        d for d in deals
+        if not classify_deal(d["slug"], d["target"], d["acquirer"], d["events"])[1]
+    ]
 
 
 def fetch_deals(conn: psycopg.Connection, canonical_only: bool = False) -> list[dict]:
@@ -131,7 +151,7 @@ def fetch_deals(conn: psycopg.Connection, canonical_only: bool = False) -> list[
         else:
             events = conn.execute(
                 """
-                SELECT e.date_start, e.event_type, e.parties
+                SELECT e.date_start, e.event_type, e.parties, e.summary, e.source_quotes
                 FROM events e
                 WHERE e.run_id = %s AND e.passed
                 """,
@@ -140,7 +160,7 @@ def fetch_deals(conn: psycopg.Connection, canonical_only: bool = False) -> list[
             proposals = conn.execute(
                 """
                 SELECT p.date_resolved, p.proposer, p.recipient, p.price_low, p.price_high,
-                       p.consideration_type, p.status
+                       p.consideration_type, p.status, p.source_quotes
                 FROM proposals p
                 WHERE p.run_id = %s AND p.passed
                 """,
@@ -158,6 +178,8 @@ def fetch_deals(conn: psycopg.Connection, canonical_only: bool = False) -> list[
                         "date_start": e[0],
                         "event_type": e[1],
                         "parties": [_resolve_target(p, target) for p in (e[2] or [])],
+                        "summary": e[3],
+                        "source_quotes": e[4] or [],
                     }
                     for e in events
                 ],
@@ -170,6 +192,7 @@ def fetch_deals(conn: psycopg.Connection, canonical_only: bool = False) -> list[
                         "price_high": float(p[4]) if p[4] is not None else None,
                         "consideration_type": p[5],
                         "status": p[6],
+                        "source_quotes": p[7] or [],
                     }
                     for p in proposals
                 ],
@@ -226,8 +249,95 @@ def compute_n_parties_contacted_for_deal(d: dict) -> int:
     return len(contacted)
 
 
+# A proposal for less than the whole target -- a minority stake, a
+# reinsurance arrangement, specific assets or operations rather than
+# the company itself -- doesn't make its proposer a bidder FOR the
+# target, however real the proposer is otherwise (Midwest Holding's
+# "Party G" proposed a $7.2M minority investment plus reinsuring a
+# portion of the business, not to acquire the company).
+_PARTIAL_PROPOSAL_RE = re.compile(
+    r"\breinsur|\bminority (?:stake|interest|investment)\b|"
+    r"\b(?:certain|specific) assets\b|\basset[- ]only\b|"
+    r"\b(?:certain|specific) (?:operations|businesses|business units)\b",
+    re.IGNORECASE,
+)
+
+# Splits a joint-bid proposer string ("Company A and Consortium B",
+# "Advent, Permira and Crosspoint") into its constituent bidders, so
+# each one is counted once -- as itself, merged with any proposal where
+# it bid alone -- instead of the whole joint-bid string ALSO counting
+# as if it were yet another, different bidder (United States Steel's
+# n_bidders included "Company A", "Consortium B", AND "Company A and
+# Consortium B" as three separate bidders for what both already-counted
+# singly). Guarded by requiring every resulting part to look like a
+# proper name (starts upper-case or a digit) -- a non-joint-bid phrase
+# that merely contains the word "and" ("a third-party financial
+# partner", "management of Terra BDC and TPT") usually has at least one
+# part that doesn't, and is left unsplit rather than exploded into
+# fragments.
+def _split_joint_proposer(name: str) -> list[str]:
+    cleaned = re.sub(r",\s*and\s+", ", ", name)
+    parts = [p.strip() for p in re.split(r",\s*|\s+and\s+", cleaned) if p.strip()]
+    if len(parts) <= 1:
+        return [name]
+    if not all(p[0].isupper() or p[0].isdigit() for p in parts):
+        return [name]
+    return parts
+
+
+def _add_bidder(bidders: set[str], name: str) -> None:
+    """Adds `name` unless an already-added bidder is the same entity
+    under a different formality level -- splitting a joint bid can
+    otherwise reintroduce the exact over-count it's meant to fix: a
+    deal naming "Nippon Paint and Sherwin-Williams" in one proposal and
+    "Nippon Paint Holdings Co., Ltd and The Sherwin-Williams Company" in
+    another would split into 4 strings for what are really 2 bidders.
+
+    Skipped entirely for an anonymized placeholder ("Party A", "Party
+    AA") -- is_same_entity's prefix-match logic treats "Party A" as a
+    match for "Party AA" (the longer core name literally starts with
+    the shorter one), which would silently merge two of a heavily
+    -shopped deal's genuinely distinct anonymized bidders into one
+    (AVROBIO's 40+ Party-lettered bidders lost more than half under this
+    before the guard)."""
+    if is_anonymized_placeholder(name):
+        bidders.add(name)
+        return
+    for existing in bidders:
+        if not is_anonymized_placeholder(existing) and is_same_entity(name, existing):
+            return
+    bidders.add(name)
+
+
+def _is_non_bidder_role(name: str) -> bool:
+    """True for a name that's a role/defined-term placeholder rather
+    than a specific company -- the target's own board/committee (see
+    is_governance_body_reference), or a generic role term like
+    "Sellers" (the defined term for a group of selling shareholders in
+    a carve-out/JV transaction, negotiating on the SELL side, not a
+    rival bidder trying to acquire the target -- Bunge/Viterra's
+    "Sellers" responding with a counterproposal is the divesting
+    shareholder group talking back, not a competing offer) or
+    "Investor"/"Parent"/"Buyer" (see dedup_deals._GENERIC_ACQUIRER_TERMS,
+    the same generic-placeholder list used to decide an acquirer name
+    is unusable)."""
+    return is_governance_body_reference(name) or _is_generic(name)
+
+
 def compute_n_bidders_for_deal(d: dict) -> int:
-    return len({p["proposer"] for p in d["proposals"] if p["proposer"] and p["proposer"] != d["target"]})
+    bidders: set[str] = set()
+    for p in d["proposals"]:
+        proposer = p.get("proposer")
+        if not proposer or proposer == d["target"]:
+            continue
+        if _is_non_bidder_role(proposer):
+            continue
+        if _PARTIAL_PROPOSAL_RE.search(" ".join(p.get("source_quotes") or [])):
+            continue
+        for name in _split_joint_proposer(proposer):
+            if name != d["target"] and not _is_non_bidder_role(name):
+                _add_bidder(bidders, name)
+    return len(bidders)
 
 
 def compute_n_proposals_for_deal(d: dict) -> int:
@@ -319,25 +429,108 @@ def compute_first_bidder_won_for_deal(d: dict) -> tuple[Optional[bool], Optional
 
 
 def _process_start_date(d: dict):
+    """The deal's earliest explicit first_contact event, or None.
+    Deliberately NOT a fallback to the earliest dated event/proposal of
+    any kind -- a board meeting, an unrelated asset sale, a banker
+    engagement, or a public announcement is not "first contact" with a
+    bidder, and silently standing in for it understated some deals'
+    real process length while fabricating a date for others that never
+    had a usable first-contact signal at all. Callers treat None as
+    "no process-start date," excluding the deal from timing stats
+    rather than ever guessing."""
     first_contact = sorted(
         (e for e in d["events"] if e["event_type"] == "first_contact" and e["date_start"]),
         key=lambda e: e["date_start"],
     )
-    if first_contact:
-        return first_contact[0]["date_start"]
-    all_dates = sorted(
-        [e["date_start"] for e in d["events"] if e["date_start"]]
-        + [p["date_resolved"] for p in d["proposals"] if p["date_resolved"]]
-    )
-    return all_dates[0] if all_dates else None
+    return first_contact[0]["date_start"] if first_contact else None
+
+
+# Deliberately narrow and unambiguous: every one of these is, in every
+# deal structure this pipeline has seen, a financing-side or
+# shareholder-support document, never the deal's own operative
+# agreement. Left OUT on purpose: "exchange agreement", "investment
+# agreement", "subscription agreement", "letter of intent" -- each of
+# those names the ACTUAL definitive agreement for some deal structures
+# (a share-exchange deal's "Exchange Agreement"; Cyclacel/Fitters) and
+# including them produced real false exclusions.
+_ANCILLARY_DOC_RE = re.compile(
+    r"\b(voting agreement|support agreement|guaranty|guarantee|"
+    r"equity commitment letter|debt commitment letter|commitment letter|"
+    r"credit agreement)\b",
+    re.IGNORECASE,
+)
+# Deliberately broad: anything that plausibly names a deal's own
+# definitive agreement, across the several structures this pipeline
+# extracts (merger, equity/asset/stock purchase, share exchange,
+# business combination, scheme of arrangement) -- this only has to
+# override a false ancillary-only read, not uniquely identify "the"
+# document, so a generic "the Agreement" counts too.
+_DEFINITIVE_DOC_RE = re.compile(
+    r"\b(merger agreement|agreement and plan of merger|plan of merger|"
+    r"business combination agreement|transaction agreement|purchase agreement|"
+    r"exchange agreement|implementation agreement|scheme of arrangement|"
+    r"definitive agreement|the agreement)\b",
+    re.IGNORECASE,
+)
+
+
+def _signing_event_text(e: dict) -> str:
+    return " ".join([e.get("summary") or ""] + list(e.get("source_quotes") or []))
+
+
+def _is_ancillary_only_signing(e: dict) -> bool:
+    """True when a signing event's own text names only a financing
+    -side/support document (see _ANCILLARY_DOC_RE) with no mention of
+    anything that could be the deal's own definitive agreement (see
+    _DEFINITIVE_DOC_RE) -- Global Business Travel's latest "signing"
+    event is a Voting Agreement executed a day after the real Merger
+    Agreement, and naively taking the latest-dated signing event picks
+    it over the real one. An event that mentions a non-binding
+    indication of interest or letter of intent and nothing else matches
+    neither regex, so isn't excluded here -- it doesn't need to be:
+    a preliminary document always predates the real signing, so taking
+    the LATEST surviving event (below) already prefers the real one
+    over it without risking a false exclusion on deal structures this
+    function doesn't recognize by name."""
+    text = _signing_event_text(e)
+    return bool(_ANCILLARY_DOC_RE.search(text)) and not bool(_DEFINITIVE_DOC_RE.search(text))
 
 
 def _latest_signing_date(d: dict):
-    signings = sorted(
-        (e for e in d["events"] if e["event_type"] == "signing" and e["date_start"]),
-        key=lambda e: e["date_start"],
-    )
-    return signings[-1]["date_start"] if signings else None
+    """The deal's signing date -- the latest-dated signing event, after
+    two filters: (1) drop any signing event dated before every other
+    dated event/proposal in the deal, which catches a signing event
+    that's actually a completely different, earlier transaction (a
+    SPAC's own formation agreement, re-tagged as this deal's signing --
+    Renovacor's extracted "signing" is its 2021 SPAC business
+    combination, over two months before Rocket ever makes contact); a
+    deal can't have signed before its own process began. (2) prefer a
+    signing event that mentions the actual merger agreement over one
+    that's ancillary-document-only (see _is_ancillary_only_signing) --
+    degrades back to the full (pre-filter-2) set if that filter would
+    otherwise remove every signing event, since an event that mentions
+    neither a merger agreement nor a known ancillary document by name
+    is more likely an extraction-phrasing gap than a genuine ancillary
+    -only signing, and shouldn't be thrown away. Filter 1 has no such
+    fallback -- a deal with zero events/proposals to compare against
+    skips it entirely, but a deal where every signing event fails it
+    has no signing date at all, rather than ever using a signing event
+    that cannot possibly belong to this deal's own process."""
+    signings = [e for e in d["events"] if e["event_type"] == "signing" and e["date_start"]]
+    if not signings:
+        return None
+
+    other_dates = [e["date_start"] for e in d["events"] if e["event_type"] != "signing" and e["date_start"]]
+    other_dates += [p["date_resolved"] for p in d.get("proposals", []) if p.get("date_resolved")]
+    if other_dates:
+        earliest_other = min(other_dates)
+        signings = [e for e in signings if e["date_start"] >= earliest_other]
+    if not signings:
+        return None
+
+    valid = [e for e in signings if not _is_ancillary_only_signing(e)]
+    candidates = valid if valid else signings
+    return max(e["date_start"] for e in candidates)
 
 
 def _days_between(start, end) -> int:
@@ -489,7 +682,7 @@ def stat_days_first_contact_to_signing(deals: list[dict]) -> dict:
     day_values = [v for _, v in values]
     top = sorted(values, key=lambda t: t[1], reverse=True)[:N_OUTLIERS]
     return {
-        "definition": "Days from the deal's process-start date (earliest first_contact event, else the earliest dated event/proposal of any kind) to its latest signing event.",
+        "definition": "Days from the deal's earliest first_contact event to its latest signing event. Excluded (not backfilled from any other event type) when no first_contact event was extracted.",
         "n": len(day_values),
         **_distribution(day_values),
         "top_outliers": [{"deal_name": name, "days": v} for name, v in top],

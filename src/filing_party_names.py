@@ -21,8 +21,16 @@ _WS_RE = re.compile(r"\s+")
 SCAN_WINDOW_CHARS = 400_000
 
 _QUOTE_CLASS = "\"“”"
+# Two drafting conventions for the same defined-term parenthetical:
+# quote-wrapped ("the 'Parent'") or spelled out ("which we refer to as
+# Parent" / "which we refer to as 'Parent'", with or without quotes --
+# PAE/Amentum uses this unquoted form, which the quote-only pattern
+# missed entirely, silently falling through to "Undisclosed"). Two
+# alternatives, each with its own capturing group, since the label can
+# land in either depending on which convention matched.
 _PARTY_DEF_RE = re.compile(
-    r"\(\s*(?:the\s+)?[" + _QUOTE_CLASS + r"]\s*(Parent|Purchaser)\s*[" + _QUOTE_CLASS + r"]\s*\)",
+    r"\(\s*(?:the\s+)?[" + _QUOTE_CLASS + r"]\s*(Parent|Purchaser)\s*[" + _QUOTE_CLASS + r"]\s*\)"
+    r"|\(\s*which\s+we\s+refer\s+to\s+as\s+(?:the\s+)?[" + _QUOTE_CLASS + r"]?\s*(Parent|Purchaser)\s*[" + _QUOTE_CLASS + r"]?\s*\)",
     re.IGNORECASE,
 )
 _DESCRIPTIVE_CLAUSE_START_RE = re.compile(r",\s*(?:a|an)\s+", re.IGNORECASE)
@@ -88,16 +96,48 @@ def _clean_text(raw_html: str) -> str:
     return _WS_RE.sub(" ", text)
 
 
-def _strip_trailing_descriptive_clause(window: str) -> str:
+def _strip_trailing_descriptive_clause(window: str) -> tuple[str, str]:
     """Strips a trailing ", a Delaware corporation" / ", a company
     incorporated under the laws of..." clause -- uses the LAST such
     clause before the end of the window, not the first, since the
     window can contain other parties' own ", a ..." clauses earlier
-    in the same "by and among A, a ..., B, a ..." sentence."""
+    in the same "by and among A, a ..., B, a ..." sentence. Returns
+    (stripped_window, removed_clause) -- the removed clause is needed
+    by _candidate_for_match to catch a European-style name ("Merck
+    KGaA, Darmstadt, Germany") where the comma before the trailing
+    country name looks, to a plain connector-split, just like a list
+    separator (see _collides_with_nationality_adjective)."""
     matches = list(_DESCRIPTIVE_CLAUSE_START_RE.finditer(window))
     if matches:
-        window = window[: matches[-1].start()]
-    return window.strip()
+        return window[: matches[-1].start()].strip(), window[matches[-1].start() :]
+    return window.strip(), ""
+
+
+_NATIONALITY_ADJECTIVE_RE = re.compile(r",\s*(?:a|an)\s+([A-Za-z]+)\b")
+
+
+def _collides_with_nationality_adjective(candidate: str, removed_clause: str) -> bool:
+    """True when `candidate` is a single bare word that is itself just
+    the country name a nearby "a German corporation"/"a Delaware
+    corporation"-style descriptor was adjectivizing -- i.e. the comma
+    -split landed one segment too far into a "Company, City, Country"
+    style name (common for German/European filers: "Merck KGaA,
+    Darmstadt, Germany, a German corporation") instead of stopping at
+    the real company name. Checked by a plain shared-prefix match
+    between the candidate and the descriptor's adjective (German ~
+    Germany), not a country-name gazetteer, so it generalizes to any
+    country without needing to enumerate them -- and is narrow enough
+    (requires the SAME root word immediately adjacent) that it can't
+    misfire on an ordinary unrelated "a Delaware corporation" following
+    a real, multi-word or legal-suffixed company name."""
+    if not candidate or " " in candidate.strip():
+        return False
+    m = _NATIONALITY_ADJECTIVE_RE.match(removed_clause)
+    if not m:
+        return False
+    adjective, candidate_lower = m.group(1).lower(), candidate.strip().lower()
+    shorter, longer = sorted([adjective, candidate_lower], key=len)
+    return len(shorter) >= 4 and longer.startswith(shorter)
 
 
 def _take_last_segment(window: str) -> str:
@@ -147,7 +187,8 @@ def _extract_refinement(text: str, pattern: re.Pattern, search_start: int, searc
     after = window[match.end():]
     end_match = _SENTENCE_END_RE.search(after)
     candidate = after[: end_match.start()] if end_match else after[:150]
-    return _strip_trailing_descriptive_clause(candidate)
+    stripped, _ = _strip_trailing_descriptive_clause(candidate)
+    return stripped
 
 
 def _candidate_for_match(text: str, match: re.Match) -> str | None:
@@ -175,10 +216,12 @@ def _candidate_for_match(text: str, match: re.Match) -> str | None:
     relation_matches = list(_RELATION_OF_RE.finditer(window))
     if relation_matches and len(window) - relation_matches[-1].end() <= 70:
         window = window[relation_matches[-1].end() :]
-    window = _strip_trailing_descriptive_clause(window)
+    window, removed_clause = _strip_trailing_descriptive_clause(window)
 
-    name = _take_last_segment(window)
-    return name.strip(" ,.;") or None
+    name = _take_last_segment(window).strip(" ,.;")
+    if not name or _collides_with_nationality_adjective(name, removed_clause):
+        return None
+    return name
 
 
 _OPAQUE_ACRONYM_RE = re.compile(r"^[A-Z]{2,6}$")
@@ -216,7 +259,8 @@ def extract_acquirer_from_filing(raw_html: str, target: str) -> str | None:
 
     matches_by_label: dict[str, list[re.Match]] = {"parent": [], "purchaser": []}
     for m in _PARTY_DEF_RE.finditer(text):
-        matches_by_label[m.group(1).lower()].append(m)
+        label = m.group(1) or m.group(2)
+        matches_by_label[label.lower()].append(m)
 
     for label in ("parent", "purchaser"):
         for m in matches_by_label[label]:

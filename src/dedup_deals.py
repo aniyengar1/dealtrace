@@ -42,6 +42,13 @@ load_env()
 # this exclusion existed.
 _GENERIC_ACQUIRER_TERMS = {
     "unknown", "parent", "merger sub", "acquiror", "buyer", "consortium", "sponsor", "purchaser",
+    # Role-based placeholder terms meaning "whoever is on that side of
+    # the transaction," never a specific company name -- "the Sellers"
+    # (plural, a defined term for a group of selling shareholders) and
+    # "Investor"/"Investor Group" (core_name already strips "Group" as
+    # a legal suffix, so one entry covers both forms) have the exact
+    # same problem as "Parent"/"Buyer" already did.
+    "seller", "sellers", "investor",
 }
 
 

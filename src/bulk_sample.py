@@ -4,11 +4,16 @@ real filings, with a fillable checklist per deal.
 
     python -m src.bulk_sample
 
-Scoped to canonical BULK deals (is_canonical AND slug LIKE 'bulk_%') --
-curated deals are excluded since they're already hand-reviewed and
-don't have a bulk-style slug to derive an EDGAR filing link from, and a
-duplicate bulk row that lost to another canonical row shouldn't be
-spot-checked as if it were representative.
+Scoped to canonical BULK deals (is_canonical AND slug LIKE 'bulk_%'),
+further restricted to deal_metrics.excluded_from_stats = false -- a
+spin-off, affiliated-manager merger, or filer/target reversal
+(src.classify_deal_type) isn't a representative ordinary sale process
+to spot-check, and the reversed ones would have swapped target/
+acquirer labels that make the rendered checklist nonsensical to review
+in the first place. Curated deals are excluded since they're already
+hand-reviewed and don't have a bulk-style slug to derive an EDGAR
+filing link from, and a duplicate bulk row that lost to another
+canonical row shouldn't be spot-checked as if it were representative.
 
 CIK and accession number are recovered by parsing them back out of the
 deal's own slug (minted by src.load_bulk.bulk_slug as
@@ -34,7 +39,7 @@ from src.load_db import connect
 
 load_env()
 
-SEED = 2026
+SEED = 2027
 N_SAMPLE = 20
 OUTPUT_PATH = Path("data/output/bulk_sample_spotcheck.md")
 
@@ -164,7 +169,12 @@ def _fetch_metrics(conn: psycopg.Connection, deal_id: str) -> dict:
 def main() -> None:
     with connect() as conn:
         rows = conn.execute(
-            "SELECT id, slug, target, acquirer FROM deals WHERE slug LIKE 'bulk_%' AND is_canonical ORDER BY slug"
+            """
+            SELECT d.id, d.slug, d.target, d.acquirer
+            FROM deals d JOIN deal_metrics dm ON dm.deal_id = d.id
+            WHERE d.slug LIKE 'bulk_%' AND d.is_canonical AND NOT dm.excluded_from_stats
+            ORDER BY d.slug
+            """
         ).fetchall()
 
         rng = random.Random(SEED)
@@ -179,8 +189,9 @@ def main() -> None:
     header = (
         f"# Bulk deal sample for manual spot-check\n\n"
         f"Random sample of {len(sample)} deals out of {len(rows)} canonical bulk deals "
-        f"(curated deals and non-canonical duplicates excluded), seed={SEED} "
-        f"(Python `random.Random({SEED}).sample(...)` over canonical bulk deals sorted by slug).\n\n"
+        f"(curated deals, non-canonical duplicates, and deal_metrics.excluded_from_stats deals "
+        f"-- spin-offs, affiliated-manager mergers, filer/target reversals -- excluded), seed={SEED} "
+        f"(Python `random.Random({SEED}).sample(...)` over the cleaned canonical bulk deal set, sorted by slug).\n\n"
     )
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(header + "\n".join(sections))

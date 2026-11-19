@@ -22,6 +22,7 @@ import psycopg
 
 from src import bulk_stats
 from src.bulk_run import load_cached_html
+from src.classify_deal_type import classify_deal
 from src.dedup_deals import _is_generic
 from src.display_name import clean_display_name
 from src.entity_match import is_acronym_of, is_anonymized_placeholder, is_same_entity
@@ -127,6 +128,23 @@ def _is_safe_fuller_name(candidate: str, base: str) -> bool:
     return trailing_word not in _ORG_REFERENCE_WORDS
 
 
+def _is_holding_vehicle_of(candidate: str, base: str) -> bool:
+    """True if `candidate` is just `base` plus a "Holdings"/"Holding"
+    suffix (optionally with a region/qualifier word in between, e.g.
+    "Rio Tinto" -> "Rio Tinto Western Holdings Limited") -- a deal
+    -specific holding vehicle's own legal name, not a fuller form of
+    the parent brand itself. Only fires when `base` (the already
+    -stored, already-correct acquirer value) is itself a real prefix of
+    `candidate`, so this can't misfire on an unrelated company whose
+    name happens to contain "Holdings"."""
+    base_norm = base.strip().lower()
+    candidate_norm = candidate.strip().lower()
+    if not base_norm or not candidate_norm.startswith(base_norm):
+        return False
+    extra = candidate_norm[len(base_norm):]
+    return bool(re.search(r"\bholdings?\b", extra))
+
+
 _COMMITTEE_RE = re.compile(r"\bcommittee\b", re.IGNORECASE)
 
 
@@ -206,7 +224,12 @@ def resolve_acquirer_display(
     refinement available, which would have wrongly replaced an already
     -correct, already-named real acquirer with a less informative shell
     name. The shell is still used as a last resort when the heuristic
-    has nothing valid either (better than "Undisclosed")."""
+    has nothing valid either (better than "Undisclosed"). The same
+    deference applies when the filing definition is just the already
+    -stored acquirer plus a "Holdings" suffix (Rio Tinto/Arcadium: the
+    filing's own "Parent" is "Rio Tinto Western Holdings Limited", a
+    subsidiary vehicle, when "Rio Tinto" is already the correct, more
+    recognizable name) -- see _is_holding_vehicle_of."""
     if acquirer in KNOWN_SHORT_NAME_EXPANSIONS:
         resolved = KNOWN_SHORT_NAME_EXPANSIONS[acquirer]
     else:
@@ -223,7 +246,7 @@ def resolve_acquirer_display(
         candidates = [acquirer] + [m for m in mentioned if m != target and _is_safe_fuller_name(m, acquirer)]
         heuristic_resolved = max(candidates, key=len)
 
-        if filing_valid and not is_shell_name(filing_name):
+        if filing_valid and not is_shell_name(filing_name) and not _is_holding_vehicle_of(filing_name, acquirer):
             resolved = filing_name
         elif _is_invalid_acquirer_display(heuristic_resolved, target) and filing_valid:
             resolved = filing_name
@@ -259,13 +282,24 @@ def compute_metrics_for_deal(d: dict) -> dict:
 
     if d["slug"] in DEALS:
         target_display, acquirer_display = _curated_display_names(d["slug"])
+        # Curated deals are hand-verified -- never run them through the
+        # bulk-only structural checks (a curated slug has no CIK/accession
+        # to re-derive filing text from anyway; classify_deal_type's
+        # filing-text checks are a no-op for them, but the affiliated
+        # -manager check runs on events/parties alone and could in theory
+        # still fire).
+        deal_type, excluded_from_stats, exclusion_reason = "acquisition", False, None
     else:
         target_display = clean_display_name(d["target"])
         acquirer_display = resolve_acquirer_display(d["acquirer"], d["target"], d["proposals"], d["events"], d["slug"])
+        deal_type, excluded_from_stats, exclusion_reason = classify_deal(d["slug"], d["target"], d["acquirer"], d["events"])
 
     return {
         "target_display": target_display,
         "acquirer_display": acquirer_display,
+        "deal_type": deal_type,
+        "excluded_from_stats": excluded_from_stats,
+        "exclusion_reason": exclusion_reason,
         "n_parties_contacted": bulk_stats.compute_n_parties_contacted_for_deal(d),
         "n_bidders": bulk_stats.compute_n_bidders_for_deal(d),
         "n_proposals": bulk_stats.compute_n_proposals_for_deal(d),
@@ -292,15 +326,19 @@ def refresh_deal_metrics(conn: psycopg.Connection) -> int:
         conn.execute(
             """
             INSERT INTO deal_metrics (
-                deal_id, is_canonical, target_display, acquirer_display, n_parties_contacted, n_bidders,
+                deal_id, is_canonical, target_display, acquirer_display, deal_type, excluded_from_stats,
+                exclusion_reason, n_parties_contacted, n_bidders,
                 n_proposals, first_price, final_price, price_plausible, pct_bump, pct_bump_exclusion_reason,
                 pct_bump_bucket, days_first_contact_to_signing, days_first_proposal_to_signing,
                 first_bidder_won, computed_at
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, now())
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, now())
             ON CONFLICT (deal_id) DO UPDATE SET
                 is_canonical = EXCLUDED.is_canonical,
                 target_display = EXCLUDED.target_display,
                 acquirer_display = EXCLUDED.acquirer_display,
+                deal_type = EXCLUDED.deal_type,
+                excluded_from_stats = EXCLUDED.excluded_from_stats,
+                exclusion_reason = EXCLUDED.exclusion_reason,
                 n_parties_contacted = EXCLUDED.n_parties_contacted,
                 n_bidders = EXCLUDED.n_bidders,
                 n_proposals = EXCLUDED.n_proposals,
@@ -317,6 +355,7 @@ def refresh_deal_metrics(conn: psycopg.Connection) -> int:
             """,
             (
                 d["deal_id"], is_canonical_by_id[d["deal_id"]], m["target_display"], m["acquirer_display"],
+                m["deal_type"], m["excluded_from_stats"], m["exclusion_reason"],
                 m["n_parties_contacted"], m["n_bidders"], m["n_proposals"],
                 m["first_price"], m["final_price"], m["price_plausible"], m["pct_bump"], m["pct_bump_exclusion_reason"],
                 m["pct_bump_bucket"], m["days_first_contact_to_signing"],

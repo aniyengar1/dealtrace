@@ -78,16 +78,59 @@ _ANONYMIZED_PLACEHOLDER_RE = re.compile(
     re.IGNORECASE,
 )
 
+# A reference to a company's own governance body, not a party at all --
+# "Company Board", "EnLink Conflicts Committee", "the Special
+# Committee", "Independent Directors" are how a filing's own text names
+# the board/committee/directors negotiating on a company's behalf,
+# never a real counterparty. Not anchored at the start, since the name
+# in front ("EnLink", "Company") can be any company's own name, not
+# just a fixed placeholder word -- matched at the end instead, requiring
+# a word boundary (so "Chessboard" doesn't trip it just for containing
+# "board") and an optional adjective ("Special", "Conflicts",
+# "Independent", "Transaction", "Audit", "Compensation", "Governance")
+# right before "Board"/"Committee" (with "Board" also accepting "of
+# Directors"). Bare "Directors" is its own, separate alternative with a
+# REQUIRED adjective -- "directors" alone is too generic a word to gate
+# on safely the way "board"/"committee" can (nothing comparable to
+# "Chessboard" risks colliding with "board", but plenty of real things
+# could plausibly end in the word "directors"), so it only fires
+# alongside one of the same qualifying adjectives ("Independent
+# Directors", "Special Directors").
+_GOVERNANCE_BODY_RE = re.compile(
+    r"(?:^|\s)"
+    r"(?:special|conflicts|independent|transaction|audit|compensation|governance)?\s*"
+    r"(?:board(?:\s+of\s+directors)?|committee)$"
+    r"|(?:^|\s)(?:special|conflicts|independent|transaction|audit|compensation|governance)\s+directors$",
+    re.IGNORECASE,
+)
+
+
+def is_governance_body_reference(name: str) -> bool:
+    """True for a reference to a company's own board/special/conflicts
+    committee ("Company Board", "EnLink Conflicts Committee") -- never a
+    real company, and (unlike an anonymized label such as "Party A")
+    never a real bidder either: a target's own committee negotiating
+    opposite a bidder isn't a second bidder."""
+    if not name:
+        return False
+    return bool(_GOVERNANCE_BODY_RE.search(name.strip()))
+
 
 def is_anonymized_placeholder(name: str) -> bool:
     """True for a filing's own anonymization label ("Company A", "Party
     B", "Bidder 1") -- never a real company, so never a valid answer for
     "who is the acquirer" even when it's the most frequently mentioned
     name in a deal's proposals (see Global Blood Therapeutics / Pfizer,
-    where "Company A" outnumbered "Pfizer" by raw mention count)."""
+    where "Company A" outnumbered "Pfizer" by raw mention count) -- or
+    for a reference to the target's own board/special/conflicts
+    committee (see is_governance_body_reference), which is just as
+    unusable as an acquirer name as an anonymization label is (though,
+    unlike a committee, an anonymized label like "Party A" IS a real
+    bidder -- see is_governance_body_reference for that distinction)."""
     if not name:
         return False
-    return bool(_ANONYMIZED_PLACEHOLDER_RE.match(name.strip()))
+    n = name.strip()
+    return bool(_ANONYMIZED_PLACEHOLDER_RE.match(n) or is_governance_body_reference(n))
 
 
 def is_acronym_of(short: str, long_name: str) -> bool:
