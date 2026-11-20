@@ -29,7 +29,11 @@ interface GroupStats {
   medianPctBump: number | null;
   meanPctBump: number | null;
   medianBidders: number | null;
-  medianDaysToSigning: number | null;
+  // Anchored to the first PROPOSAL, not first contact -- a round-3
+  // spot-check found first-contact dates the least reliable extracted
+  // field (5 of 9 field errors), so that metric is excluded from
+  // public stats entirely. See src.bulk_stats.compute_all().
+  medianDaysProposalToSigning: number | null;
 }
 
 function groupStats(rows: DealMetricsRow[]): GroupStats {
@@ -39,8 +43,8 @@ function groupStats(rows: DealMetricsRow[]): GroupStats {
     medianPctBump: median(bump),
     meanPctBump: mean(bump),
     medianBidders: median(rows.map((r) => r.nBidders)),
-    medianDaysToSigning: median(
-      rows.map((r) => r.daysFirstContactToSigning).filter((v): v is number => v !== null)
+    medianDaysProposalToSigning: median(
+      rows.map((r) => r.daysFirstProposalToSigning).filter((v): v is number => v !== null)
     ),
   };
 }
@@ -73,9 +77,9 @@ function GroupStatsCard({ label, stats }: { label: string; stats: GroupStats }) 
           <dd className="tabular-nums">{stats.medianBidders ?? "—"}</dd>
         </div>
         <div>
-          <dt className="text-xs text-ink-muted">Median days to signing</dt>
+          <dt className="text-xs text-ink-muted">Median days, proposal to signing</dt>
           <dd className="tabular-nums">
-            {stats.medianDaysToSigning !== null ? Math.round(stats.medianDaysToSigning) : "—"}
+            {stats.medianDaysProposalToSigning !== null ? Math.round(stats.medianDaysProposalToSigning) : "—"}
           </dd>
         </div>
       </dl>
@@ -131,7 +135,7 @@ export default async function StatsPage({
               <th className="px-3 py-2.5 text-right font-medium">Bidders</th>
               <th className="px-3 py-2.5 text-right font-medium">Proposals</th>
               <th className="px-3 py-2.5 text-right font-medium">1st → final</th>
-              <th className="px-3 py-2.5 text-right font-medium">Days to signing</th>
+              <th className="px-3 py-2.5 text-right font-medium">Days, proposal to signing</th>
               <th className="px-3 py-2.5">First bidder won</th>
             </tr>
           </thead>
@@ -148,12 +152,12 @@ export default async function StatsPage({
                   {BUYER_TYPE_LABELS[buyerType(row.slug, row.acquirerDisplay)]}
                 </td>
                 <td className="px-3 py-3 text-right tabular-nums">
-                  <PriceValue price={row.finalPrice} plausible={row.pricePlausible} />
+                  <PriceValue price={row.finalPrice} plausible={row.pricePlausible} finalPriceIsRatio={row.finalPriceIsRatio} />
                 </td>
                 <td className="px-3 py-3 text-right tabular-nums">{row.nBidders}</td>
                 <td className="px-3 py-3 text-right tabular-nums">{row.nProposals}</td>
                 <td className="px-3 py-3 text-right tabular-nums">{pctLabel(row.pctBump)}</td>
-                <td className="px-3 py-3 text-right tabular-nums">{row.daysFirstContactToSigning ?? "—"}</td>
+                <td className="px-3 py-3 text-right tabular-nums">{row.daysFirstProposalToSigning ?? "—"}</td>
                 <td className="px-3 py-3 text-ink-muted">
                   {row.firstBidderWon === null ? "—" : row.firstBidderWon ? "Yes" : "No"}
                 </td>

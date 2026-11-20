@@ -57,7 +57,7 @@ const ACCURACY_ROWS: {
 }[] = [
   { deal: "Splunk — Cisco", set: "Development", metric: "Core events & proposals vs. gold answer key", result: "100%" },
   { deal: "Zendesk — Consortium", set: "Held-out", metric: "Core-event recall / proposal recall", result: "97% / 100%" },
-  { deal: "20-deal spot check", set: "Bulk extraction sample", metric: "Manual spot-check against source filings", result: "Pending", pending: true },
+  { deal: "20-deal spot check (round 3)", set: "Bulk extraction sample", metric: "Field-by-field manual verification", result: "81 / 90 fields" },
 ];
 
 export default function MethodologyPage() {
@@ -91,6 +91,10 @@ export default function MethodologyPage() {
             </Reveal>
           ))}
         </div>
+        <p className="mt-3 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
+          Extracted with gemini-3.6-flash via Vertex AI; the model retires Jan 28, 2027; raw model outputs are
+          archived.
+        </p>
       </section>
 
       <section className="mt-14">
@@ -177,6 +181,16 @@ export default function MethodologyPage() {
               Measured by scoring an extraction run against a hand-checked gold answer key read directly off the
               filing (see <code className="text-ink">src/score.py</code>). A held-out deal is one whose gold key was
               never consulted while the extraction prompt was being developed.
+            </p>
+            <p className="mt-3 text-sm text-ink-muted">
+              Accuracy was audited in three rounds of 20 randomly sampled deals, each checked field-by-field against
+              the source filing by an independent model (Claude) with all flagged fields reviewed by the author.
+              Rounds 1–2 found systematic errors (buyer-side filings mislabeled as sales, inflated bidder counts,
+              wrong first-contact dates), fixed with deterministic rules. Round 3, on a fresh sample: 18 of 20 deals
+              were genuine target-side sale processes; across those, 81 of 90 extracted fields were correct or
+              materially correct, 9 were wrong — most often first-contact dates, which are therefore excluded from
+              headline statistics. Known limitations: some acquirers remain unresolved (&ldquo;Undisclosed&rdquo;),
+              and stock-for-stock deals have no per-share cash price.
             </p>
           </div>
         </Reveal>

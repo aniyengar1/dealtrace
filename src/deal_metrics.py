@@ -305,6 +305,7 @@ def compute_metrics_for_deal(d: dict) -> dict:
         "n_proposals": bulk_stats.compute_n_proposals_for_deal(d),
         "first_price": first_price,
         "final_price": final_price,
+        "final_price_is_ratio": bulk_stats.compute_final_price_is_ratio_for_deal(d),
         "price_plausible": compute_price_plausible(final_price, final_price_low, final_price_high),
         "pct_bump": pct_bump if pct_bump_reason is None else None,
         "pct_bump_exclusion_reason": pct_bump_reason,
@@ -328,10 +329,10 @@ def refresh_deal_metrics(conn: psycopg.Connection) -> int:
             INSERT INTO deal_metrics (
                 deal_id, is_canonical, target_display, acquirer_display, deal_type, excluded_from_stats,
                 exclusion_reason, n_parties_contacted, n_bidders,
-                n_proposals, first_price, final_price, price_plausible, pct_bump, pct_bump_exclusion_reason,
+                n_proposals, first_price, final_price, final_price_is_ratio, price_plausible, pct_bump, pct_bump_exclusion_reason,
                 pct_bump_bucket, days_first_contact_to_signing, days_first_proposal_to_signing,
                 first_bidder_won, computed_at
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, now())
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, now())
             ON CONFLICT (deal_id) DO UPDATE SET
                 is_canonical = EXCLUDED.is_canonical,
                 target_display = EXCLUDED.target_display,
@@ -344,6 +345,7 @@ def refresh_deal_metrics(conn: psycopg.Connection) -> int:
                 n_proposals = EXCLUDED.n_proposals,
                 first_price = EXCLUDED.first_price,
                 final_price = EXCLUDED.final_price,
+                final_price_is_ratio = EXCLUDED.final_price_is_ratio,
                 price_plausible = EXCLUDED.price_plausible,
                 pct_bump = EXCLUDED.pct_bump,
                 pct_bump_exclusion_reason = EXCLUDED.pct_bump_exclusion_reason,
@@ -357,7 +359,7 @@ def refresh_deal_metrics(conn: psycopg.Connection) -> int:
                 d["deal_id"], is_canonical_by_id[d["deal_id"]], m["target_display"], m["acquirer_display"],
                 m["deal_type"], m["excluded_from_stats"], m["exclusion_reason"],
                 m["n_parties_contacted"], m["n_bidders"], m["n_proposals"],
-                m["first_price"], m["final_price"], m["price_plausible"], m["pct_bump"], m["pct_bump_exclusion_reason"],
+                m["first_price"], m["final_price"], m["final_price_is_ratio"], m["price_plausible"], m["pct_bump"], m["pct_bump_exclusion_reason"],
                 m["pct_bump_bucket"], m["days_first_contact_to_signing"],
                 m["days_first_proposal_to_signing"], m["first_bidder_won"],
             ),
@@ -386,6 +388,16 @@ def _code_commit() -> str:
 
 
 def refresh_headline_stats(conn: psycopg.Connection, stats: dict, generated_at: str, code_commit: str) -> int:
+    # Removes any row no longer produced by compute_all() -- e.g.
+    # days_first_contact_to_signing, dropped from the public stats as
+    # of the round-3 spot-check (5 of 9 field errors were first-contact
+    # dates). Without this, a stat removed from compute_all()'s output
+    # would silently keep its stale last-computed row in the table
+    # forever, since the upsert loop below only ever adds/updates rows
+    # present in `stats`, never deletes ones that are absent.
+    published_names = [name for name in stats if name != "n_canonical_deals"]
+    conn.execute("DELETE FROM headline_stats WHERE name != ALL(%s)", (published_names,))
+
     n = 0
     for name, stat in stats.items():
         if name == "n_canonical_deals":

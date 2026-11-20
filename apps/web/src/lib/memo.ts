@@ -218,12 +218,16 @@ function buildTalkingPoints(acquirerDisplay: string, target: string, summary: De
     );
   }
 
-  if (summary.nBidders > 0 && summary.daysFirstContactToSigning !== null && summary.firstContactEvent && summary.signingEvent) {
+  // Anchored to the first PROPOSAL, not first contact -- a round-3
+  // spot-check found first-contact dates the least reliable extracted
+  // field (5 of 9 field errors), so it's excluded from anything
+  // user-facing, memos included.
+  if (summary.nBidders > 0 && summary.daysFirstProposalToSigning !== null && summary.firstBidProposal && summary.signingEvent) {
     candidates.push(
       line(
-        `${summary.nBidders} bidder(s) competed over ${summary.nRounds} round(s); the process ran ${summary.daysFirstContactToSigning} day(s) from first contact to signing.`,
+        `${summary.nBidders} bidder(s) competed over ${summary.nRounds} round(s); the process ran ${summary.daysFirstProposalToSigning} day(s) from first proposal to signing.`,
         summary.signingEvent.id,
-        [...summary.firstContactEvent.source_paragraph_ids, ...summary.signingEvent.source_paragraph_ids]
+        [...summary.firstBidProposal.source_paragraph_ids, ...summary.signingEvent.source_paragraph_ids]
       )
     );
   }

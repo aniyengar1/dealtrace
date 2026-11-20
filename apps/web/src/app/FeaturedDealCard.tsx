@@ -12,7 +12,12 @@ export function FeaturedDealCard({ deal }: { deal: DealMetricsRow }) {
     >
       <p className="font-serif text-lg text-ink">{dealTitle(deal.acquirerDisplay, deal.targetDisplay)}</p>
       <div className="mt-1 flex flex-wrap items-baseline gap-x-4 gap-y-1 text-sm text-ink-muted">
-        <PriceValue price={deal.finalPrice} plausible={deal.pricePlausible} className="tabular-nums text-accent" />
+        <PriceValue
+          price={deal.finalPrice}
+          plausible={deal.pricePlausible}
+          finalPriceIsRatio={deal.finalPriceIsRatio}
+          className="tabular-nums text-accent"
+        />
         <span className="tabular-nums">{formatDate(deal.signingDate)}</span>
         <span className="tabular-nums">{deal.nProposals} proposals</span>
       </div>

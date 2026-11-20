@@ -50,14 +50,70 @@ re-fetches, only reads what's already on disk, and a curated deal
 defaults to "acquisition" unless one of the other two rules catches it.
 """
 
+import hashlib
+import json
 import re
 from functools import lru_cache
+from pathlib import Path
 from typing import Optional
 
 from bs4 import BeautifulSoup
 
 from src.bulk_run import load_cached_html
 from src.entity_match import _is_ticker_of, is_acronym_of, is_same_entity
+
+# BeautifulSoup-parsing a deal's full cached filing HTML (some are
+# multi-megabyte) for every one of ~900 bulk deals is the dominant cost
+# of a full deal_metrics recompute (~9 minutes, confirmed by timing a
+# full run) -- cached to disk here, keyed by slug alone, since a cached
+# filing's HTML never changes once fetched (SEC filings are immutable;
+# this pipeline never re-fetches one, see bulk_run.load_cached_html).
+# Not time/mtime invalidated for the same reason: there's nothing that
+# would ever change the source HTML out from under an existing cache
+# entry. Clearing a specific deal's cache (e.g. after a genuine re
+# -fetch) means deleting its one file; a code change serious enough to
+# need re-parsing EVERY deal has no reason to touch parsed text at all
+# (only src.classify_deal_type's own regex logic would change, which
+# the separate _CLASSIFY_CACHE below already re-runs on every call --
+# only the raw text extraction is cached here).
+_PARSED_TEXT_CACHE_DIR = Path("data/cache/parsed_filing_text")
+
+
+def _parsed_text_cache_path(slug: str) -> Path:
+    return _PARSED_TEXT_CACHE_DIR / f"{slug}.txt"
+
+
+# Caches classify_deal()'s full result (deal_type, excluded_from_stats,
+# exclusion_reason) -- even with _full_text() now cached, every call
+# still re-runs several regex scans and _is_affiliated_manager_merger's
+# signing-event-party comparisons, on every one of ~900 deals, on every
+# recompute. Keyed on target/acquirer/the signing event's own type+
+# parties (the only event fields any check here reads, per
+# _signing_event_parties) plus _CLASSIFY_CACHE_VERSION, so a genuine
+# change to those inputs -- or a deliberate version bump after a future
+# rule change -- invalidates the right entries instead of silently
+# serving a stale classification forever.
+_CLASSIFY_CACHE_DIR = Path("data/cache/deal_type_classification")
+_CLASSIFY_CACHE_VERSION = "v1"
+
+
+def _classify_cache_key(slug: str, target: str, acquirer: str, events: list[dict]) -> str:
+    relevant_events = [{"event_type": e.get("event_type"), "parties": e.get("parties")} for e in events]
+    payload = json.dumps(
+        {
+            "version": _CLASSIFY_CACHE_VERSION,
+            "target": target,
+            "acquirer": acquirer,
+            "events": relevant_events,
+        },
+        sort_keys=True,
+        default=str,
+    )
+    return hashlib.sha256(payload.encode("utf-8")).hexdigest()[:16]
+
+
+def _classify_cache_path(slug: str, key: str) -> Path:
+    return _CLASSIFY_CACHE_DIR / f"{slug}_{key}.json"
 
 # Deliberately NOT bare "spin-off"/"spinoff"/"split-off"/"spinco" --
 # those words show up constantly in ordinary anti-dilution boilerplate
@@ -142,13 +198,21 @@ def _bulk_slug_to_cik_accession(slug: str) -> Optional[tuple[str, str]]:
 
 @lru_cache(maxsize=None)
 def _full_text(slug: str) -> str:
+    cache_path = _parsed_text_cache_path(slug)
+    if cache_path.exists():
+        return cache_path.read_text(encoding="utf-8")
+
     parsed = _bulk_slug_to_cik_accession(slug)
     if parsed is None:
         return ""
     html = load_cached_html(*parsed)
     if not html:
         return ""
-    return BeautifulSoup(html, "lxml").get_text(" ", strip=True)
+    text = BeautifulSoup(html, "lxml").get_text(" ", strip=True)
+
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    cache_path.write_text(text, encoding="utf-8")
+    return text
 
 
 def _is_spin_off(slug: str) -> bool:
@@ -339,7 +403,27 @@ def _is_manager_internalization(text: str) -> bool:
     )
 
 
-def classify_deal(
+def classify_deal(slug: str, target: str, acquirer: str, events: list[dict]) -> tuple[str, bool, Optional[str]]:
+    """Disk-cached wrapper around _classify_deal_uncached -- see
+    _CLASSIFY_CACHE_DIR's comment for the cache key and invalidation
+    rationale."""
+    key = _classify_cache_key(slug, target, acquirer, events)
+    cache_path = _classify_cache_path(slug, key)
+    if cache_path.exists():
+        cached = json.loads(cache_path.read_text(encoding="utf-8"))
+        return cached["deal_type"], cached["excluded_from_stats"], cached["exclusion_reason"]
+
+    result = _classify_deal_uncached(slug, target, acquirer, events)
+
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    cache_path.write_text(
+        json.dumps({"deal_type": result[0], "excluded_from_stats": result[1], "exclusion_reason": result[2]}),
+        encoding="utf-8",
+    )
+    return result
+
+
+def _classify_deal_uncached(
     slug: str, target: str, acquirer: str, events: list[dict]
 ) -> tuple[str, bool, Optional[str]]:
     """Returns (deal_type, excluded_from_stats, exclusion_reason). A

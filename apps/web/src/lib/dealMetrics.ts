@@ -27,8 +27,21 @@ export interface DealMetricsRow {
   nProposals: number;
   firstPrice: number | null;
   finalPrice: number | null;
+  // True when finalPrice is a stock-exchange ratio ("0.36" meaning
+  // 0.36 shares of the acquirer per target share), not a dollar
+  // amount -- consideration_type alone can't tell these apart, since
+  // an all-stock deal's final price is often a genuine stated dollar
+  // figure too ("implied value of $X per share"). See
+  // src.bulk_stats.compute_final_price_is_ratio_for_deal. Always use
+  // this (via PriceValue) rather than checking considerationType
+  // directly for display purposes.
+  finalPriceIsRatio: boolean | null;
   pctBump: number | null;
   pctBumpExclusionReason: string | null;
+  // Experimental -- read for completeness but never rendered or sorted
+  // on; a round-3 spot-check found first-contact dates the least
+  // reliable extracted field (5 of 9 field errors). Use
+  // daysFirstProposalToSigning instead for anything user-facing.
   daysFirstContactToSigning: number | null;
   daysFirstProposalToSigning: number | null;
   firstBidderWon: boolean | null;
@@ -49,6 +62,7 @@ interface DealMetricsDbRow {
   n_proposals: number;
   first_price: number | null;
   final_price: number | null;
+  final_price_is_ratio: boolean | null;
   pct_bump: number | null;
   pct_bump_exclusion_reason: string | null;
   days_first_contact_to_signing: number | null;
@@ -72,6 +86,7 @@ function toRow(r: DealMetricsDbRow): DealMetricsRow {
     nProposals: r.n_proposals,
     firstPrice: r.first_price,
     finalPrice: r.final_price,
+    finalPriceIsRatio: r.final_price_is_ratio,
     pctBump: r.pct_bump,
     pctBumpExclusionReason: r.pct_bump_exclusion_reason,
     daysFirstContactToSigning: r.days_first_contact_to_signing,
@@ -86,7 +101,7 @@ function toRow(r: DealMetricsDbRow): DealMetricsRow {
 const BASE_SELECT = `
   SELECT
     dm.deal_id, d.slug, d.deal_name, dm.is_canonical, dm.target_display, dm.acquirer_display,
-    dm.n_parties_contacted, dm.n_bidders, dm.n_proposals, dm.first_price, dm.final_price,
+    dm.n_parties_contacted, dm.n_bidders, dm.n_proposals, dm.first_price, dm.final_price, dm.final_price_is_ratio,
     dm.pct_bump, dm.pct_bump_exclusion_reason, dm.days_first_contact_to_signing,
     dm.days_first_proposal_to_signing, dm.first_bidder_won, dm.price_plausible,
     (SELECT e.date_start FROM events e JOIN extraction_runs r2 ON r2.id = e.run_id
@@ -162,8 +177,6 @@ export function filterAndSortDeals(rows: DealMetricsRow[], filter: DealsFilter) 
         return r.nProposals;
       case "pctChange":
         return r.pctBump;
-      case "daysToSigning":
-        return r.daysFirstContactToSigning;
     }
   };
   // Signing date (most recent first) breaks ties on the primary sort --

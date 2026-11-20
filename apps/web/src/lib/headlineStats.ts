@@ -10,13 +10,17 @@ import { query } from "./db";
 // the full n/p25/median/p75/min/max; the one scalar stat
 // (pct_first_bidder_is_eventual_acquirer, a plain percentage) only ever
 // populates `median`.
+// days_first_contact_to_signing is deliberately excluded -- a round-3
+// spot-check found it the least reliable extracted field (5 of 9
+// errors were first-contact dates), so it's never published to
+// headline_stats or shown anywhere on the site. See src.bulk_stats's
+// compute_all().
 export type HeadlineStatName =
   | "parties_contacted"
   | "bidders_who_submitted_a_proposal"
   | "proposals_per_deal"
   | "pct_increase_cash_deals"
   | "pct_first_bidder_is_eventual_acquirer"
-  | "days_first_contact_to_signing"
   | "days_first_proposal_to_signing";
 
 export interface HeadlineStatRow {

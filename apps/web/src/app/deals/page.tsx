@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description: "Search and filter every public-company sale process DealTrace has extracted from SEC filings.",
 };
 
-const SORT_KEYS: SortKey[] = ["signingDate", "finalPrice", "nBidders", "nProposals", "pctChange", "daysToSigning"];
+const SORT_KEYS: SortKey[] = ["signingDate", "finalPrice", "nBidders", "nProposals", "pctChange"];
 
 function isSortKey(value: string | undefined): value is SortKey {
   return !!value && (SORT_KEYS as string[]).includes(value);
@@ -95,9 +95,6 @@ export default async function DealsPage({
                 <th className="px-3 py-2.5 text-right font-medium">
                   <SortableHeader sortKey="pctChange" label="1st → final" currentSort={sort} currentDir={dir} searchParams={sp} align="right" />
                 </th>
-                <th className="px-3 py-2.5 text-right font-medium">
-                  <SortableHeader sortKey="daysToSigning" label="Days to signing" currentSort={sort} currentDir={dir} searchParams={sp} align="right" />
-                </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
@@ -114,14 +111,13 @@ export default async function DealsPage({
                     {row.considerationType ? CONSIDERATION_TYPE_LABELS[row.considerationType] ?? row.considerationType : "—"}
                   </td>
                   <td className="px-3 py-3 text-right tabular-nums text-accent">
-                    <PriceValue price={row.finalPrice} plausible={row.pricePlausible} />
+                    <PriceValue price={row.finalPrice} plausible={row.pricePlausible} finalPriceIsRatio={row.finalPriceIsRatio} />
                   </td>
                   <td className="px-3 py-3 text-right tabular-nums">{row.nBidders}</td>
                   <td className="px-3 py-3 text-right tabular-nums">{row.nProposals}</td>
                   <td className="px-3 py-3 text-right tabular-nums">
                     {row.pctBump !== null ? `${row.pctBump >= 0 ? "+" : ""}${row.pctBump.toFixed(1)}%` : "—"}
                   </td>
-                  <td className="px-3 py-3 text-right tabular-nums">{row.daysFirstContactToSigning ?? "—"}</td>
                 </tr>
               ))}
             </tbody>

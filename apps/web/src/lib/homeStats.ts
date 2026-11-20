@@ -18,7 +18,6 @@ export interface HomeStats {
   medianBidders: HomeStat | null;
   medianProposals: HomeStat | null;
   medianPctBump: HomeStat | null;
-  medianDaysToSigning: HomeStat | null;
   medianDaysFirstProposalToSigning: HomeStat | null;
   pctFirstBidderWon: HomeStat | null;
   // Histogram of first-proposal -> final-price % change, open-ended on
@@ -63,7 +62,6 @@ export async function computeHomeStats(): Promise<HomeStats> {
   const bidders = stats.bidders_who_submitted_a_proposal;
   const proposals = stats.proposals_per_deal;
   const pctBump = stats.pct_increase_cash_deals;
-  const daysToSigning = stats.days_first_contact_to_signing;
   const daysProposalToSigning = stats.days_first_proposal_to_signing;
   const firstBidderWon = stats.pct_first_bidder_is_eventual_acquirer;
 
@@ -72,7 +70,6 @@ export async function computeHomeStats(): Promise<HomeStats> {
     medianBidders: bidders?.median != null ? { value: bidders.median, n: bidders.n } : null,
     medianProposals: proposals?.median != null ? { value: proposals.median, n: proposals.n } : null,
     medianPctBump: pctBump?.median != null ? { value: pctBump.median, n: pctBump.n } : null,
-    medianDaysToSigning: daysToSigning?.median != null ? { value: daysToSigning.median, n: daysToSigning.n } : null,
     medianDaysFirstProposalToSigning:
       daysProposalToSigning?.median != null
         ? { value: daysProposalToSigning.median, n: daysProposalToSigning.n }

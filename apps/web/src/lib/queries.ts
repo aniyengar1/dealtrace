@@ -93,12 +93,14 @@ export async function getDealBySlug(slug: string): Promise<Deal | null> {
   );
 }
 
-// Resolves a duplicate deal's `duplicate_of` id to the slug of the
-// canonical deal it was merged into -- the only lookup a non-canonical
-// deal page needs before redirecting away.
-export async function getDealSlugById(id: string): Promise<string | null> {
-  const row = await queryOne<{ slug: string }>(`SELECT slug FROM deals WHERE id = $1`, [id]);
-  return row?.slug ?? null;
+// Whole-table index of just the columns proxy.ts needs to decide
+// exists/redirect/pass-through for every deal slug in one query -- small
+// enough (one row per deal, four scalar columns) to load in full and
+// cache in memory rather than re-querying per request.
+export async function listDealSlugIndex(): Promise<
+  { id: string; slug: string; is_canonical: boolean; duplicate_of: string | null }[]
+> {
+  return query(`SELECT id, slug, is_canonical, duplicate_of FROM deals`);
 }
 
 // The most recent run that actually extracted events/proposals (the

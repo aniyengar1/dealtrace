@@ -84,6 +84,11 @@ export default async function DealPage({
 
   const finalProposal = pickFinalProposal(proposals);
   const finalPrice = metrics?.finalPrice ?? finalProposal?.price_high ?? finalProposal?.price_low ?? null;
+  // Only available from deal_metrics (see PriceValue) -- every
+  // canonical deal has a row there, so this only falls back to the
+  // (safe, dollar-price-assuming) default when metrics itself is
+  // unexpectedly missing.
+  const finalPriceIsRatio = metrics?.finalPriceIsRatio ?? null;
   const signingEvent = events.find((e) => e.event_type === "signing" && e.date_start);
   const summary = computeDealSummary(events, proposals, deal.target);
   const initialFact = factId
@@ -110,9 +115,9 @@ export default async function DealPage({
 
       <dl className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <Card className="p-3.5">
-          <dt className="text-xs text-ink-muted">Price per share</dt>
+          <dt className="text-xs text-ink-muted">{finalPriceIsRatio ? "Exchange ratio" : "Price per share"}</dt>
           <dd className="mt-0.5 text-lg font-semibold tabular-nums text-accent">
-            <PriceValue price={finalPrice} plausible={metrics?.pricePlausible ?? null} />
+            <PriceValue price={finalPrice} plausible={metrics?.pricePlausible ?? null} finalPriceIsRatio={finalPriceIsRatio} />
           </dd>
         </Card>
         <Card className="p-3.5">
@@ -169,9 +174,9 @@ export default async function DealPage({
             <dd className="mt-0.5 text-sm font-medium tabular-nums text-ink">{summary.nBidders}</dd>
           </div>
           <div>
-            <dt className="text-xs text-ink-muted">First contact → signing</dt>
+            <dt className="text-xs text-ink-muted">First proposal → signing</dt>
             <dd className="mt-0.5 text-sm font-medium tabular-nums text-ink">
-              {summary.daysFirstContactToSigning !== null ? `${summary.daysFirstContactToSigning} days` : "—"}
+              {summary.daysFirstProposalToSigning !== null ? `${summary.daysFirstProposalToSigning} days` : "—"}
             </dd>
           </div>
           <div>

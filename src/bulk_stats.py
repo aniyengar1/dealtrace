@@ -452,6 +452,57 @@ def compute_final_price_range_for_deal(d: dict) -> tuple[Optional[float], Option
     return final["price_low"], final["price_high"]
 
 
+# Matches a dollar amount in a quote's own text ("$74.00", "$1.25 per
+# share", "C$1.48"/"A$0.90" -- a currency-code prefix before the "$" is
+# fine, only the digits after it matter here).
+_DOLLAR_AMOUNT_RE = re.compile(r"\$\s*([\d,]+\.?\d*)")
+
+
+def _is_dollar_denominated(price: float, quotes: list[str]) -> bool:
+    """True if a consideration_type='stock' proposal's own source
+    quote confirms its stored price is a genuine dollar-per-share
+    figure -- an "implied value of $X per share" is a real, common
+    convention even for an all-stock deal (Mr. Cooper/Rocket: $154.00;
+    Renovacor/Rocket: "an implied value of $2.10 per share") -- rather
+    than a bare exchange ratio with no dollar amount mentioned
+    anywhere in its own quote at all ("a fixed exchange ratio of
+    0.3575x", Axcelis/Veeco). A plain magnitude threshold can't tell
+    these apart -- genuine ratios (commonly 0.3-2.5) and genuine
+    per-share dollar prices for a lower-priced stock (Sonnet/Rorschach:
+    $1.25; Home Point: $1.80) overlap in exactly the same range --
+    so this checks the quote's own text for the stored number spelled
+    out with a leading "$", not just its size."""
+    for m in _DOLLAR_AMOUNT_RE.finditer(" ".join(quotes)):
+        try:
+            amount = float(m.group(1).replace(",", ""))
+        except ValueError:
+            continue
+        if abs(amount - price) < 0.015:
+            return True
+    return False
+
+
+def compute_final_price_is_ratio_for_deal(d: dict) -> Optional[bool]:
+    """True when the final price should be displayed as a stock
+    -exchange ratio, not a dollar amount -- the final proposal's
+    consideration_type is 'stock' AND its own source quotes never
+    spell out the stored number as a dollar figure (see
+    _is_dollar_denominated). None when there's no final price at all;
+    False (show as a dollar price) for every other consideration_type,
+    since a spot-check confirmed cash/mixed/unknown deals in this
+    dataset always store a genuine stated per-share dollar price."""
+    dated = _dated_proposals(d["proposals"])
+    final = _final_entry(dated)
+    if final is None:
+        return None
+    price = _price(final)
+    if price is None:
+        return None
+    if final.get("consideration_type") != "stock":
+        return False
+    return not _is_dollar_denominated(price, final.get("source_quotes") or [])
+
+
 def compute_pct_bump_for_deal(d: dict) -> tuple[Optional[float], Optional[str]]:
     """Returns (pct, exclusion_reason). reason is None exactly when pct
     is a valid, includable value. For abs_change_over_300pct, pct still
@@ -831,6 +882,16 @@ def stat_days_first_proposal_to_signing(deals: list[dict]) -> dict:
 
 
 def compute_all() -> dict:
+    """Deliberately does NOT include days_first_contact_to_signing --
+    a round-3 spot-check found 5 of 9 field errors were first-contact
+    dates (the single least reliable extracted signal in the
+    pipeline), so this stat is excluded from the public headline_stats
+    table and the site entirely. The per-deal value is still computed
+    and stored in deal_metrics.days_first_contact_to_signing (see
+    src.deal_metrics.compute_metrics_for_deal) -- kept in the database
+    as an experimental column, just never surfaced or aggregated
+    publicly. days_first_proposal_to_signing is unaffected and remains
+    the headline stat for process duration."""
     with connect() as conn:
         deals = _fetch_canonical_deals(conn)
     return {
@@ -840,7 +901,6 @@ def compute_all() -> dict:
         "proposals_per_deal": stat_n_proposals(deals),
         "pct_increase_cash_deals": stat_pct_increase_cash(deals),
         "pct_first_bidder_is_eventual_acquirer": stat_first_bidder_is_acquirer(deals),
-        "days_first_contact_to_signing": stat_days_first_contact_to_signing(deals),
         "days_first_proposal_to_signing": stat_days_first_proposal_to_signing(deals),
     }
 

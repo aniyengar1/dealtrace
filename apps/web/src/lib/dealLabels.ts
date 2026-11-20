@@ -21,5 +21,5 @@ export const CONSIDERATION_TYPE_LABELS: Record<string, string> = {
   unknown: "Unknown",
 };
 
-export type SortKey = "signingDate" | "finalPrice" | "nBidders" | "nProposals" | "pctChange" | "daysToSigning";
+export type SortKey = "signingDate" | "finalPrice" | "nBidders" | "nProposals" | "pctChange";
 export type SortDir = "asc" | "desc";

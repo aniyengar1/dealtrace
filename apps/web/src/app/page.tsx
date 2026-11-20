@@ -144,11 +144,11 @@ export default async function HomePage() {
                 size="lg"
               />
             )}
-            {stats.medianDaysToSigning && (
+            {stats.medianDaysFirstProposalToSigning && (
               <StatNumber
-                value={Math.round(stats.medianDaysToSigning.value)}
-                label="Median days, first contact → signing"
-                n={stats.medianDaysToSigning.n}
+                value={Math.round(stats.medianDaysFirstProposalToSigning.value)}
+                label="Median days, first proposal → signing"
+                n={stats.medianDaysFirstProposalToSigning.n}
                 size="lg"
               />
             )}

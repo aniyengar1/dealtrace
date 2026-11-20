@@ -12,7 +12,12 @@ export interface DealSummaryStats {
   nBidders: number;
   nBidderBids: number;
   nCounteroffers: number;
+  // Experimental -- not rendered anywhere; a round-3 spot-check found
+  // first-contact dates the least reliable extracted field (5 of 9
+  // field errors). Kept on the type for internal/future use only; use
+  // daysFirstProposalToSigning for anything user-facing.
   daysFirstContactToSigning: number | null;
+  daysFirstProposalToSigning: number | null;
   daysFirstBidToFinalBid: number | null;
   marketCheck: "yes" | "no" | "unknown";
   finalPremiumPct: number | null;
@@ -141,6 +146,16 @@ export function computeDealSummary(
     daysFirstContactToSigning = Math.round((end - start) / (1000 * 60 * 60 * 24));
   }
 
+  // The reliable, user-facing timeline figure -- anchored to the
+  // earliest dated PROPOSAL rather than first contact (see
+  // daysFirstContactToSigning's comment above).
+  let daysFirstProposalToSigning: number | null = null;
+  if (firstEntry && signing?.date_start) {
+    const start = firstEntry.date.getTime();
+    const end = new Date(`${signing.date_start}T00:00:00Z`).getTime();
+    daysFirstProposalToSigning = Math.round((end - start) / (1000 * 60 * 60 * 24));
+  }
+
   // Heuristic, not a direct extraction: 2+ distinct bidders is itself
   // strong evidence a market check happened, regardless of whether the
   // filing narrates it as one; with exactly one bidder, a
@@ -171,6 +186,7 @@ export function computeDealSummary(
     nBidderBids,
     nCounteroffers,
     daysFirstContactToSigning,
+    daysFirstProposalToSigning,
     daysFirstBidToFinalBid,
     marketCheck,
     finalPremiumPct,
