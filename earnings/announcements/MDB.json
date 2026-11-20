@@ -1,0 +1,48 @@
+{
+  "company": "MDB",
+  "versions": [
+    {
+      "announcement_issued_date": "2026-11-05",
+      "authenticity_limit": "SHA-256 proves byte integrity, not document authenticity or current website contents",
+      "checked_at": "2026-11-20T09:46:51.041023+00:00",
+      "company": "MDB",
+      "entered_at": "2026-11-20T09:46:51.041023+00:00",
+      "event_kind": "results_release",
+      "fiscal_period": {
+        "end": "2026-10-31",
+        "label": "Q3 FY2027",
+        "start": "2026-08-01"
+      },
+      "gaps": [],
+      "id": "2f70fb99-20fe-598d-a1a6-41bc11e04ca1",
+      "independently_checked": false,
+      "ingested_at": "2026-11-20T09:46:51.020544+00:00",
+      "owner_intake_id": "2098548e-3c7f-4f50-9128-1de89610a4d6",
+      "owner_retrieved_at": "2026-11-20T01:21:00-08:00",
+      "quote": "MongoDB, Inc. (NASDAQ: MDB) will report its third quarter fiscal year 2027 financial results for the three months ended October 31, 2026, after the U.S. financial markets close on Tuesday, December 1, 2026.",
+      "quotes": {
+        "announcement_date": "November 5, 2026",
+        "company": "MongoDB, Inc. (NASDAQ: MDB) will report its third quarter fiscal year 2027 financial results for the three months ended October 31, 2026, after the U.S. financial markets close on Tuesday, December 1, 2026.",
+        "fiscal_period": "MongoDB, Inc. (NASDAQ: MDB) will report its third quarter fiscal year 2027 financial results for the three months ended October 31, 2026, after the U.S. financial markets close on Tuesday, December 1, 2026.",
+        "release_date": "MongoDB, Inc. (NASDAQ: MDB) will report its third quarter fiscal year 2027 financial results for the three months ended October 31, 2026, after the U.S. financial markets close on Tuesday, December 1, 2026.",
+        "release_time": "MongoDB, Inc. (NASDAQ: MDB) will report its third quarter fiscal year 2027 financial results for the three months ended October 31, 2026, after the U.S. financial markets close on Tuesday, December 1, 2026.",
+        "results_publication": "MongoDB, Inc. (NASDAQ: MDB) will report its third quarter fiscal year 2027 financial results for the three months ended October 31, 2026, after the U.S. financial markets close on Tuesday, December 1, 2026."
+      },
+      "release_date": "2026-12-01",
+      "release_time": "after_market_close",
+      "review_note": "Reviewed identity, Q3 FY2027 ended October 31, issuance dateline and explicit results publication, separate from call. Owner retrieval time preserved; MongoDB corrected by supplier from 01:29 to 01:21. Hash is integrity evidence, not authenticity. No current-state attestation or lock.",
+      "reviewed_by": "Codex (document-content review; owner-supplied provenance)",
+      "source_sha256": "bb8153d7363709fa19d7f6b32bb190d8467e45387f282a86c9ce8d80a1ea4136",
+      "source_url": "https://investors.mongodb.com/node/14771/pdf",
+      "supplied_by": "Anirudh Iyengar",
+      "time_precision": "market_session",
+      "timestamp_verified": false,
+      "timezone": "America/New_York",
+      "timezone_provenance": "U.S. financial-market close context; conservative midnight start of release date, not conference-call time.",
+      "verification_method": "owner_pdf_document_review_v1",
+      "verification_status": "user_verified",
+      "verified_at": "2026-11-20T09:46:51.041023+00:00",
+      "verifier": "Codex (document-content review; owner-supplied provenance)"
+    }
+  ]
+}

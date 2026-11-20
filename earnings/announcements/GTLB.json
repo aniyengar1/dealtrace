@@ -1,0 +1,60 @@
+{
+  "company": "GTLB",
+  "versions": [
+    {
+      "announcement_issued_date": "2026-11-17",
+      "cached_body": "data/cache/earnings/ir-dates/fe18d72c505e966b547c2715cf1249cad972d290cfa4fb228c26d1580eb73daa-aa5483eb912f4c6b73407fbc01020e8cdeb3716e46fa95b9b55795bfe40e814d.body",
+      "checked_at": "2026-11-20T09:49:09.043678+00:00",
+      "company": "GTLB",
+      "event_kind": "results_release",
+      "fiscal_period": {
+        "available_on": "2026-09-01",
+        "boundary_evidence": {
+          "accession": "0001628280-26-059820",
+          "filed_date": "2026-09-01",
+          "prior_actual_accession": "0001628280-25-054840",
+          "prior_actual_id": "c14acb73-8f6e-5174-b068-45c2bf6a085a",
+          "rule": "Three calendar months on the registered month-based fiscal calendar",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm"
+        },
+        "end": "2026-10-31",
+        "growth_comparability": {
+          "available_on": "2026-11-11",
+          "blocked": false,
+          "reason": "Consolidated revenue reconciled to current release and prior-year annual/YTD statements.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm"
+          ]
+        },
+        "label": "Q3 FY2027",
+        "outcome_comparability": {
+          "available_on": "2026-11-11",
+          "blocked": true,
+          "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm"
+          ]
+        },
+        "prior_end": "2025-10-31",
+        "prior_start": "2025-08-01",
+        "start": "2026-08-01"
+      },
+      "id": "bb8e494b-337f-599d-9e2d-ed8693601237",
+      "quote": "GitLab Inc., (NASDAQ: GTLB), the intelligent orchestration platform for DevSecOps, today announced that it will report its financial results for the third quarter fiscal year 2027, which ended October 31, 2026, after U.S. markets close on Tuesday, December 1, 2026.",
+      "release_date": "2026-12-01",
+      "release_time": "after_market_close",
+      "retrieved_at": "2026-11-20T09:49:09.960240+00:00",
+      "review_note": "Full announcement reviewed for identity, Q3 FY2027 ended October31, November17 dateline, December1 after-close results publication; separate 1:30PT call is not the release deadline.",
+      "source_sha256": "aa5483eb912f4c6b73407fbc01020e8cdeb3716e46fa95b9b55795bfe40e814d",
+      "source_url": "https://ir.gitlab.com/news/news-details/2026/GitLab-To-Announce-Third-Quarter-Fiscal-2027-Financial-Results/default.aspx",
+      "time_precision": "market_session",
+      "timestamp_verified": false,
+      "timezone": "America/New_York",
+      "timezone_provenance": "U.S. market-close context; conservative start of release date; call clock is separate.",
+      "verification_method": "direct_http_official_ir_full_document",
+      "verification_status": "independently_verified",
+      "verified_at": "2026-11-20T10:06:10.176463+00:00",
+      "verifier": "Codex"
+    }
+  ]
+}
