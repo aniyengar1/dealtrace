@@ -10,6 +10,7 @@ export interface Deal {
   search_term: string;
   is_canonical: boolean;
   duplicate_of: string | null;
+  excluded_from_stats: boolean;
 }
 
 export interface ExtractionRun {

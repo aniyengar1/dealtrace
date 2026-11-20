@@ -44,8 +44,8 @@ export async function getTickerDeals(): Promise<TickerDeal[]> {
     `SELECT d.slug, dm.target_display, dm.acquirer_display, dm.final_price
      FROM deal_metrics dm
      JOIN deals d ON d.id = dm.deal_id
-     WHERE d.slug = ANY($1) AND dm.is_canonical AND dm.price_plausible IS DISTINCT FROM false
-       AND dm.final_price IS NOT NULL`,
+     WHERE d.slug = ANY($1) AND dm.is_canonical AND NOT dm.excluded_from_stats
+       AND dm.price_plausible IS DISTINCT FROM false AND dm.final_price IS NOT NULL`,
     [CURATED_TICKER_SLUGS]
   );
 

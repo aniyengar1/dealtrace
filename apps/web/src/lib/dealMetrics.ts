@@ -114,8 +114,16 @@ const BASE_SELECT = `
   JOIN deals d ON d.id = dm.deal_id
 `;
 
+// Every public listing reads from here, so the scope is "included"
+// deals -- canonical (deduplicated) AND not excluded_from_stats
+// (src.classify_deal_type: spin-offs, affiliated-manager mergers, and
+// buyer-side-filer deals) -- never canonical alone. A deal like
+// Viasat/Inmarsat (filer_is_acquirer) is canonical but must never
+// appear in a public count, list, or search result.
 export async function listCanonicalDealMetrics(): Promise<DealMetricsRow[]> {
-  const rows = await query<DealMetricsDbRow>(`${BASE_SELECT} WHERE dm.is_canonical ORDER BY dm.computed_at DESC`);
+  const rows = await query<DealMetricsDbRow>(
+    `${BASE_SELECT} WHERE dm.is_canonical AND NOT dm.excluded_from_stats ORDER BY dm.computed_at DESC`
+  );
   return rows.map(toRow);
 }
 

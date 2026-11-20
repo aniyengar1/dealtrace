@@ -61,7 +61,7 @@ export default async function DealsPage({
     <Container wide className="py-10">
       <h1 className="font-serif text-3xl font-semibold tracking-tight text-ink">Deal explorer</h1>
       <p className="mt-1.5 text-sm text-ink-muted">
-        {total} of {allRows.length} canonical deals.
+        {total} of {allRows.length} deals.
       </p>
 
       <div className="mt-6">

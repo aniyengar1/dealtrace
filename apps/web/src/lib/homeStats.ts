@@ -15,6 +15,7 @@ export interface PctBumpBucket {
 
 export interface HomeStats {
   nDealsCovered: number;
+  minSigningYear: number | null;
   medianBidders: HomeStat | null;
   medianProposals: HomeStat | null;
   medianPctBump: HomeStat | null;
@@ -25,6 +26,28 @@ export interface HomeStats {
   // after bulk_stats.py's own sanity thresholds; a bounded bucket
   // absorbs them instead of a chart with one bar towering over the rest.
   pctBumpHistogram: PctBumpBucket[];
+}
+
+export interface IncludedDealsSummary {
+  count: number;
+  minSigningYear: number | null;
+}
+
+// Shared by the home page (hero/stats-band counts, "since YYYY") and
+// the root layout's <title>/description -- both need the same
+// included-deal population (canonical AND not excluded_from_stats, see
+// listCanonicalDealMetrics) and the same "since" floor, computed once
+// here instead of drifting into two separately hand-maintained numbers.
+export async function getIncludedDealsSummary(): Promise<IncludedDealsSummary> {
+  const rows = await query<{ count: number; min_year: number | null }>(
+    `SELECT count(DISTINCT dm.deal_id)::int AS count,
+            MIN(EXTRACT(YEAR FROM e.date_start))::int AS min_year
+     FROM deal_metrics dm
+     LEFT JOIN extraction_runs r ON r.deal_id = dm.deal_id
+     LEFT JOIN events e ON e.run_id = r.id AND e.event_type = 'signing' AND e.date_start IS NOT NULL
+     WHERE dm.is_canonical AND NOT dm.excluded_from_stats`
+  );
+  return { count: rows[0]?.count ?? 0, minSigningYear: rows[0]?.min_year ?? null };
 }
 
 const PCT_BUMP_BUCKETS: { label: string; min: number; max: number }[] = [
@@ -51,12 +74,14 @@ function buildHistogram(values: number[]): PctBumpBucket[] {
 // cash-deal population pct_increase_cash_deals summarizes -- a non-null
 // pct_bump with no exclusion reason).
 export async function computeHomeStats(): Promise<HomeStats> {
-  const [stats, pctBumpRows, canonicalCount] = await Promise.all([
+  const [stats, pctBumpRows, dealsSummary] = await Promise.all([
     getHeadlineStats(),
     query<{ pct_bump: number }>(
-      `SELECT pct_bump FROM deal_metrics WHERE is_canonical AND pct_bump IS NOT NULL AND pct_bump_exclusion_reason IS NULL`
+      `SELECT dm.pct_bump FROM deal_metrics dm
+       WHERE dm.is_canonical AND NOT dm.excluded_from_stats
+         AND dm.pct_bump IS NOT NULL AND dm.pct_bump_exclusion_reason IS NULL`
     ),
-    query<{ count: number }>(`SELECT count(*)::int AS count FROM deals WHERE is_canonical`),
+    getIncludedDealsSummary(),
   ]);
 
   const bidders = stats.bidders_who_submitted_a_proposal;
@@ -66,7 +91,8 @@ export async function computeHomeStats(): Promise<HomeStats> {
   const firstBidderWon = stats.pct_first_bidder_is_eventual_acquirer;
 
   return {
-    nDealsCovered: canonicalCount[0]?.count ?? 0,
+    nDealsCovered: dealsSummary.count,
+    minSigningYear: dealsSummary.minSigningYear,
     medianBidders: bidders?.median != null ? { value: bidders.median, n: bidders.n } : null,
     medianProposals: proposals?.median != null ? { value: proposals.median, n: proposals.n } : null,
     medianPctBump: pctBump?.median != null ? { value: pctBump.median, n: pctBump.n } : null,

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { listCanonicalDealMetrics, type DealMetricsRow } from "@/lib/dealMetrics";
-import { buyerType, BUYER_TYPE_LABELS, type BuyerType } from "@/lib/labels";
+import { buyerType, BUYER_TYPE_LABELS } from "@/lib/labels";
 import { statDecimals } from "@/lib/format";
 import { PriceValue } from "@/components/ui/PriceValue";
 import { Container } from "@/components/ui/Container";
@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Cross-deal stats",
-  description: "Aggregate findings across every canonical deal, computed once per bulk-load run.",
+  description: "Aggregate findings across every included deal, computed once per bulk-load run.",
 };
 
 function median(values: number[]): number | null {
@@ -97,10 +97,7 @@ export default async function StatsPage({
   // raw events and proposals on every request.
   const rows = await listCanonicalDealMetrics();
 
-  const byType: Record<BuyerType, DealMetricsRow[]> = { strategic: [], sponsor: [], unknown: [] };
-  for (const row of rows) byType[buyerType(row.slug, row.acquirerDisplay)].push(row);
-
-  // The group-stats cards above summarize all 964 canonical deals;
+  // The group-stats card above summarizes every included deal;
   // only the per-deal table below is paginated -- a single response
   // rendering every row as its own <tr> is the thing that was actually
   // slow, not the deal_metrics query itself.
@@ -114,14 +111,12 @@ export default async function StatsPage({
     <Container wide className="py-10">
       <h1 className="font-serif text-3xl font-semibold tracking-tight text-ink">Cross-deal findings</h1>
       <p className="mt-1 text-sm text-ink-muted">
-        n = {rows.length} canonical deal{rows.length === 1 ? "" : "s"} — every figure is read from{" "}
+        n = {rows.length} included deal{rows.length === 1 ? "" : "s"} — every figure is read from{" "}
         <code className="text-ink">deal_metrics</code>, computed once per bulk-load run.
       </p>
 
-      <div className="mt-6 grid gap-4 sm:grid-cols-3">
+      <div className="mt-6 max-w-sm">
         <GroupStatsCard label="All deals" stats={groupStats(rows)} />
-        <GroupStatsCard label={BUYER_TYPE_LABELS.strategic} stats={groupStats(byType.strategic)} />
-        <GroupStatsCard label={BUYER_TYPE_LABELS.sponsor} stats={groupStats(byType.sponsor)} />
       </div>
 
       <div className="mt-8 overflow-x-auto rounded-lg border border-border bg-surface">

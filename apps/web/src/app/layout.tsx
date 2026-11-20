@@ -3,7 +3,7 @@ import { Fraunces, Inter } from "next/font/google";
 import { NavBar } from "@/components/layout/NavBar";
 import { Footer } from "@/components/layout/Footer";
 import { PageTransition } from "@/components/layout/PageTransition";
-import { query } from "@/lib/db";
+import { getIncludedDealsSummary } from "@/lib/homeStats";
 import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -27,9 +27,9 @@ const siteUrl = SITE_URL;
 // canonical deal count instead of a claim that drifts out of date
 // (or a blanket "every" that promises more coverage than exists).
 export async function generateMetadata(): Promise<Metadata> {
-  const rows = await query<{ count: number }>(`SELECT count(*)::int AS count FROM deals WHERE is_canonical`);
-  const n = rows[0]?.count ?? 0;
-  const description = `DealTrace has extracted ${n} public-company sale processes from SEC filings since 2021 -- who was contacted, how bids moved, how long it took -- with every fact linked to its source quote.`;
+  const { count: n, minSigningYear } = await getIncludedDealsSummary();
+  const since = minSigningYear ?? 2021;
+  const description = `DealTrace has extracted ${n} public-company sale processes from SEC filings since ${since} -- who was contacted, how bids moved, how long it took -- with every fact linked to its source quote.`;
   return {
     metadataBase: new URL(siteUrl),
     title: {

@@ -57,7 +57,10 @@ export default async function DealPage({
   const { slug } = await params;
   const { fact: factId } = await searchParams;
   const [deal, metrics] = await Promise.all([getDealBySlug(slug), getDealMetricsBySlug(slug)]);
-  if (!deal) notFound();
+  // proxy.ts already blocks a real request from getting this far for an
+  // excluded deal's slug -- this is defense-in-depth only (e.g. a stale
+  // slug-map cache window).
+  if (!deal || deal.excluded_from_stats) notFound();
 
   const [factsRun, valuationsRun] = await Promise.all([
     getLatestFactsRunForDeal(deal.id),

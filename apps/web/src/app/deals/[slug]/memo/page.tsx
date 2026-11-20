@@ -45,7 +45,8 @@ function LineList({ slug, lines }: { slug: string; lines: MemoLine[] }) {
 export default async function DealMemoPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const [deal, metrics] = await Promise.all([getDealBySlug(slug), getDealMetricsBySlug(slug)]);
-  if (!deal) notFound();
+  // Defense-in-depth -- see deals/[slug]/page.tsx's identical check.
+  if (!deal || deal.excluded_from_stats) notFound();
 
   const [factsRun, valuationsRun] = await Promise.all([
     getLatestFactsRunForDeal(deal.id),

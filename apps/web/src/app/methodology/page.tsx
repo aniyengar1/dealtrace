@@ -4,7 +4,10 @@ import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { getIncludedDealsSummary } from "@/lib/homeStats";
 import { HeroMedia } from "../HeroMedia";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Methodology",
@@ -26,6 +29,9 @@ const DISCOVERY_FUNNEL: { label: string; count: number }[] = [
   { label: "Extracted", count: 1174 },
   { label: "Unique deals (after de-duplication)", count: 964 },
 ];
+
+const FINAL_FUNNEL_STEP_LABEL =
+  "Target-side sale processes (after excluding buyer-side filings, spin-offs, affiliated mergers)";
 
 const EXTRACTED_FIELDS: { type: string; fields: string }[] = [
   { type: "Event", fields: "date (as written + resolved), event type, parties involved, a one-sentence summary" },
@@ -60,7 +66,10 @@ const ACCURACY_ROWS: {
   { deal: "20-deal spot check (round 3)", set: "Bulk extraction sample", metric: "Field-by-field manual verification", result: "81 / 90 fields" },
 ];
 
-export default function MethodologyPage() {
+export default async function MethodologyPage() {
+  const { count: nIncluded } = await getIncludedDealsSummary();
+  const funnel = [...DISCOVERY_FUNNEL, { label: FINAL_FUNNEL_STEP_LABEL, count: nIncluded }];
+
   return (
     <div>
       <HeroMedia />
@@ -102,14 +111,14 @@ export default function MethodologyPage() {
           <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Discovery funnel</h2>
         </Reveal>
         <Reveal delay={60}>
-          <div className="mt-5 grid gap-3 sm:grid-cols-4">
-            {DISCOVERY_FUNNEL.map((step, i) => (
+          <div className="mt-5 grid gap-3 sm:grid-cols-5">
+            {funnel.map((step, i) => (
               <div key={step.label} className="relative">
                 <Card className="h-full p-4">
                   <span className="font-serif text-2xl text-accent tabular-nums">{step.count.toLocaleString()}</span>
                   <p className="mt-1.5 text-sm text-ink-muted">{step.label}</p>
                 </Card>
-                {i < DISCOVERY_FUNNEL.length - 1 && (
+                {i < funnel.length - 1 && (
                   <span className="absolute -right-3 top-1/2 hidden -translate-y-1/2 text-ink-faint sm:block">→</span>
                 )}
               </div>

@@ -1,4 +1,5 @@
 import { formatPrice } from "@/lib/format";
+import { acquireVerb } from "@/lib/labels";
 import type { TickerDeal } from "@/lib/tickerDeals";
 
 // Pure CSS marquee (no JS, no framer-motion) -- cheap enough to run
@@ -14,7 +15,7 @@ export function DealTicker({ deals }: { deals: TickerDeal[] }) {
       {deals.map((d) => (
         <span key={`${keyPrefix}-${d.slug}`} className="flex items-center gap-2 whitespace-nowrap text-sm text-ink-muted">
           <span className="text-ink">{d.acquirerDisplay}</span>
-          <span>acquires</span>
+          <span>{acquireVerb(d.acquirerDisplay)}</span>
           <span className="text-ink">{d.targetDisplay}</span>
           <span className="text-accent tabular-nums">{formatPrice(d.finalPrice)}</span>
         </span>

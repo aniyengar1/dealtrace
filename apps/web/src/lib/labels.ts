@@ -129,9 +129,19 @@ export function buyerType(slug: string, acquirer: string): BuyerType {
   return SPONSOR_NAME_PATTERN.test(acquirer) ? "sponsor" : "unknown";
 }
 
+// " and "/"&" between names signals multiple acquiring parties
+// (consortium/co-sponsor deals, e.g. "Hellman & Friedman and Permira")
+// -- plural "acquire" reads right there, singular "acquires" everywhere
+// else.
+const MULTI_PARTY_RE = / and |&/i;
+
+export function acquireVerb(acquirerDisplay: string): string {
+  return MULTI_PARTY_RE.test(acquirerDisplay) ? "acquire" : "acquires";
+}
+
 // One direction convention for every deal title on the site: the
 // acquirer always leads, the target always follows, and it reads as a
 // sentence -- no arrow glyph to point the wrong way on half the pages.
 export function dealTitle(acquirerDisplay: string, targetDisplay: string): string {
-  return `${acquirerDisplay} acquires ${targetDisplay}`;
+  return `${acquirerDisplay} ${acquireVerb(acquirerDisplay)} ${targetDisplay}`;
 }

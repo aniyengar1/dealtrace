@@ -47,6 +47,7 @@ export default async function HomePage() {
     (d): d is NonNullable<typeof d> => d !== undefined
   );
   const headlineCount = stats.nDealsCovered;
+  const sinceYear = stats.minSigningYear ?? 2021;
 
   return (
     <div>
@@ -72,7 +73,7 @@ export default async function HomePage() {
               }}
             />
             <h1 className="font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-ink sm:text-5xl lg:text-6xl">
-              {headlineCount} public-company sale processes since 2021, extracted from SEC filings.
+              {headlineCount} public-company sale processes since {sinceYear}, extracted from SEC filings.
             </h1>
             <p className="mt-5 max-w-xl text-lg text-ink-muted">
               DealTrace reconstructs how M&amp;A sale processes actually unfold &mdash; who was contacted, how bids

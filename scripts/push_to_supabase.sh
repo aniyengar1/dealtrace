@@ -149,6 +149,14 @@ done
 
 if [ "$ALL_PASS" = true ]; then
   echo "==> PASS: all row counts match"
+  echo ""
+  echo "##############################################################"
+  echo "# WARNING: this just DROP + CREATE'd all 10 tables above.    #"
+  echo "# That wipes every GRANT and RLS policy they had -- the      #"
+  echo "# dealtrace_web role (apps/web in production) now has NO     #"
+  echo "# read access until you re-run supabase/readonly_role.sql    #"
+  echo "# in the Supabase SQL editor.                                #"
+  echo "##############################################################"
   exit 0
 else
   echo "==> FAIL: row count mismatch for one or more tables"

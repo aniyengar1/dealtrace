@@ -87,20 +87,25 @@ export async function listDeals(): Promise<Deal[]> {
 
 export async function getDealBySlug(slug: string): Promise<Deal | null> {
   return queryOne<Deal>(
-    `SELECT id, slug, deal_name, target, acquirer, search_term, is_canonical, duplicate_of
-     FROM deals WHERE slug = $1`,
+    `SELECT d.id, d.slug, d.deal_name, d.target, d.acquirer, d.search_term, d.is_canonical, d.duplicate_of,
+            coalesce(dm.excluded_from_stats, false) AS excluded_from_stats
+     FROM deals d LEFT JOIN deal_metrics dm ON dm.deal_id = d.id
+     WHERE d.slug = $1`,
     [slug]
   );
 }
 
 // Whole-table index of just the columns proxy.ts needs to decide
-// exists/redirect/pass-through for every deal slug in one query -- small
-// enough (one row per deal, four scalar columns) to load in full and
-// cache in memory rather than re-querying per request.
+// exists/excluded/redirect/pass-through for every deal slug in one
+// query -- small enough (one row per deal, five scalar columns) to load
+// in full and cache in memory rather than re-querying per request.
 export async function listDealSlugIndex(): Promise<
-  { id: string; slug: string; is_canonical: boolean; duplicate_of: string | null }[]
+  { id: string; slug: string; is_canonical: boolean; duplicate_of: string | null; excluded_from_stats: boolean }[]
 > {
-  return query(`SELECT id, slug, is_canonical, duplicate_of FROM deals`);
+  return query(
+    `SELECT d.id, d.slug, d.is_canonical, d.duplicate_of, coalesce(dm.excluded_from_stats, false) AS excluded_from_stats
+     FROM deals d LEFT JOIN deal_metrics dm ON dm.deal_id = d.id`
+  );
 }
 
 // The most recent run that actually extracted events/proposals (the

@@ -47,6 +47,44 @@ REVOKE SELECT ON TABLE public.schema_migrations FROM dealtrace_web;
 -- later are NOT automatically readable by this role. Re-run (or extend)
 -- this script explicitly when the 9-table scope changes.
 
+-- GRANT SELECT above only controls table-level privilege -- every one
+-- of these 9 tables also has row-level security enabled on Supabase,
+-- which (unlike the table's owner or a BYPASSRLS role) still hides
+-- every row from dealtrace_web unless a policy explicitly admits it.
+-- dealtrace_web isn't anon/authenticated/service_role, so the
+-- anon/authenticated read policies 0008_rls_policies.sql and
+-- 0011_deal_candidates_rls.sql create don't cover it either -- it
+-- needs its own. DROP POLICY IF EXISTS first makes each one safe to
+-- re-run (e.g. after a fresh push_to_supabase.sh recreates these
+-- tables from scratch, wiping any policy that existed on the old
+-- table object -- see that script's own warning).
+DROP POLICY IF EXISTS dealtrace_web_read ON public.deals;
+CREATE POLICY dealtrace_web_read ON public.deals FOR SELECT TO dealtrace_web USING (true);
+
+DROP POLICY IF EXISTS dealtrace_web_read ON public.paragraphs;
+CREATE POLICY dealtrace_web_read ON public.paragraphs FOR SELECT TO dealtrace_web USING (true);
+
+DROP POLICY IF EXISTS dealtrace_web_read ON public.extraction_runs;
+CREATE POLICY dealtrace_web_read ON public.extraction_runs FOR SELECT TO dealtrace_web USING (true);
+
+DROP POLICY IF EXISTS dealtrace_web_read ON public.events;
+CREATE POLICY dealtrace_web_read ON public.events FOR SELECT TO dealtrace_web USING (true);
+
+DROP POLICY IF EXISTS dealtrace_web_read ON public.proposals;
+CREATE POLICY dealtrace_web_read ON public.proposals FOR SELECT TO dealtrace_web USING (true);
+
+DROP POLICY IF EXISTS dealtrace_web_read ON public.valuations;
+CREATE POLICY dealtrace_web_read ON public.valuations FOR SELECT TO dealtrace_web USING (true);
+
+DROP POLICY IF EXISTS dealtrace_web_read ON public.deal_candidates;
+CREATE POLICY dealtrace_web_read ON public.deal_candidates FOR SELECT TO dealtrace_web USING (true);
+
+DROP POLICY IF EXISTS dealtrace_web_read ON public.deal_metrics;
+CREATE POLICY dealtrace_web_read ON public.deal_metrics FOR SELECT TO dealtrace_web USING (true);
+
+DROP POLICY IF EXISTS dealtrace_web_read ON public.headline_stats;
+CREATE POLICY dealtrace_web_read ON public.headline_stats FOR SELECT TO dealtrace_web USING (true);
+
 -- Building the transaction-pooler URL for this role:
 -- Open the Supabase dashboard's Connect page and copy the "Transaction
 -- pooler" connection string shown there (host something like
