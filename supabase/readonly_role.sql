@@ -1,8 +1,10 @@
 -- Read-only Postgres role for apps/web in production (Vercel -> Supabase
--- transaction pooler). Grants SELECT only on the 10 DealTrace tables --
--- no INSERT/UPDATE/DELETE, and no access to anything outside this list
--- (in particular, never the earnings/Crosscheck tables, which this role
--- is never granted on at all).
+-- transaction pooler). Grants SELECT only on the 9 tables apps/web
+-- actually queries -- no INSERT/UPDATE/DELETE, and no access to
+-- anything outside this list (in particular, never the earnings/
+-- Crosscheck tables, which this role is never granted on at all; and
+-- not schema_migrations, which only db/migrate.py reads, never the web
+-- app).
 --
 -- Run this yourself in the Supabase SQL editor, replacing the password
 -- placeholder with your own before running (or edit it in after, via
@@ -32,13 +34,18 @@ GRANT SELECT ON TABLE
     public.valuations,
     public.deal_candidates,
     public.deal_metrics,
-    public.headline_stats,
-    public.schema_migrations
+    public.headline_stats
 TO dealtrace_web;
+
+-- Un-does schema_migrations' earlier inclusion in the grant list above,
+-- for anyone re-running this script against a database where the prior
+-- 10-table version already ran -- REVOKE on a privilege the role never
+-- had is a harmless no-op, so this is safe either way.
+REVOKE SELECT ON TABLE public.schema_migrations FROM dealtrace_web;
 
 -- No ALTER DEFAULT PRIVILEGES grant here on purpose: new tables created
 -- later are NOT automatically readable by this role. Re-run (or extend)
--- this script explicitly when the 10-table scope changes.
+-- this script explicitly when the 9-table scope changes.
 
 -- Building the transaction-pooler URL for this role:
 -- Open the Supabase dashboard's Connect page and copy the "Transaction
