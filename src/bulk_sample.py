@@ -33,13 +33,22 @@ from pathlib import Path
 
 import psycopg
 
-from src.bulk_stats import _latest_signing_date, _resolve_target
+from src.bulk_stats import (
+    _add_bidder,
+    _is_non_bidder_role,
+    _is_same_company_fuzzy,
+    _is_unusable_fragment,
+    _latest_signing_date,
+    _PARTIAL_PROPOSAL_RE,
+    _resolve_target,
+    _split_joint_proposer,
+)
 from src.env import load_env
 from src.load_db import connect
 
 load_env()
 
-SEED = 2027
+SEED = 2028
 N_SAMPLE = 20
 OUTPUT_PATH = Path("data/output/bulk_sample_spotcheck.md")
 
@@ -80,7 +89,7 @@ def _fetch_timeline(conn: psycopg.Connection, deal_id: str, target: str) -> tupl
     proposals = conn.execute(
         """
         SELECT date_text, date_resolved, proposer, recipient, price_low, price_high,
-               currency, consideration_type, status
+               currency, consideration_type, status, source_quotes
         FROM proposals p JOIN extraction_runs r ON r.id = p.run_id
         WHERE r.deal_id = %s AND p.passed
         ORDER BY date_resolved NULLS LAST
@@ -101,14 +110,14 @@ def _fetch_timeline(conn: psycopg.Connection, deal_id: str, target: str) -> tupl
                 "date": p[0], "date_resolved": p[1],
                 "proposer": _resolve_target(p[2], target), "recipient": _resolve_target(p[3], target),
                 "price_low": p[4], "price_high": p[5], "currency": p[6],
-                "consideration_type": p[7], "status": p[8],
+                "consideration_type": p[7], "status": p[8], "source_quotes": p[9] or [],
             }
             for p in proposals
         ],
     )
 
 
-def render_deal(slug: str, target: str, metrics: dict, events: list[dict], proposals: list[dict]) -> str:
+def render_deal(slug: str, target: str, acquirer: str, metrics: dict, events: list[dict], proposals: list[dict]) -> str:
     cik, accession_nodash = _parse_slug(slug)
     link = filing_link(cik, accession_nodash)
     lines = [f"## {metrics['target_display']} <- {metrics['acquirer_display']}", "", f"- Filing: {link}", ""]
@@ -135,7 +144,27 @@ def render_deal(slug: str, target: str, metrics: dict, events: list[dict], propo
     lines.append("")
 
     signing_date = _latest_signing_date({"events": events})
-    bidders = {p["proposer"] for p in proposals if p["proposer"] and p["proposer"] != target}
+    # Mirrors src.bulk_stats.compute_n_bidders_for_deal exactly (same
+    # helpers, same exemption for the deal's own eventual acquirer), so
+    # this parenthetical name list always matches metrics['n_bidders']
+    # itself rather than a naive recount that could show a different
+    # number of names than the count it's meant to support.
+    bidders: set[str] = set()
+    for p in proposals:
+        proposer = p.get("proposer")
+        if not proposer or _is_same_company_fuzzy(proposer, target) or _is_unusable_fragment(proposer):
+            continue
+        is_eventual_acquirer = _is_same_company_fuzzy(proposer, acquirer)
+        if _is_non_bidder_role(proposer) and not is_eventual_acquirer:
+            continue
+        if _PARTIAL_PROPOSAL_RE.search(" ".join(p.get("source_quotes") or [])):
+            continue
+        for name in _split_joint_proposer(proposer):
+            if _is_same_company_fuzzy(name, target) or _is_unusable_fragment(name):
+                continue
+            if _is_non_bidder_role(name) and not is_eventual_acquirer:
+                continue
+            _add_bidder(bidders, name)
 
     lines.append("### deal_metrics (reference for the checklist below -- single source of truth, not recomputed here)")
     lines.append(f"- Acquirer (acquirer_display): {metrics['acquirer_display']}")
@@ -184,7 +213,7 @@ def main() -> None:
         for deal_id, slug, target, acquirer in sample:
             events, proposals = _fetch_timeline(conn, deal_id, target)
             metrics = _fetch_metrics(conn, deal_id)
-            sections.append(render_deal(slug, target, metrics, events, proposals))
+            sections.append(render_deal(slug, target, acquirer, metrics, events, proposals))
 
     header = (
         f"# Bulk deal sample for manual spot-check\n\n"

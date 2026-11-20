@@ -27,6 +27,8 @@ from src.bulk_sample import SEED, N_SAMPLE, _parse_slug, filing_link
 from src.bulk_stats import (
     _add_bidder,
     _is_non_bidder_role,
+    _is_same_company_fuzzy,
+    _is_unusable_fragment,
     _latest_signing_date,
     _PARTIAL_PROPOSAL_RE,
     _process_start_date,
@@ -134,7 +136,7 @@ def _checkbox(label: str) -> str:
     return f"- [ ] {label} correct"
 
 
-def render_deal(conn: psycopg.Connection, deal_id: str, slug: str, target: str) -> str:
+def render_deal(conn: psycopg.Connection, deal_id: str, slug: str, target: str, acquirer: str) -> str:
     link = filing_link(*_parse_slug(slug))
     paragraphs = _paragraph_lookup(slug)
     events = _fetch_events(conn, deal_id, target)
@@ -202,21 +204,27 @@ def render_deal(conn: psycopg.Connection, deal_id: str, slug: str, target: str) 
     lines.append("### Number of bidders")
     lines.append(f"- Extracted value: {metrics['n_bidders']}")
     # Mirrors src.bulk_stats.compute_n_bidders_for_deal exactly (joint
-    # -bid splitting, governance-body and partial-proposal exclusion,
-    # same-entity merging), so the evidence list below always matches
-    # metrics['n_bidders'] itself -- a naive one-proposer-string-per-row
-    # count would show a different number of names than the count it's
-    # meant to support.
+    # -bid splitting, governance-body/generic-role/fragment exclusion,
+    # same-entity merging, and the exemption for the deal's own
+    # eventual acquirer even under a generic raw name), so the evidence
+    # list below always matches metrics['n_bidders'] itself -- a naive
+    # one-proposer-string-per-row count would show a different number
+    # of names than the count it's meant to support.
     bidder_names: set[str] = set()
     bidders: dict[str, dict] = {}
     for p in proposals:
         proposer = p.get("proposer")
-        if not proposer or proposer == target or _is_non_bidder_role(proposer):
+        if not proposer or _is_same_company_fuzzy(proposer, target) or _is_unusable_fragment(proposer):
+            continue
+        is_eventual_acquirer = _is_same_company_fuzzy(proposer, acquirer)
+        if _is_non_bidder_role(proposer) and not is_eventual_acquirer:
             continue
         if _PARTIAL_PROPOSAL_RE.search(" ".join(p.get("source_quotes") or [])):
             continue
         for name in _split_joint_proposer(proposer):
-            if name == target or _is_non_bidder_role(name):
+            if _is_same_company_fuzzy(name, target) or _is_unusable_fragment(name):
+                continue
+            if _is_non_bidder_role(name) and not is_eventual_acquirer:
                 continue
             before = set(bidder_names)
             _add_bidder(bidder_names, name)
@@ -230,16 +238,26 @@ def render_deal(conn: psycopg.Connection, deal_id: str, slug: str, target: str) 
     lines.append("")
 
     lines.append("### First contact date")
-    # No earliest-dated-event fallback -- see src.bulk_stats._process_start_date;
-    # a deal with no extracted first_contact event shows None here,
-    # matching what's actually stored in deal_metrics/excluded from
-    # timing stats, rather than guessing from an unrelated event type.
-    process_start = _process_start_date({"events": events})
+    # The earliest first_contact event, proposal-typed event, or actual
+    # Proposal record about acquiring the target (see
+    # src.bulk_stats._process_start_date) -- not an earliest-dated
+    # -event-of-any-kind fallback, so None here means no such signal
+    # was extracted at all, matching what's actually stored in
+    # deal_metrics/excluded from timing stats.
+    process_start = _process_start_date({"events": events, "proposals": proposals})
     lines.append(f"- Extracted value: {process_start}")
     fc_events = [e for e in events if e["event_type"] == "first_contact" and e["date_start"] == process_start]
+    proposal_events = [e for e in events if e["event_type"] == "proposal" and e["date_start"] == process_start]
+    matching_proposals = [p for p in proposals if p.get("date_resolved") == process_start]
     if process_start is not None and fc_events:
         quote, pid = _quote_block(paragraphs, fc_events[0]["source_paragraph_ids"], fc_events[0]["source_quotes"])
         lines.append(f"- Quote ({pid}): \"{quote}\"")
+    elif process_start is not None and proposal_events:
+        quote, pid = _quote_block(paragraphs, proposal_events[0]["source_paragraph_ids"], proposal_events[0]["source_quotes"])
+        lines.append(f"- Quote ({pid}, from a proposal-typed event -- no first_contact event recorded): \"{quote}\"")
+    elif process_start is not None and matching_proposals:
+        quote, pid = _quote_block(paragraphs, matching_proposals[0]["source_paragraph_ids"], matching_proposals[0]["source_quotes"])
+        lines.append(f"- Quote ({pid}, from a Proposal record -- no first_contact event recorded): \"{quote}\"")
     else:
         lines.append("- Quote: (no first_contact event recorded)")
     lines.append(_checkbox("First contact date"))
@@ -252,7 +270,7 @@ def main() -> None:
     with connect() as conn:
         rows = conn.execute(
             """
-            SELECT d.id, d.slug, d.target
+            SELECT d.id, d.slug, d.target, d.acquirer
             FROM deals d JOIN deal_metrics dm ON dm.deal_id = d.id
             WHERE d.slug LIKE 'bulk_%' AND d.is_canonical AND NOT dm.excluded_from_stats
             ORDER BY d.slug
@@ -263,7 +281,7 @@ def main() -> None:
         rng = random.Random(SEED)
         sample = rng.sample(rows, min(N_SAMPLE, len(rows)))
 
-        sections = [render_deal(conn, deal_id, slug, target) for deal_id, slug, target in sample]
+        sections = [render_deal(conn, deal_id, slug, target, acquirer) for deal_id, slug, target, acquirer in sample]
 
     header = (
         f"# Spot-check evidence packet\n\n"

@@ -47,7 +47,7 @@ import psycopg
 
 from src import validate
 from src.dedup_deals import _is_generic
-from src.entity_match import is_acronym_of, is_anonymized_placeholder, is_governance_body_reference, is_same_entity
+from src.entity_match import _is_ticker_of, core_name, is_acronym_of, is_anonymized_placeholder, is_governance_body_reference, is_same_entity
 from src.env import load_env
 from src.load_db import connect
 
@@ -250,17 +250,34 @@ def compute_n_parties_contacted_for_deal(d: dict) -> int:
 
 
 # A proposal for less than the whole target -- a minority stake, a
-# reinsurance arrangement, specific assets or operations rather than
-# the company itself -- doesn't make its proposer a bidder FOR the
-# target, however real the proposer is otherwise (Midwest Holding's
-# "Party G" proposed a $7.2M minority investment plus reinsuring a
-# portion of the business, not to acquire the company).
+# reinsurance arrangement, specific assets or operations, a licensing
+# deal, or a strategic (non-controlling) investment rather than the
+# company itself -- doesn't make its proposer a bidder FOR the target,
+# however real the proposer is otherwise (Midwest Holding's "Party G"
+# proposed a $7.2M minority investment plus reinsuring a portion of the
+# business, not to acquire the company).
 _PARTIAL_PROPOSAL_RE = re.compile(
     r"\breinsur|\bminority (?:stake|interest|investment)\b|"
     r"\b(?:certain|specific) assets\b|\basset[- ]only\b|"
-    r"\b(?:certain|specific) (?:operations|businesses|business units)\b",
+    r"\b(?:certain|specific) (?:operations|businesses|business units)\b|"
+    r"\blicens(?:e|ing)\b|\bstrategic investment\b",
     re.IGNORECASE,
 )
+
+# A bare honorific-plus-personal-name proposer ("Mr. Greisch", "Dr. Avi
+# Katz") is virtually always an officer/director communicating on
+# behalf of a real corporate bidder (Catalent: "Mr. Greisch" ->
+# "Novo Parties" is Catalent's own officer relaying a message, not a
+# rival bid from an individual), not itself a company capable of
+# acquiring the whole target -- dropped from the bidder count
+# regardless of which side of the deal they're associated with.
+_INDIVIDUAL_NAME_RE = re.compile(
+    r"^(?:Mr\.?|Mrs\.?|Ms\.?|Dr\.?|Messrs\.?|Prof\.?)\s+[A-Z][A-Za-z'\-]+(?:\s+[A-Z][A-Za-z'\-]+)*$"
+)
+
+
+def _is_individual_name(name: str) -> bool:
+    return bool(_INDIVIDUAL_NAME_RE.match(name.strip()))
 
 # Splits a joint-bid proposer string ("Company A and Consortium B",
 # "Advent, Permira and Crosspoint") into its constituent bidders, so
@@ -275,9 +292,17 @@ _PARTIAL_PROPOSAL_RE = re.compile(
 # partner", "management of Terra BDC and TPT") usually has at least one
 # part that doesn't, and is left unsplit rather than exploded into
 # fragments.
+_LEGAL_SUFFIX_WORDS = r"inc\.?|incorporated|corp\.?|corporation|llc|l\.l\.c\.?|lp|l\.p\.?|ltd\.?|limited|plc|co\.?|company"
+# The comma in "Fertitta Entertainment, Inc." is part of ONE company's
+# own name, not a list separator -- splitting there produced a real
+# "Inc." fragment bidder. Matches filing_party_names._CONNECTOR_SPLIT_RE's
+# same negative lookahead for exactly this reason.
+_JOINT_PROPOSER_SPLIT_RE = re.compile(r",\s*(?!(?:" + _LEGAL_SUFFIX_WORDS + r")\b)|\s+and\s+")
+
+
 def _split_joint_proposer(name: str) -> list[str]:
     cleaned = re.sub(r",\s*and\s+", ", ", name)
-    parts = [p.strip() for p in re.split(r",\s*|\s+and\s+", cleaned) if p.strip()]
+    parts = [p.strip() for p in _JOINT_PROPOSER_SPLIT_RE.split(cleaned) if p.strip()]
     if len(parts) <= 1:
         return [name]
     if not all(p[0].isupper() or p[0].isdigit() for p in parts):
@@ -287,11 +312,16 @@ def _split_joint_proposer(name: str) -> list[str]:
 
 def _add_bidder(bidders: set[str], name: str) -> None:
     """Adds `name` unless an already-added bidder is the same entity
-    under a different formality level -- splitting a joint bid can
-    otherwise reintroduce the exact over-count it's meant to fix: a
-    deal naming "Nippon Paint and Sherwin-Williams" in one proposal and
-    "Nippon Paint Holdings Co., Ltd and The Sherwin-Williams Company" in
-    another would split into 4 strings for what are really 2 bidders.
+    under a different formality level or a short-form alias -- splitting
+    a joint bid can otherwise reintroduce the exact over-count it's
+    meant to fix: a deal naming "Nippon Paint and Sherwin-Williams" in
+    one proposal and "Nippon Paint Holdings Co., Ltd and The
+    Sherwin-Williams Company" in another would split into 4 strings for
+    what are really 2 bidders. is_acronym_of (checked both directions,
+    since either the acronym or the full name could already be in the
+    set) catches an initials-style alias the same way -- "FEI" and
+    "Fertitta Entertainment, Inc." are the same bidder, not two
+    (Caesars/Fertitta).
 
     Skipped entirely for an anonymized placeholder ("Party A", "Party
     AA") -- is_same_entity's prefix-match logic treats "Party A" as a
@@ -304,39 +334,90 @@ def _add_bidder(bidders: set[str], name: str) -> None:
         bidders.add(name)
         return
     for existing in bidders:
-        if not is_anonymized_placeholder(existing) and is_same_entity(name, existing):
+        if is_anonymized_placeholder(existing):
+            continue
+        if is_same_entity(name, existing) or is_acronym_of(name, existing) or is_acronym_of(existing, name):
             return
     bidders.add(name)
 
 
+def _is_unusable_fragment(name: str) -> bool:
+    """True for a string that's never a real bidder no matter what --
+    empty, a bare corporate-suffix fragment left over from a bad split
+    ("Inc.", "LLC" with nothing else -- core_name strips the suffix and
+    whatever's left is empty), or a bare individual's name (see
+    _is_individual_name). Checked unconditionally, even for the deal's
+    own eventual acquirer -- unlike a generic ROLE term (see
+    _is_non_bidder_role), which the eventual acquirer is exempted from,
+    there's no sense in which a lone "Inc." fragment or an officer's
+    name IS the acquirer, however it got attached to an accepted
+    proposal."""
+    if not name or not core_name(name):
+        return True
+    return _is_individual_name(name)
+
+
 def _is_non_bidder_role(name: str) -> bool:
     """True for a name that's a role/defined-term placeholder rather
-    than a specific company -- the target's own board/committee (see
-    is_governance_body_reference), or a generic role term like
-    "Sellers" (the defined term for a group of selling shareholders in
-    a carve-out/JV transaction, negotiating on the SELL side, not a
-    rival bidder trying to acquire the target -- Bunge/Viterra's
-    "Sellers" responding with a counterproposal is the divesting
-    shareholder group talking back, not a competing offer) or
+    than a specific company capable of acquiring the whole target --
+    the target's own board/committee (see is_governance_body_reference),
+    a generic role term like "Sellers" (the defined term for a group of
+    selling shareholders in a carve-out/JV transaction, negotiating on
+    the SELL side, not a rival bidder trying to acquire the target --
+    Bunge/Viterra's "Sellers" responding with a counterproposal is the
+    divesting shareholder group talking back, not a competing offer) or
     "Investor"/"Parent"/"Buyer" (see dedup_deals._GENERIC_ACQUIRER_TERMS,
     the same generic-placeholder list used to decide an acquirer name
-    is unusable)."""
+    is unusable). Exempted for the deal's own eventual acquirer (see
+    compute_n_bidders_for_deal) -- several deals only ever call their
+    real, eventual acquirer "Parent" throughout their own extracted
+    text, and excluding it here would silently drop the actual winning
+    bidder from the count entirely."""
     return is_governance_body_reference(name) or _is_generic(name)
 
 
+def _is_same_company_fuzzy(name: str, other: str) -> bool:
+    """True when `name` plausibly refers to the same company as
+    `other`, including under a ticker/short-name (WMC, BNCC) rather
+    than its literal stored legal name -- a plain string-equality check
+    misses these. Used both to recognize the target bidding for itself
+    under an alias, and to recognize a proposer as the deal's own
+    stored acquirer under a generic term never otherwise resolved."""
+    return name == other or is_same_entity(name, other) or is_acronym_of(name, other) or _is_ticker_of(name, other)
+
+
 def compute_n_bidders_for_deal(d: dict) -> int:
+    """The eventual acquirer (d["acquirer"], the deal's own stored
+    acquirer field -- not re-derived from whichever proposal happens to
+    be marked "accepted", since that marker sometimes lands on the
+    TARGET's own counter-proposal in a late-stage back-and-forth, e.g.
+    Dawson/Wilks's accepted entry has proposer="Company" with
+    recipient="Parent") is always counted as a bidder if it made any
+    proposal, even when its own raw name is a generic term never
+    otherwise resolved in this deal's extracted text (Dawson/Wilks and
+    Bio-Techne/Merck both only ever call their real, eventual acquirer
+    "Parent" throughout -- excluding every "Parent"-named proposer as
+    non-bidder-role, with no exemption, silently dropped the actual
+    winning bidder from the count entirely)."""
+    target = d["target"]
+    acquirer = d["acquirer"]
+
     bidders: set[str] = set()
     for p in d["proposals"]:
         proposer = p.get("proposer")
-        if not proposer or proposer == d["target"]:
+        if not proposer or _is_same_company_fuzzy(proposer, target) or _is_unusable_fragment(proposer):
             continue
-        if _is_non_bidder_role(proposer):
+        is_eventual_acquirer = _is_same_company_fuzzy(proposer, acquirer)
+        if _is_non_bidder_role(proposer) and not is_eventual_acquirer:
             continue
         if _PARTIAL_PROPOSAL_RE.search(" ".join(p.get("source_quotes") or [])):
             continue
         for name in _split_joint_proposer(proposer):
-            if name != d["target"] and not _is_non_bidder_role(name):
-                _add_bidder(bidders, name)
+            if _is_same_company_fuzzy(name, target) or _is_unusable_fragment(name):
+                continue
+            if _is_non_bidder_role(name) and not is_eventual_acquirer:
+                continue
+            _add_bidder(bidders, name)
     return len(bidders)
 
 
@@ -428,21 +509,54 @@ def compute_first_bidder_won_for_deal(d: dict) -> tuple[Optional[bool], Optional
     return (first_bidder.strip().lower() == eventual_acquirer.strip().lower()), None
 
 
+# A first_contact event with no deal-relevant language at all ("became
+# acquainted...spoke periodically during 2018") is a social
+# introduction, not first contact ABOUT acquiring or combining with the
+# target (Support.com/Greenidge: the real first_contact that led to the
+# merger is three years later, in 2021) -- required only for
+# first_contact events, since a 'proposal'-typed event or an actual
+# Proposal record already IS, by definition, about acquiring the
+# target and needs no further relevance check.
+_DEAL_RELEVANT_CONTACT_RE = re.compile(
+    r"\bacqui\w*|\bmerg\w*|\bcombin\w*|\btransaction\w*|\bpropos\w*|"
+    r"\bstrategic\b|\bsale process\b|\bpotential (?:sale|deal)\b|"
+    r"\bsubsidiary\b|\bpartnership\w*|\bsynerg\w*",
+    re.IGNORECASE,
+)
+
+
+def _is_deal_relevant_contact(summary: Optional[str]) -> bool:
+    return bool(summary and _DEAL_RELEVANT_CONTACT_RE.search(summary))
+
+
 def _process_start_date(d: dict):
-    """The deal's earliest explicit first_contact event, or None.
-    Deliberately NOT a fallback to the earliest dated event/proposal of
-    any kind -- a board meeting, an unrelated asset sale, a banker
-    engagement, or a public announcement is not "first contact" with a
-    bidder, and silently standing in for it understated some deals'
-    real process length while fabricating a date for others that never
-    had a usable first-contact signal at all. Callers treat None as
-    "no process-start date," excluding the deal from timing stats
-    rather than ever guessing."""
-    first_contact = sorted(
-        (e for e in d["events"] if e["event_type"] == "first_contact" and e["date_start"]),
-        key=lambda e: e["date_start"],
-    )
-    return first_contact[0]["date_start"] if first_contact else None
+    """The deal's earliest contact or proposal, by ANY party, about
+    acquiring or combining with the target -- not just a literal
+    first_contact-typed event (Catalent: Party A's December 2022
+    proposal letter is earlier contact than Party B's January 2023
+    first_contact event, and only counting the latter understated the
+    real process length). Candidates are a first_contact event that
+    actually mentions a deal (see _is_deal_relevant_contact -- a purely
+    social introduction doesn't count), any proposal-typed event, or
+    any row in the deal's own Proposal records (covers an extraction
+    that only produced an Event, never a matching Proposal row, for
+    the same underlying offer). Deliberately NOT a fallback to the
+    earliest event/proposal of ANY kind -- a board meeting, an
+    unrelated asset sale, or a public announcement still isn't contact
+    about this deal. Callers treat None as "no process-start date,"
+    excluding the deal from timing stats rather than ever guessing."""
+    candidates = []
+    for e in d["events"]:
+        if not e["date_start"]:
+            continue
+        if e["event_type"] == "proposal":
+            candidates.append(e["date_start"])
+        elif e["event_type"] == "first_contact" and _is_deal_relevant_contact(e.get("summary")):
+            candidates.append(e["date_start"])
+    for p in d.get("proposals", []):
+        if p.get("date_resolved"):
+            candidates.append(p["date_resolved"])
+    return min(candidates) if candidates else None
 
 
 # Deliberately narrow and unambiguous: every one of these is, in every

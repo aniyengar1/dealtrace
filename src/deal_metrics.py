@@ -25,7 +25,7 @@ from src.bulk_run import load_cached_html
 from src.classify_deal_type import classify_deal
 from src.dedup_deals import _is_generic
 from src.display_name import clean_display_name
-from src.entity_match import is_acronym_of, is_anonymized_placeholder, is_same_entity
+from src.entity_match import _is_ticker_of, is_acronym_of, is_anonymized_placeholder, is_same_entity
 from src.env import load_env
 from src.filing_party_names import extract_acquirer_from_filing, is_shell_name
 from src.load_db import connect
@@ -164,7 +164,7 @@ def _is_invalid_acquirer_display(name: str, target: str) -> bool:
         return True
     if _COMMITTEE_RE.search(name):
         return True
-    if is_same_entity(name, target) or is_acronym_of(name, target):
+    if is_same_entity(name, target) or is_acronym_of(name, target) or _is_ticker_of(name, target):
         return True
     if clean_display_name(name).strip().lower() == clean_display_name(target).strip().lower():
         return True

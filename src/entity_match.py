@@ -73,8 +73,18 @@ def _initials_including_suffix(name: str) -> str:
     return "".join(w[0] for w in words if w).upper()
 
 
+# An optional single descriptive/role word ("Shareholder Party A",
+# "Controlling Stockholder B") in front of the placeholder term itself
+# -- still just an anonymization label, not a real company name,
+# whichever role the filing happens to tag it with. shareholder/
+# stockholder/equityholder can be either the role-adjective prefix
+# ("Shareholder Party A") or the placeholder term itself
+# ("Stockholder B"), so both lists include them.
 _ANONYMIZED_PLACEHOLDER_RE = re.compile(
-    r"^(the\s+)?(company|party|bidder|buyer|acquiror|acquirer|counterparty|sponsor)\s*[a-z0-9]{1,3}$",
+    r"^(the\s+)?(?:shareholder|stockholder|equityholder|controlling|significant|majority|"
+    r"management|director|officer|founder)?\s*"
+    r"(company|party|bidder|buyer|acquiror|acquirer|counterparty|sponsor|"
+    r"shareholder|stockholder|equityholder)\s*[a-z0-9]{1,3}$",
     re.IGNORECASE,
 )
 
@@ -147,3 +157,49 @@ def is_acronym_of(short: str, long_name: str) -> bool:
     if len(words) < 2:
         return False
     return s.upper() in (initials(long_name), _initials_including_suffix(long_name))
+
+
+# Words real stock tickers conventionally drop when abbreviating a
+# company name to 3-5 letters ("Western Asset Mortgage Capital Corp" ->
+# NYSE: WMC, dropping "Asset") -- not an exhaustive list, just the
+# common filler words this pipeline has seen cause a real ticker to
+# diverge from a plain one-letter-per-word initialism.
+_TICKER_FILLER_WORDS = {
+    "asset", "assets", "capital", "holding", "holdings", "investment",
+    "investments", "management", "trust", "realty", "group", "fund",
+}
+
+
+def _is_ticker_of(short: str, long_name: str) -> bool:
+    """True if `short` plausibly IS `long_name`'s own stock ticker or
+    informal short name, rather than a different company's -- broader
+    than is_acronym_of in two ways real tickers diverge from a strict
+    one-letter-per-word initialism: (1) dropping a filler word
+    (_TICKER_FILLER_WORDS) before taking initials ("WMC" only works for
+    "Western Asset Mortgage Capital" once "Asset" is dropped); (2)
+    being a literal prefix of the long name's own squished-together
+    letters ("USAR" is literally the first four letters of
+    "usarareearth", the squished form of "USA Rare Earth" -- a company
+    whose own ticker keeps "USA" as a unit rather than reducing it to
+    one letter, a convention no fixed initials formula predicts).
+    Exists specifically to stop an acquirer-resolution candidate from
+    turning out to just be the target's own ticker (deal_metrics must
+    never show a deal's acquirer as the target itself)."""
+    s = short.strip()
+    if not s or not s.isalpha() or not (2 <= len(s) <= 6):
+        return False
+    words = core_name(long_name).split()
+    if len(words) >= 2:
+        # Try dropping each filler word ONE AT A TIME, not all of them
+        # at once -- "Western Asset Mortgage Capital" drops only
+        # "Asset" (WMC keeps the initial for "Capital"); dropping every
+        # filler word simultaneously would wrongly give "WM".
+        filler_positions = [i for i, w in enumerate(words) if w in _TICKER_FILLER_WORDS]
+        candidates = [words] + [[w for j, w in enumerate(words) if j != i] for i in filler_positions]
+        for candidate_words in candidates:
+            if len(candidate_words) < 2:
+                continue
+            if s.upper() == "".join(w[0] for w in candidate_words).upper():
+                return True
+    squished = re.sub(r"[^a-z]", "", core_name(long_name))
+    return len(s) >= 3 and squished.startswith(s.lower())

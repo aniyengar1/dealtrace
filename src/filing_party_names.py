@@ -114,6 +114,7 @@ def _strip_trailing_descriptive_clause(window: str) -> tuple[str, str]:
 
 
 _NATIONALITY_ADJECTIVE_RE = re.compile(r",\s*(?:a|an)\s+([A-Za-z]+)\b")
+_BARE_WORD_RE = re.compile(r"^[A-Za-z]+$")
 
 
 def _collides_with_nationality_adjective(candidate: str, removed_clause: str) -> bool:
@@ -140,14 +141,36 @@ def _collides_with_nationality_adjective(candidate: str, removed_clause: str) ->
     return len(shorter) >= 4 and longer.startswith(shorter)
 
 
-def _take_last_segment(window: str) -> str:
+def _take_last_segment(window: str, removed_clause: str = "") -> str:
     """The window typically ends with a connector phrase ("by and
     among ... NAME") -- splits on connectors (by/among/between/with/
     and/,) and keeps the last segment, which is the actual party name
     immediately before the defined term's parenthetical (or before
-    whatever relational phrase _candidate_for_match already cut at)."""
+    whatever relational phrase _candidate_for_match already cut at).
+
+    When the last segment collides with a nationality adjective in the
+    nearby descriptive clause (see _collides_with_nationality_adjective
+    -- a "Company, City, Country" name, e.g. "Merck KGaA, Darmstadt,
+    Germany"), that segment and the plain-city-looking one before it
+    (a single bare word, no legal-suffix content of its own) are
+    dropped instead, recovering "Merck KGaA" rather than either the
+    wrong trailing fragment or giving up entirely."""
     parts = _CONNECTOR_SPLIT_RE.split(window)
-    return parts[-1].strip() if parts else window.strip()
+    if not parts:
+        return window.strip()
+    last = parts[-1].strip()
+    if len(parts) >= 2 and _collides_with_nationality_adjective(last, removed_clause):
+        parts = parts[:-1]
+        if len(parts) >= 2 and _BARE_WORD_RE.match(parts[-1].strip()):
+            parts = parts[:-1]
+        return parts[-1].strip() if parts else last
+    return last
+
+
+_PROSE_FRAGMENT_RE = re.compile(
+    r"\bwww\.|\.com\b|\bavailable at\b|\bForm 10-K\b|\bAnnual Report\b",
+    re.IGNORECASE,
+)
 
 
 def _is_plausible_name(name: str, target: str) -> bool:
@@ -158,8 +181,17 @@ def _is_plausible_name(name: str, target: str) -> bool:
     # got skipped in favor of a later, address-block-garbled one
     # ("Colorado 80206 (720) 284-6400 1776 Portfolio Investment, LLC")
     # that only happened to pass because "Colorado" starts with a
-    # capital letter.
-    if not (name[0].isupper() or name[0].isdigit()):
+    # capital letter. Lowercase is allowed too -- some real company
+    # names are deliberately stylized lowercase ("steute Industrial
+    # Controls, Inc", a German company; rejecting it meant a correct
+    # match got skipped in favor of a LATER, prose-contaminated match
+    # ("Annual Report on Form 10-K are available at www.proxyvote.com.
+    # steute Industrial Controls, Inc") that only passed because
+    # "Annual" happens to start uppercase). Prose contamination is
+    # instead caught directly, by _PROSE_FRAGMENT_RE, below.
+    if not (name[0].isalpha() or name[0].isdigit()):
+        return False
+    if _PROSE_FRAGMENT_RE.search(name):
         return False
     if re.search(r"\(\d{3}\)|\d{3}-\d{4}", name):
         return False
@@ -218,10 +250,8 @@ def _candidate_for_match(text: str, match: re.Match) -> str | None:
         window = window[relation_matches[-1].end() :]
     window, removed_clause = _strip_trailing_descriptive_clause(window)
 
-    name = _take_last_segment(window).strip(" ,.;")
-    if not name or _collides_with_nationality_adjective(name, removed_clause):
-        return None
-    return name
+    name = _take_last_segment(window, removed_clause).strip(" ,.;")
+    return name or None
 
 
 _OPAQUE_ACRONYM_RE = re.compile(r"^[A-Z]{2,6}$")
