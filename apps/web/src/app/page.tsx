@@ -104,7 +104,7 @@ export default async function HomePage() {
             </div>
             {latestAdded && (
               <p className="mt-6 font-mono text-xs text-ink-faint">
-                Latest deal added: {dealTitle(latestAdded.acquirerDisplay, latestAdded.targetDisplay)}
+                Most recent signing: {dealTitle(latestAdded.acquirerDisplay, latestAdded.targetDisplay)}
                 {latestAdded.signingDate ? ` · signed ${formatDate(latestAdded.signingDate)}` : ""}
               </p>
             )}
