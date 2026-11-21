@@ -425,6 +425,19 @@ def compute_n_proposals_for_deal(d: dict) -> int:
     return len(d["proposals"])
 
 
+def _proposals_not_extracted_counts(n_proposals: int, n_bidders: int) -> bool:
+    """True when a deal has zero Proposal records at all -- never because
+    there were truly no bids (every deal has at least an eventual
+    acquirer who signed something), but because this run's extraction
+    produced no Proposal record for the deal's Background of the Merger
+    section at all (Twitter/Musk, New Relic, Skillsoft/Codecademy)."""
+    return n_proposals == 0 and n_bidders == 0
+
+
+def _proposals_not_extracted(d: dict) -> bool:
+    return _proposals_not_extracted_counts(compute_n_proposals_for_deal(d), compute_n_bidders_for_deal(d))
+
+
 def compute_first_final_price_for_deal(d: dict) -> tuple[Optional[float], Optional[float]]:
     """First dated proposal's price and the final (accepted, else
     latest-dated) proposal's price -- independent of the stricter cash/
@@ -894,12 +907,19 @@ def compute_all() -> dict:
     the headline stat for process duration."""
     with connect() as conn:
         deals = _fetch_canonical_deals(conn)
+    # bidders/proposals/bump are the only stats that would otherwise
+    # count a deal's missing extraction as a real "0" -- parties_
+    # contacted doesn't depend on Proposal records at all, and first-
+    # bidder/days-to-signing already self-exclude a 0-proposal deal via
+    # their own "no proposal to anchor from" reason, same net effect
+    # without double-filtering.
+    deals_with_proposals = [d for d in deals if not _proposals_not_extracted(d)]
     return {
         "n_canonical_deals": len(deals),
         "parties_contacted": stat_parties_contacted(deals),
-        "bidders_who_submitted_a_proposal": stat_n_bidders(deals),
-        "proposals_per_deal": stat_n_proposals(deals),
-        "pct_increase_cash_deals": stat_pct_increase_cash(deals),
+        "bidders_who_submitted_a_proposal": stat_n_bidders(deals_with_proposals),
+        "proposals_per_deal": stat_n_proposals(deals_with_proposals),
+        "pct_increase_cash_deals": stat_pct_increase_cash(deals_with_proposals),
         "pct_first_bidder_is_eventual_acquirer": stat_first_bidder_is_acquirer(deals),
         "days_first_proposal_to_signing": stat_days_first_proposal_to_signing(deals),
     }

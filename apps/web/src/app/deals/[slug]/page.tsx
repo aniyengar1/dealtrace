@@ -18,7 +18,6 @@ import { PriceValue } from "@/components/ui/PriceValue";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { LinkButton } from "@/components/ui/Button";
-import { EmptyState } from "@/components/ui/EmptyState";
 import { DealView } from "./DealView";
 
 export const dynamic = "force-dynamic";
@@ -58,24 +57,18 @@ export default async function DealPage({
   const { fact: factId } = await searchParams;
   const [deal, metrics] = await Promise.all([getDealBySlug(slug), getDealMetricsBySlug(slug)]);
   // proxy.ts already blocks a real request from getting this far for an
-  // excluded deal's slug -- this is defense-in-depth only (e.g. a stale
-  // slug-map cache window).
-  if (!deal || deal.excluded_from_stats) notFound();
+  // excluded or not-yet-extracted deal's slug -- this is defense-in-
+  // depth only (e.g. a stale slug-map cache window).
+  if (!deal || deal.excluded_from_stats || !deal.has_completed_run) notFound();
 
   const [factsRun, valuationsRun] = await Promise.all([
     getLatestFactsRunForDeal(deal.id),
     getLatestValuationsRunForDeal(deal.id),
   ]);
-  if (!factsRun) {
-    return (
-      <Container wide className="py-10">
-        <h1 className="font-serif text-2xl font-semibold text-ink">{deal.deal_name}</h1>
-        <div className="mt-6">
-          <EmptyState title="Not extracted yet" description="No completed extraction run exists for this deal yet." />
-        </div>
-      </Container>
-    );
-  }
+  // has_completed_run being true already guarantees factsRun exists --
+  // this is unreachable in practice, kept only so TypeScript knows
+  // factsRun is non-null below.
+  if (!factsRun) notFound();
 
   const [events, proposals, valuations, paragraphs, filingUrl] = await Promise.all([
     getEventsForRun(factsRun.id),
@@ -115,6 +108,12 @@ export default async function DealPage({
           </LinkButton>
         </div>
       </div>
+
+      {metrics?.dataQualityFlag === "proposals_not_extracted" && (
+        <p className="mt-3 rounded-md border border-border bg-surface px-3 py-2 text-sm text-ink-muted">
+          Proposal history could not be extracted from this filing.
+        </p>
+      )}
 
       <dl className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <Card className="p-3.5">

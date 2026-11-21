@@ -1,17 +1,40 @@
 """Classifies each deal's transaction structure using rules only (no
 LLM) against already-extracted events/proposals and the cached filing
-HTML, to catch four patterns a 20-deal spot-check surfaced that a plain
+HTML, to catch patterns a 20-deal spot-check surfaced that a plain
 "M&A sale process" stat shouldn't include, or should at least label:
 
     from src.classify_deal_type import classify_deal
 
 - spin_off: a parent distributing a subsidiary stake to its own
-  shareholders (BellRing <- Post), not an arm's-length sale -- excluded.
+  shareholders (BellRing <- Post, IAC -> Vimeo), not an arm's-length
+  sale -- excluded. Checked two ways: the specific "distribution of a
+  stake in X to its shareholders" recital, or "a spin-off of X to Y's
+  stockholders" naming the deal's own parties directly (IAC's board
+  discussing "a spin-off of Vimeo to IAC's stockholders").
+- self_reorganization: target and acquirer are each other's own
+  pre-existing affiliate, not independent third parties -- a holding
+  company interposed above an existing public company via merger
+  (FTAI Finance Holdco Ltd., formed as an indirect subsidiary of FTAI
+  before "acquiring" it in a holdco merger) or a parent reabsorbing its
+  own already-majority-owned operating partnership (LXP Industrial
+  Trust already owning ~99% of LCIF before "merging" with it) --
+  excluded, same reasoning as spin_off (no competitive process is
+  possible when there's no independent counterparty at all). The bare
+  "reverse merger"/"reorganization" words alone don't trigger this --
+  both stay included elsewhere (reverse_merger below; routine tax-
+  qualification language is near-universal M&A boilerplate) -- only
+  the deal's own text directly naming target/acquirer in the
+  structural relationship does.
 - affiliated_manager_merger: a merger between two entities under the
-  same external manager/adviser (Golub Capital BDC 3 <- GBDC) -- these
-  don't have a normal competitive bidding process, so counting their
-  "bidders"/"parties contacted" alongside real sale processes would be
-  misleading -- excluded.
+  same external manager/adviser (Golub Capital BDC 3 <- GBDC, FS KKR
+  Capital Corp. II <- FSK) -- these don't have a normal competitive
+  bidding process, so counting their "bidders"/"parties contacted"
+  alongside real sale processes would be misleading -- excluded.
+  Checked three ways: a signing-event party whose own name shares a
+  root with the other side's name or the filing's own brand-defining
+  sentences, or (when the shared manager is never actually named as a
+  signing party at all, as for FSK/FSKR) the filing directly stating
+  both sides "have the same adviser/manager."
 - filer_is_acquirer: the filing's own text describes the filer
   (always recorded as "target" by this pipeline's discovery step,
   which assumes whoever filed the document is the one being acquired)
@@ -94,7 +117,18 @@ def _parsed_text_cache_path(slug: str) -> Path:
 # rule change -- invalidates the right entries instead of silently
 # serving a stale classification forever.
 _CLASSIFY_CACHE_DIR = Path("data/cache/deal_type_classification")
-_CLASSIFY_CACHE_VERSION = "v1"
+# v2: added self_reorganization, the shared-manager-statement check in
+# _is_affiliated_manager_merger, and the "spin-off of X to Y's
+# stockholders" check in _is_spin_off. v3: tightened
+# _is_self_reorganization's reverse-merger-of-into check to require
+# BOTH captured names to match target/acquirer, not just one -- the
+# looser version misclassified an ordinary reverse-merger-structured
+# THIRD-PARTY sale (Cherry Hill/TPG Mortgage's "Party A", a real
+# competing bidder, not an affiliate) as a self-reorganization. Every
+# classification rule change needs a bump here, or a deal keeps
+# silently serving its stale result forever even once the rule that
+# should catch it is fixed.
+_CLASSIFY_CACHE_VERSION = "v3"
 
 
 def _classify_cache_key(slug: str, target: str, acquirer: str, events: list[dict]) -> str:
@@ -134,6 +168,22 @@ _DISTRIBUTION_RE = re.compile(
     r"[^.]{0,80}\bto\s+(?:its\s+|the\s+)?(?:shareholders|stockholders)\b",
     re.IGNORECASE,
 )
+# "spin-off of X to Y's stockholders" -- unlike the bare word "spin-off"
+# (deliberately not matched above, see this section's comment), this
+# requires the parent-distributes-subsidiary-TO-its-own-shareholders
+# structure spelled out as its own object + recipient, same precision
+# as _DISTRIBUTION_RE's "distribution of a stake in" phrasing just
+# without the word "distribution" itself (IAC's own board discussion
+# of "a spin-off of Vimeo to IAC's stockholders" never uses that word).
+# Scoped (?i:...) around the connector words only, not a blanket
+# re.IGNORECASE on the whole pattern (see _SHARED_MANAGER_NAMED_RE's
+# comment on why that's unsafe for the [A-Z] name-capture groups). "'s"
+# matches either apostrophe style, since filing HTML commonly uses the
+# curly Unicode one (U+2019), not the ASCII one.
+_SPIN_OFF_OF_TO_RE = re.compile(
+    r"(?i:spin-?off)\s+of\s+" + r"([A-Z][\w&'\-]*(?:\s+[A-Z][\w&'\-]*){0,4})" + r"\s+to\s+"
+    r"([A-Z][\w&'\-]*(?:\s+[A-Z][\w&'\-]*){0,4})" + r"['’]?s?\s+(?i:stockholders|shareholders)\b"
+)
 _REVERSE_MERGER_RE = re.compile(r"\breverse merger\b", re.IGNORECASE)
 
 _ADVISER_SUFFIX_RE = re.compile(r"\b(advisors?|advisers?)\b", re.IGNORECASE)
@@ -147,6 +197,35 @@ _ADVISER_SUFFIX_STRIP_RE = re.compile(r"\b(advisors?|advisers?)\b.*$", re.IGNORE
 # the M&A deal itself, appears in several filings' risk-factor
 # sections and must NOT be mistaken for a merger-structure recital).
 _NAME_RUN = r"([A-Z][\w&'\-]*(?:\s+[A-Z][\w&'\-]*){0,4})"
+
+# "a reverse merger of X into Y" -- the accounting-classification
+# phrasing an S-4/proxy uses when a new holding company (X's new
+# surviving-parent shell) is being interposed above an existing public
+# company via merger (FTAI/FTAI Finance Holdco Ltd., Mobile
+# Infrastructure Corp/Trust). Unlike the bare "reverse merger" phrase
+# (flagged but kept IN stats elsewhere, since a real reverse merger --
+# Movano/Corvex -- is still a genuine sale, just one where the "target"
+# ends up in control), "of X into Y" names the two parties directly, so
+# it's checked against target/acquirer below rather than trusted alone.
+_REVERSE_MERGER_OF_INTO_RE = re.compile(
+    r"\breverse merger of\s+" + _NAME_RUN + r"\s+into\s+" + _NAME_RUN,
+    re.IGNORECASE,
+)
+# "X had/has an approximate NN% ownership interest in Y" -- LXP already
+# owning ~99% of LCIF before "merging" with it is the same self
+# -reorganization as a holdco interposition, just the opposite
+# direction (parent reabsorbing its own already-majority-owned
+# affiliate instead of a new holdco being interposed above the
+# existing public company).
+# Not re.IGNORECASE (see _SHARED_MANAGER_NAMED_RE's comment) -- besides
+# the same name-capture-runs-backwards-into-lowercase-prose bug, on a
+# multi-megabyte filing IGNORECASE here made this pattern catastrophically
+# slow (4+ seconds on one 7MB filing alone, from how many more positions
+# [A-Z] now has to try matching against), not just wrong.
+_MAJORITY_OWNERSHIP_INTEREST_RE = re.compile(
+    r"([A-Z][\w&'\-]*(?:\s+[A-Z][\w&'\-]*){0,4})\s+(?:had|has)\s+an?\s+approximate(?:ly)?\s+"
+    r"(\d{1,3})%\s+ownership\s+interest\s+in\s+" + _NAME_RUN
+)
 
 # The filer explicitly describing ITSELF, in its own first-person
 # voice, as the one buying the other side -- Viasat's registration
@@ -215,9 +294,15 @@ def _full_text(slug: str) -> str:
     return text
 
 
-def _is_spin_off(slug: str) -> bool:
+def _is_spin_off(slug: str, target: str, acquirer: str) -> bool:
     text = _full_text(slug)
-    return bool(_RMT_RE.search(text) or _DISTRIBUTION_RE.search(text))
+    if _RMT_RE.search(text) or _DISTRIBUTION_RE.search(text):
+        return True
+    for m in _SPIN_OFF_OF_TO_RE.finditer(text):
+        _spinco, parent = m.group(1).strip(), m.group(2).strip()
+        if _is_same_entity_fuzzy(parent, target) or _is_same_entity_fuzzy(parent, acquirer):
+            return True
+    return False
 
 
 def _is_reverse_merger_text(slug: str) -> bool:
@@ -264,6 +349,32 @@ _SPONSOR_DEF_RE = re.compile(
     r"(?:a\s+\w+\s+corporation\s*)?\(\s*[“\"]([A-Za-z0-9]{2,10})[”\"]\s*\)"
 )
 
+# A direct admission, in the filing's own words, that both sides of the
+# merger share one external manager/adviser -- catches affiliated-BDC
+# mergers with no adviser-suffixed party in the signing event at all
+# (FSK/FSKR's signing event names only the two funds themselves, never
+# "FS/KKR Advisor, LLC"). Two phrasings ("GBDC and GBDC 3 have the same
+# investment adviser"; "FSK and FSKR are managed by the Advisor"), both
+# requiring the TWO NAMES to be captured directly in the same sentence
+# -- NOT a bare "we have the same Manager" (an externally managed REIT/
+# BDC's routine conflicts-of-interest risk factor, comparing itself to
+# OTHER unrelated vehicles under the same sponsor, not confirming
+# anything about THIS deal's own target/acquirer) -- so the caller can
+# still verify the captured names actually ARE this deal's target/
+# acquirer before trusting it. Deliberately not re.IGNORECASE: under
+# IGNORECASE, [A-Z] also matches lowercase, which let the name capture
+# run backwards into the preceding lowercase prose instead of stopping
+# at the real company name.
+_SHORT_NAME_RUN = r"([A-Z][\w\d&'\-]*(?:\s+[A-Z0-9][\w\d&'\-]*){0,3})"
+_SHARED_MANAGER_NAMED_RE = re.compile(
+    _SHORT_NAME_RUN + r"\s+and\s+" + _SHORT_NAME_RUN
+    + r"\s+(?:have|has|are|share)\b[^.]{0,40}\b(?:the\s+same\s+)?(?:external\s+)?(?:investment\s+)?(?:adviser|advisor|manager)\b"
+)
+_MANAGED_BY_SAME_RE = re.compile(
+    _SHORT_NAME_RUN + r"\s+and\s+" + _SHORT_NAME_RUN
+    + r"\s+(?:are|is)\s+managed\s+by\s+(?:the\s+)?(?:same\s+)?(?:[Aa]dvisor|[Aa]dviser|[Mm]anager)\b"
+)
+
 
 def _shared_sponsor_brand(text: str, target: str, acquirer: str) -> bool:
     """True when the filing's own party-definition sentences ("Brand X
@@ -308,7 +419,28 @@ def _is_affiliated_manager_merger(slug: str, events: list[dict], target: str, ac
         others = [x for x in parties if x != p] + [target, acquirer]
         if _shares_root_with_another_party(p, others):
             return True
-    return _shared_sponsor_brand(_full_text(slug), target, acquirer)
+    text = _full_text(slug)
+    if _shared_sponsor_brand(text, target, acquirer):
+        return True
+    # Catches cases with no adviser-suffixed signing party to match at
+    # all (FS KKR Capital Corp. II / FSK -- the signing event's parties
+    # are just ["FSK", "FSKR"], with "FS/KKR Advisor, LLC" never named
+    # as a signer, only elsewhere in the proxy's own text): a direct
+    # admission, in the filing's own words, that both NAMED sides share
+    # one external manager. At least one of the two captured names must
+    # still fuzzy-match target/acquirer -- the sentence structure alone
+    # isn't enough (an externally managed REIT/BDC's own TOC/boilerplate
+    # can coincidentally satisfy either regex with two unrelated defined
+    # terms, e.g. Fortress Transportation's "Affiliates and Affiliated
+    # Entities Our Parent is managed by the Manager").
+    for rx in (_SHARED_MANAGER_NAMED_RE, _MANAGED_BY_SAME_RE):
+        for m in rx.finditer(text):
+            a, b = m.group(1).strip(), m.group(2).strip()
+            if _is_same_entity_fuzzy(a, target) or _is_same_entity_fuzzy(a, acquirer):
+                return True
+            if _is_same_entity_fuzzy(b, target) or _is_same_entity_fuzzy(b, acquirer):
+                return True
+    return False
 
 
 def _is_same_entity_fuzzy(a: str, b: str) -> bool:
@@ -403,6 +535,52 @@ def _is_manager_internalization(text: str) -> bool:
     )
 
 
+def _is_self_reorganization(slug: str, target: str, acquirer: str) -> bool:
+    """True when target and acquirer are each other's own pre-existing
+    affiliate -- a holding company being interposed above an existing
+    public company via merger (FTAI Finance Holdco Ltd., formed as an
+    indirect subsidiary of FTAI before "acquiring" it in a holdco
+    merger) or a parent reabsorbing its own already-majority-owned
+    operating partnership (LXP Industrial Trust already owning ~99% of
+    LCIF before "merging" with it) -- never an arm's-length sale to an
+    independent third party, regardless of how the bare "reverse
+    merger"/"reorganization" words alone would otherwise classify it
+    (those stay included elsewhere: a real reverse merger, like Movano/
+    Corvex, is still a genuine sale)."""
+    text = _full_text(slug)
+    for m in _REVERSE_MERGER_OF_INTO_RE.finditer(text):
+        merged_away, surviving_parent = m.group(1).strip(), m.group(2).strip()
+        # BOTH sides must independently match target/acquirer -- a
+        # single-match requirement let through a real false positive:
+        # Cherry Hill/TPG Mortgage's "reverse merger of Party A with and
+        # into CHMI" is an ordinary competitive THIRD-PARTY bidder
+        # ("Party A", an anonymized placeholder, one of several real
+        # bidders -- Party B, Party D -- in a genuine process run by
+        # BTIG) proposing a reverse-merger STRUCTURE, not an affiliate
+        # relationship; "CHMI" alone matching our stored acquirer
+        # trivially, with no check on the OTHER name, wrongly excluded
+        # a real sale. Requiring both sides narrows out this and
+        # Boundless Bio/Serapha (an ordinary reverse-merger-structured
+        # third-party acquisition, the exact scenario the plain
+        # reverse_merger category -- Movano/Corvex -- already handles
+        # correctly) while still catching FTAI Finance Holdco Ltd. (both
+        # "FTAI" and "FTAI Finance Holdco Ltd." resolve to this deal's
+        # own target).
+        if (_is_same_entity_fuzzy(merged_away, target) or _is_same_entity_fuzzy(merged_away, acquirer)) and (
+            _is_same_entity_fuzzy(surviving_parent, target) or _is_same_entity_fuzzy(surviving_parent, acquirer)
+        ):
+            return True
+    for m in _MAJORITY_OWNERSHIP_INTEREST_RE.finditer(text):
+        owner, pct, owned = m.group(1).strip(), int(m.group(2)), m.group(3).strip()
+        if pct < 50:
+            continue
+        owner_is_party = _is_same_entity_fuzzy(owner, target) or _is_same_entity_fuzzy(owner, acquirer)
+        owned_is_party = _is_same_entity_fuzzy(owned, target) or _is_same_entity_fuzzy(owned, acquirer)
+        if owner_is_party and owned_is_party:
+            return True
+    return False
+
+
 def classify_deal(slug: str, target: str, acquirer: str, events: list[dict]) -> tuple[str, bool, Optional[str]]:
     """Disk-cached wrapper around _classify_deal_uncached -- see
     _CLASSIFY_CACHE_DIR's comment for the cache key and invalidation
@@ -437,16 +615,25 @@ def _classify_deal_uncached(
     phrase), affiliated-manager merger (two entities under the same
     external manager/sponsor), manager internalization (the filer
     issues new shares to absorb and terminate its own external
-    manager's contract), then filer-reversal (the filer is reported
-    acquiring/absorbing someone else, not being bought out itself).
-    reverse_merger is flagged but never excludes -- it's still a real
-    sale process, just one where the legal "acquirer" ends up
-    controlled by the legal "target"'s former owners."""
-    if _is_spin_off(slug):
+    manager's contract), self-reorganization (target and acquirer are
+    each other's own pre-existing affiliate -- a holdco interposition
+    or a parent reabsorbing its own operating partnership), then
+    filer-reversal (the filer is reported acquiring/absorbing someone
+    else, not being bought out itself). reverse_merger is flagged but
+    never excludes -- it's still a real sale process, just one where
+    the legal "acquirer" ends up controlled by the legal "target"'s
+    former owners."""
+    if _is_spin_off(slug, target, acquirer):
         return (
             "spin_off",
             True,
             "spin-off / parent distribution of a subsidiary stake to its own shareholders, not an arm's-length sale process",
+        )
+    if _is_self_reorganization(slug, target, acquirer):
+        return (
+            "self_reorganization",
+            True,
+            "target and acquirer are each other's own pre-existing affiliate (a holdco interposition or a parent reabsorbing its own operating partnership), not an arm's-length sale process",
         )
     if _is_affiliated_manager_merger(slug, events, target, acquirer):
         return (

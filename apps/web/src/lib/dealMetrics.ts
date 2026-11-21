@@ -48,6 +48,12 @@ export interface DealMetricsRow {
   pricePlausible: boolean | null;
   signingDate: string | null;
   considerationType: string | null;
+  // 'proposals_not_extracted' for a genuine (non-excluded) sale process
+  // whose extraction produced zero Proposal records at all (Twitter/
+  // Musk, New Relic) -- null otherwise. Still shown on the site; only
+  // affects whether its bidder/proposal/bump figures look misleadingly
+  // like "0" instead of "unknown." See src.bulk_stats._proposals_not_extracted.
+  dataQualityFlag: string | null;
 }
 
 interface DealMetricsDbRow {
@@ -71,6 +77,7 @@ interface DealMetricsDbRow {
   price_plausible: boolean | null;
   signing_date: string | null;
   consideration_type: string | null;
+  data_quality_flag: string | null;
 }
 
 function toRow(r: DealMetricsDbRow): DealMetricsRow {
@@ -95,6 +102,7 @@ function toRow(r: DealMetricsDbRow): DealMetricsRow {
     pricePlausible: r.price_plausible,
     signingDate: r.signing_date,
     considerationType: r.consideration_type,
+    dataQualityFlag: r.data_quality_flag,
   };
 }
 
@@ -103,7 +111,7 @@ const BASE_SELECT = `
     dm.deal_id, d.slug, d.deal_name, dm.is_canonical, dm.target_display, dm.acquirer_display,
     dm.n_parties_contacted, dm.n_bidders, dm.n_proposals, dm.first_price, dm.final_price, dm.final_price_is_ratio,
     dm.pct_bump, dm.pct_bump_exclusion_reason, dm.days_first_contact_to_signing,
-    dm.days_first_proposal_to_signing, dm.first_bidder_won, dm.price_plausible,
+    dm.days_first_proposal_to_signing, dm.first_bidder_won, dm.price_plausible, dm.data_quality_flag,
     (SELECT e.date_start FROM events e JOIN extraction_runs r2 ON r2.id = e.run_id
      WHERE r2.deal_id = d.id AND e.event_type = 'signing' AND e.date_start IS NOT NULL
      ORDER BY e.date_start DESC LIMIT 1) AS signing_date,
@@ -114,15 +122,35 @@ const BASE_SELECT = `
   JOIN deals d ON d.id = dm.deal_id
 `;
 
+// A deal with no completed extraction run at all (Twitter/Musk, New
+// Relic -- zero events AND zero proposals on every run, including no
+// run whatsoever) has nothing to show beyond its bare deals-table row,
+// so it's excluded from every public query the same way an
+// excluded_from_stats deal is -- no recompute needed, since
+// extraction_runs/events/proposals already reflect reality; this is
+// purely a query-time check. Reused verbatim by every public query
+// below (sitemap, ticker, home stats) that needs the same scope.
+// References dm.deal_id (every caller already has a deal_metrics dm in
+// scope), not d.id, so this drops into a query with or without a
+// "deals d" join present.
+export const HAS_COMPLETED_RUN_SQL = `
+  EXISTS (
+    SELECT 1 FROM extraction_runs r WHERE r.deal_id = dm.deal_id
+      AND (EXISTS (SELECT 1 FROM events e WHERE e.run_id = r.id)
+           OR EXISTS (SELECT 1 FROM proposals p WHERE p.run_id = r.id))
+  )
+`;
+
 // Every public listing reads from here, so the scope is "included"
-// deals -- canonical (deduplicated) AND not excluded_from_stats
+// deals -- canonical (deduplicated), not excluded_from_stats
 // (src.classify_deal_type: spin-offs, affiliated-manager mergers, and
-// buyer-side-filer deals) -- never canonical alone. A deal like
-// Viasat/Inmarsat (filer_is_acquirer) is canonical but must never
-// appear in a public count, list, or search result.
+// buyer-side-filer deals), AND with a completed extraction run --
+// never canonical alone. A deal like Viasat/Inmarsat (filer_is_acquirer)
+// is canonical but must never appear in a public count, list, or
+// search result; neither must one with nothing extracted yet.
 export async function listCanonicalDealMetrics(): Promise<DealMetricsRow[]> {
   const rows = await query<DealMetricsDbRow>(
-    `${BASE_SELECT} WHERE dm.is_canonical AND NOT dm.excluded_from_stats ORDER BY dm.computed_at DESC`
+    `${BASE_SELECT} WHERE dm.is_canonical AND NOT dm.excluded_from_stats AND ${HAS_COMPLETED_RUN_SQL} ORDER BY dm.computed_at DESC`
   );
   return rows.map(toRow);
 }

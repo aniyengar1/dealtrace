@@ -85,10 +85,24 @@ export async function listDeals(): Promise<Deal[]> {
   return query<Deal>(`SELECT id, slug, deal_name, target, acquirer, search_term FROM deals ORDER BY deal_name`);
 }
 
+// A deal with no completed extraction run at all (zero events AND
+// zero proposals on every run, including no run whatsoever -- Twitter/
+// Musk, New Relic) is excluded from this check the same way as
+// excluded_from_stats; d.id, not dm.deal_id, since dm can be absent
+// (LEFT JOIN) for a deal never run through deal_metrics at all.
+const HAS_COMPLETED_RUN_SQL = `
+  EXISTS (
+    SELECT 1 FROM extraction_runs r WHERE r.deal_id = d.id
+      AND (EXISTS (SELECT 1 FROM events e WHERE e.run_id = r.id)
+           OR EXISTS (SELECT 1 FROM proposals p WHERE p.run_id = r.id))
+  )
+`;
+
 export async function getDealBySlug(slug: string): Promise<Deal | null> {
   return queryOne<Deal>(
     `SELECT d.id, d.slug, d.deal_name, d.target, d.acquirer, d.search_term, d.is_canonical, d.duplicate_of,
-            coalesce(dm.excluded_from_stats, false) AS excluded_from_stats
+            coalesce(dm.excluded_from_stats, false) AS excluded_from_stats,
+            ${HAS_COMPLETED_RUN_SQL} AS has_completed_run
      FROM deals d LEFT JOIN deal_metrics dm ON dm.deal_id = d.id
      WHERE d.slug = $1`,
     [slug]
@@ -97,13 +111,21 @@ export async function getDealBySlug(slug: string): Promise<Deal | null> {
 
 // Whole-table index of just the columns proxy.ts needs to decide
 // exists/excluded/redirect/pass-through for every deal slug in one
-// query -- small enough (one row per deal, five scalar columns) to load
+// query -- small enough (one row per deal, six scalar columns) to load
 // in full and cache in memory rather than re-querying per request.
 export async function listDealSlugIndex(): Promise<
-  { id: string; slug: string; is_canonical: boolean; duplicate_of: string | null; excluded_from_stats: boolean }[]
+  {
+    id: string;
+    slug: string;
+    is_canonical: boolean;
+    duplicate_of: string | null;
+    excluded_from_stats: boolean;
+    has_completed_run: boolean;
+  }[]
 > {
   return query(
-    `SELECT d.id, d.slug, d.is_canonical, d.duplicate_of, coalesce(dm.excluded_from_stats, false) AS excluded_from_stats
+    `SELECT d.id, d.slug, d.is_canonical, d.duplicate_of, coalesce(dm.excluded_from_stats, false) AS excluded_from_stats,
+            ${HAS_COMPLETED_RUN_SQL} AS has_completed_run
      FROM deals d LEFT JOIN deal_metrics dm ON dm.deal_id = d.id`
   );
 }

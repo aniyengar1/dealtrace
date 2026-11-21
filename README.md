@@ -14,27 +14,37 @@ below before treating any number here as authoritative.
 
 ## Headline numbers
 
-Pulled live from the `headline_stats` table (`src/write_headline_stats.py`),
-computed over the 964 canonical, de-duplicated deals in `deal_metrics`
-(1,125 deals total; 161 are duplicates of another filing for the same
-underlying transaction and are excluded from every stat):
+Pulled from the `headline_stats` table (`src/write_headline_stats.py`),
+computed over the 823 target-side sale processes `deal_metrics` marks
+included in cross-deal stats -- 1,125 deals total; 161 are duplicates
+of another filing for the same underlying transaction (excluded by
+`is_canonical`, leaving 964 canonical deals), and a further 141 of
+those 964 are spin-offs, affiliated-manager mergers, holding-company
+reorganizations, or buyer-side filings that `src/classify_deal_type.py`
+excludes as not a genuine arm's-length sale process:
 
 | Stat | n | p25 | median | p75 |
 |---|---|---|---|---|
-| Parties contacted per deal | 964 | 5 | 8 | 12 |
-| Proposals per deal | 964 | 4 | 7 | 10 |
-| Bidders who submitted a proposal | 964 | 1 | 2 | 3 |
-| Days, first contact → signing | 948 | 159 | 290.5 | 541 |
-| Days, first proposal → signing | 904 | 69 | 130 | 261.25 |
-| First bidder is the eventual acquirer | 898 | — | 48.9% | — |
-| Price increase, cash deals only | 350 | 0.2% | 9.7% | 23.5% |
+| Parties contacted per deal | 823 | 5 | 8 | 12 |
+| Proposals per deal | 807 | 5 | 7 | 11 |
+| Bidders who submitted a proposal | 807 | 1 | 2 | 4 |
+| Days, first proposal → signing | 795 | 69 | 129 | 262.5 |
+| First bidder is the eventual acquirer | 792 | — | 51.3% | — |
+| Price increase, cash deals only | 346 | 0.5% | 9.7% | 23.5% |
 
-`n` is smaller than 964 for stats that need a specific event (a dated
-first-contact, a cash-only final price) that not every extraction run
-captured — see `config/prompt_lock.json` and each stat's own
-`exclusions` column in `headline_stats` for what was dropped and why.
-Nothing here is hand-typed; re-run `python -m src.write_headline_stats`
-after any pipeline change and these numbers update themselves.
+`n` is smaller than 823 for stats that need a record not every deal
+has. 16 of the 823 are a genuine sale process whose extraction
+produced zero Proposal records at all (Twitter/Musk, New Relic) --
+`deal_metrics.data_quality_flag = 'proposals_not_extracted'`, excluded
+from the proposals/bidders/price-bump rows above only, never from the
+site or from parties-contacted. The rest need a dated first-contact or
+a cash-only final price that not every extraction run captured — see
+`config/prompt_lock.json` and each stat's own `exclusions` column in
+`headline_stats` for what was dropped and why. These figures aren't
+regenerated automatically on every pipeline change -- re-run
+`python -m src.write_headline_stats` and re-paste the table here (the
+website itself always reads live from the database; only this README
+snapshot needs a manual refresh).
 
 **Accuracy was audited in three rounds of 20 randomly sampled deals,
 each checked field-by-field against the source filing by an
