@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
 export async function GET(_request: Request, { params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const deal = await getDealBySlug(slug);
-  if (!deal || deal.excluded_from_stats) return new NextResponse("Not found", { status: 404 });
+  if (!deal || deal.excluded_from_stats || !deal.has_completed_run) return new NextResponse("Not found", { status: 404 });
 
   const [factsRun, valuationsRun] = await Promise.all([
     getLatestFactsRunForDeal(deal.id),

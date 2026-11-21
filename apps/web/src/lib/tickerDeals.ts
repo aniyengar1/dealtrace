@@ -1,6 +1,7 @@
 import "server-only";
 
 import { query } from "./db";
+import { HAS_COMPLETED_RUN_SQL } from "./dealMetrics";
 
 export interface TickerDeal {
   slug: string;
@@ -44,7 +45,7 @@ export async function getTickerDeals(): Promise<TickerDeal[]> {
     `SELECT d.slug, dm.target_display, dm.acquirer_display, dm.final_price
      FROM deal_metrics dm
      JOIN deals d ON d.id = dm.deal_id
-     WHERE d.slug = ANY($1) AND dm.is_canonical AND NOT dm.excluded_from_stats
+     WHERE d.slug = ANY($1) AND dm.is_canonical AND NOT dm.excluded_from_stats AND ${HAS_COMPLETED_RUN_SQL}
        AND dm.price_plausible IS DISTINCT FROM false AND dm.final_price IS NOT NULL`,
     [CURATED_TICKER_SLUGS]
   );

@@ -12,7 +12,6 @@ import { buildDealMemo, type MemoLine } from "@/lib/memo";
 import { getDealMetricsBySlug } from "@/lib/dealMetrics";
 import { dealTitle } from "@/lib/labels";
 import { Container } from "@/components/ui/Container";
-import { EmptyState } from "@/components/ui/EmptyState";
 
 export const dynamic = "force-dynamic";
 
@@ -46,22 +45,16 @@ export default async function DealMemoPage({ params }: { params: Promise<{ slug:
   const { slug } = await params;
   const [deal, metrics] = await Promise.all([getDealBySlug(slug), getDealMetricsBySlug(slug)]);
   // Defense-in-depth -- see deals/[slug]/page.tsx's identical check.
-  if (!deal || deal.excluded_from_stats) notFound();
+  if (!deal || deal.excluded_from_stats || !deal.has_completed_run) notFound();
 
   const [factsRun, valuationsRun] = await Promise.all([
     getLatestFactsRunForDeal(deal.id),
     getLatestValuationsRunForDeal(deal.id),
   ]);
-  if (!factsRun) {
-    return (
-      <Container wide className="py-10">
-        <h1 className="font-serif text-2xl font-semibold text-ink">{deal.deal_name}</h1>
-        <div className="mt-6">
-          <EmptyState title="Not extracted yet" description="No completed extraction run exists for this deal yet." />
-        </div>
-      </Container>
-    );
-  }
+  // has_completed_run being true already guarantees factsRun exists --
+  // this is unreachable in practice, kept only so TypeScript knows
+  // factsRun is non-null below.
+  if (!factsRun) notFound();
 
   const [events, proposals, valuations] = await Promise.all([
     getEventsForRun(factsRun.id),

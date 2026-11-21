@@ -87,6 +87,7 @@ const DEAL: Deal = {
   is_canonical: true,
   duplicate_of: null,
   excluded_from_stats: false,
+  has_completed_run: true,
 };
 
 const EVENTS: EventRow[] = [
