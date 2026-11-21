@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useInView, animate } from "framer-motion";
-import { usePrefersReducedMotion } from "@/lib/useReducedMotion";
+import { usePrefersReducedMotion, useNarrowViewport } from "@/lib/useReducedMotion";
 
 export function StatNumber({
   value,
@@ -24,6 +24,11 @@ export function StatNumber({
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.6 });
   const prefersReducedMotion = usePrefersReducedMotion();
+  // Below Tailwind's `sm` breakpoint, a count-up reads as a flicker
+  // rather than a flourish -- skipped outright, same as reduced motion,
+  // rather than merely shortened, so a narrow screen never shows an
+  // intermediate value for even a blink.
+  const narrow = useNarrowViewport();
   // Starts at the real final value, not 0 -- server HTML, no-JS
   // requests, link-preview scrapers, and screen readers before
   // hydration all see the true number. The count-up below is a
@@ -31,7 +36,7 @@ export function StatNumber({
   const [display, setDisplay] = useState(value);
 
   useEffect(() => {
-    if (!inView || prefersReducedMotion) return;
+    if (!inView || prefersReducedMotion || narrow) return;
     // animate()'s onUpdate fires with the `from` value (0) on its very
     // first tick, so the reset-then-count-up is driven entirely from
     // that callback -- never a direct setState in the effect body.
@@ -41,7 +46,7 @@ export function StatNumber({
       onUpdate: setDisplay,
     });
     return () => controls.stop();
-  }, [inView, value, prefersReducedMotion]);
+  }, [inView, value, prefersReducedMotion, narrow]);
 
   const finalText = `${prefix}${value.toFixed(decimals)}${suffix}`;
 

@@ -14,13 +14,17 @@ export const EVENT_CATEGORY_LABELS: Record<EventCategory, string> = {
   other: "Other",
 };
 
+// --color-lane-* (globals.css), not --color-chart-* -- the chart ramp's
+// brightest step is near-white, which read as one stark lane next to
+// five gray ones; the lane ramp stays within a muted mid-gray band so
+// every lane is distinct but none is stark.
 export const EVENT_CATEGORY_COLORS: Record<EventCategory, string> = {
-  contact: "var(--color-chart-1)",
-  diligence: "var(--color-chart-2)",
-  governance: "var(--color-chart-3)",
-  bid: "var(--color-chart-4)",
-  conclusion: "var(--color-chart-5)",
-  other: "var(--color-chart-6)",
+  contact: "var(--color-lane-1)",
+  diligence: "var(--color-lane-2)",
+  governance: "var(--color-lane-3)",
+  bid: "var(--color-lane-4)",
+  conclusion: "var(--color-lane-5)",
+  other: "var(--color-lane-6)",
 };
 
 const CATEGORY_BY_TYPE: Record<string, EventCategory> = {

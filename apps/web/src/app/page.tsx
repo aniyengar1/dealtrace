@@ -150,7 +150,7 @@ export default async function HomePage() {
             <SectionHeading
               eyebrow="Findings"
               title="What the data says"
-              description="Three patterns that hold across every included deal, not just the well-known names."
+              description={`Three patterns across all ${headlineCount} deals, not just the well-known names.`}
             />
           </Reveal>
           <div className="mt-10 grid grid-cols-2 gap-8 sm:grid-cols-3">
@@ -186,7 +186,7 @@ export default async function HomePage() {
                     referenceAt={50}
                   />
                   <p className="mt-3 text-sm text-ink-muted">
-                    The first bidder to show up wins the deal about half the time (n = {stats.pctFirstBidderWon.n}) --
+                    The first bidder to show up wins the deal about half the time (n = {stats.pctFirstBidderWon.n}) —
                     showing up early is an edge, not a guarantee.
                   </p>
                 </Card>
@@ -204,7 +204,7 @@ export default async function HomePage() {
                   />
                   <p className="mt-3 text-sm text-ink-muted">
                     Cash deals typically sign for about {stats.medianPctBump.value.toFixed(1)}% more than the first
-                    priced proposal (n = {stats.medianPctBump.n}) -- negotiation usually moves the price, not just the
+                    priced proposal (n = {stats.medianPctBump.n}) — negotiation usually moves the price, not just the
                     terms.
                   </p>
                 </Card>
@@ -222,7 +222,7 @@ export default async function HomePage() {
                   <p className="mt-3 text-sm text-ink-muted">
                     From the first priced proposal to a signed agreement takes a median of{" "}
                     {Math.round(stats.medianDaysFirstProposalToSigning.value)} days (n ={" "}
-                    {stats.medianDaysFirstProposalToSigning.n}) -- a quarter of a year once real numbers are on the
+                    {stats.medianDaysFirstProposalToSigning.n}) — a quarter of a year once real numbers are on the
                     table.
                   </p>
                 </Card>
@@ -244,13 +244,11 @@ export default async function HomePage() {
           </Reveal>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((step, i) => (
-              <Reveal key={step.title} delay={i * 80}>
-                <div className="relative rounded-lg border border-border bg-surface p-5">
-                  <span className="font-serif text-3xl text-accent">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="mt-3 text-base font-semibold text-ink">{step.title}</h3>
-                  <p className="mt-2 text-sm text-ink-muted">{step.body}</p>
-                </div>
-              </Reveal>
+              <div key={step.title} className="relative rounded-lg border border-border bg-surface p-5">
+                <span className="font-serif text-3xl text-accent">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="mt-3 text-base font-semibold text-ink">{step.title}</h3>
+                <p className="mt-2 text-sm text-ink-muted">{step.body}</p>
+              </div>
             ))}
           </div>
           <p className="mt-6 inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
@@ -277,10 +275,8 @@ export default async function HomePage() {
               <SectionHeading eyebrow="Coverage" title="Featured deals" />
             </Reveal>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {featured.map((deal, i) => (
-                <Reveal key={deal.slug} delay={i * 60}>
-                  <FeaturedDealCard deal={deal} />
-                </Reveal>
+              {featured.map((deal) => (
+                <FeaturedDealCard key={deal.slug} deal={deal} />
               ))}
             </div>
             <p className="mt-6 inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">

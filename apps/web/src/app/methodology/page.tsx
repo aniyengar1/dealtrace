@@ -88,7 +88,7 @@ export default async function MethodologyPage() {
         </Reveal>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {PIPELINE_STEPS.map((step, i) => (
-            <Reveal key={step.title} delay={i * 70} className="relative">
+            <div key={step.title} className="relative">
               <Card className="h-full p-4">
                 <StepDiagram kind={step.kind} step={i + 1} />
                 <h3 className="mt-2 text-sm font-semibold text-ink">{step.title}</h3>
@@ -97,7 +97,7 @@ export default async function MethodologyPage() {
               {i < PIPELINE_STEPS.length - 1 && (
                 <span className="absolute -right-3 top-1/2 hidden -translate-y-1/2 text-ink-faint lg:block">→</span>
               )}
-            </Reveal>
+            </div>
           ))}
         </div>
         <p className="mt-3 inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
@@ -171,13 +171,11 @@ export default async function MethodologyPage() {
           <h2 className="inline-block rounded-lg bg-bg/90 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Validation rules</h2>
         </Reveal>
         <div className="mt-5 grid gap-5 sm:grid-cols-3">
-          {VALIDATION_RULES.map((rule, i) => (
-            <Reveal key={rule.title} delay={i * 70}>
-              <Card className="h-full p-4">
-                <h3 className="text-sm font-semibold text-ink">{rule.title}</h3>
-                <p className="mt-2 text-sm text-ink-muted">{rule.body}</p>
-              </Card>
-            </Reveal>
+          {VALIDATION_RULES.map((rule) => (
+            <Card key={rule.title} className="h-full p-4">
+              <h3 className="text-sm font-semibold text-ink">{rule.title}</h3>
+              <p className="mt-2 text-sm text-ink-muted">{rule.body}</p>
+            </Card>
           ))}
         </div>
       </section>

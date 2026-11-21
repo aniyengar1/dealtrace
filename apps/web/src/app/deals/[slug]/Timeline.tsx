@@ -14,14 +14,17 @@ import { ReviewStatusBadge, factRowClassName } from "@/components/StatusBadge";
 
 const CATEGORY_ORDER: EventCategory[] = ["contact", "diligence", "governance", "bid", "conclusion", "other"];
 
-function chipStyle(active: boolean, color: string): { className: string; style?: React.CSSProperties } {
-  if (active) {
-    return {
-      className: "border text-ink",
-      style: { backgroundColor: `color-mix(in srgb, ${color} 22%, transparent)`, borderColor: color },
-    };
-  }
-  return { className: "border border-border bg-transparent text-ink-faint" };
+// One obvious selected style (a solid filled pill), one obvious
+// unselected style (a plain outline) -- a translucent tint of the
+// lane's own muted color used to carry this distinction, but with
+// lane colors confined to a narrow muted band (see globals.css), a
+// 22%-opacity tint of any of them reads as "about the same dark gray"
+// next to an unselected chip's own dark background. Lane identity
+// still shows up via the small colored dot, not the chip's fill.
+function chipStyle(active: boolean): string {
+  return active
+    ? "border border-border-strong bg-surface-raised text-ink"
+    : "border border-border bg-transparent text-ink-faint";
 }
 
 export function Timeline({
@@ -59,15 +62,17 @@ export function Timeline({
       <div className="mb-3 flex flex-wrap items-center gap-1.5">
         {presentCategories.map((cat) => {
           const active = activeCategories.has(cat);
-          const { className, style } = chipStyle(active, EVENT_CATEGORY_COLORS[cat]);
           return (
             <button
               key={cat}
               onClick={() => toggleCategory(cat)}
               aria-pressed={active}
-              className={`rounded-full px-2.5 py-1 text-xs font-medium transition-colors ${className}`}
-              style={style}
+              className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium transition-colors ${chipStyle(active)}`}
             >
+              <span
+                className="inline-block h-2 w-2 shrink-0 rounded-full"
+                style={{ backgroundColor: EVENT_CATEGORY_COLORS[cat], opacity: active ? 1 : 0.5 }}
+              />
               {EVENT_CATEGORY_LABELS[cat]} <span className="tabular-nums opacity-70">({counts.get(cat)})</span>
             </button>
           );

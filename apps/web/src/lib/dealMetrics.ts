@@ -270,15 +270,33 @@ export interface LatestAddedDeal {
   signingDate: string | null;
 }
 
-// Most recently *added to the dataset* (deal_metrics.computed_at),
-// not most recently signed -- a bulk-load run can backfill a deal
-// signed years ago, and "latest deal added" on the home page should
-// reflect that the pipeline just ran, not quietly restate whichever
-// deal happens to have the newest signing date.
+// A handful of bulk-extracted display names are entity-resolution
+// artifacts, not real names -- a bare ticker-style fragment ("Dti",
+// "Mitt", "Rep") rather than the company it stands for. Real company
+// names, even short ones, are vanishingly rare at 4 letters or fewer
+// once ampersands/periods/spaces are stripped ("H.I.G." being a known
+// exception), so this is a cheap, good-enough filter for a single
+// hero-line pick -- not a data-quality claim about the row itself,
+// which still renders normally everywhere else on the site.
+function looksTickerLike(name: string): boolean {
+  return name.replace(/[^A-Za-z]/g, "").length <= 4;
+}
+
+const CANDIDATE_POOL_SIZE = 20;
+
+// Most recently *signed* among included deals -- not most recently
+// added to the dataset (deal_metrics.computed_at), since a bulk-load
+// run can backfill a deal signed years ago and "latest deal added"
+// reads better as "the newest real deal" than as a pipeline-internals
+// timestamp. Pulls a small pool (not just the single top row) because
+// the single newest signing can belong to a deal whose acquirer name
+// didn't resolve to a real string.
 export async function getLatestAddedDeal(): Promise<LatestAddedDeal | null> {
-  const row = await queryOne<{ slug: string; target_display: string; acquirer_display: string; signing_date: string | null }>(
-    `${BASE_SELECT} WHERE dm.is_canonical AND NOT dm.excluded_from_stats ORDER BY dm.computed_at DESC LIMIT 1`
+  const rows = await query<{ slug: string; target_display: string; acquirer_display: string; signing_date: string | null }>(
+    `${BASE_SELECT} WHERE dm.is_canonical AND NOT dm.excluded_from_stats AND ${HAS_COMPLETED_RUN_SQL}
+     ORDER BY signing_date DESC NULLS LAST LIMIT ${CANDIDATE_POOL_SIZE}`
   );
+  const row = rows.find((r) => !looksTickerLike(r.target_display) && !looksTickerLike(r.acquirer_display));
   return row
     ? { slug: row.slug, targetDisplay: row.target_display, acquirerDisplay: row.acquirer_display, signingDate: row.signing_date }
     : null;
