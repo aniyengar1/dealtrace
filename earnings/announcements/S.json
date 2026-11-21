@@ -1,40 +1,78 @@
 {
   "versions": [
     {
-      "company": "S",
-      "event_kind": "results_release",
-      "fiscal_period": {
-        "start": "2026-08-01",
-        "end": "2026-10-31",
-        "label": "Q3 FY2027"
-      },
-      "release_date": "2026-12-03",
-      "release_time": "after_market_close",
-      "time_precision": "market_session",
-      "timezone": "America/New_York",
-      "timezone_provenance": "NYSE-listed company and US market-close context; release-date-boundary-v1 uses start of the release day in America/New_York. Documented conservative policy interpretation, not an exact publication clock time.",
-      "timestamp_verified": false,
       "announcement_issued_date": "2026-11-12",
-      "verification_status": "independently_verified",
-      "verifier": "Codex",
-      "verification_method": "direct_http_official_ir_full_document",
-      "checked_at": "2026-11-12T23:57:07.320887+00:00",
-      "retrieved_at": "2026-11-12T23:57:07.549302+00:00",
-      "verified_at": "2026-11-12T23:57:43.472150+00:00",
-      "source_url": "https://investors.sentinelone.com/press-releases/news-details/2026/SentinelOne-Announces-Date-of-Fiscal-Third-Quarter-2027-Financial-Results-Conference-Call-and-Participation-in-Upcoming-Investor-Conference/default.aspx",
-      "source_sha256": "3a34812800b483533dd1f0839a4447fcb9c6e86b778ad44218ca8a1d81744da5",
-      "cached_body": "data/cache/earnings/release-leads/S-exact-3a34812800b483533dd1f0839a4447fcb9c6e86b778ad44218ca8a1d81744da5.body",
-      "quote": "Results will be released after market close on Thursday, December 3, 2026.",
-      "fiscal_period_quote": "SentinelOne, Inc. (NYSE: S) today announced that it will release financial results for its fiscal third quarter 2027, which ended October 31, 2026.",
       "announcement_text": "SentinelOne, Inc. - SentinelOne Announces Date of Fiscal Third Quarter 2027 Financial Results Conference Call and Participation in Upcoming Investor Conference Skip to main content Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog Skip to main content News Details Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog View All News SentinelOne Announces Date of Fiscal Third Quarter 2027 Financial Results Conference Call and Participation in Upcoming Investor Conference November 12, 2026 MOUNTAIN VIEW, Calif.--(BUSINESS WIRE)-- SentinelOne, Inc. (NYSE: S) today announced that it will release financial results for its fiscal third quarter 2027, which ended October 31, 2026. Results will be released after market close on Thursday, December 3, 2026. SentinelOne will host a conference call to discuss the results at 2:00 p.m. PT (5:00 p.m. ET) on the same day. To register for the live event, please visit Q3 FY2027 Earnings Conference Call Webcast . SentinelOne is also scheduled to present at the following investor conference: Event: Barclays Global Technology Conference Date: Thursday, December 10, 2026 Presentation Time: 12:50 p.m. PT (3:50 p.m. ET) Live webcasts for both events will be available on SentinelOne\u2019s Investor Relations website at investors.sentinelone.com , along with related earnings materials. Replays will be accessible through the same link shortly after each event. Disclosure Information SentinelOne uses, and intends to continue using, its Investor Relations website ( investors.sentinelone.com ) as a means of disclosing material information to the public and complying with its disclosure obligations under Regulation FD. Accordingly, investors should monitor the Investor Relations website, in addition to the company\u2019s press releases, blog ( sentinelone.com/blog ), SEC filings, public conference calls, presentations, and webcasts. About SentinelOne SentinelOne (NYSE: S) is the leader in AI security, setting the standard for leveraging AI and automation to give defenders a decisive operating advantage. Built for those who secure our world, Singularity Platform delivers unified coverage across endpoints, identity, cloud, and AI. Powered by Autonomous Security Intelligence, SentinelOne stops attacks at machine speed, reducing risk and delivering clarity and control to stay one step ahead. Headquartered in Mountain View, California with teams worldwide, SentinelOne protects nearly one-fifth of the Fortune 500 and hundreds of Global 2000 enterprises. From Main Street to Wall Street, the world\u2019s most critical organizations trust SentinelOne for cybersecurity. For more information, please visit www.sentinelone.com Category: Investors Investor Contact Saad Nazir investors@sentinelone.com Press Contact Craig VerColen press@sentinelone.com Source: SentinelOne View All News Investor Relations 444 Castro Street Suite 400 Mountain View, California 94041 Send Email Overview Press Releases Events & Presentations Financial Info Governance Resources follow us on twitter follow us on facebook follow us on LinkedIn follow us on youtube Privacy Policy Terms of Use \u00a9 Q4 Inc. - All rights reserved | Powered By Q4 Inc.",
+      "cached_body": "data/cache/earnings/release-leads/S-exact-3a34812800b483533dd1f0839a4447fcb9c6e86b778ad44218ca8a1d81744da5.body",
       "call": {
         "event_kind": "earnings_call",
+        "precision": "minute",
         "time": "14:00",
-        "timezone": "America/Los_Angeles",
-        "precision": "minute"
+        "timezone": "America/Los_Angeles"
       },
+      "checked_at": "2026-11-12T23:57:07.320887+00:00",
+      "company": "S",
       "discovery_note": "User supplied an unverified Stockhouse reprint lead. Original official IR announcement independently retrieved and reviewed. Not user_verified; directory/search excerpts not used as verification.",
-      "id": "44c674b9-16d2-5a39-b330-225112d7752a"
+      "event_kind": "results_release",
+      "fiscal_period": {
+        "end": "2026-10-31",
+        "label": "Q3 FY2027",
+        "start": "2026-08-01"
+      },
+      "fiscal_period_quote": "SentinelOne, Inc. (NYSE: S) today announced that it will release financial results for its fiscal third quarter 2027, which ended October 31, 2026.",
+      "id": "44c674b9-16d2-5a39-b330-225112d7752a",
+      "quote": "Results will be released after market close on Thursday, December 3, 2026.",
+      "release_date": "2026-12-03",
+      "release_time": "after_market_close",
+      "retrieved_at": "2026-11-12T23:57:07.549302+00:00",
+      "source_sha256": "3a34812800b483533dd1f0839a4447fcb9c6e86b778ad44218ca8a1d81744da5",
+      "source_url": "https://investors.sentinelone.com/press-releases/news-details/2026/SentinelOne-Announces-Date-of-Fiscal-Third-Quarter-2027-Financial-Results-Conference-Call-and-Participation-in-Upcoming-Investor-Conference/default.aspx",
+      "time_precision": "market_session",
+      "timestamp_verified": false,
+      "timezone": "America/New_York",
+      "timezone_provenance": "NYSE-listed company and US market-close context; release-date-boundary-v1 uses start of the release day in America/New_York. Documented conservative policy interpretation, not an exact publication clock time.",
+      "verification_method": "direct_http_official_ir_full_document",
+      "verification_status": "independently_verified",
+      "verified_at": "2026-11-12T23:57:43.472150+00:00",
+      "verifier": "Codex"
+    },
+    {
+      "announcement_issued_date": "2026-11-12",
+      "announcement_text": "SentinelOne, Inc. - SentinelOne Announces Date of Fiscal Third Quarter 2027 Financial Results Conference Call and Participation in Upcoming Investor Conference Skip to main content Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog Skip to main content News Details Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog View All News SentinelOne Announces Date of Fiscal Third Quarter 2027 Financial Results Conference Call and Participation in Upcoming Investor Conference November 12, 2026 MOUNTAIN VIEW, Calif.--(BUSINESS WIRE)-- SentinelOne, Inc. (NYSE: S) today announced that it will release financial results for its fiscal third quarter 2027, which ended October 31, 2026. Results will be released after market close on Thursday, December 3, 2026. SentinelOne will host a conference call to discuss the results at 2:00 p.m. PT (5:00 p.m. ET) on the same day. To register for the live event, please visit Q3 FY2027 Earnings Conference Call Webcast . SentinelOne is also scheduled to present at the following investor conference: Event: Barclays Global Technology Conference Date: Thursday, December 10, 2026 Presentation Time: 12:50 p.m. PT (3:50 p.m. ET) Live webcasts for both events will be available on SentinelOne\u2019s Investor Relations website at investors.sentinelone.com , along with related earnings materials. Replays will be accessible through the same link shortly after each event. Disclosure Information SentinelOne uses, and intends to continue using, its Investor Relations website ( investors.sentinelone.com ) as a means of disclosing material information to the public and complying with its disclosure obligations under Regulation FD. Accordingly, investors should monitor the Investor Relations website, in addition to the company\u2019s press releases, blog ( sentinelone.com/blog ), SEC filings, public conference calls, presentations, and webcasts. About SentinelOne SentinelOne (NYSE: S) is the leader in AI security, setting the standard for leveraging AI and automation to give defenders a decisive operating advantage. Built for those who secure our world, Singularity Platform delivers unified coverage across endpoints, identity, cloud, and AI. Powered by Autonomous Security Intelligence, SentinelOne stops attacks at machine speed, reducing risk and delivering clarity and control to stay one step ahead. Headquartered in Mountain View, California with teams worldwide, SentinelOne protects nearly one-fifth of the Fortune 500 and hundreds of Global 2000 enterprises. From Main Street to Wall Street, the world\u2019s most critical organizations trust SentinelOne for cybersecurity. For more information, please visit www.sentinelone.com Category: Investors Investor Contact Saad Nazir investors@sentinelone.com Press Contact Craig VerColen press@sentinelone.com Source: SentinelOne View All News Investor Relations 444 Castro Street Suite 400 Mountain View, California 94041 Send Email Overview Press Releases Events & Presentations Financial Info Governance Resources follow us on twitter follow us on facebook follow us on LinkedIn follow us on youtube Privacy Policy Terms of Use \u00a9 Q4 Inc. - All rights reserved | Powered By Q4 Inc.",
+      "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/76fc1676e96cc4852e5a76748cc112f3b0448f0d910cf90e033cccb34bb0e441-813581858ea7073d3ba6fc177be352e3a9586f88e6ea55bc6e6248d24242857a.body",
+      "call": {
+        "event_kind": "earnings_call",
+        "precision": "minute",
+        "time": "14:00",
+        "timezone": "America/Los_Angeles"
+      },
+      "checked_at": "2026-11-17T06:28:12.457657+00:00",
+      "company": "S",
+      "discovery_note": "User supplied an unverified Stockhouse reprint lead. Original official IR announcement independently retrieved and reviewed. Not user_verified; directory/search excerpts not used as verification.",
+      "event_kind": "results_release",
+      "fiscal_period": {
+        "end": "2026-10-31",
+        "label": "Q3 FY2027",
+        "start": "2026-08-01"
+      },
+      "fiscal_period_quote": "SentinelOne, Inc. (NYSE: S) today announced that it will release financial results for its fiscal third quarter 2027, which ended October 31, 2026.",
+      "id": "4828e3ae-4d92-59f6-9bd1-68d1ec58a148",
+      "previous_evidence_id": "44c674b9-16d2-5a39-b330-225112d7752a",
+      "quote": "Results will be released after market close on Thursday, December 3, 2026.",
+      "release_date": "2026-12-03",
+      "release_time": "after_market_close",
+      "retrieved_at": "2026-11-17T06:28:12.960758+00:00",
+      "review_note": "Full dated release reviewed: issuer, third quarter fiscal2027 ended October31,2026, November12 dateline and explicit December3 after-market-close results publication, distinct from call timing. Normalized visible text is unchanged; raw body hash changed.",
+      "source_sha256": "813581858ea7073d3ba6fc177be352e3a9586f88e6ea55bc6e6248d24242857a",
+      "source_url": "https://investors.sentinelone.com/press-releases/news-details/2026/SentinelOne-Announces-Date-of-Fiscal-Third-Quarter-2027-Financial-Results-Conference-Call-and-Participation-in-Upcoming-Investor-Conference/default.aspx",
+      "time_precision": "market_session",
+      "timestamp_verified": false,
+      "timezone": "America/New_York",
+      "timezone_provenance": "NYSE-listed company and US market-close context; release-date-boundary-v1 uses start of the release day in America/New_York. Documented conservative policy interpretation, not an exact publication clock time.",
+      "verification_method": "direct_http_official_ir_full_document_re_review",
+      "verification_status": "independently_verified",
+      "verified_at": "2026-11-17T06:30:40.790976+00:00",
+      "verifier": "Codex"
     }
   ]
 }

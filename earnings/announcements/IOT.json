@@ -1,74 +1,110 @@
 {
   "versions": [
     {
-      "company": "IOT",
-      "event_kind": "results_release",
-      "fiscal_period": {
-        "start": "2026-08-02",
-        "end": "2026-10-31",
-        "label": "Q3 FY2027"
-      },
-      "release_date": "2026-12-03",
-      "release_time": "after_market_close",
-      "time_precision": "market_session",
-      "timezone": "America/New_York",
-      "timezone_provenance": "US market closes reference; release-date boundary interpreted in America/New_York under release-date-boundary-v1. Not an exact publication clock time.",
-      "timestamp_verified": false,
+      "announcement_issued_date": "2026-11-02",
+      "cached_body": "data/cache/earnings/session3-research/samsara-date-be8472cbd44fe0287b86b3a95999dcdec6f4bda10db333f56c10a49b2573fb0a.html",
       "call": {
         "event_kind": "earnings_call",
+        "precision": "minute",
         "time": "14:00",
-        "timezone": "America/Los_Angeles",
-        "precision": "minute"
+        "timezone": "America/Los_Angeles"
       },
-      "announcement_issued_date": "2026-11-02",
-      "verification_status": "independently_verified",
-      "verifier": "Codex",
-      "verification_method": "direct_http_official_ir_full_document; field validation and Codex review completed at verified_at",
       "checked_at": "2026-11-12T10:47:32.848632+00:00",
-      "retrieved_at": "2026-11-12T10:47:33.282784+00:00",
-      "verified_at": "2026-11-12T20:24:42.274438+00:00",
-      "source_url": "https://investors.samsara.com/news/news-details/2026/Samsara-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-3-2026/default.aspx",
-      "source_sha256": "be8472cbd44fe0287b86b3a95999dcdec6f4bda10db333f56c10a49b2573fb0a",
-      "cached_body": "data/cache/earnings/session3-research/samsara-date-be8472cbd44fe0287b86b3a95999dcdec6f4bda10db333f56c10a49b2573fb0a.html",
-      "quote": "after the U.S. market closes on Thursday, December 3, 2026.",
+      "company": "IOT",
       "discovery_note": "Another agent supplied a Finviz lead. The lead was not used as verified evidence; original official IR document independently retrieved. No user_verified label.",
-      "id": "7e01749a-258c-5831-aace-9e0d050eb715"
+      "event_kind": "results_release",
+      "fiscal_period": {
+        "end": "2026-10-31",
+        "label": "Q3 FY2027",
+        "start": "2026-08-02"
+      },
+      "id": "7e01749a-258c-5831-aace-9e0d050eb715",
+      "quote": "after the U.S. market closes on Thursday, December 3, 2026.",
+      "release_date": "2026-12-03",
+      "release_time": "after_market_close",
+      "retrieved_at": "2026-11-12T10:47:33.282784+00:00",
+      "source_sha256": "be8472cbd44fe0287b86b3a95999dcdec6f4bda10db333f56c10a49b2573fb0a",
+      "source_url": "https://investors.samsara.com/news/news-details/2026/Samsara-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-3-2026/default.aspx",
+      "time_precision": "market_session",
+      "timestamp_verified": false,
+      "timezone": "America/New_York",
+      "timezone_provenance": "US market closes reference; release-date boundary interpreted in America/New_York under release-date-boundary-v1. Not an exact publication clock time.",
+      "verification_method": "direct_http_official_ir_full_document; field validation and Codex review completed at verified_at",
+      "verification_status": "independently_verified",
+      "verified_at": "2026-11-12T20:24:42.274438+00:00",
+      "verifier": "Codex"
     },
     {
-      "company": "IOT",
-      "event_kind": "results_release",
-      "fiscal_period": {
-        "start": "2026-08-02",
-        "end": "2026-10-31",
-        "label": "Q3 FY2027"
-      },
-      "release_date": "2026-12-03",
-      "release_time": "after_market_close",
-      "time_precision": "market_session",
-      "timezone": "America/New_York",
-      "timezone_provenance": "US market closes reference; release-date boundary interpreted in America/New_York under release-date-boundary-v1. Not an exact publication clock time.",
-      "timestamp_verified": false,
+      "announcement_issued_date": "2026-11-02",
+      "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/31bd7c94a4aa0a85c8f526e08e9b3666146e4132d257112cbe9f0f2843d9ba13-bb35e403595b4af82df3ffd18d02f30f3859d3ed218ba20ff3224c29faccefc5.body",
       "call": {
         "event_kind": "earnings_call",
+        "precision": "minute",
         "time": "14:00",
-        "timezone": "America/Los_Angeles",
-        "precision": "minute"
+        "timezone": "America/Los_Angeles"
       },
-      "announcement_issued_date": "2026-11-02",
-      "verification_status": "independently_verified",
-      "verifier": "Codex",
-      "verification_method": "direct_http_official_ir_full_document_re_review",
       "checked_at": "2026-11-12T23:46:52.384801+00:00",
-      "retrieved_at": "2026-11-12T23:46:52.622261+00:00",
-      "verified_at": "2026-11-12T23:48:07.519940+00:00",
-      "source_url": "https://investors.samsara.com/news/news-details/2026/Samsara-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-3-2026/default.aspx",
-      "source_sha256": "bb35e403595b4af82df3ffd18d02f30f3859d3ed218ba20ff3224c29faccefc5",
-      "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/31bd7c94a4aa0a85c8f526e08e9b3666146e4132d257112cbe9f0f2843d9ba13-bb35e403595b4af82df3ffd18d02f30f3859d3ed218ba20ff3224c29faccefc5.body",
-      "quote": "after the U.S. market closes on Thursday, December 3, 2026.",
+      "company": "IOT",
       "discovery_note": "Another agent supplied a Finviz lead. The lead was not used as verified evidence; original official IR document independently retrieved. No user_verified label.",
+      "event_kind": "results_release",
+      "fiscal_period": {
+        "end": "2026-10-31",
+        "label": "Q3 FY2027",
+        "start": "2026-08-02"
+      },
+      "id": "df34084d-c4ea-5848-ad67-df9dc8b98084",
       "previous_evidence_id": "7e01749a-258c-5831-aace-9e0d050eb715",
+      "quote": "after the U.S. market closes on Thursday, December 3, 2026.",
+      "release_date": "2026-12-03",
+      "release_time": "after_market_close",
+      "retrieved_at": "2026-11-12T23:46:52.622261+00:00",
       "review_note": "Release company, fiscal quarter/year, dateline and results-publication wording re-reviewed. No date or timezone change. Normalized visible text unchanged; raw HTML changed.",
-      "id": "df34084d-c4ea-5848-ad67-df9dc8b98084"
+      "source_sha256": "bb35e403595b4af82df3ffd18d02f30f3859d3ed218ba20ff3224c29faccefc5",
+      "source_url": "https://investors.samsara.com/news/news-details/2026/Samsara-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-3-2026/default.aspx",
+      "time_precision": "market_session",
+      "timestamp_verified": false,
+      "timezone": "America/New_York",
+      "timezone_provenance": "US market closes reference; release-date boundary interpreted in America/New_York under release-date-boundary-v1. Not an exact publication clock time.",
+      "verification_method": "direct_http_official_ir_full_document_re_review",
+      "verification_status": "independently_verified",
+      "verified_at": "2026-11-12T23:48:07.519940+00:00",
+      "verifier": "Codex"
+    },
+    {
+      "announcement_issued_date": "2026-11-02",
+      "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/31bd7c94a4aa0a85c8f526e08e9b3666146e4132d257112cbe9f0f2843d9ba13-4a095014e7eaeb74e685bddacd92b64665c374998dff9e26088dc10960481c84.body",
+      "call": {
+        "event_kind": "earnings_call",
+        "precision": "minute",
+        "time": "14:00",
+        "timezone": "America/Los_Angeles"
+      },
+      "checked_at": "2026-11-17T06:28:08.988166+00:00",
+      "company": "IOT",
+      "discovery_note": "Another agent supplied a Finviz lead. The lead was not used as verified evidence; original official IR document independently retrieved. No user_verified label.",
+      "event_kind": "results_release",
+      "fiscal_period": {
+        "end": "2026-10-31",
+        "label": "Q3 FY2027",
+        "start": "2026-08-02"
+      },
+      "id": "abcda209-7bdc-5eef-87e5-301e295f55d1",
+      "previous_evidence_id": "df34084d-c4ea-5848-ad67-df9dc8b98084",
+      "quote": "after the U.S. market closes on Thursday, December 3, 2026.",
+      "release_date": "2026-12-03",
+      "release_time": "after_market_close",
+      "retrieved_at": "2026-11-17T06:28:12.440721+00:00",
+      "review_note": "Full dated release reviewed: issuer, third quarter fiscal2027 ended October31,2026, November2 dateline and December3 after-US-market-close results publication;2pm Pacific webcast is separate. Visible change is Q4 platform version; release wording unchanged.",
+      "source_sha256": "4a095014e7eaeb74e685bddacd92b64665c374998dff9e26088dc10960481c84",
+      "source_url": "https://investors.samsara.com/news/news-details/2026/Samsara-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-3-2026/default.aspx",
+      "time_precision": "market_session",
+      "timestamp_verified": false,
+      "timezone": "America/New_York",
+      "timezone_provenance": "US market closes reference; release-date boundary interpreted in America/New_York under release-date-boundary-v1. Not an exact publication clock time.",
+      "verification_method": "direct_http_official_ir_full_document_re_review",
+      "verification_status": "independently_verified",
+      "verified_at": "2026-11-17T06:30:40.783979+00:00",
+      "verifier": "Codex"
     }
   ]
 }
