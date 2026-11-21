@@ -94,10 +94,18 @@ async function getSlugMap(): Promise<Map<string, SlugEntry>> {
   return slugMapCache;
 }
 
+// Literal route segments that live directly under /deals/ alongside
+// the [slug] dynamic segment -- Next's router already prefers the
+// static route for an exact match, but this proxy's own matcher
+// (/deals/:slug) can't tell "export" from a real deal slug, so without
+// this guard a request for /deals/export would 404 here before the
+// real route.ts ever got a chance to run.
+const RESERVED_DEALS_SEGMENTS = new Set(["export"]);
+
 async function resolveDealSlug(request: NextRequest): Promise<NextResponse | null> {
   const segments = request.nextUrl.pathname.split("/").filter(Boolean);
   const [, slug, ...rest] = segments;
-  if (!slug) return null;
+  if (!slug || RESERVED_DEALS_SEGMENTS.has(slug)) return null;
 
   const map = await getSlugMap();
   const entry = map.get(slug);

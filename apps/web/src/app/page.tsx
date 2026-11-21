@@ -7,12 +7,14 @@ import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { LinkButton } from "@/components/ui/Button";
 import { StatNumber } from "@/components/ui/StatNumber";
+import { ChartNote } from "@/components/ui/ChartNote";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { HeroBumpChart } from "./HeroBumpChart";
 import { FeaturedDealCard } from "./FeaturedDealCard";
 import { HeroMedia } from "./HeroMedia";
 import { DealTicker } from "./DealTicker";
+import { InsightBar } from "./InsightBar";
 
 export const dynamic = "force-dynamic";
 
@@ -92,6 +94,10 @@ export default async function HomePage() {
             <p className="text-xs font-medium uppercase tracking-wide text-ink-muted">
               Distribution of first proposal &rarr; final price change
             </p>
+            <ChartNote
+              definition="How much the final signed price differed from the first cash proposal, bucketed in 25-point steps."
+              source="deal_metrics, computed from proposal records across every included deal"
+            />
             {stats.medianPctBump ? (
               <div className="mt-3">
                 <HeroBumpChart data={stats.pctBumpHistogram} />
@@ -167,6 +173,74 @@ export default async function HomePage() {
         </Container>
       </section>
 
+      {/* What the data says */}
+      <section className="border-b border-border py-20">
+        <Container wide>
+          <Reveal>
+            <SectionHeading
+              eyebrow="Findings"
+              title="What the data says"
+              description="Three patterns that hold across every included deal, not just the well-known names."
+            />
+          </Reveal>
+          <div className="mt-10 grid gap-5 sm:grid-cols-3">
+            {stats.pctFirstBidderWon && (
+              <Reveal>
+                <Card className="p-5">
+                  <InsightBar
+                    value={stats.pctFirstBidderWon.value}
+                    domain={[0, 100]}
+                    valueLabel={`${stats.pctFirstBidderWon.value.toFixed(statDecimals(stats.pctFirstBidderWon.value))}%`}
+                    domainLabels={["0%", "100%"]}
+                    referenceAt={50}
+                  />
+                  <p className="mt-3 text-sm text-ink-muted">
+                    The first bidder to show up wins the deal about half the time (n = {stats.pctFirstBidderWon.n}) --
+                    showing up early is an edge, not a guarantee.
+                  </p>
+                </Card>
+              </Reveal>
+            )}
+            {stats.medianPctBump && (
+              <Reveal delay={80}>
+                <Card className="p-5">
+                  <InsightBar
+                    value={stats.medianPctBump.value}
+                    domain={[-25, 50]}
+                    valueLabel={`${stats.medianPctBump.value >= 0 ? "+" : ""}${stats.medianPctBump.value.toFixed(statDecimals(stats.medianPctBump.value))}%`}
+                    domainLabels={["-25%", "+50%"]}
+                    referenceAt={0}
+                  />
+                  <p className="mt-3 text-sm text-ink-muted">
+                    Cash deals typically sign for about {stats.medianPctBump.value.toFixed(1)}% more than the first
+                    priced proposal (n = {stats.medianPctBump.n}) -- negotiation usually moves the price, not just the
+                    terms.
+                  </p>
+                </Card>
+              </Reveal>
+            )}
+            {stats.medianDaysFirstProposalToSigning && (
+              <Reveal delay={160}>
+                <Card className="p-5">
+                  <InsightBar
+                    value={stats.medianDaysFirstProposalToSigning.value}
+                    domain={[0, 365]}
+                    valueLabel={`~${(stats.medianDaysFirstProposalToSigning.value / 30.44).toFixed(1)} months`}
+                    domainLabels={["0 mo", "12 mo"]}
+                  />
+                  <p className="mt-3 text-sm text-ink-muted">
+                    From the first priced proposal to a signed agreement takes a median of{" "}
+                    {Math.round(stats.medianDaysFirstProposalToSigning.value)} days (n ={" "}
+                    {stats.medianDaysFirstProposalToSigning.n}) -- a quarter of a year once real numbers are on the
+                    table.
+                  </p>
+                </Card>
+              </Reveal>
+            )}
+          </div>
+        </Container>
+      </section>
+
       {/* How it works */}
       <section className="py-20">
         <Container wide>
@@ -188,7 +262,7 @@ export default async function HomePage() {
               </Reveal>
             ))}
           </div>
-          <p className="mt-6 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
+          <p className="mt-6 inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
             <Link href="/methodology" className="text-accent hover:underline">
               Read the full methodology →
             </Link>
@@ -210,7 +284,7 @@ export default async function HomePage() {
                 </Reveal>
               ))}
             </div>
-            <p className="mt-6 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
+            <p className="mt-6 inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
               <Link href="/deals" className="text-accent hover:underline">
                 Browse all {headlineCount} deals →
               </Link>
@@ -252,7 +326,7 @@ export default async function HomePage() {
               </Card>
             </Reveal>
           </div>
-          <p className="mt-6 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
+          <p className="mt-6 inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
             <Link href="/methodology" className="text-accent hover:underline">
               See the full accuracy methodology →
             </Link>

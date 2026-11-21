@@ -46,7 +46,7 @@ export function StatNumber({
   const finalText = `${prefix}${value.toFixed(decimals)}${suffix}`;
 
   return (
-    <div className="rounded-lg bg-bg/55 px-4 py-3 backdrop-blur-sm">
+    <div className="rounded-lg bg-bg/90 px-4 py-3 backdrop-blur-sm">
       <span
         ref={ref}
         aria-label={finalText}

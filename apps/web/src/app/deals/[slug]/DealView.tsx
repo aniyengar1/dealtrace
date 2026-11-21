@@ -8,6 +8,7 @@ import { Timeline } from "./Timeline";
 import { ValuationPanel } from "./ValuationPanel";
 import { EvidenceDrawer } from "./EvidenceDrawer";
 import { PartiesPanel } from "./PartiesPanel";
+import { ChartNote } from "@/components/ui/ChartNote";
 
 export function DealView({
   target,
@@ -36,6 +37,10 @@ export function DealView({
     <div className="space-y-10">
       <section id="timeline">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-muted">Process timeline</h2>
+        <ChartNote
+          definition="Every dated event in the sale process, grouped into six lanes by what kind of step it was."
+          source="event records extracted from the deal's SEC merger-proxy filing"
+        />
         <div className="mt-3">
           <HorizontalTimeline events={events} onInspect={setSelected} />
         </div>
@@ -46,6 +51,10 @@ export function DealView({
 
       <section id="bids">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-muted">Bids over time</h2>
+        <ChartNote
+          definition="Price per share offered by each bidder, in the order proposals were made, through to the signed deal price."
+          source="proposal records extracted from the deal's SEC merger-proxy filing"
+        />
         <div className="mt-3">
           <BidChart
             proposals={proposals}
@@ -62,6 +71,10 @@ export function DealView({
         <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-muted">
           Valuation vs. final price
         </h2>
+        <ChartNote
+          definition="Each financial advisor's implied per-share valuation range, compared with the price the deal actually signed at."
+          source="valuation-analysis records extracted from the deal's fairness-opinion filing"
+        />
         <div className="mt-3 rounded-lg border border-border bg-surface p-4">
           <ValuationPanel valuations={valuations} finalPrice={finalPrice} onInspect={setSelected} />
         </div>

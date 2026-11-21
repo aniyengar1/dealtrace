@@ -175,8 +175,38 @@ export function BidChart({
     return <p className="text-sm text-ink-muted">No proposals with both a resolvable date and price to chart.</p>;
   }
 
+  const tableRows = [...allPlotted].sort((a, b) => a.date.getTime() - b.date.getTime());
+
   return (
     <div className="space-y-2">
+      {/* Screen-reader/non-visual table equivalent of the SVG above --
+          the chart's own aria-label gives the gist, but a reader who
+          can't see the plot still needs the actual bid-by-bid data. */}
+      <table className="sr-only">
+        <caption>Bid history for {target}</caption>
+        <thead>
+          <tr>
+            <th>Bidder</th>
+            <th>Date</th>
+            <th>Price</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tableRows.map((p) => (
+            <tr key={p.proposal.id}>
+              <td>{p.proposal.proposer}</td>
+              <td>{formatDate(isoDate(p.date))}</td>
+              <td>
+                {p.proposal.price_low !== null && p.proposal.price_high !== null && p.proposal.price_low !== p.proposal.price_high
+                  ? `${formatPrice(p.proposal.price_low)}–${formatPrice(p.proposal.price_high)}`
+                  : formatPrice(p.proposal.price_high ?? p.proposal.price_low)}
+              </td>
+              <td>{p.proposal.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
       <div className="overflow-x-auto rounded-lg border border-border bg-surface p-4">
         <svg
           viewBox={`0 0 ${PANEL_WIDTH} ${PANEL_HEIGHT}`}

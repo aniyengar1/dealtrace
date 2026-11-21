@@ -152,7 +152,11 @@ export interface DealsFilter {
 
 const PAGE_SIZE = 25;
 
-export function filterAndSortDeals(rows: DealMetricsRow[], filter: DealsFilter) {
+// Filter + sort only, no pagination -- shared by filterAndSortDeals
+// (the /deals table, 25 rows at a time) and the CSV export route
+// (the whole filtered set, same filters/sort as whatever the reader
+// was looking at).
+export function filterAndSort(rows: DealMetricsRow[], filter: Omit<DealsFilter, "page">): DealMetricsRow[] {
   let filtered = rows;
 
   if (filter.q) {
@@ -199,7 +203,7 @@ export function filterAndSortDeals(rows: DealMetricsRow[], filter: DealsFilter) 
     if (bd === null) return -1;
     return bd - ad;
   };
-  const sorted = [...filtered].sort((a, b) => {
+  return [...filtered].sort((a, b) => {
     const av = valueOf(a);
     const bv = valueOf(b);
     if (av === null && bv === null) return byRecentSigningDate(a, b);
@@ -208,7 +212,10 @@ export function filterAndSortDeals(rows: DealMetricsRow[], filter: DealsFilter) 
     if (av === bv) return byRecentSigningDate(a, b);
     return (av - bv) * dir;
   });
+}
 
+export function filterAndSortDeals(rows: DealMetricsRow[], filter: DealsFilter) {
+  const sorted = filterAndSort(rows, filter);
   const page = Math.max(1, filter.page ?? 1);
   const total = sorted.length;
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));

@@ -85,7 +85,7 @@ export default async function MethodologyPage() {
 
       <section className="mt-12">
         <Reveal>
-          <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Pipeline</h2>
+          <h2 className="inline-block rounded-lg bg-bg/90 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Pipeline</h2>
         </Reveal>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {PIPELINE_STEPS.map((step, i) => (
@@ -101,7 +101,7 @@ export default async function MethodologyPage() {
             </Reveal>
           ))}
         </div>
-        <p className="mt-3 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
+        <p className="mt-3 inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
           Extracted with gemini-3.6-flash via Vertex AI; the model retires Jan 28, 2027; raw model outputs are
           archived.
         </p>
@@ -109,7 +109,7 @@ export default async function MethodologyPage() {
 
       <section className="mt-14">
         <Reveal>
-          <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Discovery funnel</h2>
+          <h2 className="inline-block rounded-lg bg-bg/90 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Discovery funnel</h2>
         </Reveal>
         <Reveal delay={60}>
           <div className="mt-5 grid gap-3 sm:grid-cols-5">
@@ -126,7 +126,7 @@ export default async function MethodologyPage() {
             ))}
           </div>
         </Reveal>
-        <p className="mt-3 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
+        <p className="mt-3 inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
           De-duplication (<code className="text-ink">src/dedup_deals.py</code>) resolves cases where the same
           underlying deal surfaces as two or more separately discovered filings &mdash; a target company
           refiling an amended proxy, or a tender offer and a merger-proxy for the same transaction both getting
@@ -139,7 +139,7 @@ export default async function MethodologyPage() {
 
       <section className="mt-14">
         <Reveal>
-          <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">What&apos;s extracted</h2>
+          <h2 className="inline-block rounded-lg bg-bg/90 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">What&apos;s extracted</h2>
         </Reveal>
         <Reveal delay={60}>
           <div className="mt-5 overflow-x-auto rounded-lg border border-border">
@@ -161,7 +161,7 @@ export default async function MethodologyPage() {
             </table>
           </div>
         </Reveal>
-        <p className="mt-3 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
+        <p className="mt-3 inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
           Every record also carries its 1–3 source quotes, the paragraph(s) they came from, a pass/fail
           validation flag, and a review status — visible on each deal page via the evidence drawer.
         </p>
@@ -169,7 +169,7 @@ export default async function MethodologyPage() {
 
       <section className="mt-14">
         <Reveal>
-          <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Validation rules</h2>
+          <h2 className="inline-block rounded-lg bg-bg/90 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Validation rules</h2>
         </Reveal>
         <div className="mt-5 grid gap-5 sm:grid-cols-3">
           {VALIDATION_RULES.map((rule, i) => (
@@ -185,7 +185,7 @@ export default async function MethodologyPage() {
 
       <section className="mt-14">
         <Reveal>
-          <div className="inline-block max-w-2xl rounded-lg bg-bg/55 px-5 py-4 backdrop-blur-sm">
+          <div className="inline-block max-w-2xl rounded-lg bg-bg/90 px-5 py-4 backdrop-blur-sm">
             <h2 className="text-lg font-semibold text-ink">Accuracy</h2>
             <p className="mt-2 text-sm text-ink-muted">
               Measured by scoring an extraction run against a hand-checked gold answer key read directly off the
@@ -234,7 +234,7 @@ export default async function MethodologyPage() {
 
       <section className="mt-14">
         <Reveal>
-          <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Coverage</h2>
+          <h2 className="inline-block rounded-lg bg-bg/90 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Coverage</h2>
           <Card className="mt-5 p-5 text-sm text-ink-muted">
             <p>
               <span className="text-ink">Date range:</span> deals announced {since} onward (bounded by when the
@@ -255,7 +255,7 @@ export default async function MethodologyPage() {
 
       <section className="mt-14 mb-4">
         <Reveal>
-          <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Known limitations</h2>
+          <h2 className="inline-block rounded-lg bg-bg/90 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Known limitations</h2>
           <Card className="mt-5 p-5 text-sm text-ink-muted">
             <ul className="list-disc space-y-2 pl-5">
               <li>
@@ -281,7 +281,7 @@ export default async function MethodologyPage() {
         </Reveal>
       </section>
 
-      <p className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
+      <p className="inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
         <Link href="/" className="text-accent hover:underline">
           ← Back to home
         </Link>
