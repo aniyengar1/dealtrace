@@ -90,7 +90,7 @@ All targets below are **Q3 FY2027, August1–October31,2026, consolidated report
 .venv/bin/python -m earnings.score_live --review-dir /absolute/path/reviewed-outcomes --output /absolute/path/new-unique-scoring-execution.json
 ```
 
-Inclusive endpoints; unscaled multiclass Brier0..2, lower better. Frozen log score is absent; do not invent clipping or change zero-probability buckets. Publish only after reviewing the score execution and separately refreshing the publication copy. Detailed review fields and safeguards follow below.
+Inclusive endpoints; unscaled multiclass Brier0..2, lower better. Frozen log score is absent; do not invent clipping or change zero-probability buckets. Publish only after reviewing the score execution and separately refreshing the publication copy. The website now reads standalone snapshot tables: regenerate `earnings/publication/published_snapshot_seed.sql`, review it, and apply it manually after the owner-run setup in `earnings/publication/README.md`. Never point the publication reader at the live ledger. Detailed review fields and safeguards follow below.
 
 ## Scoring-day procedure — after December1–3 results (not executed in this readiness pass)
 

@@ -14,6 +14,16 @@ def no_network(monkeypatch):
     def denied(*a,**kw):raise AssertionError('Hybrid tests forbid network access')
     monkeypatch.setattr(socket.socket,'connect',denied)
     monkeypatch.setattr(socket,'create_connection',denied)
+    # Mock-only safety tests must not expire with the real experiment deadline.
+    # Production clocks, the paused experiment and its November17 deadline stay
+    # unchanged. Explicit deadline-boundary fixtures still pass their own clock.
+    class TestClock(datetime):
+        @classmethod
+        def now(cls,tz=None):
+            fixed=datetime(2026,11,16,12,tzinfo=timezone.utc)
+            return fixed.astimezone(tz) if tz else fixed.replace(tzinfo=None)
+    monkeypatch.setattr(ledger,'now',lambda:datetime(2026,11,16,12,tzinfo=timezone.utc))
+    monkeypatch.setattr(runner,'datetime',TestClock)
 
 @pytest.fixture
 def c():

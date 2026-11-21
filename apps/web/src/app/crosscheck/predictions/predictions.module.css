@@ -3,3 +3,12 @@
 .header{max-width:none}.header>p:not(.question){max-width:760px}.question{font-size:.875rem;letter-spacing:-.015em;color:#e5e6ea}.leadTime{font-size:.75rem;color:#d8dbe3;margin-top:8px}.probabilities>div{padding:10px 8px;border:1px solid transparent;border-radius:8px}.probabilities .leading{border-color:#969eae;background:linear-gradient(140deg,#343945,#22262f);box-shadow:inset 0 1px 0 #ffffff12}.probabilities .leading dt{color:#e7eaf1}.probabilities .leading dd{color:#fff;font-weight:700}.probabilities>div:not(.leading) dd{color:#a9afbc}
 
 .stats .statSeparator{align-self:center;border:0;background:none;padding:0;color:#979daa}.target span{margin-bottom:4px}
+
+/* Crosscheck reuses main's fonts, tokens, Card and HeroMedia. Scoped only. */
+.page{position:relative;max-width:1152px;margin:0 auto;border:0;border-radius:0;padding:clamp(24px,4vw,56px) 24px;background:transparent;color:var(--color-ink);font-family:var(--font-sans)}
+.page h1,.page h2{font-family:var(--font-serif)}
+.header{padding:28px;border:1px solid var(--color-border);border-radius:var(--radius-lg);background:color-mix(in srgb,var(--color-bg) 85%,transparent);backdrop-filter:blur(8px)}
+.company{background:var(--color-surface);border-color:var(--color-border);border-radius:var(--radius-lg)}
+.companyHeading,.method+.method,.footer{border-color:var(--color-border)}
+.probabilities .leading{border-color:var(--color-accent);background:var(--color-surface-raised);box-shadow:none}
+.methodHeading strong{cursor:help}.backtest{margin-top:32px;padding:24px}.backtest h2{font-size:1.5rem;margin:8px 0}.backtest p{margin:10px 0}.backtest table{width:100%;max-width:480px;margin:18px 0;font-variant-numeric:tabular-nums}.backtest th,.backtest td{text-align:left;padding:8px;border-bottom:1px solid var(--color-border)}

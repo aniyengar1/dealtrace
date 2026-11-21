@@ -5,6 +5,7 @@ const LINKS = [
   { href: "/deals", label: "Deals" },
   { href: "/methodology", label: "Methodology" },
   { href: "/stats", label: "Stats" },
+  { href: "/crosscheck/predictions", label: "Crosscheck" },
 ];
 
 export function NavBar() {
@@ -25,6 +26,7 @@ export function NavBar() {
             </Link>
           ))}
         </div>
+        <Link href="/crosscheck/predictions" className="text-sm text-ink-muted sm:hidden">Crosscheck</Link>
         <div className="ml-auto w-full max-w-[220px]">
           <SearchBox />
         </div>

@@ -1,5 +1,7 @@
 # Jan–Feb 2027 scaling readiness research
 
+Later announcement research: [24 completed four-quarter studies and remaining gaps](lead_time_followup_2026-11-20.md). This financial snapshot and its JSON remain pinned for backtest reproducibility.
+
 Prepared 2026-11-21T02:22:30.744845+00:00; financial source cutoff November 20, 2026. Fixed population: the original 64 R1 companies, without replacing difficult formats.
 
 **512 company-quarters reviewed; 472 source-matched, 40 blocked. 63 companies have at least six source-matched quarters. 11 companies have all four announcement/release pairs verified. Zero are operationally live-ready for 2027: future publication dates have not been accepted and none was imported.**

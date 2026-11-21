@@ -33,6 +33,8 @@ def load_observations():
                 excluded.append({'company':company['ticker'], 'id':r['research_id'], 'reason':r['blocks']})
                 continue
             assert a and g and r['outcome'] in baseline.LABELS
+            cutoff=str(baseline.guidance_cutoff(r['result_release']['report_date']))
+            assert g['issued']<=cutoff and max(g['filed'],g.get('selected_version_filed',g['filed']))<=cutoff
             # Training labels require both release publication and exact actual
             # SEC availability; Q4 parents are represented by actual.filed=max.
             available = max(baseline.day_available(d) for d in [a['filed'], r['actual_source']['filed'], r['result_release']['filed'], r['result_release']['report_date']])
@@ -117,6 +119,10 @@ def report(d):
     lines+=['','## Calibration — fixed bins, no fitting','','Bins are left-inclusive/right-exclusive, except final bin includes1. Each class is evaluated separately; empty cells are omitted. Small cell counts should not be interpreted as reliable calibration estimates.','','| Method | Class | Predicted bin | n | Mean predicted | Observed frequency |','|---|---|---|---|---|---|']
     for c in d['calibration']:lines.append(f"| {c['method']} | {c['class']} | {c['bin']} | {c['n']} | {c['mean_predicted']:.6f} | {c['observed_frequency']:.6f} |")
     lines+=['','## Reproduce','','```sh','.venv/bin/python -m earnings.backtest_walkforward','```','','Outputs: `earnings/reports/backtest_walkforward.json`, this report and a separate `earnings/publication/backtest.json` summary. No database connection, history ingestion, live prediction, or score insert occurs. Re-running changes execution time but the pinned inputs and deterministic case results remain reproducible.']
+    lines+=['','## Denominators and subgroups','','The initial pool contains592 quarter slots (64 scaling issuers plus the original ten, eight each). Removing Rambus’s eight-quarter panel leaves584 slots across73 companies. Source/basis/timing exclusions remove38;546 source-matched targets remain. Fourteen early targets lack the frozen minimum history, leaving532 scored cases. The same532 cases are used for all four score comparisons.','','| Population | Scored n | Raw history | Smoothed | Uniform | Always above |','|---|---|---|---|---|---|']
+    for name,s in d['per_population'].items():
+        lines.append(f"| {name} | {s['n']} | "+' | '.join(f"{s['mean_brier'][m]:.10f}" for m in METHODS)+' |')
+    lines+=['','The lead-time follow-up identified a concrete historical schedule mismatch for Lumentum: November5 was announced, while results were published November2 with merger news. Simulating from the now-known actual release date does not reproduce an operator’s scheduled-date knowledge. This reinforces the retrospective timing caveat; no live record is reconstructed or relabelled.']
     return '\n'.join(lines)+'\n'
 
 

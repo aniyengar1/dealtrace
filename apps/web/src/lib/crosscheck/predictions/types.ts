@@ -7,3 +7,4 @@ export type PublishedPrediction={
 };
 export type PublishedSnapshot={schema_version:'crosscheck-public-predictions-v1';copied_at:string;prediction_count:number;ledger_sha256:string;predictions:PublishedPrediction[]};
 export type SnapshotState={kind:'ready';snapshot:PublishedSnapshot}|{kind:'missing'|'invalid'};
+export type BacktestSummary={kind:'BACKTEST_PUBLIC_DATE_RECONSTRUCTION_NOT_LIVE';executed_at:string;company_count:number;source_matched_targets:number;summary:{n:number;mean_brier:Record<string,string>;outcomes:Record<string,number>;outcome_shares:Record<string,string>;own_history_predictions:number;pooled_predictions:number}};

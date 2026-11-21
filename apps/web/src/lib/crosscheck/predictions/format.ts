@@ -5,9 +5,9 @@ function parts(value:string){
   return {n:BigInt(match[1]+(match[2]??'')),scale:BigInt(10)**BigInt((match[2]??'').length)};
 }
 export function percent(value:string){
-  const {n,scale}=parts(value);const numerator=n*BigInt(10000);let q=numerator/scale;const r=numerator%scale;
+  const {n,scale}=parts(value);const numerator=n*BigInt(1000);let q=numerator/scale;const r=numerator%scale;
   if(r*BigInt(2)>scale||(r*BigInt(2)===scale&&q%BigInt(2)===BigInt(1)))q++;
-  return `${q/BigInt(100)}.${(q%BigInt(100)).toString().padStart(2,'0')}%`;
+  return q%BigInt(10)===BigInt(0)?`${q/BigInt(10)}%`:`${q/BigInt(10)}.${q%BigInt(10)}%`;
 }
 export function usd(value:string){
   const m=/^(\d+)(?:\.(\d+))?$/.exec(value);if(!m)throw new Error('Invalid amount');
@@ -44,7 +44,7 @@ export function leadDays(lockTimestamp:string,releaseDate:string,releaseTimezone
   const day=`${part('year')}-${part('month')}-${part('day')}`;
   return (Date.parse(releaseDate+'T00:00:00Z')-Date.parse(day+'T00:00:00Z'))/86400000;
 }
-// Emphasize all ties at the same two-decimal precision users see. The frozen
+// Emphasize all ties at the same one-decimal precision users see. The frozen
 // residual convention may distinguish equal-count rates at the 24th place.
 export function highestDisplayedBuckets(p:Record<'below'|'within'|'above',string>){
   const labels=['below','within','above'] as const;
@@ -52,3 +52,6 @@ export function highestDisplayedBuckets(p:Record<'below'|'within'|'above',string
   const max=labels.reduce((m,k)=>value(k)>m?value(k):m,BigInt(0));
   return labels.filter(k=>value(k)===max);
 }
+
+export function scoreLabel(value:string){return roundedScaled(value,BigInt(1),4);}
+export function validBrier(value:string){try{const {n,scale}=parts(value);return n<=BigInt(2)*scale;}catch{return false;}}

@@ -1,0 +1,3346 @@
+{
+  "kind": "ANNOUNCEMENT_LEAD_TIME_RESEARCH_NOT_LOCK_EVIDENCE",
+  "prepared_at": "2026-11-21T03:42:46.936962+00:00",
+  "financial_audit_sha256": "6080969532407a69e122b26a7ce65abba3721168f8ce132aa734bfd05382d1d3",
+  "complete_count": 24,
+  "previous_complete_count": 11,
+  "new_complete": [
+    "RPD",
+    "IPGP",
+    "PINS",
+    "HIMS",
+    "NTNX",
+    "AMD",
+    "EPAM",
+    "ADI",
+    "POWI",
+    "TWLO",
+    "ONTO",
+    "DOCN",
+    "TASK"
+  ],
+  "remaining_count": 40,
+  "companies": [
+    {
+      "ticker": "META",
+      "company": "Meta Platforms, Inc.",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": true,
+      "typical_gap_days": "14.5",
+      "range_days": [
+        "9",
+        "16"
+      ],
+      "pairs": [
+        {
+          "ticker": "META",
+          "issued": "2026-10-12",
+          "scheduled_release": "2026-10-21",
+          "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-Third-Quarter-2026-Results/default.aspx",
+          "quote": "MENLO PARK, Calif., Oct. 12, 2026 /PRNewswire/ -- Meta Platforms, Inc. (NASDAQ: META) announced today that the company's third quarter 2026 financial results will be released after market close on Wednesday, October 21st, 2026.",
+          "observed_at": "2026-11-21 01:11:47 UTC",
+          "provider": "full rendered official source; original web retrieval timestamp not preserved",
+          "artifact_sha256": "6a80c1350868689cfdd16780f3471ccfe5bc12bbb428c0568e8742c6ae7b8361",
+          "artifact_kind": "web-rendered official-source text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/META/web-announcement-1.txt",
+          "http_observations": [
+            {
+              "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-Third-Quarter-2026-Results/default.aspx",
+              "checked_at": "2026-11-21T00:40:39.176504+00:00",
+              "purpose": "earnings-date announcement research only",
+              "status": "retrieved_not_semantically_verified",
+              "http_status": 200,
+              "fetched_at": "2026-11-21T00:40:39.494435+00:00",
+              "sha256": "ab28d3a5a52ec4b99b5f109862742c15cadbf145c9583612701bbd876aa3f8bc",
+              "body_file": "data/cache/earnings/scaling-2027q1-dates/META/00d503b2aa3256f4b2ea00402f95f6e147f6a2b6d4159839c8c36eeacfe036e3-ab28d3a5a52ec4b99b5f109862742c15cadbf145c9583612701bbd876aa3f8bc.body",
+              "final_url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-Third-Quarter-2026-Results/default.aspx",
+              "redirects": []
+            }
+          ],
+          "verification_interval": {
+            "started_at": "2026-11-21 00:57:26 UTC",
+            "finished_at": "2026-11-21 00:58:32 UTC"
+          },
+          "refreshed_source_file": "data/cache/earnings/scaling-2027q1-dates/META/refreshed-full-4.txt",
+          "refreshed_artifact_sha256": "5576905c6ae6e8f97044f4966e022ab4b92af6fbe1d0392b78564865b31e20f0",
+          "full_body_rechecked": true,
+          "lead_days": 9,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "META",
+          "issued": "2026-07-14",
+          "scheduled_release": "2026-07-29",
+          "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-Second-Quarter-2026-Results/default.aspx",
+          "quote": "MENLO PARK, Calif., July 14, 2026 /PRNewswire/ -- Meta Platforms, Inc. (NASDAQ: META) announced today that the company's second quarter 2026 financial results will be released after market close on Wednesday, July 29th, 2026.",
+          "observed_at": "2026-11-21 01:11:49 UTC",
+          "provider": "full rendered official source; original web retrieval timestamp not preserved",
+          "artifact_sha256": "07d346238a5f516b0707c49f9083e8be75ee042bc453d4945bd2aab0282c6272",
+          "artifact_kind": "web-rendered official-source text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/META/web-announcement-2.txt",
+          "http_observations": [
+            {
+              "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-Second-Quarter-2026-Results/default.aspx",
+              "checked_at": "2026-11-21T00:40:39.498887+00:00",
+              "purpose": "earnings-date announcement research only",
+              "status": "retrieved_not_semantically_verified",
+              "http_status": 200,
+              "fetched_at": "2026-11-21T00:40:39.667989+00:00",
+              "sha256": "e507b59b86307895c4d2c5050b2ef032ad2d4b767da46484c8dce1b9067cfe8c",
+              "body_file": "data/cache/earnings/scaling-2027q1-dates/META/89afaf63e24aa365b4c3da6bcf044e6fddf6d645346458cbe46715658128b462-e507b59b86307895c4d2c5050b2ef032ad2d4b767da46484c8dce1b9067cfe8c.body",
+              "final_url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-Second-Quarter-2026-Results/default.aspx",
+              "redirects": []
+            }
+          ],
+          "verification_interval": {
+            "started_at": "2026-11-21 00:57:26 UTC",
+            "finished_at": "2026-11-21 00:58:32 UTC"
+          },
+          "refreshed_source_file": "data/cache/earnings/scaling-2027q1-dates/META/refreshed-full-5.txt",
+          "refreshed_artifact_sha256": "dce84d42a311dd5f9d0282564f133f5ce309f424f717217e081783a44440487b",
+          "full_body_rechecked": true,
+          "lead_days": 15,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "META",
+          "issued": "2026-04-13",
+          "scheduled_release": "2026-04-29",
+          "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-First-Quarter-2026-Results/default.aspx",
+          "quote": "MENLO PARK, Calif., April 13, 2026 /PRNewswire/ -- Meta Platforms, Inc. (NASDAQ: META) announced today that the company's first quarter 2026 financial results will be released after market close on Wednesday, April 29th, 2026.",
+          "observed_at": "2026-11-21 01:11:51 UTC",
+          "provider": "full rendered official source; original web retrieval timestamp not preserved",
+          "artifact_sha256": "1592b7d2ee193201b90abbe1393e1b3673a9249e0512dc6a8e19cc38060dffe4",
+          "artifact_kind": "web-rendered official-source text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/META/web-announcement-3.txt",
+          "http_observations": [
+            {
+              "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-First-Quarter-2026-Results/default.aspx",
+              "checked_at": "2026-11-21T00:40:39.470526+00:00",
+              "purpose": "earnings-date announcement research only",
+              "status": "retrieved_not_semantically_verified",
+              "http_status": 200,
+              "fetched_at": "2026-11-21T00:40:40.224498+00:00",
+              "sha256": "7a07a280a43a5f88a3fa10bf1d50e600f06e1be472963c2fdd41cd64f49de4d5",
+              "body_file": "data/cache/earnings/scaling-2027q1-dates/META/b55bbd69f9420e728622d18914319a99a66051c6b598c528570ea4fee0d6620d-7a07a280a43a5f88a3fa10bf1d50e600f06e1be472963c2fdd41cd64f49de4d5.body",
+              "final_url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-First-Quarter-2026-Results/default.aspx",
+              "redirects": []
+            }
+          ],
+          "verification_interval": {
+            "started_at": "2026-11-21 00:57:26 UTC",
+            "finished_at": "2026-11-21 00:58:32 UTC"
+          },
+          "refreshed_source_file": "data/cache/earnings/scaling-2027q1-dates/META/refreshed-full-6.txt",
+          "refreshed_artifact_sha256": "fb29de999bcf416139f1ad58f395aca3fa02afee4d1702c0137b4609038a9c31",
+          "full_body_rechecked": true,
+          "lead_days": 16,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "META",
+          "issued": "2026-01-14",
+          "scheduled_release": "2026-01-28",
+          "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx",
+          "quote": "MENLO PARK, Calif., Jan. 14, 2026 /PRNewswire/ -- Meta Platforms, Inc. (NASDAQ: META) announced today that the company's fourth quarter and full year 2025 financial results will be released after market close on Wednesday, January 28th, 2026.",
+          "observed_at": "2026-11-21 01:11:52 UTC",
+          "provider": "full rendered official source; original web retrieval timestamp not preserved",
+          "artifact_sha256": "4448be2f1425a1bac20a5b079e71df81925b03a2f155c0139156860f31205d06",
+          "artifact_kind": "web-rendered official-source text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/META/web-announcement-4.txt",
+          "http_observations": [
+            {
+              "url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx",
+              "checked_at": "2026-11-21T00:40:39.176180+00:00",
+              "purpose": "earnings-date announcement research only",
+              "status": "retrieved_not_semantically_verified",
+              "http_status": 200,
+              "fetched_at": "2026-11-21T00:40:39.468514+00:00",
+              "sha256": "a2d177cc781635c2882f446fc1b9c70198e2bf1b2a5109d2dca8252df7099aa7",
+              "body_file": "data/cache/earnings/scaling-2027q1-dates/META/82ef5286ceefdf074195b849786c675f15e6265d81611f759f29bf8462363b13-a2d177cc781635c2882f446fc1b9c70198e2bf1b2a5109d2dca8252df7099aa7.body",
+              "final_url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx",
+              "redirects": []
+            }
+          ],
+          "verification_interval": {
+            "started_at": "2026-11-21 00:57:26 UTC",
+            "finished_at": "2026-11-21 00:58:32 UTC"
+          },
+          "refreshed_source_file": "data/cache/earnings/scaling-2027q1-dates/META/refreshed-full-7.txt",
+          "refreshed_artifact_sha256": "e5ab12fa34262f21549b4c130d98e1ea107b1db60f34567ea2d9167265141d1a",
+          "full_body_rechecked": true,
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "CRUS",
+      "company": "CIRRUS LOGIC, INC.",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": true,
+      "typical_gap_days": "21.5",
+      "range_days": [
+        "20",
+        "22"
+      ],
+      "pairs": [
+        {
+          "ticker": "CRUS",
+          "issued": "2026-10-13",
+          "scheduled_release": "2026-11-04",
+          "url": "https://investor.cirrus.com/news-and-events/investor-news/news-details/2026/Cirrus-Logic-to-Report-Second-Quarter-Fiscal-Year-2027-Results/default.aspx",
+          "quote": "AUSTIN, Texas--(BUSINESS WIRE)-- Cirrus Logic, Inc. (Nasdaq: CRUS) will post its second quarter fiscal year 2027 financial results and business outlook on the Investor Relations area of its \u30101\u2020website\u2020cts.businesswire.com\u3011 on Wednesday, November 4, at approximately 4 p.m. ET.",
+          "observed_at": "2026-11-21T00:27:01.879Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "5991e0e5b2decfcf4ff3a9b36bb62dd58936d83cb28f29d366af7d97e10a33f2",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/CRUS/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 22,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "CRUS",
+          "issued": "2026-04-15",
+          "scheduled_release": "2026-05-06",
+          "url": "https://investor.cirrus.com/news-and-events/investor-news/news-details/2026/Cirrus-Logic-to-Report-Fourth-Quarter-and-Full-Fiscal-Year-2026-Results/default.aspx",
+          "quote": "AUSTIN, Texas--(BUSINESS WIRE)-- Cirrus Logic, Inc. (NASDAQ: CRUS) will post its fourth quarter and full fiscal year 2026 financial results and business outlook on the Investor Relations area of its \u30101\u2020website\u2020cts.businesswire.com\u3011 on Wednesday, May 6, at approximately 4 p.m. ET.",
+          "observed_at": "2026-11-21T00:27:02.472Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "e50649718977ecd985fefb3fe742ab930e9b9881a275c9f09c61f89ba4f54aae",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/CRUS/web-found-article-2.txt",
+          "notes": "",
+          "lead_days": 21,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "CRUS",
+          "issued": "2026-01-14",
+          "scheduled_release": "2026-02-03",
+          "url": "https://investor.cirrus.com/news-and-events/investor-news/news-details/2026/Cirrus-Logic-to-Report-Third-Quarter-Fiscal-Year-2026-Results/default.aspx",
+          "quote": "AUSTIN, Texas--(BUSINESS WIRE)-- Cirrus Logic, Inc. (NASDAQ: CRUS) will post its third quarter fiscal year 2026 financial results and business outlook on the Investor Relations area of its \u30101\u2020website\u2020cts.businesswire.com\u3011 on Tuesday, February 3, at approximately 4 p.m. ET.",
+          "observed_at": "2026-11-21T00:27:03.272Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "50f24a091e3218f128c3aa38ef531f75f72caa9aefc9abd454b8d4a0c998c42e",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/CRUS/web-found-article-3.txt",
+          "notes": "",
+          "lead_days": 20,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "CRUS",
+          "issued": "2026-07-14",
+          "scheduled_release": "2026-08-05",
+          "url": "https://investor.cirrus.com/news-and-events/investor-news/news-details/2026/Cirrus-Logic-to-Report-First-Quarter-Fiscal-Year-2027-Results/default.aspx",
+          "quote": "AUSTIN, Texas--(BUSINESS WIRE)-- Cirrus Logic, Inc. (NASDAQ: CRUS) will post its first quarter fiscal year 2027 financial results and business outlook on the Investor Relations area of its \u30101\u2020website\u2020cts.businesswire.com\u3011 on Wednesday, August 5, at approximately 4 p.m. ET.",
+          "observed_at": "2026-11-21T00:27:03.840Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "80d18a06bbceb813ddf2bed906c3dd3d76f35763bf04ecde86e191dd1eef4b69",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/CRUS/web-found-article-4.txt",
+          "notes": "",
+          "lead_days": 22,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "RDDT",
+      "company": "Reddit, Inc.",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": true,
+      "typical_gap_days": "21",
+      "range_days": [
+        "14",
+        "21"
+      ],
+      "pairs": [
+        {
+          "ticker": "RDDT",
+          "issued": "2026-10-15",
+          "scheduled_release": "2026-10-29",
+          "url": "https://investor.redditinc.com/news-events/news-releases/news-details/2026/Reddit-to-Announce-Third-Quarter-Results-on-Thursday-October-29-2026/default.aspx",
+          "quote": "SAN FRANCISCO--(BUSINESS WIRE)-- Reddit, Inc. (NYSE: RDDT), announced today that the company\u2019s third quarter 2026 financial results will be released after market close on Thursday, October 29, 2026.",
+          "observed_at": "2026-11-21T00:27:39.001Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "399cffcf7f92d1d4a28d34d4bf0653609597da6cadd6b648f16468fb164615ca",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/RDDT/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "RDDT",
+          "issued": "2026-07-09",
+          "scheduled_release": "2026-07-30",
+          "url": "https://investor.redditinc.com/news-events/news-releases/news-details/2026/Reddit-to-Announce-Second-Quarter-Results-on-Thursday-July-30-2026/default.aspx",
+          "quote": "SAN FRANCISCO--(BUSINESS WIRE)-- Reddit, Inc. (NYSE: RDDT), announced today that the company\u2019s second quarter 2026 financial results will be released after market close on Thursday, July 30, 2026.",
+          "observed_at": "2026-11-21T00:27:39.626Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "3ad73c52ffa2df2ba7c312af9b754e0df9df4a17493788d377ccb0e9857a90c5",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/RDDT/web-found-article-2.txt",
+          "notes": "",
+          "lead_days": 21,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "RDDT",
+          "issued": "2026-04-09",
+          "scheduled_release": "2026-04-30",
+          "url": "https://investor.redditinc.com/news-events/news-releases/news-details/2026/Reddit-to-Announce-First-Quarter-Results-on-Thursday-April-30-2026/default.aspx",
+          "quote": "SAN FRANCISCO--(BUSINESS WIRE)-- Reddit, Inc. (NYSE: RDDT), announced today that the company\u2019s first quarter 2026 financial results will be released after market close on Thursday, April 30, 2026.",
+          "observed_at": "2026-11-21T00:27:40.207Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "5157b91832e79857263cb0719932769216eb83102a310abfe0f75222b8aa4568",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/RDDT/web-found-article-3.txt",
+          "notes": "",
+          "lead_days": 21,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "RDDT",
+          "issued": "2026-01-15",
+          "scheduled_release": "2026-02-05",
+          "url": "https://investor.redditinc.com/news-events/news-releases/news-details/2026/Reddit-to-Announce-Fourth-Quarter-and-Full-Year-2025-Results-on-Thursday-February-5-2026/default.aspx",
+          "quote": "SAN FRANCISCO--(BUSINESS WIRE)-- Reddit, Inc. (NYSE: RDDT) announced today that the company\u2019s fourth quarter and full year 2025 financial results will be released after market close on Thursday, February 5, 2026.",
+          "observed_at": "2026-11-21T00:27:40.859Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "e13b22acb5294fe76078b7018d29b49d10bf2e00f84f300ffce481fb56ec5f0b",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/RDDT/web-found-article-4.txt",
+          "notes": "",
+          "lead_days": 21,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "AEIS",
+      "company": "ADVANCED ENERGY INDUSTRIES INC",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": true,
+      "typical_gap_days": "14",
+      "range_days": [
+        "13",
+        "20"
+      ],
+      "pairs": [
+        {
+          "ticker": "AEIS",
+          "issued": "2026-10-19",
+          "scheduled_release": "2026-11-02",
+          "url": "https://ir.advancedenergy.com/news/advanced-energy-announces-third-quarter-2026-earnings-date-on-november-2/d3ed2f9a-b9a5-4d51-86c8-fe0713561589",
+          "quote": "DENVER--(BUSINESS WIRE)-- Advanced Energy (Nasdaq: AEIS), a global leader in highly engineered, precision power conversion, measurement, and control solutions, will report its third quarter 2026 financial results after the market closes on Monday, November 2, 2026. Management's quarterly conference call will be held the same day beginning at 4:30 p.m. Eastern Time.",
+          "observed_at": "2026-11-21 01:12:00 UTC",
+          "provider": "full rendered official source; original web retrieval timestamp not preserved",
+          "artifact_sha256": "1957663f7daf97469f2c01b8eeb5391069fc6f121bce7b2139585c5f6a96136b",
+          "artifact_kind": "web-rendered official-source text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/AEIS/web-quarter-date-1.txt",
+          "http_observations": [
+            {
+              "url": "https://ir.advancedenergy.com/news/advanced-energy-announces-third-quarter-2026-earnings-date-on-november-2/d3ed2f9a-b9a5-4d51-86c8-fe0713561589",
+              "checked_at": "2026-11-21T00:40:42.930853+00:00",
+              "purpose": "earnings-date announcement research only",
+              "status": "retrieved_not_semantically_verified",
+              "http_status": 200,
+              "fetched_at": "2026-11-21T00:40:43.490480+00:00",
+              "sha256": "2ad6958f2bd0456118fd38b0bb1f7356c4bc52da4c383d575038908e92cb3ec7",
+              "body_file": "data/cache/earnings/scaling-2027q1-dates/AEIS/e86573fe6f1d37a8ca3f04759972b0bbaa533214d18bd9989928c7401afb2776-2ad6958f2bd0456118fd38b0bb1f7356c4bc52da4c383d575038908e92cb3ec7.body",
+              "final_url": "https://ir.advancedenergy.com/news/advanced-energy-announces-third-quarter-2026-earnings-date-on-november-2/d3ed2f9a-b9a5-4d51-86c8-fe0713561589",
+              "redirects": []
+            }
+          ],
+          "verification_interval": {
+            "started_at": "2026-11-21 00:57:26 UTC",
+            "finished_at": "2026-11-21 00:58:32 UTC"
+          },
+          "refreshed_source_file": "data/cache/earnings/scaling-2027q1-dates/AEIS/refreshed-full-12.txt",
+          "refreshed_artifact_sha256": "efbe97aa9abda3c407b2205c9d71e9e6a2f81ca3d6337d46b11e5c79f7bf9260",
+          "full_body_rechecked": true,
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "AEIS",
+          "issued": "2026-07-20",
+          "scheduled_release": "2026-08-03",
+          "url": "https://ir.advancedenergy.com/news/advanced-energy-announces-second-quarter-2026-earnings-date-on-august-3/98659958-a1e6-4a40-bc01-064ca8813afd",
+          "quote": "DENVER--(BUSINESS WIRE)-- Advanced Energy (Nasdaq: AEIS), a global leader in highly engineered, precision power conversion, measurement, and control solutions, will report its second quarter 2026 financial results after the market closes on Monday, August 3, 2026. Management's quarterly conference call will be held the same day beginning at 4:30 p.m. Eastern Time.",
+          "observed_at": "2026-11-21 01:12:02 UTC",
+          "provider": "full rendered official source; original web retrieval timestamp not preserved",
+          "artifact_sha256": "d0e2b33e682d0c97d8a42bf863b44b6935f0ce61ffb64057d7ecddf35eeb9169",
+          "artifact_kind": "web-rendered official-source text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/AEIS/web-quarter-date-2.txt",
+          "http_observations": [
+            {
+              "url": "https://ir.advancedenergy.com/news/advanced-energy-announces-second-quarter-2026-earnings-date-on-august-3/98659958-a1e6-4a40-bc01-064ca8813afd",
+              "checked_at": "2026-11-21T00:40:43.073095+00:00",
+              "purpose": "earnings-date announcement research only",
+              "status": "retrieved_not_semantically_verified",
+              "http_status": 200,
+              "fetched_at": "2026-11-21T00:40:43.654210+00:00",
+              "sha256": "2ad6958f2bd0456118fd38b0bb1f7356c4bc52da4c383d575038908e92cb3ec7",
+              "body_file": "data/cache/earnings/scaling-2027q1-dates/AEIS/e4cfae4ccef7cfe22c103fb76ec170d6f5c1648132726f6e7edd7c222c60a26f-2ad6958f2bd0456118fd38b0bb1f7356c4bc52da4c383d575038908e92cb3ec7.body",
+              "final_url": "https://ir.advancedenergy.com/news/advanced-energy-announces-second-quarter-2026-earnings-date-on-august-3/98659958-a1e6-4a40-bc01-064ca8813afd",
+              "redirects": []
+            }
+          ],
+          "verification_interval": {
+            "started_at": "2026-11-21 00:57:26 UTC",
+            "finished_at": "2026-11-21 00:58:32 UTC"
+          },
+          "refreshed_source_file": "data/cache/earnings/scaling-2027q1-dates/AEIS/refreshed-full-13.txt",
+          "refreshed_artifact_sha256": "f1b3b89b32fb422616bb59f863c437f0f05772bfb1e26b3cf3470ebdf84d169e",
+          "full_body_rechecked": true,
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "AEIS",
+          "issued": "2026-04-21",
+          "scheduled_release": "2026-05-04",
+          "url": "https://ir.advancedenergy.com/news/advanced-energy-announces-first-quarter-2026-earnings-date-on-may-4/bc59ba59-ca9c-46a3-8da2-3fd3dc5ab58b",
+          "quote": "DENVER--(BUSINESS WIRE)-- Advanced Energy (Nasdaq: AEIS), a global leader in highly engineered, precision power conversion, measurement, and control solutions, will report its first quarter 2026 financial results after the market closes on Monday, May 4, 2026. Management's quarterly conference call will be held the same day beginning at 4:30 p.m. Eastern Time.",
+          "observed_at": "2026-11-21 01:12:03 UTC",
+          "provider": "full rendered official source; original web retrieval timestamp not preserved",
+          "artifact_sha256": "c8419cd53d4cb45be8a957438df6d5e59cf3429fc96463da5056382bda4e117a",
+          "artifact_kind": "web-rendered official-source text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/AEIS/web-quarter-date-3.txt",
+          "http_observations": [
+            {
+              "url": "https://ir.advancedenergy.com/news/advanced-energy-announces-first-quarter-2026-earnings-date-on-may-4/bc59ba59-ca9c-46a3-8da2-3fd3dc5ab58b",
+              "checked_at": "2026-11-21T00:40:43.494172+00:00",
+              "purpose": "earnings-date announcement research only",
+              "status": "retrieved_not_semantically_verified",
+              "http_status": 200,
+              "fetched_at": "2026-11-21T00:40:44.049722+00:00",
+              "sha256": "2ad6958f2bd0456118fd38b0bb1f7356c4bc52da4c383d575038908e92cb3ec7",
+              "body_file": "data/cache/earnings/scaling-2027q1-dates/AEIS/27feb696fc9d8dfa0c5075ae9deef851521bef67250b3a9aa09980610f4c52b6-2ad6958f2bd0456118fd38b0bb1f7356c4bc52da4c383d575038908e92cb3ec7.body",
+              "final_url": "https://ir.advancedenergy.com/news/advanced-energy-announces-first-quarter-2026-earnings-date-on-may-4/bc59ba59-ca9c-46a3-8da2-3fd3dc5ab58b",
+              "redirects": []
+            }
+          ],
+          "verification_interval": {
+            "started_at": "2026-11-21 00:57:26 UTC",
+            "finished_at": "2026-11-21 00:58:32 UTC"
+          },
+          "refreshed_source_file": "data/cache/earnings/scaling-2027q1-dates/AEIS/refreshed-full-14.txt",
+          "refreshed_artifact_sha256": "ab61c178afbe0c3a78863d7c6deed3e711fd120b1cfc0ec4f0ccd3dfce7df14f",
+          "full_body_rechecked": true,
+          "lead_days": 13,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "AEIS",
+          "issued": "2026-01-21",
+          "scheduled_release": "2026-02-10",
+          "url": "https://ir.advancedenergy.com/news/advanced-energy-announces-fourth-quarter-2025-earnings-date-on-february-10/48ca069f-723e-46d4-bfe4-706eb9314ef5",
+          "quote": "DENVER--(BUSINESS WIRE)-- Advanced Energy (Nasdaq: AEIS), a global leader in highly engineered, precision power conversion, measurement, and control solutions, will report its fourth quarter 2025 financial results after the market closes on Tuesday, February 10, 2026. Management's quarterly conference call will be held the same day beginning at 4:30 p.m. Eastern Time.",
+          "observed_at": "2026-11-21 01:12:07 UTC",
+          "provider": "full rendered official source; original web retrieval timestamp not preserved",
+          "artifact_sha256": "54db06041dc8950cc089cf751ebb85522256e1f61b6aed78b34f99eb08d768b2",
+          "artifact_kind": "web-rendered official-source text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/AEIS/web-quarter-date-4.txt",
+          "http_observations": [
+            {
+              "url": "https://ir.advancedenergy.com/news/advanced-energy-announces-fourth-quarter-2025-earnings-date-on-february-10/48ca069f-723e-46d4-bfe4-706eb9314ef5",
+              "checked_at": "2026-11-21T00:40:42.439125+00:00",
+              "purpose": "earnings-date announcement research only",
+              "status": "retrieved_not_semantically_verified",
+              "http_status": 200,
+              "fetched_at": "2026-11-21T00:40:43.065519+00:00",
+              "sha256": "2ad6958f2bd0456118fd38b0bb1f7356c4bc52da4c383d575038908e92cb3ec7",
+              "body_file": "data/cache/earnings/scaling-2027q1-dates/AEIS/8df3d96b59247422561a84db05cddc3da263bd58618e39d9bf4df80e16b753eb-2ad6958f2bd0456118fd38b0bb1f7356c4bc52da4c383d575038908e92cb3ec7.body",
+              "final_url": "https://ir.advancedenergy.com/news/advanced-energy-announces-fourth-quarter-2025-earnings-date-on-february-10/48ca069f-723e-46d4-bfe4-706eb9314ef5",
+              "redirects": []
+            }
+          ],
+          "verification_interval": {
+            "started_at": "2026-11-21 00:57:26 UTC",
+            "finished_at": "2026-11-21 00:58:32 UTC"
+          },
+          "refreshed_source_file": "data/cache/earnings/scaling-2027q1-dates/AEIS/refreshed-full-15.txt",
+          "refreshed_artifact_sha256": "df3e42d784461df5e37fb2cc7932fac7d49ef0260cabf5c5b642e08e8f436436",
+          "full_body_rechecked": true,
+          "lead_days": 20,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "ABNB",
+      "company": "Airbnb, Inc.",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": true,
+      "typical_gap_days": "28",
+      "range_days": [
+        "14",
+        "35"
+      ],
+      "pairs": [
+        {
+          "ticker": "ABNB",
+          "issued": "2026-10-01",
+          "scheduled_release": "2026-11-05",
+          "url": "https://investors.airbnb.com/press-releases/news-details/2026/Airbnb-to-Announce-Third-Quarter-2026-Results/default.aspx",
+          "quote": "SAN FRANCISCO, Oct. 1, 2026 /PRNewswire/ -- Airbnb, Inc. (NASDAQ: ABNB) today announced that the company's third quarter 2026 financial results will be released after market close on November 5, 2026. The company's shareholder letter will be made available on the Airbnb Investor Relations website at \u301022\u2020https://investors.airbnb.com\u2020edge.prnewswire.com\u3011.",
+          "observed_at": "2026-11-21 01:11:41 UTC",
+          "provider": "full rendered official source; original web retrieval timestamp not preserved",
+          "artifact_sha256": "ea303ef1446fc0d1d2c13a0770b385a76f57fbf22e56edf5ef75534abcb3e475",
+          "artifact_kind": "web-rendered official-source text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/ABNB/web-announcement-1.txt",
+          "http_observations": [
+            {
+              "url": "https://investors.airbnb.com/press-releases/news-details/2026/Airbnb-to-Announce-Third-Quarter-2026-Results/default.aspx",
+              "checked_at": "2026-11-21T00:40:41.677382+00:00",
+              "purpose": "earnings-date announcement research only",
+              "status": "unverified",
+              "http_status": 403,
+              "redirects": []
+            }
+          ],
+          "verification_interval": {
+            "started_at": "2026-11-21 00:57:26 UTC",
+            "finished_at": "2026-11-21 00:58:32 UTC"
+          },
+          "refreshed_source_file": "data/cache/earnings/scaling-2027q1-dates/ABNB/refreshed-full-0.txt",
+          "refreshed_artifact_sha256": "6dd0f983d45883017c97fe41f69225b43da572759e403981d37719167724221b",
+          "full_body_rechecked": true,
+          "lead_days": 35,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "ABNB",
+          "issued": "2026-07-09",
+          "scheduled_release": "2026-08-06",
+          "url": "https://investors.airbnb.com/press-releases/news-details/2026/Airbnb-to-Announce-Second-Quarter-2026-Results/default.aspx",
+          "quote": "SAN FRANCISCO, July 9, 2026 /PRNewswire/ -- Airbnb, Inc. (NASDAQ: ABNB) today announced that the company's second quarter 2026 financial results will be released after market close on August 6, 2026. The company's shareholder letter will be made available on the Airbnb Investor Relations website at \u301022\u2020https://investors.airbnb.com\u2020edge.prnewswire.com\u3011.",
+          "observed_at": "2026-11-21 01:11:43 UTC",
+          "provider": "full rendered official source; original web retrieval timestamp not preserved",
+          "artifact_sha256": "333c31f73a496bd6fa055d349f35134be91e223d74a1ece0d24684103c61848a",
+          "artifact_kind": "web-rendered official-source text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/ABNB/web-announcement-2.txt",
+          "http_observations": [
+            {
+              "url": "https://investors.airbnb.com/press-releases/news-details/2026/Airbnb-to-Announce-Second-Quarter-2026-Results/default.aspx",
+              "checked_at": "2026-11-21T00:40:42.325392+00:00",
+              "purpose": "earnings-date announcement research only",
+              "status": "unverified",
+              "http_status": 403,
+              "redirects": []
+            }
+          ],
+          "verification_interval": {
+            "started_at": "2026-11-21 00:57:26 UTC",
+            "finished_at": "2026-11-21 00:58:32 UTC"
+          },
+          "refreshed_source_file": "data/cache/earnings/scaling-2027q1-dates/ABNB/refreshed-full-1.txt",
+          "refreshed_artifact_sha256": "deff35b50a3a52e3bad10689c3c34185964d1e649677155fdeeec5be6cebdb8b",
+          "full_body_rechecked": true,
+          "lead_days": 28,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "ABNB",
+          "issued": "2026-04-09",
+          "scheduled_release": "2026-05-07",
+          "url": "https://investors.airbnb.com/press-releases/news-details/2026/Airbnb-to-Announce-First-Quarter-2026-Results/default.aspx",
+          "quote": "SAN FRANCISCO, April 9, 2026 /PRNewswire/ -- Airbnb, Inc. (NASDAQ: ABNB) today announced that the company's first quarter 2026 financial results will be released after market close on May 7, 2026. The company's shareholder letter will be made available on the Airbnb Investor Relations website at \u301022\u2020https://investors.airbnb.com\u2020edge.prnewswire.com\u3011.",
+          "observed_at": "2026-11-21 01:11:44 UTC",
+          "provider": "full rendered official source; original web retrieval timestamp not preserved",
+          "artifact_sha256": "a3c51955ea0947cfa0a3ed4ac83fe76fa271c74be99f2e210cfe0c83fe18b094",
+          "artifact_kind": "web-rendered official-source text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/ABNB/web-announcement-3.txt",
+          "http_observations": [
+            {
+              "url": "https://investors.airbnb.com/press-releases/news-details/2026/Airbnb-to-Announce-First-Quarter-2026-Results/default.aspx",
+              "checked_at": "2026-11-21T00:40:41.865516+00:00",
+              "purpose": "earnings-date announcement research only",
+              "status": "retrieved_not_semantically_verified",
+              "http_status": 200,
+              "fetched_at": "2026-11-21T00:40:42.320227+00:00",
+              "sha256": "9376f9ac6ef63f7b7ec81f23dc982a2f69e4a64cf615d9e7d9a2cd2da13a6124",
+              "body_file": "data/cache/earnings/scaling-2027q1-dates/ABNB/f72222b3aeab09488e1f2d3bf4d5f5384c004440a76915b357d649c9898e289b-9376f9ac6ef63f7b7ec81f23dc982a2f69e4a64cf615d9e7d9a2cd2da13a6124.body",
+              "final_url": "https://investors.airbnb.com/press-releases/news-details/2026/Airbnb-to-Announce-First-Quarter-2026-Results/default.aspx",
+              "redirects": []
+            }
+          ],
+          "verification_interval": {
+            "started_at": "2026-11-21 00:57:26 UTC",
+            "finished_at": "2026-11-21 00:58:32 UTC"
+          },
+          "refreshed_source_file": "data/cache/earnings/scaling-2027q1-dates/ABNB/refreshed-full-2.txt",
+          "refreshed_artifact_sha256": "71c0b7983ae4773871ee5c64103f7f29c8ea0e442a6f5e1459892bc9d443d61b",
+          "full_body_rechecked": true,
+          "lead_days": 28,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "ABNB",
+          "issued": "2026-01-29",
+          "scheduled_release": "2026-02-12",
+          "url": "https://investors.airbnb.com/press-releases/news-details/2026/Airbnb-to-Announce-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx",
+          "quote": "SAN FRANCISCO, Jan. 29, 2026 /PRNewswire/ -- Airbnb, Inc. (NASDAQ: ABNB) today announced that the company's fourth quarter and full year 2025 financial results will be released after market close on February 12, 2026. The company's shareholder letter will be made available on the Airbnb Investor Relations website at \u301022\u2020https://investors.airbnb.com\u2020edge.prnewswire.com\u3011.",
+          "observed_at": "2026-11-21 01:11:46 UTC",
+          "provider": "full rendered official source; original web retrieval timestamp not preserved",
+          "artifact_sha256": "d648596814ac872076e21e44acdc7fb7de88e9a20ee1e0983d94bf11fa08c8be",
+          "artifact_kind": "web-rendered official-source text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/ABNB/web-announcement-4.txt",
+          "http_observations": [
+            {
+              "url": "https://investors.airbnb.com/press-releases/news-details/2026/Airbnb-to-Announce-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx",
+              "checked_at": "2026-11-21T00:40:41.328002+00:00",
+              "purpose": "earnings-date announcement research only",
+              "status": "retrieved_not_semantically_verified",
+              "http_status": 200,
+              "fetched_at": "2026-11-21T00:40:41.861207+00:00",
+              "sha256": "ac0fafd10aca7e53a5238a66c00e9635dab172a95e9c0082f657cca1ccacc30b",
+              "body_file": "data/cache/earnings/scaling-2027q1-dates/ABNB/7f0c50dc3eca4c6502103990755c6a4af8bf73afc77437ef68647d915d785f49-ac0fafd10aca7e53a5238a66c00e9635dab172a95e9c0082f657cca1ccacc30b.body",
+              "final_url": "https://investors.airbnb.com/press-releases/news-details/2026/Airbnb-to-Announce-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx",
+              "redirects": []
+            }
+          ],
+          "verification_interval": {
+            "started_at": "2026-11-21 00:57:26 UTC",
+            "finished_at": "2026-11-21 00:58:32 UTC"
+          },
+          "refreshed_source_file": "data/cache/earnings/scaling-2027q1-dates/ABNB/refreshed-full-3.txt",
+          "refreshed_artifact_sha256": "4f902c13530f5200a8ffc556444d29643b208d5aa37c7d3e9b32a10ec447730e",
+          "full_body_rechecked": true,
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "RNG",
+      "company": "RingCentral, Inc.",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": true,
+      "typical_gap_days": "15.5",
+      "range_days": [
+        "14",
+        "20"
+      ],
+      "pairs": [
+        {
+          "ticker": "RNG",
+          "issued": "2026-10-08",
+          "scheduled_release": "2026-10-22",
+          "url": "https://ir.ringcentral.com/news/press-release-details/2026/RingCentral-to-Announce-Third-Quarter-2026-Financial-Results/default.aspx",
+          "quote": "BELMONT, Calif.--(BUSINESS WIRE)-- \u301076\u2020RingCentral, Inc.\u2020cts.businesswire.com\u3011 (NYSE: RNG), a global leader in AI-powered customer engagement, today announced that it will report financial results for the third quarter ended September 30, 2026 after market close on October 22, 2026. The company also announced that it will hold a conference call on the same day at 2:00 PM Pacific Time (5:00 PM Eastern Time) to discuss its financial results.",
+          "observed_at": "2026-11-21T00:27:43.598Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "e860c623be34c53b69d5400f57f338e2da6c78368c911b71a6b159edc4a60405",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/RNG/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "RNG",
+          "issued": "2026-07-09",
+          "scheduled_release": "2026-07-23",
+          "url": "https://ir.ringcentral.com/news/press-release-details/2026/RingCentral-to-Announce-Second-Quarter-2026-Financial-Results/default.aspx",
+          "quote": "BELMONT, Calif.--(BUSINESS WIRE)-- \u301076\u2020RingCentral, Inc.\u2020cts.businesswire.com\u3011 (NYSE: RNG), a global leader in AI-powered customer engagement, today announced that it will report financial results for the second quarter ended June 30, 2026 after market close on July 23, 2026. The company also announced that it will hold a conference call on the same day at 2:00 PM Pacific Time (5:00 PM Eastern Time) to discuss its financial results.",
+          "observed_at": "2026-11-21T00:27:44.507Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "ca88c633a9d04dc2168da48dfeef2ca75570fae6213893a9f3e934e04057903f",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/RNG/web-found-article-2.txt",
+          "notes": "",
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "RNG",
+          "issued": "2026-04-17",
+          "scheduled_release": "2026-05-07",
+          "url": "https://ir.ringcentral.com/news/press-release-details/2026/RingCentral-to-Announce-First-Quarter-2026-Financial-Results-On-May-7-2026/default.aspx",
+          "quote": "BELMONT, Calif.--(BUSINESS WIRE)-- \u301076\u2020RingCentral, Inc.\u2020cts.businesswire.com\u3011 (NYSE: RNG), a global leader in AI-powered business communications, today announced that it will report financial results for the first quarter ended March 31, 2026 after market close on May 7, 2026. The company also announced that it will hold a conference call on the same day at 2:00 PM Pacific Time (5:00 PM Eastern Time) to discuss its financial results.",
+          "observed_at": "2026-11-21T00:27:45.172Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "22198a8dd9f402a360f5b6476c8cf82871a948322f359d748225aed944044fd9",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/RNG/web-found-article-3.txt",
+          "notes": "",
+          "lead_days": 20,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "RNG",
+          "issued": "2026-02-02",
+          "scheduled_release": "2026-02-19",
+          "url": "https://ir.ringcentral.com/news/press-release-details/2026/RingCentral-to-Announce-Fourth-Quarter-and-Full-Year-2025-Financial-Results-On-February-19-2026/default.aspx",
+          "quote": "BELMONT, Calif.--(BUSINESS WIRE)-- \u301076\u2020RingCentral, Inc.\u2020cts.businesswire.com\u3011 (NYSE: RNG), a global leader in AI-powered business communications, today announced that it will report financial results for the fourth quarter and full year ended December 31, 2025 after market close on February 19, 2026. The company also announced that it will hold a conference call on the same day at 2:00 PM Pacific Time (5:00 PM Eastern Time) to discuss its financial results.",
+          "observed_at": "2026-11-21T00:27:45.826Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "45ed0eeeabdb78898bd0cdf68a4d5cd56f6e34ed1056e7a39ed2480ccf2394ff",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/RNG/web-found-article-4.txt",
+          "notes": "",
+          "lead_days": 17,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "BL",
+      "company": "BLACKLINE, INC.",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": true,
+      "typical_gap_days": "14",
+      "range_days": [
+        "14",
+        "14"
+      ],
+      "pairs": [
+        {
+          "ticker": "BL",
+          "issued": "2026-10-22",
+          "scheduled_release": "2026-11-05",
+          "url": "https://investors.blackline.com/news-releases/news-release-details/blackline-announces-date-third-quarter-2026-earnings-release-and",
+          "quote": "LOS ANGELES, Oct. 22, 2026 (GLOBE NEWSWIRE) -- \u30103\u2020BlackLine, Inc\u2020www.globenewswire.com\u3011\u30104\u2020.\u2020www.globenewswire.com\u3011 (Nasdaq: BL) announced today that it will release financial results for the third quarter ended September 30, 2026 after market close on Thursday, November 5, 2026 followed by a conference call hosted by management at 2:00 p.m. PT / 5:00 p.m. ET. A live webcast and replay will be accessible on BlackLine\u2019s investor relations website at \u30105\u2020https://investors.blackline.com/\u2020www.globenewswire.com\u3011.",
+          "observed_at": "2026-11-21T00:26:58.530Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "74d06cccaa079bebe4f0ae6b25fb50f82695c6192fe98741b7ceea0cc3556edf",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/BL/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "BL",
+          "issued": "2026-04-21",
+          "scheduled_release": "2026-05-05",
+          "url": "https://investors.blackline.com/news-releases/news-release-details/blackline-announces-date-first-quarter-2026-earnings-release-and/",
+          "quote": "LOS ANGELES, April 21, 2026 (GLOBE NEWSWIRE) -- \u30103\u2020BlackLine, Inc.\u2020www.globenewswire.com\u3011 (Nasdaq: BL) announced today that it will release financial results for the first quarter ended March 31, 2026 after market close on Tuesday, May 5, 2026 followed by a conference call hosted by management at 2:00 p.m. PT / 5:00 p.m. ET. A live webcast and replay will be accessible on BlackLine\u2019s investor relations website at \u30104\u2020https://investors.blackline.com\u2020www.globenewswire.com\u3011.",
+          "observed_at": "2026-11-21T00:26:59.160Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "39a94da03056fb2436cfd4d34d4635b32ff20ca904fa48a909a9d651fd19cf32",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/BL/web-found-article-2.txt",
+          "notes": "",
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "BL",
+          "issued": "2026-07-21",
+          "scheduled_release": "2026-08-04",
+          "url": "https://investors.blackline.com/news-releases/news-release-details/blackline-announces-date-second-quarter-2026-earnings-release",
+          "quote": "LOS ANGELES, July 21, 2026 (GLOBE NEWSWIRE) -- \u30103\u2020BlackLine, Inc\u2020www.globenewswire.com\u3011\u30104\u2020.\u2020www.globenewswire.com\u3011 (Nasdaq: BL) announced today that it will release financial results for the first quarter ended June 30, 2026 after market close on Tuesday, August 4, 2026 followed by a conference call hosted by management at 2:00 p.m. PT / 5:00 p.m. ET. A live webcast and replay will be accessible on BlackLine\u2019s investor relations website at \u30105\u2020https://investors.blackline.com/\u2020www.globenewswire.com\u3011.",
+          "observed_at": "2026-11-21T00:26:59.765Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "18fcb8f076e69d2962a883c1a07097a26703e3f9558c7f8737ccbc2c51c3ea1a",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/BL/web-found-article-3.txt",
+          "notes": "The Q2 announcement calls June30 first quarter; quarter-end matches Q2 result. Preserve source typo.",
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "BL",
+          "issued": "2026-01-27",
+          "scheduled_release": "2026-02-10",
+          "url": "https://investors.blackline.com/news-releases/news-release-details/blackline-announces-date-fourth-quarter-and-full-year-2025/",
+          "quote": "LOS ANGELES, Jan. 27, 2026 (GLOBE NEWSWIRE) -- \u30103\u2020BlackLine, Inc.\u2020www.globenewswire.com\u3011 (Nasdaq: BL) announced today that it will release financial results for the fourth quarter and full year ended December 31, 2025 after market close on Tuesday, February 10, 2026 followed by a conference call hosted by management at 2:00 p.m. PT / 5:00 p.m. ET. A live webcast and replay will be accessible on BlackLine\u2019s investor relations website at \u30104\u2020https://investors.blackline.com/\u2020www.globenewswire.com\u3011.",
+          "observed_at": "2026-11-21T00:27:00.584Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "7cfb9ac2259475d15c2c885b892ff9ac91c3d0979dcf238644b0fdaf951d055d",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/BL/web-found-article-4.txt",
+          "notes": "",
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "APP",
+      "company": "AppLovin Corp",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": true,
+      "typical_gap_days": "35",
+      "range_days": [
+        "28",
+        "35"
+      ],
+      "pairs": [
+        {
+          "ticker": "APP",
+          "issued": "2026-10-07",
+          "scheduled_release": "2026-11-04",
+          "url": "https://investors.applovin.com/news/news-details/2026/AppLovin-to-Announce-Third-Quarter-2026-Results/default.aspx",
+          "quote": "PALO ALTO, Calif.--(BUSINESS WIRE)-- AppLovin Corporation, (NASDAQ: APP) (\u201cAppLovin\u201d or the \u201cCompany\u201d) the leading marketing platform, today announced it will report financial results for the third quarter ended September 30, 2026 on Wednesday, November 4, 2026 after the U.S. stock market closes.",
+          "observed_at": "2026-11-21T00:26:56.167Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "3754a0240f5a9abe06bcea9448bda4d094554393eb008649bab9080eb7ec3871",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/APP/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 28,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "APP",
+          "issued": "2026-07-01",
+          "scheduled_release": "2026-08-05",
+          "url": "https://investors.applovin.com/news/news-details/2026/AppLovin-to-Announce-Second-Quarter-2026-Results/default.aspx",
+          "quote": "PALO ALTO, Calif.--(BUSINESS WIRE)-- AppLovin Corporation, (NASDAQ: APP) (\u201cAppLovin\u201d or the \u201cCompany\u201d) the leading marketing platform, today announced it will report financial results for the second quarter ended June 30, 2026 on Wednesday, August 5, 2026 after the U.S. stock market closes.",
+          "observed_at": "2026-11-21T00:26:56.744Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "18b12b1f48bcd425b20081a9cb0f8b063e000a1ace4f7c38f7cef38557706e5f",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/APP/web-found-article-2.txt",
+          "notes": "",
+          "lead_days": 35,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "APP",
+          "issued": "2026-04-01",
+          "scheduled_release": "2026-05-06",
+          "url": "https://investors.applovin.com/news/news-details/2026/AppLovin-to-Announce-First-Quarter-2026-Results/default.aspx",
+          "quote": "PALO ALTO, Calif.--(BUSINESS WIRE)-- AppLovin Corporation, (NASDAQ: APP) (\u201cAppLovin\u201d or the \u201cCompany\u201d) the leading marketing platform, today announced it will report financial results for the first quarter ended March 31, 2026 on Wednesday, May 6, 2026 after the U.S. stock market closes.",
+          "observed_at": "2026-11-21T00:26:57.374Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "a710555353597e5e018974afefe8464448ccacf1322513d5fc1e61a6b72980cf",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/APP/web-found-article-3.txt",
+          "notes": "",
+          "lead_days": 35,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "APP",
+          "issued": "2026-01-07",
+          "scheduled_release": "2026-02-11",
+          "url": "https://investors.applovin.com/news/news-details/2026/AppLovin-to-Announce-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx",
+          "quote": "PALO ALTO, Calif.--(BUSINESS WIRE)-- AppLovin Corporation, (NASDAQ: APP) (\u201cAppLovin\u201d or the \u201cCompany\u201d) the leading marketing platform, today announced it will report financial results for the fourth quarter and fiscal year 2025 on Wednesday, February 11, 2026 after the U.S. stock market closes.",
+          "observed_at": "2026-11-21T00:26:57.955Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "d8205cf13c78e73fb76da5c94dbef9d67f36739509d9121ea93a0b3d8d8e2b7e",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/APP/web-found-article-4.txt",
+          "notes": "",
+          "lead_days": 35,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "NVDA",
+      "company": "NVIDIA CORP",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": true,
+      "typical_gap_days": "24.5",
+      "range_days": [
+        "20",
+        "28"
+      ],
+      "pairs": [
+        {
+          "ticker": "NVDA",
+          "issued": "2026-10-28",
+          "scheduled_release": "2026-11-17",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-Third-Quarter-Financial-Results/default.aspx",
+          "quote": "Ahead of the call, NVIDIA will provide written commentary on its third-quarter results from Colette Kress, the company\u2019s Executive Vice President and Chief Financial Officer. This material will be posted to \u301027\u2020investor.nvidia.com\u3011 immediately after the company\u2019s results are publicly announced at approximately 1:20 p.m. PT.",
+          "observed_at": "2026-11-21 01:11:53 UTC",
+          "provider": "full rendered official source; original web retrieval timestamp not preserved",
+          "artifact_sha256": "d01ffe7a79d0115ba84216e8ee785d7a705987239ff0613bdc8c1021365cbadb",
+          "artifact_kind": "web-rendered official-source text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/NVDA/web-announcement-1.txt",
+          "http_observations": [
+            {
+              "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-Third-Quarter-Financial-Results/default.aspx",
+              "checked_at": "2026-11-21T00:40:40.226554+00:00",
+              "purpose": "earnings-date announcement research only",
+              "status": "retrieved_not_semantically_verified",
+              "http_status": 200,
+              "fetched_at": "2026-11-21T00:40:40.449771+00:00",
+              "sha256": "ca0d925e14eb49746807a0ed7f067fad786e47763ace71893b3e24d070c98090",
+              "body_file": "data/cache/earnings/scaling-2027q1-dates/NVDA/bab6c9866a7c4fa324fd7d091f0b3eddf7ce68d5ddb590044e14d89862d328d1-ca0d925e14eb49746807a0ed7f067fad786e47763ace71893b3e24d070c98090.body",
+              "final_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-Third-Quarter-Financial-Results/default.aspx",
+              "redirects": []
+            }
+          ],
+          "verification_interval": {
+            "started_at": "2026-11-21 00:57:26 UTC",
+            "finished_at": "2026-11-21 00:58:32 UTC"
+          },
+          "refreshed_source_file": "data/cache/earnings/scaling-2027q1-dates/NVDA/refreshed-full-8.txt",
+          "refreshed_artifact_sha256": "90d1bc95d3d51b8425797d54c7f50690a985b069ab877a889827cc6d176a7a4e",
+          "full_body_rechecked": true,
+          "lead_days": 20,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "NVDA",
+          "issued": "2026-07-29",
+          "scheduled_release": "2026-08-26",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-Second-Quarter-Financial-Results/default.aspx",
+          "quote": "Ahead of the call, NVIDIA will provide written commentary on its second-quarter results from Colette Kress, the company\u2019s executive vice president and chief financial officer. This material will be posted to \u301027\u2020investor.nvidia.com\u3011 immediately after the company\u2019s results are publicly announced at approximately 1:20 p.m. PT.",
+          "observed_at": "2026-11-21 01:11:56 UTC",
+          "provider": "full rendered official source; original web retrieval timestamp not preserved",
+          "artifact_sha256": "3a45b4b96531e06c11575d9af77e0eaf747b646994211f8c82daa6401bbc154d",
+          "artifact_kind": "web-rendered official-source text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/NVDA/web-announcement-2.txt",
+          "http_observations": [
+            {
+              "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-Second-Quarter-Financial-Results/default.aspx",
+              "checked_at": "2026-11-21T00:40:41.137553+00:00",
+              "purpose": "earnings-date announcement research only",
+              "status": "retrieved_not_semantically_verified",
+              "http_status": 200,
+              "fetched_at": "2026-11-21T00:40:41.324432+00:00",
+              "sha256": "1a5da7ed74e8cf3b049b1d5e111a3ef0e07ec39bf1b47267841c0332cca26fb8",
+              "body_file": "data/cache/earnings/scaling-2027q1-dates/NVDA/4047009781ab00b9f972bef2880bb94a9f3f287e3903e08157a76c7c41fc39c0-1a5da7ed74e8cf3b049b1d5e111a3ef0e07ec39bf1b47267841c0332cca26fb8.body",
+              "final_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-Second-Quarter-Financial-Results/default.aspx",
+              "redirects": []
+            }
+          ],
+          "verification_interval": {
+            "started_at": "2026-11-21 00:57:26 UTC",
+            "finished_at": "2026-11-21 00:58:32 UTC"
+          },
+          "refreshed_source_file": "data/cache/earnings/scaling-2027q1-dates/NVDA/refreshed-full-9.txt",
+          "refreshed_artifact_sha256": "5fab82fc6bfb74255f96bfb5bc33b04dd7acb65b1c28d5c1e6b2b3d22e852a7c",
+          "full_body_rechecked": true,
+          "lead_days": 28,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "NVDA",
+          "issued": "2026-04-29",
+          "scheduled_release": "2026-05-20",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-First-Quarter-Financial-Results/default.aspx",
+          "quote": "Ahead of the call, NVIDIA will provide written commentary on its first-quarter results from Colette Kress, the company's executive vice president and chief financial officer. This material will be posted to \u301027\u2020investor.nvidia.com\u3011 immediately after the company\u2019s results are publicly announced at approximately 1:20 p.m. PT.",
+          "observed_at": "2026-11-21 01:11:57 UTC",
+          "provider": "full rendered official source; original web retrieval timestamp not preserved",
+          "artifact_sha256": "fd35439db612a3060c7f6c9176a228d0f7849d3bebe5535ae4cfa3db4bbcf21c",
+          "artifact_kind": "web-rendered official-source text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/NVDA/web-announcement-3.txt",
+          "http_observations": [
+            {
+              "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-First-Quarter-Financial-Results/default.aspx",
+              "checked_at": "2026-11-21T00:40:40.452479+00:00",
+              "purpose": "earnings-date announcement research only",
+              "status": "retrieved_not_semantically_verified",
+              "http_status": 200,
+              "fetched_at": "2026-11-21T00:40:41.672215+00:00",
+              "sha256": "2b8415c080db366cabdba17bbb341ff74aedd2dfd9a4dec2cc10048da062bc0a",
+              "body_file": "data/cache/earnings/scaling-2027q1-dates/NVDA/66859d2102f6e59c36c7d5d434646e9f22cb38c5740c76569210fd74169a9271-2b8415c080db366cabdba17bbb341ff74aedd2dfd9a4dec2cc10048da062bc0a.body",
+              "final_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-First-Quarter-Financial-Results/default.aspx",
+              "redirects": []
+            }
+          ],
+          "verification_interval": {
+            "started_at": "2026-11-21 00:57:26 UTC",
+            "finished_at": "2026-11-21 00:58:32 UTC"
+          },
+          "refreshed_source_file": "data/cache/earnings/scaling-2027q1-dates/NVDA/refreshed-full-10.txt",
+          "refreshed_artifact_sha256": "8253b239dd25fc4fd1c45a54cfd0d1ca423e588531ad1dade3db94a074bfd508",
+          "full_body_rechecked": true,
+          "lead_days": 21,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "NVDA",
+          "issued": "2026-01-28",
+          "scheduled_release": "2026-02-25",
+          "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-Fourth-Quarter-Financial-Results/default.aspx",
+          "quote": "Ahead of the call, NVIDIA will provide written commentary on its fourth-quarter results from Colette Kress, the company\u2019s executive vice president and chief financial officer. This material will be posted to \u301027\u2020investor.nvidia.com\u3011 immediately after the company\u2019s results are publicly announced at approximately 1:20 p.m. PT.",
+          "observed_at": "2026-11-21 01:11:58 UTC",
+          "provider": "full rendered official source; original web retrieval timestamp not preserved",
+          "artifact_sha256": "88ffa60730967ca01707dd77b534cef2b8c0b3a627ad8bbc799de887e8418761",
+          "artifact_kind": "web-rendered official-source text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/NVDA/web-announcement-4.txt",
+          "http_observations": [
+            {
+              "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-Fourth-Quarter-Financial-Results/default.aspx",
+              "checked_at": "2026-11-21T00:40:39.670072+00:00",
+              "purpose": "earnings-date announcement research only",
+              "status": "retrieved_not_semantically_verified",
+              "http_status": 200,
+              "fetched_at": "2026-11-21T00:40:41.133707+00:00",
+              "sha256": "fdfcbb0dc04f352b78a6c15a21465fda4c944e2da715be0974e56a4c5485278d",
+              "body_file": "data/cache/earnings/scaling-2027q1-dates/NVDA/b16e022bdfa40b31700c60c2ff5237e07464e229fbc12c147a7c980612763cb7-fdfcbb0dc04f352b78a6c15a21465fda4c944e2da715be0974e56a4c5485278d.body",
+              "final_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-Fourth-Quarter-Financial-Results/default.aspx",
+              "redirects": []
+            }
+          ],
+          "verification_interval": {
+            "started_at": "2026-11-21 00:57:26 UTC",
+            "finished_at": "2026-11-21 00:58:32 UTC"
+          },
+          "refreshed_source_file": "data/cache/earnings/scaling-2027q1-dates/NVDA/refreshed-full-11.txt",
+          "refreshed_artifact_sha256": "94586f091fb3fcee0e2ae85a3677101e6032b3245587f33ce2b9e39b41060933",
+          "full_body_rechecked": true,
+          "lead_days": 28,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "FFIV",
+      "company": "F5, INC.",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": true,
+      "typical_gap_days": "20",
+      "range_days": [
+        "19",
+        "21"
+      ],
+      "pairs": [
+        {
+          "ticker": "FFIV",
+          "issued": "2026-10-08",
+          "scheduled_release": "2026-10-27",
+          "url": "https://investors.f5.com/news/news-details/2026/F5-to-Report-Fourth-Quarter-and-Fiscal-Year-2026-Financial-Results/default.aspx",
+          "quote": "SEATTLE--(BUSINESS WIRE)-- F5, Inc. (NASDAQ: FFIV), the global leader in delivering and securing every app and API, announced it will report its fourth quarter and fiscal year 2026 financial results on Tuesday, October 27, 2026, following the market close. F5 will host a live webcast to discuss its results with investors and analysts beginning at 4:30 p.m. ET on October 27, 2026.",
+          "observed_at": "2026-11-21T00:27:14.053Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "78f5485744339a270359052ebad6faa9576916767075cbd8736c70e931d76ce8",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/FFIV/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 19,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "FFIV",
+          "issued": "2026-07-07",
+          "scheduled_release": "2026-07-27",
+          "url": "https://investors.f5.com/news/news-details/2026/F5-to-Report-Third-Quarter-Fiscal-Year-2026-Financial-Results/default.aspx",
+          "quote": "SEATTLE--(BUSINESS WIRE)-- F5, Inc. (NASDAQ: FFIV), the global leader in delivering and securing every app and API, announced it will report its third quarter fiscal year 2026 financial results on Monday, July 27, 2026, following the market close. F5 will host a live webcast to discuss its results with investors and analysts beginning at 4:30 p.m. ET on July 27, 2026.",
+          "observed_at": "2026-11-21T00:27:14.833Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "0d259104c924909ec1be9e9e3f3b1bf308d759213d144a5c00f99ec9856a8b0a",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/FFIV/web-found-article-2.txt",
+          "notes": "",
+          "lead_days": 20,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "FFIV",
+          "issued": "2026-04-07",
+          "scheduled_release": "2026-04-28",
+          "url": "https://investors.f5.com/news/news-details/2026/F5-to-Report-Second-Quarter-Fiscal-Year-2026-Financial-Results/default.aspx",
+          "quote": "SEATTLE--(BUSINESS WIRE)-- F5, Inc. (NASDAQ: FFIV), the global leader in delivering and securing every app and API, announced it will report its second quarter fiscal year 2026 financial results on Tuesday, April 28, 2026, following the market close. F5 will host a live webcast to discuss its results with investors and analysts beginning at 4:30 p.m. ET on April 28, 2026.",
+          "observed_at": "2026-11-21T00:27:15.627Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "0322e6f0e859bcc67942a6908bae7f4d593786148e75b13e57d5a7b528ad4bc4",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/FFIV/web-found-article-3.txt",
+          "notes": "",
+          "lead_days": 21,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "FFIV",
+          "issued": "2026-01-07",
+          "scheduled_release": "2026-01-27",
+          "url": "https://investors.f5.com/news/news-details/2026/F5-to-Report-First-Quarter-Fiscal-Year-2026-Financial-Results-01-07-2026/default.aspx",
+          "quote": "SEATTLE--(BUSINESS WIRE)-- F5, Inc. (NASDAQ: FFIV), the global leader in delivering and securing every app and API, announced it will report its first quarter fiscal year 2026 financial results on Tuesday, January 27, 2026, following the market close. F5 will host a live webcast to discuss its results with investors and analysts beginning at 4:30 p.m. ET on January 27, 2026.",
+          "observed_at": "2026-11-21T00:27:16.393Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "0f40f8f1a8d942777fcdc5735d141a9b66a92520d5a6ca6bf4535ea763e378d1",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/FFIV/web-found-article-4.txt",
+          "notes": "",
+          "lead_days": 20,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "TDOC",
+      "company": "Teladoc Health, Inc.",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": true,
+      "typical_gap_days": "14",
+      "range_days": [
+        "14",
+        "20"
+      ],
+      "pairs": [
+        {
+          "ticker": "TDOC",
+          "issued": "2026-10-14",
+          "scheduled_release": "2026-10-28",
+          "url": "https://ir.teladochealth.com/news-and-events/investor-news/press-release-details/2026/Teladoc-Health-to-Announce-Third-Quarter-2026-Financial-Results/default.aspx",
+          "quote": "NEW YORK, Oct. 14, 2026 (GLOBE NEWSWIRE) -- Teladoc Health Inc. (NYSE: TDOC), the global leader in virtual care, announced that it will release third quarter 2026 results on Wednesday, October 28, 2026, after the market closes. In conjunction, the company will host a conference call to review results at 5:00 p.m. ET on the same day.",
+          "observed_at": "2026-11-21T00:27:48.459Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "78a233fc6bf9bb357638c1d0a06e9e2b821b86ad286cd093dfcb884a147951b4",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/TDOC/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "TDOC",
+          "issued": "2026-07-15",
+          "scheduled_release": "2026-07-29",
+          "url": "https://ir.teladochealth.com/news-and-events/investor-news/press-release-details/2026/Teladoc-Health-to-Announce-Second-Quarter-2026-Financial-Results/default.aspx",
+          "quote": "NEW YORK, July 15, 2026 (GLOBE NEWSWIRE) -- Teladoc Health Inc. (NYSE: TDOC), the global leader in virtual care, announced that it will release second quarter 2026 results on Wednesday, July 29, 2026, after the market closes. In conjunction, the company will host a conference call to review results at 5:00 p.m. ET on the same day.",
+          "observed_at": "2026-11-21T00:27:49.065Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "300dad95552a91c434445324aa061c69f1d117c66bff0f99149f80a640daaadc",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/TDOC/web-found-article-2.txt",
+          "notes": "",
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "TDOC",
+          "issued": "2026-04-15",
+          "scheduled_release": "2026-04-29",
+          "url": "https://ir.teladochealth.com/news-and-events/investor-news/press-release-details/2026/Teladoc-Health-to-Announce-First-Quarter-2026-Financial-Results/default.aspx",
+          "quote": "NEW YORK, April 15, 2026 (GLOBE NEWSWIRE) -- Teladoc Health Inc. (NYSE: TDOC), the global leader in virtual care, announced that it will release first quarter 2026 results on Wednesday, April 29, 2026, after the market closes. In conjunction, the company will host a conference call to review results at 5:00 p.m. ET on the same day.",
+          "observed_at": "2026-11-21T00:27:49.668Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "f523432a4a30072526012adb679209236a3dc2b2a3dcd2ce93b6184a4e639862",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/TDOC/web-found-article-3.txt",
+          "notes": "",
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "TDOC",
+          "issued": "2026-02-05",
+          "scheduled_release": "2026-02-25",
+          "url": "https://ir.teladochealth.com/news-and-events/investor-news/press-release-details/2026/Teladoc-Health-to-Announce-Fourth-Quarter-2025-Financial-Results/default.aspx",
+          "quote": "NEW YORK, Feb. 05, 2026 (GLOBE NEWSWIRE) -- Teladoc Health Inc. (NYSE: TDOC), the global leader in virtual care, announced that it will release fourth quarter 2025 results on Wednesday, February 25, 2026, after the market closes. In conjunction, the company will host a conference call to review results at 5:00 p.m. ET on the same day.",
+          "observed_at": "2026-11-21T00:27:50.476Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "fce7091e93d13fc14b349d1df52a4e0c5c8bb87827e1abddf4f1d0982317a5bd",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/TDOC/web-found-article-4.txt",
+          "notes": "",
+          "lead_days": 20,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "RPD",
+      "company": "Rapid7, Inc.",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": false,
+      "typical_gap_days": "26",
+      "range_days": [
+        "21",
+        "27"
+      ],
+      "pairs": [
+        {
+          "ticker": "RPD",
+          "issued": "2026-04-09",
+          "scheduled_release": "2026-05-05",
+          "url": "https://investors.rapid7.com/news/news-details/2026/Rapid7-to-Report-First-Quarter-2026-Financial-Results-on-May-5/default.aspx",
+          "quote": "BOSTON, April 09, 2026 (GLOBE NEWSWIRE) -- \u301022\u2020Rapid7, Inc.\u2020www.globenewswire.com\u3011 (NASDAQ: RPD), a global leader in AI-powered managed cybersecurity operations, today announced that the company will release its first quarter 2026 financial results on Tuesday, May 5, 2026, after the financial markets close.",
+          "observed_at": "2026-11-21T00:27:46.433Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "e7a5fb9387eaf9294e2620660cbb7b0ca9204b4e493f5ac3bf370c814f87f07b",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/RPD/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 26,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "RPD",
+          "issued": "2026-07-14",
+          "scheduled_release": "2026-08-10",
+          "url": "https://investors.rapid7.com/news/news-details/2026/Rapid7-to-Report-Second-Quarter-2026-Financial-Results-on-August-10/default.aspx",
+          "quote": "BOSTON, July 14, 2026 (GLOBE NEWSWIRE) -- \u301022\u2020Rapid7, Inc.\u2020www.globenewswire.com\u3011 (NASDAQ: RPD), a global leader in AI-powered managed cybersecurity operations, today announced that the company will release its second quarter 2026 financial results on Monday, August 10, 2026, after the financial markets close.",
+          "observed_at": "2026-11-21T00:27:47.058Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "ed9ef9829c390e732e60db2abe19f687181523c131ae3c8a5023c63eed50e99f",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/RPD/web-found-article-2.txt",
+          "notes": "",
+          "lead_days": 27,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "RPD",
+          "issued": "2026-01-15",
+          "scheduled_release": "2026-02-10",
+          "url": "https://investors.rapid7.com/news/news-details/2026/Rapid7-to-Report-Fourth-Quarter-and-Full-Year-2025-Financial-Results-on-February-10/default.aspx",
+          "quote": "BOSTON, Jan. 15, 2026 (GLOBE NEWSWIRE) -- \u301022\u2020Rapid7, Inc.\u2020www.globenewswire.com\u3011 (NASDAQ: RPD), a leader in threat detection and exposure management, today announced that the company will release its fourth quarter and full year 2025 financial results on Tuesday, February 10, 2026, after the financial markets close.",
+          "observed_at": "2026-11-21T00:27:47.766Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "2cc1ab106d2cdb11b39ee08030146eb4170a89e8d4eaf81cb6c2134ce4f6a432",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/RPD/web-found-article-3.txt",
+          "notes": "",
+          "lead_days": 26,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "RPD",
+          "issued": "2026-10-14",
+          "scheduled_release": "2026-11-04",
+          "url": "https://investors.rapid7.com/news/news-details/2026/Rapid7-to-Report-Third-Quarter-2026-Financial-Results-on-November-4/default.aspx",
+          "quote": "BOSTON, Oct. 14, 2026 (GLOBE NEWSWIRE) -- \u301022\u2020Rapid7, Inc.\u2020www.globenewswire.com\u3011 (NASDAQ: RPD), a global leader in AI-powered managed cybersecurity operations, today announced that the company will release its third quarter 2026 financial results on Wednesday, November 4, 2026, after the financial markets close.",
+          "observed_at": "2026-11-21 02:53:23 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "c70ee5c7b3de21174b4ee8c1fa75e8aeb4a1a0551db618373780a03b46ff30ed",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/RPD/leadtime-followup-4.txt",
+          "notes": "",
+          "lead_days": 21,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "IPGP",
+      "company": "IPG PHOTONICS CORP",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": false,
+      "typical_gap_days": "14",
+      "range_days": [
+        "14",
+        "15"
+      ],
+      "pairs": [
+        {
+          "ticker": "IPGP",
+          "issued": "2026-10-20",
+          "scheduled_release": "2026-11-03",
+          "url": "https://investor.ipgphotonics.com/news/news-details/2026/IPG-Photonics-to-Announce-Third-Quarter-2026-Financial-Results-on-November-3/default.aspx",
+          "quote": "MARLBOROUGH, Mass., Oct. 20, 2026 (GLOBE NEWSWIRE) -- \u301015\u2020IPG Photonics Corporation\u2020www.globenewswire.com\u3011 (Nasdaq: IPGP) will release its third quarter 2026 financial results before the market opens on Tuesday, November 3, 2026. The Company will hold a conference call to review these results at 10:00 a.m. ET on the same day. To access the call, please dial 877-407-6184 in the United States or 201-389-0877 internationally.",
+          "observed_at": "2026-11-21T00:27:20.655Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "4277c29326c1a254ed9e0b1d71d2ab4ad90fc425d5e73b68c3981ace7535fa39",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/IPGP/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "IPGP",
+          "issued": "2026-04-21",
+          "scheduled_release": "2026-05-05",
+          "url": "https://investor.ipgphotonics.com/news/news-details/2026/IPG-Photonics-to-Announce-First-Quarter-2026-Financial-Results-on-May-5/default.aspx",
+          "quote": "MARLBOROUGH, Mass., April 21, 2026 (GLOBE NEWSWIRE) -- \u301015\u2020IPG Photonics Corporation\u2020www.globenewswire.com\u3011 (Nasdaq: IPGP) will release its first quarter 2026 financial results before the market opens on Tuesday, May 5, 2026. The Company will hold a conference call to review these results at 10:00 a.m. ET on the same day. To access the call, please dial 877-407-6184 in the United States or 201-389-0877 internationally.",
+          "observed_at": "2026-11-21T00:27:21.477Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "b42f8edf83e13b5f59343ce58e2bc26f2fff95e5d5b184b0aa49c0e314cbe586",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/IPGP/web-found-article-2.txt",
+          "notes": "",
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "IPGP",
+          "issued": "2026-01-28",
+          "scheduled_release": "2026-02-12",
+          "url": "https://investor.ipgphotonics.com/news/news-details/2026/IPG-Photonics-to-Announce-Fourth-Quarter-2025-Financial-Results-on-February-12/default.aspx",
+          "quote": "MARLBOROUGH, Mass., Jan. 28, 2026 (GLOBE NEWSWIRE) -- \u301015\u2020IPG Photonics Corporation\u2020www.globenewswire.com\u3011 (Nasdaq: IPGP) will release its fourth quarter 2025 financial results before the market opens on Thursday, February 12, 2026. The Company will hold a conference call to review these results at 10:00 a.m. ET on the same day. To access the call, please dial 877-407-6184 in the United States or 201-389-0877 internationally.",
+          "observed_at": "2026-11-21T00:27:22.104Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "6e0d9747b0a059566cee331feb1750ede06c32f3d76b59b656f3c64f4a038636",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/IPGP/web-found-article-3.txt",
+          "notes": "",
+          "lead_days": 15,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "IPGP",
+          "issued": "2026-07-21",
+          "scheduled_release": "2026-08-04",
+          "url": "https://investor.ipgphotonics.com/news/news-details/2026/IPG-Photonics-to-Announce-Second-Quarter-2026-Financial-Results-on-August-4/default.aspx",
+          "quote": "MARLBOROUGH, Mass., July 21, 2026 (GLOBE NEWSWIRE) -- \u301015\u2020IPG Photonics Corporation\u2020www.globenewswire.com\u3011 (Nasdaq: IPGP) will release its second quarter 2026 financial results before the market opens on Tuesday, August 4, 2026. The Company will hold a conference call to review these results at 10:00 a.m. ET on the same day. To access the call, please dial 877-407-6184 in the United States or 201-389-0877 internationally.",
+          "observed_at": "2026-11-21 02:53:24 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "129d074783b6e3a1df033ab1776ba439f2e760da1856ad05eb55cf01057ab7fc",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/IPGP/leadtime-followup-5.txt",
+          "notes": "",
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "PINS",
+      "company": "PINTEREST, INC.",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": false,
+      "typical_gap_days": "21.5",
+      "range_days": [
+        "10",
+        "27"
+      ],
+      "pairs": [
+        {
+          "ticker": "PINS",
+          "issued": "2026-10-19",
+          "scheduled_release": "2026-10-29",
+          "url": "https://investor.pinterestinc.com/news-and-events/press-releases/press-releases-details/2026/Pinterest-to-Announce-Third-Quarter-2026-Results/default.aspx",
+          "quote": "SAN FRANCISCO--(BUSINESS WIRE)-- Pinterest, Inc. (NYSE: PINS) will release financial results for the third quarter 2026 on Thursday, October 29th, 2026 after market close. The company will host its quarterly conference call to discuss these results at 2:30 p.m. PT (5:30 p.m. ET) on the same day.",
+          "observed_at": "2026-11-21T00:27:35.241Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "6fb55ee96619163a5c30f59faf270ebb7412ea0df7cc9f7a011b7ca3f515d05e",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/PINS/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 10,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "PINS",
+          "issued": "2026-07-13",
+          "scheduled_release": "2026-08-04",
+          "url": "https://investor.pinterestinc.com/news-and-events/press-releases/press-releases-details/2026/Pinterest-to-Announce-Second-Quarter-2026-Results/default.aspx",
+          "quote": "SAN FRANCISCO--(BUSINESS WIRE)-- Pinterest, Inc. (NYSE: PINS) will release financial results for the second quarter 2026 on Tuesday, August 4th, 2026 after market close. The company will host its quarterly conference call to discuss these results at 1:30 p.m. PT (4:30 p.m. ET) on the same day.",
+          "observed_at": "2026-11-21T00:27:35.840Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "cf11426ee78db2fbc1f967e20f34b6f9ccb5616a5760e1934e2ee788a8aed18d",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/PINS/web-found-article-2.txt",
+          "notes": "",
+          "lead_days": 22,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "PINS",
+          "issued": "2026-01-16",
+          "scheduled_release": "2026-02-12",
+          "url": "https://investor.pinterestinc.com/news-and-events/press-releases/press-releases-details/2026/Pinterest-to-Announce-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx",
+          "quote": "SAN FRANCISCO--(BUSINESS WIRE)-- Pinterest, Inc. (NYSE: PINS) will release financial results for the fourth quarter and full year 2025 on Thursday, February 12th, 2026 after market close. The company will host its quarterly conference call to discuss these results at 1:30 p.m. PT (4:30 p.m. ET) on the same day.",
+          "observed_at": "2026-11-21T00:27:37.025Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "23de3f069fdfae4d034fbf13868bf9a6a807b326128c971ee143b83655c4d60f",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/PINS/web-found-article-3.txt",
+          "notes": "",
+          "lead_days": 27,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "PINS",
+          "issued": "2026-04-13",
+          "scheduled_release": "2026-05-04",
+          "url": "https://investor.pinterestinc.com/news-and-events/press-releases/press-releases-details/2026/Pinterest-to-Announce-First-Quarter-2026-Results/default.aspx",
+          "quote": "SAN FRANCISCO--(BUSINESS WIRE)-- Pinterest, Inc. (NYSE: PINS) will release financial results for the first quarter 2026 on Monday, May 4th, 2026 after market close. The company will host its quarterly conference call to discuss these results at 1:30 p.m. PT (4:30 p.m. ET) on the same day.",
+          "observed_at": "2026-11-21 02:53:25 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "d2e207af719c54a746c809fa212bb1efe7879627b7f969f2a9f6696069fe45e4",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/PINS/leadtime-followup-6.txt",
+          "notes": "",
+          "lead_days": 21,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "HIMS",
+      "company": "Hims & Hers Health, Inc.",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": false,
+      "typical_gap_days": "28",
+      "range_days": [
+        "21",
+        "28"
+      ],
+      "pairs": [
+        {
+          "ticker": "HIMS",
+          "issued": "2026-10-12",
+          "scheduled_release": "2026-11-09",
+          "url": "https://investors.hims.com/news/news-details/2026/Hims--Hers-to-Announce-Third-Quarter-2026-Financial-Results-on-November-9-2026/default.aspx",
+          "quote": "SAN FRANCISCO--(BUSINESS WIRE)-- Hims & Hers Health, Inc. (\u201cHims & Hers\u201d, NYSE: HIMS), the leading global health and wellness platform, today announced that it will report third quarter 2026 financial results after the market closes on Monday, November 9, 2026. The company will host a live conference call to discuss the results at 5:00 p.m. ET the same day.",
+          "observed_at": "2026-11-21T00:27:17.386Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "e265075edd029ad09947974c743d5c4d40820d21c14136dc6c2b71e4351a2111",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/HIMS/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 28,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "HIMS",
+          "issued": "2026-07-13",
+          "scheduled_release": "2026-08-10",
+          "url": "https://investors.hims.com/news/news-details/2026/Hims--Hers-to-Announce-Second-Quarter-2026-Financial-Results-on-August-10-2026/default.aspx",
+          "quote": "SAN FRANCISCO--(BUSINESS WIRE)-- Hims & Hers Health, Inc. (\u201cHims & Hers\u201d, NYSE: HIMS), the leading health and wellness platform, today announced that it will report second quarter 2026 financial results after the market closes on Monday, August 10, 2026. The company will host a live conference call to discuss the results at 5:00 p.m. ET the same day.",
+          "observed_at": "2026-11-21T00:27:17.947Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "87c24199664b43d72276dd339bfa696968092637f5286371e2fa085b2289786d",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/HIMS/web-found-article-2.txt",
+          "notes": "",
+          "lead_days": 28,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "HIMS",
+          "issued": "2026-02-02",
+          "scheduled_release": "2026-02-23",
+          "url": "https://investors.hims.com/news/news-details/2026/Hims--Hers-to-Announce-Fourth-Quarter-and-Full-Year-2025-Financial-Results-on-February-23-2026/default.aspx",
+          "quote": "SAN FRANCISCO--(BUSINESS WIRE)-- Hims & Hers Health, Inc. (\u201cHims & Hers\u201d, NYSE: HIMS), the leading health and wellness platform, today announced that it will report fourth quarter and full year 2025 financial results after the market closes on Monday, February 23, 2026. The company will host a live conference call to discuss the results at 5:00 p.m. ET the same day.",
+          "observed_at": "2026-11-21T00:27:18.679Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "f2faa020d344d93fc6f1ed1ff0f01f7bd100b69ee0a508ac0f30e9961274c829",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/HIMS/web-found-article-3.txt",
+          "notes": "",
+          "lead_days": 21,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "HIMS",
+          "issued": "2026-04-13",
+          "scheduled_release": "2026-05-11",
+          "url": "https://investors.hims.com/news/news-details/2026/Hims--Hers-to-Announce-First-Quarter-2026-Financial-Results-on-May-11-2026/default.aspx",
+          "quote": "SAN FRANCISCO--(BUSINESS WIRE)-- Hims & Hers Health, Inc. (\u201cHims & Hers\u201d, NYSE: HIMS), the leading health and wellness platform, today announced that it will report first quarter 2026 financial results after the market closes on Monday, May 11, 2026. The company will host a live conference call to discuss the results at 5:00 p.m. ET the same day.",
+          "observed_at": "2026-11-21 02:53:25 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "c0546cba14bfdd2b33957faf3d39c3171326ca161cd985f530acc91e63142847",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/HIMS/leadtime-followup-7.txt",
+          "notes": "",
+          "lead_days": 28,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "NTNX",
+      "company": "Nutanix, Inc.",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": false,
+      "typical_gap_days": "20",
+      "range_days": [
+        "19",
+        "20"
+      ],
+      "pairs": [
+        {
+          "ticker": "NTNX",
+          "issued": "2026-08-06",
+          "scheduled_release": "2026-08-26",
+          "url": "https://ir.nutanix.com/news-releases/news-release-details/nutanix-announces-date-and-conference-call-information-fiscal-6",
+          "quote": "SAN JOSE, Calif., Aug. 06, 2026 (GLOBE NEWSWIRE) -- \u301020\u2020Nutanix, Inc.\u2020www.globenewswire.com\u3011 (NASDAQ: \u301021\u2020NTNX\u2020www.globenewswire.com\u3011), a hybrid cloud leader, today announced that it will report its financial results for the fiscal fourth quarter and fiscal year 2026, which ended July 31, 2026, after U.S. markets close on Wednesday, August 26, 2026.",
+          "observed_at": "2026-11-21T00:27:29.370Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "4a12aaaa328777087d6ec672f4c4a3782004380aed48d9254f954bed6b00d5bc",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/NTNX/web-found-article-2.txt",
+          "notes": "",
+          "lead_days": 20,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "NTNX",
+          "issued": "2026-05-07",
+          "scheduled_release": "2026-05-27",
+          "url": "https://ir.nutanix.com/news-releases/news-release-details/nutanix-announces-date-and-conference-call-information-third-5",
+          "quote": "SAN JOSE, Calif., May 07, 2026 (GLOBE NEWSWIRE) -- \u301020\u2020Nutanix, Inc.\u2020www.globenewswire.com\u3011 (NASDAQ: \u301021\u2020NTNX\u2020www.globenewswire.com\u3011), a leader in hybrid multicloud computing, today announced that it will report its financial results for the third quarter of fiscal year 2026, which ended April 30, 2026, after U.S. markets close on Wednesday, May 27, 2026.",
+          "observed_at": "2026-11-21T00:27:30.162Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "5957bbfb86e85ee1a59e8915b800ad0efcf44812c6f143b20f297a7df0868122",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/NTNX/web-found-article-3.txt",
+          "notes": "",
+          "lead_days": 20,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "NTNX",
+          "issued": "2026-02-05",
+          "scheduled_release": "2026-02-25",
+          "url": "https://ir.nutanix.com/news-releases/news-release-details/nutanix-announces-date-and-conference-call-information-second-6",
+          "quote": "SAN JOSE, Calif., Feb. 05, 2026 (GLOBE NEWSWIRE) -- \u301020\u2020Nutanix\u2020www.globenewswire.com\u3011, Inc. (NASDAQ: \u301021\u2020NTNX\u2020www.globenewswire.com\u3011), a leader in hybrid multicloud computing, today announced that it will report its financial results for the second quarter of fiscal year 2026, which ended January 31, 2026, after U.S. markets close on Wednesday, February 25, 2026.",
+          "observed_at": "2026-11-21T00:27:31.417Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "940be527b7e31b45de42db23f4eff64177cdd9a162fd939a11fcf3882d79de2e",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/NTNX/web-found-article-5.txt",
+          "notes": "",
+          "lead_days": 20,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "NTNX",
+          "issued": "2025-11-06",
+          "scheduled_release": "2025-11-25",
+          "url": "https://ir.nutanix.com/node/15706/pdf",
+          "quote": "November 6, 2025 SAN JOSE, Calif., Nov. 06, 2025 (GLOBE NEWSWIRE) -- Nutanix, Inc. (NASDAQ: NTNX), a leader in hybrid multicloud computing, today announced that it will report its financial results for the first quarter of fiscal year 2026, which ended October 31, 2025, after U.S. markets close on Tuesday, November 25, 2025. Nutanix will host a conference call and earnings webcast beginning at 4:30 p.m. Eastern Time / 1:30 p.m. Pacific Time on the same day to discuss the company\u2019s financial results. Interested parties may access the conference call by registering at this link to receive dial in details",
+          "observed_at": "2026-11-21 03:03:52 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "07089a020b2282970fcbca2d1d995e02b1ce98e5d266ecd8bcd1d1e6df776521",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/leadtime-official-pdf-1.txt",
+          "notes": "",
+          "lead_days": 19,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "AMD",
+      "company": "ADVANCED MICRO DEVICES INC",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": false,
+      "typical_gap_days": "27.5",
+      "range_days": [
+        "27",
+        "28"
+      ],
+      "pairs": [
+        {
+          "ticker": "AMD",
+          "issued": "2026-10-06",
+          "scheduled_release": "2026-11-03",
+          "url": "https://ir.amd.com/news-events/press-releases/detail/1300/amd-to-report-fiscal-third-quarter-2026-financial-results",
+          "quote": "SANTA CLARA, Calif., Oct. 06, 2026 (GLOBE NEWSWIRE) -- AMD (NASDAQ: AMD) announced today that it will report fiscal third quarter 2026 financial results on Tuesday, Nov. 3, 2026, after the market close. Management will conduct a conference call to discuss these results at 5 p.m. ET / 2 p.m. PT. Interested parties are invited to listen to the webcast of the conference call via AMD\u2019s Investor Relations website: \u30103\u2020ir.amd.com\u3011.",
+          "observed_at": "2026-11-21T00:26:54.540Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "189b062679c44e8f50fc3d0ef596b31d3c67d484754cddda6303ac7f3bd2ce7f",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/AMD/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 28,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "AMD",
+          "issued": "2026-07-08",
+          "scheduled_release": "2026-08-04",
+          "url": "https://ir.amd.com/news-events/press-releases/detail/1289/amd-to-report-fiscal-second-quarter-2026-financial-results",
+          "quote": "SANTA CLARA, Calif., July 08, 2026 (GLOBE NEWSWIRE) -- \u301028\u2020AMD\u2020www.amd.com\u3011 (NASDAQ: AMD) announced today that it will report fiscal second quarter 2026 financial results on Tuesday, Aug. 4, 2026, after the market close. Management will conduct a conference call to discuss these results at 5:00 p.m. ET / 2:00 p.m. PT. Interested parties are invited to listen to the webcast of the conference call via the AMD Investor Relations website \u301029\u2020ir.amd.com\u3011.",
+          "observed_at": "2026-11-21T00:26:55.553Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "fe8dcc6bc8c3ea0fa2f3c9b054defcd0721a8d47d7675808a24fdca31fdb44dd",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/AMD/web-found-article-2.txt",
+          "notes": "",
+          "lead_days": 27,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "AMD",
+          "issued": "2026-04-08",
+          "scheduled_release": "2026-05-05",
+          "url": "https://ir.amd.com/news-events/press-releases/detail/1282/amd-to-report-fiscal-first-quarter-2026-financial-results",
+          "quote": "SANTA CLARA, Calif., April 08, 2026 (GLOBE NEWSWIRE) -- \u301028\u2020AMD\u2020www.amd.com\u3011 (NASDAQ: AMD) announced today that it will report fiscal first quarter 2026 financial results on Tuesday, May 5, 2026, after the market close. Management will conduct a conference call to discuss these results at 5:00 p.m. ET / 2:00 p.m. PT. Interested parties are invited to listen to the webcast of the conference call via the AMD Investor Relations website \u301029\u2020ir.amd.com\u3011.",
+          "observed_at": "2026-11-21 03:12:58 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "20bf4a5d5c66d74e214a6aa89716c422f671a7a29a6511b93904da3130a61c47",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/AMD/leadtime-extra-0.txt",
+          "notes": "",
+          "lead_days": 27,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "AMD",
+          "issued": "2026-01-06",
+          "scheduled_release": "2026-02-03",
+          "url": "https://ir.amd.com/news-events/press-releases/detail/1273/amd-to-report-fiscal-fourth-quarter-and-full-year-2025-financial-results",
+          "quote": "SANTA CLARA, Calif., Jan. 06, 2026 (GLOBE NEWSWIRE) -- \u301028\u2020AMD\u2020www.amd.com\u3011 (NASDAQ: AMD) announced today that it will report fiscal fourth quarter and full year 2025 financial results on Tuesday, Feb. 3, 2026, after the market close. Management will conduct a conference call to discuss these results at 5:00 p.m. EST / 2:00 p.m. PST. Interested parties are invited to listen to the webcast of the conference call via the AMD Investor Relations website \u301029\u2020ir.amd.com\u3011.",
+          "observed_at": "2026-11-21 03:12:59 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "2107e3ce06495a1e971a24e9c0812d94eaf49f38edba719f48260fce117c98a1",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/AMD/leadtime-extra-1.txt",
+          "notes": "",
+          "lead_days": 28,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "EPAM",
+      "company": "EPAM Systems, Inc.",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": false,
+      "typical_gap_days": "31",
+      "range_days": [
+        "30",
+        "34"
+      ],
+      "pairs": [
+        {
+          "ticker": "EPAM",
+          "issued": "2026-10-02",
+          "scheduled_release": "2026-11-05",
+          "url": "https://investors.epam.com/news/news-details/2026/EPAM-Announces-Date-for-Third-Quarter-Earnings-Release-and-Conference-Call/default.aspx",
+          "quote": "NEWTOWN, Pa., Oct. 2, 2026 /PRNewswire/ -- \u3010117\u2020EPAM Systems, Inc.\u2020www.epam.com\u3011 (NYSE: EPAM), a leading digital transformation services and product engineering company, will host a conference call at 8:00 a.m. ET, on Thursday, November 5, 2026, to discuss its third quarter 2026 financial results. A news release containing these results will be issued before the call.",
+          "observed_at": "2026-11-21T00:27:12.866Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "3be79baa317c7789bab572113383cd00ebd10ff92344429854aab66e27985e13",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/EPAM/web-found-article-1.txt",
+          "notes": "Historical results date is separately reconciled to SEC release. Announcement only states news release before the dated call; not sufficient standalone future publication-timing evidence.",
+          "lead_days": 34,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "EPAM",
+          "issued": "2026-01-19",
+          "scheduled_release": "2026-02-19",
+          "url": "https://investors.epam.com/news/news-details/2026/EPAM-Announces-Date-for-Fourth-Quarter-and-Full-Year-2025-Earnings-Release-and-Conference-Call/default.aspx",
+          "quote": "NEWTOWN, Pa., Jan. 19, 2026 /PRNewswire/ -- \u3010117\u2020EPAM Systems, Inc.\u2020www.epam.com\u3011 (NYSE: EPAM), a leading digital transformation services and product engineering company, will host a conference call at 8:00 a.m. ET, on Thursday, February 19, 2026, to discuss its fourth quarter and full year 2025 financial results. A news release containing these results will be issued before the call.",
+          "observed_at": "2026-11-21T00:27:13.455Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "ba514715db8c7e4e43f89c1b28761ff40cc9591b500b4c53b935519f1eb67c9c",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/EPAM/web-found-article-2.txt",
+          "notes": "Historical results date is separately reconciled to SEC release. Announcement only states news release before the dated call; not sufficient standalone future publication-timing evidence.",
+          "lead_days": 31,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "EPAM",
+          "issued": "2026-07-06",
+          "scheduled_release": "2026-08-06",
+          "url": "https://investors.epam.com/news/news-details/2026/EPAM-Announces-Date-for-Second-Quarter-Earnings-Release-and-Conference-Call/default.aspx",
+          "quote": "NEWTOWN, Pa., July 6, 2026 /PRNewswire/ -- \u3010117\u2020EPAM Systems, Inc.\u2020www.epam.com\u3011 (NYSE: EPAM), a leading digital and AI transformation company, will host a conference call at 8:00 a.m. ET, on Thursday, August 6, 2026, to discuss its second quarter 2026 financial results. A news release containing these results will be issued before the call.",
+          "observed_at": "2026-11-21 02:53:28 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "b41868f4dd286bf01dab8d25ee6b8710342f46fd85bee31efbcd099d137f477a",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/EPAM/leadtime-followup-10.txt",
+          "notes": "Historical results date independently verified in SEC release; announcement states release before dated call. Not standalone future publication-timing verification.",
+          "lead_days": 31,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "EPAM",
+          "issued": "2026-04-07",
+          "scheduled_release": "2026-05-07",
+          "url": "https://investors.epam.com/news/news-details/2026/EPAM-Announces-Date-for-First-Quarter-Earnings-Release-and-Conference-Call/default.aspx",
+          "quote": "NEWTOWN, Pa., April 7, 2026 /PRNewswire/ -- \u3010117\u2020EPAM Systems, Inc.\u2020www.epam.com\u3011 (NYSE: EPAM), a leading digital transformation services and product engineering company, will host a conference call at 8:00 a.m. ET, on Thursday, May 7, 2026, to discuss its first quarter 2026 financial results. A news release containing these results will be issued before the call.",
+          "observed_at": "2026-11-21 02:53:29 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "173a09a11aca6e522d11f161a4793749c0e8c857da6432830a2559b4a6a7b251",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/EPAM/leadtime-followup-11.txt",
+          "notes": "Historical results date independently verified in SEC release; announcement states release before dated call. Not standalone future publication-timing verification.",
+          "lead_days": 30,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "CNXC",
+      "company": "Concentrix Corp",
+      "verified_matching_pairs": 1,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": [
+        "21",
+        "21"
+      ],
+      "pairs": [
+        {
+          "ticker": "CNXC",
+          "issued": "2025-12-23",
+          "scheduled_release": "2026-01-13",
+          "url": "https://ir.concentrix.com/news/news-details/2025/Concentrix-Schedules-Release-of-Fourth-Quarter-and-Fiscal-Year-2025-Financial-Results-and-Investor-Conference-Call-Webcast/default.aspx",
+          "quote": "NEWARK, Calif., Dec. 23, 2025 (GLOBE NEWSWIRE) -- Concentrix Corporation (NASDAQ: CNXC), a global technology and services leader, plans to announce its fourth quarter and fiscal year 2025 financial results before market open on Tuesday, January 13, 2026.",
+          "observed_at": "2026-11-21T00:27:01.230Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "4a3b9faccdd1751a56e062ee4e1e8e391ca0509b5d7b106743b664c8429c7f12",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/CNXC/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 21,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [
+        "2026-09-29",
+        "2026-06-29",
+        "2026-03-24"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "KFRC",
+      "company": "KFORCE INC",
+      "verified_matching_pairs": 1,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": [
+        "25",
+        "25"
+      ],
+      "pairs": [
+        {
+          "ticker": "KFRC",
+          "issued": "2026-10-01",
+          "scheduled_release": "2026-10-26",
+          "url": "https://investor.kforce.com/news-and-events/news/news-details/2026/Kforce-Inc--to-Announce-Third-Quarter-Results-on-October-26-2026/default.aspx",
+          "quote": "TAMPA, Fla.--(BUSINESS WIRE)-- Kforce Inc. (NYSE: KFRC), a provider of professional staffing services and solutions, will release third quarter results post-market on Monday, October 26, 2026, followed by a conference call at 5:00 pm ET to discuss the results. The dial-in number is (833) 461-5787 and the conference passcode is 497 752 574. A replay of the call will be available on our website at \u301049\u2020https://investor.kforce.com\u2020cts.businesswire.com\u3011 for one year after the call.",
+          "observed_at": "2026-11-21T00:27:22.757Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "369a30f3ee11abc6a6fdb70ffc36b8eff4662f4a71c5480b1f7e97d73036cba2",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/KFRC/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 25,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [
+        "2026-07-27",
+        "2026-04-27",
+        "2026-02-02"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "ADI",
+      "company": "ANALOG DEVICES INC",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": false,
+      "typical_gap_days": "27.5",
+      "range_days": [
+        "27",
+        "33"
+      ],
+      "pairs": [
+        {
+          "ticker": "ADI",
+          "issued": "2026-07-23",
+          "scheduled_release": "2026-08-19",
+          "url": "https://investor.analog.com/news-releases/news-release-details/analog-devices-report-third-quarter-fiscal-year-2026-financial",
+          "quote": "WILMINGTON, Mass., July 23, 2026 /PRNewswire/ -- Analog Devices, Inc. (Nasdaq: \u301023\u2020ADI\u2020edge.prnewswire.com\u3011) today announced it will release financial results for the third quarter fiscal year 2026 at 7:00 a.m. Eastern time on Wednesday, August 19, 2026. Following the press release, the Company will host a conference call at 10:00 a.m. Eastern time, the same day.",
+          "observed_at": "2026-11-21 01:12:08 UTC",
+          "provider": "full rendered official source; original web retrieval timestamp not preserved",
+          "artifact_sha256": "2bd800ea3efad7e0feb200f5e9f3bd142f05b3cdc27a2b5f6956dd4a2f45cc46",
+          "artifact_kind": "web-rendered official-source text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/ADI/web-quarter-date-1.txt",
+          "http_observations": [
+            {
+              "url": "https://investor.analog.com/news-releases/news-release-details/analog-devices-report-third-quarter-fiscal-year-2026-financial",
+              "checked_at": "2026-11-21T00:40:42.325883+00:00",
+              "purpose": "earnings-date announcement research only",
+              "status": "unverified",
+              "http_status": 403,
+              "redirects": []
+            }
+          ],
+          "verification_interval": {
+            "started_at": "2026-11-21 00:57:26 UTC",
+            "finished_at": "2026-11-21 00:58:32 UTC"
+          },
+          "refreshed_source_file": "data/cache/earnings/scaling-2027q1-dates/ADI/refreshed-full-16.txt",
+          "refreshed_artifact_sha256": "b3b47ac79a8a72ae85d665b23d85be01e5f69e79ede198181178dd62c7edee18",
+          "full_body_rechecked": true,
+          "lead_days": 27,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "ADI",
+          "issued": "2026-04-22",
+          "scheduled_release": "2026-05-20",
+          "url": "https://investor.analog.com/news-releases/news-release-details/analog-devices-report-second-quarter-fiscal-year-2026-financial",
+          "quote": "WILMINGTON, Mass., April 22, 2026 /PRNewswire/ -- \u301023\u2020Analog Devices, Inc.\u2020edge.prnewswire.com\u3011 (Nasdaq: \u301024\u2020ADI\u2020edge.prnewswire.com\u3011) today announced it will release financial results for the second quarter fiscal year 2026 at 7:00 a.m. Eastern time on Wednesday, May 20, 2026. Following the press release, the Company will host a conference call at 10:00 a.m.",
+          "observed_at": "2026-11-21 02:53:20 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "5d28b5793a21b33f30a8f8d7f19d02b4bec96fb873ff20376083d52c1e0d625e",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/ADI/leadtime-followup-0.txt",
+          "notes": "",
+          "lead_days": 28,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "ADI",
+          "issued": "2026-01-22",
+          "scheduled_release": "2026-02-18",
+          "url": "https://investor.analog.com/news-releases/news-release-details/analog-devices-report-first-quarter-fiscal-year-2026-financial",
+          "quote": "WILMINGTON, Mass., Jan. 22, 2026 /PRNewswire/ -- \u301023\u2020Analog Devices, Inc.\u2020edge.prnewswire.com\u3011 (Nasdaq: \u301024\u2020ADI\u2020edge.prnewswire.com\u3011) today announced it will release financial results for the first quarter fiscal year 2026 at 7:00 a.m. Eastern time on Wednesday, February 18, 2026. Following the press release, the Company will host a conference call at 10:00 a.m.",
+          "observed_at": "2026-11-21 02:53:21 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "4684f132ca355c6edd583f113cf0a05fb3e64a62c48dc78aa849894408e051b7",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/ADI/leadtime-followup-1.txt",
+          "notes": "",
+          "lead_days": 27,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "ADI",
+          "issued": "2025-10-23",
+          "scheduled_release": "2025-11-25",
+          "url": "https://investor.analog.com/node/29836/pdf",
+          "quote": "October 23, 2025 at 4:00 PM EDT WILMINGTON, Mass., Oct. 23, 2025 /PRNewswire/ -- Analog Devices, Inc. (Nasdaq: ADI) today announced it will release financial results for the fourth quarter fiscal year 2025 at 7:00 a.m. Eastern time on Tuesday, November 25, 2025. Following the press release, the Company will host a conference call at 10:00 a.m. Eastern time, the same day. Vincent Roche, Chief Executive Officer and Chair, Richard Puccio, Executive Vice President and Chief Financial Officer, and Jeff Ambrosi, Head of Investor Relations, Senior Director, will discuss ADI's results and business outlook. The press release, live conference call",
+          "observed_at": "2026-11-21 03:03:49 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "8eecf4be21d5a12d14848d829fe5b31ec6930449120ad6aeda32b830e7177403",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/leadtime-official-pdf-0.txt",
+          "notes": "",
+          "lead_days": 33,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "APPN",
+      "company": "APPIAN CORP",
+      "verified_matching_pairs": 1,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": [
+        "21",
+        "21"
+      ],
+      "pairs": [
+        {
+          "ticker": "APPN",
+          "issued": "2026-10-15",
+          "scheduled_release": "2026-11-05",
+          "url": "https://investors.appian.com/news-releases/news-release-details/appian-announce-third-quarter-2026-financial-results-november-5",
+          "quote": "MCLEAN, Va., Oct. 15, 2026 (GLOBE NEWSWIRE) -- \u301019\u2020Appian\u2020www.globenewswire.com\u3011 (NASDAQ: APPN) today announced that it will release financial results for the third quarter ended September 30, 2026, before the U.S. financial markets open on Thursday, November 5, 2026. The company will host a conference call and live webcast to review its financial results and business outlook.",
+          "observed_at": "2026-11-21 01:10:02 UTC",
+          "provider": "web tool full official-source document, not independently HTTP-verified",
+          "artifact_sha256": "ce1aaf5bd9cf4915ee8a17bef175cc18ed6ac3f273aec9c5085746d437e1cb60",
+          "artifact_kind": "rendered official-source batch text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/additional-articles-batch.txt",
+          "notes": "",
+          "lead_days": 21,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [
+        "2026-08-06",
+        "2026-05-07",
+        "2026-02-19"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "INTC",
+      "company": "INTEL CORP",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-10-29",
+        "2026-07-23",
+        "2026-04-23",
+        "2026-01-22"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "SANM",
+      "company": "SANMINA CORP",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-11-09",
+        "2026-07-27",
+        "2026-04-27",
+        "2026-01-26"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "LRCX",
+      "company": "LAM RESEARCH CORP",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-10-21",
+        "2026-07-29",
+        "2026-04-22",
+        "2026-01-28"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "PLXS",
+      "company": "PLEXUS CORP",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-10-28",
+        "2026-07-29",
+        "2026-04-29",
+        "2026-01-28"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "KLAC",
+      "company": "KLA CORP",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-10-28",
+        "2026-07-28",
+        "2026-04-29",
+        "2026-01-29"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "MXL",
+      "company": "MAXLINEAR, INC",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-10-22",
+        "2026-07-23",
+        "2026-04-23",
+        "2026-01-29"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "PLTR",
+      "company": "Palantir Technologies Inc.",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-11-02",
+        "2026-08-03",
+        "2026-05-04",
+        "2026-02-02"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "COHR",
+      "company": "COHERENT CORP.",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-11-04",
+        "2026-08-12",
+        "2026-05-06",
+        "2026-02-04"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "CTSH",
+      "company": "COGNIZANT TECHNOLOGY SOLUTIONS CORP",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-10-29",
+        "2026-07-29",
+        "2026-04-29",
+        "2026-02-04"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "TTMI",
+      "company": "TTM TECHNOLOGIES INC",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-10-22",
+        "2026-08-05",
+        "2026-04-29",
+        "2026-02-04"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "AMZN",
+      "company": "AMAZON COM INC",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-10-29",
+        "2026-07-30",
+        "2026-04-29",
+        "2026-02-05"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "FTNT",
+      "company": "Fortinet, Inc.",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-10-28",
+        "2026-07-29",
+        "2026-05-06",
+        "2026-02-05"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "MPWR",
+      "company": "MONOLITHIC POWER SYSTEMS, INC.",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-10-29",
+        "2026-07-30",
+        "2026-04-30",
+        "2026-02-05"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "PCTY",
+      "company": "Paylocity Holding Corp",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-11-05",
+        "2026-08-04",
+        "2026-05-07",
+        "2026-02-05"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "QLYS",
+      "company": "QUALYS, INC.",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-11-09",
+        "2026-08-04",
+        "2026-05-05",
+        "2026-02-05"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "DIOD",
+      "company": "DIODES INC /DEL/",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-11-05",
+        "2026-08-05",
+        "2026-05-07",
+        "2026-02-10"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "EW",
+      "company": "Edwards Lifesciences Corp",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-11-04",
+        "2026-07-23",
+        "2026-04-23",
+        "2026-02-10"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "LSCC",
+      "company": "LATTICE SEMICONDUCTOR CORP",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-11-02",
+        "2026-08-04",
+        "2026-05-04",
+        "2026-02-10"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "AMPL",
+      "company": "Amplitude, Inc.",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-11-04",
+        "2026-08-05",
+        "2026-05-06",
+        "2026-02-18"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "AKAM",
+      "company": "AKAMAI TECHNOLOGIES INC",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-11-05",
+        "2026-08-06",
+        "2026-05-07",
+        "2026-02-19"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "AVPT",
+      "company": "AvePoint, Inc.",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-11-05",
+        "2026-08-06",
+        "2026-05-07",
+        "2026-02-26"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "ZS",
+      "company": "Zscaler, Inc.",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-09-03",
+        "2026-05-26",
+        "2026-02-26",
+        "2025-11-25"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "POWI",
+      "company": "POWER INTEGRATIONS INC",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": false,
+      "typical_gap_days": "20.5",
+      "range_days": [
+        "17",
+        "21"
+      ],
+      "pairs": [
+        {
+          "ticker": "POWI",
+          "issued": "2026-10-15",
+          "scheduled_release": "2026-11-04",
+          "url": "https://investors.power.com/news/news-details/2026/Power-Integrations-to-Announce-Third-Quarter-Financial-Results/default.aspx",
+          "quote": "SAN JOSE, Calif.--(BUSINESS WIRE)-- Power Integrations (Nasdaq: \u30101\u2020POWI\u2020cts.businesswire.com\u3011) will release its third-quarter financial results after market hours on Wednesday, November 4^{th}, 2026, and will host a conference call that day beginning at 1:30 p.m. Pacific time.",
+          "observed_at": "2026-11-21T00:27:37.788Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "89b6625ad52e0c56513c3aa6767068522e634f31045880bab73ba9daf92f2b97",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/POWI/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 20,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "POWI",
+          "issued": "2026-07-15",
+          "scheduled_release": "2026-08-05",
+          "url": "https://investors.power.com/news/news-details/2026/Power-Integrations-to-Announce-Second-Quarter-Financial-Results-on-August-5th-2026/default.aspx",
+          "quote": "SAN JOSE, Calif.--(BUSINESS WIRE)-- Power Integrations (Nasdaq: \u30101\u2020POWI\u2020cts.businesswire.com\u3011) will release its second-quarter financial results after market hours on Wednesday, August 5^{th}, 2026, and will host a conference call that day beginning at 1:30 p.m. Pacific time.",
+          "observed_at": "2026-11-21T00:27:38.379Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "a37f57588ebf02fef8da55203e532ceac4dcd2efa0b02940b70c5e3faeb1bf78",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/POWI/web-found-article-2.txt",
+          "notes": "",
+          "lead_days": 21,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "POWI",
+          "issued": "2026-01-19",
+          "scheduled_release": "2026-02-05",
+          "url": "https://investors.power.com/news/news-details/2026/Power-Integrations-to-Release-Fourth-Quarter-Financial-Results-on-February-5/default.aspx",
+          "quote": "SAN JOSE, Calif.--(BUSINESS WIRE)-- Power Integrations (Nasdaq: \u30101\u2020POWI\u2020cts.businesswire.com\u3011) will release its fourth-quarter financial results after market hours on Thursday, February 5, 2026, and will host a conference call that day beginning at 1:30 p.m. Pacific time. Members of the investment community can register for the live telephonic conference call at the following link: \u30102\u2020https://events.q4inc.com/analyst/206629993?pwd=K6iyyyW6\u2020cts.businesswire.com\u3011.",
+          "observed_at": "2026-11-21 03:13:02 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "9b17db7f5035c1d6e76630467c520bab8bab1b437a855e9dc9fefe66e6a29cf0",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/POWI/leadtime-extra-5.txt",
+          "notes": "",
+          "lead_days": 17,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "POWI",
+          "issued": "2026-04-16",
+          "scheduled_release": "2026-05-07",
+          "url": "https://investors.power.com/news/news-details/2026/Power-Integrations-to-Webcast-First-Quarter-Earnings-Conference-Call-on-May-7/default.aspx",
+          "quote": "SAN JOSE, Calif.--(BUSINESS WIRE)-- Power Integrations (Nasdaq: \u30101\u2020POWI\u2020cts.businesswire.com\u3011) will release its first-quarter financial results after market hours on Thursday, May 7, 2026, and will host a conference call that day beginning at 1:30 p.m. Pacific time.",
+          "observed_at": "2026-11-21 03:13:02 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "b1c4b0c14394137974ea17bc3161f3d24c793e262f9ca85a32176871bc1b3ce1",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/POWI/leadtime-extra-6.txt",
+          "notes": "",
+          "lead_days": 21,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "TWLO",
+      "company": "TWILIO INC",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": false,
+      "typical_gap_days": "21",
+      "range_days": [
+        "21",
+        "22"
+      ],
+      "pairs": [
+        {
+          "ticker": "TWLO",
+          "issued": "2026-10-08",
+          "scheduled_release": "2026-10-29",
+          "url": "https://investors.twilio.com/news-releases/news-release-details/twilio-announce-third-quarter-2026-results-october-29-2026",
+          "quote": "SAN FRANCISCO--(BUSINESS WIRE)--Oct. 8, 2026-- Twilio Inc. (NYSE: TWLO), the infrastructure for customer engagement in the AI era, today announced that its third quarter 2026 results will be released on Thursday, October 29, 2026, after market close. Twilio will host a conference call at 2:00 p.m. (PT) / 5:00 p.m. (ET) on Thursday, October 29, 2026 to discuss its results with the investment community.",
+          "observed_at": "2026-11-21 01:10:02 UTC",
+          "provider": "web tool full official-source document, not independently HTTP-verified",
+          "artifact_sha256": "ac61a338f42b86ec576d14158446906fb170ae2914469d4150bc70765eced471",
+          "artifact_kind": "rendered official-source batch text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/additional-articles-full.txt",
+          "notes": "",
+          "lead_days": 21,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "TWLO",
+          "issued": "2026-07-16",
+          "scheduled_release": "2026-08-06",
+          "url": "https://investors.twilio.com/news-releases/news-release-details/twilio-announce-second-quarter-2026-results-august-6-2026",
+          "quote": "SAN FRANCISCO--(BUSINESS WIRE)--Jul. 16, 2026-- Twilio Inc. (NYSE: TWLO), the infrastructure for customer engagement in the AI era, today announced that its second quarter 2026 results will be released on Thursday, August 6, 2026, after market close. Twilio will host a conference call at 2:00 p.m. (PT) / 5:00 p.m. (ET) on Thursday, August 6, 2026 to discuss its results with the investment community.",
+          "observed_at": "2026-11-21 01:10:02 UTC",
+          "provider": "web tool full official-source document, not independently HTTP-verified",
+          "artifact_sha256": "ac61a338f42b86ec576d14158446906fb170ae2914469d4150bc70765eced471",
+          "artifact_kind": "rendered official-source batch text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/additional-articles-full.txt",
+          "notes": "",
+          "lead_days": 21,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "TWLO",
+          "issued": "2026-04-09",
+          "scheduled_release": "2026-04-30",
+          "url": "https://investors.twilio.com/news-releases/news-release-details/twilio-announce-first-quarter-2026-results-april-30-2026",
+          "quote": "SAN FRANCISCO--(BUSINESS WIRE)--Apr. 9, 2026-- Twilio Inc. (NYSE: TWLO), the customer engagement platform that drives real-time, personalized experiences for today\u2019s leading brands, today announced that its first quarter 2026 results will be released on Thursday, April 30, 2026, after market close. Twilio will host a conference call at 2:00 p.m. (PT) / 5:00 p.m. (ET) on Thursday, April 30, 2026 to discuss its results with the investment community.",
+          "observed_at": "2026-11-21 02:53:31 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "93736b5d425f08e8fab3d89e170ae239caba878ae091a17e491569c8e7655f1b",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/TWLO/leadtime-followup-14.txt",
+          "notes": "",
+          "lead_days": 21,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "TWLO",
+          "issued": "2026-01-21",
+          "scheduled_release": "2026-02-12",
+          "url": "https://investors.twilio.com/news-releases/news-release-details/twilio-announce-fourth-quarter-and-fiscal-year-2025-results",
+          "quote": "SAN FRANCISCO--(BUSINESS WIRE)--Jan. 21, 2026-- Twilio Inc. (NYSE: TWLO), the customer engagement platform that drives real-time, personalized experiences for today\u2019s leading brands, today announced that its fourth quarter and fiscal year 2025 results will be released on Thursday, February 12, 2026, after market close. Twilio will host a conference call at 2:00 p.m. (PT) / 5:00 p.m. (ET) on Thursday, February 12, 2026 to discuss its results with the investment community.",
+          "observed_at": "2026-11-21 03:13:00 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "d9af9df7d110a5f5bc380dcb1805e17589bc03fa6d4fffd72c924508b6c818b0",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/TWLO/leadtime-extra-2.txt",
+          "notes": "",
+          "lead_days": 22,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "TENB",
+      "company": "Tenable Holdings, Inc.",
+      "verified_matching_pairs": 1,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": [
+        "14",
+        "14"
+      ],
+      "pairs": [
+        {
+          "ticker": "TENB",
+          "issued": "2026-10-14",
+          "scheduled_release": "2026-10-28",
+          "url": "https://investors.tenable.com/news-releases/news-release-details/tenable-announce-fiscal-third-quarter-2026-earnings-results",
+          "quote": "COLUMBIA, Md., Oct. 14, 2026 (GLOBE NEWSWIRE) -- Tenable^{\u00ae} Holdings, Inc. (NASDAQ: TENB), the \u30100\u2020exposure management company\u2020www.globenewswire.com\u3011, today announced that it will release financial results for its third quarter ended September 30, 2026, after the U.S. market close on Wednesday, October 28. Tenable will host a conference call at 4:30 p.m. ET to discuss the results.",
+          "observed_at": "2026-11-21T00:27:51.075Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "6c03cfeecd4c969303c51117b11d96ce5adcfac6d49def620d1f942d231aa0b4",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/TENB/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [
+        "2026-07-29",
+        "2026-04-29",
+        "2026-02-04"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "FIVN",
+      "company": "Five9, Inc.",
+      "verified_matching_pairs": 1,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": [
+        "10",
+        "10"
+      ],
+      "pairs": [
+        {
+          "ticker": "FIVN",
+          "issued": "2026-10-26",
+          "scheduled_release": "2026-11-05",
+          "url": "https://investors.five9.com/news-releases/news-release-details/five9-report-third-quarter-2026-financial-results-november-5",
+          "quote": "SAN RAMON, Calif.--(BUSINESS WIRE)--Oct. 26, 2026-- \u301019\u2020Five9\u2020cts.businesswire.com\u3011 (NASDAQ: FIVN), provider of the Genius CX Platform, today announced it will report third quarter 2026 financial results and host a conference call on Thursday, November 5, 2026, at 1:30 p.m. Pacific Time (4:30 p.m. Eastern Time).",
+          "observed_at": "2026-11-21 01:10:02 UTC",
+          "provider": "web tool full official-source document, not independently HTTP-verified",
+          "artifact_sha256": "ce1aaf5bd9cf4915ee8a17bef175cc18ed6ac3f273aec9c5085746d437e1cb60",
+          "artifact_kind": "rendered official-source batch text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/additional-articles-batch.txt",
+          "notes": "Date only; do not take shared call/report time as exact publication timestamp.",
+          "lead_days": 10,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [
+        "2026-08-06",
+        "2026-04-30",
+        "2026-02-19"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "ENPH",
+      "company": "Enphase Energy, Inc.",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-10-27",
+        "2026-07-28",
+        "2026-04-28",
+        "2026-02-03"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "FORM",
+      "company": "FORMFACTOR INC",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-10-28",
+        "2026-07-29",
+        "2026-04-29",
+        "2026-02-04"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "DOCS",
+      "company": "Doximity, Inc.",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-11-05",
+        "2026-08-06",
+        "2026-05-13",
+        "2026-02-05"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "MCHP",
+      "company": "MICROCHIP TECHNOLOGY INC",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-11-05",
+        "2026-08-06",
+        "2026-05-07",
+        "2026-02-05"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "ON",
+      "company": "ON SEMICONDUCTOR CORP",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-11-02",
+        "2026-08-03",
+        "2026-05-04",
+        "2026-02-09"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "AMAT",
+      "company": "APPLIED MATERIALS INC /DE",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-11-12",
+        "2026-08-13",
+        "2026-05-14",
+        "2026-02-12"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "SEDG",
+      "company": "SOLAREDGE TECHNOLOGIES, INC.",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-11-04",
+        "2026-08-05",
+        "2026-05-06",
+        "2026-02-18"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "NTAP",
+      "company": "NetApp, Inc.",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-09-02",
+        "2026-05-28",
+        "2026-02-26",
+        "2025-11-25"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "ONTO",
+      "company": "ONTO INNOVATION INC.",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": false,
+      "typical_gap_days": "21",
+      "range_days": [
+        "19",
+        "22"
+      ],
+      "pairs": [
+        {
+          "ticker": "ONTO",
+          "issued": "2026-10-19",
+          "scheduled_release": "2026-11-09",
+          "url": "https://investors.ontoinnovation.com/news/news-details/2026/Onto-Innovation-to-Report-Third-Quarter-2026-Financial-Results-on-November-9-2026/default.aspx",
+          "quote": "WILMINGTON, Mass.--(BUSINESS WIRE)-- \u301018\u2020Onto Innovation Inc.\u2020cts.businesswire.com\u3011 (NYSE: ONTO) will release its 2026 third quarter results shortly after the market closes on November 9, 2026. Onto Innovation will host a conference call and audio webcast in connection with its release of the financial results. Michael P. Plisinski, chief executive officer, and Brian Roberts, chief financial officer, will host the call. The call will take place:",
+          "observed_at": "2026-11-21T00:27:32.862Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "a9812364fe64ed6d2279c369ac5ca6b2eb6135cc77b743950d6fd5939a9c4dc7",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/ONTO/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 21,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "ONTO",
+          "issued": "2026-07-16",
+          "scheduled_release": "2026-08-06",
+          "url": "https://investors.ontoinnovation.com/news/news-details/2026/Onto-Innovation-to-Report-Second-Quarter-2026-Financial-Results-on-August-6-2026/default.aspx",
+          "quote": "WILMINGTON, Mass.--(BUSINESS WIRE)-- Onto Innovation Inc. (NYSE: ONTO) will release its 2026 second quarter results shortly after the market closes on August 6, 2026. Onto Innovation will host a conference call and audio webcast in connection with its release of the financial results. Michael P. Plisinski, chief executive officer, and Brian Roberts, chief financial officer, will host the call. The call will take place:",
+          "observed_at": "2026-11-21T00:27:33.863Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "72ce1631a0a4049c60a17992c9750a4099032e9f527dd1887ab3c737d9c12aeb",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/ONTO/web-found-article-2.txt",
+          "notes": "",
+          "lead_days": 21,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "ONTO",
+          "issued": "2026-01-28",
+          "scheduled_release": "2026-02-19",
+          "url": "https://investors.ontoinnovation.com/news/news-details/2026/Onto-Innovation-to-Report-Fourth-Quarter-and-Full-Year-2025-Financial-Results-on-February-19-2026/default.aspx",
+          "quote": "WILMINGTON, Mass.--(BUSINESS WIRE)-- Onto Innovation Inc. (NYSE: ONTO) will release its 2025 fourth quarter and full year results shortly after the market closes on February 19, 2026. Onto Innovation will host a conference call and audio webcast in connection with its release of the financial results. Michael P. Plisinski, chief executive officer, and Brian Roberts, chief financial officer, will host the call. The call will take place:",
+          "observed_at": "2026-11-21T00:27:34.492Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "75fffa876916306c40a115d2ee6c00da0e891540e2ef62e2b0cf261f5b85a001",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/ONTO/web-found-article-3.txt",
+          "notes": "",
+          "lead_days": 22,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "ONTO",
+          "issued": "2026-04-16",
+          "scheduled_release": "2026-05-05",
+          "url": "https://investors.ontoinnovation.com/news/news-details/2026/Onto-Innovation-to-Report-First-Quarter-2026-Financial-Results-on-May-5-2026/default.aspx",
+          "quote": "WILMINGTON, Mass.--(BUSINESS WIRE)-- Onto Innovation Inc. (NYSE: ONTO) will release its 2026 first quarter results shortly after the market closes on May 5, 2026. Onto Innovation will host a conference call and audio webcast in connection with its release of the financial results. Michael P. Plisinski, chief executive officer, and Brian Roberts, chief financial officer, will host the call. The call will take place:",
+          "observed_at": "2026-11-21 02:53:26 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "53285ff03a4ee83ac8c981520176c8155c05cb1201362492c84ba04e5895d2f4",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/ONTO/leadtime-followup-8.txt",
+          "notes": "Same Apr16 announcement day also has preliminary revenue disclosure; regular May5 release lead does not establish a clean prospective lock window.",
+          "lead_days": 19,
+          "completed_period_disclosure_blocks": [
+            "EARLIER_COMPLETED_PERIOD_DISCLOSURE: 0001193125-26-158081; exclude under frozen historical policy, do not relabel as prospective."
+          ]
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "DOCN",
+      "company": "DigitalOcean Holdings, Inc.",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": false,
+      "typical_gap_days": "14",
+      "range_days": [
+        "14",
+        "15"
+      ],
+      "pairs": [
+        {
+          "ticker": "DOCN",
+          "issued": "2026-10-20",
+          "scheduled_release": "2026-11-03",
+          "url": "https://investors.digitalocean.com/news/news-details/2026/DigitalOcean-Announces-Date-of-Third-Quarter-2026-Earnings-Conference-Call/default.aspx",
+          "quote": "BROOMFIELD, Colo.--(BUSINESS WIRE)-- DigitalOcean Holdings, Inc. (NYSE: DOCN), the AI-Native Cloud, purpose-built for inference and agentic workloads, today announced that it will report financial results for the third quarter ended September 30, 2026 before the market opens on Tuesday, November 3, 2026.",
+          "observed_at": "2026-11-21T00:27:06.951Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "b6c80ac293e6d303896cc3bd2ca3a1760e199129b47df88d98363ab5e3ebe3c4",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/DOCN/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "DOCN",
+          "issued": "2026-04-21",
+          "scheduled_release": "2026-05-05",
+          "url": "https://investors.digitalocean.com/news/news-details/2026/DigitalOcean-Announces-Date-of-First-Quarter-2026-Earnings-Conference-Call/default.aspx",
+          "quote": "BROOMFIELD, Colo.--(BUSINESS WIRE)-- DigitalOcean Holdings, Inc. (NYSE: DOCN), the agentic inference cloud, announced today that it will report financial results for the first quarter ended March 31, 2026 before the market opens on Tuesday, May 5, 2026.",
+          "observed_at": "2026-11-21T00:27:07.550Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "8ef9fb06905995e483e21ce513432a105cc8473a5103b4f134326daeedc12925",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/DOCN/web-found-article-2.txt",
+          "notes": "",
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "DOCN",
+          "issued": "2026-02-09",
+          "scheduled_release": "2026-02-24",
+          "url": "https://investors.digitalocean.com/news/news-details/2026/DigitalOcean-Announces-Date-of-Fourth-Quarter-2025-Earnings-Conference-Call/default.aspx",
+          "quote": "BROOMFIELD, Colo.--(BUSINESS WIRE)-- DigitalOcean Holdings, Inc. (NYSE: DOCN), the agentic inference cloud, announced today that it will report financial results for the fourth quarter and full year ended December 31, 2025 and host an extended investor update before the market opens on Tuesday, February 24, 2026.",
+          "observed_at": "2026-11-21T00:27:08.305Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "48bc32a85b57bf47abb5145cae4c524e2c22377c2170303c15ddf036c3cfa938",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/DOCN/web-found-article-3.txt",
+          "notes": "",
+          "lead_days": 15,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "DOCN",
+          "issued": "2026-07-21",
+          "scheduled_release": "2026-08-04",
+          "url": "https://investors.digitalocean.com/news/news-details/2026/DigitalOcean-Announces-Date-of-Second-Quarter-2026-Earnings-Conference-Call/default.aspx",
+          "quote": "BROOMFIELD, Colo.--(BUSINESS WIRE)-- DigitalOcean Holdings, Inc. (NYSE: DOCN), the AI-Native Cloud, purpose-built for inference and agentic workloads, today announced that it will report financial results for the second quarter ended June 30, 2026 before the market opens on Tuesday, August 4, 2026.",
+          "observed_at": "2026-11-21 02:53:27 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "81d2418572878c9fd8db8a5d50eed9a2329271ca8740d6f57932c5d95ed80f31",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/DOCN/leadtime-followup-9.txt",
+          "notes": "Preliminary Q2 results were disclosed Jul7 before this Jul21 date announcement. Regular-release lead is not pre-publication eligibility.",
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": [
+            "EARLIER_COMPLETED_PERIOD_DISCLOSURE: 0001582961-26-000055; exclude under frozen historical policy, do not relabel as prospective."
+          ]
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "TASK",
+      "company": "TaskUs, Inc.",
+      "verified_matching_pairs": 4,
+      "complete": true,
+      "previously_complete": false,
+      "typical_gap_days": "14.5",
+      "range_days": [
+        "9",
+        "16"
+      ],
+      "pairs": [
+        {
+          "ticker": "TASK",
+          "issued": "2026-10-21",
+          "scheduled_release": "2026-11-04",
+          "url": "https://ir.taskus.com/news-releases/news-release-details/taskus-inc-announce-third-quarter-2026-financial-results",
+          "quote": "NEW BRAUNFELS, Texas--(BUSINESS WIRE)--Oct. 21, 2026-- TaskUs, Inc. (Nasdaq: TASK), a leading provider of outsourced digital services and next-generation customer experience to the world\u2019s most innovative companies, will report its third-quarter financial results after the U.S. market closes on Wednesday, November 4, 2026.",
+          "observed_at": "2026-11-21 01:10:02 UTC",
+          "provider": "web tool full official-source document, not independently HTTP-verified",
+          "artifact_sha256": "ce1aaf5bd9cf4915ee8a17bef175cc18ed6ac3f273aec9c5085746d437e1cb60",
+          "artifact_kind": "rendered official-source batch text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/additional-articles-batch.txt",
+          "notes": "",
+          "lead_days": 14,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "TASK",
+          "issued": "2026-07-21",
+          "scheduled_release": "2026-08-05",
+          "url": "https://ir.taskus.com/news-releases/news-release-details/taskus-inc-announce-second-quarter-2026-financial-results-august",
+          "quote": "NEW BRAUNFELS, Texas--(BUSINESS WIRE)--Jul. 21, 2026-- TaskUs, Inc. (Nasdaq: TASK), a leading provider of outsourced digital services and next-generation customer experience to the world\u2019s most innovative companies, will report its second-quarter financial results after the U.S. market closes on Wednesday, August 5, 2026.",
+          "observed_at": "2026-11-21 01:10:02 UTC",
+          "provider": "web tool full official-source document, not independently HTTP-verified",
+          "artifact_sha256": "ce1aaf5bd9cf4915ee8a17bef175cc18ed6ac3f273aec9c5085746d437e1cb60",
+          "artifact_kind": "rendered official-source batch text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/additional-articles-batch.txt",
+          "notes": "",
+          "lead_days": 15,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "TASK",
+          "issued": "2026-04-20",
+          "scheduled_release": "2026-05-06",
+          "url": "https://ir.taskus.com/news-releases/news-release-details/taskus-inc-announce-first-quarter-2026-financial-results-may-6",
+          "quote": "NEW BRAUNFELS, Texas--(BUSINESS WIRE)--Apr. 20, 2026-- TaskUs, Inc. (Nasdaq: TASK), a leading provider of outsourced digital services and next-generation customer experience to the world\u2019s most innovative companies, will report its first-quarter financial results after the U.S. market closes on Wednesday, May 6, 2026.",
+          "observed_at": "2026-11-21 01:10:02 UTC",
+          "provider": "web tool full official-source document, not independently HTTP-verified",
+          "artifact_sha256": "ac61a338f42b86ec576d14158446906fb170ae2914469d4150bc70765eced471",
+          "artifact_kind": "rendered official-source batch text",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/additional-articles-full.txt",
+          "notes": "",
+          "lead_days": 16,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "TASK",
+          "issued": "2026-02-16",
+          "scheduled_release": "2026-02-25",
+          "url": "https://ir.taskus.com/news-releases/news-release-details/taskus-inc-announce-fourth-quarter-and-full-year-2025-financial",
+          "quote": "NEW BRAUNFELS, Texas--(BUSINESS WIRE)--Feb. 16, 2026-- TaskUs, Inc. (Nasdaq: TASK), a leading provider of outsourced digital services and next-generation customer experience to the world\u2019s most innovative companies, will report its fourth-quarter and full-year financial results after the U.S. market closes on Wednesday, February 25, 2026.",
+          "observed_at": "2026-11-21 02:53:34 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "f4fc8a005c9951bb97f4e0b7019750006a23e4e21463d7d5a2dbafd36dec63ad",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/TASK/leadtime-followup-18.txt",
+          "notes": "",
+          "lead_days": 9,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [],
+      "schedule_mismatches": [],
+      "gap": null
+    },
+    {
+      "ticker": "LITE",
+      "company": "Lumentum Holdings Inc.",
+      "verified_matching_pairs": 3,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": [
+        "29",
+        "29"
+      ],
+      "pairs": [
+        {
+          "ticker": "LITE",
+          "issued": "2026-01-05",
+          "scheduled_release": "2026-02-03",
+          "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-to-Announce-Fiscal-Second-Quarter-2026-Financial-Results-on-February-3-2026/default.aspx",
+          "quote": "SAN JOSE, Calif.--(BUSINESS WIRE)-- Lumentum Holdings Inc. (\"Lumentum\") today announced that it will release its fiscal second quarter 2026 financial results on Tuesday, February 3, 2026, after the market closes.",
+          "observed_at": "2026-11-21T00:27:25.378Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "2bda3ce9c33647f5811f94fa54d6455d5c8f1dc411a4b4d13123711cd2edaf65",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/LITE/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 29,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "LITE",
+          "issued": "2026-04-06",
+          "scheduled_release": "2026-05-05",
+          "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-to-Announce-Fiscal-Third-Quarter-2026-Financial-Results-on-May-5-2026/default.aspx",
+          "quote": "SAN JOSE, Calif.--(BUSINESS WIRE)-- Lumentum Holdings Inc. (\"Lumentum\") today announced that it will release its fiscal third quarter 2026 financial results on Tuesday, May 5, 2026, after the market closes.",
+          "observed_at": "2026-11-21T00:27:26.960Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "526bdca79127f7bde31012dd7049b713839b99c597321dded6fb9d2463c0146a",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/LITE/web-found-article-3.txt",
+          "notes": "",
+          "lead_days": 29,
+          "completed_period_disclosure_blocks": []
+        },
+        {
+          "ticker": "LITE",
+          "issued": "2026-07-13",
+          "scheduled_release": "2026-08-11",
+          "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Announces-Reporting-Date-for-Fourth-Quarter-and-Fiscal-Year-2026-Results/default.aspx",
+          "quote": "SAN JOSE, Calif.--(BUSINESS WIRE)-- Lumentum Holdings Inc. (\"Lumentum\") today announced that it will release its fiscal fourth quarter and full year 2026 financial results on Tuesday, August 11, 2026, after the market closes.",
+          "observed_at": "2026-11-21 03:13:01 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "f6a7ad6d5fd3c8165ff7f94a3026b1954666a4eed144a21f0d082fb6616a7c39",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/LITE/leadtime-extra-4.txt",
+          "notes": "",
+          "lead_days": 29,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [
+        "2026-11-02"
+      ],
+      "schedule_mismatches": [
+        {
+          "ticker": "LITE",
+          "issued": "2026-10-05",
+          "scheduled_release": "2026-11-05",
+          "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Announces-Reporting-Date-for-Fiscal-First-Quarter-2027-Financial-Results/default.aspx",
+          "quote": "SAN JOSE, Calif.--(BUSINESS WIRE)-- Lumentum Holdings Inc. (\"Lumentum\") today announced that it will release its fiscal first quarter 2027 financial results on Thursday, November 5^{th}, 2026, after the market closes.",
+          "observed_at": "2026-11-21 03:13:00 UTC",
+          "provider": "web tool full official-source document, agent source curation; not user_verified",
+          "artifact_sha256": "75f8af3931c74eeded316e15126457db57c57e84792ade013dcc17cf8c557ad7",
+          "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/LITE/leadtime-extra-3.txt",
+          "notes": "SCHEDULE MISMATCH: announcement says Nov5; SEC actual result release was Nov2 alongside merger news. Do not silently replace the announced date or infer a safe live window.",
+          "actual_publication_date": "2026-11-02",
+          "actual_release_evidence": {
+            "url": "https://www.sec.gov/Archives/edgar/data/1633978/000162828026068655/lite_ex991xq1fy27.htm",
+            "sha256": "4d92f6e271733e38d5f2b870bae990b0e1e18819170abfdfe88dfd2c4c8aa6f9",
+            "retrieved_at": "2026-11-20T10:02:18.575254+00:00",
+            "accession": "0001628280-26-068655",
+            "filed": "2026-11-02",
+            "quote": "or $1.10 per diluted share. The Company held $2.0 billion in total cash, cash equivalents, and short-term investments at the end of the first quarter of fiscal year 2027, a decrease of $758.8 million from the end of the fourth quarter of fiscal year 2026. Financial Overview \u2013 Fiscal First Quarter Ended September 26, 2026 GAAP Results ($ in millions) Q1 Q4 Q1 Change FY 2027 FY 2026 FY 2026 Q/Q Y/Y Net revenue $ 1,262.6 $ 1,006.3 $ 533.8 25.5% 136.5% GAAP gross margin 51.0 % 47.4 % 34.0 % 360 bps 1,700 bps GAAP operating margin 28.5 % 27.8 % 1.3 % 70 bps 2,720 bps Non-GAAP Results ($ in millions) Q1 Q4 Q1 Change FY 2027 FY 2026 FY 2026 Q/Q Y/Y Net revenue",
+            "quote_offset": 2348
+          }
+        }
+      ],
+      "gap": "Nov5 scheduled versus Nov2 actual: earlier results disclosed with merger; replacement advance notice not established."
+    },
+    {
+      "ticker": "ICHR",
+      "company": "ICHOR HOLDINGS, LTD.",
+      "verified_matching_pairs": 1,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": [
+        "26",
+        "26"
+      ],
+      "pairs": [
+        {
+          "ticker": "ICHR",
+          "issued": "2026-10-07",
+          "scheduled_release": "2026-11-02",
+          "url": "https://ir.ichorsystems.com/press-releases/ichor-to-announce-third-quarter-2026-financial-results-on-november-2nd/dd1d723a-fef0-45f8-8a11-31cc647a2e2a",
+          "quote": "FREMONT, Calif.--(BUSINESS WIRE)-- Ichor Holdings, Ltd. (NASDAQ: ICHR), a leader in the design, engineering, and manufacturing of critical fluid delivery subsystems and components for semiconductor capital equipment, will announce third quarter 2026 results on Monday, November 2^{nd}, 2026.",
+          "observed_at": "2026-11-21T00:27:19.369Z",
+          "provider": "web tool rendered official-source document; not independently downloaded HTML",
+          "artifact_sha256": "3687af69dd350ee8b5c840d8c76afe15a24e356ea5326b8f16a59f42e31db728",
+          "artifact_kind": "web-rendered official-source text, not original HTTP body",
+          "source_file": "data/cache/earnings/scaling-2027q1-dates/ICHR/web-found-article-1.txt",
+          "notes": "",
+          "lead_days": 26,
+          "completed_period_disclosure_blocks": []
+        }
+      ],
+      "missing_regular_release_dates": [
+        "2026-08-03",
+        "2026-05-04",
+        "2026-02-09"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "MKSI",
+      "company": "MKS INC",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-11-04",
+        "2026-08-05",
+        "2026-05-06",
+        "2026-02-17"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "HLIT",
+      "company": "HARMONIC INC.",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-11-02",
+        "2026-08-12",
+        "2026-05-11",
+        "2026-02-19"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    },
+    {
+      "ticker": "RMBS",
+      "company": "RAMBUS INC",
+      "verified_matching_pairs": 0,
+      "complete": false,
+      "previously_complete": false,
+      "typical_gap_days": null,
+      "range_days": null,
+      "pairs": [],
+      "missing_regular_release_dates": [
+        "2026-10-26",
+        "2026-07-27",
+        "2026-04-27",
+        "2026-02-02"
+      ],
+      "schedule_mismatches": [],
+      "gap": "Unretrieved qualifying official articles or incomplete archive discovery; prior timestamped failures remain preserved."
+    }
+  ],
+  "followup_attempts": [
+    {
+      "ticker": "ADI",
+      "url": "https://investor.analog.com/news-releases/news-release-details/analog-devices-report-second-quarter-fiscal-year-2026-financial",
+      "checked_at": "2026-11-21 02:53:18 UTC",
+      "observed_at": "2026-11-21 02:53:20 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/ADI/leadtime-followup-0.txt",
+      "full_body": true,
+      "characters": 4935
+    },
+    {
+      "ticker": "ADI",
+      "url": "https://investor.analog.com/news-releases/news-release-details/analog-devices-report-first-quarter-fiscal-year-2026-financial",
+      "checked_at": "2026-11-21 02:53:20 UTC",
+      "observed_at": "2026-11-21 02:53:21 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/ADI/leadtime-followup-1.txt",
+      "full_body": true,
+      "characters": 4974
+    },
+    {
+      "ticker": "ADI",
+      "url": "https://investor.analog.com/news-releases/news-release-details/analog-devices-inc-report-fourth-quarter-fiscal-year-2025/",
+      "checked_at": "2026-11-21 02:53:21 UTC",
+      "observed_at": "2026-11-21 02:53:22 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/ADI/leadtime-followup-2.txt",
+      "full_body": false,
+      "characters": 372
+    },
+    {
+      "ticker": "NTNX",
+      "url": "https://ir.nutanix.com/news-releases/news-release-details/nutanix-announces-date-and-conference-call-information-first-6",
+      "checked_at": "2026-11-21 02:53:22 UTC",
+      "observed_at": "2026-11-21 02:53:22 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/NTNX/leadtime-followup-3.txt",
+      "full_body": false,
+      "characters": 370
+    },
+    {
+      "ticker": "RPD",
+      "url": "https://investors.rapid7.com/news/news-details/2026/Rapid7-to-Report-Third-Quarter-2026-Financial-Results-on-November-4/default.aspx",
+      "checked_at": "2026-11-21 02:53:22 UTC",
+      "observed_at": "2026-11-21 02:53:23 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/RPD/leadtime-followup-4.txt",
+      "full_body": true,
+      "characters": 3584
+    },
+    {
+      "ticker": "IPGP",
+      "url": "https://investor.ipgphotonics.com/news/news-details/2026/IPG-Photonics-to-Announce-Second-Quarter-2026-Financial-Results-on-August-4/default.aspx",
+      "checked_at": "2026-11-21 02:53:23 UTC",
+      "observed_at": "2026-11-21 02:53:24 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/IPGP/leadtime-followup-5.txt",
+      "full_body": true,
+      "characters": 2567
+    },
+    {
+      "ticker": "PINS",
+      "url": "https://investor.pinterestinc.com/news-and-events/press-releases/press-releases-details/2026/Pinterest-to-Announce-First-Quarter-2026-Results/default.aspx",
+      "checked_at": "2026-11-21 02:53:24 UTC",
+      "observed_at": "2026-11-21 02:53:25 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/PINS/leadtime-followup-6.txt",
+      "full_body": true,
+      "characters": 3007
+    },
+    {
+      "ticker": "HIMS",
+      "url": "https://investors.hims.com/news/news-details/2026/Hims--Hers-to-Announce-First-Quarter-2026-Financial-Results-on-May-11-2026/default.aspx",
+      "checked_at": "2026-11-21 02:53:25 UTC",
+      "observed_at": "2026-11-21 02:53:25 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/HIMS/leadtime-followup-7.txt",
+      "full_body": true,
+      "characters": 4239
+    },
+    {
+      "ticker": "ONTO",
+      "url": "https://investors.ontoinnovation.com/news/news-details/2026/Onto-Innovation-to-Report-First-Quarter-2026-Financial-Results-on-May-5-2026/default.aspx",
+      "checked_at": "2026-11-21 02:53:25 UTC",
+      "observed_at": "2026-11-21 02:53:26 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/ONTO/leadtime-followup-8.txt",
+      "full_body": true,
+      "characters": 4536
+    },
+    {
+      "ticker": "DOCN",
+      "url": "https://investors.digitalocean.com/news/news-details/2026/DigitalOcean-Announces-Date-of-Second-Quarter-2026-Earnings-Conference-Call/default.aspx",
+      "checked_at": "2026-11-21 02:53:26 UTC",
+      "observed_at": "2026-11-21 02:53:27 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/DOCN/leadtime-followup-9.txt",
+      "full_body": true,
+      "characters": 3688
+    },
+    {
+      "ticker": "EPAM",
+      "url": "https://investors.epam.com/news/news-details/2026/EPAM-Announces-Date-for-Second-Quarter-Earnings-Release-and-Conference-Call/default.aspx",
+      "checked_at": "2026-11-21 02:53:27 UTC",
+      "observed_at": "2026-11-21 02:53:28 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/EPAM/leadtime-followup-10.txt",
+      "full_body": true,
+      "characters": 15595
+    },
+    {
+      "ticker": "EPAM",
+      "url": "https://investors.epam.com/news/news-details/2026/EPAM-Announces-Date-for-First-Quarter-Earnings-Release-and-Conference-Call/default.aspx",
+      "checked_at": "2026-11-21 02:53:28 UTC",
+      "observed_at": "2026-11-21 02:53:29 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/EPAM/leadtime-followup-11.txt",
+      "full_body": true,
+      "characters": 15614
+    },
+    {
+      "ticker": "LITE",
+      "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-to-Announce-Fiscal-First-Quarter-2027-Financial-Results-on-November-2-2026/default.aspx",
+      "checked_at": "2026-11-21 02:53:29 UTC",
+      "observed_at": "2026-11-21 02:53:29 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/LITE/leadtime-followup-12.txt",
+      "full_body": false,
+      "characters": 470
+    },
+    {
+      "ticker": "LITE",
+      "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-to-Announce-Fiscal-Fourth-Quarter-2026-Financial-Results-on-August-11-2026/default.aspx",
+      "checked_at": "2026-11-21 02:53:29 UTC",
+      "observed_at": "2026-11-21 02:53:30 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/LITE/leadtime-followup-13.txt",
+      "full_body": false,
+      "characters": 470
+    },
+    {
+      "ticker": "TWLO",
+      "url": "https://investors.twilio.com/news-releases/news-release-details/twilio-announce-first-quarter-2026-results-april-30-2026",
+      "checked_at": "2026-11-21 02:53:30 UTC",
+      "observed_at": "2026-11-21 02:53:31 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/TWLO/leadtime-followup-14.txt",
+      "full_body": true,
+      "characters": 3646
+    },
+    {
+      "ticker": "TWLO",
+      "url": "https://investors.twilio.com/news-releases/news-release-details/twilio-announce-fourth-quarter-and-full-year-2025-results-february",
+      "checked_at": "2026-11-21 02:53:31 UTC",
+      "observed_at": "2026-11-21 02:53:32 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/TWLO/leadtime-followup-15.txt",
+      "full_body": false,
+      "characters": 394
+    },
+    {
+      "ticker": "POWI",
+      "url": "https://investors.power.com/news/news-details/2026/Power-Integrations-to-Announce-First-Quarter-Financial-Results/default.aspx",
+      "checked_at": "2026-11-21 02:53:32 UTC",
+      "observed_at": "2026-11-21 02:53:33 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/POWI/leadtime-followup-16.txt",
+      "full_body": false,
+      "characters": 386
+    },
+    {
+      "ticker": "POWI",
+      "url": "https://investors.power.com/news/news-details/2026/Power-Integrations-to-Announce-Fourth-Quarter-Financial-Results/default.aspx",
+      "checked_at": "2026-11-21 02:53:33 UTC",
+      "observed_at": "2026-11-21 02:53:33 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/POWI/leadtime-followup-17.txt",
+      "full_body": false,
+      "characters": 388
+    },
+    {
+      "ticker": "TASK",
+      "url": "https://ir.taskus.com/news-releases/news-release-details/taskus-inc-announce-fourth-quarter-and-full-year-2025-financial",
+      "checked_at": "2026-11-21 02:53:33 UTC",
+      "observed_at": "2026-11-21 02:53:34 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/TASK/leadtime-followup-18.txt",
+      "full_body": true,
+      "characters": 6924
+    },
+    {
+      "ticker": "ADI",
+      "url": "https://investor.analog.com/node/29836/pdf",
+      "file": "data/cache/earnings/scaling-2027q1-dates/leadtime-official-pdf-0.txt",
+      "observed_at": "2026-11-21 03:03:49 UTC",
+      "full_body": true
+    },
+    {
+      "ticker": "NTNX",
+      "url": "https://ir.nutanix.com/node/15706/pdf",
+      "file": "data/cache/earnings/scaling-2027q1-dates/leadtime-official-pdf-1.txt",
+      "observed_at": "2026-11-21 03:03:52 UTC",
+      "full_body": true
+    },
+    {
+      "ticker": "AMD",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1282/amd-to-report-fiscal-first-quarter-2026-financial-results",
+      "observed_at": "2026-11-21 03:12:58 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/AMD/leadtime-extra-0.txt",
+      "full_body": true,
+      "characters": 4227
+    },
+    {
+      "ticker": "AMD",
+      "url": "https://ir.amd.com/news-events/press-releases/detail/1273/amd-to-report-fiscal-fourth-quarter-and-full-year-2025-financial-results",
+      "observed_at": "2026-11-21 03:12:59 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/AMD/leadtime-extra-1.txt",
+      "full_body": true,
+      "characters": 4312
+    },
+    {
+      "ticker": "TWLO",
+      "url": "https://investors.twilio.com/news-releases/news-release-details/twilio-announce-fourth-quarter-and-fiscal-year-2025-results",
+      "observed_at": "2026-11-21 03:13:00 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/TWLO/leadtime-extra-2.txt",
+      "full_body": true,
+      "characters": 3725
+    },
+    {
+      "ticker": "LITE",
+      "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Announces-Reporting-Date-for-Fiscal-First-Quarter-2027-Financial-Results/default.aspx",
+      "observed_at": "2026-11-21 03:13:00 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/LITE/leadtime-extra-3.txt",
+      "full_body": true,
+      "characters": 4560
+    },
+    {
+      "ticker": "LITE",
+      "url": "https://investor.lumentum.com/financial-news-releases/news-details/2026/Lumentum-Announces-Reporting-Date-for-Fourth-Quarter-and-Fiscal-Year-2026-Results/default.aspx",
+      "observed_at": "2026-11-21 03:13:01 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/LITE/leadtime-extra-4.txt",
+      "full_body": true,
+      "characters": 4563
+    },
+    {
+      "ticker": "POWI",
+      "url": "https://investors.power.com/news/news-details/2026/Power-Integrations-to-Release-Fourth-Quarter-Financial-Results-on-February-5/default.aspx",
+      "observed_at": "2026-11-21 03:13:02 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/POWI/leadtime-extra-5.txt",
+      "full_body": true,
+      "characters": 3751
+    },
+    {
+      "ticker": "POWI",
+      "url": "https://investors.power.com/news/news-details/2026/Power-Integrations-to-Webcast-First-Quarter-Earnings-Conference-Call-on-May-7/default.aspx",
+      "observed_at": "2026-11-21 03:13:02 UTC",
+      "file": "data/cache/earnings/scaling-2027q1-dates/POWI/leadtime-extra-6.txt",
+      "full_body": true,
+      "characters": 3691
+    }
+  ]
+}

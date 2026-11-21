@@ -29,10 +29,10 @@ describe('publication copy',()=>{
   for(const kind of ['missing','invalid'] as const){const html=renderToStaticMarkup(<Predictions state={{kind}}/>);expect(html).toContain('No live database fallback');expect(html).not.toContain('data-prediction-id');}
  });
  it('keeps financial arithmetic exact beyond JavaScript safe integers',()=>{
-  expect(usd('9007199254740993123.000')).toBe('$9,007,199,254,740,993,123');expect(percent('0.454545454545454545454546')).toBe('45.45%');expect(percent('0.00005')).toBe('0.00%');expect(percent('0.00015')).toBe('0.02%');expect(validProbabilities({below:'0.1',within:'0.1',above:'0.8'})).toBe(true);
+  expect(usd('9007199254740993123.000')).toBe('$9,007,199,254,740,993,123');expect(percent('0.454545454545454545454546')).toBe('45.5%');expect(percent('0.00005')).toBe('0%');expect(percent('0.00015')).toBe('0%');expect(validProbabilities({below:'0.1',within:'0.1',above:'0.8'})).toBe(true);
  });
- it('reads the file copy even when DATABASE_URL is unusable',async()=>{
-  vi.stubEnv('DATABASE_URL','not-a-database');const r=await readPublishedPredictions();expect(r.kind).toBe('ready');vi.unstubAllEnvs();
+ it('does not fall back to DATABASE_URL or a file when snapshot URL is missing',async()=>{
+  vi.stubEnv('DATABASE_URL','not-a-database');vi.stubEnv('CROSSCHECK_PUBLISHED_DATABASE_URL','');const r=await readPublishedPredictions();expect(r.kind).toBe('missing');vi.unstubAllEnvs();
  });
  it('formats compact money, calendar dates and release-zone lead times',()=>{
   expect(compactUsd('813000000')).toBe('$813M');expect(compactUsd('817000000')).toBe('$817M');
@@ -57,6 +57,12 @@ describe('publication copy',()=>{
   expect(html).toContain('not calibrated forecasts. Scored with Brier score (0 best, 2 worst) after results are published.');
   expect(html).toContain('/crosscheck/predictions/methodology');expect(html.match(/data-leading-probability="true"/g)).toHaveLength(10);
   expect(html).not.toContain('`');expect(JSON.stringify(snapshot)).toBe(before);
+ });
+
+ it('renders the separate backtest and renamed methods without changing lock data',()=>{
+  const backtest=JSON.parse(readFileSync(path.resolve(process.cwd(),'../../earnings/publication/backtest.json'),'utf8'));
+  const html=renderToStaticMarkup(<Predictions state={{kind:'ready',snapshot:validateSnapshot(source())}} backtest={backtest}/>);
+  expect(html).toContain('Raw history');expect(html).toContain('Smoothed');expect(html).toContain('BACKTEST');expect(html).toContain('532 scored quarters');expect(html).not.toContain('Every method keeps');expect(html).not.toContain('Laplace +1');
  });
 
  it('keeps scoped classes and explicit separators in server-rendered content',()=>{

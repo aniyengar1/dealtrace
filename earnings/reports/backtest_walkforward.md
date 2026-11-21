@@ -165,3 +165,14 @@ Bins are left-inclusive/right-exclusive, except final bin includes1. Each class 
 ```
 
 Outputs: `earnings/reports/backtest_walkforward.json`, this report and a separate `earnings/publication/backtest.json` summary. No database connection, history ingestion, live prediction, or score insert occurs. Re-running changes execution time but the pinned inputs and deterministic case results remain reproducible.
+
+## Denominators and subgroups
+
+The initial pool contains592 quarter slots (64 scaling issuers plus the original ten, eight each). Removing Rambus’s eight-quarter panel leaves584 slots across73 companies. Source/basis/timing exclusions remove38;546 source-matched targets remain. Fourteen early targets lack the frozen minimum history, leaving532 scored cases. The same532 cases are used for all four score comparisons.
+
+| Population | Scored n | Raw history | Smoothed | Uniform | Always above |
+|---|---|---|---|---|---|
+| 64-company scaling audit | 467 | 0.4997912040 | 0.4918545315 | 0.6666666667 | 0.8222698073 |
+| original ten-company manual history | 65 | 0.3748181229 | 0.3742547449 | 0.6666666667 | 0.3076923077 |
+
+The lead-time follow-up identified a concrete historical schedule mismatch for Lumentum: November5 was announced, while results were published November2 with merger news. Simulating from the now-known actual release date does not reproduce an operator’s scheduled-date knowledge. This reinforces the retrospective timing caveat; no live record is reconstructed or relabelled.
