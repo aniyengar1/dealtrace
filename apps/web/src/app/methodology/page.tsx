@@ -67,7 +67,8 @@ const ACCURACY_ROWS: {
 ];
 
 export default async function MethodologyPage() {
-  const { count: nIncluded } = await getIncludedDealsSummary();
+  const { count: nIncluded, minSigningYear } = await getIncludedDealsSummary();
+  const since = minSigningYear ?? 2021;
   const funnel = [...DISCOVERY_FUNNEL, { label: FINAL_FUNNEL_STEP_LABEL, count: nIncluded }];
 
   return (
@@ -236,7 +237,7 @@ export default async function MethodologyPage() {
           <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Coverage</h2>
           <Card className="mt-5 p-5 text-sm text-ink-muted">
             <p>
-              <span className="text-ink">Date range:</span> deals announced 2021 onward (bounded by when the
+              <span className="text-ink">Date range:</span> deals announced {since} onward (bounded by when the
               pipeline&apos;s automated EDGAR discovery starts looking).
             </p>
             <p className="mt-2">

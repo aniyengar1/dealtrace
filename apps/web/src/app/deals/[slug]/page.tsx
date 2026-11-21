@@ -195,6 +195,7 @@ export default async function DealPage({
           target={targetDisplay}
           acquirer={acquirerDisplay}
           finalPrice={finalPrice}
+          finalPriceIsRatio={finalPriceIsRatio}
           events={events}
           proposals={proposals}
           valuations={valuations}

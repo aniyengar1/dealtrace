@@ -1,7 +1,6 @@
 "use client";
 
 import { useMemo } from "react";
-import { motion } from "framer-motion";
 import type { EventRow } from "@/lib/types";
 import { eventCategory, EVENT_CATEGORY_LABELS, EVENT_CATEGORY_COLORS, type EventCategory } from "@/lib/eventCategories";
 import { eventTypeLabel, CORE_EVENT_TYPES } from "@/lib/labels";
@@ -9,7 +8,7 @@ import { formatEventDate } from "@/lib/format";
 
 const PX_PER_DAY = 3;
 const MIN_WIDTH = 640;
-const LANE_HEIGHT = 36;
+const LANE_HEIGHT = 40;
 const CATEGORY_ORDER: EventCategory[] = ["contact", "diligence", "governance", "bid", "conclusion", "other"];
 
 function monthTicks(start: Date, end: Date): Date[] {
@@ -96,20 +95,16 @@ export function HorizontalTimeline({
             <div key={cat} className="relative border-t border-border" style={{ height: LANE_HEIGHT }}>
               {byCategory.get(cat)!.map(({ event, date }) => {
                 const isCore = CORE_EVENT_TYPES.has(event.event_type);
-                const size = isCore ? 10 : 7;
+                const size = isCore ? 13 : 9;
                 const left = xOf(date);
-                const finalOpacity = event.review_status === "unreviewed" ? 0.6 : 1;
+                const opacity = event.review_status === "unreviewed" ? 0.6 : 1;
                 return (
-                  <motion.button
+                  <button
                     key={event.id}
                     onClick={() => onInspect(event)}
                     title={`${formatEventDate(event)} — ${eventTypeLabel(event.event_type)}: ${event.summary}`}
                     className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full ring-2 ring-surface transition-transform hover:scale-125 focus-visible:scale-125"
-                    style={{ left, width: size, height: size, backgroundColor: EVENT_CATEGORY_COLORS[cat] }}
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: finalOpacity, scale: 1 }}
-                    viewport={{ once: true, amount: 0.4 }}
-                    transition={{ duration: 0.25, delay: (left / width) * 1.4 }}
+                    style={{ left, width: size, height: size, backgroundColor: EVENT_CATEGORY_COLORS[cat], opacity }}
                   />
                 );
               })}

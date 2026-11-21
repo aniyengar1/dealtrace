@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import type { EventRow, Fact, ParagraphRow, ProposalRow, ValuationRow } from "@/lib/types";
-import { BidChart } from "./BidChart";
+import { BidChart } from "./BidLadderChart";
 import { HorizontalTimeline } from "./HorizontalTimeline";
 import { Timeline } from "./Timeline";
 import { ValuationPanel } from "./ValuationPanel";
@@ -13,6 +13,7 @@ export function DealView({
   target,
   acquirer,
   finalPrice,
+  finalPriceIsRatio = null,
   events,
   proposals,
   valuations,
@@ -22,6 +23,7 @@ export function DealView({
   target: string;
   acquirer: string;
   finalPrice: number | null;
+  finalPriceIsRatio?: boolean | null;
   events: EventRow[];
   proposals: ProposalRow[];
   valuations: ValuationRow[];
@@ -45,7 +47,14 @@ export function DealView({
       <section id="bids">
         <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-muted">Bids over time</h2>
         <div className="mt-3">
-          <BidChart proposals={proposals} events={events} target={target} onInspect={setSelected} />
+          <BidChart
+            proposals={proposals}
+            events={events}
+            target={target}
+            finalPrice={finalPrice}
+            finalPriceIsRatio={finalPriceIsRatio}
+            onInspect={setSelected}
+          />
         </div>
       </section>
 

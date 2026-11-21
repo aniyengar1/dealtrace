@@ -229,7 +229,7 @@ export default async function HomePage() {
               description="Before any deal is trusted, its extraction is scored against a hand-checked set of events and proposals read directly off the filing."
             />
           </Reveal>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+          <div className="mt-10 grid gap-5 sm:grid-cols-3">
             <Reveal>
               <Card className="p-5">
                 <p className="text-sm font-medium text-ink">Splunk &mdash; Cisco (development set)</p>
@@ -242,6 +242,13 @@ export default async function HomePage() {
                 <p className="text-sm font-medium text-ink">Zendesk &mdash; Consortium (held-out)</p>
                 <p className="mt-1 text-2xl font-serif text-accent">97% / 100%</p>
                 <p className="mt-1 text-sm text-ink-muted">core-event recall / proposal recall, never seen during development</p>
+              </Card>
+            </Reveal>
+            <Reveal delay={160}>
+              <Card className="p-5">
+                <p className="text-sm font-medium text-ink">Round-3 spot check (bulk sample)</p>
+                <p className="mt-1 text-2xl font-serif text-accent">81 / 90</p>
+                <p className="mt-1 text-sm text-ink-muted">fields correct on a fresh random sample of 20 deals</p>
               </Card>
             </Reveal>
           </div>

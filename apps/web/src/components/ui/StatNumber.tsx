@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useInView, animate } from "framer-motion";
+import { usePrefersReducedMotion } from "@/lib/useReducedMotion";
 
 export function StatNumber({
   value,
@@ -22,22 +23,33 @@ export function StatNumber({
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.6 });
-  const [display, setDisplay] = useState(0);
+  const prefersReducedMotion = usePrefersReducedMotion();
+  // Starts at the real final value, not 0 -- server HTML, no-JS
+  // requests, link-preview scrapers, and screen readers before
+  // hydration all see the true number. The count-up below is a
+  // purely cosmetic re-animation that kicks in only after mount.
+  const [display, setDisplay] = useState(value);
 
   useEffect(() => {
-    if (!inView) return;
+    if (!inView || prefersReducedMotion) return;
+    // animate()'s onUpdate fires with the `from` value (0) on its very
+    // first tick, so the reset-then-count-up is driven entirely from
+    // that callback -- never a direct setState in the effect body.
     const controls = animate(0, value, {
-      duration: 1.1,
+      duration: 0.6,
       ease: [0.16, 1, 0.3, 1],
       onUpdate: setDisplay,
     });
     return () => controls.stop();
-  }, [inView, value]);
+  }, [inView, value, prefersReducedMotion]);
+
+  const finalText = `${prefix}${value.toFixed(decimals)}${suffix}`;
 
   return (
     <div className="rounded-lg bg-bg/55 px-4 py-3 backdrop-blur-sm">
       <span
         ref={ref}
+        aria-label={finalText}
         className={`font-serif tabular-nums text-accent ${size === "lg" ? "text-4xl sm:text-5xl" : "text-3xl"}`}
       >
         {prefix}

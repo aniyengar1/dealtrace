@@ -1,17 +1,27 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { motion } from "framer-motion";
 import type { EventRow } from "@/lib/types";
 import { formatEventDate } from "@/lib/format";
 import { eventTypeLabel, CORE_EVENT_TYPES } from "@/lib/labels";
+import {
+  eventCategory,
+  EVENT_CATEGORY_LABELS,
+  EVENT_CATEGORY_COLORS,
+  type EventCategory,
+} from "@/lib/eventCategories";
 import { ReviewStatusBadge, factRowClassName } from "@/components/StatusBadge";
 
-function chipClassName(active: boolean, isCore: boolean): string {
-  if (active && isCore) return "bg-accent text-accent-ink border border-accent";
-  if (active) return "bg-surface-raised text-ink border border-border-strong";
-  if (isCore) return "bg-transparent text-ink-muted border-2 border-border-strong";
-  return "bg-transparent text-ink-faint border border-border";
+const CATEGORY_ORDER: EventCategory[] = ["contact", "diligence", "governance", "bid", "conclusion", "other"];
+
+function chipStyle(active: boolean, color: string): { className: string; style?: React.CSSProperties } {
+  if (active) {
+    return {
+      className: "border text-ink",
+      style: { backgroundColor: `color-mix(in srgb, ${color} 22%, transparent)`, borderColor: color },
+    };
+  }
+  return { className: "border border-border bg-transparent text-ink-faint" };
 }
 
 export function Timeline({
@@ -21,53 +31,63 @@ export function Timeline({
   events: EventRow[];
   onInspect: (e: EventRow) => void;
 }) {
-  const allTypes = useMemo(
-    () => Array.from(new Set(events.map((e) => e.event_type))).sort(),
-    [events]
-  );
-  const [activeTypes, setActiveTypes] = useState<Set<string>>(new Set(allTypes));
+  const counts = useMemo(() => {
+    const m = new Map<EventCategory, number>();
+    for (const e of events) {
+      const cat = eventCategory(e.event_type);
+      m.set(cat, (m.get(cat) ?? 0) + 1);
+    }
+    return m;
+  }, [events]);
+  const presentCategories = CATEGORY_ORDER.filter((c) => (counts.get(c) ?? 0) > 0);
+  const [activeCategories, setActiveCategories] = useState<Set<EventCategory>>(new Set(presentCategories));
 
-  function toggleType(type: string) {
-    setActiveTypes((prev) => {
+  function toggleCategory(cat: EventCategory) {
+    setActiveCategories((prev) => {
       const next = new Set(prev);
-      if (next.has(type)) next.delete(type);
-      else next.add(type);
+      if (next.has(cat)) next.delete(cat);
+      else next.add(cat);
       return next;
     });
   }
 
-  const visible = events.filter((e) => activeTypes.has(e.event_type));
+  const visible = events.filter((e) => activeCategories.has(eventCategory(e.event_type)));
+  const allCleared = activeCategories.size === 0;
 
   return (
     <div>
-      <div className="mb-3 flex flex-wrap gap-1.5">
-        {allTypes.map((type) => {
-          const active = activeTypes.has(type);
-          const isCore = CORE_EVENT_TYPES.has(type);
+      <div className="mb-3 flex flex-wrap items-center gap-1.5">
+        {presentCategories.map((cat) => {
+          const active = activeCategories.has(cat);
+          const { className, style } = chipStyle(active, EVENT_CATEGORY_COLORS[cat]);
           return (
             <button
-              key={type}
-              onClick={() => toggleType(type)}
-              className={`rounded-full px-2.5 py-1 text-xs transition-colors ${chipClassName(active, isCore)}`}
+              key={cat}
+              onClick={() => toggleCategory(cat)}
+              aria-pressed={active}
+              className={`rounded-full px-2.5 py-1 text-xs font-medium transition-colors ${className}`}
+              style={style}
             >
-              {eventTypeLabel(type)}
+              {EVENT_CATEGORY_LABELS[cat]} <span className="tabular-nums opacity-70">({counts.get(cat)})</span>
             </button>
           );
         })}
+        <button
+          onClick={() => setActiveCategories(allCleared ? new Set(presentCategories) : new Set())}
+          className="ml-1 rounded-full px-2.5 py-1 text-xs font-medium text-ink-muted underline-offset-2 hover:text-ink hover:underline"
+        >
+          {allCleared ? "Select all" : "Clear"}
+        </button>
       </div>
 
       <ol className="space-y-1">
-        {visible.map((event, i) => {
+        {visible.map((event) => {
           const isCore = CORE_EVENT_TYPES.has(event.event_type);
           return (
-            <motion.li
+            <li
               key={event.id}
               onClick={() => onInspect(event)}
               className={factRowClassName("flex gap-3 rounded px-2 py-2")}
-              initial={{ opacity: 0, x: -8 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.8 }}
-              transition={{ duration: 0.25, delay: Math.min(i * 0.03, 0.3) }}
             >
               <span className="w-32 flex-shrink-0 tabular-nums text-xs text-ink-muted">
                 {formatEventDate(event)}
@@ -87,7 +107,7 @@ export function Timeline({
                   {event.summary}
                 </p>
               </div>
-            </motion.li>
+            </li>
           );
         })}
         {visible.length === 0 && (
