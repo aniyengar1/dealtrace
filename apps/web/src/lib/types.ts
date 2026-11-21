@@ -8,6 +8,9 @@ export interface Deal {
   target: string;
   acquirer: string;
   search_term: string;
+  is_canonical: boolean;
+  duplicate_of: string | null;
+  excluded_from_stats: boolean;
 }
 
 export interface ExtractionRun {
@@ -97,4 +100,5 @@ export interface DealSummary extends Deal {
   n_proposals: number;
   n_facts_total: number;
   n_facts_reviewed: number;
+  is_canonical: boolean;
 }

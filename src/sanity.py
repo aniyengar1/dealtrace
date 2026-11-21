@@ -26,23 +26,32 @@ from src.validate import _try_parse_date
 NUMBER_TOLERANCE = 0.01
 
 # Every DEFM14A checked so far (10 deals, 2 different filing-agent
-# templates) states the per-share cash consideration exactly this way,
-# once, near the very top of the cover letter: "...you will be entitled
-# to receive $157.00 in cash...for each share...". Takes the first match
-# since that's always the real consideration, not a later incidental
-# mention (e.g. dissenters'-rights "fair value" language reusing the same
-# number further down).
-_CONSIDERATION_RE = re.compile(r"entitled to receive\s+\$([\d,]+\.\d{2})\s+in cash", re.IGNORECASE)
+# templates) states the per-share cash consideration near the very top of
+# the cover letter, but the lead-in phrase and word order both vary:
+# "...you will be entitled to receive $157.00 in cash...", "...converted
+# into the right to receive $77.50 in cash, without interest...",
+# "...you will receive $54.20 in cash...", or amount-first forms like
+# "...$81.00 per share in cash, without interest...". The "$" is also not
+# guaranteed. .search() takes the first (leftmost) match across every
+# alternative, which is always the real consideration, not a later
+# incidental mention (e.g. dissenters'-rights "fair value" language
+# reusing the same number further down).
+_CONSIDERATION_RE = re.compile(
+    r"(?:entitled to receive|right to receive|will receive)\s+\$?([\d,]+\.\d{2})\s+in cash"
+    r"|\$?([\d,]+\.\d{2})\s+per share in cash,\s+without interest",
+    re.IGNORECASE,
+)
 
 
 def extract_proxy_consideration(html: str) -> Optional[float]:
     """The per-share cash merger consideration stated on the proxy's own
-    cover letter. None if the filing doesn't use this exact phrasing.
+    cover letter. None if the filing doesn't use any recognized phrasing.
     """
     match = _CONSIDERATION_RE.search(html)
     if match is None:
         return None
-    return float(match.group(1).replace(",", ""))
+    amount = match.group(1) or match.group(2)
+    return float(amount.replace(",", ""))
 
 
 def _as_dict(record) -> dict:

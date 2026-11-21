@@ -7,15 +7,15 @@ fetch -> sections -> extract -> validate, for the one deal in DEALS.
 """
 
 import argparse
+import json
 import os
 
-from dotenv import load_dotenv
-
 from src import extract, fetch, sanity, sections, validate
+from src.env import load_env
 from src.extract import Usage
 from src.schemas import BackgroundExtraction, ValuationExtraction
 
-load_dotenv()
+load_env()
 
 DEALS = {
     "splunk": {
@@ -23,14 +23,15 @@ DEALS = {
         "deal_name": "Cisco's Acquisition of Splunk",
         "target": "Splunk",
         "acquirer": "Cisco",
-        # Advisor/counsel/board names the model may use in place of the
-        # company they represent -- gold rolls these up to the company;
-        # see validate.normalize_party_roles.
+        # Advisor/counsel names the model may use in place of the company
+        # they represent -- gold rolls these up to the company; see
+        # validate.normalize_party_roles. "Board" and other generic
+        # structural references are handled without a per-deal entry by
+        # validate.normalize_defined_terms instead.
         "party_map": {
             "Qatalyst": "Splunk",
             "Morgan Stanley": "Splunk",
             "Skadden": "Splunk",
-            "Board": "Splunk",
             "Tidal Partners": "Cisco",
             "Simpson Thacher": "Cisco",
         },
@@ -44,7 +45,6 @@ DEALS = {
             "Qatalyst": "Zendesk",
             "Goldman Sachs": "Zendesk",
             "Wachtell Lipton": "Zendesk",
-            "Board": "Zendesk",
             "Fried Frank": "Consortium",
         },
         # Zendesk's own filing HTML mistags this sub-subsection at the same
@@ -138,11 +138,15 @@ SECTION_TARGET_CHUNKS: dict[str, int] = {
 }
 
 
-def run(deal_slug: str, model: str | None = None) -> None:
+def run(deal_slug: str, model: str | None = None, thinking_level: str | None = None) -> None:
     if deal_slug not in DEALS:
         raise SystemExit(f"Unknown deal '{deal_slug}'. Known deals: {list(DEALS)}")
     deal = DEALS[deal_slug]
     resolved_model = model or os.environ["GEMINI_MODEL"]
+    # Each deal gets its own cost.json (see Step 4 below) -- reset so a
+    # multi-deal process (e.g. the bulk runner) never bleeds one deal's
+    # calls into the next deal's cost summary.
+    extract.reset_session_calls()
 
     print(f"=== Step 1: fetch ({deal['deal_name']}) ===")
     fetch_result = fetch.fetch_defm14a(deal["search_term"])
@@ -173,7 +177,7 @@ def run(deal_slug: str, model: str | None = None) -> None:
         print(f"-- {section_key} ({len(section['paragraphs'])} paragraphs, schema={schema.__name__})")
         target_chunks = SECTION_TARGET_CHUNKS.get(section_key)
         instance, usage = extract.extract_section(
-            section["paragraphs"], schema, model=model, target_chunks=target_chunks
+            section["paragraphs"], schema, model=model, target_chunks=target_chunks, thinking_level=thinking_level
         )
         if hasattr(instance, "events"):
             records_by_type["Event"].extend(instance.events)
@@ -196,12 +200,16 @@ def run(deal_slug: str, model: str | None = None) -> None:
     print(f"[quota] {resolved_model}: {used}/{extract.FREE_TIER_DAILY_QUOTA} used today, {remaining} remaining (local estimate)\n")
 
     print("=== Step 4: validate ===")
+    # A lower thinking_level is a distinct experiment, not a prompt
+    # change -- tagging the run_dir keeps it from colliding with (or
+    # being mistaken for) a normal v12 run at default thinking.
+    run_prompt_version = f"{extract.PROMPT_VERSION}-lowthink-test" if thinking_level else extract.PROMPT_VERSION
     results, extraction_path, summary_path = validate.run(
         records_by_type,
         deal["deal_name"],
         deal_slug,
         model=resolved_model,
-        prompt_version=extract.PROMPT_VERSION,
+        prompt_version=run_prompt_version,
         party_map=deal.get("party_map"),
         target_name=deal.get("target"),
         acquirer_name=deal.get("acquirer"),
@@ -211,6 +219,15 @@ def run(deal_slug: str, model: str | None = None) -> None:
     print(f"Wrote {extraction_path}")
     print(f"Wrote {summary_path}")
     print(f"Latest run: {validate.LATEST_LINK}")
+
+    cost_summary = extract.session_cost_summary()
+    provider = cost_summary["calls"][0]["provider"] if cost_summary["calls"] else None
+    cost_path = extraction_path.parent / "cost.json"
+    cost_path.write_text(json.dumps({"provider": provider, **cost_summary}, indent=2))
+    print(f"Wrote {cost_path}")
+    if cost_summary["cost_unknown_for_some_calls"]:
+        print(f"[cost] WARNING: pricing unknown for some calls -- total_cost_usd is a lower bound, not the real total")
+    print(f"[cost] total for this run: ${cost_summary['total_cost_usd']:.4f}")
 
     print("\n=== Step 5: deal-level sanity checks ===")
     validated_by_type: dict[str, list] = {"Event": [], "Proposal": [], "ValuationAnalysis": []}
@@ -230,8 +247,14 @@ def main() -> None:
     parser.add_argument(
         "--model", default=None, help="Override GEMINI_MODEL from .env for this run"
     )
+    parser.add_argument(
+        "--thinking-level",
+        default=None,
+        choices=["minimal", "low", "medium", "high"],
+        help="Experiment knob only -- unset means leave the model's default thinking behavior untouched",
+    )
     args = parser.parse_args()
-    run(args.deal_slug, model=args.model)
+    run(args.deal_slug, model=args.model, thinking_level=args.thinking_level)
 
 
 if __name__ == "__main__":

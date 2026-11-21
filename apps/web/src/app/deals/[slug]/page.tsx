@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import {
   getDealBySlug,
   getLatestFactsRunForDeal,
@@ -8,13 +8,31 @@ import {
   getProposalsForRun,
   getValuationsForRun,
   getParagraphsForDeal,
+  getFilingUrlForDeal,
 } from "@/lib/queries";
+import { getDealMetricsBySlug } from "@/lib/dealMetrics";
 import { formatDate, formatPrice, formatPriceRange } from "@/lib/format";
-import { acquirerDisplayName } from "@/lib/labels";
+import { dealTitle } from "@/lib/labels";
 import { computeDealSummary } from "@/lib/dealSummary";
+import { PriceValue } from "@/components/ui/PriceValue";
+import { Container } from "@/components/ui/Container";
+import { Card } from "@/components/ui/Card";
+import { LinkButton } from "@/components/ui/Button";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { DealView } from "./DealView";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const [deal, metrics] = await Promise.all([getDealBySlug(slug), getDealMetricsBySlug(slug)]);
+  if (!deal) return {};
+  const title = metrics ? dealTitle(metrics.acquirerDisplay, metrics.targetDisplay) : deal.deal_name;
+  return {
+    title,
+    description: `Sourced sale-process timeline, bid history, and valuation analysis for ${deal.deal_name}, extracted from its SEC merger-proxy filing.`,
+  };
+}
 
 function pickFinalProposal<T extends { status: string; date_resolved: string | null; date_text: string }>(
   proposals: T[]
@@ -29,10 +47,20 @@ function pickFinalProposal<T extends { status: string; date_resolved: string | n
   });
 }
 
-export default async function DealPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function DealPage({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ fact?: string }>;
+}) {
   const { slug } = await params;
-  const deal = await getDealBySlug(slug);
-  if (!deal) notFound();
+  const { fact: factId } = await searchParams;
+  const [deal, metrics] = await Promise.all([getDealBySlug(slug), getDealMetricsBySlug(slug)]);
+  // proxy.ts already blocks a real request from getting this far for an
+  // excluded deal's slug -- this is defense-in-depth only (e.g. a stale
+  // slug-map cache window).
+  if (!deal || deal.excluded_from_stats) notFound();
 
   const [factsRun, valuationsRun] = await Promise.all([
     getLatestFactsRunForDeal(deal.id),
@@ -40,79 +68,97 @@ export default async function DealPage({ params }: { params: Promise<{ slug: str
   ]);
   if (!factsRun) {
     return (
-      <div>
-        <h1 className="text-xl font-semibold">{deal.deal_name}</h1>
-        <p className="mt-2 text-sm text-neutral-500">
-          No extraction run has completed for this deal yet.
-        </p>
-      </div>
+      <Container wide className="py-10">
+        <h1 className="font-serif text-2xl font-semibold text-ink">{deal.deal_name}</h1>
+        <div className="mt-6">
+          <EmptyState title="Not extracted yet" description="No completed extraction run exists for this deal yet." />
+        </div>
+      </Container>
     );
   }
 
-  const [events, proposals, valuations, paragraphs] = await Promise.all([
+  const [events, proposals, valuations, paragraphs, filingUrl] = await Promise.all([
     getEventsForRun(factsRun.id),
     getProposalsForRun(factsRun.id),
     valuationsRun ? getValuationsForRun(valuationsRun.id) : Promise.resolve([]),
     getParagraphsForDeal(deal.id),
+    getFilingUrlForDeal(deal.search_term),
   ]);
 
   const finalProposal = pickFinalProposal(proposals);
-  const finalPrice = finalProposal?.price_high ?? finalProposal?.price_low ?? null;
+  const finalPrice = metrics?.finalPrice ?? finalProposal?.price_high ?? finalProposal?.price_low ?? null;
+  // Only available from deal_metrics (see PriceValue) -- every
+  // canonical deal has a row there, so this only falls back to the
+  // (safe, dollar-price-assuming) default when metrics itself is
+  // unexpectedly missing.
+  const finalPriceIsRatio = metrics?.finalPriceIsRatio ?? null;
   const signingEvent = events.find((e) => e.event_type === "signing" && e.date_start);
   const summary = computeDealSummary(events, proposals, deal.target);
+  const initialFact = factId
+    ? [...events, ...proposals, ...valuations].find((f) => f.id === factId) ?? null
+    : null;
+  const targetDisplay = metrics?.targetDisplay ?? deal.target;
+  const acquirerDisplay = metrics?.acquirerDisplay ?? deal.acquirer;
 
   return (
-    <div>
-      <div className="flex items-start justify-between">
+    <Container wide className="py-10">
+      <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
-          <h1 className="text-xl font-semibold tracking-tight">{deal.deal_name}</h1>
-          <p className="mt-1 text-sm text-neutral-500">
-            {deal.target} <span className="text-neutral-300">→</span> {acquirerDisplayName(deal.slug, deal.acquirer)}
-          </p>
+          <h1 className="font-serif text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+            {dealTitle(acquirerDisplay, targetDisplay)}
+          </h1>
+          <p className="mt-1.5 text-sm text-ink-muted">{deal.deal_name}</p>
         </div>
-        <Link
-          href={`/review/${deal.slug}`}
-          className="rounded-md bg-neutral-900 px-3 py-1.5 text-sm font-medium text-white hover:bg-neutral-700"
-        >
-          Review facts
-        </Link>
+        <div className="flex gap-2">
+          <LinkButton href={`/deals/${deal.slug}/memo`} variant="secondary">
+            Memo
+          </LinkButton>
+        </div>
       </div>
 
-      <dl className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
-        <div className="rounded-lg border border-neutral-200 bg-white p-3">
-          <dt className="text-xs text-neutral-500">Price per share</dt>
-          <dd className="mt-0.5 text-lg font-semibold tabular-nums">
-            {formatPriceRange(finalProposal?.price_low ?? null, finalProposal?.price_high ?? null)}
+      <dl className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <Card className="p-3.5">
+          <dt className="text-xs text-ink-muted">{finalPriceIsRatio ? "Exchange ratio" : "Price per share"}</dt>
+          <dd className="mt-0.5 text-lg font-semibold tabular-nums text-accent">
+            <PriceValue price={finalPrice} plausible={metrics?.pricePlausible ?? null} finalPriceIsRatio={finalPriceIsRatio} />
           </dd>
-        </div>
-        <div className="rounded-lg border border-neutral-200 bg-white p-3">
-          <dt className="text-xs text-neutral-500">Signing date</dt>
-          <dd className="mt-0.5 text-lg font-semibold tabular-nums">
+        </Card>
+        <Card className="p-3.5">
+          <dt className="text-xs text-ink-muted">Signing date</dt>
+          <dd className="mt-0.5 text-lg font-semibold tabular-nums text-ink">
             {formatDate(signingEvent?.date_start ?? null)}
           </dd>
-        </div>
-        <div className="rounded-lg border border-neutral-200 bg-white p-3">
-          <dt className="text-xs text-neutral-500">Proposals</dt>
-          <dd className="mt-0.5 text-lg font-semibold tabular-nums">{proposals.length}</dd>
-        </div>
-        <div className="rounded-lg border border-neutral-200 bg-white p-3">
-          <dt className="text-xs text-neutral-500">Events</dt>
-          <dd className="mt-0.5 text-lg font-semibold tabular-nums">{events.length}</dd>
-        </div>
+        </Card>
+        <Card className="p-3.5">
+          <dt className="text-xs text-ink-muted">Proposals</dt>
+          <dd className="mt-0.5 text-lg font-semibold tabular-nums text-ink">{proposals.length}</dd>
+        </Card>
+        <Card className="p-3.5">
+          <dt className="text-xs text-ink-muted">Events</dt>
+          <dd className="mt-0.5 text-lg font-semibold tabular-nums text-ink">{events.length}</dd>
+        </Card>
       </dl>
 
-      <div className="mt-6 rounded-lg border border-neutral-200 bg-white p-4">
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-neutral-500">Deal summary</h2>
+      {filingUrl && (
+        <p className="mt-3 text-sm">
+          <a href={filingUrl} target="_blank" rel="noreferrer" className="text-accent hover:underline">
+            View the SEC filing on EDGAR →
+          </a>
+        </p>
+      )}
+
+      <Card className="mt-6 p-4">
+        <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-muted">Deal summary</h2>
         <dl className="mt-3 grid grid-cols-2 gap-4 sm:grid-cols-5">
           <div>
-            <dt className="text-xs text-neutral-500">First bid → final</dt>
-            <dd className="mt-0.5 text-sm font-medium tabular-nums">
+            <dt className="text-xs text-ink-muted">First bid → final</dt>
+            <dd className="mt-0.5 text-sm font-medium tabular-nums text-ink">
               {(summary.firstBidPriceLow !== null || summary.firstBidPriceHigh !== null) &&
               summary.finalBidPrice !== null ? (
                 <>
                   {formatPriceRange(summary.firstBidPriceLow, summary.firstBidPriceHigh)} →{" "}
                   {formatPrice(summary.finalBidPrice)}{" "}
-                  <span className={summary.pctChange !== null && summary.pctChange >= 0 ? "text-emerald-600" : "text-red-600"}>
+                  <span className={summary.pctChange !== null && summary.pctChange >= 0 ? "text-positive" : "text-negative"}>
                     ({summary.pctChange !== null ? `${summary.pctChange >= 0 ? "+" : ""}${summary.pctChange.toFixed(1)}%` : "—"}
                     {summary.pctChangeBasis ? ` from ${summary.pctChangeBasis}` : ""})
                   </span>
@@ -123,41 +169,39 @@ export default async function DealPage({ params }: { params: Promise<{ slug: str
             </dd>
           </div>
           <div>
-            <dt className="text-xs text-neutral-500">Rounds</dt>
-            <dd className="mt-0.5 text-sm font-medium tabular-nums">{summary.nRounds}</dd>
+            <dt className="text-xs text-ink-muted">Rounds</dt>
+            <dd className="mt-0.5 text-sm font-medium tabular-nums text-ink">{summary.nRounds}</dd>
           </div>
           <div>
-            <dt className="text-xs text-neutral-500">Bidders</dt>
-            <dd className="mt-0.5 text-sm font-medium tabular-nums">{summary.nBidders}</dd>
+            <dt className="text-xs text-ink-muted">Bidders</dt>
+            <dd className="mt-0.5 text-sm font-medium tabular-nums text-ink">{summary.nBidders}</dd>
           </div>
           <div>
-            <dt className="text-xs text-neutral-500">First contact → signing</dt>
-            <dd className="mt-0.5 text-sm font-medium tabular-nums">
-              {summary.daysFirstContactToSigning !== null ? `${summary.daysFirstContactToSigning} days` : "—"}
+            <dt className="text-xs text-ink-muted">First proposal → signing</dt>
+            <dd className="mt-0.5 text-sm font-medium tabular-nums text-ink">
+              {summary.daysFirstProposalToSigning !== null ? `${summary.daysFirstProposalToSigning} days` : "—"}
             </dd>
           </div>
           <div>
-            <dt className="text-xs text-neutral-500">Market check</dt>
-            <dd className="mt-0.5 text-sm font-medium capitalize">{summary.marketCheck}</dd>
+            <dt className="text-xs text-ink-muted">Market check</dt>
+            <dd className="mt-0.5 text-sm font-medium capitalize text-ink">{summary.marketCheck}</dd>
           </div>
         </dl>
-        <p className="mt-3 text-xs text-neutral-400">
-          Based on {summary.nConfirmed} confirmed and {summary.nUnreviewed} unreviewed fact
-          {summary.nConfirmed + summary.nUnreviewed === 1 ? "" : "s"}
-          {summary.nRejectedExcluded > 0 && ` (${summary.nRejectedExcluded} rejected fact${summary.nRejectedExcluded === 1 ? "" : "s"} excluded)`}.
-        </p>
-      </div>
+        <p className="mt-3 text-xs text-ink-faint">Every fact is machine-verified against a quote from the filing.</p>
+      </Card>
 
-      <div className="mt-8">
+      <div className="mt-10">
         <DealView
-          target={deal.target}
+          target={targetDisplay}
+          acquirer={acquirerDisplay}
           finalPrice={finalPrice}
           events={events}
           proposals={proposals}
           valuations={valuations}
           paragraphs={paragraphs}
+          initialFact={initialFact}
         />
       </div>
-    </div>
+    </Container>
   );
 }

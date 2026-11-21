@@ -105,6 +105,41 @@ def load_paragraph_lookup(sections_dir: Path) -> dict[str, str]:
     return lookup
 
 
+_PARAGRAPH_ID_RE = re.compile(r"^([A-Za-z]*)(\d+)$")
+
+
+def _expand_to_contiguous_span(paragraph_ids: list[str]) -> list[str]:
+    """Some filings hard-wrap a single real sentence across many short
+    paragraph fragments (one real-world case: 288 paragraphs for a 4,437-
+    word section, ~15 words each). A model correctly quoting the whole
+    sentence can cite a gappy subset of that span's paragraph IDs (e.g.
+    p03315, p03317, p03318, skipping p03316's few words in the middle)
+    without the quote being wrong -- it's a citation-completeness miss,
+    not a hallucination. Filling in the gap from the lowest to the
+    highest cited ID (inclusive) is a much closer match to "did this
+    model actually quote real text" than requiring every single
+    paragraph it touched to be explicitly listed.
+
+    Falls back to the original list unchanged if the IDs don't look like
+    the fixed "p" + zero-padded-sequential-number scheme every paragraph
+    in this pipeline is actually assigned (see sections.py's Paragraph
+    id generation) -- never guesses at a span for an unfamiliar ID format.
+    """
+    if len(paragraph_ids) < 2:
+        return paragraph_ids
+    parsed = [_PARAGRAPH_ID_RE.match(pid) for pid in paragraph_ids]
+    if not all(parsed):
+        return paragraph_ids
+    prefixes = {m.group(1) for m in parsed}
+    widths = {len(m.group(2)) for m in parsed}
+    if len(prefixes) != 1 or len(widths) != 1:
+        return paragraph_ids
+    prefix = next(iter(prefixes))
+    width = next(iter(widths))
+    numbers = sorted(int(m.group(2)) for m in parsed)
+    return [f"{prefix}{n:0{width}d}" for n in range(numbers[0], numbers[-1] + 1)]
+
+
 def check_quotes_in_paragraphs(
     source_quotes: list[str], source_paragraph_ids: list[str], paragraph_lookup: dict[str, str]
 ) -> tuple[bool, str]:
@@ -117,7 +152,10 @@ def check_quotes_in_paragraphs(
     if not source_quotes:
         return False, "no source_quotes given"
 
-    combined = normalize_for_match(" ".join(paragraph_lookup[pid] for pid in source_paragraph_ids))
+    span_ids = _expand_to_contiguous_span(source_paragraph_ids)
+    combined = normalize_for_match(
+        " ".join(paragraph_lookup[pid] for pid in span_ids if pid in paragraph_lookup)
+    )
     not_found = [q for q in source_quotes if normalize_for_match(q) not in combined]
     if not_found:
         return False, f"source_quote(s) not found verbatim in cited paragraphs: {not_found}"
@@ -304,22 +342,35 @@ def normalize_party_roles(records_by_type: dict[str, list], party_map: dict[str,
     return {**records_by_type, "Proposal": new_proposals}
 
 
-# Merger-agreement defined terms that always stand in for one of the two
-# deal principals, regardless of which deal this is -- "Parent" and "Merger
-# Sub" are the acquirer's defined terms in every DEFM14A's merger agreement
-# (Merger Sub is the acquirer's shell subsidiary doing the actual merging,
-# "Acquiror" is occasionally used in place of "Parent"), and "the Company"
-# is the target's. Unlike normalize_party_roles' advisor names, these carry
-# no information worth preserving when resolved -- "Parent" never means
-# anything other than "whichever entity is acquiring the target", so
-# resolving it to the deal's actual acquirer name loses nothing. That's why
-# this is safe to apply to Event.parties too, where normalize_party_roles
-# deliberately isn't: an advisor's name is itself informative (which firm
-# advised whom), but a defined term is pure legal-drafting shorthand for an
-# identity the deal's own metadata (target/acquirer) already specifies in
-# full.
-_ACQUIRER_DEFINED_TERMS = {"parent", "parent's", "merger sub", "acquiror"}
-_TARGET_DEFINED_TERMS = {"the company", "the company's"}
+# Merger-agreement defined terms and structural role references that
+# always stand in for one of the two deal principals, regardless of
+# which deal this is -- "Parent"/"Merger Sub"/"Acquiror"/"Buyer" are the
+# acquirer's defined terms in every DEFM14A's merger agreement (Merger
+# Sub is the acquirer's shell subsidiary doing the actual merging), and
+# "the Company"/"Company"/"Board"/"Board of Directors"/"Transaction
+# Committee"/"Special Committee" are all the target's -- a DEFM14A is
+# always narrated from the target's own perspective, so its own board or
+# a committee of it is never the ACQUIRER's, regardless of deal. Unlike
+# normalize_party_roles' advisor names, none of these carry information
+# worth preserving when resolved -- "Parent" never means anything other
+# than "whichever entity is acquiring the target", and "the Special
+# Committee" never means anything other than "the target, acting through
+# a committee of its board" -- so resolving either to the deal's actual
+# target/acquirer name loses nothing. That's why this is safe to apply to
+# Event.parties too, where normalize_party_roles deliberately isn't: an
+# advisor's name is itself informative (which firm advised whom), but
+# these are pure legal-drafting/structural shorthand for an identity the
+# deal's own metadata (target/acquirer) already specifies in full.
+_ACQUIRER_DEFINED_TERMS = {"parent", "parent's", "merger sub", "acquiror", "buyer"}
+_TARGET_DEFINED_TERMS = {
+    "the company",
+    "the company's",
+    "company",
+    "board",
+    "board of directors",
+    "transaction committee",
+    "special committee",
+}
 
 
 def _resolve_defined_term(name: Optional[str], target_name: str, acquirer_name: str) -> Optional[str]:
@@ -342,11 +393,16 @@ def _resolve_defined_term(name: Optional[str], target_name: str, acquirer_name: 
 def normalize_defined_terms(
     records_by_type: dict[str, list], target_name: str, acquirer_name: str
 ) -> dict[str, list]:
-    """Resolve merger-agreement defined terms ("Parent", "Merger Sub",
-    "Acquiror" -> acquirer; "the Company" -> target) in both Event.parties
-    and Proposal.proposer/recipient. Deal-agnostic -- the same fixed set of
-    terms applies to every deal's merger agreement, so this needs no
-    per-deal party_map, just the deal's own target/acquirer names.
+    """Resolve generic merger-agreement/structural role terms ("Parent",
+    "Merger Sub", "Acquiror", "Buyer" -> acquirer; "the Company",
+    "Company", "Board", "Board of Directors", "Transaction Committee",
+    "Special Committee" -> target) in both Event.parties and
+    Proposal.proposer/recipient. Deal-agnostic -- the same fixed set of
+    terms applies to every deal's merger agreement and narrative
+    structure, so this needs no per-deal party_map, just the deal's own
+    target/acquirer names. Per-deal party_map (normalize_party_roles) is
+    reserved for advisor/counsel names, which this can't generalize --
+    "Qatalyst Partners" doesn't mean the same thing on every deal.
     """
     new_events = []
     for event in records_by_type.get("Event", []):

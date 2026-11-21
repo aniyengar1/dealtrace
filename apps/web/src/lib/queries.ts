@@ -62,7 +62,7 @@ export async function listDealsSummary(): Promise<DealSummary[]> {
       ORDER BY run_id, date_start DESC
     )
     SELECT
-      d.id, d.slug, d.deal_name, d.target, d.acquirer, d.search_term,
+      d.id, d.slug, d.deal_name, d.target, d.acquirer, d.search_term, d.is_canonical,
       fprop.price_low AS final_price_low,
       fprop.price_high AS final_price_high,
       s.date_start AS signing_date,
@@ -81,10 +81,31 @@ export async function listDealsSummary(): Promise<DealSummary[]> {
   `);
 }
 
+export async function listDeals(): Promise<Deal[]> {
+  return query<Deal>(`SELECT id, slug, deal_name, target, acquirer, search_term FROM deals ORDER BY deal_name`);
+}
+
 export async function getDealBySlug(slug: string): Promise<Deal | null> {
-  return queryOne<Deal>(`SELECT id, slug, deal_name, target, acquirer, search_term FROM deals WHERE slug = $1`, [
-    slug,
-  ]);
+  return queryOne<Deal>(
+    `SELECT d.id, d.slug, d.deal_name, d.target, d.acquirer, d.search_term, d.is_canonical, d.duplicate_of,
+            coalesce(dm.excluded_from_stats, false) AS excluded_from_stats
+     FROM deals d LEFT JOIN deal_metrics dm ON dm.deal_id = d.id
+     WHERE d.slug = $1`,
+    [slug]
+  );
+}
+
+// Whole-table index of just the columns proxy.ts needs to decide
+// exists/excluded/redirect/pass-through for every deal slug in one
+// query -- small enough (one row per deal, five scalar columns) to load
+// in full and cache in memory rather than re-querying per request.
+export async function listDealSlugIndex(): Promise<
+  { id: string; slug: string; is_canonical: boolean; duplicate_of: string | null; excluded_from_stats: boolean }[]
+> {
+  return query(
+    `SELECT d.id, d.slug, d.is_canonical, d.duplicate_of, coalesce(dm.excluded_from_stats, false) AS excluded_from_stats
+     FROM deals d LEFT JOIN deal_metrics dm ON dm.deal_id = d.id`
+  );
 }
 
 // The most recent run that actually extracted events/proposals (the
@@ -175,6 +196,23 @@ export async function getAllFactsForDeal(dealId: string): Promise<Fact[]> {
     valuationsRun ? getValuationsForRun(valuationsRun.id) : Promise.resolve([]),
   ]);
   return [...events, ...proposals, ...valuations];
+}
+
+// Best-effort link from a deal to the SEC filing it was extracted from --
+// "deals" has no filing reference of its own (it's hand-registered in
+// src/run.py's DEALS dict, independent of the automated discovery table),
+// so this joins on the discovery table's own fuzzy name match instead.
+// Null (hidden, never guessed) when no confident match exists.
+export async function getFilingUrlForDeal(searchTerm: string): Promise<string | null> {
+  const row = await queryOne<{ primary_file_name: string }>(
+    `SELECT primary_file_name FROM deal_candidates
+     WHERE target_name ILIKE '%' || $1 || '%'
+       AND classification = 'public_company_acquisition'
+     ORDER BY primary_filed_date DESC
+     LIMIT 1`,
+    [searchTerm]
+  );
+  return row ? `https://www.sec.gov/Archives/${row.primary_file_name}` : null;
 }
 
 export async function getParagraphsForDeal(dealId: string): Promise<Record<string, ParagraphRow>> {

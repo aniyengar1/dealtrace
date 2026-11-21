@@ -27,7 +27,7 @@
       "id": "E02",
       "date": "2021-11-30",
       "date_precision": "day",
-      "event_type": "other",
+      "event_type": "activist",
       "parties": [
         "JANA Partners",
         "Zendesk"
@@ -64,7 +64,7 @@
       "id": "E05",
       "date": "2022-02-16",
       "date_precision": "day",
-      "event_type": "other",
+      "event_type": "activist",
       "parties": [
         "JANA Partners",
         "Zendesk"
@@ -89,7 +89,7 @@
       "id": "E07",
       "date": "2022-02-28",
       "date_precision": "day",
-      "event_type": "other",
+      "event_type": "activist",
       "parties": [
         "JANA Partners",
         "Zendesk"
@@ -682,7 +682,7 @@
       "id": "E54",
       "date": "2022-06-07",
       "date_precision": "day",
-      "event_type": "discussion",
+      "event_type": "activist",
       "parties": [
         "JANA Partners",
         "Zendesk"
@@ -695,7 +695,7 @@
       "id": "E55",
       "date": "2022-06-08",
       "date_precision": "day",
-      "event_type": "other",
+      "event_type": "activist",
       "parties": [
         "JANA Partners"
       ],
@@ -819,7 +819,7 @@
       "id": "E65",
       "date": "2022-06-18",
       "date_precision": "day",
-      "event_type": "nda",
+      "event_type": "activist",
       "parties": [
         "Zendesk",
         "JANA Partners"
@@ -832,7 +832,7 @@
       "id": "E66",
       "date": "2022-06-19",
       "date_precision": "day",
-      "event_type": "discussion",
+      "event_type": "activist",
       "parties": [
         "Zendesk",
         "JANA Partners"
@@ -908,7 +908,7 @@
       "id": "E72",
       "date": "2022-06-21/2022-06-22",
       "date_precision": "range",
-      "event_type": "discussion",
+      "event_type": "activist",
       "parties": [
         "Qatalyst Partners",
         "JANA Partners"
@@ -960,7 +960,7 @@
       "id": "E76",
       "date": "2022-06-23",
       "date_precision": "day",
-      "event_type": "other",
+      "event_type": "activist",
       "parties": [
         "JANA Partners",
         "Zendesk"

@@ -56,7 +56,40 @@ def _decode_legacy_cp1252_charrefs(html: str) -> str:
     return _LEGACY_CHARREF_RE.sub(_sub, html)
 
 SECTION_SPECS = {
-    "background_of_the_merger": [r"^Background of the Merger$"],
+    # Tender-offer filings (SC 14D9/SC TO-T) use "Background of the
+    # Offer" (or, when a tender offer is itself followed by a back-end
+    # merger, "...the Offer and the Merger") instead of "...the Merger"
+    # -- found while building the EDGAR discovery scan (src/discover.py),
+    # which checks both DEFM14A-style and tender-offer-style filings.
+    "background_of_the_merger": [
+        r"^Background of the Merger$",
+        r"^Background of the Offer$",
+        r"^Background of the Offer and the Merger$",
+        # Found diagnosing a 40-DEFM14A sample of section-not-found
+        # candidates from the EDGAR discovery scan (src/discover.py).
+        # "Background of the Mergers" (plural) was overwhelmingly the
+        # most common miss (16/40) -- used when the deal is structured
+        # as two linked merger steps (e.g. a holdco merger plus the
+        # operating-company merger), not a drafting typo. The others
+        # each covered a handful: "Transaction(s)" (cash-out mergers,
+        # asset sales recharacterized as "the Transaction"), "to" as an
+        # alternative preposition to "of" (both appear in practice),
+        # "Acquisition", "Business Combination" (SPAC-adjacent/holding-
+        # company deals), "(Asset) Sale", and liquidation-plan filings.
+        # Deliberately NOT added: a bare "Background"/"BACKGROUND" --
+        # real occurrences exist, but so do false positives at the exact
+        # same heading-shape in this sample (a director's bio section
+        # titled "Board Skills, Experience and Background", an ESPP
+        # section, a table-of-contents page-number artifact rendering as
+        # "Background 1") that a bare match would also catch.
+        r"^Background of the Mergers$",
+        r"^Background for the Merger$",
+        r"^Background (of|to) the Transactions?$",
+        r"^Background of the Acquisition$",
+        r"^Background (of|to) the Business Combination$",
+        r"^Background of the (Asset )?Sale$",
+        r"^Background of the Plan of Liquidation$",
+    ],
     "management_projections": [
         r"^Certain Unaudited Prospective Financial Information$",
         r"^Unaudited Prospective Financial Information$",
@@ -142,6 +175,13 @@ _UNDERLINE_STYLE_RE = re.compile(r"text-decoration\s*:\s*underline", re.IGNORECA
 # heading) and can have embedded line breaks from hard-wrapped source HTML.
 _KNOWN_STANDARD_HEADING_RE = re.compile(
     r"background of the merger"
+    r"|background for the merger"
+    r"|background of the mergers"
+    r"|background (of|to) the transactions?"
+    r"|background of the acquisition"
+    r"|background (of|to) the business combination"
+    r"|background of the (asset )?sale"
+    r"|background of the plan of liquidation"
     r"|recommendation of .{0,40}board"
     r"|reasons for the merger"
     r"|opinion of "

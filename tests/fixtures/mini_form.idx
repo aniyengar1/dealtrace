@@ -1,0 +1,17 @@
+Description:           Master Index of EDGAR Dissemination Feed by Form Type
+Last Data Received:    June 30, 2022
+Comments:              webmaster@sec.gov
+Anonymous FTP:         ftp://ftp.sec.gov/edgar/
+
+
+
+
+Form Type   Company Name                                                  CIK         Date Filed  File Name
+---------------------------------------------------------------------------------------------------------------------------------------------
+1-A              6d bytes inc.                                                 1830909     2022-05-23  edgar/data/1830909/0001477932-22-003739.txt
+DEFM14A          Anaplan, Inc.                                                 1540755     2022-05-02  edgar/data/1540755/0001193125-22-137023.txt
+PREM14A          Anaplan, Inc.                                                 1540755     2022-04-01  edgar/data/1540755/0001193125-22-100001.txt
+SC 14D9          ANTARES PHARMA, INC.                                         1016169     2022-04-26  edgar/data/1016169/0001140361-22-015844.txt
+SC TO-T          ANTARES PHARMA, INC.                                         1016169     2022-04-26  edgar/data/1016169/0001193125-22-118784.txt
+SC 14D9/A        ANTARES PHARMA, INC.                                         1016169     2022-05-10  edgar/data/1016169/0001140361-22-016500.txt
+10-K             Totally Unrelated Co.                                        9999999     2022-04-20  edgar/data/9999999/0009999999-22-000001.txt
