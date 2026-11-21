@@ -47,7 +47,7 @@ The default unique execution filename is printed and saved under `data/cache/ear
 
 ## Limits and remaining real blockers
 
-Owner-browser checks were supplied and preserved for the four completed locks; those expired observations must never be reused for another lock. Fresh source checks are required for any separately authorized future lock; this document, the old announcement, and synthetic rehearsals do not establish freshness. Historical evidence must still pass local integrity checks. Original CRWD/MDB owner PDFs remain outstanding. Missing dates for other companies remain unverified.
+Owner-browser checks were supplied and preserved for the four completed locks; those expired observations must never be reused for another lock. Fresh source checks are required for any separately authorized future lock; this document, the old announcement, and synthetic rehearsals do not establish freshness. Historical evidence must still pass local integrity checks. CRWD/MDB owner PDFs were received and verified November20; durable evidence is preserved in announcements/CRWD.json and announcements/MDB.json. They remain unlocked and require fresh current-state checks. Missing dates for other companies remain unverified.
 
 Human observations can be incomplete or mistaken; browser caching, wrong clocks, overlooked preliminary publication and incomplete inventories remain risks. Official sources plus SEC are not complete internet surveillance; a check-to-insert race remains. An attestation or SHA does not establish authenticity by itself. The DB protects ordinary application writes and immutable locked snapshots, not a DBA who changes enforcement or a dishonest operator. No eligibility, probability or outcome-quality guarantee follows from passing these checks.
 
@@ -59,9 +59,38 @@ Human observations can be incomplete or mistaken; browser caching, wrong clocks,
 | CRM / December2 | November15,00:00 | November14,21:00 | December2,00:00 |
 | IOT and S / December3 | November16,00:00 | November15,21:00 | December3,00:00 |
 
-All four are within the timing window at the planned Monday session, **conditional on all evidence and other gates**. CRWD/MDB's December1 leads would share the first opening only after their evidence is accepted; they are not currently verified/locked. Other unsupported dates remain unverified. Prepare company-specific current checks using each actual official announcement, news and results URL; do not copy Okta observations to another company. Existing owner-attribution, coverage, timestamp, freshness and SEC requirements are unchanged.
+All four are within the timing window at the planned Monday session, **conditional on all evidence and other gates**. CRWD/MDB’s December1 dates are now supported by the November20 owner-PDF intake; they share the first opening but remain unlocked. GitLab’s November17 official announcement is also verified; see reports/lock_prep_2026-11-20.md. Other unsupported dates remain unverified. Prepare company-specific current checks using each actual official announcement, news and results URL; do not copy Okta observations to another company. Existing owner-attribution, coverage, timestamp, freshness and SEC requirements are unchanged.
 
 The extractor is shelved. Owner extraction review is **deferred, not performed**; do not resume inference, tuning or extraction review. Manual reviewed guidance remains the only target input. Preserve the original random packet/fresh groups and all reservations.
+
+## December 1–3 scoring desk card — reviewed November 20, 2026
+
+**Preparation only: do not run scoring without results and separate owner approval.** The READ ONLY ledger check at 2026-11-21T02:03:36Z found eight predictions for OKTA/CRM/IOT/S, zero scores. GTLB/CRWD/MDB are **not locked**; include them only if a later READ ONLY ledger check confirms actual prospective records. Never create a prediction during scoring.
+
+All targets below are **Q3 FY2027, August1–October31,2026, consolidated reported USD revenue**. All currently verified releases are after market close. Plan to look for the Item2.02 8-K the same evening/next business day; that is a workflow expectation, not a confirmed future filing time. Most 8-K disclosures are due within four business days ([SEC guidance](https://www.sec.gov/files/readan8k.pdf)); for these dates the ordinary outer planning dates are December7/8/9 respectively. A later SEC filing is not the first-publication timestamp, and no filing is not proof of no public result.
+
+| Company | Results date | Check for 8-K / ordinary four-business-day planning date | Exact SEC discovery source |
+|---|---|---|---|
+| Okta (OKTA), locked | Dec1 | Dec1 evening–Dec2 / Dec7 | [CIK0001660134 submissions](https://data.sec.gov/submissions/CIK0001660134.json) |
+| Salesforce (CRM), locked | Dec2 | Dec2 evening–Dec3 / Dec8 | [CIK0001108524 submissions](https://data.sec.gov/submissions/CIK0001108524.json) |
+| Samsara (IOT), locked | Dec3 | Dec3 evening–Dec4 / Dec9 | [CIK0001642896 submissions](https://data.sec.gov/submissions/CIK0001642896.json) |
+| SentinelOne (S), locked | Dec3 | Dec3 evening–Dec4 / Dec9 | [CIK0001583708 submissions](https://data.sec.gov/submissions/CIK0001583708.json) |
+| GitLab (GTLB), conditional | Dec1 | Dec1 evening–Dec2 / Dec7 | [CIK0001653482 submissions](https://data.sec.gov/submissions/CIK0001653482.json) |
+| CrowdStrike (CRWD), conditional | Dec1 | Dec1 evening–Dec2 / Dec7 | [CIK0001535527 submissions](https://data.sec.gov/submissions/CIK0001535527.json) |
+| MongoDB (MDB), conditional | Dec1 | Dec1 evening–Dec2 / Dec7 | [CIK0001441816 submissions](https://data.sec.gov/submissions/CIK0001441816.json) |
+
+1. **Find the actual:** use the existing SEC fetcher for the new Item2.02 8-K and follow its actual **Exhibit99.1 earnings-release link**. The future accessions/exhibit URLs do not exist in this review; do not guess them or use the old guidance exhibit. Record accession, filed date, exact exhibit URL/hash and dateline. Read the consolidated income statement’s **three months ended October31,2026 revenue column**, with headers, USD scale and literal row. No ARR, subscriptions/segment-only revenue, YTD, adjusted or constant-currency substitutes; no YTD subtraction.
+2. **Owner verifies:** issuer/quarter/units, exact locked guidance ID and both prediction UUIDs; amount versus the release and exact matching companyfacts version; earliest public actual/preliminary disclosure (not call time); acquisition/recast/basis compatibility. Keep Salesforce/Okta/SentinelOne growth-only concerns separate from guidance-to-result scoring. Review MongoDB/Firebolt effective accounting date if MDB becomes locked. Any unresolved discrepancy blocks. Preserve actual owner identity/time and evidence; no pre-completed attestation.
+3. **Prepare review files:** follow [SCORING.md](SCORING.md), one `<prediction-UUID>-v1.json` per method. Use existing actual IDs, exact locked guidance, and genuine availability dates. The frozen verifier requires matching companyfacts; a release alone may not yet score. Day-precision filing evidence becomes usable only after the next New York midnight. Wait for missing facts; never backdate. Corrections append new reviews/scores, never overwrite.
+4. **Future commands, only after approval:** refresh the actuals for the companies being scored, then score reviewed UUID files. The same command handles both methods for every row; there is no invented company-specific score flag. Include GTLB/CRWD/MDB in ingestion only if actually locked.
+
+```sh
+.venv/bin/python -m earnings ingest OKTA CRM IOT S --refresh
+.venv/bin/python -m earnings inspect ACTUAL_UUID
+.venv/bin/python -m earnings.score_live --review-dir /absolute/path/reviewed-outcomes --output /absolute/path/new-unique-scoring-execution.json
+```
+
+Inclusive endpoints; unscaled multiclass Brier0..2, lower better. Frozen log score is absent; do not invent clipping or change zero-probability buckets. Publish only after reviewing the score execution and separately refreshing the publication copy. Detailed review fields and safeguards follow below.
 
 ## Scoring-day procedure — after December1–3 results (not executed in this readiness pass)
 

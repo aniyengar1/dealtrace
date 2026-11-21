@@ -1,0 +1,111 @@
+{
+  "company": "ADBE",
+  "reviewed_at": "2026-11-21T00:36:57.927451+00:00",
+  "status": "BLOCKED_UNVERIFIED_RESULTS_PUBLICATION",
+  "verified_call": {
+    "date": "2026-12-09",
+    "time": "14:00",
+    "timezone": "America/Los_Angeles",
+    "source_url": "https://www.adobe.com/investor-relations/events-presentations.html",
+    "quote": "Upcoming events Q4 & FY2026 earnings call Wednesday, December 9, 2026 2:00pm Pacific Time"
+  },
+  "results_publication_date": null,
+  "results_publication_time": null,
+  "no_timing_inference_from_call": true,
+  "source_checks": [
+    {
+      "url": "https://www.adobe.com/investor-relations.html",
+      "checked_at": "2026-11-20T22:27:27.458096+00:00",
+      "status": "unverified",
+      "purpose": "results-publication date evidence only; not financial inputs",
+      "http_status": 200,
+      "sha256": "a579977fb9435293c1d454fbc73319aeb71288b26627d41341d65758ecc281b4",
+      "fetched_at": "2026-11-20T22:27:27.724846+00:00",
+      "body_file": "data/cache/earnings/scaling-readiness-20261120/adobe/a579977fb9435293c1d454fbc73319aeb71288b26627d41341d65758ecc281b4.body",
+      "date_passages": [
+        "fiscal year 2025. Our stock is traded on the Nasdaq under the symbol ADBE. #f8f8f8 Investor highlights Upcoming events Wednesday, December 9, 2026 Q4 & FY2026 earnings call 2:00pm Pacific Time See all upcoming events Latest quarterly results September 10, 2026 Q3 FY2026 earnings press release Q3 FY2026 earnings script and slides Q3 FY2026 investor datasheet Watch webcast Featured event A",
+        " Our stock is traded on the Nasdaq under the symbol ADBE. #f8f8f8 Investor highlights Upcoming events Wednesday, December 9, 2026 Q4 & FY2026 earnings call 2:00pm Pacific Time See all upcoming events Latest quarterly results September 10, 2026 Q3 FY2026 earnings press release Q3 FY2026 earnings script and slides Q3 FY2026 investor datasheet Watch webcast Featured event April 21, 2026 Adobe Summit 2026 Investor Session Investor Presentation Adobe Announces New $25 Billion Stock Repurchase Program Watch webcast style three up, m-spacing, static-links background #f8f8f8"
+      ]
+    },
+    {
+      "url": "https://www.adobe.com/investor-relations/calendar.html",
+      "checked_at": "2026-11-20T22:27:27.737801+00:00",
+      "status": "unverified",
+      "purpose": "results-publication date evidence only; not financial inputs",
+      "http_status": 301
+    },
+    {
+      "url": "https://www.adobe.com/investor-relations/financial-documents.html",
+      "checked_at": "2026-11-20T22:27:27.961313+00:00",
+      "status": "unverified",
+      "purpose": "results-publication date evidence only; not financial inputs",
+      "http_status": 200,
+      "sha256": "2e7ed6ee3936c6a5e32cb40979118726a231ae9152f29946c94b2e3fc148744e",
+      "fetched_at": "2026-11-20T22:27:28.224783+00:00",
+      "body_file": "data/cache/earnings/scaling-readiness-20261120/adobe/2e7ed6ee3936c6a5e32cb40979118726a231ae9152f29946c94b2e3fc148744e.body",
+      "date_passages": []
+    },
+    {
+      "url": "https://news.adobe.com/news/2026/11/adobe-to-announce-q4-and-fy2026-earnings-results",
+      "checked_at": "2026-11-20T22:27:28.269533+00:00",
+      "status": "unverified",
+      "purpose": "results-publication date evidence only; not financial inputs",
+      "http_status": 301
+    },
+    {
+      "url": "https://news.adobe.com/news/2026/11/adobe-to-announce-fourth-quarter-and-fiscal-year-2026-earnings-results",
+      "checked_at": "2026-11-20T22:27:28.813849+00:00",
+      "status": "unverified",
+      "purpose": "results-publication date evidence only; not financial inputs",
+      "http_status": 301
+    },
+    {
+      "url": "https://www.adobe.com/investor-relations/events-presentations.html",
+      "checked_at": "2026-11-20T23:23:44.083867+00:00",
+      "purpose": "earnings-date announcement research only",
+      "status": "retrieved_not_semantically_verified",
+      "http_status": 200,
+      "fetched_at": "2026-11-20T23:23:44.244293+00:00",
+      "sha256": "233948d88c751324c89a13dfce280d4d784129c67f62125b66ba55ef7806d698",
+      "body_file": "data/cache/earnings/scaling-2027q1-dates/ADBE/29edd9f6f3b1c5ad02597fcbc14b57a44e00590dbcb278764f782251017c15ef-233948d88c751324c89a13dfce280d4d784129c67f62125b66ba55ef7806d698.body",
+      "final_url": "https://www.adobe.com/investor-relations/events-presentations.html",
+      "redirects": []
+    },
+    {
+      "url": "https://www.adobe.com/investor-relations/investor-news.html",
+      "checked_at": "2026-11-20T23:23:44.245906+00:00",
+      "purpose": "earnings-date announcement research only",
+      "status": "retrieved_not_semantically_verified",
+      "http_status": 200,
+      "fetched_at": "2026-11-20T23:23:44.461321+00:00",
+      "sha256": "509c2a15bc2a0f1a67cec203b152a7c75596fc9a416b09ce05dfb781a2c39329",
+      "body_file": "data/cache/earnings/scaling-2027q1-dates/ADBE/95ab0f94604388ccb8eec2d6af966d99a8599665465790bde583d0025afeb719-509c2a15bc2a0f1a67cec203b152a7c75596fc9a416b09ce05dfb781a2c39329.body",
+      "final_url": "https://www.adobe.com/investor-relations/investor-news.html",
+      "redirects": []
+    }
+  ],
+  "sec_submissions_source": {
+    "url": "https://data.sec.gov/submissions/CIK0000796343.json",
+    "sha256": "37f363f43ff2b605f1bbcebebe1e2cdd20667256bccf6cd6db9f9d1b71c38de3",
+    "body": "9d696a4c563d1171d5d0741239aa6831b013556f874e278027bb80be62a48e45-37f363f43ff2b605f1bbcebebe1e2cdd20667256bccf6cd6db9f9d1b71c38de3.body",
+    "fetched_at": "2026-11-20T23:44:42.559566+00:00"
+  },
+  "sec_filings_checked": [
+    {
+      "accession": "0000796343-26-000147",
+      "filed": "2026-09-10",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbe-20260910.htm"
+    }
+  ],
+  "conditional_planning_only": {
+    "condition": "Official evidence must first verify December9 results publication, distinct from the call, and support America/New_York US market-date convention. Not accepted lock evidence.",
+    "opening": "2026-11-22T00:00:00-05:00",
+    "opening_pacific": "2026-11-21T21:00:00-08:00",
+    "strict_deadline": "2026-12-09T00:00:00-05:00",
+    "strict_deadline_pacific": "2026-12-08T21:00:00-08:00"
+  },
+  "imports_performed": false,
+  "owner_check_complete": false,
+  "announcement_url": null,
+  "remaining_gap": "No explicit official December9 results-publication statement found in reviewed sources. This is not proof that no announcement exists. Guessed newsroom URLs returned redirects and were not accepted as documents."
+}

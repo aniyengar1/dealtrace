@@ -1,5 +1,7 @@
 # Jan–Feb 2027 scaling research — November 20, 2026
 
+Follow-up: [64-company source-pair and announcement audit](scaling_lock_readiness_2027Q1.md), with a ranked conditional calendar and explicit remaining gaps. The original screen below is preserved; its R1 label was an engine-format screen, not proof of six eligible historical outcomes.
+
 **This is a 100-name season screen, not a claim that 100 companies qualify.** A predeclared 111-name, sector-stratified screen yielded 100 issuers with a Jan–Feb 2026 earnings-event metadata anchor. 67 of the 100 have an agent-reviewed directly issued quarterly revenue range (including explicit center/tolerance ranges) in the retrieved SEC release. The remainder are retained as explicit research gaps/exclusions, not silently accepted. Actual Jan–Feb 2027 publication dates remain unverified. No issuer is production-onboarded or live-lock-ready by this report.
 
 ## Selection and source discipline

@@ -1,0 +1,90 @@
+{
+  "review_date_pacific": "2026-11-20",
+  "base_commit": "2124499a73a3320b907fbe260e3d847a0d1ab628",
+  "scope": "Research and preparation only; no locks, ledger writes, scoring, production imports, extractor experiment, provider calls or website changes.",
+  "historical_audit": {
+    "prepared_at": "2026-11-21T02:22:30.744845+00:00",
+    "financial_source_cutoff": "2026-11-20",
+    "universe_count": 64,
+    "tier_counts": {
+      "A": 11,
+      "B": 52,
+      "C": 1
+    },
+    "six_or_more_source_matched": 63,
+    "complete_four_announcement_pairs": 11,
+    "operationally_live_ready": 0,
+    "source_matched_total": 472,
+    "audited_quarter_total": 512
+  },
+  "tests": {
+    "command": "DATABASE_URL='' .venv/bin/python -m pytest tests/earnings/test_scaling_research.py tests/earnings/test_live_baseline.py tests/earnings/test_smoothed_baseline.py tests/earnings/test_entry_window.py tests/earnings/test_current_checks.py tests/earnings/test_scoring_readiness.py tests/earnings/test_publication.py -q",
+    "passed": 69,
+    "skipped": 41,
+    "skip_reason": "Database disabled deliberately: shared autouse fixture applies migrations; no database-write tests authorized in this pass.",
+    "new_research_tests": 8
+  },
+  "fixed_input_harness": {
+    "cases": 25,
+    "methods": [
+      "quarter-frequency-v1",
+      "quarter-frequency-laplace-v1"
+    ],
+    "database_access": false,
+    "ledger_writes_possible": false,
+    "artifact_sha256": "bf292ddaea4e963d0eea7f7f72bc76cc2917b01366e78a12e122e6588a4505be"
+  },
+  "read_only_harness": {
+    "execution_started_at": "2026-11-21T02:02:56.669601+00:00",
+    "execution_finished_at": "2026-11-21T02:02:56.689090+00:00",
+    "clock_source": "PostgreSQL clock_timestamp()",
+    "ledger_count_before": 8,
+    "ledger_count_after": 8,
+    "ledger_writes_possible": false,
+    "transaction_read_only": "on",
+    "schema_compatible": true,
+    "offline_sources": true,
+    "source_checks_performed": false,
+    "locked": []
+  },
+  "read_only_rejection_counts": {
+    "ALREADY_LOCKED": 8,
+    "READ_ONLY_CURRENT_CHECK_REQUIRED": 3,
+    "UNVERIFIED_RELEASE_DATE": 3
+  },
+  "ledger_comparison": {
+    "checked_at": "2026-11-21T02:03:36.737522+00:00",
+    "transaction_read_only": "on",
+    "predictions_before": 8,
+    "predictions_after": 8,
+    "scores_before": 0,
+    "scores_after": 0,
+    "ledger_sha256_before": "8bca62620e2355b3151c73e0e3118681f1abbf03f8cae006c9e99e30a160dead",
+    "ledger_sha256_after": "8bca62620e2355b3151c73e0e3118681f1abbf03f8cae006c9e99e30a160dead",
+    "ledger_identical": true,
+    "historical_observations_unchanged": true,
+    "tickers": [
+      "CRM",
+      "IOT",
+      "OKTA",
+      "S"
+    ]
+  },
+  "protected_changes_since_base": [],
+  "preserved_tags": {
+    "session3-current-state-v2-lock-ready-20261114": "2ef3ef1a96f7e626ab53de33d4a58f160ec4302d",
+    "session3-entry17-lock-ready-20261115": "fa65b8686988323da86edd7c9b7ef22fc1c926f0",
+    "session3-lock-ready": "4fa9ec0f58e1e8c4701c6d6ea52f04653a969385",
+    "session3-two-method-lock-ready-20261113": "1e422e4c1d1e537884668666438ffde782a2dddf",
+    "session3-two-method-lock-ready-20261113-r2": "d48caa24915b2ee837ecfc4dc720ad5b0aca53c5"
+  },
+  "adobe": "Publication unverified; no conditional financial imports.",
+  "remaining_gaps": "53 incomplete four-quarter announcement studies; all 64 future results dates unverified planning estimates. Company onboarding/corporate-scope certification remains pending. Rambus below six historical source pairs.",
+  "source_review_corrections": [
+    "Compatible 53-week Q4 derivations permit the extra week in either the first nine months or Q4, with exact source boundaries and release reconciliation.",
+    "LSCC acquisition closed before issuance; both guide and result explicitly include AMI from July27. Outcome comparability cleared separately from growth comparison.",
+    "AKAM September24 commercial transaction is not an acquisition; source explicitly states no impact to2026 revenue guidance.",
+    "DIOD furnished call transcripts repeat the same quarter range; their later SEC availability and evidence are preserved.",
+    "Post-close DOCS/ONTO reaffirmations are excluded consistently with other completed-period indications."
+  ]
+}
