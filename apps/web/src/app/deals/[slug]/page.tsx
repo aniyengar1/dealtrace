@@ -116,6 +116,12 @@ export default async function DealPage({
         </div>
       </div>
 
+      {metrics?.dataQualityFlag === "proposals_not_extracted" && (
+        <p className="mt-3 rounded-md border border-border bg-surface px-3 py-2 text-sm text-ink-muted">
+          Proposal history could not be extracted from this filing.
+        </p>
+      )}
+
       <dl className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <Card className="p-3.5">
           <dt className="text-xs text-ink-muted">{finalPriceIsRatio ? "Exchange ratio" : "Price per share"}</dt>

@@ -48,6 +48,12 @@ export interface DealMetricsRow {
   pricePlausible: boolean | null;
   signingDate: string | null;
   considerationType: string | null;
+  // 'proposals_not_extracted' for a genuine (non-excluded) sale process
+  // whose extraction produced zero Proposal records at all (Twitter/
+  // Musk, New Relic) -- null otherwise. Still shown on the site; only
+  // affects whether its bidder/proposal/bump figures look misleadingly
+  // like "0" instead of "unknown." See src.bulk_stats._proposals_not_extracted.
+  dataQualityFlag: string | null;
 }
 
 interface DealMetricsDbRow {
@@ -71,6 +77,7 @@ interface DealMetricsDbRow {
   price_plausible: boolean | null;
   signing_date: string | null;
   consideration_type: string | null;
+  data_quality_flag: string | null;
 }
 
 function toRow(r: DealMetricsDbRow): DealMetricsRow {
@@ -95,6 +102,7 @@ function toRow(r: DealMetricsDbRow): DealMetricsRow {
     pricePlausible: r.price_plausible,
     signingDate: r.signing_date,
     considerationType: r.consideration_type,
+    dataQualityFlag: r.data_quality_flag,
   };
 }
 
@@ -103,7 +111,7 @@ const BASE_SELECT = `
     dm.deal_id, d.slug, d.deal_name, dm.is_canonical, dm.target_display, dm.acquirer_display,
     dm.n_parties_contacted, dm.n_bidders, dm.n_proposals, dm.first_price, dm.final_price, dm.final_price_is_ratio,
     dm.pct_bump, dm.pct_bump_exclusion_reason, dm.days_first_contact_to_signing,
-    dm.days_first_proposal_to_signing, dm.first_bidder_won, dm.price_plausible,
+    dm.days_first_proposal_to_signing, dm.first_bidder_won, dm.price_plausible, dm.data_quality_flag,
     (SELECT e.date_start FROM events e JOIN extraction_runs r2 ON r2.id = e.run_id
      WHERE r2.deal_id = d.id AND e.event_type = 'signing' AND e.date_start IS NOT NULL
      ORDER BY e.date_start DESC LIMIT 1) AS signing_date,

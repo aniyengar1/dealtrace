@@ -294,15 +294,29 @@ def compute_metrics_for_deal(d: dict) -> dict:
         acquirer_display = resolve_acquirer_display(d["acquirer"], d["target"], d["proposals"], d["events"], d["slug"])
         deal_type, excluded_from_stats, exclusion_reason = classify_deal(d["slug"], d["target"], d["acquirer"], d["events"])
 
+    n_bidders = bulk_stats.compute_n_bidders_for_deal(d)
+    n_proposals = bulk_stats.compute_n_proposals_for_deal(d)
+    # Only for deals we're otherwise treating as a genuine sale process
+    # -- an excluded deal's own exclusion_reason already explains its
+    # zero bidders/proposals; this flag is for the opposite case, a
+    # real process with nothing to show because extraction produced no
+    # Proposal records at all (see bulk_stats._proposals_not_extracted).
+    data_quality_flag = (
+        "proposals_not_extracted"
+        if not excluded_from_stats and bulk_stats._proposals_not_extracted_counts(n_proposals, n_bidders)
+        else None
+    )
+
     return {
         "target_display": target_display,
         "acquirer_display": acquirer_display,
         "deal_type": deal_type,
         "excluded_from_stats": excluded_from_stats,
         "exclusion_reason": exclusion_reason,
+        "data_quality_flag": data_quality_flag,
         "n_parties_contacted": bulk_stats.compute_n_parties_contacted_for_deal(d),
-        "n_bidders": bulk_stats.compute_n_bidders_for_deal(d),
-        "n_proposals": bulk_stats.compute_n_proposals_for_deal(d),
+        "n_bidders": n_bidders,
+        "n_proposals": n_proposals,
         "first_price": first_price,
         "final_price": final_price,
         "final_price_is_ratio": bulk_stats.compute_final_price_is_ratio_for_deal(d),
@@ -328,11 +342,11 @@ def refresh_deal_metrics(conn: psycopg.Connection) -> int:
             """
             INSERT INTO deal_metrics (
                 deal_id, is_canonical, target_display, acquirer_display, deal_type, excluded_from_stats,
-                exclusion_reason, n_parties_contacted, n_bidders,
+                exclusion_reason, data_quality_flag, n_parties_contacted, n_bidders,
                 n_proposals, first_price, final_price, final_price_is_ratio, price_plausible, pct_bump, pct_bump_exclusion_reason,
                 pct_bump_bucket, days_first_contact_to_signing, days_first_proposal_to_signing,
                 first_bidder_won, computed_at
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, now())
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, now())
             ON CONFLICT (deal_id) DO UPDATE SET
                 is_canonical = EXCLUDED.is_canonical,
                 target_display = EXCLUDED.target_display,
@@ -340,6 +354,7 @@ def refresh_deal_metrics(conn: psycopg.Connection) -> int:
                 deal_type = EXCLUDED.deal_type,
                 excluded_from_stats = EXCLUDED.excluded_from_stats,
                 exclusion_reason = EXCLUDED.exclusion_reason,
+                data_quality_flag = EXCLUDED.data_quality_flag,
                 n_parties_contacted = EXCLUDED.n_parties_contacted,
                 n_bidders = EXCLUDED.n_bidders,
                 n_proposals = EXCLUDED.n_proposals,
@@ -357,7 +372,7 @@ def refresh_deal_metrics(conn: psycopg.Connection) -> int:
             """,
             (
                 d["deal_id"], is_canonical_by_id[d["deal_id"]], m["target_display"], m["acquirer_display"],
-                m["deal_type"], m["excluded_from_stats"], m["exclusion_reason"],
+                m["deal_type"], m["excluded_from_stats"], m["exclusion_reason"], m["data_quality_flag"],
                 m["n_parties_contacted"], m["n_bidders"], m["n_proposals"],
                 m["first_price"], m["final_price"], m["final_price_is_ratio"], m["price_plausible"], m["pct_bump"], m["pct_bump_exclusion_reason"],
                 m["pct_bump_bucket"], m["days_first_contact_to_signing"],
