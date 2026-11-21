@@ -20,4 +20,11 @@ describe('snapshot-only SQL reader',()=>{
   mock.query.mockImplementation(async(sql:string)=>({rows:sql.includes('current_user')?[{role:'dealtrace_web'}]:sql.includes('SELECT payload')?[{payload:{}}]:[]}));expect((await readPublishedPredictions()).kind).toBe('invalid');expect(await readPublishedBacktest()).toBeNull();
   vi.stubEnv('CROSSCHECK_PUBLISHED_DATABASE_URL','');mock.constructor.mockClear();expect((await readPublishedPredictions()).kind).toBe('missing');expect(mock.constructor).not.toHaveBeenCalled();
  });
+ it('does not publish an old or incomplete backtest without the pooled comparator and subgroup counts',async()=>{
+  for(const alter of [(r:ReturnType<typeof fixture>)=>delete r.summary.mean_brier['walk-forward-pooled-base-rate'],(r:ReturnType<typeof fixture>)=>{r.by_history_mode.company.n++},(r:ReturnType<typeof fixture>)=>{r.summary.below_guidance.interval.high='1.1'},(r:ReturnType<typeof fixture>)=>{r.below_company_counts.LULU.below=8}]){
+   const payload=fixture('backtest');alter(payload);
+   mock.query.mockImplementation(async(sql:string)=>({rows:sql.includes('current_user')?[{role:'dealtrace_web'}]:sql.includes('SELECT payload')?[{payload}]:[]}));
+   expect(await readPublishedBacktest()).toBeNull();
+  }
+ });
 });

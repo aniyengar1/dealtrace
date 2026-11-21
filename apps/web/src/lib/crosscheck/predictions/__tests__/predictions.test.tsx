@@ -63,6 +63,8 @@ describe('publication copy',()=>{
   const backtest=JSON.parse(readFileSync(path.resolve(process.cwd(),'../../earnings/publication/backtest.json'),'utf8'));
   const html=renderToStaticMarkup(<Predictions state={{kind:'ready',snapshot:validateSnapshot(source())}} backtest={backtest}/>);
   expect(html).toContain('Raw history');expect(html).toContain('Smoothed');expect(html).toContain('BACKTEST');expect(html).toContain('532 scored quarters');expect(html).not.toContain('Every method keeps');expect(html).not.toContain('Laplace +1');
+  expect(html).toContain('Walk-forward pooled base rate');expect(html).toContain('0.5017');expect(html).toContain('Company history (108)');expect(html).toContain('Pooled fallback (424)');
+  expect(html).toContain('Below guidance: 4/532 (0.75%)');expect(html).toContain('0.29%');expect(html).toContain('1.92%');expect(html).toContain('not adjusted');expect(html).toContain('LULU');expect(html).toContain('2 / 7');expect(html).toContain('Business services (SIC 73)');expect(html).not.toContain('beat the base rate');
  });
 
  it('keeps scoped classes and explicit separators in server-rendered content',()=>{
@@ -72,4 +74,10 @@ describe('publication copy',()=>{
   expect(html).toContain(' · </span>');expect(html).toContain('Locked management range:</span> <strong>');
  });
 
+});
+
+it('uses two-decimal display only when explicitly requested for rare-outcome statistics',()=>{
+ expect(percent('0.007518796992481203',2)).toBe('0.75%');
+ expect(percent('0.007518796992481203')).toBe('0.8%');
+ expect(percent('1',2)).toBe('100%');
 });

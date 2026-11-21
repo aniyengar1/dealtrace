@@ -4,10 +4,13 @@ function parts(value:string){
   if(!match)throw new Error('Invalid decimal');
   return {n:BigInt(match[1]+(match[2]??'')),scale:BigInt(10)**BigInt((match[2]??'').length)};
 }
-export function percent(value:string){
-  const {n,scale}=parts(value);const numerator=n*BigInt(1000);let q=numerator/scale;const r=numerator%scale;
+export function percent(value:string,places=1){
+  if(![1,2].includes(places))throw new Error('Unsupported display precision');
+  const power=BigInt(10)**BigInt(places);
+  const {n,scale}=parts(value);const numerator=n*BigInt(100)*power;let q=numerator/scale;const r=numerator%scale;
   if(r*BigInt(2)>scale||(r*BigInt(2)===scale&&q%BigInt(2)===BigInt(1)))q++;
-  return q%BigInt(10)===BigInt(0)?`${q/BigInt(10)}%`:`${q/BigInt(10)}.${q%BigInt(10)}%`;
+  const fraction=(q%power).toString().padStart(places,'0').replace(/0+$/,'');
+  return `${q/power}${fraction?'.'+fraction:''}%`;
 }
 export function usd(value:string){
   const m=/^(\d+)(?:\.(\d+))?$/.exec(value);if(!m)throw new Error('Invalid amount');
@@ -55,3 +58,4 @@ export function highestDisplayedBuckets(p:Record<'below'|'within'|'above',string
 
 export function scoreLabel(value:string){return roundedScaled(value,BigInt(1),4);}
 export function validBrier(value:string){try{const {n,scale}=parts(value);return n<=BigInt(2)*scale;}catch{return false;}}
+export function validRate(value:string){try{const {n,scale}=parts(value);return n<=scale;}catch{return false;}}

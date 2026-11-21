@@ -14,7 +14,7 @@ def row(i, *, outcome='above', end=None, public='2024-01-01T05:00:00+00:00'):
 
 def fixture():
     rows=[row(i,outcome=['below','within','within','above','above','above'][i-1]) for i in range(1,7)]
-    target=row(7);target['release_date']='2024-08-15'
+    target=row(7);target['release_date']='2024-08-15';target['public_available_at']='2024-08-16T04:00:00+00:00'
     return rows+[target]
 
 
@@ -76,3 +76,63 @@ def test_real_backtest_training_ids_have_no_historical_leakage():
             assert prior['period_end']<p['period_end']
             assert baseline.aware(prior['public_available_at'])<=when
         assert all(sum(Decimal(v) for v in probs.values())==1 for probs in p['probabilities'].values())
+
+
+def test_pooled_benchmark_uses_all_prior_public_companies_without_own_switch():
+    from earnings.backtest_walkforward import pooled_base_rate, POOLED
+    rows=fixture()
+    other=row(8,outcome='within',end='2024-07-31');other['company']='Y'
+    rows.append(other)
+    cases,_=evaluate(rows)
+    target=next(r for r in cases if r['id']=='7')
+    # Frozen target uses six own earlier quarters; all-public benchmark also
+    # uses Y's already-public later-ended quarter, not target X itself.
+    assert target['selection']['counts']=={'below':1,'within':2,'above':3}
+    pool=target['pooled_baseline_selection']
+    assert pool['counts']=={'below':1,'within':3,'above':3}
+    assert pool['sample_size']==7 and '8' in pool['historical_ids'] and '7' not in pool['historical_ids']
+    assert target['probabilities'][POOLED]==pooled_base_rate(rows,target['simulated_prediction_time'])['probabilities']
+    with localcontext() as ctx:
+        ctx.prec=80
+        assert abs(target['brier'][POOLED]-Decimal(26)/49)<Decimal('1e-23')
+
+
+def test_pooled_benchmark_strict_timestamp_and_unavailable_or_ineligible_exclusions():
+    from earnings.backtest_walkforward import pooled_base_rate
+    from earnings.actuals import Blocked
+    import pytest
+    when='2024-08-01T04:00:00+00:00'
+    prior=row(1,public='2024-08-01T03:59:59.999999+00:00')
+    at=row(2,public=when);after=row(3,public='2024-08-01T04:00:00.000001+00:00')
+    blocked=row(4);blocked['status']='blocked'
+    assert pooled_base_rate([prior,at,after,blocked],when)['historical_ids']==['1']
+    with pytest.raises(Blocked):pooled_base_rate([at,after,blocked],when)
+    with pytest.raises(ValueError,match='one version'):pooled_base_rate([prior,{**prior,'id':'duplicate'}],when)
+
+
+def test_wilson_interval_hand_reference_and_zero_or_all_successes():
+    from earnings.backtest_walkforward import wilson_interval
+    import pytest
+    ci=wilson_interval(4,532)
+    assert abs(ci['low']-Decimal('0.002927685648253535'))<Decimal('1e-18')
+    assert abs(ci['high']-Decimal('0.019171124784883501'))<Decimal('1e-18')
+    assert wilson_interval(0,28)['low']==0
+    assert wilson_interval(28,28)['high']==1
+    with pytest.raises(ValueError):wilson_interval(1,0)
+
+
+def test_saved_pooled_ids_are_strictly_available_and_subgroups_partition_sample():
+    from earnings.backtest_walkforward import POOLED
+    rows,_,_,_=load_observations();lookup={r['id']:r for r in rows}
+    saved=json.loads((Path(__file__).resolve().parents[2]/'earnings/reports/backtest_walkforward.json').read_text())
+    for p in saved['evaluated']:
+        when=baseline.aware(p['simulated_prediction_time']);pool=p['pooled_baseline_selection']
+        assert p['id'] not in pool['historical_ids']
+        expected={r['id'] for r in rows if baseline.aware(r['public_available_at'])<when}
+        assert set(pool['historical_ids'])==expected
+        assert sum(pool['counts'].values())==pool['sample_size']==len(expected)
+        assert Decimal(p['brier'][POOLED])==baseline.brier(p['probabilities'][POOLED],p['outcome'])
+    assert sum(g['n'] for g in saved['by_history_mode'].values())==saved['summary']['n']==532
+    assert sum(g['n'] for g in saved['below_by_sector'].values())==532
+    assert sum(g['below'] for g in saved['below_by_sector'].values())==4
+    assert sum(g['outcomes'].get('below',0) for g in saved['by_history_mode'].values())==4

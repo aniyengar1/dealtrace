@@ -12,3 +12,5 @@
 .companyHeading,.method+.method,.footer{border-color:var(--color-border)}
 .probabilities .leading{border-color:var(--color-accent);background:var(--color-surface-raised);box-shadow:none}
 .methodHeading strong{cursor:help}.backtest{margin-top:32px;padding:24px}.backtest h2{font-size:1.5rem;margin:8px 0}.backtest p{margin:10px 0}.backtest table{width:100%;max-width:480px;margin:18px 0;font-variant-numeric:tabular-nums}.backtest th,.backtest td{text-align:left;padding:8px;border-bottom:1px solid var(--color-border)}
+.backtest table{max-width:100%}.backtest details{margin:18px 0}.backtest summary{cursor:pointer}
+@media(max-width:640px){.backtest table{display:block;overflow-x:auto}}
