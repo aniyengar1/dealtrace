@@ -11,6 +11,7 @@ from zoneinfo import ZoneInfo
 from . import baseline, history, smoothed_baseline
 from .actuals import Blocked
 from .models import dumps
+from .backtest_significance import paired_company_bootstrap, sentence as bootstrap_sentence
 
 ROOT = Path(__file__).resolve().parent
 POOLED = 'walk-forward-pooled-base-rate'
@@ -161,6 +162,7 @@ def run():
     assert set(companies)==set(sectors)
     result['source_hashes']['sector_metadata_sha256']=hashlib.sha256(sector_path.read_bytes()).hexdigest()
     result['by_history_mode']={mode:summary([r for r in cases if r['selection']['mode']==mode]) for mode in ['company','pooled']}
+    result['company_cluster_bootstrap']=paired_company_bootstrap(cases)
     result['below_by_sector']={sector:{**below_summary([r for r in cases if sectors[r['company']]['sector']==sector]),'companies':sorted(c for c in companies if sectors[c]['sector']==sector)} for sector in sorted({v['sector'] for v in sectors.values()})}
     result['below_cases']=[{k:r[k] for k in ['id','company','period_start','period_end','actual_id','guidance_id','release_date']} for r in cases if r['outcome']=='below']
     with localcontext() as ctx:
@@ -186,6 +188,11 @@ def report(d):
     interval=d["summary"]["below_guidance"]["interval"]
     lines[16:16]=["",f"**Below guidance: 4/532 = {d['summary']['outcome_shares']['below']*100:.4f}%; nominal 95% Wilson interval {interval['low']*100:.4f}%–{interval['high']*100:.4f}%.** Misses occur in only three companies; this independent-trial interval is not cluster-adjusted. See company/sector counts and limitations below.",""]
     lines+=followup_report(d)
+    bootstrap=d['company_cluster_bootstrap']
+    lines+=['','## Paired company-cluster bootstrap — company-history subset','',bootstrap_sentence(bootstrap),'',
+            'Resample the '+str(bootstrap['n_companies'])+' companies with replacement, drawing that many company clusters per resample and retaining every paired quarter in each selected cluster, including multiplicity. For each resample, divide the sum of Smoothed-minus-pooled quarter differences by the total number of resampled quarters; this targets the per-prediction mean, not an unweighted mean of company means. Compute the 2.5th/97.5th percentiles using linear interpolation at (10,000−1)×p. Company sizes are one or two quarters, so quarter counts vary across draws. Original predictions, training pools and probabilities are not refit. Exact case IDs/scores, fixed seed, cluster sizes and distribution/draw hashes are preserved in the companion JSON. No seed or interval tuning was performed.','',
+            'The interval accounts for clustering within each company, conditional on this selected cohort and its fixed predictions. It does not account for dependence across companies from shared economic conditions or overlapping training sets, curation/survivorship, or choosing this subgroup after viewing results. It is not a fresh evaluation or a guarantee of performance on new issuers. The below-guidance Wilson interval above remains separate and is not made cluster-adjusted by this score comparison.','',
+            'Reference for paired/percentile bootstrap terminology: [SciPy bootstrap documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html). This implementation uses Python integer RNG draws and Decimal, not SciPy float arithmetic.']
     for i,line in enumerate(lines):
         if line.startswith('|---'):
             lines[i]='|'+'---|'*(lines[i-1].count('|')-1)
@@ -217,5 +224,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--output-dir',type=Path,default=ROOT/'reports');a=p.parse_args();d=run();a.output_dir.mkdir(parents=True,exist_ok=True)
     (a.output_dir/'backtest_walkforward.json').write_text(dumps(d)+'\n');(a.output_dir/'backtest_walkforward.md').write_text(report(d))
     public={'kind':d['kind'],'executed_at':d['executed_at'],'company_count':len(d['companies']),'source_matched_targets':d['source_matched_target_count'],'summary':d['summary'],'source_hashes':d['source_hashes'],'by_history_mode':d['by_history_mode'],'below_by_sector':d['below_by_sector'],'below_company_counts':{c:{'n':v['n'],'below':v['outcomes'].get('below',0)} for c,v in d['per_company'].items()}}
+    public['company_cluster_bootstrap']=d['company_cluster_bootstrap']
+    public['company_cluster_bootstrap_sentence']=bootstrap_sentence(d['company_cluster_bootstrap'])
     (ROOT/'publication/backtest.json').write_text(dumps(public)+'\n');print(dumps(public))
 if __name__=='__main__':main()

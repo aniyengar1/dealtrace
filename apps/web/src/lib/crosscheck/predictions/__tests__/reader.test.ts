@@ -27,4 +27,9 @@ describe('snapshot-only SQL reader',()=>{
    expect(await readPublishedBacktest()).toBeNull();
   }
  });
+ it('fails closed when the published bootstrap is incomplete',async()=>{
+  const payload=fixture('backtest');delete payload.company_cluster_bootstrap;
+  mock.query.mockImplementation(async(sql:string)=>({rows:sql.includes('current_user')?[{role:'dealtrace_web'}]:sql.includes('SELECT payload')?[{payload}]:[]}));
+  expect(await readPublishedBacktest()).toBeNull();
+ });
 });

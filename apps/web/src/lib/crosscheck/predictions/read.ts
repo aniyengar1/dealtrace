@@ -43,6 +43,9 @@ export async function readPublishedBacktest():Promise<BacktestSummary|null>{
   if(raw.summary.below_guidance.n!==raw.summary.n||raw.summary.below_guidance.below!==raw.summary.outcomes.below)throw new Error('Invalid below count');
   const sectors=Object.values(raw.below_by_sector),companies=Object.values(raw.below_company_counts);
   if(companies.length!==raw.company_count||companies.some(c=>!count(c.n)||!count(c.below)||c.below>c.n)||sectors.reduce((n,s)=>n+s.n,0)!==raw.summary.n||companies.reduce((n,s)=>n+s.n,0)!==raw.summary.n||sectors.reduce((n,s)=>n+s.below,0)!==raw.summary.outcomes.below||companies.reduce((n,s)=>n+s.below,0)!==raw.summary.outcomes.below)throw new Error('Invalid descriptive groups');
+  const boot=raw.company_cluster_bootstrap;
+  const validDifference=(v:string)=>typeof v==='string'&&validBrier(v.replace(/^-/,''));
+  if(boot?.kind!=='BACKTEST_PAIRED_COMPANY_CLUSTER_BOOTSTRAP_NOT_LIVE'||boot.n_predictions!==raw.by_history_mode.company.n||!Number.isInteger(boot.n_companies)||boot.n_companies<2||boot.n_companies>raw.company_count||boot.resamples!==10000||boot.seed!==20261121||typeof boot.excludes_zero!=='boolean'||![boot.mean_difference,boot.interval.low,boot.interval.high].every(validDifference)||typeof raw.company_cluster_bootstrap_sentence!=='string'||!raw.company_cluster_bootstrap_sentence.length)throw new Error('Invalid bootstrap');
   return raw;
  }catch{return null;}
 }

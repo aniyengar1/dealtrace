@@ -65,6 +65,7 @@ describe('publication copy',()=>{
   expect(html).toContain('Raw history');expect(html).toContain('Smoothed');expect(html).toContain('BACKTEST');expect(html).toContain('532 scored quarters');expect(html).not.toContain('Every method keeps');expect(html).not.toContain('Laplace +1');
   expect(html).toContain('Walk-forward pooled base rate');expect(html).toContain('0.5017');expect(html).toContain('Company history (108)');expect(html).toContain('Pooled fallback (424)');
   expect(html).toContain('Below guidance: 4/532 (0.75%)');expect(html).toContain('0.29%');expect(html).toContain('1.92%');expect(html).toContain('not adjusted');expect(html).toContain('LULU');expect(html).toContain('2 / 7');expect(html).toContain('Business services (SIC 73)');expect(html).not.toContain('beat the base rate');
+  expect(html).toContain('108 company-history predictions across 64 companies');expect(html).toContain('[-0.16700, 0.00402]');expect(html).toContain('includes zero');expect(html).toContain('10,000 resamples, seed 20261121');
  });
 
  it('keeps scoped classes and explicit separators in server-rendered content',()=>{
