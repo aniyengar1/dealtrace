@@ -39,13 +39,29 @@ export interface IncludedDealsSummary {
 // listCanonicalDealMetrics) and the same "since" floor, computed once
 // here instead of drifting into two separately hand-maintained numbers.
 export async function getIncludedDealsSummary(): Promise<IncludedDealsSummary> {
+  // Per-deal signing year has to be derived the same way
+  // dealMetrics.ts's BASE_SELECT derives signingDate -- the single
+  // latest-dated "signing" event for that deal -- not a flat MIN/MAX
+  // over every signing-typed event joined in. A background section can
+  // legitimately contain more than one "signing" event (MoneyGram's
+  // narrative mentions its 2017 agreement with Ant Financial, which
+  // fell through, before the actual 2022 MDP signing this deal
+  // tracks); averaging/MIN-ing across all of them pulled a stray 2017
+  // into "since YYYY" even though every included deal's OWN latest
+  // signing -- the figure the year filter and this stat both need to
+  // agree on -- falls in 2020 or later.
   const rows = await query<{ count: number; min_year: number | null }>(
-    `SELECT count(DISTINCT dm.deal_id)::int AS count,
-            MIN(EXTRACT(YEAR FROM e.date_start))::int AS min_year
-     FROM deal_metrics dm
-     LEFT JOIN extraction_runs r ON r.deal_id = dm.deal_id
-     LEFT JOIN events e ON e.run_id = r.id AND e.event_type = 'signing' AND e.date_start IS NOT NULL
-     WHERE dm.is_canonical AND NOT dm.excluded_from_stats`
+    `SELECT count(*)::int AS count, MIN(signing_year)::int AS min_year
+     FROM (
+       SELECT (
+         SELECT EXTRACT(YEAR FROM e.date_start)::int
+         FROM events e JOIN extraction_runs r ON r.id = e.run_id
+         WHERE r.deal_id = dm.deal_id AND e.event_type = 'signing' AND e.date_start IS NOT NULL
+         ORDER BY e.date_start DESC LIMIT 1
+       ) AS signing_year
+       FROM deal_metrics dm
+       WHERE dm.is_canonical AND NOT dm.excluded_from_stats
+     ) sub`
   );
   return { count: rows[0]?.count ?? 0, minSigningYear: rows[0]?.min_year ?? null };
 }

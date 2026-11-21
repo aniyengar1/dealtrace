@@ -112,11 +112,20 @@ async function resolveDealSlug(request: NextRequest): Promise<NextResponse | nul
   return null;
 }
 
-// Pass-through for now -- no auth exists yet. The matcher already scopes
-// this to the review routes so turning on real auth later (check a
+// /review has no real auth yet, so it's gated behind an env var instead
+// of being reachable by anyone who guesses a slug: REVIEW_ENABLED=true
+// locally (see .env.example), left unset on Vercel so the whole review
+// queue 404s in production. Swapping this for real auth later (check a
 // session cookie, redirect to a login page if absent) is a change
-// confined to this one file.
+// confined to this one file -- the matcher already scopes it to the
+// review routes.
 export async function proxy(request: NextRequest) {
+  if (request.nextUrl.pathname.startsWith("/review")) {
+    if (process.env.REVIEW_ENABLED !== "true") {
+      return notFoundResponse();
+    }
+    return NextResponse.next();
+  }
   if (request.nextUrl.pathname.startsWith("/deals/")) {
     const result = await resolveDealSlug(request);
     if (result) return result;
