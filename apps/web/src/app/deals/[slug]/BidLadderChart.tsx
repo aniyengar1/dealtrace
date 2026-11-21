@@ -237,13 +237,13 @@ export function BidChart({
                 stroke="var(--color-border)"
                 strokeWidth={1}
               />
-              <text x={MARGIN.left - 8} y={yScale(price)} textAnchor="end" dominantBaseline="middle" fontSize={11} fill="var(--color-ink-muted)">
+              <text x={MARGIN.left - 8} y={yScale(price)} textAnchor="end" dominantBaseline="middle" fontSize={11} className="font-mono" fill="var(--color-ink-muted)">
                 {formatPrice(price)}
               </text>
             </g>
           ))}
           {xTicks.map((t) => (
-            <text key={t} x={xScale(t)} y={PANEL_HEIGHT - 10} textAnchor="middle" fontSize={10} fill="var(--color-ink-muted)">
+            <text key={t} x={xScale(t)} y={PANEL_HEIGHT - 10} textAnchor="middle" fontSize={10} className="font-mono" fill="var(--color-ink-muted)">
               {formatDate(isoDate(new Date(t)))}
             </text>
           ))}
@@ -262,7 +262,7 @@ export function BidChart({
               {/* Left edge, not the right -- the right margin is
                   reserved for per-bidder end-of-line labels, and the
                   final point often lands right on this line. */}
-              <text x={MARGIN.left + 6} y={yScale(finalPrice) - 6} fontSize={11} fill="var(--color-positive)">
+              <text x={MARGIN.left + 6} y={yScale(finalPrice) - 6} fontSize={11} className="font-mono" fill="var(--color-positive)">
                 {finalPriceLabel}
               </text>
             </g>

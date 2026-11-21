@@ -89,7 +89,7 @@ export default async function DealsPage({
       ) : (
         <div className="mt-6 overflow-x-auto rounded-lg border border-border">
           <table className="w-full text-left text-sm">
-            <thead className="sticky top-[57px] z-10 border-b border-border bg-surface text-xs uppercase tracking-wide text-ink-muted">
+            <thead className="sticky top-[57px] z-10 border-b border-border bg-surface font-mono text-xs uppercase tracking-wide text-ink-muted">
               <tr>
                 <th className="px-3 py-2.5 font-medium">Target</th>
                 <th className="px-3 py-2.5 font-medium">Acquirer</th>

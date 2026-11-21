@@ -85,7 +85,7 @@ export function HorizontalTimeline({
           {ticks.map((t) => (
             <div key={t.getTime()} className="absolute top-0 flex flex-col items-start" style={{ left: xOf(t) }}>
               <div className="h-2 w-px bg-border-strong" />
-              <span className="mt-0.5 whitespace-nowrap text-[10px] text-ink-faint">
+              <span className="mt-0.5 whitespace-nowrap font-mono text-[10px] text-ink-faint">
                 {t.toLocaleDateString("en-US", { month: "short", year: "2-digit", timeZone: "UTC" })}
               </span>
             </div>

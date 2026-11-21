@@ -234,3 +234,24 @@ export function availableYears(rows: DealMetricsRow[]): string[] {
   }
   return Array.from(years).sort((a, b) => Number(b) - Number(a));
 }
+
+export interface LatestAddedDeal {
+  slug: string;
+  targetDisplay: string;
+  acquirerDisplay: string;
+  signingDate: string | null;
+}
+
+// Most recently *added to the dataset* (deal_metrics.computed_at),
+// not most recently signed -- a bulk-load run can backfill a deal
+// signed years ago, and "latest deal added" on the home page should
+// reflect that the pipeline just ran, not quietly restate whichever
+// deal happens to have the newest signing date.
+export async function getLatestAddedDeal(): Promise<LatestAddedDeal | null> {
+  const row = await queryOne<{ slug: string; target_display: string; acquirer_display: string; signing_date: string | null }>(
+    `${BASE_SELECT} WHERE dm.is_canonical AND NOT dm.excluded_from_stats ORDER BY dm.computed_at DESC LIMIT 1`
+  );
+  return row
+    ? { slug: row.slug, targetDisplay: row.target_display, acquirerDisplay: row.acquirer_display, signingDate: row.signing_date }
+    : null;
+}

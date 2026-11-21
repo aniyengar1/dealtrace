@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { getIncludedDealsSummary } from "@/lib/homeStats";
-import { HeroMedia } from "../HeroMedia";
+import { StepDiagram, type StepKind } from "./StepDiagram";
 
 export const dynamic = "force-dynamic";
 
@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     "How DealTrace extracts, validates, and sources every fact on this site from SEC merger-proxy filings.",
 };
 
-const PIPELINE_STEPS = [
-  { title: "Discover", body: "EDGAR's quarterly form.idx files are scanned for DEFM14A, PREM14A, SC 14D9, SC TO-T, and S-4 filings, grouped into candidate deals by target CIK and filing date." },
-  { title: "Classify", body: "A no-LLM pass reads each filing's SIC code and document text to separate real operating-company M&A from SPAC/de-SPAC mechanics and other non-M&A filings (debt exchanges, reorganizations, going-private squeeze-outs)." },
-  { title: "Section + extract", body: "The “Background of the Merger” narrative and fairness-opinion sections are isolated, then an LLM reads them and returns structured events, proposals, and valuation analyses — never free text." },
-  { title: "Validate", body: "Every record is checked against the filing's own text before anyone sees it: quotes must appear verbatim (after normalization), numbers must appear in a cited quote, and dates are resolved by code, never by the model." },
-  { title: "Load + review", body: "Validated records land in Postgres keyed to their source paragraphs. A human reviewer can confirm, correct, or reject any fact — review status is tracked but never blocks a fact from showing, just from being presented as verified." },
+const PIPELINE_STEPS: { kind: StepKind; title: string; body: string }[] = [
+  { kind: "discover", title: "Discover", body: "EDGAR's quarterly form.idx files are scanned for DEFM14A, PREM14A, SC 14D9, SC TO-T, and S-4 filings, grouped into candidate deals by target CIK and filing date." },
+  { kind: "classify", title: "Classify", body: "A no-LLM pass reads each filing's SIC code and document text to separate real operating-company M&A from SPAC/de-SPAC mechanics and other non-M&A filings (debt exchanges, reorganizations, going-private squeeze-outs)." },
+  { kind: "extract", title: "Section + extract", body: "The “Background of the Merger” narrative and fairness-opinion sections are isolated, then an LLM reads them and returns structured events, proposals, and valuation analyses — never free text." },
+  { kind: "validate", title: "Validate", body: "Every record is checked against the filing's own text before anyone sees it: quotes must appear verbatim (after normalization), numbers must appear in a cited quote, and dates are resolved by code, never by the model." },
+  { kind: "load", title: "Load + review", body: "Validated records land in Postgres keyed to their source paragraphs. A human reviewer can confirm, correct, or reject any fact — review status is tracked but never blocks a fact from showing, just from being presented as verified." },
 ];
 
 const DISCOVERY_FUNNEL: { label: string; count: number }[] = [
@@ -73,7 +73,6 @@ export default async function MethodologyPage() {
 
   return (
     <div>
-      <HeroMedia />
       <Container wide className="relative py-14">
       <Reveal>
         <SectionHeading
@@ -91,7 +90,7 @@ export default async function MethodologyPage() {
           {PIPELINE_STEPS.map((step, i) => (
             <Reveal key={step.title} delay={i * 70} className="relative">
               <Card className="h-full p-4">
-                <span className="font-serif text-2xl text-accent">{String(i + 1).padStart(2, "0")}</span>
+                <StepDiagram kind={step.kind} step={i + 1} />
                 <h3 className="mt-2 text-sm font-semibold text-ink">{step.title}</h3>
                 <p className="mt-1.5 text-sm text-ink-muted">{step.body}</p>
               </Card>
