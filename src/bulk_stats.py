@@ -130,7 +130,7 @@ def _fetch_canonical_deals(conn: psycopg.Connection) -> list[dict]:
     deals = fetch_deals(conn, canonical_only=True)
     return [
         d for d in deals
-        if not classify_deal(d["slug"], d["target"], d["acquirer"], d["events"], d["proposals"])[1]
+        if not classify_deal(d["slug"], d["target"], d["acquirer"], d["events"], d["proposals"], d["form_type"])[1]
     ]
 
 
@@ -139,12 +139,20 @@ def fetch_deals(conn: psycopg.Connection, canonical_only: bool = False) -> list[
     returns non-canonical deals (deal_id included) -- src.deal_metrics
     needs a row for every deal, not just the canonical ones used in
     aggregates."""
+    from src.classify_deal_type import _bulk_slug_to_cik_accession
+
     query = "SELECT d.id, d.slug, d.deal_name, d.target, d.acquirer FROM deals d"
     if canonical_only:
         query += " WHERE d.is_canonical"
     rows = conn.execute(query).fetchall()
+    # Keyed by (cik, accession-with-dashes) to join against each bulk
+    # deal's own discovery-time form type -- None for a curated deal
+    # (no deal_candidates row at all) rather than guessed.
+    form_type_by_accession = dict(conn.execute("SELECT primary_accession, primary_form_type FROM deal_candidates").fetchall())
     deals = []
     for deal_id, slug, deal_name, target, acquirer in rows:
+        parsed_cik_accession = _bulk_slug_to_cik_accession(slug)
+        form_type = form_type_by_accession.get(parsed_cik_accession[1]) if parsed_cik_accession else None
         run_id = _resolve_run_id_for_deal(conn, deal_id, slug)
         if run_id is None:
             events, proposals = [], []
@@ -173,6 +181,7 @@ def fetch_deals(conn: psycopg.Connection, canonical_only: bool = False) -> list[
                 "deal_name": deal_name,
                 "target": target,
                 "acquirer": acquirer,
+                "form_type": form_type,
                 "events": [
                     {
                         "date_start": e[0],

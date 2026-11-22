@@ -144,13 +144,21 @@ _CLASSIFY_CACHE_DIR = Path("data/cache/deal_type_classification")
 # acquisition of X" frame -- without this, Desktop Metal/Stratasys and
 # ReShape/Obalon were both wrongly flagged off an early, later
 # -superseded proposal that pointed the opposite way from the deal's
-# own final agreed structure. Every classification rule change needs a
+# own final agreed structure. v6: added _is_s4_filer_is_acquirer --
+# the BIDDER_COUNT_ANALYSIS.md swap-and-keep follow-up found the
+# filing's own FORM TYPE (a new cache-key input, see below) is a
+# sturdier signal than proposal-text "acquire" language for the same
+# filer-is-acquirer shape: an S-4's filer is, by SEC rule, always the
+# securities-issuing party (the acquirer), full stop, no textual
+# evidence needed at all. Every classification rule change needs a
 # bump here, or a deal keeps silently serving its stale result forever
 # even once the rule that should catch it is fixed.
-_CLASSIFY_CACHE_VERSION = "v5"
+_CLASSIFY_CACHE_VERSION = "v6"
 
 
-def _classify_cache_key(slug: str, target: str, acquirer: str, events: list[dict], proposals: list[dict]) -> str:
+def _classify_cache_key(
+    slug: str, target: str, acquirer: str, events: list[dict], proposals: list[dict], form_type: Optional[str]
+) -> str:
     relevant_events = [{"event_type": e.get("event_type"), "parties": e.get("parties")} for e in events]
     # v4's _is_proposal_direction_reversed reads proposer + source_quotes
     # -- the only two proposal fields any check here reads -- so those
@@ -166,6 +174,7 @@ def _classify_cache_key(slug: str, target: str, acquirer: str, events: list[dict
             "acquirer": acquirer,
             "events": relevant_events,
             "proposals": relevant_proposals,
+            "form_type": form_type,
         },
         sort_keys=True,
         default=str,
@@ -622,6 +631,41 @@ def _is_proposal_direction_reversed(slug: str, target: str, acquirer: str, propo
     return reversed_evidence and not normal_evidence
 
 
+def _is_s4_filer_is_acquirer(target: str, acquirer: str, form_type: Optional[str]) -> bool:
+    """True when the filer (always recorded as `target`, see
+    _is_filer_reversed's docstring) filed Form S-4 -- a REGISTRATION
+    STATEMENT for securities the filer itself is issuing. Unlike every
+    other check in this module, this isn't textual evidence that could
+    be absent or ambiguous: an S-4's own filer is, by SEC rule, always
+    the party registering new securities to pay target shareholders
+    with, i.e. the acquirer (or a newly formed holdco) -- never the
+    party being bought out. Found via BIDDER_COUNT_ANALYSIS.md's swap
+    -and-keep follow-up: Amazon/Globalstar, Rocket Pharmaceuticals/
+    Renovacor, PotlatchDeltic/CatchMark, and Raymond James Financial/
+    TriState Capital were all confirmed this way (and Bally's/Gamesys
+    independently, via its own DEFM14A explicitly held for Bally's own
+    shareholders to approve the share issuance for its acquisition of
+    Gamesys) -- a sturdier, structural signal than the proposal-text
+    "acquire" language the other filer-reversal checks rely on, which
+    several of these never used at all.
+
+    Deliberately NOT guarded against the acquirer field being a bare
+    self-reference to the target under another form (John Bean
+    Technologies Corp / "JBT", Palo Alto Networks / "PANW" -- its own
+    ticker, J.M. Smucker / "Smucker" -- its own short name): tried
+    first, but neither is_acronym_of (core_name strips "Technologies"
+    as a legal suffix before computing initials, losing the letter
+    JBT's own ticker needs) nor is_same_entity (a trailing, not
+    leading, word isn't a prefix match) actually catches any of these
+    three real examples, so a guard built on them would be silently
+    inert, not protective. That's a different, separate extraction
+    defect anyway (no real second party exists to resolve such a deal
+    to at all) -- caught instead during this rule's own required
+    verification pass over every newly-flagged deal, same as any other
+    check in this module."""
+    return form_type == "S-4"
+
+
 # "each of X and Y will become a wholly owned subsidiary of Z" -- a
 # double-dummy/new-HoldCo merger-of-equals structure (Apollo/Athene:
 # "each of Athene and Apollo will become a wholly owned subsidiary of
@@ -787,7 +831,7 @@ def _is_self_reorganization(slug: str, target: str, acquirer: str) -> bool:
 
 
 def classify_deal(
-    slug: str, target: str, acquirer: str, events: list[dict], proposals: list[dict]
+    slug: str, target: str, acquirer: str, events: list[dict], proposals: list[dict], form_type: Optional[str] = None
 ) -> tuple[str, bool, Optional[str]]:
     """Disk-cached wrapper around _classify_deal_uncached -- see
     _CLASSIFY_CACHE_DIR's comment for the cache key and invalidation
@@ -795,14 +839,18 @@ def classify_deal(
     during the v4 wiring fails loudly (TypeError) rather than silently
     losing _is_proposal_direction_reversed coverage. Every real caller
     (src.bulk_stats, src.deal_metrics) already has `d["proposals"]`
-    sitting next to the `d["events"]` it passes."""
-    key = _classify_cache_key(slug, target, acquirer, events, proposals)
+    sitting next to the `d["events"]` it passes. `form_type` DOES
+    default (to None, meaning "unknown/curated") -- a curated deal has
+    no `deal_candidates` row to read one from at all, and treating that
+    absence as "not an S-4" (rather than failing loudly) is correct,
+    not a silently-lost check the way a missing `proposals` would be."""
+    key = _classify_cache_key(slug, target, acquirer, events, proposals, form_type)
     cache_path = _classify_cache_path(slug, key)
     if cache_path.exists():
         cached = json.loads(cache_path.read_text(encoding="utf-8"))
         return cached["deal_type"], cached["excluded_from_stats"], cached["exclusion_reason"]
 
-    result = _classify_deal_uncached(slug, target, acquirer, events, proposals)
+    result = _classify_deal_uncached(slug, target, acquirer, events, proposals, form_type)
 
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     cache_path.write_text(
@@ -813,7 +861,7 @@ def classify_deal(
 
 
 def _classify_deal_uncached(
-    slug: str, target: str, acquirer: str, events: list[dict], proposals: list[dict]
+    slug: str, target: str, acquirer: str, events: list[dict], proposals: list[dict], form_type: Optional[str]
 ) -> tuple[str, bool, Optional[str]]:
     """Returns (deal_type, excluded_from_stats, exclusion_reason). A
     deal is included in stats/listings only when none of the exclusion
@@ -858,7 +906,11 @@ def _classify_deal_uncached(
             True,
             "the filer is internalizing (absorbing) its own external manager via a share issuance, not being acquired by or acquiring anyone",
         )
-    if _is_filer_reversed(slug, target, acquirer) or _is_proposal_direction_reversed(slug, target, acquirer, proposals):
+    if (
+        _is_filer_reversed(slug, target, acquirer)
+        or _is_proposal_direction_reversed(slug, target, acquirer, proposals)
+        or _is_s4_filer_is_acquirer(target, acquirer, form_type)
+    ):
         return (
             "filer_is_acquirer",
             True,

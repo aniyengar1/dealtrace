@@ -166,3 +166,35 @@ def test_classify_deal_leaves_ordinary_deal_included():
     assert deal_type == "acquisition"
     assert excluded is False
     assert reason is None
+
+
+# --- _is_s4_filer_is_acquirer --------------------------------------------
+
+
+def test_s4_filer_is_structurally_the_acquirer():
+    # Real shape: bulk_1018724_000110465926089294 (Amazon/Globalstar) --
+    # no "acquire" language needed at all; the S-4 form type alone is
+    # structurally conclusive (S-4 filer = securities issuer = acquirer).
+    assert cdt._is_s4_filer_is_acquirer("AMAZON COM INC", "Globalstar", "S-4") is True
+
+
+def test_non_s4_form_type_is_not_flagged_by_this_check():
+    assert cdt._is_s4_filer_is_acquirer("Target Co", "Acquirer Co", "DEFM14A") is False
+    assert cdt._is_s4_filer_is_acquirer("Target Co", "Acquirer Co", None) is False
+
+
+def test_s4_check_fires_regardless_of_acquirer_field_content():
+    # Deliberately does NOT guard against a self-referential acquirer
+    # field (John Bean Technologies Corp / "JBT", its own ticker) --
+    # see this function's own docstring for why that guard would be
+    # silently inert anyway. Caught instead during the required
+    # per-deal verification pass over every newly-flagged deal.
+    assert cdt._is_s4_filer_is_acquirer("John Bean Technologies CORP", "JBT", "S-4") is True
+
+
+def test_classify_deal_flags_s4_filer_end_to_end():
+    deal_type, excluded, reason = cdt.classify_deal(
+        "fake_slug", "AMAZON COM INC", "Globalstar", [], [], form_type="S-4"
+    )
+    assert deal_type == "filer_is_acquirer"
+    assert excluded is True
