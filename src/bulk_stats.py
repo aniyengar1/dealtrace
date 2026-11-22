@@ -560,17 +560,37 @@ def pct_bump_bucket(pct: Optional[float]) -> Optional[str]:
     return f"{lower}% to {lower + 10}%"
 
 
+def _normalize_bidder_name(name: str, acquirer: str) -> str:
+    """A generic/shell term ("Merger Sub", "Parent", "Consortium"...,
+    see dedup_deals._GENERIC_ACQUIRER_TERMS) always refers to THIS
+    deal's own acquirer in an ordinary (non-reversed) deal -- the same
+    substitution compute_n_bidders_for_deal already relies on via its
+    own eventual-acquirer exemption (see _is_non_bidder_role). Applying
+    it here too lets two different shell aliases for the SAME real
+    party (a consortium calling itself "Consortium" in early letters,
+    then signing as its own newly formed "Merger Sub") compare equal,
+    instead of looking like two different companies."""
+    return acquirer if _is_generic(name) else name
+
+
 def compute_first_bidder_won_for_deal(d: dict) -> tuple[Optional[bool], Optional[str]]:
     dated = _dated_proposals(d["proposals"])
     bidder_dated = [p for p in dated if p["proposer"] and p["proposer"] != d["target"]]
     if not bidder_dated:
         return None, "no_non_target_proposal"
-    final = _final_entry(dated)
+    # Picking "final" from bidder_dated (not the full `dated` list) is
+    # the exact same target-exclusion compute_n_bidders_for_deal already
+    # applies -- without it, a target's own counter-offer or mirrored
+    # confirmation (marked accepted, or just latest-dated) gets credited
+    # as "the winning bid" (Verint: the accepted entry is literally
+    # Verint's own willingness-to-accept communicated through its
+    # advisor, not Thoma Bravo's).
+    final = _final_entry(bidder_dated)
     if final is None or not final["proposer"]:
         return None, "no_final_entry"
-    first_bidder = bidder_dated[0]["proposer"]
-    eventual_acquirer = final["proposer"]
-    return (first_bidder.strip().lower() == eventual_acquirer.strip().lower()), None
+    first_bidder = _normalize_bidder_name(bidder_dated[0]["proposer"], d["acquirer"])
+    eventual_acquirer = _normalize_bidder_name(final["proposer"], d["acquirer"])
+    return _is_same_company_fuzzy(first_bidder, eventual_acquirer), None
 
 
 # A first_contact event with no deal-relevant language at all ("became
