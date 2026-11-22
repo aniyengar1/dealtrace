@@ -34,10 +34,18 @@ interface GroupStats {
   // field (5 of 9 field errors), so that metric is excluded from
   // public stats entirely. See src.bulk_stats.compute_all().
   medianDaysProposalToSigning: number | null;
+  // Restricted to CONTESTED deals (2+ bidders) -- a 1-bidder deal wins
+  // by definition, so including it would pull this number up without
+  // saying anything about competitive dynamics. See homeStats.ts's own
+  // pctFirstBidderWonContested for the same restriction on the
+  // homepage.
+  pctFirstBidderWonContested: { value: number; n: number } | null;
 }
 
 function groupStats(rows: DealMetricsRow[]): GroupStats {
   const bump = rows.map((r) => r.pctBump).filter((v): v is number => v !== null);
+  const contested = rows.filter((r) => r.nBidders >= 2 && r.firstBidderWon !== null);
+  const contestedWins = contested.filter((r) => r.firstBidderWon).length;
   return {
     n: rows.length,
     medianPctBump: median(bump),
@@ -46,6 +54,8 @@ function groupStats(rows: DealMetricsRow[]): GroupStats {
     medianDaysProposalToSigning: median(
       rows.map((r) => r.daysFirstProposalToSigning).filter((v): v is number => v !== null)
     ),
+    pctFirstBidderWonContested:
+      contested.length > 0 ? { value: (contestedWins / contested.length) * 100, n: contested.length } : null,
   };
 }
 
@@ -80,6 +90,14 @@ function GroupStatsCard({ label, stats }: { label: string; stats: GroupStats }) 
           <dt className="text-xs text-ink-muted">Median days, proposal to signing</dt>
           <dd className="tabular-nums">
             {stats.medianDaysProposalToSigning !== null ? Math.round(stats.medianDaysProposalToSigning) : "—"}
+          </dd>
+        </div>
+        <div>
+          <dt className="text-xs text-ink-muted">First bidder wins (contested, 2+ bidders)</dt>
+          <dd className="tabular-nums">
+            {stats.pctFirstBidderWonContested !== null
+              ? `${Math.round(stats.pctFirstBidderWonContested.value)}% (n = ${stats.pctFirstBidderWonContested.n})`
+              : "—"}
           </dd>
         </div>
       </dl>

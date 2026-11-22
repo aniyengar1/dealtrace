@@ -21,6 +21,7 @@ export type HeadlineStatName =
   | "proposals_per_deal"
   | "pct_increase_cash_deals"
   | "pct_first_bidder_is_eventual_acquirer"
+  | "pct_first_bidder_wins_contested"
   | "days_first_proposal_to_signing";
 
 export interface HeadlineStatRow {

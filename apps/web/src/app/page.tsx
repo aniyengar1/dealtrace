@@ -175,19 +175,28 @@ export default async function HomePage() {
             )}
           </div>
           <div className="mt-5 grid gap-5 sm:grid-cols-3">
-            {stats.pctFirstBidderWon && (
+            {stats.pctFirstBidderWonContested && (
               <Reveal>
                 <Card className="p-5">
                   <InsightBar
-                    value={stats.pctFirstBidderWon.value}
+                    value={stats.pctFirstBidderWonContested.value}
                     domain={[0, 100]}
-                    valueLabel={`${stats.pctFirstBidderWon.value.toFixed(statDecimals(stats.pctFirstBidderWon.value))}%`}
+                    valueLabel={`${stats.pctFirstBidderWonContested.value.toFixed(statDecimals(stats.pctFirstBidderWonContested.value))}%`}
                     domainLabels={["0%", "100%"]}
                     referenceAt={50}
                   />
                   <p className="mt-3 text-sm text-ink-muted">
-                    The first bidder to show up wins the deal about half the time (n = {stats.pctFirstBidderWon.n}) —
-                    showing up early is an edge, not a guarantee.
+                    In contested deals — 2 or more bidders submitted a proposal — the first bidder goes on to win
+                    about {Math.round(stats.pctFirstBidderWonContested.value)}% of the time (n ={" "}
+                    {stats.pctFirstBidderWonContested.n}). Showing up early is an edge, not a guarantee.
+                    {stats.pctFirstBidderWonAllDeals && (
+                      <>
+                        {" "}
+                        Across all deals the figure is {Math.round(stats.pctFirstBidderWonAllDeals.value)}% (n ={" "}
+                        {stats.pctFirstBidderWonAllDeals.n}), higher only because a 1-bidder deal wins by
+                        definition.
+                      </>
+                    )}
                   </p>
                 </Card>
               </Reveal>

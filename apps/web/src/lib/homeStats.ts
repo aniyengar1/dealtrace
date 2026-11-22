@@ -21,7 +21,13 @@ export interface HomeStats {
   medianProposals: HomeStat | null;
   medianPctBump: HomeStat | null;
   medianDaysFirstProposalToSigning: HomeStat | null;
-  pctFirstBidderWon: HomeStat | null;
+  // Primary headline number: restricted to CONTESTED deals (2+ bidders)
+  // -- a 1-bidder deal wins by definition, so including it structurally
+  // pulls the number up without saying anything about competitive
+  // dynamics. pctFirstBidderWonAllDeals is kept as secondary context
+  // (see the site's own note that 1-bidder deals win by definition).
+  pctFirstBidderWonContested: HomeStat | null;
+  pctFirstBidderWonAllDeals: HomeStat | null;
   // Histogram of first-proposal -> final-price % change, open-ended on
   // both tails -- a handful of per-deal outliers are expected even
   // after bulk_stats.py's own sanity thresholds; a bounded bucket
@@ -105,7 +111,8 @@ export async function computeHomeStats(): Promise<HomeStats> {
   const proposals = stats.proposals_per_deal;
   const pctBump = stats.pct_increase_cash_deals;
   const daysProposalToSigning = stats.days_first_proposal_to_signing;
-  const firstBidderWon = stats.pct_first_bidder_is_eventual_acquirer;
+  const firstBidderWonContested = stats.pct_first_bidder_wins_contested;
+  const firstBidderWonAllDeals = stats.pct_first_bidder_is_eventual_acquirer;
 
   return {
     nDealsCovered: dealsSummary.count,
@@ -117,7 +124,14 @@ export async function computeHomeStats(): Promise<HomeStats> {
       daysProposalToSigning?.median != null
         ? { value: daysProposalToSigning.median, n: daysProposalToSigning.n }
         : null,
-    pctFirstBidderWon: firstBidderWon?.median != null ? { value: firstBidderWon.median, n: firstBidderWon.n } : null,
+    pctFirstBidderWonContested:
+      firstBidderWonContested?.median != null
+        ? { value: firstBidderWonContested.median, n: firstBidderWonContested.n }
+        : null,
+    pctFirstBidderWonAllDeals:
+      firstBidderWonAllDeals?.median != null
+        ? { value: firstBidderWonAllDeals.median, n: firstBidderWonAllDeals.n }
+        : null,
     pctBumpHistogram: buildHistogram(pctBumpRows.map((r) => r.pct_bump)),
   };
 }
