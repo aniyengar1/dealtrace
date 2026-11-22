@@ -1,0 +1,118 @@
+{
+  "copied_locks_and_history_unchanged": true,
+  "duplicate_repeat_insertions": 0,
+  "finished_at": "2026-11-22T03:48:09.847645+00:00",
+  "future_evidence_blocked": true,
+  "kind": "SYNTHETIC_SCORING_REHEARSAL_NOT_REPORTED_RESULTS",
+  "manual_review": "NOT PERFORMED; synthetic agent fixtures only; source semantics and first-publication evidence still require owner review on real scoring day",
+  "outcomes": [
+    {
+      "brier": "2.000000000000000000000000000000000000000000000000",
+      "inserted": {
+        "id": "73103bff-3b88-40e4-9a6a-3b7f138c0de9",
+        "scored_at": "2026-11-22T03:48:09.699730+00:00",
+        "supersedes_id": null
+      },
+      "outcome": "below",
+      "prediction_id": "a8cb7630-f8a1-48bd-bd7a-7e560a0ce673"
+    },
+    {
+      "brier": "1.460000000000000000000000000000000000000000000000",
+      "inserted": {
+        "id": "0313af61-8044-4d6a-a1ff-fe1e66592517",
+        "scored_at": "2026-11-22T03:48:09.702836+00:00",
+        "supersedes_id": null
+      },
+      "outcome": "below",
+      "prediction_id": "7830e356-7f1b-4f00-94b1-bb8337ab8102"
+    },
+    {
+      "brier": "0.500000000000000000000000000000000000000000000000",
+      "inserted": {
+        "id": "a74b037a-6067-4d36-b619-8b972465dae5",
+        "scored_at": "2026-11-22T03:48:09.705488+00:00",
+        "supersedes_id": null
+      },
+      "outcome": "within",
+      "prediction_id": "33af7f57-d83f-474d-8011-76c5eabbde83"
+    },
+    {
+      "brier": "0.512396694214876033057852214876033057851239669422",
+      "inserted": {
+        "id": "f1ddfb1a-5cff-4c50-bde9-d361388347bd",
+        "scored_at": "2026-11-22T03:48:09.708767+00:00",
+        "supersedes_id": null
+      },
+      "outcome": "within",
+      "prediction_id": "5c9f53c0-b59d-47b5-8e97-cb1dead6e963"
+    },
+    {
+      "brier": "0E-48",
+      "inserted": {
+        "id": "31b62000-a523-4e7e-99e5-0fccf5ae6150",
+        "scored_at": "2026-11-22T03:48:09.711652+00:00",
+        "supersedes_id": null
+      },
+      "outcome": "above",
+      "prediction_id": "37bb0dee-c7e7-497b-acf7-5f691cccd98f"
+    },
+    {
+      "brier": "0.049586776859504132231404859504132231404958677686",
+      "inserted": {
+        "id": "88a760c1-e841-48b2-85d0-03ff2780becd",
+        "scored_at": "2026-11-22T03:48:09.714390+00:00",
+        "supersedes_id": null
+      },
+      "outcome": "above",
+      "prediction_id": "6b4f3067-ce10-4e32-aeef-9bdf24fb79c8"
+    },
+    {
+      "brier": "1.531250000000000000000000000000000000000000000000",
+      "inserted": {
+        "id": "d8f3ed4f-f31c-4b3b-bdf8-686981f83eae",
+        "scored_at": "2026-11-22T03:48:09.717403+00:00",
+        "supersedes_id": null
+      },
+      "outcome": "within",
+      "prediction_id": "3f6cdfc8-f37d-4348-983b-6e94ebefbaf1"
+    },
+    {
+      "brier": "1.206611570247933884297521338842975206611570247934",
+      "inserted": {
+        "id": "97417b05-3f14-4d2d-9012-3e44f8dd2df3",
+        "scored_at": "2026-11-22T03:48:09.720220+00:00",
+        "supersedes_id": null
+      },
+      "outcome": "within",
+      "prediction_id": "80e8aacc-250c-45b2-a83b-f6e195f5d02c"
+    }
+  ],
+  "publication": "private synthetic SQL guard; no production JSON/seed changed",
+  "scratch_scores": 8,
+  "scratch_seed_idempotent": true,
+  "snapshot_select_only_enforced": true,
+  "source_ledger_sha256": "8bca62620e2355b3151c73e0e3118681f1abbf03f8cae006c9e99e30a160dead",
+  "source_predictions": 8,
+  "source_transport": "in-memory synthetic SEC responses only; no real HTTP or cache writes",
+  "started_at": "2026-11-22T03:48:09.498459+00:00",
+  "synthetic_actuals_by_company": {
+    "CRM": "11420000000",
+    "IOT": "517000000",
+    "OKTA": "812000000",
+    "S": "311000000"
+  },
+  "timings_seconds": {
+    "archive_export_seed_and_read_seconds": "0.08779529202729464",
+    "score_and_repeat_seconds": "0.16990874987095594",
+    "scratch_migrations_seconds": "0.0037900828756392"
+  },
+  "evidence_file_sha256": "1e594fa0ee7f2555f24ca51f010d309f9450452f7ab9eadedd8fa270ebade0fe",
+  "checked_at": "2026-11-22T03:49:36.322542+00:00",
+  "script_fix_commit": "f317e7e",
+  "tests": "23 passed,1 skipped (offline checks; separate full scratch end-to-end run passed)",
+  "score_live.py_sha256": "7a6f5f792653b76488880b1b9496fd328d96bf629a814cfd774f41665df650a4",
+  "live.py_sha256": "15f06a8bd06fda816c0a088a910d70444e974073f40ce901fe0fe124a91f726f",
+  "baseline.py_sha256": "190b21d59d244d3b8e381cee9a911ff48f9bff46b07f033f50d422a060954e53",
+  "smoothed_baseline.py_sha256": "77d5dab78ffe1be2d0676e70844eee1553b324ebb3231da2f1602fc71bda09c6",
+  "production_publication_files_byte_identical": true
+}

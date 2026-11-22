@@ -65,6 +65,10 @@ All four are within the timing window at the planned Monday session, **condition
 
 The extractor is shelved. Owner extraction review is **deferred, not performed**; do not resume inference, tuning or extraction review. Manual reviewed guidance remains the only target input. Preserve the original random packet/fresh groups and all reservations.
 
+## Scoring-day workflow update — November22UTC
+
+Use [SCORING_DAY.md](SCORING_DAY.md) for the full owner procedure, per-step time estimates, explicit reviewed-export-to-snapshot-seed commands and XBRL availability caveats. The isolated eight-lock synthetic rehearsal is documented in [the rehearsal report](reports/scoring_pipeline_rehearsal_2026-11-22.md); it creates no live score or new lock. Synthetic source dates/amounts must never be copied into a real review.
+
 ## December 1–3 scoring desk card — reviewed November 20, 2026
 
 **Preparation only: do not run scoring without results and separate owner approval.** The READ ONLY ledger check at 2026-11-21T02:03:36Z found eight predictions for OKTA/CRM/IOT/S, zero scores. GTLB/CRWD/MDB are **not locked**; include them only if a later READ ONLY ledger check confirms actual prospective records. Never create a prediction during scoring.
