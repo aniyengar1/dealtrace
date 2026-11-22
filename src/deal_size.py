@@ -5,9 +5,12 @@ straight from the filing's own cached text (src.classify_deal_type.
 _full_text), with the exact source sentence kept as a quote, the same
 convention every other extracted fact in this pipeline follows.
 
-Bulk deals only -- a curated deal has no cached full-text HTML to
-parse at all (see src.deal_metrics._filing_definition_acquirer's
-identical scope decision for acquirer resolution).
+Works for curated deals too, as long as their own proxy has already
+been fetched and cached on disk (src.classify_deal_type._full_text
+resolves a curated slug's own data/raw/*.html the same way it resolves
+a bulk slug's cached discovery document) -- there's no separate
+bulk-only guard here; a slug with nothing cached either way just gets
+`_full_text`'s empty string, same as always.
 
     from src.deal_size import extract_shares_outstanding, extract_aggregate_value
 """
@@ -15,7 +18,7 @@ identical scope decision for acquirer resolution).
 import re
 from typing import Optional
 
-from src.classify_deal_type import _bulk_slug_to_cik_accession, _full_text
+from src.classify_deal_type import _full_text
 from src.entity_match import core_name
 
 # Splits on a period that's a real sentence boundary, not a decimal
@@ -34,57 +37,159 @@ _SENTENCE_SPLIT_RE = re.compile(r"(?<!\d)\.(?!\d)")
 # sentence might also contain.
 _LARGE_NUMBER_RE = re.compile(r"\b\d{1,3}(?:,\d{3})+\b")
 
+# A "Treatment of Equity Awards" section states option/RSU/warrant
+# counts in the exact same "there were N outstanding ___" construction
+# extract_shares_outstanding's other keywords all still match (Anaplan:
+# "there were 4,425,144 outstanding options to acquire Anaplan common
+# stock", "there were 8,947,507 outstanding restricted stock units
+# (rights to receive Anaplan shares)") -- neither is the share count
+# itself, however closely either sentence otherwise matches the real
+# share-count construction (the second one even contains the word
+# "shares"). Checked in a window right after the number rather than
+# requiring strict adjacency to "shares" -- real share-count sentences
+# routinely put a qualifier between the number and "shares"/"stock"
+# ("outstanding shares", "Company Common Shares", a bracket-wrapped
+# "[2,312,887] shares"), so adjacency alone rejected several genuine
+# matches when first tried.
+_AWARD_TYPE_RE = re.compile(r"\boptions?\b|\brestricted stock units?\b|\bwarrants?\b|\bRSUs?\b", re.IGNORECASE)
+# "Units," not "shares," is the equivalent, unambiguous term an
+# LP/MLP's own equity instrument goes by (EnLink Midstream, Oasis
+# Midstream, Crestwood -- "457,079,545 outstanding EnLink Units",
+# "48,627,680 Oasis Midstream common units outstanding"). Checked
+# AFTER _AWARD_TYPE_RE's "restricted stock units" so that phrase still
+# correctly excludes, not matches, via this broader word.
+_SHARE_WORD_RE = re.compile(r"\bshares?\b|\bstock\b|\bunits?\b", re.IGNORECASE)
+_SHARE_COUNT_WINDOW = 60
 
-def _sentences_mentioning(text: str, *keywords: str) -> list[str]:
+# Some filings name the award type BEFORE the number instead of after
+# ("Confluent options covering an aggregate of 14,828,996 shares of
+# our common stock") -- checking only the window after the number, as
+# originally written, missed this phrasing and let an options count
+# through just because "shares" happened to appear right after it too.
+_AWARD_TYPE_BEFORE_WINDOW = 40
+
+# A number introduced as a hypothetical ("for illustrative purposes
+# only, assume there are...") is explicitly NOT a stated fact, however
+# well it otherwise matches the real share-count construction (Uniti
+# Group: an "assume there are 242,443,090 shares...immediately prior
+# to Closing" pro-forma example outranked the deal's own actual
+# "On the Record Date, there were 244,229,237 Uniti Common Shares
+# outstanding" purely by appearing earlier in the document).
+_HYPOTHETICAL_RE = re.compile(r"\bassume\b|\billustrative\b|\bhypothetical\b|\bfor example\b", re.IGNORECASE)
+
+
+def _share_count_candidates(sentence: str) -> list[int]:
+    if _HYPOTHETICAL_RE.search(sentence):
+        return []
+    values = []
+    for m in _LARGE_NUMBER_RE.finditer(sentence):
+        before = sentence[max(0, m.start() - _AWARD_TYPE_BEFORE_WINDOW) : m.start()]
+        after = sentence[m.end() : m.end() + _SHARE_COUNT_WINDOW]
+        if _AWARD_TYPE_RE.search(before) or _AWARD_TYPE_RE.search(after):
+            continue
+        if _SHARE_WORD_RE.search(after):
+            values.append(int(m.group(0).replace(",", "")))
+    return values
+
+
+def _sentences_mentioning(text: str, *keywords: str | tuple[str, ...]) -> list[str]:
     """Sentence-like chunks (split on real sentence-ending periods,
     see _SENTENCE_SPLIT_RE) that mention every one of `keywords`,
     case-insensitively -- deliberately not one combined regex, since a
     single [^.]* run can't tell a decimal point from a sentence
     boundary either, the same problem _SENTENCE_SPLIT_RE exists to
-    avoid."""
-    return [
-        chunk.strip()
-        for chunk in _SENTENCE_SPLIT_RE.split(text)
-        if all(re.search(re.escape(kw), chunk, re.IGNORECASE) for kw in keywords)
-    ]
+    avoid. A keyword given as a tuple is an alternatives group -- ANY
+    one of them satisfies that slot (e.g. "record date" or "the filing
+    of this proxy statement" are both specific, equally unambiguous
+    anchors for a share count, just worded differently)."""
+
+    def _matches(chunk: str, kw: str | tuple[str, ...]) -> bool:
+        # A tuple's alternatives are hand-written regex patterns (this
+        # module's own); a bare string keyword is literal text and
+        # still escaped, exactly as before -- extract_aggregate_value
+        # passes a matched dollar-amount string here, which contains
+        # real regex metacharacters ("$", ".", parentheses) that must
+        # be matched literally, not interpreted.
+        if isinstance(kw, tuple):
+            return any(re.search(alt, chunk, re.IGNORECASE) for alt in kw)
+        return bool(re.search(re.escape(kw), chunk, re.IGNORECASE))
+
+    return [chunk.strip() for chunk in _SENTENCE_SPLIT_RE.split(text) if all(_matches(chunk, kw) for kw in keywords)]
+
+
+def _names_target(sentence: str, target: str) -> bool:
+    """True if `sentence`'s own text contains `target`'s full core
+    name. Tried a looser first-word-only fallback (a filing's own
+    share-count sentence sometimes refers to a company by just its
+    first word, "Pioneer" rather than "Pioneer Energy Services") --
+    reverted: across the full bulk population it matched far more
+    UNRELATED sentences than it ever correctly resolved, trading a
+    handful of real fixes for many new wrong answers. A sentence that
+    never names the target at all is still a usable last-resort
+    candidate (see the `named or candidates[0]` fallback below)."""
+    core = core_name(target)
+    return bool(core) and core in core_name(sentence)
 
 
 def extract_shares_outstanding(slug: str, target: str) -> Optional[dict]:
     """Returns {"value": int, "quote": str} or None. The record-date
     share count, read straight from the filing's own sentence -- never
     computed, inferred, or guessed."""
-    if _bulk_slug_to_cik_accession(slug) is None:
-        return None
     text = _full_text(slug)
     if not text:
         return None
 
     candidates = []
-    # "there were" (the actual count-statement construction) is a
-    # required third keyword -- "record date" + "outstanding" alone
-    # also matches unrelated sentences that just happen to mention both
-    # words (Healthpeak/Physicians Realty Trust: "Based upon the number
-    # of outstanding shares on the record date... Healthpeak will issue
-    # approximately 162,957,213 shares" is about NEW shares issued AS
-    # MERGER CONSIDERATION, not either company's own current share
-    # count -- it mentions both keywords, but never says "there were").
-    for sentence in _sentences_mentioning(text, "record date", "outstanding", "there were"):
-        m = _LARGE_NUMBER_RE.search(sentence)
-        if not m:
+    # "there were"/"there are" (the actual count-statement construction,
+    # present tense included -- MIRA: "As of the Record Date, there ARE
+    # 19,069,315 shares...") is a required keyword -- "record date" +
+    # "outstanding" alone also matches unrelated sentences that just
+    # happen to mention both words (Healthpeak/Physicians Realty Trust:
+    # "Based upon the number of outstanding shares on the record
+    # date... Healthpeak will issue approximately 162,957,213 shares"
+    # is about NEW shares issued AS MERGER CONSIDERATION, not either
+    # company's own current share count -- it mentions both keywords,
+    # but never says "there were"/"there are").
+    #
+    # The date anchor itself accepts a second, equally specific and
+    # unambiguous phrasing some filings use instead of "record date" --
+    # a share count stated as of the proxy statement's own filing date
+    # (Coupa: "As of the date of the filing of this proxy statement,
+    # there were 75,541,300 shares of Company common stock outstanding").
+    _DATE_ANCHOR = ("record date", r"(?:date of|filing of) this (?:proxy statement|information statement)")
+    _COUNT_VERB = ("there were", "there are")
+    for sentence in _sentences_mentioning(text, _DATE_ANCHOR, "outstanding", _COUNT_VERB):
+        values = _share_count_candidates(sentence)
+        if not values:
             continue
-        value = int(m.group(0).replace(",", ""))
+        # The first number in the sentence that passed the award-type
+        # filter -- a sentence naming both common and preferred counts
+        # ("35,097,821 common shares... and 6,000 preferred shares...")
+        # states the common count first.
+        value = values[0]
         # A merger-of-equals filing states BOTH companies' own share
         # counts in separate sentences (Healthpeak/Physicians Realty
         # Trust) -- only the one naming this deal's own target is the
         # right count for ITS implied equity value.
-        names_target = core_name(target) and core_name(target) in core_name(sentence)
-        candidates.append((names_target, value, sentence.strip()))
+        names_target = _names_target(sentence, target)
+        # When neither candidate names the target directly (Pioneer
+        # Energy Services/Patterson-UTI: Pioneer's own sentence never
+        # repeats its name either, just "Pioneer common stock"), prefer
+        # one anchored to the literal "record date" -- specific to
+        # THIS deal's own shareholder vote -- over the looser "date of
+        # this proxy statement" anchor, which just as easily describes
+        # a counterparty's own count stated elsewhere in the same
+        # joint filing.
+        uses_record_date = bool(re.search("record date", sentence, re.IGNORECASE))
+        candidates.append((names_target, uses_record_date, value, sentence.strip()))
 
     if not candidates:
         return None
     named = [c for c in candidates if c[0]]
-    chosen = named[0] if named else candidates[0]
-    return {"value": chosen[1], "quote": chosen[2]}
+    pool = named if named else candidates
+    record_dated = [c for c in pool if c[1]]
+    chosen = record_dated[0] if record_dated else pool[0]
+    return {"value": chosen[2], "quote": chosen[3]}
 
 
 def _parse_dollar_amount(raw: str) -> Optional[float]:
@@ -130,8 +235,6 @@ def extract_aggregate_value(slug: str) -> Optional[dict]:
     filing) -- so a phrase matching more than one DISTINCT dollar
     figure is ambiguous about which one is the actual deal's own final
     value, and is skipped rather than guessed."""
-    if _bulk_slug_to_cik_accession(slug) is None:
-        return None
     text = _full_text(slug)
     if not text:
         return None

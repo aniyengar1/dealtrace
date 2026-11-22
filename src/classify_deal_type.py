@@ -302,6 +302,36 @@ def _bulk_slug_to_cik_accession(slug: str) -> Optional[tuple[str, str]]:
     return cik, accession
 
 
+_CURATED_RAW_DIR = Path("data/raw")
+
+
+def _curated_html_path(slug: str) -> Optional[Path]:
+    """A curated deal's own proxy, already fetched and cached on disk by
+    a prior `python -m src.fetch`/`fetch_defm14a` run (data/raw/*.html +
+    its sidecar manifest) -- never fetched here, only read. Resolved by
+    matching the curated deal's own stored `target` against each
+    manifest's "company" field (fuzzy, via is_same_entity) rather than
+    re-deriving fetch.py's own filename-slugging convention a second
+    time, which has no guaranteed relationship to DEALS's own target
+    spelling and could silently drift out of sync with it."""
+    from src.run import DEALS
+
+    if slug not in DEALS:
+        return None
+    target = DEALS[slug]["target"]
+    for manifest_path in _CURATED_RAW_DIR.glob("*_defm14a.manifest.json"):
+        try:
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        company = manifest.get("company")
+        if company and is_same_entity(company, target):
+            html_path = manifest_path.with_name(manifest_path.name.replace(".manifest.json", ".html"))
+            if html_path.exists():
+                return html_path
+    return None
+
+
 @lru_cache(maxsize=None)
 def _full_text(slug: str) -> str:
     cache_path = _parsed_text_cache_path(slug)
@@ -309,9 +339,11 @@ def _full_text(slug: str) -> str:
         return cache_path.read_text(encoding="utf-8")
 
     parsed = _bulk_slug_to_cik_accession(slug)
-    if parsed is None:
-        return ""
-    html = load_cached_html(*parsed)
+    if parsed is not None:
+        html = load_cached_html(*parsed)
+    else:
+        curated_path = _curated_html_path(slug)
+        html = curated_path.read_text(encoding="utf-8", errors="replace") if curated_path else None
     if not html:
         return ""
     text = BeautifulSoup(html, "lxml").get_text(" ", strip=True)
