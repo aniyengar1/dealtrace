@@ -185,6 +185,13 @@ not genuine absences.
   2,000 days are kept in the distribution but separately flagged for
   manual review, since a ~5.5-year-plus gap is unusual enough to be
   worth a human look even if it's genuine.
+- **First-bidder-wins, contested only**: `pct_first_bidder_wins_contested`
+  restricts `pct_first_bidder_is_eventual_acquirer` to deals with 2+
+  distinct bidders -- a 1-bidder deal wins by definition (there's no one
+  else it could lose to), so the all-deals number is structurally pulled
+  up by that group and isn't informative about genuine competitive
+  dynamics on its own. This is now the stat the site's homepage/`/stats`
+  pages lead with; the all-deals figure is kept as secondary context.
 
 ## Postgres as the single source of truth (`src.deal_metrics`)
 
@@ -254,27 +261,52 @@ two values are stored on every `headline_stats` row.
 ## Changelog
 
 - **Role-reversal/self-reference classification, winner logic, shares
-  outstanding (this session).** `BIDDER_COUNT_ANALYSIS.md`'s read-only
-  anomaly investigation found the public first-bidder-win rate (51.3%)
-  was depressed by `compute_first_bidder_won_for_deal` crediting a
-  target's own counter-offer/committee confirmation as "the winner,"
-  and `classify_deal_type` missing several target/acquirer role
-  -reversal and self-reference shapes (Aon/NFP, Enova/Grasshopper,
-  Maiden/Kestrel, Centennial/Colgate, Apollo/Athene, Strategic Storage
-  Trust VI/SSGT III, and 15 more found once the detection was
-  generalized). Fixing both dropped the one-bidder-group anomaly rate
-  from 20.1% to 0% and moved the headline first-bidder-win rate from
-  51.3% to 61.3% (n 792 -> 778; `n_canonical_deals` 823 -> 808, the 15
-  newly-excluded role-reversal/self-reference deals). 7 of those
-  reclassified deals had their `target`/`acquirer` fields swapped
-  (rather than excluded) once each was individually confirmed, from
-  the filing's own text, to have independent public identity (its own
-  ticker) worth keeping in stats. Also extended shares-outstanding
-  extraction to the 10 curated deals (previously 0% covered -- no code
-  path read their already-cached proxy at all) and widened its bulk
-  regex, covering 20 more of the 467 previously-missing bulk deals.
-  Several OTHER numbers in this doc (canonical-vs-non-canonical
-  `'Undisclosed'` counts, `price_plausible IS NULL` count) were found
-  already stale from earlier, unrelated sessions while verifying the
-  above and refreshed to their current values in the same pass -- not
-  all drift above is attributable to this session's own changes.
+  outstanding.** `BIDDER_COUNT_ANALYSIS.md`'s read-only anomaly
+  investigation found the public first-bidder-win rate (51.3%) was
+  depressed by `compute_first_bidder_won_for_deal` crediting a target's
+  own counter-offer/committee confirmation as "the winner," and
+  `classify_deal_type` missing several target/acquirer role-reversal
+  and self-reference shapes (Aon/NFP, Enova/Grasshopper, Maiden/Kestrel,
+  Centennial/Colgate, Apollo/Athene, Strategic Storage Trust VI/SSGT
+  III, and 15 more found once the detection was generalized). Fixing
+  both dropped the one-bidder-group anomaly rate from 20.1% to 0% and
+  moved the headline first-bidder-win rate from 51.3% to 61.3% (n 792
+  -> 778; `n_canonical_deals` 823 -> 808, the 15 newly-excluded
+  role-reversal/self-reference deals). 7 of those reclassified deals
+  initially had their `target`/`acquirer` fields swapped rather than
+  excluded, on the theory that a real target with its own ticker meant
+  the filing's own narrative was still complete enough to trust --
+  **superseded by the next entry below**, which found filer identity a
+  sturdier test and reverted all 7 swaps back to excluded. Also
+  extended shares-outstanding extraction to the 10 curated deals
+  (previously 0% covered -- no code path read their already-cached
+  proxy at all) and widened its bulk regex, covering 20 more of the
+  467 previously-missing bulk deals. Several OTHER numbers in this doc
+  (canonical-vs-non-canonical `'Undisclosed'` counts, `price_plausible
+  IS NULL` count) were found already stale from earlier, unrelated
+  sessions while verifying the above and refreshed to their current
+  values in the same pass -- not all drift above is attributable to
+  this session's own changes.
+- **Filer-identity re-check + contested-deals stat (follow-up).**
+  Re-checked the 7 swap-and-keep deals above by filer identity instead
+  of target-ticker presence: 4 had filed Form S-4 (a registration
+  statement -- by SEC rule, always filed by the party issuing new
+  securities, i.e. the acquirer, regardless of any proposal-text
+  evidence) and the other 3 (Bally's/Gamesys and 2 more) each filed
+  their OWN special-meeting proxy to approve their OWN share issuance
+  for the acquisition. All 7 reverted to excluded. Generalized this
+  into `_is_s4_filer_is_acquirer`, guarded against `reverse_merger`
+  (a genuine reverse merger's S-4 filer is technically the public
+  shell too, but is deliberately kept in stats elsewhere), and reran
+  it across every included deal: 37 more newly excluded (verified via
+  a 12-deal random sample against their own filing text). Final public
+  -scoping included-deal count: **769** (`is_canonical AND NOT
+  excluded_from_stats AND HAS_COMPLETED_RUN_SQL`, the exact scope
+  `listCanonicalDealMetrics` uses -- distinct from `n_canonical_deals`,
+  which only checks `is_canonical`). Also added
+  `pct_first_bidder_wins_contested` (restricted to 2+-bidder deals,
+  since a 1-bidder deal wins by definition): **40.0% (n = 485)**,
+  confirming the ~40% estimate this follow-up started from; now the
+  primary first-bidder-win number shown on the site, with the all
+  -deals figure (61.0%, n = 747 after this round's additional
+  exclusions) kept as secondary context.
