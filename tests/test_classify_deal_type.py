@@ -9,14 +9,15 @@ def _proposal(proposer, quotes):
 
 
 def test_proposal_direction_reversed_true_for_filer_proposing_to_acquire_acquirer_field():
-    # Real shape: bulk_315293_000119312524045397 (Aon/NFP).
+    # Real shape: bulk_315293_000119312524045397 (Aon/NFP). A non-"bulk_"
+    # slug short-circuits _full_text to "" (no I/O), same as a curated deal.
     proposals = [
         _proposal(
             "Aon plc",
             ["Aon delivered a non-binding indication of interest to NFP containing a proposal to acquire 100% of the equity of NFP."],
         )
     ]
-    assert cdt._is_proposal_direction_reversed("Aon plc", "NFP", proposals) is True
+    assert cdt._is_proposal_direction_reversed("fake_slug", "Aon plc", "NFP", proposals) is True
 
 
 def test_proposal_direction_reversed_false_when_normal_direction_evidence_exists():
@@ -27,12 +28,12 @@ def test_proposal_direction_reversed_false_when_normal_direction_evidence_exists
         _proposal("Thoma Bravo", ["Thoma Bravo submitted a proposal to acquire all of the outstanding shares of Verint."]),
         _proposal("Verint", ["Verint's board discussed the proposed acquisition of its outstanding shares."]),
     ]
-    assert cdt._is_proposal_direction_reversed("Verint", "Thoma Bravo", proposals) is False
+    assert cdt._is_proposal_direction_reversed("fake_slug", "Verint", "Thoma Bravo", proposals) is False
 
 
 def test_proposal_direction_reversed_false_with_no_acquire_language():
     proposals = [_proposal("Corebridge", ["Corebridge stockholders would own 52% of the combined company."])]
-    assert cdt._is_proposal_direction_reversed("Equitable Holdings, Inc.", "Corebridge", proposals) is False
+    assert cdt._is_proposal_direction_reversed("fake_slug", "Equitable Holdings, Inc.", "Corebridge", proposals) is False
 
 
 def test_proposal_direction_reversed_airtight_against_contrary_evidence():
@@ -43,7 +44,39 @@ def test_proposal_direction_reversed_airtight_against_contrary_evidence():
         _proposal("Target Co", ["Target Co delivered a proposal to acquire Acquirer Co."]),
         _proposal("Acquirer Co", ["Acquirer Co submitted a proposal to acquire Target Co."]),
     ]
-    assert cdt._is_proposal_direction_reversed("Target Co", "Acquirer Co", proposals) is False
+    assert cdt._is_proposal_direction_reversed("fake_slug", "Target Co", "Acquirer Co", proposals) is False
+
+
+def test_proposal_direction_reversed_ignores_negated_acquisition_phrase():
+    # Real shape: bulk_1371217_000110465921049773 (ReShape/Obalon) --
+    # "contemplating a combination... rather than an acquisition of
+    # Obalon" REJECTS the acquisition framing, it doesn't assert it.
+    proposals = [
+        _proposal(
+            "ReShape",
+            ["term sheet contemplating a combination of the companies rather than an acquisition of Obalon's assets."],
+        )
+    ]
+    assert cdt._is_proposal_direction_reversed("fake_slug", "ReShape Lifesciences Inc.", "Obalon", proposals) is False
+
+
+def test_proposal_direction_reversed_final_subsidiary_structure_overrides_early_proposal(monkeypatch):
+    # Real shape: bulk_1754820_000114036123041374 (Desktop Metal/Stratasys)
+    # -- Desktop Metal's own EARLY proposal was to acquire Stratasys, but
+    # the deal's final, legally operative structure (its own merger
+    # -agreement recital) has Desktop Metal becoming Stratasys's
+    # subsidiary -- the correctly-labeled, final direction, which must
+    # win over the early, later-superseded offer.
+    proposals = [
+        _proposal(
+            "Desktop Metal, Inc.",
+            ["a non-binding, preliminary indication of interest of Desktop Metal to acquire Stratasys in a stock-for-stock transaction."],
+        )
+    ]
+    monkeypatch.setattr(
+        cdt, "_full_text", lambda slug: "Desktop Metal surviving the Merger as a wholly owned subsidiary of Stratasys."
+    )
+    assert cdt._is_proposal_direction_reversed("bulk_fake", "Desktop Metal, Inc.", "Stratasys", proposals) is False
 
 
 # --- _is_new_holdco_merger ----------------------------------------------

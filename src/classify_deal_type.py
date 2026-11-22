@@ -137,10 +137,17 @@ _CLASSIFY_CACHE_DIR = Path("data/cache/deal_type_classification")
 # -count anomaly investigation found several role-reversal/self
 # -reference shapes none of the v3 checks caught (Aon/NFP, Enova/
 # Grasshopper, Maiden/Kestrel, Centennial/Colgate, Apollo/Athene,
-# Strategic Storage Trust VI/SSGT III). Every classification rule
-# change needs a bump here, or a deal keeps silently serving its stale
-# result forever even once the rule that should catch it is fixed.
-_CLASSIFY_CACHE_VERSION = "v4"
+# Strategic Storage Trust VI/SSGT III). v5: _is_proposal_direction_
+# reversed now also weighs the deal's own FINAL "X will become a
+# wholly owned subsidiary of Y" structure (not just proposal-text
+# "acquire" language) and ignores a negated/contrastive "rather than an
+# acquisition of X" frame -- without this, Desktop Metal/Stratasys and
+# ReShape/Obalon were both wrongly flagged off an early, later
+# -superseded proposal that pointed the opposite way from the deal's
+# own final agreed structure. Every classification rule change needs a
+# bump here, or a deal keeps silently serving its stale result forever
+# even once the rule that should catch it is fixed.
+_CLASSIFY_CACHE_VERSION = "v5"
 
 
 def _classify_cache_key(slug: str, target: str, acquirer: str, events: list[dict], proposals: list[dict]) -> str:
@@ -517,7 +524,16 @@ _ACQUIRE_OBJECT_RE = re.compile(
 )
 
 
-def _is_proposal_direction_reversed(target: str, acquirer: str, proposals: list[dict]) -> bool:
+# A negated/contrastive frame right before the match ("a combination of
+# the companies RATHER THAN an acquisition of X") rejects X-direction as
+# the deal's structure instead of asserting it -- ReShape/Obalon's own
+# early term sheet uses exactly this phrasing, and without this guard
+# the match is read backwards (as if it affirmed what it's actually
+# denying).
+_NEGATED_ACQUIRE_RE = re.compile(r"(?:rather than|instead of|as opposed to|unlike)\s+(?:an?|the)?\s*$", re.IGNORECASE)
+
+
+def _is_proposal_direction_reversed(slug: str, target: str, acquirer: str, proposals: list[dict]) -> bool:
     """True when a Proposal's own STRUCTURED proposer field (never
     re-derived from prose subject-extraction, which is much harder to
     get right reliably than reading a field we already trust elsewhere
@@ -528,15 +544,25 @@ def _is_proposal_direction_reversed(target: str, acquirer: str, proposals: list[
     acquire the OTHER side, not the other way around (Aon/NFP: "Aon
     delivered...a proposal to acquire 100% of the equity of NFP" --
     proposer="Aon plc"=target, captured="NFP"=acquirer). Unlike
-    _is_filer_reversed, this reads already-extracted proposals/events
-    data every deal has (curated included), not cached filing HTML
+    _is_filer_reversed, this ALSO reads already-extracted proposals data
+    every deal has (curated included), not just cached filing HTML
     (bulk-only) -- closing the gap this module's own docstring already
     calls out ("a curated deal is given neither check").
 
+    Also folds in the SAME "X will become a wholly owned subsidiary of
+    Y" evidence _is_filer_reversed itself already reads from the full
+    text, in both directions: Desktop Metal/Stratasys and ReShape/Obalon
+    both had an EARLY, non-binding proposal pointing one way (Desktop
+    Metal once proposed to acquire Stratasys; ReShape's own term sheet
+    text, read without this, looked like it proposed acquiring Obalon),
+    but the deal's own FINAL, legally operative merger-agreement recital
+    settles the structure the OTHER way for both -- without weighing
+    that stronger, later signal, an early superseded offer alone would
+    wrongly flag an already-correctly-labeled deal.
+
     Airtight like _is_filer_reversed: requires at least one
-    reversal-direction quote AND zero quotes anywhere in the deal
-    asserting the opposite direction (acquirer-as-proposer proposing to
-    acquire a name matching target) -- rejected the weaker "which side
+    reversal-direction signal AND zero signals anywhere in the deal
+    asserting the opposite direction -- rejected the weaker "which side
     proposes more" heuristic for the same reason _is_filer_reversed's
     own docstring already rejected it (an ordinary target-shops-itself
     negotiation has the target sending plenty of its own counters too)."""
@@ -548,11 +574,19 @@ def _is_proposal_direction_reversed(target: str, acquirer: str, proposals: list[
             continue
         text = " ".join(p.get("source_quotes") or [])
         for m in _ACQUIRE_OBJECT_RE.finditer(text):
+            if _NEGATED_ACQUIRE_RE.search(text[: m.start()]):
+                continue
             acquired_name = m.group(1).strip()
             if _is_same_entity_fuzzy(proposer, target) and _is_same_entity_fuzzy(acquired_name, acquirer):
                 reversed_evidence = True
             elif _is_same_entity_fuzzy(proposer, acquirer) and _is_same_entity_fuzzy(acquired_name, target):
                 normal_evidence = True
+    for m in _SUBSIDIARY_OF_RE.finditer(_full_text(slug)):
+        child, parent = m.group(1).strip(), m.group(2).strip()
+        if _is_same_entity_fuzzy(child, target) and _is_same_entity_fuzzy(parent, acquirer):
+            normal_evidence = True
+        elif _is_same_entity_fuzzy(child, acquirer) and _is_same_entity_fuzzy(parent, target):
+            reversed_evidence = True
     return reversed_evidence and not normal_evidence
 
 
@@ -792,7 +826,7 @@ def _classify_deal_uncached(
             True,
             "the filer is internalizing (absorbing) its own external manager via a share issuance, not being acquired by or acquiring anyone",
         )
-    if _is_filer_reversed(slug, target, acquirer) or _is_proposal_direction_reversed(target, acquirer, proposals):
+    if _is_filer_reversed(slug, target, acquirer) or _is_proposal_direction_reversed(slug, target, acquirer, proposals):
         return (
             "filer_is_acquirer",
             True,
