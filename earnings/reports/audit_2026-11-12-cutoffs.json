@@ -1,0 +1,1430 @@
+{
+  "PD": {
+    "company": {
+      "ticker": "PD",
+      "cik": "0001568100",
+      "name": "PagerDuty, Inc.",
+      "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "basis": "US_GAAP_consolidated_reported",
+      "period_start": "2026-02-01",
+      "period_end": "2027-01-31",
+      "fiscal_label": "FY2027",
+      "prior_start": "2025-02-01",
+      "prior_end": "2026-01-31",
+      "calendar": "months",
+      "comparison_ends": {
+        "2026-04-30": "2025-04-30",
+        "2026-07-31": "2025-07-31",
+        "2026-10-31": "2025-10-31"
+      },
+      "comparability": {
+        "blocked": false,
+        "available_on": "2026-11-11",
+        "reason": "Consolidated revenue reconciled to current release and prior-year annual/YTD statements."
+      },
+      "next_report": {
+        "type": "Q3 annual-hurdle update",
+        "date": null,
+        "status": "unverified",
+        "expected_window": {
+          "start": "2026-11-20",
+          "end": "2026-11-30",
+          "precision": "range"
+        },
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000106/pd-20251122.htm",
+        "source_date": "2025-11-25",
+        "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only.",
+        "source_check": {
+          "checked_at": "2026-11-11T23:48:24.108336+00:00",
+          "fetched_at": "2026-11-11T23:48:24.313521+00:00",
+          "report_date": null,
+          "report_date_present": false,
+          "sha256": "9f4a0ebc6e4eac396206c3ca9c5c1ede5294e17f593d3a8c1ba5f680dd2cd10c",
+          "source_date": "2025-11-25",
+          "source_date_present": true,
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000106/pd-20251122.htm",
+          "status": "retrieved_unverified"
+        }
+      },
+      "annual_result": {
+        "expected_window": {
+          "start": "2027-03-01",
+          "end": "2027-03-31",
+          "precision": "month"
+        },
+        "status": "estimated",
+        "type": "Q4/FY annual-guidance outcome",
+        "source_date": "2026-03-12",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
+        "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+        "source_check": {
+          "checked_at": "2026-11-11T23:48:24.332878+00:00",
+          "fetched_at": "2026-11-11T23:48:25.046447+00:00",
+          "report_date": null,
+          "report_date_present": false,
+          "sha256": "aae98ec7ef5281daeda6f0a93daad8b0042ec35662fcd8fb8d3e0da28e15af1e",
+          "source_date": "2026-03-12",
+          "source_date_present": true,
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
+          "status": "retrieved_unverified"
+        }
+      },
+      "quarter_targets": [
+        {
+          "label": "Q3 FY2027",
+          "start": "2026-08-01",
+          "end": "2026-10-31",
+          "prior_start": "2025-08-01",
+          "prior_end": "2025-10-31",
+          "available_on": "2026-08-27",
+          "boundary_evidence": {
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm",
+            "accession": "0001568100-26-000044",
+            "filed_date": "2026-08-27",
+            "rule": "Three calendar months on the registered month-based fiscal calendar",
+            "prior_actual_id": "08e9f9d3-28c0-557e-a12c-d777fa34b8c1",
+            "prior_actual_accession": "0001568100-25-000107"
+          },
+          "growth_comparability": {
+            "blocked": false,
+            "available_on": "2026-11-11",
+            "reason": "Consolidated revenue reconciled to current release and prior-year annual/YTD statements.",
+            "sources": [
+              "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm"
+            ]
+          },
+          "outcome_comparability": {
+            "blocked": true,
+            "available_on": "2026-11-11",
+            "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+            "sources": [
+              "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm"
+            ]
+          }
+        }
+      ],
+      "outcome_comparability": {
+        "blocked": true,
+        "available_on": "2026-11-11",
+        "reason": "Selected annual result not yet reported; guidance-to-result basis requires a separate result-specific evidence review.",
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm"
+        ]
+      }
+    },
+    "dates": {
+      "2026-08-26": {
+        "annual": {
+          "id": "32abce38-a44a-57b3-a9e7-68a78c32022e",
+          "state": "ok",
+          "company": "PD",
+          "as_of": "2026-08-26",
+          "policy": {
+            "version": "manual-freshness-v1",
+            "actual_days": 135,
+            "guidance_days": 150,
+            "assumption": "Manual research policy; not an accounting standard"
+          },
+          "inputs": {
+            "guidance": "148e716d-7fcd-540e-8b80-ef316212127d",
+            "actual_ytd": "3e47e23a-24aa-5fb5-8e05-b9acbbc0a68b",
+            "prior_annual": "2b564457-0624-55e9-8524-c708527109a8",
+            "prior_ytd": "5640adf6-9a66-5abb-ab37-ec557b337cdc",
+            "prior_remaining": "b917ec6d-c2b8-55bf-ad71-67ef8f92ddd6"
+          },
+          "codes": [],
+          "details": [],
+          "remaining_low": "367533000",
+          "remaining_high": "375533000",
+          "growth_low": "-0.01397216834209276682736806522491488728098062729885",
+          "growth_high": "0.0074904558393093327538424804354766446406486005028",
+          "company_config": {
+            "ticker": "PD",
+            "cik": "0001568100",
+            "name": "PagerDuty, Inc.",
+            "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "basis": "US_GAAP_consolidated_reported",
+            "period_start": "2026-02-01",
+            "period_end": "2027-01-31",
+            "fiscal_label": "FY2027",
+            "prior_start": "2025-02-01",
+            "prior_end": "2026-01-31",
+            "calendar": "months",
+            "comparison_ends": {
+              "2026-04-30": "2025-04-30",
+              "2026-07-31": "2025-07-31",
+              "2026-10-31": "2025-10-31"
+            },
+            "comparability": {
+              "review_status": "not_available_by_cutoff"
+            }
+          },
+          "formula_version": "revenue-hurdle-v1-decimal50"
+        },
+        "quarter": {
+          "id": "35b060f2-6ccc-5c6e-b3fe-603eeed0801f",
+          "state": "blocked",
+          "company": "PD",
+          "as_of": "2026-08-26",
+          "target": {
+            "label": "Q3 FY2027",
+            "start": "2026-08-01",
+            "end": "2026-10-31",
+            "prior_start": "2025-08-01",
+            "prior_end": "2025-10-31",
+            "available_on": "2026-08-27",
+            "boundary_evidence": {
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm",
+              "accession": "0001568100-26-000044",
+              "filed_date": "2026-08-27",
+              "rule": "Three calendar months on the registered month-based fiscal calendar",
+              "prior_actual_id": "08e9f9d3-28c0-557e-a12c-d777fa34b8c1",
+              "prior_actual_accession": "0001568100-25-000107"
+            },
+            "growth_comparability": {
+              "available_on": "2026-11-11",
+              "review_status": "not_available_by_cutoff"
+            }
+          },
+          "policy": {
+            "version": "manual-freshness-v1",
+            "actual_days": 135,
+            "guidance_days": 150,
+            "assumption": "Manual research policy; not an accounting standard"
+          },
+          "inputs": {},
+          "codes": [
+            "MISSING_PERIOD"
+          ],
+          "details": [
+            "Target fiscal boundaries unavailable by cutoff"
+          ],
+          "guidance_low": null,
+          "guidance_high": null,
+          "growth_low": null,
+          "growth_high": null,
+          "formula_version": "quarter-guidance-implied-growth-v1-decimal50"
+        },
+        "eligible_quarter_guidance_ids": [],
+        "latest_quarter_guidance_id": null,
+        "prior_quarter_inventory": {
+          "id": "08e9f9d3-28c0-557e-a12c-d777fa34b8c1",
+          "company": "PD",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-08-01",
+          "end": "2025-10-31",
+          "value": "124545000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001568100-25-000107",
+          "filed": "2025-11-26",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+          "parents": [],
+          "derivation": null
+        },
+        "quarter_inventory_note": "Prior quarter is available inventory, not selected by blocked historical implied-growth calculation",
+        "actuals_selected": {
+          "actual_ytd": {
+            "id": "3e47e23a-24aa-5fb5-8e05-b9acbbc0a68b",
+            "company": "PD",
+            "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "start": "2026-02-01",
+            "end": "2026-04-30",
+            "value": "120967000",
+            "unit": "USD",
+            "basis": "US_GAAP_consolidated_reported",
+            "accession": "0001568100-26-000031",
+            "filed": "2026-05-28",
+            "form": "10-Q",
+            "fiscal_year": 2027,
+            "fiscal_period": "Q1",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+            "parents": [],
+            "derivation": null
+          },
+          "prior_annual": {
+            "id": "2b564457-0624-55e9-8524-c708527109a8",
+            "company": "PD",
+            "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "start": "2025-02-01",
+            "end": "2026-01-31",
+            "value": "492546000",
+            "unit": "USD",
+            "basis": "US_GAAP_consolidated_reported",
+            "accession": "0001568100-26-000012",
+            "filed": "2026-03-12",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "fiscal_period": "FY",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+            "parents": [],
+            "derivation": null
+          },
+          "prior_ytd": {
+            "id": "5640adf6-9a66-5abb-ab37-ec557b337cdc",
+            "company": "PD",
+            "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "start": "2025-02-01",
+            "end": "2025-04-30",
+            "value": "119805000",
+            "unit": "USD",
+            "basis": "US_GAAP_consolidated_reported",
+            "accession": "0001568100-26-000031",
+            "filed": "2026-05-28",
+            "form": "10-Q",
+            "fiscal_year": 2027,
+            "fiscal_period": "Q1",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+            "parents": [],
+            "derivation": null
+          }
+        }
+      },
+      "2026-08-27": {
+        "annual": {
+          "id": "530f4f90-ac87-56e8-aed2-5d427ff31c13",
+          "state": "ok",
+          "company": "PD",
+          "as_of": "2026-08-27",
+          "policy": {
+            "version": "manual-freshness-v1",
+            "actual_days": 135,
+            "guidance_days": 150,
+            "assumption": "Manual research policy; not an accounting standard"
+          },
+          "inputs": {
+            "guidance": "f9d37849-bf95-50da-9956-cd557de8254d",
+            "actual_ytd": "2b92d8f3-7d01-54ab-9fe8-2e8412eb4f0e",
+            "prior_annual": "2b564457-0624-55e9-8524-c708527109a8",
+            "prior_ytd": "a2b9a272-5712-52a7-8b87-678be1fd7bac",
+            "prior_remaining": "2d049796-29f3-534d-a65b-d44b3b456509"
+          },
+          "codes": [],
+          "details": [],
+          "remaining_low": "246097000",
+          "remaining_high": "251097000",
+          "growth_low": "-0.01296675089239160951349616973488950387037259856415",
+          "growth_high": "0.0070869931416195403681867404644447118276982312598",
+          "company_config": {
+            "ticker": "PD",
+            "cik": "0001568100",
+            "name": "PagerDuty, Inc.",
+            "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "basis": "US_GAAP_consolidated_reported",
+            "period_start": "2026-02-01",
+            "period_end": "2027-01-31",
+            "fiscal_label": "FY2027",
+            "prior_start": "2025-02-01",
+            "prior_end": "2026-01-31",
+            "calendar": "months",
+            "comparison_ends": {
+              "2026-04-30": "2025-04-30",
+              "2026-07-31": "2025-07-31",
+              "2026-10-31": "2025-10-31"
+            },
+            "comparability": {
+              "review_status": "not_available_by_cutoff"
+            }
+          },
+          "formula_version": "revenue-hurdle-v1-decimal50"
+        },
+        "quarter": {
+          "id": "a1f3b23b-00e0-5e5f-af5d-28fabcf5aa8f",
+          "state": "blocked",
+          "company": "PD",
+          "as_of": "2026-08-27",
+          "target": {
+            "label": "Q3 FY2027",
+            "start": "2026-08-01",
+            "end": "2026-10-31",
+            "prior_start": "2025-08-01",
+            "prior_end": "2025-10-31",
+            "available_on": "2026-08-27",
+            "boundary_evidence": {
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm",
+              "accession": "0001568100-26-000044",
+              "filed_date": "2026-08-27",
+              "rule": "Three calendar months on the registered month-based fiscal calendar",
+              "prior_actual_id": "08e9f9d3-28c0-557e-a12c-d777fa34b8c1",
+              "prior_actual_accession": "0001568100-25-000107"
+            },
+            "growth_comparability": {
+              "available_on": "2026-11-11",
+              "review_status": "not_available_by_cutoff"
+            }
+          },
+          "policy": {
+            "version": "manual-freshness-v1",
+            "actual_days": 135,
+            "guidance_days": 150,
+            "assumption": "Manual research policy; not an accounting standard"
+          },
+          "inputs": {
+            "guidance": "83256569-74d8-5e11-ac48-1cd719c80460"
+          },
+          "codes": [
+            "INCOMPARABLE_BASIS"
+          ],
+          "details": [
+            "Comparability review unavailable by cutoff"
+          ],
+          "guidance_low": null,
+          "guidance_high": null,
+          "growth_low": null,
+          "growth_high": null,
+          "formula_version": "quarter-guidance-implied-growth-v1-decimal50"
+        },
+        "eligible_quarter_guidance_ids": [
+          "83256569-74d8-5e11-ac48-1cd719c80460"
+        ],
+        "latest_quarter_guidance_id": "83256569-74d8-5e11-ac48-1cd719c80460",
+        "prior_quarter_inventory": {
+          "id": "08e9f9d3-28c0-557e-a12c-d777fa34b8c1",
+          "company": "PD",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-08-01",
+          "end": "2025-10-31",
+          "value": "124545000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001568100-25-000107",
+          "filed": "2025-11-26",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+          "parents": [],
+          "derivation": null
+        },
+        "quarter_inventory_note": "Prior quarter is available inventory, not selected by blocked historical implied-growth calculation",
+        "actuals_selected": {
+          "actual_ytd": {
+            "id": "2b92d8f3-7d01-54ab-9fe8-2e8412eb4f0e",
+            "company": "PD",
+            "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "start": "2026-02-01",
+            "end": "2026-07-31",
+            "value": "245403000",
+            "unit": "USD",
+            "basis": "US_GAAP_consolidated_reported",
+            "accession": "0001568100-26-000045",
+            "filed": "2026-08-27",
+            "form": "10-Q",
+            "fiscal_year": 2027,
+            "fiscal_period": "Q2",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+            "parents": [],
+            "derivation": null
+          },
+          "prior_annual": {
+            "id": "2b564457-0624-55e9-8524-c708527109a8",
+            "company": "PD",
+            "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "start": "2025-02-01",
+            "end": "2026-01-31",
+            "value": "492546000",
+            "unit": "USD",
+            "basis": "US_GAAP_consolidated_reported",
+            "accession": "0001568100-26-000012",
+            "filed": "2026-03-12",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "fiscal_period": "FY",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+            "parents": [],
+            "derivation": null
+          },
+          "prior_ytd": {
+            "id": "a2b9a272-5712-52a7-8b87-678be1fd7bac",
+            "company": "PD",
+            "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "start": "2025-02-01",
+            "end": "2025-07-31",
+            "value": "243216000",
+            "unit": "USD",
+            "basis": "US_GAAP_consolidated_reported",
+            "accession": "0001568100-26-000045",
+            "filed": "2026-08-27",
+            "form": "10-Q",
+            "fiscal_year": 2027,
+            "fiscal_period": "Q2",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+            "parents": [],
+            "derivation": null
+          }
+        }
+      }
+    },
+    "actual_records": [
+      {
+        "company": "PD",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-08-01",
+        "end": "2025-10-31",
+        "value": "124545000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001568100-25-000107",
+        "filed": "2025-11-26",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+        "parents": [],
+        "derivation": null
+      },
+      {
+        "company": "PD",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-02-01",
+        "end": "2026-01-31",
+        "value": "492546000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001568100-26-000012",
+        "filed": "2026-03-12",
+        "form": "10-K",
+        "fiscal_year": 2026,
+        "fiscal_period": "FY",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+        "parents": [],
+        "derivation": null
+      },
+      {
+        "company": "PD",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-02-01",
+        "end": "2026-07-31",
+        "value": "245403000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001568100-26-000045",
+        "filed": "2026-08-27",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+        "parents": [],
+        "derivation": null
+      },
+      {
+        "company": "PD",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-02-01",
+        "end": "2026-04-30",
+        "value": "120967000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001568100-26-000031",
+        "filed": "2026-05-28",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+        "parents": [],
+        "derivation": null
+      },
+      {
+        "company": "PD",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-02-01",
+        "end": "2025-04-30",
+        "value": "119805000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001568100-26-000031",
+        "filed": "2026-05-28",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+        "parents": [],
+        "derivation": null
+      },
+      {
+        "company": "PD",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-02-01",
+        "end": "2025-07-31",
+        "value": "243216000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001568100-26-000045",
+        "filed": "2026-08-27",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+        "parents": [],
+        "derivation": null
+      }
+    ],
+    "guidance_records": [
+      {
+        "id": "a2aed39a-a88c-5b65-91e8-0bf81f743819",
+        "company": "PD",
+        "issued": {
+          "start": "2026-03-12",
+          "end": "2026-03-12",
+          "precision": "day"
+        },
+        "filed": "2026-03-12",
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "low": "488500000",
+        "high": "496500000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "status": "initial",
+        "accession": "0001568100-26-000011",
+        "exhibit": "99.1",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
+        "quote": "For the full fiscal year 2027, PagerDuty currently expects: \u2022 Total revenue of $488.5 million - $496.5 million. \u2022 Non-GAAP net income per diluted share attributable to PagerDuty, Inc. common stockholders of $1.23 - $1.28 assuming approximately 81 million diluted shares and a non-GAAP tax rate of 20%. These statements are forward-looking and actual results may differ materially. Please refer to the section titled \"For",
+        "metric": "consolidated_revenue",
+        "original_verified": true,
+        "notes": ""
+      },
+      {
+        "id": "b07444c7-67c4-5721-8456-be175b6d1f02",
+        "company": "PD",
+        "issued": {
+          "start": "2026-05-11",
+          "end": "2026-05-11",
+          "precision": "day"
+        },
+        "filed": "2026-05-11",
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "low": "488500000",
+        "high": "496500000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "status": "reaffirmed",
+        "accession": "0001140361-26-020610",
+        "exhibit": "99.1",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000114036126020610/ef20072978_ex99-1.htm",
+        "quote": "Company Outlook The Company also reaffirmed its outlook for the first quarter and full fiscal year 2027, previously provided on March 12, 2026. The Company expects first\n        quarter total revenue of $118 million to $120 million, and full fiscal year total revenue of $488.5 million to $496.5 million. The Company expects Non-GAAP net income per diluted share of $0.23 - $0.25 for the first quarter (assuming approxim",
+        "metric": "consolidated_revenue",
+        "original_verified": false,
+        "notes": ""
+      },
+      {
+        "id": "148e716d-7fcd-540e-8b80-ef316212127d",
+        "company": "PD",
+        "issued": {
+          "start": "2026-05-28",
+          "end": "2026-05-28",
+          "precision": "day"
+        },
+        "filed": "2026-05-28",
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "low": "488500000",
+        "high": "496500000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "status": "reaffirmed",
+        "accession": "0001568100-26-000030",
+        "exhibit": "99.1",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000030/ex991-pagerdutyq1fy27earni.htm",
+        "quote": "For the full fiscal year 2027, PagerDuty currently expects: \u2022 Total revenue of $488.5 million - $496.5 million, consistent with previous guidance. \u2022 Non-GAAP net income per diluted share attributable to PagerDuty, Inc. common stockholders of $1.27 - $1.32 (up from $1.23 - $1.28) assuming approximately 79 million diluted shares and a non-GAAP tax rate of 20%. These statements are forward-looking and actual results may",
+        "metric": "consolidated_revenue",
+        "original_verified": false,
+        "notes": ""
+      },
+      {
+        "id": "f9d37849-bf95-50da-9956-cd557de8254d",
+        "company": "PD",
+        "issued": {
+          "start": "2026-08-27",
+          "end": "2026-08-27",
+          "precision": "day"
+        },
+        "filed": "2026-08-27",
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "low": "491500000",
+        "high": "496500000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "status": "raised",
+        "accession": "0001568100-26-000044",
+        "exhibit": "99.1",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm",
+        "quote": "For the full fiscal year 2027, PagerDuty currently expects: \u2022 Total revenue of $491.5 million - $496.5 million. \u2022 Non-GAAP operating margin of 25.0% to 26.0%. \u2022 Non-GAAP net income per diluted share attributable to PagerDuty, Inc. common stockholders of $1.33 - $1.37, assuming approximately 80 million diluted shares and a non-GAAP tax rate of 20%. These statements are forward-looking and actual results may differ mat",
+        "metric": "consolidated_revenue",
+        "original_verified": false,
+        "notes": ""
+      },
+      {
+        "id": "83256569-74d8-5e11-ac48-1cd719c80460",
+        "company": "PD",
+        "issued": {
+          "start": "2026-08-27",
+          "end": "2026-08-27",
+          "precision": "day"
+        },
+        "filed": "2026-08-27",
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "low": "123000000",
+        "high": "125000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "status": "initial",
+        "accession": "0001568100-26-000044",
+        "exhibit": "99.1",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm",
+        "quote": "For the third quarter of fiscal 2027, PagerDuty currently expects: \u2022 Total revenue of $123.0 million - $125.0 million. \u2022 Non-GAAP operating margin of 26.5% to 27.5%. \u2022 Non-GAAP net income per diluted share attributable to PagerDuty, Inc. common stockholders of $0.34",
+        "metric": "quarterly_consolidated_revenue",
+        "original_verified": true,
+        "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction."
+      }
+    ],
+    "newly_available_guidance": [
+      {
+        "id": "f9d37849-bf95-50da-9956-cd557de8254d",
+        "available_on": "2026-08-27",
+        "metric": "consolidated_revenue"
+      },
+      {
+        "id": "83256569-74d8-5e11-ac48-1cd719c80460",
+        "available_on": "2026-08-27",
+        "metric": "quarterly_consolidated_revenue"
+      }
+    ],
+    "newly_available_actuals": [
+      {
+        "id": "a2b9a272-5712-52a7-8b87-678be1fd7bac",
+        "filed": "2026-08-27",
+        "accession": "0001568100-26-000045",
+        "start": "2025-02-01",
+        "end": "2025-07-31"
+      },
+      {
+        "id": "ee447e7b-4d8c-5cd2-bd0c-472c89ffdd00",
+        "filed": "2026-08-27",
+        "accession": "0001568100-26-000045",
+        "start": "2025-05-01",
+        "end": "2025-07-31"
+      },
+      {
+        "id": "2b92d8f3-7d01-54ab-9fe8-2e8412eb4f0e",
+        "filed": "2026-08-27",
+        "accession": "0001568100-26-000045",
+        "start": "2026-02-01",
+        "end": "2026-07-31"
+      },
+      {
+        "id": "d73629ff-9070-54df-97e0-08f522fd1552",
+        "filed": "2026-08-27",
+        "accession": "0001568100-26-000045",
+        "start": "2026-05-01",
+        "end": "2026-07-31"
+      }
+    ]
+  },
+  "MDB": {
+    "company": {
+      "ticker": "MDB",
+      "cik": "0001441816",
+      "name": "MongoDB, Inc.",
+      "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+      "basis": "US_GAAP_consolidated_reported",
+      "period_start": "2026-02-01",
+      "period_end": "2027-01-31",
+      "fiscal_label": "FY2027",
+      "prior_start": "2025-02-01",
+      "prior_end": "2026-01-31",
+      "calendar": "months",
+      "comparison_ends": {
+        "2026-04-30": "2025-04-30",
+        "2026-07-31": "2025-07-31",
+        "2026-10-31": "2025-10-31"
+      },
+      "comparability": {
+        "blocked": false,
+        "available_on": "2026-11-11",
+        "reason": "Clarity consolidated from May 8, 2026. Note 4 says acquisition effects were not material; no normalization. September 29 presentation expressly does not reaffirm guidance.",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059830/mdb-20260731.htm"
+      },
+      "next_report": {
+        "type": "Q3 annual-hurdle update",
+        "date": "2026-12-01",
+        "status": "confirmed",
+        "expected_window": {
+          "start": "2026-12-01",
+          "end": "2026-12-15",
+          "precision": "range"
+        },
+        "source_url": "https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-date-third-quarter-fiscal-2027-earnings",
+        "source_date": "2026-11-05",
+        "quote": "after the U.S. financial markets close on Tuesday, December 1, 2026",
+        "verified_as_of": "2026-11-11",
+        "source_check": {
+          "checked_at": "2026-11-11T23:48:31.323477+00:00",
+          "fetched_at": null,
+          "http_status": 403,
+          "report_date": "2026-12-01",
+          "sha256": null,
+          "source_date": "2026-11-05",
+          "source_url": "https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-date-third-quarter-fiscal-2027-earnings",
+          "status": "unverified",
+          "gap": "Current direct HTTP recheck returned 403. Earlier dated-source confirmation is retained as prior evidence, without an invented earlier fetch time."
+        }
+      },
+      "annual_result": {
+        "type": "Q4/FY annual-guidance outcome",
+        "expected_window": {
+          "start": "2027-03-01",
+          "end": "2027-03-31",
+          "precision": "month"
+        },
+        "status": "estimated",
+        "source_date": "2026-03-02",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm",
+        "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+        "source_check": {
+          "checked_at": "2026-11-11T23:48:31.540381+00:00",
+          "fetched_at": "2026-11-11T23:48:32.436464+00:00",
+          "report_date": null,
+          "report_date_present": false,
+          "sha256": "c144559491c5ca9fd18e9dab5d67eabb0c18023a5241b1f646f38bac4fd23d5b",
+          "source_date": "2026-03-02",
+          "source_date_present": true,
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm",
+          "status": "retrieved_unverified"
+        }
+      },
+      "calendar_source": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059830/mdb-20260731.htm",
+      "quarter_targets": [
+        {
+          "label": "Q3 FY2027",
+          "start": "2026-08-01",
+          "end": "2026-10-31",
+          "prior_start": "2025-08-01",
+          "prior_end": "2025-10-31",
+          "available_on": "2026-09-01",
+          "boundary_evidence": {
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm",
+            "accession": "0001628280-26-059794",
+            "filed_date": "2026-09-01",
+            "rule": "Three calendar months on the registered month-based fiscal calendar",
+            "prior_actual_id": "5026a0a8-ec76-5c0c-8906-9370f9f62244",
+            "prior_actual_accession": "0001628280-25-054768"
+          },
+          "growth_comparability": {
+            "blocked": false,
+            "available_on": "2026-11-11",
+            "reason": "Clarity consolidated from May 8, 2026. Note 4 says acquisition effects were not material; no normalization. September 29 presentation expressly does not reaffirm guidance.",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059830/mdb-20260731.htm",
+            "sources": [
+              "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm"
+            ]
+          },
+          "outcome_comparability": {
+            "blocked": true,
+            "available_on": "2026-11-11",
+            "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+            "sources": [
+              "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm"
+            ]
+          }
+        }
+      ],
+      "outcome_comparability": {
+        "blocked": true,
+        "available_on": "2026-11-11",
+        "reason": "Selected annual result not yet reported; guidance-to-result basis requires a separate result-specific evidence review.",
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm"
+        ]
+      }
+    },
+    "dates": {
+      "2026-09-27": {
+        "annual": {
+          "id": "84b04180-4e19-53af-8082-310535781197",
+          "state": "ok",
+          "company": "MDB",
+          "as_of": "2026-09-27",
+          "policy": {
+            "version": "manual-freshness-v1",
+            "actual_days": 135,
+            "guidance_days": 150,
+            "assumption": "Manual research policy; not an accounting standard"
+          },
+          "inputs": {
+            "guidance": "dbe9f61c-41c3-566e-8579-275f228ff342",
+            "actual_ytd": "d7b2a391-1996-54eb-90b2-51ddbe23d7bc",
+            "prior_annual": "a57f9159-96e5-5c62-8c64-ea12e6a80d71",
+            "prior_ytd": "4ef42a40-9309-5d19-876f-a7844b474cac",
+            "prior_remaining": "6ddb4b40-8bc4-5b2f-86df-e218f8a36cfb"
+          },
+          "codes": [],
+          "details": [],
+          "remaining_low": "1530611000.00",
+          "remaining_high": "1570611000.00",
+          "growth_low": "0.1565913368863539676026782914368575640726291219233",
+          "growth_high": "0.1868169484071480548685525936975066137416208937562",
+          "company_config": {
+            "ticker": "MDB",
+            "cik": "0001441816",
+            "name": "MongoDB, Inc.",
+            "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "basis": "US_GAAP_consolidated_reported",
+            "period_start": "2026-02-01",
+            "period_end": "2027-01-31",
+            "fiscal_label": "FY2027",
+            "prior_start": "2025-02-01",
+            "prior_end": "2026-01-31",
+            "calendar": "months",
+            "comparison_ends": {
+              "2026-04-30": "2025-04-30",
+              "2026-07-31": "2025-07-31",
+              "2026-10-31": "2025-10-31"
+            },
+            "comparability": {
+              "review_status": "not_available_by_cutoff"
+            },
+            "calendar_source": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059830/mdb-20260731.htm"
+          },
+          "formula_version": "revenue-hurdle-v1-decimal50"
+        },
+        "quarter": {
+          "id": "ef8c315e-3063-5e27-aa20-abb50a345f2a",
+          "state": "blocked",
+          "company": "MDB",
+          "as_of": "2026-09-27",
+          "target": {
+            "label": "Q3 FY2027",
+            "start": "2026-08-01",
+            "end": "2026-10-31",
+            "prior_start": "2025-08-01",
+            "prior_end": "2025-10-31",
+            "available_on": "2026-09-01",
+            "boundary_evidence": {
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm",
+              "accession": "0001628280-26-059794",
+              "filed_date": "2026-09-01",
+              "rule": "Three calendar months on the registered month-based fiscal calendar",
+              "prior_actual_id": "5026a0a8-ec76-5c0c-8906-9370f9f62244",
+              "prior_actual_accession": "0001628280-25-054768"
+            },
+            "growth_comparability": {
+              "available_on": "2026-11-11",
+              "review_status": "not_available_by_cutoff"
+            }
+          },
+          "policy": {
+            "version": "manual-freshness-v1",
+            "actual_days": 135,
+            "guidance_days": 150,
+            "assumption": "Manual research policy; not an accounting standard"
+          },
+          "inputs": {
+            "guidance": "6bad7bb3-f126-5ebe-97c1-24329e436e43"
+          },
+          "codes": [
+            "INCOMPARABLE_BASIS"
+          ],
+          "details": [
+            "Comparability review unavailable by cutoff"
+          ],
+          "guidance_low": null,
+          "guidance_high": null,
+          "growth_low": null,
+          "growth_high": null,
+          "formula_version": "quarter-guidance-implied-growth-v1-decimal50"
+        },
+        "eligible_quarter_guidance_ids": [
+          "6bad7bb3-f126-5ebe-97c1-24329e436e43"
+        ],
+        "latest_quarter_guidance_id": "6bad7bb3-f126-5ebe-97c1-24329e436e43",
+        "prior_quarter_inventory": {
+          "id": "5026a0a8-ec76-5c0c-8906-9370f9f62244",
+          "company": "MDB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-08-01",
+          "end": "2025-10-31",
+          "value": "628309000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001628280-25-054768",
+          "filed": "2025-12-02",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+          "parents": [],
+          "derivation": null
+        },
+        "quarter_inventory_note": "Prior quarter is available inventory, not selected by blocked historical implied-growth calculation",
+        "actuals_selected": {
+          "actual_ytd": {
+            "id": "d7b2a391-1996-54eb-90b2-51ddbe23d7bc",
+            "company": "MDB",
+            "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "start": "2026-02-01",
+            "end": "2026-07-31",
+            "value": "1459389000",
+            "unit": "USD",
+            "basis": "US_GAAP_consolidated_reported",
+            "accession": "0001628280-26-059830",
+            "filed": "2026-09-01",
+            "form": "10-Q",
+            "fiscal_year": 2027,
+            "fiscal_period": "Q2",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+            "parents": [],
+            "derivation": null
+          },
+          "prior_annual": {
+            "id": "a57f9159-96e5-5c62-8c64-ea12e6a80d71",
+            "company": "MDB",
+            "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "start": "2025-02-01",
+            "end": "2026-01-31",
+            "value": "2463797000",
+            "unit": "USD",
+            "basis": "US_GAAP_consolidated_reported",
+            "accession": "0001628280-26-016799",
+            "filed": "2026-03-11",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "fiscal_period": "FY",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+            "parents": [],
+            "derivation": null
+          },
+          "prior_ytd": {
+            "id": "4ef42a40-9309-5d19-876f-a7844b474cac",
+            "company": "MDB",
+            "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "start": "2025-02-01",
+            "end": "2025-07-31",
+            "value": "1140416000",
+            "unit": "USD",
+            "basis": "US_GAAP_consolidated_reported",
+            "accession": "0001628280-26-059830",
+            "filed": "2026-09-01",
+            "form": "10-Q",
+            "fiscal_year": 2027,
+            "fiscal_period": "Q2",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+            "parents": [],
+            "derivation": null
+          }
+        }
+      },
+      "2026-09-28": {
+        "annual": {
+          "id": "bf5af7a8-eec6-540a-8578-d339a33b2a2c",
+          "state": "ok",
+          "company": "MDB",
+          "as_of": "2026-09-28",
+          "policy": {
+            "version": "manual-freshness-v1",
+            "actual_days": 135,
+            "guidance_days": 150,
+            "assumption": "Manual research policy; not an accounting standard"
+          },
+          "inputs": {
+            "guidance": "e7b96f8a-bebf-55c3-8efd-957619bf8a90",
+            "actual_ytd": "d7b2a391-1996-54eb-90b2-51ddbe23d7bc",
+            "prior_annual": "a57f9159-96e5-5c62-8c64-ea12e6a80d71",
+            "prior_ytd": "4ef42a40-9309-5d19-876f-a7844b474cac",
+            "prior_remaining": "6ddb4b40-8bc4-5b2f-86df-e218f8a36cfb"
+          },
+          "codes": [],
+          "details": [],
+          "remaining_low": "1530611000.00",
+          "remaining_high": "1570611000.00",
+          "growth_low": "0.1565913368863539676026782914368575640726291219233",
+          "growth_high": "0.1868169484071480548685525936975066137416208937562",
+          "company_config": {
+            "ticker": "MDB",
+            "cik": "0001441816",
+            "name": "MongoDB, Inc.",
+            "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "basis": "US_GAAP_consolidated_reported",
+            "period_start": "2026-02-01",
+            "period_end": "2027-01-31",
+            "fiscal_label": "FY2027",
+            "prior_start": "2025-02-01",
+            "prior_end": "2026-01-31",
+            "calendar": "months",
+            "comparison_ends": {
+              "2026-04-30": "2025-04-30",
+              "2026-07-31": "2025-07-31",
+              "2026-10-31": "2025-10-31"
+            },
+            "comparability": {
+              "review_status": "not_available_by_cutoff"
+            },
+            "calendar_source": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059830/mdb-20260731.htm"
+          },
+          "formula_version": "revenue-hurdle-v1-decimal50"
+        },
+        "quarter": {
+          "id": "5cc34faf-f73b-5865-b9a0-540828de7f42",
+          "state": "blocked",
+          "company": "MDB",
+          "as_of": "2026-09-28",
+          "target": {
+            "label": "Q3 FY2027",
+            "start": "2026-08-01",
+            "end": "2026-10-31",
+            "prior_start": "2025-08-01",
+            "prior_end": "2025-10-31",
+            "available_on": "2026-09-01",
+            "boundary_evidence": {
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm",
+              "accession": "0001628280-26-059794",
+              "filed_date": "2026-09-01",
+              "rule": "Three calendar months on the registered month-based fiscal calendar",
+              "prior_actual_id": "5026a0a8-ec76-5c0c-8906-9370f9f62244",
+              "prior_actual_accession": "0001628280-25-054768"
+            },
+            "growth_comparability": {
+              "available_on": "2026-11-11",
+              "review_status": "not_available_by_cutoff"
+            }
+          },
+          "policy": {
+            "version": "manual-freshness-v1",
+            "actual_days": 135,
+            "guidance_days": 150,
+            "assumption": "Manual research policy; not an accounting standard"
+          },
+          "inputs": {
+            "guidance": "c9ec8438-b130-526e-b905-0cb8c0c3815e"
+          },
+          "codes": [
+            "INCOMPARABLE_BASIS"
+          ],
+          "details": [
+            "Comparability review unavailable by cutoff"
+          ],
+          "guidance_low": null,
+          "guidance_high": null,
+          "growth_low": null,
+          "growth_high": null,
+          "formula_version": "quarter-guidance-implied-growth-v1-decimal50"
+        },
+        "eligible_quarter_guidance_ids": [
+          "6bad7bb3-f126-5ebe-97c1-24329e436e43",
+          "c9ec8438-b130-526e-b905-0cb8c0c3815e"
+        ],
+        "latest_quarter_guidance_id": "c9ec8438-b130-526e-b905-0cb8c0c3815e",
+        "prior_quarter_inventory": {
+          "id": "5026a0a8-ec76-5c0c-8906-9370f9f62244",
+          "company": "MDB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-08-01",
+          "end": "2025-10-31",
+          "value": "628309000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001628280-25-054768",
+          "filed": "2025-12-02",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+          "parents": [],
+          "derivation": null
+        },
+        "quarter_inventory_note": "Prior quarter is available inventory, not selected by blocked historical implied-growth calculation",
+        "actuals_selected": {
+          "actual_ytd": {
+            "id": "d7b2a391-1996-54eb-90b2-51ddbe23d7bc",
+            "company": "MDB",
+            "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "start": "2026-02-01",
+            "end": "2026-07-31",
+            "value": "1459389000",
+            "unit": "USD",
+            "basis": "US_GAAP_consolidated_reported",
+            "accession": "0001628280-26-059830",
+            "filed": "2026-09-01",
+            "form": "10-Q",
+            "fiscal_year": 2027,
+            "fiscal_period": "Q2",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+            "parents": [],
+            "derivation": null
+          },
+          "prior_annual": {
+            "id": "a57f9159-96e5-5c62-8c64-ea12e6a80d71",
+            "company": "MDB",
+            "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "start": "2025-02-01",
+            "end": "2026-01-31",
+            "value": "2463797000",
+            "unit": "USD",
+            "basis": "US_GAAP_consolidated_reported",
+            "accession": "0001628280-26-016799",
+            "filed": "2026-03-11",
+            "form": "10-K",
+            "fiscal_year": 2026,
+            "fiscal_period": "FY",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+            "parents": [],
+            "derivation": null
+          },
+          "prior_ytd": {
+            "id": "4ef42a40-9309-5d19-876f-a7844b474cac",
+            "company": "MDB",
+            "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+            "start": "2025-02-01",
+            "end": "2025-07-31",
+            "value": "1140416000",
+            "unit": "USD",
+            "basis": "US_GAAP_consolidated_reported",
+            "accession": "0001628280-26-059830",
+            "filed": "2026-09-01",
+            "form": "10-Q",
+            "fiscal_year": 2027,
+            "fiscal_period": "Q2",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+            "parents": [],
+            "derivation": null
+          }
+        }
+      }
+    },
+    "actual_records": [
+      {
+        "company": "MDB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-02-01",
+        "end": "2025-07-31",
+        "value": "1140416000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-26-059830",
+        "filed": "2026-09-01",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+        "parents": [],
+        "derivation": null
+      },
+      {
+        "company": "MDB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-08-01",
+        "end": "2025-10-31",
+        "value": "628309000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-25-054768",
+        "filed": "2025-12-02",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+        "parents": [],
+        "derivation": null
+      },
+      {
+        "company": "MDB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-02-01",
+        "end": "2026-01-31",
+        "value": "2463797000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-26-016799",
+        "filed": "2026-03-11",
+        "form": "10-K",
+        "fiscal_year": 2026,
+        "fiscal_period": "FY",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+        "parents": [],
+        "derivation": null
+      },
+      {
+        "company": "MDB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-02-01",
+        "end": "2026-07-31",
+        "value": "1459389000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-26-059830",
+        "filed": "2026-09-01",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+        "parents": [],
+        "derivation": null
+      }
+    ],
+    "guidance_records": [
+      {
+        "id": "7c6457c8-02c2-5d4f-8e62-43c1654db87c",
+        "company": "MDB",
+        "issued": {
+          "start": "2026-03-02",
+          "end": "2026-03-02",
+          "precision": "day"
+        },
+        "filed": "2026-03-02",
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "low": "2860000000.000",
+        "high": "2900000000.000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "status": "initial",
+        "accession": "0001628280-26-013199",
+        "exhibit": "99.1",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm",
+        "quote": "Full Year Fiscal 2027 Guidance Base d on information available to management as of today, March\u00a02, 2026, MongoDB is issuing the following financial guidance for the full year fiscal 2027. Revenues are expected to be in the range of: $2.860 billion to $2.900 billion GAAP Non-GAAP Income (Loss) from Operations are expected to be in the range of: $(117.0) million to $(97.0) million $545.0 million to $565.0 million Net I",
+        "metric": "consolidated_revenue",
+        "original_verified": true,
+        "notes": ""
+      },
+      {
+        "id": "7b108550-6b06-5d1b-8022-af76c8392409",
+        "company": "MDB",
+        "issued": {
+          "start": "2026-05-28",
+          "end": "2026-05-28",
+          "precision": "day"
+        },
+        "filed": "2026-05-28",
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "low": "2920000000.00",
+        "high": "2960000000.00",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "status": "raised",
+        "accession": "0001628280-26-038798",
+        "exhibit": "99.1",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026038798/mdb-043026xex991xrelease.htm",
+        "quote": "Full Year Fiscal 2027 Guidance Based on information available to management as of today, May\u00a028, 2026, MongoDB is issuing the following financial guidance for the full year fiscal 2027. Revenues are expected to be in the range of: $2.92 billion to $2.96 billion GAAP Non-GAAP Income (Loss) from Operations are expected to be in the range of: $(78.0) million to $(58.0) million $571.0 million to $591.0 million Net Income",
+        "metric": "consolidated_revenue",
+        "original_verified": false,
+        "notes": ""
+      },
+      {
+        "id": "dbe9f61c-41c3-566e-8579-275f228ff342",
+        "company": "MDB",
+        "issued": {
+          "start": "2026-09-01",
+          "end": "2026-09-01",
+          "precision": "day"
+        },
+        "filed": "2026-09-01",
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "low": "2990000000.00",
+        "high": "3030000000.00",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "status": "raised",
+        "accession": "0001628280-26-059794",
+        "exhibit": "99.1",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm",
+        "quote": "Full Year Fiscal 2027 Guidance Based on information available to management as of today, September\u00a01, 2026, MongoDB is issuing the following financial guidance for the full year fiscal 2027. Revenues are expected to be in the range of: $2.99 billion to $3.03 billion GAAP Non-GAAP Income (Loss) from Operations are expected to be in the range of: $(28.0) million to $(8.0) million $616.3 million to $636.3 million Net In",
+        "metric": "consolidated_revenue",
+        "original_verified": false,
+        "notes": ""
+      },
+      {
+        "id": "e7b96f8a-bebf-55c3-8efd-957619bf8a90",
+        "company": "MDB",
+        "issued": {
+          "start": "2026-09-28",
+          "end": "2026-09-28",
+          "precision": "day"
+        },
+        "filed": "2026-09-28",
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "low": "2990000000.00",
+        "high": "3030000000.00",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "status": "reaffirmed",
+        "accession": "0001628280-26-063657",
+        "exhibit": "99.1",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026063657/pressreleasedatedseptemb.htm",
+        "quote": "The company remains confident in the outlook for the business and is reaffirming its  guidance for Q3 and the full year fiscal 2027 provided on September 1st, 2026.    Investor Day     MongoDB will be hosting an Investor Day at Nasdaq MarketSite on Tuesday, September  29th from 11:00 am\u20133:15 pm ET. The MongoDB leadership team will share an in-depth look  at our long-term strategy, market opportunities, and product in",
+        "metric": "consolidated_revenue",
+        "original_verified": false,
+        "notes": "Bounds carried from explicitly referenced previous guidance; no new numerical range."
+      },
+      {
+        "id": "6bad7bb3-f126-5ebe-97c1-24329e436e43",
+        "company": "MDB",
+        "issued": {
+          "start": "2026-09-01",
+          "end": "2026-09-01",
+          "precision": "day"
+        },
+        "filed": "2026-09-01",
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "low": "756000000",
+        "high": "761000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "status": "initial",
+        "accession": "0001628280-26-059794",
+        "exhibit": "99.1",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm",
+        "quote": "Third Quarter Fiscal 2027 Guidance Based on information available to management as of today, September 1, 2026, MongoDB is issuing the following financial guidance for the third quarter fiscal 2027. Revenues are expected to be in the range of: $756 million to $761 million GAAP Non-GAAP Income (Loss) from Operations are expected to be in the range of: $(14.5) million to $(10.5) million $1",
+        "metric": "quarterly_consolidated_revenue",
+        "original_verified": true,
+        "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction."
+      },
+      {
+        "id": "c9ec8438-b130-526e-b905-0cb8c0c3815e",
+        "company": "MDB",
+        "issued": {
+          "start": "2026-09-28",
+          "end": "2026-09-28",
+          "precision": "day"
+        },
+        "filed": "2026-09-28",
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "low": "756000000",
+        "high": "761000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "status": "reaffirmed",
+        "accession": "0001628280-26-063657",
+        "exhibit": "99.1",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026063657/pressreleasedatedseptemb.htm",
+        "quote": "The company remains confident in the outlook for the business and is reaffirming its  guidance for Q3 and the full year fiscal 2027 provided on September 1st, 2026.    Investor Day     MongoDB will be hosting an Investor Day at Nasdaq MarketSite on Tuesday, September  29th from 11:00 am\u20133:15 pm ET. The MongoDB leadership team will share an in-depth look  at our long-term strategy, market opportunities, and product in",
+        "metric": "quarterly_consolidated_revenue",
+        "original_verified": false,
+        "notes": "Explicit reaffirmation of Q3 and full-year guidance from September 1. Quarterly dollar bounds retain the September 1 evidence."
+      }
+    ],
+    "newly_available_guidance": [
+      {
+        "id": "e7b96f8a-bebf-55c3-8efd-957619bf8a90",
+        "available_on": "2026-09-28",
+        "metric": "consolidated_revenue"
+      },
+      {
+        "id": "c9ec8438-b130-526e-b905-0cb8c0c3815e",
+        "available_on": "2026-09-28",
+        "metric": "quarterly_consolidated_revenue"
+      }
+    ],
+    "newly_available_actuals": []
+  }
+}

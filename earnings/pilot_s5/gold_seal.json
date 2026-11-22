@@ -1,0 +1,6 @@
+{
+  "gold_sha256": "8dc9dc45290b2ee84969f8909956d2a32e3432276b82c822bd09d0930285f8b6",
+  "policy": "No candidate outputs viewed and no rules run on pilot before sealing. Do not tune frozen v2 against this sample.",
+  "sealed_at": "2026-11-13T05:27:47.401694+00:00",
+  "transcriptions_sha256": "3ddfb5f990d2638ffbdbf952ccbdd9c1535b9e18d219b73e15a3229779bfafbc"
+}

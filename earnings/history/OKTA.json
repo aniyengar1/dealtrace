@@ -1,0 +1,1277 @@
+{
+  "review_scope": "Last eight publicly reported quarters as of 2026-11-12; complete reviewed 8-K/8-K-A inventory from 2024-08-01 through 2026-11-12",
+  "source_inventory": [
+    {
+      "accession": "0001660134-24-000134",
+      "filed": "2024-08-28",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000134/okta-20240828.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000134/okta-7312024_ex991.htm"
+      ]
+    },
+    {
+      "accession": "0001660134-24-000165",
+      "filed": "2024-12-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000165/okta-20241203.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000165/okta-10312024_ex991.htm"
+      ]
+    },
+    {
+      "accession": "0001660134-25-000015",
+      "filed": "2025-02-04",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000015/okta-20250204.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001660134-25-000043",
+      "filed": "2025-03-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000043/okta-20250303.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000043/okta-1312025_ex991.htm"
+      ]
+    },
+    {
+      "accession": "0001660134-25-000091",
+      "filed": "2025-05-27",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000091/okta-20250527.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000091/okta-4302025_ex991.htm"
+      ]
+    },
+    {
+      "accession": "0001660134-25-000156",
+      "filed": "2025-08-26",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000156/okta-20250826.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000156/okta-7312025_ex991.htm",
+        "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000156/okta-7312025_8kxex992.htm"
+      ]
+    },
+    {
+      "accession": "0001660134-25-000170",
+      "filed": "2025-12-02",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000170/okta-20251202.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000170/okta-10312025_ex991.htm"
+      ]
+    },
+    {
+      "accession": "0001660134-26-000016",
+      "filed": "2026-03-04",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-20260304.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-1312026_ex991.htm"
+      ]
+    },
+    {
+      "accession": "0001660134-26-000050",
+      "filed": "2026-05-28",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000050/okta-20260528.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000050/okta-4302026_ex991.htm"
+      ]
+    },
+    {
+      "accession": "0001660134-26-000068",
+      "filed": "2026-08-26",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-20260826.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+      ]
+    },
+    {
+      "accession": "0001660134-25-000024",
+      "filed": "2025-02-10",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000024/okta-20250210.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000024/okta-21020258xkex991.htm"
+      ]
+    },
+    {
+      "accession": "0001660134-25-000119",
+      "filed": "2025-06-25",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000119/okta-20250620.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001660134-25-000138",
+      "filed": "2025-08-14",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000138/okta-20250811.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000138/okta-08142025exh991.htm"
+      ]
+    },
+    {
+      "accession": "0001660134-25-000173",
+      "filed": "2025-12-19",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000173/okta-20251215.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000173/okta-12192025exh991.htm"
+      ]
+    },
+    {
+      "accession": "0001660134-26-000003",
+      "filed": "2026-01-05",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000003/okta-20260105.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000003/okta-01052026exh991.htm"
+      ]
+    },
+    {
+      "accession": "0001660134-26-000024",
+      "filed": "2026-03-11",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000024/okta-20260305.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001660134-26-000029",
+      "filed": "2026-03-23",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000029/okta-20260319.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001193125-26-170498",
+      "filed": "2026-04-22",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000119312526170498/d118360d8k.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001660134-26-000054",
+      "filed": "2026-06-23",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000054/okta-20260618.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001660134-26-000072",
+      "filed": "2026-09-18",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000072/okta-20260914.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000072/okta-09142026ex991.htm"
+      ]
+    }
+  ],
+  "inventory_gaps": [],
+  "quarters": [
+    {
+      "company": "OKTA",
+      "target": {
+        "start": "2024-08-01",
+        "end": "2024-10-31",
+        "label": "Q3 FY2025",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "17baa7cc-4cae-5506-83a7-832b2e43150a",
+          "company": "OKTA",
+          "issued": {
+            "start": "2024-08-28",
+            "end": "2024-08-28",
+            "precision": "day"
+          },
+          "filed": "2024-08-28",
+          "start": "2024-08-01",
+          "end": "2024-10-31",
+          "low": "648000000",
+          "high": "650000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001660134-24-000134",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000134/okta-7312024_ex991.htm",
+          "quote": "third quarter of fiscal 2025, the Company expects: \u2022 Total revenue of $648 million to $650 million,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "17baa7cc-4cae-5506-83a7-832b2e43150a",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000134/okta-7312024_ex991.htm",
+          "source_sha256": "9173367d3234e2589f839c28abaf29a8361ccdc0bcd7b535bbfd2f36fa260e02",
+          "fetched_at": "2026-11-12T10:26:36.038845+00:00",
+          "issuance_date_quote": "August 28, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000134/okta-20240828.htm",
+          "exhibit_index_quote": "99.1 Press release dated August 28, 2024, issued by Okta, Inc."
+        }
+      ],
+      "actual": {
+        "id": "fef7ae92-a06f-5bc7-9a8a-21bfb671e4fa",
+        "company": "OKTA",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2024-08-01",
+        "end": "2024-10-31",
+        "value": "665000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001660134-24-000168",
+        "filed": "2024-12-04",
+        "form": "10-Q",
+        "fiscal_year": 2025,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001660134.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000168/okta-20241031.htm",
+        "filed": "2024-12-04",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000168/okta-20241031.htm",
+          "sha256": "1b2cc49e0f279d0d03bb1d5a078d78744d7883e1f72125d6c9cf5924592fc31f",
+          "body": "cdfd3bf95d52d193c59b5c7b0548e001d65cd72a036c98f46132ca669d0984c4-1b2cc49e0f279d0d03bb1d5a078d78744d7883e1f72125d6c9cf5924592fc31f.body",
+          "fetched_at": "2026-11-12T10:41:12.181827+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001660134-24-000168-filing.txt"
+      },
+      "result": {
+        "issued_date": "2024-12-03",
+        "formal_release_issued_date": "2024-12-03",
+        "issued_precision": "day",
+        "date_quote": "December 3, 2024",
+        "filed": "2024-12-03",
+        "accession": "0001660134-24-000165",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000165/okta-10312024_ex991.htm",
+        "reported_revenue_quote": "Total revenue 665 584 1,928 1,658",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "fad9f5a77bb137c7d122a4b61d233f377a60255426fce129b16e043d30be1ac3",
+        "fetched_at": "2026-11-12T10:26:37.293346+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.767437+00:00",
+        "guidance_id": "17baa7cc-4cae-5506-83a7-832b2e43150a",
+        "actual_id": "fef7ae92-a06f-5bc7-9a8a-21bfb671e4fa",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000134/okta-7312024_ex991.htm",
+            "filed_date": "2024-08-28"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000165/okta-10312024_ex991.htm",
+            "filed_date": "2024-12-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000168/okta-20241031.htm",
+            "filed_date": "2024-12-04"
+          }
+        ],
+        "scope_evidence": [
+          "service condition and will be accounted for by the Company separately from the business combination as stock-based compensation expense. Acquisition related expenses incurred were not material. This acquisition did not have a material impact on the Company\u2019s condensed consolidated financial statements; therefore, historical and pro forma disclosures have not been presented. 20 OKTA, INC. MANAGEMENT\u2019S DISCUSSI",
+          "nted for by the Company separately from the business combination as stock-based compensation expense. Acquisition related expenses incurred were not material. This acquisition did not have a material impact on the Company\u2019s condensed consolidated financial statements; therefore, historical and pro forma disclosures have not been presented. 20 OKTA, INC. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2024-12-03"
+    },
+    {
+      "company": "OKTA",
+      "target": {
+        "start": "2024-11-01",
+        "end": "2025-01-31",
+        "label": "Q4 FY2025",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "7cc5f28b-a6f7-59fc-a3c9-341641c49f12",
+          "company": "OKTA",
+          "issued": {
+            "start": "2024-12-03",
+            "end": "2024-12-03",
+            "precision": "day"
+          },
+          "filed": "2024-12-03",
+          "start": "2024-11-01",
+          "end": "2025-01-31",
+          "low": "667000000",
+          "high": "669000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001660134-24-000165",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000165/okta-10312024_ex991.htm",
+          "quote": "fourth quarter of fiscal 2025, the Company expects: \u2022 Total revenue of $667 million to $669 million,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        },
+        {
+          "id": "62d58fb1-8eba-58f2-a953-77efa5bfe24d",
+          "company": "OKTA",
+          "issued": {
+            "start": "2025-02-04",
+            "end": "2025-02-04",
+            "precision": "day"
+          },
+          "filed": "2025-02-04",
+          "start": "2024-11-01",
+          "end": "2025-01-31",
+          "low": "667000000",
+          "high": "669000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "reaffirmed",
+          "accession": "0001660134-25-000015",
+          "exhibit": "8-K Item 7.01 (primary document; no exhibit)",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000015/okta-20250204.htm",
+          "quote": "reaffirms its financial guidance for the fourth quarter and fiscal year ending January 31, 2025, as provided in a press release issued December 3, 2024, that was previously furnished as Exhibit 99.1 to the Company\u2019s Form 8-K file",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": false,
+          "notes": "Explicit quarterly reaffirmation; bounds retained from prior source. Post-close indications are separately flagged and excluded from the training cohort."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "7cc5f28b-a6f7-59fc-a3c9-341641c49f12",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000165/okta-10312024_ex991.htm",
+          "source_sha256": "fad9f5a77bb137c7d122a4b61d233f377a60255426fce129b16e043d30be1ac3",
+          "fetched_at": "2026-11-12T10:26:37.293346+00:00",
+          "issuance_date_quote": "December 3, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000165/okta-20241203.htm",
+          "exhibit_index_quote": "99.1 Press release dated December 3, 2024, issued by Okta, Inc."
+        },
+        {
+          "guidance_id": "62d58fb1-8eba-58f2-a953-77efa5bfe24d",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000015/okta-20250204.htm",
+          "source_sha256": "2e3c5223992c5d514c0782dbcba364c92724d90086fed45b140417f8c833fd6b",
+          "fetched_at": "2026-11-12T10:26:37.979179+00:00",
+          "issuance_date_quote": "February 4, 2025",
+          "version_kind": "explicit_reaffirmation",
+          "exhibit_identifier": "8-K Item 7.01 (primary document; no exhibit)",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000015/okta-20250204.htm",
+          "exhibit_index_quote": null,
+          "primary_item": "7.01 (no separate exhibit)"
+        }
+      ],
+      "actual": {
+        "id": "7ac91f47-562d-52ea-b4fd-4495595a4613",
+        "company": "OKTA",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2024-11-01",
+        "end": "2025-01-31",
+        "value": "682000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001660134-25-000049",
+        "filed": "2025-03-05",
+        "form": "DERIVED",
+        "fiscal_year": 2025,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001660134.json",
+        "parents": [
+          "b6959665-cacf-56b5-90bc-00fd24dc1e56",
+          "e8ee6d98-c27e-5647-b689-11fc336f9158"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "e8ee6d98-c27e-5647-b689-11fc336f9158",
+          "company": "OKTA",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2024-02-01",
+          "end": "2024-10-31",
+          "value": "1928000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001660134-24-000168",
+          "filed": "2024-12-04",
+          "form": "10-Q",
+          "fiscal_year": 2025,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001660134.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "b6959665-cacf-56b5-90bc-00fd24dc1e56",
+          "company": "OKTA",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2024-02-01",
+          "end": "2025-01-31",
+          "value": "2610000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001660134-25-000049",
+          "filed": "2025-03-05",
+          "form": "10-K",
+          "fiscal_year": 2025,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001660134.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000049/okta-20250131.htm",
+        "filed": "2025-03-05",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000049/okta-20250131.htm",
+          "sha256": "3c101113115bd2a5c60be846f63f4c6af297eb83fa7a4ba8ec1b3864d14c81c5",
+          "body": "9dc27167cd0548e0c54ae8be7d997f410ccfe8eb34810a29eeab799405d76dc3-3c101113115bd2a5c60be846f63f4c6af297eb83fa7a4ba8ec1b3864d14c81c5.body",
+          "fetched_at": "2026-11-12T10:41:12.911953+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001660134-25-000049-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-03-03",
+        "formal_release_issued_date": "2025-03-03",
+        "issued_precision": "day",
+        "date_quote": "March 3, 2025",
+        "filed": "2025-03-03",
+        "accession": "0001660134-25-000043",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000043/okta-1312025_ex991.htm",
+        "reported_revenue_quote": "Total revenue 682 605 2,610 2,263",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "ff1c3407263e458734a873b0d68ba821dfb1059124a05559fc5a62cf32aa12cc",
+        "fetched_at": "2026-11-12T10:26:39.211737+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [
+        {
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000015/okta-20250204.htm",
+          "accession": "0001660134-25-000015",
+          "filed": "2025-02-04",
+          "public_date": "2025-02-04",
+          "quote": "reaffirms its financial guidance for the fourth quarter and fiscal year ending January 31, 2025, as provided in a press release issued December 3, 2024, that was previously furnished as Exhibit 99.1 to the Company\u2019s Form 8-K filed with the Securities and Exchange Commission on December 3, 20",
+          "sha256": "2e3c5223992c5d514c0782dbcba364c92724d90086fed45b140417f8c833fd6b",
+          "fetched_at": "2026-11-12T10:26:37.979179+00:00",
+          "interpretation": "Completed-quarter preliminary/in-line/reaffirmation indication; conservatively not a clean pre-publication historical target",
+          "public_date_basis": "SEC filing day establishes a known-public-by boundary, not a claimed exact company publication timestamp."
+        }
+      ],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.786539+00:00",
+        "guidance_id": "7cc5f28b-a6f7-59fc-a3c9-341641c49f12",
+        "actual_id": "7ac91f47-562d-52ea-b4fd-4495595a4613",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013424000165/okta-10312024_ex991.htm",
+            "filed_date": "2024-12-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000043/okta-1312025_ex991.htm",
+            "filed_date": "2025-03-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000049/okta-20250131.htm",
+            "filed_date": "2025-03-05"
+          }
+        ],
+        "scope_evidence": [
+          "service condition and will be accounted for by the Company separately from the business combination as stock-based compensation expense. Acquisition related expenses incurred were not material. This acquisition did not have a material impact on the Company\u2019s consolidated financial statements; therefore, historical financial information and pro forma disclosures have not been presented. 98 Item 9. Changes in a",
+          "nted for by the Company separately from the business combination as stock-based compensation expense. Acquisition related expenses incurred were not material. This acquisition did not have a material impact on the Company\u2019s consolidated financial statements; therefore, historical financial information and pro forma disclosures have not been presented. 98 Item 9. Changes in and Disagreements with Accountants on Accou"
+        ]
+      },
+      "blocking_reasons": [
+        "EARLY_POST_CLOSE_RESULT_INDICATION: 2025-02-04 precedes formal-release lock window; excluded rather than training on already-public result information"
+      ],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-02-04"
+    },
+    {
+      "company": "OKTA",
+      "target": {
+        "start": "2025-02-01",
+        "end": "2025-04-30",
+        "label": "Q1 FY2026",
+        "calendar": "months",
+        "days": 89
+      },
+      "guidance_versions": [
+        {
+          "id": "8ef69874-02e3-5144-be84-b60225d962fe",
+          "company": "OKTA",
+          "issued": {
+            "start": "2025-03-03",
+            "end": "2025-03-03",
+            "precision": "day"
+          },
+          "filed": "2025-03-03",
+          "start": "2025-02-01",
+          "end": "2025-04-30",
+          "low": "678000000",
+          "high": "680000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001660134-25-000043",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000043/okta-1312025_ex991.htm",
+          "quote": "first quarter of fiscal 2026, the Company expects: \u2022 Total revenue of $678 million to $680 million,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "8ef69874-02e3-5144-be84-b60225d962fe",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000043/okta-1312025_ex991.htm",
+          "source_sha256": "ff1c3407263e458734a873b0d68ba821dfb1059124a05559fc5a62cf32aa12cc",
+          "fetched_at": "2026-11-12T10:26:39.211737+00:00",
+          "issuance_date_quote": "March 3, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000043/okta-20250303.htm",
+          "exhibit_index_quote": "99.1 Press release dated March 3, 2025, issued by Okta, Inc."
+        }
+      ],
+      "actual": {
+        "id": "c4f372c3-dc1b-5894-b65e-e5e0e6b6ffcc",
+        "company": "OKTA",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-02-01",
+        "end": "2025-04-30",
+        "value": "688000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001660134-25-000093",
+        "filed": "2025-05-28",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001660134.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000093/okta-20250430.htm",
+        "filed": "2025-05-28",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000093/okta-20250430.htm",
+          "sha256": "62b683a1c33dc827911c4a3a83952ed24dba86bec43240883e721d73d7eb6f39",
+          "body": "81d9ced230e6ce45c269b21571b25ca67d5b8fa8e5ed60ef5c03e6eed9f4566b-62b683a1c33dc827911c4a3a83952ed24dba86bec43240883e721d73d7eb6f39.body",
+          "fetched_at": "2026-11-12T10:41:13.702272+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001660134-25-000093-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-05-27",
+        "formal_release_issued_date": "2025-05-27",
+        "issued_precision": "day",
+        "date_quote": "May 27, 2025",
+        "filed": "2025-05-27",
+        "accession": "0001660134-25-000091",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000091/okta-4302025_ex991.htm",
+        "reported_revenue_quote": "Total revenue 688 617",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "9e546d22c6202392824bac48fbd618728a5ff72689ffed566c40c0f1a3892258",
+        "fetched_at": "2026-11-12T10:26:40.541315+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.794617+00:00",
+        "guidance_id": "8ef69874-02e3-5144-be84-b60225d962fe",
+        "actual_id": "c4f372c3-dc1b-5894-b65e-e5e0e6b6ffcc",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000043/okta-1312025_ex991.htm",
+            "filed_date": "2025-03-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000091/okta-4302025_ex991.htm",
+            "filed_date": "2025-05-27"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000093/okta-20250430.htm",
+            "filed_date": "2025-05-28"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-05-27"
+    },
+    {
+      "company": "OKTA",
+      "target": {
+        "start": "2025-05-01",
+        "end": "2025-07-31",
+        "label": "Q2 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "ec065d80-95bd-5fc4-8ee7-a9fcbff91f2b",
+          "company": "OKTA",
+          "issued": {
+            "start": "2025-05-27",
+            "end": "2025-05-27",
+            "precision": "day"
+          },
+          "filed": "2025-05-27",
+          "start": "2025-05-01",
+          "end": "2025-07-31",
+          "low": "710000000",
+          "high": "712000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001660134-25-000091",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000091/okta-4302025_ex991.htm",
+          "quote": "second quarter of fiscal 2026, the Company expects: \u2022 Total revenue of $710 million to $712 million,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "ec065d80-95bd-5fc4-8ee7-a9fcbff91f2b",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000091/okta-4302025_ex991.htm",
+          "source_sha256": "9e546d22c6202392824bac48fbd618728a5ff72689ffed566c40c0f1a3892258",
+          "fetched_at": "2026-11-12T10:26:40.541315+00:00",
+          "issuance_date_quote": "May 27, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000091/okta-20250527.htm",
+          "exhibit_index_quote": "99.1 Press release dated May 27, 2025, issued by Okta, Inc."
+        }
+      ],
+      "actual": {
+        "id": "39e733a3-a78c-51db-951f-082ff99dfdb0",
+        "company": "OKTA",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-05-01",
+        "end": "2025-07-31",
+        "value": "728000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001660134-25-000157",
+        "filed": "2025-08-27",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001660134.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000157/okta-20250731.htm",
+        "filed": "2025-08-27",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000157/okta-20250731.htm",
+          "sha256": "ba409ed6f5ef8574a26860362a0f120e5f47464a113e1f65707604fb4398e7f1",
+          "body": "14ac753f87c2a70fd486df86d52c4122077f1fe91a1359469b30776ca20a821a-ba409ed6f5ef8574a26860362a0f120e5f47464a113e1f65707604fb4398e7f1.body",
+          "fetched_at": "2026-11-12T10:41:14.418797+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001660134-25-000157-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-08-26",
+        "formal_release_issued_date": "2025-08-26",
+        "issued_precision": "day",
+        "date_quote": "August 26, 2025",
+        "filed": "2025-08-26",
+        "accession": "0001660134-25-000156",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000156/okta-7312025_ex991.htm",
+        "reported_revenue_quote": "Total revenue 728 646 1,416 1,263",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "f8db37818e9d909a0962ec3f603fb9e63bdac6a649a37080967944f4d3edffe9",
+        "fetched_at": "2026-11-12T10:26:41.884951+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.803072+00:00",
+        "guidance_id": "ec065d80-95bd-5fc4-8ee7-a9fcbff91f2b",
+        "actual_id": "39e733a3-a78c-51db-951f-082ff99dfdb0",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000091/okta-4302025_ex991.htm",
+            "filed_date": "2025-05-27"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000156/okta-7312025_ex991.htm",
+            "filed_date": "2025-08-26"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000157/okta-20250731.htm",
+            "filed_date": "2025-08-27"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-08-26"
+    },
+    {
+      "company": "OKTA",
+      "target": {
+        "start": "2025-08-01",
+        "end": "2025-10-31",
+        "label": "Q3 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "25c8bdf4-b2b1-5677-b987-3a2caa93dba8",
+          "company": "OKTA",
+          "issued": {
+            "start": "2025-08-26",
+            "end": "2025-08-26",
+            "precision": "day"
+          },
+          "filed": "2025-08-26",
+          "start": "2025-08-01",
+          "end": "2025-10-31",
+          "low": "728000000",
+          "high": "730000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001660134-25-000156",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000156/okta-7312025_ex991.htm",
+          "quote": "third quarter of fiscal 2026, the Company expects: \u2022 Total revenue of $728 million to $730 million,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "25c8bdf4-b2b1-5677-b987-3a2caa93dba8",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000156/okta-7312025_ex991.htm",
+          "source_sha256": "f8db37818e9d909a0962ec3f603fb9e63bdac6a649a37080967944f4d3edffe9",
+          "fetched_at": "2026-11-12T10:26:41.884951+00:00",
+          "issuance_date_quote": "August 26, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000156/okta-20250826.htm",
+          "exhibit_index_quote": "99.1 Press release dated August 26, 2025, issued by Okta, Inc."
+        }
+      ],
+      "actual": {
+        "id": "fb8f9fd5-7ec4-5e8c-a73f-97a76cbf8356",
+        "company": "OKTA",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-08-01",
+        "end": "2025-10-31",
+        "value": "742000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001660134-25-000171",
+        "filed": "2025-12-03",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001660134.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000171/okta-20251031.htm",
+        "filed": "2025-12-03",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000171/okta-20251031.htm",
+          "sha256": "7b6c45579ac4f12089aa6cac4674751e935954b301c960739cf00a87d44affe4",
+          "body": "b9eb060689eecd410d0157adb224155809d26949fdb19542fb6f7d00cfe03b05-7b6c45579ac4f12089aa6cac4674751e935954b301c960739cf00a87d44affe4.body",
+          "fetched_at": "2026-11-12T10:41:15.080723+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001660134-25-000171-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-12-02",
+        "formal_release_issued_date": "2025-12-02",
+        "issued_precision": "day",
+        "date_quote": "December 2, 2025",
+        "filed": "2025-12-02",
+        "accession": "0001660134-25-000170",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000170/okta-10312025_ex991.htm",
+        "reported_revenue_quote": "Total revenue 742 665 2,158 1,928",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "8c4d4075699a880d1afd73d2d7020a348f383a44d6332f3514e5e44280d20dbc",
+        "fetched_at": "2026-11-12T07:10:37.741757+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.811418+00:00",
+        "guidance_id": "25c8bdf4-b2b1-5677-b987-3a2caa93dba8",
+        "actual_id": "fb8f9fd5-7ec4-5e8c-a73f-97a76cbf8356",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000156/okta-7312025_ex991.htm",
+            "filed_date": "2025-08-26"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000170/okta-10312025_ex991.htm",
+            "filed_date": "2025-12-02"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000171/okta-20251031.htm",
+            "filed_date": "2025-12-03"
+          }
+        ],
+        "scope_evidence": [
+          "cation after obtaining more information regarding asset valuations, liabilities assumed and revisions of preliminary estimates through the measurement period. This acquisition did not have a material impact on the Company\u2019s condensed consolidated financial statements; therefore, historical and pro forma disclosures have not been presented. 18 OKTA, INC. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-12-02"
+    },
+    {
+      "company": "OKTA",
+      "target": {
+        "start": "2025-11-01",
+        "end": "2026-01-31",
+        "label": "Q4 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "291f2d05-0368-56a6-a423-5734101169b5",
+          "company": "OKTA",
+          "issued": {
+            "start": "2025-12-02",
+            "end": "2025-12-02",
+            "precision": "day"
+          },
+          "filed": "2025-12-02",
+          "start": "2025-11-01",
+          "end": "2026-01-31",
+          "low": "748000000",
+          "high": "750000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001660134-25-000170",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000170/okta-10312025_ex991.htm",
+          "quote": "fourth quarter of fiscal 2026, the Company expects: \u2022 Total revenue of $748 million to $750 million,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "291f2d05-0368-56a6-a423-5734101169b5",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000170/okta-10312025_ex991.htm",
+          "source_sha256": "8c4d4075699a880d1afd73d2d7020a348f383a44d6332f3514e5e44280d20dbc",
+          "fetched_at": "2026-11-12T07:10:37.741757+00:00",
+          "issuance_date_quote": "December 2, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000170/okta-20251202.htm",
+          "exhibit_index_quote": "99.1 Press release dated December 2, 2025, issued by Okta, Inc."
+        }
+      ],
+      "actual": {
+        "id": "ef8b682f-587f-5597-bab6-61f25509efb4",
+        "company": "OKTA",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-11-01",
+        "end": "2026-01-31",
+        "value": "761000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001660134-26-000020",
+        "filed": "2026-03-05",
+        "form": "DERIVED",
+        "fiscal_year": 2026,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001660134.json",
+        "parents": [
+          "7f1b7924-2b56-5f58-8e7e-d8c703357550",
+          "bf005fce-e61d-59f4-ad25-cf87ee838d04"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "bf005fce-e61d-59f4-ad25-cf87ee838d04",
+          "company": "OKTA",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-02-01",
+          "end": "2025-10-31",
+          "value": "2158000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001660134-25-000171",
+          "filed": "2025-12-03",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001660134.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "7f1b7924-2b56-5f58-8e7e-d8c703357550",
+          "company": "OKTA",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-02-01",
+          "end": "2026-01-31",
+          "value": "2919000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001660134-26-000020",
+          "filed": "2026-03-05",
+          "form": "10-K",
+          "fiscal_year": 2026,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001660134.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000020/okta-20260131.htm",
+        "filed": "2026-03-05",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000020/okta-20260131.htm",
+          "sha256": "fe9d2e96532a9b465914995a4b3fed973b6ee978ffe58677c02f17d353b058b7",
+          "body": "8c46a5b946074189de456b1ddd82ce4cb0cec7ee062e6c054a99a72752b91589-fe9d2e96532a9b465914995a4b3fed973b6ee978ffe58677c02f17d353b058b7.body",
+          "fetched_at": "2026-11-12T10:41:15.701029+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001660134-26-000020-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-03-04",
+        "formal_release_issued_date": "2026-03-04",
+        "issued_precision": "day",
+        "date_quote": "March 4, 2026",
+        "filed": "2026-03-04",
+        "accession": "0001660134-26-000016",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-1312026_ex991.htm",
+        "reported_revenue_quote": "Total revenue 761 682 2,919 2,610",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "26ae2cabf718f807d7dbf92aab1c70ffd4b11f3bb8c6b7ba0098e5292c9544f9",
+        "fetched_at": "2026-11-11T23:48:29.335277+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.824220+00:00",
+        "guidance_id": "291f2d05-0368-56a6-a423-5734101169b5",
+        "actual_id": "ef8b682f-587f-5597-bab6-61f25509efb4",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013425000170/okta-10312025_ex991.htm",
+            "filed_date": "2025-12-02"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-1312026_ex991.htm",
+            "filed_date": "2026-03-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000020/okta-20260131.htm",
+            "filed_date": "2026-03-05"
+          }
+        ],
+        "scope_evidence": [
+          "information primarily relating to income based taxes and residual goodwill through the measurement period, no more than one year from the date of acquisition. This acquisition did not have a material impact on the Company\u2019s consolidated financial statements; therefore, historical and pro forma disclosures have not been presented. 95 Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Di"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-03-04"
+    },
+    {
+      "company": "OKTA",
+      "target": {
+        "start": "2026-02-01",
+        "end": "2026-04-30",
+        "label": "Q1 FY2027",
+        "calendar": "months",
+        "days": 89
+      },
+      "guidance_versions": [
+        {
+          "id": "e4299f55-09d5-58a8-a304-c918c6940039",
+          "company": "OKTA",
+          "issued": {
+            "start": "2026-03-04",
+            "end": "2026-03-04",
+            "precision": "day"
+          },
+          "filed": "2026-03-04",
+          "start": "2026-02-01",
+          "end": "2026-04-30",
+          "low": "749000000",
+          "high": "753000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001660134-26-000016",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-1312026_ex991.htm",
+          "quote": "first quarter of fiscal 2027, the Company expects: \u2022 Total revenue of $749 million to $753 million,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "e4299f55-09d5-58a8-a304-c918c6940039",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-1312026_ex991.htm",
+          "source_sha256": "26ae2cabf718f807d7dbf92aab1c70ffd4b11f3bb8c6b7ba0098e5292c9544f9",
+          "fetched_at": "2026-11-11T23:48:29.335277+00:00",
+          "issuance_date_quote": "March 4, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-20260304.htm",
+          "exhibit_index_quote": "99.1 Press release dated March 4, 2026, issued by Okta, Inc."
+        }
+      ],
+      "actual": {
+        "id": "297d5922-9bf3-522f-9145-9d9cfa944074",
+        "company": "OKTA",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-02-01",
+        "end": "2026-04-30",
+        "value": "765000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001660134-26-000051",
+        "filed": "2026-05-29",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001660134.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000051/okta-20260430.htm",
+        "filed": "2026-05-29",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000051/okta-20260430.htm",
+          "sha256": "880a20d6392471aa836d0e21eed7cdf89de5a77befd9ba80e6975cacb030445c",
+          "body": "bc3d17ff47165cec788e94fdf089b21a22d5698fe48ffe907cfe31f24a48be2a-880a20d6392471aa836d0e21eed7cdf89de5a77befd9ba80e6975cacb030445c.body",
+          "fetched_at": "2026-11-12T10:41:16.365257+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001660134-26-000051-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-05-28",
+        "formal_release_issued_date": "2026-05-28",
+        "issued_precision": "day",
+        "date_quote": "May 28, 2026",
+        "filed": "2026-05-28",
+        "accession": "0001660134-26-000050",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000050/okta-4302026_ex991.htm",
+        "reported_revenue_quote": "Total revenue 765 688",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "372ea6ce88e222c657e9ddcb03eb5799d35592aebd1cb507437731b49d3deae1",
+        "fetched_at": "2026-11-11T10:08:57.664642+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.827681+00:00",
+        "guidance_id": "e4299f55-09d5-58a8-a304-c918c6940039",
+        "actual_id": "297d5922-9bf3-522f-9145-9d9cfa944074",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-1312026_ex991.htm",
+            "filed_date": "2026-03-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000050/okta-4302026_ex991.htm",
+            "filed_date": "2026-05-28"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000051/okta-20260430.htm",
+            "filed_date": "2026-05-29"
+          }
+        ],
+        "scope_evidence": [
+          "information primarily relating to income-based taxes and residual goodwill through the measurement period, no more than one year from the date of acquisition. This acquisition did not have a material impact on the Company\u2019s condensed consolidated financial statements; therefore, historical and pro forma disclosures have not been presented. 15 OKTA, INC. MANAGEMENT\u2019S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-05-28"
+    },
+    {
+      "company": "OKTA",
+      "target": {
+        "start": "2026-05-01",
+        "end": "2026-07-31",
+        "label": "Q2 FY2027",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "89fe4070-f04b-5293-9aed-55cd43cab1f4",
+          "company": "OKTA",
+          "issued": {
+            "start": "2026-05-28",
+            "end": "2026-05-28",
+            "precision": "day"
+          },
+          "filed": "2026-05-28",
+          "start": "2026-05-01",
+          "end": "2026-07-31",
+          "low": "790000000",
+          "high": "794000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001660134-26-000050",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000050/okta-4302026_ex991.htm",
+          "quote": "second quarter of fiscal 2027, the Company expects: \u2022 Total revenue of $790 million to $794 million,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "89fe4070-f04b-5293-9aed-55cd43cab1f4",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000050/okta-4302026_ex991.htm",
+          "source_sha256": "372ea6ce88e222c657e9ddcb03eb5799d35592aebd1cb507437731b49d3deae1",
+          "fetched_at": "2026-11-11T10:08:57.664642+00:00",
+          "issuance_date_quote": "May 28, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000050/okta-20260528.htm",
+          "exhibit_index_quote": "99.1 Press release dated May 28, 2026, issued by Okta, Inc."
+        }
+      ],
+      "actual": {
+        "id": "945ece65-5153-5800-b7ab-5e7604ccf0cc",
+        "company": "OKTA",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-05-01",
+        "end": "2026-07-31",
+        "value": "805000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001660134-26-000069",
+        "filed": "2026-08-27",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001660134.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000069/okta-20260731.htm",
+        "filed": "2026-08-27",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000069/okta-20260731.htm",
+          "sha256": "1b59ead6ceedf43c0947c17a409f595411fd07db14ae34d585e5ff8b403c2de8",
+          "body": "3e553a836f2d316625b2ee3f6b85e0ae94cea9c2255b263147c493a04b47b369-1b59ead6ceedf43c0947c17a409f595411fd07db14ae34d585e5ff8b403c2de8.body",
+          "fetched_at": "2026-11-12T08:11:45.666164+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001660134-26-000069-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-08-26",
+        "formal_release_issued_date": "2026-08-26",
+        "issued_precision": "day",
+        "date_quote": "August 26, 2026",
+        "filed": "2026-08-26",
+        "accession": "0001660134-26-000068",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm",
+        "reported_revenue_quote": "Total revenue 805 728 1,570 1,416",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "ff2c5da95d6ad2ef5134656c86f5a0a6c40b3c4b8f31b8b6cf0b435ff8248894",
+        "fetched_at": "2026-11-11T10:08:58.769834+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.831374+00:00",
+        "guidance_id": "89fe4070-f04b-5293-9aed-55cd43cab1f4",
+        "actual_id": "945ece65-5153-5800-b7ab-5e7604ccf0cc",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000050/okta-4302026_ex991.htm",
+            "filed_date": "2026-05-28"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm",
+            "filed_date": "2026-08-26"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000069/okta-20260731.htm",
+            "filed_date": "2026-08-27"
+          }
+        ],
+        "scope_evidence": [
+          "information primarily relating to income-based taxes and residual goodwill through the measurement period, no more than one year from the date of acquisition. This acquisition did not have a material impact on the Company\u2019s condensed consolidated financial statements; therefore, historical and pro forma disclosures have not been presented. 12. Subsequent Events On August 26, 2026, the Company completed its acquisiti"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-08-26"
+    }
+  ]
+}

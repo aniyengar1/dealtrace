@@ -1,0 +1,1868 @@
+{
+  "algorithm": "one minimum SHA256(seed|group-id) per company then ten globally ranked unused groups",
+  "created_at": "2026-11-13T05:13:12.875401+00:00",
+  "groups": [
+    {
+      "amendments": [],
+      "company": "A",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000013/exhibit991-q225pressrelease.htm",
+      "id": "A:0001090872-25-000013",
+      "release_group": "0001090872-25-000013",
+      "result": {
+        "accession": "0001090872-25-000034",
+        "company": "A",
+        "exhibits": [
+          {
+            "canonical_sha256": "039580d63c9fee9c218f23f9fa95fb301ee63464eff9c003bb7d70a6545f91fb",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "b93212a750a3dd86aadfec7cef6d771c31bae95a6d9d49857f1afaa940952c4d-58e2c79118c5b1fa98361c049d5e990b6817098905f84866e0695a5b1fd12d61.body",
+              "fetched_at": "2026-11-13T05:11:27.385525+00:00",
+              "sha256": "58e2c79118c5b1fa98361c049d5e990b6817098905f84866e0695a5b1fd12d61",
+              "url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000034/exhibit991-q325pressrelease.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000034/exhibit991-q325pressrelease.htm"
+          }
+        ],
+        "filed": "2025-08-27",
+        "form": "8-K",
+        "primary": "a-20250827.htm",
+        "primary_manifest": {
+          "body": "bf6458a01ef6e9bbd849b2384c1348be12d21eb73d3075a39c1543c7f49291cd-44b4d551cd9e3abe821f169ad86ea5516ce83b62b9af59a599d50aa8c6c3aa97.body",
+          "fetched_at": "2026-11-13T05:11:26.530649+00:00",
+          "sha256": "44b4d551cd9e3abe821f169ad86ea5516ce83b62b9af59a599d50aa8c6c3aa97",
+          "url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000034/a-20250827.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000034/a-20250827.htm"
+      },
+      "source": {
+        "accession": "0001090872-25-000013",
+        "company": "A",
+        "exhibits": [
+          {
+            "canonical_sha256": "83bdb7d34b64d556a67f6b50d9937d9845c000bc07ef24c207a934defed4aadf",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "924938ec93a1c25528e0b1c1a7a71eaf2be9aed31826b0511998fe20a9c9ddc6-878bb95d6f7f9a34c9f404f6b5d3f8c7160eedd1c684c1eac860d427871334fa.body",
+              "fetched_at": "2026-11-13T05:11:28.990589+00:00",
+              "sha256": "878bb95d6f7f9a34c9f404f6b5d3f8c7160eedd1c684c1eac860d427871334fa",
+              "url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000013/exhibit991-q225pressrelease.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000013/exhibit991-q225pressrelease.htm"
+          }
+        ],
+        "filed": "2025-05-28",
+        "form": "8-K",
+        "primary": "a-20250528.htm",
+        "primary_manifest": {
+          "body": "59228017a079b1de7dfca8edbb2116ef2995b8f9adca2ef7d9d5128bc908fdd4-62ba9ba7dbd7b8d5a2f542110e8b3dcd97d45c0bc4d599a097f97508c7fe7499.body",
+          "fetched_at": "2026-11-13T05:11:28.186669+00:00",
+          "sha256": "62ba9ba7dbd7b8d5a2f542110e8b3dcd97d45c0bc4d599a097f97508c7fe7499",
+          "url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000013/a-20250528.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000013/a-20250528.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "ADI",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000158/adi3q24exhibit991earnings.htm",
+      "id": "ADI:0000006281-24-000158",
+      "release_group": "0000006281-24-000158",
+      "result": {
+        "accession": "0000006281-24-000202",
+        "company": "ADI",
+        "exhibits": [
+          {
+            "canonical_sha256": "110314b8a23746a0b637af1af08f742c4f39ddf6f2160495b3898535eae89005",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "46cf72f9aed824963ab77e6a217ab7b5d155021c2236469ad386e7db8817af4b-7857aa0a7d464cf75f83be48c8acac23c386db0b49c4e4df2dc854917f60e2ac.body",
+              "fetched_at": "2026-11-13T05:09:57.821324+00:00",
+              "sha256": "7857aa0a7d464cf75f83be48c8acac23c386db0b49c4e4df2dc854917f60e2ac",
+              "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000202/adiq424exhibit991.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000202/adiq424exhibit991.htm"
+          }
+        ],
+        "filed": "2024-11-26",
+        "form": "8-K",
+        "primary": "adi-20241126.htm",
+        "primary_manifest": {
+          "body": "3f7905ed60d568b518e8eb933963656bbe11167fdaaf89d41cabc715e62c939d-f53218cbac151a678681fadf1a57129c0ca0f50ae7d896aa801abffc567e3db4.body",
+          "fetched_at": "2026-11-13T05:09:57.145979+00:00",
+          "sha256": "f53218cbac151a678681fadf1a57129c0ca0f50ae7d896aa801abffc567e3db4",
+          "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000202/adi-20241126.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000202/adi-20241126.htm"
+      },
+      "source": {
+        "accession": "0000006281-24-000158",
+        "company": "ADI",
+        "exhibits": [
+          {
+            "canonical_sha256": "efd729d45e0644a490180e2fe0530711201111597900c8242d94159aa19f6745",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "91121c95d18fa45d0259b6bd34de10baac9b3f6b613a5071463b9d14e7bf7fae-f3f864ad2b2bb0db677d800fd5b555a5c6ed2b3c297633198496b2ea1e7f2312.body",
+              "fetched_at": "2026-11-13T05:09:59.145108+00:00",
+              "sha256": "f3f864ad2b2bb0db677d800fd5b555a5c6ed2b3c297633198496b2ea1e7f2312",
+              "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000158/adi3q24exhibit991earnings.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000158/adi3q24exhibit991earnings.htm"
+          }
+        ],
+        "filed": "2024-08-21",
+        "form": "8-K",
+        "primary": "adi-20240821.htm",
+        "primary_manifest": {
+          "body": "973cf4e65a5e41e0d67a6e60824fabf011dff2c8030b22da0ad0a40285fa3a85-143d1bd7191f9f0f7c9c11fac76ed802234237dc98adb59124543e8faa8162c3.body",
+          "fetched_at": "2026-11-13T05:09:58.474063+00:00",
+          "sha256": "143d1bd7191f9f0f7c9c11fac76ed802234237dc98adb59124543e8faa8162c3",
+          "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000158/adi-20240821.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000158/adi-20240821.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "ADI",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000124/adi2q25exhibit991earnings.htm",
+      "id": "ADI:0000006281-25-000124",
+      "release_group": "0000006281-25-000124",
+      "result": {
+        "accession": "0000006281-25-000142",
+        "company": "ADI",
+        "exhibits": [
+          {
+            "canonical_sha256": "e7593c5c1de9279c4816a44a0f1ec7171f34526e1fc9dd84dc8dfda57f228cb4",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "34305606e611839978d09a917247898f5abe20fdef3cb6cafd976c22e01198a7-d0d73f120ebaf15d791f64c98e2711c23160763ce8f9beefca96df914d891ba9.body",
+              "fetched_at": "2026-11-13T05:09:53.730418+00:00",
+              "sha256": "d0d73f120ebaf15d791f64c98e2711c23160763ce8f9beefca96df914d891ba9",
+              "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000142/adi3q25exhibit991earnings.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000142/adi3q25exhibit991earnings.htm"
+          }
+        ],
+        "filed": "2025-08-20",
+        "form": "8-K",
+        "primary": "adi-20250820.htm",
+        "primary_manifest": {
+          "body": "889f9a16e2a3f226337c6cb516fd0ecf446f57c6239ccd80de9bc687efaf6621-6c6da8a228b24de622e1e667c6fd775dddd4df6fd9528eab398fe0e89f6774c9.body",
+          "fetched_at": "2026-11-13T05:09:53.069910+00:00",
+          "sha256": "6c6da8a228b24de622e1e667c6fd775dddd4df6fd9528eab398fe0e89f6774c9",
+          "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000142/adi-20250820.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000142/adi-20250820.htm"
+      },
+      "source": {
+        "accession": "0000006281-25-000124",
+        "company": "ADI",
+        "exhibits": [
+          {
+            "canonical_sha256": "98194dda2a345cd23a9e3267d575da28d42804d210aa1ce36a71d0c31819fc20",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "7986a712e6a5e79918f0ac2bcfbc0f2cbc48412c3b86be8ca3332711bd58827b-a1928d1dc49223448e660c7cab9c4ad5b42ba1cef74ff7fd45d5c18f2d40b9ec.body",
+              "fetched_at": "2026-11-13T05:09:55.133978+00:00",
+              "sha256": "a1928d1dc49223448e660c7cab9c4ad5b42ba1cef74ff7fd45d5c18f2d40b9ec",
+              "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000124/adi2q25exhibit991earnings.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000124/adi2q25exhibit991earnings.htm"
+          }
+        ],
+        "filed": "2025-05-22",
+        "form": "8-K",
+        "primary": "adi-20250522.htm",
+        "primary_manifest": {
+          "body": "84e2aa45c8c30bcfb153c7e367f15c2b4735202dd70c0e5a227664aa543ae443-aba5cec01e8182e0e877c08b5c708a4c6821b74987020ef34eb8cc8c2e1c54af.body",
+          "fetched_at": "2026-11-13T05:09:54.388755+00:00",
+          "sha256": "aba5cec01e8182e0e877c08b5c708a4c6821b74987020ef34eb8cc8c2e1c54af",
+          "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000124/adi-20250522.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628125000124/adi-20250522.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "ADI",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000050/adi2q26exhibit991earnings.htm",
+      "id": "ADI:0000006281-26-000050",
+      "release_group": "0000006281-26-000050",
+      "result": {
+        "accession": "0000006281-26-000072",
+        "company": "ADI",
+        "exhibits": [
+          {
+            "canonical_sha256": "412a5ededd5bf403c53b73f935a22e247ac93f47dc5fd5bd64c845d5d1f7c1dc",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "310c5240a631ebce535f654635bdfc9f2a4072702140a1b7d3e7bf1e5528809f-185d2fa1dbad5b9356ca1d57bfb837476dd14c3a1a2ddf8ce9e6af2ffa17ec1c.body",
+              "fetched_at": "2026-11-13T04:52:16.634007+00:00",
+              "sha256": "185d2fa1dbad5b9356ca1d57bfb837476dd14c3a1a2ddf8ce9e6af2ffa17ec1c",
+              "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000072/adi3q26exhibit991earnings.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000072/adi3q26exhibit991earnings.htm"
+          }
+        ],
+        "filed": "2026-08-19",
+        "form": "8-K",
+        "primary": "adi-20260819.htm",
+        "primary_manifest": {
+          "body": "a106cccced0588482942986d6e43429bd307f6996439e6cdf100260d6fa36af0-8735f0ca54c5e346fa013addceb09bce31cbe16039bf75b9e23382967f110aa5.body",
+          "fetched_at": "2026-11-13T04:52:15.927487+00:00",
+          "sha256": "8735f0ca54c5e346fa013addceb09bce31cbe16039bf75b9e23382967f110aa5",
+          "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000072/adi-20260819.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000072/adi-20260819.htm"
+      },
+      "source": {
+        "accession": "0000006281-26-000050",
+        "company": "ADI",
+        "exhibits": [
+          {
+            "canonical_sha256": "78e0f5f575a1067f4e6f31e5c30cb48e400d9d0a3113416a6c7a778bd8201a0b",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "a65f3c2ad2ce871dabf4b4059b8c371ba67697ff269121bb6a9a200ef7f007f7-753f9a1e3093395e702a2f86148e39b2b5c875ce8a3c78c968031fff105f7204.body",
+              "fetched_at": "2026-11-13T04:52:18.103691+00:00",
+              "sha256": "753f9a1e3093395e702a2f86148e39b2b5c875ce8a3c78c968031fff105f7204",
+              "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000050/adi2q26exhibit991earnings.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000050/adi2q26exhibit991earnings.htm"
+          }
+        ],
+        "filed": "2026-05-20",
+        "form": "8-K",
+        "primary": "adi-20260520.htm",
+        "primary_manifest": {
+          "body": "15d2c47a8aa8d612c7426fd03611437701c07aec514f466832ba9b512a9b5a1e-decebe988bdf75ce1ac5a08f9e637134656edb1fe8ff7cf17a04fac865112441.body",
+          "fetched_at": "2026-11-13T04:52:17.270348+00:00",
+          "sha256": "decebe988bdf75ce1ac5a08f9e637134656edb1fe8ff7cf17a04fac865112441",
+          "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000050/adi-20260520.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628126000050/adi-20260520.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "AMAT",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/6951/000000695125000032/exhibit991q32025earningsre.htm",
+      "id": "AMAT:0000006951-25-000032",
+      "release_group": "0000006951-25-000032",
+      "result": {
+        "accession": "0001628280-25-051998",
+        "company": "AMAT",
+        "exhibits": [
+          {
+            "canonical_sha256": "0008f5a69398a32e70e043bc7c202e172c46710fec58b65c0f96b91a779ed7f8",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "ab6d5bd40cfd392f38c7aaf5c4cf4a22ce2ae1f68da3ec6e855b2e17bae3f622-4a9735212d31699b2e18b67a1b29ba21ba39a3ccbf430864ca468ebcadd23ddd.body",
+              "fetched_at": "2026-11-13T05:09:28.556864+00:00",
+              "sha256": "4a9735212d31699b2e18b67a1b29ba21ba39a3ccbf430864ca468ebcadd23ddd",
+              "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828025051998/exhibit991q42025earningsre.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828025051998/exhibit991q42025earningsre.htm"
+          }
+        ],
+        "filed": "2025-11-13",
+        "form": "8-K",
+        "primary": "amat-20251113.htm",
+        "primary_manifest": {
+          "body": "e387d5b17735b1346b4e114da2b64ef97192f055dddb0771a7b4e91d6628ea29-047347c41684b0781dd598c5c5d30d90f2671f2ff60ff07c5af2202c945a54e2.body",
+          "fetched_at": "2026-11-13T05:09:27.864580+00:00",
+          "sha256": "047347c41684b0781dd598c5c5d30d90f2671f2ff60ff07c5af2202c945a54e2",
+          "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828025051998/amat-20251113.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828025051998/amat-20251113.htm"
+      },
+      "source": {
+        "accession": "0000006951-25-000032",
+        "company": "AMAT",
+        "exhibits": [
+          {
+            "canonical_sha256": "050de5e26fc292dc319a6d34559855698ef86eb01d7c0028a930c28d8f537e79",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "f1abc881050a4bb0751f17d33ab02739d25fd7b02c531af3548ff10fa4d84f5b-6d1618cdc221e06e56125d944ac0368808bb9a8e30602ce15a9df976be66359b.body",
+              "fetched_at": "2026-11-13T05:09:29.903455+00:00",
+              "sha256": "6d1618cdc221e06e56125d944ac0368808bb9a8e30602ce15a9df976be66359b",
+              "url": "https://www.sec.gov/Archives/edgar/data/6951/000000695125000032/exhibit991q32025earningsre.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/6951/000000695125000032/exhibit991q32025earningsre.htm"
+          }
+        ],
+        "filed": "2025-08-14",
+        "form": "8-K",
+        "primary": "amat-20250814.htm",
+        "primary_manifest": {
+          "body": "1280c8baef7eede8cbbad177fb3b866bbb59afa0443bdcc0dbf3c20056ad39db-ab36036eda03c18aebf407ee73d033836a4ca6ebec232bd3321afa2109d352de.body",
+          "fetched_at": "2026-11-13T05:09:29.233338+00:00",
+          "sha256": "ab36036eda03c18aebf407ee73d033836a4ca6ebec232bd3321afa2109d352de",
+          "url": "https://www.sec.gov/Archives/edgar/data/6951/000000695125000032/amat-20250814.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/6951/000000695125000032/amat-20250814.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "AMAT",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828025051998/exhibit991q42025earningsre.htm",
+      "id": "AMAT:0001628280-25-051998",
+      "release_group": "0001628280-25-051998",
+      "result": {
+        "accession": "0001628280-26-007661",
+        "company": "AMAT",
+        "exhibits": [
+          {
+            "canonical_sha256": "b59d0e81dafd9ce9245d87d36ac640cce8c075978d7d81606d963273f5a57e93",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "1587d8e0f6c301414827f0e9921f53410ff5069a5df66cb7156745c78bac58b0-e86a5624086b54e82f547559f010dfdd3263596b19d0ff9abe485eb59bec9ebc.body",
+              "fetched_at": "2026-11-13T05:09:27.219862+00:00",
+              "sha256": "e86a5624086b54e82f547559f010dfdd3263596b19d0ff9abe485eb59bec9ebc",
+              "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026007661/exhibit991q12026earningsre.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026007661/exhibit991q12026earningsre.htm"
+          }
+        ],
+        "filed": "2026-02-12",
+        "form": "8-K",
+        "primary": "amat-20260212.htm",
+        "primary_manifest": {
+          "body": "9cacadf32ea39d8ef360703b6a2d20d8516d720bc7c24c42a79d3be31e6dbfde-b8a33ead7bd016807e06498684c1eb6bae3f3ba44c0237aa68f80d857ea7c9bf.body",
+          "fetched_at": "2026-11-13T05:09:26.499189+00:00",
+          "sha256": "b8a33ead7bd016807e06498684c1eb6bae3f3ba44c0237aa68f80d857ea7c9bf",
+          "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026007661/amat-20260212.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026007661/amat-20260212.htm"
+      },
+      "source": {
+        "accession": "0001628280-25-051998",
+        "company": "AMAT",
+        "exhibits": [
+          {
+            "canonical_sha256": "0008f5a69398a32e70e043bc7c202e172c46710fec58b65c0f96b91a779ed7f8",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "ab6d5bd40cfd392f38c7aaf5c4cf4a22ce2ae1f68da3ec6e855b2e17bae3f622-4a9735212d31699b2e18b67a1b29ba21ba39a3ccbf430864ca468ebcadd23ddd.body",
+              "fetched_at": "2026-11-13T05:09:28.556864+00:00",
+              "sha256": "4a9735212d31699b2e18b67a1b29ba21ba39a3ccbf430864ca468ebcadd23ddd",
+              "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828025051998/exhibit991q42025earningsre.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828025051998/exhibit991q42025earningsre.htm"
+          }
+        ],
+        "filed": "2025-11-13",
+        "form": "8-K",
+        "primary": "amat-20251113.htm",
+        "primary_manifest": {
+          "body": "e387d5b17735b1346b4e114da2b64ef97192f055dddb0771a7b4e91d6628ea29-047347c41684b0781dd598c5c5d30d90f2671f2ff60ff07c5af2202c945a54e2.body",
+          "fetched_at": "2026-11-13T05:09:27.864580+00:00",
+          "sha256": "047347c41684b0781dd598c5c5d30d90f2671f2ff60ff07c5af2202c945a54e2",
+          "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828025051998/amat-20251113.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828025051998/amat-20251113.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "AMAT",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026056699/exhibit991q32026earningsre.htm",
+      "id": "AMAT:0001628280-26-056699",
+      "release_group": "0001628280-26-056699",
+      "result": {
+        "accession": "0001628280-26-073360",
+        "company": "AMAT",
+        "exhibits": [
+          {
+            "canonical_sha256": "19f22ac4f2690fcb0649eefafa869f8944ded61c6ffd2be9d06bd478c01c486a",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "84b62988ce45112f7bf25a0d60bb58d48de1bb9f0b963739ab58bedc8e348669-e6faa0782a05a00c233524289e301f4bbf1815b98fdfcc0ec8a3a353cc23d599.body",
+              "fetched_at": "2026-11-13T04:52:04.056006+00:00",
+              "sha256": "e6faa0782a05a00c233524289e301f4bbf1815b98fdfcc0ec8a3a353cc23d599",
+              "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026073360/exhibit991q42026earningsre.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026073360/exhibit991q42026earningsre.htm"
+          }
+        ],
+        "filed": "2026-11-12",
+        "form": "8-K",
+        "primary": "amat-20261112.htm",
+        "primary_manifest": {
+          "body": "5a79672dd99ef2d40b478eba8fbc3b829d4f80b4fc0dab36f9c2f30c84e341fc-f4774df826a103a0ddebc1e0497ce4833dadd188e9074d7f49d9b5e8632eb78b.body",
+          "fetched_at": "2026-11-13T04:52:03.375704+00:00",
+          "sha256": "f4774df826a103a0ddebc1e0497ce4833dadd188e9074d7f49d9b5e8632eb78b",
+          "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026073360/amat-20261112.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026073360/amat-20261112.htm"
+      },
+      "source": {
+        "accession": "0001628280-26-056699",
+        "company": "AMAT",
+        "exhibits": [
+          {
+            "canonical_sha256": "d7a2fa4995eb6a16fcc31585b02eac49802124298bd20044524680000fe14f3a",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "19be71e03330890afe777013867552f73d8df426c4201093bb70bb71df6699d1-2597b2a85c2733bdfe5141fa0de5dced968fc96e4331b3f1417accb975653a8c.body",
+              "fetched_at": "2026-11-13T04:52:05.356485+00:00",
+              "sha256": "2597b2a85c2733bdfe5141fa0de5dced968fc96e4331b3f1417accb975653a8c",
+              "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026056699/exhibit991q32026earningsre.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026056699/exhibit991q32026earningsre.htm"
+          }
+        ],
+        "filed": "2026-08-13",
+        "form": "8-K",
+        "primary": "amat-20260813.htm",
+        "primary_manifest": {
+          "body": "a31266aef970594a8df8d0910fda7901725c856f7d607dfb221b2a0b1d587795-0faf911e6a86c4e2bfc995aeb5680c7195225aef86f561f2e052c9e634d62838.body",
+          "fetched_at": "2026-11-13T04:52:04.695429+00:00",
+          "sha256": "0faf911e6a86c4e2bfc995aeb5680c7195225aef86f561f2e052c9e634d62838",
+          "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026056699/amat-20260813.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026056699/amat-20260813.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "ASAN",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772025000235/asana8-kex991q3fy26.htm",
+      "id": "ASAN:0001477720-25-000235",
+      "release_group": "0001477720-25-000235",
+      "result": {
+        "accession": "0001477720-26-000012",
+        "company": "ASAN",
+        "exhibits": [
+          {
+            "canonical_sha256": "f1738d3a9c509e7cad129755418ec2adc362d3be1ef1b9e6b885ce8a9afa8675",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "d413c3fcca4b674f3cc5d619aa8f6c3735427f9ba8a6101e3f0997cabd6d0392-8bc0d805e515613e73c4c6abbdecae353c55d8c3d468701cbbaf6f8269c13cf6.body",
+              "fetched_at": "2026-11-13T05:08:55.047970+00:00",
+              "sha256": "8bc0d805e515613e73c4c6abbdecae353c55d8c3d468701cbbaf6f8269c13cf6",
+              "url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772026000012/asana8-kex991q4fy26.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772026000012/asana8-kex991q4fy26.htm"
+          }
+        ],
+        "filed": "2026-03-02",
+        "form": "8-K",
+        "primary": "asan-20260226.htm",
+        "primary_manifest": {
+          "body": "626f2ba3ec042701fb32780566befc3b0dfa950841b3554d36d7b5a5ffb88f08-e120f7ce1676da04cca55f611d3d4b2e50ca49a065ec33499883f7653eebf5e1.body",
+          "fetched_at": "2026-11-13T05:08:54.332266+00:00",
+          "sha256": "e120f7ce1676da04cca55f611d3d4b2e50ca49a065ec33499883f7653eebf5e1",
+          "url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772026000012/asan-20260226.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772026000012/asan-20260226.htm"
+      },
+      "source": {
+        "accession": "0001477720-25-000235",
+        "company": "ASAN",
+        "exhibits": [
+          {
+            "canonical_sha256": "4deff68a33fca34ccb862ff4e372874e4590a5b451c7c059e3592d788d62342e",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "bc331b0848625e3f6e0107287349b548fdb78be9835762aab45699f2db59866e-336041404cc1b3daeb5f9128fe04083fd385e0a55ed7c82d8e7b2153a435ddca.body",
+              "fetched_at": "2026-11-13T05:08:56.681333+00:00",
+              "sha256": "336041404cc1b3daeb5f9128fe04083fd385e0a55ed7c82d8e7b2153a435ddca",
+              "url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772025000235/asana8-kex991q3fy26.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772025000235/asana8-kex991q3fy26.htm"
+          }
+        ],
+        "filed": "2025-12-02",
+        "form": "8-K",
+        "primary": "asan-20251130.htm",
+        "primary_manifest": {
+          "body": "617b0e4c23aaa3d1454c0f9b00b4eed983406f437c3225f62fc6c515aef76828-18e666d6928bfe25d5a3a0d867e3ce605f5b55e8d34b74f2f76d01d040269cb9.body",
+          "fetched_at": "2026-11-13T05:08:55.787981+00:00",
+          "sha256": "18e666d6928bfe25d5a3a0d867e3ce605f5b55e8d34b74f2f76d01d040269cb9",
+          "url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772025000235/asan-20251130.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1477720/000147772025000235/asan-20251130.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "BOOT",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025000540/boot-20250130xex99d1.htm",
+      "id": "BOOT:0001558370-25-000540",
+      "release_group": "0001558370-25-000540",
+      "result": {
+        "accession": "0001558370-25-007745",
+        "company": "BOOT",
+        "exhibits": [
+          {
+            "canonical_sha256": "ddbac0fa1a406f65e519d85d6f7f7bd4c28de0d1c35a0d0a134f3129ab9a816a",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "2a5cf6d2f8916a6e3d35aa1e87db64231ad9b222ddc813431994e1dd488a27b7-c833f35c43ec6513e1154a1814c4201e2dd46e847376bc25cab8152c61dee339.body",
+              "fetched_at": "2026-11-13T05:10:55.950352+00:00",
+              "sha256": "c833f35c43ec6513e1154a1814c4201e2dd46e847376bc25cab8152c61dee339",
+              "url": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025007745/boot-20250514xex99d1.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025007745/boot-20250514xex99d1.htm"
+          }
+        ],
+        "filed": "2025-05-14",
+        "form": "8-K",
+        "primary": "boot-20250514x8k.htm",
+        "primary_manifest": {
+          "body": "44cd8fea6917ce3eea354e5c221f5caa843d5c50991663dd7b4d106ff099326e-988869b8b8d8317035c7ff54d232671fab6832164e54a7ccace8e7b044a536d3.body",
+          "fetched_at": "2026-11-13T05:10:54.946788+00:00",
+          "sha256": "988869b8b8d8317035c7ff54d232671fab6832164e54a7ccace8e7b044a536d3",
+          "url": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025007745/boot-20250514x8k.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025007745/boot-20250514x8k.htm"
+      },
+      "source": {
+        "accession": "0001558370-25-000540",
+        "company": "BOOT",
+        "exhibits": [
+          {
+            "canonical_sha256": "69d8497016768283d3db0dcd9405bf81f3539e4fd4e6805692de5e842515e2ab",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "ed03e8ba6d9c24b7a1d6ab4070b4c7b4ac6673e9bc028b09d9eee5f7c8be69e7-8ec16d47672615461b7c5d53ca7d2b24f29110579191a12c5ddfbc27348c9d24.body",
+              "fetched_at": "2026-11-13T05:10:57.349263+00:00",
+              "sha256": "8ec16d47672615461b7c5d53ca7d2b24f29110579191a12c5ddfbc27348c9d24",
+              "url": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025000540/boot-20250130xex99d1.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025000540/boot-20250130xex99d1.htm"
+          }
+        ],
+        "filed": "2025-01-30",
+        "form": "8-K",
+        "primary": "boot-20250130x8k.htm",
+        "primary_manifest": {
+          "body": "3b7f7f8acd20264180f8f1f4714e1c80abbb443bd7f349782a42e215525ecc5d-18513e4b1e4160f4952b2045a9714885745f01f920f83dbec961b44a95f5ed2a.body",
+          "fetched_at": "2026-11-13T05:10:56.699572+00:00",
+          "sha256": "18513e4b1e4160f4952b2045a9714885745f01f920f83dbec961b44a95f5ed2a",
+          "url": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025000540/boot-20250130x8k.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1610250/000155837025000540/boot-20250130x8k.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "COO",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/711404/000071140424000069/cooperq42024pressrelease.htm",
+      "id": "COO:0000711404-24-000069",
+      "release_group": "0000711404-24-000069",
+      "result": {
+        "accession": "0000711404-25-000010",
+        "company": "COO",
+        "exhibits": [
+          {
+            "canonical_sha256": "1143a9d69ed70ad931bccb0f703e792d550afcb465594252039908de523962b4",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "6ca20c94ed7fdb81233d6644e90e0e8c95988c8ec8086a3d3ee202d453c2498d-aab6c189e6ac916901ecaeed84536c58e3745bb9f224349e1397e5f1a4549378.body",
+              "fetched_at": "2026-11-13T05:12:21.732220+00:00",
+              "sha256": "aab6c189e6ac916901ecaeed84536c58e3745bb9f224349e1397e5f1a4549378",
+              "url": "https://www.sec.gov/Archives/edgar/data/711404/000071140425000010/cooperq12025pressrelease.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/711404/000071140425000010/cooperq12025pressrelease.htm"
+          }
+        ],
+        "filed": "2025-03-06",
+        "form": "8-K",
+        "primary": "coo-20250306.htm",
+        "primary_manifest": {
+          "body": "6bebffbba7b4499aa241b722919a513fb77622a9d150910eae5cd9059861f15b-2fa2a448d042219e73216cd3aacdc164051489760dff9139fd1eae86bd6e4f83.body",
+          "fetched_at": "2026-11-13T05:12:21.103608+00:00",
+          "sha256": "2fa2a448d042219e73216cd3aacdc164051489760dff9139fd1eae86bd6e4f83",
+          "url": "https://www.sec.gov/Archives/edgar/data/711404/000071140425000010/coo-20250306.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/711404/000071140425000010/coo-20250306.htm"
+      },
+      "source": {
+        "accession": "0000711404-24-000069",
+        "company": "COO",
+        "exhibits": [
+          {
+            "canonical_sha256": "c111af2be34ba9d2a2feb44e60ae23f86e2ff0d3dafdfc27e0aee8c8ed86fc4a",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "81d36f4a3f76d79750ab12dcf85a5a1c56c5fa7342231ac9637b171a160b621f-57b9d8a23f67fddf6ce235ea3d07a41695e407d679800291c61650bd298687e1.body",
+              "fetched_at": "2026-11-13T05:12:23.396167+00:00",
+              "sha256": "57b9d8a23f67fddf6ce235ea3d07a41695e407d679800291c61650bd298687e1",
+              "url": "https://www.sec.gov/Archives/edgar/data/711404/000071140424000069/cooperq42024pressrelease.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/711404/000071140424000069/cooperq42024pressrelease.htm"
+          }
+        ],
+        "filed": "2024-12-05",
+        "form": "8-K",
+        "primary": "coo-20241205.htm",
+        "primary_manifest": {
+          "body": "154faf77cbca22f0fa9abaa0d8d414ee6e15537f7b16dce0d9db64000c9187c2-59065c722badc5ad2f9b8f4729e9a145be86c9236f0f2a54fb9eb070f71b85c7.body",
+          "fetched_at": "2026-11-13T05:12:22.511583+00:00",
+          "sha256": "59065c722badc5ad2f9b8f4729e9a145be86c9236f0f2a54fb9eb070f71b85c7",
+          "url": "https://www.sec.gov/Archives/edgar/data/711404/000071140424000069/coo-20241205.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/711404/000071140424000069/coo-20241205.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "DLTR",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000039/ex991q2-24earningspr.htm",
+      "id": "DLTR:0000935703-24-000039",
+      "release_group": "0000935703-24-000039",
+      "result": {
+        "accession": "0000935703-24-000057",
+        "company": "DLTR",
+        "exhibits": [
+          {
+            "canonical_sha256": "fa0805d3882f979a0f49c9bc17df621930e3ef9dd8b1e19d09f6e461b719c414",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "da354beb90706b9d3c35525708ec6fcb4df8f8d23fc13843e5130fac8abc456d-478a8ab66adf85e7688dfb86a5731cca380b8fbaec56f0f596640162115b8689.body",
+              "fetched_at": "2026-11-13T05:10:41.892482+00:00",
+              "sha256": "478a8ab66adf85e7688dfb86a5731cca380b8fbaec56f0f596640162115b8689",
+              "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000057/ex991q3-24earningspr.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000057/ex991q3-24earningspr.htm"
+          }
+        ],
+        "filed": "2024-12-04",
+        "form": "8-K",
+        "primary": "dltr-20241204.htm",
+        "primary_manifest": {
+          "body": "a3d1caf066d5c54ae711a291ed02e406ccee8f0cafd8cdb9f71ef5ee85de8be0-27f344c1bf73ade09ca45a43cced30e8f9c753cff54fb387ba3a35e8ec3fb163.body",
+          "fetched_at": "2026-11-13T05:10:41.199544+00:00",
+          "sha256": "27f344c1bf73ade09ca45a43cced30e8f9c753cff54fb387ba3a35e8ec3fb163",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000057/dltr-20241204.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000057/dltr-20241204.htm"
+      },
+      "source": {
+        "accession": "0000935703-24-000039",
+        "company": "DLTR",
+        "exhibits": [
+          {
+            "canonical_sha256": "48ac1970cffad63f917c97e2f060a4f8f2263d947a0294c473e0c63b5c14da0b",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "2fef7a098706f5c048f893d522a92b0426dfd6002c1a8379d4b574d30e0571ba-f337a2217808332926fcd03d9ae1f32e95bd90fe49774e5f71a6439674d48191.body",
+              "fetched_at": "2026-11-13T05:10:43.283308+00:00",
+              "sha256": "f337a2217808332926fcd03d9ae1f32e95bd90fe49774e5f71a6439674d48191",
+              "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000039/ex991q2-24earningspr.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000039/ex991q2-24earningspr.htm"
+          }
+        ],
+        "filed": "2024-09-04",
+        "form": "8-K",
+        "primary": "dltr-20240904.htm",
+        "primary_manifest": {
+          "body": "27281a3eb1236a5c7ce37c593b0239c65c0df41183337796fd3e91a8e2066f60-4a30c1958aa5b3ef8753f71223e7f9dd295105488936e0cabe9e53e2519cbaf1.body",
+          "fetched_at": "2026-11-13T05:10:42.512881+00:00",
+          "sha256": "4a30c1958aa5b3ef8753f71223e7f9dd295105488936e0cabe9e53e2519cbaf1",
+          "url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000039/dltr-20240904.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/935703/000093570324000039/dltr-20240904.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "DOCU",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000016/q425ex-991er.htm",
+      "id": "DOCU:0001261333-25-000016",
+      "release_group": "0001261333-25-000016",
+      "result": {
+        "accession": "0001261333-25-000073",
+        "company": "DOCU",
+        "exhibits": [
+          {
+            "canonical_sha256": "ae9c6b7e16fe1ded256ea7ed3df9cc56568ed2529732fc79020a20043a3d1fc8",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "3c16e22bf6a3419bba800bfff94e4219c2f02c3af22be052ef241b9ac33b2375-b2631f2164ce4a12b29e7f983e9e505459b5256d478470d09e07b782bc8579d5.body",
+              "fetched_at": "2026-11-13T05:08:31.497539+00:00",
+              "sha256": "b2631f2164ce4a12b29e7f983e9e505459b5256d478470d09e07b782bc8579d5",
+              "url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000073/q126ex-991er.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000073/q126ex-991er.htm"
+          }
+        ],
+        "filed": "2025-06-05",
+        "form": "8-K",
+        "primary": "docu-20250605.htm",
+        "primary_manifest": {
+          "body": "83437e65686fc35b3c6cc2ff73a5c9a829f9d34738c48b32b52baddf69004ce3-805e5ca724ca994742c7554778884bbb10329d125b07874f8b1ab8728120acb2.body",
+          "fetched_at": "2026-11-13T05:08:30.863131+00:00",
+          "sha256": "805e5ca724ca994742c7554778884bbb10329d125b07874f8b1ab8728120acb2",
+          "url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000073/docu-20250605.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000073/docu-20250605.htm"
+      },
+      "source": {
+        "accession": "0001261333-25-000016",
+        "company": "DOCU",
+        "exhibits": [
+          {
+            "canonical_sha256": "3a40cce978e342096b0bb51bd45c842fe9a351f206289488ae78c3aba90b0775",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "8dca49388454a0ad276f97a9481d86a7ce3ccfef81bdbf7cd2ec086b2828ae87-98beaf25725d5addb49d97d1c58661d8f601630d3f2004cb9fac7754c1c71cd9.body",
+              "fetched_at": "2026-11-13T05:08:32.867814+00:00",
+              "sha256": "98beaf25725d5addb49d97d1c58661d8f601630d3f2004cb9fac7754c1c71cd9",
+              "url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000016/q425ex-991er.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000016/q425ex-991er.htm"
+          }
+        ],
+        "filed": "2025-03-13",
+        "form": "8-K",
+        "primary": "docu-20250313.htm",
+        "primary_manifest": {
+          "body": "9529b8fa37e2ef6f4284ff3fb61a3794d1b7d3d959ad910257365f531abd26ff-d7c0462656d787b430c35cd1055b98909fbb062337ade184cd769465307b5ab4.body",
+          "fetched_at": "2026-11-13T05:08:32.219878+00:00",
+          "sha256": "d7c0462656d787b430c35cd1055b98909fbb062337ade184cd769465307b5ab4",
+          "url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000016/docu-20250313.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000016/docu-20250313.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "DOCU",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000146/q326ex-991er.htm",
+      "id": "DOCU:0001261333-25-000146",
+      "release_group": "0001261333-25-000146",
+      "result": {
+        "accession": "0001261333-26-000017",
+        "company": "DOCU",
+        "exhibits": [
+          {
+            "canonical_sha256": "259eba7e09e50d35a3daf95de7cc1a519fe1cb690f83cb849117e7bb62bf70bf",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "f568b5372abc4932cf1449f8b64ffff9ba64cac3e6ca8c8ebc8865f2207450c8-1ae7cce7608fdd5e08f2907e2c65838eb7211b64281c4ed1f329e75f7360876e.body",
+              "fetched_at": "2026-11-13T05:08:27.552621+00:00",
+              "sha256": "1ae7cce7608fdd5e08f2907e2c65838eb7211b64281c4ed1f329e75f7360876e",
+              "url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000017/q426ex-991er.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000017/q426ex-991er.htm"
+          }
+        ],
+        "filed": "2026-03-17",
+        "form": "8-K",
+        "primary": "docu-20260317.htm",
+        "primary_manifest": {
+          "body": "3c6a91f8330c9dac7d767c4e42e87ef3525fbe4738e1f071e2d48059e3ef1c21-41077ad77a030f24e69d81336e70e7d94ae06154ccec26bcba50afeb46716837.body",
+          "fetched_at": "2026-11-13T05:08:26.893264+00:00",
+          "sha256": "41077ad77a030f24e69d81336e70e7d94ae06154ccec26bcba50afeb46716837",
+          "url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000017/docu-20260317.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000017/docu-20260317.htm"
+      },
+      "source": {
+        "accession": "0001261333-25-000146",
+        "company": "DOCU",
+        "exhibits": [
+          {
+            "canonical_sha256": "053d3eb1a29eabeb461236ac8150abac9555483a7020f0cc330a8459665a7e55",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "0b77af81c4a2426c9aa8c42f3729455a190da557721bca722677c6bd959049bd-b14d9c290fc6c7ead3033ba1625e22aad20afda904c601fa5684caa7c4fa0ce6.body",
+              "fetched_at": "2026-11-13T05:08:28.847812+00:00",
+              "sha256": "b14d9c290fc6c7ead3033ba1625e22aad20afda904c601fa5684caa7c4fa0ce6",
+              "url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000146/q326ex-991er.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000146/q326ex-991er.htm"
+          }
+        ],
+        "filed": "2025-12-04",
+        "form": "8-K",
+        "primary": "docu-20251204.htm",
+        "primary_manifest": {
+          "body": "ddd107718de263b46c2d63f50e7783a0f5da65ba76e35f94e99cf3102f6fa191-76de9c3237a74e7f9227c34f66db88601e58468c71a083cf319670dd483ed063.body",
+          "fetched_at": "2026-11-13T05:08:28.195075+00:00",
+          "sha256": "76de9c3237a74e7f9227c34f66db88601e58468c71a083cf319670dd483ed063",
+          "url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000146/docu-20251204.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000146/docu-20251204.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "ESTC",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000008/a25q3erex991.htm",
+      "id": "ESTC:0001707753-25-000008",
+      "release_group": "0001707753-25-000008",
+      "result": {
+        "accession": "0001707753-25-000015",
+        "company": "ESTC",
+        "exhibits": [
+          {
+            "canonical_sha256": "ddd7afaaa52992815b236871f9fa1edaee719960fdcbf16bdc9aab710d4fba98",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "b72ae2c33a5117b1b9deb628463f4087abb98c6bb5dcbb85a78a4004f6fa7819-f486c811af3f210c9692ab1dbc7d2658f7f1131d7e74d8f0a68a913eaa84df00.body",
+              "fetched_at": "2026-11-13T05:09:15.259720+00:00",
+              "sha256": "f486c811af3f210c9692ab1dbc7d2658f7f1131d7e74d8f0a68a913eaa84df00",
+              "url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000015/a25q4erex991.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000015/a25q4erex991.htm"
+          }
+        ],
+        "filed": "2025-05-29",
+        "form": "8-K",
+        "primary": "estc-20250529.htm",
+        "primary_manifest": {
+          "body": "5e51284aff9a1c97ac186423f7da3173f75b0b781ee04a7d5008d59fa2de1ca5-5ea3179927e0f7cca4e4d983e0e90f1eea5a70a7c367d67ff5e7ae13da3d1603.body",
+          "fetched_at": "2026-11-13T05:09:14.123378+00:00",
+          "sha256": "5ea3179927e0f7cca4e4d983e0e90f1eea5a70a7c367d67ff5e7ae13da3d1603",
+          "url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000015/estc-20250529.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000015/estc-20250529.htm"
+      },
+      "source": {
+        "accession": "0001707753-25-000008",
+        "company": "ESTC",
+        "exhibits": [
+          {
+            "canonical_sha256": "2cb320e79ec4bd78c7b44958cdbfd321bca89ba60e1c0f1f75f14dc006a3aa43",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "db733751da2cfc4ab2f3a3c6454ee3f6ccbff0c8f89d4bd1dac48db2ded08e43-20c505dc66424c5062f60f2708aa4956ab70d4395c96548bb904c7595b00059a.body",
+              "fetched_at": "2026-11-13T05:09:16.564521+00:00",
+              "sha256": "20c505dc66424c5062f60f2708aa4956ab70d4395c96548bb904c7595b00059a",
+              "url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000008/a25q3erex991.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000008/a25q3erex991.htm"
+          }
+        ],
+        "filed": "2025-02-27",
+        "form": "8-K",
+        "primary": "estc-20250225.htm",
+        "primary_manifest": {
+          "body": "e5caee845719067bee2d40c2b51885aad5f0328e7ccb1a54654642b762f64f13-6e7f65a74bc2fea0235362465623ca744602ad542bb62222c37779ed5895c780.body",
+          "fetched_at": "2026-11-13T05:09:15.882779+00:00",
+          "sha256": "6e7f65a74bc2fea0235362465623ca744602ad542bb62222c37779ed5895c780",
+          "url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000008/estc-20250225.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1707753/000170775325000008/estc-20250225.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "FIVE",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000006/q42024fivebelowexhibit991.htm",
+      "id": "FIVE:0001177609-25-000006",
+      "release_group": "0001177609-25-000006",
+      "result": {
+        "accession": "0001177609-25-000019",
+        "company": "FIVE",
+        "exhibits": [
+          {
+            "canonical_sha256": "cd3b22bb9a23c5fbb60e3692471edcb90c904d4b5c3e95c779c99e8c2154ddff",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "aa8ba83319168632391b0c5305d3a6e2b493c3593e8038cedc3dc894f1ef9df0-aa7a46f39fc4a8b3ee031989955c1dc59d53c281907dafadbed79e19d22350b7.body",
+              "fetched_at": "2026-11-13T05:10:23.572255+00:00",
+              "sha256": "aa7a46f39fc4a8b3ee031989955c1dc59d53c281907dafadbed79e19d22350b7",
+              "url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000019/q12025fivebelowexhibit991.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000019/q12025fivebelowexhibit991.htm"
+          }
+        ],
+        "filed": "2025-06-04",
+        "form": "8-K",
+        "primary": "five-20250604.htm",
+        "primary_manifest": {
+          "body": "fdf310d36d273a692db99e6c27470f1bb50f2e518f6f8cef66bfd801a8db200f-ff514b41a9ec813e6b1035509d935e9415cc127db4f57babcbed14c32e007cf3.body",
+          "fetched_at": "2026-11-13T05:10:22.904302+00:00",
+          "sha256": "ff514b41a9ec813e6b1035509d935e9415cc127db4f57babcbed14c32e007cf3",
+          "url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000019/five-20250604.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000019/five-20250604.htm"
+      },
+      "source": {
+        "accession": "0001177609-25-000006",
+        "company": "FIVE",
+        "exhibits": [
+          {
+            "canonical_sha256": "6b969efcf7f48acfbba6b8cd4e57ecad11c83be8685ff5b1e3abd2c63da545f4",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "2c830e73fd01188cc4366ca386959df34298534e80e81ece9feb6305f92ceab1-4350f5a7aa5920b26692727cce98c2ef7818486df551ff9219f1cf4bcf1a2a8e.body",
+              "fetched_at": "2026-11-13T05:10:24.885449+00:00",
+              "sha256": "4350f5a7aa5920b26692727cce98c2ef7818486df551ff9219f1cf4bcf1a2a8e",
+              "url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000006/q42024fivebelowexhibit991.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000006/q42024fivebelowexhibit991.htm"
+          }
+        ],
+        "filed": "2025-03-19",
+        "form": "8-K",
+        "primary": "five-20250319.htm",
+        "primary_manifest": {
+          "body": "a34dfd9983a85022d0c6549f31a6147e6014fffec2a103f0ae30fb960e84329a-9e8d464793a338a5682ce695be4fe653bdab3c993b3fab0ae316f4a2784ee2d6.body",
+          "fetched_at": "2026-11-13T05:10:24.240323+00:00",
+          "sha256": "9e8d464793a338a5682ce695be4fe653bdab3c993b3fab0ae316f4a2784ee2d6",
+          "url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000006/five-20250319.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000006/five-20250319.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "FIVE",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000037/q22025fivebelowexhibit991.htm",
+      "id": "FIVE:0001177609-25-000037",
+      "release_group": "0001177609-25-000037",
+      "result": {
+        "accession": "0001177609-25-000048",
+        "company": "FIVE",
+        "exhibits": [
+          {
+            "canonical_sha256": "e4a99c96e9b8d035081d141e60e15d1cb399273642c23509732e1eeb305637c6",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "dd1f0176de7937d73631fdb8245d80110f5c5b57eb527aad0bf4368329ec5717-f32c662435013ccd14c1fd1f2608feca717cc26bfcc01a6ec202b5f3c0fb6079.body",
+              "fetched_at": "2026-11-13T05:10:20.553503+00:00",
+              "sha256": "f32c662435013ccd14c1fd1f2608feca717cc26bfcc01a6ec202b5f3c0fb6079",
+              "url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000048/q32025fivebelowexhibit991.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000048/q32025fivebelowexhibit991.htm"
+          }
+        ],
+        "filed": "2025-12-03",
+        "form": "8-K",
+        "primary": "five-20251203.htm",
+        "primary_manifest": {
+          "body": "3bd317c8ab06fda9c9386358139d9ec6941f50fe8454200cbf563225dc8c776f-d62de75cbe931323a985b14a1e255c6638e1f09d05a3188d8434fe2fbba897fe.body",
+          "fetched_at": "2026-11-13T05:10:19.683692+00:00",
+          "sha256": "d62de75cbe931323a985b14a1e255c6638e1f09d05a3188d8434fe2fbba897fe",
+          "url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000048/five-20251203.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000048/five-20251203.htm"
+      },
+      "source": {
+        "accession": "0001177609-25-000037",
+        "company": "FIVE",
+        "exhibits": [
+          {
+            "canonical_sha256": "957dbc48ad97882707f05c8927c8e26c4fdb96f6983d418ac9eaea3e5f43d7be",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "56ba2dea1532346c65decb3bad2f7cee6126627d75458256b5f317e4de66d6c2-02b693db6c19b9119d0520277b46ef5d163b4278291c67199c1b9756d5715619.body",
+              "fetched_at": "2026-11-13T05:10:21.937565+00:00",
+              "sha256": "02b693db6c19b9119d0520277b46ef5d163b4278291c67199c1b9756d5715619",
+              "url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000037/q22025fivebelowexhibit991.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000037/q22025fivebelowexhibit991.htm"
+          }
+        ],
+        "filed": "2025-08-27",
+        "form": "8-K",
+        "primary": "five-20250827.htm",
+        "primary_manifest": {
+          "body": "456726957aa9237cf32cbc5455a604e361059db634ccd94da8c1139c76cb04f9-a1fc27ae9304f4854a12408ec81bad876c087049df642df8a90d0b1d6b905b5f.body",
+          "fetched_at": "2026-11-13T05:10:21.291434+00:00",
+          "sha256": "a1fc27ae9304f4854a12408ec81bad876c087049df642df8a90d0b1d6b905b5f",
+          "url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000037/five-20250827.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000037/five-20250827.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "HIMS",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375124000337/hims-20240930x8xkearningsr.htm",
+      "id": "HIMS:0001773751-24-000337",
+      "release_group": "0001773751-24-000337",
+      "result": {
+        "accession": "0001773751-25-000059",
+        "company": "HIMS",
+        "exhibits": [
+          {
+            "canonical_sha256": "426d4ab009c5deed226d03402557342612156abb125475705ed74c1ba96a4b17",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "aa307e9cf2519d881cba29b9b85d6c6680d883747de6eff899ef2442a3cc38e0-498a09cb3c3459d1b168db99dd915da2bdfeee39efd23b4768662647d2b3dcd1.body",
+              "fetched_at": "2026-11-13T05:11:49.811056+00:00",
+              "sha256": "498a09cb3c3459d1b168db99dd915da2bdfeee39efd23b4768662647d2b3dcd1",
+              "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000059/hims-20241231x8xkearningsr.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000059/hims-20241231x8xkearningsr.htm"
+          }
+        ],
+        "filed": "2025-02-24",
+        "form": "8-K",
+        "primary": "hims-20250224.htm",
+        "primary_manifest": {
+          "body": "3f95f76fda633a7d5ec66396b3ccd5f0e9752b8b62120cdb605e5a95825e2f8d-ee4d20d7b07d1c17d1af86ed331102088ce0aeb5d4e077c044907ddc2579a6dd.body",
+          "fetched_at": "2026-11-13T05:11:48.938016+00:00",
+          "sha256": "ee4d20d7b07d1c17d1af86ed331102088ce0aeb5d4e077c044907ddc2579a6dd",
+          "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000059/hims-20250224.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000059/hims-20250224.htm"
+      },
+      "source": {
+        "accession": "0001773751-24-000337",
+        "company": "HIMS",
+        "exhibits": [
+          {
+            "canonical_sha256": "5b0901ea703018aa5ce91a15698352c2df18ebb684035cc166c501a3b79f487e",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "41433ad3a285189b5e40fd1f581fc3931bd214c0b60a9d41894ed63e1f59b7b0-048740b46da116fd76ccef2fe454d0675a137f46ca96f2010f40f873706e58c4.body",
+              "fetched_at": "2026-11-13T05:11:51.328443+00:00",
+              "sha256": "048740b46da116fd76ccef2fe454d0675a137f46ca96f2010f40f873706e58c4",
+              "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375124000337/hims-20240930x8xkearningsr.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375124000337/hims-20240930x8xkearningsr.htm"
+          }
+        ],
+        "filed": "2024-11-04",
+        "form": "8-K",
+        "primary": "hims-20241104.htm",
+        "primary_manifest": {
+          "body": "d79d99befcb107d631de837eba4b04e61d7b8a9adc9579ffe5d05b4af81145cc-7bc73bb13f1f51e19e1cac82e28abc3e13432ace3f97b729a8459a8e838cd44d.body",
+          "fetched_at": "2026-11-13T05:11:50.451242+00:00",
+          "sha256": "7bc73bb13f1f51e19e1cac82e28abc3e13432ace3f97b729a8459a8e838cd44d",
+          "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375124000337/hims-20241104.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375124000337/hims-20241104.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "HIMS",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000059/hims-20241231x8xkearningsr.htm",
+      "id": "HIMS:0001773751-25-000059",
+      "release_group": "0001773751-25-000059",
+      "result": {
+        "accession": "0001773751-25-000152",
+        "company": "HIMS",
+        "exhibits": [
+          {
+            "canonical_sha256": "f550596fd1ad4c8ae67b03aa1805cb6ffbeecf84455906ed855ba5957c0f1462",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "68062981dec1c31f73ba18a2e67f485f92e6a14582fb367537b8144faa3a411a-b005561fc4d6f143df573b7c20c3ad2a5e139287dfd2b19cae2bd9611e4e7e04.body",
+              "fetched_at": "2026-11-13T05:11:48.301033+00:00",
+              "sha256": "b005561fc4d6f143df573b7c20c3ad2a5e139287dfd2b19cae2bd9611e4e7e04",
+              "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000152/hims-20250331x8xkearningsr.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000152/hims-20250331x8xkearningsr.htm"
+          }
+        ],
+        "filed": "2025-05-05",
+        "form": "8-K",
+        "primary": "hims-20250505.htm",
+        "primary_manifest": {
+          "body": "c90313fa925c81ff45743c31be2efe5c4b8839c20e038befb077465954748b98-64e1748cf7b1c22b97b361110faf4b8ac1dde276cb5bfb9b2043298625b6b83d.body",
+          "fetched_at": "2026-11-13T05:11:47.484826+00:00",
+          "sha256": "64e1748cf7b1c22b97b361110faf4b8ac1dde276cb5bfb9b2043298625b6b83d",
+          "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000152/hims-20250505.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000152/hims-20250505.htm"
+      },
+      "source": {
+        "accession": "0001773751-25-000059",
+        "company": "HIMS",
+        "exhibits": [
+          {
+            "canonical_sha256": "426d4ab009c5deed226d03402557342612156abb125475705ed74c1ba96a4b17",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "aa307e9cf2519d881cba29b9b85d6c6680d883747de6eff899ef2442a3cc38e0-498a09cb3c3459d1b168db99dd915da2bdfeee39efd23b4768662647d2b3dcd1.body",
+              "fetched_at": "2026-11-13T05:11:49.811056+00:00",
+              "sha256": "498a09cb3c3459d1b168db99dd915da2bdfeee39efd23b4768662647d2b3dcd1",
+              "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000059/hims-20241231x8xkearningsr.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000059/hims-20241231x8xkearningsr.htm"
+          }
+        ],
+        "filed": "2025-02-24",
+        "form": "8-K",
+        "primary": "hims-20250224.htm",
+        "primary_manifest": {
+          "body": "3f95f76fda633a7d5ec66396b3ccd5f0e9752b8b62120cdb605e5a95825e2f8d-ee4d20d7b07d1c17d1af86ed331102088ce0aeb5d4e077c044907ddc2579a6dd.body",
+          "fetched_at": "2026-11-13T05:11:48.938016+00:00",
+          "sha256": "ee4d20d7b07d1c17d1af86ed331102088ce0aeb5d4e077c044907ddc2579a6dd",
+          "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000059/hims-20250224.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000059/hims-20250224.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "HIMS",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000248/hims-20250630x8xkearningsr.htm",
+      "id": "HIMS:0001773751-25-000248",
+      "release_group": "0001773751-25-000248",
+      "result": {
+        "accession": "0001773751-25-000352",
+        "company": "HIMS",
+        "exhibits": [
+          {
+            "canonical_sha256": "047da4985c00835b79ee5458f2bae9178cf849ae1cd62760fad1a6d82f41729b",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "45422156b1011b320dcfdeb225edaa22b21751125bb56e7cb2404259d8ed38b5-d7f97a2ae5938531891df4754f9777a41b0709bfeb42b6ede3ae2f67a03b970f.body",
+              "fetched_at": "2026-11-13T05:11:44.435528+00:00",
+              "sha256": "d7f97a2ae5938531891df4754f9777a41b0709bfeb42b6ede3ae2f67a03b970f",
+              "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000352/hims-20250930x8xkearningsr.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000352/hims-20250930x8xkearningsr.htm"
+          }
+        ],
+        "filed": "2025-11-03",
+        "form": "8-K",
+        "primary": "hims-20251103.htm",
+        "primary_manifest": {
+          "body": "905635bea805270a4e24d4bc43b0160fb576edc6293ac400c743b8df3b24db8b-dcee5665899d01e223011804b6d227cb03d55b709fe0d2c6500859f7e099435a.body",
+          "fetched_at": "2026-11-13T05:11:43.632020+00:00",
+          "sha256": "dcee5665899d01e223011804b6d227cb03d55b709fe0d2c6500859f7e099435a",
+          "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000352/hims-20251103.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000352/hims-20251103.htm"
+      },
+      "source": {
+        "accession": "0001773751-25-000248",
+        "company": "HIMS",
+        "exhibits": [
+          {
+            "canonical_sha256": "3ac71bf26e710e21c4f724dac7655e1ad5162685e2e2c0f67249eaabc1f1657a",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "5e7ea929d1b866cd1c6a2297929f9816be245af4e47fd8bcc12e56527bc83443-04f9f634d346c5af9f272e7d2ed30460343b0514bc15ba49d25de85a579775b7.body",
+              "fetched_at": "2026-11-13T05:11:46.846843+00:00",
+              "sha256": "04f9f634d346c5af9f272e7d2ed30460343b0514bc15ba49d25de85a579775b7",
+              "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000248/hims-20250630x8xkearningsr.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000248/hims-20250630x8xkearningsr.htm"
+          }
+        ],
+        "filed": "2025-08-04",
+        "form": "8-K",
+        "primary": "hims-20250804.htm",
+        "primary_manifest": {
+          "body": "7111091b1ed37217b6a07e04d03d0162b879db6155ebc3dc55051afdd54e0a69-1a3b223b5d4a1a25028469bc01c5749cb107904e51647e3cab1089d0f2f4b6bf.body",
+          "fetched_at": "2026-11-13T05:11:45.068104+00:00",
+          "sha256": "1a3b223b5d4a1a25028469bc01c5749cb107904e51647e3cab1089d0f2f4b6bf",
+          "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000248/hims-20250804.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375125000248/hims-20250804.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "HIMS",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000074/hims-20260331x8xkearningsr.htm",
+      "id": "HIMS:0001773751-26-000074",
+      "release_group": "0001773751-26-000074",
+      "result": {
+        "accession": "0001773751-26-000161",
+        "company": "HIMS",
+        "exhibits": [
+          {
+            "canonical_sha256": "c1e61435e5c20bda0a22320972f6117e0386e71da859dbbee7176a0123fccb69",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "4ffcd62696abaed46196a4da20f4add9445dcbde534f0bde6455d2633c9a4589-f53f01a22420acf8ba2e4d7fd89a2d27d9164d4e9fb83b94f127a42480b7dfda.body",
+              "fetched_at": "2026-11-13T04:58:54.326438+00:00",
+              "sha256": "f53f01a22420acf8ba2e4d7fd89a2d27d9164d4e9fb83b94f127a42480b7dfda",
+              "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000161/hims-20260630x8xkearningsr.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000161/hims-20260630x8xkearningsr.htm"
+          }
+        ],
+        "filed": "2026-08-10",
+        "form": "8-K",
+        "primary": "hims-20260810.htm",
+        "primary_manifest": {
+          "body": "dba1027c82199c5bcbb0c54a6ab7d48ac1f210d8ed4be14905dc2217f0c32f2c-aea3c22765cb57609b2663a5b753f33d4b311c0501fa756f8ec285693fcc6e55.body",
+          "fetched_at": "2026-11-13T04:58:53.642015+00:00",
+          "sha256": "aea3c22765cb57609b2663a5b753f33d4b311c0501fa756f8ec285693fcc6e55",
+          "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000161/hims-20260810.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000161/hims-20260810.htm"
+      },
+      "source": {
+        "accession": "0001773751-26-000074",
+        "company": "HIMS",
+        "exhibits": [
+          {
+            "canonical_sha256": "5da70e7e3e48a036f8adeed8e0cd9f120bed858b50f921f0940d375b2680281e",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "716bd0e840d494d8c15bfcbf13ca96f9bab83f26b1b8b758b207c624882b98a5-1abcff8789a5235f6f7667327681f622cdfd19b6e99305741d0073e28a10ce7c.body",
+              "fetched_at": "2026-11-13T05:11:41.686144+00:00",
+              "sha256": "1abcff8789a5235f6f7667327681f622cdfd19b6e99305741d0073e28a10ce7c",
+              "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000074/hims-20260331x8xkearningsr.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000074/hims-20260331x8xkearningsr.htm"
+          }
+        ],
+        "filed": "2026-05-11",
+        "form": "8-K",
+        "primary": "hims-20260511.htm",
+        "primary_manifest": {
+          "body": "c63ae1f05b9a3c3b9c69a186796077333ff82e119bc16ed1aa78f84fb277b858-1001077cee7f25db39e266e41f21e9b22dda3108a29b71e0258d556e661bf518.body",
+          "fetched_at": "2026-11-13T05:11:39.821843+00:00",
+          "sha256": "1001077cee7f25db39e266e41f21e9b22dda3108a29b71e0258d556e661bf518",
+          "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000074/hims-20260511.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000074/hims-20260511.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "JBL",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025031712/jbl-20250617ex991.htm",
+      "id": "JBL:0001628280-25-031712",
+      "release_group": "0001628280-25-031712",
+      "result": {
+        "accession": "0001628280-25-042693",
+        "company": "JBL",
+        "exhibits": [
+          {
+            "canonical_sha256": "564bbdd16889ac10af88fe1c5baaae3fa5428f0c27f9afc60d4f6aea5a6696cb",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "c02480d6a7e07471722152d645db86c40420244c5909603f6156f93b3ec60b3c-0aebadf968c542aea9a3a7d340e7bae5169a60cbee5e520101b681958a52e469.body",
+              "fetched_at": "2026-11-13T05:12:33.434534+00:00",
+              "sha256": "0aebadf968c542aea9a3a7d340e7bae5169a60cbee5e520101b681958a52e469",
+              "url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025042693/jbl-20250925ex991.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025042693/jbl-20250925ex991.htm"
+          }
+        ],
+        "filed": "2025-09-25",
+        "form": "8-K",
+        "primary": "jbl-20250925.htm",
+        "primary_manifest": {
+          "body": "1d1c692c63a765cfed38a00e04382797ef363dca5176f72ec608b4e2e325eee0-09d64ddce2b860d6434a857cf109b95e6731906571d1d195ed9c063d8b895b44.body",
+          "fetched_at": "2026-11-13T05:12:32.485151+00:00",
+          "sha256": "09d64ddce2b860d6434a857cf109b95e6731906571d1d195ed9c063d8b895b44",
+          "url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025042693/jbl-20250925.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025042693/jbl-20250925.htm"
+      },
+      "source": {
+        "accession": "0001628280-25-031712",
+        "company": "JBL",
+        "exhibits": [
+          {
+            "canonical_sha256": "d1375fe1954e64bf33b0c6e103e6c063cd9fa45b6596bde279171978f8f84f54",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "8dc8913fbf0bc4861b7367266a2ea9b322b1b7d6032c5ceba12b82514623b16c-bc685ed51dde7ffb97373d5cb70df368a8e3866fe86cf24e6e453d02689fdb7a.body",
+              "fetched_at": "2026-11-13T05:12:35.112443+00:00",
+              "sha256": "bc685ed51dde7ffb97373d5cb70df368a8e3866fe86cf24e6e453d02689fdb7a",
+              "url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025031712/jbl-20250617ex991.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025031712/jbl-20250617ex991.htm"
+          }
+        ],
+        "filed": "2025-06-17",
+        "form": "8-K",
+        "primary": "jbl-20250617.htm",
+        "primary_manifest": {
+          "body": "7df64cb3c58986a10bb22aea0bc3a8d8c3d534b7a516294ad1957d5af665bcc3-edf31c3fb327712bbfe02235d2e93f12fcf8da7455fd420b3403f95c43adc9d2.body",
+          "fetched_at": "2026-11-13T05:12:34.283959+00:00",
+          "sha256": "edf31c3fb327712bbfe02235d2e93f12fcf8da7455fd420b3403f95c43adc9d2",
+          "url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025031712/jbl-20250617.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/898293/000162828025031712/jbl-20250617.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "MCHP",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/exhibit991q4fy26.htm",
+      "id": "MCHP:0000827054-26-000012",
+      "release_group": "0000827054-26-000012",
+      "result": {
+        "accession": "0000827054-26-000037",
+        "company": "MCHP",
+        "exhibits": [
+          {
+            "canonical_sha256": "26f300fb1b38c496bf705dd2ca8fa61128fa60f5ae4a8f61838bda735c34c6b1",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "0104aa8e48c57a3502b6475d344ca40f19c247ba7bc79ee63a5aaef6fa56909e-d609854013c66d75cee2553b9df2a92440d304b126d30f754e01b004e6294b33.body",
+              "fetched_at": "2026-11-13T04:58:45.244150+00:00",
+              "sha256": "d609854013c66d75cee2553b9df2a92440d304b126d30f754e01b004e6294b33",
+              "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000037/exhibit991q1fy27.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000037/exhibit991q1fy27.htm"
+          }
+        ],
+        "filed": "2026-08-06",
+        "form": "8-K",
+        "primary": "mchp-20260806.htm",
+        "primary_manifest": {
+          "body": "64c476cc8c3c346cf10041e0cce2ac0821260e145c50b3f2eeb5bb27f8e91869-6d2b7861e45708535a73d13218669ef2ab19471496b25414663cbaaefabd6dcb.body",
+          "fetched_at": "2026-11-13T04:58:44.605576+00:00",
+          "sha256": "6d2b7861e45708535a73d13218669ef2ab19471496b25414663cbaaefabd6dcb",
+          "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000037/mchp-20260806.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000037/mchp-20260806.htm"
+      },
+      "source": {
+        "accession": "0000827054-26-000012",
+        "company": "MCHP",
+        "exhibits": [
+          {
+            "canonical_sha256": "35931ed0f53bfe155f9d77fa07cf006ccc5c63634414b9adb458f1e65873b319",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "3b7550fe65a0826f182e529a01037645494ecc468c06f2e42e67c228ce0282f6-79c9667d086272ea52140e0497ceaf3266ff19cc3d124d0410ab30b92dd4ad54.body",
+              "fetched_at": "2026-11-13T05:10:04.077632+00:00",
+              "sha256": "79c9667d086272ea52140e0497ceaf3266ff19cc3d124d0410ab30b92dd4ad54",
+              "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/exhibit991q4fy26.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/exhibit991q4fy26.htm"
+          }
+        ],
+        "filed": "2026-05-07",
+        "form": "8-K",
+        "primary": "mchp-20260507.htm",
+        "primary_manifest": {
+          "body": "6ac704ae8d9212a56514b7f1066d8a9e7727b0c82ee9959bf6453df3dc014be3-b188a8da004842ea7b296ce214592827e979c0a025d9d867bfb0fb7a78099723.body",
+          "fetched_at": "2026-11-13T05:10:03.416735+00:00",
+          "sha256": "b188a8da004842ea7b296ce214592827e979c0a025d9d867bfb0fb7a78099723",
+          "url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/827054/000082705426000012/mchp-20260507.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "MU",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000006/a2025q2ex991-pressrelease.htm",
+      "id": "MU:0000723125-25-000006",
+      "release_group": "0000723125-25-000006",
+      "result": {
+        "accession": "0000723125-25-000019",
+        "company": "MU",
+        "exhibits": [
+          {
+            "canonical_sha256": "9a6c6c8bc97878eaf261fe561bc75ec0f8c9f521de048043d28efd5c847899dc",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "f1ded0518928d02b3d6b9398296f486825fcfeed40e53c0420048e4cb3a1c119-c7bd013c6541c049294e33acdb13ffeb4aaed0e2a68e6871b6bdc73b325f6974.body",
+              "fetched_at": "2026-11-13T05:09:42.525087+00:00",
+              "sha256": "c7bd013c6541c049294e33acdb13ffeb4aaed0e2a68e6871b6bdc73b325f6974",
+              "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000019/a2025q3ex991-pressrelease.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000019/a2025q3ex991-pressrelease.htm"
+          }
+        ],
+        "filed": "2025-06-25",
+        "form": "8-K",
+        "primary": "mu-20250625.htm",
+        "primary_manifest": {
+          "body": "898215a3226dd446a0358342367376e5c1d4797ca322dd2e8a5629846ab91541-0308b63187ee888e09378c1bdf12f3da0b6e61b172ac35001c22e624fae82bcb.body",
+          "fetched_at": "2026-11-13T05:09:41.879013+00:00",
+          "sha256": "0308b63187ee888e09378c1bdf12f3da0b6e61b172ac35001c22e624fae82bcb",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000019/mu-20250625.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000019/mu-20250625.htm"
+      },
+      "source": {
+        "accession": "0000723125-25-000006",
+        "company": "MU",
+        "exhibits": [
+          {
+            "canonical_sha256": "a1ddf896f3488b60e66c5b9e978addf642a1c63df1b8e6e12745ac0529ceccc1",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "455118d020e865cee83fa3b8cfc0c8d7a7c9a3233948bf8658f846e86556af9b-1d655759c72426838d2d1068f5ce50721f2fd99c6f15a0c35197bc5a0fe54873.body",
+              "fetched_at": "2026-11-13T05:09:43.827180+00:00",
+              "sha256": "1d655759c72426838d2d1068f5ce50721f2fd99c6f15a0c35197bc5a0fe54873",
+              "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000006/a2025q2ex991-pressrelease.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000006/a2025q2ex991-pressrelease.htm"
+          }
+        ],
+        "filed": "2025-03-20",
+        "form": "8-K",
+        "primary": "mu-20250320.htm",
+        "primary_manifest": {
+          "body": "aabfec2cc424b2e3e23d8c0bb7767f1cd05a5209327856946a2e66b766bbf09a-35ccd1f2d1a61a3ab85ed5606f6e6c4602a6a733e77b319232b9ed1cb1a53d06.body",
+          "fetched_at": "2026-11-13T05:09:43.159157+00:00",
+          "sha256": "35ccd1f2d1a61a3ab85ed5606f6e6c4602a6a733e77b319232b9ed1cb1a53d06",
+          "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000006/mu-20250320.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/723125/000072312525000006/mu-20250320.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "PLXS",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000020/plxsf25q2earningsrelease-e.htm",
+      "id": "PLXS:0000785786-25-000020",
+      "release_group": "0000785786-25-000020",
+      "result": {
+        "accession": "0000785786-25-000045",
+        "company": "PLXS",
+        "exhibits": [
+          {
+            "canonical_sha256": "edbfd6754f7c11b5a6502d12d49db32d886e26570c22f0dbc2b90fd05099c206",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "0018449faf560bd110f419284a27786d90f7f0a37e7e8a200a89b32cbf2f15ae-8279a192e136318f5b7e28d49cf422c77168f308f4d44e2f5a94c133119cd121.body",
+              "fetched_at": "2026-11-13T05:13:02.872499+00:00",
+              "sha256": "8279a192e136318f5b7e28d49cf422c77168f308f4d44e2f5a94c133119cd121",
+              "url": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000045/plxsf25q3earningsrelease-e.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000045/plxsf25q3earningsrelease-e.htm"
+          }
+        ],
+        "filed": "2025-07-23",
+        "form": "8-K",
+        "primary": "plxs-20250723.htm",
+        "primary_manifest": {
+          "body": "368942d542d3e8ad79e4ba2efc2d1b9b8cafacbd81a027c4c01197176cdc3b8e-5cd9770d55fc466ed4f00dbd90e7e8829aa0e15c97b7d9c6c19e07c2988c8594.body",
+          "fetched_at": "2026-11-13T05:13:02.025455+00:00",
+          "sha256": "5cd9770d55fc466ed4f00dbd90e7e8829aa0e15c97b7d9c6c19e07c2988c8594",
+          "url": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000045/plxs-20250723.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000045/plxs-20250723.htm"
+      },
+      "source": {
+        "accession": "0000785786-25-000020",
+        "company": "PLXS",
+        "exhibits": [
+          {
+            "canonical_sha256": "0880de3e2f521b0e003338c33c905e408272c1c507a855ca3624692028c8bbaf",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "e0cdd87e8c07719d29094ec6f98800162afb6b016dbbd6a7fd02553eb8ab405f-186bb8c213c68ce97eb8de2d7d2ab104f8f548ffa7e19efe182e919792205b0f.body",
+              "fetched_at": "2026-11-13T05:13:04.868889+00:00",
+              "sha256": "186bb8c213c68ce97eb8de2d7d2ab104f8f548ffa7e19efe182e919792205b0f",
+              "url": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000020/plxsf25q2earningsrelease-e.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000020/plxsf25q2earningsrelease-e.htm"
+          }
+        ],
+        "filed": "2025-04-23",
+        "form": "8-K",
+        "primary": "plxs-20250423.htm",
+        "primary_manifest": {
+          "body": "bea4077130359a10aff729758286f5b9bf50f2cccebc06dc3b010ef6099cd036-8a2868661dd8eeb75663a0306d9699dd2c50c8d418b53b451e3e8dfaea236401.body",
+          "fetched_at": "2026-11-13T05:13:03.740156+00:00",
+          "sha256": "8a2868661dd8eeb75663a0306d9699dd2c50c8d418b53b451e3e8dfaea236401",
+          "url": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000020/plxs-20250423.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/785786/000078578625000020/plxs-20250423.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "SANM",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/897723/000089772324000049/sanmina_exx991xsep282024.htm",
+      "id": "SANM:0000897723-24-000049",
+      "release_group": "0000897723-24-000049",
+      "result": {
+        "accession": "0000897723-25-000004",
+        "company": "SANM",
+        "exhibits": [
+          {
+            "canonical_sha256": "fba20537909569fbe046ffe79bd5d49ccb69d6d1749165f8c033dd2429555d0c",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "c26850aaae0580c11ee816742b0805f8318f6684373ac7ff82a682f74923f9dc-f9b9c906dc5d76d6a3f2d99949299a9c312038497005fb01c64d61b1c374666d.body",
+              "fetched_at": "2026-11-13T05:12:51.291334+00:00",
+              "sha256": "f9b9c906dc5d76d6a3f2d99949299a9c312038497005fb01c64d61b1c374666d",
+              "url": "https://www.sec.gov/Archives/edgar/data/897723/000089772325000004/sanmina_exx991xdec282024.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/897723/000089772325000004/sanmina_exx991xdec282024.htm"
+          }
+        ],
+        "filed": "2025-01-27",
+        "form": "8-K",
+        "primary": "sanm-20250127.htm",
+        "primary_manifest": {
+          "body": "edb53415ac531ae8f7cc2f9aa8d10101d5ca4620b3d514937a67b267cc08ee25-1b112da919fd865cc19864d42e65c5daa1994a4e2b3b1c4ba7c4d11a19e900de.body",
+          "fetched_at": "2026-11-13T05:12:50.574446+00:00",
+          "sha256": "1b112da919fd865cc19864d42e65c5daa1994a4e2b3b1c4ba7c4d11a19e900de",
+          "url": "https://www.sec.gov/Archives/edgar/data/897723/000089772325000004/sanm-20250127.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/897723/000089772325000004/sanm-20250127.htm"
+      },
+      "source": {
+        "accession": "0000897723-24-000049",
+        "company": "SANM",
+        "exhibits": [
+          {
+            "canonical_sha256": "9a4928cb0b9b9087dd2a093c19a7eef604b6dcb6218243a00b98a0854fb37401",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "043b0ebb7d23a16d3c4d5ac9710df97f6136bc827d0d79273805ddbea2c5f68a-44bd2d5c1f2e771a58ac2d0069a40ae7e4a852b62954fed50b559b7a028b8c1b.body",
+              "fetched_at": "2026-11-13T05:12:52.592872+00:00",
+              "sha256": "44bd2d5c1f2e771a58ac2d0069a40ae7e4a852b62954fed50b559b7a028b8c1b",
+              "url": "https://www.sec.gov/Archives/edgar/data/897723/000089772324000049/sanmina_exx991xsep282024.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/897723/000089772324000049/sanmina_exx991xsep282024.htm"
+          }
+        ],
+        "filed": "2024-11-04",
+        "form": "8-K",
+        "primary": "sanm-20241104.htm",
+        "primary_manifest": {
+          "body": "2775b4c07a6e5708766d1ccef52b652cbd506e96c7d324024f68a865e3adec50-2c59dab1c274e6ee43d9fe60339f8546287d616a6ca92f8395c13b57045183cc.body",
+          "fetched_at": "2026-11-13T05:12:51.933570+00:00",
+          "sha256": "2c59dab1c274e6ee43d9fe60339f8546287d616a6ca92f8395c13b57045183cc",
+          "url": "https://www.sec.gov/Archives/edgar/data/897723/000089772324000049/sanm-20241104.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/897723/000089772324000049/sanm-20241104.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "SFIX",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/1576942/000162828025055353/exhibit991-q126.htm",
+      "id": "SFIX:0001628280-25-055353",
+      "release_group": "0001628280-25-055353",
+      "result": {
+        "accession": "0001628280-26-016819",
+        "company": "SFIX",
+        "exhibits": [
+          {
+            "canonical_sha256": "61f45062e58c1cb423f8f0a415b91232ab17cea3900da0522c718cabae31bc98",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "d6891be0bf8c3df294af4a25af1a09aa6b33a11a0f3198166b50fed40fefa17a-1e68f3b040903c35206085dc57ac036780020fba99f678bb56a49e328f7798e6.body",
+              "fetched_at": "2026-11-13T05:11:06.674752+00:00",
+              "sha256": "1e68f3b040903c35206085dc57ac036780020fba99f678bb56a49e328f7798e6",
+              "url": "https://www.sec.gov/Archives/edgar/data/1576942/000162828026016819/exhibit991-q226.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1576942/000162828026016819/exhibit991-q226.htm"
+          }
+        ],
+        "filed": "2026-03-11",
+        "form": "8-K",
+        "primary": "sfix-20260311.htm",
+        "primary_manifest": {
+          "body": "ac4a9385503f98bfd510a1684baa761cd67cf52a1e6a7bc2c4440349189c3040-ccc1fe8c1a78a5e341b3fe8d97c428a9f0173af2013e56e67952e26b42a02a51.body",
+          "fetched_at": "2026-11-13T05:11:05.819637+00:00",
+          "sha256": "ccc1fe8c1a78a5e341b3fe8d97c428a9f0173af2013e56e67952e26b42a02a51",
+          "url": "https://www.sec.gov/Archives/edgar/data/1576942/000162828026016819/sfix-20260311.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1576942/000162828026016819/sfix-20260311.htm"
+      },
+      "source": {
+        "accession": "0001628280-25-055353",
+        "company": "SFIX",
+        "exhibits": [
+          {
+            "canonical_sha256": "63600255c7ab85314b04e95a81dc8e73fe458b314a77b556b95410183a77f2f0",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "810b7c4201c3511e893b817f1f00e5e3ab6715f230ecde0d5ef5bcd81772bce3-20fb262ecf8a2fc16719cf810e3a79d323a52ff86b43a9668a05ffa425a0515d.body",
+              "fetched_at": "2026-11-13T05:11:09.444029+00:00",
+              "sha256": "20fb262ecf8a2fc16719cf810e3a79d323a52ff86b43a9668a05ffa425a0515d",
+              "url": "https://www.sec.gov/Archives/edgar/data/1576942/000162828025055353/exhibit991-q126.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1576942/000162828025055353/exhibit991-q126.htm"
+          }
+        ],
+        "filed": "2025-12-04",
+        "form": "8-K",
+        "primary": "sfix-20251204.htm",
+        "primary_manifest": {
+          "body": "e32cc8bd4bc7ef9357cd10478ddd9b9a49f0df99fbf5245c529366e785c45d7a-aa4ddb10bc7c5b98f7cc6db22d1bd07cd28c2b3c21eb320ecd94ed8aed8c8ec2.body",
+          "fetched_at": "2026-11-13T05:11:08.637118+00:00",
+          "sha256": "aa4ddb10bc7c5b98f7cc6db22d1bd07cd28c2b3c21eb320ecd94ed8aed8c8ec2",
+          "url": "https://www.sec.gov/Archives/edgar/data/1576942/000162828025055353/sfix-20251204.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1576942/000162828025055353/sfix-20251204.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "TDOC",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000002/tdoc-20241231xexx991.htm",
+      "id": "TDOC:0001477449-25-000002",
+      "release_group": "0001477449-25-000002",
+      "result": {
+        "accession": "0001477449-25-000047",
+        "company": "TDOC",
+        "exhibits": [
+          {
+            "canonical_sha256": "9a9598db448051c41f2184e3b93a8d6290345b761358f41be34f273c66872f95",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "ac0e130e2b7fa15a723ba7b720eceb6b1227174fc593fb30fe2031dfe42212ee-fae9d0ccf5d42fa9c4fe3934968e7afcf93bdcb491000f50a5513541a1b88391.body",
+              "fetched_at": "2026-11-13T05:12:05.186643+00:00",
+              "sha256": "fae9d0ccf5d42fa9c4fe3934968e7afcf93bdcb491000f50a5513541a1b88391",
+              "url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000047/tdoc-20250331xexx991.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000047/tdoc-20250331xexx991.htm"
+          }
+        ],
+        "filed": "2025-04-30",
+        "form": "8-K",
+        "primary": "tdoc-20250430.htm",
+        "primary_manifest": {
+          "body": "c63ad4ef43ea3458307c7cfdc27861919ee33c1142d9e891b063743a748da622-9024be68ddd5d46a517932054521088078a52cc4f87a7fff24b4ab797eaf5709.body",
+          "fetched_at": "2026-11-13T05:12:04.249359+00:00",
+          "sha256": "9024be68ddd5d46a517932054521088078a52cc4f87a7fff24b4ab797eaf5709",
+          "url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000047/tdoc-20250430.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000047/tdoc-20250430.htm"
+      },
+      "source": {
+        "accession": "0001477449-25-000002",
+        "company": "TDOC",
+        "exhibits": [
+          {
+            "canonical_sha256": "674219fce4ec3f2c576bfa2485350ab1a5c7009ed7244a8f6d7950a964b94381",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "b57e54433b3cb9aff944eca451534a3ff520334a78ede0790f61f1b94b8a025a-33b765bcc24366f68a3418e9586bcbf76582c239e95f3ee9f5ef8053f6ecca24.body",
+              "fetched_at": "2026-11-13T05:12:07.656589+00:00",
+              "sha256": "33b765bcc24366f68a3418e9586bcbf76582c239e95f3ee9f5ef8053f6ecca24",
+              "url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000002/tdoc-20241231xexx991.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000002/tdoc-20241231xexx991.htm"
+          }
+        ],
+        "filed": "2025-02-26",
+        "form": "8-K",
+        "primary": "tdoc-20250226.htm",
+        "primary_manifest": {
+          "body": "e799347d63cd9ce119302c41253139b1143a2fd69a798859c38e253f57d8a2df-9d0a27d25771ba2c3a9d68e71b2a1db5a4606ac972d32e15d3d9c6a02170ca9c.body",
+          "fetched_at": "2026-11-13T05:12:06.580595+00:00",
+          "sha256": "9d0a27d25771ba2c3a9d68e71b2a1db5a4606ac972d32e15d3d9c6a02170ca9c",
+          "url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000002/tdoc-20250226.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000002/tdoc-20250226.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "TDOC",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000047/tdoc-20250331xexx991.htm",
+      "id": "TDOC:0001477449-25-000047",
+      "release_group": "0001477449-25-000047",
+      "result": {
+        "accession": "0001477449-25-000096",
+        "company": "TDOC",
+        "exhibits": [
+          {
+            "canonical_sha256": "e4a9070267cc6b01e7a03ad5181f75101ddc601447e9d15e9d81633f72aecb03",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "c57d276fd3b2989620d0a8711640c62bcaabeffbf34f6737e0a7daa118b1382a-f7933d0909f1a0f85ca7abf65a5d4fc4fd9fccd45efe1fb1dfc2d7764577cc02.body",
+              "fetched_at": "2026-11-13T05:12:03.296977+00:00",
+              "sha256": "f7933d0909f1a0f85ca7abf65a5d4fc4fd9fccd45efe1fb1dfc2d7764577cc02",
+              "url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000096/tdoc-20250630xexx991.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000096/tdoc-20250630xexx991.htm"
+          }
+        ],
+        "filed": "2025-07-29",
+        "form": "8-K",
+        "primary": "tdoc-20250729.htm",
+        "primary_manifest": {
+          "body": "ee624abd7b843ba4d43f30a629d3b91c1ba34a7edf4ef93dfef182a7031d7148-e9d515e640c22bcd03ad00868e3e88bb74cb64bb65c6fa06264cf2f29eff5183.body",
+          "fetched_at": "2026-11-13T05:12:02.390461+00:00",
+          "sha256": "e9d515e640c22bcd03ad00868e3e88bb74cb64bb65c6fa06264cf2f29eff5183",
+          "url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000096/tdoc-20250729.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000096/tdoc-20250729.htm"
+      },
+      "source": {
+        "accession": "0001477449-25-000047",
+        "company": "TDOC",
+        "exhibits": [
+          {
+            "canonical_sha256": "9a9598db448051c41f2184e3b93a8d6290345b761358f41be34f273c66872f95",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "ac0e130e2b7fa15a723ba7b720eceb6b1227174fc593fb30fe2031dfe42212ee-fae9d0ccf5d42fa9c4fe3934968e7afcf93bdcb491000f50a5513541a1b88391.body",
+              "fetched_at": "2026-11-13T05:12:05.186643+00:00",
+              "sha256": "fae9d0ccf5d42fa9c4fe3934968e7afcf93bdcb491000f50a5513541a1b88391",
+              "url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000047/tdoc-20250331xexx991.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000047/tdoc-20250331xexx991.htm"
+          }
+        ],
+        "filed": "2025-04-30",
+        "form": "8-K",
+        "primary": "tdoc-20250430.htm",
+        "primary_manifest": {
+          "body": "c63ad4ef43ea3458307c7cfdc27861919ee33c1142d9e891b063743a748da622-9024be68ddd5d46a517932054521088078a52cc4f87a7fff24b4ab797eaf5709.body",
+          "fetched_at": "2026-11-13T05:12:04.249359+00:00",
+          "sha256": "9024be68ddd5d46a517932054521088078a52cc4f87a7fff24b4ab797eaf5709",
+          "url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000047/tdoc-20250430.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000047/tdoc-20250430.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "ZM",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000026/zm-20260225ex991.htm",
+      "id": "ZM:0001585521-26-000026",
+      "release_group": "0001585521-26-000026",
+      "result": {
+        "accession": "0001585521-26-000069",
+        "company": "ZM",
+        "exhibits": [
+          {
+            "canonical_sha256": "3214649a0886b485ee0b631ecd5cdac320eebc03a7b4b85a3d5567862bbe0d08",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "bc9a075c9103a9a9f7a9b5766105be4b5392a59a67be971bec3549429a1280a3-72ef20f385fe8500a5f9c510b9e830a671999a26830ef80117ef98962983427f.body",
+              "fetched_at": "2026-11-13T04:51:48.458006+00:00",
+              "sha256": "72ef20f385fe8500a5f9c510b9e830a671999a26830ef80117ef98962983427f",
+              "url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000069/zm-20260430ex991.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000069/zm-20260430ex991.htm"
+          }
+        ],
+        "filed": "2026-05-21",
+        "form": "8-K",
+        "primary": "zm-20260521.htm",
+        "primary_manifest": {
+          "body": "c285e22ffb819b75bb5cdd81646f622e4faa028784c616e89d60bbc766e21467-2c3b7e007d1d34e1cb24949650782bbc389f4daca518f91ca42651dbb3647fbe.body",
+          "fetched_at": "2026-11-13T04:51:47.826380+00:00",
+          "sha256": "2c3b7e007d1d34e1cb24949650782bbc389f4daca518f91ca42651dbb3647fbe",
+          "url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000069/zm-20260521.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000069/zm-20260521.htm"
+      },
+      "source": {
+        "accession": "0001585521-26-000026",
+        "company": "ZM",
+        "exhibits": [
+          {
+            "canonical_sha256": "58deaa1f1452d0a3b5f54eb0ecb66379ac71b5c1e680000d44304247681edf7a",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "e95a9a06261a8e8f78c75263bb847e05ff3380cccc2c851599b20706b90aafd7-c66fc9adc63db8e7b305fdddcc91b6e68a8338a12847c874e425fd84e9fbd8d8.body",
+              "fetched_at": "2026-11-13T05:08:10.286930+00:00",
+              "sha256": "c66fc9adc63db8e7b305fdddcc91b6e68a8338a12847c874e425fd84e9fbd8d8",
+              "url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000026/zm-20260225ex991.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000026/zm-20260225ex991.htm"
+          }
+        ],
+        "filed": "2026-02-25",
+        "form": "8-K",
+        "primary": "zm-20260225.htm",
+        "primary_manifest": {
+          "body": "910207452b16893627ed2f474a0ffc98e2caba2bbcd3575f6b2c24acf71659fa-03e54757a92e23863c9d0713d003fa8e4374c96c4513d751beebb7884b2bbf4d.body",
+          "fetched_at": "2026-11-13T05:08:09.649624+00:00",
+          "sha256": "03e54757a92e23863c9d0713d003fa8e4374c96c4513d751beebb7884b2bbf4d",
+          "url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000026/zm-20260225.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000026/zm-20260225.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    },
+    {
+      "amendments": [],
+      "company": "ZS",
+      "guidance_source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-04302025_991.htm",
+      "id": "ZS:0001713683-25-000078",
+      "release_group": "0001713683-25-000078",
+      "result": {
+        "accession": "0001713683-25-000138",
+        "company": "ZS",
+        "exhibits": [
+          {
+            "canonical_sha256": "c38b99631e6d8a76844dcaa723e4d70b10e92903cd574de9310d7f34837ccb47",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "1b0896f771bf2626fe272e8691d3eb2b122e53fb88513a766a014897a5db72d5-735ecd21151a9a73a098eb1a65847c3284a14d89a957ecfa9b39120c64144475.body",
+              "fetched_at": "2026-11-13T05:08:43.573395+00:00",
+              "sha256": "735ecd21151a9a73a098eb1a65847c3284a14d89a957ecfa9b39120c64144475",
+              "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000138/zs-07312025_991.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000138/zs-07312025_991.htm"
+          }
+        ],
+        "filed": "2025-09-02",
+        "form": "8-K",
+        "primary": "zs-20250902.htm",
+        "primary_manifest": {
+          "body": "0e149bde60ec7dd38fa1ec58fcdb9ca9f1919732257d0ccb95e18c902a7a6a8d-850c074257d0b1b157e96462442df2c287d5ebfa9e92da08c4949a2d1340e77d.body",
+          "fetched_at": "2026-11-13T05:08:42.753058+00:00",
+          "sha256": "850c074257d0b1b157e96462442df2c287d5ebfa9e92da08c4949a2d1340e77d",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000138/zs-20250902.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000138/zs-20250902.htm"
+      },
+      "source": {
+        "accession": "0001713683-25-000078",
+        "company": "ZS",
+        "exhibits": [
+          {
+            "canonical_sha256": "256fe313a6e679655b9946e0c7a05d23ace2d8fce00d429718d70a3c15e7197c",
+            "exhibit": "99.1",
+            "manifest": {
+              "body": "322f7c578ecb5c4fb4eb0c4a9e15b29202d05e50e96f5f7f930e6bc2b1ae5f39-68231186b933dbc416d31dd08e7fc3caca84bd1f826f558ea963307bfb67d3cf.body",
+              "fetched_at": "2026-11-13T05:08:44.862750+00:00",
+              "sha256": "68231186b933dbc416d31dd08e7fc3caca84bd1f826f558ea963307bfb67d3cf",
+              "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-04302025_991.htm"
+            },
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-04302025_991.htm"
+          }
+        ],
+        "filed": "2025-05-29",
+        "form": "8-K",
+        "primary": "zs-20250526.htm",
+        "primary_manifest": {
+          "body": "c504dee2555c1c930606cec95a59883712d7685898da94969f2cd65d1d632cd3-1373ddede6b3550f9dc6d0fbcc084f1c6b2ef0a469fa367ae36083a1e525edb1.body",
+          "fetched_at": "2026-11-13T05:08:44.221582+00:00",
+          "sha256": "1373ddede6b3550f9dc6d0fbcc084f1c6b2ef0a469fa367ae36083a1e525edb1",
+          "url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-20250526.htm"
+        },
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1713683/000171368325000078/zs-20250526.htm"
+      },
+      "status": "PENDING_MANUAL_GUIDANCE_AND_OUTCOME_BASIS_REVIEW"
+    }
+  ],
+  "inventory_sha256": "b59a1fd82d28a304e0a0a4e5d4d9446f0700bbcac6f1a9cfaea777628c5175df",
+  "seed": "crosscheck-session5-pilot-audit-v1"
+}

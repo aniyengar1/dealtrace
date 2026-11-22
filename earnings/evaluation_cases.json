@@ -1,0 +1,53 @@
+[
+  {
+    "company": "PD",
+    "forecast_date": "2025-09-04",
+    "period_start": "2025-02-01",
+    "period_end": "2026-01-31",
+    "ytd_end": "2025-07-31",
+    "prior_start": "2024-02-01",
+    "prior_end": "2025-01-31",
+    "prior_ytd_end": "2024-07-31",
+    "scope_status": "reviewed",
+    "scope_notes": "Manual review of the FY2025 annual report and FY2026 Q2 filing for reported consolidated revenue, fiscal boundaries, and business combinations. No normalization or adjusted figures. Small research example, not a full scope audit.",
+    "scope_sources": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000099/pd-20250731.htm",
+        "filed_date": "2025-09-04"
+      },
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000023/pd-20250131.htm",
+        "filed_date": "2025-03-17",
+        "quote": "The Company did not complete any business combinations in the fiscal year ended January 31, 2025."
+      }
+    ],
+    "guidance": {
+      "low": "493000000",
+      "high": "497000000",
+      "issued_date": "2025-09-03",
+      "filed_date": "2025-09-03",
+      "accession": "0001568100-25-000098",
+      "exhibit": "99.1",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000098/ex991-pagerdutyq2fy26earni.htm",
+      "quote": "Total revenue of $493.0 million - $497.0 million"
+    }
+  },
+  {
+    "company": "GTLB",
+    "forecast_date": "2025-09-04",
+    "period_start": "2025-02-01",
+    "period_end": "2026-01-31",
+    "ytd_end": "2025-07-31",
+    "prior_start": "2024-02-01",
+    "prior_end": "2025-01-31",
+    "prior_ytd_end": "2024-07-31",
+    "scope_status": "unresolved",
+    "scope_notes": "Oxeye acquired March 2024. Prior YTD includes a pre-acquisition interval; comparable revenue impact has not been reconciled using evidence public at the forecast date.",
+    "scope_sources": [
+      {
+        "url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348225000010/gtlb-20250731.htm",
+        "filed_date": "2025-09-04"
+      }
+    ]
+  }
+]

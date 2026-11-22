@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-11-21T03:15:53.480032+00:00",
+  "route": "/crosscheck/predictions",
+  "http_status": 200,
+  "rendered_predictions": 8,
+  "leading_buckets": 10,
+  "backtest_visible": true,
+  "raw_history_visible": true,
+  "smoothed_visible": true,
+  "background_poster_present": true,
+  "crosscheck_nav_present": true,
+  "forbidden_copy_absent": true,
+  "stylesheets": [
+    {
+      "url": "/_next/static/css/6aec294e8dfbefd7.css",
+      "status": 200,
+      "sha256": "a980e2210fecd3a421e8d6297addb09d49d090bbda82a76d652593a9e12029f6",
+      "bytes": 44683
+    },
+    {
+      "url": "/_next/static/css/a2cf3c45eb3b8d8a.css",
+      "status": 200,
+      "sha256": "c42605cb9944be6df818113d1b9ebbe306487233f8a24d450e1bbc390301ea00",
+      "bytes": 6103
+    }
+  ],
+  "visual_browser_verification": "NOT_PERFORMED; owner forbids browser automation",
+  "snapshot_database": "isolated temporary publication-only PostgreSQL; eight copies, no live-ledger connection used by publication reader"
+}

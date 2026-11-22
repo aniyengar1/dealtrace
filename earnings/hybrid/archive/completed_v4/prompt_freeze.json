@@ -1,0 +1,10 @@
+{
+  "prompt_version": "hybrid-diagnostic-v4-compact-owner-reservation",
+  "execution_fingerprint": "3ed28a6e2dce36b3bec92a6d35318c6f9180387d8cb733addf4c51e93127a4db",
+  "frozen_at": "2026-11-14T03:19:17.344205+00:00",
+  "fresh_reservation_commit": "6e085a5",
+  "diagnostic_only": true,
+  "fresh_inference_forbidden": true,
+  "approved_release_count": 10,
+  "policy": "Owner November13 compact-context diagnostic authorization; one inference attempt per release; estimated requested-output reservation; unknown thinking retains reservation without blocking quarantined evaluation."
+}

@@ -1,0 +1,655 @@
+{
+  "below_by_sector": {
+    "Apparel and textile products (SIC 23)": {
+      "below": 2,
+      "companies": [
+        "LULU"
+      ],
+      "interval": {
+        "high": "0.64106554816738069153255418191234465160634759155255575725236586954065138007671079",
+        "low": "0.08221892400405676594724874948785309351097645784966729689690311323000918111418811",
+        "method": "95% Wilson binomial; independent-trial reference only, not cluster-adjusted"
+      },
+      "n": 7,
+      "rate": "0.28571428571428571428571428571428571428571428571428571428571428571428571428571429"
+    },
+    "Business services (SIC 73)": {
+      "below": 2,
+      "companies": [
+        "ABNB",
+        "ADBE",
+        "AKAM",
+        "AMPL",
+        "APP",
+        "APPN",
+        "AVPT",
+        "BL",
+        "CNXC",
+        "CRM",
+        "CRWD",
+        "CTSH",
+        "DOCN",
+        "DOCS",
+        "EPAM",
+        "FIVN",
+        "GTLB",
+        "IOT",
+        "KFRC",
+        "MDB",
+        "META",
+        "NTNX",
+        "OKTA",
+        "PCTY",
+        "PD",
+        "PINS",
+        "PLTR",
+        "QLYS",
+        "RDDT",
+        "RNG",
+        "RPD",
+        "S",
+        "TASK",
+        "TENB",
+        "TWLO",
+        "ZS"
+      ],
+      "interval": {
+        "high": "0.027400841771056542839348413276081454271555854233739834139132183073466898126092609",
+        "low": "0.002095907364611815975641600535708040524199666763693718418695110857718341894045767",
+        "method": "95% Wilson binomial; independent-trial reference only, not cluster-adjusted"
+      },
+      "n": 262,
+      "rate": "0.0076335877862595419847328244274809160305343511450381679389312977099236641221374046"
+    },
+    "Electronic/electrical equipment (SIC 36)": {
+      "below": 0,
+      "companies": [
+        "ADI",
+        "AEIS",
+        "AMAT",
+        "AMD",
+        "CRUS",
+        "DIOD",
+        "ENPH",
+        "FORM",
+        "HLIT",
+        "ICHR",
+        "INTC",
+        "IPGP",
+        "LITE",
+        "LSCC",
+        "MCHP",
+        "MPWR",
+        "MXL",
+        "NVDA",
+        "ON",
+        "PLXS",
+        "POWI",
+        "SANM",
+        "SEDG",
+        "TTMI"
+      ],
+      "interval": {
+        "high": "0.021242135767677945880032721450204654436914409547001818124635519143742629154646468",
+        "low": "0",
+        "method": "95% Wilson binomial; independent-trial reference only, not cluster-adjusted"
+      },
+      "n": 177,
+      "rate": "0"
+    },
+    "Health services (SIC 80)": {
+      "below": 0,
+      "companies": [
+        "HIMS",
+        "TDOC"
+      ],
+      "interval": {
+        "high": "0.21531080273763580149941673102927696576055495338226541577606973446434146996895084",
+        "low": "0",
+        "method": "95% Wilson binomial; independent-trial reference only, not cluster-adjusted"
+      },
+      "n": 14,
+      "rate": "0"
+    },
+    "Industrial/computer machinery (SIC 35)": {
+      "below": 0,
+      "companies": [
+        "FFIV",
+        "FTNT",
+        "LRCX",
+        "NTAP"
+      ],
+      "interval": {
+        "high": "0.12064330476584563398355352043869753085897376723450770142302729276292294846157372",
+        "low": "0",
+        "method": "95% Wilson binomial; independent-trial reference only, not cluster-adjusted"
+      },
+      "n": 28,
+      "rate": "0"
+    },
+    "Instruments and related products (SIC 38)": {
+      "below": 0,
+      "companies": [
+        "COHR",
+        "EW",
+        "KLAC",
+        "MKSI",
+        "ONTO"
+      ],
+      "interval": {
+        "high": "0.096418628594463661538244594792799230922832496909078748147251474139144745847579312",
+        "low": "0",
+        "method": "95% Wilson binomial; independent-trial reference only, not cluster-adjusted"
+      },
+      "n": 36,
+      "rate": "0"
+    },
+    "Miscellaneous retail (SIC 59)": {
+      "below": 0,
+      "companies": [
+        "AMZN"
+      ],
+      "interval": {
+        "high": "0.32440756488388021289028027714452179423839557039020580401656678247405125373969120",
+        "low": "0",
+        "method": "95% Wilson binomial; independent-trial reference only, not cluster-adjusted"
+      },
+      "n": 8,
+      "rate": "0"
+    }
+  },
+  "below_company_counts": {
+    "ABNB": {
+      "below": 0,
+      "n": 8
+    },
+    "ADBE": {
+      "below": 0,
+      "n": 7
+    },
+    "ADI": {
+      "below": 0,
+      "n": 7
+    },
+    "AEIS": {
+      "below": 0,
+      "n": 8
+    },
+    "AKAM": {
+      "below": 0,
+      "n": 8
+    },
+    "AMAT": {
+      "below": 0,
+      "n": 7
+    },
+    "AMD": {
+      "below": 0,
+      "n": 8
+    },
+    "AMPL": {
+      "below": 0,
+      "n": 8
+    },
+    "AMZN": {
+      "below": 0,
+      "n": 8
+    },
+    "APP": {
+      "below": 0,
+      "n": 7
+    },
+    "APPN": {
+      "below": 0,
+      "n": 8
+    },
+    "AVPT": {
+      "below": 0,
+      "n": 8
+    },
+    "BL": {
+      "below": 0,
+      "n": 7
+    },
+    "CNXC": {
+      "below": 1,
+      "n": 8
+    },
+    "COHR": {
+      "below": 0,
+      "n": 8
+    },
+    "CRM": {
+      "below": 0,
+      "n": 7
+    },
+    "CRUS": {
+      "below": 0,
+      "n": 8
+    },
+    "CRWD": {
+      "below": 0,
+      "n": 6
+    },
+    "CTSH": {
+      "below": 0,
+      "n": 8
+    },
+    "DIOD": {
+      "below": 0,
+      "n": 8
+    },
+    "DOCN": {
+      "below": 0,
+      "n": 6
+    },
+    "DOCS": {
+      "below": 0,
+      "n": 7
+    },
+    "ENPH": {
+      "below": 0,
+      "n": 7
+    },
+    "EPAM": {
+      "below": 0,
+      "n": 8
+    },
+    "EW": {
+      "below": 0,
+      "n": 8
+    },
+    "FFIV": {
+      "below": 0,
+      "n": 6
+    },
+    "FIVN": {
+      "below": 0,
+      "n": 7
+    },
+    "FORM": {
+      "below": 0,
+      "n": 7
+    },
+    "FTNT": {
+      "below": 0,
+      "n": 8
+    },
+    "GTLB": {
+      "below": 0,
+      "n": 6
+    },
+    "HIMS": {
+      "below": 0,
+      "n": 8
+    },
+    "HLIT": {
+      "below": 0,
+      "n": 6
+    },
+    "ICHR": {
+      "below": 0,
+      "n": 6
+    },
+    "INTC": {
+      "below": 0,
+      "n": 8
+    },
+    "IOT": {
+      "below": 0,
+      "n": 7
+    },
+    "IPGP": {
+      "below": 0,
+      "n": 8
+    },
+    "KFRC": {
+      "below": 0,
+      "n": 8
+    },
+    "KLAC": {
+      "below": 0,
+      "n": 8
+    },
+    "LITE": {
+      "below": 0,
+      "n": 6
+    },
+    "LRCX": {
+      "below": 0,
+      "n": 8
+    },
+    "LSCC": {
+      "below": 0,
+      "n": 8
+    },
+    "LULU": {
+      "below": 2,
+      "n": 7
+    },
+    "MCHP": {
+      "below": 0,
+      "n": 7
+    },
+    "MDB": {
+      "below": 0,
+      "n": 6
+    },
+    "META": {
+      "below": 0,
+      "n": 8
+    },
+    "MKSI": {
+      "below": 0,
+      "n": 6
+    },
+    "MPWR": {
+      "below": 0,
+      "n": 8
+    },
+    "MXL": {
+      "below": 0,
+      "n": 8
+    },
+    "NTAP": {
+      "below": 0,
+      "n": 6
+    },
+    "NTNX": {
+      "below": 0,
+      "n": 7
+    },
+    "NVDA": {
+      "below": 0,
+      "n": 7
+    },
+    "OKTA": {
+      "below": 0,
+      "n": 6
+    },
+    "ON": {
+      "below": 0,
+      "n": 7
+    },
+    "ONTO": {
+      "below": 0,
+      "n": 6
+    },
+    "PCTY": {
+      "below": 0,
+      "n": 8
+    },
+    "PD": {
+      "below": 0,
+      "n": 6
+    },
+    "PINS": {
+      "below": 1,
+      "n": 8
+    },
+    "PLTR": {
+      "below": 0,
+      "n": 8
+    },
+    "PLXS": {
+      "below": 0,
+      "n": 8
+    },
+    "POWI": {
+      "below": 0,
+      "n": 7
+    },
+    "QLYS": {
+      "below": 0,
+      "n": 8
+    },
+    "RDDT": {
+      "below": 0,
+      "n": 8
+    },
+    "RNG": {
+      "below": 0,
+      "n": 8
+    },
+    "RPD": {
+      "below": 0,
+      "n": 8
+    },
+    "S": {
+      "below": 0,
+      "n": 7
+    },
+    "SANM": {
+      "below": 0,
+      "n": 8
+    },
+    "SEDG": {
+      "below": 0,
+      "n": 7
+    },
+    "TASK": {
+      "below": 0,
+      "n": 6
+    },
+    "TDOC": {
+      "below": 0,
+      "n": 6
+    },
+    "TENB": {
+      "below": 0,
+      "n": 7
+    },
+    "TTMI": {
+      "below": 0,
+      "n": 8
+    },
+    "TWLO": {
+      "below": 0,
+      "n": 7
+    },
+    "ZS": {
+      "below": 0,
+      "n": 7
+    }
+  },
+  "by_history_mode": {
+    "company": {
+      "below_guidance": {
+        "below": 3,
+        "interval": {
+          "high": "0.078503388750236362902211310466056001642074394951363745840368057669207801247345258",
+          "low": "0.009491339899289720693695895545900016876595576758347706793550442057986500894688234",
+          "method": "95% Wilson binomial; independent-trial reference only, not cluster-adjusted"
+        },
+        "n": 108,
+        "rate": "0.027777777777777777777777777777777777777777777777777777777777777777777777777777778"
+      },
+      "mean_brier": {
+        "always-above": "0.6851851851851851851851851851851851851851851851851851851851851851851851851851851851851851851851851852",
+        "quarter-frequency-laplace-v1": "0.3901554641060813900320071902149062642889803383631851851851851851851851851851851851851851851851851852",
+        "quarter-frequency-v1": "0.3950512303686906861510036435290165448895607625767407407407407407407407407407407407407407407407407407",
+        "uniform": "0.6666666666666666666666660185185185185185185185191851851851851851851851851851851851851851851851851852",
+        "walk-forward-pooled-base-rate": "0.4736051011051357304842581353556474897605687685015185185185185185185185185185185185185185185185185185"
+      },
+      "n": 108,
+      "outcome_shares": {
+        "above": "0.6574074074074074074074074074074074074074074074074074074074074074074074074074074074074074074074074074",
+        "below": "0.02777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777777778",
+        "within": "0.3148148148148148148148148148148148148148148148148148148148148148148148148148148148148148148148148148"
+      },
+      "outcomes": {
+        "above": 71,
+        "below": 3,
+        "within": 34
+      },
+      "own_history_predictions": 108,
+      "pooled_predictions": 0
+    },
+    "pooled": {
+      "below_guidance": {
+        "below": 1,
+        "interval": {
+          "high": "0.013236872894653974836443272174128151310953708313013667861971980129088492129997132",
+          "low": "0.0004164528882086124959326568086911818542242627579425442804149589987849379356387502",
+          "method": "95% Wilson binomial; independent-trial reference only, not cluster-adjusted"
+        },
+        "n": 424,
+        "rate": "0.0023584905660377358490566037735849056603773584905660377358490566037735849056603774"
+      },
+      "mean_brier": {
+        "always-above": "0.7783018867924528301886792452830188679245283018867924528301886792452830188679245283018867924528301887",
+        "quarter-frequency-laplace-v1": "0.4997307417140818155526694104607244150050741239940141509433962264150943396226415094339622641509433962",
+        "quarter-frequency-v1": "0.5073116447420723522080324680063726677212945038708632075471698113207547169811320754716981132075471698",
+        "uniform": "0.6666666666666666666666661116352201257861635220132452830188679245283018867924528301886792452830188679",
+        "walk-forward-pooled-base-rate": "0.5088520997486521442200448619095389688953442804133679245283018867924528301886792452830188679245283019"
+      },
+      "n": 424,
+      "outcome_shares": {
+        "above": "0.6108490566037735849056603773584905660377358490566037735849056603773584905660377358490566037735849057",
+        "below": "0.002358490566037735849056603773584905660377358490566037735849056603773584905660377358490566037735849057",
+        "within": "0.3867924528301886792452830188679245283018867924528301886792452830188679245283018867924528301886792453"
+      },
+      "outcomes": {
+        "above": 259,
+        "below": 1,
+        "within": 164
+      },
+      "own_history_predictions": 0,
+      "pooled_predictions": 424
+    }
+  },
+  "company_cluster_bootstrap": {
+    "bootstrap_distribution_sha256": "c0b6d1278528c7c010e7737f58bfeb40da6cd7a9f8ff3857c3b674751fdbfed2",
+    "company_draws_sha256": "9117121ff6420d494355d1a7d4c743736b7145cc2938a265076f6d90eb5194dd",
+    "company_sizes": {
+      "ABNB": 2,
+      "ADBE": 2,
+      "ADI": 2,
+      "AEIS": 2,
+      "AKAM": 2,
+      "AMAT": 1,
+      "AMD": 2,
+      "AMPL": 2,
+      "AMZN": 2,
+      "APP": 1,
+      "APPN": 2,
+      "AVPT": 2,
+      "BL": 1,
+      "CNXC": 2,
+      "COHR": 2,
+      "CRM": 2,
+      "CRUS": 2,
+      "CRWD": 1,
+      "CTSH": 2,
+      "DIOD": 2,
+      "DOCS": 1,
+      "ENPH": 1,
+      "EPAM": 2,
+      "EW": 2,
+      "FIVN": 1,
+      "FORM": 1,
+      "FTNT": 2,
+      "GTLB": 1,
+      "HIMS": 2,
+      "INTC": 2,
+      "IOT": 2,
+      "IPGP": 2,
+      "KFRC": 2,
+      "KLAC": 2,
+      "LRCX": 2,
+      "LSCC": 2,
+      "LULU": 2,
+      "MCHP": 1,
+      "MDB": 1,
+      "META": 2,
+      "MPWR": 2,
+      "MXL": 2,
+      "NTAP": 1,
+      "NTNX": 2,
+      "NVDA": 1,
+      "OKTA": 1,
+      "ON": 1,
+      "PCTY": 2,
+      "PD": 1,
+      "PINS": 2,
+      "PLTR": 2,
+      "PLXS": 2,
+      "POWI": 1,
+      "QLYS": 2,
+      "RDDT": 2,
+      "RNG": 2,
+      "RPD": 2,
+      "S": 2,
+      "SANM": 2,
+      "SEDG": 1,
+      "TENB": 1,
+      "TTMI": 2,
+      "TWLO": 1,
+      "ZS": 2
+    },
+    "confidence_level": "0.95",
+    "difference": "Smoothed minus walk-forward pooled unscaled Brier",
+    "excludes_zero": false,
+    "interval": {
+      "high": "0.004020661600682831027062596214315411852191312319462129629629629629629629629629629629629629629629629630",
+      "low": "-0.1669976711904755811487785205444830873397225019383956774876499647141848976711362032462949894142554693"
+    },
+    "interval_method": "percentile, linear interpolation at (B-1)*p; Decimal precision100",
+    "kind": "BACKTEST_PAIRED_COMPANY_CLUSTER_BOOTSTRAP_NOT_LIVE",
+    "limitations": "Conditional retrospective comparison of fixed predictions on the selected company-history subset; company resampling preserves within-company pairs but not cross-company dependence from shared macro conditions or overlapping training pools. No causal or prospective generalization claim.",
+    "mean_difference": "-0.08344963699905434045225094514074122547158843013833333333333333333333333333333333333333333333333333333",
+    "n_companies": 64,
+    "n_predictions": 108,
+    "paired_input_sha256": "fdedf6e6aa2ae26a1fdc1baaf47747d7c076a29d149f5d30c8d8e1085a9759f3",
+    "resampled_quarter_count_range": [
+      93,
+      121
+    ],
+    "resamples": 10000,
+    "rng": "Python random.Random(seed), integer randrange(G), sorted company and prediction IDs",
+    "seed": 20261121,
+    "statistic": "sum of paired quarter differences / all quarters in resampled company clusters"
+  },
+  "company_cluster_bootstrap_sentence": "On 108 company-history predictions across 64 companies, the paired mean Brier difference (Smoothed minus walk-forward pooled) is -0.08345, with a 95% company-cluster bootstrap interval [-0.16700, 0.00402] (10,000 resamples, seed 20261121), which includes zero, but remains a selected retrospective comparison that does not capture cross-company dependence or establish live predictive quality.",
+  "company_count": 73,
+  "executed_at": "2026-11-21T13:22:10.113133+00:00",
+  "kind": "BACKTEST_PUBLIC_DATE_RECONSTRUCTION_NOT_LIVE",
+  "source_hashes": {
+    "manual_history_sha256": "81c5b0c71fef8a8a21708bc3ab8a635e67992d238c9dcc661eb23fa65baa7995",
+    "scaling_audit_sha256": "6080969532407a69e122b26a7ce65abba3721168f8ce132aa734bfd05382d1d3",
+    "sector_metadata_sha256": "93fb63ea10340241cbaa39050656e2abf23e643a2669120e240b458335709454"
+  },
+  "source_matched_targets": 546,
+  "summary": {
+    "below_guidance": {
+      "below": 4,
+      "interval": {
+        "high": "0.019171124784883501288776534057417041604973667670591222436490609690488347894045225",
+        "low": "0.0029276856482535351933493157156191452200425266544204166240311182413450135487933249",
+        "method": "95% Wilson binomial; independent-trial reference only, not cluster-adjusted"
+      },
+      "n": 532,
+      "rate": "0.0075187969924812030075187969924812030075187969924812030075187969924812030075187970"
+    },
+    "mean_brier": {
+      "always-above": "0.7593984962406015037593984962406015037593984962406015037593984962406015037593984962406015037593984962",
+      "quarter-frequency-laplace-v1": "0.4774861364853899998454673055987914069649648592418909774436090225563909774436090225563909774436090226",
+      "quarter-frequency-v1": "0.4845219365610099087227709773229996202291380300743120300751879699248120300751879699248120300751879699",
+      "uniform": "0.6666666666666666666666660927318295739348370927324962406015037593984962406015037593984962406015037594",
+      "walk-forward-pooled-base-rate": "0.5016966940089909173714265038873203979431718080703609022556390977443609022556390977443609022556390977"
+    },
+    "n": 532,
+    "outcome_shares": {
+      "above": "0.6203007518796992481203007518796992481203007518796992481203007518796992481203007518796992481203007519",
+      "below": "0.007518796992481203007518796992481203007518796992481203007518796992481203007518796992481203007518796992",
+      "within": "0.3721804511278195488721804511278195488721804511278195488721804511278195488721804511278195488721804511"
+    },
+    "outcomes": {
+      "above": 330,
+      "below": 4,
+      "within": 198
+    },
+    "own_history_predictions": 108,
+    "pooled_predictions": 424
+  }
+}

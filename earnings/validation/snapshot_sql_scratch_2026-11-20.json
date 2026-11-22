@@ -1,0 +1,26 @@
+{
+  "executed_at": "2026-11-21T03:11:55.253534+00:00",
+  "database": "isolated temporary PostgreSQL cluster; not live",
+  "ddl_and_seed_repeatable": true,
+  "checks": {
+    "insert": "42501",
+    "update": "42501",
+    "delete": "42501",
+    "truncate": "42501",
+    "private_read": "42501"
+  },
+  "copied_predictions": 8,
+  "outsider_rows_under_rls": 0,
+  "rls": [
+    [
+      "crosscheck_backtest_snapshots",
+      true,
+      true
+    ],
+    [
+      "crosscheck_prediction_snapshots",
+      true,
+      true
+    ]
+  ]
+}

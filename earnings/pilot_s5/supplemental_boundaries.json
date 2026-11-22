@@ -1,0 +1,50 @@
+{
+  "boundaries": [
+    {
+      "company": "ADI",
+      "end": "2024-11-02",
+      "quarter": 4,
+      "reason": "Physical quarter is day after reported Q3 end through reported Q4 end. ADI FY2024 has 53 weeks before Q4; AMAT latest annual 10-K not yet filed at cutoff. Calendar bounds only, no synthetic actual amount.",
+      "result_manifest": {
+        "body": "46cf72f9aed824963ab77e6a217ab7b5d155021c2236469ad386e7db8817af4b-7857aa0a7d464cf75f83be48c8acac23c386db0b49c4e4df2dc854917f60e2ac.body",
+        "fetched_at": "2026-11-13T05:09:57.821324+00:00",
+        "sha256": "7857aa0a7d464cf75f83be48c8acac23c386db0b49c4e4df2dc854917f60e2ac",
+        "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000202/adiq424exhibit991.htm"
+      },
+      "result_quote": "EX-99.1 2 adiq424exhibit991.htm EX-99.1 Document Exhibit 99.1 Analog Devices Reports Fourth Quarter and Fiscal 2024 Financial Results \u2022 Fourth quarter revenue of more than $2.4 billion, above the midpoint of guidance with sequential growth across all end markets \u2022 Fiscal 2024 revenue of more than $9.4 billion \u2022 Fiscal 2024 operating cash flow of $3.9 billion and free cash flow of $3.1 billion \u2022 Returned more than $2.4 billion to shareholders in fiscal 2024, including $0.6 billion of share repurchases and $1.8 billion of dividends WILMINGTON, Mass.--November 26, 2024-- Analog Devices, Inc. (Nasdaq: ADI), a global semiconductor leader, today announced financial results for its fiscal fourth quarter and fiscal year 2024, which ended November 2, 2024. \u201cADI\u2019s revenue, profitability, and earnings per share all finished above our guided midpoint, underscoring continued business momentum and solid execution,\u201d said Vincent Roche, CEO and Chair. \u201cWhile unprecedented customer inventory headwinds drove a historic revenue decline during fiscal 2024, we maintained operating margins north of 40%, which is a testament to our business model\u2019s resilience. We also continued to make strategic, long-term investments across engineering, manufacturing, and the end-to-end customer experience. As such, we enter 2025 as an even stronger enterprise, giving me the utmost confidence in our ability to drive increased value for customers and shareholders over the long term.\u201d \u201cAfter a brief decline in overall bookings during our third quarter, orders picked up steadily throughout the fourth quarter, particularly in the Automotive end market. While macro uncertainty continues to limit the pace of our rec",
+      "reviewer": "Codex source curator, before candidate extraction",
+      "source_manifest": {
+        "body": "91121c95d18fa45d0259b6bd34de10baac9b3f6b613a5071463b9d14e7bf7fae-f3f864ad2b2bb0db677d800fd5b555a5c6ed2b3c297633198496b2ea1e7f2312.body",
+        "fetched_at": "2026-11-13T05:09:59.145108+00:00",
+        "sha256": "f3f864ad2b2bb0db677d800fd5b555a5c6ed2b3c297633198496b2ea1e7f2312",
+        "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000158/adi3q24exhibit991earnings.htm"
+      },
+      "source_quote": "EX-99.1 2 adi3q24exhibit991earnings.htm EX-99.1 Document Exhibit 99.1 Analog Devices Reports Fiscal Third Quarter 2024 Financial Results \u2022 Revenue of $2.31 billion, above the midpoint of our outlook with sequential growth in Industrial, Consumer, and Communications \u2022 Operating cash flow of $4.0 billion and free cash flow of $2.9 billion on a trailing twelve-month basis \u2022 Returned $574 million to shareholders through dividends and repurchases in the third quarter WILMINGTON, Mass.--August 21, 2024 --Analog Devices, Inc. (Nasdaq: ADI), a global semiconductor leader, today announced financial results for its fiscal third quarter 2024, which ended August 3, 2024. \u201cADI\u2019s revenue finished above our guided midpoint with stronger profitability driving earnings per share near the high end of our outlook,\u201d said Vincent Roche, CEO and Chair. \u201cAs we navigate this business cycle\u2019s nascent recovery, our high-performance analog solutions portfolio positions us well to intersect the strong underlying stream of concurrent secular trends. Our innovation and customer-centric ethos will continue to form the foundation for our success and help drive long-term shareholder value.\u201d \u201cImproved customer inventory levels and order momentum, across most of our markets, position us to grow again sequentially in our fourth quarter, increasing our confidence that we are past the trough of this cycle. However,",
+      "start": "2024-08-04",
+      "year": 2024
+    },
+    {
+      "company": "AMAT",
+      "end": "2026-10-25",
+      "quarter": 4,
+      "reason": "Physical quarter is day after reported Q3 end through reported Q4 end. ADI FY2024 has 53 weeks before Q4; AMAT latest annual 10-K not yet filed at cutoff. Calendar bounds only, no synthetic actual amount.",
+      "result_manifest": {
+        "body": "84b62988ce45112f7bf25a0d60bb58d48de1bb9f0b963739ab58bedc8e348669-e6faa0782a05a00c233524289e301f4bbf1815b98fdfcc0ec8a3a353cc23d599.body",
+        "fetched_at": "2026-11-13T04:52:04.056006+00:00",
+        "sha256": "e6faa0782a05a00c233524289e301f4bbf1815b98fdfcc0ec8a3a353cc23d599",
+        "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026073360/exhibit991q42026earningsre.htm"
+      },
+      "result_quote": "EX-99.1 2 exhibit991q42026earningsre.htm EX-99.1 EARNINGS RELEASE Document Exhibit 99.1 Investor Relations Contact: Mike Sullivan (408) 986-7977 mike_sullivan@amat.com Media Contact: Ricky Gradwohl (408) 235-4676 ricky_gradwohl@amat.com APPLIED MATERIALS ANNOUNCES FOURTH QUARTER AND FISCAL YEAR 2026 RESULTS \u2022 Record quarterly revenue $10.41 billion, up 53 percent year over year \u2022 Quarterly GAAP gross margin 50.4 percent and non-GAAP gross margin 50.6 percent, up 240 basis points and 250 basis points year over year, respectively \u2022 Quarterly GAAP EPS $3.40 and record non-GAAP EPS $4.16, up 43 percent and 92 percent year over year, respectively \u2022 Record annual revenue $34.45 billion, up 21 percent year over year \u2022 Annual GAAP gross margin 50.0 percent and non-GAAP gross margin 50.1 percent, both up 130 basis points year over year \u2022 Record annual GAAP EPS $12.62 and record non-GAAP EPS $12.89, up 46 percent and 37 percent year over year, respectively \u2022 Unveiled the EPIC Center in Silicon Valley and added four new R&D partnerships, bringing our total number of announced EPIC engagements to 15 SANTA CLARA, Calif., Nov. 12, 2026 \u2014 Applied Materials, Inc. (NASDAQ: AMAT) today reported results for its fourth quarter and fiscal year ended Oct. 25, 2026. Fourth Quarter Results Applied generated record revenue of $10.41 billion. On a GAAP basis, the company reported gross margin of 50.4 percent, record operating income of $3.66 billion or 35.1 percent of revenue, and earnings per share (EPS) of $3.40. On a non-GAAP basis, the company reported gross margin of 50.6 percent, record operating income of $3.68 billion or 35.3 percent of revenue, and record EPS of $4.16. The company generat",
+      "reviewer": "Codex source curator, before candidate extraction",
+      "source_manifest": {
+        "body": "19be71e03330890afe777013867552f73d8df426c4201093bb70bb71df6699d1-2597b2a85c2733bdfe5141fa0de5dced968fc96e4331b3f1417accb975653a8c.body",
+        "fetched_at": "2026-11-13T04:52:05.356485+00:00",
+        "sha256": "2597b2a85c2733bdfe5141fa0de5dced968fc96e4331b3f1417accb975653a8c",
+        "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026056699/exhibit991q32026earningsre.htm"
+      },
+      "source_quote": "EX-99.1 2 exhibit991q32026earningsre.htm EX-99.1 EARNINGS RELEASE Document Exhibit 99.1 Investor Relations Contact: Mike Sullivan (408) 986-7977 mike_sullivan@amat.com Media Contact: Ricky Gradwohl (408) 235-4676 ricky_gradwohl@amat.com APPLIED MATERIALS ANNOUNCES THIRD QUARTER 2026 RESULTS \u2022 Record revenue $9.12 billion, up 25 percent year over year \u2022 GAAP gross margin 50.3 percent and non-GAAP gross margin 50.4 percent \u2022 GAAP EPS $3.17 and record non-GAAP EPS $3.50, up 43 percent and 41 percent year over year, respectively \u2022 EPIC Center R&D partnerships expand to 11 engagements with leading chipmakers, universities and innovation partners SANTA CLARA, Calif., Aug. 13, 2026 \u2014 Applied Materials, Inc. (NASDAQ: AMAT) today reported results for its third quarter ended July 26, 2026. Third Quarter Results Applied generated record revenue of $9.12 billion. On a GAAP basis, the company reported gross margin of 50.3 percent, record operating income of $3.08 billion or 33.7 percent of revenue, and earnings per share (EPS) of $3.17. On a non-GAAP basis, the company reported gross margin of 50.4 percent, record operating income of $3.10 billion or 34.0 percent of revenue, and record EPS of $3.50. The company generated record cash from operations of $3.04 billion and distributed $860 million to shareholders through $440 million in share repurchases and $420 million in dividends. \u201cApplied ",
+      "start": "2026-07-27",
+      "year": 2026
+    }
+  ]
+}

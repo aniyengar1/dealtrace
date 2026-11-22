@@ -1,0 +1,1229 @@
+{
+  "review_scope": "Last eight publicly reported quarters as of 2026-11-12; complete reviewed 8-K/8-K-A inventory from 2024-08-01 through 2026-11-12",
+  "source_inventory": [
+    {
+      "accession": "0001583708-24-000076",
+      "filed": "2024-08-27",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000076/s-20240827.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000076/sentineloneq225exhibit991.htm",
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000076/s-q2fy25shareholderlette.htm"
+      ]
+    },
+    {
+      "accession": "0001583708-24-000123",
+      "filed": "2024-12-04",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000123/s-20241204.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000123/sentineloneq325exhibit991.htm",
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000123/s-q3fy25shareholderlette.htm"
+      ]
+    },
+    {
+      "accession": "0001583708-25-000031",
+      "filed": "2025-03-12",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000031/s-20250312.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000031/sentineloneq425exhibit991.htm",
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000031/s-q4fy25earningspresenta.htm"
+      ]
+    },
+    {
+      "accession": "0001583708-25-000104",
+      "filed": "2025-05-28",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000104/s-20250528.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000104/sentineloneq126exhibit991.htm",
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000104/s-earningspresentationxq.htm"
+      ]
+    },
+    {
+      "accession": "0001583708-25-000146",
+      "filed": "2025-08-28",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000146/s-20250828.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000146/sentineloneq226exhibit991.htm",
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000146/s-q2fy26earningspresenta.htm"
+      ]
+    },
+    {
+      "accession": "0001583708-25-000157",
+      "filed": "2025-12-04",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000157/s-20251204.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000157/sentineloneq326exhibit991.htm",
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000157/s-q3fy26earningspresenta.htm"
+      ]
+    },
+    {
+      "accession": "0001583708-26-000014",
+      "filed": "2026-03-12",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/s-20260312.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/sentineloneq426exhibit991.htm",
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/s-q4fy26earningspresenta.htm"
+      ]
+    },
+    {
+      "accession": "0001583708-26-000039",
+      "filed": "2026-05-28",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000039/s-20260528.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000039/sentineloneq127exhibit991.htm",
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000039/s-q1fy27earningspresenta.htm"
+      ]
+    },
+    {
+      "accession": "0001583708-26-000052",
+      "filed": "2026-08-27",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/s-20260827.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm",
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sq2fy27earningspresentat.htm"
+      ]
+    },
+    {
+      "accession": "0001104659-24-098794",
+      "filed": "2024-09-11",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000110465924098794/tm2423762d1_8k.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001583708-25-000119",
+      "filed": "2025-06-27",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000119/s-20250625.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001104659-25-088079",
+      "filed": "2025-09-08",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000110465925088079/tm2525181d1_8k.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001104659-25-093387",
+      "filed": "2025-09-25",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000110465925093387/tm2526939d1_8k.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001583708-25-000164",
+      "filed": "2025-12-11",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000164/s-20251204.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001583708-26-000003",
+      "filed": "2026-01-14",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000003/s-20260108.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001583708-26-000006",
+      "filed": "2026-01-21",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000006/s-20251204.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001583708-26-000009",
+      "filed": "2026-03-05",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000009/s-20260228.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001583708-26-000025",
+      "filed": "2026-03-25",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000025/s-20260319.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001583708-26-000044",
+      "filed": "2026-06-26",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000044/s-20260625.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001104659-26-116654",
+      "filed": "2026-10-16",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000110465926116654/tm2627397d1_8k.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1583708/000110465926116654/tm2627397d1_ex99-1.htm",
+        "https://www.sec.gov/Archives/edgar/data/1583708/000110465926116654/tm2627397d1_ex99-2.htm"
+      ]
+    }
+  ],
+  "inventory_gaps": [],
+  "quarters": [
+    {
+      "company": "S",
+      "target": {
+        "start": "2024-08-01",
+        "end": "2024-10-31",
+        "label": "Q3 FY2025",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "649f6f17-5213-56b3-9507-689f1ba491e8",
+          "company": "S",
+          "issued": {
+            "start": "2024-08-27",
+            "end": "2024-08-27",
+            "precision": "day"
+          },
+          "filed": "2024-08-27",
+          "start": "2024-08-01",
+          "end": "2024-10-31",
+          "low": "209500000.0",
+          "high": "209500000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001583708-24-000076",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000076/sentineloneq225exhibit991.htm",
+          "quote": "Q3FY25 Guidance Full FY2025 Guidance Revenue $209.5 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "649f6f17-5213-56b3-9507-689f1ba491e8",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000076/sentineloneq225exhibit991.htm",
+          "source_sha256": "5ec0d4ea7ef0dd90acd5d0972f15d2ad7b271944605b982d22d5c919a7209029",
+          "fetched_at": "2026-11-12T10:27:10.655059+00:00",
+          "issuance_date_quote": "August 27, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000076/s-20240827.htm",
+          "exhibit_index_quote": "99.1 Press Release issued by SentinelOne, Inc. dated August 2 7 , 2024 ."
+        }
+      ],
+      "actual": {
+        "id": "682ae53e-9563-56f8-94d1-d202b666cd78",
+        "company": "S",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2024-08-01",
+        "end": "2024-10-31",
+        "value": "210648000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001583708-24-000125",
+        "filed": "2024-12-04",
+        "form": "10-Q",
+        "fiscal_year": 2025,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001583708.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000125/s-20241031.htm",
+        "filed": "2024-12-04",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000125/s-20241031.htm",
+          "sha256": "779f83268750b0013e8992cac336958ba9fca6983ac2074499509b9f97eecd2f",
+          "body": "b04fb7ade70a29dc0b6e6d362c333a6781f40f8263bc93a571966bb3b09f7fd3-779f83268750b0013e8992cac336958ba9fca6983ac2074499509b9f97eecd2f.body",
+          "fetched_at": "2026-11-12T10:41:20.889311+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001583708-24-000125-filing.txt"
+      },
+      "result": {
+        "issued_date": "2024-12-04",
+        "formal_release_issued_date": "2024-12-04",
+        "issued_precision": "day",
+        "date_quote": "December 4, 2024",
+        "filed": "2024-12-04",
+        "accession": "0001583708-24-000123",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000123/sentineloneq325exhibit991.htm",
+        "reported_revenue_quote": "Revenue $ 210,648 $ 164,165 $ 595,940 $ 446,979",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "3b5a58246380a542d5c0ccd3f95a35137589bf9e09a337271cc2040265354909",
+        "fetched_at": "2026-11-12T10:27:12.740463+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.906223+00:00",
+        "guidance_id": "649f6f17-5213-56b3-9507-689f1ba491e8",
+        "actual_id": "682ae53e-9563-56f8-94d1-d202b666cd78",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000076/sentineloneq225exhibit991.htm",
+            "filed_date": "2024-08-27"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000123/sentineloneq325exhibit991.htm",
+            "filed_date": "2024-12-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000125/s-20241031.htm",
+            "filed_date": "2024-12-04"
+          }
+        ],
+        "scope_evidence": [
+          "atements from the date of each acquisition and would not have had a material impact on our combined results of operations if the acquisitions had occurred on February 1, 2023. The pro forma impact of the PingSafe and Stride business combinations during the three and nine months ended October 31, 2024 was not material to our historical consolidated operating results and is therefore not presented, except for stock",
+          "he acquisitions had occurred on February 1, 2023. The pro forma impact of the PingSafe and Stride business combinations during the three and nine months ended October 31, 2024 was not material to our historical consolidated operating results and is therefore not presented, except for stock-based compensation expense related to restricted common stock issued in connection with the acquisition of PingSafe as di"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2024-12-04"
+    },
+    {
+      "company": "S",
+      "target": {
+        "start": "2024-11-01",
+        "end": "2025-01-31",
+        "label": "Q4 FY2025",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "16d17c49-7b99-52a5-a563-f89dd7ee41ec",
+          "company": "S",
+          "issued": {
+            "start": "2024-12-04",
+            "end": "2024-12-04",
+            "precision": "day"
+          },
+          "filed": "2024-12-04",
+          "start": "2024-11-01",
+          "end": "2025-01-31",
+          "low": "222000000",
+          "high": "222000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001583708-24-000123",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000123/sentineloneq325exhibit991.htm",
+          "quote": "Q4FY25 Guidance Full FY2025 Guidance Revenue $222 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "16d17c49-7b99-52a5-a563-f89dd7ee41ec",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000123/sentineloneq325exhibit991.htm",
+          "source_sha256": "3b5a58246380a542d5c0ccd3f95a35137589bf9e09a337271cc2040265354909",
+          "fetched_at": "2026-11-12T10:27:12.740463+00:00",
+          "issuance_date_quote": "December 4, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000123/s-20241204.htm",
+          "exhibit_index_quote": "99.1 Press Release issued by SentinelOne, Inc. dated December 4 , 2024."
+        }
+      ],
+      "actual": {
+        "id": "49834f3f-4b9b-53eb-8fd4-54e457f8bf20",
+        "company": "S",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2024-11-01",
+        "end": "2025-01-31",
+        "value": "225521000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001583708-25-000051",
+        "filed": "2025-03-26",
+        "form": "DERIVED",
+        "fiscal_year": 2025,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001583708.json",
+        "parents": [
+          "8c799fe3-fbdd-5cf5-822d-0b43c9f33bca",
+          "5b83c702-4cf1-5bcb-b0de-53538e0bfbd8"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "5b83c702-4cf1-5bcb-b0de-53538e0bfbd8",
+          "company": "S",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2024-02-01",
+          "end": "2024-10-31",
+          "value": "595940000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001583708-24-000125",
+          "filed": "2024-12-04",
+          "form": "10-Q",
+          "fiscal_year": 2025,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001583708.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "8c799fe3-fbdd-5cf5-822d-0b43c9f33bca",
+          "company": "S",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2024-02-01",
+          "end": "2025-01-31",
+          "value": "821461000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001583708-25-000051",
+          "filed": "2025-03-26",
+          "form": "10-K",
+          "fiscal_year": 2025,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001583708.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000051/s-20250131.htm",
+        "filed": "2025-03-26",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000051/s-20250131.htm",
+          "sha256": "f4a9e5168493747d46776dc4bfd8e7e6814edb5fff9a2175feb3ff082ffd725f",
+          "body": "dedaf031b5aef5a074b58ef7f71da48262d92dcc8416ed8286445ebda6d22e3b-f4a9e5168493747d46776dc4bfd8e7e6814edb5fff9a2175feb3ff082ffd725f.body",
+          "fetched_at": "2026-11-12T10:41:21.623841+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001583708-25-000051-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-03-12",
+        "formal_release_issued_date": "2025-03-12",
+        "issued_precision": "day",
+        "date_quote": "March 12, 2025",
+        "filed": "2025-03-12",
+        "accession": "0001583708-25-000031",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000031/sentineloneq425exhibit991.htm",
+        "reported_revenue_quote": "Revenue $ 225,521 $ 174,175 $ 821,461 $ 621,154",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "96387d9de27e962ce9099687bc9bba44b748aede1d2eb4dc7d144ac55070df60",
+        "fetched_at": "2026-11-12T10:27:14.668389+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.922374+00:00",
+        "guidance_id": "16d17c49-7b99-52a5-a563-f89dd7ee41ec",
+        "actual_id": "49834f3f-4b9b-53eb-8fd4-54e457f8bf20",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370824000123/sentineloneq325exhibit991.htm",
+            "filed_date": "2024-12-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000031/sentineloneq425exhibit991.htm",
+            "filed_date": "2025-03-12"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000051/s-20250131.htm",
+            "filed_date": "2025-03-26"
+          }
+        ],
+        "scope_evidence": [
+          "atements from the date of each acquisition and would not have had a material impact on our combined results of operations if the acquisitions had occurred on February 1, 2023. The pro forma impact of the PingSafe and Stride business combinations during the fiscal 2025 was not material to our historical consolidated operating results and is therefore not presented, except for stock-based compensation expense relat",
+          "mbined results of operations if the acquisitions had occurred on February 1, 2023. The pro forma impact of the PingSafe and Stride business combinations during the fiscal 2025 was not material to our historical consolidated operating results and is therefore not presented, except for stock-based compensation expense related to restricted common stock issued in connection with the acquisition of PingSafe as di"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-03-12"
+    },
+    {
+      "company": "S",
+      "target": {
+        "start": "2025-02-01",
+        "end": "2025-04-30",
+        "label": "Q1 FY2026",
+        "calendar": "months",
+        "days": 89
+      },
+      "guidance_versions": [
+        {
+          "id": "70eef1c1-c372-5991-9fa0-9341e6ee381b",
+          "company": "S",
+          "issued": {
+            "start": "2025-03-12",
+            "end": "2025-03-12",
+            "precision": "day"
+          },
+          "filed": "2025-03-12",
+          "start": "2025-02-01",
+          "end": "2025-04-30",
+          "low": "228000000",
+          "high": "228000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001583708-25-000031",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000031/sentineloneq425exhibit991.htm",
+          "quote": "Q1FY26 Guidance Full FY2026 Guidance Revenue $228 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "70eef1c1-c372-5991-9fa0-9341e6ee381b",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000031/sentineloneq425exhibit991.htm",
+          "source_sha256": "96387d9de27e962ce9099687bc9bba44b748aede1d2eb4dc7d144ac55070df60",
+          "fetched_at": "2026-11-12T10:27:14.668389+00:00",
+          "issuance_date_quote": "March 12, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000031/s-20250312.htm",
+          "exhibit_index_quote": "99.1 Press Release issued by SentinelOne, Inc. dated March 1 2 , 202 5 ."
+        }
+      ],
+      "actual": {
+        "id": "91314c4d-29de-5945-9556-b079d7a132fc",
+        "company": "S",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-02-01",
+        "end": "2025-04-30",
+        "value": "229029000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001583708-25-000106",
+        "filed": "2025-05-28",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001583708.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000106/s-20250430.htm",
+        "filed": "2025-05-28",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000106/s-20250430.htm",
+          "sha256": "3294f2636d8c38b3ff756425c86cf6fc62dc81340d05cafda208a70ba254ebe5",
+          "body": "f8567f628030a31cae9d5892a73d2a0dd1892d13780c4fc527c52fdf89eea186-3294f2636d8c38b3ff756425c86cf6fc62dc81340d05cafda208a70ba254ebe5.body",
+          "fetched_at": "2026-11-12T10:41:22.325534+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001583708-25-000106-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-05-28",
+        "formal_release_issued_date": "2025-05-28",
+        "issued_precision": "day",
+        "date_quote": "May 28, 2025",
+        "filed": "2025-05-28",
+        "accession": "0001583708-25-000104",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000104/sentineloneq126exhibit991.htm",
+        "reported_revenue_quote": "Revenue $ 229,029 $ 186,355",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "7ccdd1ce9a21cd936e0b9407a46e3f94c78b01d6b46f8157011a3eda34f90a48",
+        "fetched_at": "2026-11-12T10:27:16.726044+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.933482+00:00",
+        "guidance_id": "70eef1c1-c372-5991-9fa0-9341e6ee381b",
+        "actual_id": "91314c4d-29de-5945-9556-b079d7a132fc",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000031/sentineloneq425exhibit991.htm",
+            "filed_date": "2025-03-12"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000104/sentineloneq126exhibit991.htm",
+            "filed_date": "2025-05-28"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000106/s-20250430.htm",
+            "filed_date": "2025-05-28"
+          }
+        ],
+        "scope_evidence": [
+          "atements from the date of each acquisition and would not have had a material impact on our combined results of operations if the acquisitions had occurred on February 1, 2023. The pro forma impact of the PingSafe and Stride business combinations during the three months ended April 30, 2025 was not material to our historical consolidated operating results and is therefore not presented, except for stock-based comp",
+          "ations if the acquisitions had occurred on February 1, 2023. The pro forma impact of the PingSafe and Stride business combinations during the three months ended April 30, 2025 was not material to our historical consolidated operating results and is therefore not presented, except for stock-based compensation expense related to restricted common stock issued in connection with the acquisition of PingSafe as di"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-05-28"
+    },
+    {
+      "company": "S",
+      "target": {
+        "start": "2025-05-01",
+        "end": "2025-07-31",
+        "label": "Q2 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "7d34d32d-ff89-54a9-96b9-54ce1a8e04f3",
+          "company": "S",
+          "issued": {
+            "start": "2025-05-28",
+            "end": "2025-05-28",
+            "precision": "day"
+          },
+          "filed": "2025-05-28",
+          "start": "2025-05-01",
+          "end": "2025-07-31",
+          "low": "242000000",
+          "high": "242000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001583708-25-000104",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000104/sentineloneq126exhibit991.htm",
+          "quote": "Q2FY26 Guidance Full FY2026 Guidance Revenue $242 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "7d34d32d-ff89-54a9-96b9-54ce1a8e04f3",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000104/sentineloneq126exhibit991.htm",
+          "source_sha256": "7ccdd1ce9a21cd936e0b9407a46e3f94c78b01d6b46f8157011a3eda34f90a48",
+          "fetched_at": "2026-11-12T10:27:16.726044+00:00",
+          "issuance_date_quote": "May 28, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000104/s-20250528.htm",
+          "exhibit_index_quote": "99.1 Press Release issued by SentinelOne, Inc. dated May 28, 2025 ."
+        }
+      ],
+      "actual": {
+        "id": "2b64ee86-b7d3-5ab9-9f8e-9686ada7a6aa",
+        "company": "S",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-05-01",
+        "end": "2025-07-31",
+        "value": "242183000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001583708-25-000148",
+        "filed": "2025-08-28",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001583708.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000148/s-20250731.htm",
+        "filed": "2025-08-28",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000148/s-20250731.htm",
+          "sha256": "d434d74d2309990d95f2be6490f6bd463bbd3bc6c74699d5af7c2f2458579676",
+          "body": "737ec8d5db34134a7e9f06f50012ddc072243c3be0bbafc8f319e24aa950715f-d434d74d2309990d95f2be6490f6bd463bbd3bc6c74699d5af7c2f2458579676.body",
+          "fetched_at": "2026-11-12T10:41:23.038002+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001583708-25-000148-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-08-28",
+        "formal_release_issued_date": "2025-08-28",
+        "issued_precision": "day",
+        "date_quote": "August 28, 2025",
+        "filed": "2025-08-28",
+        "accession": "0001583708-25-000146",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000146/sentineloneq226exhibit991.htm",
+        "reported_revenue_quote": "Revenue $ 242,183 $ 198,937 $ 471,212 $ 385,292",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "1f0ace87fb7a682423de9ff0f210534f649a03212a415c9afeb3a50eb3227d39",
+        "fetched_at": "2026-11-12T10:27:18.744098+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.944666+00:00",
+        "guidance_id": "7d34d32d-ff89-54a9-96b9-54ce1a8e04f3",
+        "actual_id": "2b64ee86-b7d3-5ab9-9f8e-9686ada7a6aa",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000104/sentineloneq126exhibit991.htm",
+            "filed_date": "2025-05-28"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000146/sentineloneq226exhibit991.htm",
+            "filed_date": "2025-08-28"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000148/s-20250731.htm",
+            "filed_date": "2025-08-28"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-08-28"
+    },
+    {
+      "company": "S",
+      "target": {
+        "start": "2025-08-01",
+        "end": "2025-10-31",
+        "label": "Q3 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "512b0e95-f3e4-5e48-bc60-f2c247699f0b",
+          "company": "S",
+          "issued": {
+            "start": "2025-08-28",
+            "end": "2025-08-28",
+            "precision": "day"
+          },
+          "filed": "2025-08-28",
+          "start": "2025-08-01",
+          "end": "2025-10-31",
+          "low": "256000000",
+          "high": "256000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001583708-25-000146",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000146/sentineloneq226exhibit991.htm",
+          "quote": "Q3FY26 Guidance Full FY2026 Guidance Revenue $256 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "512b0e95-f3e4-5e48-bc60-f2c247699f0b",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000146/sentineloneq226exhibit991.htm",
+          "source_sha256": "1f0ace87fb7a682423de9ff0f210534f649a03212a415c9afeb3a50eb3227d39",
+          "fetched_at": "2026-11-12T10:27:18.744098+00:00",
+          "issuance_date_quote": "August 28, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000146/s-20250828.htm",
+          "exhibit_index_quote": "99.1 Press Release issued by SentinelOne, Inc. dated August 28, 2025."
+        }
+      ],
+      "actual": {
+        "id": "24be2ebb-7517-56b8-8d06-5bfa9b7161f1",
+        "company": "S",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-08-01",
+        "end": "2025-10-31",
+        "value": "258913000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001583708-25-000159",
+        "filed": "2025-12-04",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001583708.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000159/s-20251031.htm",
+        "filed": "2025-12-04",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000159/s-20251031.htm",
+          "sha256": "72797b4a0c2c5f71180a4be3cc30af3b3789a1993777b597c90420ce710539bd",
+          "body": "c98c4c4a8e751666f9ce414e9246f836903729e92a9e1ceddae8190e42a074a6-72797b4a0c2c5f71180a4be3cc30af3b3789a1993777b597c90420ce710539bd.body",
+          "fetched_at": "2026-11-12T10:41:23.755939+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001583708-25-000159-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-12-04",
+        "formal_release_issued_date": "2025-12-04",
+        "issued_precision": "day",
+        "date_quote": "December 4, 2025",
+        "filed": "2025-12-04",
+        "accession": "0001583708-25-000157",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000157/sentineloneq326exhibit991.htm",
+        "reported_revenue_quote": "Revenue $ 258,913 $ 210,648 $ 730,125 $ 595,940",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "c6370c6d64a1be679dbf9dab2c68e303585bfb5cdea9b63f74c088814264e3ed",
+        "fetched_at": "2026-11-12T07:10:41.018978+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.956179+00:00",
+        "guidance_id": "512b0e95-f3e4-5e48-bc60-f2c247699f0b",
+        "actual_id": "24be2ebb-7517-56b8-8d06-5bfa9b7161f1",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000146/sentineloneq226exhibit991.htm",
+            "filed_date": "2025-08-28"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000157/sentineloneq326exhibit991.htm",
+            "filed_date": "2025-12-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000159/s-20251031.htm",
+            "filed_date": "2025-12-04"
+          }
+        ],
+        "scope_evidence": [
+          "tively, during the three and nine months ended October 31, 2025. These costs were recorded as general and administrative expenses in our consolidated statements of operations. The pro forma impact of the Prompt and Observo acquisitions during the nine months ended October 31, 2025 was not material to our historical consolidated operating results and is therefore not presented, except for the recognition of stock-",
+          "administrative expenses in our consolidated statements of operations. The pro forma impact of the Prompt and Observo acquisitions during the nine months ended October 31, 2025 was not material to our historical consolidated operating results and is therefore not presented, except for the recognition of stock-based compensation expense of $ 1.4 million and $ 2.5 million, respectively . Fiscal 2025 Acquisitions"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-12-04"
+    },
+    {
+      "company": "S",
+      "target": {
+        "start": "2025-11-01",
+        "end": "2026-01-31",
+        "label": "Q4 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "25216c0c-32d8-57b0-afe5-7e21009d75b6",
+          "company": "S",
+          "issued": {
+            "start": "2025-12-04",
+            "end": "2025-12-04",
+            "precision": "day"
+          },
+          "filed": "2025-12-04",
+          "start": "2025-11-01",
+          "end": "2026-01-31",
+          "low": "271000000",
+          "high": "271000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001583708-25-000157",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000157/sentineloneq326exhibit991.htm",
+          "quote": "Q4FY26 Guidance Full FY2026 Guidance Revenue $271 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "25216c0c-32d8-57b0-afe5-7e21009d75b6",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000157/sentineloneq326exhibit991.htm",
+          "source_sha256": "c6370c6d64a1be679dbf9dab2c68e303585bfb5cdea9b63f74c088814264e3ed",
+          "fetched_at": "2026-11-12T07:10:41.018978+00:00",
+          "issuance_date_quote": "December 4, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000157/s-20251204.htm",
+          "exhibit_index_quote": "99.1 Press Release issued by SentinelOne, Inc. dated December 4 , 2025."
+        }
+      ],
+      "actual": {
+        "id": "5066a2c6-fd70-5c99-9ffe-39b0e2986f10",
+        "company": "S",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-11-01",
+        "end": "2026-01-31",
+        "value": "271153000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001583708-26-000020",
+        "filed": "2026-03-19",
+        "form": "DERIVED",
+        "fiscal_year": 2026,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001583708.json",
+        "parents": [
+          "040cf67a-5e51-5db8-8977-d89a228bb461",
+          "e5fa52cf-02f1-5cee-a6ce-b6a820367dac"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "e5fa52cf-02f1-5cee-a6ce-b6a820367dac",
+          "company": "S",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-02-01",
+          "end": "2025-10-31",
+          "value": "730125000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001583708-25-000159",
+          "filed": "2025-12-04",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001583708.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "040cf67a-5e51-5db8-8977-d89a228bb461",
+          "company": "S",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-02-01",
+          "end": "2026-01-31",
+          "value": "1001278000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001583708-26-000020",
+          "filed": "2026-03-19",
+          "form": "10-K",
+          "fiscal_year": 2026,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001583708.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000020/s-20260131.htm",
+        "filed": "2026-03-19",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000020/s-20260131.htm",
+          "sha256": "1bdbebc3d200044e71d306445d2bf85e088f3cc4c500136c259a8a628badd677",
+          "body": "839b15e71812664938dde5cb0ffc55952a801dd63d72184c80f3b4c0b51c6e77-1bdbebc3d200044e71d306445d2bf85e088f3cc4c500136c259a8a628badd677.body",
+          "fetched_at": "2026-11-12T10:41:24.551352+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001583708-26-000020-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-03-12",
+        "formal_release_issued_date": "2026-03-12",
+        "issued_precision": "day",
+        "date_quote": "March 12, 2026",
+        "filed": "2026-03-12",
+        "accession": "0001583708-26-000014",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/sentineloneq426exhibit991.htm",
+        "reported_revenue_quote": "Revenue $ 271,153 $ 225,521 $ 1,001,278 $ 821,461",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "229f682deedb33d014dfe49800e99f34000792d3dbb4b262ad8fa781a7f3bb92",
+        "fetched_at": "2026-11-11T23:48:34.205699+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.972473+00:00",
+        "guidance_id": "25216c0c-32d8-57b0-afe5-7e21009d75b6",
+        "actual_id": "5066a2c6-fd70-5c99-9ffe-39b0e2986f10",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000157/sentineloneq326exhibit991.htm",
+            "filed_date": "2025-12-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/sentineloneq426exhibit991.htm",
+            "filed_date": "2026-03-12"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000020/s-20260131.htm",
+            "filed_date": "2026-03-19"
+          }
+        ],
+        "scope_evidence": [
+          "servo and Prompt acquisitions, respectively, during fiscal 2026. These costs were recorded as general and administrative expenses in our consolidated statements of operations. The pro forma impact of the Observo and Prompt acquisitions during fiscal 2026 was not material to our historical consolidated operating results and is therefore not presented, except for the recognition of stock-based compensation expense ",
+          "re recorded as general and administrative expenses in our consolidated statements of operations. The pro forma impact of the Observo and Prompt acquisitions during fiscal 2026 was not material to our historical consolidated operating results and is therefore not presented, except for the recognition of stock-based compensation expense of $ 9.8 million and $ 3.3 million, respectively . For further details, ref"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-03-12"
+    },
+    {
+      "company": "S",
+      "target": {
+        "start": "2026-02-01",
+        "end": "2026-04-30",
+        "label": "Q1 FY2027",
+        "calendar": "months",
+        "days": 89
+      },
+      "guidance_versions": [
+        {
+          "id": "bb88dc24-cbcc-5b98-966e-d0bfe16c3287",
+          "company": "S",
+          "issued": {
+            "start": "2026-03-12",
+            "end": "2026-03-12",
+            "precision": "day"
+          },
+          "filed": "2026-03-12",
+          "start": "2026-02-01",
+          "end": "2026-04-30",
+          "low": "276000000",
+          "high": "278000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001583708-26-000014",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/sentineloneq426exhibit991.htm",
+          "quote": "Q1 Fiscal Year 2027 Guidance Fiscal Year 2027 Guidance Revenue $276 - 278 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "bb88dc24-cbcc-5b98-966e-d0bfe16c3287",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/sentineloneq426exhibit991.htm",
+          "source_sha256": "229f682deedb33d014dfe49800e99f34000792d3dbb4b262ad8fa781a7f3bb92",
+          "fetched_at": "2026-11-11T23:48:34.205699+00:00",
+          "issuance_date_quote": "March 12, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/s-20260312.htm",
+          "exhibit_index_quote": "99.1 Press Release issued by SentinelOne, Inc. dated March 1 2 , 202 6 ."
+        }
+      ],
+      "actual": {
+        "id": "d5cf1efa-14e1-57b0-8506-ffbe40cc75a6",
+        "company": "S",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-02-01",
+        "end": "2026-04-30",
+        "value": "276657000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001583708-26-000041",
+        "filed": "2026-05-28",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001583708.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000041/s-20260430.htm",
+        "filed": "2026-05-28",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000041/s-20260430.htm",
+          "sha256": "114e7db32dc2556eedbe5e6d6f2d80628eabb56814581ca265ec659f463a1ccc",
+          "body": "e7b0a8ff751293f1aaa25ed8c3a762231556225780c8934eda3c69f41d8cff45-114e7db32dc2556eedbe5e6d6f2d80628eabb56814581ca265ec659f463a1ccc.body",
+          "fetched_at": "2026-11-12T10:41:25.182701+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001583708-26-000041-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-05-28",
+        "formal_release_issued_date": "2026-05-28",
+        "issued_precision": "day",
+        "date_quote": "May 28, 2026",
+        "filed": "2026-05-28",
+        "accession": "0001583708-26-000039",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000039/sentineloneq127exhibit991.htm",
+        "reported_revenue_quote": "Revenue $ 276,657 $ 229,029",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "7fa5fd3d3a4091969d6e8674868f81051258c258f1c15537198f7ba3566fac3e",
+        "fetched_at": "2026-11-11T10:09:13.786493+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.983034+00:00",
+        "guidance_id": "bb88dc24-cbcc-5b98-966e-d0bfe16c3287",
+        "actual_id": "d5cf1efa-14e1-57b0-8506-ffbe40cc75a6",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/sentineloneq426exhibit991.htm",
+            "filed_date": "2026-03-12"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000039/sentineloneq127exhibit991.htm",
+            "filed_date": "2026-05-28"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000041/s-20260430.htm",
+            "filed_date": "2026-05-28"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-05-28"
+    },
+    {
+      "company": "S",
+      "target": {
+        "start": "2026-05-01",
+        "end": "2026-07-31",
+        "label": "Q2 FY2027",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "6b0268b6-1db8-5996-bb98-cce8f4dedf4e",
+          "company": "S",
+          "issued": {
+            "start": "2026-05-28",
+            "end": "2026-05-28",
+            "precision": "day"
+          },
+          "filed": "2026-05-28",
+          "start": "2026-05-01",
+          "end": "2026-07-31",
+          "low": "289000000",
+          "high": "291000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001583708-26-000039",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000039/sentineloneq127exhibit991.htm",
+          "quote": "Q2 Fiscal Year 2027 Guidance Fiscal Year 2027 Guidance Revenue $289 - 291 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "6b0268b6-1db8-5996-bb98-cce8f4dedf4e",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000039/sentineloneq127exhibit991.htm",
+          "source_sha256": "7fa5fd3d3a4091969d6e8674868f81051258c258f1c15537198f7ba3566fac3e",
+          "fetched_at": "2026-11-11T10:09:13.786493+00:00",
+          "issuance_date_quote": "May 28, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000039/s-20260528.htm",
+          "exhibit_index_quote": "99.1 Press Release issued by SentinelOne, Inc. dated M ay 28, 2026 ."
+        }
+      ],
+      "actual": {
+        "id": "367b3223-db74-5d74-8c5d-30871400e280",
+        "company": "S",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-05-01",
+        "end": "2026-07-31",
+        "value": "291981000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001583708-26-000055",
+        "filed": "2026-08-28",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001583708.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000055/s-20260731.htm",
+        "filed": "2026-08-28",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000055/s-20260731.htm",
+          "sha256": "c234aabab4b8e8242eb6c9e3b0c5418b1c9a5f773564c6fe92c6c1593bdc5c46",
+          "body": "4c40d48c97114c66a7f3d42a55c50202cbb59b7aee11bd1ed9cb81031b046ea4-c234aabab4b8e8242eb6c9e3b0c5418b1c9a5f773564c6fe92c6c1593bdc5c46.body",
+          "fetched_at": "2026-11-12T08:11:47.922243+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001583708-26-000055-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-08-27",
+        "formal_release_issued_date": "2026-08-27",
+        "issued_precision": "day",
+        "date_quote": "August 27, 2026",
+        "filed": "2026-08-27",
+        "accession": "0001583708-26-000052",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm",
+        "reported_revenue_quote": "Revenue $ 291,981 $ 242,183 $ 568,638 $ 471,212",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "0c703caa39e80f5376002fa0bb83b8709df7fc198d11120918710a8b61457aeb",
+        "fetched_at": "2026-11-11T10:09:16.625138+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.993949+00:00",
+        "guidance_id": "6b0268b6-1db8-5996-bb98-cce8f4dedf4e",
+        "actual_id": "367b3223-db74-5d74-8c5d-30871400e280",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000039/sentineloneq127exhibit991.htm",
+            "filed_date": "2026-05-28"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm",
+            "filed_date": "2026-08-27"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000055/s-20260731.htm",
+            "filed_date": "2026-08-28"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-08-27"
+    }
+  ]
+}

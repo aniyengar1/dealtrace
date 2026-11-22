@@ -1,0 +1,387 @@
+{
+  "agent_review": "Previous diagnostic review; not human verification",
+  "cases": [
+    {
+      "accession": "0001090872-25-000013",
+      "company": "A",
+      "context": {
+        "accession": "0001090872-25-000003",
+        "filed": "2025-02-26",
+        "quote": "AP (2) net income of $377 million; EPS of $1.31, up 2% from the first quarter of 2024. Outlook for full 2025 fiscal year and Q2 \u2022 Full-year revenue outlook is now in the range of $6.68 billion to $6.76 billion, representing a range of up 2.6% to 3.8% reported and 2.5% to 3.5% core (1) . Non-GAAP EPS (3) is expected in the range of $5.54 to $5.61 per share. \u2022 Q2 revenue outlook is expected to be in the range of $1.61 billion to $1.65 billion, an increase of 2.4% to 4.9% reported and up 2.5% to 5.0% core (1) . Non-GAAP EPS (3) is expected in the range of $1.25 to $1.28 per share. SANTA CLARA, Calif., Feb. 26, 2025 \u2014 Agilent ",
+        "source_manifest": {
+          "body": "60d50f7a27ed04f9dbe5bd65c41a565f1f0657682b9fc534e5169c4cda8d61a3-0298c86219b0fe8be598acadacef7c0aa8fbdf337942a0aa867103d9ee4f2c51.body",
+          "fetched_at": "2026-11-13T05:11:31.586691+00:00",
+          "sha256": "0298c86219b0fe8be598acadacef7c0aa8fbdf337942a0aa867103d9ee4f2c51",
+          "url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000003/exhibit991-q125pressrelease.htm"
+        },
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000003/exhibit991-q125pressrelease.htm",
+        "tokens": [
+          "6.68",
+          "6.76"
+        ]
+      },
+      "filed": "2025-05-28",
+      "gold_file": "earnings/pilot_s5/gold.json",
+      "gold_ids": [
+        "2b56f9bf-a909-5253-af89-ad6b2ce01cd2",
+        "2ed5dcba-971e-5ddd-8e67-372035386dce"
+      ],
+      "gold_kind": "source_curated_agent_reviewed_whole_release_not_human_verified",
+      "human_review": "PENDING_OWNER_REVIEW",
+      "id": "pilot-0",
+      "input_path": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/hybrid_diagnostic_vertex_v1/pilot-0-input.json",
+      "input_sha256": "88e09e1b38f3905e66438f0660845b80b797d40b5a9e900c04197cceced2a552",
+      "model_result": "NOT_RUN",
+      "review_excerpt": "Full Year 2025 and Q3 Outlook Full-year revenue outlook is now in the range of $6.73 billion to $6.81 billion, representing growth of 3.4% to 4.6% reported, while maintaining growth of 2.5% to 3.5% core (1) . Non-GAAP EPS (3) is expected in the range of $5.54 to $5.61 per share. The outlook for third-quarter revenue is expected to be in the range of $1.645 billion to $1.675 billion, representing growth of 4.2% to 6.1% reported and up 1.7% to 3.6% core (1) . Non-GAAP EPS (3) is expected in the range of $1.35 to $1.37 per share. The outlook is based on forecasted currency exchange rates. 2 Conference Call Agilent\u2019s management will present additional details regarding the company\u2019s second-quarter 2025 financial results on a conference call with investors today at 1:30 p.m. PT. This event will be broadcast live online in listen-only mode. To listen to the webcast, select the \u201cQ2 2025 Agilent Technologies Inc. Earnings Conference Call\u201d link on the Agilent Investor Relations website. The replay of the call will remain on the company site for 90 days. About Agilent Technologies Agilent Technologies Inc. (NYSE: A) is a global leader in analytical and clinical laboratory technologies, delivering insights and innovation that help our customers bring great science to life. Agilent\u2019s full range of solutions includes instruments, software, services, and expertise that provide trusted answers to our customers' most challenging questions. The company generated revenue of $6.51 billion in fiscal year 2024 and employs approximately 18,000 people worldwide. Information about Agilent is available at www.agilent.com. To receive the latest Agilent news, subscribe to the Agilent Newsroom. Follow Agilent on LinkedIn and Facebook. Forward-Looking Statements This news release contains forward-looking statements as defined in the Securities Exchange Act of 1934 and is subject to the safe harbors created therein. The forward-looking statements contained herein include, but are not limited to, information regarding Agilent\u2019s growth prospects, business, financial results, revenue, non-GAAP earnings guidance for Q3 and fiscal year 2025, and the effects of its new organizational structure, operational transformation and market-focused strategy. These forward-looking statements involve risks and uncertainties that could cause Agilent\u2019s results to differ materially from management\u2019s current expectations. Such risks and uncertainties include, but are not limited to, unforeseen changes in the strength of Agilent\u2019s customers\u2019 businesses; unforeseen changes in the demand for current and new products, technologies, and services; unforeseen changes in the currency markets; customer purchasing decisions and timing; and the risk that Agilent is not able to realize the savings expected from integration and restructuring activities. In addition, other risks that Agilent faces in running its operations include the ability to execute successfully through business cycles; the ability to meet and achieve the benefits of its operational transformation, market-focused strategy and cost-reduction goals and otherwise successfully adapt its cost structures to continuing changes in business conditions; ongoing competitive, pricing and gross-margin pressures; the risk that its cost-cutting initiatives will impair its ability to develop products and remain competitive and to operate effectively; the impact of geopolitical uncertainties and global economic conditions on its operations, its markets and its ability to conduct business; the ability to improve asset performance to adapt to cha",
+      "source_manifests": [
+        {
+          "body": "924938ec93a1c25528e0b1c1a7a71eaf2be9aed31826b0511998fe20a9c9ddc6-878bb95d6f7f9a34c9f404f6b5d3f8c7160eedd1c684c1eac860d427871334fa.body",
+          "fetched_at": "2026-11-13T05:11:28.990589+00:00",
+          "sha256": "878bb95d6f7f9a34c9f404f6b5d3f8c7160eedd1c684c1eac860d427871334fa",
+          "url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000013/exhibit991-q225pressrelease.htm"
+        },
+        {
+          "body": "60d50f7a27ed04f9dbe5bd65c41a565f1f0657682b9fc534e5169c4cda8d61a3-0298c86219b0fe8be598acadacef7c0aa8fbdf337942a0aa867103d9ee4f2c51.body",
+          "fetched_at": "2026-11-13T05:11:31.586691+00:00",
+          "sha256": "0298c86219b0fe8be598acadacef7c0aa8fbdf337942a0aa867103d9ee4f2c51",
+          "url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000003/exhibit991-q125pressrelease.htm"
+        }
+      ],
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000013/exhibit991-q225pressrelease.htm",
+      "status": "READY_LOCAL_ONLY",
+      "tags": [
+        "annual_vs_quarterly"
+      ]
+    },
+    {
+      "accession": "0000006281-24-000158",
+      "company": "ADI",
+      "context": null,
+      "filed": "2024-08-21",
+      "gold_file": "earnings/pilot_s5/gold.json",
+      "gold_ids": [
+        "7ddb492a-6994-55f5-8303-784ae4516c2b"
+      ],
+      "gold_kind": "source_curated_agent_reviewed_whole_release_not_human_verified",
+      "human_review": "PENDING_OWNER_REVIEW",
+      "id": "pilot-1",
+      "input_path": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/hybrid_diagnostic_vertex_v1/pilot-1-input.json",
+      "input_sha256": "7db68f9dbcb6a23f1e29239cda0ac149666e6c597674d5db5ccb15cd74fe572f",
+      "model_result": "NOT_RUN",
+      "review_excerpt": "Outlook for the Fourth Quarter of Fiscal Year 2024 For the fourth quarter of fiscal 2024, we are forecasting revenue of $2.40 billion, +/- $100 million. At the midpoint of this revenue outlook, we expect reported operating margin of approximately 22.3%, +/-180 bps, and adjusted operating margin of approximately 41.0%, +/-100 bps. We are planning for reported EPS to be $0.85, +/-$0.10, and adjusted EPS to be $1.63, +/-$0.10. Our fourth quarter fiscal 2024 outlook is based on current expectations and actual results may differ materially as a result of, among other things, the important factors discussed at the end of this release. These statements supersede all prior statements regarding our business outlook set forth in prior ADI news releases, and ADI disclaims any obligation to update these forward-looking statements. The adjusted results and adjusted anticipated results above are financial measures presented on a non-GAAP basis. Reconciliations of these non-GAAP financial measures to their most directly comparable GAAP financial measures are provided in the financial tables included in this release. See also the \u201cNon-GAAP Financial Information\u201d section for additional information. Dividend Payment The ADI Board of Directors has declared a quarterly cash dividend of $0.92 per outstanding share of common stock. The dividend will be paid on September 17, 2024 to all shareholders of record at the close of business on September 3, 2024. Conference Call Scheduled for Today, Wednesday, August 21, 2024 at 10:00 am ET ADI will host a conference call to discuss our third quarter fiscal 2024 results and short-term outlook today, beginning at 10:00 am ET. Investors may join via webcast, accessible at investor.analog.com. Non-GAAP Financial Information This release includes non-GAAP financial measures that are not in accordance with, nor an alternative to, U.S. generally accepted accounting principles (GAAP) and may be different from non-GAAP measures presented by other companies. In addition, these non-GAAP measures are not based on any comprehensive set of accounting rules or principles. These non-GAAP measures have material limitations in that they do not reflect all of the amounts associated with the Company\u2019s results of operations as determined in accordance with GAAP and should not be considered in isolation from, or as a substitute for, the Company\u2019s financial results presented in accordance with GAAP. The Company\u2019s use of non-GAAP measures, and the underlying methodology when including or excluding certain items, is not necessarily an indication of the results of operations that may be expected in the future, or that the Company will not, in fact, record such items in future periods. You are cautioned not to place undue reliance on these non-GAAP measures. Reconciliations of these non-GAAP financial measures to their most directly comparable GAAP financial measures are provided in the financial tables included in this release. Management uses non-GAAP measures internally to evaluate the Company\u2019s operating performance from continuing operations against past periods and to budget and allocate resources in future periods. These non-GAAP measures also assist management in evaluating the Company\u2019s core business and trends across different reporting periods on a consistent basis. Management also uses these non-GAAP measures as primary performance measurements when communicating with analysts and investors regarding the Company\u2019s earnings results and outlook and believes that the presentation of these non-GAAP measures is useful to investors be",
+      "source_manifests": [
+        {
+          "body": "91121c95d18fa45d0259b6bd34de10baac9b3f6b613a5071463b9d14e7bf7fae-f3f864ad2b2bb0db677d800fd5b555a5c6ed2b3c297633198496b2ea1e7f2312.body",
+          "fetched_at": "2026-11-13T05:09:59.145108+00:00",
+          "sha256": "f3f864ad2b2bb0db677d800fd5b555a5c6ed2b3c297633198496b2ea1e7f2312",
+          "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000158/adi3q24exhibit991earnings.htm"
+        }
+      ],
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000158/adi3q24exhibit991earnings.htm",
+      "status": "READY_LOCAL_ONLY",
+      "tags": [
+        "center_plus_tolerance"
+      ]
+    },
+    {
+      "accession": "0000006951-25-000032",
+      "company": "AMAT",
+      "context": null,
+      "filed": "2025-08-14",
+      "gold_file": "earnings/pilot_s5/gold.json",
+      "gold_ids": [
+        "ca00bf03-023f-5ac9-b346-93b9c30a3bcc"
+      ],
+      "gold_kind": "source_curated_agent_reviewed_whole_release_not_human_verified",
+      "human_review": "PENDING_OWNER_REVIEW",
+      "id": "pilot-4",
+      "input_path": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/hybrid_diagnostic_vertex_v1/pilot-4-input.json",
+      "input_sha256": "31dd8f7a1b1a494b343a062990074da2b45500f62faca41f100288862faacaab",
+      "model_result": "NOT_RUN",
+      "review_excerpt": "Business Outlook Applied\u2019s total net revenue, non-GAAP gross margin and non-GAAP diluted EPS for the fourth quarter of fiscal 2025 are expected to be approximately as follows: Q4 FY2025 (In millions, except percentage and per share amounts) Total net revenue $ 6,700 +/- $ 500 Non-GAAP gross margin 48.1 % Non-GAAP diluted EPS $ 2.11 +/- $ 0.20 This outlook for non-GAAP diluted EPS excludes known charges related to completed acquisitions of $0.01 per share, and includes a net income tax benefit related to intra-entity intangible asset transfers of $0.04 per share, but does not reflect any items that are unknown at this time, such as any additional charges related to acquisitions or other non-operational or unusual items, as well as other tax-related items, which we are not able to predict without unreasonable efforts due to their inherent uncertainty. Third Quarter Reportable Segment Information Semiconductor Systems Q3 FY2025 Q3 FY2024 (in millions, except percentages) Net revenue $ 5,427 $ 4,924 Foundry, logic and other 69 % 72 % DRAM 22 % 24 % Flash memory 9 % 4 % Operating income $ 1,966 $ 1,712 Operating margin 36.2 % 34.8 % Non-GAAP Results Non-GAAP operating income $ 1,977 $ 1,722 Non-GAAP operating margin 36.4 % 35.0 % Applied Global Services Q3 FY2025 Q3 FY2024 (in millions, except percentages) Net revenue $ 1,600 $ 1,580 Operating income $ 445 $ 467 Operating margin 27.8 % 29.6 % Non-GAAP Results Non-GAAP operating income $ 445 $ 467 Non-GAAP operating margin 27.8 % 29.6 % Display Q3 FY2025 Q3 FY2024 (in millions, except percentages) Net revenue $ 263 $ 251 Operating income $ 62 $ 16 Operating margin 23.6 % 6.4 % Non-GAAP Results Non-GAAP operating income $ 62 $ 16 Non-GAAP operating margin 23.6 % 6.4 % Applied Materials, Inc. Page 4 of 13 Corporate and Other Q3 FY2025 Q3 FY2024 (in millions) Unallocated net revenue $ 12 $ 23 Unallocated cost of products sold and expenses (252) (276) Total $ (240) $ (253) Use of Non-GAAP Financial Measures Applied provides investors with certain non-GAAP financial measures, which are adjusted for the impact of certain costs, expenses, gains and losses, including certain items related to mergers and acquisitions; restructuring and severance charges and any associated adjustments; impairments of assets; gain or loss, dividends and impairments on strategic investments; certain income tax items and other discrete adjustments. On a non-GAAP basis, the tax effect related to share-based compensation is recognized ratably over the fiscal year. Reconciliations of these non-GAAP measures to the most directly comparable financial measures calculated and presented in accordance with GAAP are provided in the financial tables included in this release. Management uses these non-GAAP financial measures to evaluate the company\u2019s operating and financial performance and for planning purposes, and as performance measures in its executive compensation program. Applied believes these measures enhance an overall understanding of its performance and investors\u2019 ability to review the company\u2019s business from the same perspective as the company\u2019s management, and facilitate comparisons of this period\u2019s results with prior periods on a consistent basis by excluding items that management does not believe are indicative of Applied's ongoing operating performance. There are limitations in using non-GAAP financial measures because the non-GAAP financial measures are not prepared in accordance with generally accepted accounting principles, may be different from non-GAAP financial measures used by other companies, and may exclude",
+      "source_manifests": [
+        {
+          "body": "f1abc881050a4bb0751f17d33ab02739d25fd7b02c531af3548ff10fa4d84f5b-6d1618cdc221e06e56125d944ac0368808bb9a8e30602ce15a9df976be66359b.body",
+          "fetched_at": "2026-11-13T05:09:29.903455+00:00",
+          "sha256": "6d1618cdc221e06e56125d944ac0368808bb9a8e30602ce15a9df976be66359b",
+          "url": "https://www.sec.gov/Archives/edgar/data/6951/000000695125000032/exhibit991q32025earningsre.htm"
+        }
+      ],
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6951/000000695125000032/exhibit991q32025earningsre.htm",
+      "status": "READY_LOCAL_ONLY",
+      "tags": [
+        "segment_actual_false_positive",
+        "table_columns"
+      ]
+    },
+    {
+      "accession": "0001261333-25-000016",
+      "company": "DOCU",
+      "context": null,
+      "filed": "2025-03-13",
+      "gold_file": "earnings/pilot_s5/gold.json",
+      "gold_ids": [
+        "46f00532-1e96-5d8d-9ddd-17ee2b1ab913",
+        "0e079373-165f-5a77-8d96-868c37171133"
+      ],
+      "gold_kind": "source_curated_agent_reviewed_whole_release_not_human_verified",
+      "human_review": "PENDING_OWNER_REVIEW",
+      "id": "pilot-11",
+      "input_path": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/hybrid_diagnostic_vertex_v1/pilot-11-input.json",
+      "input_sha256": "04299f22a749ecdd322c6d7e77b8a6c0a783b3664d5877ad6a670e7bcc6a0497",
+      "model_result": "NOT_RUN",
+      "review_excerpt": "Guidance The company currently expects the following guidance: \u25aa Quarter ending April 30, 2025 (in millions, except percentages): Total revenue [1] $745 to $749 Subscription revenue $729 to $733 Billings [2] $741 to $751 Non-GAAP gross margin 80.5% to 81.5% Non-GAAP operating margin 27.0% to 28.0% Non-GAAP diluted weighted-average shares outstanding 210 to 215 \u25aa Fiscal year ending January 31, 2026 (in millions, except percentages): Total revenue [1] $3,129 to $3,141 Subscription revenue $3,062 to $3,074 Billings [2] $3,300 to $3,354 Non-GAAP gross margin 80.5% to 81.5% Non-GAAP operating margin 27.8% to 28.8% Non-GAAP diluted weighted-average shares outstanding 210 to 215 [1] Excluding the impact of foreign currency exchange rates on year-over-year guided growth, revenue guidance range would be approximately 0.7% point higher for both the quarter ending April 30, 2025 and the fiscal year ending January 31, 2026. [2] Excluding the impact of foreign currency exchange rates on year-over-year guided growth, billings guidance range would be approximately 1.0% point higher for both the quarter ending April 30, 2025 and the fiscal year ending January 31, 2026. A reconciliation of non-GAAP guidance measures to corresponding GAAP guidance measures is not available on a forward-looking basis without unreasonable effort due to the uncertainty regarding, and the potential variability of, expenses that may be incurred in the future. Stock-based compensation-related charges, including employer payroll tax-related items on employee stock transactions, are impacted by many factors, including the timing of employee stock transactions, the future fair market value of our common stock, and our future hiring and retention needs, all of which are difficult to predict and subject to constant change. We have provided a reconciliation of GAAP to non-GAAP financial measures in the financial statement tables for our historical non-GAAP financial results included in this release. | 3 | DOCUSIGN, INC. Webcast Conference Call Information The company will host a conference call on March 13, 2025 at 2:00 p.m. PT (5:00 p.m. ET) to discuss its financial results. A live webcast of the event will be available on the Docusign Investor Relations website at investor.docusign.com. Prepared remarks and the news release with the financial results will also be accessible on Docusign\u2019s website prior to the webcast. A live dial-in will be available domestically at 877-407-0784 or internationally at 201-689-8560. A replay will be available domestically at 844-512-2921 or internationally at 412-317-6671 until midnight (ET) March 27, 2025, using the passcode 13751751. About Docusign Docusign brings agreements to life. Nearly 1.7 million customers and more than a billion people in over 180 countries use Docusign solutions to accelerate the process of doing business and simplify people's lives. With intelligent agreement management, Docusign unleashes business critical data that is trapped inside of documents. Until now, these were disconnected from business systems of record, costing businesses time, money, and opportunity. Using Docusign\u2019s IAM platform, companies can create, commit, and manage agreements with solutions created by the #1 company in e-signature and CLM. Learn more at www.docusign.com. Copyright 2025. Docusign, Inc. is the owner of DOCUSIGN\u00ae and all its other marks (www.docusign.com/IP). Investor Relations: Docusign Investor Relations investors@docusign.com Media Relations: Docusign Corporate Communications media@docusign.com | 4 | DOCUSIGN, INC. Forward-Looking Stat",
+      "source_manifests": [
+        {
+          "body": "8dca49388454a0ad276f97a9481d86a7ce3ccfef81bdbf7cd2ec086b2828ae87-98beaf25725d5addb49d97d1c58661d8f601630d3f2004cb9fac7754c1c71cd9.body",
+          "fetched_at": "2026-11-13T05:08:32.867814+00:00",
+          "sha256": "98beaf25725d5addb49d97d1c58661d8f601630d3f2004cb9fac7754c1c71cd9",
+          "url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000016/q425ex-991er.htm"
+        }
+      ],
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133325000016/q425ex-991er.htm",
+      "status": "READY_LOCAL_ONLY",
+      "tags": [
+        "period_ending_table",
+        "missed_target"
+      ]
+    },
+    {
+      "accession": "0001177609-25-000006",
+      "company": "FIVE",
+      "context": null,
+      "filed": "2025-03-19",
+      "gold_file": "earnings/pilot_s5/gold.json",
+      "gold_ids": [
+        "26b6b262-4076-5434-9880-c0cc9fac9028",
+        "b5461daa-deed-503d-9884-37845bec4410"
+      ],
+      "gold_kind": "source_curated_agent_reviewed_whole_release_not_human_verified",
+      "human_review": "PENDING_OWNER_REVIEW",
+      "id": "pilot-14",
+      "input_path": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/hybrid_diagnostic_vertex_v1/pilot-14-input.json",
+      "input_sha256": "03cc822aa28ad52c546f19f20219bab8bb7d6c95388101a071dfdea96aba3eb8",
+      "model_result": "NOT_RUN",
+      "review_excerpt": "Outlook: The Company expects the following results for the first quarter and full year of fiscal 2025. This guidance includes the expected impact of tariffs currently in place. For the first quarter of Fiscal 2025: \u2022 Net sales are expected to be in the range of $905 million to $925 million based on opening approximately 50 new stores and assuming an approximate flat to 2% increase in comparable sales. \u2022 Net income is expected to be in the range of $25 million to $31 million. Adjusted net income (3) is expected to be in the range of $28 million to $34 million. \u2022 Diluted income per common share is expected to be in the range of $0.44 to $0.55 on approximately 55.3 million diluted weighted average shares outstanding. Adjusted diluted income per common share (3) is expected to be in the range of $0.50 to $0.61. \u2022 This outlook does not include the impact of share repurchases, if any. (3) Adjusted net income and adjusted diluted income per common share exclude the impact of nonrecurring or non-cash items which includes retention awards, costs incurred with the strategic acquisition of certain leases and on-going execution of the inventory write-off. For the full year of Fiscal 2025: \u2022 Net sales are expected to be in the range of $4.21 billion to $4.33 billion based on opening approximately 150 new stores and assuming an approximate flat to 3% increase in comparable sales. \u2022 Net income is expected to be in the range of $216 million to $250 million. Adjusted net income (4) is expected to be in the range of $227 million to $261 million. \u2022 Diluted income per common share is expected to be in the range of $3.90 to $4.52 on approximately 55.4 million diluted weighted average shares outstanding. Adjusted diluted income per common share (4) is expected to be in the range of $4.10 to $4.72. \u2022 Gross capital expenditures are expected to be approximately $210 million to $230 million in fiscal 2025. \u2022 This outlook does not include the impact of share repurchases, if any. (4) Adjusted net income and adjusted diluted income per common share exclude the impact of nonrecurring or non-cash items which includes retention awards, costs incurred with the strategic acquisition of certain leases and on-going execution of the inventory write-off. Conference Call Information: A conference call to discuss the financial results for the fourth quarter and full year of fiscal 2024 is scheduled for today, March 19, 2025, at 4:30 p.m. Eastern Time. Investors and analysts interested in participating in the call are invited to dial 412-902-6753 approximately 10 minutes prior to the start of the call. Non-GAAP Information: This press release includes gross profit, adjusted gross profit, adjusted operating income, adjusted net income, and adjusted diluted income per common share, each is a non-GAAP financial measure. The Company has reconciled these non-GAAP financial measures with the most directly comparable GAAP financial measures within this filing. The Company believes that these non-GAAP financial measures not only provide its management with comparable financial data for internal financial analysis but also provide meaningful supplemental information to investors. Specifically, these non-GAAP financial measures allow investors to better understand the performance of the Company's business and facilitate a meaningful evaluation of its quarterly and fiscal year 2024 diluted income per common share and actual results on a comparable basis with its quarterly and fiscal year 2023 results. In evaluating these non-GAAP financial measures, investors should be aware that in th",
+      "source_manifests": [
+        {
+          "body": "2c830e73fd01188cc4366ca386959df34298534e80e81ece9feb6305f92ceab1-4350f5a7aa5920b26692727cce98c2ef7818486df551ff9219f1cf4bcf1a2a8e.body",
+          "fetched_at": "2026-11-13T05:10:24.885449+00:00",
+          "sha256": "4350f5a7aa5920b26692727cce98c2ef7818486df551ff9219f1cf4bcf1a2a8e",
+          "url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000006/q42024fivebelowexhibit991.htm"
+        }
+      ],
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1177609/000117760925000006/q42024fivebelowexhibit991.htm",
+      "status": "READY_LOCAL_ONLY",
+      "tags": [
+        "net_sales"
+      ]
+    },
+    {
+      "accession": "0001773751-26-000074",
+      "company": "HIMS",
+      "context": {
+        "accession": "0001773751-26-000019",
+        "filed": "2026-02-23",
+        "quote": "f $318 million in 2025 Subscribers grew to over 2.5 million, up 13% year-over-year in 2025 Provides Q1 and full year 2026 guidance 1 , with full year 2026 revenue in the range of $2.7 billion to $2.9 billion and Adjusted EBITDA in the range of $300 million to $375 million SAN FRANCISCO, February 23, 2026 \u2013 Hims & Hers Health, Inc. (\u201cHims & Hers\u201d or the \u201cCompany\u201d, NYSE: HIMS), the leading health and wellness platform, today announced financial results for th e fourth quarter and full year ended December 31, 2025 in a shareholder letter that is posted at investors.hims.com. \u201cMore than 2.5 million subscribers now rely on us f",
+        "source_manifest": {
+          "body": "3a59a82af432a0553561b13fae765b9d98a531b8fe2b999580d66cd60137293a-b1c89bc74fdeace75dd72f09f3bf209e4dc7b858474d2faaf92db9815b3111ed.body",
+          "fetched_at": "2026-11-13T05:11:42.976097+00:00",
+          "sha256": "b1c89bc74fdeace75dd72f09f3bf209e4dc7b858474d2faaf92db9815b3111ed",
+          "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000019/hims-20251231x8xkearningsr.htm"
+        },
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000019/hims-20251231x8xkearningsr.htm",
+        "tokens": [
+          "2.7",
+          "2.9"
+        ]
+      },
+      "filed": "2026-05-11",
+      "gold_file": "earnings/pilot_s5/gold.json",
+      "gold_ids": [
+        "9fc3e193-bd2f-583a-a8b3-1d63f53d5d65",
+        "7e7b5241-be52-545e-aaa9-7c748a526486"
+      ],
+      "gold_kind": "source_curated_agent_reviewed_whole_release_not_human_verified",
+      "human_review": "PENDING_OWNER_REVIEW",
+      "id": "pilot-19",
+      "input_path": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/hybrid_diagnostic_vertex_v1/pilot-19-input.json",
+      "input_sha256": "ba370696f236abb6d38482c832615e6c9fada89db22a6cf0b0780dbe3ce2139f",
+      "model_result": "NOT_RUN",
+      "review_excerpt": "Financial Outlook 2 Hims & Hers is providing the following guidance: For the second quarter 2026, we expect: \u2022 Revenue of $680 million to $700 million. \u2022 Adjusted EBITDA of $35 million to $55 million, reflecting an Adjusted EBITDA margin of 5% to 8%. For the full year 2026, we expect: \u2022 Revenue of $2.8 billion to $3.0 billion. \u2022 Adjusted EBITDA of $275 million to $350 million, reflecting an Adjusted EBITDA margin of 10% to 12%. 2 Our second quarter and full year 2026 outlook excludes any potential contributions from the recently announced proposed acquisition of Eucalyptus, which is expected to close during the middle of calendar year 2026, subject to customary closing conditions, including regulatory approvals. The guidance provided above constitutes forward-looking statements and actual results may differ materially. Refer to the \u201cCautionary Note Regarding Forward-Looking Statements\u201d safe harbor section below for information on the factors that could cause our actual results to differ materially from these forward-looking statements. We have relied upon the exception in Item 10(e)(1)(i)(B) of Regulation S-K and have not reconciled forward-looking Adjusted EBITDA to its most directly comparable U.S. GAAP measure, net income or loss, because we cannot predict with reasonable certainty the ultimate outcome of certain components of such reconciliations, including market-related assumptions that are not within our control, or others that may arise, without unreasonable effort. For these reasons, we are unable to assess the probable significance of the unavailable information, which could materially impact the amount of future net income or loss. See \u201cNon-GAAP Financial Measures\u201d for additional important information regarding Adjusted EBITDA. Conference Call Hims & Hers will host a conference call to review the first quarter 2026 results on May 11, 2026, at 5:00 p.m. ET. The conference call can be accessed by dialing +1 (888) 510-2630 for U.S. participants and +1 (646) 960-0137 for international participants, and referencing conference ID #1704296. A live audio webcast will be available online at investors.hims.com. A replay of the call will be available via webcast for on-demand listening shortly after the completion of the call at the same link. About Hims & Hers Health, Inc. Hims & Hers is the leading health and wellness platform on a mission to help the world feel great through the power of better health. We believe how you feel in your body and mind transforms how you show up in life. That\u2019s why we\u2019re building a future where nothing stands in the way of harnessing this power. Hims & Hers normalizes health & wellness challenges\u2014and innovates on their solutions\u2014to make feeling happy and healthy easy to achieve. No two people are the same, so the Company provides access to personalized care designed for results. For more information, please visit investors.hims.com. Cautionary Note Regarding Forward-Looking Statements This press release includes forward-looking statements within the meaning of Section 27A of the Securities Act of 1933, as amended and Section 21E of the Securities Exchange Act of 1934, as amended. These forward-looking statements can be identified by the use of forward-looking terminology, including the words \u201cbelieves,\u201d \u201cestimates,\u201d \u201canticipates,\u201d \u201cexpects,\u201d \u201cintends,\u201d \u201cplans,\u201d \u201cassumes,\u201d \u201cmay,\u201d \u201cwill,\u201d \u201clikely,\u201d \u201cpotential,\u201d \u201cprojects,\u201d \u201cpredicts,\u201d \u201ccontinue,\u201d \u201cgoal,\u201d \u201cstrategy,\u201d \u201cfuture,\u201d \u201cforecast,\u201d \u201ctarget,\u201d \u201coutlook,\u201d \u201copportunity,\u201d \u201cconfidence,\u201d \u201cfoundation,\u201d \u201cgroundwork,\u201d or \u201cshould,\u201d or, in each case, their nega",
+      "source_manifests": [
+        {
+          "body": "716bd0e840d494d8c15bfcbf13ca96f9bab83f26b1b8b758b207c624882b98a5-1abcff8789a5235f6f7667327681f622cdfd19b6e99305741d0073e28a10ce7c.body",
+          "fetched_at": "2026-11-13T05:11:41.686144+00:00",
+          "sha256": "1abcff8789a5235f6f7667327681f622cdfd19b6e99305741d0073e28a10ce7c",
+          "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000074/hims-20260331x8xkearningsr.htm"
+        },
+        {
+          "body": "3a59a82af432a0553561b13fae765b9d98a531b8fe2b999580d66cd60137293a-b1c89bc74fdeace75dd72f09f3bf209e4dc7b858474d2faaf92db9815b3111ed.body",
+          "fetched_at": "2026-11-13T05:11:42.976097+00:00",
+          "sha256": "b1c89bc74fdeace75dd72f09f3bf209e4dc7b858474d2faaf92db9815b3111ed",
+          "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000019/hims-20251231x8xkearningsr.htm"
+        }
+      ],
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000074/hims-20260331x8xkearningsr.htm",
+      "status": "READY_LOCAL_ONLY",
+      "tags": [
+        "acquisition_scope"
+      ]
+    },
+    {
+      "accession": "0001477449-25-000047",
+      "company": "TDOC",
+      "context": {
+        "accession": "0001477449-25-000002",
+        "filed": "2025-02-26",
+        "quote": "dingly, we believe our outlook ranges provide a reasonable baseline for future financial performance. 3 For the full year of 2025, we expect: Full Year 2025 Outlook Range Revenue $2,468 - $2,576 million Adjusted EBITDA $278 - $319 million Net loss per share ($1.10) - ($0.50) Free Cash Flow $190- $220 million U.S. Integrated Care Members (2) 101 - 103 million Integrated Care Revenue growth percentage (year-over-year) 0.00% - 3.00% Adjusted EBITDA margin 14.30% - 15.30% BetterHelp Revenue growth percentage (year-over-year) (9.75%) - (3.75%) Adjusted EBITDA margin 6.25% - 7.75% For the first quarter of 2025, we expect: 1Q 202",
+        "source_manifest": {
+          "body": "b57e54433b3cb9aff944eca451534a3ff520334a78ede0790f61f1b94b8a025a-33b765bcc24366f68a3418e9586bcbf76582c239e95f3ee9f5ef8053f6ecca24.body",
+          "fetched_at": "2026-11-13T05:12:07.656589+00:00",
+          "sha256": "33b765bcc24366f68a3418e9586bcbf76582c239e95f3ee9f5ef8053f6ecca24",
+          "url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000002/tdoc-20241231xexx991.htm"
+        },
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000002/tdoc-20241231xexx991.htm",
+        "tokens": [
+          "2,468",
+          "2,576"
+        ]
+      },
+      "filed": "2025-04-30",
+      "gold_file": "earnings/pilot_s5/gold.json",
+      "gold_ids": [
+        "5f37b878-d482-5138-98b8-f1bb79a9d6f3",
+        "d896d0de-906b-5d9e-a17e-24a9cc01fefb"
+      ],
+      "gold_kind": "source_curated_agent_reviewed_whole_release_not_human_verified",
+      "human_review": "PENDING_OWNER_REVIEW",
+      "id": "pilot-27",
+      "input_path": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/hybrid_diagnostic_vertex_v1/pilot-27-input.json",
+      "input_sha256": "42e1f8d49bf8c61f46eb71e26a21bb45e5db06e53f99915f05bf5e9666d8f389",
+      "model_result": "NOT_RUN",
+      "review_excerpt": "Financial Outlook The outlook provided below is based on current market conditions and expectations and what we know today, and includes the anticipated contribution from the acquisition of UpLift. However, due to continued uncertainty regarding the implementation dates and scope of potential U.S. import tariffs or retaliatory tariffs put in place by other countries, this guidance does not include any impact from new tariff actions in 2025. 2 For the full year of 2025, we expect: Full Year 2025 Outlook Range Revenue $2,468 - $2,576 million Adjusted EBITDA $263 - $304 million Net loss per share ($1.40) - ($0.90) Free Cash Flow $170 - $200 million U.S. Integrated Care Members (2) 101 - 103 million Integrated Care Revenue growth percentage (year-over-year) 0.00% - 3.00% Adjusted EBITDA margin 14.30% - 15.30% BetterHelp Revenue growth percentage (year-over-year) (9.75%) - (3.75%) Adjusted EBITDA margin 4.75% - 6.25% For the second quarter of 2025, we expect: 2Q 2025 Outlook Range Revenue $614 - $633 million Adjusted EBITDA $56 - $70 million Net loss per share ($0.40) - ($0.20) U.S. Integrated Care Members (2) 101.5 - 102.5 million Integrated Care Revenue growth percentage (year-over-year) 0.25% - 2.75% Adjusted EBITDA margin 13.25% - 14.75% BetterHelp Revenue growth percentage (year-over-year) (11.25%) - (7.50%) Adjusted EBITDA margin 2.50% - 5.25% See note (2) in the Notes section that follows. Earnings Conference Call The First Quarter 2025 earnings conference call and webcast will be held Wednesday, April 30, 2025 at 4:30 p.m. E.T. The conference call can be accessed by dialing 1-833-470-1428 for U.S. participants and using the access code #309585. For international participants, please visit the following link for global dial-in numbers: https://www.netroadshow.com/conferencing/global-numbers?confId=81196. A live audio webcast will also be available online at http://ir.teladoc.com/news-and-events/events-and-presentations/. A replay of the call will be available via webcast for on-demand listening shortly after the completion of the call, at the same web link, and will remain available for approximately 90 days. About Teladoc Health Teladoc Health empowers all people everywhere to live their healthiest lives by transforming the healthcare experience. As the world leader in virtual care, Teladoc Health uses proprietary health signals and personalized interactions to drive better health outcomes across the full continuum of care, at every stage in a person\u2019s health journey. Teladoc Health leverages more than two decades of expertise and data-driven insights to meet the growing virtual care needs of consumers and healthcare professionals. For more information, please visit www.teladochealth.com . 3 Cautionary Note Regarding Forward-Looking Statements This press release contains \u201cforward-looking statements\u201d within the meaning of the safe harbor provisions of the U.S. Private Securities Litigation Reform Act of 1995. Forward-looking statements can be identified by words such as: \u201canticipate,\u201d \u201cintend,\u201d \u201cplan,\u201d \u201cbelieve,\u201d \u201cproject,\u201d \u201cestimate,\u201d \u201cexpect,\u201d \u201cmay,\u201d \u201cshould,\u201d \u201cwill\u201d and similar references to future periods. Examples of forward-looking statements include, among others, the information under the caption \u201cFinancial Outlook\u201d and statements we make regarding future financial or operating results, future numbers of members, BetterHelp paying users or clients, litigation outcomes, regulatory developments, market developments, new products and growth strategies, and the effects of any of the foregoing on our future results of operations ",
+      "source_manifests": [
+        {
+          "body": "ac0e130e2b7fa15a723ba7b720eceb6b1227174fc593fb30fe2031dfe42212ee-fae9d0ccf5d42fa9c4fe3934968e7afcf93bdcb491000f50a5513541a1b88391.body",
+          "fetched_at": "2026-11-13T05:12:05.186643+00:00",
+          "sha256": "fae9d0ccf5d42fa9c4fe3934968e7afcf93bdcb491000f50a5513541a1b88391",
+          "url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000047/tdoc-20250331xexx991.htm"
+        },
+        {
+          "body": "b57e54433b3cb9aff944eca451534a3ff520334a78ede0790f61f1b94b8a025a-33b765bcc24366f68a3418e9586bcbf76582c239e95f3ee9f5ef8053f6ecca24.body",
+          "fetched_at": "2026-11-13T05:12:07.656589+00:00",
+          "sha256": "33b765bcc24366f68a3418e9586bcbf76582c239e95f3ee9f5ef8053f6ecca24",
+          "url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000002/tdoc-20241231xexx991.htm"
+        }
+      ],
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000047/tdoc-20250331xexx991.htm",
+      "status": "READY_LOCAL_ONLY",
+      "tags": [
+        "metric_specific_revision_status"
+      ]
+    },
+    {
+      "accession": "0001585521-26-000026",
+      "company": "ZM",
+      "context": null,
+      "filed": "2026-02-25",
+      "gold_file": "earnings/pilot_s5/gold.json",
+      "gold_ids": [
+        "aa8c13ff-5d2a-5f34-b4b9-5d785d8769ee",
+        "809aa81c-aca1-5be9-a27f-4a1bdf6fc256"
+      ],
+      "gold_kind": "source_curated_agent_reviewed_whole_release_not_human_verified",
+      "human_review": "PENDING_OWNER_REVIEW",
+      "id": "pilot-28",
+      "input_path": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/hybrid_diagnostic_vertex_v1/pilot-28-input.json",
+      "input_sha256": "4efd329bac7c247b9b5ed52867eb55a2011add522ac09122810752bbc55ba572",
+      "model_result": "NOT_RUN",
+      "review_excerpt": "Financial Outlook: Zoom is providing the following guidance for its first quarter of fiscal year 2027 and its full fiscal year 2027. \u2022 First Quarter Fiscal Year 2027: Total revenue is expected to be between $1.220 billion and $1.225 billion and revenue in constant currency is expected to be between $1.212 billion and $1.217 billion. Non-GAAP income from operations is expected to be between $487.0 million and $492.0 million. First quarter non-GAAP diluted EPS is expected to be between $1.40 and $1.42 with approximately 304 million non-GAAP weighted average shares outstanding. \u2022 Full Fiscal Year 2027: Total revenue is expected to be between $5.065 billion and $5.075 billion and revenue in constant currency is expected to be between $5.054 billion and $5.064 billion. Non-GAAP income from operations is expected to be between $2.050 billion and $2.060 billion. Full fiscal year non-GAAP diluted EPS is expected to be between $5.77 and $5.81 with approximately 308 million non-GAAP weighted average shares outstanding. Full fiscal year free cash flow is expected to be between $1.700 billion and $1.740 billion. The EPS and share count figures do not include any impact from $1.0 billion of authorized share repurchase remaining as of January 31, 2026. Additional information on Zoom's reported results, including a reconciliation of the non-GAAP results to their most comparable GAAP measures, is included in the financial tables below. A reconciliation of non-GAAP guidance measures to corresponding GAAP measures is not available on a forward-looking basis without unreasonable effort due to the uncertainty of expenses that may be incurred in the future, although it is important to note that these factors could be material to Zoom's results computed in accordance with GAAP. A supplemental financial presentation and other information can be accessed through Zoom\u2019s investor relations website at investors.zoom.us. Zoom Video Earnings Call Zoom will host a Zoom Video Webinar for investors on February 25, 2026 at 2:00 p.m. Pacific Time / 5:00 p.m. Eastern Time to discuss the company\u2019s financial results, business highlights and financial outlook. Investors are invited to join the Zoom Video Webinar by visiting: https://investors.zoom.us/ About Zoom Zoom (NASDAQ: ZM) is a system of action for modern work, turning live collaboration into completed results. From entrepreneurs to global enterprises, customers choose Zoom to seamlessly collaborate, communicate, and drive outcomes across meetings, phone, contact center, and more \u2014 all with the built-in assistance of Zoom AI Companion. Founded in 2011, Zoom is headquartered in San Jose, CA. For more information, visit zoom.com. Forward-Looking Statements This press release contains express and implied \u201cforward-looking statements\u201d within the meaning of the Private Securities Litigation Reform Act of 1995, including statements regarding Zoom's financial outlook for the first quarter of fiscal year 2027 and full fiscal year 2027, Zoom\u2019s market position, opportunities, and growth strategy, product initiatives, including future product and feature releases and the potential of agentic AI, and go-to-market motions and the expected benefits resulting from the same, market trends, and Zoom's stock repurchase program. In some cases, you can identify forward-looking statements by terms such as \u201canticipate,\u201d \u201cbelieve,\u201d \u201cestimate,\u201d \u201cexpect,\u201d \u201cintend,\u201d \u201cmay,\u201d \u201cmight,\u201d \u201cplan,\u201d \u201cproject,\u201d \u201cwill,\u201d \u201cwould,\u201d \u201cshould,\u201d \u201ccould,\u201d \u201ccan,\u201d \u201cpredict,\u201d \u201cpotential,\u201d \u201ctarget,\u201d \u201cexplore,\u201d \u201ccontinue,\u201d or the negative of these terms, and similar",
+      "source_manifests": [
+        {
+          "body": "e95a9a06261a8e8f78c75263bb847e05ff3380cccc2c851599b20706b90aafd7-c66fc9adc63db8e7b305fdddcc91b6e68a8338a12847c874e425fd84e9fbd8d8.body",
+          "fetched_at": "2026-11-13T05:08:10.286930+00:00",
+          "sha256": "c66fc9adc63db8e7b305fdddcc91b6e68a8338a12847c874e425fd84e9fbd8d8",
+          "url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000026/zm-20260225ex991.htm"
+        }
+      ],
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1585521/000158552126000026/zm-20260225ex991.htm",
+      "status": "READY_LOCAL_ONLY",
+      "tags": [
+        "reported_vs_constant_currency",
+        "between_and_range"
+      ]
+    },
+    {
+      "accession": "0001642896-24-000059",
+      "company": "IOT",
+      "context": null,
+      "filed": "2024-09-05",
+      "gold_file": "earnings/extraction/gold_v1.json",
+      "gold_ids": [
+        "8314785d-3123-5174-be7d-d1f8d31b4d29"
+      ],
+      "gold_kind": "existing_positive_only_source_curated_agent_reviewed_not_human_verified",
+      "gold_limitations": "Old positive-only scope not exhaustive annual/quarterly negatives; human review must include missed/implied/ARR content. No open-world precision claim from these labels.",
+      "human_review": "PENDING_OWNER_REVIEW",
+      "id": "IOT-0001642896-24-000059",
+      "input_path": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/hybrid_diagnostic_vertex_v1/IOT-0001642896-24-000059-input.json",
+      "input_sha256": "3ec604b30ca89e9d022162985137e02302b9aabc0e4c5801d539f2a104120463",
+      "model_result": "NOT_RUN",
+      "review_excerpt": "Q3 FY2025 Outlook Implied Q4 FY2025 Outlook FY 2025 Outlook Total revenue $309 million \u2013 $311 million ",
+      "source_manifests": [
+        {
+          "body": "1e6a6520fb92da43d8960a0c27ff0dc449b3846afffa3cb7066574b1aa22cbd2-472bcdd46129663ff43ff11bbf68757fb8a0c3b24c28605749e2a3a21c349520.body",
+          "fetched_at": "2026-11-12T10:26:46.486784+00:00",
+          "sha256": "472bcdd46129663ff43ff11bbf68757fb8a0c3b24c28605749e2a3a21c349520",
+          "url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000059/samsaraepr-q22025.htm"
+        }
+      ],
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289624000059/samsaraepr-q22025.htm",
+      "status": "READY_LOCAL_ONLY",
+      "tags": [
+        "direct_vs_implied",
+        "ARR_vs_revenue",
+        "table_columns"
+      ]
+    },
+    {
+      "accession": "0001535527-24-000017",
+      "company": "CRWD",
+      "context": null,
+      "filed": "2024-08-28",
+      "gold_file": "earnings/extraction/gold_v1.json",
+      "gold_ids": [
+        "01205c58-db41-52ae-a250-7887b127dba6"
+      ],
+      "gold_kind": "existing_positive_only_source_curated_agent_reviewed_not_human_verified",
+      "gold_limitations": "Old positive-only scope not exhaustive annual/quarterly negatives; human review must include missed/implied/ARR content. No open-world precision claim from these labels.",
+      "human_review": "PENDING_OWNER_REVIEW",
+      "id": "CRWD-0001535527-24-000017",
+      "input_path": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/hybrid_diagnostic_vertex_v1/CRWD-0001535527-24-000017-input.json",
+      "input_sha256": "cd9d081d18da4606d3c0e0364c289783747748705d089a445d700aa509bf5194",
+      "model_result": "NOT_RUN",
+      "review_excerpt": "Q3 FY25 Guidance Full Year FY25 Guidance Total revenue $979.2 - $984.7 million ",
+      "source_manifests": [
+        {
+          "body": "f535d400eab9a77321eadbfc99553b1dfd8483f7f8c6b38f9e8fcddc307c466e-b6798b8023304716ce246541b8a89671c334ecd8a7ddbbf0f2f39d6c0b6d7c81.body",
+          "fetched_at": "2026-11-12T10:26:23.338471+00:00",
+          "sha256": "b6798b8023304716ce246541b8a89671c334ecd8a7ddbbf0f2f39d6c0b6d7c81",
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000017/crwd-20240828xex991.htm"
+        }
+      ],
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552724000017/crwd-20240828xex991.htm",
+      "status": "READY_LOCAL_ONLY",
+      "tags": [
+        "ARR_vs_revenue",
+        "revision_status_ambiguity"
+      ]
+    }
+  ],
+  "fresh_manifest_sha256": "4022f697239b705e00a592ba009aa510653ecc17e1cf3b6ae035bc550e0f60d0",
+  "human_reviewer": "Owner only; not yet reviewed",
+  "prepared_at": "2026-11-13T10:19:21.387990+00:00",
+  "source_curator": "Prior Codex source-curated labels",
+  "stage": "diagnostic_local_preparation_no_inference"
+}

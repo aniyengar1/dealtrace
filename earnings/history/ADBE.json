@@ -1,0 +1,1193 @@
+{
+  "review_scope": "Last eight publicly reported quarters as of 2026-11-12; complete reviewed 8-K/8-K-A inventory from 2024-08-01 through 2026-11-12",
+  "source_inventory": [
+    {
+      "accession": "0000796343-24-000200",
+      "filed": "2024-09-12",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000200/adbe-20240912.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634324000200/adbeex991q324.htm"
+      ]
+    },
+    {
+      "accession": "0000796343-24-000250",
+      "filed": "2024-12-11",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000250/adbe-20241211.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634324000250/adbeex991q424.htm"
+      ]
+    },
+    {
+      "accession": "0000796343-25-000052",
+      "filed": "2025-03-12",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000052/adbe-20250312.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634325000052/adbeex991q125.htm"
+      ]
+    },
+    {
+      "accession": "0000796343-25-000064",
+      "filed": "2025-06-12",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000064/adbe-20250612.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634325000064/adbeex991q225.htm"
+      ]
+    },
+    {
+      "accession": "0000796343-25-000102",
+      "filed": "2025-09-11",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000102/adbe-20250911.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634325000102/adbeex991q325.htm"
+      ]
+    },
+    {
+      "accession": "0000796343-25-000135",
+      "filed": "2025-12-10",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbe-20251210.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm"
+      ]
+    },
+    {
+      "accession": "0000796343-26-000048",
+      "filed": "2026-03-12",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbe-20260309.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbeex991q126.htm",
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbeex992q126.htm"
+      ]
+    },
+    {
+      "accession": "0000796343-26-000109",
+      "filed": "2026-06-11",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbe-20260608.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm"
+      ]
+    },
+    {
+      "accession": "0000796343-26-000144",
+      "filed": "2026-09-08",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000144/adbe-20260902.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634326000144/adbeex9918-k9826.htm"
+      ]
+    },
+    {
+      "accession": "0000796343-26-000147",
+      "filed": "2026-09-10",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbe-20260910.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+      ]
+    },
+    {
+      "accession": "0000796343-24-000192",
+      "filed": "2024-08-08",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000192/adbe-20240805.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001193125-25-008409",
+      "filed": "2025-01-17",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000119312525008409/d856773d8k.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0000796343-25-000036",
+      "filed": "2025-01-30",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000036/adbe-20250124.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001628280-25-019665",
+      "filed": "2025-04-24",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000162828025019665/adbe-20250422.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0000796343-26-000019",
+      "filed": "2026-01-27",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000019/adbe-20260126.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0000796343-26-000101",
+      "filed": "2026-04-21",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000101/adbe-20260415.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634326000101/ex9918-k42126.htm"
+      ]
+    },
+    {
+      "accession": "0000796343-26-000120",
+      "filed": "2026-07-17",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000120/adbe-20260714.htm",
+      "exhibits": []
+    }
+  ],
+  "inventory_gaps": [],
+  "quarters": [
+    {
+      "company": "ADBE",
+      "target": {
+        "start": "2024-08-31",
+        "end": "2024-11-29",
+        "label": "Q4 FY2024",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "943db843-f2f6-5304-8af1-768f655f4e69",
+          "company": "ADBE",
+          "issued": {
+            "start": "2024-09-12",
+            "end": "2024-09-12",
+            "precision": "day"
+          },
+          "filed": "2024-09-12",
+          "start": "2024-08-31",
+          "end": "2024-11-29",
+          "low": "5500000000.00",
+          "high": "5550000000.00",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0000796343-24-000200",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000200/adbeex991q324.htm",
+          "quote": "fourth quarter fiscal year 2024 targets: Total revenue $5.50 billion to $5.55 billion ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "943db843-f2f6-5304-8af1-768f655f4e69",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000200/adbeex991q324.htm",
+          "source_sha256": "20c61c5a9c3d27b0a8377c5351845697d51bc33e46b994a0d56ba591d75c41ca",
+          "fetched_at": "2026-11-12T10:27:25.090990+00:00",
+          "issuance_date_quote": "Sept. 12, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000200/adbe-20240912.htm",
+          "exhibit_index_quote": "99.1 Press release issued on September 1 2 , 2024 entitled \u201c Adobe Reports Record Revenue in Q 3 Fiscal 2024 \u201d"
+        }
+      ],
+      "actual": {
+        "id": "a890fda1-9385-5e08-a8c9-e2c179b06211",
+        "company": "ADBE",
+        "concept": "Revenues",
+        "start": "2024-08-31",
+        "end": "2024-11-29",
+        "value": "5606000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0000796343-25-000004",
+        "filed": "2025-01-13",
+        "form": "DERIVED",
+        "fiscal_year": 2024,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+        "parents": [
+          "e7028d46-b1b7-5ed4-9325-32f1460479f4",
+          "b9fd7870-74a7-55ec-9f85-d03377f664b1"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "b9fd7870-74a7-55ec-9f85-d03377f664b1",
+          "company": "ADBE",
+          "concept": "Revenues",
+          "start": "2023-12-02",
+          "end": "2024-08-30",
+          "value": "15899000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0000796343-24-000208",
+          "filed": "2024-09-25",
+          "form": "10-Q",
+          "fiscal_year": 2024,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "e7028d46-b1b7-5ed4-9325-32f1460479f4",
+          "company": "ADBE",
+          "concept": "Revenues",
+          "start": "2023-12-02",
+          "end": "2024-11-29",
+          "value": "21505000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0000796343-25-000004",
+          "filed": "2025-01-13",
+          "form": "10-K",
+          "fiscal_year": 2024,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000004/adbe-20241129.htm",
+        "filed": "2025-01-13",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000004/adbe-20241129.htm",
+          "sha256": "94dadd85fafd97f2a56302884fc8ededa7964e39ad37ccc183623a1790b6e5c3",
+          "body": "5f625f930d6c384dd1c9eef41ff9ccf783fc37b72f2b89dc2c84bfe33e2d0972-94dadd85fafd97f2a56302884fc8ededa7964e39ad37ccc183623a1790b6e5c3.body",
+          "fetched_at": "2026-11-12T10:40:36.250989+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0000796343-25-000004-filing.txt"
+      },
+      "result": {
+        "issued_date": "2024-12-11",
+        "formal_release_issued_date": "2024-12-11",
+        "issued_precision": "day",
+        "date_quote": "Dec. 11, 2024",
+        "filed": "2024-12-11",
+        "accession": "0000796343-24-000250",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000250/adbeex991q424.htm",
+        "reported_revenue_quote": "Total revenue 5,606 5,048 21,505 19,409",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "db1236ffe1f77aab3c72cbae269981ed63ead81e1dd1d1d40f09481603842a54",
+        "fetched_at": "2026-11-12T10:27:26.419411+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.153924+00:00",
+        "guidance_id": "943db843-f2f6-5304-8af1-768f655f4e69",
+        "actual_id": "a890fda1-9385-5e08-a8c9-e2c179b06211",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000200/adbeex991q324.htm",
+            "filed_date": "2024-09-12"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000250/adbeex991q424.htm",
+            "filed_date": "2024-12-11"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000004/adbe-20241129.htm",
+            "filed_date": "2025-01-13"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2024-12-11"
+    },
+    {
+      "company": "ADBE",
+      "target": {
+        "start": "2024-11-30",
+        "end": "2025-02-28",
+        "label": "Q1 FY2025",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "4092b1fe-aebe-5693-997f-d6ab62f6c620",
+          "company": "ADBE",
+          "issued": {
+            "start": "2024-12-11",
+            "end": "2024-12-11",
+            "precision": "day"
+          },
+          "filed": "2024-12-11",
+          "start": "2024-11-30",
+          "end": "2025-02-28",
+          "low": "5630000000.00",
+          "high": "5680000000.00",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0000796343-24-000250",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000250/adbeex991q424.htm",
+          "quote": "first quarter fiscal year 2025 targets 2 : Total revenue $5.63 billion to $5.68 billion ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "4092b1fe-aebe-5693-997f-d6ab62f6c620",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000250/adbeex991q424.htm",
+          "source_sha256": "db1236ffe1f77aab3c72cbae269981ed63ead81e1dd1d1d40f09481603842a54",
+          "fetched_at": "2026-11-12T10:27:26.419411+00:00",
+          "issuance_date_quote": "Dec. 11, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000250/adbe-20241211.htm",
+          "exhibit_index_quote": "99.1 Press release issued on December 11 , 2024 entitled \u201cAdobe Reports Record Q 4 and Fiscal 2024 Revenue \u201d"
+        }
+      ],
+      "actual": {
+        "id": "04567782-c322-518d-bcb4-b2a65f830f24",
+        "company": "ADBE",
+        "concept": "Revenues",
+        "start": "2024-11-30",
+        "end": "2025-02-28",
+        "value": "5714000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0000796343-25-000059",
+        "filed": "2025-03-26",
+        "form": "10-Q",
+        "fiscal_year": 2025,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000059/adbe-20250228.htm",
+        "filed": "2025-03-26",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000059/adbe-20250228.htm",
+          "sha256": "8aff1cf6caed4acdd1317fa2bbae115e41032986ff5ef0decc78e97a3b726cee",
+          "body": "7331c2ab179766d899c3f9a010afbc180209ea7b951ee3be3d34f71e88b58192-8aff1cf6caed4acdd1317fa2bbae115e41032986ff5ef0decc78e97a3b726cee.body",
+          "fetched_at": "2026-11-12T10:40:37.659221+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0000796343-25-000059-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-03-12",
+        "formal_release_issued_date": "2025-03-12",
+        "issued_precision": "day",
+        "date_quote": "March 12, 2025",
+        "filed": "2025-03-12",
+        "accession": "0000796343-25-000052",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000052/adbeex991q125.htm",
+        "reported_revenue_quote": "Total revenue 5,714 5,182",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "08ff5f4a0361a077ebf12fc20e3f943b166ed3d68194a63cee4f54d618ff3f77",
+        "fetched_at": "2026-11-12T10:27:27.647714+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.161104+00:00",
+        "guidance_id": "4092b1fe-aebe-5693-997f-d6ab62f6c620",
+        "actual_id": "04567782-c322-518d-bcb4-b2a65f830f24",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000250/adbeex991q424.htm",
+            "filed_date": "2024-12-11"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000052/adbeex991q125.htm",
+            "filed_date": "2025-03-12"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000059/adbe-20250228.htm",
+            "filed_date": "2025-03-26"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-03-12"
+    },
+    {
+      "company": "ADBE",
+      "target": {
+        "start": "2025-03-01",
+        "end": "2025-05-30",
+        "label": "Q2 FY2025",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "2053bcc5-9b6a-5ec5-8291-2e4ee2e6ba59",
+          "company": "ADBE",
+          "issued": {
+            "start": "2025-03-12",
+            "end": "2025-03-12",
+            "precision": "day"
+          },
+          "filed": "2025-03-12",
+          "start": "2025-03-01",
+          "end": "2025-05-30",
+          "low": "5770000000.00",
+          "high": "5820000000.00",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0000796343-25-000052",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000052/adbeex991q125.htm",
+          "quote": "second quarter fiscal year 2025 targets 1 : Total revenue $5.77 billion to $5.82 billion ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "2053bcc5-9b6a-5ec5-8291-2e4ee2e6ba59",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000052/adbeex991q125.htm",
+          "source_sha256": "08ff5f4a0361a077ebf12fc20e3f943b166ed3d68194a63cee4f54d618ff3f77",
+          "fetched_at": "2026-11-12T10:27:27.647714+00:00",
+          "issuance_date_quote": "March 12, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000052/adbe-20250312.htm",
+          "exhibit_index_quote": "99.1 P ress release issued on March 12, 2025 entitled \u201cAdobe Delivers Record Q1 Results\u201d"
+        }
+      ],
+      "actual": {
+        "id": "c8fa9f03-f259-5927-ae4b-07c0d841027d",
+        "company": "ADBE",
+        "concept": "Revenues",
+        "start": "2025-03-01",
+        "end": "2025-05-30",
+        "value": "5873000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0000796343-25-000073",
+        "filed": "2025-06-25",
+        "form": "10-Q",
+        "fiscal_year": 2025,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000073/adbe-20250530.htm",
+        "filed": "2025-06-25",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000073/adbe-20250530.htm",
+          "sha256": "2389563b6367b152de02b81abbd8a471df34d436d8a0c0a395ad14da255b2e3d",
+          "body": "3287fedfc7ce5e55a6a81dbba14fc72c13c48d40e149b287e967f5a81dd5074a-2389563b6367b152de02b81abbd8a471df34d436d8a0c0a395ad14da255b2e3d.body",
+          "fetched_at": "2026-11-12T10:40:38.399961+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0000796343-25-000073-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-06-12",
+        "formal_release_issued_date": "2025-06-12",
+        "issued_precision": "day",
+        "date_quote": "June 12, 2025",
+        "filed": "2025-06-12",
+        "accession": "0000796343-25-000064",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000064/adbeex991q225.htm",
+        "reported_revenue_quote": "Total revenue 5,873 5,309 11,587 10,491",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "4e365f283aeb94263b6a67816b35eadcba6a602ae001b3700be3a7bd9c1d5fbb",
+        "fetched_at": "2026-11-12T10:27:28.976267+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.167681+00:00",
+        "guidance_id": "2053bcc5-9b6a-5ec5-8291-2e4ee2e6ba59",
+        "actual_id": "c8fa9f03-f259-5927-ae4b-07c0d841027d",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000052/adbeex991q125.htm",
+            "filed_date": "2025-03-12"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000064/adbeex991q225.htm",
+            "filed_date": "2025-06-12"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000073/adbe-20250530.htm",
+            "filed_date": "2025-06-25"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-06-12"
+    },
+    {
+      "company": "ADBE",
+      "target": {
+        "start": "2025-05-31",
+        "end": "2025-08-29",
+        "label": "Q3 FY2025",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "bc676721-36d2-586e-b72a-97e04af6f2fd",
+          "company": "ADBE",
+          "issued": {
+            "start": "2025-06-12",
+            "end": "2025-06-12",
+            "precision": "day"
+          },
+          "filed": "2025-06-12",
+          "start": "2025-05-31",
+          "end": "2025-08-29",
+          "low": "5875000000.000",
+          "high": "5925000000.000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0000796343-25-000064",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000064/adbeex991q225.htm",
+          "quote": "third quarter fiscal year 2025 targets, which assumes current macroeconomic conditions 1 : Total revenue $5.875 billion to $5.925 billion ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "bc676721-36d2-586e-b72a-97e04af6f2fd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000064/adbeex991q225.htm",
+          "source_sha256": "4e365f283aeb94263b6a67816b35eadcba6a602ae001b3700be3a7bd9c1d5fbb",
+          "fetched_at": "2026-11-12T10:27:28.976267+00:00",
+          "issuance_date_quote": "June 12, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000064/adbe-20250612.htm",
+          "exhibit_index_quote": "99.1 Press release issued on June 12, 2025 entitled \u201cAdobe Reports Record Revenue in Q2 and Raises FY25 Revenue and EPS Targets\u201d"
+        }
+      ],
+      "actual": {
+        "id": "a5c0d918-79a7-578c-9273-e779e7f4f99a",
+        "company": "ADBE",
+        "concept": "Revenues",
+        "start": "2025-05-31",
+        "end": "2025-08-29",
+        "value": "5988000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0000796343-25-000107",
+        "filed": "2025-09-24",
+        "form": "10-Q",
+        "fiscal_year": 2025,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000107/adbe-20250829.htm",
+        "filed": "2025-09-24",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000107/adbe-20250829.htm",
+          "sha256": "cc1a6e5a20d7f16021e7cdef7f86217e40ec0344eaff900ed7046647b3d75127",
+          "body": "1a9deaeebbc32c4ed8ff94e195621ec773e14c706d317c6b9332f75c39ca20eb-cc1a6e5a20d7f16021e7cdef7f86217e40ec0344eaff900ed7046647b3d75127.body",
+          "fetched_at": "2026-11-12T10:40:39.100679+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0000796343-25-000107-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-09-11",
+        "formal_release_issued_date": "2025-09-11",
+        "issued_precision": "day",
+        "date_quote": "Sept. 11, 2025",
+        "filed": "2025-09-11",
+        "accession": "0000796343-25-000102",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000102/adbeex991q325.htm",
+        "reported_revenue_quote": "Total revenue 5,988 5,408 17,575 15,899",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "4cd51448d9376a921fcec261ea37211fefd123229668d5e29abd4332ecba84fb",
+        "fetched_at": "2026-11-12T10:27:30.242479+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.174561+00:00",
+        "guidance_id": "bc676721-36d2-586e-b72a-97e04af6f2fd",
+        "actual_id": "a5c0d918-79a7-578c-9273-e779e7f4f99a",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000064/adbeex991q225.htm",
+            "filed_date": "2025-06-12"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000102/adbeex991q325.htm",
+            "filed_date": "2025-09-11"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000107/adbe-20250829.htm",
+            "filed_date": "2025-09-24"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-09-11"
+    },
+    {
+      "company": "ADBE",
+      "target": {
+        "start": "2025-08-30",
+        "end": "2025-11-28",
+        "label": "Q4 FY2025",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "57807be0-c9a0-5ce4-ba88-b787def5f7cf",
+          "company": "ADBE",
+          "issued": {
+            "start": "2025-09-11",
+            "end": "2025-09-11",
+            "precision": "day"
+          },
+          "filed": "2025-09-11",
+          "start": "2025-08-30",
+          "end": "2025-11-28",
+          "low": "6075000000.000",
+          "high": "6125000000.000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0000796343-25-000102",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000102/adbeex991q325.htm",
+          "quote": "fourth quarter fiscal year 2025 targets, which assumes current macroeconomic conditions 1 : Total revenue $6.075 billion to $6.125 billion ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "57807be0-c9a0-5ce4-ba88-b787def5f7cf",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000102/adbeex991q325.htm",
+          "source_sha256": "4cd51448d9376a921fcec261ea37211fefd123229668d5e29abd4332ecba84fb",
+          "fetched_at": "2026-11-12T10:27:30.242479+00:00",
+          "issuance_date_quote": "Sept. 11, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000102/adbe-20250911.htm",
+          "exhibit_index_quote": "99.1 Press release issued on September 11, 2025 entitled \u201cAdobe Raises FY25 Digital Media ARR Growth, Total Revenue, and EPS Targets\u201d"
+        }
+      ],
+      "actual": {
+        "id": "4a112452-48b9-5d6f-9961-94d689154452",
+        "company": "ADBE",
+        "concept": "Revenues",
+        "start": "2025-08-30",
+        "end": "2025-11-28",
+        "value": "6194000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0000796343-26-000003",
+        "filed": "2026-01-15",
+        "form": "DERIVED",
+        "fiscal_year": 2025,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+        "parents": [
+          "a2ef2fac-145a-5869-acfa-6a56ab7dd9c4",
+          "536465d9-11fd-52e0-9170-d664f9eb7fc8"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "536465d9-11fd-52e0-9170-d664f9eb7fc8",
+          "company": "ADBE",
+          "concept": "Revenues",
+          "start": "2024-11-30",
+          "end": "2025-08-29",
+          "value": "17575000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0000796343-25-000107",
+          "filed": "2025-09-24",
+          "form": "10-Q",
+          "fiscal_year": 2025,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "a2ef2fac-145a-5869-acfa-6a56ab7dd9c4",
+          "company": "ADBE",
+          "concept": "Revenues",
+          "start": "2024-11-30",
+          "end": "2025-11-28",
+          "value": "23769000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0000796343-26-000003",
+          "filed": "2026-01-15",
+          "form": "10-K",
+          "fiscal_year": 2025,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+        "filed": "2026-01-15",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+          "sha256": "56cfc0b921d8a1d154dd851aeed77b4ba0325c51a38f842e463998898c6d76e0",
+          "body": "f31e0836af7bc24022da8ba788b253cff10fcd82a3963dc065a8dcf10bbfbd69-56cfc0b921d8a1d154dd851aeed77b4ba0325c51a38f842e463998898c6d76e0.body",
+          "fetched_at": "2026-11-12T10:40:39.804859+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0000796343-26-000003-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-12-10",
+        "formal_release_issued_date": "2025-12-10",
+        "issued_precision": "day",
+        "date_quote": "Dec. 10, 2025",
+        "filed": "2025-12-10",
+        "accession": "0000796343-25-000135",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+        "reported_revenue_quote": "Total revenue 6,194 5,606 23,769 21,505",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "5fd2619f5e70fc09b2d558525bc965209a31e9d0638f7b886405ffa9e8f31f79",
+        "fetched_at": "2026-11-11T23:48:35.760781+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.186339+00:00",
+        "guidance_id": "57807be0-c9a0-5ce4-ba88-b787def5f7cf",
+        "actual_id": "4a112452-48b9-5d6f-9961-94d689154452",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000102/adbeex991q325.htm",
+            "filed_date": "2025-09-11"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+            "filed_date": "2025-12-10"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+            "filed_date": "2026-01-15"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-12-10"
+    },
+    {
+      "company": "ADBE",
+      "target": {
+        "start": "2025-11-29",
+        "end": "2026-02-27",
+        "label": "Q1 FY2026",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "1515cf4f-d53f-542c-a786-4321a261155b",
+          "company": "ADBE",
+          "issued": {
+            "start": "2025-12-10",
+            "end": "2025-12-10",
+            "precision": "day"
+          },
+          "filed": "2025-12-10",
+          "start": "2025-11-29",
+          "end": "2026-02-27",
+          "low": "6250000000.00",
+          "high": "6300000000.00",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0000796343-25-000135",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+          "quote": "first quarter FY2026 targets 2 : Total revenue $6.25 billion to $6.30 billion ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "1515cf4f-d53f-542c-a786-4321a261155b",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+          "source_sha256": "5fd2619f5e70fc09b2d558525bc965209a31e9d0638f7b886405ffa9e8f31f79",
+          "fetched_at": "2026-11-11T23:48:35.760781+00:00",
+          "issuance_date_quote": "Dec. 10, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbe-20251210.htm",
+          "exhibit_index_quote": "99.1 Press release issued on December 10, 2025 entitled \u201cAdobe Reports Record Q4 and FY2025 Revenue\u201d"
+        }
+      ],
+      "actual": {
+        "id": "67c93245-8791-592c-a54a-c37e8e3d07a1",
+        "company": "ADBE",
+        "concept": "Revenues",
+        "start": "2025-11-29",
+        "end": "2026-02-27",
+        "value": "6398000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0000796343-26-000056",
+        "filed": "2026-03-25",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000056/adbe-20260227.htm",
+        "filed": "2026-03-25",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000056/adbe-20260227.htm",
+          "sha256": "dd468f3cce2532671763dc60f8f2f0dbfddb2adc3cdfea15ed181e6c2deb26fd",
+          "body": "2c72c96eedd2308b24b3060e741f75606291f029de1d0e33f093c02ba9fdcb0c-dd468f3cce2532671763dc60f8f2f0dbfddb2adc3cdfea15ed181e6c2deb26fd.body",
+          "fetched_at": "2026-11-12T10:40:40.500620+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0000796343-26-000056-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-03-12",
+        "formal_release_issued_date": "2026-03-12",
+        "issued_precision": "day",
+        "date_quote": "March 12, 2026",
+        "filed": "2026-03-12",
+        "accession": "0000796343-26-000048",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbeex991q126.htm",
+        "reported_revenue_quote": "Total revenue 6,398 5,714",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "ba9e0472ccba1f7e926f70f3ecbd17fe81aa865447694113b033562a8835720c",
+        "fetched_at": "2026-11-11T10:09:22.392321+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.193071+00:00",
+        "guidance_id": "1515cf4f-d53f-542c-a786-4321a261155b",
+        "actual_id": "67c93245-8791-592c-a54a-c37e8e3d07a1",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+            "filed_date": "2025-12-10"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbeex991q126.htm",
+            "filed_date": "2026-03-12"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000056/adbe-20260227.htm",
+            "filed_date": "2026-03-25"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-03-12"
+    },
+    {
+      "company": "ADBE",
+      "target": {
+        "start": "2026-02-28",
+        "end": "2026-05-29",
+        "label": "Q2 FY2026",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "0a890adf-1833-5ec9-8455-10f6ae14dc06",
+          "company": "ADBE",
+          "issued": {
+            "start": "2026-03-12",
+            "end": "2026-03-12",
+            "precision": "day"
+          },
+          "filed": "2026-03-12",
+          "start": "2026-02-28",
+          "end": "2026-05-29",
+          "low": "6430000000.00",
+          "high": "6480000000.00",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0000796343-26-000048",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbeex991q126.htm",
+          "quote": "second quarter FY2026 targets: Total revenue $6.43 billion to $6.48 billion ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "0a890adf-1833-5ec9-8455-10f6ae14dc06",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbeex991q126.htm",
+          "source_sha256": "ba9e0472ccba1f7e926f70f3ecbd17fe81aa865447694113b033562a8835720c",
+          "fetched_at": "2026-11-11T10:09:22.392321+00:00",
+          "issuance_date_quote": "March 12, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbe-20260309.htm",
+          "exhibit_index_quote": "99.1 Press release issued on March 12 , 202 6 entitled \u201c Adobe Delivers Record Q1 Results \u201d"
+        }
+      ],
+      "actual": {
+        "id": "c1900ef6-3165-5fad-a7a6-0ff688a853bd",
+        "company": "ADBE",
+        "concept": "Revenues",
+        "start": "2026-02-28",
+        "end": "2026-05-29",
+        "value": "6618000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0000796343-26-000112",
+        "filed": "2026-06-15",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000112/adbe-20260529.htm",
+        "filed": "2026-06-15",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000112/adbe-20260529.htm",
+          "sha256": "798373bba15e29c96cb62d214d75fdb9ca7e8e71604d63a939d70ec775dcea4f",
+          "body": "e3e7edfe9e46e32ff2e1edcbb53f47e0802f61022f19f2def5f3f06ea8ece1e0-798373bba15e29c96cb62d214d75fdb9ca7e8e71604d63a939d70ec775dcea4f.body",
+          "fetched_at": "2026-11-12T10:40:41.143463+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0000796343-26-000112-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-06-11",
+        "formal_release_issued_date": "2026-06-11",
+        "issued_precision": "day",
+        "date_quote": "June 11, 2026",
+        "filed": "2026-06-11",
+        "accession": "0000796343-26-000109",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm",
+        "reported_revenue_quote": "Total revenue 6,618 5,873 13,016 11,587",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "bcf8f786660fa356e3e123c541346ffb35b9e70633e4f7540d647572511c4fd6",
+        "fetched_at": "2026-11-11T10:09:23.043398+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.199904+00:00",
+        "guidance_id": "0a890adf-1833-5ec9-8455-10f6ae14dc06",
+        "actual_id": "c1900ef6-3165-5fad-a7a6-0ff688a853bd",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbeex991q126.htm",
+            "filed_date": "2026-03-12"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm",
+            "filed_date": "2026-06-11"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000112/adbe-20260529.htm",
+            "filed_date": "2026-06-15"
+          }
+        ],
+        "scope_evidence": [
+          "ngs. Financial results and pro forma financial information have not been presented for the Semrush acquisition as the impact to our condensed consolidated financial statements was not material. NOTE 4. CASH, CASH EQUIVALENTS AND SHORT-TERM INVESTMENTS Cash equivalents consist of highly liquid marketable securities with remaining maturities of three months or less at the date of purchase. We classify our inves"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-06-11"
+    },
+    {
+      "company": "ADBE",
+      "target": {
+        "start": "2026-05-30",
+        "end": "2026-08-28",
+        "label": "Q3 FY2026",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "e8524bc3-89c0-5a87-965e-9a97fe4dea07",
+          "company": "ADBE",
+          "issued": {
+            "start": "2026-06-11",
+            "end": "2026-06-11",
+            "precision": "day"
+          },
+          "filed": "2026-06-11",
+          "start": "2026-05-30",
+          "end": "2026-08-28",
+          "low": "6670000000.00",
+          "high": "6720000000.00",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0000796343-26-000109",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm",
+          "quote": "third quarter FY2026 targets: Total revenue $6.67 billion to $6.72 billion ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "e8524bc3-89c0-5a87-965e-9a97fe4dea07",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm",
+          "source_sha256": "bcf8f786660fa356e3e123c541346ffb35b9e70633e4f7540d647572511c4fd6",
+          "fetched_at": "2026-11-11T10:09:23.043398+00:00",
+          "issuance_date_quote": "June 11, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbe-20260608.htm",
+          "exhibit_index_quote": "99.1 Press release issued on June 11 , 2026 entitled \u201c Adobe Reports Record Q 2 Results \u201d"
+        }
+      ],
+      "actual": {
+        "id": "2e97365c-03d8-5519-bfed-13d8cebf6dac",
+        "company": "ADBE",
+        "concept": "Revenues",
+        "start": "2026-05-30",
+        "end": "2026-08-28",
+        "value": "6760000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0000796343-26-000156",
+        "filed": "2026-09-22",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+        "filed": "2026-09-22",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+          "sha256": "d40f2a2b5d14bcdd11e9977d4c94f066ca345078f31eec551a98477460f24215",
+          "body": "4a6c928755954090072d66e79edd32a4f957fc562910ba5915bd65375a9c3f00-d40f2a2b5d14bcdd11e9977d4c94f066ca345078f31eec551a98477460f24215.body",
+          "fetched_at": "2026-11-12T08:11:48.666926+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0000796343-26-000156-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-09-10",
+        "formal_release_issued_date": "2026-09-10",
+        "issued_precision": "day",
+        "date_quote": "Sept. 10, 2026",
+        "filed": "2026-09-10",
+        "accession": "0000796343-26-000147",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+        "reported_revenue_quote": "Total revenue 6,760 5,988 19,776 17,575",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "24da9b5927cdb491c398249a90eb2c6ef2a28fee050a2b89bafba8955ae973a4",
+        "fetched_at": "2026-11-11T10:09:23.640187+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.206682+00:00",
+        "guidance_id": "e8524bc3-89c0-5a87-965e-9a97fe4dea07",
+        "actual_id": "2e97365c-03d8-5519-bfed-13d8cebf6dac",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm",
+            "filed_date": "2026-06-11"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+            "filed_date": "2026-09-10"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+            "filed_date": "2026-09-22"
+          }
+        ],
+        "scope_evidence": [
+          "ngs. Financial results and pro forma financial information have not been presented for the Semrush acquisition as the impact to our condensed consolidated financial statements was not material. NOTE 4. CASH, CASH EQUIVALENTS AND SHORT-TERM INVESTMENTS Cash equivalents consist of highly liquid marketable securities with remaining maturities of three months or less at the date of purchase. We classify our inves"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-09-10"
+    }
+  ]
+}

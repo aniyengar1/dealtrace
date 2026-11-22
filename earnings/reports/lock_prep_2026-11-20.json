@@ -1,0 +1,423 @@
+{
+  "companies": [
+    {
+      "actuals_manifest": {
+        "body": "59bd2e3d197ca7660d3c289cb769d88c8aa4bf7d9f4fef601938bb29960d9f4e-5f900199621c5922f358c542d0fb942df930d4fe391724686f2625149fc1ee54.body",
+        "fetched_at": "2026-11-20T09:48:27.133771+00:00",
+        "sha256": "5f900199621c5922f358c542d0fb942df930d4fe391724686f2625149fc1ee54",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json"
+      },
+      "announcement": {
+        "announcement_issued_date": "2026-11-17",
+        "cached_body": "data/cache/earnings/ir-dates/fe18d72c505e966b547c2715cf1249cad972d290cfa4fb228c26d1580eb73daa-aa5483eb912f4c6b73407fbc01020e8cdeb3716e46fa95b9b55795bfe40e814d.body",
+        "checked_at": "2026-11-20T09:49:09.043678+00:00",
+        "company": "GTLB",
+        "event_kind": "results_release",
+        "fiscal_period": {
+          "available_on": "2026-09-01",
+          "boundary_evidence": {
+            "accession": "0001628280-26-059820",
+            "filed_date": "2026-09-01",
+            "prior_actual_accession": "0001628280-25-054840",
+            "prior_actual_id": "c14acb73-8f6e-5174-b068-45c2bf6a085a",
+            "rule": "Three calendar months on the registered month-based fiscal calendar",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm"
+          },
+          "end": "2026-10-31",
+          "growth_comparability": {
+            "available_on": "2026-11-11",
+            "blocked": false,
+            "reason": "Consolidated revenue reconciled to current release and prior-year annual/YTD statements.",
+            "sources": [
+              "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm"
+            ]
+          },
+          "label": "Q3 FY2027",
+          "outcome_comparability": {
+            "available_on": "2026-11-11",
+            "blocked": true,
+            "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+            "sources": [
+              "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm"
+            ]
+          },
+          "prior_end": "2025-10-31",
+          "prior_start": "2025-08-01",
+          "start": "2026-08-01"
+        },
+        "id": "bb8e494b-337f-599d-9e2d-ed8693601237",
+        "quote": "GitLab Inc., (NASDAQ: GTLB), the intelligent orchestration platform for DevSecOps, today announced that it will report its financial results for the third quarter fiscal year 2027, which ended October 31, 2026, after U.S. markets close on Tuesday, December 1, 2026.",
+        "release_date": "2026-12-01",
+        "release_time": "after_market_close",
+        "retrieved_at": "2026-11-20T09:49:09.960240+00:00",
+        "review_note": "Full announcement reviewed for identity, Q3 FY2027 ended October31, November17 dateline, December1 after-close results publication; separate 1:30PT call is not the release deadline.",
+        "source_sha256": "aa5483eb912f4c6b73407fbc01020e8cdeb3716e46fa95b9b55795bfe40e814d",
+        "source_url": "https://ir.gitlab.com/news/news-details/2026/GitLab-To-Announce-Third-Quarter-Fiscal-2027-Financial-Results/default.aspx",
+        "time_precision": "market_session",
+        "timestamp_verified": false,
+        "timezone": "America/New_York",
+        "timezone_provenance": "U.S. market-close context; conservative start of release date; call clock is separate.",
+        "verification_method": "direct_http_official_ir_full_document",
+        "verification_status": "independently_verified",
+        "verified_at": "2026-11-20T10:06:10.176463+00:00",
+        "verifier": "Codex"
+      },
+      "company": "GTLB",
+      "guidance": [
+        {
+          "accession": "0001628280-26-059820",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "GTLB",
+          "end": "2026-10-31",
+          "exhibit": "99.1",
+          "filed": "2026-09-01",
+          "high": "283000000",
+          "id": "acbb63cf-a5ed-5c74-a414-e6a5e957b408",
+          "issued": {
+            "end": "2026-09-01",
+            "precision": "day",
+            "start": "2026-09-01"
+          },
+          "low": "281000000",
+          "metric": "quarterly_consolidated_revenue",
+          "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+          "original_verified": true,
+          "quote": "Q3 FY 2027 Guidance FY 2027 Guidance Revenue $281 - $283 $1,129 - $1,133 Non-GAAP operating income $35 - $37 $148 - $152 Non-GAAP diluted net income per share assuming approximately 172 million and 172 million weighted average sh",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm",
+          "start": "2026-08-01",
+          "status": "initial",
+          "unit": "USD"
+        }
+      ],
+      "latest_actual_end": "2026-07-31",
+      "latest_actual_records": [
+        {
+          "accession": "0001628280-26-059943",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "GTLB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2026-07-31",
+          "filed": "2026-09-02",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "fc5e4db7-8178-5f6b-94ce-527052ae2657",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+          "start": "2026-02-01",
+          "unit": "USD",
+          "value": "550412000"
+        },
+        {
+          "accession": "0001628280-26-059943",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "GTLB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2026-07-31",
+          "filed": "2026-09-02",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "362a234f-cb11-51d3-9e45-c2bea07414d1",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+          "start": "2026-05-01",
+          "unit": "USD",
+          "value": "286254000"
+        }
+      ],
+      "opening": "2026-11-14T00:00:00-05:00",
+      "owner_form": "data/cache/earnings/prep-20261120/GTLB-owner-check-UNSIGNED.json",
+      "remaining_checks": [
+        "Unsigned owner current-state attestation",
+        "Fresh independent SEC/publication verification within ten minutes",
+        "No contradicting disclosure or schedule change",
+        "Explicit owner lock instruction"
+      ],
+      "strict_deadline": "2026-12-01T00:00:00-05:00",
+      "timing_status": "INSIDE_WINDOW; not authorization or full lock eligibility"
+    },
+    {
+      "actuals_manifest": {
+        "body": "1e27b7df0f8dd2a173fb0e3d30ac0385e1c9ba7db1c1d186a2c469d75dcc2eb4-a71a92f1f11bd3032271ca55be7a7770a96a846ec809f925829ef952fd5f3fa1.body",
+        "fetched_at": "2026-11-20T09:48:28.576577+00:00",
+        "sha256": "a71a92f1f11bd3032271ca55be7a7770a96a846ec809f925829ef952fd5f3fa1",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json"
+      },
+      "announcement": {
+        "announcement_issued_date": "2026-11-04",
+        "authenticity_limit": "SHA-256 proves byte integrity, not document authenticity or current website contents",
+        "checked_at": "2026-11-20T09:46:51.019345+00:00",
+        "company": "CRWD",
+        "entered_at": "2026-11-20T09:46:51.019345+00:00",
+        "event_kind": "results_release",
+        "fiscal_period": {
+          "end": "2026-10-31",
+          "label": "Q3 FY2027",
+          "start": "2026-08-01"
+        },
+        "gaps": [],
+        "id": "92fce228-e081-5122-a8f4-d3ae353a5f7e",
+        "independently_checked": false,
+        "ingested_at": "2026-11-20T09:46:50.925797+00:00",
+        "owner_intake_id": "86d506f4-c3df-46d7-bbef-eab075ac51e9",
+        "owner_retrieved_at": "2026-11-20T01:35:00-08:00",
+        "quote": "CrowdStrike Holdings, Inc. (Nasdaq: CRWD), today announced that it will release financial results for its fiscal third quarter 2027 ended October 31, 2026 after the U.S. market close on Tuesday, December 1, 2026.",
+        "quotes": {
+          "announcement_date": "November 4, 2026",
+          "company": "CrowdStrike Holdings, Inc. (Nasdaq: CRWD), today announced that it will release financial results for its fiscal third quarter 2027 ended October 31, 2026 after the U.S. market close on Tuesday, December 1, 2026.",
+          "fiscal_period": "CrowdStrike Holdings, Inc. (Nasdaq: CRWD), today announced that it will release financial results for its fiscal third quarter 2027 ended October 31, 2026 after the U.S. market close on Tuesday, December 1, 2026.",
+          "release_date": "CrowdStrike Holdings, Inc. (Nasdaq: CRWD), today announced that it will release financial results for its fiscal third quarter 2027 ended October 31, 2026 after the U.S. market close on Tuesday, December 1, 2026.",
+          "release_time": "CrowdStrike Holdings, Inc. (Nasdaq: CRWD), today announced that it will release financial results for its fiscal third quarter 2027 ended October 31, 2026 after the U.S. market close on Tuesday, December 1, 2026.",
+          "results_publication": "CrowdStrike Holdings, Inc. (Nasdaq: CRWD), today announced that it will release financial results for its fiscal third quarter 2027 ended October 31, 2026 after the U.S. market close on Tuesday, December 1, 2026."
+        },
+        "release_date": "2026-12-01",
+        "release_time": "after_market_close",
+        "review_note": "Reviewed identity, Q3 FY2027 ended October 31, issuance dateline and explicit results publication, separate from call. Owner retrieval time preserved; MongoDB corrected by supplier from 01:29 to 01:21. Hash is integrity evidence, not authenticity. No current-state attestation or lock.",
+        "reviewed_by": "Codex (document-content review; owner-supplied provenance)",
+        "source_sha256": "9fb31601a2e224375bf88d52560553aec646d14c709d5a679920487834da7d5c",
+        "source_url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-announces-date-fiscal-third-quarter-2027-financial",
+        "supplied_by": "Anirudh Iyengar",
+        "time_precision": "market_session",
+        "timestamp_verified": false,
+        "timezone": "America/New_York",
+        "timezone_provenance": "U.S. financial-market close context; conservative midnight start of release date, not conference-call time.",
+        "verification_method": "owner_pdf_document_review_v1",
+        "verification_status": "user_verified",
+        "verified_at": "2026-11-20T09:46:51.019345+00:00",
+        "verifier": "Codex (document-content review; owner-supplied provenance)"
+      },
+      "company": "CRWD",
+      "guidance": [
+        {
+          "accession": "0001535527-26-000029",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "CRWD",
+          "end": "2026-10-31",
+          "exhibit": "99.1",
+          "filed": "2026-08-26",
+          "high": "1529200000",
+          "id": "f6ff18dc-8880-5f65-b254-cdbbf1a488ba",
+          "issued": {
+            "end": "2026-08-26",
+            "precision": "day",
+            "start": "2026-08-26"
+          },
+          "low": "1523200000",
+          "metric": "quarterly_consolidated_revenue",
+          "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+          "original_verified": true,
+          "quote": "Total revenue $1,523.2 - $1,529.2 million $5,991.1 - $6,011.1 million Non-GAAP income from operations $372.7 - $375.9 mill",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+          "start": "2026-08-01",
+          "status": "initial",
+          "unit": "USD"
+        }
+      ],
+      "latest_actual_end": "2026-07-31",
+      "latest_actual_records": [
+        {
+          "accession": "0001535527-26-000031",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "CRWD",
+          "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+          "derivation": null,
+          "end": "2026-07-31",
+          "filed": "2026-08-27",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "76c32b45-9444-5cb0-b1d8-3c83c8ca26a6",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+          "start": "2026-02-01",
+          "unit": "USD",
+          "value": "2856526000"
+        },
+        {
+          "accession": "0001535527-26-000031",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "CRWD",
+          "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+          "derivation": null,
+          "end": "2026-07-31",
+          "filed": "2026-08-27",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "44f21ec7-5ad8-58a6-b657-24b0f4f08c13",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+          "start": "2026-05-01",
+          "unit": "USD",
+          "value": "1470897000"
+        }
+      ],
+      "opening": "2026-11-14T00:00:00-05:00",
+      "owner_form": "data/cache/earnings/prep-20261120/CRWD-owner-check-UNSIGNED.json",
+      "remaining_checks": [
+        "Unsigned owner current-state attestation",
+        "Fresh independent SEC/publication verification within ten minutes",
+        "No contradicting disclosure or schedule change",
+        "Explicit owner lock instruction"
+      ],
+      "strict_deadline": "2026-12-01T00:00:00-05:00",
+      "timing_status": "INSIDE_WINDOW; not authorization or full lock eligibility"
+    },
+    {
+      "actuals_manifest": {
+        "body": "7c980d76b24dbaa6bf765a7ba383025f32d90e5130467cf454a52b80b74b3530-8947052d6912d9ac6b35470f5e331ef6fe1f4b4cf782fab20822c9cb66738997.body",
+        "fetched_at": "2026-11-20T09:48:39.708437+00:00",
+        "sha256": "8947052d6912d9ac6b35470f5e331ef6fe1f4b4cf782fab20822c9cb66738997",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json"
+      },
+      "announcement": {
+        "announcement_issued_date": "2026-11-05",
+        "authenticity_limit": "SHA-256 proves byte integrity, not document authenticity or current website contents",
+        "checked_at": "2026-11-20T09:46:51.041023+00:00",
+        "company": "MDB",
+        "entered_at": "2026-11-20T09:46:51.041023+00:00",
+        "event_kind": "results_release",
+        "fiscal_period": {
+          "end": "2026-10-31",
+          "label": "Q3 FY2027",
+          "start": "2026-08-01"
+        },
+        "gaps": [],
+        "id": "2f70fb99-20fe-598d-a1a6-41bc11e04ca1",
+        "independently_checked": false,
+        "ingested_at": "2026-11-20T09:46:51.020544+00:00",
+        "owner_intake_id": "2098548e-3c7f-4f50-9128-1de89610a4d6",
+        "owner_retrieved_at": "2026-11-20T01:21:00-08:00",
+        "quote": "MongoDB, Inc. (NASDAQ: MDB) will report its third quarter fiscal year 2027 financial results for the three months ended October 31, 2026, after the U.S. financial markets close on Tuesday, December 1, 2026.",
+        "quotes": {
+          "announcement_date": "November 5, 2026",
+          "company": "MongoDB, Inc. (NASDAQ: MDB) will report its third quarter fiscal year 2027 financial results for the three months ended October 31, 2026, after the U.S. financial markets close on Tuesday, December 1, 2026.",
+          "fiscal_period": "MongoDB, Inc. (NASDAQ: MDB) will report its third quarter fiscal year 2027 financial results for the three months ended October 31, 2026, after the U.S. financial markets close on Tuesday, December 1, 2026.",
+          "release_date": "MongoDB, Inc. (NASDAQ: MDB) will report its third quarter fiscal year 2027 financial results for the three months ended October 31, 2026, after the U.S. financial markets close on Tuesday, December 1, 2026.",
+          "release_time": "MongoDB, Inc. (NASDAQ: MDB) will report its third quarter fiscal year 2027 financial results for the three months ended October 31, 2026, after the U.S. financial markets close on Tuesday, December 1, 2026.",
+          "results_publication": "MongoDB, Inc. (NASDAQ: MDB) will report its third quarter fiscal year 2027 financial results for the three months ended October 31, 2026, after the U.S. financial markets close on Tuesday, December 1, 2026."
+        },
+        "release_date": "2026-12-01",
+        "release_time": "after_market_close",
+        "review_note": "Reviewed identity, Q3 FY2027 ended October 31, issuance dateline and explicit results publication, separate from call. Owner retrieval time preserved; MongoDB corrected by supplier from 01:29 to 01:21. Hash is integrity evidence, not authenticity. No current-state attestation or lock.",
+        "reviewed_by": "Codex (document-content review; owner-supplied provenance)",
+        "source_sha256": "bb8153d7363709fa19d7f6b32bb190d8467e45387f282a86c9ce8d80a1ea4136",
+        "source_url": "https://investors.mongodb.com/node/14771/pdf",
+        "supplied_by": "Anirudh Iyengar",
+        "time_precision": "market_session",
+        "timestamp_verified": false,
+        "timezone": "America/New_York",
+        "timezone_provenance": "U.S. financial-market close context; conservative midnight start of release date, not conference-call time.",
+        "verification_method": "owner_pdf_document_review_v1",
+        "verification_status": "user_verified",
+        "verified_at": "2026-11-20T09:46:51.041023+00:00",
+        "verifier": "Codex (document-content review; owner-supplied provenance)"
+      },
+      "company": "MDB",
+      "guidance": [
+        {
+          "accession": "0001628280-26-059794",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "MDB",
+          "end": "2026-10-31",
+          "exhibit": "99.1",
+          "filed": "2026-09-01",
+          "high": "761000000",
+          "id": "6bad7bb3-f126-5ebe-97c1-24329e436e43",
+          "issued": {
+            "end": "2026-09-01",
+            "precision": "day",
+            "start": "2026-09-01"
+          },
+          "low": "756000000",
+          "metric": "quarterly_consolidated_revenue",
+          "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+          "original_verified": true,
+          "quote": "Third Quarter Fiscal 2027 Guidance Based on information available to management as of today, September 1, 2026, MongoDB is issuing the following financial guidance for the third quarter fiscal 2027. Revenues are expected to be in the range of: $756 million to $761 million GAAP Non-GAAP Income (Loss) from Operations are expected to be in the range of: $(14.5) million to $(10.5) million $1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm",
+          "start": "2026-08-01",
+          "status": "initial",
+          "unit": "USD"
+        },
+        {
+          "accession": "0001628280-26-063657",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "MDB",
+          "end": "2026-10-31",
+          "exhibit": "99.1",
+          "filed": "2026-09-28",
+          "high": "761000000",
+          "id": "c9ec8438-b130-526e-b905-0cb8c0c3815e",
+          "issued": {
+            "end": "2026-09-28",
+            "precision": "day",
+            "start": "2026-09-28"
+          },
+          "low": "756000000",
+          "metric": "quarterly_consolidated_revenue",
+          "notes": "Explicit reaffirmation of Q3 and full-year guidance from September 1. Quarterly dollar bounds retain the September 1 evidence.",
+          "original_verified": false,
+          "quote": "The company remains confident in the outlook for the business and is reaffirming its  guidance for Q3 and the full year fiscal 2027 provided on September 1st, 2026.    Investor Day     MongoDB will be hosting an Investor Day at Nasdaq MarketSite on Tuesday, September  29th from 11:00 am\u20133:15 pm ET. The MongoDB leadership team will share an in-depth look  at our long-term strategy, market opportunities, and product in",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026063657/pressreleasedatedseptemb.htm",
+          "start": "2026-08-01",
+          "status": "reaffirmed",
+          "unit": "USD"
+        }
+      ],
+      "latest_actual_end": "2026-07-31",
+      "latest_actual_records": [
+        {
+          "accession": "0001628280-26-059830",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "MDB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2026-07-31",
+          "filed": "2026-09-01",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "d7b2a391-1996-54eb-90b2-51ddbe23d7bc",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+          "start": "2026-02-01",
+          "unit": "USD",
+          "value": "1459389000"
+        },
+        {
+          "accession": "0001628280-26-059830",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "MDB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2026-07-31",
+          "filed": "2026-09-01",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "870d987b-e8fa-5436-9560-ea5308620d0b",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+          "start": "2026-05-01",
+          "unit": "USD",
+          "value": "771773000"
+        }
+      ],
+      "opening": "2026-11-14T00:00:00-05:00",
+      "owner_form": "data/cache/earnings/prep-20261120/MDB-owner-check-UNSIGNED.json",
+      "remaining_checks": [
+        "Unsigned owner current-state attestation",
+        "Fresh independent SEC/publication verification within ten minutes",
+        "No contradicting disclosure or schedule change",
+        "Explicit owner lock instruction"
+      ],
+      "strict_deadline": "2026-12-01T00:00:00-05:00",
+      "timing_status": "INSIDE_WINDOW; not authorization or full lock eligibility"
+    }
+  ],
+  "purpose": "preparation only; no lock/current owner attestation",
+  "reviewed_at": "2026-11-20T10:07:56.820666+00:00"
+}

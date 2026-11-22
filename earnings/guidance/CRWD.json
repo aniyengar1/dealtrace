@@ -1,0 +1,141 @@
+{
+  "history_review": {
+    "cutoff": "2026-11-12",
+    "scope": "Manual review of all SEC 8-K/8-K/A filings and linked 99.x/earnings/investor exhibits from December 2025 through November 11, 2026; includes non-earnings reaffirmations.",
+    "sources_reviewed": [
+      "https://www.sec.gov/Archives/edgar/data/1535527/000110465925124912/tm2534248d1_8k.htm",
+      "https://www.sec.gov/Archives/edgar/data/1535527/000110465926076376/tm2618192d1_8k.htm",
+      "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000030/crwd-20251202.htm",
+      "https://www.sec.gov/Archives/edgar/data/1535527/000153552725000030/crwd-20251202xex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303.htm",
+      "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000013/crwd-20260406.htm",
+      "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000013/sharerepurchaseincreasepre.htm",
+      "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000018/crwd-20260416.htm",
+      "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603.htm",
+      "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826.htm",
+      "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
+    ],
+    "original_verified": true,
+    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness.",
+    "latest_actual_release": {
+      "ytd_end": "2026-07-31",
+      "issued_date": "2026-08-26",
+      "filed_date": "2026-08-26",
+      "accession": "0001535527-26-000029",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+      "period_quote": "gs, Inc. (Nasdaq: CRWD), today announced financial results for the second quarter fiscal year 2027, ended July 31, 2026",
+      "source_sha256": "40fe219bb8e11d46d665cd8f565484b80d6e62d8dd6a1492339a5125a0656d66"
+    },
+    "quarterly_scope": {
+      "target": "Q3 FY2027",
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "cutoff": "2026-11-12",
+      "note": "Reviewed existing SEC source inventory after quarter issuance. MongoDB September 28 explicitly reaffirms Q3; Salesforce October 20 mentions FY27 only and is not treated as quarterly reaffirmation. No inferred quarterly reaffirmations from annual-only statements."
+    },
+    "session2_incremental_review": {
+      "as_of": "2026-11-12",
+      "source_url": "https://data.sec.gov/submissions/CIK0001535527.json",
+      "fetched_at": "2026-11-12T08:12:39.229203+00:00",
+      "sha256": "e197d631d198a73e2e6a2064d2c539136d3d6bab8b825b40ec7de0ecfcc08306",
+      "scope": "Filings dated November 12 after the prior November 11 review; no new filings found in SEC recent submissions."
+    }
+  },
+  "versions": [
+    {
+      "issued_date": "2026-03-03",
+      "filed_date": "2026-03-03",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "5867600000.0000",
+      "high": "5927600000.0000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001535527-26-000007",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm"
+      },
+      "quote": "Full Year FY27 Guidance Annual recurring revenue $5,501.8 - $5,503.8 million $6,465.8 - $6,516.4 million Total revenue $1,360.0 - $1,364.0 million $5,867.6 - $5,927.6 million Non-GAAP income from operations $308.0 - $310.4 million $1,422.2 - $1,462.2 million Non-GAAP net income attributable to CrowdStrike $275.2 - $277.1 million $1,241.0 - $1,271.1 million Non-GAAP net income per share attributable to CrowdStrike com",
+      "original_verified": true,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-06-03",
+      "filed_date": "2026-06-03",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "5914700000.0000",
+      "high": "5958700000.0000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "raised",
+      "source": {
+        "accession": "0001535527-26-000022",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm"
+      },
+      "quote": "Full Year FY27 Guidance Annual recurring revenue $5,792.6 - $5,794.6 million $6,531.7 - $6,555.5 million Total revenue $1,436.0 - $1,442.0 million $5,914.7 - $5,958.7 million Non-GAAP income from operations $345.6 - $349.1 million $1,452.3 - $1,480.3 million Non-GAAP net income attributable to CrowdStrike $300.7 - $303.4 million $1,263.1 - $1,285.2 million Non-GAAP net income per share attributable to CrowdStrike com",
+      "original_verified": false,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-08-26",
+      "filed_date": "2026-08-26",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "5991100000.0000",
+      "high": "6011100000.0000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "raised",
+      "source": {
+        "accession": "0001535527-26-000029",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
+      },
+      "quote": "Full Year FY27 Guidance Annual recurring revenue $6,184.4 - $6,188.4 million $6,603.0 - $6,611.9 million Total revenue $1,523.2 - $1,529.2 million $5,991.1 - $6,011.1 million Non-GAAP income from operations $372.7 - $375.9 million $1,497.2 - $1,508.4 million Non-GAAP net income attributable to CrowdStrike $325.4 - $327.9 million $1,302.7 - $1,311.6 million Non-GAAP net income per share attributable to CrowdStrike com",
+      "original_verified": false,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-08-26",
+      "filed_date": "2026-08-26",
+      "fiscal_period": {
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "label": "Q3 FY2027"
+      },
+      "metric": "quarterly_consolidated_revenue",
+      "low": "1523200000",
+      "high": "1529200000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001535527-26-000029",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
+      },
+      "quote": "Total revenue $1,523.2 - $1,529.2 million $5,991.1 - $6,011.1 million Non-GAAP income from operations $372.7 - $375.9 mill",
+      "original_verified": true,
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "source_sha256": "40fe219bb8e11d46d665cd8f565484b80d6e62d8dd6a1492339a5125a0656d66"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "diagnostic_only": true,
+  "execution_fingerprint": "746b8a53f4f6c5d1fbbefbab81868d4c21b7b0c71a8a2ba94835871cfc8e5b05",
+  "fresh_inference_forbidden": true,
+  "fresh_reservation_commit": "6e085a5",
+  "frozen_at": "2026-11-13T20:34:26.603041+00:00",
+  "policy": "Owner-authorized operational reservation estimates; no documented/provider billing cap claimed. Prompt/schema/validation unchanged; generation/counting/control provenance version bumped before any actual inference.",
+  "prompt_version": "hybrid-diagnostic-v2-owner-estimate"
+}

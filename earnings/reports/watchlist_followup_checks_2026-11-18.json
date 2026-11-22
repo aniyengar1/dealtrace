@@ -1,0 +1,38 @@
+{
+  "checks": [
+    {
+      "checked_at": "2026-11-18T06:40:45.467308+00:00",
+      "company": "ADBE",
+      "fetched_at": "2026-11-18T06:40:45.655670+00:00",
+      "http_status": 200,
+      "passages": [
+        "in Adobe for upcoming investor conferences or access information about past events. Upcoming events Q4 & FY2026 earnings call Wednesday, December 9, 2026 2:00pm Pacific Time Archived events 2026 2025 2024 2023 2022 2021 active tab 1 id events 2026 Q3 FY2026 earnings call September 10, 2026 Q2 FY2026 earnings call June 11, 2026 Adobe Summit 2026 Investor Session April 21, 2026 Q1 FY2026 earnings call March 12, 2026 tab events, 1 style m spacing 2025 Q4 & FY2025 earnings call December 10, 2025 Adobe MAX 2025 Investor Session Investor Presentation",
+        "ences or access information about past events. Upcoming events Q4 & FY2026 earnings call Wednesday, December 9, 2026 2:00pm Pacific Time Archived events 2026 2025 2024 2023 2022 2021 active tab 1 id events 2026 Q3 FY2026 earnings call September 10, 2026 Q2 FY2026 earnings call June 11, 2026 Adobe Summit 2026 Investor Session April 21, 2026 Q1 FY2026 earnings call March 12, 2026 tab events, 1 style m spacing 2025 Q4 & FY2025 earnings call December 10, 2025 Adobe MAX 2025 Investor Session Investor Presentation October 28, 2025 Bloomberg Intellige",
+        " 2026 2:00pm Pacific Time Archived events 2026 2025 2024 2023 2022 2021 active tab 1 id events 2026 Q3 FY2026 earnings call September 10, 2026 Q2 FY2026 earnings call June 11, 2026 Adobe Summit 2026 Investor Session April 21, 2026 Q1 FY2026 earnings call March 12, 2026 tab events, 1 style m spacing 2025 Q4 & FY2025 earnings call December 10, 2025 Adobe MAX 2025 Investor Session Investor Presentation October 28, 2025 Bloomberg Intelligence: Tech Disruptors - Why AI Will Accelerate Creative Cloud with Dan Durn, Adobe CFO October 17, 2025 Q3 FY202"
+      ],
+      "relevant_links": [],
+      "sha256": "a2bd6b3b9da0c376ce2a5b8149a8384474ea3bc89bfc91373f8c4747d741641b",
+      "url": "https://www.adobe.com/investor-relations/events-presentations.html"
+    },
+    {
+      "checked_at": "2026-11-18T06:40:45.666401+00:00",
+      "company": "LULU",
+      "fetched_at": "2026-11-18T06:40:46.158241+00:00",
+      "http_status": 200,
+      "passages": [],
+      "relevant_links": [
+        {
+          "href": "/newsroom/press-releases/2026/08-20-2026-113008522",
+          "text": "lululemon athletica inc. Announces Second Quarter Fiscal 2026 Earnings Conference Call"
+        },
+        {
+          "href": "/newsroom/press-releases/2026/05-21-2026-113023552",
+          "text": "lululemon athletica inc. Announces First Quarter Fiscal 2026 Earnings Conference Call"
+        }
+      ],
+      "sha256": "eeb88a01cb5b268b3efce5c8f4ad61e0fecb1d067ec6ade0a55e48145764edb5",
+      "url": "https://corporate.lululemon.com/newsroom/press-releases"
+    }
+  ],
+  "recorded_at": "2026-11-18T06:40:46.179712+00:00"
+}

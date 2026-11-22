@@ -1,0 +1,1307 @@
+{
+  "review_scope": "Last eight publicly reported quarters as of 2026-11-12; complete reviewed 8-K/8-K-A inventory from 2024-08-01 through 2026-11-12",
+  "source_inventory": [
+    {
+      "accession": "0001441816-24-000185",
+      "filed": "2024-08-29",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000185/mdb-20240829.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000185/mdb-73124xex991xrelease.htm"
+      ]
+    },
+    {
+      "accession": "0001441816-24-000257",
+      "filed": "2024-12-09",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000257/mdb-20241209.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000257/mdb-103124xex991xrelease.htm"
+      ]
+    },
+    {
+      "accession": "0001441816-25-000040",
+      "filed": "2025-02-24",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000040/mdb-20250224.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000040/mdb-odysseypr.htm"
+      ]
+    },
+    {
+      "accession": "0001441816-25-000046",
+      "filed": "2025-03-05",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000046/mdb-20250305.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000046/mdb-13125xex991xrelease.htm"
+      ]
+    },
+    {
+      "accession": "0001441816-25-000089",
+      "filed": "2025-04-28",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000089/mdb-20250428.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000089/mdb-20250428exhibit991.htm"
+      ]
+    },
+    {
+      "accession": "0001441816-25-000116",
+      "filed": "2025-06-04",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/mdb-20250604.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/mdb-43025xex991xrelease.htm"
+      ]
+    },
+    {
+      "accession": "0001441816-25-000176",
+      "filed": "2025-08-26",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000176/mdb-20250826.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000176/mdb-73125xex991xrelease.htm"
+      ]
+    },
+    {
+      "accession": "0001441816-25-000197",
+      "filed": "2025-09-17",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000197/mdb-20250917.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001628280-25-047941",
+      "filed": "2025-11-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025047941/mdb-20251029.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1441816/000162828025047941/a2025-11x03xpressrelease.htm"
+      ]
+    },
+    {
+      "accession": "0001628280-25-054425",
+      "filed": "2025-12-01",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054425/mdb-20251201.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054425/mdb-103125xex991xrelease.htm"
+      ]
+    },
+    {
+      "accession": "0001628280-25-054569",
+      "filed": "2025-12-02",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054569/mdb-20251201.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054569/a8-kaexhibit991revised.htm"
+      ]
+    },
+    {
+      "accession": "0001628280-26-013199",
+      "filed": "2026-03-02",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-20260302.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm"
+      ]
+    },
+    {
+      "accession": "0001628280-26-038798",
+      "filed": "2026-05-28",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026038798/mdb-20260528.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1441816/000162828026038798/mdb-043026xex991xrelease.htm"
+      ]
+    },
+    {
+      "accession": "0001628280-26-059794",
+      "filed": "2026-09-01",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-20260901.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm"
+      ]
+    },
+    {
+      "accession": "0001628280-26-063657",
+      "filed": "2026-09-28",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026063657/mdb-20260924.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1441816/000162828026063657/pressreleasedatedseptemb.htm"
+      ]
+    },
+    {
+      "accession": "0001628280-26-063850",
+      "filed": "2026-09-29",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026063850/mdb-20260925.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001441816-24-000228",
+      "filed": "2024-10-16",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000228/mdb-20241016.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001441816-24-000247",
+      "filed": "2024-11-20",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000247/mdb-20241114.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001441816-24-000271",
+      "filed": "2024-12-20",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000271/mdb-20241216.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001441816-25-000030",
+      "filed": "2025-02-06",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000030/mdb-20250201.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001441816-25-000085",
+      "filed": "2025-04-21",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000085/mdb-20250421.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001441816-25-000151",
+      "filed": "2025-07-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000151/mdb-20250630.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001628280-26-047228",
+      "filed": "2026-07-06",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026047228/mdb-20260630.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001628280-26-065934",
+      "filed": "2026-10-15",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026065934/mdb-20261012.htm",
+      "exhibits": []
+    }
+  ],
+  "inventory_gaps": [],
+  "quarters": [
+    {
+      "company": "MDB",
+      "target": {
+        "start": "2024-08-01",
+        "end": "2024-10-31",
+        "label": "Q3 FY2025",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "e21db595-0548-5222-88f8-5f70e402f725",
+          "company": "MDB",
+          "issued": {
+            "start": "2024-08-29",
+            "end": "2024-08-29",
+            "precision": "day"
+          },
+          "filed": "2024-08-29",
+          "start": "2024-08-01",
+          "end": "2024-10-31",
+          "low": "493000000.0",
+          "high": "497000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001441816-24-000185",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000185/mdb-73124xex991xrelease.htm",
+          "quote": "Third Quarter Fiscal 2025 Full Year Fiscal 2025 Revenue $493.0 million to $497.0 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "e21db595-0548-5222-88f8-5f70e402f725",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000185/mdb-73124xex991xrelease.htm",
+          "source_sha256": "048828fa80349e4f154ae7007f91025b9579e0bda6c47c3c637a5601a471392c",
+          "fetched_at": "2026-11-12T10:26:54.989017+00:00",
+          "issuance_date_quote": "August 29, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000185/mdb-20240829.htm",
+          "exhibit_index_quote": "99.1 Press Release dated August 29, 2024."
+        }
+      ],
+      "actual": {
+        "id": "184cd59c-2be4-5709-922e-6065efa71ba7",
+        "company": "MDB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2024-08-01",
+        "end": "2024-10-31",
+        "value": "529375000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001441816-24-000260",
+        "filed": "2024-12-10",
+        "form": "10-Q",
+        "fiscal_year": 2025,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000260/mdb-20241031.htm",
+        "filed": "2024-12-10",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000260/mdb-20241031.htm",
+          "sha256": "0f6c1f65b677e24848fd09873423732bd1e63269adb38fc63a2cd8117faf1dbf",
+          "body": "ac69ed59d3b5c3bbc0156d8b86a1451b23a173370d8bc89d739e86d4034ec62e-0f6c1f65b677e24848fd09873423732bd1e63269adb38fc63a2cd8117faf1dbf.body",
+          "fetched_at": "2026-11-12T10:41:06.648267+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001441816-24-000260-filing.txt"
+      },
+      "result": {
+        "issued_date": "2024-12-09",
+        "formal_release_issued_date": "2024-12-09",
+        "issued_precision": "day",
+        "date_quote": "December 9, 2024",
+        "filed": "2024-12-09",
+        "accession": "0001441816-24-000257",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000257/mdb-103124xex991xrelease.htm",
+        "reported_revenue_quote": "Total revenue 529,375 432,938 1,458,045 1,225,009",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "171e5487ee868ad178ff8a92c5daf886aaa9803fe8b23250d5eb84b3a23fc4e8",
+        "fetched_at": "2026-11-12T10:26:56.252478+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.668927+00:00",
+        "guidance_id": "e21db595-0548-5222-88f8-5f70e402f725",
+        "actual_id": "184cd59c-2be4-5709-922e-6065efa71ba7",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000185/mdb-73124xex991xrelease.htm",
+            "filed_date": "2024-08-29"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000257/mdb-103124xex991xrelease.htm",
+            "filed_date": "2024-12-09"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000260/mdb-20241031.htm",
+            "filed_date": "2024-12-10"
+          }
+        ],
+        "scope_evidence": [
+          "nsaction is accounted for as an asset acquisition for tax purposes, and therefore both the goodwill and acquired intangible asset are deductible for tax purposes. Tax impacts were not material. Acquisition-related transaction costs were not material and have been expensed as incurred and included in general and administrative expenses in the condensed consolidated statements of operations. The business combin",
+          " purposes, and therefore both the goodwill and acquired intangible asset are deductible for tax purposes. Tax impacts were not material. Acquisition-related transaction costs were not material and have been expensed as incurred and included in general and administrative expenses in the condensed consolidated statements of operations. The business combination did not have a material impact on the Company\u2019s con"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2024-12-09"
+    },
+    {
+      "company": "MDB",
+      "target": {
+        "start": "2024-11-01",
+        "end": "2025-01-31",
+        "label": "Q4 FY2025",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "f1c2056c-9af0-52c0-b96e-2bd460948300",
+          "company": "MDB",
+          "issued": {
+            "start": "2024-12-09",
+            "end": "2024-12-09",
+            "precision": "day"
+          },
+          "filed": "2024-12-09",
+          "start": "2024-11-01",
+          "end": "2025-01-31",
+          "low": "515000000.0",
+          "high": "519000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001441816-24-000257",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000257/mdb-103124xex991xrelease.htm",
+          "quote": "Fourth Quarter Fiscal 2025 Full Year Fiscal 2025 Revenue $515.0 million to $519.0 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "f1c2056c-9af0-52c0-b96e-2bd460948300",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000257/mdb-103124xex991xrelease.htm",
+          "source_sha256": "171e5487ee868ad178ff8a92c5daf886aaa9803fe8b23250d5eb84b3a23fc4e8",
+          "fetched_at": "2026-11-12T10:26:56.252478+00:00",
+          "issuance_date_quote": "December 9, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000257/mdb-20241209.htm",
+          "exhibit_index_quote": "99.1 Press Release dated December 9, 2024."
+        }
+      ],
+      "actual": {
+        "id": "4921d987-2b3c-5815-bd1d-2711a694cb93",
+        "company": "MDB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2024-11-01",
+        "end": "2025-01-31",
+        "value": "548398000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001441816-25-000057",
+        "filed": "2025-03-21",
+        "form": "DERIVED",
+        "fiscal_year": 2025,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+        "parents": [
+          "434ae6cb-78dd-5b80-862e-a54ff81db0ce",
+          "ffcb33d8-e12b-5c35-b7ed-3a9f36cc1974"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "ffcb33d8-e12b-5c35-b7ed-3a9f36cc1974",
+          "company": "MDB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2024-02-01",
+          "end": "2024-10-31",
+          "value": "1458045000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001441816-24-000260",
+          "filed": "2024-12-10",
+          "form": "10-Q",
+          "fiscal_year": 2025,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "434ae6cb-78dd-5b80-862e-a54ff81db0ce",
+          "company": "MDB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2024-02-01",
+          "end": "2025-01-31",
+          "value": "2006443000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001441816-25-000057",
+          "filed": "2025-03-21",
+          "form": "10-K",
+          "fiscal_year": 2025,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000057/mdb-20250131.htm",
+        "filed": "2025-03-21",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000057/mdb-20250131.htm",
+          "sha256": "5427196c4bb60d81e1df1c20860ecaf551ac66b9b02c99d63f67f44b576ee00d",
+          "body": "963c12f140685cd78e4c49bf6e7fe7acfef940780246dfa01cdeb9fd1a968915-5427196c4bb60d81e1df1c20860ecaf551ac66b9b02c99d63f67f44b576ee00d.body",
+          "fetched_at": "2026-11-12T10:41:07.438395+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001441816-25-000057-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-03-05",
+        "formal_release_issued_date": "2025-03-05",
+        "issued_precision": "day",
+        "date_quote": "March 5, 2025",
+        "filed": "2025-03-05",
+        "accession": "0001441816-25-000046",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000046/mdb-13125xex991xrelease.htm",
+        "reported_revenue_quote": "Total revenue 548,398 458,002 2,006,443 1,683,011",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "b74e7af1bc6bb8b93500a10c52a6cb0110b264a25698c7d477a2b038c2d268e3",
+        "fetched_at": "2026-11-12T10:26:58.878466+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.684540+00:00",
+        "guidance_id": "f1c2056c-9af0-52c0-b96e-2bd460948300",
+        "actual_id": "4921d987-2b3c-5815-bd1d-2711a694cb93",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181624000257/mdb-103124xex991xrelease.htm",
+            "filed_date": "2024-12-09"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000046/mdb-13125xex991xrelease.htm",
+            "filed_date": "2025-03-05"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000057/mdb-20250131.htm",
+            "filed_date": "2025-03-21"
+          }
+        ],
+        "scope_evidence": [
+          "nsaction is accounted for as an asset acquisition for tax purposes, and therefore both the goodwill and acquired intangible asset are deductible for tax purposes. Tax impacts were not material. Acquisition-related transaction costs were not material and have been expensed as incurred and included in general and 84 Table of Contents MONGODB, INC. NOTES TO CONSOLIDATED FINANCIAL STATEMENTS (CONTINUED) administr",
+          " purposes, and therefore both the goodwill and acquired intangible asset are deductible for tax purposes. Tax impacts were not material. Acquisition-related transaction costs were not material and have been expensed as incurred and included in general and 84 Table of Contents MONGODB, INC. NOTES TO CONSOLIDATED FINANCIAL STATEMENTS (CONTINUED) administrative expenses in the consolidated statements of operatio"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-03-05"
+    },
+    {
+      "company": "MDB",
+      "target": {
+        "start": "2025-02-01",
+        "end": "2025-04-30",
+        "label": "Q1 FY2026",
+        "calendar": "months",
+        "days": 89
+      },
+      "guidance_versions": [
+        {
+          "id": "c04ef45b-be19-52d7-b307-767ac6ead384",
+          "company": "MDB",
+          "issued": {
+            "start": "2025-03-05",
+            "end": "2025-03-05",
+            "precision": "day"
+          },
+          "filed": "2025-03-05",
+          "start": "2025-02-01",
+          "end": "2025-04-30",
+          "low": "524000000.0",
+          "high": "529000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001441816-25-000046",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000046/mdb-13125xex991xrelease.htm",
+          "quote": "First Quarter Fiscal 2026 Full Year Fiscal 2026 Revenue $524.0 million to $529.0 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "c04ef45b-be19-52d7-b307-767ac6ead384",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000046/mdb-13125xex991xrelease.htm",
+          "source_sha256": "b74e7af1bc6bb8b93500a10c52a6cb0110b264a25698c7d477a2b038c2d268e3",
+          "fetched_at": "2026-11-12T10:26:58.878466+00:00",
+          "issuance_date_quote": "March 5, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000046/mdb-20250305.htm",
+          "exhibit_index_quote": "99.1 Press Release dated March 5, 2025."
+        }
+      ],
+      "actual": {
+        "id": "cf8a16f1-cdf8-5c16-b72b-5b6071ed7253",
+        "company": "MDB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-02-01",
+        "end": "2025-04-30",
+        "value": "549014000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001441816-25-000118",
+        "filed": "2025-06-04",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000118/mdb-20250430.htm",
+        "filed": "2025-06-04",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000118/mdb-20250430.htm",
+          "sha256": "4c377ce856ee64406caedb2909422c055120c9b2919508f482451e3f7da5ffce",
+          "body": "89642bd460ba23cb2e60236a37d18f4d25b35209e3d8a56f98aa54a8d3875882-4c377ce856ee64406caedb2909422c055120c9b2919508f482451e3f7da5ffce.body",
+          "fetched_at": "2026-11-12T10:41:08.281536+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001441816-25-000118-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-06-04",
+        "formal_release_issued_date": "2025-06-04",
+        "issued_precision": "day",
+        "date_quote": "June 4, 2025",
+        "filed": "2025-06-04",
+        "accession": "0001441816-25-000116",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/mdb-43025xex991xrelease.htm",
+        "reported_revenue_quote": "Total revenue 549,014 450,561",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "9913eb572e364d6ea0cdb23cb0aa6585db9195ddcbc4912f6829f533a6b1a1d4",
+        "fetched_at": "2026-11-12T10:27:01.445671+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.695553+00:00",
+        "guidance_id": "c04ef45b-be19-52d7-b307-767ac6ead384",
+        "actual_id": "cf8a16f1-cdf8-5c16-b72b-5b6071ed7253",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000046/mdb-13125xex991xrelease.htm",
+            "filed_date": "2025-03-05"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/mdb-43025xex991xrelease.htm",
+            "filed_date": "2025-06-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000118/mdb-20250430.htm",
+            "filed_date": "2025-06-04"
+          }
+        ],
+        "scope_evidence": [
+          "April 30, 2025, revenue attributable to Voyage AI, included in the Company\u2019s interim condensed consolidated statements of operations for the three months ended April 30, 2025, was not material. 9 Table of Contents MONGODB, INC. NOTES TO UNAUDITED CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (CONTINUED) Grainite, Inc. On September 27, 2023, the Company acquired the assets of Grainite, Inc. (\u201cGrainite\u201d), for tot",
+          "nsaction is accounted for as an asset acquisition for tax purposes, and therefore both the goodwill and acquired intangible asset are deductible for tax purposes. Tax impacts were not material. Acquisition-related transaction costs were not material and have been expensed as incurred and included in general and administrative expenses in the condensed consolidated statements of operations. The business combin",
+          " purposes, and therefore both the goodwill and acquired intangible asset are deductible for tax purposes. Tax impacts were not material. Acquisition-related transaction costs were not material and have been expensed as incurred and included in general and administrative expenses in the condensed consolidated statements of operations. The business combination did not have a material impact on the Company\u2019s con"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-06-04"
+    },
+    {
+      "company": "MDB",
+      "target": {
+        "start": "2025-05-01",
+        "end": "2025-07-31",
+        "label": "Q2 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "7515ff32-081a-5f97-acfc-c99717fde937",
+          "company": "MDB",
+          "issued": {
+            "start": "2025-06-04",
+            "end": "2025-06-04",
+            "precision": "day"
+          },
+          "filed": "2025-06-04",
+          "start": "2025-05-01",
+          "end": "2025-07-31",
+          "low": "548000000.0",
+          "high": "553000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001441816-25-000116",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/mdb-43025xex991xrelease.htm",
+          "quote": "Second Quarter Fiscal 2026 Full Year Fiscal 2026 Revenue $548.0 million to $553.0 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "7515ff32-081a-5f97-acfc-c99717fde937",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/mdb-43025xex991xrelease.htm",
+          "source_sha256": "9913eb572e364d6ea0cdb23cb0aa6585db9195ddcbc4912f6829f533a6b1a1d4",
+          "fetched_at": "2026-11-12T10:27:01.445671+00:00",
+          "issuance_date_quote": "June 4, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/mdb-20250604.htm",
+          "exhibit_index_quote": "99.1 Press Release dated June 4, 2025."
+        }
+      ],
+      "actual": {
+        "id": "88d6ed73-a67b-551d-8636-b4b6e60a5890",
+        "company": "MDB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-05-01",
+        "end": "2025-07-31",
+        "value": "591402000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001441816-25-000181",
+        "filed": "2025-08-27",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000181/mdb-20250731.htm",
+        "filed": "2025-08-27",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000181/mdb-20250731.htm",
+          "sha256": "cdd0853654a82dce01b391fd18cd5f2da67aa42e1a21492ef992d579998c1fa5",
+          "body": "ca5d2c9fafb875b3365c3cf6f211bc35cbe7a1f1f5cf33eed15d21eb2c528466-cdd0853654a82dce01b391fd18cd5f2da67aa42e1a21492ef992d579998c1fa5.body",
+          "fetched_at": "2026-11-12T10:41:09.019234+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001441816-25-000181-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-08-26",
+        "formal_release_issued_date": "2025-08-26",
+        "issued_precision": "day",
+        "date_quote": "August 26, 2025",
+        "filed": "2025-08-26",
+        "accession": "0001441816-25-000176",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000176/mdb-73125xex991xrelease.htm",
+        "reported_revenue_quote": "Total revenue 591,402 478,109 1,140,416 928,670",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "de0bee43c8abc4bb04476eaeb5c72a0ab822d8ad2014edfac8b206c976dc6c03",
+        "fetched_at": "2026-11-12T10:27:02.772483+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.706839+00:00",
+        "guidance_id": "7515ff32-081a-5f97-acfc-c99717fde937",
+        "actual_id": "88d6ed73-a67b-551d-8636-b4b6e60a5890",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000116/mdb-43025xex991xrelease.htm",
+            "filed_date": "2025-06-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000176/mdb-73125xex991xrelease.htm",
+            "filed_date": "2025-08-26"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000181/mdb-20250731.htm",
+            "filed_date": "2025-08-27"
+          }
+        ],
+        "scope_evidence": [
+          "1, 2025, revenue attributable to Voyage AI, included in the Company\u2019s interim condensed consolidated statements of operations for the three and six months ended July 31, 2025, was not material. 9 Table of Contents MONGODB, INC. NOTES TO UNAUDITED CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (CONTINUED) Grainite, Inc. On September 27, 2023, the Company acquired the assets of Grainite, Inc. (\u201cGrainite\u201d), for tot",
+          "nsaction is accounted for as an asset acquisition for tax purposes, and therefore both the goodwill and acquired intangible asset are deductible for tax purposes. Tax impacts were not material. Acquisition-related transaction costs were not material and have been expensed as incurred and included in general and administrative expenses in the condensed consolidated statements of operations. The business combin",
+          " purposes, and therefore both the goodwill and acquired intangible asset are deductible for tax purposes. Tax impacts were not material. Acquisition-related transaction costs were not material and have been expensed as incurred and included in general and administrative expenses in the condensed consolidated statements of operations. The business combination did not have a material impact on the Company\u2019s con"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-08-26"
+    },
+    {
+      "company": "MDB",
+      "target": {
+        "start": "2025-08-01",
+        "end": "2025-10-31",
+        "label": "Q3 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "be815840-db94-5925-ad6e-fed0df6b6ccc",
+          "company": "MDB",
+          "issued": {
+            "start": "2025-08-26",
+            "end": "2025-08-26",
+            "precision": "day"
+          },
+          "filed": "2025-08-26",
+          "start": "2025-08-01",
+          "end": "2025-10-31",
+          "low": "587000000.0",
+          "high": "592000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001441816-25-000176",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000176/mdb-73125xex991xrelease.htm",
+          "quote": "Third Quarter Fiscal 2026 Full Year Fiscal 2026 Revenue $587.0 million to $592.0 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "be815840-db94-5925-ad6e-fed0df6b6ccc",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000176/mdb-73125xex991xrelease.htm",
+          "source_sha256": "de0bee43c8abc4bb04476eaeb5c72a0ab822d8ad2014edfac8b206c976dc6c03",
+          "fetched_at": "2026-11-12T10:27:02.772483+00:00",
+          "issuance_date_quote": "August 26, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000176/mdb-20250826.htm",
+          "exhibit_index_quote": "99.1 Press Release dated August 26 , 2025."
+        }
+      ],
+      "actual": {
+        "id": "5026a0a8-ec76-5c0c-8906-9370f9f62244",
+        "company": "MDB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-08-01",
+        "end": "2025-10-31",
+        "value": "628309000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-25-054768",
+        "filed": "2025-12-02",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054768/mdb-20251031.htm",
+        "filed": "2025-12-02",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054768/mdb-20251031.htm",
+          "sha256": "9898f39b2d403e077a1f26e7fff9a2002f27755da6fe3aca9c4f73f98d5400a5",
+          "body": "2606707b274ecc5071fa1538f50523c0d739288defff3b4ff73ab0021f7c5a42-9898f39b2d403e077a1f26e7fff9a2002f27755da6fe3aca9c4f73f98d5400a5.body",
+          "fetched_at": "2026-11-12T10:41:09.807973+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001628280-25-054768-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-12-01",
+        "formal_release_issued_date": "2025-12-01",
+        "issued_precision": "day",
+        "date_quote": "December 1, 2025",
+        "filed": "2025-12-01",
+        "accession": "0001628280-25-054425",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054425/mdb-103125xex991xrelease.htm",
+        "reported_revenue_quote": "Total revenue 628,309 529,375 1,768,725 1,458,045",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "ce39574562dc1a16f54049a4a3508d1c367767166b8f89959b4631655300ecb5",
+        "fetched_at": "2026-11-12T07:10:39.186531+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [
+        {
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025047941/a2025-11x03xpressrelease.htm",
+          "accession": "0001628280-25-047941",
+          "filed": "2025-11-03",
+          "public_date": "2025-11-03",
+          "quote": "preliminary, unaudited results, the Company expects to exceed the high end of the provided third quarter fiscal year 2026 guidance for revenue, non-GAAP income from operations, and non-GAAP earnings per share, driven by continued strength in Atlas. MongoDB intends to report its fin",
+          "sha256": "54e9f88117650f6fba830e0b1d835bd1a2c53da24a268ecca021edcdabeb32a6",
+          "fetched_at": "2026-11-12T10:27:04.710088+00:00",
+          "interpretation": "Completed-quarter preliminary/in-line/reaffirmation indication; conservatively not a clean pre-publication historical target",
+          "public_date_basis": "SEC filing day establishes a known-public-by boundary, not a claimed exact company publication timestamp."
+        }
+      ],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.718310+00:00",
+        "guidance_id": "be815840-db94-5925-ad6e-fed0df6b6ccc",
+        "actual_id": "5026a0a8-ec76-5c0c-8906-9370f9f62244",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181625000176/mdb-73125xex991xrelease.htm",
+            "filed_date": "2025-08-26"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054425/mdb-103125xex991xrelease.htm",
+            "filed_date": "2025-12-01"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054768/mdb-20251031.htm",
+            "filed_date": "2025-12-02"
+          }
+        ],
+        "scope_evidence": [
+          "025, revenue attributable to Voyage AI, included in the Company\u2019s interim condensed consolidated statements of operations for the three and nine months ended October 31, 2025, was not material. Grainite, Inc. On September 27, 2023, the Company acquired the assets of Grainite, Inc. (\u201cGrainite\u201d), for total cash consideration of $ 15.0 million. Grainite is a stream processing application company and the transact",
+          "nsaction is accounted for as an asset acquisition for tax purposes, and therefore both the goodwill and acquired intangible asset are deductible for tax purposes. Tax impacts were not material. Acquisition-related transaction costs were not material and have been expensed as incurred and included in general and administrative expenses in the condensed consolidated statements of operations. The business combin",
+          " purposes, and therefore both the goodwill and acquired intangible asset are deductible for tax purposes. Tax impacts were not material. Acquisition-related transaction costs were not material and have been expensed as incurred and included in general and administrative expenses in the condensed consolidated statements of operations. The business combination did not have a material impact on the Company\u2019s con"
+        ]
+      },
+      "blocking_reasons": [
+        "EARLY_POST_CLOSE_RESULT_INDICATION: 2025-11-03 precedes formal-release lock window; excluded rather than training on already-public result information"
+      ],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-11-03"
+    },
+    {
+      "company": "MDB",
+      "target": {
+        "start": "2025-11-01",
+        "end": "2026-01-31",
+        "label": "Q4 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "3dd6278e-19a8-5a1a-8b12-9a28f3cce525",
+          "company": "MDB",
+          "issued": {
+            "start": "2025-12-01",
+            "end": "2025-12-01",
+            "precision": "day"
+          },
+          "filed": "2025-12-01",
+          "start": "2025-11-01",
+          "end": "2026-01-31",
+          "low": "665000000.0",
+          "high": "670000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001628280-25-054425",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054425/mdb-103125xex991xrelease.htm",
+          "quote": "Fourth Quarter Fiscal 2026 Full Year Fiscal 2026 Revenue $665.0 million to $670.0 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        },
+        {
+          "id": "3f519fed-b8c0-526f-838f-f91a1fedcd8c",
+          "company": "MDB",
+          "issued": {
+            "start": "2025-12-01",
+            "end": "2025-12-01",
+            "precision": "day"
+          },
+          "filed": "2025-12-02",
+          "start": "2025-11-01",
+          "end": "2026-01-31",
+          "low": "665000000.0",
+          "high": "670000000.0",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001628280-25-054569",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054569/a8-kaexhibit991revised.htm",
+          "quote": "Fourth Quarter Fiscal 2026 Full Year Fiscal 2026 Revenue $665.0 million to $670.0 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": false,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance. Amended exhibit retains revenue range; not treated as a new explicit reaffirmation."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "3dd6278e-19a8-5a1a-8b12-9a28f3cce525",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054425/mdb-103125xex991xrelease.htm",
+          "source_sha256": "ce39574562dc1a16f54049a4a3508d1c367767166b8f89959b4631655300ecb5",
+          "fetched_at": "2026-11-12T07:10:39.186531+00:00",
+          "issuance_date_quote": "December 1, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054425/mdb-20251201.htm",
+          "exhibit_index_quote": "99.1 Press Release dated December 1, 2025."
+        },
+        {
+          "guidance_id": "3f519fed-b8c0-526f-838f-f91a1fedcd8c",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054569/a8-kaexhibit991revised.htm",
+          "source_sha256": "15b0734502e5f43ff1f51886c3d4ed6921ed8ce7f24f190a4ed2fd47b07b9d83",
+          "fetched_at": "2026-11-12T07:10:40.176258+00:00",
+          "issuance_date_quote": "December 1, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "amendment",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054569/mdb-20251201.htm",
+          "exhibit_index_quote": "99.1 Press Release, dated December 1, 2025, reporting financial results for the quarter ended October 31, 2025 (Revised)"
+        }
+      ],
+      "actual": {
+        "id": "de76a7a6-8e98-5380-a2ec-18070026e4ac",
+        "company": "MDB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-11-01",
+        "end": "2026-01-31",
+        "value": "695072000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-26-016799",
+        "filed": "2026-03-11",
+        "form": "DERIVED",
+        "fiscal_year": 2026,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+        "parents": [
+          "a57f9159-96e5-5c62-8c64-ea12e6a80d71",
+          "24502505-7b6d-5a32-a846-e25addf928ba"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "24502505-7b6d-5a32-a846-e25addf928ba",
+          "company": "MDB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-02-01",
+          "end": "2025-10-31",
+          "value": "1768725000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001628280-25-054768",
+          "filed": "2025-12-02",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "a57f9159-96e5-5c62-8c64-ea12e6a80d71",
+          "company": "MDB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-02-01",
+          "end": "2026-01-31",
+          "value": "2463797000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001628280-26-016799",
+          "filed": "2026-03-11",
+          "form": "10-K",
+          "fiscal_year": 2026,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026016799/mdb-20260131.htm",
+        "filed": "2026-03-11",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026016799/mdb-20260131.htm",
+          "sha256": "5afff22930544cd1e57fefac087d92ae4b5300a188f73a3b2e8e72e8e416dafb",
+          "body": "c73bbe86736862698cefffea5f6d15917cc12875cd2fc704a7d065140d785cf9-5afff22930544cd1e57fefac087d92ae4b5300a188f73a3b2e8e72e8e416dafb.body",
+          "fetched_at": "2026-11-12T10:41:10.767440+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001628280-26-016799-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-03-02",
+        "formal_release_issued_date": "2026-03-02",
+        "issued_precision": "day",
+        "date_quote": "March 2, 2026",
+        "filed": "2026-03-02",
+        "accession": "0001628280-26-013199",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm",
+        "reported_revenue_quote": "Total revenue 695,072 548,398 2,463,797 2,006,443",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "c144559491c5ca9fd18e9dab5d67eabb0c18023a5241b1f646f38bac4fd23d5b",
+        "fetched_at": "2026-11-11T23:48:32.436464+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.734334+00:00",
+        "guidance_id": "3f519fed-b8c0-526f-838f-f91a1fedcd8c",
+        "actual_id": "de76a7a6-8e98-5380-a2ec-18070026e4ac",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828025054569/a8-kaexhibit991revised.htm",
+            "filed_date": "2025-12-02"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm",
+            "filed_date": "2026-03-02"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026016799/mdb-20260131.htm",
+            "filed_date": "2026-03-11"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-03-02"
+    },
+    {
+      "company": "MDB",
+      "target": {
+        "start": "2026-02-01",
+        "end": "2026-04-30",
+        "label": "Q1 FY2027",
+        "calendar": "months",
+        "days": 89
+      },
+      "guidance_versions": [
+        {
+          "id": "ad14ac79-8c5c-5236-8fae-e508808c519a",
+          "company": "MDB",
+          "issued": {
+            "start": "2026-03-02",
+            "end": "2026-03-02",
+            "precision": "day"
+          },
+          "filed": "2026-03-02",
+          "start": "2026-02-01",
+          "end": "2026-04-30",
+          "low": "659000000",
+          "high": "664000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001628280-26-013199",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm",
+          "quote": "First Quarter Fiscal Year 2027 Guidance Based on information available to management as of today, March 2, 2026, MongoDB is issuing the following financial guidance for the first quarter fiscal 2027. Revenues are expected to be in the range of: $659 million to $664 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "ad14ac79-8c5c-5236-8fae-e508808c519a",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm",
+          "source_sha256": "c144559491c5ca9fd18e9dab5d67eabb0c18023a5241b1f646f38bac4fd23d5b",
+          "fetched_at": "2026-11-11T23:48:32.436464+00:00",
+          "issuance_date_quote": "March 2, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-20260302.htm",
+          "exhibit_index_quote": "99.1 Press Release, dated March 2 , 20 26."
+        }
+      ],
+      "actual": {
+        "id": "1091010f-3306-5243-936f-1619393c7db8",
+        "company": "MDB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-02-01",
+        "end": "2026-04-30",
+        "value": "687616000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-26-039150",
+        "filed": "2026-05-29",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026039150/mdb-20260430.htm",
+        "filed": "2026-05-29",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026039150/mdb-20260430.htm",
+          "sha256": "cdeca95359db8bac56a02873ebba0b4f93a63f19000da5f349ec5ab2e265d007",
+          "body": "c3354b5b4adf9fc62131572f9dfc140c638b4216b7f921374b1bc7c1b82ce5fd-cdeca95359db8bac56a02873ebba0b4f93a63f19000da5f349ec5ab2e265d007.body",
+          "fetched_at": "2026-11-12T10:41:11.467856+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001628280-26-039150-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-05-28",
+        "formal_release_issued_date": "2026-05-28",
+        "issued_precision": "day",
+        "date_quote": "May 28, 2026",
+        "filed": "2026-05-28",
+        "accession": "0001628280-26-038798",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026038798/mdb-043026xex991xrelease.htm",
+        "reported_revenue_quote": "Total revenue 687,616 549,014",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "12b5f146d4a0241c00e54525716b5c805334d62c06f0cdb1376aae6f80025c93",
+        "fetched_at": "2026-11-11T10:09:06.418978+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.745328+00:00",
+        "guidance_id": "ad14ac79-8c5c-5236-8fae-e508808c519a",
+        "actual_id": "1091010f-3306-5243-936f-1619393c7db8",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm",
+            "filed_date": "2026-03-02"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026038798/mdb-043026xex991xrelease.htm",
+            "filed_date": "2026-05-28"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026039150/mdb-20260430.htm",
+            "filed_date": "2026-05-29"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-05-28"
+    },
+    {
+      "company": "MDB",
+      "target": {
+        "start": "2026-05-01",
+        "end": "2026-07-31",
+        "label": "Q2 FY2027",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "51b3af46-4bda-59f9-845d-be4e51e6ec65",
+          "company": "MDB",
+          "issued": {
+            "start": "2026-05-28",
+            "end": "2026-05-28",
+            "precision": "day"
+          },
+          "filed": "2026-05-28",
+          "start": "2026-05-01",
+          "end": "2026-07-31",
+          "low": "729000000",
+          "high": "734000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001628280-26-038798",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026038798/mdb-043026xex991xrelease.htm",
+          "quote": "Second Quarter Fiscal 2027 Guidance Based on information available to management as of today, May 28, 2026, MongoDB is issuing the following financial guidance for the second quarter fiscal 2027. Revenues are expected to be in the range of: $729 million to $734 million ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "51b3af46-4bda-59f9-845d-be4e51e6ec65",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026038798/mdb-043026xex991xrelease.htm",
+          "source_sha256": "12b5f146d4a0241c00e54525716b5c805334d62c06f0cdb1376aae6f80025c93",
+          "fetched_at": "2026-11-11T10:09:06.418978+00:00",
+          "issuance_date_quote": "May 28, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026038798/mdb-20260528.htm",
+          "exhibit_index_quote": "99.1 Press Release, dated May 28 , 2026 , reporting financial results for the quarter ended April 30, 2026"
+        }
+      ],
+      "actual": {
+        "id": "870d987b-e8fa-5436-9560-ea5308620d0b",
+        "company": "MDB",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-05-01",
+        "end": "2026-07-31",
+        "value": "771773000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001628280-26-059830",
+        "filed": "2026-09-01",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059830/mdb-20260731.htm",
+        "filed": "2026-09-01",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059830/mdb-20260731.htm",
+          "sha256": "5507ecd2debae1899966cb1fa67143c716eb9bf9aaf06850fa5b2c0bbc3326d1",
+          "body": "9cde0a372ea5a5caf429ecd81fb6cb779a9e341dc20ec32fac6bf45bab8c8584-5507ecd2debae1899966cb1fa67143c716eb9bf9aaf06850fa5b2c0bbc3326d1.body",
+          "fetched_at": "2026-11-12T08:11:47.185244+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001628280-26-059830-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-09-01",
+        "formal_release_issued_date": "2026-09-01",
+        "issued_precision": "day",
+        "date_quote": "September 1, 2026",
+        "filed": "2026-09-01",
+        "accession": "0001628280-26-059794",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm",
+        "reported_revenue_quote": "Total revenue 771,773 591,402 1,459,389 1,140,416",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "28eb3703e7b94394ac7ee44215f3452bca4b47d7d35d8c51f6192f936c0378c9",
+        "fetched_at": "2026-11-11T10:09:07.635856+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.756610+00:00",
+        "guidance_id": "51b3af46-4bda-59f9-845d-be4e51e6ec65",
+        "actual_id": "870d987b-e8fa-5436-9560-ea5308620d0b",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026038798/mdb-043026xex991xrelease.htm",
+            "filed_date": "2026-05-28"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm",
+            "filed_date": "2026-09-01"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059830/mdb-20260731.htm",
+            "filed_date": "2026-09-01"
+          }
+        ],
+        "scope_evidence": [
+          "vertical. Goodwill was not deductible for income tax purposes. The assets acquired, the liabilities assumed, and the intangible assets and deferred tax liabilities recognized were not material. Intangible assets acquired are related to customer relationships and have an estimated useful life of five years . The fair values assigned to assets acquired and liabilities assumed are based on management\u2019s best esti",
+          "ts from the date of acquisition. Separate operating results and pro forma results of operations for this acquisition have not been presented as the effects of the acquisition were not material to the Company\u2019s condensed consolidated financial statements. 9 Table of Contents MONGODB, INC. NOTES TO UNAUDITED CONDENSED CONSOLIDATED FINANCIAL STATEMENTS (CONTINUED) 5. Goodwill and Intangible Assets, Net The follo"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-09-01"
+    }
+  ]
+}

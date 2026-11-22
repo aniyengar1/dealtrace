@@ -1,0 +1,324 @@
+{
+  "base_commit": "f1a9d73",
+  "gold_policy": "After rule freeze, inspect all reserved target/context exhibits. Label every explicit annual and directly issued next-quarter consolidated reported USD revenue target and explicit revision; reject ARR, segments, organic/CC-only and implied/derived targets. Review the full release rather than only extractor candidates. Carry unchanged amounts only with explicit reference and earlier matching-period evidence. Unresolved status/boundaries are recorded as uncertain, not guessed. Context labels support history but are not included in target recall.",
+  "groups": [
+    {
+      "company": "ADBE",
+      "context_release": {
+        "accession": "0000796343-23-000044",
+        "company": "ADBE",
+        "filed": "2023-03-15",
+        "inventory_manifest": {
+          "body": "9d696a4c563d1171d5d0741239aa6831b013556f874e278027bb80be62a48e45-6123f46732dcf4665213439fb2ccfe9faab048df9e901faba05a8fd8372bac5f.body",
+          "fetched_at": "2026-11-12T08:12:43.441209+00:00",
+          "sha256": "6123f46732dcf4665213439fb2ccfe9faab048df9e901faba05a8fd8372bac5f",
+          "url": "https://data.sec.gov/submissions/CIK0000796343.json"
+        },
+        "primary": "adbe-20230315.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000044/adbe-20230315.htm"
+      },
+      "evaluation_release": {
+        "accession": "0000796343-23-000133",
+        "company": "ADBE",
+        "filed": "2023-06-15",
+        "inventory_manifest": {
+          "body": "9d696a4c563d1171d5d0741239aa6831b013556f874e278027bb80be62a48e45-6123f46732dcf4665213439fb2ccfe9faab048df9e901faba05a8fd8372bac5f.body",
+          "fetched_at": "2026-11-12T08:12:43.441209+00:00",
+          "sha256": "6123f46732dcf4665213439fb2ccfe9faab048df9e901faba05a8fd8372bac5f",
+          "url": "https://data.sec.gov/submissions/CIK0000796343.json"
+        },
+        "primary": "adbe-20230615.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000133/adbe-20230615.htm"
+      },
+      "group": "ADBE-fresh-2023",
+      "status": "reserved"
+    },
+    {
+      "company": "CRM",
+      "context_release": {
+        "accession": "0001108524-23-000007",
+        "company": "CRM",
+        "filed": "2023-03-01",
+        "inventory_manifest": {
+          "body": "f3d4567f97cbf7595cb92dcd83d71920753f2968cb874a377b7a2f3c981f73ac-f71caf4521bd2c2bc134b0aab2d1bbe9a6fb314a7ec14f74c038ae87227eebfd.body",
+          "fetched_at": "2026-11-13T03:24:53.248847+00:00",
+          "sha256": "f71caf4521bd2c2bc134b0aab2d1bbe9a6fb314a7ec14f74c038ae87227eebfd",
+          "url": "https://data.sec.gov/submissions/CIK0001108524-submissions-001.json"
+        },
+        "primary": "crm-20230301.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852423000007/crm-20230301.htm"
+      },
+      "evaluation_release": {
+        "accession": "0001108524-23-000021",
+        "company": "CRM",
+        "filed": "2023-05-31",
+        "inventory_manifest": {
+          "body": "f3d4567f97cbf7595cb92dcd83d71920753f2968cb874a377b7a2f3c981f73ac-f71caf4521bd2c2bc134b0aab2d1bbe9a6fb314a7ec14f74c038ae87227eebfd.body",
+          "fetched_at": "2026-11-13T03:24:53.248847+00:00",
+          "sha256": "f71caf4521bd2c2bc134b0aab2d1bbe9a6fb314a7ec14f74c038ae87227eebfd",
+          "url": "https://data.sec.gov/submissions/CIK0001108524-submissions-001.json"
+        },
+        "primary": "crm-20230531.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852423000021/crm-20230531.htm"
+      },
+      "group": "CRM-fresh-2023",
+      "status": "reserved"
+    },
+    {
+      "company": "CRWD",
+      "context_release": {
+        "accession": "0001535527-23-000006",
+        "company": "CRWD",
+        "filed": "2023-03-07",
+        "inventory_manifest": {
+          "body": "13bba4ef6931994357e0c7b39c7f9b1bd4237b74749fb251c36dd72ae8d03c5a-e197d631d198a73e2e6a2064d2c539136d3d6bab8b825b40ec7de0ecfcc08306.body",
+          "fetched_at": "2026-11-12T08:12:39.229203+00:00",
+          "sha256": "e197d631d198a73e2e6a2064d2c539136d3d6bab8b825b40ec7de0ecfcc08306",
+          "url": "https://data.sec.gov/submissions/CIK0001535527.json"
+        },
+        "primary": "crwd-20230307.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552723000006/crwd-20230307.htm"
+      },
+      "evaluation_release": {
+        "accession": "0001535527-23-000012",
+        "company": "CRWD",
+        "filed": "2023-05-31",
+        "inventory_manifest": {
+          "body": "13bba4ef6931994357e0c7b39c7f9b1bd4237b74749fb251c36dd72ae8d03c5a-e197d631d198a73e2e6a2064d2c539136d3d6bab8b825b40ec7de0ecfcc08306.body",
+          "fetched_at": "2026-11-12T08:12:39.229203+00:00",
+          "sha256": "e197d631d198a73e2e6a2064d2c539136d3d6bab8b825b40ec7de0ecfcc08306",
+          "url": "https://data.sec.gov/submissions/CIK0001535527.json"
+        },
+        "primary": "crwd-20230531.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552723000012/crwd-20230531.htm"
+      },
+      "group": "CRWD-fresh-2023",
+      "status": "reserved"
+    },
+    {
+      "company": "GTLB",
+      "context_release": {
+        "accession": "0001628280-23-007704",
+        "company": "GTLB",
+        "filed": "2023-03-13",
+        "inventory_manifest": {
+          "body": "98bc920729dcf666c16891c5de1359121a74e4ec81844d0c203bf9cc65e34b30-b6d5ca64db614653ca8ad80a23fc50c11fa5623be542b27d3652c856a6649603.body",
+          "fetched_at": "2026-11-12T08:12:37.896021+00:00",
+          "sha256": "b6d5ca64db614653ca8ad80a23fc50c11fa5623be542b27d3652c856a6649603",
+          "url": "https://data.sec.gov/submissions/CIK0001653482.json"
+        },
+        "primary": "gtlb-20230313.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828023007704/gtlb-20230313.htm"
+      },
+      "evaluation_release": {
+        "accession": "0001628280-23-020862",
+        "company": "GTLB",
+        "filed": "2023-06-05",
+        "inventory_manifest": {
+          "body": "98bc920729dcf666c16891c5de1359121a74e4ec81844d0c203bf9cc65e34b30-b6d5ca64db614653ca8ad80a23fc50c11fa5623be542b27d3652c856a6649603.body",
+          "fetched_at": "2026-11-12T08:12:37.896021+00:00",
+          "sha256": "b6d5ca64db614653ca8ad80a23fc50c11fa5623be542b27d3652c856a6649603",
+          "url": "https://data.sec.gov/submissions/CIK0001653482.json"
+        },
+        "primary": "gtlb-20230605.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828023020862/gtlb-20230605.htm"
+      },
+      "group": "GTLB-fresh-2023",
+      "status": "reserved"
+    },
+    {
+      "company": "IOT",
+      "context_release": {
+        "accession": "0001642896-23-000010",
+        "company": "IOT",
+        "filed": "2023-03-02",
+        "inventory_manifest": {
+          "body": "15da6e840d1d2bf479073b944f0cdda0b2cfb094edc4e06fdb2f19115b2ad568-c74baee959bb7ead697294cbffbba32ff17ceaba66bed8921a37176682dbdbee.body",
+          "fetched_at": "2026-11-13T03:24:53.858829+00:00",
+          "sha256": "c74baee959bb7ead697294cbffbba32ff17ceaba66bed8921a37176682dbdbee",
+          "url": "https://data.sec.gov/submissions/CIK0001642896-submissions-001.json"
+        },
+        "primary": "iot-20230302.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289623000010/iot-20230302.htm"
+      },
+      "evaluation_release": {
+        "accession": "0001642896-23-000053",
+        "company": "IOT",
+        "filed": "2023-06-01",
+        "inventory_manifest": {
+          "body": "b53136bdfd8d17cb226bab278630b1d7a67303041461b8ef926bbcc23407aceb-7a82aff5c8c0386d861d16d7a7e760730360605c87452fd401fc2a7db21d8996.body",
+          "fetched_at": "2026-11-12T08:12:40.963813+00:00",
+          "sha256": "7a82aff5c8c0386d861d16d7a7e760730360605c87452fd401fc2a7db21d8996",
+          "url": "https://data.sec.gov/submissions/CIK0001642896.json"
+        },
+        "primary": "iot-20230530.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289623000053/iot-20230530.htm"
+      },
+      "group": "IOT-fresh-2023",
+      "status": "reserved"
+    },
+    {
+      "company": "LULU",
+      "context_release": {
+        "accession": "0001397187-23-000011",
+        "company": "LULU",
+        "filed": "2023-03-28",
+        "inventory_manifest": {
+          "body": "eccf2101d833e300d8c4cc459f0798c099978a63f5c216e451bc87ed82419f25-d1af739907cf625747a4963b29ad999506d0c3985167612366b283102de5eddf.body",
+          "fetched_at": "2026-11-12T08:12:44.265495+00:00",
+          "sha256": "d1af739907cf625747a4963b29ad999506d0c3985167612366b283102de5eddf",
+          "url": "https://data.sec.gov/submissions/CIK0001397187.json"
+        },
+        "primary": "lulu-20230328.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718723000011/lulu-20230328.htm"
+      },
+      "evaluation_release": {
+        "accession": "0001397187-23-000026",
+        "company": "LULU",
+        "filed": "2023-06-01",
+        "inventory_manifest": {
+          "body": "eccf2101d833e300d8c4cc459f0798c099978a63f5c216e451bc87ed82419f25-d1af739907cf625747a4963b29ad999506d0c3985167612366b283102de5eddf.body",
+          "fetched_at": "2026-11-12T08:12:44.265495+00:00",
+          "sha256": "d1af739907cf625747a4963b29ad999506d0c3985167612366b283102de5eddf",
+          "url": "https://data.sec.gov/submissions/CIK0001397187.json"
+        },
+        "primary": "lulu-20230601.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718723000026/lulu-20230601.htm"
+      },
+      "group": "LULU-fresh-2023",
+      "status": "reserved"
+    },
+    {
+      "company": "MDB",
+      "context_release": {
+        "accession": "0001441816-23-000023",
+        "company": "MDB",
+        "filed": "2023-03-08",
+        "inventory_manifest": {
+          "body": "ebf71d52af5051c1cde49c6546547e39bfb133abb4f0853ed7f269fd7cb99df1-78bbd6e9099fe79cc9a4e769fdbcdfe1107fc690f14632317396fc87f1805697.body",
+          "fetched_at": "2026-11-12T08:12:41.900717+00:00",
+          "sha256": "78bbd6e9099fe79cc9a4e769fdbcdfe1107fc690f14632317396fc87f1805697",
+          "url": "https://data.sec.gov/submissions/CIK0001441816.json"
+        },
+        "primary": "mdb-20230308.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181623000023/mdb-20230308.htm"
+      },
+      "evaluation_release": {
+        "accession": "0001441816-23-000085",
+        "company": "MDB",
+        "filed": "2023-06-01",
+        "inventory_manifest": {
+          "body": "ebf71d52af5051c1cde49c6546547e39bfb133abb4f0853ed7f269fd7cb99df1-78bbd6e9099fe79cc9a4e769fdbcdfe1107fc690f14632317396fc87f1805697.body",
+          "fetched_at": "2026-11-12T08:12:41.900717+00:00",
+          "sha256": "78bbd6e9099fe79cc9a4e769fdbcdfe1107fc690f14632317396fc87f1805697",
+          "url": "https://data.sec.gov/submissions/CIK0001441816.json"
+        },
+        "primary": "mdb-20230601.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181623000085/mdb-20230601.htm"
+      },
+      "group": "MDB-fresh-2023",
+      "status": "reserved"
+    },
+    {
+      "company": "OKTA",
+      "context_release": {
+        "accession": "0001660134-23-000009",
+        "company": "OKTA",
+        "filed": "2023-03-01",
+        "inventory_manifest": {
+          "body": "78a26811b563336fb5cea1e06bd46f0d5de0c2a7ce5e1d56718d6e764a5e531f-401ad0120efe04c1586c56d6e914bba94ab08a70ae3b34ae34fc361ddd3f1ac4.body",
+          "fetched_at": "2026-11-12T08:12:40.229671+00:00",
+          "sha256": "401ad0120efe04c1586c56d6e914bba94ab08a70ae3b34ae34fc361ddd3f1ac4",
+          "url": "https://data.sec.gov/submissions/CIK0001660134.json"
+        },
+        "primary": "okta-20230227.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013423000009/okta-20230227.htm"
+      },
+      "evaluation_release": {
+        "accession": "0001660134-23-000032",
+        "company": "OKTA",
+        "filed": "2023-05-31",
+        "inventory_manifest": {
+          "body": "78a26811b563336fb5cea1e06bd46f0d5de0c2a7ce5e1d56718d6e764a5e531f-401ad0120efe04c1586c56d6e914bba94ab08a70ae3b34ae34fc361ddd3f1ac4.body",
+          "fetched_at": "2026-11-12T08:12:40.229671+00:00",
+          "sha256": "401ad0120efe04c1586c56d6e914bba94ab08a70ae3b34ae34fc361ddd3f1ac4",
+          "url": "https://data.sec.gov/submissions/CIK0001660134.json"
+        },
+        "primary": "okta-20230531.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013423000032/okta-20230531.htm"
+      },
+      "group": "OKTA-fresh-2023",
+      "status": "reserved"
+    },
+    {
+      "company": "PD",
+      "context_release": {
+        "accession": "0001568100-23-000008",
+        "company": "PD",
+        "filed": "2023-03-15",
+        "inventory_manifest": {
+          "body": "22cf4674096bf6ee04528a13b25c01502032c4772a663f659906a16c4a83396f-d03001bf2f0305fea3d94709b83f11c6bfd1eac473e01d641eb31d26dc00b1c2.body",
+          "fetched_at": "2026-11-12T08:12:37.185257+00:00",
+          "sha256": "d03001bf2f0305fea3d94709b83f11c6bfd1eac473e01d641eb31d26dc00b1c2",
+          "url": "https://data.sec.gov/submissions/CIK0001568100.json"
+        },
+        "primary": "pd-20230315.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810023000008/pd-20230315.htm"
+      },
+      "evaluation_release": {
+        "accession": "0001568100-23-000031",
+        "company": "PD",
+        "filed": "2023-06-01",
+        "inventory_manifest": {
+          "body": "22cf4674096bf6ee04528a13b25c01502032c4772a663f659906a16c4a83396f-d03001bf2f0305fea3d94709b83f11c6bfd1eac473e01d641eb31d26dc00b1c2.body",
+          "fetched_at": "2026-11-12T08:12:37.185257+00:00",
+          "sha256": "d03001bf2f0305fea3d94709b83f11c6bfd1eac473e01d641eb31d26dc00b1c2",
+          "url": "https://data.sec.gov/submissions/CIK0001568100.json"
+        },
+        "primary": "pd-20230601.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810023000031/pd-20230601.htm"
+      },
+      "group": "PD-fresh-2023",
+      "status": "reserved"
+    },
+    {
+      "company": "S",
+      "context_release": {
+        "accession": "0001583708-23-000007",
+        "company": "S",
+        "filed": "2023-03-14",
+        "inventory_manifest": {
+          "body": "38e9acfa03386a6fe5270b48f70257f12eaf9100546acb59c2694f26e3cddec5-60659746517a91d58b0dc9fefb7035563e2ada871d5363ac83bf051193d9c754.body",
+          "fetched_at": "2026-11-12T08:12:42.808604+00:00",
+          "sha256": "60659746517a91d58b0dc9fefb7035563e2ada871d5363ac83bf051193d9c754",
+          "url": "https://data.sec.gov/submissions/CIK0001583708.json"
+        },
+        "primary": "s-20230314.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370823000007/s-20230314.htm"
+      },
+      "evaluation_release": {
+        "accession": "0001583708-23-000034",
+        "company": "S",
+        "filed": "2023-06-01",
+        "inventory_manifest": {
+          "body": "38e9acfa03386a6fe5270b48f70257f12eaf9100546acb59c2694f26e3cddec5-60659746517a91d58b0dc9fefb7035563e2ada871d5363ac83bf051193d9c754.body",
+          "fetched_at": "2026-11-12T08:12:42.808604+00:00",
+          "sha256": "60659746517a91d58b0dc9fefb7035563e2ada871d5363ac83bf051193d9c754",
+          "url": "https://data.sec.gov/submissions/CIK0001583708.json"
+        },
+        "primary": "s-20230601.htm",
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370823000034/s-20230601.htm"
+      },
+      "group": "S-fresh-2023",
+      "status": "reserved"
+    }
+  ],
+  "limitations": [
+    "Ten issuer groups; approximately twenty target labels, not enough to substantiate a general 98% precision rate. Same issuers/templates as diagnostics; fresh source periods, not unseen issuers.",
+    "One agent independently checks labels against SEC document/primary/index and retained evidence; no second human adjudicator or pristine external blind test. No LLM extraction."
+  ],
+  "prior_exposure": "Issuer formats and later periods were examined in Sessions 1\u20134. Only submissions metadata was read for this reservation; no reserved release/exhibit body was read to develop v2. Earlier companyfacts can contain these periods; prior cache presence alone does not prove blindness. Context is not development data. Gold is to be curated after v2 rules freeze without retuning.",
+  "reserved_at": "2026-11-13T03:24:53.875546+00:00",
+  "selection_procedure": "For each of the existing ten issuers, choose the latest original 8-K with Item 2.02 filed April 1\u2013July 31, 2023, absent from gold_v1. Reserve the immediately previous such earnings filing (since Nov 1, 2022) as context only. Both filings and all exhibits, amendments and target-guidance versions stay in one issuer group. No replacement based on extraction difficulty or guidance presence. A release with no eligible guidance remains a negative evaluation document.",
+  "selection_refinement_before_commit": "A metadata-only 2024 proposal was rejected before reading release bodies because its annual targets overlap later FY2025 guidance exposed in v1. The 2023 window avoids that annual-period overlap. Proposal retained only in local cache."
+}

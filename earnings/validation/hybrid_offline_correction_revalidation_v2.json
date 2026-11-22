@@ -1,0 +1,488 @@
+{
+  "accounting_read_only": [
+    {
+      "accounted_nano": null,
+      "active": 0,
+      "held_nano": 1120000000,
+      "id": "bb7bb97b-f98d-497c-847f-012086b915af",
+      "reserved_nano": 1120000000
+    }
+  ],
+  "bytes_removed": 161279,
+  "components": [
+    {
+      "canonical_characters": 24121,
+      "canonical_json_bytes": 24403,
+      "document_json_bytes": 141184,
+      "source_id": "current",
+      "table_count": 9,
+      "table_rows_value_bytes": 103677,
+      "table_surrounding_context_value_bytes": 5438,
+      "table_text_value_bytes": 6434,
+      "tables_json_bytes": 116360
+    },
+    {
+      "canonical_characters": 22979,
+      "canonical_json_bytes": 23231,
+      "document_json_bytes": 129770,
+      "source_id": "prior",
+      "table_count": 9,
+      "table_rows_value_bytes": 94104,
+      "table_surrounding_context_value_bytes": 5438,
+      "table_text_value_bytes": 5779,
+      "tables_json_bytes": 106114
+    }
+  ],
+  "human_review_complete": false,
+  "kind": "CACHED_RESPONSE_REVALIDATION_NOT_FRESH_MODEL_PERFORMANCE",
+  "original_artifacts": {
+    "bb7bb97b-f98d-497c-847f-012086b915af-raw.json": "60b7f6aed50d4f96aacc63ab0ec397e9a82975298b32cfe17b19109711014f6f",
+    "bb7bb97b-f98d-497c-847f-012086b915af-request.json": "47bde3613afbc5dee3962e657e95a2089578faa4878ad08d7ec5ff7c85bf42a0",
+    "bb7bb97b-f98d-497c-847f-012086b915af-result.json": "0018436c3a1e4f753c4f41594806954fe3ea082c155099a80cbabaab19e2deda",
+    "cost.sqlite3": "f840bccfa8e398bd1737c5c5c80fa37d0bd7296022586945f6fd09c2f6bcb2e0",
+    "pilot-0-input.json": "88e09e1b38f3905e66438f0660845b80b797d40b5a9e900c04197cceced2a552",
+    "run-20261113T203446771896Z.json": "732a32e32633631f9f6acee37aeea74519862c84ac1141767cb5eed7938d101f"
+  },
+  "original_input_tokens": 89449,
+  "original_usage": {
+    "cache_tokens_details": null,
+    "cached_content_token_count": null,
+    "candidates_token_count": 1901,
+    "candidates_tokens_details": [
+      {
+        "modality": "TEXT",
+        "token_count": 1901
+      }
+    ],
+    "prompt_token_count": 89449,
+    "prompt_tokens_details": [
+      {
+        "modality": "TEXT",
+        "token_count": 89449
+      }
+    ],
+    "thoughts_token_count": null,
+    "tool_use_prompt_token_count": null,
+    "tool_use_prompt_tokens_details": null,
+    "total_token_count": 91350,
+    "traffic_type": "ON_DEMAND"
+  },
+  "payload_json_bytes": 270971,
+  "production_promotion": false,
+  "proposal_scope": "All text, all table cell values and header positions retained; duplicate representations removed. NOT activated for inference.",
+  "proposed_full_text_compact_tables_json_bytes": 109692,
+  "provider_calls": 0,
+  "provider_pre_count_tokens": 89940,
+  "raw_html_in_inference_payload": false,
+  "revalidation": {
+    "human_review_complete": false,
+    "observations": [
+      {
+        "deterministic_checks_passed": false,
+        "deterministic_errors": [
+          "CURRENCY_NOT_SUPPORTED",
+          "INCOMPLETE_EVIDENCE_ROLES",
+          "INVALID_STATUS_REFERENCE_INPUT",
+          "MISSING_STATUS_EVIDENCE",
+          "NUMBER_NOT_IN_AMOUNT_EVIDENCE",
+          "REPEATED_EXACT_MATCH",
+          "SCALE_NOT_SUPPORTED"
+        ],
+        "evidence_locations": [
+          {
+            "matches": [
+              {
+                "end": 728,
+                "start": 649
+              },
+              {
+                "end": 3180,
+                "start": 3101
+              }
+            ],
+            "original": {
+              "end": 580,
+              "quote": "Full-year revenue outlook is now in the range of $6.73 billion to $6.81 billion",
+              "source_id": "current",
+              "start": 507
+            },
+            "original_offsets_match": false,
+            "resolved": null,
+            "roles": [
+              "amount"
+            ],
+            "semantic_validation": "NOT_GUARANTEED",
+            "status": "REPEATED_EXACT_MATCH"
+          }
+        ],
+        "id": "d79bab3c-004f-5ef2-b374-cb1d8a56ea28",
+        "index": 0,
+        "normalization": "Decimal explicit literals",
+        "normalized_high": "6810000000.00",
+        "normalized_low": "6730000000.00",
+        "proposal": {
+          "amount_style": "range",
+          "basis_kind": "reported",
+          "center": null,
+          "column_label": null,
+          "currency": "USD",
+          "evidence": [
+            {
+              "end": 580,
+              "quote": "Full-year revenue outlook is now in the range of $6.73 billion to $6.81 billion",
+              "role": "amount",
+              "roles": [],
+              "source_id": "current",
+              "start": 507
+            }
+          ],
+          "fiscal_quarter": null,
+          "fiscal_year": 2025,
+          "guidance_type": "direct",
+          "high": {
+            "scale": "1000000000",
+            "value": "6.81"
+          },
+          "issued_end": "2025-05-28",
+          "issued_precision": "day",
+          "issued_start": "2025-05-28",
+          "low": {
+            "scale": "1000000000",
+            "value": "6.73"
+          },
+          "metric_class": "consolidated_revenue",
+          "metric_label": "revenue",
+          "period_end": null,
+          "period_start": null,
+          "prior_observation_index": 2,
+          "review_note": "Consolidated full-year 2025 revenue outlook raised from $6.68B-$6.76B to $6.73B-$6.81B.",
+          "scope": "consolidated",
+          "scope_qualifiers": [],
+          "scope_support": "explicit",
+          "source_id": "current",
+          "status": "raised",
+          "status_support": "prior_range",
+          "table_column_index": null,
+          "table_id": null,
+          "table_row_index": null,
+          "tolerance": null
+        },
+        "quarantined": true,
+        "resolved_period_end": "2025-10-31",
+        "resolved_period_start": "2024-11-01",
+        "resolved_status": "unresolved",
+        "review_flags": [
+          "SEMANTIC_HUMAN_REVIEW_REQUIRED",
+          "PERIOD_RESOLVED_FROM_REGISTERED_CALENDAR_NOT_MODEL",
+          "ISSUANCE_SEMANTICS_REQUIRE_REVIEW"
+        ],
+        "review_status": "human_review_pending",
+        "semantic_validation": "NOT_GUARANTEED"
+      },
+      {
+        "deterministic_checks_passed": false,
+        "deterministic_errors": [
+          "INCOMPLETE_EVIDENCE_ROLES",
+          "INITIAL_NOT_ESTABLISHED",
+          "MISSING_STATUS_EVIDENCE"
+        ],
+        "evidence_locations": [
+          {
+            "matches": [
+              {
+                "end": 970,
+                "start": 885
+              }
+            ],
+            "original": {
+              "end": 787,
+              "quote": "Q3 revenue outlook is expected to be in the range of $1.645 billion to $1.675 billion",
+              "source_id": "current",
+              "start": 709
+            },
+            "original_offsets_match": false,
+            "resolved": {
+              "end": 970,
+              "start": 885
+            },
+            "roles": [
+              "amount"
+            ],
+            "semantic_validation": "NOT_GUARANTEED",
+            "status": "UNIQUE_EXACT_MATCH"
+          }
+        ],
+        "id": "a7413cc3-d6e3-5ba4-b623-796e75172443",
+        "index": 1,
+        "normalization": "Decimal explicit literals",
+        "normalized_high": "1675000000.000",
+        "normalized_low": "1645000000.000",
+        "proposal": {
+          "amount_style": "range",
+          "basis_kind": "reported",
+          "center": null,
+          "column_label": null,
+          "currency": "USD",
+          "evidence": [
+            {
+              "end": 787,
+              "quote": "Q3 revenue outlook is expected to be in the range of $1.645 billion to $1.675 billion",
+              "role": "amount",
+              "roles": [],
+              "source_id": "current",
+              "start": 709
+            }
+          ],
+          "fiscal_quarter": 3,
+          "fiscal_year": 2025,
+          "guidance_type": "direct",
+          "high": {
+            "scale": "1000000000",
+            "value": "1.675"
+          },
+          "issued_end": "2025-05-28",
+          "issued_precision": "day",
+          "issued_start": "2025-05-28",
+          "low": {
+            "scale": "1000000000",
+            "value": "1.645"
+          },
+          "metric_class": "consolidated_revenue",
+          "metric_label": "revenue",
+          "period_end": null,
+          "period_start": null,
+          "prior_observation_index": null,
+          "review_note": "First observed direct revenue guidance for Q3 fiscal year 2025.",
+          "scope": "consolidated",
+          "scope_qualifiers": [],
+          "scope_support": "explicit",
+          "source_id": "current",
+          "status": "initial",
+          "status_support": "first_observed_quarter",
+          "table_column_index": null,
+          "table_id": null,
+          "table_row_index": null,
+          "tolerance": null
+        },
+        "quarantined": true,
+        "resolved_period_end": "2025-07-31",
+        "resolved_period_start": "2025-05-01",
+        "resolved_status": "unresolved",
+        "review_flags": [
+          "SEMANTIC_HUMAN_REVIEW_REQUIRED",
+          "MODEL_OFFSETS_DIFFER_DETERMINISTIC_LOCATION_PROPOSED",
+          "PERIOD_RESOLVED_FROM_REGISTERED_CALENDAR_NOT_MODEL",
+          "ISSUANCE_SEMANTICS_REQUIRE_REVIEW"
+        ],
+        "review_status": "human_review_pending",
+        "semantic_validation": "NOT_GUARANTEED"
+      },
+      {
+        "deterministic_checks_passed": false,
+        "deterministic_errors": [
+          "CURRENCY_NOT_SUPPORTED",
+          "INCOMPLETE_EVIDENCE_ROLES",
+          "MISSING_STATUS_EVIDENCE",
+          "NUMBER_NOT_IN_AMOUNT_EVIDENCE",
+          "REPEATED_EXACT_MATCH",
+          "SCALE_NOT_SUPPORTED"
+        ],
+        "evidence_locations": [
+          {
+            "matches": [
+              {
+                "end": 752,
+                "start": 673
+              },
+              {
+                "end": 3262,
+                "start": 3183
+              }
+            ],
+            "original": {
+              "end": 579,
+              "quote": "Full-year revenue outlook is now in the range of $6.68 billion to $6.76 billion",
+              "source_id": "prior",
+              "start": 506
+            },
+            "original_offsets_match": false,
+            "resolved": null,
+            "roles": [
+              "amount"
+            ],
+            "semantic_validation": "NOT_GUARANTEED",
+            "status": "REPEATED_EXACT_MATCH"
+          }
+        ],
+        "id": "6ec75b47-a836-5383-8bff-c025e0eb552b",
+        "index": 2,
+        "normalization": "Decimal explicit literals",
+        "normalized_high": "6760000000.00",
+        "normalized_low": "6680000000.00",
+        "proposal": {
+          "amount_style": "range",
+          "basis_kind": "reported",
+          "center": null,
+          "column_label": null,
+          "currency": "USD",
+          "evidence": [
+            {
+              "end": 579,
+              "quote": "Full-year revenue outlook is now in the range of $6.68 billion to $6.76 billion",
+              "role": "amount",
+              "roles": [],
+              "source_id": "prior",
+              "start": 506
+            }
+          ],
+          "fiscal_quarter": null,
+          "fiscal_year": 2025,
+          "guidance_type": "direct",
+          "high": {
+            "scale": "1000000000",
+            "value": "6.76"
+          },
+          "issued_end": "2025-02-26",
+          "issued_precision": "day",
+          "issued_start": "2025-02-26",
+          "low": {
+            "scale": "1000000000",
+            "value": "6.68"
+          },
+          "metric_class": "consolidated_revenue",
+          "metric_label": "revenue",
+          "period_end": null,
+          "period_start": null,
+          "prior_observation_index": null,
+          "review_note": "Prior context full-year 2025 direct revenue target range.",
+          "scope": "consolidated",
+          "scope_qualifiers": [],
+          "scope_support": "explicit",
+          "source_id": "prior",
+          "status": "initial",
+          "status_support": "explicit_issuance",
+          "table_column_index": null,
+          "table_id": null,
+          "table_row_index": null,
+          "tolerance": null
+        },
+        "quarantined": true,
+        "resolved_period_end": "2025-10-31",
+        "resolved_period_start": "2024-11-01",
+        "resolved_status": "unresolved",
+        "review_flags": [
+          "SEMANTIC_HUMAN_REVIEW_REQUIRED",
+          "PERIOD_RESOLVED_FROM_REGISTERED_CALENDAR_NOT_MODEL",
+          "ISSUANCE_SEMANTICS_REQUIRE_REVIEW"
+        ],
+        "review_status": "human_review_pending",
+        "semantic_validation": "NOT_GUARANTEED"
+      },
+      {
+        "deterministic_checks_passed": false,
+        "deterministic_errors": [
+          "INCOMPLETE_EVIDENCE_ROLES",
+          "INITIAL_NOT_ESTABLISHED",
+          "MISSING_STATUS_EVIDENCE"
+        ],
+        "evidence_locations": [
+          {
+            "matches": [
+              {
+                "end": 987,
+                "start": 904
+              }
+            ],
+            "original": {
+              "end": 778,
+              "quote": "Q2 revenue outlook is expected to be in the range of $1.61 billion to $1.65 billion",
+              "source_id": "prior",
+              "start": 703
+            },
+            "original_offsets_match": false,
+            "resolved": {
+              "end": 987,
+              "start": 904
+            },
+            "roles": [
+              "amount"
+            ],
+            "semantic_validation": "NOT_GUARANTEED",
+            "status": "UNIQUE_EXACT_MATCH"
+          }
+        ],
+        "id": "465dc241-61bf-5a06-80e6-b903965b4e1b",
+        "index": 3,
+        "normalization": "Decimal explicit literals",
+        "normalized_high": "1650000000.00",
+        "normalized_low": "1610000000.00",
+        "proposal": {
+          "amount_style": "range",
+          "basis_kind": "reported",
+          "center": null,
+          "column_label": null,
+          "currency": "USD",
+          "evidence": [
+            {
+              "end": 778,
+              "quote": "Q2 revenue outlook is expected to be in the range of $1.61 billion to $1.65 billion",
+              "role": "amount",
+              "roles": [],
+              "source_id": "prior",
+              "start": 703
+            }
+          ],
+          "fiscal_quarter": 2,
+          "fiscal_year": 2025,
+          "guidance_type": "direct",
+          "high": {
+            "scale": "1000000000",
+            "value": "1.65"
+          },
+          "issued_end": "2025-02-26",
+          "issued_precision": "day",
+          "issued_start": "2025-02-26",
+          "low": {
+            "scale": "1000000000",
+            "value": "1.61"
+          },
+          "metric_class": "consolidated_revenue",
+          "metric_label": "revenue",
+          "period_end": null,
+          "period_start": null,
+          "prior_observation_index": null,
+          "review_note": "Prior context direct revenue target range for Q2 2025.",
+          "scope": "consolidated",
+          "scope_qualifiers": [],
+          "scope_support": "explicit",
+          "source_id": "prior",
+          "status": "initial",
+          "status_support": "first_observed_quarter",
+          "table_column_index": null,
+          "table_id": null,
+          "table_row_index": null,
+          "tolerance": null
+        },
+        "quarantined": true,
+        "resolved_period_end": "2025-04-30",
+        "resolved_period_start": "2025-02-01",
+        "resolved_status": "unresolved",
+        "review_flags": [
+          "SEMANTIC_HUMAN_REVIEW_REQUIRED",
+          "MODEL_OFFSETS_DIFFER_DETERMINISTIC_LOCATION_PROPOSED",
+          "PERIOD_RESOLVED_FROM_REGISTERED_CALENDAR_NOT_MODEL",
+          "ISSUANCE_SEMANTICS_REQUIRE_REVIEW"
+        ],
+        "review_status": "human_review_pending",
+        "semantic_validation": "NOT_GUARANTEED"
+      }
+    ],
+    "unresolved_sections": []
+  },
+  "saved_schema_json_bytes": 4292,
+  "saved_system_prompt_utf8_bytes": 3118,
+  "saved_wire_body_available": false,
+  "schema_counting_supplement_sent_to_generation": false,
+  "thinking_counter_origin": "SDK serialized null; original absent versus explicit null cannot be recovered",
+  "token_attribution": "Provider saved only aggregate counters. Byte components below are exact JSON sizes, NOT per-component token counts. No inferred tokenizer attribution."
+}

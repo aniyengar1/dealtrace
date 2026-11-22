@@ -1,0 +1,1324 @@
+{
+  "review_scope": "Last eight publicly reported quarters as of 2026-11-12; complete reviewed 8-K/8-K-A inventory from 2024-08-01 through 2026-11-12",
+  "source_inventory": [
+    {
+      "accession": "0001397187-24-000033",
+      "filed": "2024-08-29",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000033/lulu-20240829.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000033/lulu-20240728xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001397187-24-000040",
+      "filed": "2024-12-05",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000040/lulu-20241203.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000040/lulu-20241027xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001397187-25-000004",
+      "filed": "2025-01-13",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000004/lulu-20250113.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000004/lulu-20250113xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001397187-25-000012",
+      "filed": "2025-03-27",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000012/lulu-20250327.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000012/lulu-20250202xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001397187-25-000026",
+      "filed": "2025-06-05",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/lulu-20250605.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/lulu-20250504xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001397187-25-000038",
+      "filed": "2025-09-04",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000038/lulu-20250904.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000038/lulu-20250803xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001397187-25-000054",
+      "filed": "2025-12-11",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000054/lulu-20251203.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000054/lulu-20251102xex991.htm",
+        "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000054/lulu-20251211xex992.htm"
+      ]
+    },
+    {
+      "accession": "0001397187-26-000005",
+      "filed": "2026-01-12",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000005/lulu-20260112.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000005/lulu-20260112xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001397187-26-000017",
+      "filed": "2026-03-17",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000017/lulu-20260313.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000017/lulu-20260313xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001397187-26-000019",
+      "filed": "2026-03-17",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260317.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260201xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001397187-26-000070",
+      "filed": "2026-04-22",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000070/lulu-20260421.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000070/lulu-20260421xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001213900-26-048264",
+      "filed": "2026-04-28",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000121390026048264/ea0287949-8k_lululemon.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000121390026048264/ea028794901ex99-1.htm"
+      ]
+    },
+    {
+      "accession": "0001213900-26-061531",
+      "filed": "2026-05-27",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000121390026061531/ea0292191-8k_lululemon.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000121390026061531/ea029219101ex99-1.htm"
+      ]
+    },
+    {
+      "accession": "0001397187-26-000077",
+      "filed": "2026-06-04",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260604.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260503xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001397187-26-000126",
+      "filed": "2026-09-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260903.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001397187-26-000131",
+      "filed": "2026-10-07",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000131/lulu-20260930.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000131/lulu-20260930xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001397187-26-000135",
+      "filed": "2026-10-22",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000135/lulu-20261019.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000135/lulu-20261019xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001397187-25-000029",
+      "filed": "2025-06-17",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000029/lulu-20250611.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001397187-25-000045",
+      "filed": "2025-10-21",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000045/lulu-20251015.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001397187-25-000047",
+      "filed": "2025-11-21",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000047/lulu-20251117.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000047/lulu-20251117xex991.htm"
+      ]
+    },
+    {
+      "accession": "0001213900-25-126119",
+      "filed": "2025-12-29",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000121390025126119/ea0271178-8k_lulu.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000121390025126119/ea027117801ex99-1_lulu.htm"
+      ]
+    },
+    {
+      "accession": "0001397187-26-000088",
+      "filed": "2026-06-26",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000088/lulu-20260624.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001397187-26-000120",
+      "filed": "2026-08-13",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000120/lulu-20260813.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001397187-26-000129",
+      "filed": "2026-09-14",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000129/lulu-20260908.htm",
+      "exhibits": []
+    }
+  ],
+  "inventory_gaps": [],
+  "quarters": [
+    {
+      "company": "LULU",
+      "target": {
+        "start": "2024-07-29",
+        "end": "2024-10-27",
+        "label": "Q3 FY2024",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "650831fd-d5fa-5b4f-adc6-8d8bd37f2f91",
+          "company": "LULU",
+          "issued": {
+            "start": "2024-08-29",
+            "end": "2024-08-29",
+            "precision": "day"
+          },
+          "filed": "2024-08-29",
+          "start": "2024-07-29",
+          "end": "2024-10-27",
+          "low": "2340000000.000",
+          "high": "2365000000.000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001397187-24-000033",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000033/lulu-20240728xex991.htm",
+          "quote": "third quarter of 2024, the Company expects net revenue to be in the range of $2.340 billion to $2.365 billion,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "650831fd-d5fa-5b4f-adc6-8d8bd37f2f91",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000033/lulu-20240728xex991.htm",
+          "source_sha256": "9ffd5ab33a632733e39e4fd1d5def1481a5194483a8e77f666555eeda3fbb78b",
+          "fetched_at": "2026-11-12T10:27:35.431541+00:00",
+          "issuance_date_quote": "August 29, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000033/lulu-20240829.htm",
+          "exhibit_index_quote": "99.1 Press release issued on August 29 , 2024."
+        }
+      ],
+      "actual": {
+        "id": "9776c1de-82d3-5205-968e-9ecf88139f9a",
+        "company": "LULU",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2024-07-29",
+        "end": "2024-10-27",
+        "value": "2396660000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001397187-24-000041",
+        "filed": "2024-12-05",
+        "form": "10-Q",
+        "fiscal_year": 2024,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397187.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000041/lulu-20241027.htm",
+        "filed": "2024-12-05",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000041/lulu-20241027.htm",
+          "sha256": "76369382598ec2873bf5ba51b48fa7e421c8adb397681db08cf38b94d152bdf0",
+          "body": "f8310580f4b769062e75b11245ed716d88d039f72c29fdd753143428e269e913-76369382598ec2873bf5ba51b48fa7e421c8adb397681db08cf38b94d152bdf0.body",
+          "fetched_at": "2026-11-12T10:41:01.528139+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001397187-24-000041-filing.txt"
+      },
+      "result": {
+        "issued_date": "2024-12-05",
+        "formal_release_issued_date": "2024-12-05",
+        "issued_precision": "day",
+        "date_quote": "December 5, 2024",
+        "filed": "2024-12-05",
+        "accession": "0001397187-24-000040",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000040/lulu-20241027xex991.htm",
+        "reported_revenue_quote": "Net revenue $ 2,396,660 $ 2,204,218 $ 6,976,629 $ 6,414,175",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "62bb4501c705882660d17d2e2c904f804281f980a3adbae069bf3ca6252d206a",
+        "fetched_at": "2026-11-12T10:27:36.760628+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.602845+00:00",
+        "guidance_id": "650831fd-d5fa-5b4f-adc6-8d8bd37f2f91",
+        "actual_id": "9776c1de-82d3-5205-968e-9ecf88139f9a",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000033/lulu-20240728xex991.htm",
+            "filed_date": "2024-08-29"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000040/lulu-20241027xex991.htm",
+            "filed_date": "2024-12-05"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000041/lulu-20241027.htm",
+            "filed_date": "2024-12-05"
+          }
+        ],
+        "scope_evidence": [
+          "ird quarter of 2024, and $ 23.1 million was paid subsequent to October 27, 2024. The Company has not disclosed pro forma information of the combined business as the transaction is not material to net revenue or net earnings. During the first three quarters of 2024, the Company recognized $ 2.5 million in acquisition-related expenses within selling, general and administrative expenses primarily related to lega"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2024-12-05"
+    },
+    {
+      "company": "LULU",
+      "target": {
+        "start": "2024-10-28",
+        "end": "2025-02-02",
+        "label": "Q4 FY2024",
+        "calendar": "weeks",
+        "days": 98
+      },
+      "guidance_versions": [
+        {
+          "id": "c238a715-c3f2-5140-90b0-0915ea47dcbe",
+          "company": "LULU",
+          "issued": {
+            "start": "2024-12-05",
+            "end": "2024-12-05",
+            "precision": "day"
+          },
+          "filed": "2024-12-05",
+          "start": "2024-10-28",
+          "end": "2025-02-02",
+          "low": "3475000000.000",
+          "high": "3510000000.000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001397187-24-000040",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000040/lulu-20241027xex991.htm",
+          "quote": "fourth quarter of 2024, the Company expects net revenue to be in the range of $3.475 billion to $3.510 billion,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        },
+        {
+          "id": "428042f8-d727-51ae-9c58-b562f949a824",
+          "company": "LULU",
+          "issued": {
+            "start": "2025-01-13",
+            "end": "2025-01-13",
+            "precision": "day"
+          },
+          "filed": "2025-01-13",
+          "start": "2024-10-28",
+          "end": "2025-02-02",
+          "low": "3560000000.000",
+          "high": "3580000000.000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "raised",
+          "accession": "0001397187-25-000004",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000004/lulu-20250113xex991.htm",
+          "quote": "fourth quarter of fiscal 2024, the Company now expects net revenue will be in the range of $3.560 billion to $3.580 billion,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": false,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "c238a715-c3f2-5140-90b0-0915ea47dcbe",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000040/lulu-20241027xex991.htm",
+          "source_sha256": "62bb4501c705882660d17d2e2c904f804281f980a3adbae069bf3ca6252d206a",
+          "fetched_at": "2026-11-12T10:27:36.760628+00:00",
+          "issuance_date_quote": "December 5, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718724000040/lulu-20241203.htm",
+          "exhibit_index_quote": "99.1 Press release issued on December 5, 2024."
+        },
+        {
+          "guidance_id": "428042f8-d727-51ae-9c58-b562f949a824",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000004/lulu-20250113xex991.htm",
+          "source_sha256": "6f60ffd8904b707ea4b835d3c8ea3e66eebe027f776c36b9d25d10b1ccfa1176",
+          "fetched_at": "2026-11-12T10:27:38.088858+00:00",
+          "issuance_date_quote": "January 13, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "range_update",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000004/lulu-20250113.htm",
+          "exhibit_index_quote": "99.1 Press release issued on January 13 , 202 5 ."
+        }
+      ],
+      "actual": {
+        "id": "0d4d804a-1481-5e48-ba07-316fabcde113",
+        "company": "LULU",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2024-10-28",
+        "end": "2025-02-02",
+        "value": "3611497000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001397187-25-000013",
+        "filed": "2025-03-27",
+        "form": "DERIVED",
+        "fiscal_year": 2024,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397187.json",
+        "parents": [
+          "ed72ccd0-e87f-597c-8ff3-5508d7af91c8",
+          "59584d85-626b-5490-8218-6634e93b456a"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "59584d85-626b-5490-8218-6634e93b456a",
+          "company": "LULU",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2024-01-29",
+          "end": "2024-10-27",
+          "value": "6976629000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001397187-24-000041",
+          "filed": "2024-12-05",
+          "form": "10-Q",
+          "fiscal_year": 2024,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397187.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "ed72ccd0-e87f-597c-8ff3-5508d7af91c8",
+          "company": "LULU",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2024-01-29",
+          "end": "2025-02-02",
+          "value": "10588126000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001397187-25-000013",
+          "filed": "2025-03-27",
+          "form": "10-K",
+          "fiscal_year": 2024,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397187.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000013/lulu-20250202.htm",
+        "filed": "2025-03-27",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000013/lulu-20250202.htm",
+          "sha256": "8bc4b4d16ac40d48ec5bdbf5404e4335e789d7f4d2b30486db41eb0d30ca9753",
+          "body": "1b69b75abb4486ee7406d11e5548d00b40dec0815b6e5e577c4ddfb691bb580b-8bc4b4d16ac40d48ec5bdbf5404e4335e789d7f4d2b30486db41eb0d30ca9753.body",
+          "fetched_at": "2026-11-12T10:41:02.256811+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001397187-25-000013-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-03-27",
+        "formal_release_issued_date": "2025-03-27",
+        "issued_precision": "day",
+        "date_quote": "March 27, 2025",
+        "filed": "2025-03-27",
+        "accession": "0001397187-25-000012",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000012/lulu-20250202xex991.htm",
+        "reported_revenue_quote": "Net revenue $ 3,611,497 $ 3,205,103 $ 10,588,126 $ 9,619,278",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "2d4c164cc091bf2e1d79275a8ae0429820e37c0a91345bab3411f6c70d23c559",
+        "fetched_at": "2026-11-12T10:27:39.323650+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.613636+00:00",
+        "guidance_id": "428042f8-d727-51ae-9c58-b562f949a824",
+        "actual_id": "0d4d804a-1481-5e48-ba07-316fabcde113",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000004/lulu-20250113xex991.htm",
+            "filed_date": "2025-01-13"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000012/lulu-20250202xex991.htm",
+            "filed_date": "2025-03-27"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000013/lulu-20250202.htm",
+            "filed_date": "2025-03-27"
+          }
+        ],
+        "scope_evidence": [
+          "he acquisition date to December 31, 2025, and has been recognized at fair value. The Company has not disclosed pro forma information of the combined business as the transaction is not material to net revenue or net earnings. During 2024, the Company recognized $ 3.5 million in acquisition-related expenses within selling, general and administrative expenses primarily related to legal, accounting, valuation, an"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-03-27"
+    },
+    {
+      "company": "LULU",
+      "target": {
+        "start": "2025-02-03",
+        "end": "2025-05-04",
+        "label": "Q1 FY2025",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "5690de22-8de0-5635-8526-c01c9cc462a6",
+          "company": "LULU",
+          "issued": {
+            "start": "2025-03-27",
+            "end": "2025-03-27",
+            "precision": "day"
+          },
+          "filed": "2025-03-27",
+          "start": "2025-02-03",
+          "end": "2025-05-04",
+          "low": "2335000000.000",
+          "high": "2355000000.000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001397187-25-000012",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000012/lulu-20250202xex991.htm",
+          "quote": "first quarter of 2025, the Company expects net revenue to be in the range of $2.335 billion to $2.355 billion,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "5690de22-8de0-5635-8526-c01c9cc462a6",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000012/lulu-20250202xex991.htm",
+          "source_sha256": "2d4c164cc091bf2e1d79275a8ae0429820e37c0a91345bab3411f6c70d23c559",
+          "fetched_at": "2026-11-12T10:27:39.323650+00:00",
+          "issuance_date_quote": "March 27, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000012/lulu-20250327.htm",
+          "exhibit_index_quote": "99.1 Press release issued on March 2 7 , 202 5 ."
+        }
+      ],
+      "actual": {
+        "id": "5b2798b7-bd39-53b6-b61f-d9b9e4a792cb",
+        "company": "LULU",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-02-03",
+        "end": "2025-05-04",
+        "value": "2370660000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001397187-25-000027",
+        "filed": "2025-06-05",
+        "form": "10-Q",
+        "fiscal_year": 2025,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397187.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000027/lulu-20250504.htm",
+        "filed": "2025-06-05",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000027/lulu-20250504.htm",
+          "sha256": "d8fd9304fb2389d59c236abcf7c04f820a2d2e56497cfc472abce26e28461276",
+          "body": "796f6d24f3f9f6c058d584971933dc424e2184e441b458d81c67725bbb290ecb-d8fd9304fb2389d59c236abcf7c04f820a2d2e56497cfc472abce26e28461276.body",
+          "fetched_at": "2026-11-12T10:41:02.969855+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001397187-25-000027-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-06-05",
+        "formal_release_issued_date": "2025-06-05",
+        "issued_precision": "day",
+        "date_quote": "June 5, 2025",
+        "filed": "2025-06-05",
+        "accession": "0001397187-25-000026",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/lulu-20250504xex991.htm",
+        "reported_revenue_quote": "Net revenue $ 2,370,660 $ 2,208,891",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "7647077a40bfcc7d940750e1176bc7403d28e413d40bffd7f668510be7b74371",
+        "fetched_at": "2026-11-12T10:27:40.548142+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.619919+00:00",
+        "guidance_id": "5690de22-8de0-5635-8526-c01c9cc462a6",
+        "actual_id": "5b2798b7-bd39-53b6-b61f-d9b9e4a792cb",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000012/lulu-20250202xex991.htm",
+            "filed_date": "2025-03-27"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/lulu-20250504xex991.htm",
+            "filed_date": "2025-06-05"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000027/lulu-20250504.htm",
+            "filed_date": "2025-06-05"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-06-05"
+    },
+    {
+      "company": "LULU",
+      "target": {
+        "start": "2025-05-05",
+        "end": "2025-08-03",
+        "label": "Q2 FY2025",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "761d0e8e-cb2e-578f-b009-66c1bbd92387",
+          "company": "LULU",
+          "issued": {
+            "start": "2025-06-05",
+            "end": "2025-06-05",
+            "precision": "day"
+          },
+          "filed": "2025-06-05",
+          "start": "2025-05-05",
+          "end": "2025-08-03",
+          "low": "2535000000.000",
+          "high": "2560000000.000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001397187-25-000026",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/lulu-20250504xex991.htm",
+          "quote": "second quarter of 2025, the Company expects net revenue to be in the range of $2.535 billion to $2.560 billion,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "761d0e8e-cb2e-578f-b009-66c1bbd92387",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/lulu-20250504xex991.htm",
+          "source_sha256": "7647077a40bfcc7d940750e1176bc7403d28e413d40bffd7f668510be7b74371",
+          "fetched_at": "2026-11-12T10:27:40.548142+00:00",
+          "issuance_date_quote": "June 5, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/lulu-20250605.htm",
+          "exhibit_index_quote": "99.1 Press release issued on June 5, 202 5 ."
+        }
+      ],
+      "actual": {
+        "id": "1313a552-c473-5cc8-ac53-dcc71235eb81",
+        "company": "LULU",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-05-05",
+        "end": "2025-08-03",
+        "value": "2525219000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001397187-25-000039",
+        "filed": "2025-09-04",
+        "form": "10-Q",
+        "fiscal_year": 2025,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397187.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000039/lulu-20250803.htm",
+        "filed": "2025-09-04",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000039/lulu-20250803.htm",
+          "sha256": "ab77e2301f2cbe1e12dad7fa4131277087814b4db82d064f338cfafe07827ab6",
+          "body": "8300afdc3ac4f762ed6c2a3fd13382a815cc7cc91f5bd2010bf9c48dfe2d9763-ab77e2301f2cbe1e12dad7fa4131277087814b4db82d064f338cfafe07827ab6.body",
+          "fetched_at": "2026-11-12T10:41:03.673386+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001397187-25-000039-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-09-04",
+        "formal_release_issued_date": "2025-09-04",
+        "issued_precision": "day",
+        "date_quote": "September 4, 2025",
+        "filed": "2025-09-04",
+        "accession": "0001397187-25-000038",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000038/lulu-20250803xex991.htm",
+        "reported_revenue_quote": "Net revenue $ 2,525,219 $ 2,371,078 $ 4,895,879 $ 4,579,969",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "7ee275fde8c2f1f05f8577e24097b538192f2c7b7bc37496f33afd2df2f17f8e",
+        "fetched_at": "2026-11-12T10:27:41.882780+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.626788+00:00",
+        "guidance_id": "761d0e8e-cb2e-578f-b009-66c1bbd92387",
+        "actual_id": "1313a552-c473-5cc8-ac53-dcc71235eb81",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000026/lulu-20250504xex991.htm",
+            "filed_date": "2025-06-05"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000038/lulu-20250803xex991.htm",
+            "filed_date": "2025-09-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000039/lulu-20250803.htm",
+            "filed_date": "2025-09-04"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-09-04"
+    },
+    {
+      "company": "LULU",
+      "target": {
+        "start": "2025-08-04",
+        "end": "2025-11-02",
+        "label": "Q3 FY2025",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "d3e5d71a-7cdc-5aaf-89e1-3887345fcb2a",
+          "company": "LULU",
+          "issued": {
+            "start": "2025-09-04",
+            "end": "2025-09-04",
+            "precision": "day"
+          },
+          "filed": "2025-09-04",
+          "start": "2025-08-04",
+          "end": "2025-11-02",
+          "low": "2470000000.000",
+          "high": "2500000000.000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001397187-25-000038",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000038/lulu-20250803xex991.htm",
+          "quote": "third quarter of 2025, the Company expects net revenue to be in the range of $2.470 billion to $2.500 billion,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "d3e5d71a-7cdc-5aaf-89e1-3887345fcb2a",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000038/lulu-20250803xex991.htm",
+          "source_sha256": "7ee275fde8c2f1f05f8577e24097b538192f2c7b7bc37496f33afd2df2f17f8e",
+          "fetched_at": "2026-11-12T10:27:41.882780+00:00",
+          "issuance_date_quote": "September 4, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000038/lulu-20250904.htm",
+          "exhibit_index_quote": "99.1 Press release issued on September 4, 2025."
+        }
+      ],
+      "actual": {
+        "id": "1b2a56bd-3d2c-544e-9d20-f3e713d44cc7",
+        "company": "LULU",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-08-04",
+        "end": "2025-11-02",
+        "value": "2565920000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001397187-25-000055",
+        "filed": "2025-12-11",
+        "form": "10-Q",
+        "fiscal_year": 2025,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397187.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000055/lulu-20251102.htm",
+        "filed": "2025-12-11",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000055/lulu-20251102.htm",
+          "sha256": "d60c42f951f9ae4a026ef9905df7c16323b711b46445704ebe8260f9919c7ffa",
+          "body": "924476b2ce38cb04b9df3a768790260836e6a82633d2c63c6245f70fb9dd69bc-d60c42f951f9ae4a026ef9905df7c16323b711b46445704ebe8260f9919c7ffa.body",
+          "fetched_at": "2026-11-12T10:41:04.372387+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001397187-25-000055-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-12-11",
+        "formal_release_issued_date": "2025-12-11",
+        "issued_precision": "day",
+        "date_quote": "December 11, 2025",
+        "filed": "2025-12-11",
+        "accession": "0001397187-25-000054",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000054/lulu-20251102xex991.htm",
+        "reported_revenue_quote": "Net revenue $ 2,565,920 $ 2,396,660 $ 7,461,799 $ 6,976,629",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "837c0431adcc30b374698eab6e39b2cb83124938ed75ddec65769bacf7b86ce6",
+        "fetched_at": "2026-11-12T07:10:41.903282+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.633675+00:00",
+        "guidance_id": "d3e5d71a-7cdc-5aaf-89e1-3887345fcb2a",
+        "actual_id": "1b2a56bd-3d2c-544e-9d20-f3e713d44cc7",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000038/lulu-20250803xex991.htm",
+            "filed_date": "2025-09-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000054/lulu-20251102xex991.htm",
+            "filed_date": "2025-12-11"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000055/lulu-20251102.htm",
+            "filed_date": "2025-12-11"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-12-11"
+    },
+    {
+      "company": "LULU",
+      "target": {
+        "start": "2025-11-03",
+        "end": "2026-02-01",
+        "label": "Q4 FY2025",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "06de0fe6-f4dd-5862-b834-4bfcc71e0f34",
+          "company": "LULU",
+          "issued": {
+            "start": "2025-12-11",
+            "end": "2025-12-11",
+            "precision": "day"
+          },
+          "filed": "2025-12-11",
+          "start": "2025-11-03",
+          "end": "2026-02-01",
+          "low": "3500000000.000",
+          "high": "3585000000.000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001397187-25-000054",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000054/lulu-20251102xex991.htm",
+          "quote": "fourth quarter of 2025, the Company expects net revenue to be in the range of $3.500 billion to $3.585 billion,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        },
+        {
+          "id": "a7933c24-91b4-555b-bacc-6c30c5947967",
+          "company": "LULU",
+          "issued": {
+            "start": "2026-01-12",
+            "end": "2026-01-12",
+            "precision": "day"
+          },
+          "filed": "2026-01-12",
+          "start": "2025-11-03",
+          "end": "2026-02-01",
+          "low": "3500000000.000",
+          "high": "3585000000.000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "reaffirmed",
+          "accession": "0001397187-26-000005",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000005/lulu-20260112xex991.htm",
+          "quote": "now expects net revenue and diluted earnings per share for the fourth quarter of fiscal 2025 to be toward the high end of the previously guided ranges of $3.500 billion to $3.585 billion and $4.66 to $4.76, respectively. There is no change to the Company\u2019s previous guidance ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": false,
+          "notes": "Explicit unchanged range incorporated by reference; qualitative toward-high-end wording does not define a narrower numerical range."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "06de0fe6-f4dd-5862-b834-4bfcc71e0f34",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000054/lulu-20251102xex991.htm",
+          "source_sha256": "837c0431adcc30b374698eab6e39b2cb83124938ed75ddec65769bacf7b86ce6",
+          "fetched_at": "2026-11-12T07:10:41.903282+00:00",
+          "issuance_date_quote": "December 11, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000054/lulu-20251203.htm",
+          "exhibit_index_quote": "99.1 Earnings release issued on December 11, 2025."
+        },
+        {
+          "guidance_id": "a7933c24-91b4-555b-bacc-6c30c5947967",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000005/lulu-20260112xex991.htm",
+          "source_sha256": "9b88b848ee09d2c15a9e93a075d34b18d1c978e85b989d70e33e8f3c14327ec7",
+          "fetched_at": "2026-11-12T10:27:43.724567+00:00",
+          "issuance_date_quote": "January 12, 2026",
+          "version_kind": "explicit_reaffirmation",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000005/lulu-20260112.htm",
+          "exhibit_index_quote": "99.1 Press release issued on January 1 2 , 202 6 ."
+        }
+      ],
+      "actual": {
+        "id": "d5862710-16dc-5a03-8a51-70eac8e0b3eb",
+        "company": "LULU",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-11-03",
+        "end": "2026-02-01",
+        "value": "3640801000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001397187-26-000020",
+        "filed": "2026-03-17",
+        "form": "DERIVED",
+        "fiscal_year": 2025,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397187.json",
+        "parents": [
+          "fa0e49da-2ef9-522c-becb-9c9c3ed4764d",
+          "d3a26832-3074-5528-b710-a9e63d6cc2a7"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "d3a26832-3074-5528-b710-a9e63d6cc2a7",
+          "company": "LULU",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-02-03",
+          "end": "2025-11-02",
+          "value": "7461799000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001397187-25-000055",
+          "filed": "2025-12-11",
+          "form": "10-Q",
+          "fiscal_year": 2025,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397187.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "fa0e49da-2ef9-522c-becb-9c9c3ed4764d",
+          "company": "LULU",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-02-03",
+          "end": "2026-02-01",
+          "value": "11102600000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001397187-26-000020",
+          "filed": "2026-03-17",
+          "form": "10-K",
+          "fiscal_year": 2025,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397187.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000020/lulu-20260201.htm",
+        "filed": "2026-03-17",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000020/lulu-20260201.htm",
+          "sha256": "04907d11f8bca27e732c6a207ab011330bb319a575b55d7aad80bc92f2c1767d",
+          "body": "0393a9ba1eb47763383460dc52587d866ca44e1f1773a40ec82766f4fb6af477-04907d11f8bca27e732c6a207ab011330bb319a575b55d7aad80bc92f2c1767d.body",
+          "fetched_at": "2026-11-12T10:41:05.107283+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001397187-26-000020-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-03-17",
+        "formal_release_issued_date": "2026-03-17",
+        "issued_precision": "day",
+        "date_quote": "March 17, 2026",
+        "filed": "2026-03-17",
+        "accession": "0001397187-26-000019",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260201xex991.htm",
+        "reported_revenue_quote": "Net revenue $ 3,640,801 $ 3,611,497 $ 11,102,600 $ 10,588,126",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "b47c12fc44fc46c7436f263b4a9ec63491f4b05a829a56b54769ce54aae46421",
+        "fetched_at": "2026-11-11T23:48:37.218337+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.644360+00:00",
+        "guidance_id": "a7933c24-91b4-555b-bacc-6c30c5947967",
+        "actual_id": "d5862710-16dc-5a03-8a51-70eac8e0b3eb",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000005/lulu-20260112xex991.htm",
+            "filed_date": "2026-01-12"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260201xex991.htm",
+            "filed_date": "2026-03-17"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000020/lulu-20260201.htm",
+            "filed_date": "2026-03-17"
+          }
+        ],
+        "scope_evidence": [
+          " As of February 1, 2026, $ 10.1 million in consideration payments has been paid. The Company has not disclosed pro forma information of the combined business as the transaction is not material to net revenue or net earnings. During 2024, the Company recognized $ 3.5 million in acquisition-related expenses within selling, general and administrative expenses primarily related to legal, accounting, valuation, an"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-03-17"
+    },
+    {
+      "company": "LULU",
+      "target": {
+        "start": "2026-02-02",
+        "end": "2026-05-03",
+        "label": "Q1 FY2026",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "795adeb2-8fb6-5a3e-87a4-bdf607d2ebf1",
+          "company": "LULU",
+          "issued": {
+            "start": "2026-03-17",
+            "end": "2026-03-17",
+            "precision": "day"
+          },
+          "filed": "2026-03-17",
+          "start": "2026-02-02",
+          "end": "2026-05-03",
+          "low": "2400000000.000",
+          "high": "2430000000.000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001397187-26-000019",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260201xex991.htm",
+          "quote": "first quarter of 2026, the Company expects net revenue to be in the range of $2.400 billion to $2.430 billion,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "795adeb2-8fb6-5a3e-87a4-bdf607d2ebf1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260201xex991.htm",
+          "source_sha256": "b47c12fc44fc46c7436f263b4a9ec63491f4b05a829a56b54769ce54aae46421",
+          "fetched_at": "2026-11-11T23:48:37.218337+00:00",
+          "issuance_date_quote": "March 17, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260317.htm",
+          "exhibit_index_quote": "99.1 Press release issued on March 1 7, 202 6 ."
+        }
+      ],
+      "actual": {
+        "id": "9b1c7efe-b690-54be-8054-e50a3ba8e510",
+        "company": "LULU",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-02-02",
+        "end": "2026-05-03",
+        "value": "2471603000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001397187-26-000078",
+        "filed": "2026-06-04",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397187.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000078/lulu-20260503.htm",
+        "filed": "2026-06-04",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000078/lulu-20260503.htm",
+          "sha256": "52b949d15d84a5e4be7b5b986540b969929aef0536c1c7be49b84b783c9e708a",
+          "body": "46b9e58106866e655fd33771d8ea4ebf266676d8b2d0f74a288a5474aaace216-52b949d15d84a5e4be7b5b986540b969929aef0536c1c7be49b84b783c9e708a.body",
+          "fetched_at": "2026-11-12T10:41:05.831302+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001397187-26-000078-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-06-04",
+        "formal_release_issued_date": "2026-06-04",
+        "issued_precision": "day",
+        "date_quote": "June 4, 2026",
+        "filed": "2026-06-04",
+        "accession": "0001397187-26-000077",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260503xex991.htm",
+        "reported_revenue_quote": "Net revenue $ 2,471,603 $ 2,370,660",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "fb3e9fbb284c24603f0493e36e6adf36effd2612463911f6bd3f58f18f657384",
+        "fetched_at": "2026-11-11T10:09:24.862263+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.650640+00:00",
+        "guidance_id": "795adeb2-8fb6-5a3e-87a4-bdf607d2ebf1",
+        "actual_id": "9b1c7efe-b690-54be-8054-e50a3ba8e510",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260201xex991.htm",
+            "filed_date": "2026-03-17"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260503xex991.htm",
+            "filed_date": "2026-06-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000078/lulu-20260503.htm",
+            "filed_date": "2026-06-04"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-06-04"
+    },
+    {
+      "company": "LULU",
+      "target": {
+        "start": "2026-05-04",
+        "end": "2026-08-02",
+        "label": "Q2 FY2026",
+        "calendar": "weeks",
+        "days": 91
+      },
+      "guidance_versions": [
+        {
+          "id": "35bdf649-0526-56e8-ad6b-6154e08e39d6",
+          "company": "LULU",
+          "issued": {
+            "start": "2026-06-04",
+            "end": "2026-06-04",
+            "precision": "day"
+          },
+          "filed": "2026-06-04",
+          "start": "2026-05-04",
+          "end": "2026-08-02",
+          "low": "2450000000.000",
+          "high": "2475000000.000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001397187-26-000077",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260503xex991.htm",
+          "quote": "second quarter of 2026, the Company expects net revenue to be in the range of $2.450 billion to $2.475 billion,",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "35bdf649-0526-56e8-ad6b-6154e08e39d6",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260503xex991.htm",
+          "source_sha256": "fb3e9fbb284c24603f0493e36e6adf36effd2612463911f6bd3f58f18f657384",
+          "fetched_at": "2026-11-11T10:09:24.862263+00:00",
+          "issuance_date_quote": "June 4, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260604.htm",
+          "exhibit_index_quote": "99.1 Press release issued on June 4, 2026 ."
+        }
+      ],
+      "actual": {
+        "id": "2c226549-7d49-5601-952b-ec3eb4ac5efa",
+        "company": "LULU",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-05-04",
+        "end": "2026-08-02",
+        "value": "2415631000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001397187-26-000127",
+        "filed": "2026-09-03",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397187.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000127/lulu-20260802.htm",
+        "filed": "2026-09-03",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000127/lulu-20260802.htm",
+          "sha256": "051f777a0cd3094109dc2a1a006cf91fa780bfe98b6483d153c95784c58429a5",
+          "body": "449c1f0013e89239fa86a43e9240c6c64acbf4c0524ca54ec061e699f87133e9-051f777a0cd3094109dc2a1a006cf91fa780bfe98b6483d153c95784c58429a5.body",
+          "fetched_at": "2026-11-12T08:11:49.451011+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001397187-26-000127-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-09-03",
+        "formal_release_issued_date": "2026-09-03",
+        "issued_precision": "day",
+        "date_quote": "September 3, 2026",
+        "filed": "2026-09-03",
+        "accession": "0001397187-26-000126",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm",
+        "reported_revenue_quote": "Net revenue $ 2,415,631 $ 2,525,219 $ 4,887,234 $ 4,895,879",
+        "unit_scale": "1000",
+        "column_index": 0,
+        "source_sha256": "a46c0ae866fbf781605e969adee8e23a469aff5eb38e1044bb30b7aa1f448e41",
+        "fetched_at": "2026-11-11T10:09:25.436745+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.657169+00:00",
+        "guidance_id": "35bdf649-0526-56e8-ad6b-6154e08e39d6",
+        "actual_id": "2c226549-7d49-5601-952b-ec3eb4ac5efa",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260503xex991.htm",
+            "filed_date": "2026-06-04"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm",
+            "filed_date": "2026-09-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000127/lulu-20260802.htm",
+            "filed_date": "2026-09-03"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-09-03"
+    }
+  ]
+}

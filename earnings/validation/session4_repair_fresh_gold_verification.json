@@ -1,0 +1,147 @@
+{
+  "checked_at": "2026-11-13T04:18:45.660586+00:00",
+  "limitations": "These checks verify provenance and arithmetic; source semantics and column selection remain manually reviewed, not proven by quote matching. One curator, not a second independent human review.",
+  "records": [
+    {
+      "company": "ADBE",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "3f1cbabd-2bce-54fd-b04e-39f700ce79b8",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "b96642771027d4f52a2fca122cc21a153ff1f6b961615eefec5cc35d6ef9c4ee"
+    },
+    {
+      "company": "ADBE",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "7f177d08-28e8-5c94-bda3-f04ba84c3de4",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "b96642771027d4f52a2fca122cc21a153ff1f6b961615eefec5cc35d6ef9c4ee"
+    },
+    {
+      "company": "CRM",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "dad1261f-b50c-5d97-b07a-85c7a79f228d",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "720f32e93d68d7fd198b19b0e0dfd54484c352dd26743e1a1e2e17a2d91d0f32"
+    },
+    {
+      "company": "CRM",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "c332292f-fa90-5bf4-ad9f-20920b1a43a1",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "720f32e93d68d7fd198b19b0e0dfd54484c352dd26743e1a1e2e17a2d91d0f32"
+    },
+    {
+      "company": "CRWD",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "d54fd51f-d510-513a-af2d-ca910d011f9d",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "816bd4279cdbe48635202d2ae0435aee7ad922fa420c06129f5e28933c80b627"
+    },
+    {
+      "company": "CRWD",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "2675cee0-969c-57f9-ac2b-2885bc532614",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "816bd4279cdbe48635202d2ae0435aee7ad922fa420c06129f5e28933c80b627"
+    },
+    {
+      "company": "GTLB",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "a69bf896-e95c-5dd7-becf-f1ed5515ca28",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "1950fd33cbe383bce468de8a0cf756d4b801f644815d4a168cce6b69fcc44657"
+    },
+    {
+      "company": "GTLB",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "5dbe7d63-073a-58cc-b93d-958e32e3faff",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "1950fd33cbe383bce468de8a0cf756d4b801f644815d4a168cce6b69fcc44657"
+    },
+    {
+      "company": "IOT",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "e00b9f9d-c39e-5173-8518-62eb4e0742b4",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "a4f1eff4ed5414a6a35806c25f065186d3ea7035b9b828c3a5a956e13f062041"
+    },
+    {
+      "company": "IOT",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "158375c9-8a1f-5c1a-b4fd-098590b41c93",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "a4f1eff4ed5414a6a35806c25f065186d3ea7035b9b828c3a5a956e13f062041"
+    },
+    {
+      "company": "LULU",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "232aa835-ada7-5465-ae64-8d0f145d1cf9",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "e79132609c561bdbab6190c35e2ca62a57126a18f6263f07d3d9a5c41c4fc526"
+    },
+    {
+      "company": "LULU",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "9dd05523-5fdc-5c51-9c54-b87d3a64e8d0",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "e79132609c561bdbab6190c35e2ca62a57126a18f6263f07d3d9a5c41c4fc526"
+    },
+    {
+      "company": "MDB",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "36eaf066-83ee-5ae5-a05b-f1f91681e231",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "29c88b93ca1251ffac370374a2b3cbeb43d341323f5b0356d972e0b058d3e96a"
+    },
+    {
+      "company": "MDB",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "00b0862b-0e67-5381-910a-dfc8e2d408ef",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "29c88b93ca1251ffac370374a2b3cbeb43d341323f5b0356d972e0b058d3e96a"
+    },
+    {
+      "company": "OKTA",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "06bfdd9f-aae6-534c-99f9-f618af63084f",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "e9b1b6d3a00d0453d4782b6b6fce34dbe4f2cc8f73fd29676b0502266664d341"
+    },
+    {
+      "company": "OKTA",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "94a89b80-b0c8-5216-b334-22100af4925c",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "e9b1b6d3a00d0453d4782b6b6fce34dbe4f2cc8f73fd29676b0502266664d341"
+    },
+    {
+      "company": "PD",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "10bf514a-cd08-5761-98a3-e235c70ae5fe",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "6679cc95e6bdb100da0046a920085a6e68acd4c756f01aade789472a95528ae7"
+    },
+    {
+      "company": "PD",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "67788e9f-f7f6-5c10-8343-a9db31ca59c2",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "6679cc95e6bdb100da0046a920085a6e68acd4c756f01aade789472a95528ae7"
+    },
+    {
+      "company": "S",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "668e6f55-7771-59bb-bb03-1b85f6102427",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "8558091bb84bb57ef78e858e5a17f7866643560354af3082c13446b42141279e"
+    },
+    {
+      "company": "S",
+      "fiscal_boundary_fact_verified": true,
+      "gold_id": "efc5da86-1617-5f94-b932-176430a1096a",
+      "quote_and_numeric_scale_verified": true,
+      "source_sha256": "8558091bb84bb57ef78e858e5a17f7866643560354af3082c13446b42141279e"
+    }
+  ],
+  "verifier": "Independent deterministic evidence checks, no v2 extraction imports"
+}

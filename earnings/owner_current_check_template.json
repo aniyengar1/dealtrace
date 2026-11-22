@@ -1,0 +1,60 @@
+{
+  "company": "OKTA",
+  "announcement_id": "4a3e1f16-7b0b-55be-b00b-f43055db57af",
+  "observer": null,
+  "timezone": "America/Los_Angeles",
+  "precision": "second",
+  "personally_checked": false,
+  "contradictions": null,
+  "attestation": null,
+  "automation_gap": {
+    "url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+    "reason": null,
+    "provenance": "owner_reported"
+  },
+  "pages": [
+    {
+      "url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+      "checked_at": null,
+      "roles": [
+        "schedule"
+      ],
+      "coverage": null,
+      "complete": false
+    },
+    {
+      "url": "https://investor.okta.com/news-and-events/news-releases/default.aspx",
+      "checked_at": null,
+      "roles": [
+        "news_inventory"
+      ],
+      "coverage": null,
+      "complete": false
+    },
+    {
+      "url": "https://investor.okta.com/financials/quarterly-results/default.aspx",
+      "checked_at": null,
+      "roles": [
+        "results_inventory"
+      ],
+      "coverage": null,
+      "complete": false
+    }
+  ],
+  "schedule": {
+    "release_date": "2026-12-01",
+    "timezone": "America/New_York",
+    "time_precision": "market_session",
+    "release_time": "after_market_close",
+    "event_kind": "results_release"
+  },
+  "publication": {
+    "status": "unknown",
+    "target_start": "2026-08-01",
+    "target_end": "2026-10-31",
+    "coverage_from": "2026-08-01",
+    "coverage_through": null,
+    "preliminary_results_checked": false,
+    "pagination_complete": false
+  }
+}

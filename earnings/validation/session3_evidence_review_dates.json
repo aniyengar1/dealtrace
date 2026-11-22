@@ -1,0 +1,44 @@
+[
+  {
+    "checked_at": "2026-11-12T23:43:43.010627+00:00",
+    "company": "CRM",
+    "reason": "The source body changed; review and append new evidence instead of reusing or rewriting the old date.",
+    "status": "ANNOUNCEMENT_SOURCE_CHANGED"
+  },
+  {
+    "checked_at": "2026-11-12T23:43:43.612089+00:00",
+    "company": "OKTA",
+    "reason": "The source body changed; review and append new evidence instead of reusing or rewriting the old date.",
+    "status": "ANNOUNCEMENT_SOURCE_CHANGED"
+  },
+  {
+    "checked_at": "2026-11-12T23:43:43.906764+00:00",
+    "company": "IOT",
+    "reason": "The source body changed; review and append new evidence instead of reusing or rewriting the old date.",
+    "status": "ANNOUNCEMENT_SOURCE_CHANGED"
+  },
+  {
+    "checked_at": "2026-11-12T23:43:43.907202+00:00",
+    "company": "CRWD",
+    "fetched_at": null,
+    "http_status": 403,
+    "report_date": "2026-12-01",
+    "sha256": null,
+    "source_date": "2026-11-04",
+    "source_url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-announces-date-fiscal-third-quarter-2027-financial",
+    "status": "unverified",
+    "verifier": "Codex direct HTTP review"
+  },
+  {
+    "checked_at": "2026-11-12T23:43:44.120860+00:00",
+    "company": "MDB",
+    "fetched_at": null,
+    "http_status": 403,
+    "report_date": "2026-12-01",
+    "sha256": null,
+    "source_date": "2026-11-05",
+    "source_url": "https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-date-third-quarter-fiscal-2027-earnings",
+    "status": "unverified",
+    "verifier": "Codex direct HTTP review"
+  }
+]

@@ -6,7 +6,10 @@ const nextConfig: NextConfig = {
   // explicit "use cache" annotations to avoid stale/static reads.
   turbopack: {
     rules: {
-      "*.css": {
+      // Restrict the Tailwind entry loader to global CSS. Its `as` rewrite
+      // strips CSS-module identity when applied to *.module.css. Next handles
+      // module scoping and class exports natively.
+      "globals.css": {
         loaders: ["@tailwindcss/turbopack"],
         as: "*.css",
       },

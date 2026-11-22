@@ -1,0 +1,14 @@
+{
+  "balance_assumed_current": false,
+  "billing_changes_performed": false,
+  "billing_upgrade_authorized": false,
+  "cloud_budget_owner_text": "20USD, alerts-only, not an enforced cap",
+  "credit_as_of_owner_text": "November13,2026,1:45a.m.Pacific",
+  "credit_remaining_approx_usd": "278",
+  "deadline": "2026-11-17T18:00:00-08:00",
+  "experiment_ceiling_usd": "15",
+  "independently_verified": false,
+  "recorded_at": "2026-11-13T10:59:42.370016+00:00",
+  "source": "owner task instructions",
+  "trial_expiry_owner_text": "expected aroundNovember17\u201318"
+}

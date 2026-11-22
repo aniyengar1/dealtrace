@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-11-18T10:52:53.079Z",
+  "route": "http://127.0.0.1:3108/crosscheck/predictions",
+  "status": 200,
+  "stylesheets": [
+    {
+      "url": "http://127.0.0.1:3108/_next/static/chunks/src_app_globals_css_1o9jubfkxlfx1.css",
+      "status": 200,
+      "bytes": 35306,
+      "sha256": "4c3ee6d5d205a18c4c18be49d4c3cce819553d50babbab8e7a3180da69a594a4"
+    },
+    {
+      "url": "http://127.0.0.1:3108/_next/static/chunks/src_app_crosscheck_predictions_predictions_module_1hr-yaydfcf1l.css",
+      "status": 200,
+      "bytes": 6380,
+      "sha256": "2cef09722019dbe885f17b327e40328fe322dcb97e8cd510c2cdd32f856f9ca1"
+    }
+  ],
+  "rendered_method_rows": 8,
+  "highlighted_buckets": 10,
+  "matching_scoped_classes": [
+    "predictions-module__VP_K2G__page",
+    "predictions-module__VP_K2G__method",
+    "predictions-module__VP_K2G__leading"
+  ],
+  "tailwind_utilities_present": true,
+  "stats_text": "8 locked predictions · 4 companies · 0 reviewed scores",
+  "first_target_text": "Locked management range: $813M–$817M",
+  "browser_automation": false,
+  "ledger_access": false
+}

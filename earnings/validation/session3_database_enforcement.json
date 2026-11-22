@@ -1,0 +1,68 @@
+{
+  "checked_at": "2026-11-12T22:59:58.392117+00:00",
+  "repeat_history_ingestion": {
+    "blocked": 5,
+    "eligible": 75,
+    "inserted": 0
+  },
+  "tables": {
+    "earnings_historical_observations": {
+      "rls_enabled": true,
+      "row_count": 80,
+      "service_role_can_insert_creation_timestamp": false,
+      "service_role_privileges": {
+        "DELETE": false,
+        "SELECT": true,
+        "TRUNCATE": false,
+        "UPDATE": false
+      },
+      "triggers": [
+        "CREATE TRIGGER earnings_historical_observations_immutable_rows BEFORE DELETE OR UPDATE ON public.earnings_historical_observations FOR EACH ROW EXECUTE FUNCTION earnings_deny_mutation()",
+        "CREATE TRIGGER earnings_historical_observations_immutable_truncate BEFORE TRUNCATE ON public.earnings_historical_observations FOR EACH STATEMENT EXECUTE FUNCTION earnings_deny_mutation()",
+        "CREATE TRIGGER earnings_observation_clock BEFORE INSERT ON public.earnings_historical_observations FOR EACH ROW EXECUTE FUNCTION earnings_observation_stamp()"
+      ]
+    },
+    "earnings_live_predictions": {
+      "rls_enabled": true,
+      "row_count": 0,
+      "service_role_can_insert_creation_timestamp": false,
+      "service_role_privileges": {
+        "DELETE": false,
+        "SELECT": true,
+        "TRUNCATE": false,
+        "UPDATE": false
+      },
+      "triggers": [
+        "CREATE TRIGGER earnings_live_predictions_immutable_rows BEFORE DELETE OR UPDATE ON public.earnings_live_predictions FOR EACH ROW EXECUTE FUNCTION earnings_deny_mutation()",
+        "CREATE TRIGGER earnings_live_predictions_immutable_truncate BEFORE TRUNCATE ON public.earnings_live_predictions FOR EACH STATEMENT EXECUTE FUNCTION earnings_deny_mutation()",
+        "CREATE TRIGGER earnings_prediction_validate BEFORE INSERT ON public.earnings_live_predictions FOR EACH ROW EXECUTE FUNCTION earnings_prediction_guard()"
+      ]
+    },
+    "earnings_live_results": {
+      "rls_enabled": true,
+      "row_count": 0,
+      "service_role_can_insert_creation_timestamp": false,
+      "service_role_privileges": {
+        "DELETE": false,
+        "SELECT": true,
+        "TRUNCATE": false,
+        "UPDATE": false
+      },
+      "triggers": [
+        "CREATE TRIGGER earnings_live_results_immutable_rows BEFORE DELETE OR UPDATE ON public.earnings_live_results FOR EACH ROW EXECUTE FUNCTION earnings_deny_mutation()",
+        "CREATE TRIGGER earnings_live_results_immutable_truncate BEFORE TRUNCATE ON public.earnings_live_results FOR EACH STATEMENT EXECUTE FUNCTION earnings_deny_mutation()",
+        "CREATE TRIGGER earnings_result_validate BEFORE INSERT ON public.earnings_live_results FOR EACH ROW EXECUTE FUNCTION earnings_result_guard()"
+      ]
+    }
+  },
+  "unique_constraints": [
+    {
+      "definition": "UNIQUE (company_id, period_start, period_end, metric, method_version)",
+      "table": "earnings_live_predictions"
+    },
+    {
+      "definition": "UNIQUE (prediction_id, evidence_hash)",
+      "table": "earnings_live_results"
+    }
+  ]
+}

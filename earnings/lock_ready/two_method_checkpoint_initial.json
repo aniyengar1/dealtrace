@@ -1,0 +1,18 @@
+{
+  "recorded_at": "2026-11-14T03:24:02.666326+00:00",
+  "tag": "session3-two-method-lock-ready-20261113",
+  "commit": "87f48d40dfba363a7732cbb0b3cf68f473b3d56f",
+  "owner_authorized": true,
+  "owner_review_status": "pending; agent-tested checkpoint, not completed human review",
+  "original_tag_commit": "94984fc3ce33c6e85a287738d3a617561cd0cefc",
+  "dependencies_sha256": "724e79d85f370754531901af2f5c65d07f4b98ef24acffb60e6dddfde0c6b527",
+  "dependency_lock": "earnings/lock_ready/two_method_requirements.lock",
+  "tests_at_freeze": {
+    "passed": 490,
+    "skipped": 3,
+    "xfailed": 2
+  },
+  "original_method_regression_identical": true,
+  "live_predictions": 0,
+  "frozen_before_deadline": "2026-11-16T21:00:00-08:00"
+}

@@ -1,0 +1,144 @@
+{
+  "conservative_deadline": "2026-12-03T05:00:00+00:00",
+  "directories": [
+    {
+      "cached_response": "data/cache/earnings/release-leads/CRWD-a2c86572f9abd5a3f3c8410508147d81d9228d87e0ad2b75edf4fcefd55ade17.body",
+      "checked_at": "2026-11-12T23:56:12.982498+00:00",
+      "company": "CRWD",
+      "http_status": 403,
+      "redirect_location": null,
+      "response_received_at": "2026-11-12T23:56:13.150910+00:00",
+      "response_sha256": "a2c86572f9abd5a3f3c8410508147d81d9228d87e0ad2b75edf4fcefd55ade17",
+      "source_url": "https://ir.crowdstrike.com/press-releases/",
+      "verification_status": "research_lead_only"
+    },
+    {
+      "cached_response": "data/cache/earnings/release-leads/MDB-f44d442820cf80d6b2c9467b7a1303970cadaf3690a0c587605ac10aff830680.body",
+      "checked_at": "2026-11-12T23:56:13.151133+00:00",
+      "company": "MDB",
+      "http_status": 403,
+      "redirect_location": null,
+      "response_received_at": "2026-11-12T23:56:13.355802+00:00",
+      "response_sha256": "f44d442820cf80d6b2c9467b7a1303970cadaf3690a0c587605ac10aff830680",
+      "source_url": "https://investors.mongodb.com/news-events/news-releases",
+      "verification_status": "research_lead_only"
+    },
+    {
+      "cached_response": "data/cache/earnings/release-leads/S-7a0f81dbcdd23561d3faafcfe37ee5352722c52998ad76d7dceac2f5dcd7dff3.body",
+      "candidate_links": [],
+      "checked_at": "2026-11-12T23:56:13.355987+00:00",
+      "company": "S",
+      "fetched_at": "2026-11-12T23:56:14.116245+00:00",
+      "http_status": 200,
+      "redirect_location": null,
+      "response_received_at": "2026-11-12T23:56:14.116245+00:00",
+      "response_sha256": "7a0f81dbcdd23561d3faafcfe37ee5352722c52998ad76d7dceac2f5dcd7dff3",
+      "source_url": "https://investors.sentinelone.com/press-releases/",
+      "text_excerpt": "SentinelOne, Inc. - Press Releases Skip to main content Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog Skip to main content Press Releases Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog Selecting a year value will change the news content Select Year: Loading Investor Relations 444 Castro Street Suite 400 Mountain View, California 94041 Send Email Overview Press Releases Events & Presentations Financial Info Governance Resources follow us on twitter follow us on facebook follow us on LinkedIn follow us on youtube Privacy Policy Terms of Use \u00a9 Q4 Inc. - Al",
+      "verification_status": "research_lead_only"
+    }
+  ],
+  "earliest_window": "2026-11-19T05:00:00+00:00",
+  "exact_source_attempts": [
+    {
+      "cached_response": "data/cache/earnings/release-leads/CRWD-exact-e50f24eb9231c07380641dfc2b7a112cbc71e6532636bcd2f0adf1ed3ec5862b.body",
+      "checked_at": "2026-11-12T23:57:07.109454+00:00",
+      "company": "CRWD",
+      "http_status": 403,
+      "redirect_location": null,
+      "response_received_at": "2026-11-12T23:57:07.193877+00:00",
+      "response_sha256": "e50f24eb9231c07380641dfc2b7a112cbc71e6532636bcd2f0adf1ed3ec5862b",
+      "source_url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-announces-date-fiscal-third-quarter-2027-financial",
+      "verification_status": "unverified"
+    },
+    {
+      "cached_response": "data/cache/earnings/release-leads/MDB-exact-05cd60fb80d2e8997de9d0182c004fe8d4b4d436f3318ff8378b139237dcf630.body",
+      "checked_at": "2026-11-12T23:57:07.194397+00:00",
+      "company": "MDB",
+      "http_status": 403,
+      "redirect_location": null,
+      "response_received_at": "2026-11-12T23:57:07.320603+00:00",
+      "response_sha256": "05cd60fb80d2e8997de9d0182c004fe8d4b4d436f3318ff8378b139237dcf630",
+      "source_url": "https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-date-third-quarter-fiscal-2027-earnings",
+      "verification_status": "unverified"
+    },
+    {
+      "cached_response": "data/cache/earnings/release-leads/S-exact-3a34812800b483533dd1f0839a4447fcb9c6e86b778ad44218ca8a1d81744da5.body",
+      "checked_at": "2026-11-12T23:57:07.320887+00:00",
+      "company": "S",
+      "fetched_at": "2026-11-12T23:57:07.549302+00:00",
+      "http_status": 200,
+      "redirect_location": null,
+      "response_received_at": "2026-11-12T23:57:07.549302+00:00",
+      "response_sha256": "3a34812800b483533dd1f0839a4447fcb9c6e86b778ad44218ca8a1d81744da5",
+      "source_sha256": "3a34812800b483533dd1f0839a4447fcb9c6e86b778ad44218ca8a1d81744da5",
+      "source_url": "https://investors.sentinelone.com/press-releases/news-details/2026/SentinelOne-Announces-Date-of-Fiscal-Third-Quarter-2027-Financial-Results-Conference-Call-and-Participation-in-Upcoming-Investor-Conference/default.aspx",
+      "text": "SentinelOne, Inc. - SentinelOne Announces Date of Fiscal Third Quarter 2027 Financial Results Conference Call and Participation in Upcoming Investor Conference Skip to main content Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog Skip to main content News Details Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog View All News SentinelOne Announces Date of Fiscal Third Quarter 2027 Financial Results Conference Call and Participation in Upcoming Investor Conference November 12, 2026 MOUNTAIN VIEW, Calif.--(BUSINESS WIRE)-- SentinelOne, Inc. (NYSE: S) today announced that it will release financial results for its fiscal third quarter 2027, which ended October 31, 2026. Results will be released after market close on Thursday, December 3, 2026. SentinelOne will host a conference call to discuss the results at 2:00 p.m. PT (5:00 p.m. ET) on the same day. To register for the live event, please visit Q3 FY2027 Earnings Conference Call Webcast . SentinelOne is also scheduled to present at the following investor conference: Event: Barclays Global Technology Conference Date: Thursday, December 10, 2026 Presentation Time: 12:50 p.m. PT (3:50 p.m. ET) Live webcasts for both events will be available on SentinelOne\u2019s Investor Relations website at investors.sentinelone.com , along with related earnings materials. Replays will be accessible through the same link shortly after each event. Disclosure Information SentinelOne uses, and intends to continue using, its Investor Relations website ( investors.sentinelone.com ) as a means of disclosing material information to the public and complying with its disclosure obligations under Regulation FD. Accordingly, investors should monitor the Investor Relations website, in addition to the company\u2019s press releases, blog ( sentinelone.com/blog ), SEC filings, public conference calls, presentations, and webcasts. About SentinelOne SentinelOne (NYSE: S) is the leader in AI security, setting the standard for leveraging AI and automation to give defenders a decisive operating advantage. Built for those who secure our world, Singularity Platform delivers unified coverage across endpoints, identity, cloud, and AI. Powered by Autonomous Security Intelligence, SentinelOne stops attacks at machine speed, reducing risk and delivering clarity and control to stay one step ahead. Headquartered in Mountain View, California with teams worldwide, SentinelOne protects nearly one-fifth of the Fortune 500 and hundreds of Global 2000 enterprises. From Main Street to Wall Street, the world\u2019s most critical organizations trust SentinelOne for cybersecurity. For more information, please visit www.sentinelone.com Category: Investors Investor Contact Saad Nazir investors@sentinelone.com Press Contact Craig VerColen press@sentinelone.com Source: SentinelOne View All News Investor Relations 444 Castro Street Suite 400 Mountain View, California 94041 Send Email Overview Press Releases Events & Presentations Financial Info Governance Resources follow us on twitter follow us on facebook follow us on LinkedIn follow us on youtube Privacy Policy Terms of Use \u00a9 Q4 Inc. - All rights reserved | Powered By Q4 Inc.",
+      "verification_status": "unverified"
+    }
+  ],
+  "new_evidence_id": "44c674b9-16d2-5a39-b330-225112d7752a",
+  "notes": [
+    "HTTP error response hashes identify error responses, not retrieved announcement evidence. A 403 means fetched_at is absent; response_received_at is the actual response receipt time.",
+    "Search-returned official excerpts for CRWD/MDB locate original URLs but are discovery leads only. No full original HTTP body obtained for either; no verification promotion.",
+    "No financial input, guidance, model, code, lock, website or Session 4 changes. No new verification for ADBE/PD/GTLB/LULU."
+  ],
+  "recorded_at": "2026-11-12T23:57:43.472667+00:00",
+  "strict_source_refresh": {
+    "evidence": {
+      "announcement_issued_date": "2026-11-12",
+      "announcement_text": "SentinelOne, Inc. - SentinelOne Announces Date of Fiscal Third Quarter 2027 Financial Results Conference Call and Participation in Upcoming Investor Conference Skip to main content Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog Skip to main content News Details Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog View All News SentinelOne Announces Date of Fiscal Third Quarter 2027 Financial Results Conference Call and Participation in Upcoming Investor Conference November 12, 2026 MOUNTAIN VIEW, Calif.--(BUSINESS WIRE)-- SentinelOne, Inc. (NYSE: S) today announced that it will release financial results for its fiscal third quarter 2027, which ended October 31, 2026. Results will be released after market close on Thursday, December 3, 2026. SentinelOne will host a conference call to discuss the results at 2:00 p.m. PT (5:00 p.m. ET) on the same day. To register for the live event, please visit Q3 FY2027 Earnings Conference Call Webcast . SentinelOne is also scheduled to present at the following investor conference: Event: Barclays Global Technology Conference Date: Thursday, December 10, 2026 Presentation Time: 12:50 p.m. PT (3:50 p.m. ET) Live webcasts for both events will be available on SentinelOne\u2019s Investor Relations website at investors.sentinelone.com , along with related earnings materials. Replays will be accessible through the same link shortly after each event. Disclosure Information SentinelOne uses, and intends to continue using, its Investor Relations website ( investors.sentinelone.com ) as a means of disclosing material information to the public and complying with its disclosure obligations under Regulation FD. Accordingly, investors should monitor the Investor Relations website, in addition to the company\u2019s press releases, blog ( sentinelone.com/blog ), SEC filings, public conference calls, presentations, and webcasts. About SentinelOne SentinelOne (NYSE: S) is the leader in AI security, setting the standard for leveraging AI and automation to give defenders a decisive operating advantage. Built for those who secure our world, Singularity Platform delivers unified coverage across endpoints, identity, cloud, and AI. Powered by Autonomous Security Intelligence, SentinelOne stops attacks at machine speed, reducing risk and delivering clarity and control to stay one step ahead. Headquartered in Mountain View, California with teams worldwide, SentinelOne protects nearly one-fifth of the Fortune 500 and hundreds of Global 2000 enterprises. From Main Street to Wall Street, the world\u2019s most critical organizations trust SentinelOne for cybersecurity. For more information, please visit www.sentinelone.com Category: Investors Investor Contact Saad Nazir investors@sentinelone.com Press Contact Craig VerColen press@sentinelone.com Source: SentinelOne View All News Investor Relations 444 Castro Street Suite 400 Mountain View, California 94041 Send Email Overview Press Releases Events & Presentations Financial Info Governance Resources follow us on twitter follow us on facebook follow us on LinkedIn follow us on youtube Privacy Policy Terms of Use \u00a9 Q4 Inc. - All rights reserved | Powered By Q4 Inc.",
+      "cached_body": "data/cache/earnings/release-leads/S-exact-3a34812800b483533dd1f0839a4447fcb9c6e86b778ad44218ca8a1d81744da5.body",
+      "call": {
+        "event_kind": "earnings_call",
+        "precision": "minute",
+        "time": "14:00",
+        "timezone": "America/Los_Angeles"
+      },
+      "checked_at": "2026-11-12T23:58:11.594953+00:00",
+      "company": "S",
+      "discovery_note": "User supplied an unverified Stockhouse reprint lead. Original official IR announcement independently retrieved and reviewed. Not user_verified; directory/search excerpts not used as verification.",
+      "event_kind": "results_release",
+      "fiscal_period": {
+        "end": "2026-10-31",
+        "label": "Q3 FY2027",
+        "start": "2026-08-01"
+      },
+      "fiscal_period_quote": "SentinelOne, Inc. (NYSE: S) today announced that it will release financial results for its fiscal third quarter 2027, which ended October 31, 2026.",
+      "id": "44c674b9-16d2-5a39-b330-225112d7752a",
+      "previous_evidence_id": "44c674b9-16d2-5a39-b330-225112d7752a",
+      "quote": "Results will be released after market close on Thursday, December 3, 2026.",
+      "recheck": {
+        "checked_at": "2026-11-12T23:58:11.594953+00:00",
+        "company": "S",
+        "date_evidence": [
+          "6. Results will be released after market close on Thursday, December 3, 2026. SentinelOne will host a conference call to discuss the results at 2:00 p.m. PT (5:00 p.m"
+        ],
+        "fetched_at": "2026-11-12T23:58:11.835572+00:00",
+        "report_date": "2026-12-03",
+        "report_date_present": true,
+        "sha256": "3a34812800b483533dd1f0839a4447fcb9c6e86b778ad44218ca8a1d81744da5",
+        "source_date": "2026-11-12",
+        "source_date_present": true,
+        "source_url": "https://investors.sentinelone.com/press-releases/news-details/2026/SentinelOne-Announces-Date-of-Fiscal-Third-Quarter-2027-Financial-Results-Conference-Call-and-Participation-in-Upcoming-Investor-Conference/default.aspx",
+        "status": "confirmed"
+      },
+      "release_date": "2026-12-03",
+      "release_time": "after_market_close",
+      "retrieved_at": "2026-11-12T23:58:11.835572+00:00",
+      "source_sha256": "3a34812800b483533dd1f0839a4447fcb9c6e86b778ad44218ca8a1d81744da5",
+      "source_url": "https://investors.sentinelone.com/press-releases/news-details/2026/SentinelOne-Announces-Date-of-Fiscal-Third-Quarter-2027-Financial-Results-Conference-Call-and-Participation-in-Upcoming-Investor-Conference/default.aspx",
+      "time_precision": "market_session",
+      "timestamp_verified": false,
+      "timezone": "America/New_York",
+      "timezone_provenance": "NYSE-listed company and US market-close context; release-date-boundary-v1 uses start of the release day in America/New_York. Documented conservative policy interpretation, not an exact publication clock time.",
+      "verification_method": "direct_http_official_ir_full_document",
+      "verification_status": "independently_verified",
+      "verified_at": "2026-11-12T23:57:43.472150+00:00",
+      "verifier": "Codex deterministic date check; original full-document review retained"
+    },
+    "status": "passed"
+  },
+  "validation_recorded_at": "2026-11-12T23:58:11.845987+00:00",
+  "verifier": "Codex"
+}

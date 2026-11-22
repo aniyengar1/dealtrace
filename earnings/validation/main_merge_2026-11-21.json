@@ -1,0 +1,42 @@
+{
+  "kind": "POST_MERGE_CHECKS_BEFORE_MERGE_COMMIT",
+  "checked_at": "2026-11-21T23:46:36.845062+00:00",
+  "earnings_parent": "0050ff2012d30827e14401ccebadfd3fcd513e82",
+  "main_parent": "06dc7592dbc8ae3d27276f245b7c02b67aebd2d7",
+  "announcement_commit": "0050ff2",
+  "conflicts": [],
+  "manual_conflict_resolutions": [],
+  "main_ui_matches_main": true,
+  "crosscheck_pages_sql_and_prediction_code_unchanged_from_earnings_parent": true,
+  "reviewed_shared_files_unchanged_from_earnings_parent": [
+    "apps/web/src/components/layout/NavBar.tsx",
+    "apps/web/next.config.ts",
+    "apps/web/postcss.config.mjs",
+    "apps/web/package.json",
+    "apps/web/package-lock.json"
+  ],
+  "tests": {
+    "python": {
+      "passed": 821,
+      "skipped": 3,
+      "xfailed": 2,
+      "database": "guarded temporary cluster, port65439; non-scratch connections rejected"
+    },
+    "frontend": {
+      "passed": 69,
+      "test_files": 9
+    },
+    "typecheck": "passed",
+    "lint": "passed",
+    "webpack_build": "passed"
+  },
+  "published_prediction_sha256": "662a2a3dd552470496667f45d66cd2d36b9099cf71752cd49d6cefb787b88837",
+  "live_ledger_writes": false,
+  "new_locks": 0,
+  "production_migrations": false,
+  "push": false,
+  "deploy": false,
+  "crm_status": "pre-existing working-tree modification left unstaged",
+  "visual_compatibility": "unverified; no browser automation",
+  "default_bundler_status": "not retried or claimed passed; requested Webpack build passed"
+}

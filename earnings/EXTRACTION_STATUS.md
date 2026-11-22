@@ -1,0 +1,5 @@
+# Extractor experiment shelved
+
+Owner instruction: shelve extraction. **Owner review: deferred, not performed.** No human decisions have been received. No further inference, CountTokens calls, tuning or extraction review is authorized. Original rules, prompts, splits, fresh reservations, responses, failed evaluations, cached revalidation artifacts, random review packet and quarantined candidates remain intact. Fresh evaluation bodies/labels/inference remain untouched. Historical pending labels are preserved audit records, superseded administratively by `hybrid/STATUS.json`; they are not actual human review. The$8 operational ceiling and all unresolved reservations remain unchanged.
+
+Current scope: ten-company manual-guidance live tracker with the two frozen categorical methods and current-state-checks-v2. Entry timing is separately updated to17 calendar days; the planned owner lock session stays November16 after9p.m. Pacific. No automatic lock, live prediction, production promotion, merge, push or deployment is authorized by the preparation pass.

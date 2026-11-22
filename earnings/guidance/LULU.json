@@ -1,0 +1,156 @@
+{
+  "history_review": {
+    "cutoff": "2026-11-12",
+    "scope": "Manual review of all SEC 8-K/8-K/A filings and linked 99.x/earnings/investor exhibits from December 2025 through November 11, 2026; includes non-earnings reaffirmations.",
+    "sources_reviewed": [
+      "https://www.sec.gov/Archives/edgar/data/1397187/000121390025126119/ea0271178-8k_lulu.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000121390025126119/ea027117801ex99-1_lulu.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000121390026048264/ea0287949-8k_lululemon.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000121390026048264/ea028794901ex99-1.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000121390026061531/ea0292191-8k_lululemon.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000121390026061531/ea029219101ex99-1.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000054/lulu-20251102xex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000054/lulu-20251203.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000054/lulu-20251211xex101.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000054/lulu-20251211xex992.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000005/lulu-20260112.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000005/lulu-20260112xex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000017/lulu-20260313.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000017/lulu-20260313xex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260201xex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000070/lulu-20260421.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000070/lulu-20260421xex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260503xex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260604.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000088/lulu-20260624.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000120/lulu-20260813.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260903.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000129/lulu-20260908.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000131/lulu-20260930.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000131/lulu-20260930xex991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000135/lulu-20261019.htm",
+      "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000135/lulu-20261019xex991.htm"
+    ],
+    "original_verified": true,
+    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness.",
+    "latest_actual_release": {
+      "ytd_end": "2026-08-02",
+      "issued_date": "2026-09-03",
+      "filed_date": "2026-09-03",
+      "accession": "0001397187-26-000126",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm",
+      "period_quote": "a inc. (NASDAQ:LULU) today announced financial results for the second quarter of fiscal 2026, which ended on August 2, 2026",
+      "source_sha256": "a46c0ae866fbf781605e969adee8e23a469aff5eb38e1044bb30b7aa1f448e41"
+    },
+    "quarterly_scope": {
+      "target": "Q3 FY2026",
+      "start": "2026-08-03",
+      "end": "2026-11-01",
+      "cutoff": "2026-11-12",
+      "note": "Reviewed existing SEC source inventory after quarter issuance. MongoDB September 28 explicitly reaffirms Q3; Salesforce October 20 mentions FY27 only and is not treated as quarterly reaffirmation. No inferred quarterly reaffirmations from annual-only statements."
+    },
+    "session2_incremental_review": {
+      "as_of": "2026-11-12",
+      "source_url": "https://data.sec.gov/submissions/CIK0001397187.json",
+      "fetched_at": "2026-11-12T08:12:44.265495+00:00",
+      "sha256": "d1af739907cf625747a4963b29ad999506d0c3985167612366b283102de5eddf",
+      "scope": "Filings dated November 12 after the prior November 11 review; no new filings found in SEC recent submissions."
+    }
+  },
+  "versions": [
+    {
+      "issued_date": "2026-03-17",
+      "filed_date": "2026-03-17",
+      "fiscal_period": {
+        "start": "2026-02-02",
+        "end": "2027-01-31",
+        "label": "FY2026"
+      },
+      "metric": "consolidated_revenue",
+      "low": "11350000000.000",
+      "high": "11500000000.000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001397187-26-000019",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260201xex991.htm"
+      },
+      "quote": "For 2026, the Company expects net revenue to be in the range of $11.350 billion to $11.500 billion, representing growth of 2% to 4%. Diluted earnings per share are expected to be in the range of $12.10 to $12.30 for the year. This assumes a tax rate of approximately 30%. The guidance does not reflect potential future r",
+      "original_verified": true,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-06-04",
+      "filed_date": "2026-06-04",
+      "fiscal_period": {
+        "start": "2026-02-02",
+        "end": "2027-01-31",
+        "label": "FY2026"
+      },
+      "metric": "consolidated_revenue",
+      "low": "11000000000.000",
+      "high": "11150000000.000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "lowered",
+      "source": {
+        "accession": "0001397187-26-000077",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260503xex991.htm"
+      },
+      "quote": "For 2026, the Company now expects net revenue to be in the range of $11.000 billion to $11.150 billion, representing a decline of 1% to 0%. Diluted earnings per share are now expected to be in the range of $10.95 to $11.15 for the year. This assumes a tax rate of approximately 30%. The guidance does not reflect any pot",
+      "original_verified": false,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-09-03",
+      "filed_date": "2026-09-03",
+      "fiscal_period": {
+        "start": "2026-02-02",
+        "end": "2027-01-31",
+        "label": "FY2026"
+      },
+      "metric": "consolidated_revenue",
+      "low": "10350000000.000",
+      "high": "10500000000.000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "lowered",
+      "source": {
+        "accession": "0001397187-26-000126",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm"
+      },
+      "quote": "For 2026, the Company now expects net revenue to be in the range of $10.350 billion to $10.500 billion, representing a decline of 5% to 7%. Diluted earnings per share are now expected to be in the range of $9.48 to $9.73 for the year. This assumes a tax rate of approximately 30%. The 2026 outlook includes $0.86 per sha",
+      "original_verified": false,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-09-03",
+      "filed_date": "2026-09-03",
+      "fiscal_period": {
+        "start": "2026-08-03",
+        "end": "2026-11-01",
+        "label": "Q3 FY2026"
+      },
+      "metric": "quarterly_consolidated_revenue",
+      "low": "2290000000",
+      "high": "2320000000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001397187-26-000126",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm"
+      },
+      "quote": "For the third quarter of 2026, the Company expects net revenue to be in the range of $2.290 billion to $2.320 billion, representing a decline of 10% to 11%. Diluted earnings per share are expected to be in the range of $0.93 to $0.98 for the quarter. This assumes a tax",
+      "original_verified": true,
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "source_sha256": "a46c0ae866fbf781605e969adee8e23a469aff5eb38e1044bb30b7aa1f448e41"
+    }
+  ]
+}

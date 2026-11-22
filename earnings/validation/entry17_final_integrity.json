@@ -1,0 +1,91 @@
+{
+  "policy_version": "live-entry-17-calendar-days-v1",
+  "checked_at": "2026-11-15T20:43:59.057776+00:00",
+  "live_predictions": 0,
+  "live_scores": 0,
+  "database_read_only": true,
+  "installed_guard_bodies_match_final_0107": {
+    "earnings_lock_opening": true,
+    "earnings_prediction_guard": true
+  },
+  "migration_applied_at": "2026-11-15T03:25:01.951820+00:00",
+  "previous_tags_unchanged": {
+    "session3-lock-ready": "94984fc3ce33c6e85a287738d3a617561cd0cefc",
+    "session3-two-method-lock-ready-20261113": "87f48d40dfba363a7732cbb0b3cf68f473b3d56f",
+    "session3-two-method-lock-ready-20261113-r2": "7dc952c635446bb4ed3a6717d58cb7dc003f62cb",
+    "session3-current-state-v2-lock-ready-20261114": "c2c587fdeb550b7afe70a1a54098299d8874589e"
+  },
+  "protected_files_unchanged": [
+    "earnings/baseline.py",
+    "earnings/smoothed_baseline.py",
+    "earnings/history.py",
+    "earnings/score_live.py",
+    "earnings/current_checks.py",
+    "earnings/owner_evidence.py",
+    "earnings/announcements",
+    "earnings/guidance",
+    "earnings/hybrid/config.json",
+    "earnings/hybrid/prompt_freeze.json",
+    "earnings/hybrid/fresh_manifest.json",
+    "earnings/hybrid/diagnostic_manifest.json",
+    "earnings/hybrid/owner_review_packet_v4.md",
+    "earnings/hybrid/owner_review_manifest_v4.json",
+    "earnings/hybrid/validation.py"
+  ],
+  "dependency_lock_sha256": "724e79d85f370754531901af2f5c65d07f4b98ef24acffb60e6dddfde0c6b527",
+  "extraction_status": "shelved",
+  "owner_review": "deferred, not performed",
+  "fresh_groups_untouched": true,
+  "provider_or_count_calls": 0,
+  "ledger": {
+    "attempt_rows_sha256": "6d07b5971cef31372ef2234e69311e939521d603b9ff0305a3d74c65319b94d2",
+    "event_rows_sha256": "fd9dbbe31106b39c06c74999ccd351d01e837a04a35c7d36eb269d87b4cf03e1",
+    "ceiling_usd": "8",
+    "accounted_usd": "0.363525",
+    "unresolved_reservations_usd": "2.2373935",
+    "occupancy_usd": "2.6009185",
+    "headroom_usd": "5.3990815",
+    "original_reservation_usd": "1.12",
+    "provider_billing_cap_guaranteed": false
+  },
+  "verified_schedule_records_NOT_fresh_checks": [
+    {
+      "company": "OKTA",
+      "announcement_id": "4a3e1f16-7b0b-55be-b00b-f43055db57af",
+      "release_date": "2026-12-01",
+      "timezone": "America/New_York",
+      "opening": "2026-11-14T05:00:00+00:00",
+      "deadline": "2026-12-01T05:00:00+00:00",
+      "fresh_source_check_performed": false
+    },
+    {
+      "company": "CRM",
+      "announcement_id": "6c11f52b-a7d9-580d-bf77-86c072ba3a30",
+      "release_date": "2026-12-02",
+      "timezone": "America/New_York",
+      "opening": "2026-11-15T05:00:00+00:00",
+      "deadline": "2026-12-02T05:00:00+00:00",
+      "fresh_source_check_performed": false
+    },
+    {
+      "company": "IOT",
+      "announcement_id": "df34084d-c4ea-5848-ad67-df9dc8b98084",
+      "release_date": "2026-12-03",
+      "timezone": "America/New_York",
+      "opening": "2026-11-16T05:00:00+00:00",
+      "deadline": "2026-12-03T05:00:00+00:00",
+      "fresh_source_check_performed": false
+    },
+    {
+      "company": "S",
+      "announcement_id": "44c674b9-16d2-5a39-b330-225112d7752a",
+      "release_date": "2026-12-03",
+      "timezone": "America/New_York",
+      "opening": "2026-11-16T05:00:00+00:00",
+      "deadline": "2026-12-03T05:00:00+00:00",
+      "fresh_source_check_performed": false
+    }
+  ],
+  "planned_owner_session": "2026-11-16 after21:00 America/Los_Angeles",
+  "live_execution_authorized_by_this_change": false
+}

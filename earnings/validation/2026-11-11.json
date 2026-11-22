@@ -1,0 +1,2478 @@
+{
+  "as_of": "2026-11-11",
+  "companies": {
+    "ADBE": {
+      "calculation": {
+        "as_of": "2026-11-11",
+        "codes": [],
+        "company": "ADBE",
+        "company_config": {
+          "basis": "US_GAAP_consolidated_reported",
+          "calendar": "weeks",
+          "calendar_source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+          "cik": "0000796343",
+          "comparability": {
+            "available_on": "2026-11-11",
+            "blocked": false,
+            "reason": "Semrush consolidated from April 28, 2026. Note 3 explicitly says impact was not material; no acquisition normalization. FY2026 and comparison FY2025 are 52-week years.",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
+          },
+          "comparison_ends": {
+            "2026-02-27": "2025-02-28",
+            "2026-05-29": "2025-05-30",
+            "2026-08-28": "2025-08-29"
+          },
+          "concept": "Revenues",
+          "fiscal_label": "FY2026",
+          "name": "ADOBE INC.",
+          "period_end": "2026-11-27",
+          "period_start": "2025-11-29",
+          "prior_end": "2025-11-28",
+          "prior_start": "2024-11-30",
+          "ticker": "ADBE"
+        },
+        "details": [],
+        "formula_version": "revenue-hurdle-v1-decimal50",
+        "growth_high": "0.1059089441394898288666451404585082337746206005812",
+        "growth_low": "0.0978366160800774943493703584113658379076525670003",
+        "id": "9f40e737-5a4d-548f-a763-a0bf3ae8c9fd",
+        "inputs": {
+          "actual_ytd": "a083ce84-caea-59aa-8a68-ec2ad3c2b407",
+          "guidance": "04d7cd94-ee0a-56f9-b9d5-7329de346f83",
+          "prior_annual": "a2ef2fac-145a-5869-acfa-6a56ab7dd9c4",
+          "prior_remaining": "7abe3801-66c8-52b4-b8cc-f97764e73c36",
+          "prior_ytd": "cae93e71-4df5-5aeb-bafc-cb3108465d29"
+        },
+        "policy": {
+          "actual_days": 135,
+          "assumption": "Manual research policy; not an accounting standard",
+          "guidance_days": 150,
+          "version": "manual-freshness-v1"
+        },
+        "remaining_high": "6850000000.000",
+        "remaining_low": "6800000000.000",
+        "state": "ok"
+      },
+      "companyfacts_manifest": {
+        "body": "b9f0c6daf7ac54e02ebeb3629fb20802ae8603a2f6e9aeeb46843d398b4b99c3-86a5689aa9aa7b0f9e95be21b48b0305376e014c8dbf3b8bb3b4b131f1b6a0c4.body",
+        "fetched_at": "2026-11-11T10:11:04.161689+00:00",
+        "sha256": "86a5689aa9aa7b0f9e95be21b48b0305376e014c8dbf3b8bb3b4b131f1b6a0c4",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json"
+      },
+      "guidance_quotes": [
+        {
+          "guidance_id": "b7c14351-ad44-5757-b7f8-b816b58002ff",
+          "quote_verified": true,
+          "sha256": "5fd2619f5e70fc09b2d558525bc965209a31e9d0638f7b886405ffa9e8f31f79",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm"
+        },
+        {
+          "guidance_id": "87aa0e07-6f3c-5db0-8a9b-eb0aca2d79d4",
+          "quote_verified": true,
+          "sha256": "ba9e0472ccba1f7e926f70f3ecbd17fe81aa865447694113b033562a8835720c",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbeex991q126.htm"
+        },
+        {
+          "guidance_id": "812b1c5c-9ce3-5ba1-8524-479d49c18149",
+          "quote_verified": true,
+          "sha256": "bcf8f786660fa356e3e123c541346ffb35b9e70633e4f7540d647572511c4fd6",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm"
+        },
+        {
+          "guidance_id": "04d7cd94-ee0a-56f9-b9d5-7329de346f83",
+          "quote_verified": true,
+          "sha256": "24da9b5927cdb491c398249a90eb2c6ef2a28fee050a2b89bafba8955ae973a4",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+        }
+      ],
+      "history_original": {
+        "accession": "0000796343-25-000135",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "ADBE",
+        "end": "2026-11-27",
+        "exhibit": "99.1",
+        "filed": "2025-12-10",
+        "high": "26100000000.00",
+        "id": "b7c14351-ad44-5757-b7f8-b816b58002ff",
+        "issued": {
+          "end": "2025-12-10",
+          "precision": "day",
+          "start": "2025-12-10"
+        },
+        "low": "25900000000.00",
+        "metric": "consolidated_revenue",
+        "notes": "",
+        "original_verified": true,
+        "quote": "FY2026 targets 1 : Total revenue $25.90 billion to $26.10 billion Business Professionals & Consumers subscription revenue $7.35 billion to $7.40 billion Creative & Marketing Professionals subscription revenue $17.75 billion to $17.90 billion Total Adobe ending ARR growth 10.2% year over year Earnings per share GAAP: $1",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+        "start": "2025-11-29",
+        "status": "initial",
+        "unit": "USD"
+      },
+      "history_versions": 4,
+      "input_records": {
+        "actual_ytd": {
+          "accession": "0000796343-26-000156",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "ADBE",
+          "concept": "Revenues",
+          "derivation": null,
+          "end": "2026-08-28",
+          "filed": "2026-09-22",
+          "fiscal_period": "Q3",
+          "fiscal_year": 2026,
+          "form": "10-Q",
+          "id": "a083ce84-caea-59aa-8a68-ec2ad3c2b407",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+          "start": "2025-11-29",
+          "unit": "USD",
+          "value": "19776000000"
+        },
+        "guidance": {
+          "accession": "0000796343-26-000147",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "ADBE",
+          "end": "2026-11-27",
+          "exhibit": "99.1",
+          "filed": "2026-09-10",
+          "high": "26626000000.000",
+          "id": "04d7cd94-ee0a-56f9-b9d5-7329de346f83",
+          "issued": {
+            "end": "2026-09-10",
+            "precision": "day",
+            "start": "2026-09-10"
+          },
+          "low": "26576000000.000",
+          "metric": "consolidated_revenue",
+          "notes": "",
+          "original_verified": false,
+          "quote": "updated FY2026 targets: Total revenue $26.576 billion to $26.626 billion Business Professionals & Consumers subscription revenue $7.470 billion to $7.490 billion Creative & Marketing Professionals subscription revenue $18.242 billion to $18.272 billion Total Adobe ending ARR growth 10.2% year over year Earnings per sha",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+          "start": "2025-11-29",
+          "status": "raised",
+          "unit": "USD"
+        },
+        "prior_annual": {
+          "accession": "0000796343-26-000003",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "ADBE",
+          "concept": "Revenues",
+          "derivation": null,
+          "end": "2025-11-28",
+          "filed": "2026-01-15",
+          "fiscal_period": "FY",
+          "fiscal_year": 2025,
+          "form": "10-K",
+          "id": "a2ef2fac-145a-5869-acfa-6a56ab7dd9c4",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+          "start": "2024-11-30",
+          "unit": "USD",
+          "value": "23769000000"
+        },
+        "prior_remaining": {
+          "accession": "0000796343-26-000003",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "ADBE",
+          "concept": "Revenues",
+          "derivation": "annual-minus-ytd-v1",
+          "end": "2025-11-28",
+          "filed": "2026-09-22",
+          "fiscal_period": "REMAINING",
+          "fiscal_year": 2025,
+          "form": "DERIVED",
+          "id": "7abe3801-66c8-52b4-b8cc-f97764e73c36",
+          "parents": [
+            "a2ef2fac-145a-5869-acfa-6a56ab7dd9c4",
+            "cae93e71-4df5-5aeb-bafc-cb3108465d29"
+          ],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+          "start": "2025-08-30",
+          "unit": "USD",
+          "value": "6194000000"
+        },
+        "prior_ytd": {
+          "accession": "0000796343-26-000156",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "ADBE",
+          "concept": "Revenues",
+          "derivation": null,
+          "end": "2025-08-29",
+          "filed": "2026-09-22",
+          "fiscal_period": "Q3",
+          "fiscal_year": 2026,
+          "form": "10-Q",
+          "id": "cae93e71-4df5-5aeb-bafc-cb3108465d29",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+          "start": "2024-11-30",
+          "unit": "USD",
+          "value": "17575000000"
+        }
+      },
+      "reporting": {
+        "annual_result": {
+          "expected_window": {
+            "end": "2026-12-31",
+            "precision": "month",
+            "start": "2026-12-01"
+          },
+          "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+          "source_date": "2025-12-10",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+          "status": "estimated",
+          "type": "Q4/FY annual-guidance outcome"
+        },
+        "as_of": "2026-11-11",
+        "company": "ADBE",
+        "next_report": {
+          "date": null,
+          "expected_window": {
+            "end": "2026-12-15",
+            "precision": "range",
+            "start": "2026-12-01"
+          },
+          "source_date": "2025-12-10",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbe-20251210.htm",
+          "status": "unverified",
+          "type": "Q4/FY annual-guidance outcome",
+          "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only."
+        }
+      }
+    },
+    "CRM": {
+      "calculation": {
+        "as_of": "2026-11-11",
+        "codes": [
+          "INCOMPARABLE_BASIS"
+        ],
+        "company": "CRM",
+        "company_config": {
+          "basis": "US_GAAP_consolidated_reported",
+          "calendar": "months",
+          "calendar_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+          "cik": "0001108524",
+          "comparability": {
+            "available_on": "2026-02-25",
+            "blocked": true,
+            "reason": "Informatica contribution and pending Contentful/Fin acquisitions change consolidation scope. October Braze announcement adds uncertainty; explicit evidence reconciliation required.",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm"
+          },
+          "comparison_ends": {
+            "2026-04-30": "2025-04-30",
+            "2026-07-31": "2025-07-31",
+            "2026-10-31": "2025-10-31"
+          },
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fiscal_label": "FY2027",
+          "name": "Salesforce, Inc.",
+          "period_end": "2027-01-31",
+          "period_start": "2026-02-01",
+          "prior_end": "2026-01-31",
+          "prior_start": "2025-02-01",
+          "ticker": "CRM"
+        },
+        "details": [
+          "Informatica contribution and pending Contentful/Fin acquisitions change consolidation scope. October Braze announcement adds uncertainty; explicit evidence reconciliation required."
+        ],
+        "formula_version": "revenue-hurdle-v1-decimal50",
+        "growth_high": null,
+        "growth_low": null,
+        "id": "a7fd3f1d-bd6b-5a4f-ad05-bdd5cd6ba381",
+        "inputs": {
+          "guidance": "a83bd1cc-d8c3-5a31-8aff-ffb4022e9f8a"
+        },
+        "policy": {
+          "actual_days": 135,
+          "assumption": "Manual research policy; not an accounting standard",
+          "guidance_days": 150,
+          "version": "manual-freshness-v1"
+        },
+        "remaining_high": null,
+        "remaining_low": null,
+        "state": "blocked"
+      },
+      "companyfacts_manifest": {
+        "body": "54660e82c5b06acdd9412e9e05f21d83d8bcead81cdefdd1c871a8bf8db4bc4d-a89be8715e056f1cadffdcd9616676ec1949107233b11f430a8183f88ca4ae15.body",
+        "fetched_at": "2026-11-11T10:10:59.588203+00:00",
+        "sha256": "a89be8715e056f1cadffdcd9616676ec1949107233b11f430a8183f88ca4ae15",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001108524.json"
+      },
+      "guidance_quotes": [
+        {
+          "guidance_id": "2e224c9b-77d6-5665-97ce-f8cf535ce5bc",
+          "quote_verified": true,
+          "sha256": "8ea16dfd1b1706f6ece15eaeec0722e399bb02f5fe6efaa9518d4afdf6ee04cd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-q4fy26xexhibit991.htm"
+        },
+        {
+          "guidance_id": "6efd228a-70fb-51dc-9d1c-93c55ff84e16",
+          "quote_verified": true,
+          "sha256": "9b8bd22a94fa9e4b5c29920757b4763cd2bad0ae8eedbb0d4b16542d361ad552",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000125/crm-q1fy27xexhibit991.htm"
+        },
+        {
+          "guidance_id": "01731e6e-0166-552d-baba-021e4d237bf7",
+          "quote_verified": true,
+          "sha256": "ed2dace59f395fd2426543a34ce2dd92ecf2c442024be98c33fb96f98689633b",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+        },
+        {
+          "guidance_id": "a83bd1cc-d8c3-5a31-8aff-ffb4022e9f8a",
+          "quote_verified": true,
+          "sha256": "c3b8586a44838fa1b98906a322204bd0cf6c937e35658da189a4729ac26f8e56",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312526425881/d516983dex991.htm"
+        }
+      ],
+      "history_original": {
+        "accession": "0001108524-26-000056",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "CRM",
+        "end": "2027-01-31",
+        "exhibit": "99.1",
+        "filed": "2026-02-25",
+        "high": "46200000000.0",
+        "id": "2e224c9b-77d6-5665-97ce-f8cf535ce5bc",
+        "issued": {
+          "end": "2026-02-25",
+          "precision": "day",
+          "start": "2026-02-25"
+        },
+        "low": "45800000000.0",
+        "metric": "consolidated_revenue",
+        "notes": "",
+        "original_verified": true,
+        "quote": "Initiates full year FY27 revenue guidance of $45.8 billion to $46.2 billion, up 10% - 11% Y/Y and in CC, including approximately 3pts Informatica contribution \u2022 Expects organic revenue re-acceleration in the second half of FY27 \u2022 Initiates full year FY27 subscription & support revenue growth guidance of slightly under ",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-q4fy26xexhibit991.htm",
+        "start": "2026-02-01",
+        "status": "initial",
+        "unit": "USD"
+      },
+      "history_versions": 4,
+      "input_records": {
+        "guidance": {
+          "accession": "0001193125-26-425881",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "CRM",
+          "end": "2027-01-31",
+          "exhibit": "99.1",
+          "filed": "2026-10-20",
+          "high": "46400000000.0",
+          "id": "a83bd1cc-d8c3-5a31-8aff-ffb4022e9f8a",
+          "issued": {
+            "end": "2026-10-20",
+            "precision": "day",
+            "start": "2026-10-20"
+          },
+          "low": "46100000000.0",
+          "metric": "consolidated_revenue",
+          "notes": "Bounds carried from explicitly referenced previous guidance; no new numerical range.",
+          "original_verified": false,
+          "quote": "There is no anticipated change to Salesforce\u2019s FY27 guidance.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312526425881/d516983dex991.htm",
+          "start": "2026-02-01",
+          "status": "reaffirmed",
+          "unit": "USD"
+        }
+      },
+      "reporting": {
+        "annual_result": {
+          "expected_window": {
+            "end": "2027-02-28",
+            "precision": "month",
+            "start": "2027-02-01"
+          },
+          "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+          "source_date": "2026-02-25",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-q4fy26xexhibit991.htm",
+          "status": "estimated",
+          "type": "Q4/FY annual-guidance outcome"
+        },
+        "as_of": "2026-11-11",
+        "company": "CRM",
+        "next_report": {
+          "date": "2026-12-02",
+          "expected_window": {
+            "end": "2026-12-15",
+            "precision": "range",
+            "start": "2026-12-01"
+          },
+          "quote": "Results to be released on December 2, 2026, after market close",
+          "source_date": "2026-11-10",
+          "source_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx",
+          "status": "confirmed",
+          "type": "Q3 annual-hurdle update",
+          "verified_as_of": "2026-11-11"
+        }
+      }
+    },
+    "CRWD": {
+      "calculation": {
+        "as_of": "2026-11-11",
+        "codes": [],
+        "company": "CRWD",
+        "company_config": {
+          "basis": "US_GAAP_consolidated_reported",
+          "calendar": "months",
+          "calendar_source": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm",
+          "cik": "0001535527",
+          "comparability": {
+            "available_on": "2026-11-11",
+            "blocked": false,
+            "reason": "As-reported total revenue. Acquisitions disclosed in Note 12 as not having material financial-statement impact; no organic/pro-forma normalization. Stock-compensation revisions preserved.",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm"
+          },
+          "comparison_ends": {
+            "2026-04-30": "2025-04-30",
+            "2026-07-31": "2025-07-31",
+            "2026-10-31": "2025-10-31"
+          },
+          "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+          "fiscal_label": "FY2027",
+          "name": "CrowdStrike Holdings, Inc.",
+          "period_end": "2027-01-31",
+          "period_start": "2026-02-01",
+          "prior_end": "2026-01-31",
+          "prior_start": "2025-02-01",
+          "ticker": "CRWD"
+        },
+        "details": [],
+        "formula_version": "revenue-hurdle-v1-decimal50",
+        "growth_high": "0.2421445894049461749971157090886467615811663088046",
+        "growth_low": "0.2342693923773605410890373713537345562464290903478",
+        "id": "ad7fe379-8d9a-590c-89bf-f08d94c1f927",
+        "inputs": {
+          "actual_ytd": "76c32b45-9444-5cb0-b1d8-3c83c8ca26a6",
+          "guidance": "20136ed5-16e2-50dc-b46c-8f4833b1db90",
+          "prior_annual": "f9e2446a-2913-5e54-821f-6b3cddc548e3",
+          "prior_remaining": "1dac35de-8ae7-5239-8f39-ce8e4aa7f4d7",
+          "prior_ytd": "8a5f1cea-4951-57fb-b7be-0958074783da"
+        },
+        "policy": {
+          "actual_days": 135,
+          "assumption": "Manual research policy; not an accounting standard",
+          "guidance_days": 150,
+          "version": "manual-freshness-v1"
+        },
+        "remaining_high": "3154574000.0000",
+        "remaining_low": "3134574000.0000",
+        "state": "ok"
+      },
+      "companyfacts_manifest": {
+        "body": "1e27b7df0f8dd2a173fb0e3d30ac0385e1c9ba7db1c1d186a2c469d75dcc2eb4-a71a92f1f11bd3032271ca55be7a7770a96a846ec809f925829ef952fd5f3fa1.body",
+        "fetched_at": "2026-11-11T10:11:00.341417+00:00",
+        "sha256": "a71a92f1f11bd3032271ca55be7a7770a96a846ec809f925829ef952fd5f3fa1",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json"
+      },
+      "guidance_quotes": [
+        {
+          "guidance_id": "6a52f11e-61b8-554e-826f-4dc433be1b18",
+          "quote_verified": true,
+          "sha256": "df7a97897d4009706438cf210ff18227268fae98ea1b1655bb9b997450ba873f",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm"
+        },
+        {
+          "guidance_id": "a31172b0-3168-5009-8472-59282faee637",
+          "quote_verified": true,
+          "sha256": "5dce1aee74e9d89c4f286de0c09c61a834d9d823eea6464bb3f91ffa8240dcd1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm"
+        },
+        {
+          "guidance_id": "20136ed5-16e2-50dc-b46c-8f4833b1db90",
+          "quote_verified": true,
+          "sha256": "40fe219bb8e11d46d665cd8f565484b80d6e62d8dd6a1492339a5125a0656d66",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
+        }
+      ],
+      "history_original": {
+        "accession": "0001535527-26-000007",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "CRWD",
+        "end": "2027-01-31",
+        "exhibit": "99.1",
+        "filed": "2026-03-03",
+        "high": "5927600000.0000",
+        "id": "6a52f11e-61b8-554e-826f-4dc433be1b18",
+        "issued": {
+          "end": "2026-03-03",
+          "precision": "day",
+          "start": "2026-03-03"
+        },
+        "low": "5867600000.0000",
+        "metric": "consolidated_revenue",
+        "notes": "",
+        "original_verified": true,
+        "quote": "Full Year FY27 Guidance Annual recurring revenue $5,501.8 - $5,503.8 million $6,465.8 - $6,516.4 million Total revenue $1,360.0 - $1,364.0 million $5,867.6 - $5,927.6 million Non-GAAP income from operations $308.0 - $310.4 million $1,422.2 - $1,462.2 million Non-GAAP net income attributable to CrowdStrike $275.2 - $277.1 million $1,241.0 - $1,271.1 million Non-GAAP net income per share attributable to CrowdStrike com",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm",
+        "start": "2026-02-01",
+        "status": "initial",
+        "unit": "USD"
+      },
+      "history_versions": 3,
+      "input_records": {
+        "actual_ytd": {
+          "accession": "0001535527-26-000031",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "CRWD",
+          "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+          "derivation": null,
+          "end": "2026-07-31",
+          "filed": "2026-08-27",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "76c32b45-9444-5cb0-b1d8-3c83c8ca26a6",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+          "start": "2026-02-01",
+          "unit": "USD",
+          "value": "2856526000"
+        },
+        "guidance": {
+          "accession": "0001535527-26-000029",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "CRWD",
+          "end": "2027-01-31",
+          "exhibit": "99.1",
+          "filed": "2026-08-26",
+          "high": "6011100000.0000",
+          "id": "20136ed5-16e2-50dc-b46c-8f4833b1db90",
+          "issued": {
+            "end": "2026-08-26",
+            "precision": "day",
+            "start": "2026-08-26"
+          },
+          "low": "5991100000.0000",
+          "metric": "consolidated_revenue",
+          "notes": "",
+          "original_verified": false,
+          "quote": "Full Year FY27 Guidance Annual recurring revenue $6,184.4 - $6,188.4 million $6,603.0 - $6,611.9 million Total revenue $1,523.2 - $1,529.2 million $5,991.1 - $6,011.1 million Non-GAAP income from operations $372.7 - $375.9 million $1,497.2 - $1,508.4 million Non-GAAP net income attributable to CrowdStrike $325.4 - $327.9 million $1,302.7 - $1,311.6 million Non-GAAP net income per share attributable to CrowdStrike com",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+          "start": "2026-02-01",
+          "status": "raised",
+          "unit": "USD"
+        },
+        "prior_annual": {
+          "accession": "0001535527-26-000010",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "CRWD",
+          "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+          "derivation": null,
+          "end": "2026-01-31",
+          "filed": "2026-03-05",
+          "fiscal_period": "FY",
+          "fiscal_year": 2026,
+          "form": "10-K",
+          "id": "f9e2446a-2913-5e54-821f-6b3cddc548e3",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+          "start": "2025-02-01",
+          "unit": "USD",
+          "value": "4812005000"
+        },
+        "prior_remaining": {
+          "accession": "0001535527-26-000010",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "CRWD",
+          "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+          "derivation": "annual-minus-ytd-v1",
+          "end": "2026-01-31",
+          "filed": "2026-08-27",
+          "fiscal_period": "REMAINING",
+          "fiscal_year": 2026,
+          "form": "DERIVED",
+          "id": "1dac35de-8ae7-5239-8f39-ce8e4aa7f4d7",
+          "parents": [
+            "f9e2446a-2913-5e54-821f-6b3cddc548e3",
+            "8a5f1cea-4951-57fb-b7be-0958074783da"
+          ],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+          "start": "2025-08-01",
+          "unit": "USD",
+          "value": "2539619000"
+        },
+        "prior_ytd": {
+          "accession": "0001535527-26-000031",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "CRWD",
+          "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+          "derivation": null,
+          "end": "2025-07-31",
+          "filed": "2026-08-27",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "8a5f1cea-4951-57fb-b7be-0958074783da",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+          "start": "2025-02-01",
+          "unit": "USD",
+          "value": "2272386000"
+        }
+      },
+      "reporting": {
+        "annual_result": {
+          "expected_window": {
+            "end": "2027-03-31",
+            "precision": "month",
+            "start": "2027-03-01"
+          },
+          "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+          "source_date": "2026-03-03",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm",
+          "status": "estimated",
+          "type": "Q4/FY annual-guidance outcome"
+        },
+        "as_of": "2026-11-11",
+        "company": "CRWD",
+        "next_report": {
+          "date": "2026-12-01",
+          "expected_window": {
+            "end": "2026-12-15",
+            "precision": "range",
+            "start": "2026-12-01"
+          },
+          "quote": "after the U.S. market close on Tuesday, December 1, 2026",
+          "source_date": "2026-11-04",
+          "source_url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-announces-date-fiscal-third-quarter-2027-financial",
+          "status": "confirmed",
+          "type": "Q3 annual-hurdle update",
+          "verified_as_of": "2026-11-11"
+        }
+      }
+    },
+    "GTLB": {
+      "calculation": {
+        "as_of": "2026-11-11",
+        "codes": [],
+        "company": "GTLB",
+        "company_config": {
+          "basis": "US_GAAP_consolidated_reported",
+          "calendar": "months",
+          "cik": "0001653482",
+          "comparability": {
+            "available_on": "2026-11-11",
+            "blocked": false,
+            "reason": "Consolidated revenue reconciled to current release and prior-year annual/YTD statements."
+          },
+          "comparison_ends": {
+            "2026-04-30": "2025-04-30",
+            "2026-07-31": "2025-07-31",
+            "2026-10-31": "2025-10-31"
+          },
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fiscal_label": "FY2027",
+          "name": "GitLab Inc.",
+          "period_end": "2027-01-31",
+          "period_start": "2026-02-01",
+          "prior_end": "2026-01-31",
+          "prior_start": "2025-02-01",
+          "ticker": "GTLB"
+        },
+        "details": [],
+        "formula_version": "revenue-hurdle-v1-decimal50",
+        "growth_high": "0.1541995621638220522827906608156432328555437786649",
+        "growth_low": "0.1462749254588859941952036136343374508424879396935",
+        "id": "152923dd-bf62-5174-ac9a-d097e236b76f",
+        "inputs": {
+          "actual_ytd": "fc5e4db7-8178-5f6b-94ce-527052ae2657",
+          "guidance": "ba14fe0d-bc14-582c-89f3-deb673b23254",
+          "prior_annual": "dc87f11a-a9f0-534d-96c7-86247ee6a868",
+          "prior_remaining": "c46eb85a-bd9b-5310-8649-21a5fa28f382",
+          "prior_ytd": "1c344d72-6802-5f65-8c27-abe85a39c8e0"
+        },
+        "policy": {
+          "actual_days": 135,
+          "assumption": "Manual research policy; not an accounting standard",
+          "guidance_days": 150,
+          "version": "manual-freshness-v1"
+        },
+        "remaining_high": "582588000",
+        "remaining_low": "578588000",
+        "state": "ok"
+      },
+      "companyfacts_manifest": {
+        "body": "59bd2e3d197ca7660d3c289cb769d88c8aa4bf7d9f4fef601938bb29960d9f4e-5f900199621c5922f358c542d0fb942df930d4fe391724686f2625149fc1ee54.body",
+        "fetched_at": "2026-11-11T10:08:17.886939+00:00",
+        "sha256": "5f900199621c5922f358c542d0fb942df930d4fe391724686f2625149fc1ee54",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json"
+      },
+      "guidance_quotes": [
+        {
+          "guidance_id": "0b4891ac-f765-5fb8-a0cb-39130819cb06",
+          "quote_verified": true,
+          "sha256": "ded7bdd17b01b7cef197ca62f582b40261b3cefbf65a4d56d302e788e7703cd2",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm"
+        },
+        {
+          "guidance_id": "ff4be85a-dde0-5573-b3b9-9f26b067046e",
+          "quote_verified": true,
+          "sha256": "7cdb4107962a2ea159c8eff0a60e6d71908a2ae50d6d310d0a2d66fb0a511ed3",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000095/gtlb-20260511.htm"
+        },
+        {
+          "guidance_id": "4b3e8896-8091-59ff-beb6-4fc03caed6d5",
+          "quote_verified": true,
+          "sha256": "ad4e810c4a58dcefcb90971c37fc0d6f5e80e300b7e7685980dfb3ee6f1fa131",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039805/gitlab-ex99120260430fy27.htm"
+        },
+        {
+          "guidance_id": "ba14fe0d-bc14-582c-89f3-deb673b23254",
+          "quote_verified": true,
+          "sha256": "7c3e015238a277599421246919f83f33228efea9a5f2dca65486bbd65699db3b",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm"
+        }
+      ],
+      "history_original": {
+        "accession": "0001628280-26-013795",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "GTLB",
+        "end": "2027-01-31",
+        "exhibit": "99.1",
+        "filed": "2026-03-03",
+        "high": "1118000000",
+        "id": "0b4891ac-f765-5fb8-a0cb-39130819cb06",
+        "issued": {
+          "end": "2026-03-03",
+          "precision": "day",
+          "start": "2026-03-03"
+        },
+        "low": "1099000000",
+        "metric": "consolidated_revenue",
+        "notes": "",
+        "original_verified": true,
+        "quote": "First Quarter and Fiscal Year 2027 Financial Outlook For the first quarter and fiscal year 2027, GitLab Inc. expects ( in millions , except share and per share data) : Q1 FY 2027 Guidance FY 2027 Guidance Revenue $253.0 - $255.0 $1,099 - $1,118 Non-GAAP operating income $32.0 - $34.0 $129 - $137 Non-GAAP diluted net income per share assuming approximately 173 million and 175 million weighted average shares outstanding during Q1 FY 2027 and FY 2027, respectively. $0.20 - $0.21 $0.76 - $0.80 These statements are forward-looking and actual results may differ materially as a result of many factors. Refer to the Forward-Looking Statements safe har",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm",
+        "start": "2026-02-01",
+        "status": "initial",
+        "unit": "USD"
+      },
+      "history_versions": 4,
+      "input_records": {
+        "actual_ytd": {
+          "accession": "0001628280-26-059943",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "GTLB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2026-07-31",
+          "filed": "2026-09-02",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "fc5e4db7-8178-5f6b-94ce-527052ae2657",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+          "start": "2026-02-01",
+          "unit": "USD",
+          "value": "550412000"
+        },
+        "guidance": {
+          "accession": "0001628280-26-059820",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "GTLB",
+          "end": "2027-01-31",
+          "exhibit": "99.1",
+          "filed": "2026-09-01",
+          "high": "1133000000",
+          "id": "ba14fe0d-bc14-582c-89f3-deb673b23254",
+          "issued": {
+            "end": "2026-09-01",
+            "precision": "day",
+            "start": "2026-09-01"
+          },
+          "low": "1129000000",
+          "metric": "consolidated_revenue",
+          "notes": "",
+          "original_verified": false,
+          "quote": "Third Quarter and Fiscal Year 2027 Financial Outlook For the third quarter and fiscal year 2027, GitLab Inc. expects ( in millions , except share and per share data) : Q3 FY 2027 Guidance FY 2027 Guidance Revenue $281 - $283 $1,129 - $1,133 Non-GAAP operating income $35 - $37 $148 - $152 Non-GAAP diluted net income per share assuming approximately 172 million and 172 million weighted average shares outstanding during Q3 FY 2027 and FY 2027, respectively. $0.19 - $0.20 $0.85 - $0.87 These statements are forward-looking and actual results may differ materially as a result of many factors. Refer to the Forward-Looking Statements safe harbor belo",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm",
+          "start": "2026-02-01",
+          "status": "raised",
+          "unit": "USD"
+        },
+        "prior_annual": {
+          "accession": "0001628280-26-018731",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "GTLB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2026-01-31",
+          "filed": "2026-03-17",
+          "fiscal_period": "FY",
+          "fiscal_year": 2026,
+          "form": "10-K",
+          "id": "dc87f11a-a9f0-534d-96c7-86247ee6a868",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+          "start": "2025-02-01",
+          "unit": "USD",
+          "value": "955224000"
+        },
+        "prior_remaining": {
+          "accession": "0001628280-26-018731",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "GTLB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": "annual-minus-ytd-v1",
+          "end": "2026-01-31",
+          "filed": "2026-09-02",
+          "fiscal_period": "REMAINING",
+          "fiscal_year": 2026,
+          "form": "DERIVED",
+          "id": "c46eb85a-bd9b-5310-8649-21a5fa28f382",
+          "parents": [
+            "dc87f11a-a9f0-534d-96c7-86247ee6a868",
+            "1c344d72-6802-5f65-8c27-abe85a39c8e0"
+          ],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+          "start": "2025-08-01",
+          "unit": "USD",
+          "value": "504755000"
+        },
+        "prior_ytd": {
+          "accession": "0001628280-26-059943",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "GTLB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2025-07-31",
+          "filed": "2026-09-02",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "1c344d72-6802-5f65-8c27-abe85a39c8e0",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+          "start": "2025-02-01",
+          "unit": "USD",
+          "value": "450469000"
+        }
+      },
+      "reporting": {
+        "annual_result": {
+          "expected_window": {
+            "end": "2027-03-31",
+            "precision": "month",
+            "start": "2027-03-01"
+          },
+          "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+          "source_date": "2026-03-03",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm",
+          "status": "estimated",
+          "type": "Q4/FY annual-guidance outcome"
+        },
+        "as_of": "2026-11-11",
+        "company": "GTLB",
+        "next_report": {
+          "date": null,
+          "expected_window": {
+            "end": "2026-12-15",
+            "precision": "range",
+            "start": "2026-12-01"
+          },
+          "source_date": "2025-12-02",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054758/gtlb-20251202.htm",
+          "status": "unverified",
+          "type": "Q3 annual-hurdle update",
+          "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only."
+        }
+      }
+    },
+    "IOT": {
+      "calculation": {
+        "as_of": "2026-11-11",
+        "codes": [],
+        "company": "IOT",
+        "company_config": {
+          "basis": "US_GAAP_consolidated_reported",
+          "calendar": "weeks",
+          "calendar_source": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060909/iot-20260801.htm",
+          "cik": "0001642896",
+          "comparability": {
+            "available_on": "2026-11-11",
+            "blocked": false,
+            "reason": "Current and prior fiscal years each have 52 weeks; compare observed 26-week remaining periods.",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060909/iot-20260801.htm"
+          },
+          "comparison_ends": {
+            "2026-05-02": "2025-05-03",
+            "2026-08-01": "2025-08-02",
+            "2026-10-31": "2025-11-01"
+          },
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fiscal_label": "FY2027",
+          "name": "Samsara Inc.",
+          "period_end": "2027-01-30",
+          "period_start": "2026-02-01",
+          "prior_end": "2026-01-31",
+          "prior_start": "2025-02-02",
+          "ticker": "IOT"
+        },
+        "details": [],
+        "formula_version": "revenue-hurdle-v1-decimal50",
+        "growth_high": "0.2318432214964819225569617016033319732967867102343",
+        "growth_low": "0.2271935239011892764024359765701738173203560273449",
+        "id": "675563bb-9fa8-5eb5-be5d-43afcea4a759",
+        "inputs": {
+          "actual_ytd": "cb2b20ef-89de-5b8c-9c12-3cd68f922c0b",
+          "guidance": "76e27739-b53d-537d-92b7-cdfcef7fb397",
+          "prior_annual": "274703de-9cd2-527f-b898-623f8123dc64",
+          "prior_remaining": "ce96d544-d7a3-51da-94aa-465430ca8960",
+          "prior_ytd": "9232d677-597a-545e-838e-0f982ab1f6e5"
+        },
+        "policy": {
+          "actual_days": 135,
+          "assumption": "Manual research policy; not an accounting standard",
+          "guidance_days": 150,
+          "version": "manual-freshness-v1"
+        },
+        "remaining_high": "1059719000.000",
+        "remaining_low": "1055719000.000",
+        "state": "ok"
+      },
+      "companyfacts_manifest": {
+        "body": "c93feb3111c994ef891909842cfe6101923693b03439d044b4143399ee24af47-af6813e058d66103c895aa04a9a7e2dec47660197cc07e71e14f776538d56205.body",
+        "fetched_at": "2026-11-11T10:11:01.877894+00:00",
+        "sha256": "af6813e058d66103c895aa04a9a7e2dec47660197cc07e71e14f776538d56205",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001642896.json"
+      },
+      "guidance_quotes": [
+        {
+          "guidance_id": "2824c751-b7ba-52a9-a9af-1b995d6933ac",
+          "quote_verified": true,
+          "sha256": "aed8b5fb4260578dd607e9aae5aa3da14e17b6ec3315ed3efc86b2ede908dc61",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026015170/samsaraepr-q42026.htm"
+        },
+        {
+          "guidance_id": "a2756a8b-c638-59e9-bca2-1f8a39215c85",
+          "quote_verified": true,
+          "sha256": "ca9eb03f26fc872d19eb0b4b2cec9ef20739eabf03701560f1ce86c88305c31a",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026040788/samsaraepr-q12027.htm"
+        },
+        {
+          "guidance_id": "76e27739-b53d-537d-92b7-cdfcef7fb397",
+          "quote_verified": true,
+          "sha256": "4323b6b76f3785cb80b656f18cb96b8b3e37b366c0baad4e18b361aafdc29812",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm"
+        }
+      ],
+      "history_original": {
+        "accession": "0001628280-26-015170",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "IOT",
+        "end": "2027-01-30",
+        "exhibit": "99.1",
+        "filed": "2026-03-05",
+        "high": "1975000000.000",
+        "id": "2824c751-b7ba-52a9-a9af-1b995d6933ac",
+        "issued": {
+          "end": "2026-03-05",
+          "precision": "day",
+          "start": "2026-03-05"
+        },
+        "low": "1965000000.000",
+        "metric": "consolidated_revenue",
+        "notes": "",
+        "original_verified": true,
+        "quote": "Financial Outlook Our guidance includes GAAP and non-GAAP financial measures. For the first quarter and fiscal year 2027, Samsara expects the following: Q1 FY2027 Outlook FY 2027 Outlook Total revenue $454 million \u2013 $456 million $1.965 billion \u2013 $1.975 billion Year/Year revenue growth 24% 21% \u2013 22% Year/Year revenue growth in constant currency (1) 22%  \u2013 23% 21% Non-GAAP operating margin (2) 15% 19% Non-GAAP net income per share, diluted (2) $0.12 \u2013 $0.13 $0.65 \u2013 $0.69 GAAP net income per share, diluted GAAP Profitable __________ (1) Constant currency impact to revenue guidance is expected to be a $5M positive im",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026015170/samsaraepr-q42026.htm",
+        "start": "2026-02-01",
+        "status": "initial",
+        "unit": "USD"
+      },
+      "history_versions": 3,
+      "input_records": {
+        "actual_ytd": {
+          "accession": "0001628280-26-060909",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "IOT",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2026-08-01",
+          "filed": "2026-09-08",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "cb2b20ef-89de-5b8c-9c12-3cd68f922c0b",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001642896.json",
+          "start": "2026-02-01",
+          "unit": "USD",
+          "value": "987281000"
+        },
+        "guidance": {
+          "accession": "0001628280-26-060438",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "IOT",
+          "end": "2027-01-30",
+          "exhibit": "99.1",
+          "filed": "2026-09-03",
+          "high": "2047000000.000",
+          "id": "76e27739-b53d-537d-92b7-cdfcef7fb397",
+          "issued": {
+            "end": "2026-09-03",
+            "precision": "day",
+            "start": "2026-09-03"
+          },
+          "low": "2043000000.000",
+          "metric": "consolidated_revenue",
+          "notes": "",
+          "original_verified": false,
+          "quote": "Financial Outlook Our guidance includes GAAP and non-GAAP financial measures. For the third quarter and fiscal year 2027, Samsara expects the following: Q3 FY2027 Outlook FY2027 Outlook Total revenue $514 million \u2013 $516 million $2.043 billion \u2013 $2.047 billion Year/Year revenue growth 24% 26% Year/Year revenue growth in constant currency (1) 23%  \u2013 24% 26% Non-GAAP operating margin (2) 21% 21% Non-GAAP net income per share, diluted (2) $0.18 \u2013 $0.19 $0.76 \u2013 $0.78 GAAP net income per share, diluted GAAP Profitable GAAP Profitable __________ (1) Constant currency impact to revenue guidance is $2 million for Q3 FY202",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm",
+          "start": "2026-02-01",
+          "status": "raised",
+          "unit": "USD"
+        },
+        "prior_annual": {
+          "accession": "0001628280-26-018167",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "IOT",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2026-01-31",
+          "filed": "2026-03-16",
+          "fiscal_period": "FY",
+          "fiscal_year": 2026,
+          "form": "10-K",
+          "id": "274703de-9cd2-527f-b898-623f8123dc64",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001642896.json",
+          "start": "2025-02-02",
+          "unit": "USD",
+          "value": "1618635000"
+        },
+        "prior_remaining": {
+          "accession": "0001628280-26-018167",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "IOT",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": "annual-minus-ytd-v1",
+          "end": "2026-01-31",
+          "filed": "2026-09-08",
+          "fiscal_period": "REMAINING",
+          "fiscal_year": 2026,
+          "form": "DERIVED",
+          "id": "ce96d544-d7a3-51da-94aa-465430ca8960",
+          "parents": [
+            "274703de-9cd2-527f-b898-623f8123dc64",
+            "9232d677-597a-545e-838e-0f982ab1f6e5"
+          ],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001642896.json",
+          "start": "2025-08-03",
+          "unit": "USD",
+          "value": "860271000"
+        },
+        "prior_ytd": {
+          "accession": "0001628280-26-060909",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "IOT",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2025-08-02",
+          "filed": "2026-09-08",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "9232d677-597a-545e-838e-0f982ab1f6e5",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001642896.json",
+          "start": "2025-02-02",
+          "unit": "USD",
+          "value": "758364000"
+        }
+      },
+      "reporting": {
+        "annual_result": {
+          "expected_window": {
+            "end": "2027-03-31",
+            "precision": "month",
+            "start": "2027-03-01"
+          },
+          "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+          "source_date": "2026-03-05",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026015170/samsaraepr-q42026.htm",
+          "status": "estimated",
+          "type": "Q4/FY annual-guidance outcome"
+        },
+        "as_of": "2026-11-11",
+        "company": "IOT",
+        "next_report": {
+          "date": null,
+          "expected_window": {
+            "end": "2026-12-15",
+            "precision": "range",
+            "start": "2026-12-01"
+          },
+          "source_date": "2025-12-04",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025055355/iot-20251204.htm",
+          "status": "unverified",
+          "type": "Q3 annual-hurdle update",
+          "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only."
+        }
+      }
+    },
+    "LULU": {
+      "calculation": {
+        "as_of": "2026-11-11",
+        "codes": [],
+        "company": "LULU",
+        "company_config": {
+          "basis": "US_GAAP_consolidated_reported",
+          "calendar": "weeks",
+          "calendar_source": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000127/lulu-20260802.htm",
+          "cik": "0001397187",
+          "comparability": {
+            "available_on": "2026-11-11",
+            "blocked": false,
+            "reason": "Current and prior fiscal years each have 52 weeks; reported total net revenue, no constant-dollar normalization.",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000127/lulu-20260802.htm"
+          },
+          "comparison_ends": {
+            "2026-05-03": "2025-05-04",
+            "2026-08-02": "2025-08-03",
+            "2026-11-01": "2025-11-02"
+          },
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fiscal_label": "FY2026",
+          "name": "lululemon athletica inc.",
+          "period_end": "2027-01-31",
+          "period_start": "2026-02-02",
+          "prior_end": "2026-02-01",
+          "prior_start": "2025-02-03",
+          "ticker": "LULU"
+        },
+        "details": [],
+        "formula_version": "revenue-hurdle-v1-decimal50",
+        "growth_high": "-0.09569545658649712142691769132203622492456161635105",
+        "growth_low": "-0.11986280678638527493019260894762306860579040043849",
+        "id": "4753f64e-dfa4-5d4e-98ed-4f013087ce03",
+        "inputs": {
+          "actual_ytd": "1ee9c3c7-b374-5a1e-96a9-c4949b40bf2f",
+          "guidance": "922c08aa-ed21-56eb-8898-fe746b19f388",
+          "prior_annual": "fa0e49da-2ef9-522c-becb-9c9c3ed4764d",
+          "prior_remaining": "d397cb62-2a39-5322-b7d6-dccfdc9d5538",
+          "prior_ytd": "260e343f-6b74-55e1-9495-6dad0ad6ece7"
+        },
+        "policy": {
+          "actual_days": 135,
+          "assumption": "Manual research policy; not an accounting standard",
+          "guidance_days": 150,
+          "version": "manual-freshness-v1"
+        },
+        "remaining_high": "5612766000.000",
+        "remaining_low": "5462766000.000",
+        "state": "ok"
+      },
+      "companyfacts_manifest": {
+        "body": "829e5376d22849a5ccdfb1ba8be6b9c8e82144bb3e2b81780345b08e6d481f00-89f7c4fd2ad8016bb521a2a2999da6515819d628d61ea81c773d838ba2addfaf.body",
+        "fetched_at": "2026-11-11T10:11:04.930060+00:00",
+        "sha256": "89f7c4fd2ad8016bb521a2a2999da6515819d628d61ea81c773d838ba2addfaf",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397187.json"
+      },
+      "guidance_quotes": [
+        {
+          "guidance_id": "97e0b842-2159-5e01-9e6f-c0e00779a660",
+          "quote_verified": true,
+          "sha256": "b47c12fc44fc46c7436f263b4a9ec63491f4b05a829a56b54769ce54aae46421",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260201xex991.htm"
+        },
+        {
+          "guidance_id": "5e5e884b-d835-52b8-96b1-b89aee84dd31",
+          "quote_verified": true,
+          "sha256": "fb3e9fbb284c24603f0493e36e6adf36effd2612463911f6bd3f58f18f657384",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260503xex991.htm"
+        },
+        {
+          "guidance_id": "922c08aa-ed21-56eb-8898-fe746b19f388",
+          "quote_verified": true,
+          "sha256": "a46c0ae866fbf781605e969adee8e23a469aff5eb38e1044bb30b7aa1f448e41",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm"
+        }
+      ],
+      "history_original": {
+        "accession": "0001397187-26-000019",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "LULU",
+        "end": "2027-01-31",
+        "exhibit": "99.1",
+        "filed": "2026-03-17",
+        "high": "11500000000.000",
+        "id": "97e0b842-2159-5e01-9e6f-c0e00779a660",
+        "issued": {
+          "end": "2026-03-17",
+          "precision": "day",
+          "start": "2026-03-17"
+        },
+        "low": "11350000000.000",
+        "metric": "consolidated_revenue",
+        "notes": "",
+        "original_verified": true,
+        "quote": "For 2026, the Company expects net revenue to be in the range of $11.350 billion to $11.500 billion, representing growth of 2% to 4%. Diluted earnings per share are expected to be in the range of $12.10 to $12.30 for the year. This assumes a tax rate of approximately 30%. The guidance does not reflect potential future r",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260201xex991.htm",
+        "start": "2026-02-02",
+        "status": "initial",
+        "unit": "USD"
+      },
+      "history_versions": 3,
+      "input_records": {
+        "actual_ytd": {
+          "accession": "0001397187-26-000127",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "LULU",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2026-08-02",
+          "filed": "2026-09-03",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2026,
+          "form": "10-Q",
+          "id": "1ee9c3c7-b374-5a1e-96a9-c4949b40bf2f",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397187.json",
+          "start": "2026-02-02",
+          "unit": "USD",
+          "value": "4887234000"
+        },
+        "guidance": {
+          "accession": "0001397187-26-000126",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "LULU",
+          "end": "2027-01-31",
+          "exhibit": "99.1",
+          "filed": "2026-09-03",
+          "high": "10500000000.000",
+          "id": "922c08aa-ed21-56eb-8898-fe746b19f388",
+          "issued": {
+            "end": "2026-09-03",
+            "precision": "day",
+            "start": "2026-09-03"
+          },
+          "low": "10350000000.000",
+          "metric": "consolidated_revenue",
+          "notes": "",
+          "original_verified": false,
+          "quote": "For 2026, the Company now expects net revenue to be in the range of $10.350 billion to $10.500 billion, representing a decline of 5% to 7%. Diluted earnings per share are now expected to be in the range of $9.48 to $9.73 for the year. This assumes a tax rate of approximately 30%. The 2026 outlook includes $0.86 per sha",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm",
+          "start": "2026-02-02",
+          "status": "lowered",
+          "unit": "USD"
+        },
+        "prior_annual": {
+          "accession": "0001397187-26-000020",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "LULU",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2026-02-01",
+          "filed": "2026-03-17",
+          "fiscal_period": "FY",
+          "fiscal_year": 2025,
+          "form": "10-K",
+          "id": "fa0e49da-2ef9-522c-becb-9c9c3ed4764d",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397187.json",
+          "start": "2025-02-03",
+          "unit": "USD",
+          "value": "11102600000"
+        },
+        "prior_remaining": {
+          "accession": "0001397187-26-000020",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "LULU",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": "annual-minus-ytd-v1",
+          "end": "2026-02-01",
+          "filed": "2026-09-03",
+          "fiscal_period": "REMAINING",
+          "fiscal_year": 2025,
+          "form": "DERIVED",
+          "id": "d397cb62-2a39-5322-b7d6-dccfdc9d5538",
+          "parents": [
+            "fa0e49da-2ef9-522c-becb-9c9c3ed4764d",
+            "260e343f-6b74-55e1-9495-6dad0ad6ece7"
+          ],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397187.json",
+          "start": "2025-08-04",
+          "unit": "USD",
+          "value": "6206721000"
+        },
+        "prior_ytd": {
+          "accession": "0001397187-26-000127",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "LULU",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2025-08-03",
+          "filed": "2026-09-03",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2026,
+          "form": "10-Q",
+          "id": "260e343f-6b74-55e1-9495-6dad0ad6ece7",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397187.json",
+          "start": "2025-02-03",
+          "unit": "USD",
+          "value": "4895879000"
+        }
+      },
+      "reporting": {
+        "annual_result": {
+          "expected_window": {
+            "end": "2027-03-31",
+            "precision": "month",
+            "start": "2027-03-01"
+          },
+          "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+          "source_date": "2026-03-17",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260201xex991.htm",
+          "status": "estimated",
+          "type": "Q4/FY annual-guidance outcome"
+        },
+        "as_of": "2026-11-11",
+        "company": "LULU",
+        "next_report": {
+          "date": null,
+          "expected_window": {
+            "end": "2026-12-15",
+            "precision": "range",
+            "start": "2026-12-01"
+          },
+          "source_date": "2025-12-11",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000054/lulu-20251203.htm",
+          "status": "unverified",
+          "type": "Q3 annual-hurdle update",
+          "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only."
+        }
+      }
+    },
+    "MDB": {
+      "calculation": {
+        "as_of": "2026-11-11",
+        "codes": [],
+        "company": "MDB",
+        "company_config": {
+          "basis": "US_GAAP_consolidated_reported",
+          "calendar": "months",
+          "calendar_source": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059830/mdb-20260731.htm",
+          "cik": "0001441816",
+          "comparability": {
+            "available_on": "2026-11-11",
+            "blocked": false,
+            "reason": "Clarity consolidated from May 8, 2026. Note 4 says acquisition effects were not material; no normalization. September 29 presentation expressly does not reaffirm guidance.",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059830/mdb-20260731.htm"
+          },
+          "comparison_ends": {
+            "2026-04-30": "2025-04-30",
+            "2026-07-31": "2025-07-31",
+            "2026-10-31": "2025-10-31"
+          },
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fiscal_label": "FY2027",
+          "name": "MongoDB, Inc.",
+          "period_end": "2027-01-31",
+          "period_start": "2026-02-01",
+          "prior_end": "2026-01-31",
+          "prior_start": "2025-02-01",
+          "ticker": "MDB"
+        },
+        "details": [],
+        "formula_version": "revenue-hurdle-v1-decimal50",
+        "growth_high": "0.1868169484071480548685525936975066137416208937562",
+        "growth_low": "0.1565913368863539676026782914368575640726291219233",
+        "id": "cc9b69a3-2fc4-58e1-9ef2-77abab829742",
+        "inputs": {
+          "actual_ytd": "d7b2a391-1996-54eb-90b2-51ddbe23d7bc",
+          "guidance": "e7b96f8a-bebf-55c3-8efd-957619bf8a90",
+          "prior_annual": "a57f9159-96e5-5c62-8c64-ea12e6a80d71",
+          "prior_remaining": "6ddb4b40-8bc4-5b2f-86df-e218f8a36cfb",
+          "prior_ytd": "4ef42a40-9309-5d19-876f-a7844b474cac"
+        },
+        "policy": {
+          "actual_days": 135,
+          "assumption": "Manual research policy; not an accounting standard",
+          "guidance_days": 150,
+          "version": "manual-freshness-v1"
+        },
+        "remaining_high": "1570611000.00",
+        "remaining_low": "1530611000.00",
+        "state": "ok"
+      },
+      "companyfacts_manifest": {
+        "body": "7c980d76b24dbaa6bf765a7ba383025f32d90e5130467cf454a52b80b74b3530-8947052d6912d9ac6b35470f5e331ef6fe1f4b4cf782fab20822c9cb66738997.body",
+        "fetched_at": "2026-11-11T10:11:02.604615+00:00",
+        "sha256": "8947052d6912d9ac6b35470f5e331ef6fe1f4b4cf782fab20822c9cb66738997",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json"
+      },
+      "guidance_quotes": [
+        {
+          "guidance_id": "7c6457c8-02c2-5d4f-8e62-43c1654db87c",
+          "quote_verified": true,
+          "sha256": "c144559491c5ca9fd18e9dab5d67eabb0c18023a5241b1f646f38bac4fd23d5b",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm"
+        },
+        {
+          "guidance_id": "7b108550-6b06-5d1b-8022-af76c8392409",
+          "quote_verified": true,
+          "sha256": "12b5f146d4a0241c00e54525716b5c805334d62c06f0cdb1376aae6f80025c93",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026038798/mdb-043026xex991xrelease.htm"
+        },
+        {
+          "guidance_id": "dbe9f61c-41c3-566e-8579-275f228ff342",
+          "quote_verified": true,
+          "sha256": "28eb3703e7b94394ac7ee44215f3452bca4b47d7d35d8c51f6192f936c0378c9",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm"
+        },
+        {
+          "guidance_id": "e7b96f8a-bebf-55c3-8efd-957619bf8a90",
+          "quote_verified": true,
+          "sha256": "1c7184a8bf6bab81c1195cba1e12b43a66ea5ec6e7f10b0af545a3a23b5ccd7a",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026063657/pressreleasedatedseptemb.htm"
+        }
+      ],
+      "history_original": {
+        "accession": "0001628280-26-013199",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "MDB",
+        "end": "2027-01-31",
+        "exhibit": "99.1",
+        "filed": "2026-03-02",
+        "high": "2900000000.000",
+        "id": "7c6457c8-02c2-5d4f-8e62-43c1654db87c",
+        "issued": {
+          "end": "2026-03-02",
+          "precision": "day",
+          "start": "2026-03-02"
+        },
+        "low": "2860000000.000",
+        "metric": "consolidated_revenue",
+        "notes": "",
+        "original_verified": true,
+        "quote": "Full Year Fiscal 2027 Guidance Base d on information available to management as of today, March\u00a02, 2026, MongoDB is issuing the following financial guidance for the full year fiscal 2027. Revenues are expected to be in the range of: $2.860 billion to $2.900 billion GAAP Non-GAAP Income (Loss) from Operations are expected to be in the range of: $(117.0) million to $(97.0) million $545.0 million to $565.0 million Net I",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm",
+        "start": "2026-02-01",
+        "status": "initial",
+        "unit": "USD"
+      },
+      "history_versions": 4,
+      "input_records": {
+        "actual_ytd": {
+          "accession": "0001628280-26-059830",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "MDB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2026-07-31",
+          "filed": "2026-09-01",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "d7b2a391-1996-54eb-90b2-51ddbe23d7bc",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+          "start": "2026-02-01",
+          "unit": "USD",
+          "value": "1459389000"
+        },
+        "guidance": {
+          "accession": "0001628280-26-063657",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "MDB",
+          "end": "2027-01-31",
+          "exhibit": "99.1",
+          "filed": "2026-09-28",
+          "high": "3030000000.00",
+          "id": "e7b96f8a-bebf-55c3-8efd-957619bf8a90",
+          "issued": {
+            "end": "2026-09-28",
+            "precision": "day",
+            "start": "2026-09-28"
+          },
+          "low": "2990000000.00",
+          "metric": "consolidated_revenue",
+          "notes": "Bounds carried from explicitly referenced previous guidance; no new numerical range.",
+          "original_verified": false,
+          "quote": "The company remains confident in the outlook for the business and is reaffirming its  guidance for Q3 and the full year fiscal 2027 provided on September 1st, 2026.    Investor Day     MongoDB will be hosting an Investor Day at Nasdaq MarketSite on Tuesday, September  29th from 11:00 am\u20133:15 pm ET. The MongoDB leadership team will share an in-depth look  at our long-term strategy, market opportunities, and product in",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026063657/pressreleasedatedseptemb.htm",
+          "start": "2026-02-01",
+          "status": "reaffirmed",
+          "unit": "USD"
+        },
+        "prior_annual": {
+          "accession": "0001628280-26-016799",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "MDB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2026-01-31",
+          "filed": "2026-03-11",
+          "fiscal_period": "FY",
+          "fiscal_year": 2026,
+          "form": "10-K",
+          "id": "a57f9159-96e5-5c62-8c64-ea12e6a80d71",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+          "start": "2025-02-01",
+          "unit": "USD",
+          "value": "2463797000"
+        },
+        "prior_remaining": {
+          "accession": "0001628280-26-016799",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "MDB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": "annual-minus-ytd-v1",
+          "end": "2026-01-31",
+          "filed": "2026-09-01",
+          "fiscal_period": "REMAINING",
+          "fiscal_year": 2026,
+          "form": "DERIVED",
+          "id": "6ddb4b40-8bc4-5b2f-86df-e218f8a36cfb",
+          "parents": [
+            "a57f9159-96e5-5c62-8c64-ea12e6a80d71",
+            "4ef42a40-9309-5d19-876f-a7844b474cac"
+          ],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+          "start": "2025-08-01",
+          "unit": "USD",
+          "value": "1323381000"
+        },
+        "prior_ytd": {
+          "accession": "0001628280-26-059830",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "MDB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2025-07-31",
+          "filed": "2026-09-01",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "4ef42a40-9309-5d19-876f-a7844b474cac",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001441816.json",
+          "start": "2025-02-01",
+          "unit": "USD",
+          "value": "1140416000"
+        }
+      },
+      "reporting": {
+        "annual_result": {
+          "expected_window": {
+            "end": "2027-03-31",
+            "precision": "month",
+            "start": "2027-03-01"
+          },
+          "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+          "source_date": "2026-03-02",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm",
+          "status": "estimated",
+          "type": "Q4/FY annual-guidance outcome"
+        },
+        "as_of": "2026-11-11",
+        "company": "MDB",
+        "next_report": {
+          "date": "2026-12-01",
+          "expected_window": {
+            "end": "2026-12-15",
+            "precision": "range",
+            "start": "2026-12-01"
+          },
+          "quote": "after the U.S. financial markets close on Tuesday, December 1, 2026",
+          "source_date": "2026-11-05",
+          "source_url": "https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-date-third-quarter-fiscal-2027-earnings",
+          "status": "confirmed",
+          "type": "Q3 annual-hurdle update",
+          "verified_as_of": "2026-11-11"
+        }
+      }
+    },
+    "OKTA": {
+      "calculation": {
+        "as_of": "2026-11-11",
+        "codes": [
+          "INCOMPARABLE_BASIS"
+        ],
+        "company": "OKTA",
+        "company_config": {
+          "basis": "US_GAAP_consolidated_reported",
+          "calendar": "months",
+          "calendar_source": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000069/okta-20260731.htm",
+          "cik": "0001660134",
+          "comparability": {
+            "available_on": "2026-08-27",
+            "blocked": true,
+            "reason": "August 26 Permiso acquisition is a subsequent event with consideration still under evaluation. Annual guidance and prior-year comparison scope require reconciliation; partner-services shift is also disclosed.",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000069/okta-20260731.htm"
+          },
+          "comparison_ends": {
+            "2026-04-30": "2025-04-30",
+            "2026-07-31": "2025-07-31",
+            "2026-10-31": "2025-10-31"
+          },
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fiscal_label": "FY2027",
+          "name": "Okta, Inc.",
+          "period_end": "2027-01-31",
+          "period_start": "2026-02-01",
+          "prior_end": "2026-01-31",
+          "prior_start": "2025-02-01",
+          "ticker": "OKTA"
+        },
+        "details": [
+          "August 26 Permiso acquisition is a subsequent event with consideration still under evaluation. Annual guidance and prior-year comparison scope require reconciliation; partner-services shift is also disclosed."
+        ],
+        "formula_version": "revenue-hurdle-v1-decimal50",
+        "growth_high": null,
+        "growth_low": null,
+        "id": "96dfd5cf-a881-5f79-85e5-fd029c2b9ad3",
+        "inputs": {
+          "guidance": "8bd0f82d-d6cc-5ce4-ad32-0526621af3e8"
+        },
+        "policy": {
+          "actual_days": 135,
+          "assumption": "Manual research policy; not an accounting standard",
+          "guidance_days": 150,
+          "version": "manual-freshness-v1"
+        },
+        "remaining_high": null,
+        "remaining_low": null,
+        "state": "blocked"
+      },
+      "companyfacts_manifest": {
+        "body": "ef80def6b093efbcff2691192e8287f28820dde388b130b3bf7d2df0f8c83ee9-ce9d8dc684e7e95b8ab313f731115188cc90b20d383e32a0725832de18cef1d7.body",
+        "fetched_at": "2026-11-11T10:11:00.997785+00:00",
+        "sha256": "ce9d8dc684e7e95b8ab313f731115188cc90b20d383e32a0725832de18cef1d7",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001660134.json"
+      },
+      "guidance_quotes": [
+        {
+          "guidance_id": "c070d7c9-4e74-5c1c-a790-ff98b6b9d38b",
+          "quote_verified": true,
+          "sha256": "26ae2cabf718f807d7dbf92aab1c70ffd4b11f3bb8c6b7ba0098e5292c9544f9",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-1312026_ex991.htm"
+        },
+        {
+          "guidance_id": "5fd99f26-b4f5-5e1e-922a-5a4436d040cd",
+          "quote_verified": true,
+          "sha256": "372ea6ce88e222c657e9ddcb03eb5799d35592aebd1cb507437731b49d3deae1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000050/okta-4302026_ex991.htm"
+        },
+        {
+          "guidance_id": "8bd0f82d-d6cc-5ce4-ad32-0526621af3e8",
+          "quote_verified": true,
+          "sha256": "ff2c5da95d6ad2ef5134656c86f5a0a6c40b3c4b8f31b8b6cf0b435ff8248894",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+        }
+      ],
+      "history_original": {
+        "accession": "0001660134-26-000016",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "OKTA",
+        "end": "2027-01-31",
+        "exhibit": "99.1",
+        "filed": "2026-03-04",
+        "high": "3190000000.000",
+        "id": "c070d7c9-4e74-5c1c-a790-ff98b6b9d38b",
+        "issued": {
+          "end": "2026-03-04",
+          "precision": "day",
+          "start": "2026-03-04"
+        },
+        "low": "3170000000.000",
+        "metric": "consolidated_revenue",
+        "notes": "",
+        "original_verified": true,
+        "quote": "For the full year fiscal 2027, the Company now expects: \u2022 Total revenue of $3.170 billion to $3.190 billion , representing a growth rate of 9% year-over-year; \u25e6 Reflected in the revenue guidance is an approximately one percentage point impact to total revenue growth resulting from our decision to accelerate the shift o",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-1312026_ex991.htm",
+        "start": "2026-02-01",
+        "status": "initial",
+        "unit": "USD"
+      },
+      "history_versions": 3,
+      "input_records": {
+        "guidance": {
+          "accession": "0001660134-26-000068",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "OKTA",
+          "end": "2027-01-31",
+          "exhibit": "99.1",
+          "filed": "2026-08-26",
+          "high": "3226000000.000",
+          "id": "8bd0f82d-d6cc-5ce4-ad32-0526621af3e8",
+          "issued": {
+            "end": "2026-08-26",
+            "precision": "day",
+            "start": "2026-08-26"
+          },
+          "low": "3216000000.000",
+          "metric": "consolidated_revenue",
+          "notes": "",
+          "original_verified": false,
+          "quote": "For the full year fiscal 2027, the Company now expects: \u2022 Total revenue of $3.216 billion to $3.226 billion , representing a growth rate of 10% to 11% year-over-year; \u25e6 Reflected in the revenue guidance is an approximately one percentage point impact to total revenue growth resulting from our decision to accelerate the",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm",
+          "start": "2026-02-01",
+          "status": "raised",
+          "unit": "USD"
+        }
+      },
+      "reporting": {
+        "annual_result": {
+          "expected_window": {
+            "end": "2027-03-31",
+            "precision": "month",
+            "start": "2027-03-01"
+          },
+          "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+          "source_date": "2026-03-04",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-1312026_ex991.htm",
+          "status": "estimated",
+          "type": "Q4/FY annual-guidance outcome"
+        },
+        "as_of": "2026-11-11",
+        "company": "OKTA",
+        "next_report": {
+          "date": "2026-12-01",
+          "expected_window": {
+            "end": "2026-12-15",
+            "precision": "range",
+            "start": "2026-12-01"
+          },
+          "quote": "after the U.S. market close on Tuesday, December 1, 2026",
+          "source_date": "2026-11-02",
+          "source_url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+          "status": "confirmed",
+          "type": "Q3 annual-hurdle update",
+          "verified_as_of": "2026-11-11"
+        }
+      }
+    },
+    "PD": {
+      "calculation": {
+        "as_of": "2026-11-11",
+        "codes": [],
+        "company": "PD",
+        "company_config": {
+          "basis": "US_GAAP_consolidated_reported",
+          "calendar": "months",
+          "cik": "0001568100",
+          "comparability": {
+            "available_on": "2026-11-11",
+            "blocked": false,
+            "reason": "Consolidated revenue reconciled to current release and prior-year annual/YTD statements."
+          },
+          "comparison_ends": {
+            "2026-04-30": "2025-04-30",
+            "2026-07-31": "2025-07-31",
+            "2026-10-31": "2025-10-31"
+          },
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fiscal_label": "FY2027",
+          "name": "PagerDuty, Inc.",
+          "period_end": "2027-01-31",
+          "period_start": "2026-02-01",
+          "prior_end": "2026-01-31",
+          "prior_start": "2025-02-01",
+          "ticker": "PD"
+        },
+        "details": [],
+        "formula_version": "revenue-hurdle-v1-decimal50",
+        "growth_high": "0.0070869931416195403681867404644447118276982312598",
+        "growth_low": "-0.01296675089239160951349616973488950387037259856415",
+        "id": "64a4ad5a-f2a8-5af0-8974-d213786eda0e",
+        "inputs": {
+          "actual_ytd": "2b92d8f3-7d01-54ab-9fe8-2e8412eb4f0e",
+          "guidance": "f9d37849-bf95-50da-9956-cd557de8254d",
+          "prior_annual": "2b564457-0624-55e9-8524-c708527109a8",
+          "prior_remaining": "2d049796-29f3-534d-a65b-d44b3b456509",
+          "prior_ytd": "a2b9a272-5712-52a7-8b87-678be1fd7bac"
+        },
+        "policy": {
+          "actual_days": 135,
+          "assumption": "Manual research policy; not an accounting standard",
+          "guidance_days": 150,
+          "version": "manual-freshness-v1"
+        },
+        "remaining_high": "251097000",
+        "remaining_low": "246097000",
+        "state": "ok"
+      },
+      "companyfacts_manifest": {
+        "body": "59ec581b74d9421535a110f4435eacfcb8b0655271f35bb987e5a0005acb701c-35b74433d1c158aeb8658822ef72580edbad9ae2dcdadecdccaacb0134b8893d.body",
+        "fetched_at": "2026-11-11T10:08:16.564511+00:00",
+        "sha256": "35b74433d1c158aeb8658822ef72580edbad9ae2dcdadecdccaacb0134b8893d",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json"
+      },
+      "guidance_quotes": [
+        {
+          "guidance_id": "a2aed39a-a88c-5b65-91e8-0bf81f743819",
+          "quote_verified": true,
+          "sha256": "aae98ec7ef5281daeda6f0a93daad8b0042ec35662fcd8fb8d3e0da28e15af1e",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm"
+        },
+        {
+          "guidance_id": "b07444c7-67c4-5721-8456-be175b6d1f02",
+          "quote_verified": true,
+          "sha256": "6c553eafde53aa648fb53f3b6cd3dfe5cfd1fa8cd5717ac9b26e62ec3846bd0e",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000114036126020610/ef20072978_ex99-1.htm"
+        },
+        {
+          "guidance_id": "148e716d-7fcd-540e-8b80-ef316212127d",
+          "quote_verified": true,
+          "sha256": "d76ad20661ba11259eb4cf2b4a5f5e011867ea253b5544463c4cab98df0c743b",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000030/ex991-pagerdutyq1fy27earni.htm"
+        },
+        {
+          "guidance_id": "f9d37849-bf95-50da-9956-cd557de8254d",
+          "quote_verified": true,
+          "sha256": "fbaaad97447a51e013b30f56b21375492b3ad170ddf68dd9e8e11e762205bbd8",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm"
+        }
+      ],
+      "history_original": {
+        "accession": "0001568100-26-000011",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "PD",
+        "end": "2027-01-31",
+        "exhibit": "99.1",
+        "filed": "2026-03-12",
+        "high": "496500000",
+        "id": "a2aed39a-a88c-5b65-91e8-0bf81f743819",
+        "issued": {
+          "end": "2026-03-12",
+          "precision": "day",
+          "start": "2026-03-12"
+        },
+        "low": "488500000",
+        "metric": "consolidated_revenue",
+        "notes": "",
+        "original_verified": true,
+        "quote": "For the full fiscal year 2027, PagerDuty currently expects: \u2022 Total revenue of $488.5 million - $496.5 million. \u2022 Non-GAAP net income per diluted share attributable to PagerDuty, Inc. common stockholders of $1.23 - $1.28 assuming approximately 81 million diluted shares and a non-GAAP tax rate of 20%. These statements are forward-looking and actual results may differ materially. Please refer to the section titled \"For",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
+        "start": "2026-02-01",
+        "status": "initial",
+        "unit": "USD"
+      },
+      "history_versions": 4,
+      "input_records": {
+        "actual_ytd": {
+          "accession": "0001568100-26-000045",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "PD",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2026-07-31",
+          "filed": "2026-08-27",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "2b92d8f3-7d01-54ab-9fe8-2e8412eb4f0e",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+          "start": "2026-02-01",
+          "unit": "USD",
+          "value": "245403000"
+        },
+        "guidance": {
+          "accession": "0001568100-26-000044",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "PD",
+          "end": "2027-01-31",
+          "exhibit": "99.1",
+          "filed": "2026-08-27",
+          "high": "496500000",
+          "id": "f9d37849-bf95-50da-9956-cd557de8254d",
+          "issued": {
+            "end": "2026-08-27",
+            "precision": "day",
+            "start": "2026-08-27"
+          },
+          "low": "491500000",
+          "metric": "consolidated_revenue",
+          "notes": "",
+          "original_verified": false,
+          "quote": "For the full fiscal year 2027, PagerDuty currently expects: \u2022 Total revenue of $491.5 million - $496.5 million. \u2022 Non-GAAP operating margin of 25.0% to 26.0%. \u2022 Non-GAAP net income per diluted share attributable to PagerDuty, Inc. common stockholders of $1.33 - $1.37, assuming approximately 80 million diluted shares and a non-GAAP tax rate of 20%. These statements are forward-looking and actual results may differ mat",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm",
+          "start": "2026-02-01",
+          "status": "raised",
+          "unit": "USD"
+        },
+        "prior_annual": {
+          "accession": "0001568100-26-000012",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "PD",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2026-01-31",
+          "filed": "2026-03-12",
+          "fiscal_period": "FY",
+          "fiscal_year": 2026,
+          "form": "10-K",
+          "id": "2b564457-0624-55e9-8524-c708527109a8",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+          "start": "2025-02-01",
+          "unit": "USD",
+          "value": "492546000"
+        },
+        "prior_remaining": {
+          "accession": "0001568100-26-000012",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "PD",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": "annual-minus-ytd-v1",
+          "end": "2026-01-31",
+          "filed": "2026-08-27",
+          "fiscal_period": "REMAINING",
+          "fiscal_year": 2026,
+          "form": "DERIVED",
+          "id": "2d049796-29f3-534d-a65b-d44b3b456509",
+          "parents": [
+            "2b564457-0624-55e9-8524-c708527109a8",
+            "a2b9a272-5712-52a7-8b87-678be1fd7bac"
+          ],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+          "start": "2025-08-01",
+          "unit": "USD",
+          "value": "249330000"
+        },
+        "prior_ytd": {
+          "accession": "0001568100-26-000045",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "PD",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2025-07-31",
+          "filed": "2026-08-27",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "a2b9a272-5712-52a7-8b87-678be1fd7bac",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+          "start": "2025-02-01",
+          "unit": "USD",
+          "value": "243216000"
+        }
+      },
+      "reporting": {
+        "annual_result": {
+          "expected_window": {
+            "end": "2027-03-31",
+            "precision": "month",
+            "start": "2027-03-01"
+          },
+          "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+          "source_date": "2026-03-12",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
+          "status": "estimated",
+          "type": "Q4/FY annual-guidance outcome"
+        },
+        "as_of": "2026-11-11",
+        "company": "PD",
+        "next_report": {
+          "date": null,
+          "expected_window": {
+            "end": "2026-11-30",
+            "precision": "range",
+            "start": "2026-11-20"
+          },
+          "source_date": "2025-11-25",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000106/pd-20251122.htm",
+          "status": "unverified",
+          "type": "Q3 annual-hurdle update",
+          "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only."
+        }
+      }
+    },
+    "S": {
+      "calculation": {
+        "as_of": "2026-11-11",
+        "codes": [
+          "INCOMPARABLE_BASIS"
+        ],
+        "company": "S",
+        "company_config": {
+          "basis": "US_GAAP_consolidated_reported",
+          "calendar": "months",
+          "calendar_source": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000055/s-20260731.htm",
+          "cik": "0001583708",
+          "comparability": {
+            "available_on": "2026-08-28",
+            "blocked": true,
+            "reason": "Observo and Prompt acquired in September 2025; current/prior remaining periods contain different ownership durations. Comparable revenue impact not reconciled.",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000055/s-20260731.htm"
+          },
+          "comparison_ends": {
+            "2026-04-30": "2025-04-30",
+            "2026-07-31": "2025-07-31",
+            "2026-10-31": "2025-10-31"
+          },
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fiscal_label": "FY2027",
+          "name": "SentinelOne, Inc.",
+          "period_end": "2027-01-31",
+          "period_start": "2026-02-01",
+          "prior_end": "2026-01-31",
+          "prior_start": "2025-02-01",
+          "ticker": "S"
+        },
+        "details": [
+          "Observo and Prompt acquired in September 2025; current/prior remaining periods contain different ownership durations. Comparable revenue impact not reconciled."
+        ],
+        "formula_version": "revenue-hurdle-v1-decimal50",
+        "growth_high": null,
+        "growth_low": null,
+        "id": "ba70ddc2-4233-597a-b47f-6ca6b32f50e1",
+        "inputs": {
+          "guidance": "79f71ece-aabc-5851-9ac3-a6cccd6a8004"
+        },
+        "policy": {
+          "actual_days": 135,
+          "assumption": "Manual research policy; not an accounting standard",
+          "guidance_days": 150,
+          "version": "manual-freshness-v1"
+        },
+        "remaining_high": null,
+        "remaining_low": null,
+        "state": "blocked"
+      },
+      "companyfacts_manifest": {
+        "body": "d85eff6e07af33e785de66def14a9b7ecc0d08dd28464da0ac312400d984a301-8c493fe6c6c4cd7e944856a59eb4f053bd56f94cf7d176c6eef713e1e87f205c.body",
+        "fetched_at": "2026-11-11T10:11:03.486172+00:00",
+        "sha256": "8c493fe6c6c4cd7e944856a59eb4f053bd56f94cf7d176c6eef713e1e87f205c",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001583708.json"
+      },
+      "guidance_quotes": [
+        {
+          "guidance_id": "9d5b2b30-61e6-57cd-b6fc-39a0905bb865",
+          "quote_verified": true,
+          "sha256": "229f682deedb33d014dfe49800e99f34000792d3dbb4b262ad8fa781a7f3bb92",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/sentineloneq426exhibit991.htm"
+        },
+        {
+          "guidance_id": "02538201-d254-53be-9b06-35b0cafc8df2",
+          "quote_verified": true,
+          "sha256": "7fa5fd3d3a4091969d6e8674868f81051258c258f1c15537198f7ba3566fac3e",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000039/sentineloneq127exhibit991.htm"
+        },
+        {
+          "guidance_id": "79f71ece-aabc-5851-9ac3-a6cccd6a8004",
+          "quote_verified": true,
+          "sha256": "0c703caa39e80f5376002fa0bb83b8709df7fc198d11120918710a8b61457aeb",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+        }
+      ],
+      "history_original": {
+        "accession": "0001583708-26-000014",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "S",
+        "end": "2027-01-31",
+        "exhibit": "99.1",
+        "filed": "2026-03-12",
+        "high": "1205000000.000",
+        "id": "9d5b2b30-61e6-57cd-b6fc-39a0905bb865",
+        "issued": {
+          "end": "2026-03-12",
+          "precision": "day",
+          "start": "2026-03-12"
+        },
+        "low": "1195000000.000",
+        "metric": "consolidated_revenue",
+        "notes": "",
+        "original_verified": true,
+        "quote": "Q1 Fiscal Year 2027 Guidance Fiscal Year 2027 Guidance Revenue $276 - 278 million $1.195 - 1.205 billion Non-GAAP operating income $4 - 6 million $110 - 120 million Non-GAAP diluted EPS $0.01 - 0.02 $0.32 - 0.38 Diluted weighted average shares outstanding 345 million 352 million Non-GAAP tax rate 17% 17% These statemen",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/sentineloneq426exhibit991.htm",
+        "start": "2026-02-01",
+        "status": "initial",
+        "unit": "USD"
+      },
+      "history_versions": 3,
+      "input_records": {
+        "guidance": {
+          "accession": "0001583708-26-000052",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "S",
+          "end": "2027-01-31",
+          "exhibit": "99.1",
+          "filed": "2026-08-27",
+          "high": "1207000000.000",
+          "id": "79f71ece-aabc-5851-9ac3-a6cccd6a8004",
+          "issued": {
+            "end": "2026-08-27",
+            "precision": "day",
+            "start": "2026-08-27"
+          },
+          "low": "1202000000.000",
+          "metric": "consolidated_revenue",
+          "notes": "",
+          "original_verified": false,
+          "quote": "Q3 Fiscal Year 2027 Guidance Fiscal Year 2027 Guidance Revenue $309 - 311 million $1.202 - 1.207 billion Non-GAAP operating income $38 - 40 million $124 - 128 million Non-GAAP diluted earnings per share (EPS) $0.08 - 0.09 $0.30 - 0.32 Diluted weighted average shares outstanding 370 million 361 million Non-GAAP tax rate",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm",
+          "start": "2026-02-01",
+          "status": "raised",
+          "unit": "USD"
+        }
+      },
+      "reporting": {
+        "annual_result": {
+          "expected_window": {
+            "end": "2027-03-31",
+            "precision": "month",
+            "start": "2027-03-01"
+          },
+          "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+          "source_date": "2026-03-12",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/sentineloneq426exhibit991.htm",
+          "status": "estimated",
+          "type": "Q4/FY annual-guidance outcome"
+        },
+        "as_of": "2026-11-11",
+        "company": "S",
+        "next_report": {
+          "date": null,
+          "expected_window": {
+            "end": "2026-12-15",
+            "precision": "range",
+            "start": "2026-12-01"
+          },
+          "source_date": "2025-12-04",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000157/s-20251204.htm",
+          "status": "unverified",
+          "type": "Q3 annual-hurdle update",
+          "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only."
+        }
+      }
+    }
+  },
+  "ignored_document_instructions": "Salesforce investor-day slide editorial layout notes were treated only as untrusted document text and ignored.",
+  "purpose": "Annual revenue hurdles, not annual outcomes or ML predictions",
+  "reconciliations": {
+    "GTLB": {
+      "as_of": "2026-11-11",
+      "calculation": {
+        "as_of": "2026-11-11",
+        "codes": [],
+        "company": "GTLB",
+        "company_config": {
+          "basis": "US_GAAP_consolidated_reported",
+          "calendar": "months",
+          "cik": "0001653482",
+          "comparability": {
+            "available_on": "2026-11-11",
+            "blocked": false,
+            "reason": "Consolidated revenue reconciled to current release and prior-year annual/YTD statements."
+          },
+          "comparison_ends": {
+            "2026-04-30": "2025-04-30",
+            "2026-07-31": "2025-07-31",
+            "2026-10-31": "2025-10-31"
+          },
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fiscal_label": "FY2027",
+          "name": "GitLab Inc.",
+          "period_end": "2027-01-31",
+          "period_start": "2026-02-01",
+          "prior_end": "2026-01-31",
+          "prior_start": "2025-02-01",
+          "ticker": "GTLB"
+        },
+        "details": [],
+        "formula_version": "revenue-hurdle-v1-decimal50",
+        "growth_high": "0.1541995621638220522827906608156432328555437786649",
+        "growth_low": "0.1462749254588859941952036136343374508424879396935",
+        "id": "152923dd-bf62-5174-ac9a-d097e236b76f",
+        "inputs": {
+          "actual_ytd": "fc5e4db7-8178-5f6b-94ce-527052ae2657",
+          "guidance": "ba14fe0d-bc14-582c-89f3-deb673b23254",
+          "prior_annual": "dc87f11a-a9f0-534d-96c7-86247ee6a868",
+          "prior_remaining": "c46eb85a-bd9b-5310-8649-21a5fa28f382",
+          "prior_ytd": "1c344d72-6802-5f65-8c27-abe85a39c8e0"
+        },
+        "policy": {
+          "actual_days": 135,
+          "assumption": "Manual research policy; not an accounting standard",
+          "guidance_days": 150,
+          "version": "manual-freshness-v1"
+        },
+        "remaining_high": "582588000",
+        "remaining_low": "578588000",
+        "state": "ok"
+      },
+      "company": "GTLB",
+      "companyfacts_manifest": {
+        "body": "59bd2e3d197ca7660d3c289cb769d88c8aa4bf7d9f4fef601938bb29960d9f4e-5f900199621c5922f358c542d0fb942df930d4fe391724686f2625149fc1ee54.body",
+        "fetched_at": "2026-11-11T10:08:17.886939+00:00",
+        "sha256": "5f900199621c5922f358c542d0fb942df930d4fe391724686f2625149fc1ee54",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json"
+      },
+      "guidance": {
+        "accession": "0001628280-26-059820",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "GTLB",
+        "end": "2027-01-31",
+        "exhibit": "99.1",
+        "filed": "2026-09-01",
+        "high": "1133000000",
+        "id": "ba14fe0d-bc14-582c-89f3-deb673b23254",
+        "issued": {
+          "end": "2026-09-01",
+          "precision": "day",
+          "start": "2026-09-01"
+        },
+        "low": "1129000000",
+        "metric": "consolidated_revenue",
+        "notes": "",
+        "original_verified": false,
+        "quote": "Third Quarter and Fiscal Year 2027 Financial Outlook For the third quarter and fiscal year 2027, GitLab Inc. expects ( in millions , except share and per share data) : Q3 FY 2027 Guidance FY 2027 Guidance Revenue $281 - $283 $1,129 - $1,133 Non-GAAP operating income $35 - $37 $148 - $152 Non-GAAP diluted net income per share assuming approximately 172 million and 172 million weighted average shares outstanding during Q3 FY 2027 and FY 2027, respectively. $0.19 - $0.20 $0.85 - $0.87 These statements are forward-looking and actual results may differ materially as a result of many factors. Refer to the Forward-Looking Statements safe harbor belo",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm",
+        "start": "2026-02-01",
+        "status": "raised",
+        "unit": "USD"
+      },
+      "input_records": {
+        "actual_ytd": {
+          "accession": "0001628280-26-059943",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "GTLB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2026-07-31",
+          "filed": "2026-09-02",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "fc5e4db7-8178-5f6b-94ce-527052ae2657",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+          "start": "2026-02-01",
+          "unit": "USD",
+          "value": "550412000"
+        },
+        "prior_annual": {
+          "accession": "0001628280-26-018731",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "GTLB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2026-01-31",
+          "filed": "2026-03-17",
+          "fiscal_period": "FY",
+          "fiscal_year": 2026,
+          "form": "10-K",
+          "id": "dc87f11a-a9f0-534d-96c7-86247ee6a868",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+          "start": "2025-02-01",
+          "unit": "USD",
+          "value": "955224000"
+        },
+        "prior_ytd": {
+          "accession": "0001628280-26-059943",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "GTLB",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2025-07-31",
+          "filed": "2026-09-02",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "1c344d72-6802-5f65-8c27-abe85a39c8e0",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+          "start": "2025-02-01",
+          "unit": "USD",
+          "value": "450469000"
+        }
+      },
+      "statement_evidence": [
+        {
+          "column_order": "current quarter, prior quarter, current YTD/annual, prior YTD/annual",
+          "quote": "Total revenue 286,254 235,960 550,412 450,469",
+          "sha256": "7c3e015238a277599421246919f83f33228efea9a5f2dca65486bbd65699db3b",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm",
+          "unit": "USD thousands"
+        },
+        {
+          "column_order": "current quarter, prior quarter, current YTD/annual, prior YTD/annual",
+          "quote": "Total revenue 260,402 211,431 955,224 759,249",
+          "sha256": "ded7bdd17b01b7cef197ca62f582b40261b3cefbf65a4d56d302e788e7703cd2",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm",
+          "unit": "USD thousands"
+        }
+      ]
+    },
+    "PD": {
+      "as_of": "2026-11-11",
+      "calculation": {
+        "as_of": "2026-11-11",
+        "codes": [],
+        "company": "PD",
+        "company_config": {
+          "basis": "US_GAAP_consolidated_reported",
+          "calendar": "months",
+          "cik": "0001568100",
+          "comparability": {
+            "available_on": "2026-11-11",
+            "blocked": false,
+            "reason": "Consolidated revenue reconciled to current release and prior-year annual/YTD statements."
+          },
+          "comparison_ends": {
+            "2026-04-30": "2025-04-30",
+            "2026-07-31": "2025-07-31",
+            "2026-10-31": "2025-10-31"
+          },
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "fiscal_label": "FY2027",
+          "name": "PagerDuty, Inc.",
+          "period_end": "2027-01-31",
+          "period_start": "2026-02-01",
+          "prior_end": "2026-01-31",
+          "prior_start": "2025-02-01",
+          "ticker": "PD"
+        },
+        "details": [],
+        "formula_version": "revenue-hurdle-v1-decimal50",
+        "growth_high": "0.0070869931416195403681867404644447118276982312598",
+        "growth_low": "-0.01296675089239160951349616973488950387037259856415",
+        "id": "64a4ad5a-f2a8-5af0-8974-d213786eda0e",
+        "inputs": {
+          "actual_ytd": "2b92d8f3-7d01-54ab-9fe8-2e8412eb4f0e",
+          "guidance": "f9d37849-bf95-50da-9956-cd557de8254d",
+          "prior_annual": "2b564457-0624-55e9-8524-c708527109a8",
+          "prior_remaining": "2d049796-29f3-534d-a65b-d44b3b456509",
+          "prior_ytd": "a2b9a272-5712-52a7-8b87-678be1fd7bac"
+        },
+        "policy": {
+          "actual_days": 135,
+          "assumption": "Manual research policy; not an accounting standard",
+          "guidance_days": 150,
+          "version": "manual-freshness-v1"
+        },
+        "remaining_high": "251097000",
+        "remaining_low": "246097000",
+        "state": "ok"
+      },
+      "company": "PD",
+      "companyfacts_manifest": {
+        "body": "59ec581b74d9421535a110f4435eacfcb8b0655271f35bb987e5a0005acb701c-35b74433d1c158aeb8658822ef72580edbad9ae2dcdadecdccaacb0134b8893d.body",
+        "fetched_at": "2026-11-11T10:08:16.564511+00:00",
+        "sha256": "35b74433d1c158aeb8658822ef72580edbad9ae2dcdadecdccaacb0134b8893d",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json"
+      },
+      "guidance": {
+        "accession": "0001568100-26-000044",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "PD",
+        "end": "2027-01-31",
+        "exhibit": "99.1",
+        "filed": "2026-08-27",
+        "high": "496500000",
+        "id": "f9d37849-bf95-50da-9956-cd557de8254d",
+        "issued": {
+          "end": "2026-08-27",
+          "precision": "day",
+          "start": "2026-08-27"
+        },
+        "low": "491500000",
+        "metric": "consolidated_revenue",
+        "notes": "",
+        "original_verified": false,
+        "quote": "For the full fiscal year 2027, PagerDuty currently expects: \u2022 Total revenue of $491.5 million - $496.5 million. \u2022 Non-GAAP operating margin of 25.0% to 26.0%. \u2022 Non-GAAP net income per diluted share attributable to PagerDuty, Inc. common stockholders of $1.33 - $1.37, assuming approximately 80 million diluted shares and a non-GAAP tax rate of 20%. These statements are forward-looking and actual results may differ mat",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm",
+        "start": "2026-02-01",
+        "status": "raised",
+        "unit": "USD"
+      },
+      "input_records": {
+        "actual_ytd": {
+          "accession": "0001568100-26-000045",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "PD",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2026-07-31",
+          "filed": "2026-08-27",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "2b92d8f3-7d01-54ab-9fe8-2e8412eb4f0e",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+          "start": "2026-02-01",
+          "unit": "USD",
+          "value": "245403000"
+        },
+        "prior_annual": {
+          "accession": "0001568100-26-000012",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "PD",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2026-01-31",
+          "filed": "2026-03-12",
+          "fiscal_period": "FY",
+          "fiscal_year": 2026,
+          "form": "10-K",
+          "id": "2b564457-0624-55e9-8524-c708527109a8",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+          "start": "2025-02-01",
+          "unit": "USD",
+          "value": "492546000"
+        },
+        "prior_ytd": {
+          "accession": "0001568100-26-000045",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "PD",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "derivation": null,
+          "end": "2025-07-31",
+          "filed": "2026-08-27",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "a2b9a272-5712-52a7-8b87-678be1fd7bac",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001568100.json",
+          "start": "2025-02-01",
+          "unit": "USD",
+          "value": "243216000"
+        }
+      },
+      "statement_evidence": [
+        {
+          "column_order": "current quarter, prior quarter, current YTD/annual, prior YTD/annual",
+          "quote": "Revenue $ 124,436 $ 123,411 $ 245,403 $ 243,216",
+          "sha256": "fbaaad97447a51e013b30f56b21375492b3ad170ddf68dd9e8e11e762205bbd8",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm",
+          "unit": "USD thousands"
+        },
+        {
+          "column_order": "current quarter, prior quarter, current YTD/annual, prior YTD/annual",
+          "quote": "Revenue $ 124,785 $ 121,446 $ 492,546 $ 467,499",
+          "sha256": "aae98ec7ef5281daeda6f0a93daad8b0042ec35662fcd8fb8d3e0da28e15af1e",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
+          "unit": "USD thousands"
+        }
+      ]
+    }
+  },
+  "repeat_ingestion": {
+    "actual_records_inserted": 0,
+    "companies": 10,
+    "guidance_versions_inserted": 0
+  },
+  "source_rules": "SEC financial sources via src.fetch; official IR exception only for announcement dates",
+  "test_results": {
+    "command": ".venv/bin/python -m pytest -q --tb=short",
+    "earnings_tests_passed": 43,
+    "passed": 266,
+    "skip_reason": "Existing section-parser tests require three uncached gitignored source filings",
+    "skipped": 3
+  },
+  "validated_code_commit": "87d78c941cd0291c271ab60a648a794cfee516b1"
+}

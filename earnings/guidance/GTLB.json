@@ -1,0 +1,169 @@
+{
+  "history_review": {
+    "cutoff": "2026-11-12",
+    "scope": "Manual review of all SEC 8-K/8-K/A filings and linked 99.x/earnings/investor exhibits from December 2025 through November 11, 2026; includes non-earnings reaffirmations.",
+    "sources_reviewed": [
+      "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054758/gitlab-ex99120251031fy26.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054758/gtlb-20251202.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054895/gitlab-ex99120251031fy26am.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054895/gtlb-20251202.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gtlb-20260302.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039805/gitlab-ex99120260430fy27.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039805/gtlb-20260601.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gtlb-20260828.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000002/gtlb-20251230.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000009/gtlb-20260109.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000051/gtlb-20260413.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000095/exhibit991-letterfromwilla.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000095/gtlb-20260511.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000107/gtlb-20260518.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000139/gtlb-20260617.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000145/exhibit991-businessupdat.htm",
+      "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000145/gtlb-20260708.htm"
+    ],
+    "original_verified": true,
+    "latest_actual_release": {
+      "ytd_end": "2026-07-31",
+      "issued_date": "2026-09-01",
+      "filed_date": "2026-09-01",
+      "accession": "0001628280-26-059820",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm",
+      "period_quote": "n platform for DevSecOps, today reported financial results for its second quarter fiscal year 2027, ended July 31, 2026",
+      "source_sha256": "7c3e015238a277599421246919f83f33228efea9a5f2dca65486bbd65699db3b"
+    },
+    "quarterly_scope": {
+      "target": "Q3 FY2027",
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "cutoff": "2026-11-12",
+      "note": "Reviewed existing SEC source inventory after quarter issuance. MongoDB September 28 explicitly reaffirms Q3; Salesforce October 20 mentions FY27 only and is not treated as quarterly reaffirmation. No inferred quarterly reaffirmations from annual-only statements."
+    },
+    "session2_incremental_review": {
+      "as_of": "2026-11-12",
+      "source_url": "https://data.sec.gov/submissions/CIK0001653482.json",
+      "fetched_at": "2026-11-12T08:12:37.896021+00:00",
+      "sha256": "b6d5ca64db614653ca8ad80a23fc50c11fa5623be542b27d3652c856a6649603",
+      "scope": "Filings dated November 12 after the prior November 11 review; no new filings found in SEC recent submissions."
+    }
+  },
+  "versions": [
+    {
+      "issued_date": "2026-03-03",
+      "filed_date": "2026-03-03",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "1099000000",
+      "high": "1118000000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001628280-26-013795",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm"
+      },
+      "quote": "First Quarter and Fiscal Year 2027 Financial Outlook For the first quarter and fiscal year 2027, GitLab Inc. expects ( in millions , except share and per share data) : Q1 FY 2027 Guidance FY 2027 Guidance Revenue $253.0 - $255.0 $1,099 - $1,118 Non-GAAP operating income $32.0 - $34.0 $129 - $137 Non-GAAP diluted net income per share assuming approximately 173 million and 175 million weighted average shares outstanding during Q1 FY 2027 and FY 2027, respectively. $0.20 - $0.21 $0.76 - $0.80 These statements are forward-looking and actual results may differ materially as a result of many factors. Refer to the Forward-Looking Statements safe har",
+      "original_verified": true,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-05-11",
+      "filed_date": "2026-05-11",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "1099000000",
+      "high": "1118000000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "reaffirmed",
+      "source": {
+        "accession": "0001653482-26-000095",
+        "exhibit": "8-K Item 2.02",
+        "url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000095/gtlb-20260511.htm"
+      },
+      "quote": "The Company also reaffirms its guidance for the fiscal year 2027 (ending January 31, 2027), as provided in its earnings press release issued March 3, 2026, that was previously furnished as Exhibit 99.1 to the Company\u2019s Form 8-K filed with the Securities and Exchange Commission (the \u201cSEC\u201d) on March 3, 2026. These results are based on preliminary unaudited financial and other information, and subject to normal quarterly closing processes and accounting review. The Company will provide financial results for the quarter ending April 30, 2026 and guidance for the fiscal year ending January 31, 2027 at its next earnings call, which is expected to b",
+      "original_verified": false,
+      "notes": "Reaffirmation incorporates the March 3 original range by reference."
+    },
+    {
+      "issued_date": "2026-06-02",
+      "filed_date": "2026-06-02",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "1112000000",
+      "high": "1118000000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "raised",
+      "source": {
+        "accession": "0001628280-26-039805",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039805/gitlab-ex99120260430fy27.htm"
+      },
+      "quote": "Second Quarter and Fiscal Year 2027 Financial Outlook For the second quarter and fiscal year 2027, GitLab Inc. expects ( in millions , except share and per share data) : Q2 FY 2027 Guidance FY 2027 Guidance Revenue $272 - $274 $1,112 - $1,118 Non-GAAP operating income $30 - $32 $135 - $141 Non-GAAP diluted net income per share assuming approximately 168 million and 166 million weighted average shares outstanding during Q2 FY 2027 and FY 2027, respectively. $0.17 - $0.18 $0.79 - $0.82 These statements are forward-looking and actual results may differ materially as a result of many factors. Refer to the Forward-Looking Statements safe harbor be",
+      "original_verified": false,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-09-01",
+      "filed_date": "2026-09-01",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "1129000000",
+      "high": "1133000000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "raised",
+      "source": {
+        "accession": "0001628280-26-059820",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm"
+      },
+      "quote": "Third Quarter and Fiscal Year 2027 Financial Outlook For the third quarter and fiscal year 2027, GitLab Inc. expects ( in millions , except share and per share data) : Q3 FY 2027 Guidance FY 2027 Guidance Revenue $281 - $283 $1,129 - $1,133 Non-GAAP operating income $35 - $37 $148 - $152 Non-GAAP diluted net income per share assuming approximately 172 million and 172 million weighted average shares outstanding during Q3 FY 2027 and FY 2027, respectively. $0.19 - $0.20 $0.85 - $0.87 These statements are forward-looking and actual results may differ materially as a result of many factors. Refer to the Forward-Looking Statements safe harbor belo",
+      "original_verified": false,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-09-01",
+      "filed_date": "2026-09-01",
+      "fiscal_period": {
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "label": "Q3 FY2027"
+      },
+      "metric": "quarterly_consolidated_revenue",
+      "low": "281000000",
+      "high": "283000000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001628280-26-059820",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm"
+      },
+      "quote": "Q3 FY 2027 Guidance FY 2027 Guidance Revenue $281 - $283 $1,129 - $1,133 Non-GAAP operating income $35 - $37 $148 - $152 Non-GAAP diluted net income per share assuming approximately 172 million and 172 million weighted average sh",
+      "original_verified": true,
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "source_sha256": "7c3e015238a277599421246919f83f33228efea9a5f2dca65486bbd65699db3b"
+    }
+  ]
+}

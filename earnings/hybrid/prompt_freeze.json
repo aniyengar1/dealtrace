@@ -1,0 +1,9 @@
+{
+  "prompt_version": "hybrid-post-diagnostic-validator-repair-v1-paused",
+  "execution_fingerprint": "59e6a8a25fab0eed518460b13efaffed0a37089232cc093602ebcba7d5459413",
+  "frozen_at": "2026-11-15T00:23:24.107578+00:00",
+  "inference_authorized": false,
+  "generation_rules_changed": false,
+  "validation_rules_changed": true,
+  "reason": "Owner-approved offline validator repair only. Previous configuration and validation preserved in archive/pre_validator_repair. No inference under this version; costs/reservations and ceiling8 unchanged."
+}

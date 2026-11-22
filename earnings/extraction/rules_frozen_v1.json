@@ -1,0 +1,11 @@
+{
+  "frozen_at": "2026-11-13T00:28:39.810737+00:00",
+  "policy": "Development tuning ended; these files are fixed before the first held-out evaluation. Do not tune against held-out outcomes.",
+  "files": {
+    "rules.py": "82c83056bccc8630402f42cce68744c3f8e000d720ed9620fabb6e966899573a",
+    "evaluate.py": "95b8073c624e553b2c5f5924ebce549381b3a9b91154efacb0437f8c7a2f539e",
+    "corpus.py": "1834c6fae0e7b8acbf148d1089c0fce94457c75350bd2e60384b3069b5105f5e",
+    "calendars.json": "f4366fd307f2e31daa9dccce3988167b4158573ce96293029596216c1a53c64d"
+  },
+  "gold_sha256": "d6de1dd51f61e5eb4ee5f51350859dd0799494eb9cd75d8514099617c6f16b4c"
+}

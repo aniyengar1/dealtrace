@@ -1,0 +1,92 @@
+{
+  "accession": "0001090872-25-000013",
+  "accounted_final_cost_usd": null,
+  "attempt_id": "bb7bb97b-f98d-497c-847f-012086b915af",
+  "case_id": "pilot-0",
+  "count_tokens_cost_usd": "0",
+  "counted_input_tokens": 89940,
+  "finish_reasons": [
+    "STOP"
+  ],
+  "human_review_complete": false,
+  "input_sha256": "88e09e1b38f3905e66438f0660845b80b797d40b5a9e900c04197cceced2a552",
+  "known_counter_subtotal_usd_not_final_cost": "0.148431",
+  "latency_seconds": "7.163454791996628",
+  "ledger_ceiling_not_provider_billing_cap": true,
+  "location": "global",
+  "model_response_sha256": "60b7f6aed50d4f96aacc63ab0ec397e9a82975298b32cfe17b19109711014f6f",
+  "outstanding_reservation_usd": "1.12",
+  "probe_finished_at": "2026-11-13T20:34:46.771918+00:00",
+  "probe_started_at": "2026-11-13T20:34:38.094031+00:00",
+  "project": "just-rhythm-506202-j8",
+  "provider": "google_vertex_ai",
+  "recorded_at": "2026-11-13T20:39:32.497736+00:00",
+  "requested_model": "gemini-3.6-flash",
+  "returned_model_version": "gemini-3.6-flash",
+  "sdk_version": "2.34.0",
+  "source_filed": "2025-05-28",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/1090872/000109087225000013/exhibit991-q225pressrelease.htm",
+  "stop_reason": "SUCCESS_RESPONSE_USAGE_UNKNOWN_OR_INCONSISTENT_STOP",
+  "usage": {
+    "cache_tokens_details": null,
+    "cached_content_token_count": null,
+    "candidates_token_count": 1901,
+    "candidates_tokens_details": [
+      {
+        "modality": "TEXT",
+        "token_count": 1901
+      }
+    ],
+    "prompt_token_count": 89449,
+    "prompt_tokens_details": [
+      {
+        "modality": "TEXT",
+        "token_count": 89449
+      }
+    ],
+    "thoughts_token_count": null,
+    "tool_use_prompt_token_count": null,
+    "tool_use_prompt_tokens_details": null,
+    "total_token_count": 91350,
+    "traffic_type": "ON_DEMAND"
+  },
+  "validation_summary": [
+    {
+      "deterministic_errors": [
+        "INCOMPLETE_EVIDENCE_ROLES",
+        "INVALID_STATUS_REFERENCE_INPUT",
+        "QUOTE_OFFSET_MISMATCH"
+      ],
+      "id": "5a9242c0-bb8a-551f-bf16-1e63ae41c965",
+      "quarantined": true,
+      "source_id": "current"
+    },
+    {
+      "deterministic_errors": [
+        "INCOMPLETE_EVIDENCE_ROLES",
+        "QUOTE_OFFSET_MISMATCH"
+      ],
+      "id": "9db626ec-e65b-55cc-9ec0-fa9cd4092248",
+      "quarantined": true,
+      "source_id": "current"
+    },
+    {
+      "deterministic_errors": [
+        "INCOMPLETE_EVIDENCE_ROLES",
+        "QUOTE_OFFSET_MISMATCH"
+      ],
+      "id": "c6c551d0-2c76-5456-bd0c-a3a29720b759",
+      "quarantined": true,
+      "source_id": "prior"
+    },
+    {
+      "deterministic_errors": [
+        "INCOMPLETE_EVIDENCE_ROLES",
+        "QUOTE_OFFSET_MISMATCH"
+      ],
+      "id": "7e5498ef-f2c7-5208-b6eb-987ffce3404f",
+      "quarantined": true,
+      "source_id": "prior"
+    }
+  ]
+}

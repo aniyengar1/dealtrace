@@ -1,0 +1,9 @@
+{
+  "version": "hybrid-fresh-metadata-v1",
+  "purpose": "Reserve only; no release bodies, labels, inference or prompt development until manifest committed",
+  "issuer_order": ["ANET", "DELL", "CSCO", "NET", "DDOG", "HUBS", "TEAM", "PATH", "CFLT", "FSLY"],
+  "selection": "Ten fixed issuers outside original ten, pilot twenty and screened replacement pools. Reserve all original Item2.02 8-K groups filed in calendar2024, including amendment metadata. Do not filter by quarterly guidance presence or formatting. No eligibility claims yet. Entire issuer held out from development; all related versions and other fiscal-year guidance releases remain embargoed.",
+  "exposure_rule": "Exclude any issuer with an Archives release URL in this earnings worktree SEC-cache manifests or tracked earnings research records. Inspect URL metadata only; never read fresh release bodies. Missing submissions history or insufficient metadata remains a gap, never substituted based on formatting.",
+  "future_evaluation": "Expected about40 releases, exact count determined only by SEC submission metadata. Not inference authorization; genuinely fresh labels and future evaluation require separate approval. No replacement after observing performance.",
+  "cache_scope": "earnings-owned SEC cache only. Do not access deals checkout/cache/logs/bulk files."
+}

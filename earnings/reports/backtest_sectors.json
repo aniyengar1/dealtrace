@@ -1,0 +1,665 @@
+{
+  "classification_source": "https://www.sec.gov/search-filings/standard-industrial-classification-sic-code-list",
+  "companies": {
+    "ABNB": {
+      "name": "Airbnb, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7340",
+      "sic_description": "Services-To Dwellings & Other Buildings",
+      "source_fetched_at": "2026-11-20T22:35:49.204529+00:00",
+      "source_sha256": "d7b52f2ce9870db9ef6f40a4014b4ad4b66e1a301b7c62d6fe0ea2b2f9ec17e6",
+      "source_url": "https://data.sec.gov/submissions/CIK0001559720.json"
+    },
+    "ADBE": {
+      "name": "ADOBE INC.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-20T23:44:42.559566+00:00",
+      "source_sha256": "37f363f43ff2b605f1bbcebebe1e2cdd20667256bccf6cd6db9f9d1b71c38de3",
+      "source_url": "https://data.sec.gov/submissions/CIK0000796343.json"
+    },
+    "ADI": {
+      "name": "ANALOG DEVICES INC",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "source_fetched_at": "2026-11-20T22:35:50.644152+00:00",
+      "source_sha256": "2412d1aa158a495d788c59d4126d4c32f4cdff8d03e1a5385b41197f7f52d8ea",
+      "source_url": "https://data.sec.gov/submissions/CIK0000006281.json"
+    },
+    "AEIS": {
+      "name": "ADVANCED ENERGY INDUSTRIES INC",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3679",
+      "sic_description": "Electronic Components, NEC",
+      "source_fetched_at": "2026-11-20T22:35:52.864132+00:00",
+      "source_sha256": "0096f5a6e4af8c917a1eedcff6168512eaeeb84e074e20cc1266956bee692ec7",
+      "source_url": "https://data.sec.gov/submissions/CIK0000927003.json"
+    },
+    "AKAM": {
+      "name": "AKAMAI TECHNOLOGIES INC",
+      "sector": "Business services (SIC 73)",
+      "sic": "7389",
+      "sic_description": "Services-Business Services, NEC",
+      "source_fetched_at": "2026-11-20T22:35:54.329999+00:00",
+      "source_sha256": "909a2e0cc9ce98ec9463c642dc3b6b9d8ba952f8bd360aac18f26ebbb3237e45",
+      "source_url": "https://data.sec.gov/submissions/CIK0001086222.json"
+    },
+    "AMAT": {
+      "name": "APPLIED MATERIALS INC /DE",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "source_fetched_at": "2026-11-20T22:35:55.795178+00:00",
+      "source_sha256": "bd35a826257fd83379f9b533c2287510fde9dc9218ef02df0aafe956d0ff8e19",
+      "source_url": "https://data.sec.gov/submissions/CIK0000006951.json"
+    },
+    "AMD": {
+      "name": "ADVANCED MICRO DEVICES INC",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "source_fetched_at": "2026-11-20T22:35:58.828716+00:00",
+      "source_sha256": "e9d9d4cf459e753cf5b9cd0c24fe01e4bc325b048f81320a47cf7b4bff4fe27b",
+      "source_url": "https://data.sec.gov/submissions/CIK0000002488.json"
+    },
+    "AMPL": {
+      "name": "Amplitude, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-20T22:36:00.984594+00:00",
+      "source_sha256": "9f2dc82f060b6dcf4901fba5816fea9478731325eb23b3281c12921aaeb594b6",
+      "source_url": "https://data.sec.gov/submissions/CIK0001866692.json"
+    },
+    "AMZN": {
+      "name": "AMAZON COM INC",
+      "sector": "Miscellaneous retail (SIC 59)",
+      "sic": "5961",
+      "sic_description": "Retail-Catalog & Mail-Order Houses",
+      "source_fetched_at": "2026-11-20T22:36:02.507224+00:00",
+      "source_sha256": "5272a8d7e4f66f044b9192589810ffaa860163b393b69cc6aa8a2c6975c13572",
+      "source_url": "https://data.sec.gov/submissions/CIK0001018724.json"
+    },
+    "APP": {
+      "name": "AppLovin Corp",
+      "sector": "Business services (SIC 73)",
+      "sic": "7370",
+      "sic_description": "Services-Computer Programming, Data Processing, Etc.",
+      "source_fetched_at": "2026-11-20T22:36:03.965548+00:00",
+      "source_sha256": "869c79a47364873ea85843dd4bf46b18d22b9bfd4121690120c01ce1d48b696d",
+      "source_url": "https://data.sec.gov/submissions/CIK0001751008.json"
+    },
+    "APPN": {
+      "name": "APPIAN CORP",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-20T22:36:06.015225+00:00",
+      "source_sha256": "4ec2f5b624c35e0b76486c3370de08096f4ac2c2748ad243663577936d8afbf7",
+      "source_url": "https://data.sec.gov/submissions/CIK0001441683.json"
+    },
+    "AVPT": {
+      "name": "AvePoint, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-20T22:36:08.118000+00:00",
+      "source_sha256": "72fcad82a85093bc4559727d13c5d59e0cfea0c0d9ac46b5f244892e5f861acd",
+      "source_url": "https://data.sec.gov/submissions/CIK0001777921.json"
+    },
+    "BL": {
+      "name": "BLACKLINE, INC.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-20T22:36:09.798349+00:00",
+      "source_sha256": "dbcc150e5602544a1a48066a463d0c1cbb1046179a3e84d706d6684bd18307ad",
+      "source_url": "https://data.sec.gov/submissions/CIK0001666134.json"
+    },
+    "CNXC": {
+      "name": "Concentrix Corp",
+      "sector": "Business services (SIC 73)",
+      "sic": "7389",
+      "sic_description": "Services-Business Services, NEC",
+      "source_fetched_at": "2026-11-20T22:36:11.918930+00:00",
+      "source_sha256": "06c23e6c9cc6fa4d0045fe9389af183b27d88b347c07e46cb5ca8d6152214033",
+      "source_url": "https://data.sec.gov/submissions/CIK0001803599.json"
+    },
+    "COHR": {
+      "name": "COHERENT CORP.",
+      "sector": "Instruments and related products (SIC 38)",
+      "sic": "3827",
+      "sic_description": "Optical Instruments & Lenses",
+      "source_fetched_at": "2026-11-20T22:36:13.931636+00:00",
+      "source_sha256": "9fc5b14148f69f689058b2dacc8a73679e71b75e878304d7f8bf11d0907de1c8",
+      "source_url": "https://data.sec.gov/submissions/CIK0000820318.json"
+    },
+    "CRM": {
+      "name": "Salesforce, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-17T11:14:36.755862+00:00",
+      "source_sha256": "92897c3ece78bcd7c42b1b94dcff01c701e8017118f491f83267b3baa4aac31b",
+      "source_url": "https://data.sec.gov/submissions/CIK0001108524.json"
+    },
+    "CRUS": {
+      "name": "CIRRUS LOGIC, INC.",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "source_fetched_at": "2026-11-20T22:36:16.098388+00:00",
+      "source_sha256": "d91331c7200731788b56c55de157a748431cd12b3ea9476a4dc8acc7bd095efb",
+      "source_url": "https://data.sec.gov/submissions/CIK0000772406.json"
+    },
+    "CRWD": {
+      "name": "CrowdStrike Holdings, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-20T09:57:59.425817+00:00",
+      "source_sha256": "23a61f33729bc08b671e0fe89fab7f8f7490a6c36fc7707012251418be1877aa",
+      "source_url": "https://data.sec.gov/submissions/CIK0001535527.json"
+    },
+    "CTSH": {
+      "name": "COGNIZANT TECHNOLOGY SOLUTIONS CORP",
+      "sector": "Business services (SIC 73)",
+      "sic": "7371",
+      "sic_description": "Services-Computer Programming Services",
+      "source_fetched_at": "2026-11-20T22:36:17.578658+00:00",
+      "source_sha256": "05ec1cf78f04cf112e6e72f2696eab05e6e3ecdc6b0fc5063f8669688ab3594b",
+      "source_url": "https://data.sec.gov/submissions/CIK0001058290.json"
+    },
+    "DIOD": {
+      "name": "DIODES INC /DEL/",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "source_fetched_at": "2026-11-20T22:36:19.645062+00:00",
+      "source_sha256": "c577ed018a732f8c256ca672c7d3b987ecc4e152cfd40d584089a1a6dd1499c7",
+      "source_url": "https://data.sec.gov/submissions/CIK0000029002.json"
+    },
+    "DOCN": {
+      "name": "DigitalOcean Holdings, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7370",
+      "sic_description": "Services-Computer Programming, Data Processing, Etc.",
+      "source_fetched_at": "2026-11-20T22:36:21.350864+00:00",
+      "source_sha256": "5d3d294a2d724236a19fdefc6170851393706334098bb17cf2e8893286c3e341",
+      "source_url": "https://data.sec.gov/submissions/CIK0001582961.json"
+    },
+    "DOCS": {
+      "name": "Doximity, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7371",
+      "sic_description": "Services-Computer Programming Services",
+      "source_fetched_at": "2026-11-20T22:36:22.776328+00:00",
+      "source_sha256": "83036b31396a08ed4e3c3892bded1c6b19ab43e8cac8d87ea7fc915381750975",
+      "source_url": "https://data.sec.gov/submissions/CIK0001516513.json"
+    },
+    "ENPH": {
+      "name": "Enphase Energy, Inc.",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "source_fetched_at": "2026-11-20T22:36:24.040916+00:00",
+      "source_sha256": "cf6a6c841eb6ddfd7d07704e21831fd297cd2680793fb8bab6976b92e8c6a0e4",
+      "source_url": "https://data.sec.gov/submissions/CIK0001463101.json"
+    },
+    "EPAM": {
+      "name": "EPAM Systems, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7371",
+      "sic_description": "Services-Computer Programming Services",
+      "source_fetched_at": "2026-11-20T22:36:27.355940+00:00",
+      "source_sha256": "8e61b1802c3c5eaa57db13ad3e49822d957c48225e0da5faba8a0e27b84bb280",
+      "source_url": "https://data.sec.gov/submissions/CIK0001352010.json"
+    },
+    "EW": {
+      "name": "Edwards Lifesciences Corp",
+      "sector": "Instruments and related products (SIC 38)",
+      "sic": "3842",
+      "sic_description": "Orthopedic, Prosthetic & Surgical Appliances & Supplies",
+      "source_fetched_at": "2026-11-20T22:36:28.992744+00:00",
+      "source_sha256": "4dbbe3935e52be4508b559d634e11fc6d93c6e8c6c7254cf245d3d278a4979ad",
+      "source_url": "https://data.sec.gov/submissions/CIK0001099800.json"
+    },
+    "FFIV": {
+      "name": "F5, INC.",
+      "sector": "Industrial/computer machinery (SIC 35)",
+      "sic": "3576",
+      "sic_description": "Computer Communications Equipment",
+      "source_fetched_at": "2026-11-20T22:36:30.532376+00:00",
+      "source_sha256": "4c98578cc6121bab862df9b1bcde6b3b7d44c9b086e8eaecba21e85da931fc78",
+      "source_url": "https://data.sec.gov/submissions/CIK0001048695.json"
+    },
+    "FIVN": {
+      "name": "Five9, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7374",
+      "sic_description": "Services-Computer Processing & Data Preparation",
+      "source_fetched_at": "2026-11-20T22:36:34.043195+00:00",
+      "source_sha256": "dfcf7a2e70a4c623d84aced7b80278ef7915dca95735e88b315e33d1f7048178",
+      "source_url": "https://data.sec.gov/submissions/CIK0001288847.json"
+    },
+    "FORM": {
+      "name": "FORMFACTOR INC",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "source_fetched_at": "2026-11-20T22:36:35.685497+00:00",
+      "source_sha256": "a86c43c07d40264fd8bfc6ff01aa6cd736d01e58065cdb95b00f6be9894a96a4",
+      "source_url": "https://data.sec.gov/submissions/CIK0001039399.json"
+    },
+    "FTNT": {
+      "name": "Fortinet, Inc.",
+      "sector": "Industrial/computer machinery (SIC 35)",
+      "sic": "3577",
+      "sic_description": "Computer Peripheral Equipment, NEC",
+      "source_fetched_at": "2026-11-20T22:36:36.981201+00:00",
+      "source_sha256": "325c73d63a719a91971b37f8a939846057ad4d1c27ae76622774d281fdee4464",
+      "source_url": "https://data.sec.gov/submissions/CIK0001262039.json"
+    },
+    "GTLB": {
+      "name": "Gitlab Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-20T09:57:57.410960+00:00",
+      "source_sha256": "81cc62ffbaa90c1f434a0fe456692322bb786ecc39282fd2d5d79c83d6292da7",
+      "source_url": "https://data.sec.gov/submissions/CIK0001653482.json"
+    },
+    "HIMS": {
+      "name": "Hims & Hers Health, Inc.",
+      "sector": "Health services (SIC 80)",
+      "sic": "8011",
+      "sic_description": "Services-Offices & Clinics of  Doctors of  Medicine",
+      "source_fetched_at": "2026-11-20T22:36:38.593906+00:00",
+      "source_sha256": "3de5f720e0e600b9e8c48d43f68bb5df0692fd8ab5bd7b0f4408459483e7f034",
+      "source_url": "https://data.sec.gov/submissions/CIK0001773751.json"
+    },
+    "HLIT": {
+      "name": "HARMONIC INC.",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3663",
+      "sic_description": "Radio & Tv Broadcasting & Communications Equipment",
+      "source_fetched_at": "2026-11-20T22:36:40.551173+00:00",
+      "source_sha256": "2d812392ef70434dbc870230245c9abcd497d7ddc802d288c899f498f45b55e6",
+      "source_url": "https://data.sec.gov/submissions/CIK0000851310.json"
+    },
+    "ICHR": {
+      "name": "ICHOR HOLDINGS, LTD.",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "source_fetched_at": "2026-11-20T22:36:42.217499+00:00",
+      "source_sha256": "5c22ec8e70fbdfbd5a0cd32971614f23d97eb94bbd5c5ee2913c583fdb34a5d4",
+      "source_url": "https://data.sec.gov/submissions/CIK0001652535.json"
+    },
+    "INTC": {
+      "name": "INTEL CORP",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "source_fetched_at": "2026-11-20T22:36:43.913372+00:00",
+      "source_sha256": "9a17aa0d3a296cc418353bd2a0ccba7f92d4c2bb8e661d7fc32f2301927941e4",
+      "source_url": "https://data.sec.gov/submissions/CIK0000050863.json"
+    },
+    "IOT": {
+      "name": "Samsara Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7373",
+      "sic_description": "Services-Computer Integrated Systems Design",
+      "source_fetched_at": "2026-11-17T11:19:39.317952+00:00",
+      "source_sha256": "b04902d6fae706566689d72bf655395581f1b46d48309a81fd72dd7b95fb6156",
+      "source_url": "https://data.sec.gov/submissions/CIK0001642896.json"
+    },
+    "IPGP": {
+      "name": "IPG PHOTONICS CORP",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "source_fetched_at": "2026-11-20T22:36:45.291125+00:00",
+      "source_sha256": "549425a79d3a8a1bc087c6c9544ca544f960e320fb09fbfc422cc804da5deee1",
+      "source_url": "https://data.sec.gov/submissions/CIK0001111928.json"
+    },
+    "KFRC": {
+      "name": "KFORCE INC",
+      "sector": "Business services (SIC 73)",
+      "sic": "7363",
+      "sic_description": "Services-Help Supply Services",
+      "source_fetched_at": "2026-11-20T22:36:46.964307+00:00",
+      "source_sha256": "933f964db97b996cf4af89844c91f6ba6ad7cec2a513b6f0f7325df88ce1b3d7",
+      "source_url": "https://data.sec.gov/submissions/CIK0000930420.json"
+    },
+    "KLAC": {
+      "name": "KLA CORP",
+      "sector": "Instruments and related products (SIC 38)",
+      "sic": "3827",
+      "sic_description": "Optical Instruments & Lenses",
+      "source_fetched_at": "2026-11-20T22:36:48.475113+00:00",
+      "source_sha256": "6658ad0f63831399c5d4a5c1fe42cd11628449fafcd16f4c4377c73888d2df5f",
+      "source_url": "https://data.sec.gov/submissions/CIK0000319201.json"
+    },
+    "LITE": {
+      "name": "Lumentum Holdings Inc.",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3669",
+      "sic_description": "Communications Equipment, NEC",
+      "source_fetched_at": "2026-11-20T22:36:51.847583+00:00",
+      "source_sha256": "90e9553ad7c2087ea844c7c1ca71f3f02a600ca4bfbe05ce1c665b833dd0a1cf",
+      "source_url": "https://data.sec.gov/submissions/CIK0001633978.json"
+    },
+    "LRCX": {
+      "name": "LAM RESEARCH CORP",
+      "sector": "Industrial/computer machinery (SIC 35)",
+      "sic": "3559",
+      "sic_description": "Special Industry Machinery, NEC",
+      "source_fetched_at": "2026-11-20T22:36:53.518255+00:00",
+      "source_sha256": "860fe1ae9a61efd226e94c46ef664ff10beaf32843e5a06dadc5e3270a6b861e",
+      "source_url": "https://data.sec.gov/submissions/CIK0000707549.json"
+    },
+    "LSCC": {
+      "name": "LATTICE SEMICONDUCTOR CORP",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "source_fetched_at": "2026-11-20T22:36:55.803986+00:00",
+      "source_sha256": "1d729f42ec06e9b3018feda79c2c3ab3982dc10be82b0f7d9f95e5242a5573b1",
+      "source_url": "https://data.sec.gov/submissions/CIK0000855658.json"
+    },
+    "LULU": {
+      "name": "lululemon athletica inc.",
+      "sector": "Apparel and textile products (SIC 23)",
+      "sic": "2300",
+      "sic_description": "Apparel & Other Finishd Prods of  Fabrics & Similar Matl",
+      "source_fetched_at": "2026-11-12T08:12:44.265495+00:00",
+      "source_sha256": "d1af739907cf625747a4963b29ad999506d0c3985167612366b283102de5eddf",
+      "source_url": "https://data.sec.gov/submissions/CIK0001397187.json"
+    },
+    "MCHP": {
+      "name": "MICROCHIP TECHNOLOGY INC",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "source_fetched_at": "2026-11-20T22:36:57.878346+00:00",
+      "source_sha256": "979355c47c1020433a37c93a2be3e746eec57a52a04e268aa14bd3e7188bddc0",
+      "source_url": "https://data.sec.gov/submissions/CIK0000827054.json"
+    },
+    "MDB": {
+      "name": "MongoDB, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-20T09:58:01.698369+00:00",
+      "source_sha256": "d6dc1fc00620cce646a624d2534f55a230e298c67f08e777b20a47495ee3ca7e",
+      "source_url": "https://data.sec.gov/submissions/CIK0001441816.json"
+    },
+    "META": {
+      "name": "Meta Platforms, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7370",
+      "sic_description": "Services-Computer Programming, Data Processing, Etc.",
+      "source_fetched_at": "2026-11-20T22:37:00.942805+00:00",
+      "source_sha256": "3e1406ff428ce0dd62925f8974adc636243e6b5ff5aaa842f2e7c85793fcf3d9",
+      "source_url": "https://data.sec.gov/submissions/CIK0001326801.json"
+    },
+    "MKSI": {
+      "name": "MKS INC",
+      "sector": "Instruments and related products (SIC 38)",
+      "sic": "3823",
+      "sic_description": "Industrial Instruments For Measurement, Display, and Control",
+      "source_fetched_at": "2026-11-20T22:37:03.909099+00:00",
+      "source_sha256": "932d5ecec01ebda989e679cf8b64a20cb6632af10c390edf306aca489b28590f",
+      "source_url": "https://data.sec.gov/submissions/CIK0001049502.json"
+    },
+    "MPWR": {
+      "name": "MONOLITHIC POWER SYSTEMS, INC.",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "source_fetched_at": "2026-11-20T22:37:05.614177+00:00",
+      "source_sha256": "530ddbf1c1ef3c880e934e7365179679e8285a5eaab9bf22b68933166255b81b",
+      "source_url": "https://data.sec.gov/submissions/CIK0001280452.json"
+    },
+    "MXL": {
+      "name": "MAXLINEAR, INC",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "source_fetched_at": "2026-11-20T22:37:07.027069+00:00",
+      "source_sha256": "b026524fc0c2b2f608767bb9360c660d9c301bb6c491f8378cfae290a8cb19c2",
+      "source_url": "https://data.sec.gov/submissions/CIK0001288469.json"
+    },
+    "NTAP": {
+      "name": "NetApp, Inc.",
+      "sector": "Industrial/computer machinery (SIC 35)",
+      "sic": "3572",
+      "sic_description": "Computer Storage Devices",
+      "source_fetched_at": "2026-11-20T22:37:08.551113+00:00",
+      "source_sha256": "7b88a981e3fc34b8bff5190e163c05e5771d23928f2f7ea0adcb3ac0ce94480d",
+      "source_url": "https://data.sec.gov/submissions/CIK0001002047.json"
+    },
+    "NTNX": {
+      "name": "Nutanix, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-20T22:37:09.916380+00:00",
+      "source_sha256": "4c5c7f6df5ef1023125a4c550d29aa63175d0cccad2c0c3584bdd8b5ccb5834e",
+      "source_url": "https://data.sec.gov/submissions/CIK0001618732.json"
+    },
+    "NVDA": {
+      "name": "NVIDIA CORP",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "source_fetched_at": "2026-11-20T22:37:11.220578+00:00",
+      "source_sha256": "bd9dbcb9c9fb2ed73869cb524b442ebbc838eb9da2ec8166b1deae6d872a14db",
+      "source_url": "https://data.sec.gov/submissions/CIK0001045810.json"
+    },
+    "OKTA": {
+      "name": "Okta, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-17T10:56:43.419981+00:00",
+      "source_sha256": "401ad0120efe04c1586c56d6e914bba94ab08a70ae3b34ae34fc361ddd3f1ac4",
+      "source_url": "https://data.sec.gov/submissions/CIK0001660134.json"
+    },
+    "ON": {
+      "name": "ON SEMICONDUCTOR CORP",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "source_fetched_at": "2026-11-20T22:37:13.322783+00:00",
+      "source_sha256": "faffd0b68f0a546ea0311d92386a0654862948c6316c024d680969678f603cbf",
+      "source_url": "https://data.sec.gov/submissions/CIK0001097864.json"
+    },
+    "ONTO": {
+      "name": "ONTO INNOVATION INC.",
+      "sector": "Instruments and related products (SIC 38)",
+      "sic": "3829",
+      "sic_description": "Measuring & Controlling Devices, NEC",
+      "source_fetched_at": "2026-11-20T22:37:14.767735+00:00",
+      "source_sha256": "f0c1e98ac69ffabb9ce43252be446052985fbe84541769f87dfc35d0f16200ea",
+      "source_url": "https://data.sec.gov/submissions/CIK0000704532.json"
+    },
+    "PCTY": {
+      "name": "Paylocity Holding Corp",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-20T22:37:16.856372+00:00",
+      "source_sha256": "994ee2671744978425b8ef0bea21a8b8ee54ed85e7025558f846a7803a6ae28b",
+      "source_url": "https://data.sec.gov/submissions/CIK0001591698.json"
+    },
+    "PD": {
+      "name": "PagerDuty, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-12T08:12:37.185257+00:00",
+      "source_sha256": "d03001bf2f0305fea3d94709b83f11c6bfd1eac473e01d641eb31d26dc00b1c2",
+      "source_url": "https://data.sec.gov/submissions/CIK0001568100.json"
+    },
+    "PINS": {
+      "name": "PINTEREST, INC.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7370",
+      "sic_description": "Services-Computer Programming, Data Processing, Etc.",
+      "source_fetched_at": "2026-11-20T22:37:18.350349+00:00",
+      "source_sha256": "36443c168104c86569ff0964a06febe8d31f93a8c63df9b4dff0b94c4e9aab4b",
+      "source_url": "https://data.sec.gov/submissions/CIK0001506293.json"
+    },
+    "PLTR": {
+      "name": "Palantir Technologies Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-20T22:37:19.974484+00:00",
+      "source_sha256": "3e7cd7a3e123eb732539fd993f7a304fade21138a1561f71b999104a2fa3e343",
+      "source_url": "https://data.sec.gov/submissions/CIK0001321655.json"
+    },
+    "PLXS": {
+      "name": "PLEXUS CORP",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3672",
+      "sic_description": "Printed Circuit Boards",
+      "source_fetched_at": "2026-11-20T22:37:22.923475+00:00",
+      "source_sha256": "50b00b885e52479e13938b950452ab0f3fec0724086bf571b9c337112fe68b8f",
+      "source_url": "https://data.sec.gov/submissions/CIK0000785786.json"
+    },
+    "POWI": {
+      "name": "POWER INTEGRATIONS INC",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "source_fetched_at": "2026-11-20T22:37:25.099815+00:00",
+      "source_sha256": "f50cf0884348b85d09647c057f0a9c1ee4229b91398cb5082ec92532a72156f6",
+      "source_url": "https://data.sec.gov/submissions/CIK0000833640.json"
+    },
+    "QLYS": {
+      "name": "QUALYS, INC.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-20T22:37:26.356822+00:00",
+      "source_sha256": "6c4790fa114c59c8391666f33bbbe2c759ac930a52a01ee5fbad595a044128f5",
+      "source_url": "https://data.sec.gov/submissions/CIK0001107843.json"
+    },
+    "RDDT": {
+      "name": "Reddit, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7374",
+      "sic_description": "Services-Computer Processing & Data Preparation",
+      "source_fetched_at": "2026-11-20T22:37:27.691638+00:00",
+      "source_sha256": "78583cd89537bfbca5e97107358a352d8a8591323d5987af09fab93d4290df56",
+      "source_url": "https://data.sec.gov/submissions/CIK0001713445.json"
+    },
+    "RNG": {
+      "name": "RingCentral, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7374",
+      "sic_description": "Services-Computer Processing & Data Preparation",
+      "source_fetched_at": "2026-11-20T22:37:30.348538+00:00",
+      "source_sha256": "8cd7c6b75e09a78b4a6658220359686984e44b1c95a7152e3cad545fb9bc0ca6",
+      "source_url": "https://data.sec.gov/submissions/CIK0001384905.json"
+    },
+    "RPD": {
+      "name": "Rapid7, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-20T22:37:32.342711+00:00",
+      "source_sha256": "47bc767623b853c703dad47c4e6979afa3d602024a8226370f4837fa6a973bd3",
+      "source_url": "https://data.sec.gov/submissions/CIK0001560327.json"
+    },
+    "S": {
+      "name": "SentinelOne, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-17T11:24:32.340300+00:00",
+      "source_sha256": "93ac5a1ae6604d5bcf66d8f9bf9e1b3880668e5cf0c24876b0f98356cc35fefd",
+      "source_url": "https://data.sec.gov/submissions/CIK0001583708.json"
+    },
+    "SANM": {
+      "name": "SANMINA CORP",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3672",
+      "sic_description": "Printed Circuit Boards",
+      "source_fetched_at": "2026-11-20T22:37:34.227527+00:00",
+      "source_sha256": "41570d40bf405c1c195373ef2acad5f4fe88cc934bfa98082c261e9352cb8f50",
+      "source_url": "https://data.sec.gov/submissions/CIK0000897723.json"
+    },
+    "SEDG": {
+      "name": "SOLAREDGE TECHNOLOGIES, INC.",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "source_fetched_at": "2026-11-20T22:37:35.521180+00:00",
+      "source_sha256": "6dc82c2bc5d0ffc8c3071daee4690dac65c310db3b05316e91c6566105d7e520",
+      "source_url": "https://data.sec.gov/submissions/CIK0001419612.json"
+    },
+    "TASK": {
+      "name": "TaskUs, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7374",
+      "sic_description": "Services-Computer Processing & Data Preparation",
+      "source_fetched_at": "2026-11-20T22:37:37.411918+00:00",
+      "source_sha256": "e5180d85401668914f2e743f266c18b7571cf12c3db9f38d33bf4a67fedb54a1",
+      "source_url": "https://data.sec.gov/submissions/CIK0001829864.json"
+    },
+    "TDOC": {
+      "name": "Teladoc Health, Inc.",
+      "sector": "Health services (SIC 80)",
+      "sic": "8011",
+      "sic_description": "Services-Offices & Clinics of  Doctors of  Medicine",
+      "source_fetched_at": "2026-11-20T22:37:38.733017+00:00",
+      "source_sha256": "c9901c18f0653c70039c66347b2480f509d49c6625eb3f82bc992ae94d25230a",
+      "source_url": "https://data.sec.gov/submissions/CIK0001477449.json"
+    },
+    "TENB": {
+      "name": "Tenable Holdings, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-20T22:37:40.405753+00:00",
+      "source_sha256": "4108e55ff6e03dccebdedf3d859072f4e6f8fb5a277c09ab5f4ba01e1da277bf",
+      "source_url": "https://data.sec.gov/submissions/CIK0001660280.json"
+    },
+    "TTMI": {
+      "name": "TTM TECHNOLOGIES INC",
+      "sector": "Electronic/electrical equipment (SIC 36)",
+      "sic": "3672",
+      "sic_description": "Printed Circuit Boards",
+      "source_fetched_at": "2026-11-20T22:37:42.090184+00:00",
+      "source_sha256": "059f1877c334bc39d78ac56d570f8a31c6ced373f81313a3518c78b30b1e1357",
+      "source_url": "https://data.sec.gov/submissions/CIK0001116942.json"
+    },
+    "TWLO": {
+      "name": "TWILIO INC",
+      "sector": "Business services (SIC 73)",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "source_fetched_at": "2026-11-20T22:37:43.554959+00:00",
+      "source_sha256": "1d6b268f5ca655fb5efa7ab26203f54ba6b1dd615b2a2447efcf493c5d9e9b83",
+      "source_url": "https://data.sec.gov/submissions/CIK0001447669.json"
+    },
+    "ZS": {
+      "name": "Zscaler, Inc.",
+      "sector": "Business services (SIC 73)",
+      "sic": "7371",
+      "sic_description": "Services-Computer Programming Services",
+      "source_fetched_at": "2026-11-20T22:37:44.998484+00:00",
+      "source_sha256": "9c1b847dd0e740e05b03b894e8001714040d7291ea45468ba6ac70390fb0e078",
+      "source_url": "https://data.sec.gov/submissions/CIK0001713683.json"
+    }
+  },
+  "kind": "BACKTEST_DESCRIPTIVE_SECTOR_METADATA",
+  "selection": "All 73 existing backtest companies; no outcome-based selection. Metadata from already cached SEC submissions; no new release bodies or provider calls. Never used in historical prediction selection.",
+  "taxonomy": "SEC SIC two-digit industry groups; not GICS sectors, contemporary classification only"
+}

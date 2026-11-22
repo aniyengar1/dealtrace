@@ -1,0 +1,412 @@
+{
+  "checked_at": "2026-11-13T22:19:01.427058+00:00",
+  "session3_tag_target": "94984fc3ce33c6e85a287738d3a617561cd0cefc",
+  "fixed_input_time_identical": true,
+  "protected_files": [
+    {
+      "path": "db/migrations/0001_enums.sql",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0002_deals.sql",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0003_paragraphs.sql",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0004_extraction_runs.sql",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0005_events.sql",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0006_proposals.sql",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0007_valuations.sql",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0008_rls_policies.sql",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0009_reviewer_note.sql",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0100_crosscheck.sql",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0101_crosscheck_product.sql",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0102_crosscheck_quarters.sql",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0103_crosscheck_live_ledger.sql",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/__init__.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/__main__.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/actuals.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/announcements/CRM.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/announcements/IOT.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/announcements/OKTA.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/announcements/S.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/baseline.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/baseline_evaluation.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/companies.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/dates.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/engine.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/evaluate.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/forecast.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/ADBE.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/CRM.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/CRWD.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/GTLB.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/IOT.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/LULU.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/MDB.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/OKTA.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/PD.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/S.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/ADBE.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/CRM.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/CRWD.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/GTLB.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/IOT.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/LULU.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/MDB.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/OKTA.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/PD.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/S.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history_audit.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/live.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/manual_dates.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/metrics.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/models.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/predict.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/product.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/quarters.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/registry.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/score_live.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/sec.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/smoke.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/store.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/verification.py",
+      "unchanged": true
+    },
+    {
+      "path": "requirements.txt",
+      "unchanged": true
+    },
+    {
+      "path": "src/fetch.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/README.md",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/__init__.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/calendars.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/corpus.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/evaluate.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/gold_v1.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/replay.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/rules.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/rules_frozen_v1.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/split_v1.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/validation/session4_development_final.candidates.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/validation/session4_development_final.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/validation/session4_heldout_v1.candidates.json",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/validation/session4_heldout_v1.json",
+      "unchanged": true
+    },
+    {
+      "path": "tests/earnings/test_extraction.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/v2/__init__.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/v2/rules.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/v2/pipeline.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/v2/corpus.py",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/v2/evaluate.py",
+      "unchanged": true
+    }
+  ],
+  "original_probe_artifacts": [
+    {
+      "path": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/hybrid_diagnostic_vertex_v1/bb7bb97b-f98d-497c-847f-012086b915af-raw.json",
+      "sha256": "60b7f6aed50d4f96aacc63ab0ec397e9a82975298b32cfe17b19109711014f6f",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/hybrid_diagnostic_vertex_v1/bb7bb97b-f98d-497c-847f-012086b915af-request.json",
+      "sha256": "47bde3613afbc5dee3962e657e95a2089578faa4878ad08d7ec5ff7c85bf42a0",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/hybrid_diagnostic_vertex_v1/bb7bb97b-f98d-497c-847f-012086b915af-result.json",
+      "sha256": "0018436c3a1e4f753c4f41594806954fe3ea082c155099a80cbabaab19e2deda",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/hybrid_diagnostic_vertex_v1/cost.sqlite3",
+      "sha256": "f840bccfa8e398bd1737c5c5c80fa37d0bd7296022586945f6fd09c2f6bcb2e0",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/hybrid_diagnostic_vertex_v1/pilot-0-input.json",
+      "sha256": "88e09e1b38f3905e66438f0660845b80b797d40b5a9e900c04197cceced2a552",
+      "unchanged": true
+    },
+    {
+      "path": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/hybrid_diagnostic_vertex_v1/run-20261113T203446771896Z.json",
+      "sha256": "732a32e32633631f9f6acee37aeea74519862c84ac1141767cb5eed7938d101f",
+      "unchanged": true
+    }
+  ],
+  "archived_probe_files": [
+    {
+      "path": "schema.py",
+      "matches_reviewed_probe_commit": true
+    },
+    {
+      "path": "prompt.txt",
+      "matches_reviewed_probe_commit": true
+    },
+    {
+      "path": "validation.py",
+      "matches_reviewed_probe_commit": true
+    },
+    {
+      "path": "transport.py",
+      "matches_reviewed_probe_commit": true
+    },
+    {
+      "path": "config.json",
+      "matches_reviewed_probe_commit": true
+    },
+    {
+      "path": "prompt_freeze.json",
+      "matches_reviewed_probe_commit": true
+    }
+  ],
+  "new_provider_calls": 0,
+  "preflight_rejection": "OFFLINE_CORRECTION_NO_NEW_INFERENCE",
+  "fresh_manifest_unchanged_since_244bf35": true,
+  "fresh_bodies_opened": false,
+  "fresh_inference_performed": false,
+  "dependencies_changed": false,
+  "tests": {
+    "passed": 479,
+    "skipped": 3,
+    "xfailed": 2
+  }
+}

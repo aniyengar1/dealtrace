@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-11-14T21:24:57.693577+00:00",
+  "protected_live_code_unchanged_from_r2": [
+    "earnings/baseline.py",
+    "earnings/smoothed_baseline.py",
+    "earnings/predict.py",
+    "earnings/live.py",
+    "earnings/owner_evidence.py",
+    "db/migrations/0103_crosscheck_live_ledger.sql",
+    "db/migrations/0104_crosscheck_laplace.sql",
+    "db/migrations/0105_crosscheck_owner_evidence.sql"
+  ],
+  "tag_commits": {
+    "session3-lock-ready": "94984fc3ce33c6e85a287738d3a617561cd0cefc",
+    "session3-two-method-lock-ready-20261113": "87f48d40dfba363a7732cbb0b3cf68f473b3d56f",
+    "session3-two-method-lock-ready-20261113-r2": "7dc952c635446bb4ed3a6717d58cb7dc003f62cb"
+  },
+  "new_provider_calls": 0,
+  "ledger_attempt_count": 11,
+  "original_probe_held_nano": 1120000000,
+  "reservation_releases": 0,
+  "cost_ledger_only_new_entry": "owner_budget_ceiling_changed policy event; no attempt mutation",
+  "fresh_evaluation_bodies_or_inference": false,
+  "budget_ceiling_usd": "8.00",
+  "headroom_usd": "5.3990815",
+  "extractor_prompt_schema_validation_unchanged": true,
+  "targeted_tests_passed": 88,
+  "dispatch_status": "INFERENCE_PAUSED_OWNER_REVIEW"
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/76a225f3e35b0f5e19a47014c96fe18d8639fbc3e5a064f512a31d4522e7af38-c8a640be882cb70fba14d5be638823309652d2025c7baa08b5b96f95ee894b83.body",
+    "check": {
+      "checked_at": "2026-11-12T23:46:51.729367+00:00",
+      "company": "CRM",
+      "date_evidence": [
+        "ase and Webcast November 10, 2026 Results to be released on December 2, 2026, after market close SAN FRANCISCO--(BUSINESS WIRE)-- Salesforce (NYSE: CRM), the world\u2019s "
+      ],
+      "fetched_at": "2026-11-12T23:46:52.000110+00:00",
+      "report_date": "2026-12-02",
+      "report_date_present": true,
+      "sha256": "c8a640be882cb70fba14d5be638823309652d2025c7baa08b5b96f95ee894b83",
+      "source_date": "2026-11-10",
+      "source_date_present": true,
+      "source_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx",
+      "status": "confirmed"
+    },
+    "company": "CRM",
+    "evidence_excerpt": "erly Results Annual Reports SEC Filings Tax Forms Safe Harbor IAC Financials Events News Stock Quote Governance Governance Corporate Governance Executive Management Board of Directors Committee Composition ESG Resources Resources Investor FAQs Investor Email Alerts Investor Contacts View All News Salesforce Announces Date of Third Quarter Fiscal 2027 Earnings Release and Webcast November 10, 2026 Results to be released on December 2, 2026, after market close SAN FRANCISCO--(BUSINESS WIRE)-- Salesforce (NYSE: CRM), the world\u2019s #1 AI CRM, today announced that its third quarter fiscal 2027 results will be re",
+    "normalized_visible_text_unchanged": true,
+    "previous_evidence_id": "e82fb6a0-19d2-5391-9516-c866f186a734",
+    "previous_quote_still_present": true,
+    "visible_text_diff": []
+  },
+  {
+    "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/1baff785d18b716e62059282389f6e5a9e7a0b62d605938fb202fe6fcda66a19-d60517f2f59870d407a185b7e6497c384447795a6cc2b119407799703091170f.body",
+    "check": {
+      "checked_at": "2026-11-12T23:46:52.041483+00:00",
+      "company": "OKTA",
+      "date_evidence": [
+        "nnounce Third Quarter Fiscal Year 2027 Financial Results on December 1, 2026 Skip to main content Overview News & Events News Releases Events & Presentations Stock In"
+      ],
+      "fetched_at": "2026-11-12T23:46:52.326318+00:00",
+      "report_date": "2026-12-01",
+      "report_date_present": true,
+      "sha256": "d60517f2f59870d407a185b7e6497c384447795a6cc2b119407799703091170f",
+      "source_date": "2026-11-02",
+      "source_date_present": true,
+      "source_url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+      "status": "confirmed"
+    },
+    "company": "OKTA",
+    "evidence_excerpt": "Investor FAQs Investor Email Alerts Contact IR News Details View All News Okta to Announce Third Quarter Fiscal Year 2027 Financial Results on December 1, 2026 November 2, 2026 SAN FRANCISCO--(BUSINESS WIRE)-- Okta, Inc. (NASDAQ: OKTA), the leading independent identity partner, today announced that it will release its financial results for its third quarter fiscal year 2027 ended October 31, 2026 after the U.S. market close on Tuesday, December 1, 2026. Okta will host a live video webcast that day at 2:00 p.m. Pacific time (5:00 p.m. Eastern time) to discuss the results. Event: Okta\u2019s Third Quarter ",
+    "normalized_visible_text_unchanged": false,
+    "previous_evidence_id": "c28a2554-0a0a-51fd-946a-3d4a129a1c6c",
+    "previous_quote_still_present": true,
+    "visible_text_diff": [
+      "--- \n",
+      "+++ \n",
+      "@@ -1 +1 @@\n",
+      "-Okta Inc. - Okta to Announce Third Quarter Fiscal Year 2027 Financial Results on December 1, 2026 Skip to main content Overview News & Events News Releases Events & Presentations Stock Info Stock Information Analyst Coverage Financials Quarterly Results Annual Reports SEC Filings Responsibility & Governance Responsibility Governance Overview Board of Directors Investor Services Investor FAQs Investor Email Alerts Contact IR News Details View All News Okta to Announce Third Quarter Fiscal Year 2027 Financial Results on December 1, 2026 November 2, 2026 SAN FRANCISCO--(BUSINESS WIRE)-- Okta, Inc. (NASDAQ: OKTA), the leading independent identity partner, today announced that it will release its financial results for its third quarter fiscal year 2027 ended October 31, 2026 after the U.S. market close on Tuesday, December 1, 2026. Okta will host a live video webcast that day at 2:00 p.m. Pacific time (5:00 p.m. Eastern time) to discuss the results. Event: Okta\u2019s Third Quarter Fiscal Year 2027 Financial Results Date: Tuesday, December 1, 2026 Time: 2:00 p.m. Pacific time (5:00 p.m. Eastern time) Webcast: investor.okta.com A webcast replay will be accessible from the Okta investor relations website at investor.okta.com . The press release will be accessible from the Okta investor relations website prior to the commencement of the event. About Okta Okta, Inc. is The World\u2019s Identity Company\u2122. We secure AI, machine, and human identity so everyone is free to safely use any technology. Our workforce and customer solutions empower businesses and developers to protect their AI agents, users, employees, and partners while driving security, efficiencies, and innovation. Learn why the world\u2019s leading brands trust Okta for authentication, authorization, and more at okta.com . Okta uses its investor.okta.com and okta.com/blog websites (including the Security Blog, Okta Developer Blog, and Auth0 Developer Blog) as a means of disclosing material non-public information, announcing upcoming investor conferences, and for complying with its disclosure obligations under Regulation FD. Accordingly, you should monitor our investor relations and okta.com/blog websites in addition to following our press releases, SEC filings, and public conference calls and webcasts. Investor Contact: Dave Gennarelli investor@okta.com Media Contact: Eddie McGraw press@okta.com Source: Okta, Inc. View All News Quick Links SEC Filings opens in new window Investor FAQs opens in new window Solutions Protect Against Data Breaches Secure, Seamless Customer Experience Collaborate with Partners Reduce IT Friction Increase M&A Agility View All \u203a Resources Whitepapers Analyst Research Webinars Events Businesses @ Work Report Products Workforce Identity Cloud Customer Identity Cloud For Small Businesses (SMB) Okta AI Okta Developer Okta Integration Network Email Alerts Personal Information Email Address * Required Investor Alert Options * News Quarterly Reports Annual Reports SEC Filings End of Day Stock Quote Events & Presentations Submit Unsubscribe \u00a9 2026 Okta Inc. - All rights reserved Powered By Q4 Inc. 5.191.0.1 (opens in new window) Privacy opens in new window | Security opens in new window | FAQ opens in new window | Visit our Developer Site opens in new window",
+      "+Okta Inc. - Okta to Announce Third Quarter Fiscal Year 2027 Financial Results on December 1, 2026 Skip to main content Overview News & Events News Releases Events & Presentations Stock Info Stock Information Analyst Coverage Financials Quarterly Results Annual Reports SEC Filings Responsibility & Governance Responsibility Governance Overview Board of Directors Investor Services Investor FAQs Investor Email Alerts Contact IR News Details View All News Okta to Announce Third Quarter Fiscal Year 2027 Financial Results on December 1, 2026 November 2, 2026 SAN FRANCISCO--(BUSINESS WIRE)-- Okta, Inc. (NASDAQ: OKTA), the leading independent identity partner, today announced that it will release its financial results for its third quarter fiscal year 2027 ended October 31, 2026 after the U.S. market close on Tuesday, December 1, 2026. Okta will host a live video webcast that day at 2:00 p.m. Pacific time (5:00 p.m. Eastern time) to discuss the results. Event: Okta\u2019s Third Quarter Fiscal Year 2027 Financial Results Date: Tuesday, December 1, 2026 Time: 2:00 p.m. Pacific time (5:00 p.m. Eastern time) Webcast: investor.okta.com A webcast replay will be accessible from the Okta investor relations website at investor.okta.com . The press release will be accessible from the Okta investor relations website prior to the commencement of the event. About Okta Okta, Inc. is The World\u2019s Identity Company\u2122. We secure AI, machine, and human identity so everyone is free to safely use any technology. Our workforce and customer solutions empower businesses and developers to protect their AI agents, users, employees, and partners while driving security, efficiencies, and innovation. Learn why the world\u2019s leading brands trust Okta for authentication, authorization, and more at okta.com . Okta uses its investor.okta.com and okta.com/blog websites (including the Security Blog, Okta Developer Blog, and Auth0 Developer Blog) as a means of disclosing material non-public information, announcing upcoming investor conferences, and for complying with its disclosure obligations under Regulation FD. Accordingly, you should monitor our investor relations and okta.com/blog websites in addition to following our press releases, SEC filings, and public conference calls and webcasts. Investor Contact: Dave Gennarelli investor@okta.com Media Contact: Eddie McGraw press@okta.com Source: Okta, Inc. View All News Quick Links SEC Filings opens in new window Investor FAQs opens in new window Solutions Protect Against Data Breaches Secure, Seamless Customer Experience Collaborate with Partners Reduce IT Friction Increase M&A Agility View All \u203a Resources Whitepapers Analyst Research Webinars Events Businesses @ Work Report Products Workforce Identity Cloud Customer Identity Cloud For Small Businesses (SMB) Okta AI Okta Developer Okta Integration Network Email Alerts Personal Information Email Address * Required Email Address is required. Email Address is invalid. Investor Alert Options * News Quarterly Reports Annual Reports SEC Filings End of Day Stock Quote Events & Presentations Investor Alert Options is required. The captcha test has failed. Please try again. Submit Unsubscribe \u00a9 2026 Okta Inc. - All rights reserved Powered By Q4 Inc. 5.191.0.1 (opens in new window) Privacy opens in new window | Security opens in new window | FAQ opens in new window | Visit our Developer Site opens in new window"
+    ]
+  },
+  {
+    "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/31bd7c94a4aa0a85c8f526e08e9b3666146e4132d257112cbe9f0f2843d9ba13-bb35e403595b4af82df3ffd18d02f30f3859d3ed218ba20ff3224c29faccefc5.body",
+    "check": {
+      "checked_at": "2026-11-12T23:46:52.384801+00:00",
+      "company": "IOT",
+      "date_evidence": [
+        "nnounce Third Quarter Fiscal Year 2027 Financial Results on December 3, 2026 Skip to main content Overview News Events & Presentations Events Presentations Stock Info"
+      ],
+      "fetched_at": "2026-11-12T23:46:52.622261+00:00",
+      "report_date": "2026-12-03",
+      "report_date_present": true,
+      "sha256": "bb35e403595b4af82df3ffd18d02f30f3859d3ed218ba20ff3224c29faccefc5",
+      "source_date": "2026-11-02",
+      "source_date_present": true,
+      "source_url": "https://investors.samsara.com/news/news-details/2026/Samsara-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-3-2026/default.aspx",
+      "status": "confirmed"
+    },
+    "company": "IOT",
+    "evidence_excerpt": "avery Statement Tax Policy ESG View All News Samsara to Announce Third Quarter Fiscal Year 2027 Financial Results on December 3, 2026 November 2, 2026 SAN FRANCISCO--(BUSINESS WIRE)-- Samsara Inc. (\"Samsara\") (NYSE: IOT), the pioneer of the Connected Operations\u00ae Platform, today announced it will release its financial results for the third quarter of fiscal year 2027, which ended October 31, 2026, after the U.S. market closes on Thursday, December 3, 2026. Samsara will host a live webcast that day at 2:00 p.m. Pacific time (5:00 p.m. Eastern time) to discuss the results. Event : Samsara's Third Quarter ",
+    "normalized_visible_text_unchanged": true,
+    "previous_evidence_id": "7e01749a-258c-5831-aace-9e0d050eb715",
+    "previous_quote_still_present": true,
+    "visible_text_diff": []
+  }
+]

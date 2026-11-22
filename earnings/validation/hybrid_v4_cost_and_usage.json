@@ -1,0 +1,894 @@
+{
+  "accounting_rates_not_invoice": {
+    "input_per_million": "1.50",
+    "output_including_thinking_per_million": "7.50"
+  },
+  "ceiling_not_provider_cap": true,
+  "count_tokens_charge_usd": "0",
+  "original_probe_attempts": 1,
+  "recorded_at": "2026-11-14T03:37:01.986627+00:00",
+  "revised_batch_attempts": 10,
+  "rows": [
+    {
+      "accounted_usd": "0.104571",
+      "attempt_id": "c1e46a1e-f992-4325-bb99-80cca3399975",
+      "case_id": "pilot-0",
+      "counted_input_tokens": 46870,
+      "finish_reasons": [
+        "STOP"
+      ],
+      "held_usd": "0.104571",
+      "known_subtotal_usd_not_extra_charge": "0.104571",
+      "latency_seconds": "12.591813334263861",
+      "requested_model": "gemini-3.6-flash",
+      "reserved_usd": "0.193185",
+      "returned_model_version": "gemini-3.6-flash",
+      "usage": {
+        "cache_tokens_details": null,
+        "cached_content_token_count": null,
+        "candidates_token_count": 2595,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2595
+          }
+        ],
+        "prompt_token_count": 46309,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 46309
+          }
+        ],
+        "thoughts_token_count": 2086,
+        "tool_use_prompt_token_count": null,
+        "tool_use_prompt_tokens_details": null,
+        "total_token_count": 50990,
+        "traffic_type": "ON_DEMAND"
+      },
+      "wire_usage_metadata": [
+        {
+          "body_bytes": 16966,
+          "body_sha256": "959cd44603d827adf20258d2ddca86328eea8665b69e87b30982fcc782eca608",
+          "capture": "original HTTP JSON before SDK parsing; metadata allowlist only",
+          "json_valid": true,
+          "status_code": 200,
+          "usage_fields": {
+            "cachedContentTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "candidatesTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 2595
+            },
+            "promptTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 46309
+            },
+            "thoughtsTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 2086
+            },
+            "toolUsePromptTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "totalTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 50990
+            }
+          },
+          "usage_metadata_is_null": false,
+          "usage_metadata_present": true
+        }
+      ]
+    },
+    {
+      "accounted_usd": "0.07047",
+      "attempt_id": "ab7dfca7-e78d-4e18-bcd2-2497062baebe",
+      "case_id": "pilot-1",
+      "counted_input_tokens": 38091,
+      "finish_reasons": [
+        "STOP"
+      ],
+      "held_usd": "0.07047",
+      "known_subtotal_usd_not_extra_charge": "0.07047",
+      "latency_seconds": "7.910902875009924",
+      "requested_model": "gemini-3.6-flash",
+      "reserved_usd": "0.1800165",
+      "returned_model_version": "gemini-3.6-flash",
+      "usage": {
+        "cache_tokens_details": null,
+        "cached_content_token_count": null,
+        "candidates_token_count": 777,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 777
+          }
+        ],
+        "prompt_token_count": 37530,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 37530
+          }
+        ],
+        "thoughts_token_count": 1113,
+        "tool_use_prompt_token_count": null,
+        "tool_use_prompt_tokens_details": null,
+        "total_token_count": 39420,
+        "traffic_type": "ON_DEMAND"
+      },
+      "wire_usage_metadata": [
+        {
+          "body_bytes": 8998,
+          "body_sha256": "68337f2319ca08598984e65fe100c55fbbe02fb308ab82366add19992db12c2b",
+          "capture": "original HTTP JSON before SDK parsing; metadata allowlist only",
+          "json_valid": true,
+          "status_code": 200,
+          "usage_fields": {
+            "cachedContentTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "candidatesTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 777
+            },
+            "promptTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 37530
+            },
+            "thoughtsTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 1113
+            },
+            "toolUsePromptTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "totalTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 39420
+            }
+          },
+          "usage_metadata_is_null": false,
+          "usage_metadata_present": true
+        }
+      ]
+    },
+    {
+      "accounted_usd": null,
+      "attempt_id": "52982fdd-62d0-4e35-8775-c272ade45f85",
+      "case_id": "pilot-4",
+      "counted_input_tokens": 52036,
+      "finish_reasons": [
+        "STOP"
+      ],
+      "held_usd": "0.200934",
+      "known_subtotal_usd_not_extra_charge": "0.08496",
+      "latency_seconds": "3.4773491248488426",
+      "requested_model": "gemini-3.6-flash",
+      "reserved_usd": "0.200934",
+      "returned_model_version": "gemini-3.6-flash",
+      "usage": {
+        "cache_tokens_details": null,
+        "cached_content_token_count": null,
+        "candidates_token_count": 1033,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1033
+          }
+        ],
+        "prompt_token_count": 51475,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 51475
+          }
+        ],
+        "thoughts_token_count": null,
+        "tool_use_prompt_token_count": null,
+        "tool_use_prompt_tokens_details": null,
+        "total_token_count": 52508,
+        "traffic_type": "ON_DEMAND"
+      },
+      "wire_usage_metadata": [
+        {
+          "body_bytes": 4527,
+          "body_sha256": "f79501447e05517343987e6a3480e1909ff86e31512c64558568e323443eefe3",
+          "capture": "original HTTP JSON before SDK parsing; metadata allowlist only",
+          "json_valid": true,
+          "status_code": 200,
+          "usage_fields": {
+            "cachedContentTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "candidatesTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 1033
+            },
+            "promptTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 51475
+            },
+            "thoughtsTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "toolUsePromptTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "totalTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 52508
+            }
+          },
+          "usage_metadata_is_null": false,
+          "usage_metadata_present": true
+        }
+      ]
+    },
+    {
+      "accounted_usd": null,
+      "attempt_id": "388923c1-c5b9-4769-9454-9aa5d68e4517",
+      "case_id": "pilot-11",
+      "counted_input_tokens": 40874,
+      "finish_reasons": [
+        "STOP"
+      ],
+      "held_usd": "0.184191",
+      "known_subtotal_usd_not_extra_charge": "0.070527",
+      "latency_seconds": "3.5631453753449023",
+      "requested_model": "gemini-3.6-flash",
+      "reserved_usd": "0.184191",
+      "returned_model_version": "gemini-3.6-flash",
+      "usage": {
+        "cache_tokens_details": null,
+        "cached_content_token_count": null,
+        "candidates_token_count": 1341,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1341
+          }
+        ],
+        "prompt_token_count": 40313,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 40313
+          }
+        ],
+        "thoughts_token_count": null,
+        "tool_use_prompt_token_count": null,
+        "tool_use_prompt_tokens_details": null,
+        "total_token_count": 41654,
+        "traffic_type": "ON_DEMAND"
+      },
+      "wire_usage_metadata": [
+        {
+          "body_bytes": 5512,
+          "body_sha256": "3d4a1dfc61b38af804cd0735e00aac33d2d707885e6ab26e5e2b3dae7ad3c690",
+          "capture": "original HTTP JSON before SDK parsing; metadata allowlist only",
+          "json_valid": true,
+          "status_code": 200,
+          "usage_fields": {
+            "cachedContentTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "candidatesTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 1341
+            },
+            "promptTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 40313
+            },
+            "thoughtsTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "toolUsePromptTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "totalTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 41654
+            }
+          },
+          "usage_metadata_is_null": false,
+          "usage_metadata_present": true
+        }
+      ]
+    },
+    {
+      "accounted_usd": null,
+      "attempt_id": "2ff3b1b9-eb85-4443-8c70-039e3c11c0e0",
+      "case_id": "pilot-14",
+      "counted_input_tokens": 24712,
+      "finish_reasons": [
+        "STOP"
+      ],
+      "held_usd": "0.159948",
+      "known_subtotal_usd_not_extra_charge": "0.046014",
+      "latency_seconds": "8.39861087501049",
+      "requested_model": "gemini-3.6-flash",
+      "reserved_usd": "0.159948",
+      "returned_model_version": "gemini-3.6-flash",
+      "usage": {
+        "cache_tokens_details": null,
+        "cached_content_token_count": null,
+        "candidates_token_count": 1305,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1305
+          }
+        ],
+        "prompt_token_count": 24151,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 24151
+          }
+        ],
+        "thoughts_token_count": null,
+        "tool_use_prompt_token_count": null,
+        "tool_use_prompt_tokens_details": null,
+        "total_token_count": 25456,
+        "traffic_type": "ON_DEMAND"
+      },
+      "wire_usage_metadata": [
+        {
+          "body_bytes": 5406,
+          "body_sha256": "ad2a2f91bc3ef0de29eebecdb51248d3846ebcf8e9d2d73dffec8fa8ce1466bc",
+          "capture": "original HTTP JSON before SDK parsing; metadata allowlist only",
+          "json_valid": true,
+          "status_code": 200,
+          "usage_fields": {
+            "cachedContentTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "candidatesTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 1305
+            },
+            "promptTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 24151
+            },
+            "thoughtsTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "toolUsePromptTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "totalTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 25456
+            }
+          },
+          "usage_metadata_is_null": false,
+          "usage_metadata_present": true
+        }
+      ]
+    },
+    {
+      "accounted_usd": null,
+      "attempt_id": "1b4b77e0-0262-4d3e-a2ef-84616310f1bc",
+      "case_id": "pilot-19",
+      "counted_input_tokens": 57215,
+      "finish_reasons": [
+        "STOP"
+      ],
+      "held_usd": "0.2087025",
+      "known_subtotal_usd_not_extra_charge": "0.1015035",
+      "latency_seconds": "4.9084315416403115",
+      "requested_model": "gemini-3.6-flash",
+      "reserved_usd": "0.2087025",
+      "returned_model_version": "gemini-3.6-flash",
+      "usage": {
+        "cache_tokens_details": null,
+        "cached_content_token_count": null,
+        "candidates_token_count": 2203,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2203
+          }
+        ],
+        "prompt_token_count": 56654,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 56654
+          }
+        ],
+        "thoughts_token_count": null,
+        "tool_use_prompt_token_count": null,
+        "tool_use_prompt_tokens_details": null,
+        "total_token_count": 58857,
+        "traffic_type": "ON_DEMAND"
+      },
+      "wire_usage_metadata": [
+        {
+          "body_bytes": 8782,
+          "body_sha256": "db0f2d2ef1f4d39506746b88f37278baa0c482f1e63bea96453d852632c304ea",
+          "capture": "original HTTP JSON before SDK parsing; metadata allowlist only",
+          "json_valid": true,
+          "status_code": 200,
+          "usage_fields": {
+            "cachedContentTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "candidatesTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 2203
+            },
+            "promptTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 56654
+            },
+            "thoughtsTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "toolUsePromptTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "totalTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 58857
+            }
+          },
+          "usage_metadata_is_null": false,
+          "usage_metadata_present": true
+        }
+      ]
+    },
+    {
+      "accounted_usd": "0.118149",
+      "attempt_id": "43f5d89a-3991-4ffc-9353-c2ed2f2355af",
+      "case_id": "pilot-27",
+      "counted_input_tokens": 63417,
+      "finish_reasons": [
+        "STOP"
+      ],
+      "held_usd": "0.118149",
+      "known_subtotal_usd_not_extra_charge": "0.118149",
+      "latency_seconds": "9.944116459228098",
+      "requested_model": "gemini-3.6-flash",
+      "reserved_usd": "0.2180055",
+      "returned_model_version": "gemini-3.6-flash",
+      "usage": {
+        "cache_tokens_details": null,
+        "cached_content_token_count": null,
+        "candidates_token_count": 1862,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1862
+          }
+        ],
+        "prompt_token_count": 62856,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 62856
+          }
+        ],
+        "thoughts_token_count": 1320,
+        "tool_use_prompt_token_count": null,
+        "tool_use_prompt_tokens_details": null,
+        "total_token_count": 66038,
+        "traffic_type": "ON_DEMAND"
+      },
+      "wire_usage_metadata": [
+        {
+          "body_bytes": 13603,
+          "body_sha256": "560e5adc546a9b1e1342cd594aa9f269116f6a2d118eb13c39fff79b48b4daab",
+          "capture": "original HTTP JSON before SDK parsing; metadata allowlist only",
+          "json_valid": true,
+          "status_code": 200,
+          "usage_fields": {
+            "cachedContentTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "candidatesTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 1862
+            },
+            "promptTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 62856
+            },
+            "thoughtsTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 1320
+            },
+            "toolUsePromptTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "totalTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 66038
+            }
+          },
+          "usage_metadata_is_null": false,
+          "usage_metadata_present": true
+        }
+      ]
+    },
+    {
+      "accounted_usd": null,
+      "attempt_id": "9f1deb58-61ac-4045-92fb-dafc97ad4165",
+      "case_id": "pilot-28",
+      "counted_input_tokens": 31494,
+      "finish_reasons": [
+        "STOP"
+      ],
+      "held_usd": "0.170121",
+      "known_subtotal_usd_not_extra_charge": "0.062232",
+      "latency_seconds": "14.593969999812543",
+      "requested_model": "gemini-3.6-flash",
+      "reserved_usd": "0.170121",
+      "returned_model_version": "gemini-3.6-flash",
+      "usage": {
+        "cache_tokens_details": null,
+        "cached_content_token_count": null,
+        "candidates_token_count": 2111,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2111
+          }
+        ],
+        "prompt_token_count": 30933,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 30933
+          }
+        ],
+        "thoughts_token_count": null,
+        "tool_use_prompt_token_count": null,
+        "tool_use_prompt_tokens_details": null,
+        "total_token_count": 33044,
+        "traffic_type": "ON_DEMAND"
+      },
+      "wire_usage_metadata": [
+        {
+          "body_bytes": 7990,
+          "body_sha256": "bc2be2416eb95a12844c2ff751cf64897a208f904f3ed50173bfea98401c3290",
+          "capture": "original HTTP JSON before SDK parsing; metadata allowlist only",
+          "json_valid": true,
+          "status_code": 200,
+          "usage_fields": {
+            "cachedContentTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "candidatesTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 2111
+            },
+            "promptTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 30933
+            },
+            "thoughtsTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "toolUsePromptTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "totalTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 33044
+            }
+          },
+          "usage_metadata_is_null": false,
+          "usage_metadata_present": true
+        }
+      ]
+    },
+    {
+      "accounted_usd": "0.070335",
+      "attempt_id": "d12fc762-eeed-482f-a9c6-e11aaa6a4739",
+      "case_id": "IOT-0001642896-24-000059",
+      "counted_input_tokens": 32036,
+      "finish_reasons": [
+        "STOP"
+      ],
+      "held_usd": "0.070335",
+      "known_subtotal_usd_not_extra_charge": "0.070335",
+      "latency_seconds": "65.26812783302739",
+      "requested_model": "gemini-3.6-flash",
+      "reserved_usd": "0.170934",
+      "returned_model_version": "gemini-3.6-flash",
+      "usage": {
+        "cache_tokens_details": null,
+        "cached_content_token_count": null,
+        "candidates_token_count": 2170,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 2170
+          }
+        ],
+        "prompt_token_count": 31475,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 31475
+          }
+        ],
+        "thoughts_token_count": 913,
+        "tool_use_prompt_token_count": null,
+        "tool_use_prompt_tokens_details": null,
+        "total_token_count": 34558,
+        "traffic_type": "ON_DEMAND"
+      },
+      "wire_usage_metadata": [
+        {
+          "body_bytes": 12502,
+          "body_sha256": "6a4d3ad779ce0fa665ea8ba28ea7955403813116b52a88ffe841633c0c382c18",
+          "capture": "original HTTP JSON before SDK parsing; metadata allowlist only",
+          "json_valid": true,
+          "status_code": 200,
+          "usage_fields": {
+            "cachedContentTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "candidatesTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 2170
+            },
+            "promptTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 31475
+            },
+            "thoughtsTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 913
+            },
+            "toolUsePromptTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "totalTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 34558
+            }
+          },
+          "usage_metadata_is_null": false,
+          "usage_metadata_present": true
+        }
+      ]
+    },
+    {
+      "accounted_usd": null,
+      "attempt_id": "0d891e33-c79a-4676-8181-c1282b250c8f",
+      "case_id": "CRWD-0001535527-24-000017",
+      "counted_input_tokens": 47078,
+      "finish_reasons": [
+        "STOP"
+      ],
+      "held_usd": "0.193497",
+      "known_subtotal_usd_not_extra_charge": "0.082128",
+      "latency_seconds": "5.3895224169828",
+      "requested_model": "gemini-3.6-flash",
+      "reserved_usd": "0.193497",
+      "returned_model_version": "gemini-3.6-flash",
+      "usage": {
+        "cache_tokens_details": null,
+        "cached_content_token_count": null,
+        "candidates_token_count": 1647,
+        "candidates_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 1647
+          }
+        ],
+        "prompt_token_count": 46517,
+        "prompt_tokens_details": [
+          {
+            "modality": "TEXT",
+            "token_count": 46517
+          }
+        ],
+        "thoughts_token_count": null,
+        "tool_use_prompt_token_count": null,
+        "tool_use_prompt_tokens_details": null,
+        "total_token_count": 48164,
+        "traffic_type": "ON_DEMAND"
+      },
+      "wire_usage_metadata": [
+        {
+          "body_bytes": 6420,
+          "body_sha256": "ff52a840babe6c1c28bbd3dacc97fe8545f4341a8064846711ae64d0e61d9480",
+          "capture": "original HTTP JSON before SDK parsing; metadata allowlist only",
+          "json_valid": true,
+          "status_code": 200,
+          "usage_fields": {
+            "cachedContentTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "candidatesTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 1647
+            },
+            "promptTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 46517
+            },
+            "thoughtsTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "toolUsePromptTokenCount": {
+              "is_null": false,
+              "present": false,
+              "type_valid": true,
+              "value": null
+            },
+            "totalTokenCount": {
+              "is_null": false,
+              "present": true,
+              "type_valid": true,
+              "value": 48164
+            }
+          },
+          "usage_metadata_is_null": false,
+          "usage_metadata_present": true
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "active_attempts": 0,
+    "attempts": 11,
+    "ceiling_usd": "15",
+    "halted": false,
+    "known_accounted_usd": "0.363525",
+    "known_counter_subtotals_usd_not_extra_charges": "0.9593205",
+    "outstanding_unknown_or_active_reservations_usd": "2.2373935",
+    "total_held_usd": "2.6009185"
+  },
+  "unknown_subtotals_do_not_add_to_held_reservations": true
+}

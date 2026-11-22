@@ -1,0 +1,1923 @@
+{
+  "abstention_counts": {
+    "ANNUAL_STATUS_HISTORY_MISSING": 2,
+    "NON_CONSOLIDATED_METRIC": 13
+  },
+  "abstentions": [
+    {
+      "code": "NON_CONSOLIDATED_METRIC",
+      "quote": "\u2022 Annual Recurring Revenue (ARR) increased 42% year-over-year and grew to $2.73 billion as of April 30, 2023, of which $174.2 million was net new ARR added in the quarter.",
+      "quote_start": null,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552723000012/crwd-20230531xex991.htm"
+    },
+    {
+      "code": "NON_CONSOLIDATED_METRIC",
+      "quote": "Annual Recurring Revenue",
+      "quote_start": null,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552723000012/crwd-20230531xex991.htm"
+    },
+    {
+      "code": "NON_CONSOLIDATED_METRIC",
+      "quote": "Annual Recurring Revenue (ARR) $ 856.2 $ 607.2 41 %",
+      "quote_start": null,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289623000053/samsaraepr-q12024.htm"
+    },
+    {
+      "code": "NON_CONSOLIDATED_METRIC",
+      "quote": "These risks and uncertainties include our ability to retain customers and expand the Applications used by our customers, our ability to attract new customers, our future financial performance, including trends in revenue and annual recurring revenue, net retention rate, costs of revenue, gross profit or gross margin, operating expenses, customer counts, non-GAAP financial measures (such as non-GAAP gross margin, non-GAAP operating margin, and adjusted free cash flow margin), our ability to achieve or maintain profitability, the demand for our products or for solutions for connected operations in general, the impact of the Russia-Ukraine conflict, geopolitical tensions involving China, the COVID-19 pandemic, and macroeconomic conditions globally on our and our customers\u2019, partners\u2019 and suppliers\u2019 operations and future financial performance, possible harm caused by silicon component shortages and other supply chain constraints, the length of our sales cycles, possible harm caused by a security breach or other incident affecting our or our customers\u2019 assets or data, our ability to compete successfully in competitive markets, our ability to respond to rapid technological changes, and our ability to continue to innovate and develop new Applications. The forward-looking statements contained in this press release are also subject to other risks and uncertainties, including those more fully described in our filings and reports that we may file from time to time with the Securities and Exchange Commission, including our Annual Reports on Form 10-K and Quarterly Reports on Form 10-Q.",
+      "quote_start": null,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289623000053/samsaraepr-q12024.htm"
+    },
+    {
+      "code": "NON_CONSOLIDATED_METRIC",
+      "quote": "Annual Recurring Revenue \u2014 We define ARR as the annualized value of subscription contracts that have commenced revenue recognition as of the measurement date.",
+      "quote_start": null,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289623000053/samsaraepr-q12024.htm"
+    },
+    {
+      "code": "ANNUAL_STATUS_HISTORY_MISSING",
+      "end": "2024-01-28",
+      "metric": "consolidated_revenue",
+      "partial_id": "166cb4a2-598e-58a4-bf84-6ba8c2b09cc4",
+      "quote": "For 2023, the Company expects net revenue to be in the range of $9.440 billion to $9.510 billion, representing growth of approximately 17%. Diluted earnings per share are expected to be in the range of $11.74 to $11.94 for the year. This guidance assumes a 30% tax rate.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718723000026/lulu-20230430xex991.htm",
+      "start": "2023-01-30"
+    },
+    {
+      "code": "NON_CONSOLIDATED_METRIC",
+      "quote": "(c) Represents the number of customers with $100,000 or greater in annualized recurring revenue (\u201cARR\u201d) and annualized monthly recurring revenue (\u201cMRR\u201d). ARR includes the revenue we expect to receive from our customers over the following 12 months based on contractual commitments and, in the case of Direct Sales Customers of MongoDB Atlas, by annualizing the prior 90 days of their actual consumption of MongoDB Atlas, assuming no increases or reductions in their subscriptions or usage.",
+      "quote_start": null,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181623000085/mdb-043023xex991xrelease.htm"
+    },
+    {
+      "code": "NON_CONSOLIDATED_METRIC",
+      "quote": "(c) Represents the number of customers with $100,000 or greater in annualized recurring revenue (\u201cARR\u201d) and annualized monthly recurring revenue (\u201cMRR\u201d). ARR includes the revenue we expect to receive from our customers over the following 12 months based on contractual commitments and, in the case of Direct Sales Customers of MongoDB Atlas, by annualizing the prior 90 days of their actual consumption of MongoDB Atlas, assuming no increases or reductions in their subscriptions or usage.",
+      "quote_start": null,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181623000085/mdb-043023xex991xrelease.htm"
+    },
+    {
+      "code": "NON_CONSOLIDATED_METRIC",
+      "quote": "\u2022 Customers with annual recurring revenue over $100,000 was 764 as of April 30, 2023, compared to 655 in the year ago period.",
+      "quote_start": null,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810023000031/pagerdutyq1fy24earningspre.htm"
+    },
+    {
+      "code": "NON_CONSOLIDATED_METRIC",
+      "quote": "We believe that ARR is a key operating metric to measure our business because it is driven by our ability to acquire new subscription and capacity customers and to maintain and expand our relationship with existing customers. ARR represents the annualized revenue run rate of our subscription and capacity contracts at the end of a reporting period, assuming contracts are renewed on their existing terms for customers that are under contracts with us. ARR is not a forecast of future revenue, which can be impacted by contract start and end dates and renewal rates. As discussed above, in the first quarter of fiscal 2024 we adjusted our historical ARR (i) due to a change in the methodology for reflecting consumption and usage based agreements as part of ARR to reflect committed contract values as opposed to based on consumption and usage as a result of expected lower usage and consumption trends resulting from the current macro environment and (ii) to correct some historical recording inaccuracies relating to ARR on certain contracts that were discovered as part of our review of ARR in the first quarter of fiscal 2024. The adjustment to ARR did not impact historical total bookings or revenue.",
+      "quote_start": null,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370823000034/sentineloneq124exhibit991.htm"
+    },
+    {
+      "code": "NON_CONSOLIDATED_METRIC",
+      "quote": "We believe that ARR is a key operating metric to measure our business because it is driven by our ability to acquire new subscription and capacity customers and to maintain and expand our relationship with existing customers. ARR represents the annualized revenue run rate of our subscription and capacity contracts at the end of a reporting period, assuming contracts are renewed on their existing terms for customers that are under contracts with us. ARR is not a forecast of future revenue, which can be impacted by contract start and end dates and renewal rates. As discussed above, in the first quarter of fiscal 2024 we adjusted our historical ARR (i) due to a change in the methodology for reflecting consumption and usage based agreements as part of ARR to reflect committed contract values as opposed to based on consumption and usage as a result of expected lower usage and consumption trends resulting from the current macro environment and (ii) to correct some historical recording inaccuracies relating to ARR on certain contracts that were discovered as part of our review of ARR in the first quarter of fiscal 2024. The adjustment to ARR did not impact historical total bookings or revenue.",
+      "quote_start": null,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370823000034/sentineloneq124exhibit991.htm"
+    },
+    {
+      "code": "NON_CONSOLIDATED_METRIC",
+      "quote": "Annual Recurring Revenue (\u201cARR\u201d): We define annual recurring revenue as the annual run-rate revenue of subscription agreements, including our self-managed and SaaS offerings but excluding professional services, from all customers as measured on the last day of a given month. We calculate ARR by taking the monthly recurring revenue (\u201cMRR\u201d) and multiplying it by 12. MRR for each month is calculated by aggregating, for all customers during that month, monthly revenue from committed contractual amounts of subscriptions, including our self-managed license, self-managed subscription, and SaaS subscription offerings but excluding professional services.",
+      "quote_start": null,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828023020862/gitlab-ex99120230430fy24.htm"
+    },
+    {
+      "code": "NON_CONSOLIDATED_METRIC",
+      "quote": "Annual Recurring Revenue (\u201cARR\u201d): We define annual recurring revenue as the annual run-rate revenue of subscription agreements, including our self-managed and SaaS offerings but excluding professional services, from all customers as measured on the last day of a given month. We calculate ARR by taking the monthly recurring revenue (\u201cMRR\u201d) and multiplying it by 12. MRR for each month is calculated by aggregating, for all customers during that month, monthly revenue from committed contractual amounts of subscriptions, including our self-managed license, self-managed subscription, and SaaS subscription offerings but excluding professional services.",
+      "quote_start": null,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828023020862/gitlab-ex99120230430fy24.htm"
+    },
+    {
+      "code": "NON_CONSOLIDATED_METRIC",
+      "quote": "Annual Recurring Revenue (\u201cARR\u201d): We define annual recurring revenue as the annual run-rate revenue of subscription agreements, including our self-managed and SaaS offerings but excluding professional services, from all customers as measured on the last day of a given month. We calculate ARR by taking the monthly recurring revenue (\u201cMRR\u201d) and multiplying it by 12. MRR for each month is calculated by aggregating, for all customers during that month, monthly revenue from committed contractual amounts of subscriptions, including our self-managed license, self-managed subscription, and SaaS subscription offerings but excluding professional services.",
+      "quote_start": null,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828023020862/gitlab-ex99120230430fy24.htm"
+    },
+    {
+      "code": "ANNUAL_STATUS_HISTORY_MISSING",
+      "end": "2023-12-01",
+      "metric": "consolidated_revenue",
+      "partial_id": "630087fb-8929-5bec-8c4b-c30dbac4b818",
+      "quote": "Total revenue $19.25 billion to $19.35 billion",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000133/adbeex991q223.htm",
+      "start": "2022-12-03"
+    }
+  ],
+  "candidates": [
+    {
+      "accession": "0001108524-23-000021",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "c34be35ea32431893af83b971c45f3b7e8c45d282e8ad3710106531ada352c32",
+      "company": "CRM",
+      "context": {
+        "amount_column": 0,
+        "headers": "Q2 FY24 Guidance Full Year FY24 Guidance",
+        "metric_label": "Revenue",
+        "surrounding_context": "on growth guidance, and revenue guidance. The Company is reiterating its full year FY24 revenue guidance and updating its GAAP and non-GAAP EPS guidance, GAAP and non-GAAP operating margin guidance, and operating cash flow guidance. Our guidance assumes no change to the value of the Company's strategic investment portfolio as it is not possible to forecast future gains and losses. In addition, the guidance below is based on estimated GAAP tax rates that reflect the Company\u2019s currently available information, and excludes forecasted discrete tax items such as the tax effects of stock-based compensation. The GAAP tax rates may fluctuate due to discrete tax items and related effects in conjunction with certain provisions in the Tax Cuts and Jobs Act, future acquisitions or other transactions. ",
+        "table_prefix": "Q2 FY24 Guidance Full Year FY24 Guidance "
+      },
+      "direct_guidance": true,
+      "end": "2023-07-31",
+      "exhibit": "99.1",
+      "filed": "2023-05-31",
+      "fiscal_label": "Q2 FY2024",
+      "high": "8530000000.00",
+      "id": "f3fd0741-fc92-5938-aaac-f4ffe613dad5",
+      "issuance_evidence": {
+        "end": "2023-05-31",
+        "evidence_end": 164,
+        "evidence_quote": "May 31, 2023",
+        "evidence_source": "exhibit",
+        "evidence_start": 152,
+        "precision": "day",
+        "start": "2023-05-31"
+      },
+      "issued": {
+        "end": "2023-05-31",
+        "precision": "day",
+        "start": "2023-05-31"
+      },
+      "low": "8510000000.00",
+      "method_version": "revenue-rules-v2",
+      "metric": "quarterly_consolidated_revenue",
+      "origin": "table",
+      "original_verified": false,
+      "quote": "Revenue $8.51 - $8.53 Billion $34.5 - $34.7 Billion",
+      "quote_end": 4561,
+      "quote_start": 4510,
+      "review_required": true,
+      "source_sha256": "720f32e93d68d7fd198b19b0e0dfd54484c352dd26743e1a1e2e17a2d91d0f32",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852423000021/crm-q1fy24xexhibit991.htm",
+      "start": "2023-05-01",
+      "status": "initial",
+      "status_reason": "FIRST_DIRECT_QUARTER_RANGE_OBSERVED_NOT_ORIGINAL_VERIFIED",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001108524-23-000021",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "c34be35ea32431893af83b971c45f3b7e8c45d282e8ad3710106531ada352c32",
+      "company": "CRM",
+      "context": {
+        "amount_column": 1,
+        "headers": "Q2 FY24 Guidance Full Year FY24 Guidance",
+        "metric_label": "Revenue",
+        "surrounding_context": "on growth guidance, and revenue guidance. The Company is reiterating its full year FY24 revenue guidance and updating its GAAP and non-GAAP EPS guidance, GAAP and non-GAAP operating margin guidance, and operating cash flow guidance. Our guidance assumes no change to the value of the Company's strategic investment portfolio as it is not possible to forecast future gains and losses. In addition, the guidance below is based on estimated GAAP tax rates that reflect the Company\u2019s currently available information, and excludes forecasted discrete tax items such as the tax effects of stock-based compensation. The GAAP tax rates may fluctuate due to discrete tax items and related effects in conjunction with certain provisions in the Tax Cuts and Jobs Act, future acquisitions or other transactions. ",
+        "table_prefix": "Q2 FY24 Guidance Full Year FY24 Guidance "
+      },
+      "direct_guidance": true,
+      "end": "2024-01-31",
+      "exhibit": "99.1",
+      "filed": "2023-05-31",
+      "fiscal_label": "FY2024",
+      "high": "34700000000.0",
+      "id": "44262e9b-7276-5b71-9ec1-96c9e8129f52",
+      "issuance_evidence": {
+        "end": "2023-05-31",
+        "evidence_end": 164,
+        "evidence_quote": "May 31, 2023",
+        "evidence_source": "exhibit",
+        "evidence_start": 152,
+        "precision": "day",
+        "start": "2023-05-31"
+      },
+      "issued": {
+        "end": "2023-05-31",
+        "precision": "day",
+        "start": "2023-05-31"
+      },
+      "low": "34500000000.0",
+      "method_version": "revenue-rules-v2",
+      "metric": "consolidated_revenue",
+      "origin": "table",
+      "original_verified": false,
+      "quote": "Revenue $8.51 - $8.53 Billion $34.5 - $34.7 Billion",
+      "quote_end": 4561,
+      "quote_start": 4510,
+      "review_required": true,
+      "source_sha256": "720f32e93d68d7fd198b19b0e0dfd54484c352dd26743e1a1e2e17a2d91d0f32",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852423000021/crm-q1fy24xexhibit991.htm",
+      "start": "2023-02-01",
+      "status": "reaffirmed",
+      "status_evidence": {
+        "current": [
+          "34500000000.0",
+          "34700000000.0"
+        ],
+        "prior": [
+          "34500000000.0",
+          "34700000000.0"
+        ],
+        "same_metric_and_period": true
+      },
+      "status_input_id": "d8e0d4ea-e7e4-5ea6-ade2-3146dfffe15f",
+      "status_reason": "EXACT_TARGET_RANGE_UNCHANGED",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001535527-23-000012",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "46d835a3dd55da1fd609dce5ba1726760b2eac5f5efd8b727c5817f08a62f30d",
+      "company": "CRWD",
+      "context": {
+        "amount_column": 0,
+        "headers": "Q2 FY24 Guidance Full Year FY24 Guidance",
+        "metric_label": "Total revenue",
+        "surrounding_context": "pense, amortization expense of acquired intangible assets, including purchased patents, amortization of debt issuance costs and discount, mark-to-market adjustments on deferred compensation liabilities, legal reserve and settlement charges or benefits, gain (loss) and other income from strategic investments, acquisition-related expenses, and losses (gains) from deferred compensation assets. The company has not provided the most directly comparable GAAP measures because certain items are out of the company's control or cannot be reasonably predicted. Accordingly, a reconciliation for non-GAAP income from operations, non-GAAP net income attributable to CrowdStrike, and non-GAAP net income per share attributable to CrowdStrike common stockholders is not available without unreasonable effort. ",
+        "table_prefix": "Q2 FY24 Guidance Full Year FY24 Guidance "
+      },
+      "direct_guidance": true,
+      "end": "2023-07-31",
+      "exhibit": "99.1",
+      "filed": "2023-05-31",
+      "fiscal_label": "Q2 FY2024",
+      "high": "727400000.0",
+      "id": "59d4ae9f-e246-5414-bbf7-cac45d34b236",
+      "issuance_evidence": {
+        "end": "2023-05-31",
+        "evidence_end": 2212,
+        "evidence_quote": "May 31, 2023",
+        "evidence_source": "primary",
+        "evidence_start": 2200,
+        "precision": "day",
+        "start": "2023-05-31"
+      },
+      "issued": {
+        "end": "2023-05-31",
+        "precision": "day",
+        "start": "2023-05-31"
+      },
+      "low": "717200000.0",
+      "method_version": "revenue-rules-v2",
+      "metric": "quarterly_consolidated_revenue",
+      "origin": "table",
+      "original_verified": false,
+      "quote": "Total revenue $717.2 - $727.4 million $3,000.5 - $3,036.7 million",
+      "quote_end": 6385,
+      "quote_start": 6320,
+      "review_required": true,
+      "source_sha256": "816bd4279cdbe48635202d2ae0435aee7ad922fa420c06129f5e28933c80b627",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552723000012/crwd-20230531xex991.htm",
+      "start": "2023-05-01",
+      "status": "initial",
+      "status_reason": "FIRST_DIRECT_QUARTER_RANGE_OBSERVED_NOT_ORIGINAL_VERIFIED",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001535527-23-000012",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "46d835a3dd55da1fd609dce5ba1726760b2eac5f5efd8b727c5817f08a62f30d",
+      "company": "CRWD",
+      "context": {
+        "amount_column": 1,
+        "headers": "Q2 FY24 Guidance Full Year FY24 Guidance",
+        "metric_label": "Total revenue",
+        "surrounding_context": "pense, amortization expense of acquired intangible assets, including purchased patents, amortization of debt issuance costs and discount, mark-to-market adjustments on deferred compensation liabilities, legal reserve and settlement charges or benefits, gain (loss) and other income from strategic investments, acquisition-related expenses, and losses (gains) from deferred compensation assets. The company has not provided the most directly comparable GAAP measures because certain items are out of the company's control or cannot be reasonably predicted. Accordingly, a reconciliation for non-GAAP income from operations, non-GAAP net income attributable to CrowdStrike, and non-GAAP net income per share attributable to CrowdStrike common stockholders is not available without unreasonable effort. ",
+        "table_prefix": "Q2 FY24 Guidance Full Year FY24 Guidance "
+      },
+      "direct_guidance": true,
+      "end": "2024-01-31",
+      "exhibit": "99.1",
+      "filed": "2023-05-31",
+      "fiscal_label": "FY2024",
+      "high": "3036700000.0",
+      "id": "c33c6cce-036f-5640-b059-ffaa538766c9",
+      "issuance_evidence": {
+        "end": "2023-05-31",
+        "evidence_end": 2212,
+        "evidence_quote": "May 31, 2023",
+        "evidence_source": "primary",
+        "evidence_start": 2200,
+        "precision": "day",
+        "start": "2023-05-31"
+      },
+      "issued": {
+        "end": "2023-05-31",
+        "precision": "day",
+        "start": "2023-05-31"
+      },
+      "low": "3000500000.0",
+      "method_version": "revenue-rules-v2",
+      "metric": "consolidated_revenue",
+      "origin": "table",
+      "original_verified": false,
+      "quote": "Total revenue $717.2 - $727.4 million $3,000.5 - $3,036.7 million",
+      "quote_end": 6385,
+      "quote_start": 6320,
+      "review_required": true,
+      "source_sha256": "816bd4279cdbe48635202d2ae0435aee7ad922fa420c06129f5e28933c80b627",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552723000012/crwd-20230531xex991.htm",
+      "start": "2023-02-01",
+      "status": "raised",
+      "status_evidence": {
+        "current": [
+          "3000500000.0",
+          "3036700000.0"
+        ],
+        "prior": [
+          "2955100000.0",
+          "3014800000.0"
+        ],
+        "same_metric_and_period": true
+      },
+      "status_input_id": "22ee3fdf-da1f-586a-a66c-8ebfdd036aec",
+      "status_reason": "EXACT_TARGET_RANGE_RAISED",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001660134-23-000032",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "1bb395ca89d378c68c137f2863b5de45504eb88ec1fa61fc5f9f5f8f539340cf",
+      "company": "OKTA",
+      "context": {
+        "fiscal_context": "second quarter of fiscal 2024",
+        "metric_label": "Total revenue",
+        "supporting_context": " of the convertible senior notes due in 2025, resulting in a gain on early extinguishment of debt of $31 million. The section titled \"Non-GAAP Financial Measures\" below contains a description of the non-GAAP financial measures, and reconciliations between GAAP and non-GAAP information are contained in the tables below. Financial Outlook: For the second quarter of fiscal 2024, the Company expects: "
+      },
+      "direct_guidance": true,
+      "end": "2023-07-31",
+      "exhibit": "99.1",
+      "filed": "2023-05-31",
+      "fiscal_label": "Q2 FY2024",
+      "high": "535000000",
+      "id": "a22b078d-39b7-5a04-8ffc-7f43b9821038",
+      "issuance_evidence": {
+        "end": "2023-05-31",
+        "evidence_end": 397,
+        "evidence_quote": "May 31, 2023",
+        "evidence_source": "exhibit",
+        "evidence_start": 385,
+        "precision": "day",
+        "start": "2023-05-31"
+      },
+      "issued": {
+        "end": "2023-05-31",
+        "precision": "day",
+        "start": "2023-05-31"
+      },
+      "low": "533000000",
+      "method_version": "revenue-rules-v2",
+      "metric": "quarterly_consolidated_revenue",
+      "origin": "prose",
+      "original_verified": false,
+      "quote": "\u2022 Total revenue of $533 million to $535 million, representing a growth rate of 18% year-over-year;",
+      "quote_end": 3783,
+      "quote_start": 3685,
+      "review_required": true,
+      "source_sha256": "e9b1b6d3a00d0453d4782b6b6fce34dbe4f2cc8f73fd29676b0502266664d341",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013423000032/okta-4302023_ex991.htm",
+      "start": "2023-05-01",
+      "status": "initial",
+      "status_reason": "FIRST_DIRECT_QUARTER_RANGE_OBSERVED_NOT_ORIGINAL_VERIFIED",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001660134-23-000032",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "1bb395ca89d378c68c137f2863b5de45504eb88ec1fa61fc5f9f5f8f539340cf",
+      "company": "OKTA",
+      "context": {
+        "fiscal_context": "full year fiscal 2024",
+        "metric_label": "Total revenue",
+        "supporting_context": "; \u2022 Current RPO of $1.71 billion to $1.72 billion, representing a growth rate of 14% to 15% year-over-year; \u2022 Non-GAAP operating income of $36 million to $38 million; and \u2022 Non-GAAP diluted net income per share of $0.21 to $0.22, assuming diluted weighted-average shares outstanding of approximately 180 million and a non-GAAP tax rate of 26%. For the full year fiscal 2024, the Company now expects: "
+      },
+      "direct_guidance": true,
+      "end": "2024-01-31",
+      "exhibit": "99.1",
+      "filed": "2023-05-31",
+      "fiscal_label": "FY2024",
+      "high": "2185000000.000",
+      "id": "860a31ed-1fae-5885-8085-e393171a440f",
+      "issuance_evidence": {
+        "end": "2023-05-31",
+        "evidence_end": 397,
+        "evidence_quote": "May 31, 2023",
+        "evidence_source": "exhibit",
+        "evidence_start": 385,
+        "precision": "day",
+        "start": "2023-05-31"
+      },
+      "issued": {
+        "end": "2023-05-31",
+        "precision": "day",
+        "start": "2023-05-31"
+      },
+      "low": "2175000000.000",
+      "method_version": "revenue-rules-v2",
+      "metric": "consolidated_revenue",
+      "origin": "prose",
+      "original_verified": false,
+      "quote": "\u2022 Total revenue of $2.175 billion to $2.185 billion, representing a growth rate of 17% to 18% year-over-year;",
+      "quote_end": 4291,
+      "quote_start": 4182,
+      "review_required": true,
+      "source_sha256": "e9b1b6d3a00d0453d4782b6b6fce34dbe4f2cc8f73fd29676b0502266664d341",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013423000032/okta-4302023_ex991.htm",
+      "start": "2023-02-01",
+      "status": "raised",
+      "status_evidence": {
+        "current": [
+          "2175000000.000",
+          "2185000000.000"
+        ],
+        "prior": [
+          "2155000000.000",
+          "2170000000.000"
+        ],
+        "same_metric_and_period": true
+      },
+      "status_input_id": "cb920a6e-4366-588c-83ab-eba7f8e97b30",
+      "status_reason": "EXACT_TARGET_RANGE_RAISED",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001642896-23-000053",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "3336da6d17b3cfb4c44d28392e9dfc6eb74701bc44a7a9eb5d36f832fe3fd36d",
+      "company": "IOT",
+      "context": {
+        "amount_column": 0,
+        "headers": "Q2 FY2024 Outlook FY 2024 Outlook",
+        "metric_label": "Total revenue",
+        "surrounding_context": "djusted free cash flow $ (2.2) $ (50.7) $ 48.5 Net cash provided by (used in) operating activities margin 5 % (34 %) 39 pts Adjusted free cash flow margin (1 %) (36 %) 35 pts We report non-GAAP financial measures in addition to, and not as a substitute for, or superior to, financial measures calculated in accordance with generally accepted accounting principles (\u201cGAAP\u201d). See the section titled \u201cUse of Non-GAAP Financial Measures\u201d for an explanation of non-GAAP financial measures and the tables in the section titled \u201cReconciliation Between GAAP and Non-GAAP Financial Measures\u201d for a reconciliation of GAAP to non-GAAP financial measures. 1 Financial Outlook Our guidance includes GAAP and non-GAAP financial measures. For the second quarter and fiscal year 2024, Samsara expects the following: ",
+        "table_prefix": "Q2 FY2024 Outlook FY 2024 Outlook "
+      },
+      "direct_guidance": true,
+      "end": "2023-07-29",
+      "exhibit": "99.1",
+      "filed": "2023-06-01",
+      "fiscal_label": "Q2 FY2024",
+      "high": "208000000",
+      "id": "902f9191-29a5-55e4-8950-ca4a722cb6b9",
+      "issuance_evidence": {
+        "end": "2023-06-01",
+        "evidence_end": 366,
+        "evidence_quote": "June 1, 2023",
+        "evidence_source": "exhibit",
+        "evidence_start": 354,
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "issued": {
+        "end": "2023-06-01",
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "low": "206000000",
+      "method_version": "revenue-rules-v2",
+      "metric": "quarterly_consolidated_revenue",
+      "origin": "table",
+      "original_verified": false,
+      "quote": "Total revenue $206 million \u2013 $208 million $866 million \u2013 $874 million",
+      "quote_end": 2800,
+      "quote_start": 2731,
+      "review_required": true,
+      "source_sha256": "a4f1eff4ed5414a6a35806c25f065186d3ea7035b9b828c3a5a956e13f062041",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289623000053/samsaraepr-q12024.htm",
+      "start": "2023-04-30",
+      "status": "initial",
+      "status_reason": "FIRST_DIRECT_QUARTER_RANGE_OBSERVED_NOT_ORIGINAL_VERIFIED",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001642896-23-000053",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "3336da6d17b3cfb4c44d28392e9dfc6eb74701bc44a7a9eb5d36f832fe3fd36d",
+      "company": "IOT",
+      "context": {
+        "amount_column": 1,
+        "headers": "Q2 FY2024 Outlook FY 2024 Outlook",
+        "metric_label": "Total revenue",
+        "surrounding_context": "djusted free cash flow $ (2.2) $ (50.7) $ 48.5 Net cash provided by (used in) operating activities margin 5 % (34 %) 39 pts Adjusted free cash flow margin (1 %) (36 %) 35 pts We report non-GAAP financial measures in addition to, and not as a substitute for, or superior to, financial measures calculated in accordance with generally accepted accounting principles (\u201cGAAP\u201d). See the section titled \u201cUse of Non-GAAP Financial Measures\u201d for an explanation of non-GAAP financial measures and the tables in the section titled \u201cReconciliation Between GAAP and Non-GAAP Financial Measures\u201d for a reconciliation of GAAP to non-GAAP financial measures. 1 Financial Outlook Our guidance includes GAAP and non-GAAP financial measures. For the second quarter and fiscal year 2024, Samsara expects the following: ",
+        "table_prefix": "Q2 FY2024 Outlook FY 2024 Outlook "
+      },
+      "direct_guidance": true,
+      "end": "2024-02-03",
+      "exhibit": "99.1",
+      "filed": "2023-06-01",
+      "fiscal_label": "FY2024",
+      "high": "874000000",
+      "id": "72966fe2-da97-5c6e-9ca3-a9a0dd0e4012",
+      "issuance_evidence": {
+        "end": "2023-06-01",
+        "evidence_end": 366,
+        "evidence_quote": "June 1, 2023",
+        "evidence_source": "exhibit",
+        "evidence_start": 354,
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "issued": {
+        "end": "2023-06-01",
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "low": "866000000",
+      "method_version": "revenue-rules-v2",
+      "metric": "consolidated_revenue",
+      "origin": "table",
+      "original_verified": false,
+      "quote": "Total revenue $206 million \u2013 $208 million $866 million \u2013 $874 million",
+      "quote_end": 2800,
+      "quote_start": 2731,
+      "review_required": true,
+      "source_sha256": "a4f1eff4ed5414a6a35806c25f065186d3ea7035b9b828c3a5a956e13f062041",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289623000053/samsaraepr-q12024.htm",
+      "start": "2023-01-29",
+      "status": "raised",
+      "status_evidence": {
+        "current": [
+          "866000000",
+          "874000000"
+        ],
+        "prior": [
+          "838000000",
+          "848000000"
+        ],
+        "same_metric_and_period": true
+      },
+      "status_input_id": "1db0227b-eef5-541f-8734-98f5d1fb5944",
+      "status_reason": "EXACT_TARGET_RANGE_RAISED",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001397187-23-000026",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "c351bccc492728580c506f2df1c793df35a14e92eecc2ee63b63f961f9a76078",
+      "company": "LULU",
+      "context": {
+        "fiscal_context": "second quarter of 2023",
+        "metric_label": "net revenue",
+        "supporting_context": "d in our revised outlook for FY23.\" Balance sheet highlights The Company ended the first quarter of 2023 with $950.6 million in cash and cash equivalents and the capacity under its committed revolving credit facility was $393.5 million. Inventories at the end of the first quarter of 2023 increased 24% to $1.6 billion compared to $1.3 billion at the end of the first quarter of 2022. 1 2023 Outlook "
+      },
+      "direct_guidance": true,
+      "end": "2023-07-30",
+      "exhibit": "99.1",
+      "filed": "2023-06-01",
+      "fiscal_label": "Q2 FY2023",
+      "high": "2170000000.000",
+      "id": "5bc9be61-cafa-548c-9a68-a93af00529f0",
+      "issuance_evidence": {
+        "end": "2023-06-01",
+        "evidence_end": 319,
+        "evidence_quote": "June 1, 2023",
+        "evidence_source": "exhibit",
+        "evidence_start": 307,
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "issued": {
+        "end": "2023-06-01",
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "low": "2140000000.000",
+      "method_version": "revenue-rules-v2",
+      "metric": "quarterly_consolidated_revenue",
+      "origin": "prose",
+      "original_verified": false,
+      "quote": "For the second quarter of 2023, the Company expects net revenue to be in the range of $2.140 billion to $2.170 billion, representing growth of approximately 15%. Diluted earnings per share are expected to be in the range of $2.47 to $2.52 for the quarter. This guidance assumes a 30% tax rate.",
+      "quote_end": 3358,
+      "quote_start": 3065,
+      "review_required": true,
+      "source_sha256": "e79132609c561bdbab6190c35e2ca62a57126a18f6263f07d3d9a5c41c4fc526",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718723000026/lulu-20230430xex991.htm",
+      "start": "2023-05-01",
+      "status": "initial",
+      "status_reason": "FIRST_DIRECT_QUARTER_RANGE_OBSERVED_NOT_ORIGINAL_VERIFIED",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001441816-23-000085",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "3636ef74e720fa3df49b37ae42456680f8dbea3c035a442cd494f89135f80bd5",
+      "company": "MDB",
+      "context": {
+        "amount_column": 0,
+        "headers": "Second Quarter Fiscal 2024 Full Year Fiscal 2024",
+        "metric_label": "Revenue",
+        "surrounding_context": "d a record-breaking 150,000+ banking transactions per second. Compared to the relational database used in the prior benchmark, MongoDB delivered twice the performance while using less than half the resources. These results demonstrate that the Temenos banking platform, coupled with MongoDB, can support the needs of even the largest global banks while offering superior price/performance. \u2022 MongoDB is excited to take its in-person learning conferences on the road with a new MongoDB.local series to 29 cities across 19 countries and tens of thousands of expected attendees. Second Quarter and Full Year Fiscal 2024 Guidance Based on information available to management as of today, June 1, 2023, MongoDB is issuing the following financial guidance for the second quarter and full year fiscal 2024. ",
+        "table_prefix": "Second Quarter Fiscal 2024 Full Year Fiscal 2024 "
+      },
+      "direct_guidance": true,
+      "end": "2023-07-31",
+      "exhibit": "99.1",
+      "filed": "2023-06-01",
+      "fiscal_label": "Q2 FY2024",
+      "high": "392000000.0",
+      "id": "1cc7e116-c1fb-5b1a-9709-e0238fe95d41",
+      "issuance_evidence": {
+        "end": "2023-06-01",
+        "evidence_end": 391,
+        "evidence_quote": "June 1, 2023",
+        "evidence_source": "exhibit",
+        "evidence_start": 379,
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "issued": {
+        "end": "2023-06-01",
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "low": "388000000.0",
+      "method_version": "revenue-rules-v2",
+      "metric": "quarterly_consolidated_revenue",
+      "origin": "table",
+      "original_verified": false,
+      "quote": "Revenue $388.0 million to $392.0 million $1.522 billion to $1.542 billion",
+      "quote_end": 4897,
+      "quote_start": 4824,
+      "review_required": true,
+      "source_sha256": "29c88b93ca1251ffac370374a2b3cbeb43d341323f5b0356d972e0b058d3e96a",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181623000085/mdb-043023xex991xrelease.htm",
+      "start": "2023-05-01",
+      "status": "initial",
+      "status_reason": "FIRST_DIRECT_QUARTER_RANGE_OBSERVED_NOT_ORIGINAL_VERIFIED",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001441816-23-000085",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "3636ef74e720fa3df49b37ae42456680f8dbea3c035a442cd494f89135f80bd5",
+      "company": "MDB",
+      "context": {
+        "amount_column": 1,
+        "headers": "Second Quarter Fiscal 2024 Full Year Fiscal 2024",
+        "metric_label": "Revenue",
+        "surrounding_context": "d a record-breaking 150,000+ banking transactions per second. Compared to the relational database used in the prior benchmark, MongoDB delivered twice the performance while using less than half the resources. These results demonstrate that the Temenos banking platform, coupled with MongoDB, can support the needs of even the largest global banks while offering superior price/performance. \u2022 MongoDB is excited to take its in-person learning conferences on the road with a new MongoDB.local series to 29 cities across 19 countries and tens of thousands of expected attendees. Second Quarter and Full Year Fiscal 2024 Guidance Based on information available to management as of today, June 1, 2023, MongoDB is issuing the following financial guidance for the second quarter and full year fiscal 2024. ",
+        "table_prefix": "Second Quarter Fiscal 2024 Full Year Fiscal 2024 "
+      },
+      "direct_guidance": true,
+      "end": "2024-01-31",
+      "exhibit": "99.1",
+      "filed": "2023-06-01",
+      "fiscal_label": "FY2024",
+      "high": "1542000000.000",
+      "id": "c329b7aa-e9f5-513d-bafc-61bae8ee32b0",
+      "issuance_evidence": {
+        "end": "2023-06-01",
+        "evidence_end": 391,
+        "evidence_quote": "June 1, 2023",
+        "evidence_source": "exhibit",
+        "evidence_start": 379,
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "issued": {
+        "end": "2023-06-01",
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "low": "1522000000.000",
+      "method_version": "revenue-rules-v2",
+      "metric": "consolidated_revenue",
+      "origin": "table",
+      "original_verified": false,
+      "quote": "Revenue $388.0 million to $392.0 million $1.522 billion to $1.542 billion",
+      "quote_end": 4897,
+      "quote_start": 4824,
+      "review_required": true,
+      "source_sha256": "29c88b93ca1251ffac370374a2b3cbeb43d341323f5b0356d972e0b058d3e96a",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181623000085/mdb-043023xex991xrelease.htm",
+      "start": "2023-02-01",
+      "status": "raised",
+      "status_evidence": {
+        "current": [
+          "1522000000.000",
+          "1542000000.000"
+        ],
+        "prior": [
+          "1480000000.000",
+          "1510000000.000"
+        ],
+        "same_metric_and_period": true
+      },
+      "status_input_id": "dc943570-3b07-58a9-bc6b-997fbe5717a4",
+      "status_reason": "EXACT_TARGET_RANGE_RAISED",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001568100-23-000031",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "ce7520c18e9e1b9a31c49b37150c2b4f1bce7a6b9e11d21f9504efe44fb48247",
+      "company": "PD",
+      "context": {
+        "fiscal_context": "second quarter of fiscal 2024",
+        "metric_label": "Total revenue",
+        "supporting_context": " of an Inspiring Workplace. \u2022 PagerDuty earned a top spot on G2\u2019s 2023 list of the Best Software Products for providing best-in-class products and experience for customers. \u2022 Featured case study: US City Government \u2022 Lands and expands include: 11:11 Systems, Cisco, Docusign, IBM, Palo Alto Networks and Vodafone. Financial Outlook For the second quarter of fiscal 2024, PagerDuty currently expects: "
+      },
+      "direct_guidance": true,
+      "end": "2023-07-31",
+      "exhibit": "99.1",
+      "filed": "2023-06-01",
+      "fiscal_label": "Q2 FY2024",
+      "high": "105500000.0",
+      "id": "98d5adf6-2550-5bff-8e22-20e8a333e561",
+      "issuance_evidence": {
+        "end": "2023-06-01",
+        "evidence_end": 339,
+        "evidence_quote": "June 1, 2023",
+        "evidence_source": "exhibit",
+        "evidence_start": 327,
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "issued": {
+        "end": "2023-06-01",
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "low": "103500000.0",
+      "method_version": "revenue-rules-v2",
+      "metric": "quarterly_consolidated_revenue",
+      "origin": "prose",
+      "original_verified": false,
+      "quote": "\u2022 Total revenue of $103.5 million - $105.5 million, representing a growth rate of 15% - 17% year over year",
+      "quote_end": 4150,
+      "quote_start": 4044,
+      "review_required": true,
+      "source_sha256": "6679cc95e6bdb100da0046a920085a6e68acd4c756f01aade789472a95528ae7",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810023000031/pagerdutyq1fy24earningspre.htm",
+      "start": "2023-05-01",
+      "status": "initial",
+      "status_reason": "FIRST_DIRECT_QUARTER_RANGE_OBSERVED_NOT_ORIGINAL_VERIFIED",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001568100-23-000031",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "ce7520c18e9e1b9a31c49b37150c2b4f1bce7a6b9e11d21f9504efe44fb48247",
+      "company": "PD",
+      "context": {
+        "fiscal_context": "full fiscal year 2024",
+        "metric_label": "Total revenue",
+        "supporting_context": "dafone. Financial Outlook For the second quarter of fiscal 2024, PagerDuty currently expects: \u2022 Total revenue of $103.5 million - $105.5 million, representing a growth rate of 15% - 17% year over year \u2022 Non-GAAP net income per diluted share attributable to PagerDuty, Inc. of $0.10 - $0.11 assuming approximately 105 million diluted shares For the full fiscal year 2024, PagerDuty currently expects: "
+      },
+      "direct_guidance": true,
+      "end": "2024-01-31",
+      "exhibit": "99.1",
+      "filed": "2023-06-01",
+      "fiscal_label": "FY2024",
+      "high": "430000000.0",
+      "id": "edc34733-e86d-5ce4-9007-1e9c83a046ac",
+      "issuance_evidence": {
+        "end": "2023-06-01",
+        "evidence_end": 339,
+        "evidence_quote": "June 1, 2023",
+        "evidence_source": "exhibit",
+        "evidence_start": 327,
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "issued": {
+        "end": "2023-06-01",
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "low": "425000000.0",
+      "method_version": "revenue-rules-v2",
+      "metric": "consolidated_revenue",
+      "origin": "prose",
+      "original_verified": false,
+      "quote": "\u2022 Total revenue of $425.0 million - $430.0 million (down from $446.0 million and $452.0 million), representing a growth rate of 15% - 16% year over year",
+      "quote_end": 4502,
+      "quote_start": 4350,
+      "review_required": true,
+      "source_sha256": "6679cc95e6bdb100da0046a920085a6e68acd4c756f01aade789472a95528ae7",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810023000031/pagerdutyq1fy24earningspre.htm",
+      "start": "2023-02-01",
+      "status": "lowered",
+      "status_evidence": {
+        "current": [
+          "425000000.0",
+          "430000000.0"
+        ],
+        "prior": [
+          "446000000.0",
+          "452000000.0"
+        ],
+        "same_metric_and_period": true
+      },
+      "status_input_id": "d8527d56-c202-56a4-a78e-35d50c333bf2",
+      "status_reason": "EXACT_TARGET_RANGE_LOWERED",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001583708-23-000034",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "7920f60681e5f6922d54071c01bcbb483c808da2da252b626e460a8cb2636f59",
+      "company": "S",
+      "context": {
+        "amount_column": 0,
+        "headers": "Q2FY24 Guidance Full FY2024 Guidance",
+        "metric_label": "Revenue",
+        "surrounding_context": "ollar-based net revenue retention rate (NRR) remained above 125%. Customers with ARR over $100,000 and NRR reflect the adjustment to ARR described above. \u2022 Gross margin: GAAP gross margin was 68%, compared to 65%. Non-GAAP gross margin was 75%, compared to 68%. \u2022 Operating margin: GAAP operating margin was (86)%, compared to (115)%. Non-GAAP operating margin was (38)%, compared to (73)%. \u2022 Cash, cash equivalents, and investments were $1.1 billion as of April 30, 2023. *See Annualized Recurring Revenue discussion under First Quarter Fiscal Year 2024 Highlights for a discussion regarding an adjustment to ARR. Financial Outlook We are providing the following guidance for the second quarter of the fiscal year 2024 (ending July 31, 2023), and for the fiscal year 2024 (ending January 31, 2024). ",
+        "table_prefix": "Q2FY24 Guidance Full FY2024 Guidance "
+      },
+      "direct_guidance": true,
+      "end": "2023-07-31",
+      "exhibit": "99.1",
+      "filed": "2023-06-01",
+      "fiscal_label": "Q2 FY2024",
+      "high": "141000000",
+      "id": "7f1ade32-cbc4-51cb-a42a-c61c1268ad58",
+      "issuance_evidence": {
+        "end": "2023-06-01",
+        "evidence_end": 2194,
+        "evidence_quote": "June 1, 2023",
+        "evidence_source": "primary",
+        "evidence_start": 2182,
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "issued": {
+        "end": "2023-06-01",
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "low": "141000000",
+      "method_version": "revenue-rules-v2",
+      "metric": "quarterly_consolidated_revenue",
+      "origin": "table",
+      "original_verified": false,
+      "quote": "Revenue $141 million $590-600 million",
+      "quote_end": 3377,
+      "quote_start": 3340,
+      "review_required": true,
+      "source_sha256": "8558091bb84bb57ef78e858e5a17f7866643560354af3082c13446b42141279e",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370823000034/sentineloneq124exhibit991.htm",
+      "start": "2023-05-01",
+      "status": "initial",
+      "status_reason": "FIRST_DIRECT_QUARTER_RANGE_OBSERVED_NOT_ORIGINAL_VERIFIED",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001583708-23-000034",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "7920f60681e5f6922d54071c01bcbb483c808da2da252b626e460a8cb2636f59",
+      "company": "S",
+      "context": {
+        "amount_column": 1,
+        "headers": "Q2FY24 Guidance Full FY2024 Guidance",
+        "metric_label": "Revenue",
+        "surrounding_context": "ollar-based net revenue retention rate (NRR) remained above 125%. Customers with ARR over $100,000 and NRR reflect the adjustment to ARR described above. \u2022 Gross margin: GAAP gross margin was 68%, compared to 65%. Non-GAAP gross margin was 75%, compared to 68%. \u2022 Operating margin: GAAP operating margin was (86)%, compared to (115)%. Non-GAAP operating margin was (38)%, compared to (73)%. \u2022 Cash, cash equivalents, and investments were $1.1 billion as of April 30, 2023. *See Annualized Recurring Revenue discussion under First Quarter Fiscal Year 2024 Highlights for a discussion regarding an adjustment to ARR. Financial Outlook We are providing the following guidance for the second quarter of the fiscal year 2024 (ending July 31, 2023), and for the fiscal year 2024 (ending January 31, 2024). ",
+        "table_prefix": "Q2FY24 Guidance Full FY2024 Guidance "
+      },
+      "direct_guidance": true,
+      "end": "2024-01-31",
+      "exhibit": "99.1",
+      "filed": "2023-06-01",
+      "fiscal_label": "FY2024",
+      "high": "600000000",
+      "id": "27ff95ab-86c3-5236-a9e2-a8c8e115676d",
+      "issuance_evidence": {
+        "end": "2023-06-01",
+        "evidence_end": 2194,
+        "evidence_quote": "June 1, 2023",
+        "evidence_source": "primary",
+        "evidence_start": 2182,
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "issued": {
+        "end": "2023-06-01",
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "low": "590000000",
+      "method_version": "revenue-rules-v2",
+      "metric": "consolidated_revenue",
+      "origin": "table",
+      "original_verified": false,
+      "quote": "Revenue $141 million $590-600 million",
+      "quote_end": 3377,
+      "quote_start": 3340,
+      "review_required": true,
+      "source_sha256": "8558091bb84bb57ef78e858e5a17f7866643560354af3082c13446b42141279e",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370823000034/sentineloneq124exhibit991.htm",
+      "start": "2023-02-01",
+      "status": "lowered",
+      "status_evidence": {
+        "current": [
+          "590000000",
+          "600000000"
+        ],
+        "prior": [
+          "631000000",
+          "640000000"
+        ],
+        "same_metric_and_period": true
+      },
+      "status_input_id": "cc8d8ef9-056a-592a-acdf-f105c300c74c",
+      "status_reason": "EXACT_TARGET_RANGE_LOWERED",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-23-020862",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "6b658da47d31676b8f4e6adeb32b67df8c0ff8db36984058ef976e02c9b61c2b",
+      "company": "GTLB",
+      "context": {
+        "amount_column": 0,
+        "headers": "Q2 FY 2024 Guidance FY 2024 Guidance",
+        "metric_label": "Revenue",
+        "surrounding_context": "rative AI infrastructure to deliver secure AI offerings to joint customers. \u2022 Announced an expanded strategic collaboration with Oracle and a new AI/ML offering enabling customers to speed up model training and inference to drive innovation and enhance customer experiences. \u2022 Issued the 7th annual Global DevSecOps Report, which found that 65% of developers are using AI/ML in testing efforts or will be in the next three years. \u2022 Released new security features to automatically enforce security policies, reduce false positives, and protect organizations from credential exposure while reducing risk to production applications. Second Quarter and Fiscal Year 2024 Financial Outlook For the second quarter and fiscal year 2024, GitLab Inc. expects ( in millions , except share and per share data) : ",
+        "table_prefix": "Q2 FY 2024 Guidance FY 2024 Guidance "
+      },
+      "direct_guidance": true,
+      "end": "2023-07-31",
+      "exhibit": "99.1",
+      "filed": "2023-06-05",
+      "fiscal_label": "Q2 FY2024",
+      "high": "130000000.0",
+      "id": "bbfcfec7-c9df-53df-be00-5f7ad682cca0",
+      "issuance_evidence": {
+        "end": "2023-06-05",
+        "evidence_end": 2706,
+        "evidence_quote": "June 5, 2023",
+        "evidence_source": "primary",
+        "evidence_start": 2694,
+        "precision": "day",
+        "start": "2023-06-05"
+      },
+      "issued": {
+        "end": "2023-06-05",
+        "precision": "day",
+        "start": "2023-06-05"
+      },
+      "low": "129000000.0",
+      "method_version": "revenue-rules-v2",
+      "metric": "quarterly_consolidated_revenue",
+      "origin": "table",
+      "original_verified": false,
+      "quote": "Revenue $129.0 - $130.0 $541.0 - $543.0",
+      "quote_end": 4053,
+      "quote_start": 4014,
+      "review_required": true,
+      "source_sha256": "1950fd33cbe383bce468de8a0cf756d4b801f644815d4a168cce6b69fcc44657",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828023020862/gitlab-ex99120230430fy24.htm",
+      "start": "2023-05-01",
+      "status": "initial",
+      "status_reason": "FIRST_DIRECT_QUARTER_RANGE_OBSERVED_NOT_ORIGINAL_VERIFIED",
+      "unit": "USD"
+    },
+    {
+      "accession": "0001628280-23-020862",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "6b658da47d31676b8f4e6adeb32b67df8c0ff8db36984058ef976e02c9b61c2b",
+      "company": "GTLB",
+      "context": {
+        "amount_column": 1,
+        "headers": "Q2 FY 2024 Guidance FY 2024 Guidance",
+        "metric_label": "Revenue",
+        "surrounding_context": "rative AI infrastructure to deliver secure AI offerings to joint customers. \u2022 Announced an expanded strategic collaboration with Oracle and a new AI/ML offering enabling customers to speed up model training and inference to drive innovation and enhance customer experiences. \u2022 Issued the 7th annual Global DevSecOps Report, which found that 65% of developers are using AI/ML in testing efforts or will be in the next three years. \u2022 Released new security features to automatically enforce security policies, reduce false positives, and protect organizations from credential exposure while reducing risk to production applications. Second Quarter and Fiscal Year 2024 Financial Outlook For the second quarter and fiscal year 2024, GitLab Inc. expects ( in millions , except share and per share data) : ",
+        "table_prefix": "Q2 FY 2024 Guidance FY 2024 Guidance "
+      },
+      "direct_guidance": true,
+      "end": "2024-01-31",
+      "exhibit": "99.1",
+      "filed": "2023-06-05",
+      "fiscal_label": "FY2024",
+      "high": "543000000.0",
+      "id": "99b7be81-01fe-5856-8614-26305bb2bcd9",
+      "issuance_evidence": {
+        "end": "2023-06-05",
+        "evidence_end": 2706,
+        "evidence_quote": "June 5, 2023",
+        "evidence_source": "primary",
+        "evidence_start": 2694,
+        "precision": "day",
+        "start": "2023-06-05"
+      },
+      "issued": {
+        "end": "2023-06-05",
+        "precision": "day",
+        "start": "2023-06-05"
+      },
+      "low": "541000000.0",
+      "method_version": "revenue-rules-v2",
+      "metric": "consolidated_revenue",
+      "origin": "table",
+      "original_verified": false,
+      "quote": "Revenue $129.0 - $130.0 $541.0 - $543.0",
+      "quote_end": 4053,
+      "quote_start": 4014,
+      "review_required": true,
+      "source_sha256": "1950fd33cbe383bce468de8a0cf756d4b801f644815d4a168cce6b69fcc44657",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828023020862/gitlab-ex99120230430fy24.htm",
+      "start": "2023-02-01",
+      "status": "raised",
+      "status_evidence": {
+        "current": [
+          "541000000.0",
+          "543000000.0"
+        ],
+        "prior": [
+          "529000000.0",
+          "533000000.0"
+        ],
+        "same_metric_and_period": true
+      },
+      "status_input_id": "694a8951-96ac-58e9-93b4-2c8fb78a0a77",
+      "status_reason": "EXACT_TARGET_RANGE_RAISED",
+      "unit": "USD"
+    },
+    {
+      "accession": "0000796343-23-000133",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "e5fde369bb520c8eb903e8bced9523e52f0208bcbae6c20d1b3b5ce9ba6a0319",
+      "company": "ADBE",
+      "context": {
+        "amount_column": 0,
+        "headers": "",
+        "metric_label": "Total revenue",
+        "surrounding_context": "constant currency. \u2022 Net new Digital Media Annualized Recurring Revenue (\u201cARR\u201d) was $470 million, exiting the quarter with Digital Media ARR of $14.14 billion. Creative ARR grew to $11.64 billion and Document Cloud ARR grew to $2.50 billion. \u2022 Digital Experience segment revenue was $1.22 billion, representing 12 percent year-over-year growth or 14 percent in constant currency. Digital Experience subscription revenue was $1.07 billion, representing 11 percent year-over-year growth or 14 percent in constant currency. Financial Targets Adobe is providing third quarter targets and updated fiscal year 2023 targets. These targets factor in current expectations for the macroeconomic environment and summer seasonality. The following table summarizes Adobe\u2019s third quarter fiscal year 2023 targets: ",
+        "table_prefix": ""
+      },
+      "direct_guidance": true,
+      "end": "2023-09-01",
+      "exhibit": "99.1",
+      "filed": "2023-06-15",
+      "fiscal_label": "Q3 FY2023",
+      "high": "4870000000.00",
+      "id": "926d830d-a26b-5f3a-8cd1-b740c8cf6b04",
+      "issuance_evidence": {
+        "end": "2023-06-15",
+        "evidence_end": 359,
+        "evidence_quote": "June 15, 2023",
+        "evidence_source": "exhibit",
+        "evidence_start": 346,
+        "precision": "day",
+        "start": "2023-06-15"
+      },
+      "issued": {
+        "end": "2023-06-15",
+        "precision": "day",
+        "start": "2023-06-15"
+      },
+      "low": "4830000000.00",
+      "method_version": "revenue-rules-v2",
+      "metric": "quarterly_consolidated_revenue",
+      "origin": "table",
+      "original_verified": false,
+      "quote": "Total revenue $4.83 billion to $4.87 billion",
+      "quote_end": 3125,
+      "quote_start": 3081,
+      "review_required": true,
+      "source_sha256": "b96642771027d4f52a2fca122cc21a153ff1f6b961615eefec5cc35d6ef9c4ee",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000133/adbeex991q223.htm",
+      "start": "2023-06-03",
+      "status": "initial",
+      "status_reason": "FIRST_DIRECT_QUARTER_RANGE_OBSERVED_NOT_ORIGINAL_VERIFIED",
+      "unit": "USD"
+    }
+  ],
+  "dataset": "fresh",
+  "errors": [
+    {
+      "company": "ADBE",
+      "expected": {
+        "accession": "0000796343-23-000133",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "ADBE",
+        "end": "2023-12-01",
+        "exhibit": "99.1",
+        "filed": "2023-06-15",
+        "high": "19350000000.00",
+        "id": "7f177d08-28e8-5c94-bda3-f04ba84c3de4",
+        "issued": {
+          "end": "2023-06-15",
+          "precision": "day",
+          "start": "2023-06-15"
+        },
+        "low": "19250000000.00",
+        "metric": "consolidated_revenue",
+        "original_verified": false,
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000133/adbe-20230615.htm",
+        "quote": " billion to $1.10 billion Tax rate GAAP: ~21.5% Non-GAAP: ~18.5% Earnings per share 1 GAAP: $2.82 to $2.88 Non-GAAP: $3.95 to $4.00 The following table summarizes Adobe\u2019s updated fiscal year 2023 targets: Total revenue $19.25 billion to $19.35 billion Digital Media net new ARR ~$1.75 billion Digital Media segment revenue $14.10 billion to $14.15 billio",
+        "review": {
+          "calendar_crosscheck": {
+            "accession": "0000796343-24-000006",
+            "end": "2023-12-01",
+            "filed": "2024-01-17",
+            "source_sha256": "86a5689aa9aa7b0f9e95be21b48b0305376e014c8dbf3b8bb3b4b131f1b6a0c4",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+            "start": "2022-12-03",
+            "use": "Physical fiscal boundaries only; no actual revenue enters extraction inputs."
+          },
+          "dateline_quote": "June 15, 2023",
+          "fetched_at": "2026-11-13T04:10:49.510715+00:00",
+          "fiscal_label": "FY2023",
+          "numeric_transcription": {
+            "column": "full fiscal year",
+            "high_literal": "19.35",
+            "low_literal": "19.25",
+            "scale_word": "billion"
+          },
+          "raw_source_sha256": "b96642771027d4f52a2fca122cc21a153ff1f6b961615eefec5cc35d6ef9c4ee",
+          "reviewed_at": "2026-11-13T04:15:00.742292+00:00",
+          "scope": "Full release read; consolidated total/net revenue, not ARR, segment, constant-currency, EPS or implied quarter. No candidate-based gold selection.",
+          "status_evidence": "The source headline explicitly says Company raises annual targets for revenue, EPS and Digital Media net new ARR; the total-revenue FY2023 table establishes the same metric/period. March context updated ARR/EPS only, so no invented prior revenue range.",
+          "verifier": "Codex manual SEC-source review, not v1/v2 model output"
+        },
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000133/adbeex991q223.htm",
+        "start": "2022-12-03",
+        "status": "raised",
+        "unit": "USD"
+      },
+      "gold_id": "7f177d08-28e8-5c94-bda3-f04ba84c3de4",
+      "type": "miss"
+    },
+    {
+      "company": "LULU",
+      "expected": {
+        "accession": "0001397187-23-000026",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "LULU",
+        "end": "2024-01-28",
+        "exhibit": "99.1",
+        "filed": "2023-06-01",
+        "high": "9510000000.000",
+        "id": "9dd05523-5fdc-5c51-9c54-b87d3a64e8d0",
+        "issued": {
+          "end": "2023-06-01",
+          "precision": "day",
+          "start": "2023-06-01"
+        },
+        "low": "9440000000.000",
+        "metric": "consolidated_revenue",
+        "original_verified": false,
+        "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718723000026/lulu-20230601.htm",
+        "quote": " of approximately 15%. Diluted earnings per share are expected to be in the range of $2.47 to $2.52 for the quarter. This guidance assumes a 30% tax rate. For 2023, the Company expects net revenue to be in the range of $9.440 billion to $9.510 billion, representing growth of approximately 17%. Diluted earnings per share are expected to be in the range ",
+        "review": {
+          "calendar_crosscheck": {
+            "accession": "0001397187-24-000010",
+            "end": "2024-01-28",
+            "filed": "2024-03-21",
+            "source_sha256": "89f7c4fd2ad8016bb521a2a2999da6515819d628d61ea81c773d838ba2addfaf",
+            "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001397187.json",
+            "start": "2023-01-30",
+            "use": "Physical fiscal boundaries only; no actual revenue enters extraction inputs."
+          },
+          "dateline_quote": "June 1, 2023",
+          "fetched_at": "2026-11-13T04:11:02.746188+00:00",
+          "fiscal_label": "FY2023",
+          "numeric_transcription": {
+            "column": "full fiscal year",
+            "high_literal": "9.510",
+            "low_literal": "9.440",
+            "scale_word": "billion"
+          },
+          "raw_source_sha256": "e79132609c561bdbab6190c35e2ca62a57126a18f6263f07d3d9a5c41c4fc526",
+          "reviewed_at": "2026-11-13T04:15:00.742292+00:00",
+          "scope": "Full release read; consolidated total/net revenue, not ARR, segment, constant-currency, EPS or implied quarter. No candidate-based gold selection.",
+          "status_evidence": {
+            "decision": "raised",
+            "prior_accession": "0001397187-23-000011",
+            "prior_filed": "2023-03-28",
+            "prior_high": "9410000000.000",
+            "prior_low": "9300000000.000",
+            "prior_source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718723000011/lulu-20230129xex991.htm",
+            "same_metric_period": true
+          },
+          "verifier": "Codex manual SEC-source review, not v1/v2 model output"
+        },
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718723000026/lulu-20230430xex991.htm",
+        "start": "2023-01-30",
+        "status": "raised",
+        "unit": "USD"
+      },
+      "gold_id": "9dd05523-5fdc-5c51-9c54-b87d3a64e8d0",
+      "type": "miss"
+    }
+  ],
+  "executed_at": "2026-11-13T04:16:06.216460+00:00",
+  "fields": {
+    "accession": {
+      "false_negative": 2,
+      "false_positive": 0,
+      "gold": 20,
+      "precision": "1",
+      "predicted": 18,
+      "recall": "0.9",
+      "true_positive": 18
+    },
+    "basis": {
+      "false_negative": 2,
+      "false_positive": 0,
+      "gold": 20,
+      "precision": "1",
+      "predicted": 18,
+      "recall": "0.9",
+      "true_positive": 18
+    },
+    "end": {
+      "false_negative": 2,
+      "false_positive": 0,
+      "gold": 20,
+      "precision": "1",
+      "predicted": 18,
+      "recall": "0.9",
+      "true_positive": 18
+    },
+    "exhibit": {
+      "false_negative": 2,
+      "false_positive": 0,
+      "gold": 20,
+      "precision": "1",
+      "predicted": 18,
+      "recall": "0.9",
+      "true_positive": 18
+    },
+    "filed": {
+      "false_negative": 2,
+      "false_positive": 0,
+      "gold": 20,
+      "precision": "1",
+      "predicted": 18,
+      "recall": "0.9",
+      "true_positive": 18
+    },
+    "high": {
+      "false_negative": 2,
+      "false_positive": 0,
+      "gold": 20,
+      "precision": "1",
+      "predicted": 18,
+      "recall": "0.9",
+      "true_positive": 18
+    },
+    "issued": {
+      "false_negative": 2,
+      "false_positive": 0,
+      "gold": 20,
+      "precision": "1",
+      "predicted": 18,
+      "recall": "0.9",
+      "true_positive": 18
+    },
+    "low": {
+      "false_negative": 2,
+      "false_positive": 0,
+      "gold": 20,
+      "precision": "1",
+      "predicted": 18,
+      "recall": "0.9",
+      "true_positive": 18
+    },
+    "metric": {
+      "false_negative": 2,
+      "false_positive": 0,
+      "gold": 20,
+      "precision": "1",
+      "predicted": 18,
+      "recall": "0.9",
+      "true_positive": 18
+    },
+    "start": {
+      "false_negative": 2,
+      "false_positive": 0,
+      "gold": 20,
+      "precision": "1",
+      "predicted": 18,
+      "recall": "0.9",
+      "true_positive": 18
+    },
+    "status": {
+      "false_negative": 2,
+      "false_positive": 0,
+      "gold": 20,
+      "precision": "1",
+      "predicted": 18,
+      "recall": "0.9",
+      "true_positive": 18
+    },
+    "unit": {
+      "false_negative": 2,
+      "false_positive": 0,
+      "gold": 20,
+      "precision": "1",
+      "predicted": 18,
+      "recall": "0.9",
+      "true_positive": 18
+    }
+  },
+  "gold_count": 20,
+  "matches": [
+    {
+      "candidate_id": "926d830d-a26b-5f3a-8cd1-b740c8cf6b04",
+      "exact": true,
+      "gold_id": "3f1cbabd-2bce-54fd-b04e-39f700ce79b8"
+    },
+    {
+      "candidate_id": "f3fd0741-fc92-5938-aaac-f4ffe613dad5",
+      "exact": true,
+      "gold_id": "dad1261f-b50c-5d97-b07a-85c7a79f228d"
+    },
+    {
+      "candidate_id": "44262e9b-7276-5b71-9ec1-96c9e8129f52",
+      "exact": true,
+      "gold_id": "c332292f-fa90-5bf4-ad9f-20920b1a43a1"
+    },
+    {
+      "candidate_id": "59d4ae9f-e246-5414-bbf7-cac45d34b236",
+      "exact": true,
+      "gold_id": "d54fd51f-d510-513a-af2d-ca910d011f9d"
+    },
+    {
+      "candidate_id": "c33c6cce-036f-5640-b059-ffaa538766c9",
+      "exact": true,
+      "gold_id": "2675cee0-969c-57f9-ac2b-2885bc532614"
+    },
+    {
+      "candidate_id": "bbfcfec7-c9df-53df-be00-5f7ad682cca0",
+      "exact": true,
+      "gold_id": "a69bf896-e95c-5dd7-becf-f1ed5515ca28"
+    },
+    {
+      "candidate_id": "99b7be81-01fe-5856-8614-26305bb2bcd9",
+      "exact": true,
+      "gold_id": "5dbe7d63-073a-58cc-b93d-958e32e3faff"
+    },
+    {
+      "candidate_id": "902f9191-29a5-55e4-8950-ca4a722cb6b9",
+      "exact": true,
+      "gold_id": "e00b9f9d-c39e-5173-8518-62eb4e0742b4"
+    },
+    {
+      "candidate_id": "72966fe2-da97-5c6e-9ca3-a9a0dd0e4012",
+      "exact": true,
+      "gold_id": "158375c9-8a1f-5c1a-b4fd-098590b41c93"
+    },
+    {
+      "candidate_id": "5bc9be61-cafa-548c-9a68-a93af00529f0",
+      "exact": true,
+      "gold_id": "232aa835-ada7-5465-ae64-8d0f145d1cf9"
+    },
+    {
+      "candidate_id": "1cc7e116-c1fb-5b1a-9709-e0238fe95d41",
+      "exact": true,
+      "gold_id": "36eaf066-83ee-5ae5-a05b-f1f91681e231"
+    },
+    {
+      "candidate_id": "c329b7aa-e9f5-513d-bafc-61bae8ee32b0",
+      "exact": true,
+      "gold_id": "00b0862b-0e67-5381-910a-dfc8e2d408ef"
+    },
+    {
+      "candidate_id": "a22b078d-39b7-5a04-8ffc-7f43b9821038",
+      "exact": true,
+      "gold_id": "06bfdd9f-aae6-534c-99f9-f618af63084f"
+    },
+    {
+      "candidate_id": "860a31ed-1fae-5885-8085-e393171a440f",
+      "exact": true,
+      "gold_id": "94a89b80-b0c8-5216-b334-22100af4925c"
+    },
+    {
+      "candidate_id": "98d5adf6-2550-5bff-8e22-20e8a333e561",
+      "exact": true,
+      "gold_id": "10bf514a-cd08-5761-98a3-e235c70ae5fe"
+    },
+    {
+      "candidate_id": "edc34733-e86d-5ce4-9007-1e9c83a046ac",
+      "exact": true,
+      "gold_id": "67788e9f-f7f6-5c10-8343-a9db31ca59c2"
+    },
+    {
+      "candidate_id": "7f1ade32-cbc4-51cb-a42a-c61c1268ad58",
+      "exact": true,
+      "gold_id": "668e6f55-7771-59bb-bb03-1b85f6102427"
+    },
+    {
+      "candidate_id": "27ff95ab-86c3-5236-a9e2-a8c8e115676d",
+      "exact": true,
+      "gold_id": "efc5da86-1617-5f94-b932-176430a1096a"
+    }
+  ],
+  "method_version": "revenue-rules-v2",
+  "partials": [
+    {
+      "accession": "0001397187-23-000026",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "c351bccc492728580c506f2df1c793df35a14e92eecc2ee63b63f961f9a76078",
+      "company": "LULU",
+      "context": {
+        "fiscal_context": "For 2023,",
+        "metric_label": "net revenue",
+        "supporting_context": "ased 24% to $1.6 billion compared to $1.3 billion at the end of the first quarter of 2022. 1 2023 Outlook For the second quarter of 2023, the Company expects net revenue to be in the range of $2.140 billion to $2.170 billion, representing growth of approximately 15%. Diluted earnings per share are expected to be in the range of $2.47 to $2.52 for the quarter. This guidance assumes a 30% tax rate. "
+      },
+      "direct_guidance": true,
+      "end": "2024-01-28",
+      "exhibit": "99.1",
+      "filed": "2023-06-01",
+      "fiscal_label": "FY2023",
+      "high": "9510000000.000",
+      "id": "166cb4a2-598e-58a4-bf84-6ba8c2b09cc4",
+      "issuance_evidence": {
+        "end": "2023-06-01",
+        "evidence_end": 319,
+        "evidence_quote": "June 1, 2023",
+        "evidence_source": "exhibit",
+        "evidence_start": 307,
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "issued": {
+        "end": "2023-06-01",
+        "precision": "day",
+        "start": "2023-06-01"
+      },
+      "low": "9440000000.000",
+      "method_version": "revenue-rules-v2",
+      "metric": "consolidated_revenue",
+      "origin": "prose",
+      "original_verified": false,
+      "quote": "For 2023, the Company expects net revenue to be in the range of $9.440 billion to $9.510 billion, representing growth of approximately 17%. Diluted earnings per share are expected to be in the range of $11.74 to $11.94 for the year. This guidance assumes a 30% tax rate.",
+      "quote_end": 3629,
+      "quote_start": 3359,
+      "review_required": true,
+      "source_sha256": "e79132609c561bdbab6190c35e2ca62a57126a18f6263f07d3d9a5c41c4fc526",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718723000026/lulu-20230430xex991.htm",
+      "start": "2023-01-30",
+      "status": null,
+      "status_reason": "ANNUAL_STATUS_HISTORY_MISSING",
+      "unit": "USD"
+    },
+    {
+      "accession": "0000796343-23-000133",
+      "basis": "US_GAAP_consolidated_reported",
+      "calendar_policy": "registered-fiscal-calendar-v1",
+      "canonical_sha256": "e5fde369bb520c8eb903e8bced9523e52f0208bcbae6c20d1b3b5ce9ba6a0319",
+      "company": "ADBE",
+      "context": {
+        "amount_column": 0,
+        "headers": "",
+        "metric_label": "Total revenue",
+        "surrounding_context": " year-over-year growth or 14 percent in constant currency. Financial Targets Adobe is providing third quarter targets and updated fiscal year 2023 targets. These targets factor in current expectations for the macroeconomic environment and summer seasonality. The following table summarizes Adobe\u2019s third quarter fiscal year 2023 targets: Total revenue $4.83 billion to $4.87 billion Digital Media net new ARR ~$410 million Digital Media segment revenue $3.55 billion to $3.57 billion Digital Experience segment revenue $1.21 billion to $1.23 billion Digital Experience subscription revenue $1.08 billion to $1.10 billion Tax rate GAAP: ~21.5% Non-GAAP: ~18.5% Earnings per share 1 GAAP: $2.82 to $2.88 Non-GAAP: $3.95 to $4.00 The following table summarizes Adobe\u2019s updated fiscal year 2023 targets: ",
+        "table_prefix": ""
+      },
+      "direct_guidance": true,
+      "end": "2023-12-01",
+      "exhibit": "99.1",
+      "filed": "2023-06-15",
+      "fiscal_label": "FY2023",
+      "high": "19350000000.00",
+      "id": "630087fb-8929-5bec-8c4b-c30dbac4b818",
+      "issuance_evidence": {
+        "end": "2023-06-15",
+        "evidence_end": 359,
+        "evidence_quote": "June 15, 2023",
+        "evidence_source": "exhibit",
+        "evidence_start": 346,
+        "precision": "day",
+        "start": "2023-06-15"
+      },
+      "issued": {
+        "end": "2023-06-15",
+        "precision": "day",
+        "start": "2023-06-15"
+      },
+      "low": "19250000000.00",
+      "method_version": "revenue-rules-v2",
+      "metric": "consolidated_revenue",
+      "origin": "table",
+      "original_verified": false,
+      "quote": "Total revenue $19.25 billion to $19.35 billion",
+      "quote_end": 3589,
+      "quote_start": 3543,
+      "review_required": true,
+      "source_sha256": "b96642771027d4f52a2fca122cc21a153ff1f6b961615eefec5cc35d6ef9c4ee",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000133/adbeex991q223.htm",
+      "start": "2022-12-03",
+      "status": null,
+      "status_reason": "ANNUAL_STATUS_HISTORY_MISSING",
+      "unit": "USD"
+    }
+  ],
+  "per_company": {
+    "ADBE": {
+      "false_negative": 1,
+      "false_positive": 0,
+      "gold": 2,
+      "precision": "1",
+      "predicted": 1,
+      "recall": "0.5",
+      "true_positive": 1
+    },
+    "CRM": {
+      "false_negative": 0,
+      "false_positive": 0,
+      "gold": 2,
+      "precision": "1",
+      "predicted": 2,
+      "recall": "1",
+      "true_positive": 2
+    },
+    "CRWD": {
+      "false_negative": 0,
+      "false_positive": 0,
+      "gold": 2,
+      "precision": "1",
+      "predicted": 2,
+      "recall": "1",
+      "true_positive": 2
+    },
+    "GTLB": {
+      "false_negative": 0,
+      "false_positive": 0,
+      "gold": 2,
+      "precision": "1",
+      "predicted": 2,
+      "recall": "1",
+      "true_positive": 2
+    },
+    "IOT": {
+      "false_negative": 0,
+      "false_positive": 0,
+      "gold": 2,
+      "precision": "1",
+      "predicted": 2,
+      "recall": "1",
+      "true_positive": 2
+    },
+    "LULU": {
+      "false_negative": 1,
+      "false_positive": 0,
+      "gold": 2,
+      "precision": "1",
+      "predicted": 1,
+      "recall": "0.5",
+      "true_positive": 1
+    },
+    "MDB": {
+      "false_negative": 0,
+      "false_positive": 0,
+      "gold": 2,
+      "precision": "1",
+      "predicted": 2,
+      "recall": "1",
+      "true_positive": 2
+    },
+    "OKTA": {
+      "false_negative": 0,
+      "false_positive": 0,
+      "gold": 2,
+      "precision": "1",
+      "predicted": 2,
+      "recall": "1",
+      "true_positive": 2
+    },
+    "PD": {
+      "false_negative": 0,
+      "false_positive": 0,
+      "gold": 2,
+      "precision": "1",
+      "predicted": 2,
+      "recall": "1",
+      "true_positive": 2
+    },
+    "S": {
+      "false_negative": 0,
+      "false_positive": 0,
+      "gold": 2,
+      "precision": "1",
+      "predicted": 2,
+      "recall": "1",
+      "true_positive": 2
+    }
+  },
+  "rules_sha256": "41fc69dfb9394ea0a9147b060b01a40996970fc573f4137b94860a3a0f58eaed",
+  "score_scope": "All records in exhaustively reviewed fresh documents",
+  "source_gaps": [],
+  "sources": [
+    {
+      "accession": "0001108524-23-000007",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/0616c2612973111494908f1868f90e71a9bc25c3907b1cf0b8fc70ff11aa13de.txt",
+      "canonical_sha256": "0616c2612973111494908f1868f90e71a9bc25c3907b1cf0b8fc70ff11aa13de",
+      "company": "CRM",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:10:50.843785+00:00",
+      "filed": "2023-03-01",
+      "primary_fetched_at": "2026-11-13T04:10:50.126183+00:00",
+      "primary_sha256": "f1de1ef7d78be5ad4a1db7b30e2efa0d08da4c15f3177c71a60bd9cfc07a694e",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852423000007/crm-20230301.htm",
+      "raw_sha256": "f47949e9aa31018127cf9e8340d34f7e282b7352779f4f06a58a8e0e91d5e1f7",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852423000007/crm-q4fy23xexhibit991.htm"
+    },
+    {
+      "accession": "0001660134-23-000009",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/07cad44a372fc4cbdf71b42f217171b874780d098b9e0f1874c777d2be3c0cf0.txt",
+      "canonical_sha256": "07cad44a372fc4cbdf71b42f217171b874780d098b9e0f1874c777d2be3c0cf0",
+      "company": "OKTA",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:11:06.558229+00:00",
+      "filed": "2023-03-01",
+      "primary_fetched_at": "2026-11-13T04:11:05.929102+00:00",
+      "primary_sha256": "7326803af84f6802281d43f651b0dfaa968e5dbe56c3d5b54430639f1237d3d2",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013423000009/okta-20230227.htm",
+      "raw_sha256": "543ef1ecbf61aa8eb7788f108d6f36f69cfb2c8ddbbf844fb6690ae164a7e275",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013423000009/okta-1312023_ex991.htm"
+    },
+    {
+      "accession": "0001642896-23-000010",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/4603dc3fd490452ad3ac2c2783673ef3983995568336c16287dbed6aa1f0a678.txt",
+      "canonical_sha256": "4603dc3fd490452ad3ac2c2783673ef3983995568336c16287dbed6aa1f0a678",
+      "company": "IOT",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:10:58.771651+00:00",
+      "filed": "2023-03-02",
+      "primary_fetched_at": "2026-11-13T04:10:58.092200+00:00",
+      "primary_sha256": "36c20e237971e94d81e3af1b3e591d591b1fda593fbd14c8fac73bc9c48621eb",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289623000010/iot-20230302.htm",
+      "raw_sha256": "b1a67ebcf967faca986b2d9d823c324fd33d3001331261fa96684dfa7e1117a6",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289623000010/samsaraepr-q42023.htm"
+    },
+    {
+      "accession": "0001535527-23-000006",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/524bc614c7db30366b2d996b1a6f6bb85a52e91107f5a692461a7c6b370a7ece.txt",
+      "canonical_sha256": "524bc614c7db30366b2d996b1a6f6bb85a52e91107f5a692461a7c6b370a7ece",
+      "company": "CRWD",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:10:53.457518+00:00",
+      "filed": "2023-03-07",
+      "primary_fetched_at": "2026-11-13T04:10:52.804129+00:00",
+      "primary_sha256": "ebd5d1eb374f46180bd3a7265da2abbfc37e363af7ab241130997417780beaae",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552723000006/crwd-20230307.htm",
+      "raw_sha256": "e7584edd72fa2a1d1deaccbd96ad64f2a0e3456dda898a6b3acf071953f65b2f",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552723000006/crwd-20230307xex991.htm"
+    },
+    {
+      "accession": "0001441816-23-000023",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/ace99d742bceda9e01800f806d26af14512d3e23ed46ef2039abf43593a24a76.txt",
+      "canonical_sha256": "ace99d742bceda9e01800f806d26af14512d3e23ed46ef2039abf43593a24a76",
+      "company": "MDB",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:11:04.019916+00:00",
+      "filed": "2023-03-08",
+      "primary_fetched_at": "2026-11-13T04:11:03.372813+00:00",
+      "primary_sha256": "db5d271ddd9130213c1567a0d3d40cc82c581c57ae82bfb6161b89986e3ea603",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181623000023/mdb-20230308.htm",
+      "raw_sha256": "42ab6bd4c36f69325d7507dca2fcc729fb335bc0e342e7ab2e8ef623d3b35acc",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181623000023/mdb-013123xex991xrelease.htm"
+    },
+    {
+      "accession": "0001628280-23-007704",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/8e1a0656f203d77630c88617648057c70d80ed865a13ae749c0b7a2c26bac3ba.txt",
+      "canonical_sha256": "8e1a0656f203d77630c88617648057c70d80ed865a13ae749c0b7a2c26bac3ba",
+      "company": "GTLB",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:10:56.065993+00:00",
+      "filed": "2023-03-13",
+      "primary_fetched_at": "2026-11-13T04:10:55.445163+00:00",
+      "primary_sha256": "e6e14a8eb9c36da9b06f66c727a684b47ecd4d95247e0f22954885fbd21d1fba",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828023007704/gtlb-20230313.htm",
+      "raw_sha256": "4c3596b5ec6d80165b371fdfe7e8277356281720add5cc37bb866a4106163d20",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828023007704/gitlab-ex99120230131fy23.htm"
+    },
+    {
+      "accession": "0001583708-23-000007",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/d9bd1bfb092fbee1aaed5170cd098239040287d6c99d40247014265e7ae6a7c1.txt",
+      "canonical_sha256": "d9bd1bfb092fbee1aaed5170cd098239040287d6c99d40247014265e7ae6a7c1",
+      "company": "S",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:11:11.840364+00:00",
+      "filed": "2023-03-14",
+      "primary_fetched_at": "2026-11-13T04:11:11.158995+00:00",
+      "primary_sha256": "9ae9221af56ef4326cf2d1cb001125f24f49129848a6a5f85cce648e03fd8fc1",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370823000007/s-20230314.htm",
+      "raw_sha256": "a24894bdf2b4f7416f94c1db4a39bdb1f99cd91d17bd153308d6b54204441174",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370823000007/sentineloneq423exhibit991.htm"
+    },
+    {
+      "accession": "0000796343-23-000044",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/d60e3ac7ba19b225fecbed3e909a190ff8b46c70c7dedd72503ff10a75e8ef2e.txt",
+      "canonical_sha256": "d60e3ac7ba19b225fecbed3e909a190ff8b46c70c7dedd72503ff10a75e8ef2e",
+      "company": "ADBE",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:10:48.231314+00:00",
+      "filed": "2023-03-15",
+      "primary_fetched_at": "2026-11-13T04:10:47.604637+00:00",
+      "primary_sha256": "7c4d498908b4ad5fb7f267da973e3009b3be8d8480ef9714302f6f98e6f5d576",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000044/adbe-20230315.htm",
+      "raw_sha256": "5cfb3d7199efb6610ade2b5756dfdf229ed26e5b96581cf2941c3455cc09d9ff",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000044/adbeex991q123.htm"
+    },
+    {
+      "accession": "0001568100-23-000008",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/6e32250bfce0b15c8e7f35b952bea783544899c7fd91f40088ceb4ced5db2702.txt",
+      "canonical_sha256": "6e32250bfce0b15c8e7f35b952bea783544899c7fd91f40088ceb4ced5db2702",
+      "company": "PD",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:11:09.213585+00:00",
+      "filed": "2023-03-15",
+      "primary_fetched_at": "2026-11-13T04:11:08.463527+00:00",
+      "primary_sha256": "1c9ec313d533c812cea709053448cab008219a1429168846e4f841b483787bdc",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810023000008/pd-20230315.htm",
+      "raw_sha256": "7e4fdcea67bff3a2afc5f88432e1d695c85ab8ef2973b2eed9eb5d293461a5f1",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810023000008/pagerdutyq4fy23earningspre.htm"
+    },
+    {
+      "accession": "0001397187-23-000011",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/62c8d6faa3ecc496af261d1f506a275e5a27a9920cb1e9f219eed898a34bca33.txt",
+      "canonical_sha256": "62c8d6faa3ecc496af261d1f506a275e5a27a9920cb1e9f219eed898a34bca33",
+      "company": "LULU",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:11:01.419401+00:00",
+      "filed": "2023-03-28",
+      "primary_fetched_at": "2026-11-13T04:11:00.751097+00:00",
+      "primary_sha256": "6e92bf66cdf5f37ae2df32def717bb28980c85a0a9c4da894abb273f838f284d",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718723000011/lulu-20230328.htm",
+      "raw_sha256": "4a8aa32859347cb14ed9c5d4af9822085360d08ea914ca36fd5912cf616e7a63",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718723000011/lulu-20230129xex991.htm"
+    },
+    {
+      "accession": "0001108524-23-000021",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/c34be35ea32431893af83b971c45f3b7e8c45d282e8ad3710106531ada352c32.txt",
+      "canonical_sha256": "c34be35ea32431893af83b971c45f3b7e8c45d282e8ad3710106531ada352c32",
+      "company": "CRM",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:10:52.146426+00:00",
+      "filed": "2023-05-31",
+      "primary_fetched_at": "2026-11-13T04:10:51.447922+00:00",
+      "primary_sha256": "28d7690d855150fab96de81e801e063d8c3a8f0106df40827acc72ce6792670b",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852423000021/crm-20230531.htm",
+      "raw_sha256": "720f32e93d68d7fd198b19b0e0dfd54484c352dd26743e1a1e2e17a2d91d0f32",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852423000021/crm-q1fy24xexhibit991.htm"
+    },
+    {
+      "accession": "0001535527-23-000012",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/46d835a3dd55da1fd609dce5ba1726760b2eac5f5efd8b727c5817f08a62f30d.txt",
+      "canonical_sha256": "46d835a3dd55da1fd609dce5ba1726760b2eac5f5efd8b727c5817f08a62f30d",
+      "company": "CRWD",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:10:54.767541+00:00",
+      "filed": "2023-05-31",
+      "primary_fetched_at": "2026-11-13T04:10:54.106386+00:00",
+      "primary_sha256": "ddb1f0dbad1d32cfa26e0026f83235659a1a499460d91b2b06b667298e24da2b",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552723000012/crwd-20230531.htm",
+      "raw_sha256": "816bd4279cdbe48635202d2ae0435aee7ad922fa420c06129f5e28933c80b627",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552723000012/crwd-20230531xex991.htm"
+    },
+    {
+      "accession": "0001660134-23-000032",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/1bb395ca89d378c68c137f2863b5de45504eb88ec1fa61fc5f9f5f8f539340cf.txt",
+      "canonical_sha256": "1bb395ca89d378c68c137f2863b5de45504eb88ec1fa61fc5f9f5f8f539340cf",
+      "company": "OKTA",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:11:07.843717+00:00",
+      "filed": "2023-05-31",
+      "primary_fetched_at": "2026-11-13T04:11:07.172246+00:00",
+      "primary_sha256": "05821c70079b299ebd041ad27dfd889f52e595787c7e66a94b69a7d34845f82f",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013423000032/okta-20230531.htm",
+      "raw_sha256": "e9b1b6d3a00d0453d4782b6b6fce34dbe4f2cc8f73fd29676b0502266664d341",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013423000032/okta-4302023_ex991.htm"
+    },
+    {
+      "accession": "0001642896-23-000053",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/3336da6d17b3cfb4c44d28392e9dfc6eb74701bc44a7a9eb5d36f832fe3fd36d.txt",
+      "canonical_sha256": "3336da6d17b3cfb4c44d28392e9dfc6eb74701bc44a7a9eb5d36f832fe3fd36d",
+      "company": "IOT",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:11:00.081316+00:00",
+      "filed": "2023-06-01",
+      "primary_fetched_at": "2026-11-13T04:10:59.444857+00:00",
+      "primary_sha256": "99df46ff7e2baabcb2b6d1ef4d7916a86163267214c7fa01838e9296c16a86aa",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289623000053/iot-20230530.htm",
+      "raw_sha256": "a4f1eff4ed5414a6a35806c25f065186d3ea7035b9b828c3a5a956e13f062041",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000164289623000053/samsaraepr-q12024.htm"
+    },
+    {
+      "accession": "0001397187-23-000026",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/c351bccc492728580c506f2df1c793df35a14e92eecc2ee63b63f961f9a76078.txt",
+      "canonical_sha256": "c351bccc492728580c506f2df1c793df35a14e92eecc2ee63b63f961f9a76078",
+      "company": "LULU",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:11:02.746188+00:00",
+      "filed": "2023-06-01",
+      "primary_fetched_at": "2026-11-13T04:11:02.062622+00:00",
+      "primary_sha256": "fc7113357ea17cc768940ac95965e8c90ee04f9770c6be2498e9e2a5257d4d6d",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718723000026/lulu-20230601.htm",
+      "raw_sha256": "e79132609c561bdbab6190c35e2ca62a57126a18f6263f07d3d9a5c41c4fc526",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718723000026/lulu-20230430xex991.htm"
+    },
+    {
+      "accession": "0001441816-23-000085",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/3636ef74e720fa3df49b37ae42456680f8dbea3c035a442cd494f89135f80bd5.txt",
+      "canonical_sha256": "3636ef74e720fa3df49b37ae42456680f8dbea3c035a442cd494f89135f80bd5",
+      "company": "MDB",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:11:05.278064+00:00",
+      "filed": "2023-06-01",
+      "primary_fetched_at": "2026-11-13T04:11:04.622318+00:00",
+      "primary_sha256": "30054a66876e7950e1d729dc7168d12b43d3fd461f206cc77779b6ab1378e073",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181623000085/mdb-20230601.htm",
+      "raw_sha256": "29c88b93ca1251ffac370374a2b3cbeb43d341323f5b0356d972e0b058d3e96a",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000144181623000085/mdb-043023xex991xrelease.htm"
+    },
+    {
+      "accession": "0001568100-23-000031",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/ce7520c18e9e1b9a31c49b37150c2b4f1bce7a6b9e11d21f9504efe44fb48247.txt",
+      "canonical_sha256": "ce7520c18e9e1b9a31c49b37150c2b4f1bce7a6b9e11d21f9504efe44fb48247",
+      "company": "PD",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:11:10.484697+00:00",
+      "filed": "2023-06-01",
+      "primary_fetched_at": "2026-11-13T04:11:09.840751+00:00",
+      "primary_sha256": "9f7fb9edf5e4c096688d24419d16429c3954d100e2d17fcda7c28efa2c60f143",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810023000031/pd-20230601.htm",
+      "raw_sha256": "6679cc95e6bdb100da0046a920085a6e68acd4c756f01aade789472a95528ae7",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810023000031/pagerdutyq1fy24earningspre.htm"
+    },
+    {
+      "accession": "0001583708-23-000034",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/7920f60681e5f6922d54071c01bcbb483c808da2da252b626e460a8cb2636f59.txt",
+      "canonical_sha256": "7920f60681e5f6922d54071c01bcbb483c808da2da252b626e460a8cb2636f59",
+      "company": "S",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:11:13.285897+00:00",
+      "filed": "2023-06-01",
+      "primary_fetched_at": "2026-11-13T04:11:12.491780+00:00",
+      "primary_sha256": "3aacf63edc979c59d05c578a7a55b2113bdfd31218c6c552ff8b901c70930df0",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370823000034/s-20230601.htm",
+      "raw_sha256": "8558091bb84bb57ef78e858e5a17f7866643560354af3082c13446b42141279e",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370823000034/sentineloneq124exhibit991.htm"
+    },
+    {
+      "accession": "0001628280-23-020862",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/6b658da47d31676b8f4e6adeb32b67df8c0ff8db36984058ef976e02c9b61c2b.txt",
+      "canonical_sha256": "6b658da47d31676b8f4e6adeb32b67df8c0ff8db36984058ef976e02c9b61c2b",
+      "company": "GTLB",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:10:57.454215+00:00",
+      "filed": "2023-06-05",
+      "primary_fetched_at": "2026-11-13T04:10:56.679576+00:00",
+      "primary_sha256": "45ecba122f3d4392d08ecbb7257d326293f35e077b381717e5fad1a41fefed80",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828023020862/gtlb-20230605.htm",
+      "raw_sha256": "1950fd33cbe383bce468de8a0cf756d4b801f644815d4a168cce6b69fcc44657",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828023020862/gitlab-ex99120230430fy24.htm"
+    },
+    {
+      "accession": "0000796343-23-000133",
+      "amendment": false,
+      "canonical_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/extraction-v2/e5fde369bb520c8eb903e8bced9523e52f0208bcbae6c20d1b3b5ce9ba6a0319.txt",
+      "canonical_sha256": "e5fde369bb520c8eb903e8bced9523e52f0208bcbae6c20d1b3b5ce9ba6a0319",
+      "company": "ADBE",
+      "exhibit": "99.1",
+      "fetched_at": "2026-11-13T04:10:49.510715+00:00",
+      "filed": "2023-06-15",
+      "primary_fetched_at": "2026-11-13T04:10:48.872408+00:00",
+      "primary_sha256": "e9574c3c6a29326af9836d38ecf4963915cb2412690ea478ca2b8864b18cd41a",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000133/adbe-20230615.htm",
+      "raw_sha256": "b96642771027d4f52a2fca122cc21a153ff1f6b961615eefec5cc35d6ef9c4ee",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000133/adbeex991q223.htm"
+    }
+  ],
+  "strict_record": {
+    "false_negative": 2,
+    "false_positive": 0,
+    "gold": 20,
+    "precision": "1",
+    "predicted": 18,
+    "recall": "0.9",
+    "true_positive": 18
+  },
+  "unjudged_count": 0
+}

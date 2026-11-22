@@ -1,0 +1,9 @@
+{
+  "checked_at": "2026-11-21T04:07:30.210763+00:00",
+  "transaction_read_only": "on",
+  "prediction_count": 8,
+  "score_count": 0,
+  "ledger_sha256": "8bca62620e2355b3151c73e0e3118681f1abbf03f8cae006c9e99e30a160dead",
+  "ledger_identical_to_task_start": true,
+  "historical_inputs_unchanged": true
+}

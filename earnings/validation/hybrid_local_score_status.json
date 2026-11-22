@@ -1,0 +1,20 @@
+{
+  "kind": "consumed_diagnostic_NOT_fresh_NOT_human_validated",
+  "performance_status": "NOT_EVALUATED_NO_MODEL_RESULTS",
+  "not_run_cases": [
+    "pilot-0",
+    "pilot-1",
+    "pilot-4",
+    "pilot-11",
+    "pilot-14",
+    "pilot-19",
+    "pilot-27",
+    "pilot-28",
+    "IOT-0001642896-24-000059",
+    "CRWD-0001535527-24-000017"
+  ],
+  "abstentions": [],
+  "whole_release_pilot_scope": null,
+  "old_positive_only_scope": null,
+  "limitations": "Old positive-only scope leaves other document/metric cells unjudged. Scope qualifiers require review, never silently mapped to generic GAAP. Deterministic-pass proposals remain quarantined and do not establish semantic correctness. No human-reviewed precision claim."
+}

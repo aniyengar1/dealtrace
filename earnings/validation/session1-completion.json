@@ -1,0 +1,1306 @@
+{
+  "scope": "Bounded Session 1 completion; not the Session 2 audit or Session 3 ledger",
+  "as_of": "2026-11-11",
+  "annual_reconciliations": [
+    {
+      "as_of": "2026-11-11",
+      "calculation": {
+        "as_of": "2026-11-11",
+        "codes": [],
+        "company": "ADBE",
+        "company_config": {
+          "basis": "US_GAAP_consolidated_reported",
+          "calendar": "weeks",
+          "calendar_source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+          "cik": "0000796343",
+          "comparability": {
+            "available_on": "2026-11-11",
+            "blocked": false,
+            "reason": "Semrush consolidated from April 28, 2026. Note 3 explicitly says impact was not material; no acquisition normalization. FY2026 and comparison FY2025 are 52-week years.",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
+          },
+          "comparison_ends": {
+            "2026-02-27": "2025-02-28",
+            "2026-05-29": "2025-05-30",
+            "2026-08-28": "2025-08-29"
+          },
+          "concept": "Revenues",
+          "fiscal_label": "FY2026",
+          "name": "ADOBE INC.",
+          "period_end": "2026-11-27",
+          "period_start": "2025-11-29",
+          "prior_end": "2025-11-28",
+          "prior_start": "2024-11-30",
+          "ticker": "ADBE"
+        },
+        "details": [],
+        "formula_version": "revenue-hurdle-v1-decimal50",
+        "growth_high": "0.1059089441394898288666451404585082337746206005812",
+        "growth_low": "0.0978366160800774943493703584113658379076525670003",
+        "id": "9f40e737-5a4d-548f-a763-a0bf3ae8c9fd",
+        "inputs": {
+          "actual_ytd": "a083ce84-caea-59aa-8a68-ec2ad3c2b407",
+          "guidance": "04d7cd94-ee0a-56f9-b9d5-7329de346f83",
+          "prior_annual": "a2ef2fac-145a-5869-acfa-6a56ab7dd9c4",
+          "prior_remaining": "7abe3801-66c8-52b4-b8cc-f97764e73c36",
+          "prior_ytd": "cae93e71-4df5-5aeb-bafc-cb3108465d29"
+        },
+        "policy": {
+          "actual_days": 135,
+          "assumption": "Manual research policy; not an accounting standard",
+          "guidance_days": 150,
+          "version": "manual-freshness-v1"
+        },
+        "remaining_high": "6850000000.000",
+        "remaining_low": "6800000000.000",
+        "state": "ok"
+      },
+      "company": "ADBE",
+      "companyfacts_manifest": {
+        "body": "b9f0c6daf7ac54e02ebeb3629fb20802ae8603a2f6e9aeeb46843d398b4b99c3-86a5689aa9aa7b0f9e95be21b48b0305376e014c8dbf3b8bb3b4b131f1b6a0c4.body",
+        "fetched_at": "2026-11-11T10:11:04.161689+00:00",
+        "sha256": "86a5689aa9aa7b0f9e95be21b48b0305376e014c8dbf3b8bb3b4b131f1b6a0c4",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json"
+      },
+      "guidance": {
+        "accession": "0000796343-26-000147",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "ADBE",
+        "end": "2026-11-27",
+        "exhibit": "99.1",
+        "filed": "2026-09-10",
+        "high": "26626000000.000",
+        "id": "04d7cd94-ee0a-56f9-b9d5-7329de346f83",
+        "issued": {
+          "end": "2026-09-10",
+          "precision": "day",
+          "start": "2026-09-10"
+        },
+        "low": "26576000000.000",
+        "metric": "consolidated_revenue",
+        "notes": "",
+        "original_verified": false,
+        "quote": "updated FY2026 targets: Total revenue $26.576 billion to $26.626 billion Business Professionals & Consumers subscription revenue $7.470 billion to $7.490 billion Creative & Marketing Professionals subscription revenue $18.242 billion to $18.272 billion Total Adobe ending ARR growth 10.2% year over year Earnings per sha",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+        "start": "2025-11-29",
+        "status": "raised",
+        "unit": "USD"
+      },
+      "input_records": {
+        "actual_ytd": {
+          "accession": "0000796343-26-000156",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "ADBE",
+          "concept": "Revenues",
+          "derivation": null,
+          "end": "2026-08-28",
+          "filed": "2026-09-22",
+          "fiscal_period": "Q3",
+          "fiscal_year": 2026,
+          "form": "10-Q",
+          "id": "a083ce84-caea-59aa-8a68-ec2ad3c2b407",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+          "start": "2025-11-29",
+          "unit": "USD",
+          "value": "19776000000"
+        },
+        "prior_annual": {
+          "accession": "0000796343-26-000003",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "ADBE",
+          "concept": "Revenues",
+          "derivation": null,
+          "end": "2025-11-28",
+          "filed": "2026-01-15",
+          "fiscal_period": "FY",
+          "fiscal_year": 2025,
+          "form": "10-K",
+          "id": "a2ef2fac-145a-5869-acfa-6a56ab7dd9c4",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+          "start": "2024-11-30",
+          "unit": "USD",
+          "value": "23769000000"
+        },
+        "prior_remaining": {
+          "accession": "0000796343-26-000003",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "ADBE",
+          "concept": "Revenues",
+          "derivation": "annual-minus-ytd-v1",
+          "end": "2025-11-28",
+          "filed": "2026-09-22",
+          "fiscal_period": "REMAINING",
+          "fiscal_year": 2025,
+          "form": "DERIVED",
+          "id": "7abe3801-66c8-52b4-b8cc-f97764e73c36",
+          "parents": [
+            "a2ef2fac-145a-5869-acfa-6a56ab7dd9c4",
+            "cae93e71-4df5-5aeb-bafc-cb3108465d29"
+          ],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+          "start": "2025-08-30",
+          "unit": "USD",
+          "value": "6194000000"
+        },
+        "prior_ytd": {
+          "accession": "0000796343-26-000156",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "ADBE",
+          "concept": "Revenues",
+          "derivation": null,
+          "end": "2025-08-29",
+          "filed": "2026-09-22",
+          "fiscal_period": "Q3",
+          "fiscal_year": 2026,
+          "form": "10-Q",
+          "id": "cae93e71-4df5-5aeb-bafc-cb3108465d29",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json",
+          "start": "2024-11-30",
+          "unit": "USD",
+          "value": "17575000000"
+        }
+      },
+      "statement_evidence": [
+        {
+          "column_order": "current quarter, prior quarter, current YTD/annual, prior YTD/annual",
+          "quote": "Total revenue 6,760 5,988 19,776 17,575",
+          "sha256": "24da9b5927cdb491c398249a90eb2c6ef2a28fee050a2b89bafba8955ae973a4",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+          "unit": "USD millions"
+        },
+        {
+          "column_order": "current quarter, prior quarter, current YTD/annual, prior YTD/annual",
+          "quote": "Total revenue 6,194 5,606 23,769 21,505",
+          "sha256": "5fd2619f5e70fc09b2d558525bc965209a31e9d0638f7b886405ffa9e8f31f79",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+          "unit": "USD millions"
+        }
+      ]
+    },
+    {
+      "as_of": "2026-11-11",
+      "calculation": {
+        "as_of": "2026-11-11",
+        "codes": [],
+        "company": "CRWD",
+        "company_config": {
+          "basis": "US_GAAP_consolidated_reported",
+          "calendar": "months",
+          "calendar_source": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm",
+          "cik": "0001535527",
+          "comparability": {
+            "available_on": "2026-11-11",
+            "blocked": false,
+            "reason": "As-reported total revenue. Acquisitions disclosed in Note 12 as not having material financial-statement impact; no organic/pro-forma normalization. Stock-compensation revisions preserved.",
+            "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm"
+          },
+          "comparison_ends": {
+            "2026-04-30": "2025-04-30",
+            "2026-07-31": "2025-07-31",
+            "2026-10-31": "2025-10-31"
+          },
+          "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+          "fiscal_label": "FY2027",
+          "name": "CrowdStrike Holdings, Inc.",
+          "period_end": "2027-01-31",
+          "period_start": "2026-02-01",
+          "prior_end": "2026-01-31",
+          "prior_start": "2025-02-01",
+          "ticker": "CRWD"
+        },
+        "details": [],
+        "formula_version": "revenue-hurdle-v1-decimal50",
+        "growth_high": "0.2421445894049461749971157090886467615811663088046",
+        "growth_low": "0.2342693923773605410890373713537345562464290903478",
+        "id": "ad7fe379-8d9a-590c-89bf-f08d94c1f927",
+        "inputs": {
+          "actual_ytd": "76c32b45-9444-5cb0-b1d8-3c83c8ca26a6",
+          "guidance": "20136ed5-16e2-50dc-b46c-8f4833b1db90",
+          "prior_annual": "f9e2446a-2913-5e54-821f-6b3cddc548e3",
+          "prior_remaining": "1dac35de-8ae7-5239-8f39-ce8e4aa7f4d7",
+          "prior_ytd": "8a5f1cea-4951-57fb-b7be-0958074783da"
+        },
+        "policy": {
+          "actual_days": 135,
+          "assumption": "Manual research policy; not an accounting standard",
+          "guidance_days": 150,
+          "version": "manual-freshness-v1"
+        },
+        "remaining_high": "3154574000.0000",
+        "remaining_low": "3134574000.0000",
+        "state": "ok"
+      },
+      "company": "CRWD",
+      "companyfacts_manifest": {
+        "body": "1e27b7df0f8dd2a173fb0e3d30ac0385e1c9ba7db1c1d186a2c469d75dcc2eb4-a71a92f1f11bd3032271ca55be7a7770a96a846ec809f925829ef952fd5f3fa1.body",
+        "fetched_at": "2026-11-11T10:11:00.341417+00:00",
+        "sha256": "a71a92f1f11bd3032271ca55be7a7770a96a846ec809f925829ef952fd5f3fa1",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json"
+      },
+      "guidance": {
+        "accession": "0001535527-26-000029",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "CRWD",
+        "end": "2027-01-31",
+        "exhibit": "99.1",
+        "filed": "2026-08-26",
+        "high": "6011100000.0000",
+        "id": "20136ed5-16e2-50dc-b46c-8f4833b1db90",
+        "issued": {
+          "end": "2026-08-26",
+          "precision": "day",
+          "start": "2026-08-26"
+        },
+        "low": "5991100000.0000",
+        "metric": "consolidated_revenue",
+        "notes": "",
+        "original_verified": false,
+        "quote": "Full Year FY27 Guidance Annual recurring revenue $6,184.4 - $6,188.4 million $6,603.0 - $6,611.9 million Total revenue $1,523.2 - $1,529.2 million $5,991.1 - $6,011.1 million Non-GAAP income from operations $372.7 - $375.9 million $1,497.2 - $1,508.4 million Non-GAAP net income attributable to CrowdStrike $325.4 - $327.9 million $1,302.7 - $1,311.6 million Non-GAAP net income per share attributable to CrowdStrike com",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+        "start": "2026-02-01",
+        "status": "raised",
+        "unit": "USD"
+      },
+      "input_records": {
+        "actual_ytd": {
+          "accession": "0001535527-26-000031",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "CRWD",
+          "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+          "derivation": null,
+          "end": "2026-07-31",
+          "filed": "2026-08-27",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "76c32b45-9444-5cb0-b1d8-3c83c8ca26a6",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+          "start": "2026-02-01",
+          "unit": "USD",
+          "value": "2856526000"
+        },
+        "prior_annual": {
+          "accession": "0001535527-26-000010",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "CRWD",
+          "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+          "derivation": null,
+          "end": "2026-01-31",
+          "filed": "2026-03-05",
+          "fiscal_period": "FY",
+          "fiscal_year": 2026,
+          "form": "10-K",
+          "id": "f9e2446a-2913-5e54-821f-6b3cddc548e3",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+          "start": "2025-02-01",
+          "unit": "USD",
+          "value": "4812005000"
+        },
+        "prior_remaining": {
+          "accession": "0001535527-26-000010",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "CRWD",
+          "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+          "derivation": "annual-minus-ytd-v1",
+          "end": "2026-01-31",
+          "filed": "2026-08-27",
+          "fiscal_period": "REMAINING",
+          "fiscal_year": 2026,
+          "form": "DERIVED",
+          "id": "1dac35de-8ae7-5239-8f39-ce8e4aa7f4d7",
+          "parents": [
+            "f9e2446a-2913-5e54-821f-6b3cddc548e3",
+            "8a5f1cea-4951-57fb-b7be-0958074783da"
+          ],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+          "start": "2025-08-01",
+          "unit": "USD",
+          "value": "2539619000"
+        },
+        "prior_ytd": {
+          "accession": "0001535527-26-000031",
+          "basis": "US_GAAP_consolidated_reported",
+          "company": "CRWD",
+          "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+          "derivation": null,
+          "end": "2025-07-31",
+          "filed": "2026-08-27",
+          "fiscal_period": "Q2",
+          "fiscal_year": 2027,
+          "form": "10-Q",
+          "id": "8a5f1cea-4951-57fb-b7be-0958074783da",
+          "parents": [],
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json",
+          "start": "2025-02-01",
+          "unit": "USD",
+          "value": "2272386000"
+        }
+      },
+      "statement_evidence": [
+        {
+          "column_order": "current quarter, prior quarter, current YTD/annual, prior YTD/annual",
+          "quote": "Total revenue 1,470,897 1,168,952 2,856,526 2,272,386",
+          "sha256": "40fe219bb8e11d46d665cd8f565484b80d6e62d8dd6a1492339a5125a0656d66",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+          "unit": "USD thousands"
+        },
+        {
+          "column_order": "current quarter, prior quarter, current YTD/annual, prior YTD/annual",
+          "quote": "Total revenue 1,305,375 1,058,538 4,812,005 3,953,624",
+          "sha256": "df7a97897d4009706438cf210ff18227268fae98ea1b1655bb9b997450ba873f",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm",
+          "unit": "USD thousands"
+        }
+      ]
+    }
+  ],
+  "quarterly_implementation_checks": [
+    {
+      "as_of": "2026-11-11",
+      "codes": [],
+      "company": "PD",
+      "details": [],
+      "formula_version": "quarter-guidance-implied-growth-v1-decimal50",
+      "growth_high": "0.0036532980047372435665823597896342687382070737484",
+      "growth_low": "-0.01240515476333855233048295796699987956160423943153",
+      "guidance_high": "125000000",
+      "guidance_low": "123000000",
+      "id": "a75be706-f06f-58eb-8269-3ba8b15f8f33",
+      "inputs": {
+        "guidance": "83256569-74d8-5e11-ac48-1cd719c80460",
+        "prior_quarter": "08e9f9d3-28c0-557e-a12c-d777fa34b8c1"
+      },
+      "policy": {
+        "actual_days": 135,
+        "assumption": "Manual research policy; not an accounting standard",
+        "guidance_days": 150,
+        "version": "manual-freshness-v1"
+      },
+      "state": "ok",
+      "target": {
+        "available_on": "2026-08-27",
+        "boundary_evidence": {
+          "accession": "0001568100-26-000044",
+          "filed_date": "2026-08-27",
+          "prior_actual_accession": "0001568100-25-000107",
+          "prior_actual_id": "08e9f9d3-28c0-557e-a12c-d777fa34b8c1",
+          "rule": "Three calendar months on the registered month-based fiscal calendar",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm"
+        },
+        "end": "2026-10-31",
+        "growth_comparability": {
+          "available_on": "2026-11-11",
+          "blocked": false,
+          "reason": "Consolidated revenue reconciled to current release and prior-year annual/YTD statements.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm"
+          ]
+        },
+        "label": "Q3 FY2027",
+        "prior_end": "2025-10-31",
+        "prior_start": "2025-08-01",
+        "start": "2026-08-01"
+      }
+    },
+    {
+      "as_of": "2026-11-11",
+      "codes": [],
+      "company": "GTLB",
+      "details": [],
+      "formula_version": "quarter-guidance-implied-growth-v1-decimal50",
+      "growth_high": "0.1581605300528334008585939194525952208485265169652",
+      "growth_low": "0.1499756499817886418419254111879125691110810998842",
+      "guidance_high": "283000000",
+      "guidance_low": "281000000",
+      "id": "35b5d3d1-f366-5a79-a46d-c5286d2c548a",
+      "inputs": {
+        "guidance": "acbb63cf-a5ed-5c74-a414-e6a5e957b408",
+        "prior_quarter": "c14acb73-8f6e-5174-b068-45c2bf6a085a"
+      },
+      "policy": {
+        "actual_days": 135,
+        "assumption": "Manual research policy; not an accounting standard",
+        "guidance_days": 150,
+        "version": "manual-freshness-v1"
+      },
+      "state": "ok",
+      "target": {
+        "available_on": "2026-09-01",
+        "boundary_evidence": {
+          "accession": "0001628280-26-059820",
+          "filed_date": "2026-09-01",
+          "prior_actual_accession": "0001628280-25-054840",
+          "prior_actual_id": "c14acb73-8f6e-5174-b068-45c2bf6a085a",
+          "rule": "Three calendar months on the registered month-based fiscal calendar",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm"
+        },
+        "end": "2026-10-31",
+        "growth_comparability": {
+          "available_on": "2026-11-11",
+          "blocked": false,
+          "reason": "Consolidated revenue reconciled to current release and prior-year annual/YTD statements.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm"
+          ]
+        },
+        "label": "Q3 FY2027",
+        "prior_end": "2025-10-31",
+        "prior_start": "2025-08-01",
+        "start": "2026-08-01"
+      }
+    },
+    {
+      "as_of": "2026-11-11",
+      "codes": [
+        "INCOMPARABLE_BASIS"
+      ],
+      "company": "CRM",
+      "details": [
+        "Informatica contribution and pending Contentful/Fin acquisitions change consolidation scope. October Braze announcement adds uncertainty; explicit evidence reconciliation required."
+      ],
+      "formula_version": "quarter-guidance-implied-growth-v1-decimal50",
+      "growth_high": null,
+      "growth_low": null,
+      "guidance_high": null,
+      "guidance_low": null,
+      "id": "afba2e7f-4715-53e8-bfcf-639f4962016c",
+      "inputs": {
+        "guidance": "3b513a29-59c1-51a3-bf16-fa1001da216c"
+      },
+      "policy": {
+        "actual_days": 135,
+        "assumption": "Manual research policy; not an accounting standard",
+        "guidance_days": 150,
+        "version": "manual-freshness-v1"
+      },
+      "state": "blocked",
+      "target": {
+        "available_on": "2026-08-26",
+        "boundary_evidence": {
+          "accession": "0001108524-26-000187",
+          "filed_date": "2026-08-26",
+          "prior_actual_accession": "0001108524-25-000238",
+          "prior_actual_id": "6509063f-42b3-5d22-8909-5d47e047d76b",
+          "rule": "Three calendar months on the registered month-based fiscal calendar",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+        },
+        "end": "2026-10-31",
+        "growth_comparability": {
+          "available_on": "2026-11-11",
+          "blocked": true,
+          "reason": "Informatica contribution and pending Contentful/Fin acquisitions change consolidation scope. October Braze announcement adds uncertainty; explicit evidence reconciliation required.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+          ]
+        },
+        "label": "Q3 FY2027",
+        "prior_end": "2025-10-31",
+        "prior_start": "2025-08-01",
+        "start": "2026-08-01"
+      }
+    },
+    {
+      "as_of": "2026-11-11",
+      "codes": [],
+      "company": "CRWD",
+      "details": [],
+      "formula_version": "quarter-guidance-implied-growth-v1-decimal50",
+      "growth_high": "0.2389770580209423744413584347989538535330129212700",
+      "growth_low": "0.2341157826167273245808770388999257845288289835721",
+      "guidance_high": "1529200000",
+      "guidance_low": "1523200000",
+      "id": "15f8df6d-c4e5-5c8b-bdc5-18961b45ad07",
+      "inputs": {
+        "guidance": "f6ff18dc-8880-5f65-b254-cdbbf1a488ba",
+        "prior_quarter": "12953b5a-1353-5189-b35f-3eb7d8b0a959"
+      },
+      "policy": {
+        "actual_days": 135,
+        "assumption": "Manual research policy; not an accounting standard",
+        "guidance_days": 150,
+        "version": "manual-freshness-v1"
+      },
+      "state": "ok",
+      "target": {
+        "available_on": "2026-08-26",
+        "boundary_evidence": {
+          "accession": "0001535527-26-000029",
+          "filed_date": "2026-08-26",
+          "prior_actual_accession": "0001535527-25-000033",
+          "prior_actual_id": "12953b5a-1353-5189-b35f-3eb7d8b0a959",
+          "rule": "Three calendar months on the registered month-based fiscal calendar",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
+        },
+        "end": "2026-10-31",
+        "growth_comparability": {
+          "available_on": "2026-11-11",
+          "blocked": false,
+          "reason": "As-reported total revenue. Acquisitions disclosed in Note 12 as not having material financial-statement impact; no organic/pro-forma normalization. Stock-compensation revisions preserved.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
+          ]
+        },
+        "label": "Q3 FY2027",
+        "prior_end": "2025-10-31",
+        "prior_start": "2025-08-01",
+        "start": "2026-08-01"
+      }
+    },
+    {
+      "as_of": "2026-11-11",
+      "codes": [
+        "INCOMPARABLE_BASIS"
+      ],
+      "company": "OKTA",
+      "details": [
+        "August 26 Permiso acquisition is a subsequent event with consideration still under evaluation. Annual guidance and prior-year comparison scope require reconciliation; partner-services shift is also disclosed."
+      ],
+      "formula_version": "quarter-guidance-implied-growth-v1-decimal50",
+      "growth_high": null,
+      "growth_low": null,
+      "guidance_high": null,
+      "guidance_low": null,
+      "id": "cf6098ab-dd02-501d-95ff-f3d7bc9142c7",
+      "inputs": {
+        "guidance": "7790a72a-98d9-57b3-9287-bf22cba52401"
+      },
+      "policy": {
+        "actual_days": 135,
+        "assumption": "Manual research policy; not an accounting standard",
+        "guidance_days": 150,
+        "version": "manual-freshness-v1"
+      },
+      "state": "blocked",
+      "target": {
+        "available_on": "2026-08-26",
+        "boundary_evidence": {
+          "accession": "0001660134-26-000068",
+          "filed_date": "2026-08-26",
+          "prior_actual_accession": "0001660134-25-000171",
+          "prior_actual_id": "fb8f9fd5-7ec4-5e8c-a73f-97a76cbf8356",
+          "rule": "Three calendar months on the registered month-based fiscal calendar",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+        },
+        "end": "2026-10-31",
+        "growth_comparability": {
+          "available_on": "2026-11-11",
+          "blocked": true,
+          "reason": "August 26 Permiso acquisition is a subsequent event with consideration still under evaluation. Annual guidance and prior-year comparison scope require reconciliation; partner-services shift is also disclosed.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000069/okta-20260731.htm",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+          ]
+        },
+        "label": "Q3 FY2027",
+        "prior_end": "2025-10-31",
+        "prior_start": "2025-08-01",
+        "start": "2026-08-01"
+      }
+    },
+    {
+      "as_of": "2026-11-11",
+      "codes": [],
+      "company": "IOT",
+      "details": [],
+      "formula_version": "quarter-guidance-implied-growth-v1-decimal50",
+      "growth_high": "0.2404591622092673838572029569084680569745777991466",
+      "growth_low": "0.2356511809603942544624075966103732195444437766693",
+      "guidance_high": "516000000",
+      "guidance_low": "514000000",
+      "id": "5b7afd53-df34-5747-b35d-d0981f1588ec",
+      "inputs": {
+        "guidance": "ce9fd475-3519-55ce-b28a-9c85f104d074",
+        "prior_quarter": "04788f82-92f1-57f8-a852-5c8b7399113c"
+      },
+      "policy": {
+        "actual_days": 135,
+        "assumption": "Manual research policy; not an accounting standard",
+        "guidance_days": 150,
+        "version": "manual-freshness-v1"
+      },
+      "state": "ok",
+      "target": {
+        "available_on": "2026-09-03",
+        "boundary_evidence": {
+          "accession": "0001628280-26-060438",
+          "filed_date": "2026-09-03",
+          "prior_actual_accession": "0001628280-25-056069",
+          "prior_actual_id": "04788f82-92f1-57f8-a852-5c8b7399113c",
+          "rule": "13-week fiscal quarter on the registered weekly calendar",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm"
+        },
+        "end": "2026-10-31",
+        "growth_comparability": {
+          "available_on": "2026-11-11",
+          "blocked": false,
+          "reason": "Current and prior fiscal years each have 52 weeks; compare observed 26-week remaining periods.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060909/iot-20260801.htm",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm"
+          ]
+        },
+        "label": "Q3 FY2027",
+        "prior_end": "2025-11-01",
+        "prior_start": "2025-08-03",
+        "start": "2026-08-02"
+      }
+    },
+    {
+      "as_of": "2026-11-11",
+      "codes": [],
+      "company": "MDB",
+      "details": [],
+      "formula_version": "quarter-guidance-implied-growth-v1-decimal50",
+      "growth_high": "0.2111874889584583381743696174971232307670270519760",
+      "growth_low": "0.2032296210940795054662594360418201872008836416477",
+      "guidance_high": "761000000",
+      "guidance_low": "756000000",
+      "id": "00db7a81-575f-5165-ad1c-fa0675a198c5",
+      "inputs": {
+        "guidance": "c9ec8438-b130-526e-b905-0cb8c0c3815e",
+        "prior_quarter": "5026a0a8-ec76-5c0c-8906-9370f9f62244"
+      },
+      "policy": {
+        "actual_days": 135,
+        "assumption": "Manual research policy; not an accounting standard",
+        "guidance_days": 150,
+        "version": "manual-freshness-v1"
+      },
+      "state": "ok",
+      "target": {
+        "available_on": "2026-09-01",
+        "boundary_evidence": {
+          "accession": "0001628280-26-059794",
+          "filed_date": "2026-09-01",
+          "prior_actual_accession": "0001628280-25-054768",
+          "prior_actual_id": "5026a0a8-ec76-5c0c-8906-9370f9f62244",
+          "rule": "Three calendar months on the registered month-based fiscal calendar",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm"
+        },
+        "end": "2026-10-31",
+        "growth_comparability": {
+          "available_on": "2026-11-11",
+          "blocked": false,
+          "reason": "Clarity consolidated from May 8, 2026. Note 4 says acquisition effects were not material; no normalization. September 29 presentation expressly does not reaffirm guidance.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059830/mdb-20260731.htm",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm"
+          ]
+        },
+        "label": "Q3 FY2027",
+        "prior_end": "2025-10-31",
+        "prior_start": "2025-08-01",
+        "start": "2026-08-01"
+      }
+    },
+    {
+      "as_of": "2026-11-11",
+      "codes": [
+        "INCOMPARABLE_BASIS"
+      ],
+      "company": "S",
+      "details": [
+        "Observo and Prompt acquired in September 2025; current/prior remaining periods contain different ownership durations. Comparable revenue impact not reconciled."
+      ],
+      "formula_version": "quarter-guidance-implied-growth-v1-decimal50",
+      "growth_high": null,
+      "growth_low": null,
+      "guidance_high": null,
+      "guidance_low": null,
+      "id": "7ed3b78c-1b73-5aa7-bbed-d1cdd3aedefb",
+      "inputs": {
+        "guidance": "c5bf519b-08d3-5b8b-a2ad-bdd3636e8dba"
+      },
+      "policy": {
+        "actual_days": 135,
+        "assumption": "Manual research policy; not an accounting standard",
+        "guidance_days": 150,
+        "version": "manual-freshness-v1"
+      },
+      "state": "blocked",
+      "target": {
+        "available_on": "2026-08-27",
+        "boundary_evidence": {
+          "accession": "0001583708-26-000052",
+          "filed_date": "2026-08-27",
+          "prior_actual_accession": "0001583708-25-000159",
+          "prior_actual_id": "24be2ebb-7517-56b8-8d06-5bfa9b7161f1",
+          "rule": "Three calendar months on the registered month-based fiscal calendar",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+        },
+        "end": "2026-10-31",
+        "growth_comparability": {
+          "available_on": "2026-11-11",
+          "blocked": true,
+          "reason": "Observo and Prompt acquired in September 2025; current/prior remaining periods contain different ownership durations. Comparable revenue impact not reconciled.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000055/s-20260731.htm",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+          ]
+        },
+        "label": "Q3 FY2027",
+        "prior_end": "2025-10-31",
+        "prior_start": "2025-08-01",
+        "start": "2026-08-01"
+      }
+    },
+    {
+      "as_of": "2026-11-11",
+      "codes": [],
+      "company": "ADBE",
+      "details": [],
+      "formula_version": "quarter-guidance-implied-growth-v1-decimal50",
+      "growth_high": "0.1059089441394898288666451404585082337746206005812",
+      "growth_low": "0.0978366160800774943493703584113658379076525670003",
+      "guidance_high": "6850000000",
+      "guidance_low": "6800000000",
+      "id": "302e44ba-fdd1-5152-b486-1b55050521f1",
+      "inputs": {
+        "guidance": "c6af4c68-dde8-57b1-bf4d-2f0c56c4c3ce",
+        "prior_quarter": "7abe3801-66c8-52b4-b8cc-f97764e73c36"
+      },
+      "policy": {
+        "actual_days": 135,
+        "assumption": "Manual research policy; not an accounting standard",
+        "guidance_days": 150,
+        "version": "manual-freshness-v1"
+      },
+      "state": "ok",
+      "target": {
+        "available_on": "2026-09-10",
+        "boundary_evidence": {
+          "accession": "0000796343-26-000147",
+          "filed_date": "2026-09-10",
+          "prior_actual_accession": "0000796343-26-000003",
+          "prior_actual_id": "7abe3801-66c8-52b4-b8cc-f97764e73c36",
+          "rule": "13-week fiscal quarter on the registered weekly calendar",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+        },
+        "end": "2026-11-27",
+        "growth_comparability": {
+          "available_on": "2026-11-11",
+          "blocked": false,
+          "reason": "Semrush consolidated from April 28, 2026. Note 3 explicitly says impact was not material; no acquisition normalization. FY2026 and comparison FY2025 are 52-week years.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+          ]
+        },
+        "label": "Q4 FY2026",
+        "prior_end": "2025-11-28",
+        "prior_q4": {
+          "annual_start": "2024-11-30",
+          "nine_month_end": "2025-08-29"
+        },
+        "prior_start": "2025-08-30",
+        "start": "2026-08-29"
+      }
+    },
+    {
+      "as_of": "2026-11-11",
+      "codes": [],
+      "company": "LULU",
+      "details": [],
+      "formula_version": "quarter-guidance-implied-growth-v1-decimal50",
+      "growth_high": "-0.09584086799276672694394213381555153707052441229656",
+      "growth_low": "-0.10753258090665336409552908898172974995323314834445",
+      "guidance_high": "2320000000",
+      "guidance_low": "2290000000",
+      "id": "84bcdfc9-0533-5827-9c34-84c12d046842",
+      "inputs": {
+        "guidance": "b4df8722-2f08-5d6c-b609-69396c6c3500",
+        "prior_quarter": "1b2a56bd-3d2c-544e-9d20-f3e713d44cc7"
+      },
+      "policy": {
+        "actual_days": 135,
+        "assumption": "Manual research policy; not an accounting standard",
+        "guidance_days": 150,
+        "version": "manual-freshness-v1"
+      },
+      "state": "ok",
+      "target": {
+        "available_on": "2026-09-03",
+        "boundary_evidence": {
+          "accession": "0001397187-26-000126",
+          "filed_date": "2026-09-03",
+          "prior_actual_accession": "0001397187-25-000055",
+          "prior_actual_id": "1b2a56bd-3d2c-544e-9d20-f3e713d44cc7",
+          "rule": "13-week fiscal quarter on the registered weekly calendar",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm"
+        },
+        "end": "2026-11-01",
+        "growth_comparability": {
+          "available_on": "2026-11-11",
+          "blocked": false,
+          "reason": "Current and prior fiscal years each have 52 weeks; reported total net revenue, no constant-dollar normalization.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000127/lulu-20260802.htm",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm"
+          ]
+        },
+        "label": "Q3 FY2026",
+        "prior_end": "2025-11-02",
+        "prior_start": "2025-08-04",
+        "start": "2026-08-03"
+      }
+    }
+  ],
+  "guidance_quote_verification": [
+    {
+      "company": "PD",
+      "verified": [
+        {
+          "guidance_id": "a2aed39a-a88c-5b65-91e8-0bf81f743819",
+          "quote_verified": true,
+          "sha256": "aae98ec7ef5281daeda6f0a93daad8b0042ec35662fcd8fb8d3e0da28e15af1e",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm"
+        },
+        {
+          "guidance_id": "b07444c7-67c4-5721-8456-be175b6d1f02",
+          "quote_verified": true,
+          "sha256": "6c553eafde53aa648fb53f3b6cd3dfe5cfd1fa8cd5717ac9b26e62ec3846bd0e",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000114036126020610/ef20072978_ex99-1.htm"
+        },
+        {
+          "guidance_id": "148e716d-7fcd-540e-8b80-ef316212127d",
+          "quote_verified": true,
+          "sha256": "d76ad20661ba11259eb4cf2b4a5f5e011867ea253b5544463c4cab98df0c743b",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000030/ex991-pagerdutyq1fy27earni.htm"
+        },
+        {
+          "guidance_id": "f9d37849-bf95-50da-9956-cd557de8254d",
+          "quote_verified": true,
+          "sha256": "fbaaad97447a51e013b30f56b21375492b3ad170ddf68dd9e8e11e762205bbd8",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm"
+        },
+        {
+          "guidance_id": "83256569-74d8-5e11-ac48-1cd719c80460",
+          "quote_verified": true,
+          "sha256": "fbaaad97447a51e013b30f56b21375492b3ad170ddf68dd9e8e11e762205bbd8",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm"
+        }
+      ]
+    },
+    {
+      "company": "GTLB",
+      "verified": [
+        {
+          "guidance_id": "0b4891ac-f765-5fb8-a0cb-39130819cb06",
+          "quote_verified": true,
+          "sha256": "ded7bdd17b01b7cef197ca62f582b40261b3cefbf65a4d56d302e788e7703cd2",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm"
+        },
+        {
+          "guidance_id": "ff4be85a-dde0-5573-b3b9-9f26b067046e",
+          "quote_verified": true,
+          "sha256": "7cdb4107962a2ea159c8eff0a60e6d71908a2ae50d6d310d0a2d66fb0a511ed3",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000095/gtlb-20260511.htm"
+        },
+        {
+          "guidance_id": "4b3e8896-8091-59ff-beb6-4fc03caed6d5",
+          "quote_verified": true,
+          "sha256": "ad4e810c4a58dcefcb90971c37fc0d6f5e80e300b7e7685980dfb3ee6f1fa131",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039805/gitlab-ex99120260430fy27.htm"
+        },
+        {
+          "guidance_id": "ba14fe0d-bc14-582c-89f3-deb673b23254",
+          "quote_verified": true,
+          "sha256": "7c3e015238a277599421246919f83f33228efea9a5f2dca65486bbd65699db3b",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm"
+        },
+        {
+          "guidance_id": "acbb63cf-a5ed-5c74-a414-e6a5e957b408",
+          "quote_verified": true,
+          "sha256": "7c3e015238a277599421246919f83f33228efea9a5f2dca65486bbd65699db3b",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm"
+        }
+      ]
+    },
+    {
+      "company": "CRM",
+      "verified": [
+        {
+          "guidance_id": "2e224c9b-77d6-5665-97ce-f8cf535ce5bc",
+          "quote_verified": true,
+          "sha256": "8ea16dfd1b1706f6ece15eaeec0722e399bb02f5fe6efaa9518d4afdf6ee04cd",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-q4fy26xexhibit991.htm"
+        },
+        {
+          "guidance_id": "6efd228a-70fb-51dc-9d1c-93c55ff84e16",
+          "quote_verified": true,
+          "sha256": "9b8bd22a94fa9e4b5c29920757b4763cd2bad0ae8eedbb0d4b16542d361ad552",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000125/crm-q1fy27xexhibit991.htm"
+        },
+        {
+          "guidance_id": "01731e6e-0166-552d-baba-021e4d237bf7",
+          "quote_verified": true,
+          "sha256": "ed2dace59f395fd2426543a34ce2dd92ecf2c442024be98c33fb96f98689633b",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+        },
+        {
+          "guidance_id": "a83bd1cc-d8c3-5a31-8aff-ffb4022e9f8a",
+          "quote_verified": true,
+          "sha256": "c3b8586a44838fa1b98906a322204bd0cf6c937e35658da189a4729ac26f8e56",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312526425881/d516983dex991.htm"
+        },
+        {
+          "guidance_id": "3b513a29-59c1-51a3-bf16-fa1001da216c",
+          "quote_verified": true,
+          "sha256": "ed2dace59f395fd2426543a34ce2dd92ecf2c442024be98c33fb96f98689633b",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+        }
+      ]
+    },
+    {
+      "company": "CRWD",
+      "verified": [
+        {
+          "guidance_id": "6a52f11e-61b8-554e-826f-4dc433be1b18",
+          "quote_verified": true,
+          "sha256": "df7a97897d4009706438cf210ff18227268fae98ea1b1655bb9b997450ba873f",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm"
+        },
+        {
+          "guidance_id": "a31172b0-3168-5009-8472-59282faee637",
+          "quote_verified": true,
+          "sha256": "5dce1aee74e9d89c4f286de0c09c61a834d9d823eea6464bb3f91ffa8240dcd1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000022/crwd-20260603xex991.htm"
+        },
+        {
+          "guidance_id": "20136ed5-16e2-50dc-b46c-8f4833b1db90",
+          "quote_verified": true,
+          "sha256": "40fe219bb8e11d46d665cd8f565484b80d6e62d8dd6a1492339a5125a0656d66",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
+        },
+        {
+          "guidance_id": "f6ff18dc-8880-5f65-b254-cdbbf1a488ba",
+          "quote_verified": true,
+          "sha256": "40fe219bb8e11d46d665cd8f565484b80d6e62d8dd6a1492339a5125a0656d66",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
+        }
+      ]
+    },
+    {
+      "company": "OKTA",
+      "verified": [
+        {
+          "guidance_id": "c070d7c9-4e74-5c1c-a790-ff98b6b9d38b",
+          "quote_verified": true,
+          "sha256": "26ae2cabf718f807d7dbf92aab1c70ffd4b11f3bb8c6b7ba0098e5292c9544f9",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-1312026_ex991.htm"
+        },
+        {
+          "guidance_id": "5fd99f26-b4f5-5e1e-922a-5a4436d040cd",
+          "quote_verified": true,
+          "sha256": "372ea6ce88e222c657e9ddcb03eb5799d35592aebd1cb507437731b49d3deae1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000050/okta-4302026_ex991.htm"
+        },
+        {
+          "guidance_id": "8bd0f82d-d6cc-5ce4-ad32-0526621af3e8",
+          "quote_verified": true,
+          "sha256": "ff2c5da95d6ad2ef5134656c86f5a0a6c40b3c4b8f31b8b6cf0b435ff8248894",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+        },
+        {
+          "guidance_id": "7790a72a-98d9-57b3-9287-bf22cba52401",
+          "quote_verified": true,
+          "sha256": "ff2c5da95d6ad2ef5134656c86f5a0a6c40b3c4b8f31b8b6cf0b435ff8248894",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+        }
+      ]
+    },
+    {
+      "company": "IOT",
+      "verified": [
+        {
+          "guidance_id": "2824c751-b7ba-52a9-a9af-1b995d6933ac",
+          "quote_verified": true,
+          "sha256": "aed8b5fb4260578dd607e9aae5aa3da14e17b6ec3315ed3efc86b2ede908dc61",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026015170/samsaraepr-q42026.htm"
+        },
+        {
+          "guidance_id": "a2756a8b-c638-59e9-bca2-1f8a39215c85",
+          "quote_verified": true,
+          "sha256": "ca9eb03f26fc872d19eb0b4b2cec9ef20739eabf03701560f1ce86c88305c31a",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026040788/samsaraepr-q12027.htm"
+        },
+        {
+          "guidance_id": "76e27739-b53d-537d-92b7-cdfcef7fb397",
+          "quote_verified": true,
+          "sha256": "4323b6b76f3785cb80b656f18cb96b8b3e37b366c0baad4e18b361aafdc29812",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm"
+        },
+        {
+          "guidance_id": "ce9fd475-3519-55ce-b28a-9c85f104d074",
+          "quote_verified": true,
+          "sha256": "4323b6b76f3785cb80b656f18cb96b8b3e37b366c0baad4e18b361aafdc29812",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm"
+        }
+      ]
+    },
+    {
+      "company": "MDB",
+      "verified": [
+        {
+          "guidance_id": "7c6457c8-02c2-5d4f-8e62-43c1654db87c",
+          "quote_verified": true,
+          "sha256": "c144559491c5ca9fd18e9dab5d67eabb0c18023a5241b1f646f38bac4fd23d5b",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm"
+        },
+        {
+          "guidance_id": "7b108550-6b06-5d1b-8022-af76c8392409",
+          "quote_verified": true,
+          "sha256": "12b5f146d4a0241c00e54525716b5c805334d62c06f0cdb1376aae6f80025c93",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026038798/mdb-043026xex991xrelease.htm"
+        },
+        {
+          "guidance_id": "dbe9f61c-41c3-566e-8579-275f228ff342",
+          "quote_verified": true,
+          "sha256": "28eb3703e7b94394ac7ee44215f3452bca4b47d7d35d8c51f6192f936c0378c9",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm"
+        },
+        {
+          "guidance_id": "e7b96f8a-bebf-55c3-8efd-957619bf8a90",
+          "quote_verified": true,
+          "sha256": "1c7184a8bf6bab81c1195cba1e12b43a66ea5ec6e7f10b0af545a3a23b5ccd7a",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026063657/pressreleasedatedseptemb.htm"
+        },
+        {
+          "guidance_id": "6bad7bb3-f126-5ebe-97c1-24329e436e43",
+          "quote_verified": true,
+          "sha256": "28eb3703e7b94394ac7ee44215f3452bca4b47d7d35d8c51f6192f936c0378c9",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm"
+        },
+        {
+          "guidance_id": "c9ec8438-b130-526e-b905-0cb8c0c3815e",
+          "quote_verified": true,
+          "sha256": "1c7184a8bf6bab81c1195cba1e12b43a66ea5ec6e7f10b0af545a3a23b5ccd7a",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026063657/pressreleasedatedseptemb.htm"
+        }
+      ]
+    },
+    {
+      "company": "S",
+      "verified": [
+        {
+          "guidance_id": "9d5b2b30-61e6-57cd-b6fc-39a0905bb865",
+          "quote_verified": true,
+          "sha256": "229f682deedb33d014dfe49800e99f34000792d3dbb4b262ad8fa781a7f3bb92",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/sentineloneq426exhibit991.htm"
+        },
+        {
+          "guidance_id": "02538201-d254-53be-9b06-35b0cafc8df2",
+          "quote_verified": true,
+          "sha256": "7fa5fd3d3a4091969d6e8674868f81051258c258f1c15537198f7ba3566fac3e",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000039/sentineloneq127exhibit991.htm"
+        },
+        {
+          "guidance_id": "79f71ece-aabc-5851-9ac3-a6cccd6a8004",
+          "quote_verified": true,
+          "sha256": "0c703caa39e80f5376002fa0bb83b8709df7fc198d11120918710a8b61457aeb",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+        },
+        {
+          "guidance_id": "c5bf519b-08d3-5b8b-a2ad-bdd3636e8dba",
+          "quote_verified": true,
+          "sha256": "0c703caa39e80f5376002fa0bb83b8709df7fc198d11120918710a8b61457aeb",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+        }
+      ]
+    },
+    {
+      "company": "ADBE",
+      "verified": [
+        {
+          "guidance_id": "b7c14351-ad44-5757-b7f8-b816b58002ff",
+          "quote_verified": true,
+          "sha256": "5fd2619f5e70fc09b2d558525bc965209a31e9d0638f7b886405ffa9e8f31f79",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm"
+        },
+        {
+          "guidance_id": "87aa0e07-6f3c-5db0-8a9b-eb0aca2d79d4",
+          "quote_verified": true,
+          "sha256": "ba9e0472ccba1f7e926f70f3ecbd17fe81aa865447694113b033562a8835720c",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbeex991q126.htm"
+        },
+        {
+          "guidance_id": "812b1c5c-9ce3-5ba1-8524-479d49c18149",
+          "quote_verified": true,
+          "sha256": "bcf8f786660fa356e3e123c541346ffb35b9e70633e4f7540d647572511c4fd6",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm"
+        },
+        {
+          "guidance_id": "04d7cd94-ee0a-56f9-b9d5-7329de346f83",
+          "quote_verified": true,
+          "sha256": "24da9b5927cdb491c398249a90eb2c6ef2a28fee050a2b89bafba8955ae973a4",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+        },
+        {
+          "guidance_id": "c6af4c68-dde8-57b1-bf4d-2f0c56c4c3ce",
+          "quote_verified": true,
+          "sha256": "24da9b5927cdb491c398249a90eb2c6ef2a28fee050a2b89bafba8955ae973a4",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+        }
+      ]
+    },
+    {
+      "company": "LULU",
+      "verified": [
+        {
+          "guidance_id": "97e0b842-2159-5e01-9e6f-c0e00779a660",
+          "quote_verified": true,
+          "sha256": "b47c12fc44fc46c7436f263b4a9ec63491f4b05a829a56b54769ce54aae46421",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260201xex991.htm"
+        },
+        {
+          "guidance_id": "5e5e884b-d835-52b8-96b1-b89aee84dd31",
+          "quote_verified": true,
+          "sha256": "fb3e9fbb284c24603f0493e36e6adf36effd2612463911f6bd3f58f18f657384",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000077/lulu-20260503xex991.htm"
+        },
+        {
+          "guidance_id": "922c08aa-ed21-56eb-8898-fe746b19f388",
+          "quote_verified": true,
+          "sha256": "a46c0ae866fbf781605e969adee8e23a469aff5eb38e1044bb30b7aa1f448e41",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm"
+        },
+        {
+          "guidance_id": "b4df8722-2f08-5d6c-b609-69396c6c3500",
+          "quote_verified": true,
+          "sha256": "a46c0ae866fbf781605e969adee8e23a469aff5eb38e1044bb30b7aa1f448e41",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm"
+        }
+      ]
+    }
+  ],
+  "guidance_initial_load": [
+    {
+      "company": "PD",
+      "inserted": 1,
+      "versions": 5
+    },
+    {
+      "company": "GTLB",
+      "inserted": 1,
+      "versions": 5
+    },
+    {
+      "company": "CRM",
+      "inserted": 1,
+      "versions": 5
+    },
+    {
+      "company": "CRWD",
+      "inserted": 1,
+      "versions": 4
+    },
+    {
+      "company": "OKTA",
+      "inserted": 1,
+      "versions": 4
+    },
+    {
+      "company": "IOT",
+      "inserted": 1,
+      "versions": 4
+    },
+    {
+      "company": "MDB",
+      "inserted": 2,
+      "versions": 6
+    },
+    {
+      "company": "S",
+      "inserted": 1,
+      "versions": 4
+    },
+    {
+      "company": "ADBE",
+      "inserted": 1,
+      "versions": 5
+    },
+    {
+      "company": "LULU",
+      "inserted": 1,
+      "versions": 4
+    }
+  ],
+  "guidance_repeat_load": [
+    {
+      "company": "PD",
+      "inserted": 0,
+      "versions": 5
+    },
+    {
+      "company": "GTLB",
+      "inserted": 0,
+      "versions": 5
+    },
+    {
+      "company": "CRM",
+      "inserted": 0,
+      "versions": 5
+    },
+    {
+      "company": "CRWD",
+      "inserted": 0,
+      "versions": 4
+    },
+    {
+      "company": "OKTA",
+      "inserted": 0,
+      "versions": 4
+    },
+    {
+      "company": "IOT",
+      "inserted": 0,
+      "versions": 4
+    },
+    {
+      "company": "MDB",
+      "inserted": 0,
+      "versions": 6
+    },
+    {
+      "company": "S",
+      "inserted": 0,
+      "versions": 4
+    },
+    {
+      "company": "ADBE",
+      "inserted": 0,
+      "versions": 5
+    },
+    {
+      "company": "LULU",
+      "inserted": 0,
+      "versions": 4
+    }
+  ],
+  "date_checks_file": "session1-date-checks.json",
+  "AGENTS_sha256": "269c885a42fcf425b8a03da0120e9aeb3190ca9a3e23ca42e42ffad83b6c51da",
+  "forecast_status": "Experimental annual point forecast remains unvalidated; no probabilistic baseline or immutable live ledger",
+  "tests": {
+    "python_passed": 312,
+    "python_skipped": 3,
+    "earnings_passed": 89,
+    "frontend_passed": 18,
+    "pip_check": "passed",
+    "git_diff_check": "passed"
+  },
+  "gaps": [
+    "Quarter target outcomes not yet reported; result-specific outcome comparability remains pending",
+    "CRWD and MDB official IR direct HTTP rechecks returned 403; actual checked_at retained, fetched_at null",
+    "Six exact next-report dates unverified; annual-result windows remain estimates",
+    "No Session 2 full-universe audit performed in this pass",
+    "Session 3 probabilistic baseline and immutable ledger not implemented"
+  ],
+  "quarter_calculation_repeat_insertions": 0
+}

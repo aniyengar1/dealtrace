@@ -1,0 +1,1023 @@
+{
+  "cases": [
+    {
+      "case": "outside",
+      "eligible_candidates": [],
+      "rejections": [
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "PD",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "GTLB",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "announcement_evidence": {
+            "announcement_issued_date": "2026-11-10",
+            "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/76a225f3e35b0f5e19a47014c96fe18d8639fbc3e5a064f512a31d4522e7af38-c8a640be882cb70fba14d5be638823309652d2025c7baa08b5b96f95ee894b83.body",
+            "checked_at": "2026-11-12T23:46:51.729367+00:00",
+            "company": "CRM",
+            "event_kind": "results_release",
+            "fiscal_period": {
+              "end": "2026-10-31",
+              "label": "Q3 FY2027",
+              "start": "2026-08-01"
+            },
+            "id": "6c11f52b-a7d9-580d-bf77-86c072ba3a30",
+            "previous_evidence_id": "e82fb6a0-19d2-5391-9516-c866f186a734",
+            "quote": "Results to be released on December 2, 2026, after market close",
+            "release_date": "2026-12-02",
+            "release_time": "after_market_close",
+            "retrieved_at": "2026-11-12T23:46:52.000110+00:00",
+            "review_note": "Release company, fiscal quarter/year, dateline and results-publication wording re-reviewed. No date or timezone change. Normalized visible text unchanged; raw HTML changed.",
+            "source_sha256": "c8a640be882cb70fba14d5be638823309652d2025c7baa08b5b96f95ee894b83",
+            "source_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx",
+            "time_precision": "market_session",
+            "timestamp_verified": false,
+            "timezone": "America/New_York",
+            "timezone_provenance": "US market-close context; conservative release-date boundary in America/New_York, release-date-boundary-v1. No exact publication clock time inferred.",
+            "verification_method": "direct_http_official_ir_full_document_re_review",
+            "verification_status": "independently_verified",
+            "verified_at": "2026-11-12T23:48:07.518593+00:00",
+            "verifier": "Codex"
+          },
+          "code": "OUTSIDE_14_DAY_WINDOW",
+          "company": "CRM",
+          "deadline": "2026-12-02T05:00:00+00:00",
+          "next_eligibility_at": "2026-11-18T05:00:00+00:00",
+          "release_date": "2026-12-02"
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "CRWD",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "announcement_evidence": {
+            "announcement_issued_date": "2026-11-02",
+            "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/1baff785d18b716e62059282389f6e5a9e7a0b62d605938fb202fe6fcda66a19-d60517f2f59870d407a185b7e6497c384447795a6cc2b119407799703091170f.body",
+            "checked_at": "2026-11-12T23:46:52.041483+00:00",
+            "company": "OKTA",
+            "event_kind": "results_release",
+            "fiscal_period": {
+              "end": "2026-10-31",
+              "label": "Q3 FY2027",
+              "start": "2026-08-01"
+            },
+            "id": "4a3e1f16-7b0b-55be-b00b-f43055db57af",
+            "previous_evidence_id": "c28a2554-0a0a-51fd-946a-3d4a129a1c6c",
+            "quote": "after the U.S. market close on Tuesday, December 1, 2026",
+            "release_date": "2026-12-01",
+            "release_time": "after_market_close",
+            "retrieved_at": "2026-11-12T23:46:52.326318+00:00",
+            "review_note": "Release company, fiscal quarter/year, dateline and results-publication wording re-reviewed. No date or timezone change. Only visible changes are email-alert form validation/captcha messages; release paragraph unchanged. Call remains separate.",
+            "source_sha256": "d60517f2f59870d407a185b7e6497c384447795a6cc2b119407799703091170f",
+            "source_url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+            "time_precision": "market_session",
+            "timestamp_verified": false,
+            "timezone": "America/New_York",
+            "timezone_provenance": "US market-close context; conservative release-date boundary in America/New_York, release-date-boundary-v1. No exact publication clock time inferred.",
+            "verification_method": "direct_http_official_ir_full_document_re_review",
+            "verification_status": "independently_verified",
+            "verified_at": "2026-11-12T23:48:07.519474+00:00",
+            "verifier": "Codex"
+          },
+          "code": "OUTSIDE_14_DAY_WINDOW",
+          "company": "OKTA",
+          "deadline": "2026-12-01T05:00:00+00:00",
+          "next_eligibility_at": "2026-11-17T05:00:00+00:00",
+          "release_date": "2026-12-01"
+        },
+        {
+          "announcement_evidence": {
+            "announcement_issued_date": "2026-11-02",
+            "cached_body": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/ir-dates/31bd7c94a4aa0a85c8f526e08e9b3666146e4132d257112cbe9f0f2843d9ba13-bb35e403595b4af82df3ffd18d02f30f3859d3ed218ba20ff3224c29faccefc5.body",
+            "call": {
+              "event_kind": "earnings_call",
+              "precision": "minute",
+              "time": "14:00",
+              "timezone": "America/Los_Angeles"
+            },
+            "checked_at": "2026-11-12T23:46:52.384801+00:00",
+            "company": "IOT",
+            "discovery_note": "Another agent supplied a Finviz lead. The lead was not used as verified evidence; original official IR document independently retrieved. No user_verified label.",
+            "event_kind": "results_release",
+            "fiscal_period": {
+              "end": "2026-10-31",
+              "label": "Q3 FY2027",
+              "start": "2026-08-02"
+            },
+            "id": "df34084d-c4ea-5848-ad67-df9dc8b98084",
+            "previous_evidence_id": "7e01749a-258c-5831-aace-9e0d050eb715",
+            "quote": "after the U.S. market closes on Thursday, December 3, 2026.",
+            "release_date": "2026-12-03",
+            "release_time": "after_market_close",
+            "retrieved_at": "2026-11-12T23:46:52.622261+00:00",
+            "review_note": "Release company, fiscal quarter/year, dateline and results-publication wording re-reviewed. No date or timezone change. Normalized visible text unchanged; raw HTML changed.",
+            "source_sha256": "bb35e403595b4af82df3ffd18d02f30f3859d3ed218ba20ff3224c29faccefc5",
+            "source_url": "https://investors.samsara.com/news/news-details/2026/Samsara-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-3-2026/default.aspx",
+            "time_precision": "market_session",
+            "timestamp_verified": false,
+            "timezone": "America/New_York",
+            "timezone_provenance": "US market closes reference; release-date boundary interpreted in America/New_York under release-date-boundary-v1. Not an exact publication clock time.",
+            "verification_method": "direct_http_official_ir_full_document_re_review",
+            "verification_status": "independently_verified",
+            "verified_at": "2026-11-12T23:48:07.519940+00:00",
+            "verifier": "Codex"
+          },
+          "code": "OUTSIDE_14_DAY_WINDOW",
+          "company": "IOT",
+          "deadline": "2026-12-03T05:00:00+00:00",
+          "next_eligibility_at": "2026-11-19T05:00:00+00:00",
+          "release_date": "2026-12-03"
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "MDB",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "announcement_evidence": {
+            "announcement_issued_date": "2026-11-12",
+            "announcement_text": "SentinelOne, Inc. - SentinelOne Announces Date of Fiscal Third Quarter 2027 Financial Results Conference Call and Participation in Upcoming Investor Conference Skip to main content Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog Skip to main content News Details Overview Press Releases Events & Presentations Financial Info Quarterly Results SEC Filings Governance Governance Documents Management Board of Directors Committee Composition Whistleblower Hotline Resources Investor Email Alerts Investor FAQs Investor Contacts Blog View All News SentinelOne Announces Date of Fiscal Third Quarter 2027 Financial Results Conference Call and Participation in Upcoming Investor Conference November 12, 2026 MOUNTAIN VIEW, Calif.--(BUSINESS WIRE)-- SentinelOne, Inc. (NYSE: S) today announced that it will release financial results for its fiscal third quarter 2027, which ended October 31, 2026. Results will be released after market close on Thursday, December 3, 2026. SentinelOne will host a conference call to discuss the results at 2:00 p.m. PT (5:00 p.m. ET) on the same day. To register for the live event, please visit Q3 FY2027 Earnings Conference Call Webcast . SentinelOne is also scheduled to present at the following investor conference: Event: Barclays Global Technology Conference Date: Thursday, December 10, 2026 Presentation Time: 12:50 p.m. PT (3:50 p.m. ET) Live webcasts for both events will be available on SentinelOne\u2019s Investor Relations website at investors.sentinelone.com , along with related earnings materials. Replays will be accessible through the same link shortly after each event. Disclosure Information SentinelOne uses, and intends to continue using, its Investor Relations website ( investors.sentinelone.com ) as a means of disclosing material information to the public and complying with its disclosure obligations under Regulation FD. Accordingly, investors should monitor the Investor Relations website, in addition to the company\u2019s press releases, blog ( sentinelone.com/blog ), SEC filings, public conference calls, presentations, and webcasts. About SentinelOne SentinelOne (NYSE: S) is the leader in AI security, setting the standard for leveraging AI and automation to give defenders a decisive operating advantage. Built for those who secure our world, Singularity Platform delivers unified coverage across endpoints, identity, cloud, and AI. Powered by Autonomous Security Intelligence, SentinelOne stops attacks at machine speed, reducing risk and delivering clarity and control to stay one step ahead. Headquartered in Mountain View, California with teams worldwide, SentinelOne protects nearly one-fifth of the Fortune 500 and hundreds of Global 2000 enterprises. From Main Street to Wall Street, the world\u2019s most critical organizations trust SentinelOne for cybersecurity. For more information, please visit www.sentinelone.com Category: Investors Investor Contact Saad Nazir investors@sentinelone.com Press Contact Craig VerColen press@sentinelone.com Source: SentinelOne View All News Investor Relations 444 Castro Street Suite 400 Mountain View, California 94041 Send Email Overview Press Releases Events & Presentations Financial Info Governance Resources follow us on twitter follow us on facebook follow us on LinkedIn follow us on youtube Privacy Policy Terms of Use \u00a9 Q4 Inc. - All rights reserved | Powered By Q4 Inc.",
+            "cached_body": "data/cache/earnings/release-leads/S-exact-3a34812800b483533dd1f0839a4447fcb9c6e86b778ad44218ca8a1d81744da5.body",
+            "call": {
+              "event_kind": "earnings_call",
+              "precision": "minute",
+              "time": "14:00",
+              "timezone": "America/Los_Angeles"
+            },
+            "checked_at": "2026-11-12T23:57:07.320887+00:00",
+            "company": "S",
+            "discovery_note": "User supplied an unverified Stockhouse reprint lead. Original official IR announcement independently retrieved and reviewed. Not user_verified; directory/search excerpts not used as verification.",
+            "event_kind": "results_release",
+            "fiscal_period": {
+              "end": "2026-10-31",
+              "label": "Q3 FY2027",
+              "start": "2026-08-01"
+            },
+            "fiscal_period_quote": "SentinelOne, Inc. (NYSE: S) today announced that it will release financial results for its fiscal third quarter 2027, which ended October 31, 2026.",
+            "id": "44c674b9-16d2-5a39-b330-225112d7752a",
+            "quote": "Results will be released after market close on Thursday, December 3, 2026.",
+            "release_date": "2026-12-03",
+            "release_time": "after_market_close",
+            "retrieved_at": "2026-11-12T23:57:07.549302+00:00",
+            "source_sha256": "3a34812800b483533dd1f0839a4447fcb9c6e86b778ad44218ca8a1d81744da5",
+            "source_url": "https://investors.sentinelone.com/press-releases/news-details/2026/SentinelOne-Announces-Date-of-Fiscal-Third-Quarter-2027-Financial-Results-Conference-Call-and-Participation-in-Upcoming-Investor-Conference/default.aspx",
+            "time_precision": "market_session",
+            "timestamp_verified": false,
+            "timezone": "America/New_York",
+            "timezone_provenance": "NYSE-listed company and US market-close context; release-date-boundary-v1 uses start of the release day in America/New_York. Documented conservative policy interpretation, not an exact publication clock time.",
+            "verification_method": "direct_http_official_ir_full_document",
+            "verification_status": "independently_verified",
+            "verified_at": "2026-11-12T23:57:43.472150+00:00",
+            "verifier": "Codex"
+          },
+          "code": "OUTSIDE_14_DAY_WINDOW",
+          "company": "S",
+          "deadline": "2026-12-03T05:00:00+00:00",
+          "next_eligibility_at": "2026-11-19T05:00:00+00:00",
+          "release_date": "2026-12-03"
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "ADBE",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "LULU",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        }
+      ],
+      "synthetic_fixed_time": "2026-11-13T12:00:00+00:00"
+    },
+    {
+      "case": "inside",
+      "eligible_candidates": [
+        {
+          "company": "CRM",
+          "guidance_id": "3b513a29-59c1-51a3-bf16-fa1001da216c",
+          "historical_input_ids": [
+            "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+            "2938884f-fc6a-596d-81fa-6c78134cbed0",
+            "4f05be77-b1b5-58c4-98d1-e5de94c3deab",
+            "5efe5d24-e4b0-5e01-a6be-a1380b221681",
+            "8a009902-473a-5cf2-a231-c05e6da94253",
+            "bf133a27-52cd-537a-ac37-e413923a952b",
+            "da0c0e00-f25d-5903-bde5-70e92d18d5f1",
+            "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+          ],
+          "method_version": "quarter-frequency-v1",
+          "probabilities": {
+            "above": "0.500000000000000000000000",
+            "below": "0E-24",
+            "within": "0.500000000000000000000000"
+          },
+          "target": {
+            "available_on": "2026-08-26",
+            "boundary_evidence": {
+              "accession": "0001108524-26-000187",
+              "filed_date": "2026-08-26",
+              "prior_actual_accession": "0001108524-25-000238",
+              "prior_actual_id": "6509063f-42b3-5d22-8909-5d47e047d76b",
+              "rule": "Three calendar months on the registered month-based fiscal calendar",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+            },
+            "end": "2026-10-31",
+            "growth_comparability": {
+              "available_on": "2026-11-11",
+              "blocked": true,
+              "reason": "Informatica contribution and pending Contentful/Fin acquisitions change consolidation scope. October Braze announcement adds uncertainty; explicit evidence reconciliation required.",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+              "sources": [
+                {
+                  "filed_date": "2026-08-27",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm"
+                },
+                {
+                  "filed_date": "2026-10-20",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312526425881/d516983dex991.htm"
+                }
+              ]
+            },
+            "label": "Q3 FY2027",
+            "outcome_comparability": {
+              "available_on": "2026-11-11",
+              "blocked": true,
+              "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+              "sources": [
+                "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+              ]
+            },
+            "prior_end": "2025-10-31",
+            "prior_start": "2025-08-01",
+            "start": "2026-08-01"
+          }
+        },
+        {
+          "company": "CRM",
+          "guidance_id": "3b513a29-59c1-51a3-bf16-fa1001da216c",
+          "historical_input_ids": [
+            "019557a4-5b6c-5a7a-bc52-f8cdbaebbd60",
+            "2938884f-fc6a-596d-81fa-6c78134cbed0",
+            "4f05be77-b1b5-58c4-98d1-e5de94c3deab",
+            "5efe5d24-e4b0-5e01-a6be-a1380b221681",
+            "8a009902-473a-5cf2-a231-c05e6da94253",
+            "bf133a27-52cd-537a-ac37-e413923a952b",
+            "da0c0e00-f25d-5903-bde5-70e92d18d5f1",
+            "f3b84e6b-57cc-58a2-85be-64bcdbc060de"
+          ],
+          "method_version": "quarter-frequency-laplace-v1",
+          "probabilities": {
+            "above": "0.454545454545454545454546",
+            "below": "0.090909090909090909090909",
+            "within": "0.454545454545454545454545"
+          },
+          "target": {
+            "available_on": "2026-08-26",
+            "boundary_evidence": {
+              "accession": "0001108524-26-000187",
+              "filed_date": "2026-08-26",
+              "prior_actual_accession": "0001108524-25-000238",
+              "prior_actual_id": "6509063f-42b3-5d22-8909-5d47e047d76b",
+              "rule": "Three calendar months on the registered month-based fiscal calendar",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+            },
+            "end": "2026-10-31",
+            "growth_comparability": {
+              "available_on": "2026-11-11",
+              "blocked": true,
+              "reason": "Informatica contribution and pending Contentful/Fin acquisitions change consolidation scope. October Braze announcement adds uncertainty; explicit evidence reconciliation required.",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+              "sources": [
+                {
+                  "filed_date": "2026-08-27",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm"
+                },
+                {
+                  "filed_date": "2026-10-20",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312526425881/d516983dex991.htm"
+                }
+              ]
+            },
+            "label": "Q3 FY2027",
+            "outcome_comparability": {
+              "available_on": "2026-11-11",
+              "blocked": true,
+              "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+              "sources": [
+                "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+              ]
+            },
+            "prior_end": "2025-10-31",
+            "prior_start": "2025-08-01",
+            "start": "2026-08-01"
+          }
+        },
+        {
+          "company": "OKTA",
+          "guidance_id": "7790a72a-98d9-57b3-9287-bf22cba52401",
+          "historical_input_ids": [
+            "024f6621-98d3-562f-b9ff-913a1c253d95",
+            "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+            "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+            "97daa508-ace5-596a-ac8b-367d1eeb8660",
+            "9fd1495d-2e63-5644-9bcb-908133766a3f",
+            "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+            "ac7eef4f-1555-5aa1-89d4-79440f6d2225"
+          ],
+          "method_version": "quarter-frequency-v1",
+          "probabilities": {
+            "above": "1.000000000000000000000000",
+            "below": "0E-24",
+            "within": "0E-24"
+          },
+          "target": {
+            "available_on": "2026-08-26",
+            "boundary_evidence": {
+              "accession": "0001660134-26-000068",
+              "filed_date": "2026-08-26",
+              "prior_actual_accession": "0001660134-25-000171",
+              "prior_actual_id": "fb8f9fd5-7ec4-5e8c-a73f-97a76cbf8356",
+              "rule": "Three calendar months on the registered month-based fiscal calendar",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+            },
+            "end": "2026-10-31",
+            "growth_comparability": {
+              "available_on": "2026-11-11",
+              "blocked": true,
+              "reason": "August 26 Permiso acquisition is a subsequent event with consideration still under evaluation. Annual guidance and prior-year comparison scope require reconciliation; partner-services shift is also disclosed.",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000069/okta-20260731.htm",
+              "sources": [
+                "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+              ]
+            },
+            "label": "Q3 FY2027",
+            "outcome_comparability": {
+              "available_on": "2026-11-11",
+              "blocked": true,
+              "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+              "sources": [
+                "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+              ]
+            },
+            "prior_end": "2025-10-31",
+            "prior_start": "2025-08-01",
+            "start": "2026-08-01"
+          }
+        },
+        {
+          "company": "OKTA",
+          "guidance_id": "7790a72a-98d9-57b3-9287-bf22cba52401",
+          "historical_input_ids": [
+            "024f6621-98d3-562f-b9ff-913a1c253d95",
+            "265f154f-9f5c-5eb2-b7f6-a6fdcbbed397",
+            "6ba91171-1588-5bc1-bb71-b19cb32a3aa1",
+            "97daa508-ace5-596a-ac8b-367d1eeb8660",
+            "9fd1495d-2e63-5644-9bcb-908133766a3f",
+            "a16aa8b8-881f-55b3-baaf-277e98e97bfa",
+            "ac7eef4f-1555-5aa1-89d4-79440f6d2225"
+          ],
+          "method_version": "quarter-frequency-laplace-v1",
+          "probabilities": {
+            "above": "0.800000000000000000000000",
+            "below": "0.100000000000000000000000",
+            "within": "0.100000000000000000000000"
+          },
+          "target": {
+            "available_on": "2026-08-26",
+            "boundary_evidence": {
+              "accession": "0001660134-26-000068",
+              "filed_date": "2026-08-26",
+              "prior_actual_accession": "0001660134-25-000171",
+              "prior_actual_id": "fb8f9fd5-7ec4-5e8c-a73f-97a76cbf8356",
+              "rule": "Three calendar months on the registered month-based fiscal calendar",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+            },
+            "end": "2026-10-31",
+            "growth_comparability": {
+              "available_on": "2026-11-11",
+              "blocked": true,
+              "reason": "August 26 Permiso acquisition is a subsequent event with consideration still under evaluation. Annual guidance and prior-year comparison scope require reconciliation; partner-services shift is also disclosed.",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000069/okta-20260731.htm",
+              "sources": [
+                "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+              ]
+            },
+            "label": "Q3 FY2027",
+            "outcome_comparability": {
+              "available_on": "2026-11-11",
+              "blocked": true,
+              "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+              "sources": [
+                "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+              ]
+            },
+            "prior_end": "2025-10-31",
+            "prior_start": "2025-08-01",
+            "start": "2026-08-01"
+          }
+        },
+        {
+          "company": "IOT",
+          "guidance_id": "ce9fd475-3519-55ce-b28a-9c85f104d074",
+          "historical_input_ids": [
+            "22b792bc-f915-57e5-b426-a490e1dca5de",
+            "2962c236-49c4-5874-b918-b1fe3a137190",
+            "6b8d169c-4077-5d31-9bee-84dc60f76e50",
+            "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+            "85084aa2-014a-54d7-947e-22f48d5c315f",
+            "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+            "a2db7ecb-4217-5078-a05c-351a64d98400",
+            "c3df377b-e059-51f7-be16-6212a9c2f96c"
+          ],
+          "method_version": "quarter-frequency-v1",
+          "probabilities": {
+            "above": "1.000000000000000000000000",
+            "below": "0E-24",
+            "within": "0E-24"
+          },
+          "target": {
+            "available_on": "2026-09-03",
+            "boundary_evidence": {
+              "accession": "0001628280-26-060438",
+              "filed_date": "2026-09-03",
+              "prior_actual_accession": "0001628280-25-056069",
+              "prior_actual_id": "04788f82-92f1-57f8-a852-5c8b7399113c",
+              "rule": "13-week fiscal quarter on the registered weekly calendar",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm"
+            },
+            "end": "2026-10-31",
+            "growth_comparability": {
+              "available_on": "2026-11-11",
+              "blocked": false,
+              "reason": "Current and prior fiscal years each have 52 weeks; compare observed 26-week remaining periods.",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060909/iot-20260801.htm",
+              "sources": [
+                "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm"
+              ]
+            },
+            "label": "Q3 FY2027",
+            "outcome_comparability": {
+              "available_on": "2026-11-11",
+              "blocked": true,
+              "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+              "sources": [
+                "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm"
+              ]
+            },
+            "prior_end": "2025-11-01",
+            "prior_start": "2025-08-03",
+            "start": "2026-08-02"
+          }
+        },
+        {
+          "company": "IOT",
+          "guidance_id": "ce9fd475-3519-55ce-b28a-9c85f104d074",
+          "historical_input_ids": [
+            "22b792bc-f915-57e5-b426-a490e1dca5de",
+            "2962c236-49c4-5874-b918-b1fe3a137190",
+            "6b8d169c-4077-5d31-9bee-84dc60f76e50",
+            "7102d709-a3b2-5b5f-b7b8-12223bc6aaf7",
+            "85084aa2-014a-54d7-947e-22f48d5c315f",
+            "88d2b338-e2fa-5c52-a274-74a288dc84d4",
+            "a2db7ecb-4217-5078-a05c-351a64d98400",
+            "c3df377b-e059-51f7-be16-6212a9c2f96c"
+          ],
+          "method_version": "quarter-frequency-laplace-v1",
+          "probabilities": {
+            "above": "0.818181818181818181818182",
+            "below": "0.090909090909090909090909",
+            "within": "0.090909090909090909090909"
+          },
+          "target": {
+            "available_on": "2026-09-03",
+            "boundary_evidence": {
+              "accession": "0001628280-26-060438",
+              "filed_date": "2026-09-03",
+              "prior_actual_accession": "0001628280-25-056069",
+              "prior_actual_id": "04788f82-92f1-57f8-a852-5c8b7399113c",
+              "rule": "13-week fiscal quarter on the registered weekly calendar",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm"
+            },
+            "end": "2026-10-31",
+            "growth_comparability": {
+              "available_on": "2026-11-11",
+              "blocked": false,
+              "reason": "Current and prior fiscal years each have 52 weeks; compare observed 26-week remaining periods.",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060909/iot-20260801.htm",
+              "sources": [
+                "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm"
+              ]
+            },
+            "label": "Q3 FY2027",
+            "outcome_comparability": {
+              "available_on": "2026-11-11",
+              "blocked": true,
+              "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+              "sources": [
+                "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm"
+              ]
+            },
+            "prior_end": "2025-11-01",
+            "prior_start": "2025-08-03",
+            "start": "2026-08-02"
+          }
+        },
+        {
+          "company": "S",
+          "guidance_id": "c5bf519b-08d3-5b8b-a2ad-bdd3636e8dba",
+          "historical_input_ids": [
+            "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+            "198d111b-9057-515d-ad22-07486dbe75e9",
+            "1f3f1a34-f8c2-5ff1-a142-99c70061ead5",
+            "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+            "4b27139d-7ed7-5343-8001-b3720d678486",
+            "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+            "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+            "df062ed8-23f0-5c80-a674-8c5ab54a68d7"
+          ],
+          "method_version": "quarter-frequency-v1",
+          "probabilities": {
+            "above": "0.875000000000000000000000",
+            "below": "0E-24",
+            "within": "0.125000000000000000000000"
+          },
+          "target": {
+            "available_on": "2026-08-27",
+            "boundary_evidence": {
+              "accession": "0001583708-26-000052",
+              "filed_date": "2026-08-27",
+              "prior_actual_accession": "0001583708-25-000159",
+              "prior_actual_id": "24be2ebb-7517-56b8-8d06-5bfa9b7161f1",
+              "rule": "Three calendar months on the registered month-based fiscal calendar",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+            },
+            "end": "2026-10-31",
+            "growth_comparability": {
+              "available_on": "2026-11-11",
+              "blocked": true,
+              "reason": "Observo and Prompt acquired in September 2025; current/prior remaining periods contain different ownership durations. Comparable revenue impact not reconciled.",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000055/s-20260731.htm",
+              "sources": [
+                "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+              ]
+            },
+            "label": "Q3 FY2027",
+            "outcome_comparability": {
+              "available_on": "2026-11-11",
+              "blocked": true,
+              "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+              "sources": [
+                "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+              ]
+            },
+            "prior_end": "2025-10-31",
+            "prior_start": "2025-08-01",
+            "start": "2026-08-01"
+          }
+        },
+        {
+          "company": "S",
+          "guidance_id": "c5bf519b-08d3-5b8b-a2ad-bdd3636e8dba",
+          "historical_input_ids": [
+            "06506245-e5f3-5dbc-97e8-ed84509fd53a",
+            "198d111b-9057-515d-ad22-07486dbe75e9",
+            "1f3f1a34-f8c2-5ff1-a142-99c70061ead5",
+            "25976bf7-4e42-5187-b6dc-a3eae65d3d75",
+            "4b27139d-7ed7-5343-8001-b3720d678486",
+            "8ddcaadc-5596-5d69-a09c-dd4acd097fad",
+            "ab1a9749-feda-54b4-800c-fc7fa8a647ce",
+            "df062ed8-23f0-5c80-a674-8c5ab54a68d7"
+          ],
+          "method_version": "quarter-frequency-laplace-v1",
+          "probabilities": {
+            "above": "0.727272727272727272727273",
+            "below": "0.090909090909090909090909",
+            "within": "0.181818181818181818181818"
+          },
+          "target": {
+            "available_on": "2026-08-27",
+            "boundary_evidence": {
+              "accession": "0001583708-26-000052",
+              "filed_date": "2026-08-27",
+              "prior_actual_accession": "0001583708-25-000159",
+              "prior_actual_id": "24be2ebb-7517-56b8-8d06-5bfa9b7161f1",
+              "rule": "Three calendar months on the registered month-based fiscal calendar",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+            },
+            "end": "2026-10-31",
+            "growth_comparability": {
+              "available_on": "2026-11-11",
+              "blocked": true,
+              "reason": "Observo and Prompt acquired in September 2025; current/prior remaining periods contain different ownership durations. Comparable revenue impact not reconciled.",
+              "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000055/s-20260731.htm",
+              "sources": [
+                "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+              ]
+            },
+            "label": "Q3 FY2027",
+            "outcome_comparability": {
+              "available_on": "2026-11-11",
+              "blocked": true,
+              "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+              "sources": [
+                "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+              ]
+            },
+            "prior_end": "2025-10-31",
+            "prior_start": "2025-08-01",
+            "start": "2026-08-01"
+          }
+        }
+      ],
+      "rejections": [
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "PD",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "GTLB",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "CRWD",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "MDB",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "ADBE",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "LULU",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        }
+      ],
+      "synthetic_fixed_time": "2026-11-20T12:00:00+00:00"
+    },
+    {
+      "case": "deadline",
+      "eligible_candidates": [],
+      "rejections": [
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "PD",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "GTLB",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "LOCK_DEADLINE_PASSED",
+          "company": "CRM",
+          "reason": "Publication deadline has passed; no retrospective live prediction",
+          "unverified_release_lead": "2026-12-02"
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "CRWD",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "code": "LOCK_DEADLINE_PASSED",
+          "company": "OKTA",
+          "reason": "Publication deadline has passed; no retrospective live prediction",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "code": "LOCK_DEADLINE_PASSED",
+          "company": "IOT",
+          "reason": "Publication deadline has passed; no retrospective live prediction",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "MDB",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "code": "LOCK_DEADLINE_PASSED",
+          "company": "S",
+          "reason": "Publication deadline has passed; no retrospective live prediction",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "ADBE",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "LULU",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        }
+      ],
+      "synthetic_fixed_time": "2026-12-03T05:00:00+00:00"
+    },
+    {
+      "case": "withdrawn",
+      "eligible_candidates": [],
+      "rejections": [
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "PD",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "GTLB",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "GUIDANCE_WITHDRAWN",
+          "company": "CRM",
+          "reason": "Current public target guidance is withdrawn",
+          "unverified_release_lead": "2026-12-02"
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "CRWD",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "code": "GUIDANCE_WITHDRAWN",
+          "company": "OKTA",
+          "reason": "Current public target guidance is withdrawn",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "code": "GUIDANCE_WITHDRAWN",
+          "company": "IOT",
+          "reason": "Current public target guidance is withdrawn",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "MDB",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "code": "GUIDANCE_WITHDRAWN",
+          "company": "S",
+          "reason": "Current public target guidance is withdrawn",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "ADBE",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "LULU",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        }
+      ],
+      "synthetic_fixed_time": "2026-11-20T12:00:00+00:00"
+    },
+    {
+      "case": "stale_actual",
+      "eligible_candidates": [],
+      "rejections": [
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "PD",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "GTLB",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "STALE_INPUT",
+          "company": "CRM",
+          "reason": "Manual manual-freshness-v1: actual_days=135 exceeded or no available actual",
+          "unverified_release_lead": "2026-12-02"
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "CRWD",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "code": "STALE_INPUT",
+          "company": "OKTA",
+          "reason": "Manual manual-freshness-v1: actual_days=135 exceeded or no available actual",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "code": "STALE_INPUT",
+          "company": "IOT",
+          "reason": "Manual manual-freshness-v1: actual_days=135 exceeded or no available actual",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "MDB",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "code": "STALE_INPUT",
+          "company": "S",
+          "reason": "Manual manual-freshness-v1: actual_days=135 exceeded or no available actual",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "ADBE",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "LULU",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        }
+      ],
+      "synthetic_fixed_time": "2026-11-20T12:00:00+00:00"
+    },
+    {
+      "case": "already_public",
+      "eligible_candidates": [],
+      "rejections": [
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "PD",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "GTLB",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "PUBLICATION_CHECK_BLOCKED",
+          "company": "CRM",
+          "reason": "{\"status\": \"already_public_synthetic\"}",
+          "unverified_release_lead": "2026-12-02"
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "CRWD",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "code": "PUBLICATION_CHECK_BLOCKED",
+          "company": "OKTA",
+          "reason": "{\"status\": \"already_public_synthetic\"}",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "code": "PUBLICATION_CHECK_BLOCKED",
+          "company": "IOT",
+          "reason": "{\"status\": \"already_public_synthetic\"}",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "MDB",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "code": "PUBLICATION_CHECK_BLOCKED",
+          "company": "S",
+          "reason": "{\"status\": \"already_public_synthetic\"}",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "ADBE",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "LULU",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        }
+      ],
+      "synthetic_fixed_time": "2026-11-20T12:00:00+00:00"
+    },
+    {
+      "case": "missing_history",
+      "eligible_candidates": [],
+      "rejections": [
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "PD",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "GTLB",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "INSUFFICIENT_HISTORY",
+          "company": "CRM",
+          "reason": "Need six company quarters, or at least twelve pooled eligible quarters from two companies",
+          "unverified_release_lead": "2026-12-02"
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "CRWD",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "code": "INSUFFICIENT_HISTORY",
+          "company": "OKTA",
+          "reason": "Need six company quarters, or at least twelve pooled eligible quarters from two companies",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "code": "INSUFFICIENT_HISTORY",
+          "company": "IOT",
+          "reason": "Need six company quarters, or at least twelve pooled eligible quarters from two companies",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "MDB",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": "2026-12-01"
+        },
+        {
+          "code": "INSUFFICIENT_HISTORY",
+          "company": "S",
+          "reason": "Need six company quarters, or at least twelve pooled eligible quarters from two companies",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "ADBE",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        },
+        {
+          "code": "UNVERIFIED_RELEASE_DATE",
+          "company": "LULU",
+          "reason": "No independently retrieved full-document or direct user-verified results-publication evidence. Calls, calendar estimates and other-agent/search leads do not qualify.",
+          "unverified_release_lead": null
+        }
+      ],
+      "synthetic_fixed_time": "2026-11-20T12:00:00+00:00"
+    }
+  ],
+  "database_access": false,
+  "kind": "synthetic_fixed_input_regression_NOT_live",
+  "ledger_writes_possible": false
+}

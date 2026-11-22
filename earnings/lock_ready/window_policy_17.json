@@ -1,0 +1,24 @@
+{
+  "policy_version": "live-entry-17-calendar-days-v1",
+  "changed_at": "2026-11-15T03:06:29.923377+00:00",
+  "old_entry_days": 14,
+  "new_entry_days": 17,
+  "reason": "Operational convenience: a single planned owner lock session November16,2026 after21:00 America/Los_Angeles. Earlier eligibility is not earlier execution authorization.",
+  "ledger_precondition": {
+    "checked_at": "2026-11-15T03:04:41.413913+00:00",
+    "predictions": 0,
+    "read_only": true
+  },
+  "precedes_first_live_lock": true,
+  "future_outcomes_used": false,
+  "historical_guidance_selection_unchanged": true,
+  "planned_session": "2026-11-16 after21:00 America/Los_Angeles",
+  "live_execution_authorized_by_this_change": false,
+  "database_applied_at": "2026-11-15T03:25:01.951820+00:00",
+  "post_test_check": {
+    "checked_at": "2026-11-15T20:43:59.057776+00:00",
+    "predictions": 0,
+    "scores": 0,
+    "read_only": true
+  }
+}

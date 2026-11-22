@@ -1,0 +1,51 @@
+{
+  "ADC_probed": false,
+  "access_probes_performed": false,
+  "blocking_reasons": [
+    "WAITING_EXPLICIT_OWNER_DEALS_FINISHED_CONFIRMATION",
+    "UNVERIFIED_VERTEX_COMBINED_BILLABLE_THINKING_OUTPUT_BOUND"
+  ],
+  "checked_at": "2026-11-13T20:09:47.277108+00:00",
+  "deadline": "2026-11-17T18:00:00-08:00",
+  "diagnostic_performance": "NOT_EVALUATED_NO_MODEL_RESULTS",
+  "errors_abstentions": "Not measurable before inference; mocked tests are not model outputs",
+  "fresh": {
+    "bodies_opened": false,
+    "commit": "6e085a5",
+    "inference_performed": false,
+    "issuers": 9,
+    "labels_created": false,
+    "metadata_gap": "CFLT current SEC ticker match unavailable",
+    "metadata_groups": 36
+  },
+  "human_review": {
+    "complete": false,
+    "estimated_minutes": 88,
+    "hard_minutes": 120,
+    "prepared_cases": 7,
+    "reviewed_cases": 0,
+    "reviewer": "owner_only"
+  },
+  "inference_authorized": false,
+  "inference_performed": false,
+  "location": "global",
+  "model_requested": "gemini-3.6-flash",
+  "pre_live_requirement": "Refresh official Vertex pricing review and confirm safe documented billing bounds. Do not use access probes or silently substitute model.",
+  "production_promotion": false,
+  "project": "just-rhythm-506202-j8",
+  "provider": "google_vertex_ai",
+  "returned_model_versions": [],
+  "sdk_version": "2.34.0",
+  "spend": {
+    "active_attempts": 0,
+    "attempts": 0,
+    "ceiling_usd": "15",
+    "halted": false,
+    "known_accounted_usd": "0",
+    "outstanding_unknown_or_active_reservations_usd": "0",
+    "records": [],
+    "total_held_usd": "0"
+  },
+  "stage": "LOCAL_PREPARATION_ONLY",
+  "vertex_requests_dispatched": 0
+}

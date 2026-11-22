@@ -1,0 +1,1298 @@
+{
+  "review_scope": "Last eight publicly reported quarters as of 2026-11-12; complete reviewed 8-K/8-K-A inventory from 2024-08-01 through 2026-11-12",
+  "source_inventory": [
+    {
+      "accession": "0001108524-24-000020",
+      "filed": "2024-08-28",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000020/crm-20240828.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000020/crm-q2fy25xexhibit991.htm"
+      ]
+    },
+    {
+      "accession": "0001108524-24-000024",
+      "filed": "2024-09-05",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000024/crm-20240905.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000024/a090524-ex991pressrelease.htm"
+      ]
+    },
+    {
+      "accession": "0001108524-24-000033",
+      "filed": "2024-12-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000033/crm-20241203.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000033/crm-q3fy25xexhibit991.htm"
+      ]
+    },
+    {
+      "accession": "0001108524-25-000002",
+      "filed": "2025-02-26",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000002/crm-20250226.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000002/crm-q4fy25xexhibit991.htm"
+      ]
+    },
+    {
+      "accession": "0001193125-25-126271",
+      "filed": "2025-05-27",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312525126271/d866821d8k.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1108524/000119312525126271/d866821dex991.htm"
+      ]
+    },
+    {
+      "accession": "0001108524-25-000027",
+      "filed": "2025-05-28",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000027/crm-20250528.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000027/crm-q1fy26xexhibit991.htm"
+      ]
+    },
+    {
+      "accession": "0001108524-25-000040",
+      "filed": "2025-07-09",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000040/crm-20250709.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000040/exhibit991-july2025directo.htm"
+      ]
+    },
+    {
+      "accession": "0001108524-25-000083",
+      "filed": "2025-09-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000083/crm-20250903.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000083/crm-q2fy26xexhibit991.htm"
+      ]
+    },
+    {
+      "accession": "0001108524-25-000168",
+      "filed": "2025-10-16",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000168/crm-20251015.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000168/ex991-investordaypressrele.htm"
+      ]
+    },
+    {
+      "accession": "0001108524-25-000207",
+      "filed": "2025-11-18",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000207/crm-20251118.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000207/ex991-infaclosingpressrele.htm"
+      ]
+    },
+    {
+      "accession": "0001108524-25-000234",
+      "filed": "2025-12-03",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000234/crm-20251203.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000234/crm-q3fy26xexhibit991.htm"
+      ]
+    },
+    {
+      "accession": "0001108524-26-000056",
+      "filed": "2026-02-25",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-20260225.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-q4fy26xexhibit991.htm"
+      ]
+    },
+    {
+      "accession": "0001193125-26-107403",
+      "filed": "2026-03-16",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312526107403/d887663d8k.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1108524/000119312526107403/d887663dex991.htm"
+      ]
+    },
+    {
+      "accession": "0001108524-26-000125",
+      "filed": "2026-05-27",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000125/crm-20260527.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000125/crm-q1fy27xexhibit991.htm"
+      ]
+    },
+    {
+      "accession": "0001108524-26-000187",
+      "filed": "2026-08-26",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-20260826.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+      ]
+    },
+    {
+      "accession": "0001108524-26-000210",
+      "filed": "2026-09-17",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000210/crm-20260916.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001193125-26-425881",
+      "filed": "2026-10-20",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312526425881/d516983d8k.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1108524/000119312526425881/d516983dex991.htm"
+      ]
+    },
+    {
+      "accession": "0001193125-24-251243",
+      "filed": "2024-11-05",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312524251243/d854367d8k.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001108524-24-000036",
+      "filed": "2024-12-10",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000036/crm-20241205.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001193125-25-020881",
+      "filed": "2025-02-05",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312525020881/d926032d8k.htm",
+      "exhibits": [
+        "https://www.sec.gov/Archives/edgar/data/1108524/000119312525020881/d926032dex991.htm"
+      ]
+    },
+    {
+      "accession": "0001108524-25-000033",
+      "filed": "2025-06-09",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000033/crm-20250605.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001193125-25-145772",
+      "filed": "2025-06-24",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312525145772/d71627d8k.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001108524-26-000062",
+      "filed": "2026-03-06",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000062/crm-20260306.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001193125-26-104282",
+      "filed": "2026-03-12",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312526104282/d887348d8k.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001193125-26-106356",
+      "filed": "2026-03-13",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312526106356/d114728d8k.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001108524-26-000131",
+      "filed": "2026-06-01",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000131/crm-20260528.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001108524-26-000138",
+      "filed": "2026-06-02",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000138/crm-20260527.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001108524-26-000160",
+      "filed": "2026-08-05",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000160/crm-20260805.htm",
+      "exhibits": []
+    },
+    {
+      "accession": "0001108524-26-000197",
+      "filed": "2026-09-04",
+      "primary_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000197/crm-20260902.htm",
+      "exhibits": []
+    }
+  ],
+  "inventory_gaps": [],
+  "quarters": [
+    {
+      "company": "CRM",
+      "target": {
+        "start": "2024-08-01",
+        "end": "2024-10-31",
+        "label": "Q3 FY2025",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "9b41e06c-3f35-590e-a0f2-fc66d81dfb10",
+          "company": "CRM",
+          "issued": {
+            "start": "2024-08-28",
+            "end": "2024-08-28",
+            "precision": "day"
+          },
+          "filed": "2024-08-28",
+          "start": "2024-08-01",
+          "end": "2024-10-31",
+          "low": "9310000000.00",
+          "high": "9360000000.00",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001108524-24-000020",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000020/crm-q2fy25xexhibit991.htm",
+          "quote": "Q3 FY25 Guidance Full Year FY25 Guidance Total Revenue $9.31 - $9.36 Billion ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "9b41e06c-3f35-590e-a0f2-fc66d81dfb10",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000020/crm-q2fy25xexhibit991.htm",
+          "source_sha256": "2b8c794c663d2eddfd0ac894a7160aca38295df8f8c4a6d639a9f63d17c7dbef",
+          "fetched_at": "2026-11-12T10:26:05.734993+00:00",
+          "issuance_date_quote": "August 28, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000020/crm-20240828.htm",
+          "exhibit_index_quote": "99.1 Press Release dated August 28, 2024"
+        }
+      ],
+      "actual": {
+        "id": "fd9cfcfa-3f52-58d2-b7f8-094c4daecf7f",
+        "company": "CRM",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2024-08-01",
+        "end": "2024-10-31",
+        "value": "9444000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001108524-24-000034",
+        "filed": "2024-12-04",
+        "form": "10-Q",
+        "fiscal_year": 2025,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001108524.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000034/crm-20241031.htm",
+        "filed": "2024-12-04",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000034/crm-20241031.htm",
+          "sha256": "481a5990c188d32904562605659e1e29c9f383c080019babf5a28fe34e943de4",
+          "body": "0985f2c7108abf2e4614ccb3fc2bc5eb77d8bb693cd619ad14ccf5d6eeed6aeb-481a5990c188d32904562605659e1e29c9f383c080019babf5a28fe34e943de4.body",
+          "fetched_at": "2026-11-12T10:40:41.868963+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001108524-24-000034-filing.txt"
+      },
+      "result": {
+        "issued_date": "2024-12-03",
+        "formal_release_issued_date": "2024-12-03",
+        "issued_precision": "day",
+        "date_quote": "December 3, 2024",
+        "filed": "2024-12-03",
+        "accession": "0001108524-24-000033",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000033/crm-q3fy25xexhibit991.htm",
+        "reported_revenue_quote": "Total revenues 9,444 8,720 27,902 25,570",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "df2238b9046a8a3fe89089b64cdefc16d4420e11a864804f08cb37c5b7e23aa9",
+        "fetched_at": "2026-11-12T10:26:08.298547+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.219199+00:00",
+        "guidance_id": "9b41e06c-3f35-590e-a0f2-fc66d81dfb10",
+        "actual_id": "fd9cfcfa-3f52-58d2-b7f8-094c4daecf7f",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000020/crm-q2fy25xexhibit991.htm",
+            "filed_date": "2024-08-28"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000033/crm-q3fy25xexhibit991.htm",
+            "filed_date": "2024-12-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000034/crm-20241031.htm",
+            "filed_date": "2024-12-04"
+          }
+        ],
+        "scope_evidence": [
+          "xpects to finalize the valuation as soon as practicable, but not later than one year from the acquisition date. The Company has included the financial results of Spiff, which were not material, in its condensed consolidated financial statements from the date of acquisition. The transaction costs associated with the acquisition were also not material. 7. Intangible Assets Acquired Through Business Combinations",
+          "of Spiff, which were not material, in its condensed consolidated financial statements from the date of acquisition. The transaction costs associated with the acquisition were also not material. 7. Intangible Assets Acquired Through Business Combinations and Goodwill Intangible Assets Acquired Through Business Combinations Intangible assets acquired through business combinations were as follows (in millions): "
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2024-12-03"
+    },
+    {
+      "company": "CRM",
+      "target": {
+        "start": "2024-11-01",
+        "end": "2025-01-31",
+        "label": "Q4 FY2025",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "8b3165b3-9aef-506e-828d-ff866b6d38f1",
+          "company": "CRM",
+          "issued": {
+            "start": "2024-12-03",
+            "end": "2024-12-03",
+            "precision": "day"
+          },
+          "filed": "2024-12-03",
+          "start": "2024-11-01",
+          "end": "2025-01-31",
+          "low": "9900000000.00",
+          "high": "10100000000.00",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001108524-24-000033",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000033/crm-q3fy25xexhibit991.htm",
+          "quote": "Q4 FY25 Guidance 5 Full Year FY25 Guidance 5 Total Revenue $9.90 - $10.10 Billion ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "8b3165b3-9aef-506e-828d-ff866b6d38f1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000033/crm-q3fy25xexhibit991.htm",
+          "source_sha256": "df2238b9046a8a3fe89089b64cdefc16d4420e11a864804f08cb37c5b7e23aa9",
+          "fetched_at": "2026-11-12T10:26:08.298547+00:00",
+          "issuance_date_quote": "December 3, 2024",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000033/crm-20241203.htm",
+          "exhibit_index_quote": "99.1 Press Release dated December 3 , 2024"
+        }
+      ],
+      "actual": {
+        "id": "8039a516-a19a-56a1-b56f-e2b3d60ac87f",
+        "company": "CRM",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2024-11-01",
+        "end": "2025-01-31",
+        "value": "9993000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001108524-25-000006",
+        "filed": "2025-03-05",
+        "form": "DERIVED",
+        "fiscal_year": 2025,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001108524.json",
+        "parents": [
+          "73245ddd-1482-5bd9-8cb3-e69b408fe80b",
+          "40cf7fbd-39d8-5d84-977c-c5f610375b7d"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "40cf7fbd-39d8-5d84-977c-c5f610375b7d",
+          "company": "CRM",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2024-02-01",
+          "end": "2024-10-31",
+          "value": "27902000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001108524-24-000034",
+          "filed": "2024-12-04",
+          "form": "10-Q",
+          "fiscal_year": 2025,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001108524.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "73245ddd-1482-5bd9-8cb3-e69b408fe80b",
+          "company": "CRM",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2024-02-01",
+          "end": "2025-01-31",
+          "value": "37895000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001108524-25-000006",
+          "filed": "2025-03-05",
+          "form": "10-K",
+          "fiscal_year": 2025,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001108524.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000006/crm-20250131.htm",
+        "filed": "2025-03-05",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000006/crm-20250131.htm",
+          "sha256": "83750729c413fb5e15c769073b070a138222df049642f66cba3edc50a215560e",
+          "body": "24668ef97812430164ddc915c9ce163a501a1fbf32b581c5d8dfee1c46a583a1-83750729c413fb5e15c769073b070a138222df049642f66cba3edc50a215560e.body",
+          "fetched_at": "2026-11-12T10:40:42.595864+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001108524-25-000006-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-02-26",
+        "formal_release_issued_date": "2025-02-26",
+        "issued_precision": "day",
+        "date_quote": "February 26, 2025",
+        "filed": "2025-02-26",
+        "accession": "0001108524-25-000002",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000002/crm-q4fy25xexhibit991.htm",
+        "reported_revenue_quote": "Total revenues 9,993 9,287 37,895 34,857",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "bed49760390ea10bf0dc4959cc013e98e1eeec100969fdc8ba86c06e950dd18a",
+        "fetched_at": "2026-11-12T10:26:09.624409+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.233309+00:00",
+        "guidance_id": "8b3165b3-9aef-506e-828d-ff866b6d38f1",
+        "actual_id": "8039a516-a19a-56a1-b56f-e2b3d60ac87f",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852424000033/crm-q3fy25xexhibit991.htm",
+            "filed_date": "2024-12-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000002/crm-q4fy25xexhibit991.htm",
+            "filed_date": "2025-02-26"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000006/crm-20250131.htm",
+            "filed_date": "2025-03-05"
+          }
+        ],
+        "scope_evidence": [
+          "xpects to finalize the valuation as soon as practicable, but not later than one year from the acquisition date. The Company has included the financial results of Spiff, which were not material, in its consolidated financial statements from the date of acquisition. The transaction costs associated with the acquisition were also not material. Zoomin Software Ltd. In November 2024, the Company acquired all outst",
+          "l results of Spiff, which were not material, in its consolidated financial statements from the date of acquisition. The transaction costs associated with the acquisition were also not material. Zoomin Software Ltd. In November 2024, the Company acquired all outstanding stock of Zoomin Software Ltd. (\u201cZoomin\u201d), a data management company. The acquisition date fair value of the consideration transferred for Zoom",
+          "pects to finalize the valuation as soon as practicable, but not later than one year from the acquisition date. The Company has included the financial results of Zoomin, which were not material, in its consolidated financial statements from the date of acquisition. The transaction costs associated with the acquisition were also not material. Own Data Company Ltd. In November 2024, the Company acquired all outs",
+          " results of Zoomin, which were not material, in its consolidated financial statements from the date of acquisition. The transaction costs associated with the acquisition were also not material. Own Data Company Ltd. In November 2024, the Company acquired all outstanding stock of Own Data Company Ltd. (\u201cOwn\u201d), a leading provider of data protection and data management solutions. The Company has included the fin"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-02-26"
+    },
+    {
+      "company": "CRM",
+      "target": {
+        "start": "2025-02-01",
+        "end": "2025-04-30",
+        "label": "Q1 FY2026",
+        "calendar": "months",
+        "days": 89
+      },
+      "guidance_versions": [
+        {
+          "id": "569a87b8-437e-54d9-a6d1-dd69cfd4d9ac",
+          "company": "CRM",
+          "issued": {
+            "start": "2025-02-26",
+            "end": "2025-02-26",
+            "precision": "day"
+          },
+          "filed": "2025-02-26",
+          "start": "2025-02-01",
+          "end": "2025-04-30",
+          "low": "9710000000.00",
+          "high": "9760000000.00",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001108524-25-000002",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000002/crm-q4fy25xexhibit991.htm",
+          "quote": "Q1 FY26 Guidance Full Year FY26 Guidance Total revenue $9.71 - $9.76 billion ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "569a87b8-437e-54d9-a6d1-dd69cfd4d9ac",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000002/crm-q4fy25xexhibit991.htm",
+          "source_sha256": "bed49760390ea10bf0dc4959cc013e98e1eeec100969fdc8ba86c06e950dd18a",
+          "fetched_at": "2026-11-12T10:26:09.624409+00:00",
+          "issuance_date_quote": "February 26, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000002/crm-20250226.htm",
+          "exhibit_index_quote": "99.1 Press Release dated February 26, 2025"
+        }
+      ],
+      "actual": {
+        "id": "9990a746-aed2-5397-bd83-820a60eb870a",
+        "company": "CRM",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-02-01",
+        "end": "2025-04-30",
+        "value": "9829000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001108524-25-000030",
+        "filed": "2025-05-29",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001108524.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000030/crm-20250430.htm",
+        "filed": "2025-05-29",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000030/crm-20250430.htm",
+          "sha256": "b2b977e22cedf44211eb21eac9cdee65708b861463a572b7bc329f9052ab4701",
+          "body": "cff616baf2ed3db00abb401d35129d62e6a21659d9ee45468346af5a2000544b-b2b977e22cedf44211eb21eac9cdee65708b861463a572b7bc329f9052ab4701.body",
+          "fetched_at": "2026-11-12T10:40:43.307365+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001108524-25-000030-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-05-28",
+        "formal_release_issued_date": "2025-05-28",
+        "issued_precision": "day",
+        "date_quote": "May 28, 2025",
+        "filed": "2025-05-28",
+        "accession": "0001108524-25-000027",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000027/crm-q1fy26xexhibit991.htm",
+        "reported_revenue_quote": "Total revenues 9,829 9,133",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "d618d30a3edb635b2a741e139c0678f9c71443f4ab572368a2417b0e6d09a28d",
+        "fetched_at": "2026-11-12T10:26:12.183949+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.243586+00:00",
+        "guidance_id": "569a87b8-437e-54d9-a6d1-dd69cfd4d9ac",
+        "actual_id": "9990a746-aed2-5397-bd83-820a60eb870a",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000002/crm-q4fy25xexhibit991.htm",
+            "filed_date": "2025-02-26"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000027/crm-q1fy26xexhibit991.htm",
+            "filed_date": "2025-05-28"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000030/crm-20250430.htm",
+            "filed_date": "2025-05-29"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-05-28"
+    },
+    {
+      "company": "CRM",
+      "target": {
+        "start": "2025-05-01",
+        "end": "2025-07-31",
+        "label": "Q2 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "984df744-7f57-51d3-a70c-2910e19cb04b",
+          "company": "CRM",
+          "issued": {
+            "start": "2025-05-28",
+            "end": "2025-05-28",
+            "precision": "day"
+          },
+          "filed": "2025-05-28",
+          "start": "2025-05-01",
+          "end": "2025-07-31",
+          "low": "10110000000.00",
+          "high": "10160000000.00",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001108524-25-000027",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000027/crm-q1fy26xexhibit991.htm",
+          "quote": "Q2 FY26 Guidance GAAP Non-GAAP (1) Revenue $10.11 - $10.16 billion ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "984df744-7f57-51d3-a70c-2910e19cb04b",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000027/crm-q1fy26xexhibit991.htm",
+          "source_sha256": "d618d30a3edb635b2a741e139c0678f9c71443f4ab572368a2417b0e6d09a28d",
+          "fetched_at": "2026-11-12T10:26:12.183949+00:00",
+          "issuance_date_quote": "May 28, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000027/crm-20250528.htm",
+          "exhibit_index_quote": "99.1 Press Release dated May 2 8 , 2025"
+        }
+      ],
+      "actual": {
+        "id": "141a9883-a63a-581d-8278-22614862709e",
+        "company": "CRM",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-05-01",
+        "end": "2025-07-31",
+        "value": "10236000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001108524-25-000088",
+        "filed": "2025-09-04",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001108524.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000088/crm-20250731.htm",
+        "filed": "2025-09-04",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000088/crm-20250731.htm",
+          "sha256": "ea1724991a5de2e90c955eaedf031331a84566906bea515eeb14a08523ed548f",
+          "body": "500edb538c824955930834ad5970476a13e514f572de8997c2e523c76afe1648-ea1724991a5de2e90c955eaedf031331a84566906bea515eeb14a08523ed548f.body",
+          "fetched_at": "2026-11-12T10:40:44.022817+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001108524-25-000088-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-09-03",
+        "formal_release_issued_date": "2025-09-03",
+        "issued_precision": "day",
+        "date_quote": "September 3, 2025",
+        "filed": "2025-09-03",
+        "accession": "0001108524-25-000083",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000083/crm-q2fy26xexhibit991.htm",
+        "reported_revenue_quote": "Total revenues 10,236 9,325 20,065 18,458",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "0123d20faba4486dd529e115c8659dee15dd660a10344f1dc76abe9b6e3d5423",
+        "fetched_at": "2026-11-12T10:26:14.639202+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.254354+00:00",
+        "guidance_id": "984df744-7f57-51d3-a70c-2910e19cb04b",
+        "actual_id": "141a9883-a63a-581d-8278-22614862709e",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000027/crm-q1fy26xexhibit991.htm",
+            "filed_date": "2025-05-28"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000083/crm-q2fy26xexhibit991.htm",
+            "filed_date": "2025-09-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000088/crm-20250731.htm",
+            "filed_date": "2025-09-04"
+          }
+        ],
+        "scope_evidence": []
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-09-03"
+    },
+    {
+      "company": "CRM",
+      "target": {
+        "start": "2025-08-01",
+        "end": "2025-10-31",
+        "label": "Q3 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "42930d56-cae9-5290-9732-17206bc8ea2d",
+          "company": "CRM",
+          "issued": {
+            "start": "2025-09-03",
+            "end": "2025-09-03",
+            "precision": "day"
+          },
+          "filed": "2025-09-03",
+          "start": "2025-08-01",
+          "end": "2025-10-31",
+          "low": "10240000000.00",
+          "high": "10290000000.00",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001108524-25-000083",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000083/crm-q2fy26xexhibit991.htm",
+          "quote": "Q3 FY26 Guidance GAAP Non-GAAP (1) Revenue $10.24 - $10.29 billion ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "42930d56-cae9-5290-9732-17206bc8ea2d",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000083/crm-q2fy26xexhibit991.htm",
+          "source_sha256": "0123d20faba4486dd529e115c8659dee15dd660a10344f1dc76abe9b6e3d5423",
+          "fetched_at": "2026-11-12T10:26:14.639202+00:00",
+          "issuance_date_quote": "September 3, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000083/crm-20250903.htm",
+          "exhibit_index_quote": "99.1 Press Release dated Sep tember 3, 2025"
+        }
+      ],
+      "actual": {
+        "id": "6509063f-42b3-5d22-8909-5d47e047d76b",
+        "company": "CRM",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-08-01",
+        "end": "2025-10-31",
+        "value": "10259000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001108524-25-000238",
+        "filed": "2025-12-04",
+        "form": "10-Q",
+        "fiscal_year": 2026,
+        "fiscal_period": "Q3",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001108524.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000238/crm-20251031.htm",
+        "filed": "2025-12-04",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000238/crm-20251031.htm",
+          "sha256": "4cf4573fa6e72fc8a7ded8fde363a32657bbe97222d5786f993608905a61193b",
+          "body": "ea99ae1c7f501322d746924efd67d60720117451400b99bd16ae52d7d154083c-4cf4573fa6e72fc8a7ded8fde363a32657bbe97222d5786f993608905a61193b.body",
+          "fetched_at": "2026-11-12T10:40:44.817561+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001108524-25-000238-filing.txt"
+      },
+      "result": {
+        "issued_date": "2025-12-03",
+        "formal_release_issued_date": "2025-12-03",
+        "issued_precision": "day",
+        "date_quote": "December 3, 2025",
+        "filed": "2025-12-03",
+        "accession": "0001108524-25-000234",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000234/crm-q3fy26xexhibit991.htm",
+        "reported_revenue_quote": "Total revenues 10,259 9,444 30,324 27,902",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "921d9dacb81e4025d6ea1da42d09ccd6c55f839f9864ca8ecdd4cbf5670fc21a",
+        "fetched_at": "2026-11-12T07:10:36.207167+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.265415+00:00",
+        "guidance_id": "42930d56-cae9-5290-9732-17206bc8ea2d",
+        "actual_id": "6509063f-42b3-5d22-8909-5d47e047d76b",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000083/crm-q2fy26xexhibit991.htm",
+            "filed_date": "2025-09-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000234/crm-q3fy26xexhibit991.htm",
+            "filed_date": "2025-12-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000238/crm-20251031.htm",
+            "filed_date": "2025-12-04"
+          }
+        ],
+        "scope_evidence": [
+          "cts to finalize the valuation as soon as practicable, but not later than one year from the acquisition date. The Company has included the financial results of Regrello, which were not material, in its consolidated financial statements from the date of acquisition. The transaction costs associated with the acquisition were not material. 7. Intangible Assets Acquired Through Business Combinations and Goodwill I",
+          "ial results of Regrello, which were not material, in its consolidated financial statements from the date of acquisition. The transaction costs associated with the acquisition were not material. 7. Intangible Assets Acquired Through Business Combinations and Goodwill Intangible Assets Acquired Through Business Combinations Intangible assets acquired through business combinations were as follows (in millions): "
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2025-12-03"
+    },
+    {
+      "company": "CRM",
+      "target": {
+        "start": "2025-11-01",
+        "end": "2026-01-31",
+        "label": "Q4 FY2026",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "559547e2-f9f8-5b6c-b0e2-ab07f37b7c55",
+          "company": "CRM",
+          "issued": {
+            "start": "2025-12-03",
+            "end": "2025-12-03",
+            "precision": "day"
+          },
+          "filed": "2025-12-03",
+          "start": "2025-11-01",
+          "end": "2026-01-31",
+          "low": "11130000000.00",
+          "high": "11230000000.00",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001108524-25-000234",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000234/crm-q3fy26xexhibit991.htm",
+          "quote": "Q4 FY26 Guidance GAAP Non-GAAP (1) Revenue $11.13 - $11.23 billion ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "559547e2-f9f8-5b6c-b0e2-ab07f37b7c55",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000234/crm-q3fy26xexhibit991.htm",
+          "source_sha256": "921d9dacb81e4025d6ea1da42d09ccd6c55f839f9864ca8ecdd4cbf5670fc21a",
+          "fetched_at": "2026-11-12T07:10:36.207167+00:00",
+          "issuance_date_quote": "December 3, 2025",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000234/crm-20251203.htm",
+          "exhibit_index_quote": "99.1 Press Release dated December 3, 2025"
+        }
+      ],
+      "actual": {
+        "id": "3b11599c-fe3f-575e-a2f6-aed2a13361ae",
+        "company": "CRM",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2025-11-01",
+        "end": "2026-01-31",
+        "value": "11201000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001108524-26-000060",
+        "filed": "2026-03-02",
+        "form": "DERIVED",
+        "fiscal_year": 2025,
+        "fiscal_period": "REMAINING",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001108524.json",
+        "parents": [
+          "be526491-6d46-555b-8610-3eb466f43b88",
+          "84ad2458-82ac-5512-86a8-1c4cdc0bc750"
+        ],
+        "derivation": "annual-minus-ytd-v1"
+      },
+      "actual_parents": [
+        {
+          "id": "84ad2458-82ac-5512-86a8-1c4cdc0bc750",
+          "company": "CRM",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-02-01",
+          "end": "2025-10-31",
+          "value": "30324000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001108524-25-000238",
+          "filed": "2025-12-04",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001108524.json",
+          "parents": [],
+          "derivation": null
+        },
+        {
+          "id": "be526491-6d46-555b-8610-3eb466f43b88",
+          "company": "CRM",
+          "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "start": "2025-02-01",
+          "end": "2026-01-31",
+          "value": "41525000000",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "accession": "0001108524-26-000060",
+          "filed": "2026-03-02",
+          "form": "10-K",
+          "fiscal_year": 2025,
+          "fiscal_period": "FY",
+          "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001108524.json",
+          "parents": [],
+          "derivation": null
+        }
+      ],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+        "filed": "2026-03-02",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "sha256": "e594bccbe5cb5603a3a857be25f1469a8a5c5f7321f023d6d3b9923c299174ba",
+          "body": "b9ca44b4cb0e1b584b5e14886fedfee56a3240b05650fe034fc564a23e586b3c-e594bccbe5cb5603a3a857be25f1469a8a5c5f7321f023d6d3b9923c299174ba.body",
+          "fetched_at": "2026-11-12T10:40:45.449440+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001108524-26-000060-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-02-25",
+        "formal_release_issued_date": "2026-02-25",
+        "issued_precision": "day",
+        "date_quote": "February 25, 2026",
+        "filed": "2026-02-25",
+        "accession": "0001108524-26-000056",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-q4fy26xexhibit991.htm",
+        "reported_revenue_quote": "Total revenues 11,201 9,993 41,525 37,895",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "8ea16dfd1b1706f6ece15eaeec0722e399bb02f5fe6efaa9518d4afdf6ee04cd",
+        "fetched_at": "2026-11-11T23:48:27.220178+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.279977+00:00",
+        "guidance_id": "559547e2-f9f8-5b6c-b0e2-ab07f37b7c55",
+        "actual_id": "3b11599c-fe3f-575e-a2f6-aed2a13361ae",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000234/crm-q3fy26xexhibit991.htm",
+            "filed_date": "2025-12-03"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-q4fy26xexhibit991.htm",
+            "filed_date": "2026-02-25"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+            "filed_date": "2026-03-02"
+          }
+        ],
+        "scope_evidence": [
+          "cts to finalize the valuation as soon as practicable, but not later than one year from the acquisition date. The Company has included the financial results of Regrello, which were not material, in its consolidated financial statements from the date of acquisition. The transaction costs associated with the acquisition were not material. Informatica, Inc. In November 2025, the Company acquired all outstanding s",
+          "ial results of Regrello, which were not material, in its consolidated financial statements from the date of acquisition. The transaction costs associated with the acquisition were not material. Informatica, Inc. In November 2025, the Company acquired all outstanding stock of Informatica, a leader in enterprise AI-powered cloud data management. The Company has included the financial results of Informatica in t",
+          "has included the financial results of Informatica in the consolidated financial statements from the date of acquisition. The transaction costs associated with the acquisition were not material. The acquisition date fair value of the consideration transferred for Informatica was approximately $ 9.6 billion, which consisted of the following (in millions): 77 Table of Contents Cash 9,538 Fair value of pre-existi",
+          "Includes approximately 3pts Informatica contribution Diluted net income per share $1.47 - $1.49 $3.02 - $3.04 Current remaining performance obligation growth (3) Approximately 15% Approximately 13% C"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-02-25"
+    },
+    {
+      "company": "CRM",
+      "target": {
+        "start": "2026-02-01",
+        "end": "2026-04-30",
+        "label": "Q1 FY2027",
+        "calendar": "months",
+        "days": 89
+      },
+      "guidance_versions": [
+        {
+          "id": "903f9e16-b90d-5951-be33-6b25eb3a6b6b",
+          "company": "CRM",
+          "issued": {
+            "start": "2026-02-25",
+            "end": "2026-02-25",
+            "precision": "day"
+          },
+          "filed": "2026-02-25",
+          "start": "2026-02-01",
+          "end": "2026-04-30",
+          "low": "11030000000.00",
+          "high": "11080000000.00",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001108524-26-000056",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-q4fy26xexhibit991.htm",
+          "quote": "Q1 FY27 Guidance GAAP Non-GAAP (1) Revenue $11.03 - $11.08 billion ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "903f9e16-b90d-5951-be33-6b25eb3a6b6b",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-q4fy26xexhibit991.htm",
+          "source_sha256": "8ea16dfd1b1706f6ece15eaeec0722e399bb02f5fe6efaa9518d4afdf6ee04cd",
+          "fetched_at": "2026-11-11T23:48:27.220178+00:00",
+          "issuance_date_quote": "February 25, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-20260225.htm",
+          "exhibit_index_quote": "99.1 Press Release dated February 25 , 202 6"
+        }
+      ],
+      "actual": {
+        "id": "68a6998b-e602-5bbe-97ae-11af69fc4d24",
+        "company": "CRM",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-02-01",
+        "end": "2026-04-30",
+        "value": "11133000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001108524-26-000127",
+        "filed": "2026-05-28",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q1",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001108524.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000127/crm-20260430.htm",
+        "filed": "2026-05-28",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000127/crm-20260430.htm",
+          "sha256": "eeb5dac085cfe92b07920323fcf698c5cd3732988db672fe1853d91e31f7d4f1",
+          "body": "597a3793f814dd78d5ca3667c44b94aa61efbffc45b039f6d5b77a2aca701f78-eeb5dac085cfe92b07920323fcf698c5cd3732988db672fe1853d91e31f7d4f1.body",
+          "fetched_at": "2026-11-12T10:40:46.172967+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001108524-26-000127-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-05-27",
+        "formal_release_issued_date": "2026-05-27",
+        "issued_precision": "day",
+        "date_quote": "May 27, 2026",
+        "filed": "2026-05-27",
+        "accession": "0001108524-26-000125",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000125/crm-q1fy27xexhibit991.htm",
+        "reported_revenue_quote": "Total revenues 11,133 9,829",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "9b8bd22a94fa9e4b5c29920757b4763cd2bad0ae8eedbb0d4b16542d361ad552",
+        "fetched_at": "2026-11-11T10:08:38.315744+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.290729+00:00",
+        "guidance_id": "903f9e16-b90d-5951-be33-6b25eb3a6b6b",
+        "actual_id": "68a6998b-e602-5bbe-97ae-11af69fc4d24",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-q4fy26xexhibit991.htm",
+            "filed_date": "2026-02-25"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000125/crm-q1fy27xexhibit991.htm",
+            "filed_date": "2026-05-27"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000127/crm-20260430.htm",
+            "filed_date": "2026-05-28"
+          }
+        ],
+        "scope_evidence": [
+          "ts to finalize the valuation as soon as practicable, but not later than one year from the acquisition date. The Company has included the financial results of Qualified, which were not material, in its condensed consolidated financial statements from the date of acquisition. The transaction costs associated with the acquisition were also not material. 7. Intangible Assets Acquired Through Business Combinations",
+          "ualified, which were not material, in its condensed consolidated financial statements from the date of acquisition. The transaction costs associated with the acquisition were also not material. 7. Intangible Assets Acquired Through Business Combinations and Goodwill Intangible Assets Acquired Through Business Combinations Intangible assets acquired through business combinations were as follows (in millions): ",
+          "Includes approximately 3pts Informatica contribution Subscription & support revenue growth (4) Slightly under 12% Approximately 11% CC Includes approximately 3pts Informatica contribution Operating m",
+          "Includes approximately 3pts Informatica contribution Operating margin 20.9% 34.3% Diluted net income per share $7.85 - $7.93 $13.11 - $13.19 Operating cash flow growth Approximately 9% - 10% N/A Free"
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-05-27"
+    },
+    {
+      "company": "CRM",
+      "target": {
+        "start": "2026-05-01",
+        "end": "2026-07-31",
+        "label": "Q2 FY2027",
+        "calendar": "months",
+        "days": 92
+      },
+      "guidance_versions": [
+        {
+          "id": "b81cf032-a16f-5631-bb29-024ecd5ca379",
+          "company": "CRM",
+          "issued": {
+            "start": "2026-05-27",
+            "end": "2026-05-27",
+            "precision": "day"
+          },
+          "filed": "2026-05-27",
+          "start": "2026-05-01",
+          "end": "2026-07-31",
+          "low": "11270000000.00",
+          "high": "11350000000.00",
+          "unit": "USD",
+          "basis": "US_GAAP_consolidated_reported",
+          "status": "initial",
+          "accession": "0001108524-26-000125",
+          "exhibit": "99.1",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000125/crm-q1fy27xexhibit991.htm",
+          "quote": "Q2 FY27 Guidance GAAP Non-GAAP (1) Revenue $11.27 - $11.35 billion ",
+          "metric": "quarterly_consolidated_revenue",
+          "original_verified": true,
+          "notes": "Reviewed quarterly consolidated reported revenue; not ARR, segment, constant-currency or annual guidance."
+        }
+      ],
+      "guidance_source_checks": [
+        {
+          "guidance_id": "b81cf032-a16f-5631-bb29-024ecd5ca379",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000125/crm-q1fy27xexhibit991.htm",
+          "source_sha256": "9b8bd22a94fa9e4b5c29920757b4763cd2bad0ae8eedbb0d4b16542d361ad552",
+          "fetched_at": "2026-11-11T10:08:38.315744+00:00",
+          "issuance_date_quote": "May 27, 2026",
+          "unit_evidence": "million/billion is explicit in the range or consolidated outlook table; values converted with Decimal",
+          "version_kind": "initial",
+          "exhibit_identifier": "99.1",
+          "exhibit_index_source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000125/crm-20260527.htm",
+          "exhibit_index_quote": "99.1 Press Release dated May 2 7 , 2026"
+        }
+      ],
+      "actual": {
+        "id": "c52c6e9c-3d31-5695-b309-be49982b47b0",
+        "company": "CRM",
+        "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+        "start": "2026-05-01",
+        "end": "2026-07-31",
+        "value": "11345000000",
+        "unit": "USD",
+        "basis": "US_GAAP_consolidated_reported",
+        "accession": "0001108524-26-000190",
+        "filed": "2026-08-27",
+        "form": "10-Q",
+        "fiscal_year": 2027,
+        "fiscal_period": "Q2",
+        "source_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001108524.json",
+        "parents": [],
+        "derivation": null
+      },
+      "actual_parents": [],
+      "actual_filing_evidence": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+        "filed": "2026-08-27",
+        "manifest": {
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+          "sha256": "7b76b3936a08ce4ee81b4f68e351fff3c2c9f8eda7c467a256ae1f4b232c8579",
+          "body": "90680956b4642b1eaa6fa33053a5945ccf20632493470b7d202800680d3e0d91-7b76b3936a08ce4ee81b4f68e351fff3c2c9f8eda7c467a256ae1f4b232c8579.body",
+          "fetched_at": "2026-11-12T08:11:43.624343+00:00"
+        },
+        "text_file": "data/cache/earnings/session3-research/0001108524-26-000190-filing.txt"
+      },
+      "result": {
+        "issued_date": "2026-08-26",
+        "formal_release_issued_date": "2026-08-26",
+        "issued_precision": "day",
+        "date_quote": "August 26, 2026",
+        "filed": "2026-08-26",
+        "accession": "0001108524-26-000187",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
+        "reported_revenue_quote": "Total revenues 11,345 10,236 22,478 20,065",
+        "unit_scale": "1000000",
+        "column_index": 0,
+        "source_sha256": "ed2dace59f395fd2426543a34ce2dd92ecf2c442024be98c33fb96f98689633b",
+        "fetched_at": "2026-11-11T10:08:39.994897+00:00",
+        "exhibit_identifier": "99.1"
+      },
+      "earlier_result_indications": [],
+      "outcome_basis_review": {
+        "status": "passed",
+        "verifier": "Codex",
+        "reviewed_at": "2026-11-12T11:03:00.301799+00:00",
+        "guidance_id": "b81cf032-a16f-5631-bb29-024ecd5ca379",
+        "actual_id": "c52c6e9c-3d31-5695-b309-be49982b47b0",
+        "reason": "Exact target period and reported consolidated USD revenue reconcile. Guidance is an absolute consolidated reported range/point; actual statement uses the same consolidated basis. No organic, constant-currency, ARR, segment or pro-forma normalization. Acquisition disclosures below were reviewed independently of YoY growth comparability.",
+        "sources": [
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000125/crm-q1fy27xexhibit991.htm",
+            "filed_date": "2026-05-27"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
+            "filed_date": "2026-08-26"
+          },
+          {
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+            "filed_date": "2026-08-27"
+          }
+        ],
+        "scope_evidence": [
+          "ts to finalize the valuation as soon as practicable, but not later than one year from the acquisition date. The Company has included the financial results of Qualified, which were not material, in its condensed consolidated financial statements from the date of acquisition. The transaction costs associated with the acquisition were also not material. Pending Acquisitions Contentful In May 2026, the Company en",
+          "ualified, which were not material, in its condensed consolidated financial statements from the date of acquisition. The transaction costs associated with the acquisition were also not material. Pending Acquisitions Contentful In May 2026, the Company entered into an agreement to acquire Contentful Global, Inc. (\u201cContentful\u201d), provider of a leading composable content platform, for approximately $ 1.5 billion i",
+          "Includes approximately 3pts Informatica contribution Subscription & support revenue growth (4) Slightly Under 12% Approximately 11% CC Includes approximately 3pts Informatica contribution Operating m",
+          "Includes approximately 3pts Informatica contribution Operating margin 20.6% 34.3% Diluted net income per share $7.93 - $7.99 $14.06 - $14.12 Operating cash flow growth Approximately 4% - 5% N/A Free "
+        ]
+      },
+      "blocking_reasons": [],
+      "selection_note": "Latest guidance wholly public before entry to 14-local-day window; no guidance issued with or after first result information is selected.",
+      "guidance_anchor_publication_date": "2026-08-26"
+    }
+  ]
+}

@@ -1,0 +1,1427 @@
+{
+  "policy": "First qualifying issuers in predeclared order; later unused pool candidates not rejected, simply quota filled",
+  "exclusions": [
+    {
+      "ticker": "WDAY",
+      "reason": "Subscription-only; next-quarter subscription point, not consolidated range",
+      "screening_evidence": {
+        "checked_at": "2026-11-13T04:51:40.010900+00:00",
+        "cik": "0001327811",
+        "filings": [
+          {
+            "accession": "0001327811-26-000048",
+            "exhibits": [],
+            "filed": "2026-09-29",
+            "primary": "wday-20260929.htm",
+            "primary_manifest": {
+              "body": "4278c95608a7f92168ef3cb56ea3ca8e1394721c51628356fc8a3005aa426182-1447d1a47836ea3ea902e3a85607b10ffba4d16c6e566a9a74c23df03c59be81.body",
+              "fetched_at": "2026-11-13T04:51:40.694749+00:00",
+              "sha256": "1447d1a47836ea3ea902e3a85607b10ffba4d16c6e566a9a74c23df03c59be81",
+              "url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000048/wday-20260929.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000048/wday-20260929.htm"
+          },
+          {
+            "accession": "0001327811-26-000042",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "3176fc2207447f9189578a57cf5e58d16f77b3d8fb7b00232fc6e6b038d880b3-fb65ed043fda5dc6783f023a2f241a74e0d2b1e9d9b6c7e93b4dd8a4f84e3b49.body",
+                  "fetched_at": "2026-11-13T04:51:42.077414+00:00",
+                  "sha256": "fb65ed043fda5dc6783f023a2f241a74e0d2b1e9d9b6c7e93b4dd8a4f84e3b49",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000042/wday-07312026x991.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/WDAY-0001327811-26-000042.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000042/wday-07312026x991.htm"
+              }
+            ],
+            "filed": "2026-08-27",
+            "primary": "wday-20260827.htm",
+            "primary_manifest": {
+              "body": "94837555144c23af0be5b8d28acc2d77168c5d28fe4a8edd33d609a9835891c6-8a127bb1928f73e7dc206d09945be56ef111f0c605fb32b087c6edf0e4df5b1e.body",
+              "fetched_at": "2026-11-13T04:51:41.319302+00:00",
+              "sha256": "8a127bb1928f73e7dc206d09945be56ef111f0c605fb32b087c6edf0e4df5b1e",
+              "url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000042/wday-20260827.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1327811/000132781126000042/wday-20260827.htm"
+          }
+        ],
+        "fiscal_year_end": "0131",
+        "forms": [
+          "10-K",
+          "10-Q",
+          "144",
+          "3",
+          "305B2",
+          "4",
+          "4/A",
+          "424B5",
+          "5",
+          "8-K",
+          "ARS",
+          "AW",
+          "CORRESP",
+          "DEF 14A",
+          "DEFA14A",
+          "DEFR14A",
+          "FWP",
+          "POSASR",
+          "PRE 14A",
+          "S-3/A",
+          "S-3ASR",
+          "S-8",
+          "SC 13G",
+          "SC 13G/A",
+          "SCHEDULE 13G",
+          "SCHEDULE 13G/A",
+          "UPLOAD"
+        ],
+        "inventory_manifest": {
+          "body": "3a487c33e0e2085abec2b841bead8d9a2d7f9a527c0fd29417e2bfd531053e90-e346cbec499f663887623d6c0524d237f33a4649b1939a297aa8ab14afa56fed.body",
+          "fetched_at": "2026-11-13T04:51:40.007312+00:00",
+          "sha256": "e346cbec499f663887623d6c0524d237f33a4649b1939a297aa8ab14afa56fed",
+          "url": "https://data.sec.gov/submissions/CIK0001327811.json"
+        },
+        "name": "Workday, Inc.",
+        "sector": "software",
+        "sic": "7374",
+        "sic_description": "Services-Computer Processing & Data Preparation",
+        "ticker": "WDAY",
+        "tickers_manifest": {
+          "body": "ace4a0fb8e9e22bbcc3aac993c3d786cd9ad1d6184ae5640bed2a7a320809f3c-391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f.body",
+          "fetched_at": "2026-11-13T04:51:39.344593+00:00",
+          "sha256": "391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f",
+          "url": "https://www.sec.gov/files/company_tickers.json"
+        }
+      }
+    },
+    {
+      "ticker": "SNOW",
+      "reason": "Product-only quarterly guidance; not consolidated total revenue",
+      "screening_evidence": {
+        "checked_at": "2026-11-13T04:51:42.700820+00:00",
+        "cik": "0001640147",
+        "filings": [
+          {
+            "accession": "0001640147-26-000033",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "e05b229c4e4aea0c5bb2baba2dbbd40424515adf68497432ff6aeab638662cd2-b02b2c8a7ff90bfa9661721cb7ec99fb03d12e35b001194034b5e8266b54386a.body",
+                  "fetched_at": "2026-11-13T04:51:44.024069+00:00",
+                  "sha256": "b02b2c8a7ff90bfa9661721cb7ec99fb03d12e35b001194034b5e8266b54386a",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1640147/000164014726000033/fy2027q2earnings.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/SNOW-0001640147-26-000033.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1640147/000164014726000033/fy2027q2earnings.htm"
+              }
+            ],
+            "filed": "2026-09-02",
+            "primary": "snow-20260902.htm",
+            "primary_manifest": {
+              "body": "cbdbd3f04c6d0b52aa6aaaf66e4d29696d46caa6a100e6bd4dc85b521ba5bb72-91b43a188283fb49c534e22942d4a2a23b34c9fffc75ab358af70e833ba5c2f8.body",
+              "fetched_at": "2026-11-13T04:51:43.352708+00:00",
+              "sha256": "91b43a188283fb49c534e22942d4a2a23b34c9fffc75ab358af70e833ba5c2f8",
+              "url": "https://www.sec.gov/Archives/edgar/data/1640147/000164014726000033/snow-20260902.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1640147/000164014726000033/snow-20260902.htm"
+          },
+          {
+            "accession": "0001640147-26-000027",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "eba5c17362ae267f9b921a620cadd611b5ab3c9a1a5e112fba364b722ca56d29-172dafa3d6df83837acbf5662fe3cac99be48d9eefd1d20bf96c5968dc5a0bf1.body",
+                  "fetched_at": "2026-11-13T04:51:45.338443+00:00",
+                  "sha256": "172dafa3d6df83837acbf5662fe3cac99be48d9eefd1d20bf96c5968dc5a0bf1",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1640147/000164014726000027/fy2027q1earnings.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/SNOW-0001640147-26-000027.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1640147/000164014726000027/fy2027q1earnings.htm"
+              }
+            ],
+            "filed": "2026-05-27",
+            "primary": "snow-20260527.htm",
+            "primary_manifest": {
+              "body": "219efbdc125c7581b1ac0cb36967cdeb22d7395277878629aba979586e4c163e-29f9c964bbeb55d6d76def344262e02794093d40baa7187b534b37cf031b6265.body",
+              "fetched_at": "2026-11-13T04:51:44.668629+00:00",
+              "sha256": "29f9c964bbeb55d6d76def344262e02794093d40baa7187b534b37cf031b6265",
+              "url": "https://www.sec.gov/Archives/edgar/data/1640147/000164014726000027/snow-20260527.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1640147/000164014726000027/snow-20260527.htm"
+          }
+        ],
+        "fiscal_year_end": "0131",
+        "forms": [
+          "10-K",
+          "10-Q",
+          "144",
+          "144/A",
+          "3",
+          "3/A",
+          "4",
+          "4/A",
+          "8-K",
+          "ARS",
+          "D",
+          "DEF 14A",
+          "DEFA14A",
+          "PRE 14A",
+          "S-8",
+          "SC 13G",
+          "SC 13G/A",
+          "SCHEDULE 13G",
+          "SCHEDULE 13G/A"
+        ],
+        "inventory_manifest": {
+          "body": "2258a1a10a34c693608cdbb038c1a9f0201a4a68ea6456d5a14c276bf7490649-de9eecad45445ae6fa6e4cd1c47a7f3cac323226c1eece588c05d473e448174c.body",
+          "fetched_at": "2026-11-13T04:51:42.697665+00:00",
+          "sha256": "de9eecad45445ae6fa6e4cd1c47a7f3cac323226c1eece588c05d473e448174c",
+          "url": "https://data.sec.gov/submissions/CIK0001640147.json"
+        },
+        "name": "Snowflake Inc.",
+        "sector": "software",
+        "sic": "7372",
+        "sic_description": "Services-Prepackaged Software",
+        "ticker": "SNOW",
+        "tickers_manifest": {
+          "body": "ace4a0fb8e9e22bbcc3aac993c3d786cd9ad1d6184ae5640bed2a7a320809f3c-391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f.body",
+          "fetched_at": "2026-11-13T04:51:39.344593+00:00",
+          "sha256": "391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f",
+          "url": "https://www.sec.gov/files/company_tickers.json"
+        }
+      }
+    },
+    {
+      "ticker": "BOX",
+      "reason": "Quarterly total revenue point, not range",
+      "screening_evidence": {
+        "checked_at": "2026-11-13T04:51:49.086487+00:00",
+        "cik": "0001372612",
+        "filings": [
+          {
+            "accession": "0001193125-26-365121",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "4424849ee57f100ffbfdd6a2d3def184b2067128ac3ec57dea6558b88ecdc2da-18bab810914dc1a9f722d8b2bbef9b0d50bcd66c049dd607eeb3ed56c549c5c0.body",
+                  "fetched_at": "2026-11-13T04:51:50.876825+00:00",
+                  "sha256": "18bab810914dc1a9f722d8b2bbef9b0d50bcd66c049dd607eeb3ed56c549c5c0",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1372612/000119312526365121/box-ex99_1.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/BOX-0001193125-26-365121.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1372612/000119312526365121/box-ex99_1.htm"
+              }
+            ],
+            "filed": "2026-08-25",
+            "primary": "box-20260825.htm",
+            "primary_manifest": {
+              "body": "bc4c9e6ced7cb4389dc6ff395c212f0309f565b4a628a2e9b5ac21be429c792d-a64a708d5b0ab18e888a09b048b9bd2299e2c65310bc6fcabb42a75cbc76bbf4.body",
+              "fetched_at": "2026-11-13T04:51:50.035769+00:00",
+              "sha256": "a64a708d5b0ab18e888a09b048b9bd2299e2c65310bc6fcabb42a75cbc76bbf4",
+              "url": "https://www.sec.gov/Archives/edgar/data/1372612/000119312526365121/box-20260825.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1372612/000119312526365121/box-20260825.htm"
+          },
+          {
+            "accession": "0001193125-26-239239",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "5df2df4dd3832917f0e443a7cc51cdb8a99a668864943a3540cfc57874b40c0e-71cb8e49fef87334620c1c1fbde9839071a1a7c6154851be80d1ec6ed722f156.body",
+                  "fetched_at": "2026-11-13T04:51:52.257170+00:00",
+                  "sha256": "71cb8e49fef87334620c1c1fbde9839071a1a7c6154851be80d1ec6ed722f156",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1372612/000119312526239239/box-ex99_1.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/BOX-0001193125-26-239239.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1372612/000119312526239239/box-ex99_1.htm"
+              }
+            ],
+            "filed": "2026-05-26",
+            "primary": "box-20260526.htm",
+            "primary_manifest": {
+              "body": "677b21d651ca0768aeb3ab9dc3163f0a0c232c76995c7b11e6e8e37ba08f79c1-9cf7d872cfb4028b7c2cca030d97519203171465ee949d1cc631c9f161be0fd3.body",
+              "fetched_at": "2026-11-13T04:51:51.581696+00:00",
+              "sha256": "9cf7d872cfb4028b7c2cca030d97519203171465ee949d1cc631c9f161be0fd3",
+              "url": "https://www.sec.gov/Archives/edgar/data/1372612/000119312526239239/box-20260526.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1372612/000119312526239239/box-20260526.htm"
+          }
+        ],
+        "fiscal_year_end": "0131",
+        "forms": [
+          "10-K",
+          "10-K/A",
+          "10-Q",
+          "144",
+          "144/A",
+          "3",
+          "4",
+          "4/A",
+          "5",
+          "8-K",
+          "8-K/A",
+          "ARS",
+          "CORRESP",
+          "CT ORDER",
+          "D",
+          "DEF 14A",
+          "DEFA14A",
+          "DEFC14A",
+          "DFAN14A",
+          "PRE 14A",
+          "PREC14A",
+          "PRRN14A",
+          "S-3ASR",
+          "S-8",
+          "SC 13D",
+          "SC 13D/A",
+          "SC 13G",
+          "SC 13G/A",
+          "SC TO-C",
+          "SC TO-I",
+          "SC TO-I/A",
+          "SCHEDULE 13G",
+          "SCHEDULE 13G/A",
+          "SEC STAFF LETTER",
+          "UPLOAD"
+        ],
+        "inventory_manifest": {
+          "body": "a86f7498dae2ed0f9436a2a4751d33ce9299dd9647e3639bb238d03171efabba-571e1905bff60561d668e5ff19ef0821667adf2672db3b0f8a11ba01ceee48c4.body",
+          "fetched_at": "2026-11-13T04:51:49.082241+00:00",
+          "sha256": "571e1905bff60561d668e5ff19ef0821667adf2672db3b0f8a11ba01ceee48c4",
+          "url": "https://data.sec.gov/submissions/CIK0001372612.json"
+        },
+        "name": "BOX INC",
+        "sector": "software",
+        "sic": "7372",
+        "sic_description": "Services-Prepackaged Software",
+        "ticker": "BOX",
+        "tickers_manifest": {
+          "body": "ace4a0fb8e9e22bbcc3aac993c3d786cd9ad1d6184ae5640bed2a7a320809f3c-391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f.body",
+          "fetched_at": "2026-11-13T04:51:39.344593+00:00",
+          "sha256": "391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f",
+          "url": "https://www.sec.gov/files/company_tickers.json"
+        }
+      }
+    },
+    {
+      "ticker": "NVDA",
+      "reason": "USD base with percentage-only tolerance; not dollar-denominated interval",
+      "screening_evidence": {
+        "checked_at": "2026-11-13T04:51:59.489186+00:00",
+        "cik": "0001045810",
+        "filings": [
+          {
+            "accession": "0001045810-26-000073",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "973b6c1d75ea25e09c4739a9231f95c0ba51c2ffa5598922f649b300adaa0997-30f2b420ee104412bf7f3a30d45afd13f935cb28a09320f1b1c88b74e9f56516.body",
+                  "fetched_at": "2026-11-13T04:52:00.787962+00:00",
+                  "sha256": "30f2b420ee104412bf7f3a30d45afd13f935cb28a09320f1b1c88b74e9f56516",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/NVDA-0001045810-26-000073.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27pr.htm"
+              }
+            ],
+            "filed": "2026-08-26",
+            "primary": "nvda-20260826.htm",
+            "primary_manifest": {
+              "body": "53e31d26909b973cac66af50394abd98cbeabace08cf53d58dc028a4bdebf883-2de05937b778704ae55e8c8ee5b305d532619fb13212a756a4113838f2d7e13b.body",
+              "fetched_at": "2026-11-13T04:52:00.145743+00:00",
+              "sha256": "2de05937b778704ae55e8c8ee5b305d532619fb13212a756a4113838f2d7e13b",
+              "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/nvda-20260826.htm"
+          },
+          {
+            "accession": "0001045810-26-000051",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "1c6eafef1b93215558d6d256561d1ff0ed46ebbd1c232976fb7fcc19795a8037-cd84324c9729c637d075175395716f2147ef39b416c632acf40ab63ca3c59fc8.body",
+                  "fetched_at": "2026-11-13T04:52:02.117355+00:00",
+                  "sha256": "cd84324c9729c637d075175395716f2147ef39b416c632acf40ab63ca3c59fc8",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/NVDA-0001045810-26-000051.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/q1fy27pr.htm"
+              }
+            ],
+            "filed": "2026-05-20",
+            "primary": "nvda-20260520.htm",
+            "primary_manifest": {
+              "body": "3b60740009373c92862fd6cda842fb41d8b3fde3b2f1b88ff070334438a662f4-719189fac9059b21088676171836a3274604e4ba8717cbef3248fe1a39307aaf.body",
+              "fetched_at": "2026-11-13T04:52:01.471192+00:00",
+              "sha256": "719189fac9059b21088676171836a3274604e4ba8717cbef3248fe1a39307aaf",
+              "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/nvda-20260520.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/nvda-20260520.htm"
+          }
+        ],
+        "fiscal_year_end": "0131",
+        "forms": [
+          "10-K",
+          "10-Q",
+          "13F-HR",
+          "144",
+          "144/A",
+          "3",
+          "4",
+          "4/A",
+          "424B5",
+          "5",
+          "5/A",
+          "8-K",
+          "ARS",
+          "CORRESP",
+          "DEF 14A",
+          "DEFA14A",
+          "EFFECT",
+          "FWP",
+          "N-PX",
+          "PRE 14A",
+          "PX14A6G",
+          "S-3",
+          "S-3/A",
+          "S-3ASR",
+          "S-8",
+          "SC 13G",
+          "SC 13G/A",
+          "SCHEDULE 13G",
+          "SCHEDULE 13G/A",
+          "SD",
+          "UPLOAD"
+        ],
+        "inventory_manifest": {
+          "body": "67b767aac259adf10f9cb865ec2a59350bc70cba9eb9766ac28714fc877013fc-092e307ba8b409e49bd89a410eeb3134e7d193ea083eaf6e687539702b2ede07.body",
+          "fetched_at": "2026-11-13T04:51:59.486675+00:00",
+          "sha256": "092e307ba8b409e49bd89a410eeb3134e7d193ea083eaf6e687539702b2ede07",
+          "url": "https://data.sec.gov/submissions/CIK0001045810.json"
+        },
+        "name": "NVIDIA CORP",
+        "sector": "semiconductors",
+        "sic": "3674",
+        "sic_description": "Semiconductors & Related Devices",
+        "ticker": "NVDA",
+        "tickers_manifest": {
+          "body": "ace4a0fb8e9e22bbcc3aac993c3d786cd9ad1d6184ae5640bed2a7a320809f3c-391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f.body",
+          "fetched_at": "2026-11-13T04:51:39.344593+00:00",
+          "sha256": "391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f",
+          "url": "https://www.sec.gov/files/company_tickers.json"
+        }
+      }
+    },
+    {
+      "ticker": "AVGO",
+      "reason": "Quarterly revenue point, not range",
+      "screening_evidence": {
+        "checked_at": "2026-11-13T04:52:05.973180+00:00",
+        "cik": "0001730168",
+        "filings": [
+          {
+            "accession": "0001730168-26-000076",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "80f5308078dcdc5fe57b13aad8db1fa296af0e61fdc4f23cb57dba5169168bf9-722071ff601604c5ea0ca844465542e7e6f206e21fb5018e15614ab634e6a245.body",
+                  "fetched_at": "2026-11-13T04:52:07.354154+00:00",
+                  "sha256": "722071ff601604c5ea0ca844465542e7e6f206e21fb5018e15614ab634e6a245",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000076/avgo-08022026x8kxex99.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/AVGO-0001730168-26-000076.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000076/avgo-08022026x8kxex99.htm"
+              }
+            ],
+            "filed": "2026-09-02",
+            "primary": "avgo-20260902.htm",
+            "primary_manifest": {
+              "body": "ea2fd285d490a695264e1452765ecc2841426094649b9068ab7dc28143a2b3fd-af0dc598c286189b74a2c605fa82e216df26f14797613a778f6e2fd2ac740f8b.body",
+              "fetched_at": "2026-11-13T04:52:06.654973+00:00",
+              "sha256": "af0dc598c286189b74a2c605fa82e216df26f14797613a778f6e2fd2ac740f8b",
+              "url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000076/avgo-20260902.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000076/avgo-20260902.htm"
+          },
+          {
+            "accession": "0001730168-26-000051",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "c6e969b0bb4a490963fded5cc03f498bad79f36fec6ceacd663f01989f8684e6-fd01f0b0807c2d392562b0fef9fe230536e15bc1e62aab27cdf6cb4fc6c169c1.body",
+                  "fetched_at": "2026-11-13T04:52:08.626395+00:00",
+                  "sha256": "fd01f0b0807c2d392562b0fef9fe230536e15bc1e62aab27cdf6cb4fc6c169c1",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000051/avgo-05032026x8kxex99.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/AVGO-0001730168-26-000051.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000051/avgo-05032026x8kxex99.htm"
+              }
+            ],
+            "filed": "2026-06-03",
+            "primary": "avgo-20260603.htm",
+            "primary_manifest": {
+              "body": "3b6cb6c971fd661e5dac0f3e63687926ea9137e81344a44dffc8f7b5b796028c-bd142146d6c589b97503dddc401cecb981bdcae38f9e1038620cf315a52154cd.body",
+              "fetched_at": "2026-11-13T04:52:07.988186+00:00",
+              "sha256": "bd142146d6c589b97503dddc401cecb981bdcae38f9e1038620cf315a52154cd",
+              "url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000051/avgo-20260603.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1730168/000173016826000051/avgo-20260603.htm"
+          }
+        ],
+        "fiscal_year_end": "1101",
+        "forms": [
+          "10-K",
+          "10-Q",
+          "144",
+          "144/A",
+          "15-12B",
+          "25-NSE",
+          "3",
+          "3/A",
+          "4",
+          "4/A",
+          "424B2",
+          "424B3",
+          "424B5",
+          "425",
+          "5",
+          "8-A12B",
+          "8-K",
+          "8-K/A",
+          "8-K12B",
+          "ARS",
+          "CERT",
+          "CORRESP",
+          "DEF 14A",
+          "DEFA14A",
+          "DEL AM",
+          "EFFECT",
+          "FWP",
+          "POSASR",
+          "S-3ASR",
+          "S-4",
+          "S-4/A",
+          "S-8",
+          "S-8 POS",
+          "SC 13G",
+          "SC 13G/A",
+          "SCHEDULE 13G",
+          "SCHEDULE 13G/A",
+          "SD",
+          "UPLOAD"
+        ],
+        "inventory_manifest": {
+          "body": "a0bd7325c93f825da05d6d672037f524c097bd0860da1bede2461e85fc2e94de-41ec85346d2b5ffbd8358ab2d3ef9400598660be94281edacf784da984097866.body",
+          "fetched_at": "2026-11-13T04:52:05.967517+00:00",
+          "sha256": "41ec85346d2b5ffbd8358ab2d3ef9400598660be94281edacf784da984097866",
+          "url": "https://data.sec.gov/submissions/CIK0001730168.json"
+        },
+        "name": "Broadcom Inc.",
+        "sector": "semiconductors",
+        "sic": "3674",
+        "sic_description": "Semiconductors & Related Devices",
+        "ticker": "AVGO",
+        "tickers_manifest": {
+          "body": "ace4a0fb8e9e22bbcc3aac993c3d786cd9ad1d6184ae5640bed2a7a320809f3c-391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f.body",
+          "fetched_at": "2026-11-13T04:51:39.344593+00:00",
+          "sha256": "391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f",
+          "url": "https://www.sec.gov/files/company_tickers.json"
+        }
+      }
+    },
+    {
+      "ticker": "MRVL",
+      "reason": "Latest preliminary announcement expressly describes prior +/-5% narrowed to +/-2%; no absolute-dollar tolerance verified",
+      "screening_evidence": {
+        "checked_at": "2026-11-13T04:52:12.468639+00:00",
+        "cik": "0001835632",
+        "filings": [
+          {
+            "accession": "0001193125-26-442714",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "4125e981e18f5182fe470637526ab22f3b2f74d9cc0b0510518a50dac4a5c35e-1a05332f3e2519da9bfbffb0ea2410f73c3af0cdfcc8546852874b7db0eb807c.body",
+                  "fetched_at": "2026-11-13T04:52:13.802939+00:00",
+                  "sha256": "1a05332f3e2519da9bfbffb0ea2410f73c3af0cdfcc8546852874b7db0eb807c",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1835632/000119312526442714/d81187dex991.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/MRVL-0001193125-26-442714.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1835632/000119312526442714/d81187dex991.htm"
+              }
+            ],
+            "filed": "2026-11-02",
+            "primary": "d81187d8k.htm",
+            "primary_manifest": {
+              "body": "a5c30331b16303b381d2ef947c9ee9dc2590ca55f4a700333646fec8e8f3d1c8-386c377df7ce23460778e6fa799bd63d810c70ca10d9b24b1e9be871068bd249.body",
+              "fetched_at": "2026-11-13T04:52:13.187338+00:00",
+              "sha256": "386c377df7ce23460778e6fa799bd63d810c70ca10d9b24b1e9be871068bd249",
+              "url": "https://www.sec.gov/Archives/edgar/data/1835632/000119312526442714/d81187d8k.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1835632/000119312526442714/d81187d8k.htm"
+          },
+          {
+            "accession": "0001835632-26-000022",
+            "exhibits": [],
+            "filed": "2026-08-27",
+            "primary": "mrvl-20260827.htm",
+            "primary_manifest": {
+              "body": "67a6151431a9274ed74eb80e60d6a6224765dee421a2ee2547c6717b8fa3b59d-c68ae92719d693597f1816e0a7ade726c1c7afbd3f3e900b7a43650bc4ab0c74.body",
+              "fetched_at": "2026-11-13T04:52:14.694387+00:00",
+              "sha256": "c68ae92719d693597f1816e0a7ade726c1c7afbd3f3e900b7a43650bc4ab0c74",
+              "url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563226000022/mrvl-20260827.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1835632/000183563226000022/mrvl-20260827.htm"
+          }
+        ],
+        "fiscal_year_end": "0130",
+        "forms": [
+          "10-K",
+          "10-Q",
+          "144",
+          "3",
+          "3/A",
+          "305B2",
+          "4",
+          "4/A",
+          "424B2",
+          "424B3",
+          "424B5",
+          "424B7",
+          "425",
+          "8-K",
+          "8-K/A",
+          "8-K12B",
+          "ARS",
+          "CORRESP",
+          "D",
+          "DEF 14A",
+          "DEFA14A",
+          "EFFECT",
+          "FWP",
+          "S-3",
+          "S-3ASR",
+          "S-4",
+          "S-4/A",
+          "S-8",
+          "SC 13G",
+          "SC 13G/A",
+          "SCHEDULE 13G",
+          "SCHEDULE 13G/A",
+          "SD",
+          "UPLOAD"
+        ],
+        "inventory_manifest": {
+          "body": "31ad88afdc18a8fe2fa04c1b5bccc362ea73297018e1356b08027d1187ad8500-b1a6e1777ae8837bd6554f60da2db0937a22be321af1a98ca9c3108ddb3065fc.body",
+          "fetched_at": "2026-11-13T04:52:12.466899+00:00",
+          "sha256": "b1a6e1777ae8837bd6554f60da2db0937a22be321af1a98ca9c3108ddb3065fc",
+          "url": "https://data.sec.gov/submissions/CIK0001835632.json"
+        },
+        "name": "Marvell Technology, Inc.",
+        "sector": "semiconductors",
+        "sic": "3674",
+        "sic_description": "Semiconductors & Related Devices",
+        "ticker": "MRVL",
+        "tickers_manifest": {
+          "body": "ace4a0fb8e9e22bbcc3aac993c3d786cd9ad1d6184ae5640bed2a7a320809f3c-391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f.body",
+          "fetched_at": "2026-11-13T04:51:39.344593+00:00",
+          "sha256": "391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f",
+          "url": "https://www.sec.gov/files/company_tickers.json"
+        }
+      }
+    },
+    {
+      "ticker": "DKS",
+      "reason": "Annual sales/comp outlook; no direct quarterly consolidated dollar range verified",
+      "screening_evidence": {
+        "checked_at": "2026-11-13T04:52:25.596997+00:00",
+        "cik": "0001089063",
+        "filings": [
+          {
+            "accession": "0001089063-26-000033",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "abdbf47e3933127da278fe09fb24e7b83298341b8dd69d7c8dd5856fa52fb5b8-0c673e28328b2fd809f1c562781fb23a9dd41e9302beab04a08a6d9f3dcff102.body",
+                  "fetched_at": "2026-11-13T04:52:26.931585+00:00",
+                  "sha256": "0c673e28328b2fd809f1c562781fb23a9dd41e9302beab04a08a6d9f3dcff102",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1089063/000108906326000033/dks-2026801xex991earningsr.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/DKS-0001089063-26-000033.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1089063/000108906326000033/dks-2026801xex991earningsr.htm"
+              }
+            ],
+            "filed": "2026-08-25",
+            "primary": "dks-20260824.htm",
+            "primary_manifest": {
+              "body": "94747db90aff1e1d7823e09d472bc9e8ddff1cb3aa36a05f2c8e8f086f392e21-0081e3d9e0c72307887fac8601d5bc165620ec3d1d220fcae665f34a2de77d30.body",
+              "fetched_at": "2026-11-13T04:52:26.275089+00:00",
+              "sha256": "0081e3d9e0c72307887fac8601d5bc165620ec3d1d220fcae665f34a2de77d30",
+              "url": "https://www.sec.gov/Archives/edgar/data/1089063/000108906326000033/dks-20260824.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1089063/000108906326000033/dks-20260824.htm"
+          },
+          {
+            "accession": "0001089063-26-000021",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "3d0108b7bbebe2b8ec1b0534649edc3c06887242b76450971ba2b5fe6e0cadd6-a60966dd129eee1305dd083a595655d7dda9b617a8637efa87a029d7f536576a.body",
+                  "fetched_at": "2026-11-13T04:52:28.331886+00:00",
+                  "sha256": "a60966dd129eee1305dd083a595655d7dda9b617a8637efa87a029d7f536576a",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1089063/000108906326000021/dks-2026502xex991earningsr.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/DKS-0001089063-26-000021.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1089063/000108906326000021/dks-2026502xex991earningsr.htm"
+              }
+            ],
+            "filed": "2026-05-27",
+            "primary": "dks-20260526.htm",
+            "primary_manifest": {
+              "body": "3129183948443da45cd41f32e1b9bd2a32199dc94e8078d532d1343a42511373-ab3512b3236e268d5ffe2d837ed742470ab7396510cbcecae6668eafcbbdd5dc.body",
+              "fetched_at": "2026-11-13T04:52:27.623563+00:00",
+              "sha256": "ab3512b3236e268d5ffe2d837ed742470ab7396510cbcecae6668eafcbbdd5dc",
+              "url": "https://www.sec.gov/Archives/edgar/data/1089063/000108906326000021/dks-20260526.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1089063/000108906326000021/dks-20260526.htm"
+          }
+        ],
+        "fiscal_year_end": "0130",
+        "forms": [
+          "10-K",
+          "10-Q",
+          "144",
+          "3",
+          "4",
+          "4/A",
+          "424B2",
+          "424B3",
+          "425",
+          "5",
+          "8-K",
+          "8-K/A",
+          "ARS",
+          "CORRESP",
+          "DEF 14A",
+          "DEFA14A",
+          "EFFECT",
+          "FWP",
+          "PRE 14A",
+          "S-3ASR",
+          "S-4",
+          "S-4/A",
+          "S-8",
+          "S-8 POS",
+          "SC 13D",
+          "SC 13D/A",
+          "SC 13G",
+          "SC 13G/A",
+          "SCHEDULE 13D",
+          "SCHEDULE 13D/A",
+          "SCHEDULE 13G",
+          "SCHEDULE 13G/A",
+          "SD",
+          "UPLOAD"
+        ],
+        "inventory_manifest": {
+          "body": "0ea7ee0377e128181d5a09f0f824fc55a7ebdfb7a10ca37c335362d4433db628-1db0b0950b8c47638f91847417e195748d66f2cf4248233250d956ca6cae4e54.body",
+          "fetched_at": "2026-11-13T04:52:25.591827+00:00",
+          "sha256": "1db0b0950b8c47638f91847417e195748d66f2cf4248233250d956ca6cae4e54",
+          "url": "https://data.sec.gov/submissions/CIK0001089063.json"
+        },
+        "name": "DICK'S SPORTING GOODS, INC.",
+        "sector": "retail",
+        "sic": "5940",
+        "sic_description": "Retail-Miscellaneous Shopping Goods Stores",
+        "ticker": "DKS",
+        "tickers_manifest": {
+          "body": "ace4a0fb8e9e22bbcc3aac993c3d786cd9ad1d6184ae5640bed2a7a320809f3c-391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f.body",
+          "fetched_at": "2026-11-13T04:51:39.344593+00:00",
+          "sha256": "391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f",
+          "url": "https://www.sec.gov/files/company_tickers.json"
+        }
+      }
+    },
+    {
+      "ticker": "BBY",
+      "reason": "Current exhibit link unresolved; earlier release annual dollar range, quarterly comparable-sales growth only. Current quarterly eligibility unverified",
+      "screening_evidence": {
+        "checked_at": "2026-11-13T04:52:29.025292+00:00",
+        "cik": "0000764478",
+        "filings": [
+          {
+            "accession": "0000764478-26-000037",
+            "exhibits": [],
+            "filed": "2026-08-27",
+            "primary": "bby-20260827.htm",
+            "primary_manifest": {
+              "body": "b3acfd1adee525cf5cc32c77c9257df3fc206c54faf237aee262cc2f0d0ac1b3-4d70a98195ea14d6f10637c6a340bd9be4f50bd74b597432fd159148e5cfb5cf.body",
+              "fetched_at": "2026-11-13T04:52:29.662382+00:00",
+              "sha256": "4d70a98195ea14d6f10637c6a340bd9be4f50bd74b597432fd159148e5cfb5cf",
+              "url": "https://www.sec.gov/Archives/edgar/data/764478/000076447826000037/bby-20260827.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/764478/000076447826000037/bby-20260827.htm"
+          },
+          {
+            "accession": "0000764478-26-000018",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "8d229ee6d47ef37810d13f782542a2ee0f27bc9ba4bfce62b9f0f308d2b340e7-8a2df75df45e500636678c6f10aa8a2c794f8a334f64b89112b7481d45849fcf.body",
+                  "fetched_at": "2026-11-13T04:52:31.171089+00:00",
+                  "sha256": "8a2df75df45e500636678c6f10aa8a2c794f8a334f64b89112b7481d45849fcf",
+                  "url": "https://www.sec.gov/Archives/edgar/data/764478/000076447826000018/bby-fy27q1xexx991.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/BBY-0000764478-26-000018.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/764478/000076447826000018/bby-fy27q1xexx991.htm"
+              }
+            ],
+            "filed": "2026-05-28",
+            "primary": "bby-20260528.htm",
+            "primary_manifest": {
+              "body": "c27fa71782007ed0a24022c3c7273e3b68193028dc5d666dfd5c94aef94243c8-d7e3fce34891f32fcc77b9a44e7596b39ad03e3fe703b52335add7b7950119b0.body",
+              "fetched_at": "2026-11-13T04:52:30.408394+00:00",
+              "sha256": "d7e3fce34891f32fcc77b9a44e7596b39ad03e3fe703b52335add7b7950119b0",
+              "url": "https://www.sec.gov/Archives/edgar/data/764478/000076447826000018/bby-20260528.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/764478/000076447826000018/bby-20260528.htm"
+          }
+        ],
+        "fiscal_year_end": "0130",
+        "forms": [
+          "10-K",
+          "10-Q",
+          "11-K",
+          "144",
+          "144/A",
+          "3",
+          "3/A",
+          "4",
+          "4/A",
+          "424B2",
+          "424B5",
+          "5",
+          "8-K",
+          "8-K/A",
+          "ARS",
+          "DEF 14A",
+          "DEFA14A",
+          "DEFR14A",
+          "FWP",
+          "NO ACT",
+          "PRE 14A",
+          "PX14A6G",
+          "S-3ASR",
+          "S-8",
+          "S-8 POS",
+          "SC 13D/A",
+          "SC 13G",
+          "SC 13G/A",
+          "SCHEDULE 13D/A",
+          "SCHEDULE 13G",
+          "SCHEDULE 13G/A",
+          "SD"
+        ],
+        "inventory_manifest": {
+          "body": "5b8b0454884a9cec8181de000859820f205b239bd96922f9149291f6e9c2475a-774b64dd6ced91e18541d51be43f1d36da987ae03d6c8a1a5f6ae54f6e1d60b2.body",
+          "fetched_at": "2026-11-13T04:52:29.023998+00:00",
+          "sha256": "774b64dd6ced91e18541d51be43f1d36da987ae03d6c8a1a5f6ae54f6e1d60b2",
+          "url": "https://data.sec.gov/submissions/CIK0000764478.json"
+        },
+        "name": "BEST BUY CO INC",
+        "sector": "retail",
+        "sic": "5731",
+        "sic_description": "Retail-Radio, Tv & Consumer Electronics Stores",
+        "ticker": "BBY",
+        "tickers_manifest": {
+          "body": "ace4a0fb8e9e22bbcc3aac993c3d786cd9ad1d6184ae5640bed2a7a320809f3c-391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f.body",
+          "fetched_at": "2026-11-13T04:51:39.344593+00:00",
+          "sha256": "391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f",
+          "url": "https://www.sec.gov/files/company_tickers.json"
+        }
+      }
+    },
+    {
+      "ticker": "WSM",
+      "reason": "Annual revenue growth guidance; no direct quarterly dollar range verified",
+      "screening_evidence": {
+        "checked_at": "2026-11-13T04:52:39.145044+00:00",
+        "cik": "0000719955",
+        "filings": [
+          {
+            "accession": "0000719955-26-000203",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "ecf6e7630544319308f491df83825c74c0c52f8bfab49d9a5d7e119d04e9557b-c7e3d224e1be49bdef6c07459f12ce0bfe933c6a9d01181f4b43cc615b1ab70e.body",
+                  "fetched_at": "2026-11-13T04:52:40.434518+00:00",
+                  "sha256": "c7e3d224e1be49bdef6c07459f12ce0bfe933c6a9d01181f4b43cc615b1ab70e",
+                  "url": "https://www.sec.gov/Archives/edgar/data/719955/000071995526000203/exhibit991fy2026q2earnings.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/WSM-0000719955-26-000203.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/719955/000071995526000203/exhibit991fy2026q2earnings.htm"
+              }
+            ],
+            "filed": "2026-08-26",
+            "primary": "wsm-20260826.htm",
+            "primary_manifest": {
+              "body": "5f77390199ca46cc373e88c68eabbff5f6e6a18aa37c39c0d0d3201c24c28668-8eb80bd05e0cc3edd56a59d75e382143e71d4ec9c0334517169681937cd0b348.body",
+              "fetched_at": "2026-11-13T04:52:39.786964+00:00",
+              "sha256": "8eb80bd05e0cc3edd56a59d75e382143e71d4ec9c0334517169681937cd0b348",
+              "url": "https://www.sec.gov/Archives/edgar/data/719955/000071995526000203/wsm-20260826.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/719955/000071995526000203/wsm-20260826.htm"
+          },
+          {
+            "accession": "0000719955-26-000126",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "62fcaeacebdfc84c65e03848706ec4243a2d5c7b686a2e774f6c5b77a30f59e9-e144b3621a26f4c70111a1b43897fa7c953ba7d9d0f27fd7f3785593d875b3ac.body",
+                  "fetched_at": "2026-11-13T04:52:41.880736+00:00",
+                  "sha256": "e144b3621a26f4c70111a1b43897fa7c953ba7d9d0f27fd7f3785593d875b3ac",
+                  "url": "https://www.sec.gov/Archives/edgar/data/719955/000071995526000126/exhibit991fy2026q1earnings.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/WSM-0000719955-26-000126.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/719955/000071995526000126/exhibit991fy2026q1earnings.htm"
+              }
+            ],
+            "filed": "2026-05-21",
+            "primary": "wsm-20260521.htm",
+            "primary_manifest": {
+              "body": "3448705cd7f10e16c7850c01fbce2ea2d78dc2b7020bd42ffaaee6bb7a641e59-b8599377cb6b485dff044ff939d5fd33fa78cdd3386662b6f1aface717a2ad23.body",
+              "fetched_at": "2026-11-13T04:52:41.074804+00:00",
+              "sha256": "b8599377cb6b485dff044ff939d5fd33fa78cdd3386662b6f1aface717a2ad23",
+              "url": "https://www.sec.gov/Archives/edgar/data/719955/000071995526000126/wsm-20260521.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/719955/000071995526000126/wsm-20260521.htm"
+          }
+        ],
+        "fiscal_year_end": "0131",
+        "forms": [
+          "10-K",
+          "10-Q",
+          "11-K",
+          "144",
+          "144/A",
+          "3",
+          "4",
+          "4/A",
+          "5",
+          "8-K",
+          "ARS",
+          "CORRESP",
+          "DEF 14A",
+          "DEFA14A",
+          "PRE 14A",
+          "S-8",
+          "SC 13G",
+          "SC 13G/A",
+          "SCHEDULE 13G",
+          "SCHEDULE 13G/A",
+          "SD",
+          "UPLOAD"
+        ],
+        "inventory_manifest": {
+          "body": "c7490942316c3594b4731b97cafad2a67a87cfa26631f0e46139d5ed31d820ac-a38c23ba6b37e3a54f91e2a11874c6d3178fe2ddf37d41026fc2bea87d777043.body",
+          "fetched_at": "2026-11-13T04:52:39.140229+00:00",
+          "sha256": "a38c23ba6b37e3a54f91e2a11874c6d3178fe2ddf37d41026fc2bea87d777043",
+          "url": "https://data.sec.gov/submissions/CIK0000719955.json"
+        },
+        "name": "WILLIAMS SONOMA INC",
+        "sector": "retail",
+        "sic": "5700",
+        "sic_description": "Retail-Home Furniture, Furnishings & Equipment Stores",
+        "ticker": "WSM",
+        "tickers_manifest": {
+          "body": "ace4a0fb8e9e22bbcc3aac993c3d786cd9ad1d6184ae5640bed2a7a320809f3c-391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f.body",
+          "fetched_at": "2026-11-13T04:51:39.344593+00:00",
+          "sha256": "391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f",
+          "url": "https://www.sec.gov/files/company_tickers.json"
+        }
+      }
+    },
+    {
+      "ticker": "IQV",
+      "reason": "Annual dollar range only; no direct quarterly dollar range in checked releases",
+      "screening_evidence": {
+        "checked_at": "2026-11-13T04:52:42.699044+00:00",
+        "cik": "0001478242",
+        "filings": [
+          {
+            "accession": "0001628280-26-067406",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "950f8318adafe498ecd0f36fcaec83034077a5dc10e0b801fbcf90f090f23420-83bda9f792d5db1df5517af70dadbe8c68cdc8bdbadfb48ea4bd1dbc67bfaf7d.body",
+                  "fetched_at": "2026-11-13T04:52:43.945468+00:00",
+                  "sha256": "83bda9f792d5db1df5517af70dadbe8c68cdc8bdbadfb48ea4bd1dbc67bfaf7d",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1478242/000162828026067406/iqv-q3x2026earningspressre.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/IQV-0001628280-26-067406.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1478242/000162828026067406/iqv-q3x2026earningspressre.htm"
+              }
+            ],
+            "filed": "2026-10-27",
+            "primary": "iqv-20261027.htm",
+            "primary_manifest": {
+              "body": "c2ca8bcda5a1d2e502d9340a6f70de076c0f1bcb2a34cd7ea4908392c44f72fc-7dd7b05a8126749f5da3fa0aef263c02cc1dc44e5606d08fb8c0630679db197d.body",
+              "fetched_at": "2026-11-13T04:52:43.309454+00:00",
+              "sha256": "7dd7b05a8126749f5da3fa0aef263c02cc1dc44e5606d08fb8c0630679db197d",
+              "url": "https://www.sec.gov/Archives/edgar/data/1478242/000162828026067406/iqv-20261027.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1478242/000162828026067406/iqv-20261027.htm"
+          },
+          {
+            "accession": "0001628280-26-049923",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "7388c98b60601ab1dff3199e1b7012aac153ffec39c0ce7716ae73c596960b22-623cc5bb2f7187914d7d0c165a176cff761b63258cb83ac22721f5c6a8217ce9.body",
+                  "fetched_at": "2026-11-13T04:52:45.710396+00:00",
+                  "sha256": "623cc5bb2f7187914d7d0c165a176cff761b63258cb83ac22721f5c6a8217ce9",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1478242/000162828026049923/iqv-q2x2026earningspressre.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/IQV-0001628280-26-049923.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1478242/000162828026049923/iqv-q2x2026earningspressre.htm"
+              }
+            ],
+            "filed": "2026-07-28",
+            "primary": "iqv-20260728.htm",
+            "primary_manifest": {
+              "body": "9cbd7777ed34fc92e318e02b35ee334940e8956a76c7402b67c626aae9bb2b52-1d3ea5b2bfa23eaac5a6de8430e5ec0a7af8280880d3afb361970190100e0f0e.body",
+              "fetched_at": "2026-11-13T04:52:44.721725+00:00",
+              "sha256": "1d3ea5b2bfa23eaac5a6de8430e5ec0a7af8280880d3afb361970190100e0f0e",
+              "url": "https://www.sec.gov/Archives/edgar/data/1478242/000162828026049923/iqv-20260728.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1478242/000162828026049923/iqv-20260728.htm"
+          }
+        ],
+        "fiscal_year_end": "1231",
+        "forms": [
+          "10-K",
+          "10-K/A",
+          "10-Q",
+          "144",
+          "3",
+          "3/A",
+          "4",
+          "4/A",
+          "424B3",
+          "424B4",
+          "424B7",
+          "425",
+          "5",
+          "8-A12B/A",
+          "8-K",
+          "8-K/A",
+          "ARS",
+          "CORRESP",
+          "DEF 14A",
+          "DEFA14A",
+          "DEFR14A",
+          "EFFECT",
+          "FWP",
+          "PRE 14A",
+          "PX14A6G",
+          "S-1",
+          "S-1/A",
+          "S-3ASR",
+          "S-4",
+          "S-4/A",
+          "S-8",
+          "SC 13D",
+          "SC 13D/A",
+          "SC 13G",
+          "SC 13G/A",
+          "SCHEDULE 13G",
+          "SCHEDULE 13G/A",
+          "UPLOAD"
+        ],
+        "inventory_manifest": {
+          "body": "1aa50708568707d0b40ee3d6561fb93500b26fa1c6ac303c71b8ece4e38e1f88-9b6259ecdd28a2c2a4d9a138fc0042b09bebc64de52c974caee6f962d8bac7d0.body",
+          "fetched_at": "2026-11-13T04:52:42.694053+00:00",
+          "sha256": "9b6259ecdd28a2c2a4d9a138fc0042b09bebc64de52c974caee6f962d8bac7d0",
+          "url": "https://data.sec.gov/submissions/CIK0001478242.json"
+        },
+        "name": "IQVIA HOLDINGS INC.",
+        "sector": "healthcare_life_science",
+        "sic": "8731",
+        "sic_description": "Services-Commercial Physical & Biological Research",
+        "ticker": "IQV",
+        "tickers_manifest": {
+          "body": "ace4a0fb8e9e22bbcc3aac993c3d786cd9ad1d6184ae5640bed2a7a320809f3c-391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f.body",
+          "fetched_at": "2026-11-13T04:51:39.344593+00:00",
+          "sha256": "391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f",
+          "url": "https://www.sec.gov/files/company_tickers.json"
+        }
+      }
+    },
+    {
+      "ticker": "INSP",
+      "reason": "Annual revenue range only; no direct quarterly range verified",
+      "screening_evidence": {
+        "checked_at": "2026-11-13T04:52:50.256778+00:00",
+        "cik": "0001609550",
+        "filings": [
+          {
+            "accession": "0001609550-26-000051",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "5155cc99fe69ad6334cc5c2b89eea5d9fe5f10c1d81374c396aff39086ca169f-d12010c5c3ff4ef1d8713c2c9c113344c764796dfa6caaa63a00f435b8455cff.body",
+                  "fetched_at": "2026-11-13T04:52:51.877255+00:00",
+                  "sha256": "d12010c5c3ff4ef1d8713c2c9c113344c764796dfa6caaa63a00f435b8455cff",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1609550/000160955026000051/insp2026-q3pressreleaseex9.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/INSP-0001609550-26-000051.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1609550/000160955026000051/insp2026-q3pressreleaseex9.htm"
+              }
+            ],
+            "filed": "2026-11-02",
+            "primary": "insp-20261102.htm",
+            "primary_manifest": {
+              "body": "c633a207067ee076797c3293512da2996213ab6ae95a4380bba3a938b24659fb-20d0f0cbf786d87a414159288a92b598872dd15e18572c0f9d3ab174ae764ddf.body",
+              "fetched_at": "2026-11-13T04:52:51.100023+00:00",
+              "sha256": "20d0f0cbf786d87a414159288a92b598872dd15e18572c0f9d3ab174ae764ddf",
+              "url": "https://www.sec.gov/Archives/edgar/data/1609550/000160955026000051/insp-20261102.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1609550/000160955026000051/insp-20261102.htm"
+          },
+          {
+            "accession": "0001609550-26-000045",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "67e3430bd4f6f329281a2822fddc64fe1439ffb4a1de0833a8ef114849aa5fdf-f8f95956cd9a82a433e2f25b995d431bc299ce9ff967f32d1bf04eb9ad7d810e.body",
+                  "fetched_at": "2026-11-13T04:52:53.325530+00:00",
+                  "sha256": "f8f95956cd9a82a433e2f25b995d431bc299ce9ff967f32d1bf04eb9ad7d810e",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1609550/000160955026000045/insp2026-q2pressreleaseex9.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/INSP-0001609550-26-000045.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1609550/000160955026000045/insp2026-q2pressreleaseex9.htm"
+              }
+            ],
+            "filed": "2026-08-03",
+            "primary": "insp-20260803.htm",
+            "primary_manifest": {
+              "body": "85d4f9cec545c989dc7d63f2c027c83621784e956fdd769ea985aad506042875-78e4943fda6439c0cfaa6704dc564891a433d1a9be8d80a02e9095ce562f7c26.body",
+              "fetched_at": "2026-11-13T04:52:52.667331+00:00",
+              "sha256": "78e4943fda6439c0cfaa6704dc564891a433d1a9be8d80a02e9095ce562f7c26",
+              "url": "https://www.sec.gov/Archives/edgar/data/1609550/000160955026000045/insp-20260803.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1609550/000160955026000045/insp-20260803.htm"
+          }
+        ],
+        "fiscal_year_end": "1231",
+        "forms": [
+          "10-K",
+          "10-Q",
+          "144",
+          "3",
+          "4",
+          "4/A",
+          "424B4",
+          "424B5",
+          "5",
+          "8-A12B",
+          "8-K",
+          "ARS",
+          "CERT",
+          "CORRESP",
+          "D",
+          "DEF 14A",
+          "DEFA14A",
+          "DEFR14A",
+          "DRS",
+          "DRS/A",
+          "DRSLTR",
+          "EFFECT",
+          "FWP",
+          "PRE 14A",
+          "S-1",
+          "S-1/A",
+          "S-3ASR",
+          "S-8",
+          "SC 13G",
+          "SC 13G/A",
+          "SCHEDULE 13G",
+          "SCHEDULE 13G/A",
+          "SD",
+          "UPLOAD"
+        ],
+        "inventory_manifest": {
+          "body": "3b4612a04691c87f6e7118074c0f82f2e1ac35e28b2519a7a733ec4dfd3dbeee-aa51ae9f6d724ab6873e6df42d8b607c3b51cb6423029ee1cefb794735af1226.body",
+          "fetched_at": "2026-11-13T04:52:50.253191+00:00",
+          "sha256": "aa51ae9f6d724ab6873e6df42d8b607c3b51cb6423029ee1cefb794735af1226",
+          "url": "https://data.sec.gov/submissions/CIK0001609550.json"
+        },
+        "name": "Inspire Medical Systems, Inc.",
+        "sector": "healthcare_life_science",
+        "sic": "3841",
+        "sic_description": "Surgical & Medical Instruments & Apparatus",
+        "ticker": "INSP",
+        "tickers_manifest": {
+          "body": "ace4a0fb8e9e22bbcc3aac993c3d786cd9ad1d6184ae5640bed2a7a320809f3c-391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f.body",
+          "fetched_at": "2026-11-13T04:51:39.344593+00:00",
+          "sha256": "391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f",
+          "url": "https://www.sec.gov/files/company_tickers.json"
+        }
+      }
+    },
+    {
+      "ticker": "ILMN",
+      "reason": "Annual revenue range only; no direct quarterly range verified",
+      "screening_evidence": {
+        "checked_at": "2026-11-13T04:52:53.973159+00:00",
+        "cik": "0001110803",
+        "filings": [
+          {
+            "accession": "0001110803-26-000202",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "4eeb819be513b62104bc89d6b24efdc29c4e255d071600c4c64e9d686011bc62-58e3f658a07c0f7d538e2efdf89ac48ca321d131496777f45f47701ed5fb9316.body",
+                  "fetched_at": "2026-11-13T04:52:55.337065+00:00",
+                  "sha256": "58e3f658a07c0f7d538e2efdf89ac48ca321d131496777f45f47701ed5fb9316",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1110803/000111080326000202/q326earningsrelease.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/ILMN-0001110803-26-000202.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1110803/000111080326000202/q326earningsrelease.htm"
+              }
+            ],
+            "filed": "2026-10-29",
+            "primary": "ilmn-20261029.htm",
+            "primary_manifest": {
+              "body": "e0cf5da4e6401b2521888081cc69b60306e71dd2fdb32cf7211b3897370d3958-dd0fa0a612313254ace2ddeb805bacfd902defe682c0dcc42353555fb07b0a4d.body",
+              "fetched_at": "2026-11-13T04:52:54.619501+00:00",
+              "sha256": "dd0fa0a612313254ace2ddeb805bacfd902defe682c0dcc42353555fb07b0a4d",
+              "url": "https://www.sec.gov/Archives/edgar/data/1110803/000111080326000202/ilmn-20261029.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1110803/000111080326000202/ilmn-20261029.htm"
+          },
+          {
+            "accession": "0001110803-26-000155",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "f63bfaefeb5a5f0130b5f6126b38d35f5b25fabcbda8574309c744da3ecd133f-e59e01a40f2dcf90a750d40a94294f3f8e7f2b446e1e69dab19117ffba37e595.body",
+                  "fetched_at": "2026-11-13T04:52:57.040209+00:00",
+                  "sha256": "e59e01a40f2dcf90a750d40a94294f3f8e7f2b446e1e69dab19117ffba37e595",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1110803/000111080326000155/q226earningsrelease.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/ILMN-0001110803-26-000155.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1110803/000111080326000155/q226earningsrelease.htm"
+              }
+            ],
+            "filed": "2026-07-30",
+            "primary": "ilmn-20260730.htm",
+            "primary_manifest": {
+              "body": "04a0682460092efd39e048e893e71df97b1ee4a7e7b97a6236402836078a8533-a71296f86b7679da0452643b909fcf148dc3c3a9414a9893357946b1ddf13165.body",
+              "fetched_at": "2026-11-13T04:52:56.080220+00:00",
+              "sha256": "a71296f86b7679da0452643b909fcf148dc3c3a9414a9893357946b1ddf13165",
+              "url": "https://www.sec.gov/Archives/edgar/data/1110803/000111080326000155/ilmn-20260730.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1110803/000111080326000155/ilmn-20260730.htm"
+          }
+        ],
+        "fiscal_year_end": "0103",
+        "forms": [
+          "10-K",
+          "10-Q",
+          "144",
+          "3",
+          "3/A",
+          "4",
+          "4/A",
+          "424B2",
+          "424B3",
+          "424B5",
+          "425",
+          "8-A12G",
+          "8-K",
+          "8-K/A",
+          "ARS",
+          "CORRESP",
+          "DEF 14A",
+          "DEFA14A",
+          "DEFC14A",
+          "DEFR14A",
+          "DFAN14A",
+          "EFFECT",
+          "FWP",
+          "PRE 14A",
+          "PREC14A",
+          "PRER14A",
+          "PRRN14A",
+          "S-3ASR",
+          "S-4",
+          "S-4/A",
+          "S-4MEF",
+          "S-8",
+          "SC 13G",
+          "SC 13G/A",
+          "SC TO-I",
+          "SC TO-I/A",
+          "SCHEDULE 13G",
+          "SCHEDULE 13G/A",
+          "SD",
+          "UPLOAD"
+        ],
+        "inventory_manifest": {
+          "body": "6a885972d8df426cc315eb183902db6bafdb24c01a7ce7107c7b440f735eead8-82088b10ff2e7e094dbbb783c7d81f1cbda5fc919f2e878b1ea1cb9b8d3eec92.body",
+          "fetched_at": "2026-11-13T04:52:53.968883+00:00",
+          "sha256": "82088b10ff2e7e094dbbb783c7d81f1cbda5fc919f2e878b1ea1cb9b8d3eec92",
+          "url": "https://data.sec.gov/submissions/CIK0001110803.json"
+        },
+        "name": "ILLUMINA, INC.",
+        "sector": "healthcare_life_science",
+        "sic": "3826",
+        "sic_description": "Laboratory Analytical Instruments",
+        "ticker": "ILMN",
+        "tickers_manifest": {
+          "body": "ace4a0fb8e9e22bbcc3aac993c3d786cd9ad1d6184ae5640bed2a7a320809f3c-391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f.body",
+          "fetched_at": "2026-11-13T04:51:39.344593+00:00",
+          "sha256": "391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f",
+          "url": "https://www.sec.gov/files/company_tickers.json"
+        }
+      }
+    },
+    {
+      "ticker": "DXCM",
+      "reason": "Annual revenue range only; no direct quarterly range verified",
+      "screening_evidence": {
+        "checked_at": "2026-11-13T04:52:57.817914+00:00",
+        "cik": "0001093557",
+        "filings": [
+          {
+            "accession": "0001093557-26-000193",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "e51cd4df47bc7c32b10032c23ecf17c63bdf6f630442145f9e3c6fe7273db2ca-d9f46f966e83dcc21baab904e09d091966fc259242e84f58c058d11a3581a79d.body",
+                  "fetched_at": "2026-11-13T04:52:59.112694+00:00",
+                  "sha256": "d9f46f966e83dcc21baab904e09d091966fc259242e84f58c058d11a3581a79d",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000193/dxcm09302026-exhibit991.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/DXCM-0001093557-26-000193.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000193/dxcm09302026-exhibit991.htm"
+              }
+            ],
+            "filed": "2026-10-29",
+            "primary": "dxcm-20261029.htm",
+            "primary_manifest": {
+              "body": "7c554229b80d154d21e72d7b55db5ab4e85d98c512c491450847b1f5b3c8aecd-ffe3642b82c240adb16af6114140628635cd2398daa3ec8d4570709938804b53.body",
+              "fetched_at": "2026-11-13T04:52:58.452498+00:00",
+              "sha256": "ffe3642b82c240adb16af6114140628635cd2398daa3ec8d4570709938804b53",
+              "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000193/dxcm-20261029.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000193/dxcm-20261029.htm"
+          },
+          {
+            "accession": "0001093557-26-000142",
+            "exhibits": [
+              {
+                "exhibit": "99.1",
+                "manifest": {
+                  "body": "2acbe7599bdf71293b82e060d10e2d3b1f7dcbd50b0e5d888c79a313f031fe1d-e3fdbf742a77fc9261333b393e1a016ca9d39516adfe5c9ecd8e6080d575a6fc.body",
+                  "fetched_at": "2026-11-13T04:53:00.452989+00:00",
+                  "sha256": "e3fdbf742a77fc9261333b393e1a016ca9d39516adfe5c9ecd8e6080d575a6fc",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000142/dxcm06302026-exhibit991.htm"
+                },
+                "text_cache": "/Users/anirudhiyengar/dealtrace-earnings/data/cache/earnings/pilot_s5/DXCM-0001093557-26-000142.txt",
+                "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000142/dxcm06302026-exhibit991.htm"
+              }
+            ],
+            "filed": "2026-07-30",
+            "primary": "dxcm-20260730.htm",
+            "primary_manifest": {
+              "body": "e850dd5a1cef0c8dfda1cb916bae29178d0f6147c478d5f021920b13df096f22-c110c3edda0b72ea25284b1d8e9b51a992a88fb383d09d6888b3e28bad90601f.body",
+              "fetched_at": "2026-11-13T04:52:59.775865+00:00",
+              "sha256": "c110c3edda0b72ea25284b1d8e9b51a992a88fb383d09d6888b3e28bad90601f",
+              "url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000142/dxcm-20260730.htm"
+            },
+            "primary_url": "https://www.sec.gov/Archives/edgar/data/1093557/000109355726000142/dxcm-20260730.htm"
+          }
+        ],
+        "fiscal_year_end": "1231",
+        "forms": [
+          "10-K",
+          "10-Q",
+          "144",
+          "3",
+          "4",
+          "4/A",
+          "424B5",
+          "5",
+          "8-K",
+          "8-K/A",
+          "ARS",
+          "CORRESP",
+          "CT ORDER",
+          "DEF 14A",
+          "DEFA14A",
+          "PRE 14A",
+          "S-3ASR",
+          "S-8",
+          "S-8 POS",
+          "SC 13G",
+          "SC 13G/A",
+          "SCHEDULE 13G",
+          "SCHEDULE 13G/A",
+          "SD",
+          "UPLOAD"
+        ],
+        "inventory_manifest": {
+          "body": "b38fe7bb8a93062c248fcc3948e6734f69ace891ac8ae6751686262a6523f8d3-363de26f3ccb0631b346c691ae02d8114acdb091143d158079440951414cd245.body",
+          "fetched_at": "2026-11-13T04:52:57.809638+00:00",
+          "sha256": "363de26f3ccb0631b346c691ae02d8114acdb091143d158079440951414cd245",
+          "url": "https://data.sec.gov/submissions/CIK0001093557.json"
+        },
+        "name": "DEXCOM INC",
+        "sector": "healthcare_life_science",
+        "sic": "3841",
+        "sic_description": "Surgical & Medical Instruments & Apparatus",
+        "ticker": "DXCM",
+        "tickers_manifest": {
+          "body": "ace4a0fb8e9e22bbcc3aac993c3d786cd9ad1d6184ae5640bed2a7a320809f3c-391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f.body",
+          "fetched_at": "2026-11-13T04:51:39.344593+00:00",
+          "sha256": "391effc6a807ae1752c9d2c351dbecab8f15aa1c59b035a9a28f7955a94feb0f",
+          "url": "https://www.sec.gov/files/company_tickers.json"
+        }
+      }
+    },
+    {
+      "ticker": "HOLX",
+      "reason": "No match in current SEC ticker directory; current reporting eligibility not verified",
+      "screening_evidence": {
+        "gap": "NO_SEC_TICKER_MATCH",
+        "ticker": "HOLX"
+      }
+    }
+  ]
+}

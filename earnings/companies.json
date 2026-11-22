@@ -1,0 +1,1171 @@
+[
+  {
+    "ticker": "PD",
+    "cik": "0001568100",
+    "name": "PagerDuty, Inc.",
+    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2026-02-01",
+    "period_end": "2027-01-31",
+    "fiscal_label": "FY2027",
+    "prior_start": "2025-02-01",
+    "prior_end": "2026-01-31",
+    "calendar": "months",
+    "comparison_ends": {
+      "2026-04-30": "2025-04-30",
+      "2026-07-31": "2025-07-31",
+      "2026-10-31": "2025-10-31"
+    },
+    "comparability": {
+      "blocked": false,
+      "available_on": "2026-11-11",
+      "reason": "Consolidated revenue reconciled to current release and prior-year annual/YTD statements."
+    },
+    "next_report": {
+      "type": "Q3 annual-hurdle update",
+      "date": null,
+      "status": "unverified",
+      "expected_window": {
+        "start": "2026-11-20",
+        "end": "2026-11-30",
+        "precision": "range"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000106/pd-20251122.htm",
+      "source_date": "2025-11-25",
+      "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only.",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:24.108336+00:00",
+        "fetched_at": "2026-11-11T23:48:24.313521+00:00",
+        "report_date": null,
+        "report_date_present": false,
+        "sha256": "9f4a0ebc6e4eac396206c3ca9c5c1ede5294e17f593d3a8c1ba5f680dd2cd10c",
+        "source_date": "2025-11-25",
+        "source_date_present": true,
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000106/pd-20251122.htm",
+        "status": "retrieved_unverified"
+      }
+    },
+    "annual_result": {
+      "expected_window": {
+        "start": "2027-03-01",
+        "end": "2027-03-31",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "type": "Q4/FY annual-guidance outcome",
+      "source_date": "2026-03-12",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:24.332878+00:00",
+        "fetched_at": "2026-11-11T23:48:25.046447+00:00",
+        "report_date": null,
+        "report_date_present": false,
+        "sha256": "aae98ec7ef5281daeda6f0a93daad8b0042ec35662fcd8fb8d3e0da28e15af1e",
+        "source_date": "2026-03-12",
+        "source_date_present": true,
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
+        "status": "retrieved_unverified"
+      }
+    },
+    "quarter_targets": [
+      {
+        "label": "Q3 FY2027",
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "prior_start": "2025-08-01",
+        "prior_end": "2025-10-31",
+        "available_on": "2026-08-27",
+        "boundary_evidence": {
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm",
+          "accession": "0001568100-26-000044",
+          "filed_date": "2026-08-27",
+          "rule": "Three calendar months on the registered month-based fiscal calendar",
+          "prior_actual_id": "08e9f9d3-28c0-557e-a12c-d777fa34b8c1",
+          "prior_actual_accession": "0001568100-25-000107"
+        },
+        "growth_comparability": {
+          "blocked": false,
+          "available_on": "2026-11-11",
+          "reason": "Consolidated revenue reconciled to current release and prior-year annual/YTD statements.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm"
+          ]
+        },
+        "outcome_comparability": {
+          "blocked": true,
+          "available_on": "2026-11-11",
+          "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm"
+          ]
+        }
+      }
+    ],
+    "outcome_comparability": {
+      "blocked": true,
+      "available_on": "2026-11-11",
+      "reason": "Selected annual result not yet reported; guidance-to-result basis requires a separate result-specific evidence review.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000044/ex991-pagerdutyq2fy27earni.htm"
+      ]
+    }
+  },
+  {
+    "ticker": "GTLB",
+    "cik": "0001653482",
+    "name": "GitLab Inc.",
+    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2026-02-01",
+    "period_end": "2027-01-31",
+    "fiscal_label": "FY2027",
+    "prior_start": "2025-02-01",
+    "prior_end": "2026-01-31",
+    "calendar": "months",
+    "comparison_ends": {
+      "2026-04-30": "2025-04-30",
+      "2026-07-31": "2025-07-31",
+      "2026-10-31": "2025-10-31"
+    },
+    "comparability": {
+      "blocked": false,
+      "available_on": "2026-11-11",
+      "reason": "Consolidated revenue reconciled to current release and prior-year annual/YTD statements."
+    },
+    "next_report": {
+      "type": "Q3 annual-hurdle update",
+      "date": null,
+      "status": "unverified",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-15",
+        "precision": "range"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054758/gtlb-20251202.htm",
+      "source_date": "2025-12-02",
+      "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only.",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:25.096714+00:00",
+        "fetched_at": "2026-11-11T23:48:25.774961+00:00",
+        "report_date": null,
+        "report_date_present": false,
+        "sha256": "82379a10f188919b048fee4fdcc5d52ab19ac03004aa95853ef94afc66da09fe",
+        "source_date": "2025-12-02",
+        "source_date_present": true,
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054758/gtlb-20251202.htm",
+        "status": "retrieved_unverified"
+      }
+    },
+    "annual_result": {
+      "expected_window": {
+        "start": "2027-03-01",
+        "end": "2027-03-31",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "type": "Q4/FY annual-guidance outcome",
+      "source_date": "2026-03-03",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:25.795156+00:00",
+        "fetched_at": "2026-11-11T23:48:26.511912+00:00",
+        "report_date": null,
+        "report_date_present": false,
+        "sha256": "ded7bdd17b01b7cef197ca62f582b40261b3cefbf65a4d56d302e788e7703cd2",
+        "source_date": "2026-03-03",
+        "source_date_present": true,
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm",
+        "status": "retrieved_unverified"
+      }
+    },
+    "quarter_targets": [
+      {
+        "label": "Q3 FY2027",
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "prior_start": "2025-08-01",
+        "prior_end": "2025-10-31",
+        "available_on": "2026-09-01",
+        "boundary_evidence": {
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm",
+          "accession": "0001628280-26-059820",
+          "filed_date": "2026-09-01",
+          "rule": "Three calendar months on the registered month-based fiscal calendar",
+          "prior_actual_id": "c14acb73-8f6e-5174-b068-45c2bf6a085a",
+          "prior_actual_accession": "0001628280-25-054840"
+        },
+        "growth_comparability": {
+          "blocked": false,
+          "available_on": "2026-11-11",
+          "reason": "Consolidated revenue reconciled to current release and prior-year annual/YTD statements.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm"
+          ]
+        },
+        "outcome_comparability": {
+          "blocked": true,
+          "available_on": "2026-11-11",
+          "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm"
+          ]
+        }
+      }
+    ],
+    "outcome_comparability": {
+      "blocked": true,
+      "available_on": "2026-11-11",
+      "reason": "Selected annual result not yet reported; guidance-to-result basis requires a separate result-specific evidence review.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059820/gitlab-ex99120260731fy27.htm"
+      ]
+    }
+  },
+  {
+    "ticker": "CRM",
+    "cik": "0001108524",
+    "name": "Salesforce, Inc.",
+    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2026-02-01",
+    "period_end": "2027-01-31",
+    "fiscal_label": "FY2027",
+    "prior_start": "2025-02-01",
+    "prior_end": "2026-01-31",
+    "calendar": "months",
+    "comparison_ends": {
+      "2026-04-30": "2025-04-30",
+      "2026-07-31": "2025-07-31",
+      "2026-10-31": "2025-10-31"
+    },
+    "comparability": {
+      "blocked": true,
+      "available_on": "2026-10-20",
+      "reason": "Informatica contribution and pending Contentful/Fin acquisitions change consolidation scope. October Braze announcement adds uncertainty; explicit evidence reconciliation required.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+      "sources": [
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+          "filed_date": "2026-08-27"
+        },
+        {
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312526425881/d516983dex991.htm",
+          "filed_date": "2026-10-20"
+        }
+      ]
+    },
+    "next_report": {
+      "type": "Q3 annual-hurdle update",
+      "date": "2026-12-02",
+      "status": "confirmed",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-15",
+        "precision": "range"
+      },
+      "source_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx",
+      "source_date": "2026-11-10",
+      "quote": "Results to be released on December 2, 2026, after market close",
+      "verified_as_of": "2026-11-11",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:26.594114+00:00",
+        "fetched_at": "2026-11-11T23:48:26.811876+00:00",
+        "report_date": "2026-12-02",
+        "report_date_present": true,
+        "sha256": "e529ae64b698b3a80e768fcaffd7566262d5a43e3e7bcc427be6f54f6869b8f0",
+        "source_date": "2026-11-10",
+        "source_date_present": true,
+        "source_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx",
+        "status": "confirmed"
+      }
+    },
+    "annual_result": {
+      "type": "Q4/FY annual-guidance outcome",
+      "expected_window": {
+        "start": "2027-02-01",
+        "end": "2027-02-28",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "source_date": "2026-02-25",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-q4fy26xexhibit991.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:26.850455+00:00",
+        "fetched_at": "2026-11-11T23:48:27.220178+00:00",
+        "report_date": null,
+        "report_date_present": false,
+        "sha256": "8ea16dfd1b1706f6ece15eaeec0722e399bb02f5fe6efaa9518d4afdf6ee04cd",
+        "source_date": "2026-02-25",
+        "source_date_present": true,
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-q4fy26xexhibit991.htm",
+        "status": "retrieved_unverified"
+      }
+    },
+    "calendar_source": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+    "quarter_targets": [
+      {
+        "label": "Q3 FY2027",
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "prior_start": "2025-08-01",
+        "prior_end": "2025-10-31",
+        "available_on": "2026-08-26",
+        "boundary_evidence": {
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
+          "accession": "0001108524-26-000187",
+          "filed_date": "2026-08-26",
+          "rule": "Three calendar months on the registered month-based fiscal calendar",
+          "prior_actual_id": "6509063f-42b3-5d22-8909-5d47e047d76b",
+          "prior_actual_accession": "0001108524-25-000238"
+        },
+        "growth_comparability": {
+          "blocked": true,
+          "available_on": "2026-11-11",
+          "reason": "Informatica contribution and pending Contentful/Fin acquisitions change consolidation scope. October Braze announcement adds uncertainty; explicit evidence reconciliation required.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+          "sources": [
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+              "filed_date": "2026-08-27"
+            },
+            {
+              "url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312526425881/d516983dex991.htm",
+              "filed_date": "2026-10-20"
+            }
+          ]
+        },
+        "outcome_comparability": {
+          "blocked": true,
+          "available_on": "2026-11-11",
+          "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+          ]
+        }
+      }
+    ],
+    "outcome_comparability": {
+      "blocked": true,
+      "available_on": "2026-11-11",
+      "reason": "Selected annual result not yet reported; guidance-to-result basis requires a separate result-specific evidence review.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+      ]
+    }
+  },
+  {
+    "ticker": "CRWD",
+    "cik": "0001535527",
+    "name": "CrowdStrike Holdings, Inc.",
+    "concept": "RevenueFromContractWithCustomerIncludingAssessedTax",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2026-02-01",
+    "period_end": "2027-01-31",
+    "fiscal_label": "FY2027",
+    "prior_start": "2025-02-01",
+    "prior_end": "2026-01-31",
+    "calendar": "months",
+    "comparison_ends": {
+      "2026-04-30": "2025-04-30",
+      "2026-07-31": "2025-07-31",
+      "2026-10-31": "2025-10-31"
+    },
+    "comparability": {
+      "blocked": false,
+      "available_on": "2026-11-11",
+      "reason": "As-reported total revenue. Acquisitions disclosed in Note 12 as not having material financial-statement impact; no organic/pro-forma normalization. Stock-compensation revisions preserved.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm"
+    },
+    "next_report": {
+      "type": "Q3 annual-hurdle update",
+      "date": "2026-12-01",
+      "status": "confirmed",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-15",
+        "precision": "range"
+      },
+      "source_url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-announces-date-fiscal-third-quarter-2027-financial",
+      "source_date": "2026-11-04",
+      "quote": "after the U.S. market close on Tuesday, December 1, 2026",
+      "verified_as_of": "2026-11-11",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:27.312280+00:00",
+        "fetched_at": null,
+        "http_status": 403,
+        "report_date": "2026-12-01",
+        "sha256": null,
+        "source_date": "2026-11-04",
+        "source_url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-announces-date-fiscal-third-quarter-2027-financial",
+        "status": "unverified",
+        "gap": "Current direct HTTP recheck returned 403. Earlier dated-source confirmation is retained as prior evidence, without an invented earlier fetch time."
+      }
+    },
+    "annual_result": {
+      "type": "Q4/FY annual-guidance outcome",
+      "expected_window": {
+        "start": "2027-03-01",
+        "end": "2027-03-31",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "source_date": "2026-03-03",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:27.489001+00:00",
+        "fetched_at": "2026-11-11T23:48:28.066324+00:00",
+        "report_date": null,
+        "report_date_present": false,
+        "sha256": "df7a97897d4009706438cf210ff18227268fae98ea1b1655bb9b997450ba873f",
+        "source_date": "2026-03-03",
+        "source_date_present": true,
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm",
+        "status": "retrieved_unverified"
+      }
+    },
+    "calendar_source": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm",
+    "quarter_targets": [
+      {
+        "label": "Q3 FY2027",
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "prior_start": "2025-08-01",
+        "prior_end": "2025-10-31",
+        "available_on": "2026-08-26",
+        "boundary_evidence": {
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+          "accession": "0001535527-26-000029",
+          "filed_date": "2026-08-26",
+          "rule": "Three calendar months on the registered month-based fiscal calendar",
+          "prior_actual_id": "12953b5a-1353-5189-b35f-3eb7d8b0a959",
+          "prior_actual_accession": "0001535527-25-000033"
+        },
+        "growth_comparability": {
+          "blocked": false,
+          "available_on": "2026-11-11",
+          "reason": "As-reported total revenue. Acquisitions disclosed in Note 12 as not having material financial-statement impact; no organic/pro-forma normalization. Stock-compensation revisions preserved.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000031/crwd-20260731.htm",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
+          ]
+        },
+        "outcome_comparability": {
+          "blocked": true,
+          "available_on": "2026-11-11",
+          "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
+          ]
+        }
+      }
+    ],
+    "outcome_comparability": {
+      "blocked": true,
+      "available_on": "2026-11-11",
+      "reason": "Selected annual result not yet reported; guidance-to-result basis requires a separate result-specific evidence review.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
+      ]
+    }
+  },
+  {
+    "ticker": "OKTA",
+    "cik": "0001660134",
+    "name": "Okta, Inc.",
+    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2026-02-01",
+    "period_end": "2027-01-31",
+    "fiscal_label": "FY2027",
+    "prior_start": "2025-02-01",
+    "prior_end": "2026-01-31",
+    "calendar": "months",
+    "comparison_ends": {
+      "2026-04-30": "2025-04-30",
+      "2026-07-31": "2025-07-31",
+      "2026-10-31": "2025-10-31"
+    },
+    "comparability": {
+      "blocked": true,
+      "available_on": "2026-08-27",
+      "reason": "August 26 Permiso acquisition is a subsequent event with consideration still under evaluation. Annual guidance and prior-year comparison scope require reconciliation; partner-services shift is also disclosed.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000069/okta-20260731.htm"
+    },
+    "next_report": {
+      "type": "Q3 annual-hurdle update",
+      "date": "2026-12-01",
+      "status": "confirmed",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-15",
+        "precision": "range"
+      },
+      "source_url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+      "source_date": "2026-11-02",
+      "quote": "after the U.S. market close on Tuesday, December 1, 2026",
+      "verified_as_of": "2026-11-11",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:28.168571+00:00",
+        "fetched_at": "2026-11-11T23:48:28.511378+00:00",
+        "report_date": "2026-12-01",
+        "report_date_present": true,
+        "sha256": "aa45c5700d23cfc5c29321b3c8e5a5791d4788cb98f8fcdb9f901b5eda833dda",
+        "source_date": "2026-11-02",
+        "source_date_present": true,
+        "source_url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+        "status": "confirmed"
+      }
+    },
+    "annual_result": {
+      "type": "Q4/FY annual-guidance outcome",
+      "expected_window": {
+        "start": "2027-03-01",
+        "end": "2027-03-31",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "source_date": "2026-03-04",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-1312026_ex991.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:28.543623+00:00",
+        "fetched_at": "2026-11-11T23:48:29.335277+00:00",
+        "report_date": null,
+        "report_date_present": false,
+        "sha256": "26ae2cabf718f807d7dbf92aab1c70ffd4b11f3bb8c6b7ba0098e5292c9544f9",
+        "source_date": "2026-03-04",
+        "source_date_present": true,
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-1312026_ex991.htm",
+        "status": "retrieved_unverified"
+      }
+    },
+    "calendar_source": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000069/okta-20260731.htm",
+    "quarter_targets": [
+      {
+        "label": "Q3 FY2027",
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "prior_start": "2025-08-01",
+        "prior_end": "2025-10-31",
+        "available_on": "2026-08-26",
+        "boundary_evidence": {
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm",
+          "accession": "0001660134-26-000068",
+          "filed_date": "2026-08-26",
+          "rule": "Three calendar months on the registered month-based fiscal calendar",
+          "prior_actual_id": "fb8f9fd5-7ec4-5e8c-a73f-97a76cbf8356",
+          "prior_actual_accession": "0001660134-25-000171"
+        },
+        "growth_comparability": {
+          "blocked": true,
+          "available_on": "2026-11-11",
+          "reason": "August 26 Permiso acquisition is a subsequent event with consideration still under evaluation. Annual guidance and prior-year comparison scope require reconciliation; partner-services shift is also disclosed.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000069/okta-20260731.htm",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+          ]
+        },
+        "outcome_comparability": {
+          "blocked": true,
+          "available_on": "2026-11-11",
+          "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+          ]
+        }
+      }
+    ],
+    "outcome_comparability": {
+      "blocked": true,
+      "available_on": "2026-11-11",
+      "reason": "Selected annual result not yet reported; guidance-to-result basis requires a separate result-specific evidence review.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+      ]
+    }
+  },
+  {
+    "ticker": "IOT",
+    "cik": "0001642896",
+    "name": "Samsara Inc.",
+    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2026-02-01",
+    "period_end": "2027-01-30",
+    "fiscal_label": "FY2027",
+    "prior_start": "2025-02-02",
+    "prior_end": "2026-01-31",
+    "calendar": "weeks",
+    "comparison_ends": {
+      "2026-05-02": "2025-05-03",
+      "2026-08-01": "2025-08-02",
+      "2026-10-31": "2025-11-01"
+    },
+    "comparability": {
+      "blocked": false,
+      "available_on": "2026-11-11",
+      "reason": "Current and prior fiscal years each have 52 weeks; compare observed 26-week remaining periods.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060909/iot-20260801.htm"
+    },
+    "next_report": {
+      "type": "Q3 annual-hurdle update",
+      "date": null,
+      "status": "unverified",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-15",
+        "precision": "range"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025055355/iot-20251204.htm",
+      "source_date": "2025-12-04",
+      "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only.",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:29.400836+00:00",
+        "fetched_at": "2026-11-11T23:48:30.250194+00:00",
+        "report_date": null,
+        "report_date_present": false,
+        "sha256": "547f5963e72a425168b44d8136ac45bf56a40240b2581b7fbec81258355c303f",
+        "source_date": "2025-12-04",
+        "source_date_present": true,
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025055355/iot-20251204.htm",
+        "status": "retrieved_unverified"
+      }
+    },
+    "annual_result": {
+      "type": "Q4/FY annual-guidance outcome",
+      "expected_window": {
+        "start": "2027-03-01",
+        "end": "2027-03-31",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "source_date": "2026-03-05",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026015170/samsaraepr-q42026.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:30.271171+00:00",
+        "fetched_at": "2026-11-11T23:48:31.241707+00:00",
+        "report_date": null,
+        "report_date_present": false,
+        "sha256": "aed8b5fb4260578dd607e9aae5aa3da14e17b6ec3315ed3efc86b2ede908dc61",
+        "source_date": "2026-03-05",
+        "source_date_present": true,
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026015170/samsaraepr-q42026.htm",
+        "status": "retrieved_unverified"
+      }
+    },
+    "calendar_source": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060909/iot-20260801.htm",
+    "quarter_targets": [
+      {
+        "label": "Q3 FY2027",
+        "start": "2026-08-02",
+        "end": "2026-10-31",
+        "prior_start": "2025-08-03",
+        "prior_end": "2025-11-01",
+        "available_on": "2026-09-03",
+        "boundary_evidence": {
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm",
+          "accession": "0001628280-26-060438",
+          "filed_date": "2026-09-03",
+          "rule": "13-week fiscal quarter on the registered weekly calendar",
+          "prior_actual_id": "04788f82-92f1-57f8-a852-5c8b7399113c",
+          "prior_actual_accession": "0001628280-25-056069"
+        },
+        "growth_comparability": {
+          "blocked": false,
+          "available_on": "2026-11-11",
+          "reason": "Current and prior fiscal years each have 52 weeks; compare observed 26-week remaining periods.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060909/iot-20260801.htm",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm"
+          ]
+        },
+        "outcome_comparability": {
+          "blocked": true,
+          "available_on": "2026-11-11",
+          "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm"
+          ]
+        }
+      }
+    ],
+    "outcome_comparability": {
+      "blocked": true,
+      "available_on": "2026-11-11",
+      "reason": "Selected annual result not yet reported; guidance-to-result basis requires a separate result-specific evidence review.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1642896/000162828026060438/samsaraepr-q22027.htm"
+      ]
+    }
+  },
+  {
+    "ticker": "MDB",
+    "cik": "0001441816",
+    "name": "MongoDB, Inc.",
+    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2026-02-01",
+    "period_end": "2027-01-31",
+    "fiscal_label": "FY2027",
+    "prior_start": "2025-02-01",
+    "prior_end": "2026-01-31",
+    "calendar": "months",
+    "comparison_ends": {
+      "2026-04-30": "2025-04-30",
+      "2026-07-31": "2025-07-31",
+      "2026-10-31": "2025-10-31"
+    },
+    "comparability": {
+      "blocked": false,
+      "available_on": "2026-11-11",
+      "reason": "Clarity consolidated from May 8, 2026. Note 4 says acquisition effects were not material; no normalization. September 29 presentation expressly does not reaffirm guidance.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059830/mdb-20260731.htm"
+    },
+    "next_report": {
+      "type": "Q3 annual-hurdle update",
+      "date": "2026-12-01",
+      "status": "confirmed",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-15",
+        "precision": "range"
+      },
+      "source_url": "https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-date-third-quarter-fiscal-2027-earnings",
+      "source_date": "2026-11-05",
+      "quote": "after the U.S. financial markets close on Tuesday, December 1, 2026",
+      "verified_as_of": "2026-11-11",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:31.323477+00:00",
+        "fetched_at": null,
+        "http_status": 403,
+        "report_date": "2026-12-01",
+        "sha256": null,
+        "source_date": "2026-11-05",
+        "source_url": "https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-date-third-quarter-fiscal-2027-earnings",
+        "status": "unverified",
+        "gap": "Current direct HTTP recheck returned 403. Earlier dated-source confirmation is retained as prior evidence, without an invented earlier fetch time."
+      }
+    },
+    "annual_result": {
+      "type": "Q4/FY annual-guidance outcome",
+      "expected_window": {
+        "start": "2027-03-01",
+        "end": "2027-03-31",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "source_date": "2026-03-02",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:31.540381+00:00",
+        "fetched_at": "2026-11-11T23:48:32.436464+00:00",
+        "report_date": null,
+        "report_date_present": false,
+        "sha256": "c144559491c5ca9fd18e9dab5d67eabb0c18023a5241b1f646f38bac4fd23d5b",
+        "source_date": "2026-03-02",
+        "source_date_present": true,
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm",
+        "status": "retrieved_unverified"
+      }
+    },
+    "calendar_source": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059830/mdb-20260731.htm",
+    "quarter_targets": [
+      {
+        "label": "Q3 FY2027",
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "prior_start": "2025-08-01",
+        "prior_end": "2025-10-31",
+        "available_on": "2026-09-01",
+        "boundary_evidence": {
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm",
+          "accession": "0001628280-26-059794",
+          "filed_date": "2026-09-01",
+          "rule": "Three calendar months on the registered month-based fiscal calendar",
+          "prior_actual_id": "5026a0a8-ec76-5c0c-8906-9370f9f62244",
+          "prior_actual_accession": "0001628280-25-054768"
+        },
+        "growth_comparability": {
+          "blocked": false,
+          "available_on": "2026-11-11",
+          "reason": "Clarity consolidated from May 8, 2026. Note 4 says acquisition effects were not material; no normalization. September 29 presentation expressly does not reaffirm guidance.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059830/mdb-20260731.htm",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm"
+          ]
+        },
+        "outcome_comparability": {
+          "blocked": true,
+          "available_on": "2026-11-11",
+          "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm"
+          ]
+        }
+      }
+    ],
+    "outcome_comparability": {
+      "blocked": true,
+      "available_on": "2026-11-11",
+      "reason": "Selected annual result not yet reported; guidance-to-result basis requires a separate result-specific evidence review.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1441816/000162828026059794/mdb-073126xex991xrelease.htm"
+      ]
+    }
+  },
+  {
+    "ticker": "S",
+    "cik": "0001583708",
+    "name": "SentinelOne, Inc.",
+    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2026-02-01",
+    "period_end": "2027-01-31",
+    "fiscal_label": "FY2027",
+    "prior_start": "2025-02-01",
+    "prior_end": "2026-01-31",
+    "calendar": "months",
+    "comparison_ends": {
+      "2026-04-30": "2025-04-30",
+      "2026-07-31": "2025-07-31",
+      "2026-10-31": "2025-10-31"
+    },
+    "comparability": {
+      "blocked": true,
+      "available_on": "2026-08-28",
+      "reason": "Observo and Prompt acquired in September 2025; current/prior remaining periods contain different ownership durations. Comparable revenue impact not reconciled.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000055/s-20260731.htm"
+    },
+    "next_report": {
+      "type": "Q3 annual-hurdle update",
+      "date": null,
+      "status": "unverified",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-15",
+        "precision": "range"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000157/s-20251204.htm",
+      "source_date": "2025-12-04",
+      "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only.",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:32.530677+00:00",
+        "fetched_at": "2026-11-11T23:48:33.106683+00:00",
+        "report_date": null,
+        "report_date_present": false,
+        "sha256": "e931e6d380968c380a14939e8c37732e3ddffa065f72098b091111a3cd71b116",
+        "source_date": "2025-12-04",
+        "source_date_present": true,
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000157/s-20251204.htm",
+        "status": "retrieved_unverified"
+      }
+    },
+    "annual_result": {
+      "type": "Q4/FY annual-guidance outcome",
+      "expected_window": {
+        "start": "2027-03-01",
+        "end": "2027-03-31",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "source_date": "2026-03-12",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/sentineloneq426exhibit991.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:33.133694+00:00",
+        "fetched_at": "2026-11-11T23:48:34.205699+00:00",
+        "report_date": null,
+        "report_date_present": false,
+        "sha256": "229f682deedb33d014dfe49800e99f34000792d3dbb4b262ad8fa781a7f3bb92",
+        "source_date": "2026-03-12",
+        "source_date_present": true,
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/sentineloneq426exhibit991.htm",
+        "status": "retrieved_unverified"
+      }
+    },
+    "calendar_source": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000055/s-20260731.htm",
+    "quarter_targets": [
+      {
+        "label": "Q3 FY2027",
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "prior_start": "2025-08-01",
+        "prior_end": "2025-10-31",
+        "available_on": "2026-08-27",
+        "boundary_evidence": {
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm",
+          "accession": "0001583708-26-000052",
+          "filed_date": "2026-08-27",
+          "rule": "Three calendar months on the registered month-based fiscal calendar",
+          "prior_actual_id": "24be2ebb-7517-56b8-8d06-5bfa9b7161f1",
+          "prior_actual_accession": "0001583708-25-000159"
+        },
+        "growth_comparability": {
+          "blocked": true,
+          "available_on": "2026-11-11",
+          "reason": "Observo and Prompt acquired in September 2025; current/prior remaining periods contain different ownership durations. Comparable revenue impact not reconciled.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000055/s-20260731.htm",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+          ]
+        },
+        "outcome_comparability": {
+          "blocked": true,
+          "available_on": "2026-11-11",
+          "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+          ]
+        }
+      }
+    ],
+    "outcome_comparability": {
+      "blocked": true,
+      "available_on": "2026-11-11",
+      "reason": "Selected annual result not yet reported; guidance-to-result basis requires a separate result-specific evidence review.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+      ]
+    }
+  },
+  {
+    "ticker": "ADBE",
+    "cik": "0000796343",
+    "name": "ADOBE INC.",
+    "concept": "Revenues",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2025-11-29",
+    "period_end": "2026-11-27",
+    "fiscal_label": "FY2026",
+    "prior_start": "2024-11-30",
+    "prior_end": "2025-11-28",
+    "calendar": "weeks",
+    "comparison_ends": {
+      "2026-02-27": "2025-02-28",
+      "2026-05-29": "2025-05-30",
+      "2026-08-28": "2025-08-29"
+    },
+    "comparability": {
+      "blocked": false,
+      "available_on": "2026-11-11",
+      "reason": "Semrush consolidated from April 28, 2026. Note 3 explicitly says impact was not material; no acquisition normalization. FY2026 and comparison FY2025 are 52-week years.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm"
+    },
+    "next_report": {
+      "type": "Q4/FY annual-guidance outcome",
+      "date": null,
+      "status": "unverified",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-15",
+        "precision": "range"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbe-20251210.htm",
+      "source_date": "2025-12-10",
+      "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only.",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:34.295207+00:00",
+        "fetched_at": "2026-11-11T23:48:35.022578+00:00",
+        "report_date": null,
+        "report_date_present": false,
+        "sha256": "cbf75280fa3dcb67f3e69d6678c0636cc40d9d6c0122ccb78520632027a5dad8",
+        "source_date": "2025-12-10",
+        "source_date_present": true,
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbe-20251210.htm",
+        "status": "retrieved_unverified"
+      }
+    },
+    "annual_result": {
+      "type": "Q4/FY annual-guidance outcome",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-31",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "source_date": "2025-12-10",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:35.063201+00:00",
+        "fetched_at": "2026-11-11T23:48:35.760781+00:00",
+        "report_date": null,
+        "report_date_present": false,
+        "sha256": "5fd2619f5e70fc09b2d558525bc965209a31e9d0638f7b886405ffa9e8f31f79",
+        "source_date": "2025-12-10",
+        "source_date_present": true,
+        "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+        "status": "retrieved_unverified"
+      }
+    },
+    "calendar_source": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+    "quarter_targets": [
+      {
+        "label": "Q4 FY2026",
+        "start": "2026-08-29",
+        "end": "2026-11-27",
+        "prior_start": "2025-08-30",
+        "prior_end": "2025-11-28",
+        "available_on": "2026-09-10",
+        "boundary_evidence": {
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+          "accession": "0000796343-26-000147",
+          "filed_date": "2026-09-10",
+          "rule": "13-week fiscal quarter on the registered weekly calendar",
+          "prior_actual_id": "7abe3801-66c8-52b4-b8cc-f97764e73c36",
+          "prior_actual_accession": "0000796343-26-000003"
+        },
+        "growth_comparability": {
+          "blocked": false,
+          "available_on": "2026-11-11",
+          "reason": "Semrush consolidated from April 28, 2026. Note 3 explicitly says impact was not material; no acquisition normalization. FY2026 and comparison FY2025 are 52-week years.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+          ]
+        },
+        "outcome_comparability": {
+          "blocked": true,
+          "available_on": "2026-11-11",
+          "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+          ]
+        },
+        "prior_q4": {
+          "annual_start": "2024-11-30",
+          "nine_month_end": "2025-08-29"
+        }
+      }
+    ],
+    "outcome_comparability": {
+      "blocked": true,
+      "available_on": "2026-11-11",
+      "reason": "Selected annual result not yet reported; guidance-to-result basis requires a separate result-specific evidence review.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+      ]
+    }
+  },
+  {
+    "ticker": "LULU",
+    "cik": "0001397187",
+    "name": "lululemon athletica inc.",
+    "concept": "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "basis": "US_GAAP_consolidated_reported",
+    "period_start": "2026-02-02",
+    "period_end": "2027-01-31",
+    "fiscal_label": "FY2026",
+    "prior_start": "2025-02-03",
+    "prior_end": "2026-02-01",
+    "calendar": "weeks",
+    "comparison_ends": {
+      "2026-05-03": "2025-05-04",
+      "2026-08-02": "2025-08-03",
+      "2026-11-01": "2025-11-02"
+    },
+    "comparability": {
+      "blocked": false,
+      "available_on": "2026-11-11",
+      "reason": "Current and prior fiscal years each have 52 weeks; reported total net revenue, no constant-dollar normalization.",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000127/lulu-20260802.htm"
+    },
+    "next_report": {
+      "type": "Q3 annual-hurdle update",
+      "date": null,
+      "status": "unverified",
+      "expected_window": {
+        "start": "2026-12-01",
+        "end": "2026-12-15",
+        "precision": "range"
+      },
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000054/lulu-20251203.htm",
+      "source_date": "2025-12-11",
+      "verification_gap": "No dated 2026 announcement verified from SEC filings or official IR date-announcement search as of November 11; window is historical inference only.",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:35.825237+00:00",
+        "fetched_at": "2026-11-11T23:48:36.500043+00:00",
+        "report_date": null,
+        "report_date_present": false,
+        "sha256": "1cb55af53e56509c455818abc452eb4cc871431948f1b7c1811ad19e235028fb",
+        "source_date": "2025-12-11",
+        "source_date_present": true,
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000054/lulu-20251203.htm",
+        "status": "retrieved_unverified"
+      }
+    },
+    "annual_result": {
+      "type": "Q4/FY annual-guidance outcome",
+      "expected_window": {
+        "start": "2027-03-01",
+        "end": "2027-03-31",
+        "precision": "month"
+      },
+      "status": "estimated",
+      "source_date": "2026-03-17",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260201xex991.htm",
+      "notes": "Estimated from prior-year annual release, not confirmed. Q3 releases update the hurdle and do not settle annual guidance.",
+      "source_check": {
+        "checked_at": "2026-11-11T23:48:36.530189+00:00",
+        "fetched_at": "2026-11-11T23:48:37.218337+00:00",
+        "report_date": null,
+        "report_date_present": false,
+        "sha256": "b47c12fc44fc46c7436f263b4a9ec63491f4b05a829a56b54769ce54aae46421",
+        "source_date": "2026-03-17",
+        "source_date_present": true,
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260201xex991.htm",
+        "status": "retrieved_unverified"
+      }
+    },
+    "calendar_source": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000127/lulu-20260802.htm",
+    "quarter_targets": [
+      {
+        "label": "Q3 FY2026",
+        "start": "2026-08-03",
+        "end": "2026-11-01",
+        "prior_start": "2025-08-04",
+        "prior_end": "2025-11-02",
+        "available_on": "2026-09-03",
+        "boundary_evidence": {
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm",
+          "accession": "0001397187-26-000126",
+          "filed_date": "2026-09-03",
+          "rule": "13-week fiscal quarter on the registered weekly calendar",
+          "prior_actual_id": "1b2a56bd-3d2c-544e-9d20-f3e713d44cc7",
+          "prior_actual_accession": "0001397187-25-000055"
+        },
+        "growth_comparability": {
+          "blocked": false,
+          "available_on": "2026-11-11",
+          "reason": "Current and prior fiscal years each have 52 weeks; reported total net revenue, no constant-dollar normalization.",
+          "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000127/lulu-20260802.htm",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm"
+          ]
+        },
+        "outcome_comparability": {
+          "blocked": true,
+          "available_on": "2026-11-11",
+          "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+          "sources": [
+            "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm"
+          ]
+        }
+      }
+    ],
+    "outcome_comparability": {
+      "blocked": true,
+      "available_on": "2026-11-11",
+      "reason": "Selected annual result not yet reported; guidance-to-result basis requires a separate result-specific evidence review.",
+      "sources": [
+        "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000126/lulu-20260802xex991.htm"
+      ]
+    }
+  }
+]

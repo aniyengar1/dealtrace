@@ -1,0 +1,57 @@
+{
+  "evidence": [
+    {
+      "manifest": {
+        "body": "46cf72f9aed824963ab77e6a217ab7b5d155021c2236469ad386e7db8817af4b-7857aa0a7d464cf75f83be48c8acac23c386db0b49c4e4df2dc854917f60e2ac.body",
+        "fetched_at": "2026-11-13T05:09:57.821324+00:00",
+        "sha256": "7857aa0a7d464cf75f83be48c8acac23c386db0b49c4e4df2dc854917f60e2ac",
+        "url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000202/adiq424exhibit991.htm"
+      },
+      "quote": "ent events or circumstances. Analog Devices and the Analog Devices logo are registered trademarks or trademarks of Analog Devices, Inc. All other trademarks mentioned in this document are the property of their respective owners. ANALOG DEVICES, INC. CONSOLIDATED STATEMENTS OF INCOME (Unaudited) (In thousands, except per share amounts) Three Months Ended Twelve Months Ended Nov. 2, 2024 Oct. 28, 2023 Nov. 2, 2024 Oct. 28, 2023 Revenue $ 2,443,205 $ 2,716,484 $ 9,427,157 $ 12,305,539 Cost of sales 1,027,077 1,069,768 4,045,814 4,428,321 Gross margin 1,416,128 1,646,716 5,381,343 7,877,218 Operating expenses: Research and development 378,903 406,594 1,487,863 1,660,194 Selling, marketing, general and administrative 277,220 288,936 1,068,640 1,273,584 Amortization of intangibles 187,754 202,736 754,784 959,618 Special charges, net 2,859 114,035 37,258 160,710 Total operating expenses 846,736 1,012,301 3,348,545 4,054,106 Operating income 56",
+      "quote_end": 17635,
+      "quote_start": 16685,
+      "sample_index": 1,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6281/000000628124000202/adiq424exhibit991.htm"
+    },
+    {
+      "manifest": {
+        "body": "84b62988ce45112f7bf25a0d60bb58d48de1bb9f0b963739ab58bedc8e348669-e6faa0782a05a00c233524289e301f4bbf1815b98fdfcc0ec8a3a353cc23d599.body",
+        "fetched_at": "2026-11-13T04:52:04.056006+00:00",
+        "sha256": "e6faa0782a05a00c233524289e301f4bbf1815b98fdfcc0ec8a3a353cc23d599",
+        "url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026073360/exhibit991q42026earningsre.htm"
+      },
+      "quote": "argest quarterly share buyback in more than eight years.\u201d Applied Materials, Inc. Page 3 of 15 Results Summary Change Q4 FY2026 Q4 FY2025 FY2026 FY2025 Q4 FY2026 vs. Q4 FY2025 FY2026 vs. FY2025 (In millions, except per share amounts and percentages) Revenue $ 10,409 $ 6,800 $ 34,446 $ 28,368 53% 21% Gross margin 50.4 % 48.0 % 50.0 % 48.7 % 2.4 points 1.3 points Operating margin 35.1 % 25.2 % 32.2 % 29.2 % 9.9 points 3.0 points Net income $ 2,718 $ 1,897 $ 10,088 $ 6,998 43% 44% Diluted earnings per share $ 3.40 $ 2.38 $ 12.62 $ 8.66 43% 46% Non-GAAP Results Non-GAAP gross margin 50.6 % 48.1 % 50.1 % 48.8 % 2.5 points 1.3 points Non-GAAP operating margin 35.3 % 28.6 % 33.1 % 30.2 % 6.7 points 2.9 points Non-GAAP net income $ 3,321 $ 1,732 $ 10,301 $ 7,607 92% 35% Non-GAAP diluted EPS $ 4.16 $ 2.17 $ 12.89 $ 9.42 92% 37% Non-GAAP free cash flow $ 2,616 $ 2,043 $ 6,196 $ 5,698 28% 9% A reconciliation of the GAAP and non-GAAP results is pro",
+      "quote_end": 4283,
+      "quote_start": 3333,
+      "sample_index": 6,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/6951/000162828026073360/exhibit991q42026earningsre.htm"
+    },
+    {
+      "manifest": {
+        "body": "4ffcd62696abaed46196a4da20f4add9445dcbde534f0bde6455d2633c9a4589-f53f01a22420acf8ba2e4d7fd89a2d27d9164d4e9fb83b94f127a42480b7dfda.body",
+        "fetched_at": "2026-11-13T04:58:54.326438+00:00",
+        "sha256": "f53f01a22420acf8ba2e4d7fd89a2d27d9164d4e9fb83b94f127a42480b7dfda",
+        "url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000161/hims-20260630x8xkearningsr.htm"
+      },
+      "quote": "n our growth profile and the continued expanding reach of our platform,\u201d said Yemi Okupe, Chief Financial Officer. \u201cDomestic revenue growth accelerated to 16% year-over-year, and our international business grew more than 17-fold, strengthened by the close of our Eucalyptus acquisition in June. We expect our domestic business to continue accelerating through the second half of the year. This momentum, combined with the meaningful efficiencies we're generating from our investments in AI and technology, positions us to make access to high touch, comprehensive care more affordable for our customers while also significantly expanding our reach internationally. As a result, we are raising our 2026 revenue outlook and building increased conviction in our 2030 targets of at least $6.5 billion in revenue and $1.3 billion in Adjusted EBITDA.\u201d Key Business Metrics (In Thousands, Except for Monthly Revenue per Average Subscriber, Unaudited) Three M",
+      "quote_end": 2426,
+      "quote_start": 1476,
+      "sample_index": 19,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1773751/000177375126000161/hims-20260630x8xkearningsr.htm"
+    },
+    {
+      "manifest": {
+        "body": "ac0e130e2b7fa15a723ba7b720eceb6b1227174fc593fb30fe2031dfe42212ee-fae9d0ccf5d42fa9c4fe3934968e7afcf93bdcb491000f50a5513541a1b88391.body",
+        "fetched_at": "2026-11-13T05:12:05.186643+00:00",
+        "sha256": "fae9d0ccf5d42fa9c4fe3934968e7afcf93bdcb491000f50a5513541a1b88391",
+        "url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000047/tdoc-20250331xexx991.htm"
+      },
+      "quote": ".2% \u2022 Teladoc Health announced acquisition of UpLift Health Technologies, Inc., a virtual mental health provider with in-network health plan relationships representing more than 100 million covered lives \u201cWe are pleased with the solid start to 2025. Consolidated revenue and adjusted EBITDA were towards the higher end of our first quarter guidance ranges, including our Integrated Care segment being above our ranges for both measures and BetterHelp segment results in the upper half of our ranges as well. We also continue to make progress towards strategic priorities aimed at driving sustainable performance, including advancing our position in virtual mental health. We are excited about the UpLift acquisition announced today, which will further the BetterHelp segment's ability to support consumers seeking to use their covered benefits for virtual mental health services,\u201d said Chuck Divita, Chief Executive Officer of Teladoc Health. \u201cWe con",
+      "quote_end": 2042,
+      "quote_start": 1092,
+      "sample_index": 26,
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1477449/000147744925000047/tdoc-20250331xexx991.htm"
+    }
+  ],
+  "policy": "Additional source context; no gold labels, frozen scores, actuals or outcome decisions rewritten"
+}

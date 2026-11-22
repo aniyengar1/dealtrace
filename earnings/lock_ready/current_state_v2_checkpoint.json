@@ -1,0 +1,42 @@
+{
+  "tag": "session3-current-state-v2-lock-ready-20261114",
+  "commit": "c2c587fdeb550b7afe70a1a54098299d8874589e",
+  "recorded_at": "2026-11-15T00:40:19.921376+00:00",
+  "tag_created_at": "2026-11-14T16:39:55-08:00",
+  "policy_version": "current-state-checks-v2",
+  "required_migration": "0106_crosscheck_current_checks.sql",
+  "owner_authorized": true,
+  "owner_human_review_status": "pending; agent-tested checkpoint",
+  "dependencies_lock": "earnings/lock_ready/two_method_requirements.lock",
+  "dependencies_sha256": "724e79d85f370754531901af2f5c65d07f4b98ef24acffb60e6dddfde0c6b527",
+  "installed_runtime_versions_match_lock": true,
+  "pip_version_outside_existing_runtime_lock": "26.2.1",
+  "dependency_changes_in_this_pass": false,
+  "tests": {
+    "passed": 549,
+    "skipped": 3,
+    "xfailed": 2,
+    "earnings_passed": 326
+  },
+  "prior_method_fixed_time_regressions_identical": true,
+  "paired_fixed_time_regressions_identical": true,
+  "controlled_boundary_cases": 17,
+  "live_predictions": 0,
+  "read_only_dry_run_ledger_before": 0,
+  "read_only_dry_run_ledger_after": 0,
+  "inference_and_token_count_calls": 0,
+  "next_okta_opening": "2026-11-16T21:00:00-08:00",
+  "freeze_before_opening": true,
+  "prospective_live_gate": "PENDING",
+  "owner_checklist": "earnings/CURRENT_CHECKS.md",
+  "future_manual_command": ".venv/bin/python -m earnings.predict --lock --methods both --owner-check-dir data/cache/earnings/current-checks",
+  "ceiling_usd": "8",
+  "occupancy_usd": "2.6009185",
+  "unresolved_reservations_usd": "2.2373935",
+  "provider_billing_cap_guaranteed": false,
+  "previous_tags_unchanged": {
+    "session3-lock-ready": "94984fc3ce33c6e85a287738d3a617561cd0cefc",
+    "session3-two-method-lock-ready-20261113": "87f48d40dfba363a7732cbb0b3cf68f473b3d56f",
+    "session3-two-method-lock-ready-20261113-r2": "7dc952c635446bb4ed3a6717d58cb7dc003f62cb"
+  }
+}

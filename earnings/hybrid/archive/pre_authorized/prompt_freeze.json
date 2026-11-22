@@ -1,0 +1,10 @@
+{
+  "execution_fingerprint": "db2c467ea068ed5c1c7e8f168ad6d1e0010c56b85a99038a7ed021b549d01301",
+  "fresh_inference_forbidden": true,
+  "fresh_reservation_commit": "6e085a5",
+  "frozen_at": "2026-11-13T11:02:36.070036+00:00",
+  "live_dispatch_blocked": true,
+  "owner_human_review_complete": false,
+  "prompt_version": "hybrid-diagnostic-v1",
+  "purpose": "Freeze local diagnostic preparation, not evaluation quality or inference authorization"
+}

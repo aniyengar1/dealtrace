@@ -1,0 +1,445 @@
+{
+  "all_unchanged": true,
+  "checked_at": "2026-11-13T20:09:47.276033+00:00",
+  "dependency_changes": false,
+  "expected_failure_note": "Original v1 xfails unchanged; not claimed repaired.",
+  "failed_pilot_artifacts_unchanged": {
+    "earnings/extraction/v2/rules_frozen_v2.json": true,
+    "earnings/pilot_s5/gold.json": true,
+    "earnings/pilot_s5/gold_seal.json": true,
+    "earnings/pilot_s5/inventory.json": true,
+    "earnings/pilot_s5/sample.json": true,
+    "earnings/validation/session5_pilot_v2_first.json": true
+  },
+  "fixed_input_time_regression_identical": true,
+  "full_dependency_freeze_matches_lock_ready": true,
+  "prompt_freeze_valid": true,
+  "protected_fingerprints": [
+    {
+      "path": "db/migrations/0001_enums.sql",
+      "sha256": "df5f30bab807fb704c1d553992228dee86eb7b9ddead8c873705514cab8c4582",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0002_deals.sql",
+      "sha256": "476101b177910cc20a850ecdc6ed9764d8292d935cc803cec2c42ab2fabfc200",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0003_paragraphs.sql",
+      "sha256": "fbae23b72fc39fff05774c54f01691fb5a92a0dd4c9bc2dc741e3899b89ea093",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0004_extraction_runs.sql",
+      "sha256": "0dc34c5290a98fabf87e2049409736eb50dfaf8768c67df9868d2a43aa2cbc74",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0005_events.sql",
+      "sha256": "ee4d47adcfb5dd5fe00741bac2b2394c5f05affb93cd094e80de21a5de097304",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0006_proposals.sql",
+      "sha256": "24131c56f89799f9517ff26832a71d426c2fdd98b6607b3358ce9e27a4cdf30b",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0007_valuations.sql",
+      "sha256": "e66500712149f3703dd58a3bc1d7fdc82ab2f051b2a2843d98976125f5b25752",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0008_rls_policies.sql",
+      "sha256": "36324b6b181b495cd82e34f6b37581bb533976f1e25158179efe3b1c616020f7",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0009_reviewer_note.sql",
+      "sha256": "db4267ffc86abf89c1d90a01fa12e3988a2572c03a1caa1099a033fcf95b00b6",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0100_crosscheck.sql",
+      "sha256": "22a93a04bbff8e150f615081a8b153e5d272944d6596fdd9191a551ae0a848ae",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0101_crosscheck_product.sql",
+      "sha256": "cbbd71d317e15ca12575d825b45076f7291098945c93042a3f09fd8cb08260f1",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0102_crosscheck_quarters.sql",
+      "sha256": "fc7299be4f30cff3a3ceaa2f5f86005c24f480783bbff35d8922d4df372e9bc6",
+      "unchanged": true
+    },
+    {
+      "path": "db/migrations/0103_crosscheck_live_ledger.sql",
+      "sha256": "314549a7dcf967928da2c25454b13b96e803ccd99a74c922aa41cd7907818156",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/__init__.py",
+      "sha256": "01cce727c851576a940111951671a5642c208b121171d6d5f67a78d65edbdc63",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/__main__.py",
+      "sha256": "66f7200a8371a6a1e7416b755bd7df92446675f1c33158b096360b1b3c773525",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/actuals.py",
+      "sha256": "a4273af5bc58d93cb0616a160cbc0963e5dd1eac771f9c99d0f5231a0e7ce09f",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/announcements/CRM.json",
+      "sha256": "4ba8806850ab266ea3890d6e6b7b7eb046e32c7410bc6a9d4aa9c5b612a9e74f",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/announcements/IOT.json",
+      "sha256": "325ec5c0c73a748c3432db3cb4d5ecdaf27f26b2acca9860921174eae97eb6c0",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/announcements/OKTA.json",
+      "sha256": "f58f0cb6ffa784c513260d9fd1e48f714122f4501a537e12a879d958cd49cabd",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/announcements/S.json",
+      "sha256": "7d9a65108130c66f581555f35ebad563560a780f49575b4bc894f98f032608f7",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/baseline.py",
+      "sha256": "190b21d59d244d3b8e381cee9a911ff48f9bff46b07f033f50d422a060954e53",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/baseline_evaluation.py",
+      "sha256": "65525c1f65b3cb2e6e9ab3d40e53a2629a6f333b1f89fbdc4ed66242700fc36d",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/companies.json",
+      "sha256": "f77384ce1b2dbb17e4466cf4cb82aa36ef5071f08dda04298412cb47282827d0",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/dates.py",
+      "sha256": "1781266af2a44458e2df2b359f7c598161fc63a45618b27960953a35fd118c2d",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/engine.py",
+      "sha256": "ed64954189edab9554fbc4471304aaf614d7dec35c243a08d9efbd80f1fa2875",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/evaluate.py",
+      "sha256": "073e98dcfe85b1cf3e4d72f9a07c90bf9ca17a9b06be221cb6590036a6b94dc5",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/forecast.py",
+      "sha256": "a4caf3feb75934b1082d1e7dcff8ebf04b51f9e37493a7e8a20d417a4da1caeb",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/ADBE.json",
+      "sha256": "4f01619babac179c20248beef17a08fc6e7e2dbdaf90716b92f2fdb8c67566ce",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/CRM.json",
+      "sha256": "0c645b74c8475fc117b2123f8cfc2bc5b9a4b032c1fc6679074b933eb6b285dd",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/CRWD.json",
+      "sha256": "eb488e605c1a6acea6816d09ba431bb8975ab713d72e2aae830eb26b8a809f28",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/GTLB.json",
+      "sha256": "9dd3517e361b9a7086d14ed30436d80a1bef4f90ff1023fae0dc61afe4d737b2",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/IOT.json",
+      "sha256": "842a0882c1954b3f593f6f45b6ef3a2f274f53581c72ac53211e8cd984e1a66b",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/LULU.json",
+      "sha256": "8d47921d78b00edf32d8598e6daea7c869a3f041b9955a7d4a1d4d2c3816193b",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/MDB.json",
+      "sha256": "297a10343e1ea5e57d1557a8fa415f32417f4dc752eef0059d71c99d75a6cc79",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/OKTA.json",
+      "sha256": "2632d99ddb0413fd8c08ce0b9785f6876fb98a4ab120e4ab3d6e862369e1ad05",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/PD.json",
+      "sha256": "0a420a2d65c03bf74a9eb59c859fd3537834a915087138e5d4efacb8f26daa01",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/guidance/S.json",
+      "sha256": "5227e3ec89229110428a050dcf865e1b0ba54c8f0d7dc3b71b75216ac701d864",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history.py",
+      "sha256": "623a086a85ee18ccfad4fb1f4b255840b9a991805fb37b3992a7da4aec5a1ab4",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/ADBE.json",
+      "sha256": "5cdd276e2b5a005790dd8d2d745886c89d5035994a9a5408c49e22005a9971b1",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/CRM.json",
+      "sha256": "8dabe2c86c013106cf35b8c5801e3e60b04203722dcd5790aace7770b263c0e8",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/CRWD.json",
+      "sha256": "0be45692d5d1ebf5e7e1c95a09fa297864350160b4c6e6b1cb50ef0cd44bdb97",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/GTLB.json",
+      "sha256": "c05c37d3676ef7a27fdcaa1dae5f328dca62299b23108e0a905ba846c742d38c",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/IOT.json",
+      "sha256": "165e213b1e798310793fddb25ad28742cc25ed0312d9055ab72c1391ca271a3a",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/LULU.json",
+      "sha256": "a7a24d5a08e2a289e85d33d7b33ca892d916f46273335e612561d34b3c052f7d",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/MDB.json",
+      "sha256": "fdc3198d640789e4c7c2c11970d1c268b16f9c0970f92272e54fae1531ce3bd1",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/OKTA.json",
+      "sha256": "9006c5aafd892d1d5aa312e62a17d9ae061492ffda89814290849ee3dcec095b",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/PD.json",
+      "sha256": "ac0dac6d1ba021d12a1f2bc363a2a3ba8d0faf8de50111aff817462c381ccca3",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history/S.json",
+      "sha256": "4b4d77a0fa4a6581acb23a1348010daf3fe57fc1553c705db4776e12dad73872",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/history_audit.py",
+      "sha256": "305febdb171a0b5aecfbff23b7700e53b8eb318c061301ecc7914f34cdc2b5ea",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/live.py",
+      "sha256": "c81f1c8c56de8c44655e5d722078649db52035241c48e01c8553701d869dd1e9",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/manual_dates.py",
+      "sha256": "10685ac84eed2cb03b6960ac03468f46459e650e3966089bf45c75f49dc4ec8f",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/metrics.py",
+      "sha256": "3a990e0a7b6d8dd53e1c980be6a8d864393118b5c3527dd7482dc1a4ed30b6de",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/models.py",
+      "sha256": "691c40735c11eb2b563d203e8ffef789937dfc7a8b8a1dd392497b286ed04705",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/predict.py",
+      "sha256": "51041579d8ab154518b1bc69f566f6e4406276d6d61831bf0b30335c3cdb4e99",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/product.py",
+      "sha256": "8e6cc4c6af9be56e0eb93043c807239db62927a5af11a4110282cbab25fbb35e",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/quarters.py",
+      "sha256": "f88c41964b768731567746bff32c9f4715420a477e6c8de8f2c8996184e20bbe",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/registry.py",
+      "sha256": "b776ad270267b2d0eca73f5aa1263703bb11aa1abc8293467c541dd9b18df246",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/score_live.py",
+      "sha256": "7a6f5f792653b76488880b1b9496fd328d96bf629a814cfd774f41665df650a4",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/sec.py",
+      "sha256": "5a5fdb2eb0cae0df4f934d7254c6534d726975af70395a713053e2230c725309",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/smoke.py",
+      "sha256": "9265576dfc5df88dd4702521fe2c2a1ab7e6b3627333674bb27f383d5d63f492",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/store.py",
+      "sha256": "727f6b404c6c8c70d61271e7f8aa43fa63f677a7208645181775170ac17edc91",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/verification.py",
+      "sha256": "d6e081df39d35a5bd587d716a900ab9363fd8fc4d66c9e6496af593ed7e4ccba",
+      "unchanged": true
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "49ff69b6fe9c5371cccc22d3cafaea6df0d766e6529d343901df2be0e29734db",
+      "unchanged": true
+    },
+    {
+      "path": "src/fetch.py",
+      "sha256": "0855c9dc1701c059a14141aaf5537cbe746eda624ae9686cbd958e4e299726f0",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/README.md",
+      "sha256": "94b5e0423230586c10aad856e58b4271f9cdadb0ab206cb97b39b523f638a1ed",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/__init__.py",
+      "sha256": "e984bce334333202b7f353c7bd7613624eea75bf4f406ea798babb6155b88d4a",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/calendars.json",
+      "sha256": "f4366fd307f2e31daa9dccce3988167b4158573ce96293029596216c1a53c64d",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/corpus.py",
+      "sha256": "1834c6fae0e7b8acbf148d1089c0fce94457c75350bd2e60384b3069b5105f5e",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/evaluate.py",
+      "sha256": "95b8073c624e553b2c5f5924ebce549381b3a9b91154efacb0437f8c7a2f539e",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/gold_v1.json",
+      "sha256": "d6de1dd51f61e5eb4ee5f51350859dd0799494eb9cd75d8514099617c6f16b4c",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/replay.py",
+      "sha256": "1e7bb4bf0df3b45f6324cf3b78f91789a8e3b7a43fbb30cf91c5742043bde3e6",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/rules.py",
+      "sha256": "82c83056bccc8630402f42cce68744c3f8e000d720ed9620fabb6e966899573a",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/rules_frozen_v1.json",
+      "sha256": "c944e10728565260155bd0ffb8414ce7e40a1962d5fee62e137d2fb4ff2fe1e0",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/split_v1.json",
+      "sha256": "e3102ee46b74bfae9a9c46a0b84c68cb61151c59304f20501885136a20cee73d",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/validation/session4_development_final.candidates.json",
+      "sha256": "d36645bb0f4e530c2afcb98eb14cae51c20c1c78bda6875d9eb27e6ac9b79742",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/validation/session4_development_final.json",
+      "sha256": "e0fe3678217903ddae1028252a99bed678ee7d9efdce8c55069bf9a9df2b3333",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/validation/session4_heldout_v1.candidates.json",
+      "sha256": "1fa9fbf7a1cc06f6b4390386520b1f94feb17e7b6e4dd6ca6a64362843472347",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/validation/session4_heldout_v1.json",
+      "sha256": "bfed3fbaaf1b6017235dd1856d4919fdf8dd1b91e84365995381e703ccdd48be",
+      "unchanged": true
+    },
+    {
+      "path": "tests/earnings/test_extraction.py",
+      "sha256": "e1529ea48ca6576a36139baf339e014a56b488ec6ef9ce3e43928e779ee21967",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/v2/__init__.py",
+      "sha256": "1b76a355e9c2b671dfb954ee37217c6d99c39e4218c663f29f5242bd9aa39500",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/v2/rules.py",
+      "sha256": "41fc69dfb9394ea0a9147b060b01a40996970fc573f4137b94860a3a0f58eaed",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/v2/pipeline.py",
+      "sha256": "0448e131e714dd6b944af0b6a2f2092ca0d99b03e414ea15530b72179c8fa24f",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/v2/corpus.py",
+      "sha256": "b7a482ed76d05f1c76e70dd1aa7981efe5d0acc45389d20717c9a4e46dcbbb33",
+      "unchanged": true
+    },
+    {
+      "path": "earnings/extraction/v2/evaluate.py",
+      "sha256": "c68436a250abf96bae60059a56b9a931b8f2ec40bdc29575d0f97b662ca4c2ed",
+      "unchanged": true
+    }
+  ],
+  "session3_tag_target": "94984fc3ce33c6e85a287738d3a617561cd0cefc",
+  "tests": {
+    "passed": 443,
+    "skipped": 3,
+    "xfailed": 2
+  }
+}

@@ -1,0 +1,2 @@
+# Optional owner-announcement PDF intake only; isolated earnings .venv.
+pypdf==7.0.1

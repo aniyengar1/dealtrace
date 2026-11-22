@@ -1,0 +1,14 @@
+{
+  "confirmed_by": "owner",
+  "stage": "diagnostic_only",
+  "recorded_at": "2026-11-14T03:12:24.113989+00:00",
+  "concurrent_deals_run_authorized": true,
+  "residual_billing_uncertainty_accepted": true,
+  "exact_user_confirmation": "UPDATED OWNER DECISIONS \u2014 NOVEMBER 13: Authorize the revised Agilent inference using the compact context package and improved evidence contract; continue directly through the other nine diagnostic releases; one attempt per release, no retries.",
+  "reservation_policy": "owner_approved_requested_output_estimate_v4",
+  "formula": "counted_input*1.50/M + (8192*2)*7.50/M",
+  "missing_thinking_alone_blocks_batch": false,
+  "old_112_reservation_stays_held": true,
+  "ledger_ceiling_is_provider_cap": false,
+  "fresh_inference_authorized": false
+}

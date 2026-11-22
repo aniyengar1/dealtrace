@@ -1,0 +1,20 @@
+{
+  "route": "http://127.0.0.1:3108/crosscheck/predictions",
+  "http_status": 200,
+  "rendered_prediction_rows": 8,
+  "unique_prediction_ids": [
+    "7830e356-7f1b-4f00-94b1-bb8337ab8102",
+    "a8cb7630-f8a1-48bd-bd7a-7e560a0ce673",
+    "5c9f53c0-b59d-47b5-8e97-cb1dead6e963",
+    "33af7f57-d83f-474d-8011-76c5eabbde83",
+    "6b4f3067-ce10-4e32-aeef-9bdf24fb79c8",
+    "37bb0dee-c7e7-497b-acf7-5f691cccd98f",
+    "80e8aacc-250c-45b2-a83b-f6e195f5d02c",
+    "3f6cdfc8-f37d-4348-983b-6e94ebefbaf1"
+  ],
+  "live_database_connection": "disabled-for-public-copy: intentionally invalid DATABASE_URL",
+  "browser_automation": false,
+  "screenshot": "not taken; route and server-rendered HTML verified",
+  "scored_rows": 0,
+  "snapshot_only": true
+}

@@ -1,0 +1,219 @@
+[
+  {
+    "company": "CRM",
+    "growth_decision": "Existing block retained independently",
+    "guidance": {
+      "accession": "0001108524-26-000187",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "CRM",
+      "end": "2026-10-31",
+      "exhibit": "99.1",
+      "filed": "2026-08-26",
+      "high": "11500000000",
+      "id": "3b513a29-59c1-51a3-bf16-fa1001da216c",
+      "issued": {
+        "end": "2026-08-26",
+        "precision": "day",
+        "start": "2026-08-26"
+      },
+      "low": "11420000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "original_verified": true,
+      "quote": "Initiates third quarter FY27 revenue guidance of $11.42 billion to $11.5 billion, up 11% - 12% Y/Y and in CC, including slightly above 4pts Informatica contribution \u2022 Initiates third qu",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
+      "start": "2026-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    "guidance_quote_verified": true,
+    "outcome_decision": "Requires a future exact actual/guidance version review; absence of an unreported result does not block a pre-results prediction",
+    "prediction_target_decision": "An explicit absolute consolidated reported USD target exists for this exact quarter; no separate target-basis conflict is established by the existing growth-only evidence. Do not infer future result comparability.",
+    "source_manifest": {
+      "body": "3051e749f4db4ceded952d7c9905fc6be4c05f900988eb864d86d2403ef74c72-ed2dace59f395fd2426543a34ce2dd92ecf2c442024be98c33fb96f98689633b.body",
+      "fetched_at": "2026-11-11T10:08:39.994897+00:00",
+      "sha256": "ed2dace59f395fd2426543a34ce2dd92ecf2c442024be98c33fb96f98689633b",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+    },
+    "target": {
+      "available_on": "2026-08-26",
+      "boundary_evidence": {
+        "accession": "0001108524-26-000187",
+        "filed_date": "2026-08-26",
+        "prior_actual_accession": "0001108524-25-000238",
+        "prior_actual_id": "6509063f-42b3-5d22-8909-5d47e047d76b",
+        "rule": "Three calendar months on the registered month-based fiscal calendar",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+      },
+      "end": "2026-10-31",
+      "growth_comparability": {
+        "available_on": "2026-11-11",
+        "blocked": true,
+        "reason": "Informatica contribution and pending Contentful/Fin acquisitions change consolidation scope. October Braze announcement adds uncertainty; explicit evidence reconciliation required.",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+        "sources": [
+          {
+            "filed_date": "2026-08-27",
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm"
+          },
+          {
+            "filed_date": "2026-10-20",
+            "url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312526425881/d516983dex991.htm"
+          }
+        ]
+      },
+      "label": "Q3 FY2027",
+      "outcome_comparability": {
+        "available_on": "2026-11-11",
+        "blocked": true,
+        "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
+        ]
+      },
+      "prior_end": "2025-10-31",
+      "prior_start": "2025-08-01",
+      "start": "2026-08-01"
+    }
+  },
+  {
+    "company": "OKTA",
+    "growth_decision": "Existing block retained independently",
+    "guidance": {
+      "accession": "0001660134-26-000068",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "OKTA",
+      "end": "2026-10-31",
+      "exhibit": "99.1",
+      "filed": "2026-08-26",
+      "high": "817000000",
+      "id": "7790a72a-98d9-57b3-9287-bf22cba52401",
+      "issued": {
+        "end": "2026-08-26",
+        "precision": "day",
+        "start": "2026-08-26"
+      },
+      "low": "813000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "original_verified": true,
+      "quote": "For the third quarter of fiscal 2027, the Company expects: \u2022 Total revenue of $813 million to $817 million, representing a growth rate of 10% year-over-year; \u2022 Current RPO of $2.590 billion to $2.600 billion , representing a growth rate of 11% to 12% year-over-year; \u2022 Non-GAAP operating income of $196 million to $200 million, which yi",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm",
+      "start": "2026-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    "guidance_quote_verified": true,
+    "outcome_decision": "Requires a future exact actual/guidance version review; absence of an unreported result does not block a pre-results prediction",
+    "prediction_target_decision": "An explicit absolute consolidated reported USD target exists for this exact quarter; no separate target-basis conflict is established by the existing growth-only evidence. Do not infer future result comparability.",
+    "source_manifest": {
+      "body": "fec4a01bd2c08d2526badafcddf2797a92002d74f11f656bd947a66e8c24ace7-ff2c5da95d6ad2ef5134656c86f5a0a6c40b3c4b8f31b8b6cf0b435ff8248894.body",
+      "fetched_at": "2026-11-11T10:08:58.769834+00:00",
+      "sha256": "ff2c5da95d6ad2ef5134656c86f5a0a6c40b3c4b8f31b8b6cf0b435ff8248894",
+      "url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+    },
+    "target": {
+      "available_on": "2026-08-26",
+      "boundary_evidence": {
+        "accession": "0001660134-26-000068",
+        "filed_date": "2026-08-26",
+        "prior_actual_accession": "0001660134-25-000171",
+        "prior_actual_id": "fb8f9fd5-7ec4-5e8c-a73f-97a76cbf8356",
+        "rule": "Three calendar months on the registered month-based fiscal calendar",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+      },
+      "end": "2026-10-31",
+      "growth_comparability": {
+        "available_on": "2026-11-11",
+        "blocked": true,
+        "reason": "August 26 Permiso acquisition is a subsequent event with consideration still under evaluation. Annual guidance and prior-year comparison scope require reconciliation; partner-services shift is also disclosed.",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000069/okta-20260731.htm",
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+        ]
+      },
+      "label": "Q3 FY2027",
+      "outcome_comparability": {
+        "available_on": "2026-11-11",
+        "blocked": true,
+        "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000068/okta-7312026_ex991.htm"
+        ]
+      },
+      "prior_end": "2025-10-31",
+      "prior_start": "2025-08-01",
+      "start": "2026-08-01"
+    }
+  },
+  {
+    "company": "S",
+    "growth_decision": "Existing block retained independently",
+    "guidance": {
+      "accession": "0001583708-26-000052",
+      "basis": "US_GAAP_consolidated_reported",
+      "company": "S",
+      "end": "2026-10-31",
+      "exhibit": "99.1",
+      "filed": "2026-08-27",
+      "high": "311000000",
+      "id": "c5bf519b-08d3-5b8b-a2ad-bdd3636e8dba",
+      "issued": {
+        "end": "2026-08-27",
+        "precision": "day",
+        "start": "2026-08-27"
+      },
+      "low": "309000000",
+      "metric": "quarterly_consolidated_revenue",
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "original_verified": true,
+      "quote": "Q3 Fiscal Year 2027 Guidance Fiscal Year 2027 Guidance Revenue $309 - 311 million $1.202 - 1.207 billion Non-GAAP operating income $38 - 40 million $124 - 128 million Non-GAAP diluted earnings per share (EPS) $0.08 - 0.09 $0.30",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm",
+      "start": "2026-08-01",
+      "status": "initial",
+      "unit": "USD"
+    },
+    "guidance_quote_verified": true,
+    "outcome_decision": "Requires a future exact actual/guidance version review; absence of an unreported result does not block a pre-results prediction",
+    "prediction_target_decision": "An explicit absolute consolidated reported USD target exists for this exact quarter; no separate target-basis conflict is established by the existing growth-only evidence. Do not infer future result comparability.",
+    "source_manifest": {
+      "body": "dde257c9d570175b33709334d4e472431c49dd481a8829dd87f3c63fdc25014e-0c703caa39e80f5376002fa0bb83b8709df7fc198d11120918710a8b61457aeb.body",
+      "fetched_at": "2026-11-11T10:09:16.625138+00:00",
+      "sha256": "0c703caa39e80f5376002fa0bb83b8709df7fc198d11120918710a8b61457aeb",
+      "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+    },
+    "target": {
+      "available_on": "2026-08-27",
+      "boundary_evidence": {
+        "accession": "0001583708-26-000052",
+        "filed_date": "2026-08-27",
+        "prior_actual_accession": "0001583708-25-000159",
+        "prior_actual_id": "24be2ebb-7517-56b8-8d06-5bfa9b7161f1",
+        "rule": "Three calendar months on the registered month-based fiscal calendar",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+      },
+      "end": "2026-10-31",
+      "growth_comparability": {
+        "available_on": "2026-11-11",
+        "blocked": true,
+        "reason": "Observo and Prompt acquired in September 2025; current/prior remaining periods contain different ownership durations. Comparable revenue impact not reconciled.",
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000055/s-20260731.htm",
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+        ]
+      },
+      "label": "Q3 FY2027",
+      "outcome_comparability": {
+        "available_on": "2026-11-11",
+        "blocked": true,
+        "reason": "Target-quarter result not yet reported. A separate guidance-to-result scope review must identify the exact actual and guidance IDs; prior-year growth review is not an outcome decision.",
+        "sources": [
+          "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+        ]
+      },
+      "prior_end": "2025-10-31",
+      "prior_start": "2025-08-01",
+      "start": "2026-08-01"
+    }
+  }
+]

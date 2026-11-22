@@ -1,0 +1,24 @@
+{
+  "all_reviewed_fingerprints_unchanged": true,
+  "artifacts": {
+    "earnings/extraction/v2/rules_frozen_v2.json": "a9c787170c27756766de79a1af3c34b168317a371d799fdc1c8bf6bdce697e23",
+    "earnings/pilot_s5/gold.json": "8dc9dc45290b2ee84969f8909956d2a32e3432276b82c822bd09d0930285f8b6",
+    "earnings/pilot_s5/gold_seal.json": "2fc6fcb3531b1a37e9ca878ce399439006455f6a60f5fb8c2a1cf621d61dc2c9",
+    "earnings/pilot_s5/inventory.json": "b59a1fd82d28a304e0a0a4e5d4d9446f0700bbcac6f1a9cfaea777628c5175df",
+    "earnings/pilot_s5/sample.json": "f29964bb710779b73f7bc06ec361880378d0aa654a5c2f0c4f164bba476aae3a",
+    "earnings/validation/session5_pilot_v2_first.json": "891431392746e94b3fb173cff1ec2146ff52bfb3a057cd165556663d52b6087a"
+  },
+  "checked_at": "2026-11-13T08:10:57.080557+00:00",
+  "fixed_regression_equal": true,
+  "note": "Final full suite adds2 source/period checks after the earlier406-pass preservation snapshot; no expected-failure changes.",
+  "protected_count": 64,
+  "read_only_dry_runs_no_ledger_writes": true,
+  "session3_tag_target": "94984fc3ce33c6e85a287738d3a617561cd0cefc",
+  "tests": {
+    "passed": 408,
+    "skipped": 3,
+    "xfailed": 2
+  },
+  "v1_artifact_count": 15,
+  "v2_file_count": 5
+}

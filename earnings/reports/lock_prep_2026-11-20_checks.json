@@ -1,0 +1,97 @@
+{
+  "reviewed_at": "2026-11-20T10:30:51.115786+00:00",
+  "no_locks_authorized": true,
+  "tests": {
+    "passed": 52,
+    "skipped_database_tests": 41
+  },
+  "companies": {
+    "GTLB": {
+      "announcement_id": "bb8e494b-337f-599d-9e2d-ed8693601237",
+      "verification_status": "independently_verified",
+      "owner_form_unsigned": true,
+      "opening": "2026-11-14T05:00:00+00:00",
+      "strict_deadline": "2026-12-01T05:00:00+00:00",
+      "inside_window_at_review": true,
+      "guidance_versions": [
+        "acbb63cf-a5ed-5c74-a414-e6a5e957b408"
+      ]
+    },
+    "CRWD": {
+      "announcement_id": "92fce228-e081-5122-a8f4-d3ae353a5f7e",
+      "verification_status": "user_verified",
+      "owner_form_unsigned": true,
+      "opening": "2026-11-14T05:00:00+00:00",
+      "strict_deadline": "2026-12-01T05:00:00+00:00",
+      "inside_window_at_review": true,
+      "guidance_versions": [
+        "f6ff18dc-8880-5f65-b254-cdbbf1a488ba"
+      ]
+    },
+    "MDB": {
+      "announcement_id": "2f70fb99-20fe-598d-a1a6-41bc11e04ca1",
+      "verification_status": "user_verified",
+      "owner_form_unsigned": true,
+      "opening": "2026-11-14T05:00:00+00:00",
+      "strict_deadline": "2026-12-01T05:00:00+00:00",
+      "inside_window_at_review": true,
+      "guidance_versions": [
+        "6bad7bb3-f126-5ebe-97c1-24329e436e43",
+        "c9ec8438-b130-526e-b905-0cb8c0c3815e"
+      ]
+    }
+  },
+  "ledger_before": {
+    "checked_at": "2026-11-20T09:43:43.064789+00:00",
+    "ledger_sha256": "8bca62620e2355b3151c73e0e3118681f1abbf03f8cae006c9e99e30a160dead",
+    "predictions": 8,
+    "read_only": "on",
+    "results": 0
+  },
+  "ledger_after": {
+    "checked_at": "2026-11-20T10:29:28.758771+00:00",
+    "predictions": 8,
+    "results": 0,
+    "ledger_sha256": "8bca62620e2355b3151c73e0e3118681f1abbf03f8cae006c9e99e30a160dead",
+    "read_only": "on"
+  },
+  "same_ledger_digest": true,
+  "protected_changes_since_c53cb3a": [],
+  "tags": [
+    "2ef3ef1a96f7e626ab53de33d4a58f160ec4302d refs/tags/session3-current-state-v2-lock-ready-20261114",
+    "fa65b8686988323da86edd7c9b7ef22fc1c926f0 refs/tags/session3-entry17-lock-ready-20261115",
+    "4fa9ec0f58e1e8c4701c6d6ea52f04653a969385 refs/tags/session3-lock-ready",
+    "1e422e4c1d1e537884668666438ffde782a2dddf refs/tags/session3-two-method-lock-ready-20261113",
+    "d48caa24915b2ee837ecfc4dc720ad5b0aca53c5 refs/tags/session3-two-method-lock-ready-20261113-r2"
+  ],
+  "rehearsal": {
+    "execution_started_at": "2026-11-20T10:20:13.728681+00:00",
+    "execution_finished_at": "2026-11-20T10:20:13.747547+00:00",
+    "transaction_read_only": "on",
+    "ledger_count_before": 8,
+    "ledger_count_after": 8,
+    "ledger_writes_possible": false,
+    "locked": []
+  },
+  "rehearsal_company_blocks": [
+    {
+      "code": "READ_ONLY_CURRENT_CHECK_REQUIRED",
+      "company": "GTLB",
+      "reason": "Offline rehearsal: no fresh schedule/publication check performed; no HTTP permitted",
+      "unverified_release_lead": null
+    },
+    {
+      "code": "READ_ONLY_CURRENT_CHECK_REQUIRED",
+      "company": "CRWD",
+      "reason": "Offline rehearsal: no fresh schedule/publication check performed; no HTTP permitted",
+      "unverified_release_lead": "2026-12-01"
+    },
+    {
+      "code": "READ_ONLY_CURRENT_CHECK_REQUIRED",
+      "company": "MDB",
+      "reason": "Offline rehearsal: no fresh schedule/publication check performed; no HTTP permitted",
+      "unverified_release_lead": "2026-12-01"
+    }
+  ],
+  "fixed_input_rehearsal_cases": 25
+}

@@ -1,0 +1,149 @@
+{
+  "history_review": {
+    "cutoff": "2026-11-12",
+    "scope": "Manual review of all SEC 8-K/8-K/A filings and linked 99.x/earnings/investor exhibits from December 2025 through November 11, 2026; includes non-earnings reaffirmations.",
+    "sources_reviewed": [
+      "https://www.sec.gov/Archives/edgar/data/1583708/000110465926116654/tm2627397d1_8k.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000110465926116654/tm2627397d1_ex99-1.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000110465926116654/tm2627397d1_ex99-2.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000157/s-20251204.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000157/s-q3fy26earningspresenta.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000157/sentineloneq326exhibit991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000164/s-20251204.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000003/s-20260108.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000006/s-20251204.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000009/s-20260228.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/s-20260312.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/s-q4fy26earningspresenta.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/sentineloneq426exhibit991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000025/s-20260319.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000039/s-20260528.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000039/s-q1fy27earningspresenta.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000039/sentineloneq127exhibit991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000044/s-20260625.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/s-20260827.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm",
+      "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sq2fy27earningspresentat.htm"
+    ],
+    "original_verified": true,
+    "notes": "Republications without explicit reaffirmation do not create a new version or reset freshness.",
+    "latest_actual_release": {
+      "ytd_end": "2026-07-31",
+      "issued_date": "2026-08-27",
+      "filed_date": "2026-08-27",
+      "accession": "0001583708-26-000052",
+      "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm",
+      "period_quote": "nelOne, Inc. (NYSE: S) today announced financial results for the second quarter of fiscal year 2027 ended July 31, 2026",
+      "source_sha256": "0c703caa39e80f5376002fa0bb83b8709df7fc198d11120918710a8b61457aeb"
+    },
+    "quarterly_scope": {
+      "target": "Q3 FY2027",
+      "start": "2026-08-01",
+      "end": "2026-10-31",
+      "cutoff": "2026-11-12",
+      "note": "Reviewed existing SEC source inventory after quarter issuance. MongoDB September 28 explicitly reaffirms Q3; Salesforce October 20 mentions FY27 only and is not treated as quarterly reaffirmation. No inferred quarterly reaffirmations from annual-only statements."
+    },
+    "session2_incremental_review": {
+      "as_of": "2026-11-12",
+      "source_url": "https://data.sec.gov/submissions/CIK0001583708.json",
+      "fetched_at": "2026-11-12T08:12:42.808604+00:00",
+      "sha256": "60659746517a91d58b0dc9fefb7035563e2ada871d5363ac83bf051193d9c754",
+      "scope": "Filings dated November 12 after the prior November 11 review; no new filings found in SEC recent submissions."
+    }
+  },
+  "versions": [
+    {
+      "issued_date": "2026-03-12",
+      "filed_date": "2026-03-12",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "1195000000.000",
+      "high": "1205000000.000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001583708-26-000014",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/sentineloneq426exhibit991.htm"
+      },
+      "quote": "Q1 Fiscal Year 2027 Guidance Fiscal Year 2027 Guidance Revenue $276 - 278 million $1.195 - 1.205 billion Non-GAAP operating income $4 - 6 million $110 - 120 million Non-GAAP diluted EPS $0.01 - 0.02 $0.32 - 0.38 Diluted weighted average shares outstanding 345 million 352 million Non-GAAP tax rate 17% 17% These statemen",
+      "original_verified": true,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-05-28",
+      "filed_date": "2026-05-28",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "1195000000.000",
+      "high": "1205000000.000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "reaffirmed",
+      "source": {
+        "accession": "0001583708-26-000039",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000039/sentineloneq127exhibit991.htm"
+      },
+      "quote": "Q2 Fiscal Year 2027 Guidance Fiscal Year 2027 Guidance Revenue $289 - 291 million $1.195 - 1.205 billion Non-GAAP operating income $23 - 25 million $115 - 125 million Non-GAAP diluted earnings per share (EPS) $0.06 - 0.08 $0.32 - 0.38 Diluted weighted average shares outstanding 347 million 350 million Non-GAAP tax rate",
+      "original_verified": false,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-08-27",
+      "filed_date": "2026-08-27",
+      "fiscal_period": {
+        "start": "2026-02-01",
+        "end": "2027-01-31",
+        "label": "FY2027"
+      },
+      "metric": "consolidated_revenue",
+      "low": "1202000000.000",
+      "high": "1207000000.000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "raised",
+      "source": {
+        "accession": "0001583708-26-000052",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+      },
+      "quote": "Q3 Fiscal Year 2027 Guidance Fiscal Year 2027 Guidance Revenue $309 - 311 million $1.202 - 1.207 billion Non-GAAP operating income $38 - 40 million $124 - 128 million Non-GAAP diluted earnings per share (EPS) $0.08 - 0.09 $0.30 - 0.32 Diluted weighted average shares outstanding 370 million 361 million Non-GAAP tax rate",
+      "original_verified": false,
+      "notes": ""
+    },
+    {
+      "issued_date": "2026-08-27",
+      "filed_date": "2026-08-27",
+      "fiscal_period": {
+        "start": "2026-08-01",
+        "end": "2026-10-31",
+        "label": "Q3 FY2027"
+      },
+      "metric": "quarterly_consolidated_revenue",
+      "low": "309000000",
+      "high": "311000000",
+      "currency": "USD",
+      "basis": "US_GAAP_consolidated_reported",
+      "status": "initial",
+      "source": {
+        "accession": "0001583708-26-000052",
+        "exhibit": "99.1",
+        "url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000052/sentineloneq227exhibit991.htm"
+      },
+      "quote": "Q3 Fiscal Year 2027 Guidance Fiscal Year 2027 Guidance Revenue $309 - 311 million $1.202 - 1.207 billion Non-GAAP operating income $38 - 40 million $124 - 128 million Non-GAAP diluted earnings per share (EPS) $0.08 - 0.09 $0.30",
+      "original_verified": true,
+      "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+      "source_sha256": "0c703caa39e80f5376002fa0bb83b8709df7fc198d11120918710a8b61457aeb"
+    }
+  ]
+}

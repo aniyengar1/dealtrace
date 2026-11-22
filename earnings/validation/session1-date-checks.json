@@ -1,0 +1,314 @@
+[
+  {
+    "checked_at": "2026-11-11T23:48:24.108336+00:00",
+    "company": "PD",
+    "date_evidence": [
+      " Item 2.02 Results of Operations and Financial Condition On November 25, 2025, PagerDuty, Inc. (the \"Company\") reported financial results for the quarter ended October"
+    ],
+    "fetched_at": "2026-11-11T23:48:24.313521+00:00",
+    "purpose": "next_report",
+    "report_date": null,
+    "report_date_present": false,
+    "sha256": "9f4a0ebc6e4eac396206c3ca9c5c1ede5294e17f593d3a8c1ba5f680dd2cd10c",
+    "source_date": "2025-11-25",
+    "source_date_present": true,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810025000106/pd-20251122.htm",
+    "status": "retrieved_unverified"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:24.332878+00:00",
+    "company": "PD",
+    "date_evidence": [
+      "ter of GAAP profitability SAN FRANCISCO \u2013 (BUSINESS WIRE) \u2013 March 12, 2026 \u2013 PagerDuty, Inc. (NYSE:PD), a leader in AI-first operations management, today announced "
+    ],
+    "fetched_at": "2026-11-11T23:48:25.046447+00:00",
+    "purpose": "annual_result",
+    "report_date": null,
+    "report_date_present": false,
+    "sha256": "aae98ec7ef5281daeda6f0a93daad8b0042ec35662fcd8fb8d3e0da28e15af1e",
+    "source_date": "2026-03-12",
+    "source_date_present": true,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1568100/000156810026000011/ex991-pagerdutyq4fy26earni.htm",
+    "status": "retrieved_unverified"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:25.096714+00:00",
+    "company": "GTLB",
+    "date_evidence": [
+      "t of 1934 Date of Report (Date of earliest event reported): December 2, 2025 ______________________________ GITLAB INC. (Exact name of Registrant as Specified in Its "
+    ],
+    "fetched_at": "2026-11-11T23:48:25.774961+00:00",
+    "purpose": "next_report",
+    "report_date": null,
+    "report_date_present": false,
+    "sha256": "82379a10f188919b048fee4fdcc5d52ab19ac03004aa95853ef94afc66da09fe",
+    "source_date": "2025-12-02",
+    "source_date_present": true,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054758/gtlb-20251202.htm",
+    "status": "retrieved_unverified"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:25.795156+00:00",
+    "company": "GTLB",
+    "date_evidence": [
+      "AP adjusted free cash flow of $219.6 million San Francisco (March 3, 2026) -All-Remote- GitLab Inc. (NASDAQ: GTLB), the intelligent orchestration platform for DevS"
+    ],
+    "fetched_at": "2026-11-11T23:48:26.511912+00:00",
+    "purpose": "annual_result",
+    "report_date": null,
+    "report_date_present": false,
+    "sha256": "ded7bdd17b01b7cef197ca62f582b40261b3cefbf65a4d56d302e788e7703cd2",
+    "source_date": "2026-03-03",
+    "source_date_present": true,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026013795/gitlab-ex99120260131fy26.htm",
+    "status": "retrieved_unverified"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:26.594114+00:00",
+    "company": "CRM",
+    "date_evidence": [
+      "ase and Webcast November 10, 2026 Results to be released on December 2, 2026, after market close SAN FRANCISCO--(BUSINESS WIRE)-- Salesforce (NYSE: CRM), the world\u2019s "
+    ],
+    "fetched_at": "2026-11-11T23:48:26.811876+00:00",
+    "purpose": "next_report",
+    "report_date": "2026-12-02",
+    "report_date_present": true,
+    "sha256": "e529ae64b698b3a80e768fcaffd7566262d5a43e3e7bcc427be6f54f6869b8f0",
+    "source_date": "2026-11-10",
+    "source_date_present": true,
+    "source_url": "https://investor.salesforce.com/news/news-details/2026/Salesforce-Announces-Date-of-Third-Quarter-Fiscal-2027-Earnings-Release-and-Webcast/default.aspx",
+    "status": "confirmed"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:26.850455+00:00",
+    "company": "CRM",
+    "date_evidence": [
+      "tr to join Salesforce Earnings Show SAN FRANCISCO, Calif. - February 25, 2026 - Salesforce (NYSE: CRM), the world's #1 AI CRM, today announced results for its fourth q"
+    ],
+    "fetched_at": "2026-11-11T23:48:27.220178+00:00",
+    "purpose": "annual_result",
+    "report_date": null,
+    "report_date_present": false,
+    "sha256": "8ea16dfd1b1706f6ece15eaeec0722e399bb02f5fe6efaa9518d4afdf6ee04cd",
+    "source_date": "2026-02-25",
+    "source_date_present": true,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000056/crm-q4fy26xexhibit991.htm",
+    "status": "retrieved_unverified"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:27.312280+00:00",
+    "company": "CRWD",
+    "fetched_at": null,
+    "http_status": 403,
+    "purpose": "next_report",
+    "report_date": "2026-12-01",
+    "sha256": null,
+    "source_date": "2026-11-04",
+    "source_url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-announces-date-fiscal-third-quarter-2027-financial",
+    "status": "unverified"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:27.489001+00:00",
+    "company": "CRWD",
+    "date_evidence": [
+      " Flex accounts, up over 120% year-over-year AUSTIN, Texas - March 3, 2026 -- CrowdStrike Holdings, Inc. (Nasdaq: CRWD), today announced financial results for the f"
+    ],
+    "fetched_at": "2026-11-11T23:48:28.066324+00:00",
+    "purpose": "annual_result",
+    "report_date": null,
+    "report_date_present": false,
+    "sha256": "df7a97897d4009706438cf210ff18227268fae98ea1b1655bb9b997450ba873f",
+    "source_date": "2026-03-03",
+    "source_date_present": true,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000007/crwd-20260303xex991.htm",
+    "status": "retrieved_unverified"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:28.168571+00:00",
+    "company": "OKTA",
+    "date_evidence": [
+      "nnounce Third Quarter Fiscal Year 2027 Financial Results on December 1, 2026 Skip to main content Overview News & Events News Releases Events & Presentations Stock In"
+    ],
+    "fetched_at": "2026-11-11T23:48:28.511378+00:00",
+    "purpose": "next_report",
+    "report_date": "2026-12-01",
+    "report_date_present": true,
+    "sha256": "aa45c5700d23cfc5c29321b3c8e5a5791d4788cb98f8fcdb9f901b5eda833dda",
+    "source_date": "2026-11-02",
+    "source_date_present": true,
+    "source_url": "https://investor.okta.com/news-and-events/news-releases/news-details/2026/Okta-to-Announce-Third-Quarter-Fiscal-Year-2027-Financial-Results-on-December-1-2026/default.aspx",
+    "status": "confirmed"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:28.543623+00:00",
+    "company": "OKTA",
+    "date_evidence": [
+      " million and free cash flow of $252 million SAN FRANCISCO \u2013 March 4, 2026 \u2013 Okta, Inc. (Nasdaq: OKTA), the leading independent identity partner , today announced f"
+    ],
+    "fetched_at": "2026-11-11T23:48:29.335277+00:00",
+    "purpose": "annual_result",
+    "report_date": null,
+    "report_date_present": false,
+    "sha256": "26ae2cabf718f807d7dbf92aab1c70ffd4b11f3bb8c6b7ba0098e5292c9544f9",
+    "source_date": "2026-03-04",
+    "source_date_present": true,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1660134/000166013426000016/okta-1312026_ex991.htm",
+    "status": "retrieved_unverified"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:29.400836+00:00",
+    "company": "IOT",
+    "date_evidence": [
+      "t of 1934 Date of Report (Date of earliest event reported): December 4, 2025 SAMSARA INC. (Exact name of registrant as specified in its charter) Delaware 001-41140 47"
+    ],
+    "fetched_at": "2026-11-11T23:48:30.250194+00:00",
+    "purpose": "next_report",
+    "report_date": null,
+    "report_date_present": false,
+    "sha256": "547f5963e72a425168b44d8136ac45bf56a40240b2581b7fbec81258355c303f",
+    "source_date": "2025-12-04",
+    "source_date_present": true,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828025055355/iot-20251204.htm",
+    "status": "retrieved_unverified"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:30.271171+00:00",
+    "company": "IOT",
+    "date_evidence": [
+      "nd consecutive quarter of GAAP profitability SAN FRANCISCO, March 5, 2026 \u2014 Samsara Inc. (NYSE: IOT), the pioneer of the Connected Operations \u00ae Platform, reported "
+    ],
+    "fetched_at": "2026-11-11T23:48:31.241707+00:00",
+    "purpose": "annual_result",
+    "report_date": null,
+    "report_date_present": false,
+    "sha256": "aed8b5fb4260578dd607e9aae5aa3da14e17b6ec3315ed3efc86b2ede908dc61",
+    "source_date": "2026-03-05",
+    "source_date_present": true,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1642896/000162828026015170/samsaraepr-q42026.htm",
+    "status": "retrieved_unverified"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:31.323477+00:00",
+    "company": "MDB",
+    "fetched_at": null,
+    "http_status": 403,
+    "purpose": "next_report",
+    "report_date": "2026-12-01",
+    "sha256": null,
+    "source_date": "2026-11-05",
+    "source_url": "https://investors.mongodb.com/news-releases/news-release-details/mongodb-inc-announces-date-third-quarter-fiscal-2027-earnings",
+    "status": "unverified"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:31.540381+00:00",
+    "company": "MDB",
+    "date_evidence": [
+      "er 65,200 Total Customers as of January 31, 2026 NEW YORK - March 2, 2026 - MongoDB, Inc. (NASDAQ: MDB) today announced its financial results for the fourth quarte"
+    ],
+    "fetched_at": "2026-11-11T23:48:32.436464+00:00",
+    "purpose": "annual_result",
+    "report_date": null,
+    "report_date_present": false,
+    "sha256": "c144559491c5ca9fd18e9dab5d67eabb0c18023a5241b1f646f38bac4fd23d5b",
+    "source_date": "2026-03-02",
+    "source_date_present": true,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1441816/000162828026013199/mdb-13126xex991xrelease.htm",
+    "status": "retrieved_unverified"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:32.530677+00:00",
+    "company": "S",
+    "date_evidence": [
+      "Item 2.02 Results of Operations and Financial Condition. On December 4, 2025, SentinelOne, Inc. (the \u201cCompany\u201d) announced its financial results for the third quarter "
+    ],
+    "fetched_at": "2026-11-11T23:48:33.106683+00:00",
+    "purpose": "next_report",
+    "report_date": null,
+    "report_date_present": false,
+    "sha256": "e931e6d380968c380a14939e8c37732e3ddffa065f72098b091111a3cd71b116",
+    "source_date": "2025-12-04",
+    "source_date_present": true,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370825000157/s-20251204.htm",
+    "status": "retrieved_unverified"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:33.133694+00:00",
+    "company": "S",
+    "date_evidence": [
+      "over-year ARR up 22% year-over-year MOUNTAIN VIEW, Calif. \u2013 March 12, 2026 \u2013 SentinelOne, Inc. (NYSE: S) today announced financial results for the fourth quarter an"
+    ],
+    "fetched_at": "2026-11-11T23:48:34.205699+00:00",
+    "purpose": "annual_result",
+    "report_date": null,
+    "report_date_present": false,
+    "sha256": "229f682deedb33d014dfe49800e99f34000792d3dbb4b262ad8fa781a7f3bb92",
+    "source_date": "2026-03-12",
+    "source_date_present": true,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1583708/000158370826000014/sentineloneq426exhibit991.htm",
+    "status": "retrieved_unverified"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:34.295207+00:00",
+    "company": "ADBE",
+    "date_evidence": [
+      "t of 1934 Date of Report (date of earliest event reported): December 10, 2025 ADOBE INC. (Exact name of Registrant as specified in its charter) Delaware 0-15175 77-001"
+    ],
+    "fetched_at": "2026-11-11T23:48:35.022578+00:00",
+    "purpose": "next_report",
+    "report_date": null,
+    "report_date_present": false,
+    "sha256": "cbf75280fa3dcb67f3e69d6678c0636cc40d9d6c0122ccb78520632027a5dad8",
+    "source_date": "2025-12-10",
+    "source_date_present": true,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbe-20251210.htm",
+    "status": "retrieved_unverified"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:35.063201+00:00",
+    "company": "ADBE",
+    "date_evidence": [
+      "cash flows of over $10 billion in FY2025 SAN JOSE, Calif. \u2013 Dec. 10, 2025 \u2013 Adobe (Nasdaq:ADBE), the global technology leader that unleashes creativity and product"
+    ],
+    "fetched_at": "2026-11-11T23:48:35.760781+00:00",
+    "purpose": "annual_result",
+    "report_date": null,
+    "report_date_present": false,
+    "sha256": "5fd2619f5e70fc09b2d558525bc965209a31e9d0638f7b886405ffa9e8f31f79",
+    "source_date": "2025-12-10",
+    "source_date_present": true,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm",
+    "status": "retrieved_unverified"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:35.825237+00:00",
+    "company": "LULU",
+    "date_evidence": [
+      "tem 2.02. Results of Operations and Financial Condition. On December 11, 2025, lululemon athletica inc. (the \"Company\") issued a press release announcing its financial"
+    ],
+    "fetched_at": "2026-11-11T23:48:36.500043+00:00",
+    "purpose": "next_report",
+    "report_date": null,
+    "report_date_present": false,
+    "sha256": "1cb55af53e56509c455818abc452eb4cc871431948f1b7c1811ad19e235028fb",
+    "source_date": "2025-12-11",
+    "source_date_present": true,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718725000054/lulu-20251203.htm",
+    "status": "retrieved_unverified"
+  },
+  {
+    "checked_at": "2026-11-11T23:48:36.530189+00:00",
+    "company": "LULU",
+    "date_evidence": [
+      "illion. Diluted EPS of $13.26 Vancouver, British Columbia - March 17, 2026 - lululemon athletica inc. (NASDAQ:LULU) today announced financial results for the fourth"
+    ],
+    "fetched_at": "2026-11-11T23:48:37.218337+00:00",
+    "purpose": "annual_result",
+    "report_date": null,
+    "report_date_present": false,
+    "sha256": "b47c12fc44fc46c7436f263b4a9ec63491f4b05a829a56b54769ce54aae46421",
+    "source_date": "2026-03-17",
+    "source_date_present": true,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1397187/000139718726000019/lulu-20260201xex991.htm",
+    "status": "retrieved_unverified"
+  }
+]
