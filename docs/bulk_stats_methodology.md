@@ -130,7 +130,9 @@ filing definition is itself uninformative.
 Across 1,115 bulk deals: **179 resolved to a confident, non-shell
 filing-defined name**; **131 more** found only a shell/opaque name from
 the filing (used only where the heuristic had nothing valid either);
-**39 remain `'Undisclosed'`** (down from 121 before this feature).
+**30 remain `'Undisclosed'`** (down from 121 before this feature; the
+179/131 split predates several later acquirer-resolution
+improvements and is not recomputed here -- see the changelog below).
 
 **Known residual gap: deal code names.** A filing sometimes uses an
 internal project code name ("Project Thunder", "Project Polaris") well
@@ -220,7 +222,7 @@ can never be a generic role placeholder ("Parent", "Buyer",
 committee reference, a ticker/acronym that's actually the target
 itself, or the target's own name under another form -- any of those
 becomes `'Undisclosed'` instead. Across 1,125 deals (canonical and
-non-canonical), **121 ended up `'Undisclosed'`** (mostly deals where
+non-canonical), **30 ended up `'Undisclosed'`** (mostly deals where
 the underlying `deals.acquirer` was already "Parent"/"Unknown"/a
 committee name, pre-existing from earlier acquirer-guess limitations,
 not new failures from this display layer).
@@ -240,7 +242,7 @@ field if that parse doesn't come out clean.
 `deal_metrics.price_plausible` is `false` when the final price is
 ≤ $0.10/share or the final proposal is a quoted range rather than a
 single settled price, `true` when neither applies, and `NULL` when
-there's no final price at all to judge (393 of 1,125 deals).
+there's no final price at all to judge (403 of 1,125 deals).
 
 ## Versioning
 
@@ -248,3 +250,31 @@ there's no final price at all to judge (393 of 1,125 deals).
 and `code_commit` (the git commit the numbers were computed from) so a
 consumer can tell which code version produced a given file; the same
 two values are stored on every `headline_stats` row.
+
+## Changelog
+
+- **Role-reversal/self-reference classification, winner logic, shares
+  outstanding (this session).** `BIDDER_COUNT_ANALYSIS.md`'s read-only
+  anomaly investigation found the public first-bidder-win rate (51.3%)
+  was depressed by `compute_first_bidder_won_for_deal` crediting a
+  target's own counter-offer/committee confirmation as "the winner,"
+  and `classify_deal_type` missing several target/acquirer role
+  -reversal and self-reference shapes (Aon/NFP, Enova/Grasshopper,
+  Maiden/Kestrel, Centennial/Colgate, Apollo/Athene, Strategic Storage
+  Trust VI/SSGT III, and 15 more found once the detection was
+  generalized). Fixing both dropped the one-bidder-group anomaly rate
+  from 20.1% to 0% and moved the headline first-bidder-win rate from
+  51.3% to 61.3% (n 792 -> 778; `n_canonical_deals` 823 -> 808, the 15
+  newly-excluded role-reversal/self-reference deals). 7 of those
+  reclassified deals had their `target`/`acquirer` fields swapped
+  (rather than excluded) once each was individually confirmed, from
+  the filing's own text, to have independent public identity (its own
+  ticker) worth keeping in stats. Also extended shares-outstanding
+  extraction to the 10 curated deals (previously 0% covered -- no code
+  path read their already-cached proxy at all) and widened its bulk
+  regex, covering 20 more of the 467 previously-missing bulk deals.
+  Several OTHER numbers in this doc (canonical-vs-non-canonical
+  `'Undisclosed'` counts, `price_plausible IS NULL` count) were found
+  already stale from earlier, unrelated sessions while verifying the
+  above and refreshed to their current values in the same pass -- not
+  all drift above is attributable to this session's own changes.

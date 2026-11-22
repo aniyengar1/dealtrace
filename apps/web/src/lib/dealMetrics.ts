@@ -55,11 +55,11 @@ export interface DealMetricsRow {
   // like "0" instead of "unknown." See src.bulk_stats._proposals_not_extracted.
   dataQualityFlag: string | null;
   // Read deterministically from the filing's own text (src/deal_size.py),
-  // never computed/inferred -- null for a curated deal (no cached
-  // full-text HTML) or any filing that doesn't state the fact outright.
+  // never computed/inferred -- null for any filing (curated or bulk)
+  // whose own cached text doesn't state the fact outright.
   sharesOutstanding: number | null;
   sharesOutstandingQuote: string | null;
-  // Only ~14 of 821 filings state their own deal's aggregate value
+  // Only ~12 of 806 filings state their own deal's aggregate value
   // outright; most don't, and this is null for them rather than an
   // estimate. Never an enterprise value -- see extract_aggregate_value's
   // own docstring for why that phrasing is deliberately excluded.
