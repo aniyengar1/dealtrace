@@ -78,6 +78,44 @@ def test_resolve_acquirer_display_falls_back_to_stored_value():
     assert resolve_acquirer_display("Pfizer", "Global Blood Therapeutics, Inc.", [], []) == "Pfizer"
 
 
+def test_resolve_acquirer_display_resolves_named_committee_to_its_subject():
+    # Real shape: bulk_707388_000119312525162759 (STAR EQUITY HOLDINGS /
+    # Hudson Special Committee) -- "Hudson" is a different real company
+    # (not the target), just never named beyond its own committee here.
+    # Bare "Hudson" is strictly better than "Undisclosed", even with no
+    # fuller mention anywhere in the deal's own extracted text.
+    assert resolve_acquirer_display("Hudson Special Committee", "STAR EQUITY HOLDINGS, INC.", [], []) == "Hudson"
+
+
+def test_resolve_acquirer_display_prefers_fuller_mention_of_committee_subject():
+    proposals = [{"proposer": "Hudson Bay Partners, LLC", "recipient": "STAR EQUITY HOLDINGS, INC."}]
+    assert (
+        resolve_acquirer_display("Hudson Special Committee", "STAR EQUITY HOLDINGS, INC.", proposals, [])
+        == "Hudson Bay Partners"
+    )
+
+
+def test_resolve_acquirer_display_self_referential_committee_stays_undisclosed():
+    # Real shape: bulk_1852575_000119312526371874 (Strategic Storage
+    # Trust VI / SST VI Special Committee) -- the subject IS the target
+    # itself, so there's no real second party to resolve to at all.
+    assert (
+        resolve_acquirer_display("SST VI Special Committee", "Strategic Storage Trust VI, Inc.", [], [])
+        == "Undisclosed"
+    )
+
+
+def test_resolve_acquirer_display_never_picks_up_a_law_firm_reference():
+    # Real shape: bulk_1674356_000119312522181607 (Terra Property Trust
+    # / Terra BDC Special Committee) -- "Terra BDC Company Counsel" is
+    # the company's own lawyers, not a fuller legal name for "Terra BDC".
+    proposals = [{"proposer": "Terra BDC Company Counsel", "recipient": "Terra Property Trust, Inc."}]
+    assert (
+        resolve_acquirer_display("Terra BDC Special Committee", "Terra Property Trust, Inc.", proposals, [])
+        == "Terra Bdc"
+    )
+
+
 def test_known_short_name_expansions_is_small_and_curated():
     # Deliberately small -- a wrong guess here is worse than the short
     # form, so this is documentation as much as it is a test.

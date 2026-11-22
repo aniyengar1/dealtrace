@@ -26,7 +26,14 @@ from src.classify_deal_type import classify_deal
 from src.deal_size import extract_aggregate_value, extract_shares_outstanding
 from src.dedup_deals import _is_generic
 from src.display_name import clean_display_name
-from src.entity_match import _is_ticker_of, is_acronym_of, is_anonymized_placeholder, is_same_entity
+from src.entity_match import (
+    _is_ticker_of,
+    governance_body_subject,
+    is_acronym_of,
+    is_anonymized_placeholder,
+    is_governance_body_reference,
+    is_same_entity,
+)
 from src.env import load_env
 from src.filing_party_names import extract_acquirer_from_filing, is_shell_name
 from src.load_db import connect
@@ -92,6 +99,10 @@ _ORG_REFERENCE_WORDS = {
     "significant", "family", "independent", "conflicts", "affiliate", "affiliates",
     "fund", "consortium", "sub", "subs", "member", "members", "holder", "holders",
     "seller", "sellers",
+    # Outside legal/financial representation -- never a fuller form of
+    # the company's OWN name ("Terra BDC Company Counsel" is the
+    # company's own lawyers, not a fuller legal name for "Terra BDC").
+    "counsel", "attorneys", "law", "firm",
 }
 _TRAILING_ALPHA_WORD_RE = re.compile(r"[A-Za-z']+(?!.*[A-Za-z])")
 
@@ -244,7 +255,28 @@ def resolve_acquirer_display(
         for e in events:
             mentioned.update(e.get("parties") or [])
         mentioned.discard(None)
-        candidates = [acquirer] + [m for m in mentioned if m != target and _is_safe_fuller_name(m, acquirer)]
+        # A governance-body-referenced acquirer ("Hudson Special
+        # Committee") has a real company name hiding in its own
+        # SUBJECT, not in the committee phrase itself -- match fuller
+        # mentions against that subject instead, and fall back to the
+        # bare subject itself (still cleaner than the raw committee
+        # phrase, which _is_invalid_acquirer_display rejects outright).
+        # Never done when the subject is just the TARGET's own name
+        # (SST VI Special Committee on Strategic Storage Trust VI) --
+        # there's no real second party there to resolve at all.
+        subject = governance_body_subject(acquirer) if is_governance_body_reference(acquirer) else None
+        use_subject = bool(subject) and not (
+            is_same_entity(subject, target) or is_acronym_of(subject, target) or _is_ticker_of(subject, target)
+        )
+        if use_subject:
+            # The raw committee phrase is excluded from the running
+            # entirely here (not just appended alongside) -- it's
+            # always longer than the bare subject, so plain max(key=len)
+            # would keep picking the already-known-invalid phrase over
+            # the one candidate that's actually usable.
+            candidates = [subject] + [m for m in mentioned if m != target and _is_safe_fuller_name(m, subject)]
+        else:
+            candidates = [acquirer] + [m for m in mentioned if m != target and _is_safe_fuller_name(m, acquirer)]
         heuristic_resolved = max(candidates, key=len)
 
         if filing_valid and not is_shell_name(filing_name) and not _is_holding_vehicle_of(filing_name, acquirer):
