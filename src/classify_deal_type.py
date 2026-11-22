@@ -83,7 +83,13 @@ from typing import Optional
 from bs4 import BeautifulSoup
 
 from src.bulk_run import load_cached_html
-from src.entity_match import _is_ticker_of, is_acronym_of, is_same_entity
+from src.entity_match import (
+    _is_ticker_of,
+    governance_body_subject,
+    is_acronym_of,
+    is_governance_body_reference,
+    is_same_entity,
+)
 
 # BeautifulSoup-parsing a deal's full cached filing HTML (some are
 # multi-megabyte) for every one of ~900 bulk deals is the dominant cost
@@ -124,21 +130,35 @@ _CLASSIFY_CACHE_DIR = Path("data/cache/deal_type_classification")
 # BOTH captured names to match target/acquirer, not just one -- the
 # looser version misclassified an ordinary reverse-merger-structured
 # THIRD-PARTY sale (Cherry Hill/TPG Mortgage's "Party A", a real
-# competing bidder, not an affiliate) as a self-reorganization. Every
-# classification rule change needs a bump here, or a deal keeps
-# silently serving its stale result forever even once the rule that
-# should catch it is fixed.
-_CLASSIFY_CACHE_VERSION = "v3"
+# competing bidder, not an affiliate) as a self-reorganization. v4:
+# added _is_proposal_direction_reversed (reads proposals, not just
+# events -- a new cache-key input, see below), _is_new_holdco_merger,
+# and _acquirer_is_target_governance_body, after the read-only bidder
+# -count anomaly investigation found several role-reversal/self
+# -reference shapes none of the v3 checks caught (Aon/NFP, Enova/
+# Grasshopper, Maiden/Kestrel, Centennial/Colgate, Apollo/Athene,
+# Strategic Storage Trust VI/SSGT III). Every classification rule
+# change needs a bump here, or a deal keeps silently serving its stale
+# result forever even once the rule that should catch it is fixed.
+_CLASSIFY_CACHE_VERSION = "v4"
 
 
-def _classify_cache_key(slug: str, target: str, acquirer: str, events: list[dict]) -> str:
+def _classify_cache_key(slug: str, target: str, acquirer: str, events: list[dict], proposals: list[dict]) -> str:
     relevant_events = [{"event_type": e.get("event_type"), "parties": e.get("parties")} for e in events]
+    # v4's _is_proposal_direction_reversed reads proposer + source_quotes
+    # -- the only two proposal fields any check here reads -- so those
+    # (and only those) join events in the cache key, same reasoning as
+    # relevant_events above.
+    relevant_proposals = [
+        {"proposer": p.get("proposer"), "source_quotes": p.get("source_quotes")} for p in proposals
+    ]
     payload = json.dumps(
         {
             "version": _CLASSIFY_CACHE_VERSION,
             "target": target,
             "acquirer": acquirer,
             "events": relevant_events,
+            "proposals": relevant_proposals,
         },
         sort_keys=True,
         default=str,
@@ -480,6 +500,125 @@ def _is_filer_reversed(slug: str, target: str, acquirer: str) -> bool:
     return False
 
 
+# "<name> ... to acquire <name2>" / "... for the acquisition of <name2>"
+# / "... acquisition of <name2>", optionally with a "100% of the
+# equity of"/"all of the (issued and) outstanding shares/stock/equity/
+# membership interests of/in" object-phrase in between -- the common
+# shapes a Background-of-the-Merger narrative uses when naming WHO is
+# acquiring WHOM, independent of whether the sentence is first-person
+# (_FIRST_PERSON_BUYER_RE, the filer's own voice) or ordinary third
+# -person prose. Scoped (?i:...) around the connector words only, same
+# reason as _SPIN_OFF_OF_TO_RE: a blanket IGNORECASE would let the
+# [A-Z]-anchored _NAME_RUN capture run backward into lowercase prose.
+_ACQUIRE_OBJECT_RE = re.compile(
+    r"(?i:(?:to|would|will)\s+acquire|for the acquisition of|acquisition of)\s+"
+    r"(?i:(?:all(?:\s+of)?|100%\s+of)\s+(?:the\s+)?(?:issued\s+and\s+)?(?:outstanding\s+)?"
+    r"(?:shares|stock|equity|membership\s+interests)\s+(?:of|in)\s+)?" + _NAME_RUN
+)
+
+
+def _is_proposal_direction_reversed(target: str, acquirer: str, proposals: list[dict]) -> bool:
+    """True when a Proposal's own STRUCTURED proposer field (never
+    re-derived from prose subject-extraction, which is much harder to
+    get right reliably than reading a field we already trust elsewhere
+    in this pipeline) is the stored target, and that same proposal's own
+    quote says it's "to acquire"/"for the acquisition of" a name
+    matching the stored acquirer -- the filer (always recorded as
+    target, see _is_filer_reversed's docstring) is the one proposing to
+    acquire the OTHER side, not the other way around (Aon/NFP: "Aon
+    delivered...a proposal to acquire 100% of the equity of NFP" --
+    proposer="Aon plc"=target, captured="NFP"=acquirer). Unlike
+    _is_filer_reversed, this reads already-extracted proposals/events
+    data every deal has (curated included), not cached filing HTML
+    (bulk-only) -- closing the gap this module's own docstring already
+    calls out ("a curated deal is given neither check").
+
+    Airtight like _is_filer_reversed: requires at least one
+    reversal-direction quote AND zero quotes anywhere in the deal
+    asserting the opposite direction (acquirer-as-proposer proposing to
+    acquire a name matching target) -- rejected the weaker "which side
+    proposes more" heuristic for the same reason _is_filer_reversed's
+    own docstring already rejected it (an ordinary target-shops-itself
+    negotiation has the target sending plenty of its own counters too)."""
+    reversed_evidence = False
+    normal_evidence = False
+    for p in proposals:
+        proposer = p.get("proposer")
+        if not proposer:
+            continue
+        text = " ".join(p.get("source_quotes") or [])
+        for m in _ACQUIRE_OBJECT_RE.finditer(text):
+            acquired_name = m.group(1).strip()
+            if _is_same_entity_fuzzy(proposer, target) and _is_same_entity_fuzzy(acquired_name, acquirer):
+                reversed_evidence = True
+            elif _is_same_entity_fuzzy(proposer, acquirer) and _is_same_entity_fuzzy(acquired_name, target):
+                normal_evidence = True
+    return reversed_evidence and not normal_evidence
+
+
+# "each of X and Y will become a wholly owned subsidiary of Z" -- a
+# double-dummy/new-HoldCo merger-of-equals structure (Apollo/Athene:
+# "each of Athene and Apollo will become a wholly owned subsidiary of
+# Tango Holdings") where NEITHER existing company absorbs the other;
+# both get subordinated to a brand-new third entity. Distinct from
+# _is_self_reorganization's holdco-interposition check (which requires
+# BOTH captured names to already be this deal's own target/acquirer --
+# a parent reabsorbing its OWN pre-existing affiliate), since here the
+# new HoldCo is a THIRD name matching neither, and only ONE of the two
+# merging companies needs to match target/acquirer -- the other is
+# often the deal's real counterparty under a name our own acquirer
+# field never correctly captured (AHL special committee, not "Athene
+# Holding Ltd.", for Apollo/Athene).
+_EACH_OF_SUBSIDIARY_RE = re.compile(
+    r"(?i:each of)\s+" + _NAME_RUN + r"(?i:\s+and\s+)" + _NAME_RUN
+    + r"(?i:\s+will\s+become\s+an?\s+(?:indirect,?\s+)?wholly[- ]owned\s+subsidiary\s+of\s+)" + _NAME_RUN
+)
+
+
+def _is_new_holdco_merger(slug: str, target: str, acquirer: str) -> bool:
+    text = _full_text(slug)
+    for m in _EACH_OF_SUBSIDIARY_RE.finditer(text):
+        name1, name2, newco = (g.strip() for g in m.groups())
+        if _is_same_entity_fuzzy(newco, target) or _is_same_entity_fuzzy(newco, acquirer):
+            continue
+        if (
+            _is_same_entity_fuzzy(name1, target)
+            or _is_same_entity_fuzzy(name2, target)
+            or _is_same_entity_fuzzy(name1, acquirer)
+            or _is_same_entity_fuzzy(name2, acquirer)
+        ):
+            return True
+    return False
+
+
+def _acquirer_is_target_governance_body(target: str, acquirer: str) -> bool:
+    """True when the stored acquirer field is just a reference to the
+    TARGET's OWN board/special/conflicts committee ("SST VI Special
+    Committee" when target IS "Strategic Storage Trust VI, Inc.",
+    "SRT Special Committee" when target IS "Sunrise Realty Trust,
+    Inc." -- "SRT" a literal acronym of it) -- not an independent
+    second party at all, so there is no real acquirer name here to
+    resolve, swap in, or ever display; a discovery-time labeling
+    defect, not a reversed-but-resolvable pair (contrast
+    _is_filer_reversed/_is_proposal_direction_reversed, where the real
+    acquirer DOES have a usable name, just stored in the wrong field).
+    A bare governance term with no subject at all ("Conflicts
+    Committee", no company name attached) is treated the same way --
+    the only entity in scope for an unqualified "the Committee" to be
+    negotiating on behalf of is this deal's own target. Deliberately
+    does NOT fire when the subject names a DIFFERENT real company
+    (e.g. "Hudson Special Committee" when target is "STAR EQUITY
+    HOLDINGS, INC." -- no name relationship at all, so "Hudson" is
+    someone else's committee, an unresolved acquirer-display problem,
+    not a target/acquirer mislabeling one)."""
+    if not is_governance_body_reference(acquirer):
+        return False
+    subject = governance_body_subject(acquirer)
+    if subject is None:
+        return True
+    return _is_same_entity_fuzzy(subject, target)
+
+
 # Deliberately narrow: a bare "internalization" or "Share Issuance
 # Proposal" is each, independently, too common to use alone -- "Share
 # Issuance Proposal" is the standard proxy heading for ANY stock
@@ -581,17 +720,23 @@ def _is_self_reorganization(slug: str, target: str, acquirer: str) -> bool:
     return False
 
 
-def classify_deal(slug: str, target: str, acquirer: str, events: list[dict]) -> tuple[str, bool, Optional[str]]:
+def classify_deal(
+    slug: str, target: str, acquirer: str, events: list[dict], proposals: list[dict]
+) -> tuple[str, bool, Optional[str]]:
     """Disk-cached wrapper around _classify_deal_uncached -- see
     _CLASSIFY_CACHE_DIR's comment for the cache key and invalidation
-    rationale."""
-    key = _classify_cache_key(slug, target, acquirer, events)
+    rationale. `proposals` has no default -- an old call site missed
+    during the v4 wiring fails loudly (TypeError) rather than silently
+    losing _is_proposal_direction_reversed coverage. Every real caller
+    (src.bulk_stats, src.deal_metrics) already has `d["proposals"]`
+    sitting next to the `d["events"]` it passes."""
+    key = _classify_cache_key(slug, target, acquirer, events, proposals)
     cache_path = _classify_cache_path(slug, key)
     if cache_path.exists():
         cached = json.loads(cache_path.read_text(encoding="utf-8"))
         return cached["deal_type"], cached["excluded_from_stats"], cached["exclusion_reason"]
 
-    result = _classify_deal_uncached(slug, target, acquirer, events)
+    result = _classify_deal_uncached(slug, target, acquirer, events, proposals)
 
     cache_path.parent.mkdir(parents=True, exist_ok=True)
     cache_path.write_text(
@@ -602,7 +747,7 @@ def classify_deal(slug: str, target: str, acquirer: str, events: list[dict]) -> 
 
 
 def _classify_deal_uncached(
-    slug: str, target: str, acquirer: str, events: list[dict]
+    slug: str, target: str, acquirer: str, events: list[dict], proposals: list[dict]
 ) -> tuple[str, bool, Optional[str]]:
     """Returns (deal_type, excluded_from_stats, exclusion_reason). A
     deal is included in stats/listings only when none of the exclusion
@@ -647,11 +792,23 @@ def _classify_deal_uncached(
             True,
             "the filer is internalizing (absorbing) its own external manager via a share issuance, not being acquired by or acquiring anyone",
         )
-    if _is_filer_reversed(slug, target, acquirer):
+    if _is_filer_reversed(slug, target, acquirer) or _is_proposal_direction_reversed(target, acquirer, proposals):
         return (
             "filer_is_acquirer",
             True,
             "the filer (recorded here as target) is actually the acquirer, or is absorbing a third party -- target/acquirer are reversed or mislabeled for this deal",
+        )
+    if _is_new_holdco_merger(slug, target, acquirer):
+        return (
+            "new_holdco_merger_of_equals",
+            True,
+            "a double-dummy merger where both target and acquirer become subsidiaries of a brand-new third holding company, not a traditional single-acquirer sale process",
+        )
+    if _acquirer_is_target_governance_body(target, acquirer):
+        return (
+            "acquirer_is_target_governance_body",
+            True,
+            "the stored acquirer field is just a reference to the target's own board/special/conflicts committee, not an independent second party -- no real acquirer name is available for this deal",
         )
     if _is_reverse_merger_text(slug):
         return "reverse_merger", False, None

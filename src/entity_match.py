@@ -14,6 +14,7 @@ tags) so "Knoll" and "KNOLL INC" compare equal.
 """
 
 import re
+from typing import Optional
 
 _PAREN_SUFFIX_RE = re.compile(r"[/\\][^/\\]*[/\\]")
 _LEGAL_SUFFIX_RE = re.compile(
@@ -126,6 +127,30 @@ def is_governance_body_reference(name: str) -> bool:
     return bool(_GOVERNANCE_BODY_RE.search(name.strip()))
 
 
+def governance_body_subject(name: str) -> Optional[str]:
+    """The company name referenced BY a governance-body phrase, if any --
+    "SST VI" from "SST VI Special Committee", "AHL" from "AHL special
+    committee", None from a bare "Conflicts Committee" with no company
+    name attached at all. Not the same question as
+    is_governance_body_reference (which only tests whether the SUFFIX
+    looks like a board/committee); this extracts what comes before it,
+    so a caller can check whether that subject is actually THIS deal's
+    own target (an "acquirer" field that's really just the target's own
+    committee referring to itself, not an independent second party) --
+    see src.classify_deal_type._acquirer_is_target_governance_body."""
+    if not name:
+        return None
+    n = name.strip()
+    m = _GOVERNANCE_BODY_RE.search(n)
+    if not m:
+        return None
+    subject = n[: m.start()].strip()
+    # A leading bare article ("the Special Committee") is not a company
+    # name -- same bare-term case as no subject at all.
+    subject = re.sub(r"(?i)^the\b\s*", "", subject).strip()
+    return subject or None
+
+
 def is_anonymized_placeholder(name: str) -> bool:
     """True for a filing's own anonymization label ("Company A", "Party
     B", "Bidder 1") -- never a real company, so never a valid answer for
@@ -143,6 +168,29 @@ def is_anonymized_placeholder(name: str) -> bool:
     return bool(_ANONYMIZED_PLACEHOLDER_RE.match(n) or is_governance_body_reference(n))
 
 
+# A numbered-fund/series-sibling convention this dataset's filings use
+# repeatedly (Golub Capital BDC 3, FS KKR Capital Corp. II) sometimes
+# keeps the LAST word of a company's name as a unit in its own short
+# form, rather than reducing it to one letter the way every other word
+# is reduced -- "SST VI" for "Strategic Storage Trust VI" keeps "VI"
+# whole (not "V"), "SSGT III" for its own "...Growth Trust III" sibling
+# keeps "III" whole. Deliberately narrow: only the LAST word, only up
+# to 4 characters (so this can't absorb an ordinary multi-letter word
+# and turn an unrelated short string into a false match), and the short
+# form's own internal whitespace is stripped before comparing (a filing
+# sometimes writes a numbered short form with a space, "SST VI", where
+# a bare initials-style acronym never would).
+def _is_initials_plus_kept_suffix(short: str, long_name: str) -> bool:
+    words = core_name(long_name).split()
+    if len(words) < 2:
+        return False
+    last = words[-1]
+    if not last.isalpha() or not (1 <= len(last) <= 4):
+        return False
+    candidate = "".join(w[0] for w in words[:-1]).upper() + last.upper()
+    return short.upper() == candidate
+
+
 def is_acronym_of(short: str, long_name: str) -> bool:
     """True if `short` looks like an initials/acronym abbreviation of
     `long_name` -- "USS" for "UNITED STATES STEEL CORP". Requires the
@@ -151,12 +199,15 @@ def is_acronym_of(short: str, long_name: str) -> bool:
     candidate acronym to look like one (letters only, 2-6 characters) --
     guards against an unrelated short name coincidentally matching."""
     s = short.strip()
-    if not s or not s.isalpha() or not (2 <= len(s) <= 6):
+    s_nospace = s.replace(" ", "")
+    if not s_nospace or not s_nospace.isalpha() or not (2 <= len(s_nospace) <= 6):
         return False
     words = core_name(long_name).split()
     if len(words) < 2:
         return False
-    return s.upper() in (initials(long_name), _initials_including_suffix(long_name))
+    if s_nospace.upper() in (initials(long_name), _initials_including_suffix(long_name)):
+        return True
+    return _is_initials_plus_kept_suffix(s_nospace, long_name)
 
 
 # Words real stock tickers conventionally drop when abbreviating a

@@ -130,7 +130,7 @@ def _fetch_canonical_deals(conn: psycopg.Connection) -> list[dict]:
     deals = fetch_deals(conn, canonical_only=True)
     return [
         d for d in deals
-        if not classify_deal(d["slug"], d["target"], d["acquirer"], d["events"])[1]
+        if not classify_deal(d["slug"], d["target"], d["acquirer"], d["events"], d["proposals"])[1]
     ]
 
 

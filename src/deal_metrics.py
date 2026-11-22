@@ -293,7 +293,9 @@ def compute_metrics_for_deal(d: dict) -> dict:
     else:
         target_display = clean_display_name(d["target"])
         acquirer_display = resolve_acquirer_display(d["acquirer"], d["target"], d["proposals"], d["events"], d["slug"])
-        deal_type, excluded_from_stats, exclusion_reason = classify_deal(d["slug"], d["target"], d["acquirer"], d["events"])
+        deal_type, excluded_from_stats, exclusion_reason = classify_deal(
+            d["slug"], d["target"], d["acquirer"], d["events"], d["proposals"]
+        )
 
     n_bidders = bulk_stats.compute_n_bidders_for_deal(d)
     n_proposals = bulk_stats.compute_n_proposals_for_deal(d)
