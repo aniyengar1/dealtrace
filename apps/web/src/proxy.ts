@@ -46,14 +46,23 @@ async function loadSlugMap(): Promise<Map<string, SlugEntry>> {
 // middleware, before any Next.js page/layout renders, so it can't reuse
 // globals.css or any component; it's the ONLY 404 real browsers and
 // crawlers actually see for a bad /deals/:slug request (see this file's
-// top comment), so it needs to look intentional on its own.
-function notFoundResponse(): NextResponse {
+// top comment), so it needs to look intentional on its own. Also reused
+// for every other env-var-gated route below (/review, /crosscheck
+// research pages) -- the title/message/link are parameterized so a
+// gated section doesn't show "Deal not found" copy that makes no sense
+// for it, while every caller keeps the same deal-themed defaults it
+// already had if it passes nothing.
+function notFoundResponse(options?: { title?: string; message?: string; linkHref?: string; linkText?: string }): NextResponse {
+  const title = options?.title ?? "Deal not found";
+  const message = options?.message ?? "This deal doesn&rsquo;t exist, or isn&rsquo;t part of DealTrace&rsquo;s public dataset.";
+  const linkHref = options?.linkHref ?? "/deals";
+  const linkText = options?.linkText ?? "&larr; Back to deals";
   const html = `<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Deal not found · DealTrace</title>
+<title>${title} · DealTrace</title>
 <style>
   html, body { height: 100%; margin: 0; }
   body {
@@ -74,9 +83,9 @@ function notFoundResponse(): NextResponse {
 </head>
 <body>
   <div class="card">
-    <h1>Deal not found</h1>
-    <p>This deal doesn&rsquo;t exist, or isn&rsquo;t part of DealTrace&rsquo;s public dataset.</p>
-    <a href="/deals">&larr; Back to deals</a>
+    <h1>${title}</h1>
+    <p>${message}</p>
+    <a href="${linkHref}">${linkText}</a>
   </div>
 </body>
 </html>`;
@@ -124,6 +133,27 @@ async function resolveDealSlug(request: NextRequest): Promise<NextResponse | nul
   return null;
 }
 
+// /crosscheck's company-research pages (and the API route behind them)
+// read companies/earnings_company_reports/earnings_quarter_calculations/
+// guidance_versions/earnings_actuals over the shared DATABASE_URL pool --
+// tables scripts/push_to_supabase.sh doesn't copy and dealtrace_web isn't
+// granted on yet (see supabase/crosscheck_public.sql), so until that's
+// run in production these routes would 500/503 instead of rendering.
+// Gated the same way /review is: CROSSCHECK_RESEARCH_ENABLED=true locally,
+// left unset on Vercel so they 404 cleanly instead. /crosscheck/predictions
+// and its methodology page are a SEPARATE, already-public read path (a
+// dedicated CROSSCHECK_PUBLISHED_DATABASE_URL connection to just two
+// snapshot tables, see lib/crosscheck/predictions/read.ts) and must stay
+// reachable -- excluded here by name, not by the matcher (Next's matcher
+// syntax can't express "a dynamic segment except this one literal value").
+const CROSSCHECK_PREDICTIONS_PREFIX = "/crosscheck/predictions";
+
+export function isGatedCrosscheckPath(pathname: string): boolean {
+  if (pathname.startsWith("/api/crosscheck/")) return true;
+  if (pathname.startsWith(CROSSCHECK_PREDICTIONS_PREFIX)) return false;
+  return pathname === "/crosscheck" || pathname.startsWith("/crosscheck/");
+}
+
 // /review has no real auth yet, so it's gated behind an env var instead
 // of being reachable by anyone who guesses a slug: REVIEW_ENABLED=true
 // locally (see .env.example), left unset on Vercel so the whole review
@@ -138,6 +168,17 @@ export async function proxy(request: NextRequest) {
     }
     return NextResponse.next();
   }
+  if (isGatedCrosscheckPath(request.nextUrl.pathname)) {
+    if (process.env.CROSSCHECK_RESEARCH_ENABLED !== "true") {
+      return notFoundResponse({
+        title: "Not available",
+        message: "This Crosscheck research page isn&rsquo;t public yet.",
+        linkHref: "/crosscheck/predictions",
+        linkText: "&larr; Locked predictions",
+      });
+    }
+    return NextResponse.next();
+  }
   if (request.nextUrl.pathname.startsWith("/deals/")) {
     const result = await resolveDealSlug(request);
     if (result) return result;
@@ -146,5 +187,13 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/review/:path*", "/deals/:slug", "/deals/:slug/memo", "/deals/:slug/memo/export"],
+  matcher: [
+    "/review/:path*",
+    "/deals/:slug",
+    "/deals/:slug/memo",
+    "/deals/:slug/memo/export",
+    "/crosscheck",
+    "/crosscheck/:ticker",
+    "/api/crosscheck/:ticker",
+  ],
 };
