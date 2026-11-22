@@ -1,0 +1,90 @@
+{
+  "prepared_at": "2026-11-22T20:46:55.788613+00:00",
+  "company": "ADBE",
+  "status": "BLOCKED_RESULTS_PUBLICATION_UNVERIFIED",
+  "announcement_id": null,
+  "quarter_guidance": {
+    "accession": "0000796343-26-000147",
+    "basis": "US_GAAP_consolidated_reported",
+    "company": "ADBE",
+    "end": "2026-11-27",
+    "exhibit": "99.1",
+    "filed": "2026-09-10",
+    "high": "6850000000",
+    "id": "c6af4c68-dde8-57b1-bf4d-2f0c56c4c3ce",
+    "issued": {
+      "end": "2026-09-10",
+      "precision": "day",
+      "start": "2026-09-10"
+    },
+    "low": "6800000000",
+    "metric": "quarterly_consolidated_revenue",
+    "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+    "original_verified": true,
+    "quote": "fourth quarter FY2026 targets, which assumes current macroeconomic conditions: Total revenue $6.80 billion to $6.85 billion Business Professionals & Consumers subscription revenue $1.93 billion to $1.95 billion Creative & Marketing Professionals subscription",
+    "quote_verified": true,
+    "source_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+    "start": "2026-08-29",
+    "status": "initial",
+    "unit": "USD"
+  },
+  "official_ir_checks": [
+    {
+      "url": "https://www.adobe.com/investor-relations.html",
+      "checked_at": "2026-11-22T11:32:16.620632+00:00",
+      "fetched_at": "2026-11-22T11:32:16.702019+00:00",
+      "http_status": 200,
+      "sha256": "a579977fb9435293c1d454fbc73319aeb71288b26627d41341d65758ecc281b4"
+    },
+    {
+      "url": "https://www.adobe.com/investor-relations/events-presentations.html",
+      "checked_at": "2026-11-22T11:32:17.257475+00:00",
+      "fetched_at": "2026-11-22T11:32:17.368845+00:00",
+      "http_status": 200,
+      "sha256": "233948d88c751324c89a13dfce280d4d784129c67f62125b66ba55ef7806d698"
+    },
+    {
+      "url": "https://www.adobe.com/investor-relations/investor-news.html",
+      "checked_at": "2026-11-22T11:32:17.925089+00:00",
+      "fetched_at": "2026-11-22T11:32:18.022031+00:00",
+      "http_status": 200,
+      "sha256": "509c2a15bc2a0f1a67cec203b152a7c75596fc9a416b09ce05dfb781a2c39329"
+    },
+    {
+      "url": "https://www.adobe.com/investor-relations/financial-documents.html",
+      "checked_at": "2026-11-22T11:32:18.579365+00:00",
+      "fetched_at": "2026-11-22T11:32:18.721772+00:00",
+      "http_status": 200,
+      "sha256": "2e7ed6ee3936c6a5e32cb40979118726a231ae9152f29946c94b2e3fc148744e"
+    }
+  ],
+  "sec_sources": [
+    {
+      "url": "https://data.sec.gov/submissions/CIK0000796343.json",
+      "fetched_at": "2026-11-22T11:32:21.695992+00:00",
+      "sha256": "37f363f43ff2b605f1bbcebebe1e2cdd20667256bccf6cd6db9f9d1b71c38de3"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+      "fetched_at": "2026-11-22T11:32:22.276604+00:00",
+      "sha256": "919a854c05326dae72583870b9ed83f3347812f53856f6641675377027125b43"
+    },
+    {
+      "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000156/adbe-20260828.htm",
+      "fetched_at": "2026-11-22T11:32:22.890580+00:00",
+      "sha256": "3fc2a667ceabe5b080bcb32360c10e73bd14b549e10643a540d15b5a6ec7b592"
+    }
+  ],
+  "conditional_window": {
+    "condition": "Qualifying official evidence of December 9 results publication in US market context; not established by the call listing",
+    "opening": "2026-11-22T00:00:00-05:00",
+    "deadline_exclusive": "2026-12-09T00:00:00-05:00"
+  },
+  "comparability": {
+    "Semrush": "Existing growth review cites April 28 consolidation and Note 3 immaterial financial-statement impact. Guidance-to-result decision remains separate.",
+    "Topaz": "September 22 10-Q Note 13 anticipates Q4 close. Resolve actual close/consolidation and inclusion in Q4 guidance before eligibility; no normalization or automatic inheritance of a growth-only block.",
+    "unverified_discovery_lead": "https://blog.adobe.com/en/publish/2026/09/23/adobe-completes-acquisition-of-topaz-labs",
+    "lead_limitation": "Search lead only, not retrieved or accepted as financial evidence under SEC-only financial sourcing."
+  },
+  "actions": "Research and unsigned preparation only; no imports, owner attestation, ledger writes or locks."
+}
