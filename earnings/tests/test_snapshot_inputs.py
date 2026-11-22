@@ -30,5 +30,24 @@ def test_synthetic_payloads_are_rejected_by_production_generator(tmp_path):
     assert 'crosscheck_scoring_rehearsal_%' in sql
 
 
-def test_default_seed_is_unchanged():
-    assert script()==(ROOT/'published_snapshot_seed.sql').read_text()
+def test_default_generator_reads_its_input_not_a_separately_prepared_seed():
+    # A committed seed may come from a newer explicit reviewed export. It must
+    # not be required to match the older default source JSON byte-for-byte.
+    import re
+    payloads=re.findall(r"VALUES \('current',(\$snapshot_[0-9a-f]+\$)(.*?)\1::jsonb\)",script(),re.S)
+    assert len(payloads)==2
+    assert json.loads(payloads[0][1])==json.loads((ROOT/'predictions.json').read_text())
+    assert json.loads(payloads[1][1])==json.loads((ROOT/'backtest.json').read_text())
+
+
+def test_prepared_seed_has_consistent_public_counts_and_no_private_evidence():
+    import re
+    sql=(ROOT/'published_snapshot_seed.sql').read_text()
+    values=re.findall(r"VALUES \('current',(\$snapshot_[0-9a-f]+\$)(.*?)\1::jsonb\)",sql,re.S)
+    assert len(values)==2
+    p=json.loads(values[0][1]);rows=p['predictions']
+    assert p['prediction_count']==len(rows)==len({r['id'] for r in rows})
+    assert len(p['ledger_sha256'])==64
+    assert all(sum(x['company']==r['company'] for x in rows)==2 for r in rows)
+    for private in ['owner_record','owner_check_id','observer','attestation','personally_checked','cached_body','data/cache/','/Users/','/tmp/']:
+        assert private not in sql
