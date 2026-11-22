@@ -1,13 +1,16 @@
 import Link from "next/link";
+import { getIncludedDealsSummary } from "@/lib/homeStats";
 
-export function Footer() {
+export async function Footer() {
+  const { minSigningYear } = await getIncludedDealsSummary();
+  const since = minSigningYear ?? 2021;
   return (
     <footer className="border-t border-border">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-8 text-sm text-ink-muted sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div className="space-y-1.5">
           <p>
             Source: <span className="text-ink">SEC EDGAR</span> merger-proxy and tender-offer filings (DEFM14A,
-            SC 14D9, S-4). Coverage: deals announced 2021 onward; see{" "}
+            SC 14D9, S-4). Coverage: deals announced {since} onward; see{" "}
             <Link href="/methodology" className="text-accent hover:underline">
               Methodology
             </Link>{" "}

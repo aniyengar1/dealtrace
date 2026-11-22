@@ -1,6 +1,7 @@
 import "server-only";
 
 import { query } from "./db";
+import { HAS_COMPLETED_RUN_SQL } from "./dealMetrics";
 import { getHeadlineStats } from "./headlineStats";
 
 export interface HomeStat {
@@ -60,7 +61,7 @@ export async function getIncludedDealsSummary(): Promise<IncludedDealsSummary> {
          ORDER BY e.date_start DESC LIMIT 1
        ) AS signing_year
        FROM deal_metrics dm
-       WHERE dm.is_canonical AND NOT dm.excluded_from_stats
+       WHERE dm.is_canonical AND NOT dm.excluded_from_stats AND ${HAS_COMPLETED_RUN_SQL}
      ) sub`
   );
   return { count: rows[0]?.count ?? 0, minSigningYear: rows[0]?.min_year ?? null };

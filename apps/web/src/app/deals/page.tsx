@@ -57,12 +57,26 @@ export default async function DealsPage({
     return `/deals?${params.toString()}`;
   }
 
+  const exportParams = new URLSearchParams(
+    Object.entries(sp).filter(([k, v]) => v !== undefined && k !== "page") as [string, string][]
+  );
+
   return (
     <Container wide className="py-10">
-      <h1 className="font-serif text-3xl font-semibold tracking-tight text-ink">Deal explorer</h1>
-      <p className="mt-1.5 text-sm text-ink-muted">
-        {total} of {allRows.length} deals.
-      </p>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h1 className="font-serif text-3xl font-semibold tracking-tight text-ink">Deal explorer</h1>
+          <p className="mt-1.5 text-sm text-ink-muted">
+            {total} of {allRows.length} deals.
+          </p>
+        </div>
+        <a
+          href={`/deals/export?${exportParams.toString()}`}
+          className="rounded-md border border-border-strong px-3 py-1.5 text-sm font-medium text-ink hover:bg-surface-raised"
+        >
+          Download CSV
+        </a>
+      </div>
 
       <div className="mt-6">
         <FilterBar years={years} />
@@ -75,7 +89,7 @@ export default async function DealsPage({
       ) : (
         <div className="mt-6 overflow-x-auto rounded-lg border border-border">
           <table className="w-full text-left text-sm">
-            <thead className="sticky top-[57px] z-10 border-b border-border bg-surface text-xs uppercase tracking-wide text-ink-muted">
+            <thead className="sticky top-[57px] z-10 border-b border-border bg-surface font-mono text-xs uppercase tracking-wide text-ink-muted">
               <tr>
                 <th className="px-3 py-2.5 font-medium">Target</th>
                 <th className="px-3 py-2.5 font-medium">Acquirer</th>

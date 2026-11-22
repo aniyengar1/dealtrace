@@ -122,15 +122,35 @@ const BASE_SELECT = `
   JOIN deals d ON d.id = dm.deal_id
 `;
 
+// A deal with no completed extraction run at all (Twitter/Musk, New
+// Relic -- zero events AND zero proposals on every run, including no
+// run whatsoever) has nothing to show beyond its bare deals-table row,
+// so it's excluded from every public query the same way an
+// excluded_from_stats deal is -- no recompute needed, since
+// extraction_runs/events/proposals already reflect reality; this is
+// purely a query-time check. Reused verbatim by every public query
+// below (sitemap, ticker, home stats) that needs the same scope.
+// References dm.deal_id (every caller already has a deal_metrics dm in
+// scope), not d.id, so this drops into a query with or without a
+// "deals d" join present.
+export const HAS_COMPLETED_RUN_SQL = `
+  EXISTS (
+    SELECT 1 FROM extraction_runs r WHERE r.deal_id = dm.deal_id
+      AND (EXISTS (SELECT 1 FROM events e WHERE e.run_id = r.id)
+           OR EXISTS (SELECT 1 FROM proposals p WHERE p.run_id = r.id))
+  )
+`;
+
 // Every public listing reads from here, so the scope is "included"
-// deals -- canonical (deduplicated) AND not excluded_from_stats
+// deals -- canonical (deduplicated), not excluded_from_stats
 // (src.classify_deal_type: spin-offs, affiliated-manager mergers, and
-// buyer-side-filer deals) -- never canonical alone. A deal like
-// Viasat/Inmarsat (filer_is_acquirer) is canonical but must never
-// appear in a public count, list, or search result.
+// buyer-side-filer deals), AND with a completed extraction run --
+// never canonical alone. A deal like Viasat/Inmarsat (filer_is_acquirer)
+// is canonical but must never appear in a public count, list, or
+// search result; neither must one with nothing extracted yet.
 export async function listCanonicalDealMetrics(): Promise<DealMetricsRow[]> {
   const rows = await query<DealMetricsDbRow>(
-    `${BASE_SELECT} WHERE dm.is_canonical AND NOT dm.excluded_from_stats ORDER BY dm.computed_at DESC`
+    `${BASE_SELECT} WHERE dm.is_canonical AND NOT dm.excluded_from_stats AND ${HAS_COMPLETED_RUN_SQL} ORDER BY dm.computed_at DESC`
   );
   return rows.map(toRow);
 }
@@ -160,7 +180,11 @@ export interface DealsFilter {
 
 const PAGE_SIZE = 25;
 
-export function filterAndSortDeals(rows: DealMetricsRow[], filter: DealsFilter) {
+// Filter + sort only, no pagination -- shared by filterAndSortDeals
+// (the /deals table, 25 rows at a time) and the CSV export route
+// (the whole filtered set, same filters/sort as whatever the reader
+// was looking at).
+export function filterAndSort(rows: DealMetricsRow[], filter: Omit<DealsFilter, "page">): DealMetricsRow[] {
   let filtered = rows;
 
   if (filter.q) {
@@ -207,7 +231,7 @@ export function filterAndSortDeals(rows: DealMetricsRow[], filter: DealsFilter) 
     if (bd === null) return -1;
     return bd - ad;
   };
-  const sorted = [...filtered].sort((a, b) => {
+  return [...filtered].sort((a, b) => {
     const av = valueOf(a);
     const bv = valueOf(b);
     if (av === null && bv === null) return byRecentSigningDate(a, b);
@@ -216,7 +240,10 @@ export function filterAndSortDeals(rows: DealMetricsRow[], filter: DealsFilter) 
     if (av === bv) return byRecentSigningDate(a, b);
     return (av - bv) * dir;
   });
+}
 
+export function filterAndSortDeals(rows: DealMetricsRow[], filter: DealsFilter) {
+  const sorted = filterAndSort(rows, filter);
   const page = Math.max(1, filter.page ?? 1);
   const total = sorted.length;
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
@@ -234,4 +261,43 @@ export function availableYears(rows: DealMetricsRow[]): string[] {
     if (r.signingDate) years.add(r.signingDate.slice(0, 4));
   }
   return Array.from(years).sort((a, b) => Number(b) - Number(a));
+}
+
+export interface LatestAddedDeal {
+  slug: string;
+  targetDisplay: string;
+  acquirerDisplay: string;
+  signingDate: string | null;
+}
+
+// A handful of bulk-extracted display names are entity-resolution
+// artifacts, not real names -- a bare ticker-style fragment ("Dti",
+// "Mitt", "Rep") rather than the company it stands for. Real company
+// names, even short ones, are vanishingly rare at 4 letters or fewer
+// once ampersands/periods/spaces are stripped ("H.I.G." being a known
+// exception), so this is a cheap, good-enough filter for a single
+// hero-line pick -- not a data-quality claim about the row itself,
+// which still renders normally everywhere else on the site.
+function looksTickerLike(name: string): boolean {
+  return name.replace(/[^A-Za-z]/g, "").length <= 4;
+}
+
+const CANDIDATE_POOL_SIZE = 20;
+
+// Most recently *signed* among included deals -- not most recently
+// added to the dataset (deal_metrics.computed_at), since a bulk-load
+// run can backfill a deal signed years ago and "latest deal added"
+// reads better as "the newest real deal" than as a pipeline-internals
+// timestamp. Pulls a small pool (not just the single top row) because
+// the single newest signing can belong to a deal whose acquirer name
+// didn't resolve to a real string.
+export async function getLatestAddedDeal(): Promise<LatestAddedDeal | null> {
+  const rows = await query<{ slug: string; target_display: string; acquirer_display: string; signing_date: string | null }>(
+    `${BASE_SELECT} WHERE dm.is_canonical AND NOT dm.excluded_from_stats AND ${HAS_COMPLETED_RUN_SQL}
+     ORDER BY signing_date DESC NULLS LAST LIMIT ${CANDIDATE_POOL_SIZE}`
+  );
+  const row = rows.find((r) => !looksTickerLike(r.target_display) && !looksTickerLike(r.acquirer_display));
+  return row
+    ? { slug: row.slug, targetDisplay: row.target_display, acquirerDisplay: row.acquirer_display, signingDate: row.signing_date }
+    : null;
 }

@@ -17,7 +17,7 @@ export function DealTicker({ deals }: { deals: TickerDeal[] }) {
           <span className="text-ink">{d.acquirerDisplay}</span>
           <span>{acquireVerb(d.acquirerDisplay)}</span>
           <span className="text-ink">{d.targetDisplay}</span>
-          <span className="text-accent tabular-nums">{formatPrice(d.finalPrice)}</span>
+          <span className="font-mono text-accent tabular-nums">{formatPrice(d.finalPrice)}</span>
         </span>
       ))}
     </div>

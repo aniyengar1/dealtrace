@@ -109,11 +109,21 @@ export default async function StatsPage({
 
   return (
     <Container wide className="py-10">
-      <h1 className="font-serif text-3xl font-semibold tracking-tight text-ink">Cross-deal findings</h1>
-      <p className="mt-1 text-sm text-ink-muted">
-        n = {rows.length} included deal{rows.length === 1 ? "" : "s"} — every figure is read from{" "}
-        <code className="text-ink">deal_metrics</code>, computed once per bulk-load run.
-      </p>
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h1 className="font-serif text-3xl font-semibold tracking-tight text-ink">Cross-deal findings</h1>
+          <p className="mt-1 text-sm text-ink-muted">
+            n = {rows.length} included deal{rows.length === 1 ? "" : "s"} — every figure is read from{" "}
+            <code className="text-ink">deal_metrics</code>, computed once per bulk-load run.
+          </p>
+        </div>
+        <a
+          href="/stats/export"
+          className="rounded-md border border-border-strong px-3 py-1.5 text-sm font-medium text-ink hover:bg-surface-raised"
+        >
+          Download CSV
+        </a>
+      </div>
 
       <div className="mt-6 max-w-sm">
         <GroupStatsCard label="All deals" stats={groupStats(rows)} />
@@ -121,7 +131,7 @@ export default async function StatsPage({
 
       <div className="mt-8 overflow-x-auto rounded-lg border border-border bg-surface">
         <table className="w-full text-left text-sm">
-          <thead className="border-b border-border bg-surface-raised text-xs uppercase tracking-wide text-ink-muted">
+          <thead className="border-b border-border bg-surface-raised font-mono text-xs uppercase tracking-wide text-ink-muted">
             <tr>
               <th className="px-3 py-2.5 font-medium">Target</th>
               <th className="px-3 py-2.5 font-medium">Acquirer</th>

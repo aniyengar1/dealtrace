@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Fraunces, Inter, IBM_Plex_Mono } from "next/font/google";
 import { NavBar } from "@/components/layout/NavBar";
 import { Footer } from "@/components/layout/Footer";
 import { PageTransition } from "@/components/layout/PageTransition";
@@ -20,6 +20,13 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
+const ibmPlexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-ibm-plex-mono",
+  weight: ["400", "500"],
+  display: "swap",
+});
+
 const siteUrl = SITE_URL;
 
 // Dynamic rather than a static `metadata` export so the headline count
@@ -29,7 +36,7 @@ const siteUrl = SITE_URL;
 export async function generateMetadata(): Promise<Metadata> {
   const { count: n, minSigningYear } = await getIncludedDealsSummary();
   const since = minSigningYear ?? 2021;
-  const description = `DealTrace has extracted ${n} public-company sale processes from SEC filings since ${since} -- who was contacted, how bids moved, how long it took -- with every fact linked to its source quote.`;
+  const description = `DealTrace has extracted ${n} public-company sale processes from SEC filings since ${since} — who was contacted, how bids moved, how long it took — with every fact linked to its source quote.`;
   return {
     metadataBase: new URL(siteUrl),
     title: {
@@ -54,7 +61,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`h-full antialiased ${inter.variable} ${fraunces.variable}`}>
+    <html lang="en" className={`h-full antialiased ${inter.variable} ${fraunces.variable} ${ibmPlexMono.variable}`}>
       <body className="flex min-h-full flex-col bg-bg text-ink">
         <a
           href="#main"

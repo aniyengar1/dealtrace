@@ -12,13 +12,13 @@ import { motion } from "framer-motion";
 // than a scaled-down version of this one, since neither should ever pay
 // for video decode at all.
 //
-// Rendered `fixed` (not `absolute`) and mounted once per page by the
-// page itself (home, methodology) -- `position: fixed` escapes the
-// normal document flow entirely, so it keeps covering the full
-// viewport as the page scrolls past it, which is what makes the
-// montage read as a persistent backdrop behind every section instead
-// of just the hero. Data pages (deal explorer, deal pages, stats)
-// simply never render this component.
+// Rendered `absolute inset-0`, scoped to whichever `relative`
+// ancestor mounts it (the home hero section, and nowhere else) --
+// content below the hero is near-black with no imagery, per the
+// site's Linear/Stripe-inspired direction. A much heavier dark wash
+// than earlier rounds keeps the montage reading as a slow, subtle
+// background (~20% visible) rather than a bright photo the headline
+// competes with.
 type Slide =
   | { kind: "video"; id: string; mp4: string; webm: string; poster: string; duration: number }
   | { kind: "photo"; id: string; src: string; duration: number; zoom: "in" | "out" };
@@ -45,7 +45,7 @@ const CROSSFADE_MS = 1500;
 // Mild brightness/contrast lift on the raw footage/photos themselves --
 // applied to the media layer only, never the overlay or any text, so
 // brightening the montage never touches how crisp the headline reads.
-const MEDIA_FILTER = "brightness(1.2) contrast(1.05)";
+const MEDIA_FILTER = "brightness(0.9) contrast(1.05)";
 
 // useSyncExternalStore (not state+effect) so there's no setState-in-effect
 // render cascade, and the server snapshot is a real, correct value rather
@@ -183,7 +183,7 @@ export function HeroMedia() {
   const prefersReducedMotion = useMediaQuery("(prefers-reduced-motion: reduce)");
 
   return (
-    <div className="fixed inset-0 -z-50">
+    <div className="absolute inset-0 -z-10 overflow-hidden">
       {/* Static poster -- the only thing rendered at first paint/SSR, and
           the permanent fallback for prefers-reduced-motion. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -197,22 +197,19 @@ export function HeroMedia() {
 
       {mounted && !prefersReducedMotion && <MotionLoop slides={isMobile ? MOBILE_SLIDES : SLIDES} />}
 
-      {/* Light wash, uniform across the whole fixed layer -- just enough
-          that body text everywhere stays AA-readable against brightened
-          footage, without flattening the imagery to "plain black" the
-          way the old, much darker overlay did below the hero. The
-          hero's own headline needs more than this alone to stay crisp;
-          that extra contrast comes from a local gradient/panel behind
-          the hero text specifically (see page.tsx), not from darkening
-          this shared layer for the whole page. */}
+      {/* Heavy wash -- the montage now reads as a slow, subtle backdrop
+          (~20% visible) confined to the hero, not a bright photo the
+          headline competes with. The hero's own headline gets further
+          contrast from a local gradient/panel behind the text itself
+          (see page.tsx). */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(115deg, rgba(10,10,11,0.5) 0%, rgba(10,10,11,0.4) 35%, rgba(10,10,11,0.25) 65%, rgba(10,10,11,0.38) 100%)",
+            "linear-gradient(115deg, rgba(10,10,11,0.86) 0%, rgba(10,10,11,0.8) 35%, rgba(10,10,11,0.68) 65%, rgba(10,10,11,0.82) 100%)",
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-bg/5 via-bg/22 to-bg/38" />
+      <div className="absolute inset-0 bg-gradient-to-b from-bg/30 via-bg/45 to-bg/70" />
     </div>
   );
 }

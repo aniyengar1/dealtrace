@@ -15,7 +15,12 @@
 
   --color-ink: #f2f2f3;
   --color-ink-muted: #8b8e94;
-  --color-ink-faint: #56585d;
+  /* Lightened from #56585d -- the darker value failed WCAG AA (4.5:1)
+     for body text against both --color-bg and --color-surface (~2.6-2.8:1
+     measured). #828282 clears 4.5:1 against bg-surface (the harder of
+     the two) with a small margin while staying visibly fainter than
+     --color-ink-muted. */
+  --color-ink-faint: #828282;
 
   --color-accent: #c0c4cc;
   --color-accent-bright: #e5e7eb;
@@ -34,8 +39,28 @@
   --color-positive: #8fd6a8;
   --color-negative: #e08a8a;
 
+  /* Process-timeline lane colors -- a separate ramp from --color-chart-*
+     (used for bidder-series colors elsewhere), confined to a muted
+     mid-gray band rather than spanning all the way to --color-chart-1's
+     near-white so no single lane reads as stark white next to five
+     gray ones. Still strictly monochrome (neutral grays, same faint
+     cool tinge as --color-ink-muted), just six steps within a
+     narrower, more muted range. */
+  --color-lane-1: #b4b7bd;
+  --color-lane-2: #a3a6ac;
+  --color-lane-3: #92959b;
+  --color-lane-4: #81848a;
+  --color-lane-5: #70737a;
+  --color-lane-6: #5f6269;
+
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-fraunces), ui-serif, Georgia, serif;
+  /* Labels/metadata/eyebrows/axis ticks -- never headlines, which stay
+     serif. Tabular numerals are already the body default (see
+     `font-feature-settings: "tnum" 1` below); this just gives numbers
+     that need to visually align (stat captions, axis labels, dates) a
+     typeface built for exactly that. */
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, "SF Mono", Menlo, monospace;
 
   --radius-sm: 4px;
   --radius-md: 6px;

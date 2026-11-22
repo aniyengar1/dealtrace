@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/Card";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { getIncludedDealsSummary } from "@/lib/homeStats";
-import { HeroMedia } from "../HeroMedia";
+import { StepDiagram, type StepKind } from "./StepDiagram";
 
 export const dynamic = "force-dynamic";
 
@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     "How DealTrace extracts, validates, and sources every fact on this site from SEC merger-proxy filings.",
 };
 
-const PIPELINE_STEPS = [
-  { title: "Discover", body: "EDGAR's quarterly form.idx files are scanned for DEFM14A, PREM14A, SC 14D9, SC TO-T, and S-4 filings, grouped into candidate deals by target CIK and filing date." },
-  { title: "Classify", body: "A no-LLM pass reads each filing's SIC code and document text to separate real operating-company M&A from SPAC/de-SPAC mechanics and other non-M&A filings (debt exchanges, reorganizations, going-private squeeze-outs)." },
-  { title: "Section + extract", body: "The “Background of the Merger” narrative and fairness-opinion sections are isolated, then an LLM reads them and returns structured events, proposals, and valuation analyses — never free text." },
-  { title: "Validate", body: "Every record is checked against the filing's own text before anyone sees it: quotes must appear verbatim (after normalization), numbers must appear in a cited quote, and dates are resolved by code, never by the model." },
-  { title: "Load + review", body: "Validated records land in Postgres keyed to their source paragraphs. A human reviewer can confirm, correct, or reject any fact — review status is tracked but never blocks a fact from showing, just from being presented as verified." },
+const PIPELINE_STEPS: { kind: StepKind; title: string; body: string }[] = [
+  { kind: "discover", title: "Discover", body: "EDGAR's quarterly form.idx files are scanned for DEFM14A, PREM14A, SC 14D9, SC TO-T, and S-4 filings, grouped into candidate deals by target CIK and filing date." },
+  { kind: "classify", title: "Classify", body: "A no-LLM pass reads each filing's SIC code and document text to separate real operating-company M&A from SPAC/de-SPAC mechanics and other non-M&A filings (debt exchanges, reorganizations, going-private squeeze-outs)." },
+  { kind: "extract", title: "Section + extract", body: "The “Background of the Merger” narrative and fairness-opinion sections are isolated, then an LLM reads them and returns structured events, proposals, and valuation analyses — never free text." },
+  { kind: "validate", title: "Validate", body: "Every record is checked against the filing's own text before anyone sees it: quotes must appear verbatim (after normalization), numbers must appear in a cited quote, and dates are resolved by code, never by the model." },
+  { kind: "load", title: "Load + review", body: "Validated records land in Postgres keyed to their source paragraphs. A human reviewer can confirm, correct, or reject any fact — review status is tracked but never blocks a fact from showing, just from being presented as verified." },
 ];
 
 const DISCOVERY_FUNNEL: { label: string; count: number }[] = [
@@ -67,12 +67,12 @@ const ACCURACY_ROWS: {
 ];
 
 export default async function MethodologyPage() {
-  const { count: nIncluded } = await getIncludedDealsSummary();
+  const { count: nIncluded, minSigningYear } = await getIncludedDealsSummary();
+  const since = minSigningYear ?? 2021;
   const funnel = [...DISCOVERY_FUNNEL, { label: FINAL_FUNNEL_STEP_LABEL, count: nIncluded }];
 
   return (
     <div>
-      <HeroMedia />
       <Container wide className="relative py-14">
       <Reveal>
         <SectionHeading
@@ -84,23 +84,23 @@ export default async function MethodologyPage() {
 
       <section className="mt-12">
         <Reveal>
-          <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Pipeline</h2>
+          <h2 className="inline-block rounded-lg bg-bg/90 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Pipeline</h2>
         </Reveal>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {PIPELINE_STEPS.map((step, i) => (
-            <Reveal key={step.title} delay={i * 70} className="relative">
+            <div key={step.title} className="relative">
               <Card className="h-full p-4">
-                <span className="font-serif text-2xl text-accent">{String(i + 1).padStart(2, "0")}</span>
+                <StepDiagram kind={step.kind} step={i + 1} />
                 <h3 className="mt-2 text-sm font-semibold text-ink">{step.title}</h3>
                 <p className="mt-1.5 text-sm text-ink-muted">{step.body}</p>
               </Card>
               {i < PIPELINE_STEPS.length - 1 && (
                 <span className="absolute -right-3 top-1/2 hidden -translate-y-1/2 text-ink-faint lg:block">→</span>
               )}
-            </Reveal>
+            </div>
           ))}
         </div>
-        <p className="mt-3 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
+        <p className="mt-3 inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
           Extracted with gemini-3.6-flash via Vertex AI; the model retires Jan 28, 2027; raw model outputs are
           archived.
         </p>
@@ -108,7 +108,7 @@ export default async function MethodologyPage() {
 
       <section className="mt-14">
         <Reveal>
-          <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Discovery funnel</h2>
+          <h2 className="inline-block rounded-lg bg-bg/90 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Discovery funnel</h2>
         </Reveal>
         <Reveal delay={60}>
           <div className="mt-5 grid gap-3 sm:grid-cols-5">
@@ -125,7 +125,7 @@ export default async function MethodologyPage() {
             ))}
           </div>
         </Reveal>
-        <p className="mt-3 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
+        <p className="mt-3 inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
           De-duplication (<code className="text-ink">src/dedup_deals.py</code>) resolves cases where the same
           underlying deal surfaces as two or more separately discovered filings &mdash; a target company
           refiling an amended proxy, or a tender offer and a merger-proxy for the same transaction both getting
@@ -138,7 +138,7 @@ export default async function MethodologyPage() {
 
       <section className="mt-14">
         <Reveal>
-          <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">What&apos;s extracted</h2>
+          <h2 className="inline-block rounded-lg bg-bg/90 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">What&apos;s extracted</h2>
         </Reveal>
         <Reveal delay={60}>
           <div className="mt-5 overflow-x-auto rounded-lg border border-border">
@@ -160,7 +160,7 @@ export default async function MethodologyPage() {
             </table>
           </div>
         </Reveal>
-        <p className="mt-3 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
+        <p className="mt-3 inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
           Every record also carries its 1–3 source quotes, the paragraph(s) they came from, a pass/fail
           validation flag, and a review status — visible on each deal page via the evidence drawer.
         </p>
@@ -168,23 +168,21 @@ export default async function MethodologyPage() {
 
       <section className="mt-14">
         <Reveal>
-          <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Validation rules</h2>
+          <h2 className="inline-block rounded-lg bg-bg/90 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Validation rules</h2>
         </Reveal>
         <div className="mt-5 grid gap-5 sm:grid-cols-3">
-          {VALIDATION_RULES.map((rule, i) => (
-            <Reveal key={rule.title} delay={i * 70}>
-              <Card className="h-full p-4">
-                <h3 className="text-sm font-semibold text-ink">{rule.title}</h3>
-                <p className="mt-2 text-sm text-ink-muted">{rule.body}</p>
-              </Card>
-            </Reveal>
+          {VALIDATION_RULES.map((rule) => (
+            <Card key={rule.title} className="h-full p-4">
+              <h3 className="text-sm font-semibold text-ink">{rule.title}</h3>
+              <p className="mt-2 text-sm text-ink-muted">{rule.body}</p>
+            </Card>
           ))}
         </div>
       </section>
 
       <section className="mt-14">
         <Reveal>
-          <div className="inline-block max-w-2xl rounded-lg bg-bg/55 px-5 py-4 backdrop-blur-sm">
+          <div className="inline-block max-w-2xl rounded-lg bg-bg/90 px-5 py-4 backdrop-blur-sm">
             <h2 className="text-lg font-semibold text-ink">Accuracy</h2>
             <p className="mt-2 text-sm text-ink-muted">
               Measured by scoring an extraction run against a hand-checked gold answer key read directly off the
@@ -233,10 +231,10 @@ export default async function MethodologyPage() {
 
       <section className="mt-14">
         <Reveal>
-          <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Coverage</h2>
+          <h2 className="inline-block rounded-lg bg-bg/90 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Coverage</h2>
           <Card className="mt-5 p-5 text-sm text-ink-muted">
             <p>
-              <span className="text-ink">Date range:</span> deals announced 2021 onward (bounded by when the
+              <span className="text-ink">Date range:</span> deals announced {since} onward (bounded by when the
               pipeline&apos;s automated EDGAR discovery starts looking).
             </p>
             <p className="mt-2">
@@ -254,7 +252,7 @@ export default async function MethodologyPage() {
 
       <section className="mt-14 mb-4">
         <Reveal>
-          <h2 className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Known limitations</h2>
+          <h2 className="inline-block rounded-lg bg-bg/90 px-4 py-2 text-lg font-semibold text-ink backdrop-blur-sm">Known limitations</h2>
           <Card className="mt-5 p-5 text-sm text-ink-muted">
             <ul className="list-disc space-y-2 pl-5">
               <li>
@@ -280,7 +278,7 @@ export default async function MethodologyPage() {
         </Reveal>
       </section>
 
-      <p className="inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
+      <p className="inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
         <Link href="/" className="text-accent hover:underline">
           ← Back to home
         </Link>

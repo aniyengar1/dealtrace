@@ -254,7 +254,7 @@ export function ReviewQueue({
         <p className="text-sm text-ink-muted">
           {facts.length === 0
             ? "No facts to review for this deal."
-            : "No core facts (proposals/core events) to review -- turn off Core only to see the rest."}
+            : "No core facts (proposals/core events) to review — turn off Core only to see the rest."}
         </p>
       ) : (
       <div className="grid grid-cols-2 gap-6">

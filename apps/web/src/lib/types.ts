@@ -11,6 +11,7 @@ export interface Deal {
   is_canonical: boolean;
   duplicate_of: string | null;
   excluded_from_stats: boolean;
+  has_completed_run: boolean;
 }
 
 export interface ExtractionRun {

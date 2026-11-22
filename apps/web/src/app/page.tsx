@@ -1,18 +1,24 @@
 import Link from "next/link";
-import { listCanonicalDealMetrics } from "@/lib/dealMetrics";
+import { listCanonicalDealMetrics, getDealMetricsBySlug, getLatestAddedDeal } from "@/lib/dealMetrics";
 import { computeHomeStats } from "@/lib/homeStats";
 import { getTickerDeals } from "@/lib/tickerDeals";
-import { statDecimals } from "@/lib/format";
+import { getDealBySlug, getLatestFactsRunForDeal, getEventsForRun, getProposalsForRun } from "@/lib/queries";
+import { statDecimals, formatDate } from "@/lib/format";
+import { dealTitle } from "@/lib/labels";
 import { Container } from "@/components/ui/Container";
 import { Card } from "@/components/ui/Card";
 import { LinkButton } from "@/components/ui/Button";
 import { StatNumber } from "@/components/ui/StatNumber";
+import { ChartNote } from "@/components/ui/ChartNote";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
-import { HeroBumpChart } from "./HeroBumpChart";
+import { BidChart as BidLadderChart } from "./deals/[slug]/BidLadderChart";
 import { FeaturedDealCard } from "./FeaturedDealCard";
 import { HeroMedia } from "./HeroMedia";
 import { DealTicker } from "./DealTicker";
+import { InsightBar } from "./InsightBar";
+
+const FEATURED_DEAL_SLUG = "splunk";
 
 export const dynamic = "force-dynamic";
 
@@ -38,23 +44,33 @@ const STEPS = [
 const FEATURED_SLUGS = ["splunk", "zendesk", "activision", "mandiant", "citrix", "coupa"];
 
 export default async function HomePage() {
-  const [allCanonical, stats, tickerDeals] = await Promise.all([
+  const [allCanonical, stats, tickerDeals, latestAdded, featuredDeal, featuredMetrics] = await Promise.all([
     listCanonicalDealMetrics(),
     computeHomeStats(),
     getTickerDeals(),
+    getLatestAddedDeal(),
+    getDealBySlug(FEATURED_DEAL_SLUG),
+    getDealMetricsBySlug(FEATURED_DEAL_SLUG),
   ]);
   const featured = FEATURED_SLUGS.map((slug) => allCanonical.find((d) => d.slug === slug)).filter(
     (d): d is NonNullable<typeof d> => d !== undefined
   );
   const headlineCount = stats.nDealsCovered;
-  const sinceYear = stats.minSigningYear ?? 2021;
+
+  // A live-rendered bid ladder for one well-known deal, right in the
+  // hero, in place of the old aggregate histogram -- the point is to
+  // show what the site actually extracts (a real negotiation), not
+  // just a summary statistic, the moment someone lands on the page.
+  const featuredFactsRun = featuredDeal ? await getLatestFactsRunForDeal(featuredDeal.id) : null;
+  const [featuredEvents, featuredProposals] = featuredFactsRun
+    ? await Promise.all([getEventsForRun(featuredFactsRun.id), getProposalsForRun(featuredFactsRun.id)])
+    : [[], []];
 
   return (
     <div>
-      <HeroMedia />
-
       {/* Hero */}
-      <section className="relative border-b border-border">
+      <section className="relative overflow-hidden border-b border-border">
+        <HeroMedia />
         <Container
           wide
           className="relative grid grid-cols-1 gap-10 py-20 sm:py-28 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:py-36"
@@ -72,13 +88,12 @@ export default async function HomePage() {
                   "radial-gradient(60% 90% at 30% 40%, rgba(10,10,11,0.75) 0%, rgba(10,10,11,0.55) 45%, rgba(10,10,11,0.15) 75%, transparent 100%)",
               }}
             />
-            <h1 className="font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-ink sm:text-5xl lg:text-6xl">
-              {headlineCount} public-company sale processes since {sinceYear}, extracted from SEC filings.
+            <h1 className="font-serif text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
+              <span className="text-accent-bright">{headlineCount} M&amp;A sale processes,</span>{" "}
+              <span className="text-ink-muted">
+                reconstructed from SEC filings &mdash; every fact linked to its source sentence.
+              </span>
             </h1>
-            <p className="mt-5 max-w-xl text-lg text-ink-muted">
-              DealTrace reconstructs how M&amp;A sale processes actually unfold &mdash; who was contacted, how bids
-              moved, how long it took &mdash; with every fact linked back to the exact sentence it came from.
-            </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <LinkButton href="/deals" variant="primary">
                 Explore deals
@@ -87,17 +102,32 @@ export default async function HomePage() {
                 How it works
               </LinkButton>
             </div>
+            {latestAdded && (
+              <p className="mt-6 font-mono text-xs text-ink-faint">
+                Most recent signing: {dealTitle(latestAdded.acquirerDisplay, latestAdded.targetDisplay)}
+                {latestAdded.signingDate ? ` · signed ${formatDate(latestAdded.signingDate)}` : ""}
+              </p>
+            )}
           </div>
           <Card className="p-5">
             <p className="text-xs font-medium uppercase tracking-wide text-ink-muted">
-              Distribution of first proposal &rarr; final price change
+              {featuredDeal && featuredMetrics
+                ? `Bid history: ${dealTitle(featuredMetrics.acquirerDisplay, featuredMetrics.targetDisplay)}`
+                : "Bid history"}
             </p>
-            {stats.medianPctBump ? (
+            <ChartNote
+              definition="Price per share offered by each bidder, in the order proposals were made, through to the signed deal price."
+              source="proposal records extracted from the deal's SEC merger-proxy filing"
+            />
+            {featuredMetrics && featuredProposals.length > 0 ? (
               <div className="mt-3">
-                <HeroBumpChart data={stats.pctBumpHistogram} />
-                <p className="mt-1 text-xs text-ink-faint">
-                  n = {stats.medianPctBump.n} canonical cash deals with a priced first and final proposal
-                </p>
+                <BidLadderChart
+                  proposals={featuredProposals}
+                  events={featuredEvents}
+                  target={featuredMetrics.targetDisplay}
+                  finalPrice={featuredMetrics.finalPrice}
+                  finalPriceIsRatio={featuredMetrics.finalPriceIsRatio}
+                />
               </div>
             ) : (
               <p className="mt-3 text-sm text-ink-faint">Not enough priced proposals yet to chart.</p>
@@ -111,10 +141,19 @@ export default async function HomePage() {
         )}
       </section>
 
-      {/* Stats band */}
-      <section className="border-b border-border">
-        <Container wide className="py-12">
-          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+      {/* What the data says -- quick stats + narrative findings share one
+          section, not two, so the page reads as hero -> findings ->
+          how it works -> featured deals -> accuracy -> footer. */}
+      <section className="border-b border-border py-20">
+        <Container wide>
+          <Reveal>
+            <SectionHeading
+              eyebrow="Findings"
+              title="What the data says"
+              description={`Three patterns across all ${headlineCount} deals, not just the well-known names.`}
+            />
+          </Reveal>
+          <div className="mt-10 grid grid-cols-2 gap-8 sm:grid-cols-3">
             <StatNumber value={stats.nDealsCovered} label="Deals covered" size="lg" />
             {stats.medianBidders && (
               <StatNumber
@@ -134,34 +173,60 @@ export default async function HomePage() {
                 size="lg"
               />
             )}
+          </div>
+          <div className="mt-5 grid gap-5 sm:grid-cols-3">
+            {stats.pctFirstBidderWon && (
+              <Reveal>
+                <Card className="p-5">
+                  <InsightBar
+                    value={stats.pctFirstBidderWon.value}
+                    domain={[0, 100]}
+                    valueLabel={`${stats.pctFirstBidderWon.value.toFixed(statDecimals(stats.pctFirstBidderWon.value))}%`}
+                    domainLabels={["0%", "100%"]}
+                    referenceAt={50}
+                  />
+                  <p className="mt-3 text-sm text-ink-muted">
+                    The first bidder to show up wins the deal about half the time (n = {stats.pctFirstBidderWon.n}) —
+                    showing up early is an edge, not a guarantee.
+                  </p>
+                </Card>
+              </Reveal>
+            )}
             {stats.medianPctBump && (
-              <StatNumber
-                value={stats.medianPctBump.value}
-                decimals={statDecimals(stats.medianPctBump.value)}
-                prefix={stats.medianPctBump.value >= 0 ? "+" : ""}
-                suffix="%"
-                label="Median first → final bump (cash deals)"
-                n={stats.medianPctBump.n}
-                size="lg"
-              />
+              <Reveal delay={80}>
+                <Card className="p-5">
+                  <InsightBar
+                    value={stats.medianPctBump.value}
+                    domain={[-25, 50]}
+                    valueLabel={`${stats.medianPctBump.value >= 0 ? "+" : ""}${stats.medianPctBump.value.toFixed(statDecimals(stats.medianPctBump.value))}%`}
+                    domainLabels={["-25%", "+50%"]}
+                    referenceAt={0}
+                  />
+                  <p className="mt-3 text-sm text-ink-muted">
+                    Cash deals typically sign for about {stats.medianPctBump.value.toFixed(1)}% more than the first
+                    priced proposal (n = {stats.medianPctBump.n}) — negotiation usually moves the price, not just the
+                    terms.
+                  </p>
+                </Card>
+              </Reveal>
             )}
             {stats.medianDaysFirstProposalToSigning && (
-              <StatNumber
-                value={Math.round(stats.medianDaysFirstProposalToSigning.value)}
-                label="Median days, first proposal → signing"
-                n={stats.medianDaysFirstProposalToSigning.n}
-                size="lg"
-              />
-            )}
-            {stats.pctFirstBidderWon && (
-              <StatNumber
-                value={stats.pctFirstBidderWon.value}
-                decimals={statDecimals(stats.pctFirstBidderWon.value)}
-                suffix="%"
-                label="The first bidder is the eventual acquirer"
-                n={stats.pctFirstBidderWon.n}
-                size="lg"
-              />
+              <Reveal delay={160}>
+                <Card className="p-5">
+                  <InsightBar
+                    value={stats.medianDaysFirstProposalToSigning.value}
+                    domain={[0, 365]}
+                    valueLabel={`~${(stats.medianDaysFirstProposalToSigning.value / 30.44).toFixed(1)} months`}
+                    domainLabels={["0 mo", "12 mo"]}
+                  />
+                  <p className="mt-3 text-sm text-ink-muted">
+                    From the first priced proposal to a signed agreement takes a median of{" "}
+                    {Math.round(stats.medianDaysFirstProposalToSigning.value)} days (n ={" "}
+                    {stats.medianDaysFirstProposalToSigning.n}) — a quarter of a year once real numbers are on the
+                    table.
+                  </p>
+                </Card>
+              </Reveal>
             )}
           </div>
         </Container>
@@ -179,16 +244,14 @@ export default async function HomePage() {
           </Reveal>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {STEPS.map((step, i) => (
-              <Reveal key={step.title} delay={i * 80}>
-                <div className="relative rounded-lg border border-border bg-surface p-5">
-                  <span className="font-serif text-3xl text-accent">{String(i + 1).padStart(2, "0")}</span>
-                  <h3 className="mt-3 text-base font-semibold text-ink">{step.title}</h3>
-                  <p className="mt-2 text-sm text-ink-muted">{step.body}</p>
-                </div>
-              </Reveal>
+              <div key={step.title} className="relative rounded-lg border border-border bg-surface p-5">
+                <span className="font-serif text-3xl text-accent">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="mt-3 text-base font-semibold text-ink">{step.title}</h3>
+                <p className="mt-2 text-sm text-ink-muted">{step.body}</p>
+              </div>
             ))}
           </div>
-          <p className="mt-6 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
+          <p className="mt-6 inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
             <Link href="/methodology" className="text-accent hover:underline">
               Read the full methodology →
             </Link>
@@ -196,21 +259,27 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* Featured deals */}
+      {/* Featured deals -- the one place besides the hero where imagery
+          shows up on this page, per the site's "near-black, imagery at
+          most once more below the hero" direction. A single static
+          frame, heavily darkened, not the hero's animated loop. */}
       {featured.length > 0 && (
-        <section className="border-t border-border py-20">
+        <section className="relative overflow-hidden border-t border-border py-20">
+          <div className="absolute inset-0 -z-10">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/img/hero-photo-6.jpg" alt="" aria-hidden className="h-full w-full object-cover opacity-[0.12]" />
+            <div className="absolute inset-0 bg-bg/70" />
+          </div>
           <Container wide>
             <Reveal>
               <SectionHeading eyebrow="Coverage" title="Featured deals" />
             </Reveal>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {featured.map((deal, i) => (
-                <Reveal key={deal.slug} delay={i * 60}>
-                  <FeaturedDealCard deal={deal} />
-                </Reveal>
+              {featured.map((deal) => (
+                <FeaturedDealCard key={deal.slug} deal={deal} />
               ))}
             </div>
-            <p className="mt-6 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
+            <p className="mt-6 inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
               <Link href="/deals" className="text-accent hover:underline">
                 Browse all {headlineCount} deals →
               </Link>
@@ -229,7 +298,7 @@ export default async function HomePage() {
               description="Before any deal is trusted, its extraction is scored against a hand-checked set of events and proposals read directly off the filing."
             />
           </Reveal>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+          <div className="mt-10 grid gap-5 sm:grid-cols-3">
             <Reveal>
               <Card className="p-5">
                 <p className="text-sm font-medium text-ink">Splunk &mdash; Cisco (development set)</p>
@@ -244,8 +313,15 @@ export default async function HomePage() {
                 <p className="mt-1 text-sm text-ink-muted">core-event recall / proposal recall, never seen during development</p>
               </Card>
             </Reveal>
+            <Reveal delay={160}>
+              <Card className="p-5">
+                <p className="text-sm font-medium text-ink">Round-3 spot check (bulk sample)</p>
+                <p className="mt-1 text-2xl font-serif text-accent">81 / 90</p>
+                <p className="mt-1 text-sm text-ink-muted">fields correct on a fresh random sample of 20 deals</p>
+              </Card>
+            </Reveal>
           </div>
-          <p className="mt-6 inline-block rounded-lg bg-bg/55 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
+          <p className="mt-6 inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
             <Link href="/methodology" className="text-accent hover:underline">
               See the full accuracy methodology →
             </Link>

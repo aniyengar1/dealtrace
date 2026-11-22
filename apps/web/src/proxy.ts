@@ -20,19 +20,23 @@ let slugMapCachedAt = 0;
 async function loadSlugMap(): Promise<Map<string, SlugEntry>> {
   const rows = await listDealSlugIndex();
   const slugById = new Map(rows.map((r) => [r.id, r.slug]));
-  const excludedById = new Map(rows.map((r) => [r.id, r.excluded_from_stats]));
+  // Not public either way: excluded_from_stats (a spin-off/affiliated-
+  // merger/buyer-side-filer deal) or no completed extraction run at
+  // all (Twitter/Musk, New Relic -- nothing to show beyond a bare row).
+  const notPublicById = new Map(rows.map((r) => [r.id, r.excluded_from_stats || !r.has_completed_run]));
   const map = new Map<string, SlugEntry>();
   for (const row of rows) {
     const canonicalSlug =
       !row.is_canonical && row.duplicate_of ? slugById.get(row.duplicate_of) ?? null : null;
-    // A duplicate's own excluded_from_stats is meaningless (deal_metrics
-    // only computes it for the canonical row) -- what matters is
-    // whether the deal this slug actually resolves to is excluded, so
-    // a duplicate of an excluded deal 404s directly instead of
-    // redirecting into a canonical page that would just 404 anyway.
+    // A duplicate's own excluded_from_stats/has_completed_run is
+    // meaningless (deal_metrics only computes these for the canonical
+    // row) -- what matters is whether the deal this slug actually
+    // resolves to is public, so a duplicate of a non-public deal 404s
+    // directly instead of redirecting into a canonical page that would
+    // just 404 anyway.
     const excluded = row.is_canonical
-      ? row.excluded_from_stats
-      : excludedById.get(row.duplicate_of ?? "") ?? row.excluded_from_stats;
+      ? row.excluded_from_stats || !row.has_completed_run
+      : notPublicById.get(row.duplicate_of ?? "") ?? (row.excluded_from_stats || !row.has_completed_run);
     map.set(row.slug, { canonicalSlug, excluded });
   }
   return map;
@@ -94,10 +98,18 @@ async function getSlugMap(): Promise<Map<string, SlugEntry>> {
   return slugMapCache;
 }
 
+// Literal route segments that live directly under /deals/ alongside
+// the [slug] dynamic segment -- Next's router already prefers the
+// static route for an exact match, but this proxy's own matcher
+// (/deals/:slug) can't tell "export" from a real deal slug, so without
+// this guard a request for /deals/export would 404 here before the
+// real route.ts ever got a chance to run.
+const RESERVED_DEALS_SEGMENTS = new Set(["export"]);
+
 async function resolveDealSlug(request: NextRequest): Promise<NextResponse | null> {
   const segments = request.nextUrl.pathname.split("/").filter(Boolean);
   const [, slug, ...rest] = segments;
-  if (!slug) return null;
+  if (!slug || RESERVED_DEALS_SEGMENTS.has(slug)) return null;
 
   const map = await getSlugMap();
   const entry = map.get(slug);
