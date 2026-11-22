@@ -871,11 +871,19 @@ def stat_pct_increase_cash(deals: list[dict]) -> dict:
     }
 
 
-def stat_first_bidder_is_acquirer(deals: list[dict]) -> dict:
+def stat_first_bidder_is_acquirer(deals: list[dict], contested_only: bool = False) -> dict:
+    """contested_only restricts to deals with 2+ distinct bidders --
+    with exactly one real bidder, it trivially IS both the first and
+    final proposer (every 1-bidder deal "wins" by definition, which is
+    why the all-deals number is structurally pulled up by that group
+    and isn't informative about genuine competitive dynamics on its
+    own; see compute_n_bidders_for_deal)."""
     matches = 0
     n = 0
     excluded = {"no_non_target_proposal": 0, "no_final_entry": 0}
     for d in deals:
+        if contested_only and compute_n_bidders_for_deal(d) < 2:
+            continue
         won, reason = compute_first_bidder_won_for_deal(d)
         if reason is not None:
             excluded[reason] += 1
@@ -884,7 +892,15 @@ def stat_first_bidder_is_acquirer(deals: list[dict]) -> dict:
         if won:
             matches += 1
     return {
-        "definition": "Share of deals where the proposer of the earliest dated non-target proposal is the same (case-insensitive) as the proposer of the final (accepted, else latest-dated) proposal.",
+        "definition": (
+            "Share of CONTESTED deals (2+ distinct bidders who submitted a proposal) where the proposer of the "
+            "earliest dated non-target proposal is the same (case-insensitive) as the proposer of the final "
+            "(accepted, else latest-dated) proposal."
+            if contested_only
+            else "Share of deals where the proposer of the earliest dated non-target proposal is the same "
+            "(case-insensitive) as the proposer of the final (accepted, else latest-dated) proposal -- includes "
+            "1-bidder deals, which win by definition (see pct_first_bidder_wins_contested for the competitive-only view)."
+        ),
         "n": n,
         "pct_first_bidder_is_eventual_acquirer": (matches / n * 100) if n else None,
         "exclusions": excluded,
@@ -968,6 +984,7 @@ def compute_all() -> dict:
         "proposals_per_deal": stat_n_proposals(deals_with_proposals),
         "pct_increase_cash_deals": stat_pct_increase_cash(deals_with_proposals),
         "pct_first_bidder_is_eventual_acquirer": stat_first_bidder_is_acquirer(deals),
+        "pct_first_bidder_wins_contested": stat_first_bidder_is_acquirer(deals, contested_only=True),
         "days_first_proposal_to_signing": stat_days_first_proposal_to_signing(deals),
     }
 

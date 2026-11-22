@@ -441,6 +441,7 @@ def refresh_deal_metrics(conn: psycopg.Connection) -> int:
 # other four left NULL (see db/migrations/0015_deal_metrics.sql).
 _SCALAR_STAT_VALUE_KEYS = {
     "pct_first_bidder_is_eventual_acquirer": "pct_first_bidder_is_eventual_acquirer",
+    "pct_first_bidder_wins_contested": "pct_first_bidder_is_eventual_acquirer",
 }
 
 

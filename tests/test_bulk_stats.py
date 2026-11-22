@@ -1,6 +1,6 @@
 from datetime import date
 
-from src.bulk_stats import compute_first_bidder_won_for_deal
+from src.bulk_stats import compute_first_bidder_won_for_deal, stat_first_bidder_is_acquirer
 
 
 def _proposal(proposer, day, status="open"):
@@ -126,3 +126,21 @@ def test_committee_exempted_when_it_is_itself_the_stored_acquirer():
 def test_no_non_target_proposal_excluded():
     d = _deal("Target Co", "Acquirer Co", [_proposal("Target Co", 1)])
     assert compute_first_bidder_won_for_deal(d) == (None, "no_non_target_proposal")
+
+
+def test_contested_stat_excludes_one_bidder_deals():
+    # A 1-bidder deal wins by definition (there's no one else it could
+    # have lost to) -- contested_only must drop it from both the
+    # numerator and denominator, not just the numerator.
+    one_bidder_deal = _deal("Target Co", "Only Bidder", [_proposal("Only Bidder", 1, status="accepted")])
+    two_bidder_deal = _deal(
+        "Target Co",
+        "Second Bidder",
+        [_proposal("First Bidder", 1), _proposal("Second Bidder", 2, status="accepted")],
+    )
+    all_stat = stat_first_bidder_is_acquirer([one_bidder_deal, two_bidder_deal])
+    contested_stat = stat_first_bidder_is_acquirer([one_bidder_deal, two_bidder_deal], contested_only=True)
+    assert all_stat["n"] == 2
+    assert contested_stat["n"] == 1
+    assert contested_stat["pct_first_bidder_is_eventual_acquirer"] == 0.0
+    assert "CONTESTED" in contested_stat["definition"]
