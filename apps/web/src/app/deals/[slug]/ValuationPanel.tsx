@@ -5,6 +5,17 @@ import { formatPrice, formatMultipleRange } from "@/lib/format";
 import { valuationMethodLabel } from "@/lib/labels";
 import { ReviewStatusBadge, factRowClassName } from "@/components/StatusBadge";
 
+// Shared with DealView, which needs to know this BEFORE deciding
+// whether to render the "Valuation vs. final price" section's header
+// and description at all -- most deals (813 of 821) have no
+// valuations row whatsoever (no fairness opinion extracted, not a
+// rendering bug), so showing a whole section for a one-line "nothing
+// to plot" message on nearly every deal page is the thing actually
+// worth hiding, not just the chart body.
+export function hasPlottableValuations(valuations: ValuationRow[]): boolean {
+  return valuations.some((v) => v.implied_price_low !== null && v.implied_price_high !== null);
+}
+
 export function ValuationPanel({
   valuations,
   finalPrice,

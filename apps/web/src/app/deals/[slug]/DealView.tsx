@@ -5,7 +5,7 @@ import type { EventRow, Fact, ParagraphRow, ProposalRow, ValuationRow } from "@/
 import { BidChart } from "./BidLadderChart";
 import { HorizontalTimeline } from "./HorizontalTimeline";
 import { Timeline } from "./Timeline";
-import { ValuationPanel } from "./ValuationPanel";
+import { ValuationPanel, hasPlottableValuations } from "./ValuationPanel";
 import { EvidenceDrawer } from "./EvidenceDrawer";
 import { PartiesPanel } from "./PartiesPanel";
 import { ChartNote } from "@/components/ui/ChartNote";
@@ -32,6 +32,7 @@ export function DealView({
   initialFact?: Fact | null;
 }) {
   const [selected, setSelected] = useState<Fact | null>(initialFact);
+  const showValuationSection = hasPlottableValuations(valuations);
 
   return (
     <div className="space-y-10">
@@ -67,18 +68,28 @@ export function DealView({
         </div>
       </section>
 
-      <section>
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-muted">
-          Valuation vs. final price
-        </h2>
-        <ChartNote
-          definition="Each financial advisor's implied per-share valuation range, compared with the price the deal actually signed at."
-          source="valuation-analysis records extracted from the deal's fairness-opinion filing"
-        />
-        <div className="mt-3 rounded-lg border border-border bg-surface p-4">
-          <ValuationPanel valuations={valuations} finalPrice={finalPrice} onInspect={setSelected} />
-        </div>
-      </section>
+      {showValuationSection ? (
+        <section>
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-muted">
+            Valuation vs. final price
+          </h2>
+          <ChartNote
+            definition="Each financial advisor's implied per-share valuation range, compared with the price the deal actually signed at."
+            source="valuation-analysis records extracted from the deal's fairness-opinion filing"
+          />
+          <div className="mt-3 rounded-lg border border-border bg-surface p-4">
+            <ValuationPanel valuations={valuations} finalPrice={finalPrice} onInspect={setSelected} />
+          </div>
+        </section>
+      ) : (
+        // No full section header/description for the ~99% of deals
+        // with no fairness-opinion valuation extracted at all -- that's
+        // not a rendering bug, just a real data gap (most of this
+        // dataset's filings never had one to extract), so a short note
+        // in place of the chart is more honest than a section that
+        // always renders but almost never has anything in it.
+        <p className="text-sm text-ink-faint">No valuation analysis extracted from this filing to compare against the final price.</p>
+      )}
 
       <section>
         <h2 className="text-sm font-semibold uppercase tracking-wide text-ink-muted">Parties</h2>
