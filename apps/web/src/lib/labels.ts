@@ -145,3 +145,16 @@ export function acquireVerb(acquirerDisplay: string): string {
 export function dealTitle(acquirerDisplay: string, targetDisplay: string): string {
   return `${acquirerDisplay} ${acquireVerb(acquirerDisplay)} ${targetDisplay}`;
 }
+
+// A filing's own anonymization label for an unnamed bidder ("Party A",
+// "Company B", "Bidder 1") -- SEC filings redact a losing bidder's real
+// name during an active sale process, and this pipeline reports
+// whatever the filing itself says rather than guessing a real name.
+// Ported from src.entity_match.is_anonymized_placeholder (kept in sync
+// by hand -- there's no shared Python/TS module here to import from).
+const ANONYMIZED_PLACEHOLDER_RE =
+  /^(the\s+)?(?:shareholder|stockholder|equityholder|controlling|significant|majority|management|director|officer|founder)?\s*(company|party|bidder|buyer|acquiror|acquirer|counterparty|sponsor|shareholder|stockholder|equityholder)\s*[a-z0-9]{1,3}$/i;
+
+export function isAnonymizedBidderName(name: string): boolean {
+  return ANONYMIZED_PLACEHOLDER_RE.test(name.trim());
+}

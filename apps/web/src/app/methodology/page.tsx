@@ -273,6 +273,11 @@ export default async function MethodologyPage() {
                 Valuation analyses are only as complete as each filing&apos;s fairness-opinion section; not every deal
                 has one.
               </li>
+              <li>
+                Some filings redact a losing bidder&apos;s identity during an active sale process (&ldquo;Party A,&rdquo;
+                &ldquo;Company B,&rdquo; &ldquo;Bidder 1&rdquo;) — DealTrace reports these anonymized labels exactly as the filing
+                states them, rather than guessing a real name.
+              </li>
             </ul>
           </Card>
         </Reveal>

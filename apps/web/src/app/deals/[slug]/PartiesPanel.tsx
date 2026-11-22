@@ -1,4 +1,5 @@
 import type { EventRow, ProposalRow } from "@/lib/types";
+import { isAnonymizedBidderName } from "@/lib/labels";
 
 type Group = "Bidders" | "Advisors & banks" | "Legal counsel" | "People" | "Other";
 
@@ -46,6 +47,7 @@ export function PartiesPanel({
   proposals: ProposalRow[];
 }) {
   const bidders = new Set(proposals.map((p) => p.proposer).filter((p) => p !== target));
+  const hasAnonymizedBidder = Array.from(bidders).some(isAnonymizedBidderName);
 
   const names = new Set<string>();
   for (const e of events) for (const p of e.parties) names.add(p);
@@ -76,6 +78,12 @@ export function PartiesPanel({
           <dd className="text-ink">{acquirer}</dd>
         </div>
       </dl>
+
+      {hasAnonymizedBidder && (
+        <p className="mt-3 text-xs text-ink-faint">
+          Bidder names are anonymized in the SEC filing; DealTrace reports them as written.
+        </p>
+      )}
 
       <div className="mt-4 space-y-2">
         {GROUP_ORDER.filter((g) => byGroup.has(g)).map((group) => {
