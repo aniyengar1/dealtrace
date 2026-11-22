@@ -67,6 +67,62 @@ def test_genuinely_different_later_bidder_still_counts_as_a_loss():
     assert compute_first_bidder_won_for_deal(d) == (False, None)
 
 
+def test_targets_own_committee_never_credited_as_a_second_bidder():
+    # Real shape: bulk_1592000_000121390024113605 (EnLink/ONEOK) -- the
+    # accepted entry is the EnLink Conflicts Committee's own
+    # confirmation of ONEOK's price, not a second bidder's winning bid.
+    d = _deal(
+        "EnLink Midstream, LLC",
+        "ONEOK",
+        [
+            _proposal("ONEOK", 1),
+            _proposal("EnLink Conflicts Committee", 2, status="rejected"),
+            _proposal("ONEOK", 3),
+            _proposal("EnLink Conflicts Committee", 4, status="accepted"),
+        ],
+    )
+    assert compute_first_bidder_won_for_deal(d) == (True, None)
+
+
+def test_partial_minority_stake_proposal_is_not_a_bidder():
+    # Real shape: bulk_1847590_000114036126038492 (Bowman Consulting /
+    # Bernhard) -- "Party D"'s offer was for a minority interest in the
+    # combined enterprise, not an acquisition of the whole target, so
+    # it isn't a rival bid at all; Bernhard is the only real bidder.
+    d = _deal(
+        "Bowman Consulting Group Ltd.",
+        "Bernhard",
+        [
+            _proposal(
+                "Party D",
+                1,
+                status="withdrawn",
+            ),
+            _proposal("Bernhard", 2, status="accepted"),
+        ],
+    )
+    d["proposals"][0]["source_quotes"] = [
+        "a potential business combination transaction in which the Company Stockholders would own, collectively, a minority interest in the combined enterprise."
+    ]
+    assert compute_first_bidder_won_for_deal(d) == (True, None)
+
+
+def test_committee_exempted_when_it_is_itself_the_stored_acquirer():
+    # If the acquirer field itself ended up a committee name, excluding
+    # every committee-named proposer would wrongly drop the real
+    # winning bidder entirely -- same edge case n_bidders already
+    # guards against via its own eventual-acquirer exemption.
+    d = _deal(
+        "Target Co",
+        "Acquirer Special Committee",
+        [
+            _proposal("Acquirer Special Committee", 1),
+            _proposal("Acquirer Special Committee", 2, status="accepted"),
+        ],
+    )
+    assert compute_first_bidder_won_for_deal(d) == (True, None)
+
+
 def test_no_non_target_proposal_excluded():
     d = _deal("Target Co", "Acquirer Co", [_proposal("Target Co", 1)])
     assert compute_first_bidder_won_for_deal(d) == (None, "no_non_target_proposal")

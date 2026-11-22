@@ -575,7 +575,25 @@ def _normalize_bidder_name(name: str, acquirer: str) -> str:
 
 def compute_first_bidder_won_for_deal(d: dict) -> tuple[Optional[bool], Optional[str]]:
     dated = _dated_proposals(d["proposals"])
-    bidder_dated = [p for p in dated if p["proposer"] and p["proposer"] != d["target"]]
+    # Excluding only the LITERAL target string misses two shapes
+    # compute_n_bidders_for_deal already screens out: the target's own
+    # negotiating body under a different name (a "Conflicts
+    # Committee"/"the Board"/"Strategic Review Committee" responding to
+    # a bidder's offer is the target's own side talking back, not a
+    # second bidder -- exempted only for the deal's own eventual
+    # acquirer, on the rare chance a committee name ended up stored as
+    # the acquirer field itself), and a proposal for less than the
+    # whole target (a minority stake, a reinsurance arrangement, ... --
+    # see _PARTIAL_PROPOSAL_RE's own docstring -- its proposer isn't
+    # bidding FOR the target at all, however real it otherwise is).
+    bidder_dated = [
+        p
+        for p in dated
+        if p["proposer"]
+        and p["proposer"] != d["target"]
+        and not (is_governance_body_reference(p["proposer"]) and not _is_same_company_fuzzy(p["proposer"], d["acquirer"]))
+        and not _PARTIAL_PROPOSAL_RE.search(" ".join(p.get("source_quotes") or []))
+    ]
     if not bidder_dated:
         return None, "no_non_target_proposal"
     # Picking "final" from bidder_dated (not the full `dated` list) is
