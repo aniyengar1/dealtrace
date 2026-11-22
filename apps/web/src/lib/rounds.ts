@@ -167,10 +167,23 @@ export function computeRounds(
     return closed + opened;
   }
 
+  // A resolvable DATE alone used to be enough to count as "chartable" --
+  // a proposal with a date but no price_low/price_high (common: a bare
+  // "indication of interest" or an all-stock proposal the pipeline
+  // never resolved to a dollar figure) still got plotted. On a price
+  // axis, Math.min/Math.max coerce that missing price to 0 (JS's
+  // Number(null) === 0), pulling the whole y-domain down to include 0
+  // even when every REAL bid is $50-90 -- the "cramped" axis a manual
+  // review flagged, with real bids squeezed into a thin band and a
+  // stray point plotted at y=0. Requiring a usable price here, not just
+  // a date, is the actual fix -- see BidLadderChart's unplottable count,
+  // which now correctly reflects "no usable price or date" instead of
+  // silently including price-less points in the plotted set.
   const chartable = proposals
     .map((proposal) => {
       const date = parseFilingDate(proposal.date_text, proposal.date_resolved);
-      return date ? { proposal, date } : null;
+      const hasPrice = proposal.price_low !== null || proposal.price_high !== null;
+      return date && hasPrice ? { proposal, date } : null;
     })
     .filter((x): x is PlottableProposal => x !== null);
   const sortedChartable = sortByDateThenParagraph(

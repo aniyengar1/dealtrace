@@ -31,6 +31,18 @@ function truncate(name: string, max = 20): string {
   return name.length > max ? `${name.slice(0, max - 1)}…` : name;
 }
 
+// The single Y-position a range bid's connecting line/label/accepted
+// -ring should use -- the midpoint of its low-high range, not the high
+// end (which used to make the connecting line trace the TOP of every
+// range instead of its center). The range itself is still drawn in
+// full via its own explicit low/high tick marks (see isRange below);
+// this only picks one point to anchor the line/label/ring to.
+function representativePrice(p: ProposalRow): number {
+  const { price_low, price_high } = p;
+  if (price_low !== null && price_high !== null) return (price_low + price_high) / 2;
+  return (price_high ?? price_low) as number;
+}
+
 function niceTicks(min: number, max: number, count = 4): number[] {
   if (min === max) return [min];
   const rawStep = (max - min) / (count - 1);
@@ -154,8 +166,7 @@ export function BidChart({
     .filter(([proposer]) => proposer !== target)
     .map(([proposer, pts]) => {
       const last = [...pts].sort((a, b) => a.date.getTime() - b.date.getTime())[pts.length - 1];
-      const price = last.proposal.price_high ?? last.proposal.price_low!;
-      return { proposer, y: yScale(price), color: colorByBidder.get(proposer)! };
+      return { proposer, y: yScale(representativePrice(last.proposal)), color: colorByBidder.get(proposer)! };
     })
     .sort((a, b) => a.y - b.y);
   for (let i = 1; i < endLabels.length; i++) {
@@ -171,8 +182,13 @@ export function BidChart({
 
   const noMotion = { initial: {}, animate: {}, transition: { duration: 0 } };
 
-  if (rounds.length === 0) {
-    return <p className="text-sm text-ink-muted">No proposals with both a resolvable date and price to chart.</p>;
+  // Fewer than 2 plottable bids can't show a trend -- one point (or
+  // none) is a degenerate axis, not a chart. allPlotted is already
+  // restricted to proposals with both a usable price AND date (see
+  // computeRounds's chartable filter), so this is the real "not enough
+  // data" check, not just "zero dated proposals."
+  if (allPlotted.length < 2) {
+    return <p className="text-sm text-ink-muted">Not enough priced proposals in the filing to chart.</p>;
   }
 
   const tableRows = [...allPlotted].sort((a, b) => a.date.getTime() - b.date.getTime());
@@ -274,10 +290,7 @@ export function BidChart({
             const sorted = [...pts].sort((a, b) => a.date.getTime() - b.date.getTime());
             const realBids = sorted.filter((p) => p.proposal.proposal_kind !== "suggested_valuation");
             const linePath = realBids
-              .map(
-                (p, i) =>
-                  `${i === 0 ? "M" : "L"}${xScale(p.date.getTime())},${yScale(p.proposal.price_high ?? p.proposal.price_low!)}`
-              )
+              .map((p, i) => `${i === 0 ? "M" : "L"}${xScale(p.date.getTime())},${yScale(representativePrice(p.proposal))}`)
               .join(" ");
 
             return (
@@ -304,7 +317,7 @@ export function BidChart({
                   const isHedged = p.proposal.proposal_kind === "suggested_valuation";
                   const isRange = low !== null && high !== null && low !== high;
                   const x = xScale(p.date.getTime());
-                  const y = yScale(high ?? low!);
+                  const y = yScale(representativePrice(p.proposal));
                   const isAccepted = p.proposal.id === accepted?.proposal.id;
                   const dimmed = p.proposal.review_status === "unreviewed" ? 0.6 : 1;
                   const quote = p.proposal.source_quotes[0];
@@ -384,7 +397,7 @@ export function BidChart({
       </div>
       {unplottable > 0 && (
         <p className="text-xs text-ink-faint">
-          {unplottable} proposal{unplottable === 1 ? "" : "s"} not shown (no per-share price) — see the timeline below.
+          {unplottable} proposal{unplottable === 1 ? "" : "s"} not shown (no usable price and date) — see the timeline below.
         </p>
       )}
     </div>
