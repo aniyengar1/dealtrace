@@ -1,0 +1,193 @@
+{
+  "deadline_utc": "2026-12-01T05:00:00+00:00",
+  "guidance_horizon_date": "2026-11-16",
+  "kind": "LOCK_PREPARATION_ONLY_NOT_A_CHECK_OR_LOCK",
+  "opening_utc": "2026-11-14T05:00:00+00:00",
+  "owner_form_status": "UNSIGNED; all observational fields remain null; never ingest as completed",
+  "prepared_at": "2026-11-22T03:08:47.946852+00:00",
+  "selected_manual_guidance": {
+    "accession": "0001535527-26-000029",
+    "basis": "US_GAAP_consolidated_reported",
+    "company": "CRWD",
+    "end": "2026-10-31",
+    "exhibit": "99.1",
+    "filed": "2026-08-26",
+    "high": "1529200000",
+    "id": "f6ff18dc-8880-5f65-b254-cdbbf1a488ba",
+    "issued": {
+      "end": "2026-08-26",
+      "precision": "day",
+      "start": "2026-08-26"
+    },
+    "low": "1523200000",
+    "metric": "quarterly_consolidated_revenue",
+    "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+    "original_verified": true,
+    "quote": "Total revenue $1,523.2 - $1,529.2 million $5,991.1 - $6,011.1 million Non-GAAP income from operations $372.7 - $375.9 mill",
+    "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+    "start": "2026-08-01",
+    "status": "initial",
+    "unit": "USD"
+  },
+  "source_checks": {
+    "company": "CRWD",
+    "companyfacts_manifest": {
+      "body": "1e27b7df0f8dd2a173fb0e3d30ac0385e1c9ba7db1c1d186a2c469d75dcc2eb4-a71a92f1f11bd3032271ca55be7a7770a96a846ec809f925829ef952fd5f3fa1.body",
+      "fetched_at": "2026-11-22T03:06:58.926228+00:00",
+      "sha256": "a71a92f1f11bd3032271ca55be7a7770a96a846ec809f925829ef952fd5f3fa1",
+      "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001535527.json"
+    },
+    "current_source_checks": [
+      {
+        "checked_at": "2026-11-22T03:06:50.713041+00:00",
+        "company": "CRWD",
+        "fetched_at": null,
+        "http_status": 403,
+        "purpose": "announcement",
+        "report_date": "2026-12-01",
+        "sha256": null,
+        "source_date": "2026-11-04",
+        "source_url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-announces-date-fiscal-third-quarter-2027-financial",
+        "status": "unverified"
+      },
+      {
+        "checked_at": "2026-11-22T03:06:51.422972+00:00",
+        "company": "CRWD",
+        "fetched_at": null,
+        "http_status": 403,
+        "purpose": "news_inventory",
+        "report_date": "2026-12-01",
+        "sha256": null,
+        "source_date": "2026-11-04",
+        "source_url": "https://ir.crowdstrike.com/news-releases",
+        "status": "unverified"
+      },
+      {
+        "checked_at": "2026-11-22T03:06:52.113743+00:00",
+        "company": "CRWD",
+        "fetched_at": null,
+        "http_status": 403,
+        "purpose": "results_inventory",
+        "report_date": "2026-12-01",
+        "sha256": null,
+        "source_date": "2026-11-04",
+        "source_url": "https://ir.crowdstrike.com/results-filings/quarterly-results",
+        "status": "unverified"
+      }
+    ],
+    "durable_evidence": {
+      "announcement_issued_date": "2026-11-04",
+      "authenticity_limit": "SHA-256 proves byte integrity, not document authenticity or current website contents",
+      "checked_at": "2026-11-20T09:46:51.019345+00:00",
+      "company": "CRWD",
+      "entered_at": "2026-11-20T09:46:51.019345+00:00",
+      "event_kind": "results_release",
+      "fiscal_period": {
+        "end": "2026-10-31",
+        "label": "Q3 FY2027",
+        "start": "2026-08-01"
+      },
+      "gaps": [],
+      "id": "92fce228-e081-5122-a8f4-d3ae353a5f7e",
+      "independently_checked": false,
+      "ingested_at": "2026-11-20T09:46:50.925797+00:00",
+      "owner_intake_id": "86d506f4-c3df-46d7-bbef-eab075ac51e9",
+      "owner_retrieved_at": "2026-11-20T01:35:00-08:00",
+      "quote": "CrowdStrike Holdings, Inc. (Nasdaq: CRWD), today announced that it will release financial results for its fiscal third quarter 2027 ended October 31, 2026 after the U.S. market close on Tuesday, December 1, 2026.",
+      "quotes": {
+        "announcement_date": "November 4, 2026",
+        "company": "CrowdStrike Holdings, Inc. (Nasdaq: CRWD), today announced that it will release financial results for its fiscal third quarter 2027 ended October 31, 2026 after the U.S. market close on Tuesday, December 1, 2026.",
+        "fiscal_period": "CrowdStrike Holdings, Inc. (Nasdaq: CRWD), today announced that it will release financial results for its fiscal third quarter 2027 ended October 31, 2026 after the U.S. market close on Tuesday, December 1, 2026.",
+        "release_date": "CrowdStrike Holdings, Inc. (Nasdaq: CRWD), today announced that it will release financial results for its fiscal third quarter 2027 ended October 31, 2026 after the U.S. market close on Tuesday, December 1, 2026.",
+        "release_time": "CrowdStrike Holdings, Inc. (Nasdaq: CRWD), today announced that it will release financial results for its fiscal third quarter 2027 ended October 31, 2026 after the U.S. market close on Tuesday, December 1, 2026.",
+        "results_publication": "CrowdStrike Holdings, Inc. (Nasdaq: CRWD), today announced that it will release financial results for its fiscal third quarter 2027 ended October 31, 2026 after the U.S. market close on Tuesday, December 1, 2026."
+      },
+      "release_date": "2026-12-01",
+      "release_time": "after_market_close",
+      "review_note": "Reviewed identity, Q3 FY2027 ended October 31, issuance dateline and explicit results publication, separate from call. Owner retrieval time preserved; MongoDB corrected by supplier from 01:29 to 01:21. Hash is integrity evidence, not authenticity. No current-state attestation or lock.",
+      "reviewed_by": "Codex (document-content review; owner-supplied provenance)",
+      "source_sha256": "9fb31601a2e224375bf88d52560553aec646d14c709d5a679920487834da7d5c",
+      "source_url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-announces-date-fiscal-third-quarter-2027-financial",
+      "supplied_by": "Anirudh Iyengar",
+      "time_precision": "market_session",
+      "timestamp_verified": false,
+      "timezone": "America/New_York",
+      "timezone_provenance": "U.S. financial-market close context; conservative midnight start of release date, not conference-call time.",
+      "verification_method": "owner_pdf_document_review_v1",
+      "verification_status": "user_verified",
+      "verified_at": "2026-11-20T09:46:51.019345+00:00",
+      "verifier": "Codex (document-content review; owner-supplied provenance)"
+    },
+    "guidance": [
+      {
+        "accession": "0001535527-26-000029",
+        "basis": "US_GAAP_consolidated_reported",
+        "company": "CRWD",
+        "end": "2026-10-31",
+        "exhibit": "99.1",
+        "filed": "2026-08-26",
+        "high": "1529200000",
+        "id": "f6ff18dc-8880-5f65-b254-cdbbf1a488ba",
+        "issued": {
+          "end": "2026-08-26",
+          "precision": "day",
+          "start": "2026-08-26"
+        },
+        "low": "1523200000",
+        "metric": "quarterly_consolidated_revenue",
+        "notes": "Quarterly guidance, distinct from annual. Growth compares this full range directly with prior-year quarter revenue; no annual YTD subtraction.",
+        "original_verified": true,
+        "quote": "Total revenue $1,523.2 - $1,529.2 million $5,991.1 - $6,011.1 million Non-GAAP income from operations $372.7 - $375.9 mill",
+        "quote_exact_normalized_match": true,
+        "source_manifest": {
+          "body": "ebbad8af7ffd33db52411a4ccde20a26269e934a1f27b0d157ab0cad0e06b074-560f072ea0beb3ecbbc7cdf0850767afdccdcfcfd00ae15696d445292a1b08e6.body",
+          "fetched_at": "2026-11-22T03:06:57.333144+00:00",
+          "sha256": "560f072ea0beb3ecbbc7cdf0850767afdccdcfcfd00ae15696d445292a1b08e6",
+          "url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm"
+        },
+        "source_url": "https://www.sec.gov/Archives/edgar/data/1535527/000153552726000029/crwd-20260826xex991.htm",
+        "start": "2026-08-01",
+        "status": "initial",
+        "unit": "USD"
+      }
+    ],
+    "prepared_at": "2026-11-22T03:06:50.712977+00:00",
+    "recent_filings": [
+      {
+        "accessionNumber": "0000950103-26-017861",
+        "filingDate": "2026-11-19",
+        "form": "4",
+        "items": "",
+        "primaryDocument": "xslF345X06/ownership.xml"
+      },
+      {
+        "accessionNumber": "0001778564-26-000211",
+        "filingDate": "2026-11-17",
+        "form": "4",
+        "items": "",
+        "primaryDocument": "xslF345X06/form4-11172026_081102.xml"
+      },
+      {
+        "accessionNumber": "0001778564-26-000209",
+        "filingDate": "2026-11-13",
+        "form": "4",
+        "items": "",
+        "primaryDocument": "xslF345X06/form4-11132026_081104.xml"
+      },
+      {
+        "accessionNumber": "0001778564-26-000208",
+        "filingDate": "2026-11-13",
+        "form": "4",
+        "items": "",
+        "primaryDocument": "xslF345X06/form4-11132026_081101.xml"
+      }
+    ],
+    "submissions_manifest": {
+      "body": "13bba4ef6931994357e0c7b39c7f9b1bd4237b74749fb251c36dd72ae8d03c5a-845ff149d081f67f0d1023bb86fb4057e9ba304e31de8487eab6cfbfb0e27e2c.body",
+      "fetched_at": "2026-11-22T03:07:00.967223+00:00",
+      "sha256": "845ff149d081f67f0d1023bb86fb4057e9ba304e31de8487eab6cfbfb0e27e2c",
+      "url": "https://data.sec.gov/submissions/CIK0001535527.json"
+    }
+  },
+  "timing_inside_window_at_preparation": true
+}

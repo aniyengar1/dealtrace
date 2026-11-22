@@ -1,0 +1,60 @@
+{
+  "announcement_id": "bb8e494b-337f-599d-9e2d-ed8693601237",
+  "attestation": null,
+  "automation_gap": {
+    "provenance": "owner_reported",
+    "reason": null,
+    "url": "https://ir.gitlab.com/news/news-details/2026/GitLab-To-Announce-Third-Quarter-Fiscal-2027-Financial-Results/default.aspx"
+  },
+  "company": "GTLB",
+  "contradictions": null,
+  "observer": "Anirudh Iyengar",
+  "pages": [
+    {
+      "checked_at": null,
+      "complete": null,
+      "coverage": null,
+      "roles": [
+        "schedule"
+      ],
+      "url": "https://ir.gitlab.com/news/news-details/2026/GitLab-To-Announce-Third-Quarter-Fiscal-2027-Financial-Results/default.aspx"
+    },
+    {
+      "checked_at": null,
+      "complete": null,
+      "coverage": null,
+      "roles": [
+        "news_inventory"
+      ],
+      "url": "https://ir.gitlab.com/news/default.aspx"
+    },
+    {
+      "checked_at": null,
+      "complete": null,
+      "coverage": null,
+      "roles": [
+        "results_inventory"
+      ],
+      "url": "https://ir.gitlab.com/financials/quarterly-results/default.aspx"
+    }
+  ],
+  "personally_checked": null,
+  "precision": "minute",
+  "publication": {
+    "coverage_from": "2026-08-01",
+    "coverage_through": null,
+    "pagination_complete": null,
+    "preliminary_results_checked": null,
+    "status": null,
+    "target_end": "2026-10-31",
+    "target_start": "2026-08-01"
+  },
+  "schedule": {
+    "event_kind": "results_release",
+    "release_date": "2026-12-01",
+    "release_time": "after_market_close",
+    "time_precision": "market_session",
+    "timezone": "America/New_York"
+  },
+  "timezone": "America/Los_Angeles"
+}
