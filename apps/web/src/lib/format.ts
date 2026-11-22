@@ -38,6 +38,22 @@ export function statDecimals(value: number): number {
   return Number.isInteger(value) ? 0 : 1;
 }
 
+export function formatShareCount(value: number | null | undefined): string {
+  if (value === null || value === undefined) return "—";
+  return value.toLocaleString("en-US");
+}
+
+// Compact for anything a billion or more ("$21.46B") -- a deal size is
+// read at a glance, not reconciled to the cent the way a per-share
+// price is; formatPrice's plain "$X.XX" stays right for everything
+// under a million.
+export function formatCompactDollar(value: number | null | undefined): string {
+  if (value === null || value === undefined) return "—";
+  if (value >= 1_000_000_000) return `$${(value / 1_000_000_000).toFixed(2)}B`;
+  if (value >= 1_000_000) return `$${(value / 1_000_000).toFixed(1)}M`;
+  return formatPrice(value);
+}
+
 export function formatPct(value: number | null | undefined): string {
   if (value === null || value === undefined) return "—";
   return `${value.toFixed(1)}%`;

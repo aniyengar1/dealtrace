@@ -54,6 +54,17 @@ export interface DealMetricsRow {
   // affects whether its bidder/proposal/bump figures look misleadingly
   // like "0" instead of "unknown." See src.bulk_stats._proposals_not_extracted.
   dataQualityFlag: string | null;
+  // Read deterministically from the filing's own text (src/deal_size.py),
+  // never computed/inferred -- null for a curated deal (no cached
+  // full-text HTML) or any filing that doesn't state the fact outright.
+  sharesOutstanding: number | null;
+  sharesOutstandingQuote: string | null;
+  // Only ~14 of 821 filings state their own deal's aggregate value
+  // outright; most don't, and this is null for them rather than an
+  // estimate. Never an enterprise value -- see extract_aggregate_value's
+  // own docstring for why that phrasing is deliberately excluded.
+  aggregateValue: number | null;
+  aggregateValueQuote: string | null;
 }
 
 interface DealMetricsDbRow {
@@ -78,6 +89,10 @@ interface DealMetricsDbRow {
   signing_date: string | null;
   consideration_type: string | null;
   data_quality_flag: string | null;
+  shares_outstanding: number | null;
+  shares_outstanding_quote: string | null;
+  aggregate_value: number | null;
+  aggregate_value_quote: string | null;
 }
 
 function toRow(r: DealMetricsDbRow): DealMetricsRow {
@@ -103,6 +118,10 @@ function toRow(r: DealMetricsDbRow): DealMetricsRow {
     signingDate: r.signing_date,
     considerationType: r.consideration_type,
     dataQualityFlag: r.data_quality_flag,
+    sharesOutstanding: r.shares_outstanding,
+    sharesOutstandingQuote: r.shares_outstanding_quote,
+    aggregateValue: r.aggregate_value,
+    aggregateValueQuote: r.aggregate_value_quote,
   };
 }
 
@@ -112,6 +131,7 @@ const BASE_SELECT = `
     dm.n_parties_contacted, dm.n_bidders, dm.n_proposals, dm.first_price, dm.final_price, dm.final_price_is_ratio,
     dm.pct_bump, dm.pct_bump_exclusion_reason, dm.days_first_contact_to_signing,
     dm.days_first_proposal_to_signing, dm.first_bidder_won, dm.price_plausible, dm.data_quality_flag,
+    dm.shares_outstanding, dm.shares_outstanding_quote, dm.aggregate_value, dm.aggregate_value_quote,
     (SELECT e.date_start FROM events e JOIN extraction_runs r2 ON r2.id = e.run_id
      WHERE r2.deal_id = d.id AND e.event_type = 'signing' AND e.date_start IS NOT NULL
      ORDER BY e.date_start DESC LIMIT 1) AS signing_date,

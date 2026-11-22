@@ -23,6 +23,7 @@ import psycopg
 from src import bulk_stats
 from src.bulk_run import load_cached_html
 from src.classify_deal_type import classify_deal
+from src.deal_size import extract_aggregate_value, extract_shares_outstanding
 from src.dedup_deals import _is_generic
 from src.display_name import clean_display_name
 from src.entity_match import _is_ticker_of, is_acronym_of, is_anonymized_placeholder, is_same_entity
@@ -307,6 +308,12 @@ def compute_metrics_for_deal(d: dict) -> dict:
         else None
     )
 
+    # Both already return None for a curated deal (no cached full-text
+    # HTML to parse) and for any bulk filing that just doesn't state the
+    # fact outright -- never computed, inferred, or guessed either way.
+    shares = extract_shares_outstanding(d["slug"], d["target"])
+    aggregate = extract_aggregate_value(d["slug"])
+
     return {
         "target_display": target_display,
         "acquirer_display": acquirer_display,
@@ -327,6 +334,10 @@ def compute_metrics_for_deal(d: dict) -> dict:
         "days_first_contact_to_signing": days_contact,
         "days_first_proposal_to_signing": days_proposal,
         "first_bidder_won": first_bidder_won,
+        "shares_outstanding": shares["value"] if shares else None,
+        "shares_outstanding_quote": shares["quote"] if shares else None,
+        "aggregate_value": aggregate["value"] if aggregate else None,
+        "aggregate_value_quote": aggregate["quote"] if aggregate else None,
     }
 
 
@@ -345,8 +356,9 @@ def refresh_deal_metrics(conn: psycopg.Connection) -> int:
                 exclusion_reason, data_quality_flag, n_parties_contacted, n_bidders,
                 n_proposals, first_price, final_price, final_price_is_ratio, price_plausible, pct_bump, pct_bump_exclusion_reason,
                 pct_bump_bucket, days_first_contact_to_signing, days_first_proposal_to_signing,
-                first_bidder_won, computed_at
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, now())
+                first_bidder_won, shares_outstanding, shares_outstanding_quote, aggregate_value, aggregate_value_quote,
+                computed_at
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, now())
             ON CONFLICT (deal_id) DO UPDATE SET
                 is_canonical = EXCLUDED.is_canonical,
                 target_display = EXCLUDED.target_display,
@@ -368,6 +380,10 @@ def refresh_deal_metrics(conn: psycopg.Connection) -> int:
                 days_first_contact_to_signing = EXCLUDED.days_first_contact_to_signing,
                 days_first_proposal_to_signing = EXCLUDED.days_first_proposal_to_signing,
                 first_bidder_won = EXCLUDED.first_bidder_won,
+                shares_outstanding = EXCLUDED.shares_outstanding,
+                shares_outstanding_quote = EXCLUDED.shares_outstanding_quote,
+                aggregate_value = EXCLUDED.aggregate_value,
+                aggregate_value_quote = EXCLUDED.aggregate_value_quote,
                 computed_at = now()
             """,
             (
@@ -377,6 +393,7 @@ def refresh_deal_metrics(conn: psycopg.Connection) -> int:
                 m["first_price"], m["final_price"], m["final_price_is_ratio"], m["price_plausible"], m["pct_bump"], m["pct_bump_exclusion_reason"],
                 m["pct_bump_bucket"], m["days_first_contact_to_signing"],
                 m["days_first_proposal_to_signing"], m["first_bidder_won"],
+                m["shares_outstanding"], m["shares_outstanding_quote"], m["aggregate_value"], m["aggregate_value_quote"],
             ),
         )
         n += 1

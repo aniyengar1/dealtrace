@@ -11,7 +11,7 @@ import {
   getFilingUrlForDeal,
 } from "@/lib/queries";
 import { getDealMetricsBySlug } from "@/lib/dealMetrics";
-import { formatDate, formatPrice, formatPriceRange } from "@/lib/format";
+import { formatDate, formatPrice, formatPriceRange, formatShareCount, formatCompactDollar } from "@/lib/format";
 import { dealTitle } from "@/lib/labels";
 import { computeDealSummary } from "@/lib/dealSummary";
 import { PriceValue } from "@/components/ui/PriceValue";
@@ -92,6 +92,16 @@ export default async function DealPage({
     : null;
   const targetDisplay = metrics?.targetDisplay ?? deal.target;
   const acquirerDisplay = metrics?.acquirerDisplay ?? deal.acquirer;
+  const sharesOutstanding = metrics?.sharesOutstanding ?? null;
+  // Only computed when finalPrice is a genuine dollar figure -- for a
+  // stock/mixed deal finalPrice is a ratio (or has already failed the
+  // plausibility check), and multiplying a ratio by a share count
+  // isn't a dollar value at all. Omitted rather than shown wrong; see
+  // PriceValue's own ratio-vs-dollar distinction.
+  const impliedEquityValue =
+    sharesOutstanding !== null && finalPrice !== null && !finalPriceIsRatio && metrics?.pricePlausible !== false
+      ? finalPrice * sharesOutstanding
+      : null;
 
   return (
     <Container wide className="py-10">
@@ -137,6 +147,30 @@ export default async function DealPage({
           <dd className="mt-0.5 text-lg font-semibold tabular-nums text-ink">{events.length}</dd>
         </Card>
       </dl>
+
+      {(sharesOutstanding !== null || metrics?.aggregateValue !== null) && (
+        <dl className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
+          {sharesOutstanding !== null && (
+            <Card className="p-3.5" title={metrics?.sharesOutstandingQuote ?? undefined}>
+              <dt className="text-xs text-ink-muted">Shares outstanding (record date)</dt>
+              <dd className="mt-0.5 text-lg font-semibold tabular-nums text-ink">{formatShareCount(sharesOutstanding)}</dd>
+            </Card>
+          )}
+          {impliedEquityValue !== null && (
+            <Card className="p-3.5">
+              <dt className="text-xs text-ink-muted">Implied equity value</dt>
+              <dd className="mt-0.5 text-lg font-semibold tabular-nums text-accent">{formatCompactDollar(impliedEquityValue)}</dd>
+              <p className="mt-0.5 text-[11px] text-ink-faint">price × shares outstanding</p>
+            </Card>
+          )}
+          {metrics?.aggregateValue !== null && metrics?.aggregateValue !== undefined && (
+            <Card className="p-3.5" title={metrics?.aggregateValueQuote ?? undefined}>
+              <dt className="text-xs text-ink-muted">Aggregate value (as stated in filing)</dt>
+              <dd className="mt-0.5 text-lg font-semibold tabular-nums text-ink">{formatCompactDollar(metrics.aggregateValue)}</dd>
+            </Card>
+          )}
+        </dl>
+      )}
 
       {filingUrl && (
         <p className="mt-3 text-sm">
