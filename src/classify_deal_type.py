@@ -150,10 +150,15 @@ _CLASSIFY_CACHE_DIR = Path("data/cache/deal_type_classification")
 # sturdier signal than proposal-text "acquire" language for the same
 # filer-is-acquirer shape: an S-4's filer is, by SEC rule, always the
 # securities-issuing party (the acquirer), full stop, no textual
-# evidence needed at all. Every classification rule change needs a
-# bump here, or a deal keeps silently serving its stale result forever
-# even once the rule that should catch it is fixed.
-_CLASSIFY_CACHE_VERSION = "v6"
+# evidence needed at all. v7: guarded _is_s4_filer_is_acquirer against
+# _is_reverse_merger_text -- without it, a blanket S-4-means-exclude
+# rule wrongly re-excluded Movano/Corvex, this module's own canonical
+# example of a reverse merger deliberately kept in stats elsewhere
+# (and 7 other SPAC-shell-named filers with the same shape). Every
+# classification rule change needs a bump here, or a deal keeps
+# silently serving its stale result forever even once the rule that
+# should catch it is fixed.
+_CLASSIFY_CACHE_VERSION = "v7"
 
 
 def _classify_cache_key(
@@ -631,7 +636,7 @@ def _is_proposal_direction_reversed(slug: str, target: str, acquirer: str, propo
     return reversed_evidence and not normal_evidence
 
 
-def _is_s4_filer_is_acquirer(target: str, acquirer: str, form_type: Optional[str]) -> bool:
+def _is_s4_filer_is_acquirer(slug: str, target: str, acquirer: str, form_type: Optional[str]) -> bool:
     """True when the filer (always recorded as `target`, see
     _is_filer_reversed's docstring) filed Form S-4 -- a REGISTRATION
     STATEMENT for securities the filer itself is issuing. Unlike every
@@ -649,21 +654,30 @@ def _is_s4_filer_is_acquirer(target: str, acquirer: str, form_type: Optional[str
     "acquire" language the other filer-reversal checks rely on, which
     several of these never used at all.
 
-    Deliberately NOT guarded against the acquirer field being a bare
-    self-reference to the target under another form (John Bean
-    Technologies Corp / "JBT", Palo Alto Networks / "PANW" -- its own
-    ticker, J.M. Smucker / "Smucker" -- its own short name): tried
-    first, but neither is_acronym_of (core_name strips "Technologies"
-    as a legal suffix before computing initials, losing the letter
-    JBT's own ticker needs) nor is_same_entity (a trailing, not
-    leading, word isn't a prefix match) actually catches any of these
-    three real examples, so a guard built on them would be silently
-    inert, not protective. That's a different, separate extraction
-    defect anyway (no real second party exists to resolve such a deal
-    to at all) -- caught instead during this rule's own required
-    verification pass over every newly-flagged deal, same as any other
-    check in this module."""
-    return form_type == "S-4"
+    Guarded against _is_reverse_merger_text: a genuine reverse merger
+    (Movano/Corvex, this module's own canonical example -- also
+    Cyclacel/Fitters Parent, several SPAC-shell-named filers like "New
+    Arena Holdco"/"Amaze Holdings"/"Beacon Topco") files its S-4 the
+    exact same way a straightforward buy-side deal does (the public
+    shell IS the technical registrant/issuer), but is deliberately kept
+    in stats elsewhere in this module -- "still a genuine sale, just
+    one where the legal acquirer ends up controlled by the legal
+    target's former owners." Without this guard, a blanket S-4-means
+    -exclude rule would wrongly re-exclude exactly the shape that
+    exception exists for. Deliberately NOT guarded against the
+    acquirer field being a bare self-reference to the target under
+    another form (John Bean Technologies Corp / "JBT", its own ticker;
+    J.M. Smucker / "Smucker", its own short name) -- tried first, but
+    neither is_acronym_of (core_name strips "Technologies" as a legal
+    suffix before computing initials, losing the letter JBT's own
+    ticker needs) nor is_same_entity (a trailing, not leading, word
+    isn't a prefix match) actually catches either real example, so a
+    guard built on them would be silently inert, not protective.
+    That's a different, separate extraction defect anyway (no real
+    second party exists to resolve such a deal to at all) -- caught
+    instead during this rule's own required verification pass over
+    every newly-flagged deal, same as any other check in this module."""
+    return form_type == "S-4" and not _is_reverse_merger_text(slug)
 
 
 # "each of X and Y will become a wholly owned subsidiary of Z" -- a
@@ -909,7 +923,7 @@ def _classify_deal_uncached(
     if (
         _is_filer_reversed(slug, target, acquirer)
         or _is_proposal_direction_reversed(slug, target, acquirer, proposals)
-        or _is_s4_filer_is_acquirer(target, acquirer, form_type)
+        or _is_s4_filer_is_acquirer(slug, target, acquirer, form_type)
     ):
         return (
             "filer_is_acquirer",

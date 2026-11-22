@@ -175,12 +175,12 @@ def test_s4_filer_is_structurally_the_acquirer():
     # Real shape: bulk_1018724_000110465926089294 (Amazon/Globalstar) --
     # no "acquire" language needed at all; the S-4 form type alone is
     # structurally conclusive (S-4 filer = securities issuer = acquirer).
-    assert cdt._is_s4_filer_is_acquirer("AMAZON COM INC", "Globalstar", "S-4") is True
+    assert cdt._is_s4_filer_is_acquirer("fake_slug", "AMAZON COM INC", "Globalstar", "S-4") is True
 
 
 def test_non_s4_form_type_is_not_flagged_by_this_check():
-    assert cdt._is_s4_filer_is_acquirer("Target Co", "Acquirer Co", "DEFM14A") is False
-    assert cdt._is_s4_filer_is_acquirer("Target Co", "Acquirer Co", None) is False
+    assert cdt._is_s4_filer_is_acquirer("fake_slug", "Target Co", "Acquirer Co", "DEFM14A") is False
+    assert cdt._is_s4_filer_is_acquirer("fake_slug", "Target Co", "Acquirer Co", None) is False
 
 
 def test_s4_check_fires_regardless_of_acquirer_field_content():
@@ -189,7 +189,15 @@ def test_s4_check_fires_regardless_of_acquirer_field_content():
     # see this function's own docstring for why that guard would be
     # silently inert anyway. Caught instead during the required
     # per-deal verification pass over every newly-flagged deal.
-    assert cdt._is_s4_filer_is_acquirer("John Bean Technologies CORP", "JBT", "S-4") is True
+    assert cdt._is_s4_filer_is_acquirer("fake_slug", "John Bean Technologies CORP", "JBT", "S-4") is True
+
+
+def test_s4_check_does_not_override_genuine_reverse_merger(monkeypatch):
+    # Real shape: Movano/Corvex -- this module's own canonical example
+    # of a reverse merger that's deliberately KEPT in stats elsewhere;
+    # a blanket S-4-means-exclude rule would wrongly re-exclude it.
+    monkeypatch.setattr(cdt, "_is_reverse_merger_text", lambda slug: True)
+    assert cdt._is_s4_filer_is_acquirer("bulk_fake", "Movano Inc.", "Corvex", "S-4") is False
 
 
 def test_classify_deal_flags_s4_filer_end_to_end():
