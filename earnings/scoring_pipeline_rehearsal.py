@@ -51,7 +51,7 @@ def synthetic_review(p, clock):
     accession=f"{c['cik']}-26-900001"
     url=f"https://www.sec.gov/Archives/edgar/data/{int(c['cik'])}/{accession.replace('-','')}/SYNTHETIC-REHEARSAL-ex991.htm"
     actual=store.actual_from({'company':p['ticker'],'concept':c['concept'],'start':g['start'],'end':g['end'],'value':str(value),'unit':g['unit'],'basis':g['basis'],'accession':accession,'filed':issued,'form':'10-Q','fiscal_year':2027,'fiscal_period':'Q3','source_url':f"https://data.sec.gov/api/xbrl/companyfacts/CIK{c['cik']}.json",'parents':[],'derivation':None})
-    date_quote=f'{issued} SYNTHETIC REHEARSAL ONLY — fabricated results, not an SEC filing.'
+    date_quote=f'{issued} SYNTHETIC REHEARSAL ONLY - fabricated results, not an SEC filing.'
     quote=f'SYNTHETIC consolidated revenue for three months ended {g["end"]}: USD {value}.'
     review={'actual':{'id':actual.id,**plain(actual)},'actual_parents':[],
         'result_source':{'url':url,'accession':accession,'filed_date':issued,'issued_date':issued,'issuance_date_quote':date_quote,'quote':quote,'exhibit':'99.1'},

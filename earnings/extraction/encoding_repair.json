@@ -1,0 +1,10 @@
+{
+  "recorded_at": "2026-11-23T10:40:21.750696+00:00",
+  "kind": "POST_EVALUATION_ENCODING_REPAIR_NOT_RULE_TUNING",
+  "file": "corpus.py",
+  "original_sha256": "1834c6fae0e7b8acbf148d1089c0fce94457c75350bd2e60384b3069b5105f5e",
+  "repaired_sha256": "cf51ec86d6a3cf79a74637e348db61eed5e9f484617409ea22da70a88059ec65",
+  "original_expression": "BeautifulSoup(body,'html.parser')",
+  "replacement_expression": "BeautifulSoup(body,'html.parser',from_encoding='utf-8')",
+  "policy": "Original freeze and evaluation artifacts unchanged; historical scores are not recomputed or relabeled fresh."
+}
