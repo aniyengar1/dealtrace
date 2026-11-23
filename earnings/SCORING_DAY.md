@@ -1,8 +1,8 @@
 # December 1–3 scoring-day runbook
 
-**Procedure only. Real scoring and publication require separate owner authorization.** The November22UTC READ ONLY copy contains eight locks for OKTA/CRM/IOT/S and zero scores. GTLB/CRWD/MDB are not in that copy; add them only after actual authorized locks exist. Never recreate a prediction during scoring, choose new guidance, or alter its timestamp.
+**Procedure only. Real scoring and publication require separate owner authorization.** The November23UTC READ ONLY copy contains **12 locks for OKTA/CRM/IOT/S/GTLB/CRWD**, two methods per company, and zero scores. MDB is not locked in this copy; include it only if actual authorized locks later exist. Never recreate a prediction during scoring, choose new guidance, or alter its timestamp.
 
-Current schedule: Dec1 OKTA; Dec2 CRM; Dec3 IOT/S, all after close. The calendar is a planning aid, not evidence that results have or have not appeared. GTLB/CRWD/MDB have Dec1 dates but no predictions in this copy. For discovery URLs and ordinary four-business-day 8-K planning windows, use CURRENT_CHECKS.md. Actual companyfacts availability can lag the press release and 8-K; there is no guaranteed same-evening score.
+Current schedule: Dec1 OKTA/GTLB/CRWD; Dec2 CRM; Dec3 IOT/S, all after close. The calendar is a planning aid, not evidence that results have or have not appeared. MDB has a Dec1 planning date but no prediction in this copy. For discovery URLs and ordinary four-business-day 8-K planning windows, use CURRENT_CHECKS.md. Actual companyfacts availability can lag the press release and 8-K; there is no guaranteed same-evening score.
 
 ## Manual steps and time budget
 
@@ -59,3 +59,11 @@ Review/apply the new seed to the intended **publication database**, after its on
 It copied all eight real locks unchanged into a TEMP **view** over private copied inputs, not a prediction table or a new lock. Fabricated actuals/source responses were supplied in memory to the unchanged source verifier, scorer and frozen SQL Brier trigger. Synthetic release dates were deliberately after the original locks and before the actual current date so the time guard could be exercised without changing a DB clock. These are not claims about actual publication or human verification. All score timestamps came from actual PostgreSQL clocks.
 
 All eight scored, repeat scoring inserted zero duplicates, future evidence blocked, export/archive checks passed, and the two published copy tables/seed were regenerated and read under dealtrace_web. Seed reapplication was idempotent; INSERT/UPDATE/DELETE/TRUNCATE were denied to the publication role. All artifacts remain clearly marked synthetic in the ignored rehearsal cache. No synthetic result or seed was copied into the production publication files, live tables or website.
+
+## November 23 twelve-lock rehearsal update
+
+A fresh READ ONLY live export confirmed all **12 predictions** (OKTA, CRM, IOT, S, GTLB, CRWD × two methods) and **zero live scores**. The complete isolated scratch run scored **12/12**, repeat scoring inserted **zero duplicates**, and regenerated/exported a scored public-shaped snapshot and valid guarded synthetic seed. The seed was applied twice only to private publication-copy tables and read successfully under `dealtrace_web`; reader writes remained denied. Live rows and hash were identical before/after. See `earnings/reports/scoring_pipeline_rehearsal_twelve_2026-11-23.md`.
+
+**Clock qualification:** actual execution was November 23. The day-precision fixture for November 22 locks needs a November 23 release, available only November 24 at midnight Eastern. The real-clock attempt correctly blocked. To rehearse all 12 immediately, a forward-only **test clock of November 24, 05:00:01 UTC** was explicitly confined to the scratch scoring application and copied TEMP result-trigger timestamp. Production code/guards/database clocks and original lock timestamps stayed unchanged. This test is not a real score or backdated execution. Real scoring must still wait for actual source availability; the test-clock option exists only in the isolated rehearsal CLI and is not a scoring-day command.
+
+Automatic local timings: scoring plus duplicate repeat **0.452s**; archive/export/seed/application/read **0.153s**; scratch migrations **0.261s**. These use in-memory sources and exclude real SEC waits and human verification. No scoring-day manual step or estimated human-time budget changed. Production publication files were not regenerated or applied.

@@ -49,3 +49,38 @@ def test_production_or_ambiguous_dsns_are_rejected_before_connection(monkeypatch
 def test_source_availability_cannot_be_forced_by_backdating_a_test_clock():
     with pytest.raises(ValueError,match='No room'):
         synthetic_review(prediction('OKTA'),datetime(2026,11,17,tzinfo=timezone.utc))
+
+
+def test_forward_scratch_clock_intercepts_only_clock_queries():
+    from earnings.scoring_pipeline_rehearsal import ScratchScoringClock
+    class Connection:
+        def __init__(self):self.calls=[]
+        def execute(self,query,params=None):self.calls.append((query,params));return 'cursor'
+        def transaction(self):return 'real scratch transaction'
+    conn=Connection();stamp=datetime(2026,11,24,5,0,1,tzinfo=timezone.utc)
+    clock=ScratchScoringClock(conn,stamp)
+    assert clock.execute('SELECT clock_timestamp()')=='cursor'
+    assert conn.calls[-1]==('SELECT %s::timestamptz',(stamp,))
+    clock.execute('SELECT made_at FROM earnings_live_predictions')
+    assert conn.calls[-1]==('SELECT made_at FROM earnings_live_predictions',None)
+    assert clock.transaction()=='real scratch transaction'
+
+
+def test_scratch_simulation_cannot_backdate_or_connect_before_validation(tmp_path,monkeypatch):
+    import earnings.scoring_pipeline_rehearsal as module
+    monkeypatch.setattr(module,'ROOT',tmp_path/'earnings')
+    monkeypatch.setattr(module.export,'read_copy',lambda p:{'results':[]})
+    monkeypatch.setattr(module,'checked_scratch',lambda dsn:pytest.fail('Connected before clock validation'))
+    output=tmp_path/'data/cache/earnings/scoring-pipeline-rehearsal/test'
+    with pytest.raises(ValueError,match='must not backdate'):
+        module.rehearse(tmp_path/'copy',output,'unused',simulation_at='2000-01-01T00:00:00+00:00')
+
+
+def test_newly_locked_copy_requires_next_fully_available_filing_day():
+    # Real-time precondition from the twelve-lock rehearsal; no production bypass.
+    p=prediction('OKTA');p['made_at']='2026-11-22T10:34:35+00:00'
+    with pytest.raises(ValueError,match='No room'):
+        synthetic_review(p,datetime(2026,11,23,20,tzinfo=timezone.utc))
+    review,_=synthetic_review(p,datetime(2026,11,24,5,0,1,tzinfo=timezone.utc))
+    assert review['result_source']['issued_date']=='2026-11-23'
+    assert review['evidence_available_at']=='2026-11-24T05:00:00+00:00'
