@@ -1,0 +1,104 @@
+{
+  "kind": "SYNTHETIC_SCORING_REHEARSAL_NOT_REPORTED_RESULTS",
+  "simulation_at": "2026-11-24T05:00:01+00:00",
+  "clock_policy": "Explicit forward-only scratch application/TEMP-trigger clock; production clocks and copied lock times unchanged",
+  "started_at": "2026-11-23T20:08:43.884407+00:00",
+  "finished_at": "2026-11-23T20:08:44.904024+00:00",
+  "source_ledger_sha256": "88a79055f4e112bc3160d14022dad01057a1a131d76dd807ac7cbfea7f03c3f2",
+  "source_predictions": 12,
+  "scratch_scores": 12,
+  "duplicate_repeat_insertions": 0,
+  "future_evidence_blocked": true,
+  "copied_locks_and_history_unchanged": true,
+  "scratch_seed_idempotent": true,
+  "snapshot_select_only_enforced": true,
+  "source_transport": "in-memory synthetic SEC responses only; no real HTTP or cache writes",
+  "publication": "private synthetic SQL guard; no production JSON/seed changed",
+  "timings_seconds": {
+    "scratch_migrations_seconds": "0.2607892081141472",
+    "score_and_repeat_seconds": "0.45179999992251396",
+    "archive_export_seed_and_read_seconds": "0.15271625015884638"
+  },
+  "synthetic_actuals_by_company": {
+    "CRM": "11420000000",
+    "IOT": "517000000",
+    "S": "311000000",
+    "OKTA": "812000000",
+    "CRWD": "1526200000",
+    "GTLB": "282000000"
+  },
+  "manual_review": "NOT PERFORMED; synthetic agent fixtures only; source semantics and first-publication evidence still require owner review on real scoring day",
+  "outcomes": [
+    {
+      "prediction_id": "a8cb7630-f8a1-48bd-bd7a-7e560a0ce673",
+      "outcome": "below",
+      "brier": "2.000000000000000000000000000000000000000000000000"
+    },
+    {
+      "prediction_id": "7830e356-7f1b-4f00-94b1-bb8337ab8102",
+      "outcome": "below",
+      "brier": "1.460000000000000000000000000000000000000000000000"
+    },
+    {
+      "prediction_id": "33af7f57-d83f-474d-8011-76c5eabbde83",
+      "outcome": "within",
+      "brier": "0.500000000000000000000000000000000000000000000000"
+    },
+    {
+      "prediction_id": "5c9f53c0-b59d-47b5-8e97-cb1dead6e963",
+      "outcome": "within",
+      "brier": "0.512396694214876033057852214876033057851239669422"
+    },
+    {
+      "prediction_id": "37bb0dee-c7e7-497b-acf7-5f691cccd98f",
+      "outcome": "above",
+      "brier": "0E-48"
+    },
+    {
+      "prediction_id": "6b4f3067-ce10-4e32-aeef-9bdf24fb79c8",
+      "outcome": "above",
+      "brier": "0.049586776859504132231404859504132231404958677686"
+    },
+    {
+      "prediction_id": "3f6cdfc8-f37d-4348-983b-6e94ebefbaf1",
+      "outcome": "within",
+      "brier": "1.531250000000000000000000000000000000000000000000"
+    },
+    {
+      "prediction_id": "80e8aacc-250c-45b2-a83b-f6e195f5d02c",
+      "outcome": "within",
+      "brier": "1.206611570247933884297521338842975206611570247934"
+    },
+    {
+      "prediction_id": "cf9b4e2c-652b-424a-8535-b0a8e87a3c5b",
+      "outcome": "within",
+      "brier": "2.000000000000000000000000000000000000000000000000"
+    },
+    {
+      "prediction_id": "9bc47cd6-1d18-4e48-a46a-97e5c6078c32",
+      "outcome": "within",
+      "brier": "1.460000000000000000000000000000000000000000000000"
+    },
+    {
+      "prediction_id": "9668fcb6-a97e-445d-bd92-60f46af7bfef",
+      "outcome": "within",
+      "brier": "2.000000000000000000000000000000000000000000000000"
+    },
+    {
+      "prediction_id": "fc43e723-bd82-403e-b244-b39e4edb16ad",
+      "outcome": "within",
+      "brier": "1.460000000000000000000000000000000000000000000000"
+    }
+  ],
+  "live_integrity": {
+    "transaction_read_only": "on",
+    "before_exported_at": "2026-11-23T20:08:42.853577+00:00",
+    "after_exported_at": "2026-11-23T20:08:45.069625+00:00",
+    "before_sha256": "88a79055f4e112bc3160d14022dad01057a1a131d76dd807ac7cbfea7f03c3f2",
+    "after_sha256": "88a79055f4e112bc3160d14022dad01057a1a131d76dd807ac7cbfea7f03c3f2",
+    "predictions": 12,
+    "scores": 0,
+    "all_rows_unchanged": true
+  },
+  "scratch_database": "crosscheck_scoring_rehearsal_twelve_20261123200843"
+}
