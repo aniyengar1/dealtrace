@@ -1,0 +1,15 @@
+{
+  "scope": "Research only: continue the six remaining one-of-four partial issuer studies before zero-pair studies. No format-based reselection; preserve LITE schedule mismatch.",
+  "selected_at": "2026-11-22T04:15:40.558765+00:00",
+  "companies": [
+    "CNXC",
+    "KFRC",
+    "APPN",
+    "TENB",
+    "FIVN",
+    "ICHR"
+  ],
+  "prior_complete_count": 24,
+  "source_audit": "earnings/reports/scaling_lock_readiness_2027Q1.json",
+  "no_live_import": true
+}

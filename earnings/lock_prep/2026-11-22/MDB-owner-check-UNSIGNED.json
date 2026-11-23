@@ -1,0 +1,60 @@
+{
+  "announcement_id": "2f70fb99-20fe-598d-a1a6-41bc11e04ca1",
+  "attestation": null,
+  "automation_gap": {
+    "provenance": "owner_reported",
+    "reason": null,
+    "url": "https://investors.mongodb.com/node/14771/pdf"
+  },
+  "company": "MDB",
+  "contradictions": null,
+  "observer": "Anirudh Iyengar",
+  "pages": [
+    {
+      "checked_at": null,
+      "complete": null,
+      "coverage": null,
+      "roles": [
+        "schedule"
+      ],
+      "url": "https://investors.mongodb.com/node/14771/pdf"
+    },
+    {
+      "checked_at": null,
+      "complete": null,
+      "coverage": null,
+      "roles": [
+        "news_inventory"
+      ],
+      "url": "https://investors.mongodb.com/news-events/news-releases"
+    },
+    {
+      "checked_at": null,
+      "complete": null,
+      "coverage": null,
+      "roles": [
+        "results_inventory"
+      ],
+      "url": "https://investors.mongodb.com/financial-information/quarterly-results"
+    }
+  ],
+  "personally_checked": null,
+  "precision": "minute",
+  "publication": {
+    "coverage_from": "2026-08-01",
+    "coverage_through": null,
+    "pagination_complete": null,
+    "preliminary_results_checked": null,
+    "status": null,
+    "target_end": "2026-10-31",
+    "target_start": "2026-08-01"
+  },
+  "schedule": {
+    "event_kind": "results_release",
+    "release_date": "2026-12-01",
+    "release_time": "after_market_close",
+    "time_precision": "market_session",
+    "timezone": "America/New_York"
+  },
+  "timezone": "America/Los_Angeles"
+}

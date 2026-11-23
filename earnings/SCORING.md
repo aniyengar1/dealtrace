@@ -53,17 +53,13 @@ Preserve supplementary table headers, column identification, scale, source hashe
 
 For all eight prediction UUIDs and exact guidance IDs, consult `publication/predictions.json` or the copied SQLite archive; do not select current guidance afresh. Future result/score correction records stay append-only; latest versions in a publication copy are displayed with a version count.
 
-## Read-only copy workflow
+## Read-only copy and publication workflow
 
-```sh
-.venv/bin/python -m earnings.publication.export
-```
+Follow [SCORING_DAY.md](SCORING_DAY.md) for the complete owner checklist, timing estimates, exact commands and failure handling. After separate real-scoring approval, export using `python -m earnings.publication.export --output REVIEW_PUBLICATION_DIR/predictions.json --copy-dir PRIVATE_ARCHIVE_DIR`; review the new archive/JSON, copy the unchanged reviewed `backtest.json` alongside it, then generate the seed with `python -m earnings.publication.snapshot_sql --input-dir REVIEW_PUBLICATION_DIR --output NEW_REVIEWED_SEED.sql`. This explicit input prevents accidentally regenerating an older pending copy.
 
-This opens a REPEATABLE READ, READ ONLY transaction with the public read role, copies predictions/results/history into a new local SQLite archive under `data/cache/earnings/publication/`, verifies its content hash, and publishes `earnings/publication/predictions.json`. The archive retains private owner evidence locally and is ignored; the public JSON excludes owner names, raw attestations and source connection details. No locks, outcomes or source rows are changed. The web route imports only a file reader and pure format/validation helpers. It has no live DB fallback.
+The export opens a REPEATABLE READ, READ ONLY transaction under the read role; the private SQLite archive preserves its content hash and source evidence. Public JSON excludes raw owner attestations and connection details. Evidence digests are reproducible publication-time hashes, not independent lock-time notarization. Pending means no copied reviewed score, not proof of no external publication.
 
-Evidence SHA256 is computed from each immutable `announcement`, `publication_check`, and full `snapshot` using the existing `earnings.models.digest` canonical format. It is a reproducible digest calculated for publication, **not an independently notarized lock-time hash**. The ledger-copy hash covers the complete copied prediction/result rows. File-copy timestamps and hash definitions are displayed. Public pending status means no copied reviewed score, not a statement about external publication status.
-
-Launch the existing app from `apps/web` with `npm run dev`; open `/crosscheck/predictions`. Optional `CROSSCHECK_PUBLISHED_SNAPSHOT` points to a different reviewed JSON copy. No database setting is required for this route. The black/silver styling is confined to a CSS module; shared navigation, global CSS, deal pages, Tailwind/PostCSS and dependencies are unchanged. No browser automation or screenshot was used; visual compatibility still requires owner review before merging.
+The website now reads **standalone snapshot tables** using `CROSSCHECK_PUBLISHED_DATABASE_URL` and the SELECT-only `dealtrace_web` role, not JSON files directly. It has no live-ledger/DATABASE_URL fallback. The old `CROSSCHECK_PUBLISHED_SNAPSHOT` file-path description is obsolete. Owner setup and SQL grants/RLS are in `publication/README.md`; manually review/apply the new seed to the publication database. This is not permission to score or publish. Browser visual compatibility remains unverified.
 
 ## Scratch rehearsal (never live scoring)
 
@@ -76,3 +72,15 @@ Reads observations from the separately exported copy. Three historical cases are
 The frozen `verify_sources`, `evaluate`, `save` and `run` execute on TEMP actual/result tables and a TEMP prediction **view** over explicitly marked retrospective scratch inputs. No prediction table/record is created. A scratch-only SQL adapter and `pg_temp` search path prevent scorer SQL from addressing live tables. The result-trigger body is copied unchanged into `pg_temp`, never replacing public functions. Repetition inserts no duplicate scratch scores; an incorrect Brier is rejected. Everything rolls back/disappears when the session closes.
 
 Tests for this pass run with `DATABASE_URL=''` to prevent the repository's existing DB fixtures from creating even rollback-only rows in the live ledger. New unit tests use committed public/history data, not private cache dependencies. The scratch PostgreSQL rehearsal is executed separately and is the only write-backed scoring verification.
+
+## All-lock synthetic PostgreSQL publication rehearsal
+
+`earnings.scoring_pipeline_rehearsal` tests the eight copied real locks without creating predictions. It requires an explicit `CROSSCHECK_REHEARSAL_DATABASE_URL` pointing to a database named `crosscheck_scoring_rehearsal_*` on the private localhost port65439 cluster whose data directory starts `/tmp/crosscheck-snapshot-pg-`. It never uses `DATABASE_URL`. Verify that private cluster first, create the scratch database and then use:
+
+```sh
+.venv/bin/python -m earnings.scoring_pipeline_rehearsal --copy PRIVATE_SOURCE_ARCHIVE.sqlite3 --output data/cache/earnings/scoring-pipeline-rehearsal/NEW_UNIQUE_RUN
+```
+
+The source archive must contain zero scores for this bounded first-scoring rehearsal. Its predictions become a TEMP view with their original IDs/timestamps/snapshots, not new lock rows. Fabricated source responses are in memory only; source/review fixtures are labelled synthetic and never owner-verified. Scoring uses real PostgreSQL clocks. The output directory is constrained to the ignored private rehearsal cache, and its generated synthetic seed has a private-database guard. No fabricated JSON/seed may be promoted into the normal publication directory or a real publication database.
+
+The November22 run scored all8, repeated without duplicates, blocked future evidence, regenerated both copy tables/seed, and verified SELECT-only access. This validates mechanics, not real SEC availability, source semantics, owner review or future results. See `reports/scoring_pipeline_rehearsal_2026-11-22.md`.

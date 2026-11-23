@@ -1,0 +1,60 @@
+{
+  "announcement_id": null,
+  "attestation": null,
+  "automation_gap": {
+    "provenance": "owner_reported",
+    "reason": null,
+    "url": "https://www.adobe.com/investor-relations/events-presentations.html"
+  },
+  "company": "ADBE",
+  "contradictions": null,
+  "observer": "Anirudh Iyengar",
+  "pages": [
+    {
+      "checked_at": null,
+      "complete": null,
+      "coverage": null,
+      "roles": [
+        "schedule"
+      ],
+      "url": "https://www.adobe.com/investor-relations/events-presentations.html"
+    },
+    {
+      "checked_at": null,
+      "complete": null,
+      "coverage": null,
+      "roles": [
+        "news_inventory"
+      ],
+      "url": "https://www.adobe.com/investor-relations/investor-news.html"
+    },
+    {
+      "checked_at": null,
+      "complete": null,
+      "coverage": null,
+      "roles": [
+        "results_inventory"
+      ],
+      "url": "https://www.adobe.com/investor-relations/financial-documents.html"
+    }
+  ],
+  "personally_checked": null,
+  "precision": "minute",
+  "publication": {
+    "coverage_from": "2026-08-29",
+    "coverage_through": null,
+    "pagination_complete": null,
+    "preliminary_results_checked": null,
+    "status": null,
+    "target_end": "2026-11-27",
+    "target_start": "2026-08-29"
+  },
+  "schedule": {
+    "event_kind": "results_release",
+    "release_date": null,
+    "release_time": null,
+    "time_precision": null,
+    "timezone": null
+  },
+  "timezone": "America/Los_Angeles"
+}

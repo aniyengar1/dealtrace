@@ -1706,6 +1706,270 @@
       "artifact_kind": "rendered official article/PDF text, not original HTTP/PDF bytes",
       "source_file": "data/cache/earnings/scaling-2027q1-dates/POWI/leadtime-extra-6.txt",
       "notes": ""
+    },
+    {
+      "ticker": "CNXC",
+      "issued": "2026-09-08",
+      "scheduled_release": "2026-09-29",
+      "url": "https://ir.concentrix.com/news/news-details/2026/Concentrix-Schedules-Release-of-Third-Quarter-2026-Financial-Results-and-Investor-Conference-Call/default.aspx",
+      "quote": "NEWARK, Calif., Sept. 08, 2026 (GLOBE NEWSWIRE) -- Concentrix Corporation (NASDAQ: CNXC ), a global technology and services leader, today announced it will release the financial results of its fiscal third quarter 2026 after market close on Tuesday, September 29, 2026.",
+      "issuance_date_quote": "September 8, 2026",
+      "observed_at": "2026-11-22T04:59:17.952222+00:00",
+      "retrieved_at": "2026-11-22T04:37:05.721065+00:00",
+      "provider": "direct HTTP full official article; agent semantic review, not owner review",
+      "artifact_kind": "original HTTP response body",
+      "artifact_sha256": "99a58314a7e1da88b201649e3fe86abffdb06a4868e768b961ef24a46e1ce1d3",
+      "source_file": "data/cache/earnings/scaling-2027q1-dates/followup-20261122/5a46c578323851b119eda532d6847c2c912790b611da766d317ea6789ce9dca2-99a58314a7e1da88b201649e3fe86abffdb06a4868e768b961ef24a46e1ce1d3.body",
+      "http_observations": [
+        {
+          "url": "https://ir.concentrix.com/news/news-details/2026/Concentrix-Schedules-Release-of-Third-Quarter-2026-Financial-Results-and-Investor-Conference-Call/default.aspx",
+          "checked_at": "2026-11-22T04:37:04.637001+00:00",
+          "fetched_at": "2026-11-22T04:37:05.721065+00:00",
+          "http_status": 200,
+          "source_sha256": "99a58314a7e1da88b201649e3fe86abffdb06a4868e768b961ef24a46e1ce1d3",
+          "body_file": "data/cache/earnings/scaling-2027q1-dates/followup-20261122/5a46c578323851b119eda532d6847c2c912790b611da766d317ea6789ce9dca2-99a58314a7e1da88b201649e3fe86abffdb06a4868e768b961ef24a46e1ce1d3.body"
+        }
+      ],
+      "matched_sec_result": {
+        "accession": "0001803599-26-000147",
+        "filed": "2026-09-29",
+        "report_date": "2026-09-29",
+        "issuance_date_evidence": {
+          "date": "2026-09-29",
+          "quote": "268M, and adjusted free cash flow of $218M \u2022 Increased quarterly dividend Newark, Calif., Sept. 29, 2026 \u2013 Concentrix Corporation (NASDAQ: CNXC), a global technology and services leader, today announced financial results for the fiscal third quarter ended August 3"
+        },
+        "original_8k_report_date": "2026-09-29"
+      },
+      "actual_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1803599/000180359926000147/exhibit991q32026.htm",
+        "sha256": "a79b7fc08f69f93a744cd833ad48d8832670363f799ff5224cdec9a03466df63",
+        "retrieved_at": "2026-11-20T10:04:57.014835+00:00",
+        "accession": "0001803599-26-000147",
+        "filed": "2026-09-29",
+        "quote": "nics $ 603,512 $ 670,573 (10) % $ 1,862,845 $ 1,990,984 (6) % Retail, travel and e-commerce 662,612 622,822 6 % 1,952,770 1,790,502 9 % Communications and media 381,905 411,229 (7) % 1,168,176 1,175,192 (1) % Banking, financial services and insurance 432,463 384,449 12 % 1,286,456 1,133,657 13 % Healthcare 145,173 174,106 (17) % 475,872 540,297 (12) % Other 228,014 220,074 4 % 670,424 642,214 4 % Total revenue $ 2,453,679 $ 2,483,253 (1) % $ 7,416,543 $ 7,272,846 2 % Cost of revenue 1,604,800 1,628,246 (1) % 4,894,658 4,713,792 4 % Gross profit 848,879 855,007 (1) % 2,521,885 2,559,054 (1) % Selling, general and administrative expenses 709,184 708,023 \u2014 %",
+        "quote_offset": 21476
+      },
+      "completed_period_disclosure_blocks": []
+    },
+    {
+      "ticker": "CNXC",
+      "issued": "2026-06-10",
+      "scheduled_release": "2026-06-29",
+      "url": "https://ir.concentrix.com/news/news-details/2026/Concentrix-Schedules-Release-of-Second-Quarter-2026-Financial-Results-and-Investor-Conference-Call/default.aspx",
+      "quote": "NEWARK, Calif., June 10, 2026 (GLOBE NEWSWIRE) -- Concentrix Corporation (NASDAQ: CNXC ), a global technology and services leader, today announced it will release the financial results of its fiscal second quarter 2026 after market close on Monday, June 29, 2026.",
+      "issuance_date_quote": "June 10, 2026",
+      "observed_at": "2026-11-22T04:59:17.952885+00:00",
+      "retrieved_at": "2026-11-22T04:37:07.148828+00:00",
+      "provider": "direct HTTP full official article; agent semantic review, not owner review",
+      "artifact_kind": "original HTTP response body",
+      "artifact_sha256": "1e0a7961ee00deac355bdb1a1e4e8b3cf9743feeea67fab17edd5788a32fd4bf",
+      "source_file": "data/cache/earnings/scaling-2027q1-dates/followup-20261122/9329cf37ad3b7ad9cc559d8eaeb88bbed23ff24598401be6cf6dbbc331a79847-1e0a7961ee00deac355bdb1a1e4e8b3cf9743feeea67fab17edd5788a32fd4bf.body",
+      "http_observations": [
+        {
+          "url": "https://ir.concentrix.com/news/news-details/2026/Concentrix-Schedules-Release-of-Second-Quarter-2026-Financial-Results-and-Investor-Conference-Call/default.aspx",
+          "checked_at": "2026-11-22T04:37:06.279087+00:00",
+          "fetched_at": "2026-11-22T04:37:07.148828+00:00",
+          "http_status": 200,
+          "source_sha256": "1e0a7961ee00deac355bdb1a1e4e8b3cf9743feeea67fab17edd5788a32fd4bf",
+          "body_file": "data/cache/earnings/scaling-2027q1-dates/followup-20261122/9329cf37ad3b7ad9cc559d8eaeb88bbed23ff24598401be6cf6dbbc331a79847-1e0a7961ee00deac355bdb1a1e4e8b3cf9743feeea67fab17edd5788a32fd4bf.body"
+        }
+      ],
+      "matched_sec_result": {
+        "accession": "0001803599-26-000133",
+        "filed": "2026-06-29",
+        "report_date": "2026-06-29",
+        "issuance_date_evidence": {
+          "date": "2026-06-29",
+          "quote": " $242M in adjusted free cash flow \u2022 iX Suite deals up 400% year over year Newark, Calif., June 29, 2026 \u2013 Concentrix Corporation (NASDAQ: CNXC), a global technology and services leader, today announced financial results for the fiscal second quarter ended May 31,"
+        },
+        "original_8k_report_date": "2026-06-29"
+      },
+      "actual_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1803599/000180359926000133/exhibit991q22026.htm",
+        "sha256": "896b89c27a0b539e393143cbe29d0bfaff34385f78ea667c73b368f5d407ff5b",
+        "retrieved_at": "2026-11-20T22:12:40.516288+00:00",
+        "accession": "0001803599-26-000133",
+        "filed": "2026-06-29",
+        "quote": "mer electronics $ 624,244 $ 662,719 (6) % $ 1,259,333 $ 1,320,411 (5) % Retail, travel and e-commerce 640,795 583,782 10 % 1,290,158 1,167,680 10 % Communications and media 392,255 392,963 \u2014 % 786,271 763,963 3 % Banking, financial services and insurance 432,388 384,015 13 % 853,993 749,208 14 % Healthcare 151,869 176,386 (14) % 330,699 366,191 (10) % Other 220,922 217,506 2 % 442,410 422,140 5 % Total revenue $ 2,462,473 $ 2,417,371 2 % $ 4,962,864 $ 4,789,593 4 % Cost of revenue 1,639,124 1,569,223 4 % 3,289,858 3,085,546 7 % Gross profit 823,349 848,148 (3) % 1,673,006 1,704,047 (2) % Selling, general and administrative expenses 727,928 699,803 4 % 1,4",
+        "quote_offset": 20663
+      },
+      "completed_period_disclosure_blocks": []
+    },
+    {
+      "ticker": "CNXC",
+      "issued": "2026-03-05",
+      "scheduled_release": "2026-03-24",
+      "url": "https://ir.concentrix.com/news/news-details/2026/Concentrix-Schedules-Release-of-First-Quarter-2026-Financial-Results-and-Investor-Conference-Call-Webcast/default.aspx",
+      "quote": "NEWARK, Calif., March 05, 2026 (GLOBE NEWSWIRE) -- Concentrix Corporation (NASDAQ: CNXC ), a global technology and services leader, today announced plans to release its first quarter 2026 financial results before market open on Tuesday, March 24, 2026.",
+      "issuance_date_quote": "March 5, 2026",
+      "observed_at": "2026-11-22T04:59:17.953415+00:00",
+      "retrieved_at": "2026-11-22T04:37:08.445222+00:00",
+      "provider": "direct HTTP full official article; agent semantic review, not owner review",
+      "artifact_kind": "original HTTP response body",
+      "artifact_sha256": "3b2be68fc53bb9e4fdc295747efcea9548e46fbefffc4d6e7a79884241249075",
+      "source_file": "data/cache/earnings/scaling-2027q1-dates/followup-20261122/524796818c28b3be347919118f4ebbcf84902c31ada4f9a8c53ed26bcf2393c9-3b2be68fc53bb9e4fdc295747efcea9548e46fbefffc4d6e7a79884241249075.body",
+      "http_observations": [
+        {
+          "url": "https://ir.concentrix.com/news/news-details/2026/Concentrix-Schedules-Release-of-First-Quarter-2026-Financial-Results-and-Investor-Conference-Call-Webcast/default.aspx",
+          "checked_at": "2026-11-22T04:37:07.701694+00:00",
+          "fetched_at": "2026-11-22T04:37:08.445222+00:00",
+          "http_status": 200,
+          "source_sha256": "3b2be68fc53bb9e4fdc295747efcea9548e46fbefffc4d6e7a79884241249075",
+          "body_file": "data/cache/earnings/scaling-2027q1-dates/followup-20261122/524796818c28b3be347919118f4ebbcf84902c31ada4f9a8c53ed26bcf2393c9-3b2be68fc53bb9e4fdc295747efcea9548e46fbefffc4d6e7a79884241249075.body"
+        }
+      ],
+      "matched_sec_result": {
+        "accession": "0001803599-26-000084",
+        "filed": "2026-03-24",
+        "report_date": "2026-03-24",
+        "issuance_date_evidence": {
+          "date": "2026-03-24",
+          "quote": "onsistent full year outlook \u2022 Strong momentum in iX Suite enterprise wins Newark, Calif., March 24, 2026 \u2013 Concentrix Corporation (NASDAQ: CNXC), a global technology and services leader, today announced financial results for the fiscal first quarter ended February"
+        },
+        "original_8k_report_date": "2026-03-24"
+      },
+      "actual_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1803599/000180359926000084/exhibit991q12026.htm",
+        "sha256": "66efe19b87101775aa288001e47c5a6b8fc468ad9430880b0a9bb3750efcce7f",
+        "retrieved_at": "2026-11-20T22:12:43.298417+00:00",
+        "accession": "0001803599-26-000084",
+        "filed": "2026-03-24",
+        "quote": "housands, except per share amounts) (unaudited) Three Months Ended February 28, 2026 February 28, 2025 % Change Revenue Technology and consumer electronics $ 635,089 $ 657,692 (3) % Retail, travel and e-commerce 649,363 583,898 11 % Communications and media 394,016 371,000 6 % Banking, financial services and insurance 421,605 365,193 15 % Healthcare 178,830 189,805 (6) % Other 221,488 204,634 8 % Total revenue $ 2,500,391 $ 2,372,222 5 % Cost of revenue 1,650,734 1,516,323 9 % Gross profit 849,657 855,899 (1) % Selling, general and administrative expenses 731,098 687,032 6 % Operating income 118,559 168,867 (30) % Interest expense and finance charges, net",
+        "quote_offset": 20620
+      },
+      "completed_period_disclosure_blocks": []
+    },
+    {
+      "ticker": "KFRC",
+      "issued": "2026-07-07",
+      "scheduled_release": "2026-07-27",
+      "url": "https://investor.kforce.com/news-and-events/news/news-details/2026/Kforce-Inc--to-Announce-Second-Quarter-Results-on-July-27-2026/default.aspx",
+      "quote": "Kforce Inc. (NYSE: KFRC), a provider of professional staffing services and solutions, will release second quarter results post-market on Monday, July 27, 2026, followed by a conference call at 5:00 pm ET to discuss the results.",
+      "issuance_date_quote": "July 7, 2026",
+      "observed_at": "2026-11-22T04:59:17.953891+00:00",
+      "retrieved_at": "2026-11-22T04:37:09.960034+00:00",
+      "provider": "direct HTTP full official article; agent semantic review, not owner review",
+      "artifact_kind": "original HTTP response body",
+      "artifact_sha256": "1fad8979d695d100e8e729cc9b50c222dd321fcbfd6f2a8e6e8384078ce9a193",
+      "source_file": "data/cache/earnings/scaling-2027q1-dates/followup-20261122/1dd085230e11df371207d2936b4a33e3b9e5058873da2dbff789542c3b37b6db-1fad8979d695d100e8e729cc9b50c222dd321fcbfd6f2a8e6e8384078ce9a193.body",
+      "http_observations": [
+        {
+          "url": "https://investor.kforce.com/news-and-events/news/news-details/2026/Kforce-Inc--to-Announce-Second-Quarter-Results-on-July-27-2026/default.aspx",
+          "checked_at": "2026-11-22T04:37:09.000339+00:00",
+          "fetched_at": "2026-11-22T04:37:09.960034+00:00",
+          "http_status": 200,
+          "source_sha256": "1fad8979d695d100e8e729cc9b50c222dd321fcbfd6f2a8e6e8384078ce9a193",
+          "body_file": "data/cache/earnings/scaling-2027q1-dates/followup-20261122/1dd085230e11df371207d2936b4a33e3b9e5058873da2dbff789542c3b37b6db-1fad8979d695d100e8e729cc9b50c222dd321fcbfd6f2a8e6e8384078ce9a193.body"
+        }
+      ],
+      "matched_sec_result": {
+        "accession": "0000930420-26-000059",
+        "filed": "2026-07-27",
+        "report_date": "2026-07-27",
+        "issuance_date_evidence": {
+          "date": "2026-07-27",
+          "quote": "0 BASIS POINTS YEAR OVER YEAR EPS OF $0.73 INCREASED NEARLY 24% YEAR OVER YEAR TAMPA, FL, July 27, 2026 \u2014 Kforce Inc. (NYSE: KFRC), a solutions firm that specializes in technology and other professional staffing services, today announced results for the second qu"
+        },
+        "original_8k_report_date": "2026-07-27"
+      },
+      "actual_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/930420/000093042026000059/exhibit991q22026.htm",
+        "sha256": "d4593fcc8d1affffb363f15b184a88b2d5183a4f2092646a0b757e1dbeb9cef0",
+        "retrieved_at": "2026-11-20T22:20:44.644413+00:00",
+        "accession": "0000930420-26-000059",
+        "filed": "2026-07-27",
+        "quote": "esults may differ materially from those indicated in the forward-looking statements. Readers are cautioned not to place undue reliance on these forward-looking statements and the Firm undertakes no obligation to update any forward-looking statements. Kforce Inc. Summary of Operations (In Thousands, Except Per Share Amounts) (Unaudited) Three Months Ended June 30, 2026 March 31, 2026 June 30, 2025 Revenue $ 349,331 $ 330,364 $ 334,316 Direct costs 249,877 240,296 243,668 Gross profit 99,454 90,068 90,648 Selling, general and administrative expenses 79,406 76,758 74,370 Depreciation and amortization 1,296 1,304 1,390 Income from operations 18,752 12,0",
+        "quote_offset": 8267
+      },
+      "completed_period_disclosure_blocks": []
+    },
+    {
+      "ticker": "KFRC",
+      "issued": "2026-04-06",
+      "scheduled_release": "2026-04-27",
+      "url": "https://investor.kforce.com/news-and-events/news/news-details/2026/Kforce-Inc--to-Announce-First-Quarter-Results-on-April-27-2026/default.aspx",
+      "quote": "Kforce Inc. (NYSE: KFRC), a provider of professional staffing services and solutions, will release first quarter results post-market on Monday, April 27, 2026, followed by a conference call at 5:00 pm ET to discuss the results.",
+      "issuance_date_quote": "April 6, 2026",
+      "observed_at": "2026-11-22T04:59:17.954350+00:00",
+      "retrieved_at": "2026-11-22T04:37:11.389013+00:00",
+      "provider": "direct HTTP full official article; agent semantic review, not owner review",
+      "artifact_kind": "original HTTP response body",
+      "artifact_sha256": "80a35e0e6a63eace056bf23e9416d60fe57b18938aa5196f7488c9344d94ba27",
+      "source_file": "data/cache/earnings/scaling-2027q1-dates/followup-20261122/64b843fd0d4f908c64f48941257a086adc85510b44c62763815c6d106c34c319-80a35e0e6a63eace056bf23e9416d60fe57b18938aa5196f7488c9344d94ba27.body",
+      "http_observations": [
+        {
+          "url": "https://investor.kforce.com/news-and-events/news/news-details/2026/Kforce-Inc--to-Announce-First-Quarter-Results-on-April-27-2026/default.aspx",
+          "checked_at": "2026-11-22T04:37:10.512754+00:00",
+          "fetched_at": "2026-11-22T04:37:11.389013+00:00",
+          "http_status": 200,
+          "source_sha256": "80a35e0e6a63eace056bf23e9416d60fe57b18938aa5196f7488c9344d94ba27",
+          "body_file": "data/cache/earnings/scaling-2027q1-dates/followup-20261122/64b843fd0d4f908c64f48941257a086adc85510b44c62763815c6d106c34c319-80a35e0e6a63eace056bf23e9416d60fe57b18938aa5196f7488c9344d94ba27.body"
+        }
+      ],
+      "matched_sec_result": {
+        "accession": "0000930420-26-000031",
+        "filed": "2026-04-27",
+        "report_date": "2026-04-27",
+        "issuance_date_evidence": {
+          "date": "2026-04-27",
+          "quote": "SS PROFIT MARGINS IN THE FIRST QUARTER IMPROVED 60 BASIS POINTS YEAR-OVER-YEAR TAMPA, FL, April 27, 2026 \u2014 Kforce Inc . (NYSE: KFRC), a solutions firm that specializes in technology and other professional staffing services, today announced results for the first qu"
+        },
+        "original_8k_report_date": "2026-04-27"
+      },
+      "actual_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/930420/000093042026000031/exhibit991q12026.htm",
+        "sha256": "1de5047cd3dd720f3c78ae4853ad695f320ba6b9b5fa11168f7a740854a89c88",
+        "retrieved_at": "2026-11-20T22:20:46.681971+00:00",
+        "accession": "0000930420-26-000031",
+        "filed": "2026-04-27",
+        "quote": "s may differ materially from those indicated in the forward-looking statements. Readers are cautioned not to place undue reliance on these forward-looking statements and the Firm undertakes no obligation to update any forward-looking statements. Kforce Inc. Summary of Operations (In Thousands, Except Per Share Amounts) (Unaudited) Three Months Ended March 31, 2026 December 31, 2025 March 31, 2025 Revenue $ 330,364 $ 332,018 $ 330,028 Direct costs 240,296 241,810 241,768 Gross profit 90,068 90,208 88,260 Selling, general and administrative expenses 76,758 80,329 75,165 Depreciation and amortization 1,304 1,323 1,464 Income from operations 12,006 8,55",
+        "quote_offset": 7912
+      },
+      "completed_period_disclosure_blocks": []
+    },
+    {
+      "ticker": "KFRC",
+      "issued": "2026-01-06",
+      "scheduled_release": "2026-02-02",
+      "url": "https://investor.kforce.com/news-and-events/news/news-details/2026/Kforce-Inc--to-Announce-Fourth-Quarter-Results-on-February-2-2026/default.aspx",
+      "quote": "Kforce Inc. (NYSE: KFRC), a provider of professional staffing services and solutions, will release fourth quarter results post-market on Monday, February 2, 2026, followed by a conference call at 5:00 pm ET to discuss the results.",
+      "issuance_date_quote": "January 6, 2026",
+      "observed_at": "2026-11-22T04:59:17.954819+00:00",
+      "retrieved_at": "2026-11-22T04:37:13.012869+00:00",
+      "provider": "direct HTTP full official article; agent semantic review, not owner review",
+      "artifact_kind": "original HTTP response body",
+      "artifact_sha256": "334382568d431d9966f4e0ec74c977f2a4a6b520930796917dd03979a102337d",
+      "source_file": "data/cache/earnings/scaling-2027q1-dates/followup-20261122/99baa6325a832b9ce2b872d3f75e009f5fdf8ba254252f83a5b95295e0432909-334382568d431d9966f4e0ec74c977f2a4a6b520930796917dd03979a102337d.body",
+      "http_observations": [
+        {
+          "url": "https://investor.kforce.com/news-and-events/news/news-details/2026/Kforce-Inc--to-Announce-Fourth-Quarter-Results-on-February-2-2026/default.aspx",
+          "checked_at": "2026-11-22T04:37:11.946855+00:00",
+          "fetched_at": "2026-11-22T04:37:13.012869+00:00",
+          "http_status": 200,
+          "source_sha256": "334382568d431d9966f4e0ec74c977f2a4a6b520930796917dd03979a102337d",
+          "body_file": "data/cache/earnings/scaling-2027q1-dates/followup-20261122/99baa6325a832b9ce2b872d3f75e009f5fdf8ba254252f83a5b95295e0432909-334382568d431d9966f4e0ec74c977f2a4a6b520930796917dd03979a102337d.body"
+        }
+      ],
+      "matched_sec_result": {
+        "accession": "0000930420-26-000003",
+        "filed": "2026-02-02",
+        "report_date": "2026-02-02",
+        "issuance_date_evidence": {
+          "date": "2026-02-02",
+          "quote": "IRECTORS APPROVES INCREASE IN QUARTERLY DIVIDEND FOR SEVENTH CONSECUTIVE YEAR TAMPA, FL , February 2, 2026 \u2014 Kforce Inc. (NYSE: KFRC), a solutions firm that specializes in technology and other professional staffing services, today announced results for the fourth qu"
+        },
+        "original_8k_report_date": "2026-02-02"
+      },
+      "actual_source": {
+        "url": "https://www.sec.gov/Archives/edgar/data/930420/000093042026000003/exhibit991q42025.htm",
+        "sha256": "90657dbd5d8f255162b2f395c0e23c5622c39f1acec4ce10f69860e9f5f3902b",
+        "retrieved_at": "2026-11-20T22:20:49.728969+00:00",
+        "accession": "0000930420-26-000003",
+        "filed": "2026-02-02",
+        "quote": "iffer materially from those indicated in the forward-looking statements. Readers are cautioned not to place undue reliance on these forward-looking statements and the Firm undertakes no obligation to update any forward-looking statements. Kforce Inc. Summary of Operations (In Thousands, Except Per Share Amounts) (Unaudited) Three Months Ended December 31, 2025 September 30, 2025 December 31, 2024 Revenue $ 332,018 $ 332,645 $ 343,782 Direct costs 241,810 240,388 251,127 Gross profit 90,208 92,257 92,655 Selling, general and administrative expenses 80,329 75,884 75,586 Depreciation and amortization 1,323 1,371 1,491 Income from operations 8,556 15,00",
+        "quote_offset": 10678
+      },
+      "completed_period_disclosure_blocks": []
     }
   ],
   "excluded_call_only": [

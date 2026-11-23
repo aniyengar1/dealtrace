@@ -1,0 +1,12 @@
+{
+  "kind": "READ_ONLY_SCORING_REHEARSAL_SOURCE_INTEGRITY",
+  "before": "2026-11-22T03:25:43.900843+00:00",
+  "after": "2026-11-22T03:50:51.790384+00:00",
+  "transaction_read_only": "on",
+  "predictions": 8,
+  "scores": 0,
+  "ledger_sha256": "8bca62620e2355b3151c73e0e3118681f1abbf03f8cae006c9e99e30a160dead",
+  "all_original_rows_and_history_identical": true,
+  "live_writes": false,
+  "new_locks": 0
+}
