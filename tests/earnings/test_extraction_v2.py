@@ -101,3 +101,8 @@ def test_fresh_scores_count_abstentions_as_misses_not_invented_records():
     assert result['abstention_counts']['ANNUAL_STATUS_HISTORY_MISSING']==2
     assert {e['company'] for e in result['errors']}=={'ADBE','LULU'}
     assert all(e['type']=='miss' for e in result['errors'])
+
+
+def test_canonical_utf8_punctuation_survives_byte_input():
+    from earnings.extraction.corpus import canonical
+    assert canonical('<p>NEW YORK – September 1, 2026: $100–$110 million.</p>'.encode('utf-8')) == 'NEW YORK – September 1, 2026: $100–$110 million.'

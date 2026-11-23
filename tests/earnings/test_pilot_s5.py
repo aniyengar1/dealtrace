@@ -112,7 +112,11 @@ def test_manual_gold_quotes_reconcile_to_pinned_sources_offline():
     from earnings.pilot_s5.collect import ROOT,read
     from earnings.pilot_s5.review import raw
     from earnings.extraction.corpus import canonical
-    gold=read(ROOT/'gold.json');sources={r['source_url']:canonical(raw(r['source_manifest'])) for r in gold['release_reviews']}
+    from earnings.pilot_s5.collect import CACHE_ROOT
+    gold=read(ROOT/'gold.json')
+    if any(not (CACHE_ROOT.parent/r['source_manifest']['body']).is_file() for r in gold['release_reviews']):
+        pytest.skip('Optional gitignored pinned SEC source bodies unavailable for pilot audit; no network fallback')
+    sources={r['source_url']:canonical(raw(r['source_manifest'])) for r in gold['release_reviews']}
     for g in gold['records']:
         assert sources[g['source_url']][g['quote_start']:g['quote_end']]==g['quote']
         assert Decimal(g['low'])<=Decimal(g['high'])

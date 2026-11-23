@@ -99,7 +99,16 @@ def test_gold_checksum_source_files_and_group_split_frozen():
 
 def test_frozen_rule_files_match_pre_heldout_hashes():
     frozen=json.loads((ROOT/'rules_frozen_v1.json').read_text())
-    for name,expected in frozen['files'].items():assert sha256((ROOT/name).read_bytes()).hexdigest()==expected
+    repair=json.loads((ROOT/'encoding_repair.json').read_text())
+    for name,expected in frozen['files'].items():
+        body=(ROOT/name).read_bytes()
+        if name==repair['file']:
+            assert sha256(body).hexdigest()==repair['repaired_sha256']
+            old=repair['original_expression'].encode();new=repair['replacement_expression'].encode()
+            assert body.count(new)==1
+            body=body.replace(new,old)
+            assert repair['original_sha256']==expected
+        assert sha256(body).hexdigest()==expected
 
 
 @pytest.mark.xfail(strict=True,reason='Known held-out failure: frozen v1 accepts annual recurring revenue as total revenue; do not tune and relabel this holdout')

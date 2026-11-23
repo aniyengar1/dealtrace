@@ -37,6 +37,9 @@ def test_incompatible_or_unsupported_prior_still_blocks(fault):
     assert validate(d,docs,cal)['observations'][0]['deterministic_errors']
 
 def adi():
+    required=[DATA/'run-20261114T032437489379Z.json',DATA/'pilot-1-input.json']
+    if any(not p.is_file() for p in required):
+        pytest.skip('Optional gitignored saved ADI diagnostic response/input unavailable; no inference fallback')
     run=read(DATA/'run-20261114T032437489379Z.json');r=next(i['result'] for i in run['results'] if i['case_id']=='pilot-1')
     docs=read(DATA/'pilot-1-input.json')['documents']
     return json.loads(r['text']),docs

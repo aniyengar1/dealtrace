@@ -390,6 +390,8 @@ def test_offline_correction_authorization_blocks_before_provider_count(monkeypat
 def test_compact_proposal_preserves_all_source_and_table_content():
     from earnings.hybrid.offline_review import compact_document
     from earnings.hybrid.prepare import DATA
+    if not (DATA/'pilot-0-input.json').is_file():
+        pytest.skip('Optional gitignored Agilent diagnostic input unavailable; no inference fallback')
     doc=read(DATA/'pilot-0-input.json')['documents'][0];small=compact_document(doc)
     assert small['canonical_text']==doc['canonical_text'] and small['source_sha256']==doc['source_sha256']
     for old,new in zip(doc['tables'],small['tables'],strict=True):

@@ -21,7 +21,15 @@ def test_every_fabricated_source_is_local_and_all_outcomes_and_endpoints_work():
         def fetch(url,**kwargs):
             assert url in fixtures
             return fixtures[url],{'simulation':True}
+        assert review['result_source']['issued_date']
+        assert review['result_source']['issuance_date_quote'].encode('ascii') in fixtures[review['result_source']['url']]
         with patch('earnings.sec.fetch',fetch):score_live.verify_sources(review)
+        from copy import deepcopy
+        for field in ('issued_date','issuance_date_quote'):
+            incomplete=deepcopy(review);incomplete['result_source'].pop(field)
+            with patch('earnings.sec.fetch',fetch),pytest.raises(Blocked) as exc:
+                score_live.verify_sources(incomplete)
+            assert exc.value.code=='MISSING_PUBLICATION_TIMING'
         evaluated=score_live.evaluate(p,review,clock)
         assert evaluated['outcome']==outcome
         assert LABEL in review['rehearsal_provenance']

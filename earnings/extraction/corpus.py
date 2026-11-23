@@ -16,7 +16,7 @@ def gold():
 
 def canonical(body):
     if body.lstrip().startswith(b'%PDF'):raise ValueError('PDF_REQUIRES_SEPARATE_TEXT_REVIEW')
-    soup=BeautifulSoup(body,'html.parser')
+    soup=BeautifulSoup(body,'html.parser',from_encoding='utf-8')
     for node in soup(['script','style','ix:header']):node.decompose()
     return ' '.join(soup.get_text(' ',strip=True).split())
 
