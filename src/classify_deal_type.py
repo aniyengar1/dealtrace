@@ -58,6 +58,30 @@ HTML, to catch patterns a 20-deal spot-check surfaced that a plain
   reversed. Checking the filing's own stated transaction structure
   instead avoids that: it doesn't matter how a negotiation unfolded,
   only what the signed agreement says will happen to whom.
+
+  For an S-4 specifically, also fires whenever the ACQUIRER field's
+  own named party -- not the target field's -- is the one whose
+  shareholders are shown adopting the merger agreement: an S-4's filer
+  is always the party registering new securities, but in a stock deal
+  that's often a JOINT proxy statement/prospectus serving the real
+  target's own shareholder vote too, so filer identity alone isn't
+  enough (superseded _is_s4_filer_is_acquirer, which assumed it was).
+- merger_of_equals: an S-4 that calls itself one, or where BOTH
+  target's and acquirer's own shareholders are independently shown
+  adopting the merger agreement (Hut 8/USBTC, Steel Newco/Pinnacle,
+  Ballston Spa/NBC) -- kept in stats (not excluded), just labeled.
+- buyer_side_s4_vote: an S-4 where NEITHER party has a found merger
+  -adoption vote, and at least one votes on a share issuance only --
+  i.e. only the real acquirer's own shareholders have any described
+  vote at all (Bally's/Gamesys, Drilling Tools/DTI, AeroVironment) --
+  excluded, since there's no real target-side sale process captured in
+  this document.
+- complex_structure: a hand-reviewed, slug-keyed set of deals whose
+  structure is genuinely tangled -- a divestiture to a third-party
+  buyer entity, a split-off combined with a merger, a holdco
+  reorganization with no real second party (Eversource/Aquarion,
+  Liberty Sirius XM/Liberty Media, Twin Vee) -- excluded with this
+  distinct reason rather than spending further time untangling them.
 - reverse_merger: the filing's own text describes the deal as a
   reverse merger (Movano <- Corvex) -- flagged (deal_type set) but kept
   in stats, since it's still a real sale process, just one where the
@@ -154,11 +178,27 @@ _CLASSIFY_CACHE_DIR = Path("data/cache/deal_type_classification")
 # _is_reverse_merger_text -- without it, a blanket S-4-means-exclude
 # rule wrongly re-excluded Movano/Corvex, this module's own canonical
 # example of a reverse merger deliberately kept in stats elsewhere
-# (and 7 other SPAC-shell-named filers with the same shape). Every
-# classification rule change needs a bump here, or a deal keeps
+# (and 7 other SPAC-shell-named filers with the same shape). v8:
+# replaced _is_s4_filer_is_acquirer (filer identity) with a vote-based
+# test -- _is_s4_vote_based_reversed/_is_s4_merger_of_equals/
+# _is_s4_buyer_side_only_vote, reading whose named party's own
+# shareholders are shown adopting the merger agreement vs. approving a
+# share issuance -- after filer identity wrongly excluded 37 deals
+# whose S-4 was actually a joint proxy capturing the real target's own
+# shareholder vote (Amazon/Globalstar, Rocket Pharmaceuticals/
+# Renovacor, PotlatchDeltic/CatchMark, Raymond James/TriState Capital
+# among them). _S4_VOTE_MANUAL_OVERRIDES preserves the hand-confirmed
+# outcome for the ~15 deals this text-only rule can't safely derive on
+# its own (tender/exchange-offer and written-consent approvals, a SPAC
+# business-combination vote, a lowercase-first-letter brand name
+# ["ironSource"] _NAME_RUN can never capture, three complex/tangled
+# structures -- a divestiture, a split-off+merger, a holdco
+# reorganization -- excluded without further untangling, and two
+# genuinely undetermined deals). Every classification rule change
+# needs a bump here, or a deal keeps
 # silently serving its stale result forever even once the rule that
 # should catch it is fixed.
-_CLASSIFY_CACHE_VERSION = "v7"
+_CLASSIFY_CACHE_VERSION = "v14"
 
 
 def _classify_cache_key(
@@ -636,48 +676,286 @@ def _is_proposal_direction_reversed(slug: str, target: str, acquirer: str, propo
     return reversed_evidence and not normal_evidence
 
 
-def _is_s4_filer_is_acquirer(slug: str, target: str, acquirer: str, form_type: Optional[str]) -> bool:
-    """True when the filer (always recorded as `target`, see
-    _is_filer_reversed's docstring) filed Form S-4 -- a REGISTRATION
-    STATEMENT for securities the filer itself is issuing. Unlike every
-    other check in this module, this isn't textual evidence that could
-    be absent or ambiguous: an S-4's own filer is, by SEC rule, always
-    the party registering new securities to pay target shareholders
-    with, i.e. the acquirer (or a newly formed holdco) -- never the
-    party being bought out. Found via BIDDER_COUNT_ANALYSIS.md's swap
-    -and-keep follow-up: Amazon/Globalstar, Rocket Pharmaceuticals/
-    Renovacor, PotlatchDeltic/CatchMark, and Raymond James Financial/
-    TriState Capital were all confirmed this way (and Bally's/Gamesys
-    independently, via its own DEFM14A explicitly held for Bally's own
-    shareholders to approve the share issuance for its acquisition of
-    Gamesys) -- a sturdier, structural signal than the proposal-text
-    "acquire" language the other filer-reversal checks rely on, which
-    several of these never used at all.
+# Replaces _is_s4_filer_is_acquirer (v7): that rule treated an S-4's
+# filer as ALWAYS the acquirer, by SEC registrant rule -- true in
+# general, but wrong for the common STOCK-DEAL shape where the S-4 is
+# a JOINT proxy statement/prospectus serving the TARGET's own
+# shareholder vote (the registrant still has to register the new
+# shares it's issuing, but that doesn't mean its own shareholders are
+# the only ones voting). Re-checking by filer identity alone wrongly
+# excluded 37 deals -- Amazon/Globalstar, Rocket Pharmaceuticals/
+# Renovacor, PotlatchDeltic/CatchMark, and Raymond James Financial/
+# TriState Capital among them -- where the Background section narrates
+# exactly the real target's sale process this pipeline exists to
+# measure. The sturdier test: whose shareholders actually VOTE on
+# what, read directly from the filing's own "<Name> stockholders ...
+# adopt the Merger Agreement" (or "... of <Name>'s Special Meeting")
+# vote-notice language, vs. "<Name> stockholders ... approve the
+# issuance"/"Stock Issuance Proposal" (the OTHER standard heading, an
+# acquirer paying with its own new stock, not evidence anyone's being
+# bought out).
+#
+# "<Name> stockholders/shareholders/unitholders" in either word order
+# a filing uses -- most say "GNB shareholders will be asked to...",
+# but some invert it ("SPECIAL MEETING OF UNITHOLDERS ... of NexPoint
+# Hospitality Trust"). Scoped (?i:...) around the suffix word only, not
+# a blanket re.IGNORECASE -- see _SPIN_OFF_OF_TO_RE's comment on why
+# that's unsafe for _NAME_RUN's [A-Z]-anchored capture.
+_VOTER_BEFORE_RE = re.compile(r"\b" + _NAME_RUN + r"['’]?s?\s+(?i:stockholders|shareholders|unitholders)\b")
+_VOTER_AFTER_RE = re.compile(r"\b(?i:stockholders|shareholders|unitholders)\s+(?i:of)\s+" + _NAME_RUN)
+# Two-stage, not a single flat window (tried first): find the FIRST
+# adopt/approve verb shortly after the subject, then look for the
+# merger-agreement object shortly after THAT verb. A single wide
+# window let a DIFFERENT subject's own clear vote bleed into this
+# one's: "Unity stockholders approve the issuance of shares ... in
+# connection with the merger AND ironSource shareholders approve THE
+# MERGER AGREEMENT" is one sentence covering both parties' separate
+# proposals, and a flat 300-char search from "Unity stockholders"
+# found ironSource's "approve the merger agreement" and wrongly
+# attributed it to Unity. Anchoring the object-search to the position
+# right after Unity's OWN nearest verb ("approve the issuance...")
+# fixes this, since that verb's own 60-char object window only
+# contains "the issuance ... in connection with the merger", not
+# "Merger Agreement"/"Company Merger"/"Merger Proposal".
+_VOTE_VERB_RE = re.compile(r"\b(?:adopt|approve)(?:ed|s|ing)?\b", re.IGNORECASE)
+# Deliberately NOT a bare "the Merger" alternative (tried first) --
+# too generic a filler reference to the overall transaction to prove
+# THIS verb's object is the merger agreement itself, not an ancillary
+# share issuance "in the Merger"/"in connection with the Merger".
+_MERGER_OBJECT_RE = re.compile(
+    r"\b(?:Agreement\s+and\s+Plan\s+of\s+Merger|Merger\s+Agreement|Company\s+Merger|Merger\s+Proposal)",
+    re.IGNORECASE,
+)
+_SUBJECT_TO_VERB_CHARS = 150
+_VERB_TO_OBJECT_CHARS = 60
 
-    Guarded against _is_reverse_merger_text: a genuine reverse merger
-    (Movano/Corvex, this module's own canonical example -- also
-    Cyclacel/Fitters Parent, several SPAC-shell-named filers like "New
-    Arena Holdco"/"Amaze Holdings"/"Beacon Topco") files its S-4 the
-    exact same way a straightforward buy-side deal does (the public
-    shell IS the technical registrant/issuer), but is deliberately kept
-    in stats elsewhere in this module -- "still a genuine sale, just
-    one where the legal acquirer ends up controlled by the legal
-    target's former owners." Without this guard, a blanket S-4-means
-    -exclude rule would wrongly re-exclude exactly the shape that
-    exception exists for. Deliberately NOT guarded against the
-    acquirer field being a bare self-reference to the target under
-    another form (John Bean Technologies Corp / "JBT", its own ticker;
-    J.M. Smucker / "Smucker", its own short name) -- tried first, but
-    neither is_acronym_of (core_name strips "Technologies" as a legal
-    suffix before computing initials, losing the letter JBT's own
-    ticker needs) nor is_same_entity (a trailing, not leading, word
-    isn't a prefix match) actually catches either real example, so a
-    guard built on them would be silently inert, not protective.
-    That's a different, separate extraction defect anyway (no real
-    second party exists to resolve such a deal to at all) -- caught
-    instead during this rule's own required verification pass over
-    every newly-flagged deal, same as any other check in this module."""
-    return form_type == "S-4" and not _is_reverse_merger_text(slug)
+
+def _adopt_merger_match(text: str, start: int) -> bool:
+    """True if the first adopt/approve verb within _SUBJECT_TO_VERB_CHARS
+    chars after `start` (a voter-subject match's end) has a merger
+    -agreement object within _VERB_TO_OBJECT_CHARS chars after the verb,
+    stopping at the first comma/semicolon -- without that, "approve
+    the Unity issuance proposal, and if the merger agreement is
+    terminated by..." let a later clause's unrelated "merger
+    agreement" (the object of "terminated," not "approve") bleed into
+    this verb's own object window."""
+    near = text[start : start + _SUBJECT_TO_VERB_CHARS]
+    verb = _VOTE_VERB_RE.search(near)
+    if not verb:
+        return False
+    obj_window = near[verb.end() : verb.end() + _VERB_TO_OBJECT_CHARS]
+    clause_boundary = re.search(r"[,;]", obj_window)
+    if clause_boundary:
+        obj_window = obj_window[: clause_boundary.start()]
+    return bool(_MERGER_OBJECT_RE.search(obj_window))
+# "approve the issuance"/"Stock(s) Issuance Proposal" -- the other
+# standard proxy heading: a vote only about the acquirer paying with
+# its own new stock.
+_ISSUANCE_VOTE_WINDOW_RE = re.compile(
+    r"\bapprov(?:e|ed|ing|al)\b[^.]{0,40}\bissuance\b|\b(?:Stock|Share)s?\s+Issuance\s+Proposal\b", re.IGNORECASE
+)
+# "no vote ... is required"/"absence of any required vote"/"not
+# required to obtain" -- a closing-condition representation that NO
+# vote is needed from this party, the exact opposite of a real vote.
+# Checked in the text immediately BEFORE a voter-subject match (that's
+# where this phrasing places the negation: "the absence of any
+# required vote of the PotlatchDeltic stockholders to approve the
+# Company Merger" -- PotlatchDeltic's own closing-condition
+# representation that IT needs no vote, not evidence it has one).
+# Without this guard, _has_adopt_merger_vote wrongly fired for
+# PotlatchDeltic (the real acquirer) and AeroClean (approved by
+# written consent, not a vote, per the same "no vote ... is required"
+# phrasing) off this exact negated construction.
+_NO_VOTE_REQUIRED_RE = re.compile(
+    r"\b(?:no|without\s+any)\s+(?:vote|approval)\b[^.]{0,80}\bis\s+required\b|"
+    r"absence\s+of\s+any\s+required\s+vote|not\s+required\s+to\s+(?:obtain|seek)\b|"
+    # "advisable to, and in the best interests of, X and X's
+    # stockholders, [the Board] adopted and approved the merger
+    # agreement" -- a BOARD fiduciary recitation ("X's stockholders" is
+    # the OBJECT of "in the best interests of," not the subject of
+    # "adopted"), not a stockholder vote notice.
+    r"(?:advisable\s+to|in\s+the\s+best\s+interests?\s+of)\b|"
+    # "proposal to adjourn or postpone any meeting of X ... if there
+    # are not sufficient votes to approve the adoption of the merger
+    # agreement" -- a procedural adjournment proposal referencing the
+    # OVERALL transaction's adoption in passing, not evidence X's OWN
+    # shareholders are the ones adopting it (this boilerplate is
+    # typically mirrored for both parties' meetings in a joint proxy).
+    # Without both guards, _has_adopt_merger_vote wrongly fired for
+    # Unity (ironSource/Unity) off this exact boilerplate.
+    r"adjourn|postpone",
+    re.IGNORECASE,
+)
+_MERGER_OF_EQUALS_RE = re.compile(r"\bmerger of equals\b(?!\s*\(as defined)", re.IGNORECASE)
+_VOTE_WINDOW_CHARS = 300
+_NEGATION_LOOKBACK_CHARS = 150
+
+
+def _voter_subjects(text: str) -> list[tuple[str, int, int]]:
+    """Every "<Name> stockholders"/"stockholders of <Name>" match in
+    `text`, as (name, match-start, match-end) -- match-end is where the
+    caller looks for adopt/issuance language, in a short window
+    immediately following; match-start is where it looks BACKWARD for
+    a "no vote is required" negation immediately preceding the name."""
+    subjects = [(m.group(1).strip(), m.start(), m.end()) for m in _VOTER_BEFORE_RE.finditer(text)]
+    subjects += [(m.group(1).strip(), m.start(), m.end()) for m in _VOTER_AFTER_RE.finditer(text)]
+    return subjects
+
+
+def _has_adopt_merger_vote(text: str, name: str) -> bool:
+    for subject, start, end in _voter_subjects(text):
+        if not _is_same_entity_fuzzy(subject, name):
+            continue
+        if _NO_VOTE_REQUIRED_RE.search(text[max(0, start - _NEGATION_LOOKBACK_CHARS) : start]):
+            continue
+        if _adopt_merger_match(text, end):
+            return True
+    return False
+
+
+def _has_issuance_only_vote(text: str, name: str) -> bool:
+    found_issuance = False
+    for subject, start, end in _voter_subjects(text):
+        if not _is_same_entity_fuzzy(subject, name):
+            continue
+        if _NO_VOTE_REQUIRED_RE.search(text[max(0, start - _NEGATION_LOOKBACK_CHARS) : start]):
+            continue
+        if _adopt_merger_match(text, end):
+            return False
+        if _ISSUANCE_VOTE_WINDOW_RE.search(text[end : end + _VOTE_WINDOW_CHARS]):
+            found_issuance = True
+    return found_issuance
+
+
+# Slug-keyed overrides for deals this investigation confirmed by hand
+# but that the generalizable vote-text rule above can't safely derive
+# on its own -- either because the real party's approval is a tender/
+# exchange offer or a private company's written consent (neither reads
+# as "stockholders ... adopt the Merger Agreement"), or because the
+# vote direction genuinely can't be determined from this filing's text
+# at all. `target`/`acquirer` were already corrected to their real
+# names for the "include" cases (see the one-time correction applied
+# alongside this rule change), so this dict only needs to record the
+# INCLUDE/EXCLUDE outcome, not a name fix. "exclude" for the
+# undetermined deals (MaxLinear, Smucker/Hostess) preserves their
+# PRIOR (excluded) status, per instruction, rather than defaulting
+# them to newly-included just because no textual signal was found
+# either way. "complex_structure" is its own, distinct outcome for
+# deals whose structure is genuinely tangled (a divestiture to a
+# third-party buyer entity, a split-off combined with a merger, a
+# holdco reorganization with no real second party) -- per instruction,
+# these are excluded with their own reason and NOT worth further
+# untangling.
+_S4_VOTE_MANUAL_OVERRIDES: dict[str, str] = {
+    # Marel hf. shareholders approve via a voluntary public takeover
+    # offer (>=90% tendering, or less with Marel's own consent) under
+    # Icelandic/EU takeover rules, not a Delaware-style adoption vote;
+    # JBT's own shareholders vote only on JBT's Share Issuance Proposal.
+    "bulk_1433660_000119312524139600": "include",
+    # MGP approved by written consent of its own members, not a formal
+    # special-meeting vote; VICI's own shareholders vote only on the
+    # VICI Stock Issuance Proposal.
+    "bulk_1705696_000119312521267902": "include",
+    # Northern Data Shareholders approve via the Exchange/Takeover
+    # Offer and become Rumble stockholders on settlement; Rumble's own
+    # "adopt the Business Combination Agreement" vote is Rumble's own
+    # required acquirer-side approval, not a target-side vote.
+    "bulk_1830081_000121390026042803": "include",
+    # Wolt's board approved the Share Purchase Agreement, and ALL Wolt
+    # shareholders approved by written consent -- a private company's
+    # approval mechanism, not a public special-meeting vote.
+    "bulk_1792789_000119312521365019": "include",
+    # ironSource's own shareholders approve via a merger proposal under
+    # Israeli Companies Law Section 320; Unity's own shareholders vote
+    # only on Unity's Issuance Proposal. Not derivable by the general
+    # rule above: "ironSource" is stylized with a lowercase first
+    # letter, so it can never match _NAME_RUN's [A-Z]-anchored capture
+    # -- a brand-stylization gap in the generalized rule, not a
+    # judgment call about the vote itself.
+    "bulk_1810806_000114036122027456": "include",
+    # SPAC-shape "Business Combination": only BT Brands' own ("Pubco")
+    # stockholders vote to adopt the Merger Agreement -- a structural
+    # SPAC requirement regardless of deal direction -- and no separate
+    # Aero shareholder vote is described anywhere in the filing.
+    "bulk_1718224_000147793225009283": "exclude",
+    # AeroClean's own shareholders vote only on approving the stock
+    # -issuance merger consideration; zero described approval
+    # mechanism (vote, tender, or consent) found for Molekule anywhere
+    # in the filing -- same shape as Bally's/Gamesys and Mesa/
+    # Republic, not Wolt/MGP's explicit written consent.
+    "bulk_1872356_000110465922128138": "exclude",
+    # Undetermined: only generic "Parent Board"-calls-special-meeting
+    # procedural language found; no deal-specific vote evidence for
+    # either stored party despite extensive searching.
+    "bulk_1288469_000110465922071588": "exclude",
+    # Undetermined: despite 1,214 mentions of "Hostess," zero vote
+    # -process language found for either party -- this S-4 appears to
+    # discuss the (already-closed, cash-tender) Hostess acquisition
+    # only as financial/business background, not as this filing's own
+    # live merger-proxy narrative.
+    "bulk_91419_000119312523253048": "exclude",
+    # Complex structure, not worth untangling further: Aquarion is
+    # ALREADY Eversource's own subsidiary per the filing text, and a
+    # third entity "NESC" (New England Service Company) is the one
+    # whose stockholders vote -- this reads as a multi-step
+    # reorganization/divestiture-shaped transaction, not a plain
+    # arm's-length sale.
+    "bulk_72741_000110465921076935": "complex_structure",
+    # Complex structure, not worth untangling further: a combined
+    # split-off+merger (Liberty Media splits off its Liberty SiriusXM
+    # tracking stock and merges it into the separate "Sirius XM
+    # Holdings," a third entity named in the one merger-adoption vote
+    # found, matching neither stored field).
+    "bulk_2003397_000110465924007830": "complex_structure",
+    # Complex structure, not worth untangling further: "Twin Vee Inc."
+    # is a new holding company interposed above the existing "Twin Vee
+    # Co."; Forza X1 is Twin Vee Co.'s own existing EV-boat subsidiary,
+    # not a separate merger counterparty -- a holdco reorganization
+    # with no real second party to resolve the stored acquirer field
+    # "Unknown" to.
+    "bulk_1855509_000173112222001537": "complex_structure",
+}
+
+
+def _is_s4_vote_based_reversed(slug: str, target: str, acquirer: str, form_type: Optional[str]) -> bool:
+    """True when the ACQUIRER field's own named party -- not the
+    target field's -- is the one whose shareholders are shown adopting
+    the merger agreement, i.e. target/acquirer are reversed for this
+    S-4."""
+    if form_type != "S-4":
+        return False
+    text = _full_text(slug)
+    if _has_adopt_merger_vote(text, target):
+        return False
+    return _has_adopt_merger_vote(text, acquirer)
+
+
+def _is_s4_merger_of_equals(slug: str, target: str, acquirer: str, form_type: Optional[str]) -> bool:
+    """True when the filing calls itself a "merger of equals" (Hut 8/
+    USBTC, Steel Newco/Pinnacle, Ballston Spa/NBC). Deliberately NOT
+    "both target's and acquirer's own shareholders are shown adopting
+    the merger agreement" (tried first) -- a dual shareholder vote is
+    an ordinary STATUTORY requirement for plenty of ordinary (not
+    merger-of-equals) bank-holding-company and REIT mergers where one
+    side is clearly the acquirer (LINKBANCORP/GNB, Mesa Air Group/
+    Republic, Ready Capital/Broadmark), so that alone wrongly flagged
+    nine real swap/acquisition deals as merger-of-equals."""
+    if form_type != "S-4":
+        return False
+    return bool(_MERGER_OF_EQUALS_RE.search(_full_text(slug)))
+
+
+def _is_s4_buyer_side_only_vote(slug: str, target: str, acquirer: str, form_type: Optional[str]) -> bool:
+    """True when NEITHER party has a found merger-adoption vote, and
+    at least one of them votes on a share issuance only -- i.e. only
+    the real acquirer's shareholders have a described vote at all
+    (Bally's/Gamesys, Drilling Tools/DTI, AeroVironment)."""
+    if form_type != "S-4":
+        return False
+    text = _full_text(slug)
+    if _has_adopt_merger_vote(text, target) or _has_adopt_merger_vote(text, acquirer):
+        return False
+    return _has_issuance_only_vote(text, target) or _has_issuance_only_vote(text, acquirer)
 
 
 # "each of X and Y will become a wholly owned subsidiary of Z" -- a
@@ -920,16 +1198,38 @@ def _classify_deal_uncached(
             True,
             "the filer is internalizing (absorbing) its own external manager via a share issuance, not being acquired by or acquiring anyone",
         )
-    if (
-        _is_filer_reversed(slug, target, acquirer)
-        or _is_proposal_direction_reversed(slug, target, acquirer, proposals)
-        or _is_s4_filer_is_acquirer(slug, target, acquirer, form_type)
-    ):
+    if _is_s4_merger_of_equals(slug, target, acquirer, form_type):
+        return "merger_of_equals", False, None
+    s4_override = _S4_VOTE_MANUAL_OVERRIDES.get(slug)
+    if s4_override == "complex_structure":
         return (
-            "filer_is_acquirer",
+            "complex_structure",
             True,
-            "the filer (recorded here as target) is actually the acquirer, or is absorbing a third party -- target/acquirer are reversed or mislabeled for this deal",
+            "a divestiture to a third-party buyer entity, a split-off combined with a merger, or a holdco reorganization with no real second party -- genuinely tangled, not a plain arm's-length sale process",
         )
+    if s4_override == "exclude":
+        return (
+            "buyer_side_s4_vote",
+            True,
+            "only the acquirer's own shareholders have a described approval mechanism for this S-4, or the vote direction can't be determined from this filing's text at all",
+        )
+    if s4_override != "include":
+        if (
+            _is_filer_reversed(slug, target, acquirer)
+            or _is_proposal_direction_reversed(slug, target, acquirer, proposals)
+            or _is_s4_vote_based_reversed(slug, target, acquirer, form_type)
+        ):
+            return (
+                "filer_is_acquirer",
+                True,
+                "the filer (recorded here as target) is actually the acquirer, or is absorbing a third party -- target/acquirer are reversed or mislabeled for this deal",
+            )
+        if _is_s4_buyer_side_only_vote(slug, target, acquirer, form_type):
+            return (
+                "buyer_side_s4_vote",
+                True,
+                "only the acquirer's own shareholders have a described vote (on a share issuance) for this S-4 -- no vote, tender, or consent evidence found for the real target's own shareholders",
+            )
     if _is_new_holdco_merger(slug, target, acquirer):
         return (
             "new_holdco_merger_of_equals",

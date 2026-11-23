@@ -16,12 +16,12 @@ public.
 Pulled from the current `data/output/stats/headline_stats.json`:
 
 - **Most sale processes aren't crowded.** Median **2** distinct bidders
-  per deal (n = 758) — real competitive auctions with several serious
+  per deal (n = 790) — real competitive auctions with several serious
   bidders are the exception, not the rule.
 - **In a real contest, showing up first is an edge, not a guarantee.**
   Restricted to deals with 2+ bidders, the first bidder to submit a
-  priced proposal goes on to win **40%** of the time (n = 485). Across
-  *all* deals the figure reads higher, 61% (n = 747), only because a
+  priced proposal goes on to win **39%** of the time (n = 499). Across
+  *all* deals the figure reads higher, 61% (n = 776), only because a
   1-bidder deal wins by definition.
 - **Competition still moves the price.** For deals that end in cash,
   the median increase from the first priced bid to the signed price is

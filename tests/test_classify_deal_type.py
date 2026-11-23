@@ -168,41 +168,163 @@ def test_classify_deal_leaves_ordinary_deal_included():
     assert reason is None
 
 
-# --- _is_s4_filer_is_acquirer --------------------------------------------
+# --- vote-based S-4 rules (_is_s4_vote_based_reversed/_is_s4_merger_of_equals/_is_s4_buyer_side_only_vote) --------
 
 
-def test_s4_filer_is_structurally_the_acquirer():
+def test_s4_vote_based_reversed_true_when_acquirer_field_party_adopts(monkeypatch):
     # Real shape: bulk_1018724_000110465926089294 (Amazon/Globalstar) --
-    # no "acquire" language needed at all; the S-4 form type alone is
-    # structurally conclusive (S-4 filer = securities issuer = acquirer).
-    assert cdt._is_s4_filer_is_acquirer("fake_slug", "AMAZON COM INC", "Globalstar", "S-4") is True
+    # the ACQUIRER field's own party ("Globalstar") is the one shown
+    # adopting the merger agreement; the target field's party ("AMAZON
+    # COM INC") is never shown doing so.
+    monkeypatch.setattr(
+        cdt, "_full_text", lambda slug: "Globalstar stockholders adopt the merger agreement and approve the merger."
+    )
+    assert cdt._is_s4_vote_based_reversed("fake_slug", "AMAZON COM INC", "Globalstar", "S-4") is True
 
 
-def test_non_s4_form_type_is_not_flagged_by_this_check():
-    assert cdt._is_s4_filer_is_acquirer("fake_slug", "Target Co", "Acquirer Co", "DEFM14A") is False
-    assert cdt._is_s4_filer_is_acquirer("fake_slug", "Target Co", "Acquirer Co", None) is False
+def test_s4_vote_based_reversed_false_when_target_already_adopts(monkeypatch):
+    monkeypatch.setattr(
+        cdt, "_full_text", lambda slug: "Target Co stockholders adopt the merger agreement and approve the merger."
+    )
+    assert cdt._is_s4_vote_based_reversed("fake_slug", "Target Co", "Acquirer Co", "S-4") is False
 
 
-def test_s4_check_fires_regardless_of_acquirer_field_content():
-    # Deliberately does NOT guard against a self-referential acquirer
-    # field (John Bean Technologies Corp / "JBT", its own ticker) --
-    # see this function's own docstring for why that guard would be
-    # silently inert anyway. Caught instead during the required
-    # per-deal verification pass over every newly-flagged deal.
-    assert cdt._is_s4_filer_is_acquirer("fake_slug", "John Bean Technologies CORP", "JBT", "S-4") is True
+def test_non_s4_form_type_is_not_flagged_by_any_vote_based_check():
+    assert cdt._is_s4_vote_based_reversed("fake_slug", "Target Co", "Acquirer Co", "DEFM14A") is False
+    assert cdt._is_s4_vote_based_reversed("fake_slug", "Target Co", "Acquirer Co", None) is False
+    assert cdt._is_s4_merger_of_equals("fake_slug", "Target Co", "Acquirer Co", "DEFM14A") is False
+    assert cdt._is_s4_buyer_side_only_vote("fake_slug", "Target Co", "Acquirer Co", "DEFM14A") is False
 
 
-def test_s4_check_does_not_override_genuine_reverse_merger(monkeypatch):
-    # Real shape: Movano/Corvex -- this module's own canonical example
-    # of a reverse merger that's deliberately KEPT in stats elsewhere;
-    # a blanket S-4-means-exclude rule would wrongly re-exclude it.
-    monkeypatch.setattr(cdt, "_is_reverse_merger_text", lambda slug: True)
-    assert cdt._is_s4_filer_is_acquirer("bulk_fake", "Movano Inc.", "Corvex", "S-4") is False
+def test_s4_vote_based_reversed_respects_no_vote_required_negation(monkeypatch):
+    # Real shape: PotlatchDeltic/CatchMark -- "the absence of any
+    # required vote of the PotlatchDeltic stockholders to approve the
+    # Company Merger" is PotlatchDeltic's own closing-condition
+    # representation that IT needs no vote, not evidence it has one.
+    # Without this guard, the real acquirer's negated non-vote would
+    # wrongly satisfy this check.
+    monkeypatch.setattr(
+        cdt,
+        "_full_text",
+        lambda slug: (
+            "CatchMark stockholders approve the Company Merger. The representations include the absence "
+            "of any required vote of the PotlatchDeltic stockholders to approve the Company Merger."
+        ),
+    )
+    assert cdt._is_s4_vote_based_reversed("fake_slug", "PotlatchDeltic", "CatchMark", "S-4") is True
 
 
-def test_classify_deal_flags_s4_filer_end_to_end():
+def test_s4_merger_of_equals_true_for_explicit_phrase(monkeypatch):
+    # Real shape: Hut 8/USBTC.
+    monkeypatch.setattr(cdt, "_full_text", lambda slug: "This transaction is structured as a merger of equals.")
+    assert cdt._is_s4_merger_of_equals("fake_slug", "Hut 8 Corp.", "USBTC", "S-4") is True
+
+
+def test_s4_merger_of_equals_ignores_comparable_transactions_screening_boilerplate(monkeypatch):
+    # Real shape: Raymond James/TriState Capital -- a fairness-opinion
+    # precedent-transactions screen ("excluding any Merger of Equals
+    # (as defined by S&P Global Market Intelligence)") describes the
+    # advisor's own screening methodology, not this deal's structure.
+    monkeypatch.setattr(
+        cdt,
+        "_full_text",
+        lambda slug: "deal value between $500 million and $2.5 billion, excluding any Merger of Equals (as defined by S&P).",
+    )
+    assert cdt._is_s4_merger_of_equals("fake_slug", "TriState Capital", "Raymond James", "S-4") is False
+
+
+def test_s4_merger_of_equals_does_not_fire_on_dual_statutory_vote_alone(monkeypatch):
+    # Real shape: LINKBANCORP/GNB, Mesa Air Group/Republic -- both
+    # sides' shareholders formally adopting their own merger agreement
+    # is an ordinary STATUTORY requirement for plenty of bank-holding
+    # -company and REIT mergers where one side is clearly the
+    # acquirer, not evidence of a genuine merger of equals.
+    monkeypatch.setattr(
+        cdt,
+        "_full_text",
+        lambda slug: (
+            "GNB shareholders will be asked to adopt the merger agreement. "
+            "LINK shareholders will be asked to adopt the merger agreement."
+        ),
+    )
+    assert cdt._is_s4_merger_of_equals("fake_slug", "GNB", "LINKBANCORP, Inc.", "S-4") is False
+
+
+def test_s4_buyer_side_only_vote_true_when_only_acquirer_field_party_votes_on_issuance(monkeypatch):
+    # Real shape: Bally's/Gamesys -- only Bally's (stored target field)
+    # votes, and only on its own share issuance; Gamesys has no
+    # described vote at all.
+    monkeypatch.setattr(
+        cdt,
+        "_full_text",
+        lambda slug: "Bally's stockholders will be asked to approve the issuance of shares (the Share Issuance Proposal).",
+    )
+    assert cdt._is_s4_buyer_side_only_vote("fake_slug", "Bally's Corp", "Gamesys", "S-4") is True
+
+
+def test_s4_buyer_side_only_vote_false_when_either_party_adopts(monkeypatch):
+    monkeypatch.setattr(
+        cdt, "_full_text", lambda slug: "Target Co stockholders adopt the merger agreement and approve the merger."
+    )
+    assert cdt._is_s4_buyer_side_only_vote("fake_slug", "Target Co", "Acquirer Co", "S-4") is False
+
+
+def test_classify_deal_flags_s4_vote_based_reversal_end_to_end(monkeypatch):
+    monkeypatch.setattr(
+        cdt, "_full_text", lambda slug: "Globalstar stockholders adopt the merger agreement and approve the merger."
+    )
     deal_type, excluded, reason = cdt.classify_deal(
         "fake_slug", "AMAZON COM INC", "Globalstar", [], [], form_type="S-4"
     )
     assert deal_type == "filer_is_acquirer"
+    assert excluded is True
+
+
+def test_classify_deal_includes_s4_merger_of_equals_with_distinct_type(monkeypatch):
+    monkeypatch.setattr(cdt, "_full_text", lambda slug: "This transaction is structured as a merger of equals.")
+    deal_type, excluded, reason = cdt.classify_deal("fake_slug", "Hut 8 Corp.", "USBTC", [], [], form_type="S-4")
+    assert deal_type == "merger_of_equals"
+    assert excluded is False
+
+
+def test_classify_deal_excludes_s4_buyer_side_only_vote(monkeypatch):
+    monkeypatch.setattr(
+        cdt,
+        "_full_text",
+        lambda slug: "Bally's stockholders will be asked to approve the issuance of shares (the Share Issuance Proposal).",
+    )
+    deal_type, excluded, reason = cdt.classify_deal("fake_slug", "Bally's Corp", "Gamesys", [], [], form_type="S-4")
+    assert deal_type == "buyer_side_s4_vote"
+    assert excluded is True
+
+
+# --- _S4_VOTE_MANUAL_OVERRIDES -------------------------------------------
+
+
+def test_manual_override_include_wins_over_absent_vote_evidence(monkeypatch):
+    # Marel hf./John Bean Technologies: the manual "include" override
+    # must win even though _full_text (monkeypatched empty here) has
+    # no "adopt the merger agreement" evidence at all -- Marel's real
+    # approval is a tender offer, a shape the text-only rule can't see.
+    monkeypatch.setattr(cdt, "_full_text", lambda slug: "")
+    slug = "bulk_1433660_000119312524139600"
+    assert cdt._S4_VOTE_MANUAL_OVERRIDES[slug] == "include"
+    deal_type, excluded, reason = cdt.classify_deal(slug, "Marel hf.", "John Bean Technologies Corporation", [], [], form_type="S-4")
+    assert excluded is False
+
+
+def test_manual_override_exclude_wins_over_fabricated_vote_evidence(monkeypatch):
+    # Twin Vee: even if the text happened to contain adopt-vote
+    # language (it does, for the holdco's own reorganization vote),
+    # the manual "exclude" override (complex_structure: a holdco
+    # reorganization with no real second party) must still win.
+    monkeypatch.setattr(
+        cdt, "_full_text", lambda slug: "Twin Vee Inc. stockholders vote to adopt the merger agreement."
+    )
+    slug = "bulk_1855509_000173112222001537"
+    assert cdt._S4_VOTE_MANUAL_OVERRIDES[slug] == "complex_structure"
+    deal_type, excluded, reason = cdt.classify_deal(
+        slug, "Twin Vee PowerCats, Co.", "Unknown", [], [], form_type="S-4"
+    )
+    assert deal_type == "complex_structure"
     assert excluded is True

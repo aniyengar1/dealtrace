@@ -310,3 +310,36 @@ two values are stored on every `headline_stats` row.
   primary first-bidder-win number shown on the site, with the all
   -deals figure (61.0%, n = 747 after this round's additional
   exclusions) kept as secondary context.
+- **Vote-based re-check of the S-4 rule (correction).** The filer
+  -identity premise above was wrong: an S-4's filer is always the
+  securities issuer, but in a STOCK deal that's often a JOINT proxy
+  statement/prospectus serving the real TARGET's own shareholder vote
+  too, so filer identity alone doesn't tell you who's being sold.
+  Replaced `_is_s4_filer_is_acquirer` with a text-based vote test --
+  whose named party's own shareholders are shown "adopt[ing] the
+  Merger Agreement" vs. "approv[ing] the issuance" -- re-reading all 37
+  previously-excluded deals by hand against their own filing text. 27
+  came back in: 15 simple swaps (the real target's name was already in
+  the acquirer field -- Amazon/Globalstar, Rocket Pharmaceuticals/
+  Renovacor, PotlatchDeltic/CatchMark, and Raymond James/TriState
+  Capital among them), 6 required correcting a self-reference bug
+  where neither stored field named the real target at all (John Bean
+  Technologies's "JBT" was its own ticker; the real counterparty is
+  Marel hf., approved via an Icelandic takeover offer, not a Delaware
+  -style vote), 2 more via a tender/exchange-offer or written-consent
+  approval mechanism (Rumble/Northern Data, DoorDash/Wolt), and 4 are
+  explicit "merger of equals" filings (Hut 8/USBTC, Steel Newco/
+  Pinnacle, Ballston Spa/NBC, Helix/Hornbeck) kept with that distinct
+  `deal_type`. 10 stayed excluded: 6 confirmed buyer-side-only (only
+  the real acquirer's shareholders have any described vote -- Bally's/
+  Gamesys, AeroVironment, Drilling Tools/DTI, AeroClean/Molekule, BT
+  Brands/Aero, and 2 genuinely undetermined deals), plus 3 whose
+  structure is too tangled to be worth untangling (a divestiture, a
+  split-off combined with a merger, a holdco reorganization with no
+  real second party -- Eversource/Aquarion, Liberty Sirius XM/Liberty
+  Media, Twin Vee), given their own distinct `complex_structure`
+  reason rather than further analysis. Final public-scoping included
+  -deal count: **802**. `pct_first_bidder_wins_contested`: **39.5%
+  (n = 499)**; all-deals figure: **61.1% (n = 776)**; median cash
+  -price bump unchanged at **9.7% (n = 344)**; median days from first
+  proposal to signing: **132 (n = 778)**.
