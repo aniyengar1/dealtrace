@@ -28,6 +28,7 @@ from src.dedup_deals import _is_generic
 from src.display_name import clean_display_name
 from src.entity_match import (
     _is_ticker_of,
+    core_name,
     governance_body_subject,
     is_acronym_of,
     is_anonymized_placeholder,
@@ -160,6 +161,31 @@ def _is_holding_vehicle_of(candidate: str, base: str) -> bool:
 _COMMITTEE_RE = re.compile(r"\bcommittee\b", re.IGNORECASE)
 
 
+# Hand-verified (same bar as KNOWN_SHORT_NAME_EXPANSIONS below): a raw
+# acquirer value that's actually the TARGET's own ticker, under a
+# letter-skipping convention ("ITGR" for "Integer Holdings Corp" --
+# I-n-T-e-G-e-R, dropping only vowels) that none of is_acronym_of/
+# _is_ticker_of's fixed formulas predict, and that no general
+# algorithmic check safely generalizes either: an ordered-letter
+# -subsequence test plus a "mostly appears as the deal's own proposal
+# RECIPIENT" confirming signal was tried and caught two real, DIFFERENT
+# companies' own tickers as false positives (MEI Pharma's "MEI" against
+# Infinity Pharmaceuticals; a distinct bank counterparty's "NBC" against
+# Ballston Spa Bancorp) on top of the one genuine case -- not safe to
+# ship broadly. Explicit and small on purpose; see the round-4 spot
+# -check packet for how "ITGR" was confirmed (both the signing event's
+# own party list and KKR's accepted $127.00 proposal name KKR, never
+# ITGR, as the real counterparty).
+_SELF_REFERENTIAL_TICKERS = {
+    "ITGR": "integer",
+}
+
+
+def _is_known_self_referential_ticker(name: str, target: str) -> bool:
+    expected_core_fragment = _SELF_REFERENTIAL_TICKERS.get(name.strip().upper())
+    return expected_core_fragment is not None and expected_core_fragment in core_name(target)
+
+
 def _is_invalid_acquirer_display(name: str, target: str) -> bool:
     """True when `name` is unusable as a public-facing acquirer name:
     a generic role placeholder ("Parent", "Buyer", "Purchaser", ...),
@@ -179,6 +205,8 @@ def _is_invalid_acquirer_display(name: str, target: str) -> bool:
     if is_same_entity(name, target) or is_acronym_of(name, target) or _is_ticker_of(name, target):
         return True
     if clean_display_name(name).strip().lower() == clean_display_name(target).strip().lower():
+        return True
+    if _is_known_self_referential_ticker(name, target):
         return True
     return False
 
@@ -342,13 +370,16 @@ def resolve_acquirer_display(
             resolved = filing_name
         elif _is_invalid_acquirer_display(heuristic_resolved, target):
             # The heuristic answer is unusable on its own (a generic
-            # term like "Consortium"/"Parent", or the target itself
-            # under another name) -- prefer a real sponsor named in the
-            # deal's own proposals (e.g. "Apollo" out of a joint "Hill
-            # City, JFLCO and Apollo" proposer) over a shell/vehicle
-            # filing name, which previously won here unconditionally
-            # even when it was itself just a named shell ("Rand Parent")
-            # and a real name was sitting right there in the evidence.
+            # term like "Consortium"/"Parent", the target itself under
+            # another name, or -- Integer/ITGR -- the target's own
+            # ticker under a letter-skipping convention no fixed
+            # ticker-matching formula predicts) -- prefer a real sponsor
+            # named in the deal's own proposals (e.g. "Apollo" out of a
+            # joint "Hill City, JFLCO and Apollo" proposer) over a
+            # shell/vehicle filing name, which previously won here
+            # unconditionally even when it was itself just a named
+            # shell ("Rand Parent") and a real name was sitting right
+            # there in the evidence.
             sponsor = _best_named_sponsor(proposals, events, target)
             if sponsor and not _is_invalid_acquirer_display(sponsor, target):
                 resolved = sponsor

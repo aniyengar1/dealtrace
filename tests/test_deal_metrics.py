@@ -172,6 +172,20 @@ def test_resolve_acquirer_display_prefers_filing_vehicle_only_when_no_named_spon
     assert resolve_acquirer_display("Consortium", "Acme Inc", [], []) == "Undisclosed"
 
 
+def test_resolve_acquirer_display_replaces_integers_own_ticker_with_the_real_bidder():
+    # Real shape: bulk_1114483_000114036126036420 (Integer Holdings Corp
+    # / raw acquirer "ITGR", Integer's own ticker under a letter
+    # -skipping convention is_acronym_of/_is_ticker_of don't predict).
+    # KKR submitted the accepted proposal and is named in the signing
+    # event alongside ITGR, so it must win over showing the target's
+    # own ticker back as "the acquirer."
+    proposals = [
+        {"proposer": "KKR", "recipient": "ITGR", "date_resolved": "2026-07-30"},
+    ]
+    events = [{"parties": ["ITGR", "KKR"]}]
+    assert resolve_acquirer_display("ITGR", "Integer Holdings Corp", proposals, events) == "KKR"
+
+
 def test_curated_display_names_covers_every_curated_deal():
     from src.run import DEALS
 
