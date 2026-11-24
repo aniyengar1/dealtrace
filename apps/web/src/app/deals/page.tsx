@@ -87,9 +87,19 @@ export default async function DealsPage({
           <EmptyState title="No deals match these filters" description="Try clearing a filter or searching a different term." />
         </div>
       ) : (
-        <div className="mt-6 overflow-x-auto rounded-lg border border-border">
+        /* overflow-x-auto alone forces overflow-y to also compute as "auto" (the
+           CSS overflow-x/y visible-coupling rule), which makes this div -- not
+           the viewport -- the nearest scrolling ancestor for the thead's
+           position:sticky, so a "top-[Npx]" offset meant to clear the page nav
+           never actually sticks to the page at all; scrolling the page just
+           carries the header away with everything else and a body row ends up
+           looking like it's peeking above where the header used to be. Giving
+           this div its own bounded height and explicit overflow-auto makes it
+           the real, intentional scrolling container, so "sticky top-0" pins the
+           header to the top of its own (correctly computed) scrollport instead. */
+        <div className="mt-6 max-h-[70vh] overflow-auto rounded-lg border border-border">
           <table className="w-full text-left text-sm">
-            <thead className="sticky top-[57px] z-10 border-b border-border bg-surface font-mono text-xs uppercase tracking-wide text-ink-muted">
+            <thead className="sticky top-0 z-10 border-b border-border bg-surface font-mono text-xs uppercase tracking-wide text-ink-muted">
               <tr>
                 <th className="px-3 py-2.5 font-medium">Target</th>
                 <th className="px-3 py-2.5 font-medium">Acquirer</th>
