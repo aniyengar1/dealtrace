@@ -49,3 +49,24 @@ def test_handles_suffix_with_internal_periods():
 def test_leaves_short_non_whitelisted_token_unchanged():
     # Too short to confidently title-case either way.
     assert clean_display_name("XOMA (US) LLC") == "XOMA (US)"
+
+
+def test_round4_spotcheck_acronym_casing_fixes():
+    # Round-4 spot check: ordinary title-casing mangled real tickers
+    # ("Cvs Health", "Hni", "Aes", "Itgr") -- all four are whitelisted,
+    # not guessed.
+    assert clean_display_name("CVS HEALTH CORP") == "CVS Health"
+    assert clean_display_name("HNI CORP") == "HNI"
+    assert clean_display_name("AES CORP") == "AES"
+    assert clean_display_name("ITGR") == "ITGR"
+
+
+def test_restores_avalonbay_stylized_capitalization():
+    assert clean_display_name("AVALONBAY COMMUNITIES INC") == "AvalonBay Communities"
+
+
+def test_lhc_group_keeps_group_not_just_the_bare_acronym():
+    # "Group" is a generic legal suffix almost everywhere else, but
+    # here it's part of the real, publicly traded name -- the override
+    # restores it rather than leaving the suffix-stripped bare "LHC".
+    assert clean_display_name("LHC GROUP, INC.") == "LHC Group"

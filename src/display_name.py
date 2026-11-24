@@ -49,6 +49,23 @@ ACRONYM_WHITELIST = {
     "FSK", "GBDC", "OBDC", "NI", "HGV", "SIC", "KCS", "RBA", "WBD",
     "MBI", "CHP", "CHMI", "GRI", "PIF", "GSP", "HEL", "LCIF", "SKNY",
     "XOMA", "HIG", "USA", "USAR", "SMTC", "WHP",
+    # Round-4 spot-check: a short raw EDGAR name/ticker that ordinary
+    # title-casing mangled ("CVS Health" -> "Cvs Health", "HNI" -> "Hni",
+    # "AES" -> "Aes", "ITGR" -> "Itgr") -- verified real tickers, not a
+    # guess, same bar as the entries above.
+    "CVS", "HNI", "AES", "ITGR",
+    # Additional real, well-known tickers/initialisms found in the same
+    # round-4 sweep of all 802 public deals' display names (see
+    # tests/test_display_name.py for the methodology: dictionary
+    # -filtered, individually verified, not an exhaustive ticker list).
+    "TPG", "GIC", "IAA", "CBIZ", "NCR", "VICI", "AIP", "STG", "GCP",
+    "BBBY", "AMD", "GSK", "SLB", "CRH", "IHS", "DNOW", "GTCR", "QEP",
+    "RPT", "QTS", "LXP", "CNH", "MRC", "PGT", "PDC", "ODP", "PANW",
+    "JMP", "BGSF", "WDC", "IPG", "SWN", "BMS", "UTI", "HMS",
+    # Surfaced by the round-4 merger-vehicle-name fix (src.deal_metrics
+    # ._best_named_sponsor): Atlas Air's real buyer consortium includes
+    # J.F. Lehman & Company, named in its own filing text as "JFLCO".
+    "JFLCO",
 }
 
 # Word-level stylization overrides -- same entity, just a capitalization
@@ -59,6 +76,7 @@ ACRONYM_WHITELIST = {
 WORD_OVERRIDES = {
     "VMWARE": "VMware",
     "MARINEMAX": "MarineMax",
+    "AVALONBAY": "AvalonBay",
 }
 
 # Whole-name overrides for when the fix isn't a capitalization of the
@@ -68,6 +86,15 @@ WORD_OVERRIDES = {
 # Keyed by the suffix-stripped name, uppercased.
 DISPLAY_NAME_OVERRIDES = {
     "DFH": "Dream Finders Homes",
+    # "LHC GROUP, INC." strips both "Inc." and "Group" as generic legal
+    # suffixes (the iterative suffix-stripping loop removes them one
+    # pass at a time), leaving bare "LHC" -- but "Group" here is part of
+    # the real, publicly traded name ("LHC Group"), not a redundant
+    # corporate-structure qualifier an EDGAR filer tacked on. Restoring
+    # it as a whole-name override (rather than loosening the general
+    # suffix regex, which strips "Group"/"Holdings"/etc. correctly for
+    # many other real names) is the narrow fix.
+    "LHC": "LHC Group",
 }
 
 
