@@ -198,7 +198,12 @@ export function BidChart({
       {/* Screen-reader/non-visual table equivalent of the SVG above --
           the chart's own aria-label gives the gist, but a reader who
           can't see the plot still needs the actual bid-by-bid data. */}
-      <table className="sr-only">
+      {/* table-fixed matters here, not just visually: sr-only's width:1px
+          is a hint auto table layout can ignore once cell content wants
+          more room, which otherwise widens this (visually clipped but
+          still laid out) table past the real viewport on narrow screens
+          and drags the whole page into horizontal scroll with it. */}
+      <table className="sr-only table-fixed">
         <caption>Bid history for {target}</caption>
         <thead>
           <tr>
