@@ -3,7 +3,7 @@ import {readFileSync} from 'node:fs';
 import path from 'node:path';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {describe,it,expect,vi} from 'vitest';
-import {percent,usd,validProbabilities,compactUsd,periodLabel,leadDays,highestDisplayedBuckets} from '../format';
+import {percent,usd,validProbabilities,compactUsd,compactUsdRange,periodLabel,leadDays,highestDisplayedBuckets} from '../format';
 import {validateSnapshot} from '../validate';
 import Predictions from '@/app/crosscheck/predictions/Predictions';
 vi.mock('server-only',()=>({}));
@@ -43,6 +43,11 @@ describe('publication copy',()=>{
   expect(leadDays('2026-11-17T10:56:43.445442Z','2026-12-01','America/New_York')).toBe(14);
   expect(leadDays('2026-11-17T01:00:00Z','2026-12-01','America/New_York')).toBe(15);
  });
+ it('keeps both ends of a narrow guidance range distinct and faithful instead of rounding each side to the same billions bucket',()=>{
+  expect(compactUsdRange('1523200000','1529200000')).toBe('$1,523.2M–$1,529.2M');
+  expect(compactUsdRange('1400000000','1600000000')).toBe('$1.40B–$1.60B');
+  expect(compactUsdRange('813000000','817000000')).toBe('$813.0M–$817.0M');
+ });
  it('emphasizes displayed leaders and all displayed ties without changing rates',()=>{
   const p={below:'0.090909090909090909090909',within:'0.454545454545454545454545',above:'0.454545454545454545454546'};
   const original=JSON.stringify(p);expect(highestDisplayedBuckets(p)).toEqual(['within','above']);expect(JSON.stringify(p)).toBe(original);
@@ -51,7 +56,7 @@ describe('publication copy',()=>{
  it('renders the requested question, compact ranges, lead times and two-sentence footer',()=>{
   const snapshot=validateSnapshot(source());const before=JSON.stringify(snapshot);
   const html=renderToStaticMarkup(<Predictions state={{kind:'ready',snapshot}}/>);
-  expect(html).toContain('$813M');expect(html).toContain('$817M');expect(html).toContain('$11.42B');expect(html).toContain('$11.50B');
+  expect(html).toContain('$813.0M');expect(html).toContain('$817.0M');expect(html).toContain('$11.42B');expect(html).toContain('$11.50B');
   expect(html).toContain('Aug 1 – Oct 31, 2026');expect(html).toContain('days before results');
   expect(html).toContain('Will each company');expect(html).toContain('management');expect(html).toContain('own guidance range?');
   expect(html).toContain('not calibrated forecasts. Scored with Brier score (0 best, 2 worst) after results are published.');
