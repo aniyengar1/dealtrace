@@ -28,6 +28,13 @@ export interface HomeStats {
   // (see the site's own note that 1-bidder deals win by definition).
   pctFirstBidderWonContested: HomeStat | null;
   pctFirstBidderWonAllDeals: HomeStat | null;
+  // Same contested cohort (2+ bidders), split by exactly 2 vs. 3-or-more --
+  // the aggregate contested rate (~39%) hides that the "edge" is real only
+  // at 2 bidders and is gone (at or below the 50% coin-flip baseline) once
+  // a third bidder shows up. Computed live from deal_metrics, not carried
+  // as a pipeline-published headline_stats row.
+  pctFirstBidderWonTwoBidders: HomeStat | null;
+  pctFirstBidderWonThreeOrMoreBidders: HomeStat | null;
   // Histogram of first-proposal -> final-price % change, open-ended on
   // both tails -- a handful of per-deal outliers are expected even
   // after bulk_stats.py's own sanity thresholds; a bounded bucket
@@ -89,6 +96,31 @@ function buildHistogram(values: number[]): PctBumpBucket[] {
   }));
 }
 
+interface BidderCountWinRate {
+  twoBidders: HomeStat | null;
+  threeOrMoreBidders: HomeStat | null;
+}
+
+// Same contested population pct_first_bidder_wins_contested summarizes
+// (n_bidders >= 2, first_bidder_won resolved), split by exactly 2 vs. 3+
+// distinct bidders -- not published by the pipeline, so computed live here.
+async function getFirstBidderWinRateByBidderCount(): Promise<BidderCountWinRate> {
+  const rows = await query<{ bucket: "two" | "three_plus"; wins: number; n: number }>(
+    `SELECT
+       CASE WHEN dm.n_bidders = 2 THEN 'two' ELSE 'three_plus' END AS bucket,
+       count(*) FILTER (WHERE dm.first_bidder_won) ::int AS wins,
+       count(*)::int AS n
+     FROM deal_metrics dm
+     WHERE dm.is_canonical AND NOT dm.excluded_from_stats AND ${HAS_COMPLETED_RUN_SQL}
+       AND dm.n_bidders >= 2 AND dm.first_bidder_won IS NOT NULL
+     GROUP BY bucket`
+  );
+  const byBucket = Object.fromEntries(rows.map((r) => [r.bucket, r]));
+  const toStat = (r: { wins: number; n: number } | undefined): HomeStat | null =>
+    r && r.n > 0 ? { value: (r.wins / r.n) * 100, n: r.n } : null;
+  return { twoBidders: toStat(byBucket.two), threeOrMoreBidders: toStat(byBucket.three_plus) };
+}
+
 // Medians/n come straight from headline_stats -- the pipeline's own
 // computation, already verified in this round to match this app's
 // prior from-scratch TS port exactly. The one thing headline_stats
@@ -97,7 +129,7 @@ function buildHistogram(values: number[]): PctBumpBucket[] {
 // cash-deal population pct_increase_cash_deals summarizes -- a non-null
 // pct_bump with no exclusion reason).
 export async function computeHomeStats(): Promise<HomeStats> {
-  const [stats, pctBumpRows, dealsSummary] = await Promise.all([
+  const [stats, pctBumpRows, dealsSummary, byBidderCount] = await Promise.all([
     getHeadlineStats(),
     query<{ pct_bump: number }>(
       `SELECT dm.pct_bump FROM deal_metrics dm
@@ -105,6 +137,7 @@ export async function computeHomeStats(): Promise<HomeStats> {
          AND dm.pct_bump IS NOT NULL AND dm.pct_bump_exclusion_reason IS NULL`
     ),
     getIncludedDealsSummary(),
+    getFirstBidderWinRateByBidderCount(),
   ]);
 
   const bidders = stats.bidders_who_submitted_a_proposal;
@@ -132,6 +165,8 @@ export async function computeHomeStats(): Promise<HomeStats> {
       firstBidderWonAllDeals?.median != null
         ? { value: firstBidderWonAllDeals.median, n: firstBidderWonAllDeals.n }
         : null,
+    pctFirstBidderWonTwoBidders: byBidderCount.twoBidders,
+    pctFirstBidderWonThreeOrMoreBidders: byBidderCount.threeOrMoreBidders,
     pctBumpHistogram: buildHistogram(pctBumpRows.map((r) => r.pct_bump)),
   };
 }

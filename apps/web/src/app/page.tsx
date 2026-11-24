@@ -186,9 +186,19 @@ export default async function HomePage() {
                     referenceAt={50}
                   />
                   <p className="mt-3 text-sm text-ink-muted">
-                    In contested deals — 2 or more bidders submitted a proposal — the first bidder goes on to win
+                    In contested deals (2 or more bidders submitted a proposal), the first bidder goes on to win
                     about {Math.round(stats.pctFirstBidderWonContested.value)}% of the time (n ={" "}
-                    {stats.pctFirstBidderWonContested.n}). Showing up early is an edge, not a guarantee.
+                    {stats.pctFirstBidderWonContested.n}).
+                    {stats.pctFirstBidderWonTwoBidders && stats.pctFirstBidderWonThreeOrMoreBidders && (
+                      <>
+                        {" "}
+                        That edge isn&apos;t uniform: with exactly 2 bidders the first mover wins about{" "}
+                        {Math.round(stats.pctFirstBidderWonTwoBidders.value)}% of the time (n ={" "}
+                        {stats.pctFirstBidderWonTwoBidders.n}), just above a 50% coin flip; once a third bidder
+                        joins, it falls to about {Math.round(stats.pctFirstBidderWonThreeOrMoreBidders.value)}% (n ={" "}
+                        {stats.pctFirstBidderWonThreeOrMoreBidders.n}), at or below that baseline.
+                      </>
+                    )}
                     {stats.pctFirstBidderWonAllDeals && (
                       <>
                         {" "}
