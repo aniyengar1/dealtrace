@@ -1,10 +1,16 @@
 from datetime import date
 
-from src.bulk_stats import compute_first_bidder_won_for_deal, stat_first_bidder_is_acquirer
+from src.bulk_stats import _final_entry, compute_first_bidder_won_for_deal, stat_first_bidder_is_acquirer
 
 
-def _proposal(proposer, day, status="open"):
-    return {"date_resolved": date(2024, 1, day), "proposer": proposer, "status": status}
+def _proposal(proposer, day, status="open", price_low=None, price_high=None):
+    return {
+        "date_resolved": date(2024, 1, day),
+        "proposer": proposer,
+        "status": status,
+        "price_low": price_low,
+        "price_high": price_high,
+    }
 
 
 def _deal(target, acquirer, proposals):
@@ -144,3 +150,34 @@ def test_contested_stat_excludes_one_bidder_deals():
     assert contested_stat["n"] == 1
     assert contested_stat["pct_first_bidder_is_eventual_acquirer"] == 0.0
     assert "CONTESTED" in contested_stat["definition"]
+
+
+def test_final_entry_prefers_open_over_later_dated_rejection():
+    # Real shape: Vista Outdoor -- MNC's own unsolicited, never-accepted
+    # $37.50 bid is dated after the real signed terms in deals where a
+    # rival's rejected/withdrawn counter happens to be the latest *dated*
+    # proposal. The latest *standing* (open) proposal is the better pick
+    # than a later-dated proposal nobody acted on.
+    dated = [
+        _proposal("Acquirer", 1, status="open", price_low=32.0),
+        _proposal("Rival", 2, status="withdrawn", price_low=37.5),
+    ]
+    assert _final_entry(dated)["proposer"] == "Acquirer"
+
+
+def test_final_entry_prefers_accepted_over_open():
+    dated = [
+        _proposal("Acquirer", 1, status="accepted", price_low=30.0),
+        _proposal("Rival", 2, status="open", price_low=35.0),
+    ]
+    assert _final_entry(dated)["proposer"] == "Acquirer"
+
+
+def test_final_entry_falls_back_to_latest_when_nothing_is_open_or_accepted():
+    # A deal that fell through entirely has no open/accepted proposal at
+    # all -- there's no better candidate than the latest-dated one.
+    dated = [
+        _proposal("Bidder", 1, status="withdrawn", price_low=20.0),
+        _proposal("Bidder", 2, status="rejected", price_low=22.0),
+    ]
+    assert _final_entry(dated)["price_low"] == 22.0

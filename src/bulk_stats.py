@@ -222,9 +222,20 @@ def _price(p: dict) -> Optional[float]:
 
 
 def _final_entry(dated: list[dict]) -> Optional[dict]:
+    # Absent an accepted proposal, prefer the latest still-"open" (not yet
+    # responded to) one over a later-dated rejected/withdrawn/superseded
+    # proposal -- the latest *date* is not necessarily the latest *standing*
+    # offer. A rival bidder's own rejected/withdrawn counter can be dated
+    # after the real signed terms (e.g. Vista Outdoor: MNC's unsolicited
+    # $37.50 bid), and a target's own rejected counter-ask can likewise
+    # outdate the acquirer's still-open proposal (e.g. Haynes International
+    # counter-asking Acerinox, Kenvue counter-asking K-C).
     accepted = [p for p in dated if p["status"] == "accepted"]
     if accepted:
         return accepted[-1]
+    open_proposals = [p for p in dated if p["status"] == "open"]
+    if open_proposals:
+        return open_proposals[-1]
     return dated[-1] if dated else None
 
 
