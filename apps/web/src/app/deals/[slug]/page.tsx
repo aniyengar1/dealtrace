@@ -192,12 +192,12 @@ export default async function DealPage({
                   {formatPriceRange(summary.firstBidPriceLow, summary.firstBidPriceHigh)} →{" "}
                   {formatPrice(summary.finalBidPrice)}{" "}
                   <span className={summary.pctChange !== null && summary.pctChange >= 0 ? "text-positive" : "text-negative"}>
-                    ({summary.pctChange !== null ? `${summary.pctChange >= 0 ? "+" : ""}${summary.pctChange.toFixed(1)}%` : "—"}
+                    ({summary.pctChange !== null ? `${summary.pctChange >= 0 ? "+" : ""}${summary.pctChange.toFixed(1)}%` : "–"}
                     {summary.pctChangeBasis ? ` from ${summary.pctChangeBasis}` : ""})
                   </span>
                 </>
               ) : (
-                "—"
+                "–"
               )}
             </dd>
           </div>
@@ -212,7 +212,7 @@ export default async function DealPage({
           <div>
             <dt className="text-xs text-ink-muted">First proposal → signing</dt>
             <dd className="mt-0.5 text-sm font-medium tabular-nums text-ink">
-              {summary.daysFirstProposalToSigning !== null ? `${summary.daysFirstProposalToSigning} days` : "—"}
+              {summary.daysFirstProposalToSigning !== null ? `${summary.daysFirstProposalToSigning} days` : "–"}
             </dd>
           </div>
           <div>

@@ -332,7 +332,7 @@ export function BidChart({
                       ? `${formatPrice(low)}–${formatPrice(high)}`
                       : formatPrice(high ?? low);
                   const tooltip = [
-                    `${proposer} — ${formatDate(isoDate(p.date))} — ${priceLabel}`,
+                    `${proposer} · ${formatDate(isoDate(p.date))} · ${priceLabel}`,
                     quote ? `“${quote.length > 240 ? `${quote.slice(0, 240)}…` : quote}”` : null,
                   ]
                     .filter(Boolean)
@@ -402,7 +402,7 @@ export function BidChart({
       </div>
       {unplottable > 0 && (
         <p className="text-xs text-ink-faint">
-          {unplottable} proposal{unplottable === 1 ? "" : "s"} not shown (no usable price and date) — see the timeline below.
+          {unplottable} proposal{unplottable === 1 ? "" : "s"} not shown (no usable price and date). See the timeline below.
         </p>
       )}
     </div>

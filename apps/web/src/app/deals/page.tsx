@@ -132,7 +132,7 @@ export default async function DealsPage({
                   <td className="px-3 py-3 text-ink-muted">{row.acquirerDisplay}</td>
                   <td className="px-3 py-3 tabular-nums text-ink-muted">{formatDate(row.signingDate)}</td>
                   <td className="px-3 py-3 text-ink-muted">
-                    {row.considerationType ? CONSIDERATION_TYPE_LABELS[row.considerationType] ?? row.considerationType : "—"}
+                    {row.considerationType ? CONSIDERATION_TYPE_LABELS[row.considerationType] ?? row.considerationType : "–"}
                   </td>
                   <td className="px-3 py-3 text-right tabular-nums text-accent">
                     <PriceValue price={row.finalPrice} plausible={row.pricePlausible} finalPriceIsRatio={row.finalPriceIsRatio} />
@@ -140,7 +140,7 @@ export default async function DealsPage({
                   <td className="px-3 py-3 text-right tabular-nums">{row.nBidders}</td>
                   <td className="px-3 py-3 text-right tabular-nums">{row.nProposals}</td>
                   <td className="px-3 py-3 text-right tabular-nums">
-                    {row.pctBump !== null ? `${row.pctBump >= 0 ? "+" : ""}${row.pctBump.toFixed(1)}%` : "—"}
+                    {row.pctBump !== null ? `${row.pctBump >= 0 ? "+" : ""}${row.pctBump.toFixed(1)}%` : "–"}
                   </td>
                 </tr>
               ))}

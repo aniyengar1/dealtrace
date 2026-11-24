@@ -97,7 +97,7 @@ function fromEditString(value: string, type: FieldType): unknown {
 function factSummaryLine(fact: Fact): string {
   if (fact.record_type === "Event") return eventTypeLabel(fact.event_type);
   if (fact.record_type === "Proposal") return `${fact.proposer} → ${fact.recipient} (${proposalKindLabel(fact.proposal_kind)})`;
-  return `${fact.advisor} — ${valuationMethodLabel(fact.method)}`;
+  return `${fact.advisor} · ${valuationMethodLabel(fact.method)}`;
 }
 
 export function ReviewQueue({
@@ -254,7 +254,7 @@ export function ReviewQueue({
         <p className="text-sm text-ink-muted">
           {facts.length === 0
             ? "No facts to review for this deal."
-            : "No core facts (proposals/core events) to review — turn off Core only to see the rest."}
+            : "No core facts (proposals/core events) to review; turn off Core only to see the rest."}
         </p>
       ) : (
       <div className="grid grid-cols-2 gap-6">
@@ -339,7 +339,7 @@ export function ReviewQueue({
                   return (
                     <Fragment key={field.key}>
                       <dt className="text-ink-muted">{field.label}</dt>
-                      <dd className="tabular-nums">{display || "—"}</dd>
+                      <dd className="tabular-nums">{display || "–"}</dd>
                     </Fragment>
                   );
                 })}

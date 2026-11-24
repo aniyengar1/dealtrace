@@ -124,7 +124,7 @@ export function HorizontalTimeline({
                   <button
                     key={event.id}
                     onClick={() => onInspect(event)}
-                    title={`${formatEventDate(event)} — ${eventTypeLabel(event.event_type)}: ${event.summary}`}
+                    title={`${formatEventDate(event)} · ${eventTypeLabel(event.event_type)}: ${event.summary}`}
                     className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full ring-2 ring-surface transition-transform hover:scale-125 focus-visible:scale-125"
                     style={{ left: `${pct}%`, width: size, height: size, backgroundColor: EVENT_CATEGORY_COLORS[cat], opacity }}
                   />
@@ -137,7 +137,7 @@ export function HorizontalTimeline({
 
       {undatedCount > 0 && (
         <p className="mt-2 text-xs text-ink-faint">
-          {undatedCount} event{undatedCount === 1 ? "" : "s"} without a resolvable date not shown above — see the full list below.
+          {undatedCount} event{undatedCount === 1 ? "" : "s"} without a resolvable date not shown above. See the full list below.
         </p>
       )}
     </div>

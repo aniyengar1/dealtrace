@@ -1,5 +1,5 @@
 export function formatPrice(value: number | null | undefined): string {
-  if (value === null || value === undefined) return "—";
+  if (value === null || value === undefined) return "–";
   return `$${value.toFixed(2)}`;
 }
 
@@ -7,7 +7,7 @@ export function formatPriceRange(
   low: number | null | undefined,
   high: number | null | undefined
 ): string {
-  if (low === null && high === null) return "—";
+  if (low === null && high === null) return "–";
   if (low === high || low === null || high === null) {
     return formatPrice(low ?? high);
   }
@@ -15,7 +15,7 @@ export function formatPriceRange(
 }
 
 export function formatMultiple(value: number | null | undefined): string {
-  if (value === null || value === undefined) return "—";
+  if (value === null || value === undefined) return "–";
   return `${value.toFixed(1)}x`;
 }
 
@@ -23,7 +23,7 @@ export function formatMultipleRange(
   low: number | null | undefined,
   high: number | null | undefined
 ): string {
-  if (low === null && high === null) return "—";
+  if (low === null && high === null) return "–";
   if (low === high || low === null || high === null) {
     return formatMultiple(low ?? high);
   }
@@ -39,7 +39,7 @@ export function statDecimals(value: number): number {
 }
 
 export function formatShareCount(value: number | null | undefined): string {
-  if (value === null || value === undefined) return "—";
+  if (value === null || value === undefined) return "–";
   return value.toLocaleString("en-US");
 }
 
@@ -48,19 +48,19 @@ export function formatShareCount(value: number | null | undefined): string {
 // price is; formatPrice's plain "$X.XX" stays right for everything
 // under a million.
 export function formatCompactDollar(value: number | null | undefined): string {
-  if (value === null || value === undefined) return "—";
+  if (value === null || value === undefined) return "–";
   if (value >= 1_000_000_000) return `$${(value / 1_000_000_000).toFixed(2)}B`;
   if (value >= 1_000_000) return `$${(value / 1_000_000).toFixed(1)}M`;
   return formatPrice(value);
 }
 
 export function formatPct(value: number | null | undefined): string {
-  if (value === null || value === undefined) return "—";
+  if (value === null || value === undefined) return "–";
   return `${value.toFixed(1)}%`;
 }
 
 export function formatDate(value: string | null | undefined): string {
-  if (!value) return "—";
+  if (!value) return "–";
   const [year, month, day] = value.split("-");
   const date = new Date(Date.UTC(Number(year), Number(month) - 1, Number(day)));
   return date.toLocaleDateString("en-US", {
@@ -127,7 +127,7 @@ export function formatEventDate(event: {
 }
 
 export function formatPercentWhole(ratio: number | null | undefined): string {
-  if (ratio === null || ratio === undefined) return "—";
+  if (ratio === null || ratio === undefined) return "–";
   return `${Math.round(ratio * 100)}%`;
 }
 

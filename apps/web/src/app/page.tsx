@@ -37,7 +37,7 @@ const STEPS = [
   },
   {
     title: "Timeline",
-    body: "Validated facts assemble into a sourced, navigable process timeline — click any claim to see the quote it came from.",
+    body: "Validated facts assemble into a sourced, navigable process timeline; click any claim to see the quote it came from.",
   },
 ];
 
@@ -91,7 +91,7 @@ export default async function HomePage() {
             <h1 className="font-serif text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl">
               <span className="text-accent-bright">{headlineCount} M&amp;A sale processes,</span>{" "}
               <span className="text-ink-muted">
-                reconstructed from SEC filings &mdash; every fact linked to its source sentence.
+                reconstructed from SEC filings, every fact linked to its source sentence.
               </span>
             </h1>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -223,7 +223,7 @@ export default async function HomePage() {
                   />
                   <p className="mt-3 text-sm text-ink-muted">
                     Cash deals typically sign for about {stats.medianPctBump.value.toFixed(1)}% more than the first
-                    priced proposal (n = {stats.medianPctBump.n}) — negotiation usually moves the price, not just the
+                    priced proposal (n = {stats.medianPctBump.n}); negotiation usually moves the price, not just the
                     terms.
                   </p>
                 </Card>
@@ -241,7 +241,7 @@ export default async function HomePage() {
                   <p className="mt-3 text-sm text-ink-muted">
                     From the first priced proposal to a signed agreement takes a median of{" "}
                     {Math.round(stats.medianDaysFirstProposalToSigning.value)} days (n ={" "}
-                    {stats.medianDaysFirstProposalToSigning.n}) — a quarter of a year once real numbers are on the
+                    {stats.medianDaysFirstProposalToSigning.n}), a quarter of a year once real numbers are on the
                     table.
                   </p>
                 </Card>
@@ -320,14 +320,14 @@ export default async function HomePage() {
           <div className="mt-10 grid gap-5 sm:grid-cols-3">
             <Reveal>
               <Card className="p-5">
-                <p className="text-sm font-medium text-ink">Splunk &mdash; Cisco (development set)</p>
+                <p className="text-sm font-medium text-ink">Splunk · Cisco (development set)</p>
                 <p className="mt-1 text-2xl font-serif text-accent">100%</p>
                 <p className="mt-1 text-sm text-ink-muted">core events and proposals match the gold answer key</p>
               </Card>
             </Reveal>
             <Reveal delay={80}>
               <Card className="p-5">
-                <p className="text-sm font-medium text-ink">Zendesk &mdash; Consortium (held-out)</p>
+                <p className="text-sm font-medium text-ink">Zendesk · Consortium (held-out)</p>
                 <p className="mt-1 text-2xl font-serif text-accent">97% / 100%</p>
                 <p className="mt-1 text-sm text-ink-muted">core-event recall / proposal recall, never seen during development</p>
               </Card>

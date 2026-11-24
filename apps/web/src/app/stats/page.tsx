@@ -60,7 +60,7 @@ function groupStats(rows: DealMetricsRow[]): GroupStats {
 }
 
 function pctLabel(value: number | null): string {
-  if (value === null) return "—";
+  if (value === null) return "–";
   return `${value >= 0 ? "+" : ""}${value.toFixed(statDecimals(value))}%`;
 }
 
@@ -84,12 +84,12 @@ function GroupStatsCard({ label, stats }: { label: string; stats: GroupStats }) 
         </div>
         <div>
           <dt className="text-xs text-ink-muted">Median bidders</dt>
-          <dd className="tabular-nums">{stats.medianBidders ?? "—"}</dd>
+          <dd className="tabular-nums">{stats.medianBidders ?? "–"}</dd>
         </div>
         <div>
           <dt className="text-xs text-ink-muted">Median days, proposal to signing</dt>
           <dd className="tabular-nums">
-            {stats.medianDaysProposalToSigning !== null ? Math.round(stats.medianDaysProposalToSigning) : "—"}
+            {stats.medianDaysProposalToSigning !== null ? Math.round(stats.medianDaysProposalToSigning) : "–"}
           </dd>
         </div>
         <div>
@@ -97,7 +97,7 @@ function GroupStatsCard({ label, stats }: { label: string; stats: GroupStats }) 
           <dd className="tabular-nums">
             {stats.pctFirstBidderWonContested !== null
               ? `${Math.round(stats.pctFirstBidderWonContested.value)}% (n = ${stats.pctFirstBidderWonContested.n})`
-              : "—"}
+              : "–"}
           </dd>
         </div>
       </dl>
@@ -131,7 +131,7 @@ export default async function StatsPage({
         <div>
           <h1 className="font-serif text-3xl font-semibold tracking-tight text-ink">Cross-deal findings</h1>
           <p className="mt-1 text-sm text-ink-muted">
-            n = {rows.length} included deal{rows.length === 1 ? "" : "s"} — every figure is read from{" "}
+            n = {rows.length} included deal{rows.length === 1 ? "" : "s"}; every figure is read from{" "}
             <code className="text-ink">deal_metrics</code>, computed once per bulk-load run.
           </p>
         </div>
@@ -180,9 +180,9 @@ export default async function StatsPage({
                 <td className="px-3 py-3 text-right tabular-nums">{row.nBidders}</td>
                 <td className="px-3 py-3 text-right tabular-nums">{row.nProposals}</td>
                 <td className="px-3 py-3 text-right tabular-nums">{pctLabel(row.pctBump)}</td>
-                <td className="px-3 py-3 text-right tabular-nums">{row.daysFirstProposalToSigning ?? "—"}</td>
+                <td className="px-3 py-3 text-right tabular-nums">{row.daysFirstProposalToSigning ?? "–"}</td>
                 <td className="px-3 py-3 text-ink-muted">
-                  {row.firstBidderWon === null ? "—" : row.firstBidderWon ? "Yes" : "No"}
+                  {row.firstBidderWon === null ? "–" : row.firstBidderWon ? "Yes" : "No"}
                 </td>
               </tr>
             ))}

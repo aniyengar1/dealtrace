@@ -68,7 +68,7 @@ export default async function DealMemoPage({ params }: { params: Promise<{ slug:
     <Container wide className="py-10">
       <div className="flex items-start justify-between">
         <div>
-          <h1 className="font-serif text-2xl font-semibold tracking-tight text-ink">{memo.dealName} — Deal memo</h1>
+          <h1 className="font-serif text-2xl font-semibold tracking-tight text-ink">{memo.dealName} · Deal memo</h1>
           <p className="mt-1 text-sm text-ink-muted">
             {metrics ? dealTitle(metrics.acquirerDisplay, metrics.targetDisplay) : dealTitle(memo.acquirer, memo.target)}
           </p>

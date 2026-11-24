@@ -135,7 +135,7 @@ function buildTimeline(events: EventRow[]): MemoLine[] {
     .filter((e) => CORE_EVENT_TYPES.has(e.event_type))
     .filter((e) => e.date_start !== null)
     .sort((a, b) => (a.date_start! < b.date_start! ? -1 : a.date_start! > b.date_start! ? 1 : 0))
-    .map((e) => line(`${formatEventDate(e)} — ${eventTypeLabel(e.event_type)}: ${e.summary}`, e.id, e.source_paragraph_ids));
+    .map((e) => line(`${formatEventDate(e)} · ${eventTypeLabel(e.event_type)}: ${e.summary}`, e.id, e.source_paragraph_ids));
 }
 
 function buildBidHistory(proposals: ProposalRow[]): BidHistoryRow[] {
@@ -298,7 +298,7 @@ function citationSuffix(paragraphIds: string[]): string {
 
 export function renderMemoMarkdown(memo: DealMemo): string {
   const out: string[] = [];
-  out.push(`# ${memo.dealName} — Deal Memo`, "");
+  out.push(`# ${memo.dealName} · Deal Memo`, "");
   out.push(`${memo.target} → ${memo.acquirer}`, "");
 
   out.push("## Deal terms", "");

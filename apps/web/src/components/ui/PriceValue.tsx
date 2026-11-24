@@ -37,7 +37,7 @@ export function PriceValue({
   if (plausible === false) {
     return (
       <span className={className} title="price not reliably extracted">
-        —
+        –
       </span>
     );
   }

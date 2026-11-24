@@ -26,7 +26,7 @@ export default function OpengraphImage() {
           Every public-company sale process, extracted from SEC filings.
         </div>
         <div style={{ display: "flex", marginTop: 32, fontSize: 24, color: "#8b8e94", fontFamily: "sans-serif" }}>
-          Who was contacted · how bids moved · how long it took — every fact sourced.
+          Who was contacted · how bids moved · how long it took · every fact sourced.
         </div>
       </div>
     ),

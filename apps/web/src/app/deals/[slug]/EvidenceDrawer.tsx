@@ -10,7 +10,7 @@ import { eventTypeLabel, proposalKindLabel, proposalStatusLabel, valuationMethod
 function factTitle(fact: Fact): string {
   if (fact.record_type === "Event") return eventTypeLabel(fact.event_type);
   if (fact.record_type === "Proposal") return proposalKindLabel(fact.proposal_kind);
-  return `${fact.advisor} — ${valuationMethodLabel(fact.method)}`;
+  return `${fact.advisor} · ${valuationMethodLabel(fact.method)}`;
 }
 
 function FactFields({ fact }: { fact: Fact }) {
@@ -20,7 +20,7 @@ function FactFields({ fact }: { fact: Fact }) {
         <dt className="text-ink-muted">Date</dt>
         <dd>{formatEventDate(fact)}</dd>
         <dt className="text-ink-muted">Parties</dt>
-        <dd>{fact.parties.join(", ") || "—"}</dd>
+        <dd>{fact.parties.join(", ") || "–"}</dd>
         <dt className="text-ink-muted">Summary</dt>
         <dd>{fact.summary}</dd>
       </dl>

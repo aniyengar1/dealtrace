@@ -18,9 +18,9 @@ export const metadata: Metadata = {
 const PIPELINE_STEPS: { kind: StepKind; title: string; body: string }[] = [
   { kind: "discover", title: "Discover", body: "EDGAR's quarterly form.idx files are scanned for DEFM14A, PREM14A, SC 14D9, SC TO-T, and S-4 filings, grouped into candidate deals by target CIK and filing date." },
   { kind: "classify", title: "Classify", body: "A no-LLM pass reads each filing's SIC code and document text to separate real operating-company M&A from SPAC/de-SPAC mechanics and other non-M&A filings (debt exchanges, reorganizations, going-private squeeze-outs)." },
-  { kind: "extract", title: "Section + extract", body: "The “Background of the Merger” narrative and fairness-opinion sections are isolated, then an LLM reads them and returns structured events, proposals, and valuation analyses — never free text." },
+  { kind: "extract", title: "Section + extract", body: "The “Background of the Merger” narrative and fairness-opinion sections are isolated, then an LLM reads them and returns structured events, proposals, and valuation analyses, never free text." },
   { kind: "validate", title: "Validate", body: "Every record is checked against the filing's own text before anyone sees it: quotes must appear verbatim (after normalization), numbers must appear in a cited quote, and dates are resolved by code, never by the model." },
-  { kind: "load", title: "Load + review", body: "Validated records land in Postgres keyed to their source paragraphs. A human reviewer can confirm, correct, or reject any fact — review status is tracked but never blocks a fact from showing, just from being presented as verified." },
+  { kind: "load", title: "Load + review", body: "Validated records land in Postgres keyed to their source paragraphs. A human reviewer can confirm, correct, or reject any fact; review status is tracked but never blocks a fact from showing, just from being presented as verified." },
 ];
 
 const DISCOVERY_FUNNEL: { label: string; count: number }[] = [
@@ -42,7 +42,7 @@ const EXTRACTED_FIELDS: { type: string; fields: string }[] = [
 const VALIDATION_RULES = [
   {
     title: "Quote matching",
-    body: "Every source_quote must appear, after normalizing quote marks, dashes, and whitespace runs, somewhere in the paragraph it cites. Case is never folded — a quote has to match the filing's actual capitalization, not an approximation of it.",
+    body: "Every source_quote must appear, after normalizing quote marks, dashes, and whitespace runs, somewhere in the paragraph it cites. Case is never folded; a quote has to match the filing's actual capitalization, not an approximation of it.",
   },
   {
     title: "Number checks",
@@ -61,8 +61,8 @@ const ACCURACY_ROWS: {
   result: string;
   pending?: boolean;
 }[] = [
-  { deal: "Splunk — Cisco", set: "Development", metric: "Core events & proposals vs. gold answer key", result: "100%" },
-  { deal: "Zendesk — Consortium", set: "Held-out", metric: "Core-event recall / proposal recall", result: "97% / 100%" },
+  { deal: "Splunk · Cisco", set: "Development", metric: "Core events & proposals vs. gold answer key", result: "100%" },
+  { deal: "Zendesk · Consortium", set: "Held-out", metric: "Core-event recall / proposal recall", result: "97% / 100%" },
   { deal: "20-deal spot check (round 3)", set: "Bulk extraction sample", metric: "Field-by-field manual verification", result: "81 / 90 fields" },
 ];
 
@@ -127,7 +127,7 @@ export default async function MethodologyPage() {
         </Reveal>
         <p className="mt-3 inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
           De-duplication (<code className="text-ink">src/dedup_deals.py</code>) resolves cases where the same
-          underlying deal surfaces as two or more separately discovered filings &mdash; a target company
+          underlying deal surfaces as two or more separately discovered filings: a target company
           refiling an amended proxy, or a tender offer and a merger-proxy for the same transaction both getting
           picked up by discovery. Matches are grouped by target entity and announcement window; one deal in each
           group is marked canonical (<code className="text-ink">is_canonical</code>), the rest point to it via{" "}
@@ -162,7 +162,7 @@ export default async function MethodologyPage() {
         </Reveal>
         <p className="mt-3 inline-block rounded-lg bg-bg/90 px-4 py-2 text-sm text-ink-muted backdrop-blur-sm">
           Every record also carries its 1–3 source quotes, the paragraph(s) they came from, a pass/fail
-          validation flag, and a review status — visible on each deal page via the evidence drawer.
+          validation flag, and a review status, visible on each deal page via the evidence drawer.
         </p>
       </section>
 
@@ -195,7 +195,7 @@ export default async function MethodologyPage() {
               Rounds 1–2 found systematic errors (buyer-side filings mislabeled as sales, inflated bidder counts,
               wrong first-contact dates), fixed with deterministic rules. Round 3, on a fresh sample: 18 of 20 deals
               were genuine target-side sale processes; across those, 81 of 90 extracted fields were correct or
-              materially correct, 9 were wrong — most often first-contact dates, which are therefore excluded from
+              materially correct, 9 were wrong, most often first-contact dates, which are therefore excluded from
               headline statistics. Known limitations: some acquirers remain unresolved (&ldquo;Undisclosed&rdquo;),
               and stock-for-stock deals have no per-share cash price.
             </p>
@@ -238,12 +238,12 @@ export default async function MethodologyPage() {
               pipeline&apos;s automated EDGAR discovery starts looking).
             </p>
             <p className="mt-2">
-              <span className="text-ink">Form types:</span> DEFM14A, PREM14A, SC 14D9, SC TO-T, and S-4 — the
+              <span className="text-ink">Form types:</span> DEFM14A, PREM14A, SC 14D9, SC TO-T, and S-4, the
               merger-proxy and tender-offer filings that carry a “Background of the Merger” narrative.
             </p>
             <p className="mt-2">
               <span className="text-ink">Excluded:</span> SPAC/de-SPAC business combinations (classified and
-              dropped before extraction — they don&apos;t have a comparable sale-process narrative), and filings
+              dropped before extraction; they don&apos;t have a comparable sale-process narrative), and filings
               whose background section a parser can&apos;t reliably isolate (logged, not silently skipped).
             </p>
           </Card>
@@ -257,7 +257,7 @@ export default async function MethodologyPage() {
             <ul className="list-disc space-y-2 pl-5">
               <li>
                 Every fact shown is machine-verified against a quote from its filing before it&apos;s loaded, but
-                human review of bulk-extracted deals is still in progress behind the scenes — a figure can be
+                human review of bulk-extracted deals is still in progress behind the scenes; a figure can be
                 accurate to its source quote and still reflect a model misreading of that quote.
               </li>
               <li>
@@ -266,7 +266,7 @@ export default async function MethodologyPage() {
               </li>
               <li>
                 &ldquo;Days to signing,&rdquo; &ldquo;bidders,&rdquo; and the first-to-final bump are derived from whichever events
-                and proposals a given run extracted — a background section that omits an early contact will
+                and proposals a given run extracted; a background section that omits an early contact will
                 understate the real timeline, not just the recorded one.
               </li>
               <li>
@@ -275,7 +275,7 @@ export default async function MethodologyPage() {
               </li>
               <li>
                 Some filings redact a losing bidder&apos;s identity during an active sale process (&ldquo;Party A,&rdquo;
-                &ldquo;Company B,&rdquo; &ldquo;Bidder 1&rdquo;) — DealTrace reports these anonymized labels exactly as the filing
+                &ldquo;Company B,&rdquo; &ldquo;Bidder 1&rdquo;); DealTrace reports these anonymized labels exactly as the filing
                 states them, rather than guessing a real name.
               </li>
             </ul>
