@@ -81,6 +81,14 @@ def _initials_including_suffix(name: str) -> str:
 # stockholder/equityholder can be either the role-adjective prefix
 # ("Shareholder Party A") or the placeholder term itself
 # ("Stockholder B"), so both lists include them.
+#
+# Deliberately an enumerated list, not a generic "any leading word"
+# match: tried once, broke on "Real Acquirer Co" -- a real company
+# name where "Co" (2 characters) coincidentally fits the trailing
+# anonymization-letter-suffix shape just as well as "Party A" does, and
+# "Acquirer" being in the core-word list let "Real" slide through as
+# an unchecked adjective. The anchored suffix alone isn't a reliable
+# enough signal; the adjective has to be a recognized one too.
 _ANONYMIZED_PLACEHOLDER_RE = re.compile(
     r"^(the\s+)?(?:shareholder|stockholder|equityholder|controlling|significant|majority|"
     r"management|director|officer|founder)?\s*"

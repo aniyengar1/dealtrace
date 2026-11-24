@@ -111,6 +111,16 @@ def test_is_shell_name_detects_conventional_patterns():
         assert is_shell_name(name), name
 
 
+def test_is_shell_name_detects_intermediate_vehicles():
+    # Round-4 spot check: Avalara's acquirer_display showed "Lava
+    # Intermediate" (the filing's own vehicle name) instead of the
+    # already-correct, already-stored "Vista" -- "Intermediate" wasn't
+    # a recognized shell marker at all, so the vehicle name won
+    # unconditionally over a real, better heuristic answer.
+    assert is_shell_name("Lava Intermediate, LLC")
+    assert is_shell_name("Lava Intermediate")
+
+
 def test_is_shell_name_detects_opaque_short_acronym():
     assert is_shell_name("LEWHP, LLC")
     assert not is_shell_name("BP Products North America Inc.")

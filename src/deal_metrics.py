@@ -183,6 +183,65 @@ def _is_invalid_acquirer_display(name: str, target: str) -> bool:
     return False
 
 
+_TRAILING_GROUP_WORD_RE = re.compile(r"\s+(?:consortium|group|entities)\s*$", re.IGNORECASE)
+
+
+def _best_named_sponsor(proposals: list[dict], events: list[dict], target: str) -> Optional[str]:
+    """When the stored acquirer is itself unusable (a generic term like
+    "Consortium"/"Parent", not a specific name at all), looks for the
+    clearest real sponsor name among this deal's own PROPOSALS -- never
+    event parties alone for the candidate itself, which also pick up
+    advisors and law firms on either side (Morgan Stanley, Evercore,
+    Cravath) that are never the buyer. Checked most-recent-first so a
+    later, better-identified proposal (e.g. a joint "Hill City, JFLCO
+    and Apollo" naming the actual consortium members) wins over an
+    earlier one that only used the generic term.
+
+    Splits on joint-proposer connectors only to strip out a generic
+    component riding alongside a real name ("Consortium led by Apollo"
+    -> "Apollo"); when every split part is independently a real,
+    non-generic name, there's no single "the" sponsor to pick out of a
+    genuine multi-party group, so the original joint string is kept
+    whole ("Hill City, JFLCO and Apollo") rather than arbitrarily
+    guessing which member is lead from word order alone -- unreliable
+    both ways in this dataset (AES's own "co-led by GIP and EQT,
+    including CalPERS and QIA" names the leads first, not last).
+
+    A real-looking name is only trusted if it's ALSO independently
+    named in this deal's own events (ideally the signing) -- an early,
+    later-superseded or rejected proposal can name a real company that
+    simply isn't who the deal actually closed with (Option Care
+    Health's accepted proposal and signing event both only ever say
+    "Investor Group"/"Parent"; an earlier, unrelated "CD&R and
+    McKesson" proposal from months before is not evidence of who that
+    generic term resolves to). Without that corroboration, a named-but
+    -unconfirmed candidate is no safer a guess than the generic term or
+    shell name it would replace."""
+    from src.bulk_stats import _dated_proposals, _split_joint_proposer
+
+    event_parties = {ep for e in events for ep in (e.get("parties") or [])}
+
+    def is_usable(part: str) -> bool:
+        if _is_invalid_acquirer_display(part, target):
+            return False
+        stripped = _TRAILING_GROUP_WORD_RE.sub("", part).strip()
+        return stripped == part or not is_anonymized_placeholder(stripped)
+
+    def corroborated(part: str) -> bool:
+        return any(is_same_entity(part, ep) for ep in event_parties)
+
+    for p in reversed(_dated_proposals(proposals)):
+        proposer = p.get("proposer")
+        if not proposer:
+            continue
+        parts = _split_joint_proposer(proposer)
+        usable = [part for part in parts if is_usable(part)]
+        if not usable or not all(corroborated(part) for part in usable):
+            continue
+        return proposer.strip() if len(usable) == len(parts) else usable[0]
+    return None
+
+
 def _bulk_slug_to_cik_accession(slug: str) -> Optional[tuple[str, str]]:
     if not slug.startswith("bulk_"):
         return None
@@ -281,8 +340,22 @@ def resolve_acquirer_display(
 
         if filing_valid and not is_shell_name(filing_name) and not _is_holding_vehicle_of(filing_name, acquirer):
             resolved = filing_name
-        elif _is_invalid_acquirer_display(heuristic_resolved, target) and filing_valid:
-            resolved = filing_name
+        elif _is_invalid_acquirer_display(heuristic_resolved, target):
+            # The heuristic answer is unusable on its own (a generic
+            # term like "Consortium"/"Parent", or the target itself
+            # under another name) -- prefer a real sponsor named in the
+            # deal's own proposals (e.g. "Apollo" out of a joint "Hill
+            # City, JFLCO and Apollo" proposer) over a shell/vehicle
+            # filing name, which previously won here unconditionally
+            # even when it was itself just a named shell ("Rand Parent")
+            # and a real name was sitting right there in the evidence.
+            sponsor = _best_named_sponsor(proposals, events, target)
+            if sponsor and not _is_invalid_acquirer_display(sponsor, target):
+                resolved = sponsor
+            elif filing_valid:
+                resolved = filing_name
+            else:
+                resolved = heuristic_resolved
         else:
             resolved = heuristic_resolved
 

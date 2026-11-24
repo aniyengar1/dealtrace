@@ -132,6 +132,46 @@ def test_curated_display_names_parses_the_richer_acquirer_from_deal_name():
     assert acquirer == "Hellman & Friedman and Permira"
 
 
+def test_resolve_acquirer_display_prefers_named_sponsor_over_generic_consortium():
+    # Real shape: bulk_1135185_000110465922109861 (Atlas Air Worldwide /
+    # "Consortium") -- the filing's own "Parent" definition resolves to
+    # a named shell ("Rand Parent"), which previously won unconditionally
+    # once "Consortium" was flagged generic. The real sponsors are named
+    # in an earlier joint proposal AND corroborated by the signing event
+    # itself, so they must win over the shell.
+    proposals = [
+        {"proposer": "Hill City, JFLCO and Apollo", "recipient": "Atlas Air Worldwide Holdings Inc", "date_resolved": "2021-06-01"},
+        {"proposer": "Consortium", "recipient": "Atlas Air Worldwide Holdings Inc", "date_resolved": "2022-07-30"},
+    ]
+    events = [{"parties": ["Atlas Air Worldwide Holdings Inc", "Hill City", "JFLCO", "Apollo"]}]
+    assert (
+        resolve_acquirer_display("Consortium", "Atlas Air Worldwide Holdings Inc", proposals, events)
+        == "Hill City, JFLCO and Apollo"
+    )
+
+
+def test_resolve_acquirer_display_requires_event_corroboration_for_named_sponsor():
+    # An early, later-superseded proposal naming a real company is not
+    # by itself evidence that the company is who the deal closed with
+    # (Option Care Health: an early "CD&R and McKesson"-style proposal
+    # from months before signing, with the actual signing/announcement
+    # never mentioning them, would be a wrong guess). With no
+    # corroborating event, stay with the plain generic-term handling
+    # (Undisclosed) rather than surface an unconfirmed name.
+    proposals = [
+        {"proposer": "Real Sponsor Co", "recipient": "Acme Inc", "date_resolved": "2024-01-01"},
+        {"proposer": "Consortium", "recipient": "Acme Inc", "date_resolved": "2024-06-01"},
+    ]
+    assert resolve_acquirer_display("Consortium", "Acme Inc", proposals, []) == "Undisclosed"
+
+
+def test_resolve_acquirer_display_prefers_filing_vehicle_only_when_no_named_sponsor_exists():
+    # No real sponsor named anywhere, so the named (if uninformative)
+    # shell from the filing stays the fallback -- still better than
+    # Undisclosed, unchanged from the existing behavior.
+    assert resolve_acquirer_display("Consortium", "Acme Inc", [], []) == "Undisclosed"
+
+
 def test_curated_display_names_covers_every_curated_deal():
     from src.run import DEALS
 

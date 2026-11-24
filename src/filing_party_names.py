@@ -70,14 +70,15 @@ _SENTENCE_END_RE = re.compile(r"\s+and\s|\.\s|\.$|;|\(")
 
 # Shell/holding-vehicle name patterns -- a named parent whose own name
 # is just a deal-specific shell ("Heron BidCo, LLC", "Rand Parent,
-# LLC", "Formulations Parent Corporation", "Cyclades Parent, Inc") is
-# technically the defined party but not an informative answer to "who
-# is the acquirer" the way a real operating company or PE firm name
-# is. "Parent"/"Buyer" as a standalone word (not requiring an LLC/Inc
-# suffix right after it -- "Formulations Parent" has none) is itself
-# already a strong shell signal; real public companies essentially
-# never have "Parent" or "Buyer" as part of their own name. Used both
-# to decide whether to keep searching for an "affiliate of"/"does
+# LLC", "Formulations Parent Corporation", "Cyclades Parent, Inc",
+# "Lava Intermediate, LLC") is technically the defined party but not an
+# informative answer to "who is the acquirer" the way a real operating
+# company or PE firm name is. "Parent"/"Buyer"/"Intermediate" as a
+# standalone word (not requiring an LLC/Inc suffix right after it --
+# "Formulations Parent" has none) is itself already a strong shell
+# signal; real public companies essentially never have "Parent",
+# "Buyer", or "Intermediate" as part of their own name. Used both to
+# decide whether to keep searching for an "affiliate of"/"does
 # business as" refinement nearby, and by callers deciding whether to
 # prefer an already-good heuristic answer over a shell -- never to
 # discard the shell name outright, since it's still better than
@@ -85,7 +86,7 @@ _SENTENCE_END_RE = re.compile(r"\s+and\s|\.\s|\.$|;|\(")
 _SHELL_NAME_RE = re.compile(
     r"\b(bidco|holdco|newco|mergeco|parentco|finco|topco|midco|"
     r"acquireco|acquisitionco|merger\s*sub|parent|buyer|purchaser|"
-    r"guarantor|acquisition)\b",
+    r"guarantor|acquisition|intermediate)\b",
     re.IGNORECASE,
 )
 
