@@ -168,7 +168,7 @@ def test_classify_deal_leaves_ordinary_deal_included():
     assert reason is None
 
 
-# --- vote-based S-4 rules (_is_s4_vote_based_reversed/_is_s4_merger_of_equals/_is_s4_buyer_side_only_vote) --------
+# --- vote-based S-4 rules (_is_s4_vote_based_reversed/_is_merger_of_equals/_is_s4_buyer_side_only_vote) --------
 
 
 def test_s4_vote_based_reversed_true_when_acquirer_field_party_adopts(monkeypatch):
@@ -189,11 +189,32 @@ def test_s4_vote_based_reversed_false_when_target_already_adopts(monkeypatch):
     assert cdt._is_s4_vote_based_reversed("fake_slug", "Target Co", "Acquirer Co", "S-4") is False
 
 
-def test_non_s4_form_type_is_not_flagged_by_any_vote_based_check():
+def test_non_s4_form_type_is_not_flagged_by_either_vote_based_check():
+    # Unlike _is_merger_of_equals (a plain text-pattern check, not
+    # vote-based -- see its own DEFM14A-specific tests below), these two
+    # genuinely need the S-4's specific "adopt the merger agreement" vs
+    # "approve the issuance" voting-disclosure convention and stay
+    # S-4-only.
     assert cdt._is_s4_vote_based_reversed("fake_slug", "Target Co", "Acquirer Co", "DEFM14A") is False
     assert cdt._is_s4_vote_based_reversed("fake_slug", "Target Co", "Acquirer Co", None) is False
-    assert cdt._is_s4_merger_of_equals("fake_slug", "Target Co", "Acquirer Co", "DEFM14A") is False
     assert cdt._is_s4_buyer_side_only_vote("fake_slug", "Target Co", "Acquirer Co", "DEFM14A") is False
+
+
+def test_merger_of_equals_also_fires_on_defm14a_joint_proxies(monkeypatch):
+    # Real shape: AvalonBay/Equity Residential and Veeco/Axcelis -- both
+    # genuine mergers of equals filed as a DEFM14A joint proxy
+    # statement, never an S-4 at all.
+    monkeypatch.setattr(cdt, "_full_text", lambda slug: "the parties will combine in a merger of equals.")
+    assert cdt._is_merger_of_equals("fake_slug", "AvalonBay Communities, Inc.", "Equity Residential", "DEFM14A") is True
+
+
+def test_merger_of_equals_does_not_fire_on_a_tender_offer_form_type(monkeypatch):
+    # A tender offer is inherently one party buying out the other's
+    # shares, never a genuine combination of equals -- excluded even if
+    # the phrase somehow appears (e.g. in a fairness-opinion comparable
+    # -transactions screen, see the boilerplate test above).
+    monkeypatch.setattr(cdt, "_full_text", lambda slug: "the parties will combine in a merger of equals.")
+    assert cdt._is_merger_of_equals("fake_slug", "Target Co", "Acquirer Co", "SC 14D9") is False
 
 
 def test_s4_vote_based_reversed_respects_no_vote_required_negation(monkeypatch):
@@ -217,7 +238,7 @@ def test_s4_vote_based_reversed_respects_no_vote_required_negation(monkeypatch):
 def test_s4_merger_of_equals_true_for_explicit_phrase(monkeypatch):
     # Real shape: Hut 8/USBTC.
     monkeypatch.setattr(cdt, "_full_text", lambda slug: "This transaction is structured as a merger of equals.")
-    assert cdt._is_s4_merger_of_equals("fake_slug", "Hut 8 Corp.", "USBTC", "S-4") is True
+    assert cdt._is_merger_of_equals("fake_slug", "Hut 8 Corp.", "USBTC", "S-4") is True
 
 
 def test_s4_merger_of_equals_ignores_comparable_transactions_screening_boilerplate(monkeypatch):
@@ -230,7 +251,7 @@ def test_s4_merger_of_equals_ignores_comparable_transactions_screening_boilerpla
         "_full_text",
         lambda slug: "deal value between $500 million and $2.5 billion, excluding any Merger of Equals (as defined by S&P).",
     )
-    assert cdt._is_s4_merger_of_equals("fake_slug", "TriState Capital", "Raymond James", "S-4") is False
+    assert cdt._is_merger_of_equals("fake_slug", "TriState Capital", "Raymond James", "S-4") is False
 
 
 def test_s4_merger_of_equals_does_not_fire_on_dual_statutory_vote_alone(monkeypatch):
@@ -247,7 +268,7 @@ def test_s4_merger_of_equals_does_not_fire_on_dual_statutory_vote_alone(monkeypa
             "LINK shareholders will be asked to adopt the merger agreement."
         ),
     )
-    assert cdt._is_s4_merger_of_equals("fake_slug", "GNB", "LINKBANCORP, Inc.", "S-4") is False
+    assert cdt._is_merger_of_equals("fake_slug", "GNB", "LINKBANCORP, Inc.", "S-4") is False
 
 
 def test_s4_buyer_side_only_vote_true_when_only_acquirer_field_party_votes_on_issuance(monkeypatch):

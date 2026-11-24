@@ -180,7 +180,7 @@ _CLASSIFY_CACHE_DIR = Path("data/cache/deal_type_classification")
 # example of a reverse merger deliberately kept in stats elsewhere
 # (and 7 other SPAC-shell-named filers with the same shape). v8:
 # replaced _is_s4_filer_is_acquirer (filer identity) with a vote-based
-# test -- _is_s4_vote_based_reversed/_is_s4_merger_of_equals/
+# test -- _is_s4_vote_based_reversed/_is_merger_of_equals/
 # _is_s4_buyer_side_only_vote, reading whose named party's own
 # shareholders are shown adopting the merger agreement vs. approving a
 # share issuance -- after filer identity wrongly excluded 37 deals
@@ -194,11 +194,17 @@ _CLASSIFY_CACHE_DIR = Path("data/cache/deal_type_classification")
 # ["ironSource"] _NAME_RUN can never capture, three complex/tangled
 # structures -- a divestiture, a split-off+merger, a holdco
 # reorganization -- excluded without further untangling, and two
-# genuinely undetermined deals). Every classification rule change
-# needs a bump here, or a deal keeps
-# silently serving its stale result forever even once the rule that
-# should catch it is fixed.
-_CLASSIFY_CACHE_VERSION = "v14"
+# genuinely undetermined deals). v15 (round-4 spot check): renamed
+# _is_s4_merger_of_equals to _is_merger_of_equals and widened its gate
+# from S-4-only to also accept DEFM14A/PREM14A joint proxies (a genuine
+# merger of equals is routinely disclosed that way with no S-4 involved
+# at all -- AvalonBay/Equity Residential, Veeco/Axcelis), and added
+# Vista Outdoor as a new complex_structure manual override (a Sporting
+# Products sale to CSG combined with a Revelyst separation, not a plain
+# single-buyer sale). Every classification rule change needs a bump
+# here, or a deal keeps silently serving its stale result forever even
+# once the rule that should catch it is fixed.
+_CLASSIFY_CACHE_VERSION = "v15"
 
 
 def _classify_cache_key(
@@ -914,6 +920,15 @@ _S4_VOTE_MANUAL_OVERRIDES: dict[str, str] = {
     # with no real second party to resolve the stored acquirer field
     # "Unknown" to.
     "bulk_1855509_000173112222001537": "complex_structure",
+    # Complex structure, not worth untangling further (round-4 spot
+    # check): a sale of Vista Outdoor's Sporting Products Business to
+    # CSG, combined with a separation/distribution of its OTHER
+    # business (Revelyst) to Vista's own existing shareholders -- not a
+    # plain sale of the whole company to a single buyer. The stored
+    # acquirer field ("MNC") is a rival, unsolicited, never-signed
+    # proposal for the whole company, not the real counterparty (CSG)
+    # to the actual signed transaction.
+    "bulk_1616318_000162828024014367": "complex_structure",
 }
 
 
@@ -930,17 +945,30 @@ def _is_s4_vote_based_reversed(slug: str, target: str, acquirer: str, form_type:
     return _has_adopt_merger_vote(text, acquirer)
 
 
-def _is_s4_merger_of_equals(slug: str, target: str, acquirer: str, form_type: Optional[str]) -> bool:
+# A genuine merger of equals is disclosed via several form types, not
+# just an S-4 (which only applies when new securities are being
+# registered) -- AvalonBay/Equity Residential and Veeco/Axcelis are
+# both DEFM14A joint proxy statements, with no S-4 involved at all,
+# and both explicitly call themselves a "merger of equals" in their own
+# text. A tender offer (SC 14D9/SC TO-T) is deliberately excluded: that
+# structure is inherently one party buying out the other's shares for
+# cash/stock, never a genuine combination of equals, so the phrase
+# wouldn't legitimately appear as a real structural description there.
+_MERGER_OF_EQUALS_FORM_TYPES = {"S-4", "DEFM14A", "PREM14A"}
+
+
+def _is_merger_of_equals(slug: str, target: str, acquirer: str, form_type: Optional[str]) -> bool:
     """True when the filing calls itself a "merger of equals" (Hut 8/
-    USBTC, Steel Newco/Pinnacle, Ballston Spa/NBC). Deliberately NOT
-    "both target's and acquirer's own shareholders are shown adopting
-    the merger agreement" (tried first) -- a dual shareholder vote is
-    an ordinary STATUTORY requirement for plenty of ordinary (not
-    merger-of-equals) bank-holding-company and REIT mergers where one
-    side is clearly the acquirer (LINKBANCORP/GNB, Mesa Air Group/
-    Republic, Ready Capital/Broadmark), so that alone wrongly flagged
-    nine real swap/acquisition deals as merger-of-equals."""
-    if form_type != "S-4":
+    USBTC, Steel Newco/Pinnacle, Ballston Spa/NBC, AvalonBay/Equity
+    Residential, Veeco/Axcelis). Deliberately NOT "both target's and
+    acquirer's own shareholders are shown adopting the merger
+    agreement" (tried first) -- a dual shareholder vote is an ordinary
+    STATUTORY requirement for plenty of ordinary (not merger-of-equals)
+    bank-holding-company and REIT mergers where one side is clearly the
+    acquirer (LINKBANCORP/GNB, Mesa Air Group/Republic, Ready Capital/
+    Broadmark), so that alone wrongly flagged nine real swap/acquisition
+    deals as merger-of-equals."""
+    if form_type is not None and form_type not in _MERGER_OF_EQUALS_FORM_TYPES:
         return False
     return bool(_MERGER_OF_EQUALS_RE.search(_full_text(slug)))
 
@@ -1198,7 +1226,7 @@ def _classify_deal_uncached(
             True,
             "the filer is internalizing (absorbing) its own external manager via a share issuance, not being acquired by or acquiring anyone",
         )
-    if _is_s4_merger_of_equals(slug, target, acquirer, form_type):
+    if _is_merger_of_equals(slug, target, acquirer, form_type):
         return "merger_of_equals", False, None
     s4_override = _S4_VOTE_MANUAL_OVERRIDES.get(slug)
     if s4_override == "complex_structure":
