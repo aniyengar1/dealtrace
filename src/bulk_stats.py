@@ -537,6 +537,18 @@ def compute_final_price_is_ratio_for_deal(d: dict) -> Optional[bool]:
     return not _is_dollar_denominated(price, final.get("source_quotes") or [])
 
 
+# Matches a Contingent Value Right mention in a proposal's own quote
+# (Theseus: "$3.94 in cash ... plus one contingent value right (CVR)").
+# A CVR's payout is contingent/unknown at signing, so a deal's base-cash
+# number isn't the whole consideration -- computing a % bump off just the
+# cash leg would understate (or misrepresent) the real premium.
+_CVR_RE = re.compile(r"\bCVRs?\b|contingent value right", re.IGNORECASE)
+
+
+def _final_has_cvr(final: dict) -> bool:
+    return bool(_CVR_RE.search(" ".join(final.get("source_quotes") or [])))
+
+
 def compute_pct_bump_for_deal(d: dict) -> tuple[Optional[float], Optional[str]]:
     """Returns (pct, exclusion_reason). reason is None exactly when pct
     is a valid, includable value. For abs_change_over_300pct, pct still
@@ -549,6 +561,8 @@ def compute_pct_bump_for_deal(d: dict) -> tuple[Optional[float], Optional[str]]:
     final = _final_entry(dated)
     if final is None or final["consideration_type"] != "cash":
         return None, "not_cash_or_no_final"
+    if _final_has_cvr(final):
+        return None, "cash_plus_cvr"
     first_price = _price(dated[0])
     final_price = _price(final)
     if first_price is None:
@@ -977,7 +991,7 @@ _PCT_BUMP_EXCLUDED_DEAL_REASONS = {
 def stat_pct_increase_cash(deals: list[dict]) -> dict:
     values = []
     excluded_counts = {
-        "not_cash_or_no_final": 0, "missing_first_price": 0, "missing_final_price": 0,
+        "not_cash_or_no_final": 0, "cash_plus_cvr": 0, "missing_first_price": 0, "missing_final_price": 0,
         "fewer_than_2_dated_proposals": 0, "first_price_below_10_cents": 0,
         "first_price_below_5pct_of_final": 0, "final_price_non_positive": 0,
         "abs_change_over_300pct": 0,

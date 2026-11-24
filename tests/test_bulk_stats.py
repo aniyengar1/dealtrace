@@ -1,15 +1,24 @@
 from datetime import date
 
-from src.bulk_stats import _final_entry, compute_first_bidder_won_for_deal, stat_first_bidder_is_acquirer
+from src.bulk_stats import (
+    _final_entry,
+    compute_first_bidder_won_for_deal,
+    compute_pct_bump_for_deal,
+    stat_first_bidder_is_acquirer,
+)
 
 
-def _proposal(proposer, day, status="open", price_low=None, price_high=None):
+def _proposal(
+    proposer, day, status="open", price_low=None, price_high=None, consideration_type="cash", source_quotes=None
+):
     return {
         "date_resolved": date(2024, 1, day),
         "proposer": proposer,
         "status": status,
         "price_low": price_low,
         "price_high": price_high,
+        "consideration_type": consideration_type,
+        "source_quotes": source_quotes or [],
     }
 
 
@@ -181,3 +190,26 @@ def test_final_entry_falls_back_to_latest_when_nothing_is_open_or_accepted():
         _proposal("Bidder", 2, status="rejected", price_low=22.0),
     ]
     assert _final_entry(dated)["price_low"] == 22.0
+
+
+def test_pct_bump_excludes_cash_plus_cvr_deal():
+    # Real shape: Theseus Pharmaceuticals -- "$3.94 in cash ... plus one
+    # contingent value right (CVR)" per share. The stored price is only
+    # the base-cash leg, so a % bump computed from it alone would
+    # misrepresent the real (contingent, unknown-at-signing) consideration.
+    d = _deal(
+        "Target Co",
+        "Parent",
+        [
+            _proposal("Parent", 1, status="superseded", price_low=3.0, price_high=3.0),
+            _proposal(
+                "Target Co",
+                2,
+                status="accepted",
+                price_low=3.94,
+                price_high=3.94,
+                source_quotes=["$3.94 in cash per share plus one contingent value right (CVR)"],
+            ),
+        ],
+    )
+    assert compute_pct_bump_for_deal(d) == (None, "cash_plus_cvr")
