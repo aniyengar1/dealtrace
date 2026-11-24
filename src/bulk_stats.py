@@ -39,13 +39,14 @@ metrics tables (src.deal_metrics.refresh_all) and the JSON file.
 import json
 import re
 import statistics
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 from typing import Optional
 
 import psycopg
 
 from src import validate
+from src.classify_deal_type import _full_text
 from src.dedup_deals import _is_generic
 from src.entity_match import _is_ticker_of, core_name, is_acronym_of, is_anonymized_placeholder, is_governance_body_reference, is_same_entity
 from src.env import load_env
@@ -569,6 +570,30 @@ def pct_bump_bucket(pct: Optional[float]) -> Optional[str]:
     return f"{lower}% to {lower + 10}%"
 
 
+def _canonical_consortium_name(proposals: list[dict], acquirer: str) -> str:
+    """When the deal's own stored acquirer is ITSELF just a generic
+    term ("Consortium"), substituting a generic proposer name with it
+    (_normalize_bidder_name below) is a no-op -- the comparison still
+    fails. A filing's own narrative almost always names the group once
+    before falling back to its defined short form ("an unsolicited
+    letter from Hill City, JFLCO and Apollo (collectively, the
+    'Consortium')"), so the deal's own proposals usually already
+    contain the fuller joint name somewhere, even though the stored
+    acquirer field only kept the bare defined term. Picks the longest
+    non-generic, multi-party ("X, Y and Z" style) proposer name found
+    anywhere in the deal's own proposals as the real substitution
+    target instead -- still just `acquirer` unchanged if the stored
+    acquirer isn't itself generic, or if no such name exists."""
+    if not _is_generic(acquirer):
+        return acquirer
+    joint_names = [
+        p["proposer"]
+        for p in proposals
+        if p.get("proposer") and not _is_generic(p["proposer"]) and len(_split_joint_proposer(p["proposer"])) > 1
+    ]
+    return max(joint_names, key=len) if joint_names else acquirer
+
+
 def _normalize_bidder_name(name: str, acquirer: str) -> str:
     """A generic/shell term ("Merger Sub", "Parent", "Consortium"...,
     see dedup_deals._GENERIC_ACQUIRER_TERMS) always refers to THIS
@@ -578,7 +603,9 @@ def _normalize_bidder_name(name: str, acquirer: str) -> str:
     it here too lets two different shell aliases for the SAME real
     party (a consortium calling itself "Consortium" in early letters,
     then signing as its own newly formed "Merger Sub") compare equal,
-    instead of looking like two different companies."""
+    instead of looking like two different companies. `acquirer` should
+    already be resolved through _canonical_consortium_name when the
+    deal's own stored acquirer field is itself generic."""
     return acquirer if _is_generic(name) else name
 
 
@@ -615,8 +642,24 @@ def compute_first_bidder_won_for_deal(d: dict) -> tuple[Optional[bool], Optional
     final = _final_entry(bidder_dated)
     if final is None or not final["proposer"]:
         return None, "no_final_entry"
-    first_bidder = _normalize_bidder_name(bidder_dated[0]["proposer"], d["acquirer"])
-    eventual_acquirer = _normalize_bidder_name(final["proposer"], d["acquirer"])
+    canonical_acquirer = _canonical_consortium_name(d["proposals"], d["acquirer"])
+    # More than one DISTINCT bidder's earliest proposal landing on the
+    # same earliest date means there's no single defensible "first"
+    # bidder at all -- a same-day list of indications of interest
+    # (Integer: eight bidders, all June 17) has no established intraday
+    # order, so crediting whichever one happens to sort first (by
+    # whatever incidental tie-break the input query's row order
+    # produces) manufactures a fact the filing itself doesn't support.
+    # Distinct names are compared post-normalization (two rows that
+    # both resolve to the same real bidder are a repeat, not a tie).
+    earliest_date = bidder_dated[0]["date_resolved"]
+    tied_bidders = {
+        _normalize_bidder_name(p["proposer"], canonical_acquirer) for p in bidder_dated if p["date_resolved"] == earliest_date
+    }
+    if len(tied_bidders) > 1:
+        return None, "tied_first_bidders"
+    first_bidder = _normalize_bidder_name(bidder_dated[0]["proposer"], canonical_acquirer)
+    eventual_acquirer = _normalize_bidder_name(final["proposer"], canonical_acquirer)
     return _is_same_company_fuzzy(first_bidder, eventual_acquirer), None
 
 
@@ -684,6 +727,22 @@ _ANCILLARY_DOC_RE = re.compile(
     r"credit agreement)\b",
     re.IGNORECASE,
 )
+# An "amendment" to the merger agreement (extending a termination date,
+# adjusting a condition, ...) is a real, separately dated event, but
+# it's never the deal's ORIGINAL signing -- preferring whichever signing
+# event is latest-dated (see _latest_signing_date) picks an amendment
+# over the real original signing every time one exists (Verde Bio/SSTC:
+# a Feb 8, 2024 "entered into an amendment...extending the outside
+# termination date" event postdates the real Dec 11, 2023 "executed the
+# Merger Agreement" signing). Checked the same way _is_ancillary_only
+# _signing checks for a voting/support agreement: by the event's own
+# text, not by name/position, and with the same same-fallback-if-it-
+# would-remove-everything safety net below.
+_AMENDMENT_RE = re.compile(r"\bamendment\b", re.IGNORECASE)
+
+
+def _is_amendment_signing(e: dict) -> bool:
+    return bool(_AMENDMENT_RE.search(_signing_event_text(e)))
 # Deliberately broad: anything that plausibly names a deal's own
 # definitive agreement, across the several structures this pipeline
 # extracts (merger, equity/asset/stock purchase, share exchange,
@@ -701,6 +760,51 @@ _DEFINITIVE_DOC_RE = re.compile(
 
 def _signing_event_text(e: dict) -> str:
     return " ".join([e.get("summary") or ""] + list(e.get("source_quotes") or []))
+
+
+_ANNOUNCED_EXECUTION_RE = re.compile(r"\bannounc", re.IGNORECASE)
+# "On April 4, 2024, JBT entered into a Transaction Agreement..." --
+# deliberately narrow (one leading date, then a short run-on to
+# "entered into a/the ... Agreement") rather than a looser search: this
+# only has to recover the ONE date a signing event's own extracted text
+# mis-stated as a same-topic press-release date, not identify every
+# agreement reference in a multi-megabyte filing.
+_ENTERED_INTO_AGREEMENT_RE = re.compile(
+    r"\bOn\s+([A-Za-z]+\s+\d{1,2},\s+\d{4}),\s+[^.]{0,120}?enter(?:ed)?\s+into\s+(?:a|the)\s+"
+    r"(?:Transaction|Merger|Business Combination|Purchase|Stock Purchase)\s+Agreement\b"
+)
+_EXECUTION_DATE_FORMATS = ("%B %d, %Y", "%b %d, %Y")
+
+
+def _parse_month_day_year(text: str) -> Optional[date]:
+    for fmt in _EXECUTION_DATE_FORMATS:
+        try:
+            return datetime.strptime(text, fmt).date()
+        except ValueError:
+            continue
+    return None
+
+
+def _filing_execution_date(slug: str) -> Optional[date]:
+    """Looks for "On <date>, <parties> entered into a/the <X>
+    Agreement" directly in the filing's own cached text -- a more
+    authoritative execution date than a 'signing' event whose own
+    extracted quote actually describes a press release ANNOUNCING that
+    execution a day later (Marel/JBT: the stored signing event's own
+    quote is "On April 5, 2024...issued respective press releases
+    announcing the execution of the Transaction Agreement", one day
+    after the filing's own "On April 4, 2024, JBT entered into a
+    Transaction Agreement"). Only ever consulted by _latest_signing_date
+    when the chosen signing event's own text reads like an announcement
+    (see _ANNOUNCED_EXECUTION_RE) -- never runs, and never overrides a
+    signing event that already names the agreement's own execution
+    directly. Returns the EARLIEST such match in the filing, or None if
+    the pattern isn't found or doesn't parse."""
+    text = _full_text(slug)
+    if not text:
+        return None
+    dates = [d for m in _ENTERED_INTO_AGREEMENT_RE.finditer(text) if (d := _parse_month_day_year(m.group(1)))]
+    return min(dates) if dates else None
 
 
 def _is_ancillary_only_signing(e: dict) -> bool:
@@ -723,7 +827,7 @@ def _is_ancillary_only_signing(e: dict) -> bool:
 
 def _latest_signing_date(d: dict):
     """The deal's signing date -- the latest-dated signing event, after
-    two filters: (1) drop any signing event dated before every other
+    three filters: (1) drop any signing event dated before every other
     dated event/proposal in the deal, which catches a signing event
     that's actually a completely different, earlier transaction (a
     SPAC's own formation agreement, re-tagged as this deal's signing --
@@ -736,11 +840,23 @@ def _latest_signing_date(d: dict):
     otherwise remove every signing event, since an event that mentions
     neither a merger agreement nor a known ancillary document by name
     is more likely an extraction-phrasing gap than a genuine ancillary
-    -only signing, and shouldn't be thrown away. Filter 1 has no such
-    fallback -- a deal with zero events/proposals to compare against
-    skips it entirely, but a deal where every signing event fails it
-    has no signing date at all, rather than ever using a signing event
-    that cannot possibly belong to this deal's own process."""
+    -only signing, and shouldn't be thrown away. (3) drop a signing
+    event that's actually an AMENDMENT to the merger agreement (Verde
+    Bio/SSTC: a Feb 8, 2024 "entered into an amendment...extending the
+    outside termination date" event postdates the real Dec 11, 2023
+    original signing) -- same degrade-if-empty fallback, for the same
+    reason: an extraction that never mentions "amendment" at all is
+    more likely a phrasing gap than evidence this IS the original.
+    Taking MAX of whatever survives filters 2 and 3 still picks the
+    single latest genuine signing when a deal legitimately has more
+    than one (e.g. both parties' own separately filed signing
+    announcements on different days) -- only an amendment or
+    ancillary-only event is ever discarded outright, never a second
+    real signing-adjacent date. Filter 1 has no fallback -- a deal with
+    zero events/proposals to compare against skips it entirely, but a
+    deal where every signing event fails it has no signing date at
+    all, rather than ever using a signing event that cannot possibly
+    belong to this deal's own process."""
     signings = [e for e in d["events"] if e["event_type"] == "signing" and e["date_start"]]
     if not signings:
         return None
@@ -755,7 +871,22 @@ def _latest_signing_date(d: dict):
 
     valid = [e for e in signings if not _is_ancillary_only_signing(e)]
     candidates = valid if valid else signings
-    return max(e["date_start"] for e in candidates)
+
+    not_amendment = [e for e in candidates if not _is_amendment_signing(e)]
+    candidates = not_amendment if not_amendment else candidates
+
+    winner = max(candidates, key=lambda e: e["date_start"])
+    chosen_date = winner["date_start"]
+    # The winning signing event's own text reads like a press release
+    # ANNOUNCING execution, not the execution itself -- check the
+    # filing's own narrative for the date it was actually entered into,
+    # only ever moving the date earlier, never later or to a different
+    # deal's unrelated date (see _filing_execution_date).
+    if _ANNOUNCED_EXECUTION_RE.search(_signing_event_text(winner)):
+        execution_date = _filing_execution_date(d["slug"])
+        if execution_date is not None and execution_date < chosen_date:
+            chosen_date = execution_date
+    return chosen_date
 
 
 def _days_between(start, end) -> int:
@@ -880,7 +1011,7 @@ def stat_first_bidder_is_acquirer(deals: list[dict], contested_only: bool = Fals
     own; see compute_n_bidders_for_deal)."""
     matches = 0
     n = 0
-    excluded = {"no_non_target_proposal": 0, "no_final_entry": 0}
+    excluded = {"no_non_target_proposal": 0, "no_final_entry": 0, "tied_first_bidders": 0}
     for d in deals:
         if contested_only and compute_n_bidders_for_deal(d) < 2:
             continue
