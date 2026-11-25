@@ -220,9 +220,11 @@ export default async function MethodologyPage() {
                 latest still-open proposal over a later-dated proposal nobody accepted (a rival bidder&apos;s
                 unsolicited, rejected, or withdrawn counter could otherwise outrank the real deal&apos;s own
                 standing terms purely by date — Vista Outdoor&apos;s reported price was briefly MNC&apos;s
-                unsolicited, never-accepted bid). 15 of 802 deals changed. Deals whose signed consideration is a
-                base-cash amount plus a separate, contingent Contingent Value Right (CVR) are now excluded from the
-                % price-bump stat, since the CVR&apos;s payout is unknown at signing (18 of 802 newly excluded).
+                unsolicited, never-accepted bid). 15 of 802 deals changed, which also corrects which bidder is
+                credited as the winner for 7 of those (the &ldquo;final&rdquo; proposer is what the first-bidder
+                -wins comparison checks against). Deals whose signed consideration is a base-cash amount plus a
+                separate, contingent Contingent Value Right (CVR) are now excluded from the % price-bump stat,
+                since the CVR&apos;s payout is unknown at signing (18 of 802 newly excluded).
               </li>
               <li>
                 <span className="text-ink">First-bidder ties.</span> When two or more distinct bidders&apos;
@@ -236,21 +238,23 @@ export default async function MethodologyPage() {
                 <span className="text-ink">Consortium winner matching.</span> A deal&apos;s stored acquirer is
                 sometimes just a generic label (&ldquo;Consortium&rdquo;) that doesn&apos;t string-match the named
                 members who actually made the winning proposal. The fix resolves a generic label to the fuller
-                joint name the filing&apos;s own narrative already uses elsewhere in the same deal. 7 deals flip
-                from &ldquo;first bidder lost&rdquo; to &ldquo;first bidder won&rdquo;, including Atlas Air
-                Worldwide, whose June 2021 consortium made the first offer and is the eventual buyer group.
+                joint name the filing&apos;s own narrative already uses elsewhere in the same deal. 2 deals flip
+                from &ldquo;first bidder lost&rdquo; to &ldquo;first bidder won&rdquo;: Option Care Health and
+                Atlas Air Worldwide, whose June 2021 consortium made the first offer and is the eventual buyer
+                group.
               </li>
               <li>
                 <span className="text-ink">Deal type.</span> &ldquo;Merger of equals&rdquo; detection, previously
                 S-4-only, now also covers DEFM14A/PREM14A joint proxies (AvalonBay/Equity Residential, Veeco/Axcelis):
-                45 → 113 of 802 deals. Vista Outdoor&apos;s sale is now excluded as a complex, multi-part structure
-                (a Sporting Products sale to CSG plus a separate Revelyst spin-off) rather than counted as a plain
-                acquisition.
+                14 → 78 of 962 canonical deals with extracted data (a broader base than the 802 above, since a
+                deal&apos;s type itself determines whether it counts toward that 802). Vista Outdoor&apos;s sale is
+                now excluded as a complex, multi-part structure (a Sporting Products sale to CSG plus a separate
+                Revelyst spin-off) rather than counted as a plain acquisition.
               </li>
               <li>
                 <span className="text-ink">Signing date.</span> Now prefers the original merger agreement date over
                 a later amendment or a press-release announcement date (Verde Bio/SSTC: Dec 11, 2023, not the Feb 8
-                amendment; Marel/JBT: Apr 4 agreement, not the Apr 5 announcement). 41 of 802 deals had their
+                amendment; Marel/JBT: Apr 4 agreement, not the Apr 5 announcement). 27 of 802 deals had their
                 resolved signing date move, almost always earlier.
               </li>
             </ul>
