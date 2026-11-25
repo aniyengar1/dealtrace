@@ -201,10 +201,21 @@ _CLASSIFY_CACHE_DIR = Path("data/cache/deal_type_classification")
 # at all -- AvalonBay/Equity Residential, Veeco/Axcelis), and added
 # Vista Outdoor as a new complex_structure manual override (a Sporting
 # Products sale to CSG combined with a Revelyst separation, not a plain
-# single-buyer sale). Every classification rule change needs a bump
-# here, or a deal keeps silently serving its stale result forever even
-# once the rule that should catch it is fixed.
-_CLASSIFY_CACHE_VERSION = "v15"
+# single-buyer sale). v16 (pre-release spot check of v15's own 14->78
+# jump): a bare "merger of equals" phrase match was badly overfit --
+# 46 of 64 newly-widened matches and 7 of the original 14 turned out to
+# be a rejected alternative, a hedged/exploratory discussion, a comps
+# -selection methodology exclusion, or a reference to a different,
+# often historical, transaction, not the signed deal's own structure.
+# Replaced with _STRUCTURAL_MOE_RE (requires a definite structural verb
+# -- "combine...in", "structured as", "providing for" -- describing the
+# transaction itself) plus three negative-window checks (negation,
+# hedging, a "whereby [OtherCompany]" continuation). See
+# _is_merger_of_equals's own docstring for the full account. Every
+# classification rule change needs a bump here, or a deal keeps
+# silently serving its stale result forever even once the rule that
+# should catch it is fixed.
+_CLASSIFY_CACHE_VERSION = "v16"
 
 
 def _classify_cache_key(
@@ -792,7 +803,6 @@ _NO_VOTE_REQUIRED_RE = re.compile(
     r"adjourn|postpone",
     re.IGNORECASE,
 )
-_MERGER_OF_EQUALS_RE = re.compile(r"\bmerger of equals\b(?!\s*\(as defined)", re.IGNORECASE)
 _VOTE_WINDOW_CHARS = 300
 _NEGATION_LOOKBACK_CHARS = 150
 
@@ -957,20 +967,90 @@ def _is_s4_vote_based_reversed(slug: str, target: str, acquirer: str, form_type:
 _MERGER_OF_EQUALS_FORM_TYPES = {"S-4", "DEFM14A", "PREM14A"}
 
 
+# A bare "merger of equals" phrase match (round-4's own original rule)
+# turned out to be badly overfit once the gate widened past S-4: a
+# spot-check of the 64 newly-caught DEFM14A/PREM14A deals found 46 of
+# 64 were false positives (and the same check against the PRE-EXISTING
+# S-4-only 14 found 7 more, predating this round), almost all sharing
+# one of a few recognizable shapes --
+#   - a REJECTED/considered alternative, not the signed deal's own
+#     structure ("Party B delivered...an all-stock, merger of equals
+#     transaction", ConocoPhillips/Marathon Oil's real bidder was
+#     ConocoPhillips, not "Party B")
+#   - explicit HEDGING ("a potential merger of equals", "considered",
+#     "discussed... among other strategic options")
+#   - a comps-selection METHODOLOGY footnote explicitly EXCLUDING
+#     merger-of-equals deals from a fairness-opinion comparable set
+#     ("excluding...merger of equals...transactions") -- NextEra/
+#     Dominion, Blackstone/QTS
+#   - a reference to a DIFFERENT, unrelated, often-historical merger
+#     (Rio Tinto/Arcadium Lithium: Arcadium's OWN prior formation via
+#     the Livent/Allkem merger of equals, nothing to do with Rio
+#     Tinto's current acquisition of Arcadium)
+#   - an EXPLICIT DENIAL ("RBA no longer viewed the potential
+#     transaction as a merger of equals BUT RATHER as an acquisition",
+#     "S&P Global did NOT view the transaction as a merger of equals")
+# A genuine, signed merger of equals instead reliably uses one of a
+# handful of definite STRUCTURAL verb constructions describing the
+# transaction (or merger agreement) ITSELF: "[X] and [Y] will/have
+# agreed to combine...in a merger of equals", "structured the merger
+# as a merger of equals"/"is structured as...a merger of equals",
+# "providing for a merger of equals", or "the structure of the
+# transaction as a merger of equals". _STRUCTURAL_MOE_RE anchors on
+# these; _MOE_NEGATED_RE/_MOE_HEDGE_RE/_MOE_WHEREBY_RE reject a nearby
+# match that's negated ("NOT structured as"), still-hedged ("the
+# potential that...would be structured", "parties expressed alignment
+# on...being structured" -- a negotiation milestone, not the signed
+# terms), or continues into a different, named transaction ("...merger
+# of equals...WHEREBY Quintiles Transnational Holdings Inc[...]",
+# Syneos Health's own prior formation history). Verified against all
+# 78 deals the round-4 gate-widening touched (18 confirmed genuine, 53
+# confirmed false after this tightening, 7 pre-existing false
+# positives from before this round) with zero misses either direction;
+# see tests/test_classify_deal_type.py.
+_STRUCTURAL_MOE_RE = re.compile(
+    r"\b(?:combine|combined|combining)\b[^.;]{0,60}\bin\s+(?:an?\s+)?[\w-]*\s*merger of equals\b|"
+    r"\b(?:structured|providing for|provides for|effect a|effected)\b[^.;]{0,40}\bmerger of equals\b|"
+    r"\bmerger of equals\b[^.;]{0,40}\bbusiness combination of\b|"
+    r"\bstructure of the transaction (?:as|with)[^.;]{0,20}merger of equals\b",
+    re.IGNORECASE,
+)
+_MOE_NEGATED_RE = re.compile(
+    r"\bnot\s+(?:a\s+)?(?:structured as\s+)?(?:a\s+)?merger of equals\b|\bnot structured\b[^.;]{0,20}merger of equals",
+    re.IGNORECASE,
+)
+_MOE_HEDGE_RE = re.compile(
+    r"\bpotential\s+that\b[^.;]{0,30}\bwould be structured\b|\bwould be structured\b[^.;]{0,20}merger of equals|"
+    r"\balignment on\b[^.;]{0,30}\bbeing structured\b",
+    re.IGNORECASE,
+)
+_MOE_WHEREBY_RE = re.compile(r"merger of equals\b[^.;]{0,10}\bwhereby\s+[A-Z]", re.IGNORECASE)
+
+
 def _is_merger_of_equals(slug: str, target: str, acquirer: str, form_type: Optional[str]) -> bool:
-    """True when the filing calls itself a "merger of equals" (Hut 8/
-    USBTC, Steel Newco/Pinnacle, Ballston Spa/NBC, AvalonBay/Equity
-    Residential, Veeco/Axcelis). Deliberately NOT "both target's and
-    acquirer's own shareholders are shown adopting the merger
-    agreement" (tried first) -- a dual shareholder vote is an ordinary
-    STATUTORY requirement for plenty of ordinary (not merger-of-equals)
-    bank-holding-company and REIT mergers where one side is clearly the
-    acquirer (LINKBANCORP/GNB, Mesa Air Group/Republic, Ready Capital/
-    Broadmark), so that alone wrongly flagged nine real swap/acquisition
-    deals as merger-of-equals."""
+    """True when the filing describes THIS signed transaction, in its
+    own voice, as structured as a "merger of equals" (Hut 8/USBTC,
+    AvalonBay/Equity Residential, Veeco/Axcelis, Cedar Fair/Six Flags)
+    -- see _STRUCTURAL_MOE_RE's own comment for why a bare phrase match
+    isn't enough and what the exclusions guard against. Deliberately
+    NOT "both target's and acquirer's own shareholders are shown
+    adopting the merger agreement" (tried first) -- a dual shareholder
+    vote is an ordinary STATUTORY requirement for plenty of ordinary
+    (not merger-of-equals) bank-holding-company and REIT mergers where
+    one side is clearly the acquirer (LINKBANCORP/GNB, Mesa Air Group/
+    Republic, Ready Capital/Broadmark), so that alone wrongly flagged
+    nine real swap/acquisition deals as merger-of-equals."""
     if form_type is not None and form_type not in _MERGER_OF_EQUALS_FORM_TYPES:
         return False
-    return bool(_MERGER_OF_EQUALS_RE.search(_full_text(slug)))
+    text = _full_text(slug)
+    if not text:
+        return False
+    for m in _STRUCTURAL_MOE_RE.finditer(text):
+        window = text[max(0, m.start() - 80) : m.end() + 80]
+        if _MOE_NEGATED_RE.search(window) or _MOE_HEDGE_RE.search(window) or _MOE_WHEREBY_RE.search(window):
+            continue
+        return True
+    return False
 
 
 def _is_s4_buyer_side_only_vote(slug: str, target: str, acquirer: str, form_type: Optional[str]) -> bool:

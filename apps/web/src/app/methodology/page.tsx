@@ -245,10 +245,19 @@ export default async function MethodologyPage() {
               </li>
               <li>
                 <span className="text-ink">Deal type.</span> &ldquo;Merger of equals&rdquo; detection, previously
-                S-4-only, now also covers DEFM14A/PREM14A joint proxies (AvalonBay/Equity Residential, Veeco/Axcelis):
-                14 → 78 of 962 canonical deals with extracted data (a broader base than the 802 above, since a
-                deal&apos;s type itself determines whether it counts toward that 802). Vista Outdoor&apos;s sale is
-                now excluded as a complex, multi-part structure (a Sporting Products sale to CSG plus a separate
+                S-4-only, now also covers DEFM14A/PREM14A joint proxies (AvalonBay/Equity Residential, Veeco/Axcelis).
+                Widening the gate alone first jumped this from 14 to 78 of 962 canonical deals with extracted data
+                (a broader base than the 802 above, since a deal&apos;s type itself determines whether it counts
+                toward that 802) -- but a pre-release spot-check of those 64 newly-caught deals found 46 were a
+                rejected alternative, a hedged exploratory discussion, a fairness-opinion comps-screen exclusion, or
+                a reference to an unrelated transaction, not the signed deal&apos;s own structure (ConocoPhillips/
+                Marathon Oil: &ldquo;Party B&rdquo;, a different, non-acquiring bidder, proposed the merger of
+                equals; Rio Tinto/Arcadium Lithium: a reference to Arcadium&apos;s own prior, unrelated formation).
+                The same check against the original 14 found 7 more pre-existing false positives. Tightened to
+                require a definite structural statement about the transaction itself (&ldquo;will combine...in a
+                merger of equals&rdquo;, &ldquo;structured as a merger of equals&rdquo;), the final count is 14 → 24
+                of 962. Vista Outdoor&apos;s sale is now excluded as a complex, multi-part structure (a Sporting
+                Products sale to CSG plus a separate
                 Revelyst spin-off) rather than counted as a plain acquisition.
               </li>
               <li>

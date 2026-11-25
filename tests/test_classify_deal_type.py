@@ -271,6 +271,78 @@ def test_s4_merger_of_equals_does_not_fire_on_dual_statutory_vote_alone(monkeypa
     assert cdt._is_merger_of_equals("fake_slug", "GNB", "LINKBANCORP, Inc.", "S-4") is False
 
 
+def test_merger_of_equals_rejects_a_rejected_alternative_bidders_proposal(monkeypatch):
+    # Real shape: ConocoPhillips/Marathon Oil -- a representative of
+    # "Party B" (a different, unnamed, non-acquiring bidder) delivered
+    # a non-binding indication of interest for a merger of equals.
+    # ConocoPhillips -- the deal's own real, signed acquirer -- is
+    # never named anywhere near this phrase at all.
+    monkeypatch.setattr(
+        cdt,
+        "_full_text",
+        lambda slug: (
+            "A representative of Party B delivered to representatives of Marathon Oil a non-binding "
+            "indication of interest pursuant to which Party B would acquire Marathon Oil in an all-stock, "
+            "merger of equals transaction at a fixed exchange ratio."
+        ),
+    )
+    assert cdt._is_merger_of_equals("fake_slug", "Marathon Oil Corp", "ConocoPhillips", "DEFM14A") is False
+
+
+def test_merger_of_equals_rejects_hedged_exploratory_discussion(monkeypatch):
+    # Real shape: Abbott/Cardiovascular Systems -- "has periodically
+    # received inquiries...about a potential merger of equals at a
+    # future time" never confirms the signed deal is one.
+    monkeypatch.setattr(
+        cdt,
+        "_full_text",
+        lambda slug: "Ward has periodically received inquiries from two peer companies about a potential merger of equals at a future time.",
+    )
+    assert cdt._is_merger_of_equals("fake_slug", "Cardiovascular Systems Inc", "Abbott", "DEFM14A") is False
+
+
+def test_merger_of_equals_rejects_a_reference_to_a_different_historical_transaction(monkeypatch):
+    # Real shape: Rio Tinto/Arcadium Lithium -- Arcadium's OWN prior
+    # formation via the Livent/Allkem merger of equals has nothing to
+    # do with Rio Tinto's current, unrelated acquisition of Arcadium.
+    monkeypatch.setattr(
+        cdt,
+        "_full_text",
+        lambda slug: (
+            "The Company became the parent company of the merged group that was formed upon completion "
+            "of the merger of equals transaction between Livent Corporation and Allkem Limited."
+        ),
+    )
+    assert cdt._is_merger_of_equals("fake_slug", "Arcadium Lithium plc", "Rio Tinto", "DEFM14A") is False
+
+
+def test_merger_of_equals_rejects_an_explicit_denial(monkeypatch):
+    # Real shape: RBA/IAA -- "RBA no longer viewed the potential
+    # transaction as a merger of equals but rather as an acquisition"
+    # explicitly denies the characterization for the final deal.
+    monkeypatch.setattr(
+        cdt,
+        "_full_text",
+        lambda slug: (
+            "RBA no longer viewed the potential transaction as a merger of equals but rather as an "
+            "acquisition of IAA."
+        ),
+    )
+    assert cdt._is_merger_of_equals("fake_slug", "IAA, Inc.", "RBA", "DEFM14A") is False
+
+
+def test_merger_of_equals_accepts_genuine_signed_structure_language(monkeypatch):
+    # Real shape: AkzoNobel/Axalta, SWM/Neenah, Cedar Fair/Six Flags --
+    # a definite statement that the signed agreement itself combines
+    # the companies in a merger of equals.
+    monkeypatch.setattr(
+        cdt,
+        "_full_text",
+        lambda slug: "Axalta and AkzoNobel will combine in an all-share merger of equals in accordance with the merger agreement.",
+    )
+    assert cdt._is_merger_of_equals("fake_slug", "Axalta Coating Systems Ltd.", "AkzoNobel", "DEFM14A") is True
+
+
 def test_s4_buyer_side_only_vote_true_when_only_acquirer_field_party_votes_on_issuance(monkeypatch):
     # Real shape: Bally's/Gamesys -- only Bally's (stored target field)
     # votes, and only on its own share issuance; Gamesys has no
