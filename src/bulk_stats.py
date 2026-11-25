@@ -48,6 +48,7 @@ import psycopg
 from src import validate
 from src.classify_deal_type import _full_text
 from src.dedup_deals import _is_generic
+from src.deal_size import extract_merger_consideration
 from src.entity_match import _is_ticker_of, core_name, is_acronym_of, is_anonymized_placeholder, is_governance_body_reference, is_same_entity
 from src.env import load_env
 from src.load_db import connect
@@ -237,6 +238,51 @@ def _final_entry(dated: list[dict]) -> Optional[dict]:
     if open_proposals:
         return open_proposals[-1]
     return dated[-1] if dated else None
+
+
+def _filing_consideration_fallback(d: dict, final: dict) -> Optional[dict]:
+    """Only consulted when `final`'s own consideration_type is
+    "unknown" -- extract_merger_consideration's result, but ONLY when
+    it doesn't conflict with a price `final` already has. A filing
+    quote that DISAGREES with the stored proposal price (ChemoCentryx:
+    the filing's own "What will I receive" Q&A says $52.00, but the
+    stored proposal is a stale $44.00 negotiating round) is a sign the
+    stored data needs human review, not something to silently
+    overrule from here -- so a disagreement returns None, same as no
+    match at all, leaving the existing "unknown"/missing-price status
+    quo untouched rather than guessing which side is right."""
+    if final.get("consideration_type") != "unknown":
+        return None
+    result = extract_merger_consideration(d["slug"], d["target"])
+    if result is None:
+        return None
+    stored_price = _price(final)
+    if stored_price is not None and result.get("cash") is not None and abs(result["cash"] - stored_price) > 0.02:
+        return None
+    return result
+
+
+def _effective_final(d: dict) -> Optional[dict]:
+    """_final_entry, patched with _filing_consideration_fallback when
+    applicable -- a proposal-shaped dict every price/ratio/bump
+    function below can keep treating as the single source of "the
+    final terms", whether that came straight from the extracted
+    proposal or partly from the filing-text fallback. Only ever ADDS
+    information (a resolved type, or a price when none was stored at
+    all) -- never overwrites an already-stored price_low/price_high."""
+    final = _final_entry(_dated_proposals(d["proposals"]))
+    if final is None:
+        return None
+    fallback = _filing_consideration_fallback(d, final)
+    if fallback is None:
+        return final
+    patched = dict(final, consideration_type=fallback["type"], source_quotes=(final.get("source_quotes") or []) + [fallback["quote"]])
+    if patched["price_low"] is None and patched["price_high"] is None:
+        price = fallback["ratio"] if fallback["type"] == "stock" else fallback["cash"]
+        if price is not None:
+            patched["price_low"] = price
+            patched["price_high"] = price
+    return patched
 
 
 def _distribution(values: list[float]) -> dict:
@@ -469,7 +515,7 @@ def compute_first_final_price_for_deal(d: dict) -> tuple[Optional[float], Option
     if not dated:
         return None, None
     first_price = _price(dated[0])
-    final = _final_entry(dated)
+    final = _effective_final(d)
     final_price = _price(final) if final else None
     return first_price, final_price
 
@@ -479,8 +525,7 @@ def compute_final_price_range_for_deal(d: dict) -> tuple[Optional[float], Option
     compute_first_final_price_for_deal's single combined final_price,
     needed to tell a genuine single price (price_low == price_high)
     apart from a quoted range (price_low != price_high)."""
-    dated = _dated_proposals(d["proposals"])
-    final = _final_entry(dated)
+    final = _effective_final(d)
     if final is None:
         return None, None
     return final["price_low"], final["price_high"]
@@ -525,8 +570,7 @@ def compute_final_price_is_ratio_for_deal(d: dict) -> Optional[bool]:
     False (show as a dollar price) for every other consideration_type,
     since a spot-check confirmed cash/mixed/unknown deals in this
     dataset always store a genuine stated per-share dollar price."""
-    dated = _dated_proposals(d["proposals"])
-    final = _final_entry(dated)
+    final = _effective_final(d)
     if final is None:
         return None
     price = _price(final)
@@ -558,7 +602,7 @@ def compute_pct_bump_for_deal(d: dict) -> tuple[Optional[float], Optional[str]]:
     dated = _dated_proposals(d["proposals"])
     if len(dated) < 2:
         return None, "fewer_than_2_dated_proposals"
-    final = _final_entry(dated)
+    final = _effective_final(d)
     if final is None or final["consideration_type"] != "cash":
         return None, "not_cash_or_no_final"
     if _final_has_cvr(final):
@@ -979,6 +1023,44 @@ def stat_n_proposals(deals: list[dict]) -> dict:
         "n": len(values),
         **_distribution(values),
         "exclusions": "none -- 0 counted for deals with no proposals",
+    }
+
+
+def stat_consideration_type_coverage(deals: list[dict]) -> dict:
+    """How many deals have a resolved (not "unknown") consideration_type
+    at their final entry, before vs. after the filing-text fallback
+    (see _filing_consideration_fallback) -- "before" is the raw
+    extracted Proposal's own consideration_type; "after" additionally
+    counts a deal the fallback resolved. Also lists every deal the
+    fallback newly resolved, with its quote, for spot-checking."""
+    before_unknown, after_unknown, newly_resolved = 0, 0, []
+    for d in deals:
+        dated = _dated_proposals(d["proposals"])
+        raw_final = _final_entry(dated)
+        if raw_final is None:
+            continue
+        if raw_final.get("consideration_type") == "unknown":
+            before_unknown += 1
+            resolved = _effective_final(d)
+            if resolved is not None and resolved.get("consideration_type") != "unknown":
+                newly_resolved.append(
+                    {
+                        "deal_name": d["deal_name"],
+                        "slug": d["slug"],
+                        "consideration_type": resolved["consideration_type"],
+                        "quote": (resolved.get("source_quotes") or [None])[-1],
+                    }
+                )
+            else:
+                after_unknown += 1
+    n = len(deals)
+    return {
+        "definition": "Share of deals whose final entry has a resolved (not \"unknown\") consideration_type, before vs. after falling back to a deterministic filing-text parse of the signed merger agreement's own consideration clause.",
+        "n": n,
+        "unknown_before": before_unknown,
+        "unknown_after": after_unknown,
+        "newly_resolved_count": len(newly_resolved),
+        "newly_resolved": newly_resolved,
     }
 
 

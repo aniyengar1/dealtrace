@@ -1,6 +1,8 @@
 from datetime import date
+from unittest.mock import patch
 
 from src.bulk_stats import (
+    _effective_final,
     _final_entry,
     compute_first_bidder_won_for_deal,
     compute_pct_bump_for_deal,
@@ -22,8 +24,8 @@ def _proposal(
     }
 
 
-def _deal(target, acquirer, proposals):
-    return {"target": target, "acquirer": acquirer, "proposals": proposals}
+def _deal(target, acquirer, proposals, slug="fake_slug"):
+    return {"target": target, "acquirer": acquirer, "proposals": proposals, "slug": slug}
 
 
 def test_target_counter_offer_never_credited_as_the_winner():
@@ -213,3 +215,71 @@ def test_pct_bump_excludes_cash_plus_cvr_deal():
         ],
     )
     assert compute_pct_bump_for_deal(d) == (None, "cash_plus_cvr")
+
+
+def test_effective_final_fills_in_type_from_filing_fallback_when_price_already_agrees():
+    # Real shape: Activision Blizzard -- the stored proposal already
+    # has the right price ($95.00) but an unresolved "unknown" type;
+    # the filing fallback should only need to supply the type.
+    d = _deal(
+        "Activision Blizzard",
+        "Microsoft",
+        [_proposal("Microsoft", 1, status="accepted", price_low=95.0, consideration_type="unknown")],
+    )
+    with patch(
+        "src.bulk_stats.extract_merger_consideration",
+        return_value={"type": "cash", "cash": 95.0, "ratio": None, "quote": "receive $95.00 in cash"},
+    ):
+        final = _effective_final(d)
+    assert final["consideration_type"] == "cash"
+    assert final["price_low"] == 95.0
+
+
+def test_effective_final_leaves_unknown_when_filing_fallback_conflicts_with_stored_price():
+    # Real shape: ChemoCentryx -- the filing's own Q&A says $52.00, but
+    # the stored proposal is a stale $44.00 negotiating round. A
+    # disagreement is a sign the stored data needs human review, not
+    # something to silently overrule from here.
+    d = _deal(
+        "ChemoCentryx",
+        "Amgen",
+        [_proposal("Amgen", 1, status="accepted", price_low=44.0, consideration_type="unknown")],
+    )
+    with patch(
+        "src.bulk_stats.extract_merger_consideration",
+        return_value={"type": "cash", "cash": 52.0, "ratio": None, "quote": "receive $52.00 in cash"},
+    ):
+        final = _effective_final(d)
+    assert final["consideration_type"] == "unknown"
+    assert final["price_low"] == 44.0
+
+
+def test_effective_final_backfills_missing_price_from_filing_fallback():
+    # Real shape: Verde Bio/SSTC -- the only extracted Proposal is a
+    # vague "entered into a letter of intent" with no price at all, but
+    # the filing itself states a fixed exchange ratio.
+    d = _deal(
+        "Verde",
+        "SSTC",
+        [_proposal("Verde", 1, status="accepted", price_low=None, price_high=None, consideration_type="unknown")],
+    )
+    with patch(
+        "src.bulk_stats.extract_merger_consideration",
+        return_value={"type": "stock", "cash": None, "ratio": 300.0, "quote": "one share of SSTC for every 300 shares"},
+    ):
+        final = _effective_final(d)
+    assert final["consideration_type"] == "stock"
+    assert final["price_low"] == 300.0
+    assert final["price_high"] == 300.0
+
+
+def test_effective_final_returns_plain_final_when_no_fallback_match():
+    d = _deal(
+        "Target Co",
+        "Acquirer Co",
+        [_proposal("Acquirer Co", 1, status="accepted", price_low=10.0, consideration_type="unknown")],
+    )
+    with patch("src.bulk_stats.extract_merger_consideration", return_value=None):
+        final = _effective_final(d)
+    assert final["consideration_type"] == "unknown"
+    assert final["price_low"] == 10.0

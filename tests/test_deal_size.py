@@ -1,6 +1,6 @@
 from unittest.mock import patch
 
-from src.deal_size import extract_shares_outstanding
+from src.deal_size import extract_merger_consideration, extract_shares_outstanding
 
 
 def _with_text(text):
@@ -112,3 +112,68 @@ def test_no_text_returns_none():
 def test_no_matching_sentence_returns_none():
     with _with_text("Nothing relevant here at all."):
         assert extract_shares_outstanding("fake_slug", "Anaplan") is None
+
+
+def test_extract_merger_consideration_reads_cash_per_share():
+    # Real shape: Activision Blizzard/Microsoft.
+    text = (
+        "If the merger is completed, you will be entitled to receive $95.00 in cash, without interest, "
+        "for each share of our common stock, par value $0.000001 per share, which we refer to as "
+        "“Activision Blizzard common stock,” that you own."
+    )
+    with _with_text(text):
+        result = extract_merger_consideration("fake_slug", "Activision Blizzard")
+    assert result == {"type": "cash", "cash": 95.0, "ratio": None, "quote": result["quote"]}
+
+
+def test_extract_merger_consideration_reads_stock_exchange_ratio():
+    # Real shape: Denbury/ExxonMobil.
+    text = (
+        "If the Merger is completed, Denbury stockholders will receive, in exchange for each share of "
+        "Denbury common stock, par value $0.001 per share, held immediately prior to the Merger, "
+        "0.840 of a share of ExxonMobil common stock, without par value."
+    )
+    with _with_text(text):
+        result = extract_merger_consideration("fake_slug", "DENBURY INC")
+    assert result["type"] == "stock"
+    assert result["ratio"] == 0.840
+    assert result["cash"] is None
+
+
+def test_extract_merger_consideration_rejects_hypothetical_example():
+    # Real shape: ZAGG -- "if you own 100 shares... $420.00" is an
+    # arithmetic multiple of the real $4.20 per-share price, not the
+    # price itself.
+    text = "For example, if you own 100 shares of ZAGG common stock, you will be entitled to receive $420.00 in cash in exchange for such shares."
+    with _with_text(text):
+        assert extract_merger_consideration("fake_slug", "ZAGG") is None
+
+
+def test_extract_merger_consideration_rejects_equity_award_payout():
+    # Real shape: Aris -- an RSU/PSU cash-out formula reads like a real
+    # per-share consideration sentence but prices a different
+    # instrument under its own conversion formula.
+    text = (
+        "Each outstanding Aris RSU Award will automatically become vested and cancelled and converted "
+        "into the right to receive $7.00 in cash per restricted stock unit, for each share of Aris common stock."
+    )
+    with _with_text(text):
+        assert extract_merger_consideration("fake_slug", "Aris") is None
+
+
+def test_extract_merger_consideration_rejects_a_different_share_classs_own_ratio():
+    # Real shape: Verde Bio/SSTC -- a Series C Preferred share class's
+    # own conversion ratio ("0.15 shares of Verde Series C Preferred
+    # Stock") sits in the same sentence as the real common-stock ratio,
+    # but names the TARGET right after the number, not the acquirer.
+    text = (
+        "Each holder of Verde Series C Preferred Stock will be entitled to receive, for every 0.15 shares of "
+        "Verde Series C Preferred Stock, one share of Class B preferred stock, par value $0.001 per share, of SSTC."
+    )
+    with _with_text(text):
+        assert extract_merger_consideration("fake_slug", "Verde") is None
+
+
+def test_extract_merger_consideration_returns_none_for_no_text():
+    with _with_text(""):
+        assert extract_merger_consideration("fake_slug", "Anaplan") is None
