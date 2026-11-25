@@ -78,7 +78,11 @@ signing date over an amendment or announcement — plus a pre-release
 correction: widening "merger of equals" detection past S-4 forms
 initially also picked up 46 of 64 rejected/hedged/unrelated mentions
 that weren't the signed deal's own structure, caught by hand-checking
-every one against its filing quote before release. Full writeup on the
+every one against its filing quote before release. The same 20 deals
+were then re-verified, machine-verified against the filing text (not
+human-adjudicated), after the fixes shipped: 145 of 180 (81%) correct
+or materially correct, 19 wrong, 16 still unverifiable, with no
+regressions. Full writeup on the
 [methodology page](https://dealtrace-research.vercel.app/methodology).
 
 Known, honestly-scoped limits: some acquirers remain unresolved

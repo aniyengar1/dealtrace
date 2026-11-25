@@ -64,7 +64,8 @@ const ACCURACY_ROWS: {
   { deal: "Splunk · Cisco", set: "Development", metric: "Core events & proposals vs. gold answer key", result: "100%" },
   { deal: "Zendesk · Consortium", set: "Held-out", metric: "Core-event recall / proposal recall", result: "97% / 100%" },
   { deal: "20-deal spot check (round 3)", set: "Bulk extraction sample", metric: "Field-by-field manual verification", result: "81 / 90 fields" },
-  { deal: "20-deal spot check (round 4)", set: "Bulk extraction sample, 9 fields", metric: "Verified against the filing, with quotes", result: "136 / 180 fields" },
+  { deal: "20-deal spot check (round 4, before fixes)", set: "Bulk extraction sample, 9 fields", metric: "Verified against the filing, with quotes", result: "136 / 180 fields" },
+  { deal: "20-deal spot check (round 4, after fixes)", set: "Bulk extraction sample, 9 fields", metric: "Same 20 deals re-verified against the filing", result: "145 / 180 fields" },
 ];
 
 export default async function MethodologyPage() {
@@ -272,6 +273,21 @@ export default async function MethodologyPage() {
               Depositary Share, a multiple of the true per-ordinary-share economic value (Verona: $107 per ADS = 8
               ordinary shares, i.e. $13.375 per ordinary share) — the stored figure is the per-ADS price exactly as
               the filing states it, not yet converted or labeled by unit on this site.
+            </p>
+            <p className="mt-3 text-sm text-ink-muted">
+              After the fixes above shipped, the same 20 deals and 9 fields were re-verified against the filing
+              text, machine-verified field-by-field (not human-adjudicated): 145 of 180 fields (81%) correct or
+              materially correct, up from 136 (76%); 19 wrong, down from 28; 16 still unverifiable, unchanged (a
+              same-date tie between two bidders&apos; initial proposals has no unique answer in the filing itself,
+              fix or no fix). No field that was correct or materially correct before the fixes became wrong or
+              unverifiable after. Graphite Bio and Vista Outdoor, two of the re-checked deals, are now excluded
+              from the public stats entirely (filer_is_acquirer and complex_structure respectively) — their
+              remaining wrong fields no longer affect the headline numbers, though both are still shown, as-is, on
+              their own deal pages. Of the 19 still wrong, most are final price per share and consideration type
+              (5 each) and proposal bidders (4) — cases like a stock-for-stock exchange ratio or a cash-plus-CVR
+              deal with no stored dollar price at all (AvalonBay, Verde Bio/SSTC, Mesa Air/Republic), and bidder
+              counts sensitive to how a multi-member consortium or a business-unit-only bid is scoped, which this
+              round&apos;s fixes didn&apos;t target.
             </p>
           </div>
         </Reveal>

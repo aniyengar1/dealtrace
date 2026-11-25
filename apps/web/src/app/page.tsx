@@ -334,9 +334,12 @@ export default async function HomePage() {
             </Reveal>
             <Reveal delay={160}>
               <Card className="p-5">
-                <p className="text-sm font-medium text-ink">Round-3 spot check (bulk sample)</p>
-                <p className="mt-1 text-2xl font-serif text-accent">81 / 90</p>
-                <p className="mt-1 text-sm text-ink-muted">fields correct on a fresh random sample of 20 deals</p>
+                <p className="text-sm font-medium text-ink">Round-4 spot check (bulk sample, after fixes)</p>
+                <p className="mt-1 text-2xl font-serif text-accent">145 / 180</p>
+                <p className="mt-1 text-sm text-ink-muted">
+                  fields correct or materially correct (up from 136/180 before six deterministic fixes) —
+                  machine-verified against the filing&apos;s own text, not human-adjudicated
+                </p>
               </Card>
             </Reveal>
           </div>
