@@ -16,16 +16,18 @@ public.
 Pulled from the current `data/output/stats/headline_stats.json`:
 
 - **Most sale processes aren't crowded.** Median **2** distinct bidders
-  per deal (n = 790) — real competitive auctions with several serious
+  per deal (n = 781) — real competitive auctions with several serious
   bidders are the exception, not the rule.
 - **In a real contest, showing up first is an edge, not a guarantee.**
   Restricted to deals with 2+ bidders, the first bidder to submit a
-  priced proposal goes on to win **39%** of the time (n = 499). Across
-  *all* deals the figure reads higher, 61% (n = 776), only because a
-  1-bidder deal wins by definition.
+  priced proposal goes on to win **42%** of the time (n = 442). Across
+  *all* deals the figure reads higher, 64% (n = 717), only because a
+  1-bidder deal wins by definition. (Deals where two or more bidders'
+  earliest proposals land on the same date are excluded from both
+  figures — which one was genuinely first is undefined.)
 - **Competition still moves the price.** For deals that end in cash,
   the median increase from the first priced bid to the signed price is
-  **9.7%** (n = 344).
+  **9.5%** (n = 360).
 
 The full distribution (p25/median/p75) for these and three other
 stats — parties contacted, proposals per deal, days from first
@@ -57,17 +59,27 @@ EDGAR filings  →  LLM extraction  →  quote validation  →  Postgres  →  N
 
 ## Accuracy & limitations
 
-Accuracy was audited in three rounds of 20 randomly sampled deals,
-each checked field-by-field against the source filing by an
-independent model with every flagged field reviewed by hand. The first
-two rounds found systematic errors (buyer-side filings mislabeled as
-sales, inflated bidder counts, wrong first-contact dates) and each was
-fixed with a deterministic rule, not a one-off patch. The third round,
-on a fresh sample: 18 of 20 deals were genuine target-side sale
-processes, and across those, 81 of 90 extracted fields were correct or
-materially correct — the 9 that weren't were mostly first-contact
-dates, which is why that field is excluded from the headline stats
-above.
+Accuracy was audited in four rounds of 20 randomly sampled deals, each
+checked field-by-field against the source filing by an independent
+model with every flagged field reviewed by hand. The first two rounds
+found systematic errors (buyer-side filings mislabeled as sales,
+inflated bidder counts, wrong first-contact dates) and each was fixed
+with a deterministic rule, not a one-off patch. The third round, on a
+fresh sample: 18 of 20 deals were genuine target-side sale processes,
+and across those, 81 of 90 extracted fields were correct or materially
+correct — the 9 that weren't were mostly first-contact dates, which is
+why that field is excluded from the headline stats above. The fourth
+round (136 of 180 fields correct/materially correct, 28 wrong, 16
+unverifiable) drove six more deterministic fixes — consideration-type
+backfill, a rival-bidder exclusion from final price, excluding
+same-date bidder ties and cash-plus-CVR deals from their respective
+stats, consortium-label matching, and preferring the original
+signing date over an amendment or announcement — plus a pre-release
+correction: widening "merger of equals" detection past S-4 forms
+initially also picked up 46 of 64 rejected/hedged/unrelated mentions
+that weren't the signed deal's own structure, caught by hand-checking
+every one against its filing quote before release. Full writeup on the
+[methodology page](https://dealtrace-research.vercel.app/methodology).
 
 Known, honestly-scoped limits: some acquirers remain unresolved
 ("Undisclosed") rather than guessed; a stock-for-stock deal has no
