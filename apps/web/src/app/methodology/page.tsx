@@ -205,13 +205,14 @@ export default async function MethodologyPage() {
               signed filing with exact quotes: 136 fields (76%) correct or materially correct, 28 (16%) wrong, and
               16 (9%) where no unique, defensible answer could be established from the filing at all (most often a
               same-date tie between two bidders&apos; initial proposals). The wrong/unverifiable fields drove six
-              deterministic (no-LLM) fixes, re-run across the full 802-deal public dataset:
+              deterministic (no-LLM) fixes, re-run across the full public dataset (793 deals, after the deal-type
+              correction below):
             </p>
             <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm text-ink-muted">
               <li>
                 <span className="text-ink">Consideration type.</span> A deal whose extracted proposal never
                 resolved a cash/stock/mixed type is now backfilled, when safe, from the signed agreement&apos;s own
-                &ldquo;you will receive $X.XX in cash&rdquo;/&ldquo;N shares of [Acquirer]&rdquo; clause. 76 of 802
+                &ldquo;you will receive $X.XX in cash&rdquo;/&ldquo;N shares of [Acquirer]&rdquo; clause. 76 of 793
                 deals had an unresolved type; 28 were newly resolved this way (76 → 48 unresolved), each spot
                 -checked against its own filing quote.
               </li>
@@ -220,19 +221,18 @@ export default async function MethodologyPage() {
                 latest still-open proposal over a later-dated proposal nobody accepted (a rival bidder&apos;s
                 unsolicited, rejected, or withdrawn counter could otherwise outrank the real deal&apos;s own
                 standing terms purely by date — Vista Outdoor&apos;s reported price was briefly MNC&apos;s
-                unsolicited, never-accepted bid). 15 of 802 deals changed, which also corrects which bidder is
+                unsolicited, never-accepted bid). 14 of 793 deals changed, which also corrects which bidder is
                 credited as the winner for 7 of those (the &ldquo;final&rdquo; proposer is what the first-bidder
                 -wins comparison checks against). Deals whose signed consideration is a base-cash amount plus a
                 separate, contingent Contingent Value Right (CVR) are now excluded from the % price-bump stat,
-                since the CVR&apos;s payout is unknown at signing (18 of 802 newly excluded).
+                since the CVR&apos;s payout is unknown at signing (19 of 793 newly excluded).
               </li>
               <li>
                 <span className="text-ink">First-bidder ties.</span> When two or more distinct bidders&apos;
                 earliest proposals land on the same date, which one was first is genuinely undefined (the
                 underlying data has no reliable same-day ordering) — these deals are now excluded from the
-                first-bidder-wins stat rather than resolved by an arbitrary tie-break. 50 of 802 deals excluded;
-                the all-deals rate moves from 61% (n=776) to 64% (n=726), and the contested-deals (2+ bidders) rate
-                from 39% (n=499) to 41% (n=449).
+                first-bidder-wins stat rather than resolved by an arbitrary tie-break. 50 of 793 deals excluded;
+                the all-deals rate is now 64% (n=717), and the contested-deals (2+ bidders) rate is 42% (n=442).
               </li>
               <li>
                 <span className="text-ink">Consortium winner matching.</span> A deal&apos;s stored acquirer is
@@ -263,7 +263,7 @@ export default async function MethodologyPage() {
               <li>
                 <span className="text-ink">Signing date.</span> Now prefers the original merger agreement date over
                 a later amendment or a press-release announcement date (Verde Bio/SSTC: Dec 11, 2023, not the Feb 8
-                amendment; Marel/JBT: Apr 4 agreement, not the Apr 5 announcement). 27 of 802 deals had their
+                amendment; Marel/JBT: Apr 4 agreement, not the Apr 5 announcement). 27 of 793 deals had their
                 resolved signing date move, almost always earlier.
               </li>
             </ul>
@@ -319,6 +319,14 @@ export default async function MethodologyPage() {
               <span className="text-ink">Excluded:</span> SPAC/de-SPAC business combinations (classified and
               dropped before extraction; they don&apos;t have a comparable sale-process narrative), and filings
               whose background section a parser can&apos;t reliably isolate (logged, not silently skipped).
+            </p>
+            <p className="mt-2">
+              <span className="text-ink">Also excluded from the headline stats</span> (but still extracted and
+              shown on the deal&apos;s own page): a holdco-structured merger of equals, a manager-internalization
+              or affiliated-manager merger, a governance-body-as-acquirer deal, a self-reorganization, a spin-off,
+              an S-4 whose vote direction can&apos;t be determined, and a complex, multi-part structure (Vista
+              Outdoor). A plain &ldquo;merger of equals&rdquo; or reverse merger is NOT excluded -- both count
+              toward the stats the same as an ordinary acquisition.
             </p>
           </Card>
         </Reveal>
