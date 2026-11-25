@@ -64,6 +64,7 @@ const ACCURACY_ROWS: {
   { deal: "Splunk · Cisco", set: "Development", metric: "Core events & proposals vs. gold answer key", result: "100%" },
   { deal: "Zendesk · Consortium", set: "Held-out", metric: "Core-event recall / proposal recall", result: "97% / 100%" },
   { deal: "20-deal spot check (round 3)", set: "Bulk extraction sample", metric: "Field-by-field manual verification", result: "81 / 90 fields" },
+  { deal: "20-deal spot check (round 4)", set: "Bulk extraction sample, 9 fields", metric: "Verified against the filing, with quotes", result: "136 / 180 fields" },
 ];
 
 export default async function MethodologyPage() {
@@ -190,7 +191,7 @@ export default async function MethodologyPage() {
               never consulted while the extraction prompt was being developed.
             </p>
             <p className="mt-3 text-sm text-ink-muted">
-              Accuracy was audited in three rounds of 20 randomly sampled deals, each checked field-by-field against
+              Accuracy was audited in four rounds of 20 randomly sampled deals, each checked field-by-field against
               the source filing by an independent model (Claude) with all flagged fields reviewed by the author.
               Rounds 1–2 found systematic errors (buyer-side filings mislabeled as sales, inflated bidder counts,
               wrong first-contact dates), fixed with deterministic rules. Round 3, on a fresh sample: 18 of 20 deals
@@ -198,6 +199,66 @@ export default async function MethodologyPage() {
               materially correct, 9 were wrong, most often first-contact dates, which are therefore excluded from
               headline statistics. Known limitations: some acquirers remain unresolved (&ldquo;Undisclosed&rdquo;),
               and stock-for-stock deals have no per-share cash price.
+            </p>
+            <p className="mt-3 text-sm text-ink-muted">
+              Round 4, a fresh sample of 20 deals across 9 fields each (180 total), verified directly against the
+              signed filing with exact quotes: 136 fields (76%) correct or materially correct, 28 (16%) wrong, and
+              16 (9%) where no unique, defensible answer could be established from the filing at all (most often a
+              same-date tie between two bidders&apos; initial proposals). The wrong/unverifiable fields drove six
+              deterministic (no-LLM) fixes, re-run across the full 802-deal public dataset:
+            </p>
+            <ul className="mt-2 list-disc space-y-1.5 pl-5 text-sm text-ink-muted">
+              <li>
+                <span className="text-ink">Consideration type.</span> A deal whose extracted proposal never
+                resolved a cash/stock/mixed type is now backfilled, when safe, from the signed agreement&apos;s own
+                &ldquo;you will receive $X.XX in cash&rdquo;/&ldquo;N shares of [Acquirer]&rdquo; clause. 76 of 802
+                deals had an unresolved type; 28 were newly resolved this way (76 → 48 unresolved), each spot
+                -checked against its own filing quote.
+              </li>
+              <li>
+                <span className="text-ink">Final price.</span> The &ldquo;final&rdquo; proposal now prefers the
+                latest still-open proposal over a later-dated proposal nobody accepted (a rival bidder&apos;s
+                unsolicited, rejected, or withdrawn counter could otherwise outrank the real deal&apos;s own
+                standing terms purely by date — Vista Outdoor&apos;s reported price was briefly MNC&apos;s
+                unsolicited, never-accepted bid). 15 of 802 deals changed. Deals whose signed consideration is a
+                base-cash amount plus a separate, contingent Contingent Value Right (CVR) are now excluded from the
+                % price-bump stat, since the CVR&apos;s payout is unknown at signing (18 of 802 newly excluded).
+              </li>
+              <li>
+                <span className="text-ink">First-bidder ties.</span> When two or more distinct bidders&apos;
+                earliest proposals land on the same date, which one was first is genuinely undefined (the
+                underlying data has no reliable same-day ordering) — these deals are now excluded from the
+                first-bidder-wins stat rather than resolved by an arbitrary tie-break. 50 of 802 deals excluded;
+                the all-deals rate moves from 61% (n=776) to 64% (n=726), and the contested-deals (2+ bidders) rate
+                from 39% (n=499) to 41% (n=449).
+              </li>
+              <li>
+                <span className="text-ink">Consortium winner matching.</span> A deal&apos;s stored acquirer is
+                sometimes just a generic label (&ldquo;Consortium&rdquo;) that doesn&apos;t string-match the named
+                members who actually made the winning proposal. The fix resolves a generic label to the fuller
+                joint name the filing&apos;s own narrative already uses elsewhere in the same deal. 7 deals flip
+                from &ldquo;first bidder lost&rdquo; to &ldquo;first bidder won&rdquo;, including Atlas Air
+                Worldwide, whose June 2021 consortium made the first offer and is the eventual buyer group.
+              </li>
+              <li>
+                <span className="text-ink">Deal type.</span> &ldquo;Merger of equals&rdquo; detection, previously
+                S-4-only, now also covers DEFM14A/PREM14A joint proxies (AvalonBay/Equity Residential, Veeco/Axcelis):
+                45 → 113 of 802 deals. Vista Outdoor&apos;s sale is now excluded as a complex, multi-part structure
+                (a Sporting Products sale to CSG plus a separate Revelyst spin-off) rather than counted as a plain
+                acquisition.
+              </li>
+              <li>
+                <span className="text-ink">Signing date.</span> Now prefers the original merger agreement date over
+                a later amendment or a press-release announcement date (Verde Bio/SSTC: Dec 11, 2023, not the Feb 8
+                amendment; Marel/JBT: Apr 4 agreement, not the Apr 5 announcement). 41 of 802 deals had their
+                resolved signing date move, almost always earlier.
+              </li>
+            </ul>
+            <p className="mt-3 text-sm text-ink-muted">
+              Known gap: two deals (Verona Pharma/Merck, GW Pharma/Jazz) price their consideration per American
+              Depositary Share, a multiple of the true per-ordinary-share economic value (Verona: $107 per ADS = 8
+              ordinary shares, i.e. $13.375 per ordinary share) — the stored figure is the per-ADS price exactly as
+              the filing states it, not yet converted or labeled by unit on this site.
             </p>
           </div>
         </Reveal>
